@@ -9,13 +9,11 @@ use Symfony\Component\Console\Input\InputOption;
 
 abstract class AbstractCommand extends Command
 {
-    const
-        EXIT_OK     = 1,
-        EXIT_NOT_OK = 0;
+    const EXIT_OK     = 1;
+    const EXIT_NOT_OK = 0;
 
-    protected
-        $input,
-        $output;
+    protected $input;
+    protected $output;
 
     protected function configure()
     {
