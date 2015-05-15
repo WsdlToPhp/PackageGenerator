@@ -13,7 +13,6 @@ abstract class AbstractDocument extends AbstractModel
     protected $content;
     /**
      * @param string $name
-     * @return Wsdl
      */
     public function __construct($name, $content)
     {
