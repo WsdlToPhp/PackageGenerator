@@ -49,13 +49,10 @@ abstract class AbstractDomDocumentHandler
             switch ($node->nodeType) {
                 case XML_ELEMENT_NODE:
                     return $this->getElementHandler($node, $this, $index);
-                    break;
                 case XML_ATTRIBUTE_NODE:
                     return $this->getAttributeHandler($node, $this, $index);
-                    break;
                 default:
                     return $this->getNodeHandler($node, $this, $index);
-                    break;
             }
         } elseif ($node instanceof \DOMNameSpaceNode) {
             return new NameSpaceHandler($node, $this, $index);
