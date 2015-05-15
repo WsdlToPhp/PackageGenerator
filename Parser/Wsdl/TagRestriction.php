@@ -5,7 +5,6 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagRestriction as Restriction;
-use WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Model\Struct;
@@ -52,22 +51,24 @@ class TagRestriction extends AbstractTagParser
     public function parseRestriction(Restriction $restriction)
     {
         $parent = $restriction->getSuitableParent();
-        $model  = $this->getModel($parent);
-        if ($parent instanceof AbstractNodeHandler && $model instanceof Struct) {
-            $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName());
+        if ($parent instanceof Tag) {
+            $model = $this->getModel($parent);
+            if ($model instanceof Struct) {
+                $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName());
 
-            if ($restriction->hasAttributes()) {
-                foreach ($restriction->getAttributes() as $attribute) {
-                    if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
-                        $model->setInheritance($attribute->getValue());
-                    } else {
-                        $model->addMeta($attribute->getName(), $attribute->getValue(true));
+                if ($restriction->hasAttributes()) {
+                    foreach ($restriction->getAttributes() as $attribute) {
+                        if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
+                            $model->setInheritance($attribute->getValue());
+                        } else {
+                            $model->addMeta($attribute->getName(), $attribute->getValue(true));
+                        }
                     }
                 }
-            }
 
-            foreach ($restriction->getElementChildren() as $child) {
-                $this->parseRestrictionChild($parent, $child);
+                foreach ($restriction->getElementChildren() as $child) {
+                    $this->parseRestrictionChild($parent, $child);
+                }
             }
         }
     }
