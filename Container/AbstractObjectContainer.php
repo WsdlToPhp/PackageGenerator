@@ -17,9 +17,7 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      * @var array
      */
     private static $cache = array();
-    /**
-     * @return AbstractObjectContainer
-    */
+
     public function __construct()
     {
         $this->offset  = 0;
