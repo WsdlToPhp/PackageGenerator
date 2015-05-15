@@ -141,19 +141,12 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
             );
             $cachedModel = self::getCache($cacheValues);
             if ($cachedModel === null) {
-                foreach ($this->objects as $object) {
-                    $get = sprintf('get%s', ucfirst($key));
-                    if (!method_exists($object, $get)) {
-                        throw new \InvalidArgumentException(sprintf('Property "%s" does not exist or its getter does not exist', $key));
-                    }
-                    $propertyValue = call_user_func(array(
-                        $object,
-                        $get,
-                    ));
-                    if ($value === $propertyValue) {
-                        self::setCache($cacheValues, $object);
-                        return $object;
-                    }
+                $object = $this->findMatchingObject(array(
+                    $key => $value,
+                ));
+                if ($object !== null) {
+                    self::setCache($cacheValues, $object);
+                    return $object;
                 }
             }
             return $cachedModel;
@@ -176,26 +169,39 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
             );
             $cachedModel = self::getCache($properties);
             if ($cachedModel === null) {
-                foreach ($this->objects as $object) {
-                    $same = true;
-                    foreach ($properties as $name=>$value) {
-                        $get = sprintf('get%s', ucfirst($name));
-                        if (!method_exists($object, $get)) {
-                            throw new \InvalidArgumentException(sprintf('Property "%s" does not exist or its getter does not exist', $name));
-                        }
-                        $propertyValue = call_user_func(array(
-                            $object,
-                            $get,
-                        ));
-                        $same &= $propertyValue === $value;
-                    }
-                    if ((bool)$same === true) {
-                        self::setCache($cacheValues, $object);
-                        return $object;
-                    }
+                $object = $this->findMatchingObject($properties);
+                if ($object !== null) {
+                    self::setCache($cacheValues, $object);
+                    return $object;
                 }
             }
             return $cachedModel;
+        }
+        return null;
+    }
+    /**
+     * @param array $properties
+     * @throws \InvalidArgumentException
+     * @return mixed
+     */
+    protected function findMatchingObject(array $properties)
+    {
+        foreach ($this->objects as $object) {
+            $same = true;
+            foreach ($properties as $name=>$value) {
+                $get = sprintf('get%s', ucfirst($name));
+                if (!method_exists($object, $get)) {
+                    throw new \InvalidArgumentException(sprintf('Property "%s" does not exist or its getter does not exist', $name));
+                }
+                $propertyValue = call_user_func(array(
+                    $object,
+                    $get,
+                ));
+                $same &= $propertyValue === $value;
+            }
+            if ((bool)$same === true) {
+                return $object;
+            }
         }
         return null;
     }
