@@ -4,8 +4,12 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagList as ListTag;
+use WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class TagList extends AbstractTagParser
 {
@@ -47,16 +51,16 @@ class TagList extends AbstractTagParser
     public function parseList(ListTag $tag)
     {
         $parent       = $tag->getSuitableParent();
-        $parentParent = $parent !== null ? $parent->getSuitableParent() : null;
+        $parentParent = $parent instanceof AbstractNodeHandler ? $parent->getSuitableParent() : null;
         $model        = $this->getModel($parent);
-        if ($model === null && $parentParent !== null) {
+        if ($model === null && $parentParent instanceof AbstractNodeHandler) {
             $model = $this->getModel($parentParent);
         }
         $itemType     = $tag->getAttributeItemType();
         $struct       = $this->getStructByName($itemType);
-        if ($parent !== null && $model !== null) {
-            $type = sprintf('array[%s]', $struct !== null ? $struct->getName() : $itemType);
-            if ($parentParent !== null && ($attribute = $model->getAttribute($parent->getAttributeName())) !== null) {
+        if ($parent instanceof AbstractNodeHandler && $model instanceof AbstractModel) {
+            $type = sprintf('array[%s]', $struct instanceof Struct ? $struct->getName() : $itemType);
+            if ($parentParent instanceof AbstractNodeHandler && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
                 $model->getAttribute($parent->getAttributeName())->setInheritance($type);
             } else {
                 $model->setInheritance($type);

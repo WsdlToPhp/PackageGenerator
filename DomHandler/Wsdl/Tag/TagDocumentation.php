@@ -25,7 +25,7 @@ class TagDocumentation extends AbstractTag
     {
         if ($strict === false) {
             $enumerationTag = $this->getStrictParent(WsdlDocument::TAG_ENUMERATION);
-            if ($enumerationTag !== null) {
+            if ($enumerationTag instanceof TagEnumeration) {
                 return $enumerationTag;
             }
         }

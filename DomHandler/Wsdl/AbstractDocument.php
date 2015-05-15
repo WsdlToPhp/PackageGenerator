@@ -106,7 +106,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     {
         $rootElement = $this->getRootElement();
         $uri = '';
-        if ($rootElement !== null && $rootElement->hasAttribute(sprintf('xmlns:%s', $namespace)) === true) {
+        if ($rootElement instanceof ElementHandler && $rootElement->hasAttribute(sprintf('xmlns:%s', $namespace))) {
             $uri = $rootElement->getAttribute(sprintf('xmlns:%s', $namespace))->getValue();
         }
         return $uri;

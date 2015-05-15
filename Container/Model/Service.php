@@ -3,7 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Model\Service as Model;
-use WsdlToPhp\PackageGenerator\Model\Method;
+use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 
 class Service extends AbstractModel
 {
@@ -32,7 +32,7 @@ class Service extends AbstractModel
         /**
          * Service method does not already exist, register it
          */
-        if (!$serviceMethod instanceof Method) {
+        if (!$serviceMethod instanceof MethodModel) {
             $this->get($serviceName)->addMethod($methodName, $methodParameter, $methodReturn);
         } elseif ($serviceMethod->getParameterType() != $methodParameter) {
             /**

@@ -121,7 +121,7 @@ class Wsdl extends AbstractDocument
         $result = $parentResult;
         if ($this->getExternalSchemas()->count() > 0) {
             foreach ($this->getExternalSchemas() as $externalSchema) {
-                if ($externalSchema->getContent() !== null) {
+                if ($externalSchema->getContent() instanceof AbstractDocument) {
                     $externalResult = call_user_func_array(array(
                         $externalSchema->getContent(),
                         $method,

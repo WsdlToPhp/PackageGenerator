@@ -27,14 +27,14 @@ abstract class AbstractTagOperationElement extends AbstractTag
      */
     public function getAttributeMessage()
     {
-        return $this->hasAttributeMessage() === true ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValue() : '';
+        return $this->hasAttributeMessage() ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValue() : '';
     }
     /**
      * @return string
      */
     public function getAttributeMessageNamespace()
     {
-        return $this->hasAttribute(self::ATTRIBUTE_MESSAGE) === true ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValueNamespace() : '';
+        return $this->hasAttribute(self::ATTRIBUTE_MESSAGE) ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValueNamespace() : '';
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagMessage
@@ -55,7 +55,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
     public function getParts()
     {
         $message = $this->getMessage();
-        if ($message !== null) {
+        if ($message instanceof TagMessage) {
             return $message->getChildrenByName(WsdlDocument::TAG_PART);
         }
         return null;
@@ -66,7 +66,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
     public function getPart($partName)
     {
         $message = $this->getMessage();
-        if ($message !== null && !empty($partName)) {
+        if ($message instanceof TagMessage && !empty($partName)) {
             return $message->getPart($partName);
         }
         return null;

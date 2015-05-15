@@ -8,6 +8,7 @@ use WsdlToPhp\PackageGenerator\DomHandler\ElementHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\AbstractDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Schema;
+use WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler;
 
 abstract class AbstractTag extends ElementHandler
 {
@@ -26,7 +27,7 @@ abstract class AbstractTag extends ElementHandler
     public function getSuitableParent($checkName = true, array $additionalTags = array(), $maxDeep = self::MAX_DEEP, $strict = false)
     {
         $parentNode = null;
-        if ($this->getParent() !== null) {
+        if ($this->getParent() instanceof AbstractNodeHandler) {
             $parentTags = $this->getSuitableParentTags($additionalTags);
             $parentNode = $this->getParent()->getNode();
             while ($maxDeep-- > 0 && ($parentNode instanceof \DOMElement) && !empty($parentNode->nodeName) && (!preg_match('/' . implode('|', $parentTags) . '/i', $parentNode->nodeName) || ($checkName && preg_match('/' . implode('|', $parentTags) . '/i', $parentNode->nodeName) && (!$parentNode->hasAttribute('name') || $parentNode->getAttribute('name') === '')))) {
@@ -64,7 +65,7 @@ abstract class AbstractTag extends ElementHandler
         $parent = $this->getSuitableParent($checkName, array(
             $name,
         ), self::MAX_DEEP, true);
-        if ($parent !== null && $parent->getName() === $name) {
+        if ($parent instanceof AbstractNodeHandler && $parent->getName() === $name) {
             return $parent;
         }
         return null;

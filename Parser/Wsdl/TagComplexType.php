@@ -5,9 +5,10 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagComplexType as ComplexType;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
+use WsdlToPhp\PackageGenerator\Model\Struct;
 
 class TagComplexType extends AbstractTagParser
 {
@@ -56,7 +57,7 @@ class TagComplexType extends AbstractTagParser
     public function parseTagAttributes(AbstractTag $tag)
     {
         $model = $this->getModel($tag);
-        if ($model !== null && $tag->hasAttributes()) {
+        if ($model instanceof Struct && $tag->hasAttributes()) {
             foreach ($tag->getAttributes() as $attribute) {
                 switch ($attribute->getName()) {
                     case AbstractAttributeHandler::ATTRIBUTE_NAME:

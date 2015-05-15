@@ -165,7 +165,7 @@ class Method extends AbstractModel
     {
         $parameterModel = self::getModelByName($this->getParameterType());
         $parameterModel = ($parameterModel && $parameterModel->getIsStruct() && !$parameterModel->getIsRestriction()) ? $parameterModel : null;
-        $parameterModelAttributesCount = $parameterModel !== null ? $parameterModel->getAttributes(true, true)->count() : 0;
+        $parameterModelAttributesCount = $parameterModel instanceof Struct ? $parameterModel->getAttributes(true, true)->count() : 0;
         $returnModel = self::getModelByName($this->getReturnType());
         $returnModel = ($returnModel && $returnModel->getIsStruct() && !$returnModel->getIsRestriction()) ? $returnModel : null;
         if ($parameterModel) {

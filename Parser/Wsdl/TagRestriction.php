@@ -5,8 +5,10 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagRestriction as Restriction;
+use WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
+use WsdlToPhp\PackageGenerator\Model\Struct;
 
 class TagRestriction extends AbstractTagParser
 {
@@ -51,15 +53,15 @@ class TagRestriction extends AbstractTagParser
     {
         $parent = $restriction->getSuitableParent();
         $model  = $this->getModel($parent);
-        if ($parent !== null && $model !== null) {
+        if ($parent instanceof AbstractNodeHandler && $model instanceof Struct) {
             $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName());
 
             if ($restriction->hasAttributes()) {
                 foreach ($restriction->getAttributes() as $attribute) {
                     if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
-                        $this->getModel($parent)->setInheritance($attribute->getValue());
+                        $model->setInheritance($attribute->getValue());
                     } else {
-                        $this->getModel($parent)->addMeta($attribute->getName(), $attribute->getValue(true));
+                        $model->addMeta($attribute->getName(), $attribute->getValue(true));
                     }
                 }
             }
@@ -75,8 +77,8 @@ class TagRestriction extends AbstractTagParser
      */
     private function parseRestrictionChild(Tag $tag, Tag $child)
     {
-        if ($child->hasAttributeValue() && $this->getModel($tag) !== null) {
-            $this->getModel($tag)->addMeta($child->getName(), $child->getAttributeValue(true));
+        if ($child->hasAttributeValue() && ($model = $this->getModel($tag)) instanceof Struct) {
+            $model->addMeta($child->getName(), $child->getAttributeValue(true));
         }
     }
 }

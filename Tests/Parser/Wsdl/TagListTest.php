@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class TagListTest extends WsdlParser
 {
@@ -42,7 +43,7 @@ class TagListTest extends WsdlParser
                         }
                         break;
                     case 'segment':
-                        if ($struct->getAttribute('sectionIds') !== null) {
+                        if ($struct->getAttribute('sectionIds') instanceof StructAttribute) {
                             $this->assertSame('array[int]', $struct->getAttribute('sectionIds')->getInheritance());
                         }
                         break;

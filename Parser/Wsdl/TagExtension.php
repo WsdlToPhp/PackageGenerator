@@ -4,8 +4,10 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagExtension as Extension;
+use WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
 class TagExtension extends AbstractTagParser
 {
@@ -47,7 +49,7 @@ class TagExtension extends AbstractTagParser
     {
         $base   = $extension->getAttribute('base')->getValue();
         $parent = $extension->getSuitableParent();
-        if (!empty($base) && $parent !== null && $this->getModel($parent) !== null && $parent->getAttributeName() !== $base) {
+        if (!empty($base) && $parent instanceof AbstractNodeHandler && $this->getModel($parent) instanceof AbstractModel && $parent->getAttributeName() !== $base) {
             $this->getModel($parent)->setInheritance($base);
         }
     }

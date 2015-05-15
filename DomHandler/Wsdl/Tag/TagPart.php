@@ -51,7 +51,7 @@ class TagPart extends AbstractTag
                 $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(
                     'name' => $elementName,
                 ), true);
-                if ($element !== null && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
+                if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
                     $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
                 } else {
                     $type = $elementName;
