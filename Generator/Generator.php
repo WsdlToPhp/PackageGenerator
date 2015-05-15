@@ -84,7 +84,6 @@ class Generator extends \SoapClient
      * @param string $login login to get access to WSDL
      * @param string $password password to get access to WSDL
      * @param array $wsdlOptions options to get access to WSDL
-     * @return Generator
      */
     public function __construct($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
     {
