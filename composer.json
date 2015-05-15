@@ -29,6 +29,6 @@
         "symfony/yaml": "~2.6"
     },
     "autoload": {
-        "psr-4": { "WsdlToPhp\\PackageGenerator": "" }
+        "psr-4": { "WsdlToPhp\\PackageGenerator\\": "" }
     }
 }
