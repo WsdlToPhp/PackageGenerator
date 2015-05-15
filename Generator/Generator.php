@@ -1093,7 +1093,7 @@ class Generator extends \SoapClient
         return $this;
     }
     /**
-     * @param AbstractParser; $parser
+     * @param AbstractParser $parser
      * @return \WsdlToPhp\PackageGenerator\Generator\Generator
      */
     protected function addParser(AbstractParser $parser)
