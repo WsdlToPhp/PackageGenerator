@@ -81,7 +81,7 @@ abstract class AbstractTag extends ElementHandler
      */
     public function getAttributeName()
     {
-        return $this->getAttribute(Attribute::ATTRIBUTE_NAME) !== null ? $this->getAttribute(Attribute::ATTRIBUTE_NAME)->getValue() : '';
+        return $this->getAttribute(Attribute::ATTRIBUTE_NAME) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_NAME)->getValue() : '';
     }
     /**
      * @return boolean
@@ -95,7 +95,7 @@ abstract class AbstractTag extends ElementHandler
      */
     public function getAttributeValue($withNamespace = false, $withinItsType = true, $asType = null)
     {
-        return $this->getAttribute(Attribute::ATTRIBUTE_VALUE) !== null ? $this->getAttribute(Attribute::ATTRIBUTE_VALUE)->getValue($withNamespace, $withinItsType, $asType) : '';
+        return $this->getAttribute(Attribute::ATTRIBUTE_VALUE) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_VALUE)->getValue($withNamespace, $withinItsType, $asType) : '';
     }
     /**
      * @return AbstractDocument|Wsdl|Schema
