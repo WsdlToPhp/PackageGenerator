@@ -36,7 +36,6 @@ abstract class AbstractParser extends Parser
     public function __construct(Generator $generator)
     {
         $this->generator     = $generator;
-        $this->continue      = false;
         $this->parsedWsdls   = array();
         $this->parsedSchemas = array();
     }
