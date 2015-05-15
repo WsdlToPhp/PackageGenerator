@@ -35,7 +35,6 @@ class Method extends AbstractModel
      * @param string $returnType the type/name of the return value
      * @param Service $service defines the struct which owns this value
      * @param bool $isUnique defines if the method is unique or not
-     * @return Method
      */
     public function __construct($name, $parameterType, $returnType, Service $service, $isUnique = true)
     {

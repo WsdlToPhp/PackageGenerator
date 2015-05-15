@@ -20,7 +20,6 @@ class Service extends AbstractModel
      * @see AbstractModel::__construct()
      * @uses Service::setMethods()
      * @param string $name the service name
-     * @return Service
      */
     public function __construct($name)
     {

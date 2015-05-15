@@ -22,7 +22,6 @@ class StructAttribute extends AbstractModel
      * @param string $name the original name
      * @param string $type the type
      * @param Struct $struct defines the struct which owns this value
-     * @return StructAttribute
      */
     public function __construct($name, $type, Struct $struct)
     {

@@ -28,7 +28,6 @@ class StructValue extends AbstractModel
      * @param string $name the original name
      * @param string $index the index of the value in the enumeration struct
      * @param Struct $struct defines the struct which owns this value
-     * @return StructValue
      */
     public function __construct($name, $index, Struct $struct)
     {

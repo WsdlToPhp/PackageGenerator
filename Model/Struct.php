@@ -43,7 +43,6 @@ class Struct extends AbstractModel
      * @param string $name the original name
      * @param bool $isStruct defines if it's a real sruct or not
      * @param bool $isRestriction defines if it's an enumeration or not
-     * @return Struct
      */
     public function __construct($name, $isStruct = true, $isRestriction = false)
     {
