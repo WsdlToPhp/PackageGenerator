@@ -7,11 +7,11 @@ use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTagOperationElement;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagOperation;
 
 abstract class AbstractTagInputOutputParser extends AbstractTagParser
 {
-    const
-        UNKNOWN = 'unknown';
+    const UNKNOWN = 'unknown';
     /**
      * @param Method $method
      * @return string|array
@@ -43,11 +43,11 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
      */
     public function parseInputOutput(AbstractTagOperationElement $tag)
     {
-        if ($tag->hasAttributeMessage()) {
+        if (!$tag->hasAttributeMessage()) {
             return null;
         }
         $operation = $tag->getParentOperation();
-        if ($operation === null) {
+        if (!$operation instanceof TagOperation) {
             return null;
         }
         $method = $this->getModel($operation);
@@ -93,6 +93,6 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
                 $isKnown &= !empty($knownType) && strtolower($knownValue) !== self::UNKNOWN;
             }
         }
-        return (bool) $isKnown;
+        return (bool) !$isKnown;
     }
 }
