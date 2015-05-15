@@ -46,7 +46,7 @@ class Structs extends AbstractParser
                  */
                 $struct = $typeDef[0];
                 if ($struct != 'struct') {
-                    if (! empty($typeDef[1])) {
+                    if (!empty($typeDef[1])) {
                         $structs->addVirtualStruct($typeDef[1]);
                     }
                     continue;
@@ -71,26 +71,23 @@ class Structs extends AbstractParser
                  */
                 $start = false;
                 $then = false;
-                $end = false;
                 $structParamName = '';
                 $structParamType = '';
                 $typeDefCount = count($typeDef);
                 if ($typeDefCount > 3) {
                     for ($i = 2; $i < $typeDefCount; $i ++) {
                         $typeVal = $typeDef[$i];
-                        if ($typeVal != '{' && is_string($typeVal) && ! empty($typeVal) && ! $start) {
-                            $end = false;
+                        if ($typeVal != '{' && is_string($typeVal) && !empty($typeVal) && ! $start) {
                             $then = false;
                             $start = true;
                         }
                         if ($typeVal === ';') {
-                            $end = true;
                             $then = false;
                             $start = false;
                         }
                         if ($then) {
                             $structParamName = $typeVal;
-                            if (! empty($structParamType) && ! empty($structParamName) && ! empty($structName)) {
+                            if (!empty($structParamType) && !empty($structParamName) && !empty($structName)) {
                                 $structs->addStruct($structName, $structParamName, $structParamType);
                                 array_push($structsDefined, $typeSignature);
                                 $structParamName = '';
