@@ -4,7 +4,6 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
-use WsdlToPhp\PackageGenerator\DomHandler\AbstractElementHandler;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Model\Struct;
@@ -42,7 +41,7 @@ abstract class AbstractAttributesParser extends AbstractTagParser
     public function parseTag(AbstractTag $tag)
     {
         $parent = $tag->getSuitableParent();
-        if ($parent instanceof AbstractElementHandler && $tag->hasAttributeName() && ($model = $this->getModel($parent)) instanceof Struct && ($modelAttribute = $model->getAttribute($tag->getAttributeName())) instanceof StructAttribute) {
+        if ($parent instanceof AbstractTag && $tag->hasAttributeName() && ($model = $this->getModel($parent)) instanceof Struct && ($modelAttribute = $model->getAttribute($tag->getAttributeName())) instanceof StructAttribute) {
             foreach ($tag->getAttributes() as $tagAttribute) {
                 switch ($tagAttribute->getName()) {
                     case AbstractAttributeHandler::ATTRIBUTE_NAME:

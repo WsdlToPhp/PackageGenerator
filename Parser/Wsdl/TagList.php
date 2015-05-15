@@ -4,7 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagList as ListTag;
-use WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
@@ -51,16 +51,16 @@ class TagList extends AbstractTagParser
     public function parseList(ListTag $tag)
     {
         $parent       = $tag->getSuitableParent();
-        $parentParent = $parent instanceof AbstractNodeHandler ? $parent->getSuitableParent() : null;
+        $parentParent = $parent instanceof AbstractTag ? $parent->getSuitableParent() : null;
         $model        = $this->getModel($parent);
-        if ($model === null && $parentParent instanceof AbstractNodeHandler) {
+        if ($model === null && $parentParent instanceof AbstractTag) {
             $model = $this->getModel($parentParent);
         }
         $itemType     = $tag->getAttributeItemType();
         $struct       = $this->getStructByName($itemType);
-        if ($parent instanceof AbstractNodeHandler && $model instanceof AbstractModel) {
+        if ($parent instanceof AbstractTag && $model instanceof AbstractModel) {
             $type = sprintf('array[%s]', $struct instanceof Struct ? $struct->getName() : $itemType);
-            if ($parentParent instanceof AbstractNodeHandler && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
+            if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
                 $model->getAttribute($parent->getAttributeName())->setInheritance($type);
             } else {
                 $model->setInheritance($type);
