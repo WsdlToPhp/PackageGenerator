@@ -180,7 +180,6 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::_set()
      * @param array $_arrayOfValues SoapClient options or object attribute values
      * @param bool $_resetSoapClient allows to disable the SoapClient redefinition
-     * @return PackageNameWsdlClass
      */
     public function __construct($_arrayOfValues = array(),$_resetSoapClient = true)
     {
