@@ -11,7 +11,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      */
     public function __construct(\DOMElement $element, AbstractDomDocumentHandler $domDocument, $index = -1)
     {
-        return parent::__construct($element, $domDocument, $index);
+        parent::__construct($element, $domDocument, $index);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler::getNode()
