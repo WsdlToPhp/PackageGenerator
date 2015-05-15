@@ -250,7 +250,7 @@ abstract class AbstractModel
      * @param bool $ignoreDocumentation ignore documentation info or not
      * @return void
      */
-    protected function addMetaComment(array &$comments = array(), $addStars = false, $ignoreDocumentation = false)
+    public function addMetaComment(array &$comments = array(), $addStars = false, $ignoreDocumentation = false)
     {
         $metaComments = array();
         if (count($this->getMeta())) {
