@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "type": "library",
     "keywords" : ["soap","wsdl","php","generator"],
-    "homepage" : "https://github.com/WsdlToPhp/WsdlToPhp",
+    "homepage" : "https://github.com/WsdlToPhp/PackageGenerator",
     "license" : "MIT",
     "authors" : [
         {
