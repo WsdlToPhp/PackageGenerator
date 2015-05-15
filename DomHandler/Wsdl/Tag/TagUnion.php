@@ -19,7 +19,7 @@ class TagUnion extends AbstractTag
     protected function parseMemberTypes()
     {
         $memberTypes = array();
-        $value = $this->hasAttribute(self::ATTRIBUTE_MEMBER_TYPES) === true ? $this->getAttribute(self::ATTRIBUTE_MEMBER_TYPES)->getValue(true) : '';
+        $value = $this->hasAttribute(self::ATTRIBUTE_MEMBER_TYPES) ? $this->getAttribute(self::ATTRIBUTE_MEMBER_TYPES)->getValue(true) : '';
         if (!empty($value)) {
             $values = explode(' ', $value);
             foreach ($values as $val) {

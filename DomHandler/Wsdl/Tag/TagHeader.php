@@ -23,21 +23,21 @@ class TagHeader extends AbstractTagOperationElement
      */
     public function getAttributeRequired()
     {
-        return $this->hasAttribute(self::ATTRIBUTE_REQUIRED) === true ? $this->getAttribute(self::ATTRIBUTE_REQUIRED)->getValue(true, true, 'bool') : true;
+        return $this->hasAttribute(self::ATTRIBUTE_REQUIRED) ? $this->getAttribute(self::ATTRIBUTE_REQUIRED)->getValue(true, true, 'bool') : true;
     }
     /**
      * @return string
      */
     public function getAttributeNamespace()
     {
-        return $this->hasAttribute(Attribute::ATTRIBUTE_NAMESPACE) === true ? $this->getAttribute(Attribute::ATTRIBUTE_NAMESPACE)->getValue() : '';
+        return $this->hasAttribute(Attribute::ATTRIBUTE_NAMESPACE) ? $this->getAttribute(Attribute::ATTRIBUTE_NAMESPACE)->getValue() : '';
     }
     /**
      * @return string
      */
     public function getAttributePart()
     {
-        return $this->hasAttribute(self::ATTRIBUTE_PART) === true ? $this->getAttribute(self::ATTRIBUTE_PART)->getValue() : '';
+        return $this->hasAttribute(self::ATTRIBUTE_PART) ? $this->getAttribute(self::ATTRIBUTE_PART)->getValue() : '';
     }
     /**
      * @return null|\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart
