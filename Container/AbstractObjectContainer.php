@@ -108,7 +108,7 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     abstract protected function objectClass();
     /**
-     * @param unknown $object
+     * @param mixed $object
      * @throws \InvalidArgumentException
      * @return AbstractObjectContainer
      */

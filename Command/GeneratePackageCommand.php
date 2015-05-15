@@ -36,10 +36,10 @@ class GeneratePackageCommand extends AbstractCommand
      * @param string $wsdlUrl
      * @param string $wsdlLogin
      * @param string $wsdlPassword
-     * @param string $wsdlOptions
+     * @param array $wsdlOptions
      * @return Generator
      */
-    protected function getInstanceOfGenerator($wsdlUrl, $wsdlLogin = null, $wsdlPassword = null, $wsdlOptions = null)
+    protected function getInstanceOfGenerator($wsdlUrl, $wsdlLogin = null, $wsdlPassword = null, array $wsdlOptions = array())
     {
         return Generator::instance($wsdlUrl, $wsdlLogin, $wsdlPassword, $wsdlOptions);
     }
