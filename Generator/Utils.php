@@ -60,7 +60,6 @@ class Utils
                     } elseif (!empty($parts[$partsCount - 1])) {
                         $elementType = substr($string, strrpos($string, implode('', array_slice($parts, -1))) - 1);
                     } else {
-                        $part = '';
                         for ($i = $partsCount - 1; $i >= 0; $i--) {
                             $part = trim($parts[$i]);
                             if (!empty($part)) {
@@ -78,7 +77,6 @@ class Utils
                     } elseif (empty($parts[0]) && !empty($parts[1])) {
                         $elementType = substr($string, 0, strlen($parts[1]) + 1);
                     } else {
-                        $part = '';
                         for ($i = 0; $i < $partsCount; $i++) {
                             $part = trim($parts[$i]);
                             if (!empty($part)) {
