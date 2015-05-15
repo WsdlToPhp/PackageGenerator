@@ -23,7 +23,6 @@ abstract class AbstractTagParser extends AbstractParser
      */
     protected function getModel(Tag $tag)
     {
-        $model = null;
         switch ($tag->getName()) {
             case WsdlDocument::TAG_OPERATION:
                 $model = $this->getMethodByName($tag->getAttributeName());
