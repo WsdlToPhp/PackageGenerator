@@ -45,7 +45,6 @@ abstract class AbstractDomDocumentHandler
      */
     public function getHandler($node, $index = -1)
     {
-
         if ($node instanceof \DOMNode) {
             switch ($node->nodeType) {
                 case XML_ELEMENT_NODE:
