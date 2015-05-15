@@ -8,7 +8,6 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      * @param \DOMElement $element
      * @param AbstractDomDocumentHandler $domDocument
      * @param int $index
-     * @return AbstractElementHandler
      */
     public function __construct(\DOMElement $element, AbstractDomDocumentHandler $domDocument, $index = -1)
     {
