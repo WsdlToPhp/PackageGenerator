@@ -209,7 +209,6 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
         return array_key_exists($key, self::$cache) ? self::$cache[$key] : null;
     }
     /**
-     * @param array $values
      * @return AbstractObjectContainer
      */
     public static function purgeAllCache()
