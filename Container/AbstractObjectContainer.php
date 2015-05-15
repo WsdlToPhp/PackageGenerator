@@ -212,16 +212,6 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      * @param array $values
      * @return AbstractObjectContainer
      */
-    private static function purgeCache(array $values)
-    {
-        if (self::getCache($values)) {
-            unset(self::$cache[self::cacheKey($values)]);
-        }
-    }
-    /**
-     * @param array $values
-     * @return AbstractObjectContainer
-     */
     public static function purgeAllCache()
     {
         self::$cache = array();
