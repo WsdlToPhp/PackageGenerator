@@ -12,7 +12,6 @@ class NameSpaceHandler extends AttributeHandler
      * @param \DOMNameSpaceNode $nameSpaceNode
      * @param AbstractDomDocumentHandler $domDocumentHandler
      * @param int $index
-     * @return NameSpaceHandler
      */
     public function __construct(\DOMNameSpaceNode $nameSpaceNode, AbstractDomDocumentHandler $domDocumentHandler, $index = -1)
     {
