@@ -46,13 +46,13 @@ class Struct extends AbstractModel
         if ($this->get($structName) === null) {
             $this->add(new Model($structName));
         }
-        if (!empty($attributeName) && !empty($attributeType) && $this->get($structName) !== null) {
+        if (!empty($attributeName) && !empty($attributeType) && $this->get($structName) instanceof Model) {
             $this->get($structName)->addAttribute($attributeName, $attributeType);
         }
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
-     * @return Struct|null
+     * @return Model|null
      */
     public function get($value, $key = parent::KEY_NAME)
     {
