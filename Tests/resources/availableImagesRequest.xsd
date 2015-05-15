@@ -1,0 +1,20 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:img="http://ws.estesexpress.com/imageview" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.estesexpress.com/imageview" xml:lang="en">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">Request for available images. Copyright 2007 Estes Express Lines, Inc.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="imageViewCommon.xsd" />
+	<xsd:element name="availRequest">
+		<xsd:complexType>
+			<xsd:annotation>
+				<xsd:documentation>PRO is deprecated; provided for backward compatibility</xsd:documentation>
+			</xsd:annotation>
+			<xsd:sequence>
+				<xsd:element ref="img:requestID" />
+				<xsd:choice>
+					<xsd:element name="search" type="img:SearchCriteriaType" />
+					<xsd:element name="pro" type="img:ProType" />
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

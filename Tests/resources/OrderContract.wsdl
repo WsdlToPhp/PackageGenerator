@@ -1,0 +1,1968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tksa="http://www.telkom.co.za" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tsmd="http://www.telkom.co.za/2009/03/ServiceMetaData" xmlns:wswa="http://www.w3.org/2006/02/addressing/wsdl" targetNamespace="http://www.telkom.co.za">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.telkom.co.za/2009/03/ServiceMetaData" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+			<xsd:simpleType name="CorrelationIdStringType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1" />
+					<xsd:maxLength value="64" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="CorrelationIdType">
+				<xsd:simpleContent>
+					<xsd:extension base="tsmd:CorrelationIdStringType">
+						<xsd:anyAttribute namespace="##other" processContents="lax" />
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+			<xsd:element name="CorrelationId" type="tsmd:CorrelationIdType">
+				<xsd:annotation>
+					<xsd:documentation>This is an optional identifier to be used by a system when several technical transactions are representing one business transaction. Example: Business transaction implemented via a request and call-back transaction. The call-back will have a new MessageId as it is a new message but might have the same CorrelationId. The definition of the values is owned by the system sending the transaction.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:simpleType name="SenderIdStringType" final="restriction">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1" />
+					<xsd:maxLength value="64" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="SenderIdType">
+				<xsd:simpleContent>
+					<xsd:extension base="tsmd:SenderIdStringType">
+						<xsd:anyAttribute namespace="##other" processContents="lax" />
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+			<xsd:element name="SenderId" type="tsmd:SenderIdType">
+				<xsd:annotation>
+					<xsd:documentation>This is the identifier of the sending system.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="GeneratedTimeStamp">
+				<xsd:annotation>
+					<xsd:documentation>This should be the timestamp for when the XML document was generated.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:dateTime">
+							<xsd:anyAttribute namespace="##other" processContents="lax" />
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SentTimeStamp">
+				<xsd:annotation>
+					<xsd:documentation>This should be the timestamp for when the XML document was sent. It is important when a message will reside on a queue with retries etc and might only be sent later. The field should be re-set for every retry. The field is optional and if not present will be assumed to be the same as the GeneratedTimeStamp.
+					</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:dateTime">
+							<xsd:anyAttribute namespace="##other" processContents="lax" />
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.w3.org/2005/08/addressing" targetNamespace="http://www.w3.org/2005/08/addressing" blockDefault="#all" elementFormDefault="qualified" finalDefault="" attributeFormDefault="unqualified">
+			<!-- Constructs from the WS-Addressing Core -->
+			<xs:element name="EndpointReference" type="tns:EndpointReferenceType" />
+			<xs:complexType name="EndpointReferenceType" mixed="false">
+				<xs:sequence>
+					<xs:element name="Address" type="tns:AttributedURIType" />
+					<xs:element ref="tns:ReferenceParameters" minOccurs="0" />
+					<xs:element ref="tns:Metadata" minOccurs="0" />
+					<xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+				<xs:anyAttribute namespace="##other" processContents="lax" />
+			</xs:complexType>
+			<xs:element name="ReferenceParameters" type="tns:ReferenceParametersType" />
+			<xs:complexType name="ReferenceParametersType" mixed="false">
+				<xs:sequence>
+					<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+				<xs:anyAttribute namespace="##other" processContents="lax" />
+			</xs:complexType>
+			<xs:element name="Metadata" type="tns:MetadataType" />
+			<xs:complexType name="MetadataType" mixed="false">
+				<xs:sequence>
+					<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+				<xs:anyAttribute namespace="##other" processContents="lax" />
+			</xs:complexType>
+			<xs:element name="MessageID" type="tns:AttributedURIType" />
+			<xs:element name="RelatesTo" type="tns:RelatesToType" />
+			<xs:complexType name="RelatesToType" mixed="false">
+				<xs:simpleContent>
+					<xs:extension base="xs:anyURI">
+						<xs:attribute name="RelationshipType" type="tns:RelationshipTypeOpenEnum" use="optional" default="http://www.w3.org/2005/08/addressing/reply" />
+						<xs:anyAttribute namespace="##other" processContents="lax" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+			<xs:simpleType name="RelationshipTypeOpenEnum">
+				<xs:union memberTypes="tns:RelationshipType xs:anyURI" />
+			</xs:simpleType>
+			<xs:simpleType name="RelationshipType">
+				<xs:restriction base="xs:anyURI">
+					<xs:enumeration value="http://www.w3.org/2005/08/addressing/reply" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="ReplyTo" type="tns:EndpointReferenceType" />
+			<xs:element name="From" type="tns:EndpointReferenceType" />
+			<xs:element name="FaultTo" type="tns:EndpointReferenceType" />
+			<xs:element name="To" type="tns:AttributedURIType" />
+			<xs:element name="Action" type="tns:AttributedURIType" />
+			<xs:complexType name="AttributedURIType" mixed="false">
+				<xs:simpleContent>
+					<xs:extension base="xs:anyURI">
+						<xs:anyAttribute namespace="##other" processContents="lax" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+			<!-- Constructs from the WS-Addressing SOAP binding -->
+			<xs:attribute name="IsReferenceParameter" type="xs:boolean" />
+			<xs:simpleType name="FaultCodesOpenEnumType">
+				<xs:union memberTypes="tns:FaultCodesType xs:QName" />
+			</xs:simpleType>
+			<xs:simpleType name="FaultCodesType">
+				<xs:restriction base="xs:QName">
+					<xs:enumeration value="tns:InvalidAddressingHeader" />
+					<xs:enumeration value="tns:InvalidAddress" />
+					<xs:enumeration value="tns:InvalidEPR" />
+					<xs:enumeration value="tns:InvalidCardinality" />
+					<xs:enumeration value="tns:MissingAddressInEPR" />
+					<xs:enumeration value="tns:DuplicateMessageID" />
+					<xs:enumeration value="tns:ActionMismatch" />
+					<xs:enumeration value="tns:MessageAddressingHeaderRequired" />
+					<xs:enumeration value="tns:DestinationUnreachable" />
+					<xs:enumeration value="tns:ActionNotSupported" />
+					<xs:enumeration value="tns:EndpointUnavailable" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="RetryAfter" type="tns:AttributedUnsignedLongType" />
+			<xs:complexType name="AttributedUnsignedLongType" mixed="false">
+				<xs:simpleContent>
+					<xs:extension base="xs:unsignedLong">
+						<xs:anyAttribute namespace="##other" processContents="lax" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+			<xs:element name="ProblemHeaderQName" type="tns:AttributedQNameType" />
+			<xs:complexType name="AttributedQNameType" mixed="false">
+				<xs:simpleContent>
+					<xs:extension base="xs:QName">
+						<xs:anyAttribute namespace="##other" processContents="lax" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+			<xs:element name="ProblemIRI" type="tns:AttributedURIType" />
+			<xs:element name="ProblemAction" type="tns:ProblemActionType" />
+			<xs:complexType name="ProblemActionType" mixed="false">
+				<xs:sequence>
+					<xs:element ref="tns:Action" minOccurs="0" />
+					<xs:element name="SoapAction" minOccurs="0" type="xs:anyURI" />
+				</xs:sequence>
+				<xs:anyAttribute namespace="##other" processContents="lax" />
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.w3.org/2006/02/addressing/wsdl" targetNamespace="http://www.w3.org/2006/02/addressing/wsdl" blockDefault="#all" elementFormDefault="qualified">
+			<xs:element name="ServiceName" type="tns:ServiceNameType" />
+			<xs:complexType name="ServiceNameType">
+				<xs:simpleContent>
+					<xs:extension base="xs:QName">
+						<xs:attribute name="EndpointName" type="xs:NCName" use="optional" />
+						<xs:anyAttribute namespace="##other" processContents="lax" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+			<xs:element name="InterfaceName" type="tns:AttributedQNameType" />
+			<xs:complexType name="AttributedQNameType">
+				<xs:simpleContent>
+					<xs:extension base="xs:QName">
+						<xs:anyAttribute namespace="##other" processContents="lax" />
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+			<xs:attribute name="Action" type="xs:anyURI" />
+			<xs:element name="UsingAddressing">
+				<xs:complexType>
+					<xs:anyAttribute namespace="##other" processContents="lax" />
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="AnonymousType">
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="optional" />
+					<xs:enumeration value="required" />
+					<xs:enumeration value="prohibited" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="Anonymous">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="tns:AnonymousType">
+							<xs:anyAttribute namespace="##other" processContents="lax" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+		<schema xmlns:tns="http://eai.telkom.co.za/Order/OrdersByParametersQuery" xmlns:EAI="http://eai.telkom.co.za/Order_Types" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://eai.telkom.co.za/Order/OrdersByParametersQuery" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.05">
+			<import namespace="http://eai.telkom.co.za/Order_Types" />
+			<!-- service name : OrdersByParametersQuery service description : Queries the orders for a customer associated SID : ITSD-066019 OrdersByParametersQuery version history =============== version; date; person; description 0.01; 10/06/2005; Dirk Grobler; File Created 0.02; 26/08/2005; Dirk Grobler; Service domain corrected, centralized types to single file 0.03; 20/09/2006; Dirk Grobler; Types of the ServiceRequiredDateFrom and ServiceRequiredDateTo changed to be datetime (was date only previously) 0.04; 14/11/2006; Dirk Grobler; Review feedback attributeformdefault set to unqualified, annotations added, Result_type referenced in Order_Types.xsd instead of locally. 0.05; 09/10/2010; Omphile Thabane; added an optional ISPName in the response payload -->
+			<element name="OrdersByParametersQuery">
+				<annotation>
+					<documentation>Query all the orders for a customer</documentation>
+				</annotation>
+				<complexType>
+					<choice>
+						<element name="Request" type="tns:Request_type" />
+						<element name="Response" type="tns:Response_type" />
+					</choice>
+				</complexType>
+			</element>
+			<complexType name="Request_type">
+				<sequence>
+					<element name="CustomerAccountID">
+						<annotation>
+							<documentation>Clarify customer identifier</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="13" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="OrderID" minOccurs="0">
+						<annotation>
+							<documentation>A reference number used by a customer to identify the order</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="20" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="OrderActionID" minOccurs="0">
+						<annotation>
+							<documentation>A reference number used by a customer to identify the order action</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="20" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="ServiceType" minOccurs="0">
+						<annotation>
+							<documentation>The service type of the order action</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="100" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="ServiceID" minOccurs="0">
+						<annotation>
+							<documentation>The ID used by the CSP to identify the ordered product</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="16" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="InstallationAddressID" minOccurs="0">
+						<annotation>
+							<documentation>The ID used by the CSP to identify the installation address</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="20" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="ProjectName" type="string" minOccurs="0">
+						<annotation>
+							<documentation>The name of a project managed by the CSP that the order is related to</documentation>
+						</annotation>
+					</element>
+					<element name="ServiceRequiredStartDate" type="dateTime">
+						<annotation>
+							<documentation>The earliest Service Required Date of the order action in date-time format</documentation>
+						</annotation>
+					</element>
+					<element name="ServiceRequiredEndDate" type="dateTime">
+						<annotation>
+							<documentation>The latest Service Required Date of the order action in date-time format</documentation>
+						</annotation>
+					</element>
+					<element name="OrderActionStatus" minOccurs="0">
+						<annotation>
+							<documentation>Initial, In Negotiation, Amended, or any other status of the order action defined in OMS</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="20" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="IncludeCancelledAndCompleted" type="boolean">
+						<annotation>
+							<documentation>Includes the cancelled and completed orders for the service</documentation>
+						</annotation>
+					</element>
+					<element name="Expansion" type="anyType" minOccurs="0">
+						<annotation>
+							<documentation>Optional element containing the structure in which the response will be requested. If not specified, the default structure is returned.</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="Response_type">
+				<sequence>
+					<element name="Result" type="EAI:Result_type" />
+					<element name="Payload" minOccurs="0">
+						<complexType>
+							<sequence>
+								<element name="Orders" type="anyType">
+									<annotation>
+										<documentation>Detail order information for each order.</documentation>
+									</annotation>
+								</element>
+								<element name="ISPName" minOccurs="0">
+									<annotation>
+										<documentation>This is the name of the wholesale ISP that's stored on CBS. Field is required for B2B clients</documentation>
+									</annotation>
+									<simpleType>
+										<restriction base="string">
+											<minLength value="1" />
+											<maxLength value="255" />
+										</restriction>
+									</simpleType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</complexType>
+		</schema>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://eai.telkom.co.za/Order_Types" targetNamespace="http://eai.telkom.co.za/Order_Types" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.27">
+			<!-- domain name : Order domain description : the types used in the Order domain. version history =============== version; date; person; description 1.00; 08/02/2005; John Gustavsson;; File Created 1.01; 24/08/2005; NL Passalaris; Added types that will be used for the IPFAB project (C5471) 1.02; 30/08/2005; NL Passalaris; VPNTypes changed to CEInterfaceServiceType 1.03; 27/01/2006; Larry Thabane; Added RouterInterface_Type 1.04; 06/02/2006; Dirk Grobler; Added OMS and EAI Order Action Types for Provisioning Broker 1.05; 27/02/2006; Larry Thabane; modified RouterInterface_Type to include PeripheralEquipment 1.06; 28/02/2006; Larry Thabane; Added RouterInterfaceResponse_Type and RouterInterfaceID_Type 1.07; 10/03/2006; Dirk Grobler; Added CBSOrderNumber_Type, LAUNumber_Type types. Also sorted types alphabetically. 1.08; 20/04/2006; Larry Thabane; Added LANIPAddresses complex type to RouterInterface_Type. 1.09; 15/06/2006; NL Passalaris; Added types for C5471 Phase 3 1.10; 26/07/2006; 
+				NL Passalaris; Added PortA and PortB simple types for C5471 - Phase 3 1.11; 27/11/2006; NL Passalaris; Added DesiredDueDate, TaskType, SubTaskType, ForceDeploy and Audit. Added annotations and restrictions to ServiceName, NumberOfRequests, RequestName, LocatorID 1.12; 23/01/2007; NL Passalaris; Took Audit, ForceDeploy and DesiredDueDate definitions out of the Order_Types.xsd. 1.13 01/07/2007; J Gustavsson; Added all types from CPEOrderCreate_Types. Added CustomerEmailAddress, Vat Number 1.14 12/11/2007; Violet Maholo; Added Complex types CustomerEquipment and PeripheralEquipment. Added simple types QoSCircuitNumber, QoSOrderNumber, MiscCircuitNumber, MiscOrderNumber, LeaseLineType for C5471 Phase 5 1.15 08/02/2008 Added annotations to the fields added for C 5471 Phase5 1.16 15/02/2008 Changed simple types MiscCircuitNumber and MiscOrderNumber to MiscellanoeusCircuitNumber and MiscellaneousOrderNumber. 1.17 22/02/2008; C. E. Tempel; added Comment_Type, ControlRegion_Type, OrderPriority_Type, 
+				CustomerCategory_Type 1.18 04/03/2008; Violet Maholo; Changed QoSCircuitNumber and QoSOrderNumber to QoS_CircuitNumber and QoS_OrderNumber 1.19 26/06/2008 Violet Maholo, Added Simple types SiteOfOriginEnabled_Type, SiteOfOriginProvider_Type and SiteOfOriginPool and DateTimeString_Type 1.20 01/07/2008 Violet Maholo Added CR number (C7289) for the latest Types added, Changed surname for NL Nixon to Passalaris 1.21 01/07/16 Violet Maholo Added simple type Action_Type 1.22 18/08/2008 B. Mkhatshwa Added ProductName_Type 1.23 28/08/2008 Itumeleng Mahlakanya; Added LoginType, TaskKeyType,VersionType,JobType,FlagType and TaskProgressLineType.. 1.24 08/09/2008 Itumeleng Mahlakanya; Added TaskActionType with some enumerations. 1.25 21/10/2008 Itumeleng Mahlakanya; Added MessageKey type for NetworkInfrastructureOrderUpdateNotify and changing LoginType to Authenticate Type. 1.26 01/12/2008 Itumeleng Mahlakanya; Added TechnicalAttributesType for NetBuild Phase II. 1.27 03/02/2009 Itumeleng Mahlakanya; 
+				Remove enumeration for ServiceType -->
+			<complexType name="AddressDelivery_Type">
+				<annotation>
+					<documentation>The delivery address of the customer. This is a verified address on Location Register.</documentation>
+				</annotation>
+				<sequence>
+					<element name="Street1">
+						<annotation>
+							<documentation>First line on delivery address</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string" />
+						</simpleType>
+					</element>
+					<element name="Street2">
+						<annotation>
+							<documentation>Second line on delivery address</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string" />
+						</simpleType>
+					</element>
+					<element name="Street3">
+						<annotation>
+							<documentation>Third line on delivery address</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string" />
+						</simpleType>
+					</element>
+					<element name="City">
+						<annotation>
+							<documentation>The delivery city</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string" />
+						</simpleType>
+					</element>
+					<element name="PostalCode">
+						<annotation>
+							<documentation>Postal code for the city</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<length value="4" />
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="AccessNode_Type">
+				<annotation>
+					<documentation>Contains the access node infromation.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Action_Type">
+				<annotation>
+					<documentation>Indicates the type of an action needed</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ActionDateType">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<complexType name="AuthenticateType">
+				<annotation>
+					<documentation>Login object contains the username, password and localuser fields. They are all seen as compulsory.</documentation>
+				</annotation>
+				<sequence>
+					<element name="IsInternalUser" type="boolean">
+						<annotation>
+							<documentation>Flag set if the user is an internal user</documentation>
+						</annotation>
+					</element>
+					<element name="LocalUser" type="string" nillable="true">
+						<annotation>
+							<documentation>Contains the local user value for this login</documentation>
+						</annotation>
+					</element>
+					<element name="Password" nillable="true">
+						<annotation>
+							<documentation>String containing the password</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="17" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="UserId" nillable="true">
+						<annotation>
+							<documentation>String containing a user name used for system login</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="31" />
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="AutoAssignIPAddress_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="AdvrRoutesIPAddress_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="AdvrRoutesMetric_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="AllowedTimeType">
+				<restriction base="long" />
+			</simpleType>
+			<simpleType name="BillingAccountNumber_Type">
+				<annotation>
+					<documentation>Contains the billing account number information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="BuildingName_Type">
+				<annotation>
+					<documentation>Contains the building name information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CBSOrderNumber_Type">
+				<annotation>
+					<documentation>CBS order number</documentation>
+				</annotation>
+				<restriction base="int">
+					<totalDigits value="8" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CEInterfaceServiceType_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CEInterfaceNameDescription_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CEInterfaceEncap_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CERC_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CERCName_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CircuitCategory_Type">
+				<annotation>
+					<documentation>Contains the circuit category address information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CircuitNumber_Type">
+				<annotation>
+					<documentation>Contains the circuit number information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CircuitSpeed_Type">
+				<annotation>
+					<documentation>Contains the circuit speed information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CircuitType_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="City_Type">
+				<annotation>
+					<documentation>Contains the city name information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CPEName_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Comment_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ContactCellNumber_Type">
+				<annotation>
+					<documentation>Contains the contact cellphone information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ContactPerson_Type">
+				<annotation>
+					<documentation>Contains the contact person's information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ContactTelephoneNumber_Type">
+				<annotation>
+					<documentation>Contains the contact telephone number information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ControlRegion_Type">
+				<annotation>
+					<documentation>region that will control the order</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CreateDefaultCERC_Type">
+				<restriction base="boolean" />
+			</simpleType>
+			<simpleType name="CustomerCategory_Type">
+				<annotation>
+					<documentation>The category the customer falls into</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerEmailAddress_Type">
+				<annotation>
+					<documentation>Contains the customer email address.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="241" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerEquipment_BGP_AS_ID_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerEquipmentCircuitNo_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerEquipmentDLCI_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerEquipmentInterface_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<complexType name="CustomerEquipment_Type">
+				<sequence>
+					<element name="Interface" type="xsd:CustomerEquipmentInterface_Type">
+						<annotation>
+							<documentation>Interface name of the customer equipment</documentation>
+						</annotation>
+					</element>
+					<element name="Name" type="xsd:CustomerEquipmentName_Type">
+						<annotation>
+							<documentation>Name of the customer equipment</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="CustomerEquipmentName_Type">
+				<annotation>
+					<documentation>Contains the customer equipment name information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerEquipmentVCD_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerEquipmentVCI_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerEquipmentVPI_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerID_Type">
+				<annotation>
+					<documentation>Contains the identification number of the customer.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerName_Type">
+				<annotation>
+					<documentation>Contains the name of the customer.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerPostalAddress_Type">
+				<annotation>
+					<documentation>Contains the customer's postal address information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="CustomerVATNumber_Type">
+				<annotation>
+					<documentation>Contains the customer VAT number.</documentation>
+				</annotation>
+				<restriction base="string">
+					<maxLength value="20" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ContactInfo_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="DatafileName_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="DatafilePath_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="DataMdtSize_Type">
+				<restriction base="integer" />
+			</simpleType>
+			<simpleType name="DataMdtThreshold_Type">
+				<restriction base="integer" />
+			</simpleType>
+			<simpleType name="DateTimeString_Type">
+				<annotation>
+					<documentation>Contains a string data type, e.g. 2007-10-23 11:28:03. Usually a DateTime type is of this format; CCYY-MM-DDThh:mm:ss.s+zzzzzz</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="DeviceName_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="DueDateType">
+				<restriction base="string" />
+			</simpleType>
+			<simpleType name="DurationType">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="EAIOrderActionID">
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="24" />
+				</restriction>
+			</simpleType>
+			<simpleType name="EAIOrderActionStatus">
+				<restriction base="string">
+					<minLength value="1" />
+					<enumeration value="create" />
+					<enumeration value="active" />
+					<enumeration value="error" />
+					<enumeration value="complete" />
+				</restriction>
+			</simpleType>
+			<simpleType name="EmailAddress_Type">
+				<annotation>
+					<documentation>Contains the email address information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="EnableLogin_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="EnablePassword_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ESRRouterIP_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ExtraCELoopbackRequired_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="FaxNumber_Type">
+				<annotation>
+					<documentation>Contains the fax number information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="FlagType">
+				<restriction base="short" />
+			</simpleType>
+			<simpleType name="Floor_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="HostName_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="HubRouteTarget_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="IPAddressPoolType_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Interface_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="InterfaceName_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="InterfaceEncapType_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="IsFullMesh_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="IsDefaultRoutesSentToCE_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="IsHub_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="JobTypeType">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="JoinGreyMgmtVpn_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="LAUNumber_Type">
+				<annotation>
+					<documentation>CBS LAU Number</documentation>
+				</annotation>
+				<restriction base="int">
+					<totalDigits value="2" />
+				</restriction>
+			</simpleType>
+			<simpleType name="LANIPAddress_Type">
+				<annotation>
+					<documentation>Contains the local area network address information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="LeaseLineType_Type">
+				<annotation>
+					<documentation>Lease line type</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="LiveDate_Type">
+				<annotation>
+					<documentation>Contains the date when the installation goes live.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="LocatorId_Type">
+				<annotation>
+					<documentation>The unique locator id for the Service Request to be Deployed</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Login_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="LogicalDevice_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="LoopbackIPAddress_Type">
+				<annotation>
+					<documentation>Contains the loopback IP address information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ManagementStatus_Type">
+				<annotation>
+					<documentation>Contains the managemenmt status information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ManagementType_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ManualConfiguration_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="MessageKeyType">
+				<restriction base="int" />
+			</simpleType>
+			<simpleType name="MiscellaneousCircuitNumber_Type">
+				<annotation>
+					<documentation>Circuit number for miscellaneous order item</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="MiscellaneousOrderNumber_Type">
+				<annotation>
+					<documentation>Order number for miscellaneous order item</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="MulticastEnabled_Type">
+				<restriction base="boolean" />
+			</simpleType>
+			<simpleType name="NettAmountType">
+				<annotation>
+					<documentation>The nett amount of the product including VAT.</documentation>
+				</annotation>
+				<restriction base="double" />
+			</simpleType>
+			<simpleType name="NumberOfRequests_Type">
+				<annotation>
+					<documentation>Number of requests to be conducted</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="OMSOrderActionID">
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="20" />
+				</restriction>
+			</simpleType>
+			<simpleType name="OMSOrderActionStatus">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ObjectIdType">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="OrderAction_Type">
+				<annotation>
+					<documentation>Contains the order action information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="OrderNumber_Type">
+				<annotation>
+					<documentation>Contains the order number information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="OveriddenVrfName_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="OrderPriority_Type">
+				<annotation>
+					<documentation>Contains the order priority information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="OrderStatus_Type">
+				<annotation>
+					<documentation>Contains the order status information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="OveriddenRd_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Password_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PE_CE_IPUnnumbered_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PE_CE_RoutingProtocol_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<complexType name="PeripheralEquipment_Type">
+				<sequence>
+					<element name="Interface" type="xsd:PeripheralEquipmentInterface_Type">
+						<annotation>
+							<documentation>Interface name of the peripheral equipment</documentation>
+						</annotation>
+					</element>
+					<element name="Name" type="xsd:PeripheralEquipmentName_Type">
+						<annotation>
+							<documentation>Name of the peripheral equipment</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="PeripheralEquipmentName_Type">
+				<annotation>
+					<documentation>Contains the peripheral equipment name information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PeripheralEquipmentInterface_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PEInterfaceNameDescription_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PEInterfaceEncap_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PeripheralEquipmentDLCI_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PeripheralEquipmentVCD_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PeripheralEquipmentVCI_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PeripheralEquipmentVPI_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PeripheralEquipment_BGP_AS_ID_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Port_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PortA_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PortB_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PortSpeed_Type">
+				<annotation>
+					<documentation>Contains the required port speed information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="PostalAddress_Type">
+				<annotation>
+					<documentation>Contains the postal address information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ProductCodeType">
+				<annotation>
+					<documentation>The code of the product that was sold. This must be SAP material number</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ProductName_Type">
+				<annotation>
+					<documentation>The name of a particular product</documentation>
+				</annotation>
+				<restriction base="string" />
+			</simpleType>
+			<simpleType name="ProjectIdType">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ProviderKeyType">
+				<restriction base="long" />
+			</simpleType>
+			<simpleType name="Provider_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="QoS_CircuitNumber_Type">
+				<annotation>
+					<documentation>Circuit number for quality of service package order item</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="QoS_OrderNumber_Type">
+				<annotation>
+					<documentation>Order number for quality of service package order item</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="QualityOfServiceTrafficMix_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="QuantityType">
+				<annotation>
+					<documentation>The number of units sold. Must be the Absolute value. (Note: This should be = 1 since each item must be a separate line item).</documentation>
+				</annotation>
+				<restriction base="integer">
+					<minInclusive value="1" />
+					<maxInclusive value="30" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ReferenceType">
+				<annotation>
+					<documentation>Unique reference number allocated by web application to the customer order transaction. (Note: This reference number will be used to link the web order to the SAP order. The number will be returned with the SAP order number in the return interface file).</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="15" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RDValue_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<complexType name="RouterInterface_Type">
+				<sequence>
+					<element name="RouterInterfaceID" type="int" />
+					<element name="CircuitNumber" type="xsd:CustomerEquipmentCircuitNo_Type" />
+					<element name="CustomerEquipment">
+						<complexType>
+							<sequence>
+								<element name="Interface" type="xsd:CustomerEquipmentInterface_Type">
+									<annotation>
+										<documentation>Cutomer Equipment Interface Name</documentation>
+									</annotation>
+								</element>
+								<element name="Name" type="xsd:CustomerEquipmentName_Type">
+									<annotation>
+										<documentation>Customer Equipment Device Name</documentation>
+									</annotation>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="PeripheralEquipment">
+						<complexType>
+							<sequence>
+								<element name="Interface" type="xsd:PeripheralEquipmentInterface_Type">
+									<annotation>
+										<documentation>Peripheral Equipment Interface Name</documentation>
+									</annotation>
+								</element>
+								<element name="Name" type="xsd:PeripheralEquipmentName_Type">
+									<annotation>
+										<documentation>Peripheral Equipment Device Name</documentation>
+									</annotation>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+					<element name="IPAddresses">
+						<complexType>
+							<sequence>
+								<element name="WANIPAddress" type="xsd:LANIPAddress_Type">
+									<annotation>
+										<documentation>WAN IP Address</documentation>
+									</annotation>
+								</element>
+								<element name="LANIPAddresses">
+									<annotation>
+										<documentation>LAN IP Addresses</documentation>
+									</annotation>
+									<complexType>
+										<sequence>
+											<element name="LANIPAddress" type="xsd:LANIPAddress_Type" maxOccurs="unbounded" />
+										</sequence>
+									</complexType>
+								</element>
+								<element name="CELoopbackIPAddress" type="xsd:LANIPAddress_Type">
+									<annotation>
+										<documentation>CE Loopback IP Address</documentation>
+									</annotation>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="RouterInterfaceID_Type">
+				<restriction base="int">
+					<minInclusive value="1" />
+				</restriction>
+			</simpleType>
+			<complexType name="RouterInterfaceResponse_Type">
+				<complexContent>
+					<extension base="xsd:Result_type">
+						<sequence>
+							<element name="RouterInterfaceID" type="xsd:RouterInterfaceID_Type" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<simpleType name="RequestName_Type">
+				<annotation>
+					<documentation>The Service Request name</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="40" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RequestType_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RedistributeConnected_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RedistributeStatic_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RedistributedProtocol_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RequiredByDate_Type">
+				<annotation>
+					<documentation>Contains the required by date information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<complexType name="Result_type">
+				<sequence>
+					<element name="ResultCode" type="long">
+						<annotation>
+							<documentation>Every result message needs to have a result code to indicate success, fail or reject. Success means that the request message was successful. Fail means that there is some failure of technical nature and it is possible the message might be successful if resent. Reject means that the message will be rejected again if resent. This is typically business related and might require manual intervention. For fail and reject, result message code and result message will give a more detail description of the error.
+							</documentation>
+						</annotation>
+					</element>
+					<element name="ResultMsgCode" minOccurs="0">
+						<annotation>
+							<documentation>If the result code is of type fail or reject an additional result message code should be specified. This message code should indicate what type of problem was experienced with the request message. The recommended way of using this field is to have two parts: system identifier + number Example: RIM02001, CBS0999
+							</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="64" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="ResultMsg" minOccurs="0">
+						<annotation>
+							<documentation>This is a more detail description, human readable and interpretable, of the result message code.</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+								<maxLength value="255" />
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="Room_Type">
+				<annotation>
+					<documentation>Contains the room information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Router_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RouterCircuitNumber_Type">
+				<annotation>
+					<documentation>Circuit number for router order item</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RouterOrderNumber_Type">
+				<annotation>
+					<documentation>Order number for router order item</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RoutesToSiteIPAddress_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="RoutesToSiteMetric_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SerialIPAddress_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SerialNumber_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ServiceCentre_Type">
+				<annotation>
+					<documentation>Contains the service center information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ServiceType_Type">
+				<annotation>
+					<documentation>Contains the required service type information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ServiceName_Type">
+				<annotation>
+					<documentation>The ServiceOrder Name</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="40" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ServiceDefinition_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ServiceDefinitionType_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ServiceDefinitionDescription_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="ServiceOrderJobDescription_Type">
+				<annotation>
+					<documentation>Contains the service order job description information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SessionToken_Type">
+				<annotation>
+					<documentation>Contains the session token information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="40" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SetIdType">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SetTypeType">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteCode_Type">
+				<annotation>
+					<documentation>Contains the site code information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteContactName_Type">
+				<annotation>
+					<documentation>Contains the name of the contact person for the site.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteContactNumber_Type">
+				<annotation>
+					<documentation>Contains the contact number of the person for the site.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteInfo_Type">
+				<annotation>
+					<documentation>Information about the site e.g. physical address</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteInstallationAddress_Type">
+				<annotation>
+					<documentation>Contains the installation address information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteName_Type">
+				<annotation>
+					<documentation>Contains the site name information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteLocation_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteOfOriginEnabled_Type">
+				<annotation>
+					<documentation>Site of origin checkbox</documentation>
+				</annotation>
+				<restriction base="boolean" />
+			</simpleType>
+			<simpleType name="SiteOfOriginPool_Type">
+				<annotation>
+					<documentation>Site of origin pool</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SiteOfOriginProvider_Type">
+				<annotation>
+					<documentation>Site of origin provider</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SnmpRo_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SnmpRw_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Speed_Type">
+				<restriction base="integer" />
+			</simpleType>
+			<simpleType name="State_Type">
+				<annotation>
+					<documentation>The current state of the MPLS service request on ISC</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="Street_Type">
+				<annotation>
+					<documentation>Street related information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="50" />
+				</restriction>
+			</simpleType>
+			<simpleType name="SubTaskType_Type">
+				<annotation>
+					<documentation>What Task the service request is to conduct</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="20" />
+				</restriction>
+			</simpleType>
+			<simpleType name="TaskActionType">
+				<annotation>
+					<documentation>The action of task to be done, has some enumerations.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<enumeration value="AcceptTask" />
+					<enumeration value="RejectTask" />
+					<enumeration value="CompleteTask" />
+					<enumeration value="CommentOnTask" />
+					<enumeration value="FailTask" />
+					<enumeration value="CancelTask" />
+				</restriction>
+			</simpleType>
+			<simpleType name="TaskID_Type">
+				<annotation>
+					<documentation>Contains the task identification number for the transaction.</documentation>
+				</annotation>
+				<restriction base="string" />
+			</simpleType>
+			<simpleType name="TaskLevelType">
+				<restriction base="long" />
+			</simpleType>
+			<simpleType name="TaskKeyType">
+				<restriction base="long" />
+			</simpleType>
+			<complexType name="TaskProgressLineType">
+				<sequence>
+					<element name="TaskKey" type="xsd:TaskKeyType">
+						<annotation>
+							<documentation>The unique identifier of this task</documentation>
+						</annotation>
+					</element>
+					<element name="ActionDate" type="xsd:ActionDateType" nillable="true">
+						<annotation>
+							<documentation>The date the action will be taken.</documentation>
+						</annotation>
+					</element>
+					<element name="EmployeeId" type="xsd:CustomerID_Type" nillable="true">
+						<annotation>
+							<documentation>The employee that owns the task</documentation>
+						</annotation>
+					</element>
+					<element name="TaskState" type="xsd:State_Type" nillable="true">
+						<annotation>
+							<documentation>The state of the task</documentation>
+						</annotation>
+					</element>
+					<element name="TaskActionType" type="xsd:Action_Type" nillable="true">
+						<annotation>
+							<documentation>The string containing the type of action to be taken in order to generate the correct reason list</documentation>
+						</annotation>
+					</element>
+					<element name="TaskActionReason" type="xsd:Comment_Type" nillable="true">
+						<annotation>
+							<documentation>The reason of the action</documentation>
+						</annotation>
+					</element>
+					<element name="Comment" type="xsd:Comment_Type" nillable="true">
+						<annotation>
+							<documentation>Comments about the action taken</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="TaskStatusType">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="TaskType_Type">
+				<annotation>
+					<documentation>The type of Service Request</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+					<maxLength value="20" />
+				</restriction>
+			</simpleType>
+			<complexType name="TechnicalAttributesType">
+				<annotation>
+					<documentation>A class containing technical attributes for service orders.</documentation>
+				</annotation>
+				<sequence>
+					<element name="AttributeKey" type="long">
+						<annotation>
+							<documentation>Attribute unique key</documentation>
+						</annotation>
+					</element>
+					<element name="AttributeUp" type="long">
+						<annotation>
+							<documentation>Currently unavailable</documentation>
+						</annotation>
+					</element>
+					<element name="AttributeName" type="xsd:DatafileName_Type" nillable="true">
+						<annotation>
+							<documentation>The name of the attribute</documentation>
+						</annotation>
+					</element>
+					<element name="AttributeTemplateKey" type="long">
+						<annotation>
+							<documentation>Key referring the attribute template</documentation>
+						</annotation>
+					</element>
+					<element name="AttributeValue" type="xsd:RDValue_Type" nillable="true">
+						<annotation>
+							<documentation>The value of the attribute</documentation>
+						</annotation>
+					</element>
+					<element name="AttributeVersion" type="xsd:VersionType">
+						<annotation>
+							<documentation>Version of the attribute</documentation>
+						</annotation>
+					</element>
+					<element name="ControlSize" type="xsd:DataMdtSize_Type">
+						<annotation>
+							<documentation>Currently unavailable</documentation>
+						</annotation>
+					</element>
+					<element name="ControlType" nillable="true">
+						<annotation>
+							<documentation>Currently unavailable</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="DataType" nillable="true">
+						<annotation>
+							<documentation>The data type of the attribute</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="string">
+								<minLength value="1" />
+							</restriction>
+						</simpleType>
+					</element>
+					<element name="DefaultValue" type="xsd:RDValue_Type" nillable="true">
+						<annotation>
+							<documentation>The default value to be used by this attribute</documentation>
+						</annotation>
+					</element>
+					<element name="EditFlag" type="xsd:FlagType">
+						<annotation>
+							<documentation>Flag stating if the attribute can be edited or not.</documentation>
+						</annotation>
+					</element>
+					<element name="EmployeeId" type="xsd:CustomerID_Type" nillable="true">
+						<annotation>
+							<documentation>The employee that added the attribute</documentation>
+						</annotation>
+					</element>
+					<element name="FieldSize" type="xsd:DataMdtSize_Type">
+						<annotation>
+							<documentation>The field size of the data contained by this attribute</documentation>
+						</annotation>
+					</element>
+					<element name="MandatoryFlag" type="xsd:FlagType">
+						<annotation>
+							<documentation>Flag stating if this is a mandatory attribute</documentation>
+						</annotation>
+					</element>
+					<element name="TextMask" type="xsd:Comment_Type" nillable="true">
+						<annotation>
+							<documentation>The text mast</documentation>
+						</annotation>
+					</element>
+					<element name="SequenceNumber" type="long">
+						<annotation>
+							<documentation>Sequence number</documentation>
+						</annotation>
+					</element>
+					<element name="UpdateDate" nillable="true">
+						<annotation>
+							<documentation>The date last updated</documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="xsd:DueDateType">
+								<minLength value="1" />
+							</restriction>
+						</simpleType>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="TemplateActive_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="TemplateAction_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<complexType name="TransactionType">
+				<annotation>
+					<documentation>The process that takes place when a customer makes an order</documentation>
+				</annotation>
+				<sequence>
+					<element name="Date" type="date">
+						<annotation>
+							<documentation>Transaction date in format ccyymmdd</documentation>
+						</annotation>
+					</element>
+					<element name="Indicator" type="string">
+						<annotation>
+							<documentation>An indicator whether the transaction was for an ad hoc customer/sale or a sales on a Telkom telephone account. Ad hoc customer/sale being a credit card sale being paid for online. Account sale being a sale that should be debited on the telephone account. SAP needs this to determine whether the transaction should post revenue or whether the revenue posting will be in Flexibill. Indicator: T = Telkom account sale N = Ad hoc customer sale</documentation>
+						</annotation>
+					</element>
+					<element name="Reference" type="xsd:ReferenceType">
+						<annotation>
+							<documentation>Unique reference number allocated by web application to the customer order transaction. (Note: This reference number will be used to link the web order to the SAP order. The number will be returned with the SAP order number in the return interface file).</documentation>
+						</annotation>
+					</element>
+				</sequence>
+			</complexType>
+			<simpleType name="VersionType">
+				<restriction base="long" />
+			</simpleType>
+			<simpleType name="VPNName_Type">
+				<annotation>
+					<documentation>Contains the VPN name information.</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="VplsVpn_Type">
+				<restriction base="boolean" />
+			</simpleType>
+			<simpleType name="VrfRdOverwriteEnabled_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="WANIPAddress_Type">
+				<annotation>
+					<documentation>Contains the wide area network IP address information</documentation>
+				</annotation>
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+			<simpleType name="WANRoutingProtocol_Type">
+				<restriction base="string">
+					<minLength value="1" />
+				</restriction>
+			</simpleType>
+		</schema>
+		<s:schema xmlns:tksa0="http://eai.telkom.co.za/Order/OrdersByParametersQuery" elementFormDefault="qualified" targetNamespace="http://www.telkom.co.za">
+			<s:import namespace="http://eai.telkom.co.za/Order/OrdersByParametersQuery" />
+			<s:element name="ordersByParametersQuery">
+				<s:complexType>
+					<s:sequence>
+						<s:element ref="tksa0:OrdersByParametersQuery" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ordersByParametersQueryCallback">
+				<s:complexType>
+					<s:sequence>
+						<s:element ref="tksa0:OrdersByParametersQuery" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ordersByParametersQueryFaultCallback">
+				<s:complexType>
+					<s:sequence>
+						<s:element ref="tksa0:OrdersByParametersQuery" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ordersByParametersQueryResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element ref="tksa0:OrdersByParametersQuery" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ordersByParametersQueryCallbackResponse">
+				<s:complexType>
+					<s:sequence />
+				</s:complexType>
+			</s:element>
+			<s:element name="ordersByParametersQueryFaultCallbackResponse">
+				<s:complexType>
+					<s:sequence />
+				</s:complexType>
+			</s:element>
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="ordersByParametersQuerySoapIn">
+		<wsdl:part element="tksa:ordersByParametersQuery" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="ordersByParametersQuerySoapOut">
+		<wsdl:part element="tksa:ordersByParametersQueryResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="ordersByParametersQueryCallbackSoapIn">
+		<wsdl:part element="tksa:ordersByParametersQueryCallback" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="ordersByParametersQueryCallbackSoapOut">
+		<wsdl:part element="tksa:ordersByParametersQueryCallbackResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="ordersByParametersQueryFaultCallbackSoapIn">
+		<wsdl:part element="tksa:ordersByParametersQueryFaultCallback" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="ordersByParametersQueryFaultCallbackSoapOut">
+		<wsdl:part element="tksa:ordersByParametersQueryFaultCallbackResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:portType name="OrderSoap">
+		<wsdl:operation name="ordersByParametersQuery">
+			<wsdl:input message="tksa:ordersByParametersQuerySoapIn" />
+			<wsdl:output message="tksa:ordersByParametersQuerySoapOut" />
+			<wsdl:fault name="ordersByParametersQueryFault" message="tksa:ordersByParametersQuerySoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="ordersByParametersQueryCallback">
+			<wsdl:input message="tksa:ordersByParametersQueryCallbackSoapIn" />
+		</wsdl:operation>
+		<wsdl:operation name="ordersByParametersQueryFaultCallback">
+			<wsdl:input message="tksa:ordersByParametersQueryFaultCallbackSoapIn" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding type="tksa:OrderSoap" name="OrderSoap">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="ordersByParametersQuery">
+			<soap:operation style="document" soapAction="http://www.telkom.co.za/ordersByParametersQuery" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ordersByParametersQueryFault">
+				<soap:fault use="literal" name="ordersByParametersQueryFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ordersByParametersQueryCallback">
+			<soap:operation style="document" soapAction="http://www.telkom.co.za/ordersByParametersQueryCallback" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="ordersByParametersQueryFaultCallback">
+			<soap:operation style="document" soapAction="http://www.telkom.co.za/ordersByParametersQueryFaultCallback" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Order">
+		<wsdl:port binding="tksa:OrderSoap" name="OrderSoap">
+			<soap:address location="http://bvih-ep-owsm01.telkom.co.za:7780/gateway/services/AH-OrderContract" />
+			<wswa:UsingAddressing wsdl:required="false" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

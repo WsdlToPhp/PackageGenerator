@@ -1,0 +1,56 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:img="http://ws.estesexpress.com/imageview" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.estesexpress.com/imageview" xml:lang="en">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">Common elements for image retrieval service. Copyright 2007 Estes Express Lines, Inc.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="DocumentType">
+		<xsd:annotation>
+			<xsd:documentation>Document type code</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="6" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ErrorMessageType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="200" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ProType">
+		<xsd:annotation>
+			<xsd:documentation>PRO is 10 digits or 11 digits with dash.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="10" />
+			<xsd:maxLength value="11" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="requestID">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="50" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:complexType name="SearchCriteriaType">
+		<xsd:annotation>
+			<xsd:documentation>Generic search criteria for image search</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="item1" type="img:SearchItemType" />
+			<xsd:element minOccurs="0" name="item2" type="img:SearchItemType" />
+			<xsd:element minOccurs="0" name="item3" type="img:SearchItemType" />
+			<xsd:element minOccurs="0" name="item4" type="img:SearchItemType" />
+			<xsd:element minOccurs="0" name="item5" type="img:SearchItemType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="SearchItemType">
+		<xsd:annotation>
+			<xsd:documentation>Image search item</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="30" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

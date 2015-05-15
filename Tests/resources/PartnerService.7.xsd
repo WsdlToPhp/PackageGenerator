@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/09/13" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/09/13">
+	<xs:element name="PartnerName" nillable="true" type="xs:string" />
+	<xs:element name="PartnerPassword" nillable="true" type="xs:string" />
+</xs:schema>

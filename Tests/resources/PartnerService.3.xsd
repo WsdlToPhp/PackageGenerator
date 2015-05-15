@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.euroconsumers.com/partner/2010/09/13" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.euroconsumers.com/partner/2010/09/13">
+	<xs:complexType name="MemberNumber">
+		<xs:sequence>
+			<xs:element name="CheckDigit" type="xs:int" />
+			<xs:element name="MemberId" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MemberNumber" nillable="true" type="tns:MemberNumber" />
+	<xs:complexType name="Member">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+			<xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+			<xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="MemberNumber" nillable="true" type="tns:MemberNumber" />
+			<xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Member" nillable="true" type="tns:Member" />
+	<xs:complexType name="Address">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="StreetBox" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="StreetNumber" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Address" nillable="true" type="tns:Address" />
+	<xs:simpleType name="ValidateMemberValidationResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ValidationSuccessful" />
+			<xs:enumeration value="MarketDoesNotExist" />
+			<xs:enumeration value="MemberDoesNotExist" />
+			<xs:enumeration value="MemberNotActive" />
+			<xs:enumeration value="InvalidMemberNumberLastNameCombination" />
+			<xs:enumeration value="InvalidMemberNumber" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ValidateMemberValidationResult" nillable="true" type="tns:ValidateMemberValidationResult" />
+	<xs:complexType name="ValidationFault">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Reason" type="tns:ValidationFaultReason" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ValidationFault" nillable="true" type="tns:ValidationFault" />
+	<xs:simpleType name="ValidationFaultReason">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="InternalError" />
+			<xs:enumeration value="MemberNumberIsMandatory" />
+			<xs:enumeration value="MemberLastNameIsMandatory" />
+			<xs:enumeration value="MarketCodeIsMandatory" />
+			<xs:enumeration value="PartnerNameIsMandatory" />
+			<xs:enumeration value="PartnerPasswordIsMandatory" />
+			<xs:enumeration value="ProductNameIsMandatory" />
+			<xs:enumeration value="InvalidTokenFormat" />
+			<xs:enumeration value="MemberEmailAddressIsMandatory" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ValidationFaultReason" nillable="true" type="tns:ValidationFaultReason" />
+	<xs:simpleType name="ValidateMemberPartnerValidationResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ValidationSuccessful" />
+			<xs:enumeration value="PartnerDoesNotExist" />
+			<xs:enumeration value="InvalidPartnerNumberPasswordCombination" />
+			<xs:enumeration value="MarketDoesNotExist" />
+			<xs:enumeration value="MemberDoesNotExist" />
+			<xs:enumeration value="MemberNotActive" />
+			<xs:enumeration value="InvalidMemberNumberLastNameCombination" />
+			<xs:enumeration value="InvalidMemberNumber" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ValidateMemberPartnerValidationResult" nillable="true" type="tns:ValidateMemberPartnerValidationResult" />
+	<xs:simpleType name="ValidateMemberProductValidationResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ValidationSuccessful" />
+			<xs:enumeration value="InvalidMemberNumber" />
+			<xs:enumeration value="InvalidMemberNumberLastNameCombination" />
+			<xs:enumeration value="MarketDoesNotExist" />
+			<xs:enumeration value="MemberDoesNotExist" />
+			<xs:enumeration value="NotSubscribedToProduct" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ValidateMemberProductValidationResult" nillable="true" type="tns:ValidateMemberProductValidationResult" />
+	<xs:complexType name="TokenFault">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Reason" type="tns:TokenFaultReason" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TokenFault" nillable="true" type="tns:TokenFault" />
+	<xs:simpleType name="TokenFaultReason">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="InternalError" />
+			<xs:enumeration value="MarketDoesNotExist" />
+			<xs:enumeration value="MemberDoesNotExist" />
+			<xs:enumeration value="TokenDoesNotExist" />
+			<xs:enumeration value="InvalidMemberNumber" />
+			<xs:enumeration value="MemberNumberIsMandatory" />
+			<xs:enumeration value="MarketCodeIsMandatory" />
+			<xs:enumeration value="InvalidTokenFormat" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TokenFaultReason" nillable="true" type="tns:TokenFaultReason" />
+	<xs:simpleType name="ValidateTokenProductValidationResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ValidationSuccessful" />
+			<xs:enumeration value="MarketDoesNotExist" />
+			<xs:enumeration value="MemberDoesNotExist" />
+			<xs:enumeration value="TokenDoesNotExist" />
+			<xs:enumeration value="NotSubscribedToProduct" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ValidateTokenProductValidationResult" nillable="true" type="tns:ValidateTokenProductValidationResult" />
+	<xs:complexType name="Partner">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="MarketCode" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="PartnerName" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Partner" nillable="true" type="tns:Partner" />
+	<xs:simpleType name="ValidatePartnerResult">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ValidationSuccessful" />
+			<xs:enumeration value="PartnerDoesNotExist" />
+			<xs:enumeration value="InvalidPartnerPasswordCombination" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ValidatePartnerResult" nillable="true" type="tns:ValidatePartnerResult" />
+</xs:schema>

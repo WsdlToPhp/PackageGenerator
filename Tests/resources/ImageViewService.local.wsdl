@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="imageViewService" targetNamespace="http://ws.estesexpress.com/imageview" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.estesexpress.com/imageview">
+	<wsdl:types>
+		<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.estesexpress.com/imageview" xmlns:tns="http://ws.estesexpress.com/imageview" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<!-- Reference all the schemas -->
+			<xsd:include schemaLocation="availableImagesRequest.xsd" />
+			<xsd:include schemaLocation="availableImagesResponse.xsd" />
+			<xsd:include schemaLocation="imagesRequest.xsd" />
+			<xsd:include schemaLocation="imagesResponse.xsd" />
+			<!-- Define simple types used in SOAP request/response here. -->
+			<xsd:complexType name="AuthenticationType">
+				<xsd:sequence>
+					<xsd:element name="user" type="tns:UserType" />
+					<xsd:element name="password" type="tns:PasswordType" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="EchoRequestType">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="100" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="PasswordType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="5" />
+					<xsd:maxLength value="10" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="UserType">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="5" />
+					<xsd:maxLength value="10" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<!-- Define SOAP message names here. -->
+			<!-- Authentication SOAP Header -->
+			<xsd:element name="auth" type="tns:AuthenticationType" />
+			<!-- General Fault -->
+			<xsd:element name="generalError" type="xsd:string" />
+			<!-- Schema Validation Fault -->
+			<xsd:element name="schemaError" type="xsd:string" />
+			<!-- Echo Request Type -->
+			<xsd:element name="echoRequest" type="tns:EchoRequestType" />
+			<!-- Echo Response Type -->
+			<xsd:element name="echoResponse" type="xsd:string" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="echoRequestMsg">
+		<wsdl:part name="echoRequest" element="tns:echoRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="generalErrorMsg">
+		<wsdl:part name="fault" element="tns:generalError">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="authenticationMsg">
+		<wsdl:part name="authentication" element="tns:auth">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="schemaErrorMsg">
+		<wsdl:part name="fault" element="tns:schemaError">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="availableResponseMsg">
+		<wsdl:part name="availableResponse" element="tns:availResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="echoResponseMsg">
+		<wsdl:part name="echoResponse" element="tns:echoResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="imagesResponseMsg">
+		<wsdl:part name="imagesResponse" element="tns:imgResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="availableRequestMsg">
+		<wsdl:part name="availableRequest" element="tns:availRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="imagesRequestMsg">
+		<wsdl:part name="imagesRequest" element="tns:imgRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="imageViewPortType">
+		<wsdl:operation name="echo">
+			<wsdl:input name="echoRequest" message="tns:echoRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="echoResponse" message="tns:echoResponseMsg">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="imageCheck">
+			<wsdl:input name="availableRequest" message="tns:availableRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="availableResponse" message="tns:availableResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="schemaErrorMessage" message="tns:schemaErrorMsg">
+			</wsdl:fault>
+			<wsdl:fault name="generalErrorMessage" message="tns:generalErrorMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="imageView">
+			<wsdl:input name="imagesRequest" message="tns:imagesRequestMsg">
+			</wsdl:input>
+			<wsdl:output name="imagesResponse" message="tns:imagesResponseMsg">
+			</wsdl:output>
+			<wsdl:fault name="schemaErrorMessage" message="tns:schemaErrorMsg">
+			</wsdl:fault>
+			<wsdl:fault name="generalErrorMessage" message="tns:generalErrorMsg">
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="imageViewBinding" type="tns:imageViewPortType">
+		<wsdl:documentation>
+			<wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" />
+		</wsdl:documentation>
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="echo">
+			<soap:operation soapAction="http://ws.estesexpress.com/echo" style="document" />
+			<wsdl:input>
+				<soap:body parts="echoRequest" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="echoResponse" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="imageCheck">
+			<soap:operation soapAction="http://ws.estesexpress.com/imagecheck" style="document" />
+			<wsdl:input name="availableRequest">
+				<soap:header message="tns:authenticationMsg" part="authentication" use="literal">
+				</soap:header>
+				<soap:body parts="availableRequest" use="literal" />
+			</wsdl:input>
+			<wsdl:output name="availableResponse">
+				<soap:body parts="availableResponse" use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="schemaErrorMessage">
+				<soap:fault name="schemaErrorMessage" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="generalErrorMessage">
+				<soap:fault name="generalErrorMessage" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="imageView">
+			<soap:operation soapAction="http://ws.estesexpress.com/imageview" style="document" />
+			<wsdl:input name="imagesRequest">
+				<soap:header message="tns:authenticationMsg" part="authentication" use="literal">
+				</soap:header>
+				<soap:body parts="imagesRequest" use="literal" />
+			</wsdl:input>
+			<wsdl:output name="imagesResponse">
+				<soap:body parts="imagesResponse" use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="schemaErrorMessage">
+				<soap:fault name="schemaErrorMessage" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="generalErrorMessage">
+				<soap:fault name="generalErrorMessage" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ImageViewService">
+		<wsdl:documentation>Image retrieval service</wsdl:documentation>
+		<wsdl:port name="imageViewPort" binding="tns:imageViewBinding">
+			<soap:address location="https://www.estes-express.com/imageretrieval/services/ImageViewService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

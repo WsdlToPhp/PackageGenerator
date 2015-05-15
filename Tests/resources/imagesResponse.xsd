@@ -1,0 +1,32 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:img="http://ws.estesexpress.com/imageview" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.estesexpress.com/imageview" xml:lang="en">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">Document images response. Copyright 2007 Estes Express Lines, Inc.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="imageViewCommon.xsd" />
+	<xsd:element name="imgResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="img:requestID" />
+				<xsd:element name="search" type="img:SearchCriteriaType" />
+				<xsd:choice>
+					<xsd:element name="images" type="img:ImagesType" />
+					<xsd:element name="errorMessage" type="img:ErrorMessageType" />
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="ImageType">
+		<xsd:sequence>
+			<xsd:element name="fileName" type="xsd:string" />
+			<xsd:element name="source" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ImagesType">
+		<xsd:annotation>
+			<xsd:documentation>Image file name and Base64 encoded binary source data</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element maxOccurs="10" name="image" type="img:ImageType" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

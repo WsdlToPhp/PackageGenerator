@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://metasearch.odigeo.com/metasearch/ws/v1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ItinerarySearch" targetNamespace="http://metasearch.odigeo.com/metasearch/ws/v1/">
+  <types>
+    <xs:schema xmlns:tns="http://metasearch.odigeo.com/metasearch/ws/v1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://metasearch.odigeo.com/metasearch/ws/v1/" version="1.0">
+      <xs:element name="search" type="tns:search"/>
+      <xs:element name="searchResponse" type="tns:searchResponse"/>
+      <xs:element name="searchStatusResponse" type="tns:searchStatusResponse"/>
+      <xs:complexType name="search">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="preferences" type="tns:preferencesRequest"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="searchRequest" type="tns:searchRequest"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="metasearchEngineCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="preferencesRequest">
+        <xs:sequence/>
+        <xs:attribute name="locale" type="xs:string" use="required"/>
+        <xs:attribute name="userAgent" type="xs:string" use="required"/>
+        <xs:attribute name="domainCode" type="xs:string" use="required"/>
+        <xs:attribute name="realUserIP" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="searchRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="itinerarySearchRequest" type="tns:itinerarySearchRequest"/>
+        </xs:sequence>
+        <xs:attribute name="maxSize" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="itinerarySearchRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="3" minOccurs="1" name="segmentRequests" type="tns:itinerarySegmentRequest"/>
+        </xs:sequence>
+        <xs:attribute name="cabinClass" type="tns:cabinClass" use="required"/>
+        <xs:attribute name="numAdults" type="xs:int" use="required"/>
+        <xs:attribute name="numChildren" type="xs:int" use="required"/>
+        <xs:attribute name="numInfants" type="xs:int" use="required"/>
+        <xs:attribute name="resident" type="xs:boolean"/>
+        <xs:attribute name="directFlightsOnly" type="xs:boolean"/>
+        <xs:attribute name="mainAirportsOnly" type="xs:boolean"/>
+      </xs:complexType>
+      <xs:complexType name="itinerarySegmentRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="departure" type="tns:itineraryLocationRequest"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="destination" type="tns:itineraryLocationRequest"/>
+        </xs:sequence>
+        <xs:attribute name="date" type="xs:date" use="required"/>
+        <xs:attribute name="time" type="xs:string"/>
+        <xs:attribute name="timeWindow" type="xs:int"/>
+      </xs:complexType>
+      <xs:complexType name="itineraryLocationRequest">
+        <xs:sequence/>
+        <xs:attribute name="iataCode" type="xs:string" use="required"/>
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="geoNodeId" type="xs:int"/>
+      </xs:complexType>
+      <xs:complexType name="searchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="searchStatus" type="tns:searchStatusResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchStatusResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:preferencesAwareResponse">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="itineraryResultsPages" type="tns:searchResultsPage"/>
+              <xs:element maxOccurs="1" minOccurs="0" name="legend" type="tns:itinerariesLegend"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="preferencesAwareResponse">
+        <xs:complexContent>
+          <xs:extension base="tns:baseResponse">
+            <xs:sequence>
+              <xs:element name="preferences" type="tns:preferences"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="messages" type="tns:messageResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchResultsPage">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="messages" type="tns:messageResponse"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="itineraryResults" type="tns:fareItinerary"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="clickoutURL" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="brand" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="messageResponse">
+        <xs:sequence/>
+        <xs:attribute name="code" type="xs:string" use="required"/>
+        <xs:attribute name="description" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="fareItinerary">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="price" type="tns:fareItineraryPrice"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="clickoutURLParams" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="key" type="xs:string" use="required"/>
+        <xs:attribute name="resident" type="xs:boolean"/>
+        <xs:attribute name="firstSegmentsIds" use="required">
+          <xs:simpleType>
+            <xs:list itemType="xs:int"/>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="secondSegmentsIds">
+          <xs:simpleType>
+            <xs:list itemType="xs:int"/>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="thirdSegmentsIds">
+          <xs:simpleType>
+            <xs:list itemType="xs:int"/>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:complexType>
+      <xs:complexType name="fareItineraryPrice">
+        <xs:sequence/>
+        <xs:attribute name="totalPrice" type="xs:decimal" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="itinerariesLegend">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="carriers" nillable="true" type="tns:carrier"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="locations" nillable="true" type="tns:location"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="sectionResults" nillable="true" type="tns:sectionResult"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="segmentResults" nillable="true" type="tns:segmentResult"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="carrier">
+        <xs:sequence/>
+        <xs:attribute name="code" type="xs:string" use="required"/>
+        <xs:attribute name="name" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="location">
+        <xs:sequence/>
+        <xs:attribute name="geoNodeId" type="xs:int" use="required"/>
+        <xs:attribute name="cityName" type="xs:string"/>
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="type" type="xs:string"/>
+        <xs:attribute name="iataCode" type="xs:string" use="required"/>
+        <xs:attribute name="cityIataCode" type="xs:string"/>
+        <xs:attribute name="countryCode" type="xs:string"/>
+        <xs:attribute name="countryName" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="sectionResult">
+        <xs:sequence>
+          <xs:element name="section" type="tns:section"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="section">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="technicalStops" nillable="true" type="tns:technicalStop"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="fromGeoNodeId" type="xs:int" use="required"/>
+        <xs:attribute name="departureDate" type="xs:dateTime"/>
+        <xs:attribute name="departureTerminal" type="xs:string"/>
+        <xs:attribute name="toGeoNodeId" type="xs:int" use="required"/>
+        <xs:attribute name="arrivalDate" type="xs:dateTime"/>
+        <xs:attribute name="arrivalTerminal" type="xs:string"/>
+        <xs:attribute name="carrierCode" type="xs:string"/>
+        <xs:attribute name="cabinClass" type="tns:cabinClass"/>
+        <xs:attribute name="operatingCarrierCode" type="xs:string"/>
+        <xs:attribute name="aircraft" type="xs:string"/>
+        <xs:attribute name="duration" type="xs:long"/>
+      </xs:complexType>
+      <xs:complexType name="technicalStop">
+        <xs:sequence/>
+        <xs:attribute name="locationGeoNodeId" type="xs:int" use="required"/>
+        <xs:attribute name="arrivalDate" type="xs:dateTime"/>
+        <xs:attribute name="departureDate" type="xs:dateTime"/>
+        <xs:attribute name="equipmentType" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="segmentResult">
+        <xs:sequence>
+          <xs:element name="segment" type="tns:segment"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="segment">
+        <xs:sequence/>
+        <xs:attribute name="sectionIds" use="required">
+          <xs:simpleType>
+            <xs:list itemType="xs:int"/>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="key" type="xs:string" use="required"/>
+        <xs:attribute name="carrierCode" type="xs:string"/>
+        <xs:attribute name="duration" type="xs:long"/>
+        <xs:attribute name="seats" type="xs:int"/>
+      </xs:complexType>
+      <xs:complexType name="preferences">
+        <xs:sequence/>
+        <xs:attribute name="currency" type="xs:string" use="required"/>
+        <xs:attribute name="locale" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:simpleType name="cabinClass">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BUSINESS"/>
+          <xs:enumeration value="FIRST"/>
+          <xs:enumeration value="TOURIST"/>
+          <xs:enumeration value="PREMIUM_ECONOMY"/>
+          <xs:enumeration value="ECONOMIC_DISCOUNTED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </types>
+  <message name="ItinerarySearchService_search">
+    <part element="tns:search" name="search"/>
+  </message>
+  <message name="ItinerarySearchService_searchResponse">
+    <part element="tns:searchResponse" name="searchResponse"/>
+  </message>
+  <portType name="ItinerarySearchService">
+    <operation name="search" parameterOrder="search">
+      <input message="tns:ItinerarySearchService_search"/>
+      <output message="tns:ItinerarySearchService_searchResponse"/>
+    </operation>
+  </portType>
+  <binding name="ItinerarySearchServiceBinding" type="tns:ItinerarySearchService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="search">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ItinerarySearch">
+    <port binding="tns:ItinerarySearchServiceBinding" name="ItinerarySearchServicePort">
+      <soap:address location="http://metasearchintegration-qa1.qa.odigeo.com/metasearch/ws/v1/ItinerarySearch"/>
+    </port>
+  </service>
+</definitions>
