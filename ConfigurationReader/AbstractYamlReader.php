@@ -22,7 +22,7 @@ abstract class AbstractYamlReader
     abstract protected function __construct($filename);
     /**
      * @param string $filename
-     * @return string
+     * @return array
      */
     protected function loadYaml($filename)
     {
