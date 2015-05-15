@@ -4,7 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagUnion as Union;
-use WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
@@ -49,7 +49,7 @@ class TagUnion extends AbstractTagParser
     public function parseUnion(Union $union)
     {
         $parent = $union->getSuitableParent();
-        if ($parent instanceof AbstractNodeHandler) {
+        if ($parent instanceof AbstractTag) {
             $model = $this->getModel($parent);
             if ($model instanceof AbstractModel) {
                 $modelInheritance = $model->getInheritance();

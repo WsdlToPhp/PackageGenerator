@@ -51,19 +51,21 @@ class TagList extends AbstractTagParser
     public function parseList(ListTag $tag)
     {
         $parent       = $tag->getSuitableParent();
-        $parentParent = $parent instanceof AbstractTag ? $parent->getSuitableParent() : null;
-        $model        = $this->getModel($parent);
-        if ($model === null && $parentParent instanceof AbstractTag) {
-            $model = $this->getModel($parentParent);
-        }
-        $itemType     = $tag->getAttributeItemType();
-        $struct       = $this->getStructByName($itemType);
-        if ($parent instanceof AbstractTag && $model instanceof AbstractModel) {
-            $type = sprintf('array[%s]', $struct instanceof Struct ? $struct->getName() : $itemType);
-            if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
-                $model->getAttribute($parent->getAttributeName())->setInheritance($type);
-            } else {
-                $model->setInheritance($type);
+        if ($parent instanceof AbstractTag) {
+            $parentParent = $parent->getSuitableParent();
+            $model        = $this->getModel($parent);
+            if ($model === null && $parentParent instanceof AbstractTag) {
+                $model = $this->getModel($parentParent);
+            }
+            $itemType     = $tag->getAttributeItemType();
+            $struct       = $this->getStructByName($itemType);
+            if ($model instanceof AbstractModel) {
+                $type = sprintf('array[%s]', $struct instanceof Struct ? $struct->getName() : $itemType);
+                if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
+                    $model->getAttribute($parent->getAttributeName())->setInheritance($type);
+                } else {
+                    $model->setInheritance($type);
+                }
             }
         }
     }
