@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
@@ -46,7 +46,7 @@ class TagHeader extends AbstractTagOperationElement
      */
     public function getPartTag()
     {
-        return parent::getPart($this->getAttributePart());
+        return $this->getPart($this->getAttributePart());
     }
     /**
      * @return string
@@ -54,7 +54,7 @@ class TagHeader extends AbstractTagOperationElement
     public function getHeaderType()
     {
         $part = $this->getPartTag();
-        return $part !== null ? $part->getFinalType() : '';
+        return $part instanceof TagPart ? $part->getFinalType() : '';
     }
     /**
      * @return string
@@ -62,7 +62,7 @@ class TagHeader extends AbstractTagOperationElement
     public function getHeaderName()
     {
         $part = $this->getPartTag();
-        return $part !== null ? $part->getFinalName() : '';
+        return $part instanceof TagPart ? $part->getFinalName() : '';
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler::getNamespace()
@@ -74,7 +74,7 @@ class TagHeader extends AbstractTagOperationElement
         if (empty($messageNamespace) || ($namespace = $this->getDomDocumentHandler()->getNamespaceUri($messageNamespace)) === '') {
             $part      = $this->getPartTag();
             $namespace = '';
-            if ($part !== null) {
+            if ($part instanceof TagPart) {
                 $finalNamespace = $part->getFinalNamespace();
                 if (!empty($finalNamespace)) {
                     $namespace = $this->getDomDocumentHandler()->getNamespaceUri($finalNamespace);
