@@ -67,7 +67,6 @@ abstract class AbstractModel
      * @uses AbstractModel::setName()
      * @uses AbstractModel::updateModels()
      * @param string $name the original name
-     * @return AbstractModel
      */
     public function __construct($name)
     {
