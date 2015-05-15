@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:api.actonsoftware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:api.actonsoftware.com" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/">
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="urn:api.actonsoftware.com" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<!--GLOBAL TYPES AND ELEMENTS -->
+			<xsd:import namespace="http://www.w3.org/2005/05/xmlmime" schemaLocation="xmlmime.xml" />
+			<xsd:simpleType name="ID">
+				<xsd:annotation>
+					<xsd:documentation>ID for an object</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:string" />
+			</xsd:simpleType>
+			<xsd:simpleType name="ItemType">
+				<xsd:annotation>
+					<xsd:documentation>Enumerated type for objects</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="CONTACT_LIST" />
+					<xsd:enumeration value="TEMPLATE_MESSAGE" />
+					<xsd:enumeration value="SENT_MESSAGE" />
+					<xsd:enumeration value="SCHEDULED_MESSAGE" />
+					<xsd:enumeration value="FAILED_MESSAGE" />
+					<xsd:enumeration value="TEST_MESSAGE" />
+					<xsd:enumeration value="DRAFT_MESSAGE" />
+					<xsd:enumeration value="TRIGGERED_MESSAGE" />
+					<xsd:enumeration value="LANDING_PAGE" />
+					<xsd:enumeration value="FORM" />
+					<xsd:enumeration value="STATIONERY" />
+					<xsd:enumeration value="LOGO" />
+					<xsd:enumeration value="DOCUMENT" />
+					<xsd:enumeration value="SENDER" />
+					<xsd:enumeration value="HEADER" />
+					<xsd:enumeration value="FOOTER" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="ListColumnType">
+				<xsd:annotation>
+					<xsd:documentation>Field types for list columns</xsd:documentation>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EMAIL" />
+					<xsd:enumeration value="FIRSTNAME" />
+					<xsd:enumeration value="LASTNAME" />
+					<xsd:enumeration value="MIDDLENAME" />
+					<xsd:enumeration value="COMPANY" />
+					<xsd:enumeration value="JOBTITLE" />
+					<xsd:enumeration value="DEPT" />
+					<xsd:enumeration value="BIZ_STREET" />
+					<xsd:enumeration value="BIZ_CITY" />
+					<xsd:enumeration value="BIZ_STATE" />
+					<xsd:enumeration value="BIZ_ZIP" />
+					<xsd:enumeration value="BIZ_COUNTRY" />
+					<xsd:enumeration value="HOME_STREET" />
+					<xsd:enumeration value="HOME_CITY" />
+					<xsd:enumeration value="HOME_STATE" />
+					<xsd:enumeration value="HOME_ZIP" />
+					<xsd:enumeration value="HOME_COUNTRY" />
+					<xsd:enumeration value="BIZ_PHONE" />
+					<xsd:enumeration value="BIZ_FAX" />
+					<xsd:enumeration value="HOME_PHONE" />
+					<xsd:enumeration value="HOME_FAX" />
+					<xsd:enumeration value="CELL_PHONE" />
+					<xsd:enumeration value="BIZ_WEB" />
+					<xsd:enumeration value="HOME_WEB" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AttachmentType">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="fileName" type="xsd:string" />
+					<xsd:element minOccurs="0" name="binaryData" type="xmime:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="SessionHeader">
+				<xsd:annotation>
+					<xsd:documentation>Session Header Required for All API Calls Except Login</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="sessionId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ClusterHeader">
+				<xsd:annotation>
+					<xsd:documentation>Cluster Header (Cluster Id is provided to API enabled accounts)</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="clusterId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PartnerHeader">
+				<xsd:annotation>
+					<xsd:documentation>Partner Header (Partner key provided to Act-On Partners) to enable partner API functions</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="partnerKey" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--API FAULT -->
+			<xsd:simpleType name="FaultCode">
+				<xsd:restriction base="xsd:string" />
+			</xsd:simpleType>
+			<xsd:complexType name="ActonFaultType">
+				<xsd:sequence>
+					<xsd:element name="faultCode" type="tns:FaultCode" />
+					<xsd:element name="faultMessage" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="actonFault" type="tns:ActonFaultType" />
+			<!--API LOGIN -->
+			<xsd:complexType name="LoginResult">
+				<xsd:sequence>
+					<xsd:element name="passwordExpired" type="xsd:boolean" />
+					<xsd:element name="serverUrl" nillable="true" type="xsd:string" />
+					<xsd:element name="sessionId" nillable="true" type="xsd:string" />
+					<xsd:element name="userId" nillable="true" type="tns:ID" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="login">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="username" type="xsd:string" />
+						<xsd:element name="password" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="loginResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="result" type="tns:LoginResult" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--LISTING OBJECTS -->
+			<xsd:element name="list">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="listingType" type="tns:ItemType" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="listResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" name="Item">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="itemType" type="tns:ItemType" />
+									<xsd:element name="id" type="tns:ID" />
+									<xsd:element name="displayName" type="xsd:string" />
+									<xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##targetNamespace" />
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--SENDING EMAIL -->
+			<xsd:element name="sendEmail">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:choice>
+							<xsd:annotation>
+								<xsd:documentation>Send Custom Message Content OR send a pre-configured template message OR re-send a previously sent message.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:element minOccurs="0" name="messageTemplateId" type="tns:ID">
+								<xsd:annotation>
+									<xsd:documentation>The ID of the message template to use as the content of the message to send. You may also use an ID of a previously sent message to copy the message content to the new message. Delivery and response reports will be tracked for the message.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="resendSentMessageId" type="tns:ID">
+								<xsd:annotation>
+									<xsd:documentation>The ID of a previously sent message or triggered message to send. The delivery and response reports for the re-send will get merged with the existing reports for this message</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="CustomEmail">
+								<xsd:annotation>
+									<xsd:documentation>Specify the content and format of the new message to be sent.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="subject" type="xsd:string">
+											<xsd:annotation>
+												<xsd:documentation>The message subject</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="htmlBody" type="xsd:string">
+											<xsd:annotation>
+												<xsd:documentation>The rich-text HTML body part of the message. May only include fully qualified links and image references.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="textBody" type="xsd:string">
+											<xsd:annotation>
+												<xsd:documentation>The plain-text TEXT body part of the message.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element minOccurs="0" name="headerId" type="tns:ID">
+											<xsd:annotation>
+												<xsd:documentation>Optional header ID to use in the message body. The default header will be used if missing. To suppress the header, use -1 for the ID.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element minOccurs="0" name="footerId" type="tns:ID">
+											<xsd:annotation>
+												<xsd:documentation>Optional footer ID to use in the message body (with opt-out link). The default footer will be used if missing. To suppress the footer, use -1 for the ID.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:choice>
+						<xsd:element name="launchParameters">
+							<xsd:annotation>
+								<xsd:documentation>The parameters that specify the from, to, format, and launch time of the message to send.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:choice>
+										<xsd:element maxOccurs="unbounded" name="sendToListId" type="tns:ID">
+											<xsd:annotation>
+												<xsd:documentation>One or more contact list (or segment) IDs with email addresses to send-to.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element maxOccurs="unbounded" name="contactId" type="tns:ID">
+											<xsd:annotation>
+												<xsd:documentation>Optional: Selection set of one or more contacts to send to. If specified, only these contacts will be sent the email.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:choice>
+									<xsd:element maxOccurs="unbounded" minOccurs="0" name="suppressListId" type="tns:ID">
+										<xsd:annotation>
+											<xsd:documentation>Optional: one or more contact list (or segment) IDs with email addresses to exclude from the launch.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element minOccurs="0" name="suppressDuplicates" type="xsd:boolean">
+										<xsd:annotation>
+											<xsd:documentation>If true, duplicate email addresses will be suppressed during launch.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element minOccurs="0" name="senderFrom">
+										<xsd:annotation>
+											<xsd:documentation>The &quot;from&quot; email address and name. The email must be a verified sender for the account. Uses the default for the user if not specified.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:complexType>
+											<xsd:all>
+												<xsd:element name="email" nillable="false" type="xsd:string" />
+												<xsd:element name="name" nillable="false" type="xsd:string" />
+											</xsd:all>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element minOccurs="0" name="sendTextOnly" type="xsd:boolean">
+										<xsd:annotation>
+											<xsd:documentation>If specified and true, then send as plain-text only. Otherwise, send multipart-mime with both HTML and TEXT parts.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element minOccurs="0" name="launchTime" type="xsd:dateTime">
+										<xsd:annotation>
+											<xsd:documentation>The date and time to schedule the launch. Default: immediate launch if not specified.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="sendEmailResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="messageID" type="tns:ID">
+							<xsd:annotation>
+								<xsd:documentation>The ID of the sent message.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--UPLOAD LIST -->
+			<xsd:complexType name="UploadContactRecordType">
+				<xsd:attribute name="contactId" type="tns:ID" use="required">
+					<xsd:annotation>
+						<xsd:documentation>The unique contact ID for this contact record.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="email" type="xsd:string" use="required">
+					<xsd:annotation>
+						<xsd:documentation>The email for this contact record.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="mergeKeyValue" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>The value of the merge-key used for this contact record.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:complexType>
+			<xsd:element name="uploadList">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="name" type="xsd:string">
+							<xsd:annotation>
+								<xsd:documentation>Unique displayname of the new list, or a segment name to create of records merged into an existing list.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element minOccurs="0" name="folderName" type="xsd:string">
+							<xsd:annotation>
+								<xsd:documentation>Optional name of the folder for the list after upload</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element default="true" minOccurs="0" name="firstRowContainsColumnHeadings" type="xsd:boolean">
+							<xsd:annotation>
+								<xsd:documentation>Does the source data contain column headings in the first row of data. Optional flag (default = true if not specified).
+								</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element minOccurs="0" name="fieldSeparator">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="TAB" />
+									<xsd:enumeration value="COMMA" />
+									<xsd:enumeration value="SEMICOLON" />
+									<xsd:enumeration value="SPACE" />
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element minOccurs="0" name="quoteCharacter">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="NONE" />
+									<xsd:enumeration value="SINGLE_QUOTE" />
+									<xsd:enumeration value="DOUBLE_QUOTE" />
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="binaryData" type="tns:AttachmentType">
+							<xsd:annotation>
+								<xsd:documentation>The Uploaded List (attachment) - may be either comma (or tab) separated text file, or may be Excel spreadsheet.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element maxOccurs="unbounded" minOccurs="0" name="columnDef">
+							<xsd:annotation>
+								<xsd:documentation>Definition of columns in uploaded the source list. If this is an upload only (not a merge), then all source data columns that do not have a corresponding columnDef will be ignored. On a merge, if no source columnDef entries are specified then the first row of the source data must contain header names that exactly match the headers in the destination and all source columns will be merged.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element minOccurs="0" name="columnType" type="tns:ListColumnType">
+										<xsd:annotation>
+											<xsd:documentation>Optional list column type (e.g. EMAIL, FIRSTNAME, LASTNAME, etc)</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element minOccurs="0" name="columnHeading" type="xsd:string">
+										<xsd:annotation>
+											<xsd:documentation>Column Heading Displayname. If not specified or empty, then the column heading extracted from the first row of data is used (if available). A Fault will be generated if no unique heading is found.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="columnIndex" type="xsd:int">
+										<xsd:annotation>
+											<xsd:documentation>Column index in the uploaded binaryData (zero-based)</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element default="false" minOccurs="0" name="ignoreColumn" type="xsd:boolean">
+										<xsd:annotation>
+											<xsd:documentation>True if this column should be ignored (not loaded into the list)</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element minOccurs="0" name="mergeOptions">
+							<xsd:annotation>
+								<xsd:documentation>Optional options if merging uploaded list into an existing list</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="mergeMode">
+										<xsd:annotation>
+											<xsd:documentation>Mode of merge. UPSERT updates existing records and inserts new records. APPEND and APPEND_NO_DUPLICATES only append to the list. UPDATE only updates existing records.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:enumeration value="APPEND" />
+												<xsd:enumeration value="APPEND_NO_DUPLICATES" />
+												<xsd:enumeration value="UPSERT" />
+												<xsd:enumeration value="UPDATE_ONLY" />
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="dstListId" type="tns:ID">
+										<xsd:annotation>
+											<xsd:documentation>The ID for the destination list into which records will be merged.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element maxOccurs="unbounded" minOccurs="0" name="columnMap">
+										<xsd:annotation>
+											<xsd:documentation>Optional override for merge column mappings. Default behavior is to match based on specified columnType, then on case-insensitive column heading match.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:complexType>
+											<xsd:all>
+												<xsd:element name="uploadColumnHeading" type="xsd:string">
+													<xsd:annotation>
+														<xsd:documentation>Column heading of uploaded list</xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												<xsd:element name="dstColumnHeading" type="xsd:string">
+													<xsd:annotation>
+														<xsd:documentation>Mapped column heading in target list</xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+											</xsd:all>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element default="false" minOccurs="0" name="createSegmentAfterUpload" type="xsd:boolean">
+										<xsd:annotation>
+											<xsd:documentation>Optional flag. If true, create a segment from records merged into the list. If absent or false, no additional segment will be created.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element default="false" minOccurs="0" name="getMergeReportRecords" type="xsd:boolean">
+										<xsd:annotation>
+											<xsd:documentation>Optional flag to request the uploadListResponse to report all records appended or updated. Use with caution if your upload may result in a large number of records as this may cause a large uploadListResponse body.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element minOccurs="0" name="mergeKeyHeading" type="xsd:string">
+										<xsd:annotation>
+											<xsd:documentation>Optional heading name in the source data used to merge data into the destination list. (Default if missing is to use the identified EMAIL column in both source and destination list.) The merge column must exist in the source data and destination list or have a columnMap entry specified.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="uploadListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="jobID" type="tns:ID">
+							<xsd:annotation>
+								<xsd:documentation>The jobID of the upload/merge job. This jobID can be used to poll with the getUloadResults method to obtain the results of the upload when it completes.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getUploadResultRequest">
+				<xsd:annotation>
+					<xsd:documentation>Request the results of an uploadList job.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="jobID" type="tns:ID">
+							<xsd:annotation>
+								<xsd:documentation>The jobID of an asynchronous upload</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getUploadResultResponse">
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:sequence>
+							<xsd:element name="jobID" type="tns:ID">
+								<xsd:annotation>
+									<xsd:documentation>The jobID returned in the uploadListResponse from the asynchrounous uploadList method call. This is the ID of the job for which you want to poll for the upload results.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="jobStatus" type="xsd:string">
+								<xsd:annotation>
+									<xsd:documentation>The job status (pending or running) if the job has not yet completed. This will be the only reported result if the job has not yet completed.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:element name="contactListId" type="tns:ID">
+								<xsd:annotation>
+									<xsd:documentation>The uploaded list Id.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="mergeSegmentId" type="tns:ID">
+								<xsd:annotation>
+									<xsd:documentation>The ID of the segment created with merged records (if requested)</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="appendCount" type="xsd:int">
+								<xsd:annotation>
+									<xsd:documentation>Number of appended records after an upload or merge</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="updateCount" type="xsd:int">
+								<xsd:annotation>
+									<xsd:documentation>Number of updated records after a merge.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="rejectedCount" type="xsd:int">
+								<xsd:annotation>
+									<xsd:documentation>Number of rejected records after an upload or merge. (see also rejectedRecords attachment)</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="rejectedRecords" type="tns:AttachmentType">
+								<xsd:annotation>
+									<xsd:documentation>Attachment list of records that were rejected on upload or merge. Missing if there were no rejected records after upload or merge.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="appendedRecords">
+								<xsd:annotation>
+									<xsd:documentation>List of records appended after a merge to an existing list. Only specified if the optional mergeReport option is true in the uploadList request.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element maxOccurs="unbounded" name="appendedRecord" type="tns:UploadContactRecordType" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="updatedRecords">
+								<xsd:annotation>
+									<xsd:documentation>List of records updated after a merge to an existing list. Only specified if the optional mergeReport option is true in the uploadList request.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element maxOccurs="unbounded" name="updatedRecord" type="tns:UploadContactRecordType" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="unchangedRecords">
+								<xsd:annotation>
+									<xsd:documentation>List of records in the uploaded list that were unchanged from the matched records in the existing list. Only specified if the optional mergeReport option is true in the uploadList request.</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element maxOccurs="unbounded" name="unchangedRecord" type="tns:UploadContactRecordType" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<!--DOWNLOAD LIST -->
+			<xsd:element name="downloadList">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="listId" type="tns:ID">
+							<xsd:annotation>
+								<xsd:documentation>The ID of the list or segment to download</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element minOccurs="0" name="format">
+							<xsd:annotation>
+								<xsd:documentation>Specify the download format -- Excel spreadsheet or CSV</xsd:documentation>
+							</xsd:annotation>
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:enumeration value="CSV" />
+									<xsd:enumeration value="EXCEL" />
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element minOccurs="0" name="modifiedAfter" type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="modifiedBefore" type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="createdAfter" type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="createdBefore" type="xsd:dateTime" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="downloadListResponse" type="tns:AttachmentType">
+				<xsd:annotation>
+					<xsd:documentation>Thie downloaded list attachment</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--DELETE LIST -->
+			<xsd:element name="deleteList">
+				<xsd:annotation>
+					<xsd:documentation>Delete a list or segment</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="listId" type="tns:ID" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--MESSAGE REPORT -->
+			<xsd:element name="messageReport">
+				<xsd:annotation>
+					<xsd:documentation>Report the results of a sent message</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" name="messageID" type="tns:ID">
+							<xsd:annotation>
+								<xsd:documentation>One or more messageIDs to report. The summary section of the report will roll-up the total and unique counts when more than one messageID is provided.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element minOccurs="0" name="activityBefore" type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="activityAfter" type="xsd:dateTime" />
+						<xsd:element minOccurs="0" name="fullDetail">
+							<xsd:annotation>
+								<xsd:documentation>When specified, also reports detailed activity records for the specified types of action.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element maxOccurs="unbounded" name="action">
+										<xsd:annotation>
+											<xsd:documentation>The types of activity you want reported in the detail section (e.g. ALL, SENT, CLICKED, etc.)</xsd:documentation>
+										</xsd:annotation>
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:enumeration value="ALL" />
+												<xsd:enumeration value="SENT" />
+												<xsd:enumeration value="DELIVERED" />
+												<xsd:enumeration value="FAILED" />
+												<xsd:enumeration value="SUPPRESSED" />
+												<xsd:enumeration value="OPENED" />
+												<xsd:enumeration value="CLICKED" />
+												<xsd:enumeration value="HARD-BOUNCED" />
+												<xsd:enumeration value="SOFT-BOUNCED" />
+												<xsd:enumeration value="OPT-OUT" />
+												<xsd:enumeration value="SPAM-COMPLAINT" />
+												<xsd:enumeration value="REBROADCASTED" />
+												<xsd:enumeration value="REBROADCAST-CLICKED" />
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element minOccurs="0" name="contactFields">
+										<xsd:annotation>
+											<xsd:documentation>Optionally include the specified contact fields from the corresponding contact in the detailed action record, if available.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element maxOccurs="unbounded" name="fieldName" type="xsd:string">
+													<xsd:annotation>
+														<xsd:documentation>The field heading name to include in the detailed action record report.</xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="messageReportResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="summary">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="uniqueCounts">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="notSentSuppressed" type="xsd:int" />
+												<xsd:element name="opened" type="xsd:int" />
+												<xsd:element name="implicitOpened" type="xsd:int" />
+												<xsd:element name="clicked" type="xsd:int" />
+												<xsd:element name="optOuts" type="xsd:int" />
+												<xsd:element name="bounced" type="xsd:int" />
+												<xsd:element name="spamComplaints" type="xsd:int" />
+												<xsd:element name="rebroadcasted" type="xsd:int" />
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="totalCounts">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="sent" type="xsd:int" />
+												<xsd:element name="successfulDeliveries" type="xsd:int" />
+												<xsd:element name="notSentSuppressed" type="xsd:int" />
+												<xsd:element name="opened" type="xsd:int" />
+												<xsd:element name="implicitOpened" type="xsd:int" />
+												<xsd:element name="clicked" type="xsd:int" />
+												<xsd:element name="rebroadcasted" type="xsd:int" />
+												<xsd:element name="rebroadcastClicked" type="xsd:int" />
+												<xsd:element name="bounced" type="xsd:int" />
+												<xsd:element name="spamComplaints" type="xsd:int" />
+												<xsd:element name="optOuts" type="xsd:int" />
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element minOccurs="0" name="lastOpened" type="xsd:dateTime" />
+									<xsd:element minOccurs="0" name="lastClicked" type="xsd:dateTime" />
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element maxOccurs="unbounded" name="messageInfo">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="messageID" type="tns:ID" />
+									<xsd:element minOccurs="0" name="detail">
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element minOccurs="0" name="sent" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="delivered" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="failed" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="suppressed" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="opened" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="clicked" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="hardBounced" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="softBounced" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="optOuts" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="spamComplaints" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="rebroadcasted" type="tns:actionRecordDetailType" />
+												<xsd:element minOccurs="0" name="rebroadcastClicked" type="tns:actionRecordDetailType" />
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="subject" type="xsd:string" />
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="actionRecordDetailType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" name="actionRecord">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="contactID" type="tns:ID">
+									<xsd:annotation>
+										<xsd:documentation>The ID of the contact that performed the action, if available. May be blank for anonymous activity.</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="emailAddress" type="xsd:string">
+									<xsd:annotation>
+										<xsd:documentation>The email address of the contact that performed the action, if available. May be blank for anonymous activity.</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="name" type="xsd:string">
+									<xsd:annotation>
+										<xsd:documentation>The name of the contact that performed the action, if available (blank for anonymous activity).</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="time" type="xsd:dateTime">
+									<xsd:annotation>
+										<xsd:documentation>The time the action was recorded.</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="detail" type="xsd:string">
+									<xsd:annotation>
+										<xsd:documentation>The action detail has action specific detail. For example, the link clicked, the reason for suppression etc.</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="IPAddress" type="xsd:string">
+									<xsd:annotation>
+										<xsd:documentation>The IP address of the client computer from the HTTP session when the action was recorded. Note that this may be the IP address of a proxy or firewall or ISP protecting the actual client system from the Internet.</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="browser" type="xsd:string">
+									<xsd:annotation>
+										<xsd:documentation>The client browser reported by the HTTP session header when the action was recorded.</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element minOccurs="0" name="platformOS" type="xsd:string">
+									<xsd:annotation>
+										<xsd:documentation>The client platform and operating system reported by the HTTP session header when the action was recorded.</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element maxOccurs="unbounded" minOccurs="0" name="contactField">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="name" type="xsd:string" />
+											<xsd:element name="value" type="xsd:string" />
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="listResponse">
+		<wsdl:part name="parameter" element="tns:listResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="messageReportRequest">
+		<wsdl:part name="parameter" element="tns:messageReport">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="sendEmailRequest">
+		<wsdl:part name="parameter" element="tns:sendEmail">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="deleteListResponse">
+	</wsdl:message>
+	<wsdl:message name="ApiFault">
+		<wsdl:part name="fault" element="tns:actonFault">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUploadResultRequest">
+		<wsdl:part name="parameter" element="tns:getUploadResultRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="sendEmailResponse">
+		<wsdl:part name="parameter" element="tns:sendEmailResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="uploadListRequest">
+		<wsdl:part name="parameter" element="tns:uploadList">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listRequest">
+		<wsdl:part name="parameter" element="tns:list">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="Header">
+		<wsdl:part name="SessionHeader" element="tns:SessionHeader">
+		</wsdl:part>
+		<wsdl:part name="ClusterHeader" element="tns:ClusterHeader">
+		</wsdl:part>
+		<wsdl:part name="PartnerHeader" element="tns:PartnerHeader">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="downloadListRequest">
+		<wsdl:part name="parameter" element="tns:downloadList">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="loginRequest">
+		<wsdl:part name="parameter" element="tns:login">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="messageReportResponse">
+		<wsdl:part name="parameter" element="tns:messageReportResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="deleteListRequest">
+		<wsdl:part name="parameter" element="tns:deleteList">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="downloadListResponse">
+		<wsdl:part name="parameter" element="tns:downloadListResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="uploadListResponse">
+		<wsdl:part name="parameter" element="tns:uploadListResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="loginResponse">
+		<wsdl:part name="parameter" element="tns:loginResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getUploadListResultResponse">
+		<wsdl:part name="parameter" element="tns:getUploadResultResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="SOAP">
+		<wsdl:operation name="login">
+			<wsdl:documentation>Login to the service. This must be the first call to obtain the SessionID for all subsequent API calls</wsdl:documentation>
+			<wsdl:input message="tns:loginRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:loginResponse">
+			</wsdl:output>
+			<wsdl:fault name="ApiFault" message="tns:ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="list">
+			<wsdl:documentation>Obtain a listing of different types of items in the system (e.g. CONTACT_LISTS)</wsdl:documentation>
+			<wsdl:input message="tns:listRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:listResponse">
+			</wsdl:output>
+			<wsdl:fault name="ApiFault" message="tns:ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="uploadList">
+			<wsdl:documentation>Upload a new contact list or merge records into an existing list.</wsdl:documentation>
+			<wsdl:input message="tns:uploadListRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:uploadListResponse">
+			</wsdl:output>
+			<wsdl:fault name="ApiFault" message="tns:ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getUploadResult">
+			<wsdl:documentation>Poll for the results of an asynchronous running upload/merge request</wsdl:documentation>
+			<wsdl:input message="tns:getUploadResultRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getUploadListResultResponse">
+			</wsdl:output>
+			<wsdl:fault name="ApiFault" message="tns:ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="downloadList">
+			<wsdl:documentation>Download the records of a contact list</wsdl:documentation>
+			<wsdl:input message="tns:downloadListRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:downloadListResponse">
+			</wsdl:output>
+			<wsdl:fault name="ApiFault" message="tns:ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="deleteList">
+			<wsdl:input message="tns:deleteListRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:deleteListResponse">
+			</wsdl:output>
+			<wsdl:fault name="ApiFault" message="tns:ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="sendEmail">
+			<wsdl:documentation>Schedule an email to be sent.</wsdl:documentation>
+			<wsdl:input message="tns:sendEmailRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:sendEmailResponse">
+			</wsdl:output>
+			<wsdl:fault name="ApiFault" message="tns:ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="messageReport">
+			<wsdl:input message="tns:messageReportRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:messageReportResponse">
+			</wsdl:output>
+			<wsdl:fault name="ApiFault" message="tns:ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SoapBinding" type="tns:SOAP">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="login">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal" />
+				<soap:header message="tns:Header" part="ClusterHeader" use="literal">
+				</soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApiFault">
+				<soap:fault name="loginFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="sendEmail">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal" />
+				<soap:header message="tns:Header" part="SessionHeader" use="literal" wsdl:required="false">
+				</soap:header>
+				<soap:header message="tns:Header" part="ClusterHeader" use="literal" wsdl:required="false">
+				</soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApiFault">
+				<soap:fault name="ActonFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="list">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal" />
+				<soap:header message="tns:Header" part="SessionHeader" use="literal" wsdl:required="false">
+				</soap:header>
+				<soap:header message="tns:Header" part="ClusterHeader" use="literal">
+				</soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApiFault">
+				<soap:fault name="ActonFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="uploadList">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal" />
+				<soap:header message="tns:Header" part="SessionHeader" use="literal" wsdl:required="false">
+				</soap:header>
+				<soap:header message="tns:Header" part="ClusterHeader" use="literal">
+				</soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApiFault">
+				<soap:fault name="ActonFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getUploadResult">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal" />
+				<soap:header message="tns:Header" part="SessionHeader" use="literal">
+				</soap:header>
+				<soap:header message="tns:Header" part="ClusterHeader" use="literal">
+				</soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="downloadList">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal" />
+				<soap:header message="tns:Header" part="SessionHeader" use="literal" wsdl:required="false">
+				</soap:header>
+				<soap:header message="tns:Header" part="ClusterHeader" use="literal">
+				</soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApiFault">
+				<soap:fault name="ActonFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="messageReport">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal" />
+				<soap:header message="tns:Header" part="SessionHeader" use="literal" wsdl:required="false">
+				</soap:header>
+				<soap:header message="tns:Header" part="ClusterHeader" use="literal">
+				</soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApiFault">
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="deleteList">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body parts="parameter" use="literal" />
+				<soap:header message="tns:Header" part="SessionHeader" use="literal" wsdl:required="false">
+				</soap:header>
+				<soap:header message="tns:Header" part="ClusterHeader" use="literal">
+				</soap:header>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApiFault">
+				<soap:fault name="ActonFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ActonService2">
+		<wsdl:documentation>Act-On Service</wsdl:documentation>
+		<wsdl:port name="Soap" binding="tns:SoapBinding">
+			<soap:address location="https://apipg.actonsoftware.com/soap/services/ActonService2" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

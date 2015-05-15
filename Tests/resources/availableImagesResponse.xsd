@@ -1,0 +1,28 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:img="http://ws.estesexpress.com/imageview" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.estesexpress.com/imageview" xml:lang="en">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">Available images response. Copyright 2007 Estes Express Lines, Inc.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="imageViewCommon.xsd" />
+	<xsd:element name="availResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="img:requestID" />
+				<xsd:choice>
+					<xsd:element name="success" type="img:SuccessType" />
+					<xsd:element name="errorMessage" type="img:ErrorMessageType" />
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="DocumentsType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="10" name="document" type="img:DocumentType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SuccessType">
+		<xsd:sequence>
+			<xsd:element name="search" type="img:SearchCriteriaType" />
+			<xsd:element name="documents" type="img:DocumentsType" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

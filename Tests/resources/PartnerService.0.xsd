@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+	<xs:import schemaLocation="PartnerService.2.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberrequest/2010/09/13" />
+	<xs:import schemaLocation="PartnerService.4.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberresponse/2010/07/19" />
+	<xs:import schemaLocation="PartnerService.5.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberpartnerrequest/2010/09/13" />
+	<xs:import schemaLocation="PartnerService.6.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberpartnerresponse/2010/07/19" />
+	<xs:import schemaLocation="PartnerService.7.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/09/13" />
+	<xs:import schemaLocation="PartnerService.8.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/11/18" />
+	<xs:import schemaLocation="PartnerService.9.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberproductresponse/2010/11/18" />
+	<xs:import schemaLocation="PartnerService.10.xsd" namespace="http://schemas.euroconsumers.com/partner/getmemberfortokenrequest/2010/09/13" />
+	<xs:import schemaLocation="PartnerService.11.xsd" namespace="http://schemas.euroconsumers.com/partner/getmemberfortokenrequest/2010/12/16" />
+	<xs:import schemaLocation="PartnerService.12.xsd" namespace="http://schemas.euroconsumers.com/partner/getmemberfortokenresponse/2010/07/19" />
+	<xs:import schemaLocation="PartnerService.13.xsd" namespace="http://schemas.euroconsumers.com/partner/validatetokenproductrequest/2010/09/13" />
+	<xs:import schemaLocation="PartnerService.14.xsd" namespace="http://schemas.euroconsumers.com/partner/validatetokenproductResponse/2010/07/19" />
+	<xs:import schemaLocation="PartnerService.15.xsd" namespace="http://schemas.euroconsumers.com/partner/validatepartnerrequest/2010/09/13" />
+	<xs:import schemaLocation="PartnerService.16.xsd" namespace="http://schemas.euroconsumers.com/partner/validatepartnerresponse/2010/07/19" />
+	<xs:import schemaLocation="PartnerService.17.xsd" namespace="http://schemas.datacontract.org/2004/07/EC.PI.Services.PartnerService.MessageContract.Member" />
+	<xs:import schemaLocation="PartnerService.18.xsd" namespace="http://schemas.euroconsumers.com/partner" />
+	<xs:element name="ValidateMemberRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q1:MarketCode" xmlns:q1="http://schemas.euroconsumers.com/partner/validatememberrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q2:MemberLastName" xmlns:q2="http://schemas.euroconsumers.com/partner/validatememberrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q3:MemberNumber" xmlns:q3="http://schemas.euroconsumers.com/partner/validatememberrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q4:PartnerName" xmlns:q4="http://schemas.euroconsumers.com/partner/validatememberrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q5:PartnerPassword" xmlns:q5="http://schemas.euroconsumers.com/partner/validatememberrequest/2010/09/13" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateMemberResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q6:Member" xmlns:q6="http://schemas.euroconsumers.com/partner/validatememberresponse/2010/07/19" />
+				<xs:element minOccurs="0" ref="q7:Result" xmlns:q7="http://schemas.euroconsumers.com/partner/validatememberresponse/2010/07/19" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateMemberPartnerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q8:MarketCode" xmlns:q8="http://schemas.euroconsumers.com/partner/validatememberpartnerrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q9:MemberLastName" xmlns:q9="http://schemas.euroconsumers.com/partner/validatememberpartnerrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q10:MemberNumber" xmlns:q10="http://schemas.euroconsumers.com/partner/validatememberpartnerrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q11:OmitMemberLastNameValidation" xmlns:q11="http://schemas.euroconsumers.com/partner/validatememberpartnerrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q12:PartnerName" xmlns:q12="http://schemas.euroconsumers.com/partner/validatememberpartnerrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q13:PartnerPassword" xmlns:q13="http://schemas.euroconsumers.com/partner/validatememberpartnerrequest/2010/09/13" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateMemberPartnerResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q14:Member" xmlns:q14="http://schemas.euroconsumers.com/partner/validatememberpartnerresponse/2010/07/19" />
+				<xs:element minOccurs="0" ref="q15:Result" xmlns:q15="http://schemas.euroconsumers.com/partner/validatememberpartnerresponse/2010/07/19" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateMemberProductRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q16:PartnerName" xmlns:q16="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q17:PartnerPassword" xmlns:q17="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q18:MarketCode" xmlns:q18="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/11/18" />
+				<xs:element minOccurs="0" ref="q19:MemberLastName" xmlns:q19="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/11/18" />
+				<xs:element minOccurs="0" ref="q20:MemberNumber" xmlns:q20="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/11/18" />
+				<xs:element minOccurs="0" ref="q21:ProductLine" xmlns:q21="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/11/18" />
+				<xs:element minOccurs="0" ref="q22:ProductName" xmlns:q22="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/11/18" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateMemberProductResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q23:Result" xmlns:q23="http://schemas.euroconsumers.com/partner/validatememberproductresponse/2010/11/18" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetMemberForTokenRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q24:PartnerName" xmlns:q24="http://schemas.euroconsumers.com/partner/getmemberfortokenrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q25:PartnerPassword" xmlns:q25="http://schemas.euroconsumers.com/partner/getmemberfortokenrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q26:Token" xmlns:q26="http://schemas.euroconsumers.com/partner/getmemberfortokenrequest/2010/12/16" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetMemberForTokenResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q27:MarketCode" xmlns:q27="http://schemas.euroconsumers.com/partner/getmemberfortokenresponse/2010/07/19" />
+				<xs:element minOccurs="0" ref="q28:MemberLastName" xmlns:q28="http://schemas.euroconsumers.com/partner/getmemberfortokenresponse/2010/07/19" />
+				<xs:element minOccurs="0" ref="q29:MemberNumber" xmlns:q29="http://schemas.euroconsumers.com/partner/getmemberfortokenresponse/2010/07/19" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateTokenProductRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q30:PartnerName" xmlns:q30="http://schemas.euroconsumers.com/partner/validatetokenproductrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q31:PartnerPassword" xmlns:q31="http://schemas.euroconsumers.com/partner/validatetokenproductrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q32:ProductName" xmlns:q32="http://schemas.euroconsumers.com/partner/validatetokenproductrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q33:Token" xmlns:q33="http://schemas.euroconsumers.com/partner/validatetokenproductrequest/2010/09/13" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidateTokenProductResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q34:Result" xmlns:q34="http://schemas.euroconsumers.com/partner/validatetokenproductResponse/2010/07/19" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidatePartnerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q35:PartnerName" xmlns:q35="http://schemas.euroconsumers.com/partner/validatepartnerrequest/2010/09/13" />
+				<xs:element minOccurs="0" ref="q36:PartnerPassword" xmlns:q36="http://schemas.euroconsumers.com/partner/validatepartnerrequest/2010/09/13" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidatePartnerResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="q37:Partner" xmlns:q37="http://schemas.euroconsumers.com/partner/validatepartnerresponse/2010/07/19" />
+				<xs:element minOccurs="0" ref="q38:Result" xmlns:q38="http://schemas.euroconsumers.com/partner/validatepartnerresponse/2010/07/19" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IsMember">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q39:IsMemberRequest" xmlns:q39="http://schemas.datacontract.org/2004/07/EC.PI.Services.PartnerService.MessageContract.Member" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IsMemberResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="IsMemberResult" nillable="true" type="q40:IsMemberResponse" xmlns:q40="http://schemas.datacontract.org/2004/07/EC.PI.Services.PartnerService.MessageContract.Member" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SimpleIsMember">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="request" nillable="true" type="q41:SimpleIsMemberRequest" xmlns:q41="http://schemas.euroconsumers.com/partner" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SimpleIsMemberResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="SimpleIsMemberResult" nillable="true" type="q42:SimpleIsMemberResponse" xmlns:q42="http://schemas.euroconsumers.com/partner" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

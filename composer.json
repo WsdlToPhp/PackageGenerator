@@ -1,0 +1,34 @@
+{
+    "name": "wsdltophp/packagegenerator",
+    "description": "Generate hierarchical PHP classes based on a WSDL",
+    "version": "1.0.0",
+    "type": "library",
+    "keywords" : ["soap","wsdl","php","generator"],
+    "homepage" : "https://github.com/WsdlToPhp/WsdlToPhp",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name": "Mikaël DELSOL",
+            "email": "contact@wsdltophp.com",
+            "homepage": "https://www.wsdltophp.com",
+            "role": "Owner"
+        },
+        {
+            "name": "Gemorroj",
+            "email": "wapinet@mail.ru",
+            "role": "Contributor"
+        }
+    ],
+    "support" : {
+        "email" : "contact@wsdltophp.com"
+    },
+    "require": {
+        "php" : ">=5.3.3",
+        "ext-soap": "*",
+        "symfony/console": "~2.6",
+        "symfony/yaml": "~2.6"
+    },
+    "autoload": {
+        "psr-4": { "WsdlToPhp\\PackageGenerator": "" }
+    }
+}

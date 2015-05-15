@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.euroconsumers.com/partner" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.euroconsumers.com/partner">
+	<xs:complexType name="SimpleIsMemberRequest">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CheckDigit" type="xs:int" />
+			<xs:element minOccurs="0" name="Country" type="tns:Country" />
+			<xs:element minOccurs="0" name="MemberNumber" type="xs:int" />
+			<xs:element minOccurs="0" name="PartnerCredentials" nillable="true" type="tns:PartnerCredentials" />
+			<xs:element minOccurs="0" name="PartnerName" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="PartnerPassword" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SimpleIsMemberRequest" nillable="true" type="tns:SimpleIsMemberRequest" />
+	<xs:simpleType name="Country">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Belgium" />
+			<xs:enumeration value="Italy" />
+			<xs:enumeration value="Portugal" />
+			<xs:enumeration value="Spain" />
+			<xs:enumeration value="France" />
+			<xs:enumeration value="Brazil" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Country" nillable="true" type="tns:Country" />
+	<xs:complexType name="PartnerCredentials">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="PartnerName" nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="PartnerPassword" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PartnerCredentials" nillable="true" type="tns:PartnerCredentials" />
+	<xs:complexType name="SimpleIsMemberResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="IsMember" type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SimpleIsMemberResponse" nillable="true" type="tns:SimpleIsMemberResponse" />
+	<xs:complexType name="SimpleIsMemberFault">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Reason" type="tns:SimpleIsMemberFaultReason" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SimpleIsMemberFault" nillable="true" type="tns:SimpleIsMemberFault" />
+	<xs:simpleType name="SimpleIsMemberFaultReason">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MemberIdCheckDigitMismatch" />
+			<xs:enumeration value="InvalidPartnerCredentials" />
+			<xs:enumeration value="InternalServerError" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="SimpleIsMemberFaultReason" nillable="true" type="tns:SimpleIsMemberFaultReason" />
+</xs:schema>

@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+set_time_limit(0);
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use WsdlToPhp\PackageGenerator\Command\GeneratePackageCommand;
+
+$console = new Application();
+$console->add(new GeneratePackageCommand());
+
+$console->run();

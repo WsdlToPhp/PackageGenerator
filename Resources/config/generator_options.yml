@@ -1,0 +1,39 @@
+# The generator options are defined once in this file.
+# Each option can be overridden when using the command line tool.
+# Each option option can be overridden using your own config file too.
+category:
+    default: 'cat'
+    values: [ 'none', 'start', 'end', 'cat' ]
+sub_category:
+    default: 'start'
+    values: [ 'end', 'start', 'none' ]
+gather_methods:
+    default: 'start'
+    values: ['start', 'end' ]
+send_array_as_parameter: # will be removed !
+    default: false
+    values: [ true, false ]
+generate_autoload_file:
+    default: true
+    values: [ true, false ]
+generate_wsdl_class: # will be removed !
+    default: true
+    values: [ true, false ]
+response_as_wsdl_object:
+    default: false
+    values: [ true, false ]
+send_parameters_as_array: # will be removed !
+    default: false
+    values: [ true, false ]
+inherits_from_identifier: # will be removed !
+    default: ''
+    values: null
+generic_constants_names:
+    default: false
+    values: [ true, false ]
+generate_tutorial_file:
+    default: true
+    values: [ true, false ]
+add_comments:
+    default: [ ]
+    values: null

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.euroconsumers.com/partner/validatepartnerresponse/2010/07/19" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.euroconsumers.com/partner/validatepartnerresponse/2010/07/19">
+	<xs:import schemaLocation="PartnerService.3.xsd" namespace="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	<xs:element name="Partner" nillable="true" type="q1:Partner" xmlns:q1="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	<xs:element name="Result" type="q2:ValidatePartnerResult" xmlns:q2="http://schemas.euroconsumers.com/partner/2010/09/13" />
+</xs:schema>
