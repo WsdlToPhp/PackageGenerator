@@ -10,7 +10,6 @@ class Wsdl extends AbstractDocument
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::__construct()
      * @param \DOMDocument $domDocument
-     * @return Wsdl
      */
     public function __construct(\DOMDocument $domDocument)
     {
