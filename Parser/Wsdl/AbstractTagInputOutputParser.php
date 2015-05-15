@@ -43,7 +43,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
      */
     public function parseInputOutput(AbstractTagOperationElement $tag)
     {
-        if ($tag->hasAttributeMessage() === false) {
+        if ($tag->hasAttributeMessage()) {
             return null;
         }
         $operation = $tag->getParentOperation();
@@ -51,10 +51,10 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
             return null;
         }
         $method = $this->getModel($operation);
-        if ($method === null) {
+        if (!$method instanceof Method) {
             return null;
         }
-        if ($this->isKnownTypeUnknown($method) === false) {
+        if ($this->isKnownTypeUnknown($method)) {
             $parts         = $tag->getParts();
             $multipleParts = count($parts);
             if ($multipleParts > 1) {
