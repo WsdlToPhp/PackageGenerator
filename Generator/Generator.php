@@ -147,10 +147,14 @@ class Generator extends \SoapClient
         $this->addWsdl($pathToWsdl);
     }
     /**
-     * @param string options's file to parse
-     * @return Generator
+     * @param string $pathToWsdl
+     * @param string $login
+     * @param string $password
+     * @param array $wsdlOptions
+     * @throws \InvalidArgumentException
+     * @return \WsdlToPhp\PackageGenerator\Generator\Generator
      */
-    public static function instance($pathToWsdl = null, $login = false, $password = false, array $wsdlOptions = array())
+    public static function instance($pathToWsdl = null, $login = null, $password = null, array $wsdlOptions = array())
     {
         if (!isset(self::$instance)) {
             if (empty($pathToWsdl)) {
