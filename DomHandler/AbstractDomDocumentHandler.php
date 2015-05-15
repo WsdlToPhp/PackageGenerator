@@ -9,7 +9,7 @@ abstract class AbstractDomDocumentHandler
      */
     protected $domDocument;
     /**
-     * @var AbsractNodeHandler
+     * @var ElementHandler
      */
     protected $rootElement;
     /**
@@ -77,7 +77,7 @@ abstract class AbstractDomDocumentHandler
      */
     abstract protected function getElementHandler(\DOMElement $element, AbstractDomDocumentHandler $domDocument, $index = -1);
     /**
-     * @param \DOMAttr $element
+     * @param \DOMAttr $attribute
      * @param AbstractDomDocumentHandler $domDocument
      * @param int $index
      * @return AttributeHandler
