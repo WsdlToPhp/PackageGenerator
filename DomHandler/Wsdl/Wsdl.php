@@ -95,8 +95,8 @@ class Wsdl extends AbstractDocument
      * in addition it handles the case when we want to use the external schemas to search in
      * @param string $method
      * @param array $parameters
-     * @param string $includeExternals
-     * @param string $returnOne
+     * @param bool $includeExternals
+     * @param bool $returnOne
      * @return mixed
      */
     private function useParentMethodAndExternals($method, $parameters, $includeExternals = false, $returnOne = false)
