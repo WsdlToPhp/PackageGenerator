@@ -17,7 +17,9 @@ class TagExtension extends AbstractTagParser
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseExtension($tag);
+            if ($tag instanceof Extension) {
+                $this->parseExtension($tag);
+            }
         }
     }
     /**

@@ -17,7 +17,7 @@ class TagRestriction extends AbstractTagParser
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            if ($tag->isEnumeration() === false) {
+            if ($tag instanceof Restriction && $tag->isEnumeration() === false) {
                 $this->parseRestriction($tag);
             }
         }

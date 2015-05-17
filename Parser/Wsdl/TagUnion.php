@@ -17,7 +17,9 @@ class TagUnion extends AbstractTagParser
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseUnion($tag);
+            if ($tag instanceof Union) {
+                $this->parseUnion($tag);
+            }
         }
     }
     /**

@@ -17,7 +17,9 @@ class TagEnumeration extends AbstractTagParser
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseEnumeration($tag);
+            if ($tag instanceof Enumeration) {
+                $this->parseEnumeration($tag);
+            }
         }
     }
     /**

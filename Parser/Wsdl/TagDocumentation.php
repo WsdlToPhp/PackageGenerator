@@ -19,7 +19,9 @@ class TagDocumentation extends AbstractTagParser
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseDocumentation($tag);
+            if ($tag instanceof Documentation) {
+                $this->parseDocumentation($tag);
+            }
         }
     }
     /**

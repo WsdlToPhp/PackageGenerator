@@ -19,7 +19,9 @@ class TagList extends AbstractTagParser
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseList($tag);
+            if ($tag instanceof ListTag) {
+                $this->parseList($tag);
+            }
         }
     }
     /**

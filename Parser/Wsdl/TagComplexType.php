@@ -18,7 +18,9 @@ class TagComplexType extends AbstractTagParser
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseComplexType($tag);
+            if ($tag instanceof ComplexType) {
+                $this->parseComplexType($tag);
+            }
         }
     }
     /**

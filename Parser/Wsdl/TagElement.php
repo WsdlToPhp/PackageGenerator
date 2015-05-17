@@ -15,7 +15,7 @@ class TagElement extends AbstractAttributesParser
         return WsdlDocument::TAG_ELEMENT;
     }
     /**
-     * @param Attribute $tag
+     * @param AbstractTag $tag
      */
     public function parseTag(AbstractTag $tag)
     {

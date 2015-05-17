@@ -12,20 +12,14 @@ use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 abstract class AbstractAttributesParser extends AbstractTagParser
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return AbstractTag[]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
-    /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseTag($tag);
+            if ($tag instanceof AbstractTag) {
+                $this->parseTag($tag);
+            }
         }
     }
     /**
@@ -36,7 +30,7 @@ abstract class AbstractAttributesParser extends AbstractTagParser
         $this->parseWsdl($wsdl);
     }
     /**
-     * @param Attribute $tag
+     * @param AbstractTag $tag
      */
     public function parseTag(AbstractTag $tag)
     {
