@@ -39,7 +39,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     }
     /**
      * @param string $name
-     * @return null|AbstractAttributeHandler
+     * @return null|AttributeHandler
      */
     public function getAttribute($name)
     {
@@ -47,7 +47,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     }
     /**
      * @param string $name
-     * @return array[AbstractNodeHandler]|array[AbstractElementHandler]
+     * @return array[NodeHandler]|array[ElementHandler]
      */
     public function getChildrenByName($name)
     {
@@ -60,7 +60,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
         return $children;
     }
     /**
-     * @return array[AbstractElementHandler]
+     * @return array[ElementHandler]
      */
     public function getElementChildren()
     {

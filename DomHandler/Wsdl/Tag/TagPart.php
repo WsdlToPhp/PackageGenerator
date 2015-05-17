@@ -26,7 +26,7 @@ class TagPart extends AbstractTag
     }
     /**
      * @param bool $returnValue
-     * @return string|\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler
+     * @return null|string|\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler
      */
     public function getAttributeType($returnValue = true)
     {
