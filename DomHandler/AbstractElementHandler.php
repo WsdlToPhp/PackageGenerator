@@ -47,7 +47,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     }
     /**
      * @param string $name
-     * @return array[NodeHandler]|array[ElementHandler]
+     * @return NodeHandler[]|ElementHandler[]
      */
     public function getChildrenByName($name)
     {
@@ -60,7 +60,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
         return $children;
     }
     /**
-     * @return array[ElementHandler]
+     * @return ElementHandler[]
      */
     public function getElementChildren()
     {
@@ -79,7 +79,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     /**
      * @param string $name
      * @param array $attributes
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler]
+     * @return ElementHandler[]
      */
     public function getChildrenByNameAndAttributes($name, array $attributes)
     {
