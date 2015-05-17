@@ -11,7 +11,5 @@ php:
 before_install:
     - composer self-update
 
-before_script: phpenv config-add .travis.ini
-
 install:
     - composer install
