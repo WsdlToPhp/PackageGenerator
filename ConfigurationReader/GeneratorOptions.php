@@ -7,30 +7,28 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Common values used as option's value
      */
-    const
-        VALUE_START = 'start',
-        VALUE_END   = 'end',
-        VALUE_NONE  = 'none',
-        VALUE_CAT   = 'cat',
-        VALUE_TRUE  = true,
-        VALUE_FALSE = false;
+    const VALUE_START = 'start';
+    const VALUE_END   = 'end';
+    const VALUE_NONE  = 'none';
+    const VALUE_CAT   = 'cat';
+    const VALUE_TRUE  = true;
+    const VALUE_FALSE = false;
     /**
      * Possible option keys
      * @var string
      */
-    const
-        CATEGORY                    = 'category',
-        SUB_CATEGORY                = 'sub_category',
-        ADD_COMMENTS                = 'add_comments',
-        GATHER_METHODS              = 'gather_methods',
-        GENERATE_WSDL_CLASS         = 'generate_wsdl_class',
-        GENERATE_TUTORIAL_FILE      = 'generate_tutorial_file',
-        GENERATE_AUTOLOAD_FILE      = 'generate_autoload_file',
-        SEND_ARRAY_AS_PARAMETER     = 'send_array_as_parameter',
-        GENERIC_CONSTANTS_NAME      = 'generic_constants_names',
-        GET_RESPONSE_AS_WSDL_OBJECT = 'response_as_wsdl_object',
-        INHERITS_FROM_IDENTIFIER    = 'inherits_from_identifier',
-        SEND_PARAMETERS_AS_ARRAY    = 'send_parameters_as_array';
+    const CATEGORY                    = 'category';
+    const SUB_CATEGORY                = 'sub_category';
+    const ADD_COMMENTS                = 'add_comments';
+    const GATHER_METHODS              = 'gather_methods';
+    const GENERATE_WSDL_CLASS         = 'generate_wsdl_class';
+    const GENERATE_TUTORIAL_FILE      = 'generate_tutorial_file';
+    const GENERATE_AUTOLOAD_FILE      = 'generate_autoload_file';
+    const SEND_ARRAY_AS_PARAMETER     = 'send_array_as_parameter';
+    const GENERIC_CONSTANTS_NAME      = 'generic_constants_names';
+    const GET_RESPONSE_AS_WSDL_OBJECT = 'response_as_wsdl_object';
+    const INHERITS_FROM_IDENTIFIER    = 'inherits_from_identifier';
+    const SEND_PARAMETERS_AS_ARRAY    = 'send_parameters_as_array';
     /**
      * Generator's options
      * @var array
