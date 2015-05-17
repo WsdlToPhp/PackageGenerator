@@ -59,7 +59,9 @@ class TagRestriction extends AbstractTagParser
                 }
 
                 foreach ($restriction->getElementChildren() as $child) {
-                    $this->parseRestrictionChild($parent, $child);
+                    if ($parent instanceof Tag) {
+                        $this->parseRestrictionChild($parent, $child);
+                    }
                 }
             }
         }
