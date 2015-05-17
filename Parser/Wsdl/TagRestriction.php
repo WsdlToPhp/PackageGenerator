@@ -47,22 +47,37 @@ class TagRestriction extends AbstractTagParser
             $model = $this->getModel($parent);
             if ($model instanceof Struct) {
                 $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName());
-
-                if ($restriction->hasAttributes()) {
-                    foreach ($restriction->getAttributes() as $attribute) {
-                        if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
-                            $model->setInheritance($attribute->getValue());
-                        } else {
-                            $model->addMeta($attribute->getName(), $attribute->getValue(true));
-                        }
-                    }
+                $this->parseRestrictionAttributes($parent, $model, $restriction);
+                $this->parseRestrictionChildren($parent, $restriction);
+            }
+        }
+    }
+    /**
+     * @param Tag $parent
+     * @param Struct $struct
+     * @param Restriction $restriction
+     */
+    private function parseRestrictionAttributes(Tag $parent, Struct $struct, Restriction $restriction)
+    {
+        if ($restriction->hasAttributes()) {
+            foreach ($restriction->getAttributes() as $attribute) {
+                if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
+                    $struct->setInheritance($attribute->getValue());
+                } else {
+                    $struct->addMeta($attribute->getName(), $attribute->getValue(true));
                 }
-
-                foreach ($restriction->getElementChildren() as $child) {
-                    if ($parent instanceof Tag) {
-                        $this->parseRestrictionChild($parent, $child);
-                    }
-                }
+            }
+        }
+    }
+    /**
+     * @param Tag $parent
+     * @param Restriction $restriction
+     */
+    private function parseRestrictionChildren(Tag $parent, Restriction $restriction)
+    {
+        foreach ($restriction->getElementChildren() as $child) {
+            if ($parent instanceof Tag) {
+                $this->parseRestrictionChild($parent, $child);
             }
         }
     }
