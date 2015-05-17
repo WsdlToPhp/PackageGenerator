@@ -130,4 +130,12 @@ abstract class AbstractNodeHandler
         $nodeValue = preg_replace('[\s+]', ' ', $nodeValue);
         return $nodeValue;
     }
+    /**
+     * Alias for AbstractNodeHandler::getNodeValue()
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->getNodeValue();
+    }
 }
