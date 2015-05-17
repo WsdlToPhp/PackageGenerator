@@ -121,7 +121,7 @@ abstract class AbstractNodeHandler
         return $children;
     }
     /**
-     * @return string
+     * @return mixed
      */
     public function getNodeValue()
     {
@@ -132,7 +132,7 @@ abstract class AbstractNodeHandler
     }
     /**
      * Alias for AbstractNodeHandler::getNodeValue()
-     * @return string
+     * @return mixed
      */
     public function getValue()
     {
