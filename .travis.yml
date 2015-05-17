@@ -1,0 +1,13 @@
+language: php
+
+php:
+    - 5.3
+    - 5.4
+
+before_install:
+    - composer self-update
+
+before_script: phpenv config-add .travis.ini
+
+install:
+    - composer install
