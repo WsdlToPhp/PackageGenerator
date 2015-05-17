@@ -293,6 +293,7 @@ abstract class AbstractModel
      * Add meta information to the operation
      * @uses AbstractModel::getMeta()
      * @uses AbstractModel::updateModels()
+     * @throws \InvalidArgumentException
      * @param string $metaName
      * @param mixed $metaValue
      * @return AbstractModel
@@ -300,10 +301,10 @@ abstract class AbstractModel
     public function addMeta($metaName, $metaValue)
     {
         if (!is_scalar($metaName) || (!is_scalar($metaValue) && !is_array($metaValue))) {
-            throw new \InvalidArgumentException('Invalid meta name "%s" or value "%s". Please provide scalar meta name and scalar or array meta value.', gettype($metaName), gettype($metaValue));
+            throw new \InvalidArgumentException(sprintf('Invalid meta name "%s" or value "%s". Please provide scalar meta name and scalar or array meta value.', gettype($metaName), gettype($metaValue)));
         }
         $metaValue = is_scalar($metaValue) ? trim($metaValue) : $metaValue;
-        if (is_scalar($metaValue) && $metaValue !== '') {
+        if ((is_scalar($metaValue) && $metaValue !== '') || is_array($metaValue)) {
             if (!array_key_exists($metaName, $this->getMeta())) {
                 $this->meta[$metaName] = $metaValue;
             } elseif (is_array($this->meta[$metaName]) && is_array($metaValue)) {
