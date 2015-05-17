@@ -377,7 +377,7 @@ abstract class AbstractModel
     /**
      * Returns the value of the first meta value assigned to the name
      * @param array $names the meta names to check
-     * @param string $fallback the fallback value if anyone is set
+     * @param mixed $fallback the fallback value if anyone is set
      * @return mixed the meta information value
      */
     public function getMetaValueFirstSet(array $names, $fallback = null)
