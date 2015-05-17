@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagRestriction as Restriction;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
@@ -61,12 +62,21 @@ class TagRestriction extends AbstractTagParser
     {
         if ($restriction->hasAttributes()) {
             foreach ($restriction->getAttributes() as $attribute) {
-                if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
-                    $struct->setInheritance($attribute->getValue());
-                } else {
-                    $struct->addMeta($attribute->getName(), $attribute->getValue(true));
-                }
+                $this->parseRestrictionAttribute($parent, $struct, $attribute);
             }
+        }
+    }
+    /**
+     * @param Tag $parent
+     * @param Struct $struct
+     * @param AttributeHandler $attribute
+     */
+    private function parseRestrictionAttribute(Tag $parent, Struct $struct, AttributeHandler $attribute)
+    {
+        if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
+            $struct->setInheritance($attribute->getValue());
+        } else {
+            $struct->addMeta($attribute->getName(), $attribute->getValue(true));
         }
     }
     /**
