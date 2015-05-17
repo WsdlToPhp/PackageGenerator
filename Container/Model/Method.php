@@ -16,7 +16,7 @@ class Method extends AbstractModel
         return 'WsdlToPhp\\PackageGenerator\\Model\\Method';
     }
     /**
-     * @param sring $name
+     * @param string $name
      * @return Model|null
      */
     public function getMethodByName($name)
