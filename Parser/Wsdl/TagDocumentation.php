@@ -14,14 +14,6 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 class TagDocumentation extends AbstractTagParser
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagDocumentation]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
-    /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */
     protected function parseWsdl(Wsdl $wsdl)

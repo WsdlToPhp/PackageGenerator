@@ -13,15 +13,6 @@ use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class TagList extends AbstractTagParser
 {
-
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagList]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */

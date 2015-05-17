@@ -12,14 +12,6 @@ use WsdlToPhp\PackageGenerator\Model\Struct;
 class TagRestriction extends AbstractTagParser
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagRestriction]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
-    /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */
     protected function parseWsdl(Wsdl $wsdl)

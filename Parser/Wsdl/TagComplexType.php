@@ -13,14 +13,6 @@ use WsdlToPhp\PackageGenerator\Model\Struct;
 class TagComplexType extends AbstractTagParser
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagComplexType]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
-    /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */
     protected function parseWsdl(Wsdl $wsdl)

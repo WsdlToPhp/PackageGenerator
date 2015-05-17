@@ -11,15 +11,6 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
 class TagUnion extends AbstractTagParser
 {
-
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagUnion]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */

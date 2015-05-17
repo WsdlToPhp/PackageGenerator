@@ -8,6 +8,7 @@ use WsdlToPhp\PackageGenerator\Parser\AbstractParser as Parser;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Schema as SchemaDocument;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 
 abstract class AbstractParser extends Parser
 {
@@ -16,7 +17,7 @@ abstract class AbstractParser extends Parser
      */
     protected $generator;
     /**
-     * @var array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl]
+     * @var AbstractTag[]
      */
     protected $tags;
     /**
@@ -117,7 +118,7 @@ abstract class AbstractParser extends Parser
         return $this;
     }
     /**
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl]
+     * @return AbstractTag[]
      */
     public function getTags()
     {

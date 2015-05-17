@@ -8,14 +8,6 @@ use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 class TagInput extends AbstractTagInputOutputParser
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagInput]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
-    /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parsingTag()
      * @return string
      */

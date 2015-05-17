@@ -46,7 +46,7 @@ class TagOutputTest extends WsdlParser
     }
     /**
      * @param string $soapFunction
-     * @return array[string]
+     * @return string[]
      */
     public static function getMethodDataFromSoapFunction($soapFunction)
     {

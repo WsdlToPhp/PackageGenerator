@@ -13,7 +13,7 @@ abstract class AbstractAttributesParser extends AbstractTagParser
 {
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag]
+     * @return AbstractTag[]
      */
     public function getTags()
     {

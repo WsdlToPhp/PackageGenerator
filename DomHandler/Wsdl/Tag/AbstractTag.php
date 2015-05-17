@@ -43,7 +43,7 @@ abstract class AbstractTag extends ElementHandler
     }
     /**
      * Suitable tags as parent
-     * @return array[string]
+     * @return string[]
      */
     protected function getSuitableParentTags(array $additionalTags = array())
     {
@@ -107,7 +107,7 @@ abstract class AbstractTag extends ElementHandler
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractElementHandler::getChildrenByName()
-     * @return array[AbstractTag]
+     * @return AbstractTag[]
      */
     public function getChildrenByName($name)
     {

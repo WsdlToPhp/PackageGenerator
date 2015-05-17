@@ -11,19 +11,10 @@ use WsdlToPhp\PackageGenerator\Model\Method;
 
 class TagHeader extends AbstractTagParser
 {
-    const
-        META_SOAP_HEADERS           = 'SOAPHeaders',
-        META_SOAP_HEADER_NAMES      = 'SOAPHeaderNames',
-        META_SOAP_HEADER_TYPES      = 'SOAPHeaderTypes',
-        META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagHeader]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
+    const META_SOAP_HEADERS           = 'SOAPHeaders';
+    const META_SOAP_HEADER_NAMES      = 'SOAPHeaderNames';
+    const META_SOAP_HEADER_TYPES      = 'SOAPHeaderTypes';
+    const META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */
