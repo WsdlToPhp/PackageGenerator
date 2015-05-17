@@ -199,8 +199,8 @@ class Service extends AbstractModel
      * Adds a method to the service
      * @uses Method::setIsUnique()
      * @param string $methodName original method name
-     * @param string|string $methodParameterType original parameter type/name
-     * @param string|string $methodReturnType original return type/name
+     * @param string|array $methodParameterType original parameter type/name
+     * @param string|array $methodReturnType original return type/name
      * @param bool $methodIsUnique original isUnique value
      * @return Method
      */
