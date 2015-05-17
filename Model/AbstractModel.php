@@ -300,23 +300,22 @@ abstract class AbstractModel
     public function addMeta($metaName, $metaValue)
     {
         if (!is_scalar($metaName) || (!is_scalar($metaValue) && !is_array($metaValue))) {
-            return '';
+            throw new \InvalidArgumentException('Invalid meta name "%s" or value "%s". Please provide scalar meta name and scalar or array meta value.', gettype($metaName), gettype($metaValue));
         }
         $metaValue = is_scalar($metaValue) ? trim($metaValue) : $metaValue;
-        if (is_scalar($metaValue) && $metaValue === '') {
-            return false;
+        if (is_scalar($metaValue) && $metaValue !== '') {
+            if (!array_key_exists($metaName, $this->getMeta())) {
+                $this->meta[$metaName] = $metaValue;
+            } elseif (is_array($this->meta[$metaName]) && is_array($metaValue)) {
+                $this->meta[$metaName] = array_merge($this->meta[$metaName], $metaValue);
+            } elseif (is_array($this->meta[$metaName])) {
+                array_push($this->meta[$metaName], $metaValue);
+            } else {
+                $this->meta[$metaName] = $metaValue;
+            }
+            ksort($this->meta);
+            self::updateModels($this);
         }
-        if (!array_key_exists($metaName, $this->getMeta())) {
-            $this->meta[$metaName] = $metaValue;
-        } elseif (is_array($this->meta[$metaName]) && is_array($metaValue)) {
-            $this->meta[$metaName] = array_merge($this->meta[$metaName], $metaValue);
-        } elseif (is_array($this->meta[$metaName])) {
-            array_push($this->meta[$metaName], $metaValue);
-        } else {
-            $this->meta[$metaName] = $metaValue;
-        }
-        ksort($this->meta);
-        self::updateModels($this);
         return $this;
     }
     /**
