@@ -31,8 +31,8 @@ class Method extends AbstractModel
      * @uses Method::setReturnType()
      * @uses AbstractModel::setOwner()
      * @param string $name the function name
-     * @param string $parameterType the type/name of the parameter
-     * @param string $returnType the type/name of the return value
+     * @param string|array $parameterType the type/name of the parameter
+     * @param string|array $returnType the type/name of the return value
      * @param Service $service defines the struct which owns this value
      * @param bool $isUnique defines if the method is unique or not
      */
