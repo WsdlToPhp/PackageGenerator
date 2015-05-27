@@ -200,9 +200,7 @@ class Struct extends AbstractModel
              * A array struct
              */
             if ($this->isArray()) {
-                foreach ($this->getAttributes() as $attr) {
-                    $attribute = $attr;
-                }
+                $attribute = $this->getAttributes()->offsetGet(0);
                 if ($attribute instanceof StructAttribute) {
                     $model = self::getModelByName($attribute->getType());
                     $return = ($model && $model->getIsStruct()) ? $model->getPackagedName() : $attribute->getType();
@@ -393,7 +391,6 @@ class Struct extends AbstractModel
         if ($includeInheritanceAttributes === false && $requiredFirst === false) {
             $attributes = $this->attributes;
         } else {
-            $attributes    = new StructAttributeContainer();
             $allAttributes = new StructAttributeContainer();
             /**
              * Returns the inherited attributes
