@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
+use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class TagPart extends AbstractTag
@@ -11,7 +12,7 @@ class TagPart extends AbstractTag
         ATTRIBUTE_TYPE    = 'type';
     /**
      * @param bool $returnValue
-     * @return null|string|\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler
+     * @return null|AttributeHandler|string
      */
     public function getAttributeElement($returnValue = true)
     {
@@ -26,7 +27,7 @@ class TagPart extends AbstractTag
     }
     /**
      * @param bool $returnValue
-     * @return null|string|\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler
+     * @return null|AttributeHandler|string
      */
     public function getAttributeType($returnValue = true)
     {
