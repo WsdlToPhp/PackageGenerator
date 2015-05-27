@@ -101,14 +101,17 @@ abstract class AbstractDomDocumentHandler
     }
     /**
      * @param string $name
+     * @param string $checkInstance
      * @return NodeHandler[]
      */
-    public function getNodesByName($name)
+    public function getNodesByName($name, $checkInstance = null)
     {
         $nodes = array();
         if ($this->domDocument->getElementsByTagName($name)->length > 0) {
-            foreach ($this->domDocument->getElementsByTagName($name) as $index=>$node) {
-                $nodes[] = $this->getNodeHandler($node, $this, $index);
+            foreach ($this->domDocument->getElementsByTagName($name) as $node) {
+                if ($checkInstance === null || $node instanceof $checkInstance) {
+                    $nodes[] = $this->getHandler($node, count($nodes));
+                }
             }
         }
         return $nodes;
@@ -119,18 +122,7 @@ abstract class AbstractDomDocumentHandler
      */
     public function getElementsByName($name)
     {
-        $nodes    = $this->getNodesByName($name);
-        $elements = array();
-        if (!empty($nodes)) {
-            $index = 0;
-            foreach ($nodes as $node) {
-                if ($node->getNode() instanceof \DOMElement) {
-                    $elements[] = $this->getElementHandler($node->getNode(), $this, $index);
-                    $index++;
-                }
-            }
-        }
-        return $elements;
+        return $this->getNodesByName($name, 'DOMElement');
     }
     /**
      * @param string $name
