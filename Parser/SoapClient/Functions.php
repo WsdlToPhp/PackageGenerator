@@ -38,7 +38,9 @@ class Functions extends AbstractParser
                     /**
                      * Returns type is not defined in some case
                      */
-                    $returnType = strpos($infos[0], '(') === false ? $infos[0] : '';
+                    $start              = 0;
+                    $returnType         = strpos($infos[0], '(') === false ? $infos[0] : '';
+                    $firstParameterType = '';
                     if (empty($returnType) && strpos($infos[0], '(') !== false) {
                         $start = 1;
                         list ($methodName, $firstParameterType) = explode('(', $infos[0]);
