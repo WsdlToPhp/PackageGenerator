@@ -6,7 +6,7 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Tests\Model\WsdlTest;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl;
 
-class TagIncludeTest extends TestCase
+class TagImportTest extends TestCase
 {
     /**
      *
@@ -15,10 +15,13 @@ class TagIncludeTest extends TestCase
     {
         $wsdl = WsdlTest::partnerInstance();
 
-        $includes = $wsdl->getContent()->getElementsByName(Wsdl::TAG_INCLUDE);
+        $imports = $wsdl->getContent()->getElementsByName(Wsdl::TAG_IMPORT);
 
-        foreach ($includes as $index=>$include) {
-            $this->assertSame(sprintf('http://secapp.euroconsumers.org/partnerservice/PartnerService.svc?xsd=xsd%d', $index), $include->getLocationAttribute());
+        $count = 0;
+        foreach ($imports as $index=>$import) {
+            $this->assertSame(sprintf('http://secapp.euroconsumers.org/partnerservice/PartnerService.svc?xsd=xsd%d', $index), $import->getLocationAttribute());
+            $count++;
         }
+        $this->assertSame(19, $count);
     }
 }
