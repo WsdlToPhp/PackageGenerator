@@ -92,7 +92,7 @@ abstract class AbstractTag extends ElementHandler
         return $this->hasAttribute(Attribute::ATTRIBUTE_VALUE);
     }
     /**
-     * @return null|string
+     * @return mixed
      */
     public function getAttributeValue($withNamespace = false, $withinItsType = true, $asType = null)
     {
