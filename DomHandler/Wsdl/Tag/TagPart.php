@@ -16,14 +16,7 @@ class TagPart extends AbstractTag
      */
     public function getAttributeElement($returnValue = true)
     {
-        if ($this->hasAttribute(self::ATTRIBUTE_ELEMENT)) {
-            if ($returnValue === true) {
-                return $this->getAttribute(self::ATTRIBUTE_ELEMENT)->getValue();
-            } else {
-                return $this->getAttribute(self::ATTRIBUTE_ELEMENT);
-            }
-        }
-        return $returnValue === true ? '' : null;
+        return $this->getAttributeMixedValue(self::ATTRIBUTE_ELEMENT, $returnValue);
     }
     /**
      * @param bool $returnValue
@@ -31,11 +24,20 @@ class TagPart extends AbstractTag
      */
     public function getAttributeType($returnValue = true)
     {
-        if ($this->hasAttribute(self::ATTRIBUTE_TYPE)) {
+        return $this->getAttributeMixedValue(self::ATTRIBUTE_TYPE, $returnValue);
+    }
+    /**
+     * @param string $attributeName
+     * @param bool $returnValue
+     * @return null|AttributeHandler|string
+     */
+    private function getAttributeMixedValue($attributeName, $returnValue = true)
+    {
+        if ($this->hasAttribute($attributeName)) {
             if ($returnValue === true) {
-                return $this->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
+                return $this->getAttribute($attributeName)->getValue();
             } else {
-                return $this->getAttribute(self::ATTRIBUTE_TYPE);
+                return $this->getAttribute($attributeName);
             }
         }
         return $returnValue === true ? '' : null;
