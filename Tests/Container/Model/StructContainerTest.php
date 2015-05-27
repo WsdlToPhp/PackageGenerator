@@ -29,4 +29,16 @@ class StructContainerTest extends TestCase
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getStructByName('Bar'));
         $this->assertNull($structContainer->getStructByName('bar'));
     }
+    /**
+     *
+     */
+    public function testAddStructWithSameAttributeName()
+    {
+        $structContainer = self::instance();
+
+        $structContainer->addStruct('Foo', 'bar', 'string');
+        $structContainer->addStruct('Foo', 'bar', 'int');
+
+        $this->assertCount(1, $structContainer->getStructByName('Foo')->getAttributes());
+    }
 }
