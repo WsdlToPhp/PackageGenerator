@@ -90,7 +90,6 @@ class Structs extends AbstractParser
                             if (!empty($structParamType) && !empty($structParamName) && !empty($structName)) {
                                 $structs->addStruct($structName, $structParamName, $structParamType);
                                 array_push($structsDefined, $typeSignature);
-                                $structParamName = '';
                                 $structParamType = '';
                             }
                         }
