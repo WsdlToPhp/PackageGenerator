@@ -36,8 +36,8 @@ class StructContainerTest extends TestCase
     {
         $structContainer = self::instance();
 
-        $structContainer->addStruct('Foo', 'bar', 'string');
-        $structContainer->addStruct('Foo', 'bar', 'int');
+        $structContainer->addStructWithAttribute('Foo', 'bar', 'string');
+        $structContainer->addStructWithAttribute('Foo', 'bar', 'int');
 
         $this->assertCount(1, $structContainer->getStructByName('Foo')->getAttributes());
     }
