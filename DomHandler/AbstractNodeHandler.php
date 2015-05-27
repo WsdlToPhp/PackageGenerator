@@ -92,13 +92,7 @@ abstract class AbstractNodeHandler
      */
     public function getAttributes()
     {
-        $attributes = array();
-        if ($this->hasAttributes()) {
-            foreach ($this->getNode()->attributes as $index=>$attribute) {
-                $attributes[] = $this->getDomDocumentHandler()->getHandler($attribute, $index);
-            }
-        }
-        return $attributes;
+        return $this->getHandlers($this->getNode()->attributes);
     }
     /**
      * @return boolean
@@ -108,17 +102,23 @@ abstract class AbstractNodeHandler
         return $this->getNode()->hasChildNodes();
     }
     /**
-     * @return null|ElementHandler[]|NodeHandler[]
+     * @return ElementHandler[]|NodeHandler[]
      */
     public function getChildren()
     {
-        $children = array();
-        if ($this->hasChildren()) {
-            foreach ($this->getNode()->childNodes as $index=>$node) {
-                $children[] = $this->getDomDocumentHandler()->getHandler($node, $index);
-            }
+        return $this->getHandlers($this->getNode()->childNodes);
+    }
+    /**
+     * @param \Traversable $nodes
+     * @return NodeHandler[]|ElementHandler[]|AttributeHandler[]|NameSpaceHandler[]
+     */
+    private function getHandlers(\Traversable $nodes)
+    {
+        $handlers = array();
+        foreach ($nodes as $index=>$node) {
+            $handlers[] = $this->getDomDocumentHandler()->getHandler($node, $index);
         }
-        return $children;
+        return $handlers;
     }
     /**
      * @return mixed

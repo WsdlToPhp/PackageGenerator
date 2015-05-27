@@ -41,7 +41,7 @@ abstract class AbstractDomDocumentHandler
      * Return the matching node handler based on current \DomNode type
      * @param \DOMNode|\DOMNameSpaceNode $node
      * @param int $index
-     * @return NodeHandler|ElementHandler|AttributeHandler
+     * @return NodeHandler|ElementHandler|AttributeHandler|NameSpaceHandler
      */
     public function getHandler($node, $index = -1)
     {
