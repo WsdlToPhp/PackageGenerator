@@ -25,7 +25,7 @@ class Struct extends AbstractModel
     /**
      * Adds a virtual struct
      * @param string $structName the original struct name
-     * @return Model
+     * @return Struct
      */
     public function addVirtualStruct($structName)
     {
@@ -37,18 +37,29 @@ class Struct extends AbstractModel
     /**
      * Adds type to structs
      * @param string $structName the original struct name
-     * @param string $attributeName the attribute name
-     * @param string $attributeType the attribute type
-     * @return Model
+     * @return Struct
      */
-    public function addStruct($structName, $attributeName, $attributeType)
+    public function addStruct($structName)
     {
         if ($this->get($structName) === null) {
             $this->add(new Model($structName));
         }
+        return $this;
+    }
+    /**
+     * Adds type to structs and its attribute
+     * @param string $structName the original struct name
+     * @param string $attributeName the attribute name
+     * @param string $attributeType the attribute type
+     * @return Struct
+     */
+    public function addStructWithAttribute($structName, $attributeName, $attributeType)
+    {
+        $this->addStruct($structName);
         if (($struct = $this->getStructByName($structName)) instanceof Model) {
             $struct->addAttribute($attributeName, $attributeType);
         }
+        return $this;
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
