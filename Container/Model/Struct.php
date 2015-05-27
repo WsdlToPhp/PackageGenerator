@@ -46,8 +46,8 @@ class Struct extends AbstractModel
         if ($this->get($structName) === null) {
             $this->add(new Model($structName));
         }
-        if (!empty($attributeName) && !empty($attributeType) && $this->getStructByName($structName) !== null) {
-            $this->get($structName)->addAttribute($attributeName, $attributeType);
+        if (($struct = $this->getStructByName($structName)) instanceof Model) {
+            $struct->addAttribute($attributeName, $attributeType);
         }
     }
     /**
