@@ -12,7 +12,7 @@ class TagPart extends AbstractTag
         ATTRIBUTE_TYPE    = 'type';
     /**
      * @param bool $returnValue
-     * @return null|AttributeHandler|string
+     * @return AttributeHandler|mixed
      */
     public function getAttributeElement($returnValue = true)
     {
@@ -20,7 +20,7 @@ class TagPart extends AbstractTag
     }
     /**
      * @param bool $returnValue
-     * @return null|AttributeHandler|string
+     * @return AttributeHandler|mixed
      */
     public function getAttributeType($returnValue = true)
     {
@@ -29,7 +29,7 @@ class TagPart extends AbstractTag
     /**
      * @param string $attributeName
      * @param bool $returnValue
-     * @return null|AttributeHandler|string
+     * @return AttributeHandler|mixed
      */
     private function getAttributeMixedValue($attributeName, $returnValue = true)
     {
