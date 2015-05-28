@@ -138,4 +138,11 @@ abstract class AbstractNodeHandler
     {
         return $this->getNodeValue();
     }
+    /**
+     * @return null|string
+     */
+    public function getValueNamespace()
+    {
+        return null;
+    }
 }
