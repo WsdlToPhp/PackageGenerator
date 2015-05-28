@@ -27,6 +27,9 @@
         "symfony/console": "~2.6",
         "symfony/yaml": "~2.6"
     },
+    "require-dev": {
+        "fabpot/php-cs-fixer": "~1.8"
+    },
     "autoload": {
         "psr-4": { "WsdlToPhp\\PackageGenerator\\": "" }
     }
