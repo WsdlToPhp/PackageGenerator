@@ -61,6 +61,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
         return null;
     }
     /**
+     * @param string $partName
      * @return TagPart|null
      */
     public function getPart($partName)
