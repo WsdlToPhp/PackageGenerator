@@ -319,7 +319,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current send parameters as array option value
      * @throws \InvalidArgumentException
-     * @param bool $category
+     * @param bool $sendParametersAsArray
      * @return GeneratorOptions
      */
     public function setSendParametersAsArray($sendParametersAsArray)
