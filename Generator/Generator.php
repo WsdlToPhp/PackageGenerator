@@ -690,7 +690,6 @@ class Generator extends \SoapClient
      * @uses Generator::getService()
      * @uses Service::getMethod()
      * @param string $methodName the original function name
-     * @param mixed $methodParameter the original function paramter
      * @return Method|null
      */
     public function getServiceMethod($methodName)
