@@ -50,7 +50,12 @@ class GeneratorOptions extends AbstractYamlReader
      */
     protected function parseOptions($filename)
     {
-        $this->options = $this->loadYaml($filename);
+        $options = $this->loadYaml($filename);
+        if (is_array($options)) {
+            $this->options = $options;
+        } else {
+            throw new \InvalidArgumentException(sprintf('Settings contained by "%s" are not valid as the settings are not contained by an array: "%s"', $filename, gettype($options)));
+        }
     }
     /**
      * Returns the option value
