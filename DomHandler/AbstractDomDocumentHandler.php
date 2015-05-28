@@ -45,18 +45,14 @@ abstract class AbstractDomDocumentHandler
      */
     public function getHandler($node, $index = -1)
     {
-        if ($node instanceof \DOMNode) {
-            switch ($node->nodeType) {
-                case XML_ELEMENT_NODE:
-                    return $this->getElementHandler($node, $this, $index);
-                case XML_ATTRIBUTE_NODE:
-                    return $this->getAttributeHandler($node, $this, $index);
-                default:
-                    return $this->getNodeHandler($node, $this, $index);
-            }
+        if ($node instanceof \DOMElement) {
+            return $this->getElementHandler($node, $this, $index);
+        } elseif ($node instanceof \DOMAttr) {
+            return $this->getAttributeHandler($node, $this, $index);
         } elseif ($node instanceof \DOMNameSpaceNode) {
             return new NameSpaceHandler($node, $this, $index);
         }
+        return $this->getNodeHandler($node, $this, $index);
     }
     /**
      * @param \DOMNode $node
