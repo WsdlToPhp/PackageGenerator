@@ -43,15 +43,15 @@ class TagList extends AbstractTagParser
      */
     public function parseList(ListTag $tag)
     {
-        $parent       = $tag->getSuitableParent();
+        $parent = $tag->getSuitableParent();
         if ($parent instanceof AbstractTag) {
             $parentParent = $parent->getSuitableParent();
-            $model        = $this->getModel($parent);
+            $model = $this->getModel($parent);
             if ($model === null && $parentParent instanceof AbstractTag) {
                 $model = $this->getModel($parentParent);
             }
-            $itemType     = $tag->getAttributeItemType();
-            $struct       = $this->getStructByName($itemType);
+            $itemType = $tag->getAttributeItemType();
+            $struct = $this->getStructByName($itemType);
             if ($model instanceof AbstractModel) {
                 $type = sprintf('array[%s]', $struct instanceof Struct ? $struct->getName() : $itemType);
                 if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {

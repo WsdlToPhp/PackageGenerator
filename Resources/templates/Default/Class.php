@@ -771,7 +771,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * Method saving the last error returned by the SoapClient
      * @param string $methoName the method called when the error occurred
      * @param SoapFault $soapFault l'objet de l'erreur
-     * @return bool true|false
+     * @return SoapFault
      */
     protected function saveLastError($methoName, SoapFault $soapFault)
     {
