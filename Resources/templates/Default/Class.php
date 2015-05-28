@@ -236,26 +236,23 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::getDefaultWsdlOptions()
      * @uses PackageNameWsdlClass::getSoapClientClassName()
      * @uses PackageNameWsdlClass::setSoapClient()
-     * @param array $wsdlOptions WSDL options
+     * @param array $options WSDL options
      * @return void
      */
-    public function initSoapClient($wsdlOptions)
+    public function initSoapClient(array $options)
     {
-        if(class_exists('PackageNameClassMap',true))
-        {
+        if(class_exists('PackageNameClassMap', true)) {
             $wsdlOptions = array();
             $wsdlOptions['classmap'] = PackageNameClassMap::classMap();
             $defaultWsdlOptions = self::getDefaultWsdlOptions();
-            foreach($defaultWsdlOptions as $optioName=>$optionValue)
-            {
-                if(array_key_exists($optioName, $wsdlOptions) && !empty($wsdlOptions[$optioName])) {
-                    $wsdlOptions[str_replace('wsdl_', '', $optioName)] = $wsdlOptions[$optioName];
+            foreach($defaultWsdlOptions as $optioName=>$optionValue) {
+                if(array_key_exists($optioName, $options) && !empty($options[$optioName])) {
+                    $wsdlOptions[str_replace('wsdl_', '', $optioName)] = $options[$optioName];
                 } elseif(!empty($optionValue)) {
                     $wsdlOptions[str_replace('wsdl_', '', $optioName)] = $optionValue;
                 }
             }
-            if(array_key_exists(str_replace('wsdl_','',self::WSDL_URL), $wsdlOptions))
-            {
+            if(array_key_exists(str_replace('wsdl_','',self::WSDL_URL), $wsdlOptions)) {
                 $wsdlUrl = $wsdlOptions[str_replace('wsdl_', '', self::WSDL_URL)];
                 unset($wsdlOptions[str_replace('wsdl_', '', self::WSDL_URL)]);
                 $soapClientClassName = self::getSoapClientClassName();
