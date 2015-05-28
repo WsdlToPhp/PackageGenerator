@@ -27,12 +27,6 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     const WSDL_LOGIN = 'wsdl_login';
     /**
      * Option key to define WSDL password
-     * @deprecated use WSDL_PASSWORD instead
-     * @var string
-     */
-    const WSDL_PASSWD = 'wsdl_password';
-    /**
-     * Option key to define WSDL password
      * @var string
      */
     const WSDL_PASSWORD = 'wsdl_password';
@@ -41,12 +35,6 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @var string
      */
     const WSDL_TRACE = 'wsdl_trace';
-    /**
-     * Option key to define WSDL exceptions
-     * @deprecated use WSDL_EXCEPTIONS instead
-     * @var string
-     */
-    const WSDL_EXCPTS = 'wsdl_exceptions';
     /**
      * Option key to define WSDL exceptions
      * @var string
@@ -178,53 +166,52 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::initSoapClient()
      * @uses PackageNameWsdlClass::initInternArrayToIterate()
      * @uses PackageNameWsdlClass::_set()
-     * @param array $_arrayOfValues SoapClient options or object attribute values
-     * @param bool $_resetSoapClient allows to disable the SoapClient redefinition
+     * @param array $arrayOfValues SoapClient options or object attribute values
+     * @param bool $resetSoapClient allows to disable the SoapClient redefinition
      */
-    public function __construct($_arrayOfValues = array(),$_resetSoapClient = true)
+    public function __construct($arrayOfValues = array(), $resetSoapClient = true)
     {
         $this->setLastError(array());
         /**
          * Init soap Client
          * Set default values
          */
-        if($_resetSoapClient)
-            $this->initSoapClient($_arrayOfValues);
+        if($resetSoapClient) {
+            $this->initSoapClient($arrayOfValues);
+        }
         /**
          * Init array of values if set
          */
-        $this->initInternArrayToIterate($_arrayOfValues);
+        $this->initInternArrayToIterate($arrayOfValues);
         /**
          * Generic set methods
          */
-        if(is_array($_arrayOfValues) && count($_arrayOfValues))
-        {
-            foreach($_arrayOfValues as $name=>$value)
-                $this->_set($name,$value);
+        if(is_array($arrayOfValues) && count($arrayOfValues)) {
+            foreach($arrayOfValues as $name=>$value) {
+                $this->_set($name, $value);
+            }
         }
     }
     /**
      * Generic method called when an object has been exported with var_export() functions
      * It allows to return an object instantiated with the values
      * @uses PackageNameWsdlClass::_set()
-     * @param array $_array the exported values
-     * @param string $_className optional (used by inherited classes in order to always call this method)
+     * @param array $array the exported values
+     * @param string $className optional (used by inherited classes in order to always call this method)
      * @return PackageNameWsdlClass|null
      */
-    public static function __set_state(array $_array,$_className = __CLASS__)
+    public static function __set_state(array $array, $className = __CLASS__)
     {
-        if(class_exists($_className))
-        {
-            $object = @new $_className();
-            if(is_object($object) && is_subclass_of($object,'PackageNameWsdlClass'))
-            {
-                foreach($_array as $name=>$value)
-                    $object->_set($name,$value);
+        if(class_exists($className)) {
+            $object = @new $className();
+            if(is_object($object) && is_subclass_of($object,'PackageNameWsdlClass')) {
+                foreach($array as $name=>$value) {
+                    $object->_set($name, $value);
+                }
             }
             return $object;
         }
-        else
-            return null;
+        return null;
     }
     /**
      * Static method getting current SoapClient
@@ -236,12 +223,12 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     }
     /**
      * Static method setting current SoapClient
-     * @param SoapClient $_soapClient
+     * @param SoapClient $soapClient
      * @return SoapClient
      */
-    protected static function setSoapClient(SoapClient $_soapClient)
+    protected static function setSoapClient(SoapClient $soapClient)
     {
-        return (self::$soapClient = $_soapClient);
+        return (self::$soapClient = $soapClient);
     }
     /**
      * Method initiating SoapClient
@@ -249,10 +236,10 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::getDefaultWsdlOptions()
      * @uses PackageNameWsdlClass::getSoapClientClassName()
      * @uses PackageNameWsdlClass::setSoapClient()
-     * @param array $_wsdlOptions WSDL options
+     * @param array $wsdlOptions WSDL options
      * @return void
      */
-    public function initSoapClient($_wsdlOptions)
+    public function initSoapClient($wsdlOptions)
     {
         if(class_exists('PackageNameClassMap',true))
         {
@@ -261,17 +248,18 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
             $defaultWsdlOptions = self::getDefaultWsdlOptions();
             foreach($defaultWsdlOptions as $optioName=>$optionValue)
             {
-                if(array_key_exists($optioName,$_wsdlOptions) && !empty($_wsdlOptions[$optioName]))
-                    $wsdlOptions[str_replace('wsdl_','',$optioName)] = $_wsdlOptions[$optioName];
-                elseif(!empty($optionValue))
-                    $wsdlOptions[str_replace('wsdl_','',$optioName)] = $optionValue;
+                if(array_key_exists($optioName, $wsdlOptions) && !empty($wsdlOptions[$optioName])) {
+                    $wsdlOptions[str_replace('wsdl_', '', $optioName)] = $wsdlOptions[$optioName];
+                } elseif(!empty($optionValue)) {
+                    $wsdlOptions[str_replace('wsdl_', '', $optioName)] = $optionValue;
+                }
             }
-            if(array_key_exists(str_replace('wsdl_','',self::WSDL_URL),$wsdlOptions))
+            if(array_key_exists(str_replace('wsdl_','',self::WSDL_URL), $wsdlOptions))
             {
-                $wsdlUrl = $wsdlOptions[str_replace('wsdl_','',self::WSDL_URL)];
-                unset($wsdlOptions[str_replace('wsdl_','',self::WSDL_URL)]);
+                $wsdlUrl = $wsdlOptions[str_replace('wsdl_', '', self::WSDL_URL)];
+                unset($wsdlOptions[str_replace('wsdl_', '', self::WSDL_URL)]);
                 $soapClientClassName = self::getSoapClientClassName();
-                self::setSoapClient(new $soapClientClassName($wsdlUrl,$wsdlOptions));
+                self::setSoapClient(new $soapClientClassName($wsdlUrl, $wsdlOptions));
             }
         }
     }
@@ -286,10 +274,11 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      */
     public static function getSoapClientClassName()
     {
-        if(class_exists('PackageNameSoapClient') && is_subclass_of('PackageNameSoapClient','SoapClient'))
+        if(class_exists('PackageNameSoapClient') && is_subclass_of('PackageNameSoapClient', 'SoapClient')) {
             return 'PackageNameSoapClient';
-        else
+        } else {
             return 'SoapClient';
+        }
     }
     /**
      * Method returning all default options values
@@ -350,11 +339,11 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * Allows to set the SoapClient location to call
      * @uses PackageNameWsdlClass::getSoapClient()
      * @uses SoapClient::__setLocation()
-     * @param string $_location
+     * @param string $location
      */
-    public function setLocation($_location)
+    public function setLocation($location)
     {
-        return self::getSoapClient()?self::getSoapClient()->__setLocation($_location):false;
+        return self::getSoapClient() ? self::getSoapClient()->__setLocation($location) : false;
     }
     /**
      * Returns the last request content as a DOMDocument or as a formated XML String
@@ -362,13 +351,14 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::getSoapClient()
      * @uses PackageNameWsdlClass::getFormatedXml()
      * @uses SoapClient::__getLastRequest()
-     * @param bool $_asDomDocument
+     * @param bool $asDomDocument
      * @return DOMDocument|string
      */
-    public function getLastRequest($_asDomDocument = false)
+    public function getLastRequest($asDomDocument = false)
     {
-        if(self::getSoapClient())
-            return self::getFormatedXml(self::getSoapClient()->__getLastRequest(),$_asDomDocument);
+        if(self::getSoapClient()) {
+            return self::getFormatedXml(self::getSoapClient()->__getLastRequest(), $asDomDocument);
+        }
         return null;
     }
     /**
@@ -377,13 +367,14 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::getSoapClient()
      * @uses PackageNameWsdlClass::getFormatedXml()
      * @uses SoapClient::__getLastResponse()
-     * @param bool $_asDomDocument
+     * @param bool $asDomDocument
      * @return DOMDocument|string
      */
-    public function getLastResponse($_asDomDocument = false)
+    public function getLastResponse($asDomDocument = false)
     {
-        if(self::getSoapClient())
-            return self::getFormatedXml(self::getSoapClient()->__getLastResponse(),$_asDomDocument);
+        if(self::getSoapClient()) {
+            return self::getFormatedXml(self::getSoapClient()->__getLastResponse(), $asDomDocument);
+        }
         return null;
     }
     /**
@@ -392,14 +383,15 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::getSoapClient()
      * @uses PackageNameWsdlClass::convertStringHeadersToArray()
      * @uses SoapClient::__getLastRequestHeaders()
-     * @param bool $_asArray allows to get the headers in an associative array
+     * @param bool $asArray allows to get the headers in an associative array
      * @return null|string|array
      */
-    public function getLastRequestHeaders($_asArray = false)
+    public function getLastRequestHeaders($asArray = false)
     {
-        $headers = self::getSoapClient()?self::getSoapClient()->__getLastRequestHeaders():null;
-        if(is_string($headers) && $_asArray)
+        $headers = self::getSoapClient() ? self::getSoapClient()->__getLastRequestHeaders() : null;
+        if(is_string($headers) && $asArray) {
             return self::convertStringHeadersToArray($headers);
+        }
         return $headers;
     }
     /**
@@ -408,54 +400,53 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::getSoapClient()
      * @uses PackageNameWsdlClass::convertStringHeadersToArray()
      * @uses SoapClient::__getLastRequestHeaders()
-     * @param bool $_asArray allows to get the headers in an associative array
+     * @param bool $asArray allows to get the headers in an associative array
      * @return null|string|array
      */
-    public function getLastResponseHeaders($_asArray = false)
+    public function getLastResponseHeaders($asArray = false)
     {
-        $headers = self::getSoapClient()?self::getSoapClient()->__getLastResponseHeaders():null;
-        if(is_string($headers) && $_asArray)
+        $headers = self::getSoapClient() ? self::getSoapClient()->__getLastResponseHeaders() : null;
+        if(is_string($headers) && $asArray) {
             return self::convertStringHeadersToArray($headers);
+        }
         return $headers;
     }
     /**
      * Returns a XML string content as a DOMDocument or as a formated XML string
      * @uses DOMDocument::loadXML()
      * @uses DOMDocument::saveXML()
-     * @param string $_string
-     * @param bool $_asDomDocument
+     * @param string $string
+     * @param bool $asDomDocument
      * @return DOMDocument|string|null
      */
-    public static function getFormatedXml($_string,$_asDomDocument = false)
+    public static function getFormatedXml($string, $asDomDocument = false)
     {
-        if(!empty($_string) && class_exists('DOMDocument'))
-        {
+        if(!empty($string) && class_exists('DOMDocument')) {
             $dom = new DOMDocument('1.0','UTF-8');
             $dom->formatOutput = true;
             $dom->preserveWhiteSpace = false;
             $dom->resolveExternals = false;
             $dom->substituteEntities = false;
             $dom->validateOnParse = false;
-            if($dom->loadXML($_string))
-                return $_asDomDocument?$dom:$dom->saveXML();
+            if($dom->loadXML($string)) {
+                return $asDomDocument ? $dom:$dom->saveXML();
+            }
         }
-        return $_asDomDocument?null:$_string;
+        return $asDomDocument ? null:$string;
     }
     /**
      * Returns an associative array between the headers name and their respective values
-     * @param string $_headers
+     * @param string $headers
      * @return array
      */
-    public static function convertStringHeadersToArray($_headers)
+    public static function convertStringHeadersToArray($headers)
     {
-        $lines = explode("\r\n",$_headers);
+        $lines = explode("\r\n", $headers);
         $headers = array();
-        foreach($lines as $line)
-        {
-            if(strpos($line,':'))
-            {
-                $headerParts = explode(':',$line);
-                $headers[$headerParts[0]] = trim(implode(':',array_slice($headerParts,1)));
+        foreach($lines as $line) {
+            if(strpos($line, ':')) {
+                $headerParts = explode(':', $line);
+                $headers[$headerParts[0]] = trim(implode(':', array_slice($headerParts, 1)));
             }
         }
         return $headers;
@@ -465,112 +456,100 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * For more information, please read the online documentation on {@link http://www.php.net/manual/en/class.soapheader.php}
      * @uses PackageNameWsdlClass::getSoapClient()
      * @uses SoapClient::__setSoapheaders()
-     * @param string $_nameSpace SoapHeader namespace
-     * @param string $_name SoapHeader name
-     * @param mixed $_data SoapHeader data
-     * @param bool $_mustUnderstand
-     * @param string $_actor
+     * @param string $nameSpace SoapHeader namespace
+     * @param string $name SoapHeader name
+     * @param mixed $data SoapHeader data
+     * @param bool $mustUnderstand
+     * @param string $actor
      * @return bool true|false
      */
-    public function setSoapHeader($_nameSpace,$_name,$_data,$_mustUnderstand = false,$_actor = null)
+    public function setSoapHeader($nameSpace, $name, $data, $mustUnderstand = false, $actor = null)
     {
-        if(self::getSoapClient())
-        {
-            $defaultHeaders = (isset(self::getSoapClient()->__default_headers) && is_array(self::getSoapClient()->__default_headers))?self::getSoapClient()->__default_headers:array();
-            foreach($defaultHeaders as $index=>$soapheader)
-            {
-                if($soapheader->name == $_name)
-                {
+        if(self::getSoapClient()) {
+            $defaultHeaders = (isset(self::getSoapClient()->__default_headers) && is_array(self::getSoapClient()->__default_headers)) ? self::getSoapClient()->__default_headers : array();
+            foreach($defaultHeaders as $index=>$soapheader) {
+                if($soapheader->name === $name) {
                     unset($defaultHeaders[$index]);
                     break;
                 }
             }
             self::getSoapClient()->__setSoapheaders(null);
-            if(!empty($_actor))
-                array_push($defaultHeaders,new SoapHeader($_nameSpace,$_name,$_data,$_mustUnderstand,$_actor));
-            else
-                array_push($defaultHeaders,new SoapHeader($_nameSpace,$_name,$_data,$_mustUnderstand));
+            if(!empty($actor)) {
+                array_push($defaultHeaders, new SoapHeader($nameSpace, $name, $data, $mustUnderstand, $actor));
+            } else {
+                array_push($defaultHeaders, new SoapHeader($nameSpace, $name, $data, $mustUnderstand));
+            }
             return self::getSoapClient()->__setSoapheaders($defaultHeaders);
         }
-        else
-            return false;
+        return false;
     }
     /**
      * Sets the SoapClient Stream context HTTP Header name according to its value
      * If a context already exists, it tries to modify it
      * It the context does not exist, it then creates it with the header name and its value
      * @uses PackageNameWsdlClass::getSoapClient()
-     * @param string $_headerName
-     * @param mixed $_headerValue
+     * @param string $headerName
+     * @param mixed $headerValue
      * @return bool true|false
      */
-    public function setHttpHeader($_headerName,$_headerValue)
+    public function setHttpHeader($headerName, $headerValue)
     {
-        if(self::getSoapClient() && !empty($_headerName))
+        if(self::getSoapClient() && !empty($headerName))
         {
-            $streamContext = (isset(self::getSoapClient()->_stream_context) && is_resource(self::getSoapClient()->_stream_context))?self::getSoapClient()->_stream_context:null;
-            if(!is_resource($streamContext))
-            {
+            $streamContext = (isset(self::getSoapClient()->_stream_context) && is_resource(self::getSoapClient()->_stream_context)) ? self::getSoapClient()->_stream_context : null;
+            if(!is_resource($streamContext)) {
                 $options = array();
                 $options['http'] = array();
                 $options['http']['header'] = '';
-            }
-            else
-            {
+            } else {
                 $options = stream_context_get_options($streamContext);
-                if(is_array($options))
-                {
-                    if(!array_key_exists('http',$options) || !is_array($options['http']))
-                    {
+                if(is_array($options)) {
+                    if(!array_key_exists('http', $options) || !is_array($options['http'])) {
                         $options['http'] = array();
                         $options['http']['header'] = '';
-                    }
-                    elseif(!array_key_exists('header',$options['http']))
+                    } elseif(!array_key_exists('header', $options['http'])) {
                         $options['http']['header'] = '';
-                }
-                else
-                {
+                    }
+                } else {
                     $options = array();
                     $options['http'] = array();
                     $options['http']['header'] = '';
                 }
             }
-            if(count($options) && array_key_exists('http',$options) && is_array($options['http']) && array_key_exists('header',$options['http']) && is_string($options['http']['header']))
-            {
-                $lines = explode("\r\n",$options['http']['header']);
+            if(count($options) && array_key_exists('http', $options) && is_array($options['http']) && array_key_exists('header', $options['http']) && is_string($options['http']['header'])) {
+                $lines = explode("\r\n", $options['http']['header']);
                 /**
                  * Ensure there is only one header entry for this header name
                  */
                 $newLines = array();
-                foreach($lines as $line)
-                {
-                    if(!empty($line) && strpos($line,$_headerName) === false)
-                        array_push($newLines,$line);
+                foreach($lines as $line) {
+                    if(!empty($line) && strpos($line, $headerName) === false) {
+                        array_push($newLines, $line);
+                    }
                 }
                 /**
                  * Add new header entry
                  */
-                array_push($newLines,"$_headerName: $_headerValue");
+                array_push($newLines,"$headerName: $headerValue");
                 /**
                  * Set the context http header option
                  */
-                $options['http']['header'] = implode("\r\n",$newLines);
+                $options['http']['header'] = implode("\r\n", $newLines);
                 /**
                  * Create context if it does not exist
                  */
-                if(!is_resource($streamContext))
-                    return (self::getSoapClient()->_stream_context = stream_context_create($options))?true:false;
-                /**
-                 * Set the new context http header option
-                 */
-                else
-                    return stream_context_set_option(self::getSoapClient()->_stream_context,'http','header',$options['http']['header']);
+                if(!is_resource($streamContext)) {
+                    return (self::getSoapClient()->_stream_context = stream_context_create($options)) ? true : false;
+                } else {
+                    /**
+                     * Set the new context http header option
+                     */
+                    return stream_context_set_option(self::getSoapClient()->_stream_context, 'http', 'header', $options['http']['header']);
+                }
             }
-            else
-                return false;
-        }
-        else
             return false;
+        }
+        return false;
     }
     /**
      * Method alias to count
@@ -589,7 +568,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      */
     public function count()
     {
-        return $this->getInternArrayToIterateIsArray()?count($this->getInternArrayToIterate()):-1;
+        return $this->getInternArrayToIterateIsArray() ? count($this->getInternArrayToIterate()) : -1;
     }
     /**
      * Method returning the current element
@@ -642,12 +621,12 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * Method alias to offsetGet
      * @see PackageNameWsdlClass::offsetGet()
      * @uses PackageNameWsdlClass::offsetGet()
-     * @param int $_index
+     * @param int $index
      * @return mixed
      */
-    public function item($_index)
+    public function item($index)
     {
-        return $this->offsetGet($_index);
+        return $this->offsetGet($index);
     }
     /**
      * Default method adding item to array
@@ -658,24 +637,24 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::setInternArrayToIterate()
      * @uses PackageNameWsdlClass::setInternArrayToIterateIsArray()
      * @uses PackageNameWsdlClass::setInternArrayToIterateOffset()
-     * @param mixed $_item value
+     * @param mixed $item value
      * @return bool true|false
      */
-    public function add($_item)
+    public function add($item)
     {
-        if($this->getAttributeName() != '' && stripos($this->__toString(),'array') !== false)
-        {
+        if($this->getAttributeName() !== '' && stripos($this->__toString(), 'array') !== false) {
             /**
              * init array
              */
-            if(!is_array($this->_get($this->getAttributeName())))
-                $this->_set($this->getAttributeName(),array());
+            if(!is_array($this->_get($this->getAttributeName()))) {
+                $this->_set($this->getAttributeName(), array());
+            }
             /**
              * current array
              */
             $currentArray = $this->_get($this->getAttributeName());
-            array_push($currentArray,$_item);
-            $this->_set($this->getAttributeName(),$currentArray);
+            array_push($currentArray, $item);
+            $this->_set($this->getAttributeName(), $currentArray);
             $this->setInternArrayToIterate($currentArray);
             $this->setInternArrayToIterateIsArray(true);
             $this->setInternArrayToIterateOffset(0);
@@ -692,10 +671,11 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      */
     public function toSend()
     {
-        if($this->getAttributeName() != '' && stripos($this->__toString(),'array') !== false)
+        if($this->getAttributeName() !== '' && stripos($this->__toString(), 'array') !== false) {
             return $this->_get($this->getAttributeName());
-        else
+        } else {
             return null;
+        }
     }
     /**
      * Method returning the first item
@@ -720,39 +700,39 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * Method testing index in item
      * @uses PackageNameWsdlClass::getInternArrayToIterateIsArray()
      * @uses PackageNameWsdlClass::getInternArrayToIterate()
-     * @param int $_offset
+     * @param int $offset
      * @return bool true|false
      */
-    public function offsetExists($_offset)
+    public function offsetExists($offset)
     {
-        return ($this->getInternArrayToIterateIsArray() && array_key_exists($_offset,$this->getInternArrayToIterate()));
+        return ($this->getInternArrayToIterateIsArray() && array_key_exists($offset, $this->getInternArrayToIterate()));
     }
     /**
      * Method returning the item at "index" value
      * @uses PackageNameWsdlClass::offsetExists()
-     * @param int $_offset
+     * @param int $offset
      * @return mixed
      */
-    public function offsetGet($_offset)
+    public function offsetGet($offset)
     {
-        return $this->offsetExists($_offset)?$this->internArrayToIterate[$_offset]:null;
+        return $this->offsetExists($offset) ? $this->internArrayToIterate[$offset] : null;
     }
     /**
      * Method useless but necessarly overridden, can't set
-     * @param mixed $_offset
-     * @param mixed $_value
+     * @param mixed $offset
+     * @param mixed $value
      * @return null
      */
-    public function offsetSet($_offset,$_value)
+    public function offsetSet($offset, $value)
     {
         return null;
     }
     /**
      * Method useless but necessarly overridden, can't unset
-     * @param mixed $_offset
+     * @param mixed $offset
      * @return null
      */
-    public function offsetUnset($_offset)
+    public function offsetUnset($offset)
     {
         return null;
     }
@@ -766,12 +746,12 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     }
     /**
      * Method setting current result from Soap call
-     * @param mixed $_result
+     * @param mixed $result
      * @return mixed
      */
-    protected function setResult($_result)
+    protected function setResult($result)
     {
-        return ($this->result = $_result);
+        return ($this->result = $result);
     }
     /**
      * Method returning last errors occured during the calls
@@ -783,31 +763,31 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     }
     /**
      * Method setting last errors occured during the calls
-     * @param array $_lastError
+     * @param array $lastError
      * @return array
      */
-    private function setLastError($_lastError)
+    private function setLastError($lastError)
     {
-        return ($this->lastError = $_lastError);
+        return ($this->lastError = $lastError);
     }
     /**
      * Method saving the last error returned by the SoapClient
-     * @param string $_methoName the method called when the error occurred
-     * @param SoapFault $_soapFault l'objet de l'erreur
+     * @param string $methoName the method called when the error occurred
+     * @param SoapFault $soapFault l'objet de l'erreur
      * @return bool true|false
      */
-    protected function saveLastError($_methoName,SoapFault $_soapFault)
+    protected function saveLastError($methoName, SoapFault $soapFault)
     {
-        return ($this->lastError[$_methoName] = $_soapFault);
+        return ($this->lastError[$methoName] = $soapFault);
     }
     /**
      * Method getting the last error for a certain method
-     * @param string $_methoName method name to get error from
+     * @param string $methoName method name to get error from
      * @return SoapFault|null
      */
-    public function getLastErrorForMethod($_methoName)
+    public function getLastErrorForMethod($methoName)
     {
-        return (is_array($this->lastError) && array_key_exists($_methoName,$this->lastError))?$this->lastError[$_methoName]:null;
+        return (is_array($this->lastError) && array_key_exists($methoName, $this->lastError)) ? $this->lastError[$methoName] : null;
     }
     /**
      * Method returning intern array to iterate trough
@@ -819,12 +799,12 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     }
     /**
      * Method setting intern array to iterate trough
-     * @param array $_internArrayToIterate
+     * @param array $internArrayToIterate
      * @return array
      */
-    public function setInternArrayToIterate($_internArrayToIterate)
+    public function setInternArrayToIterate($internArrayToIterate)
     {
-        return ($this->internArrayToIterate = $_internArrayToIterate);
+        return ($this->internArrayToIterate = $internArrayToIterate);
     }
     /**
      * Method returnint intern array index when iterating trough
@@ -842,32 +822,30 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * @uses PackageNameWsdlClass::getAttributeName()
      * @uses PackageNameWsdlClass::initInternArrayToIterate()
      * @uses PackageNameWsdlClass::__toString()
-     * @param array $_array the array to iterate trough
-     * @param bool $_internCall indicates that methods is calling itself
+     * @param array $array the array to iterate trough
+     * @param bool $internCall indicates that methods is calling itself
      * @return void
      */
-    public function initInternArrayToIterate($_array = array(),$_internCall = false)
+    public function initInternArrayToIterate($array = array(), $internCall = false)
     {
-        if(stripos($this->__toString(),'array') !== false)
-        {
-            if(is_array($_array) && count($_array))
-            {
-                $this->setInternArrayToIterate($_array);
+        if(stripos($this->__toString(),'array') !== false) {
+            if(is_array($array) && count($array)) {
+                $this->setInternArrayToIterate($array);
                 $this->setInternArrayToIterateOffset(0);
                 $this->setInternArrayToIterateIsArray(true);
+            } elseif(!$internCall && $this->getAttributeName() != '' && property_exists($this->__toString(), $this->getAttributeName())) {
+                $this->initInternArrayToIterate($this->_get($this->getAttributeName()), true);
             }
-            elseif(!$_internCall && $this->getAttributeName() != '' && property_exists($this->__toString(),$this->getAttributeName()))
-                $this->initInternArrayToIterate($this->_get($this->getAttributeName()),true);
         }
     }
     /**
      * Method setting intern array offset when iterating trough
-     * @param int $_internArrayToIterateOffset
+     * @param int $internArrayToIterateOffset
      * @return int
      */
-    public function setInternArrayToIterateOffset($_internArrayToIterateOffset)
+    public function setInternArrayToIterateOffset($internArrayToIterateOffset)
     {
-        return ($this->internArrayToIterateOffset = $_internArrayToIterateOffset);
+        return ($this->internArrayToIterateOffset = $internArrayToIterateOffset);
     }
     /**
      * Method returning true if intern array is an actual array
@@ -879,42 +857,42 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     }
     /**
      * Method setting if intern array is an actual array
-     * @param bool $_internArrayToIterateIsArray
+     * @param bool $internArrayToIterateIsArray
      * @return bool true|false
      */
-    public function setInternArrayToIterateIsArray($_internArrayToIterateIsArray = false)
+    public function setInternArrayToIterateIsArray($internArrayToIterateIsArray = false)
     {
-        return ($this->internArrayToIterateIsArray = $_internArrayToIterateIsArray);
+        return ($this->internArrayToIterateIsArray = $internArrayToIterateIsArray);
     }
     /**
      * Generic method setting value
-     * @param string $_name property name to set
-     * @param mixed $_value property value to use
+     * @param string $name property name to set
+     * @param mixed $value property value to use
      * @return bool
      */
-    public function _set($_name,$_value)
+    public function _set($name, $value)
     {
-        $setMethod = 'set' . ucfirst($_name);
-        if(method_exists($this,$setMethod))
-        {
-            $this->$setMethod($_value);
+        $setMethod = 'set' . ucfirst($name);
+        if(method_exists($this, $setMethod)) {
+            $this->$setMethod($value);
             return true;
-        }
-        else
+        } else {
             return false;
+        }
     }
     /**
      * Generic method getting value
-     * @param string $_name property name to get
+     * @param string $name property name to get
      * @return mixed
      */
-    public function _get($_name)
+    public function _get($name)
     {
-        $getMethod = 'get' . ucfirst($_name);
-        if(method_exists($this,$getMethod))
+        $getMethod = 'get' . ucfirst($name);
+        if(method_exists($this, $getMethod)) {
             return $this->$getMethod();
-        else
+        } else {
             return false;
+        }
     }
     /**
      * Method returning alone attribute name when class is *array* type
@@ -926,12 +904,12 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     }
     /**
      * Generic method telling if current value is valid according to the attribute setted with the current value
-     * @param mixed $_value the value to test
+     * @param mixed $value the value to test
      * @return bool true|false
      */
-    public static function valueIsValid($_value)
+    public static function valueIsValid($value)
     {
-        return true;
+        return !empty($value);
     }
     /**
      * Method returning actual class name
