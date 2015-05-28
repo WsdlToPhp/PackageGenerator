@@ -22,7 +22,7 @@ class Functions extends AbstractParser
                     } else {
                         list ($methodName, $parameterType) = explode('(', $infos[1]);
                     }
-                    if (! empty($returnType) && ! empty($methodName)) {
+                    if (!empty($returnType) && !empty($methodName)) {
                         $services->addService($this->generator->getServiceName($methodName), $methodName, $parameterType, $returnType);
                     }
                 } elseif (count($infos) > 3) {
@@ -48,7 +48,7 @@ class Functions extends AbstractParser
                         $start = 2;
                         list ($methodName, $firstParameterType) = explode('(', $infos[1]);
                     }
-                    if (! empty($methodName)) {
+                    if (!empty($methodName)) {
                         $methodParameters = array();
                         $infosCount = count($infos);
                         for ($i = $start; $i < $infosCount; $i += 2) {
@@ -58,7 +58,7 @@ class Functions extends AbstractParser
                                 ')',
                                 '$',
                             ), '', trim($infos[$i]));
-                            if (! empty($info)) {
+                            if (!empty($info)) {
                                 $methodParameters = array_merge($methodParameters, array(
                                     $info => $i == $start ? $firstParameterType : $infos[$i - 1],
                                 ));

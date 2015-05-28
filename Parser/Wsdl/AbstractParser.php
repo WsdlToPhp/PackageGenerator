@@ -71,7 +71,7 @@ abstract class AbstractParser extends Parser
                     }
                     $this->setWsdlAsParsed($wsdl);
                 }
-            } while($this->shouldContinue());
+            } while ($this->shouldContinue());
         }
     }
     /**

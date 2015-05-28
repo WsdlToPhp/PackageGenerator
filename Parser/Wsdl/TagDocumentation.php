@@ -56,7 +56,7 @@ class TagDocumentation extends AbstractTagParser
                 if ($this->getModel($parentParent) instanceof Struct && $this->getModel($parentParent)->getAttribute($parent->getAttributeName())) {
                     $this->getModel($parentParent)->getAttribute($parent->getAttributeName())->setDocumentation($content);
                 }
-            } elseif($parent->getName() === WsdlDocument::TAG_ENUMERATION) {
+            } elseif ($parent->getName() === WsdlDocument::TAG_ENUMERATION) {
                 if ($parentParent instanceof AbstractTag && $this->getModel($parentParent) instanceof Struct && $this->getModel($parentParent)->getValue($parent->getAttributeName()) instanceof StructValue) {
                     $this->getModel($parentParent)->getValue($parent->getAttributeName())->setDocumentation($content);
                 }

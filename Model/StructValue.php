@@ -77,12 +77,13 @@ class StructValue extends AbstractModel
     }
     /**
      * Sets the index attribute value
-     * @param int
-     * @return int $index
+     * @param int $index
+     * @return StructValue
      */
     public function setIndex($index)
     {
-        return ($this->index = $index);
+        $this->index = $index;
+        return $this;
     }
     public function getClassBody(&$class)
     {
@@ -119,7 +120,7 @@ class StructValue extends AbstractModel
      * Returns the index which has to be added at the end of natural constant name defined with the value cleaned
      * Allows to avoid multiple constant name to be indentic
      * @param string $structName the struct name
-     * @param mixed $value the value
+     * @param string|int|float $value the value
      * @param int $index the position of the value
      * @return int
      */

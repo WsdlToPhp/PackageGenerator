@@ -28,7 +28,9 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseInputOutput($tag);
+            if ($tag instanceof AbstractTagOperationElement) {
+                $this->parseInputOutput($tag);
+            }
         }
     }
     /**
@@ -96,6 +98,6 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
                 $isKnown &= !empty($knownType) && strtolower($knownValue) !== self::UNKNOWN;
             }
         }
-        return (bool) !$isKnown;
+        return (bool)!$isKnown;
     }
 }
