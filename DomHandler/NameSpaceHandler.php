@@ -34,7 +34,7 @@ class NameSpaceHandler extends AttributeHandler
      * @param bool $withNamespace
      * @param bool $withinItsType
      * @param string $asType
-     * @return string
+     * @return mixed
      */
     public function getValue($withNamespace = false, $withinItsType = true, $asType = null)
     {
