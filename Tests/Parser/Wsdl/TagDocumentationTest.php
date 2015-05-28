@@ -52,7 +52,6 @@ class TagDocumentationTest extends WsdlParser
                         'PRO is 10 digits or 11 digits with dash.',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
-
                 } elseif ($struct->getName() === 'SearchCriteriaType') {
                     $this->assertEquals(array(
                         'Generic search criteria for image search',

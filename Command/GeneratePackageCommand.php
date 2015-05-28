@@ -214,7 +214,7 @@ class GeneratePackageCommand extends AbstractCommand
      */
     private function formatArrayForConsole($array)
     {
-        array_walk($array, function(&$value, $index) {
+        array_walk($array, function (&$value, $index) {
             $value = sprintf("%s: %s", $index, is_scalar($value) ? $value : implode(', ', $value));
         });
         return $array;

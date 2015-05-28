@@ -169,7 +169,6 @@ class Utils
     {
         $resolvedPath = $destination;
         if (!empty($destination) && strpos($destination, 'http://') === false && strpos($destination, 'https://') === false && !empty($origin)) {
-
             if (substr($destination, 0, 2) === './') {
                 $destination = substr($destination, 2);
             }

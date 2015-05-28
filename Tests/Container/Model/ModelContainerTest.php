@@ -52,7 +52,6 @@ class ModelContainerTest extends TestCase
      */
     public function testGetWithException()
     {
-
         $modelContainer = new ModelContainer();
         $modelContainer->add(new EmptyModel('Foo'));
         $modelContainer->add(new EmptyModel('Bar'));
@@ -96,7 +95,6 @@ class ModelContainerTest extends TestCase
 
         $index = 0;
         foreach ($models as $model) {
-
             $this->assertSame($index, $models->key());
 
             if ($models->key() === 0) {

@@ -30,10 +30,10 @@ class MethodContainerTest extends TestCase
      */
     public function testGetMethodByName()
     {
-       $methodContainer = self::instance();
+        $methodContainer = self::instance();
 
-       $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Method', $methodContainer->getMethodByName('Foo'));
-       $this->assertNull($methodContainer->getMethodByName('boo'));
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Method', $methodContainer->getMethodByName('Foo'));
+        $this->assertNull($methodContainer->getMethodByName('boo'));
     }
     /**
      *

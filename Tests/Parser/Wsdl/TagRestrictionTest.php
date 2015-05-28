@@ -48,7 +48,7 @@ class TagRestrictionTest extends WsdlParser
                     $ok = true;
                 } elseif ($struct->getName() === 'PasswordType') {
                     $this->assertSame('string', $struct->getInheritance());
-                    $this->assertEquals(array('minLength'=>'5','maxLength'=>'10'), $struct->getMeta());
+                    $this->assertEquals(array('minLength'=>'5', 'maxLength'=>'10'), $struct->getMeta());
                     $ok = true;
                 }
             }

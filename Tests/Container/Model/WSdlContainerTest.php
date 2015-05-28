@@ -6,7 +6,7 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Container\Model\Wsdl as WsdlContainer;
 
-class WsdlContainerTest extends TestCase
+class WSdlContainerTest extends TestCase
 {
     const
         WSDL_BING = 'bingsearch.wsdl',

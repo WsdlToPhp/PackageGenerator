@@ -491,8 +491,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      */
     public function setHttpHeader($headerName, $headerValue)
     {
-        if (self::getSoapClient() && !empty($headerName))
-        {
+        if (self::getSoapClient() && !empty($headerName)) {
             $streamContext = (isset(self::getSoapClient()->_stream_context) && is_resource(self::getSoapClient()->_stream_context)) ? self::getSoapClient()->_stream_context : null;
             if (!is_resource($streamContext)) {
                 $options = array();

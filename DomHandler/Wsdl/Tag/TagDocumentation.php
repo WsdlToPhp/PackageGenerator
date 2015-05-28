@@ -40,5 +40,4 @@ class TagDocumentation extends AbstractTag
             WsdlDocument::TAG_OPERATION,
         ));
     }
-
 }

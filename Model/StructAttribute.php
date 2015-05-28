@@ -200,8 +200,9 @@ class StructAttribute extends AbstractModel
          */
         $comments = array();
         array_push($comments, 'Set ' . $this->getName() . ' value');
-        if ($model && $model->getIsRestriction() && !$struct->isArray())
+        if ($model && $model->getIsRestriction() && !$struct->isArray()) {
             array_push($comments, '@uses ' . $model->getPackagedName() . '::valueIsValid()');
+        }
         if ($model) {
             if ($model->getIsStruct() && $model->getPackagedName() != $this->getOwner()->getPackagedName()) {
                 array_push($comments, '@param ' . $model->getPackagedName() . ' $' . lcfirst($this->getCleanName()) . ' the ' . $this->getName());
