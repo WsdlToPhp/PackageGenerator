@@ -6,7 +6,6 @@ use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler as Attribute;
 use WsdlToPhp\PackageGenerator\DomHandler\ElementHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\AbstractDocument;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Schema;
 
 abstract class AbstractTag extends ElementHandler

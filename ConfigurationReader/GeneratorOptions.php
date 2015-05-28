@@ -83,7 +83,7 @@ class GeneratorOptions extends AbstractYamlReader
                     'value'  => $optionValue,
                     'values' => $values,
             );
-        } elseif(!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
+        } elseif (!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
             throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])));
         } else {
             $this->options[$optionName]['value'] = $optionValue;
