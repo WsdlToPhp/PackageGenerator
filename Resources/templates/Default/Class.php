@@ -187,7 +187,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
          * Generic set methods
          */
         if (is_array($arrayOfValues) && count($arrayOfValues)) {
-            foreach($arrayOfValues as $name=>$value) {
+            foreach ($arrayOfValues as $name=>$value) {
                 $this->_set($name, $value);
             }
         }
@@ -205,7 +205,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
         if (class_exists($className)) {
             $object = @new $className();
             if (is_object($object) && is_subclass_of($object,'PackageNameWsdlClass')) {
-                foreach($array as $name=>$value) {
+                foreach ($array as $name=>$value) {
                     $object->_set($name, $value);
                 }
             }
@@ -245,7 +245,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
             $wsdlOptions = array();
             $wsdlOptions['classmap'] = PackageNameClassMap::classMap();
             $defaultWsdlOptions = self::getDefaultWsdlOptions();
-            foreach($defaultWsdlOptions as $optioName=>$optionValue) {
+            foreach ($defaultWsdlOptions as $optioName=>$optionValue) {
                 if (array_key_exists($optioName, $options) && !empty($options[$optioName])) {
                     $wsdlOptions[str_replace('wsdl_', '', $optioName)] = $options[$optioName];
                 } elseif (!empty($optionValue)) {
@@ -426,10 +426,10 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
             $dom->substituteEntities = false;
             $dom->validateOnParse = false;
             if ($dom->loadXML($string)) {
-                return $asDomDocument ? $dom:$dom->saveXML();
+                return $asDomDocument ? $dom : $dom->saveXML();
             }
         }
-        return $asDomDocument ? null:$string;
+        return $asDomDocument ? null : $string;
     }
     /**
      * Returns an associative array between the headers name and their respective values
@@ -440,7 +440,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     {
         $lines = explode("\r\n", $headers);
         $headers = array();
-        foreach($lines as $line) {
+        foreach ($lines as $line) {
             if (strpos($line, ':')) {
                 $headerParts = explode(':', $line);
                 $headers[$headerParts[0]] = trim(implode(':', array_slice($headerParts, 1)));
@@ -464,7 +464,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     {
         if (self::getSoapClient()) {
             $defaultHeaders = (isset(self::getSoapClient()->__default_headers) && is_array(self::getSoapClient()->__default_headers)) ? self::getSoapClient()->__default_headers : array();
-            foreach($defaultHeaders as $index=>$soapheader) {
+            foreach ($defaultHeaders as $index=>$soapheader) {
                 if ($soapheader->name === $name) {
                     unset($defaultHeaders[$index]);
                     break;
@@ -519,7 +519,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
                  * Ensure there is only one header entry for this header name
                  */
                 $newLines = array();
-                foreach($lines as $line) {
+                foreach ($lines as $line) {
                     if (!empty($line) && strpos($line, $headerName) === false) {
                         array_push($newLines, $line);
                     }
@@ -527,7 +527,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
                 /**
                  * Add new header entry
                  */
-                array_push($newLines, "$headerName: $headerValue");
+                array_push($newLines, "$headerName:  $headerValue");
                 /**
                  * Set the context http header option
                  */
@@ -825,7 +825,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      */
     public function initInternArrayToIterate($array = array(), $internCall = false)
     {
-        if (stripos($this->__toString(),'array') !== false) {
+        if (stripos($this->__toString(), 'array') !== false) {
             if (is_array($array) && count($array)) {
                 $this->setInternArrayToIterate($array);
                 $this->setInternArrayToIterateOffset(0);
