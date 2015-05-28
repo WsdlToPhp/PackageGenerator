@@ -105,7 +105,7 @@ abstract class AbstractDomDocumentHandler
     }
     /**
      * @param string $name
-     * @return array[NodeHandler]
+     * @return NodeHandler[]
      */
     public function getNodesByName($name)
     {
@@ -119,7 +119,7 @@ abstract class AbstractDomDocumentHandler
     }
     /**
      * @param string $name
-     * @return array[ElementHandler]
+     * @return ElementHandler[]
      */
     public function getElementsByName($name)
     {
@@ -139,7 +139,7 @@ abstract class AbstractDomDocumentHandler
     /**
      * @param string $name
      * @param array $attributes
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler]
+     * @return ElementHandler[]
      */
     public function getElementsByNameAndAttributes($name, array $attributes)
     {
@@ -167,7 +167,7 @@ abstract class AbstractDomDocumentHandler
     /**
      * @param string $name
      * @param array $attributes
-     * @return null|\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler
+     * @return null|ElementHandler
      */
     public function getElementByNameAndAttributes($name, array $attributes)
     {
