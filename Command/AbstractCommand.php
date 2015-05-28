@@ -35,7 +35,7 @@ abstract class AbstractCommand extends Command
 
     protected function canExecute()
     {
-        return (bool) $this->input->getOption('force') === true;
+        return (bool)$this->input->getOption('force') === true;
     }
 
     protected function writeLn($messages, $type = OutputInterface::OUTPUT_NORMAL)

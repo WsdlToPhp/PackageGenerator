@@ -368,8 +368,9 @@ class Generator extends \SoapClient
         foreach ($declarations as $declaration) {
             if (is_array($declaration) && array_key_exists('comment', $declaration) && is_array($declaration['comment'])) {
                 array_push($content, str_repeat($indentationString, $indentationLevel) . '/**');
-                foreach ($declaration['comment'] as $subComment)
+                foreach ($declaration['comment'] as $subComment) {
                     array_push($content, str_repeat($indentationString, $indentationLevel) . ' * ' . AbstractModel::cleanComment($subComment));
+                }
                 array_push($content, str_repeat($indentationString, $indentationLevel) . ' */');
             } elseif (is_string($declaration)) {
                 switch ($declaration) {
@@ -951,11 +952,11 @@ class Generator extends \SoapClient
     /**
      * Gets the WSDL at the index
      * @param int $index
-     * @return Wsdl
+     * @return Wsdl|null
      */
     public function getWsdl($index)
     {
-        return $this->getWsdls()->offsetExists($index) ? $this->getWsdls()->offsetGet($index) : null;
+        return $this->getWsdls()->offsetGet($index);
     }
     /**
      * Sets the WSDLs

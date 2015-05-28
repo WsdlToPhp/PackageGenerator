@@ -39,7 +39,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     }
     /**
      * @param string $name
-     * @return null|AttributeHandler
+     * @return AttributeHandler|null
      */
     public function getAttribute($name)
     {
@@ -103,7 +103,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     /**
      * @param string $name
      * @param array $attributes
-     * @return null|\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler
+     * @return ElementHandler|null
      */
     public function getChildByNameAndAttributes($name, array $attributes)
     {

@@ -40,7 +40,7 @@ class TagHeader extends AbstractTagOperationElement
         return $this->hasAttribute(self::ATTRIBUTE_PART) ? $this->getAttribute(self::ATTRIBUTE_PART)->getValue() : '';
     }
     /**
-     * @return null|\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart
+     * @return TagPart|null
      */
     public function getPartTag()
     {

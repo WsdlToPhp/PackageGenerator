@@ -1,4 +1,7 @@
 # WsdlToPhp Package Generator
+[![Build Status](https://api.travis-ci.org/WsdlToPhp/PackageGenerator.svg)](https://travis-ci.org/WsdlToPhp/PackageGenerator)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/quality-score.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
+
 Package Generator eases the creation of a PHP package in order to call any SOAP oriented Web Service.
 
 Its purpose is to provide a full OOP approach to send SOAP requests without needing any third party library.
