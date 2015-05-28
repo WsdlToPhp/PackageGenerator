@@ -178,7 +178,7 @@ class GeneratePackageCommand extends AbstractCommand
             foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
                 $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
                 if ($optionValue !== null) {
-                    $setOption = sprintf('setOption%s' , $optionMethod);
+                    $setOption = sprintf('setOption%s', $optionMethod);
                     if (method_exists($this->generator, $setOption)) {
                         $options[$optionName] = $optionValue;
                         call_user_func_array(array(
@@ -214,7 +214,7 @@ class GeneratePackageCommand extends AbstractCommand
      */
     private function formatArrayForConsole($array)
     {
-        array_walk($array, function(&$value, $index){
+        array_walk($array, function(&$value, $index) {
             $value = sprintf("%s: %s", $index, is_scalar($value) ? $value : implode(', ', $value));
         });
         return $array;
