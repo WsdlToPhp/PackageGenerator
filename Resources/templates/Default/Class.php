@@ -204,7 +204,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     {
         if (class_exists($className)) {
             $object = @new $className();
-            if (is_object($object) && is_subclass_of($object,'PackageNameWsdlClass')) {
+            if (is_object($object) && is_subclass_of($object, 'PackageNameWsdlClass')) {
                 foreach ($array as $name=>$value) {
                     $object->_set($name, $value);
                 }
@@ -252,7 +252,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
                     $wsdlOptions[str_replace('wsdl_', '', $optioName)] = $optionValue;
                 }
             }
-            if (array_key_exists(str_replace('wsdl_','',self::WSDL_URL), $wsdlOptions)) {
+            if (array_key_exists(str_replace('wsdl_', '', self::WSDL_URL), $wsdlOptions)) {
                 $wsdlUrl = $wsdlOptions[str_replace('wsdl_', '', self::WSDL_URL)];
                 unset($wsdlOptions[str_replace('wsdl_', '', self::WSDL_URL)]);
                 $soapClientClassName = self::getSoapClientClassName();
@@ -419,7 +419,7 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
     public static function getFormatedXml($string, $asDomDocument = false)
     {
         if (!empty($string) && class_exists('DOMDocument')) {
-            $dom = new DOMDocument('1.0','UTF-8');
+            $dom = new \DOMDocument('1.0', 'UTF-8');
             $dom->formatOutput = true;
             $dom->preserveWhiteSpace = false;
             $dom->resolveExternals = false;
