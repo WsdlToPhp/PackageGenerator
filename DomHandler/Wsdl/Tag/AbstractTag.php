@@ -77,7 +77,7 @@ abstract class AbstractTag extends ElementHandler
         return $this->hasAttribute(Attribute::ATTRIBUTE_NAME);
     }
     /**
-     * @return null|string
+     * @return string
      */
     public function getAttributeName()
     {
@@ -98,7 +98,7 @@ abstract class AbstractTag extends ElementHandler
         return $this->getAttribute(Attribute::ATTRIBUTE_VALUE) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_VALUE)->getValue($withNamespace, $withinItsType, $asType) : '';
     }
     /**
-     * @return AbstractDocument|Wsdl|Schema
+     * @return Wsdl|Schema
      */
     public function getDomDocumentHandler()
     {
