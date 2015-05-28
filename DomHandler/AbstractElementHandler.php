@@ -8,11 +8,10 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      * @param \DOMElement $element
      * @param AbstractDomDocumentHandler $domDocument
      * @param int $index
-     * @return AbstractElementHandler
      */
     public function __construct(\DOMElement $element, AbstractDomDocumentHandler $domDocument, $index = -1)
     {
-        return parent::__construct($element, $domDocument, $index);
+        parent::__construct($element, $domDocument, $index);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler::getNode()
@@ -40,7 +39,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     }
     /**
      * @param string $name
-     * @return null|AbstractAttributeHandler
+     * @return AbstractAttributeHandler|null
      */
     public function getAttribute($name)
     {
@@ -48,7 +47,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     }
     /**
      * @param string $name
-     * @return array[AbstractNodeHandler]|array[AbstractElementHandler]
+     * @return NodeHandler[]|ElementHandler[]
      */
     public function getChildrenByName($name)
     {
@@ -61,7 +60,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
         return $children;
     }
     /**
-     * @return array[AbstractElementHandler]
+     * @return ElementHandler[]
      */
     public function getElementChildren()
     {
@@ -80,7 +79,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     /**
      * @param string $name
      * @param array $attributes
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler]
+     * @return ElementHandler[]
      */
     public function getChildrenByNameAndAttributes($name, array $attributes)
     {
@@ -104,7 +103,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     /**
      * @param string $name
      * @param array $attributes
-     * @return null|\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler
+     * @return ElementHandler|null
      */
     public function getChildByNameAndAttributes($name, array $attributes)
     {
