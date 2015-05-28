@@ -38,7 +38,6 @@ class TagRestriction extends AbstractTagParser
         return WsdlDocument::TAG_RESTRICTION;
     }
     /**
-     * @param Tag $tag
      * @param Restriction $restriction
      */
     public function parseRestriction(Restriction $restriction)
