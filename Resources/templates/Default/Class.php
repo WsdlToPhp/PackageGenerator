@@ -8,7 +8,7 @@
  * meta_informations
  * @package PackageName
  */
-class PackageNameWsdlClass implements ArrayAccess,Iterator,Countable
+class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
 {
     /**
      * Option key to define WSDL url
