@@ -75,7 +75,7 @@ class Structs extends AbstractParser
                 $structParamType = '';
                 $typeDefCount = count($typeDef);
                 if ($typeDefCount > 3) {
-                    for ($i = 2; $i < $typeDefCount; $i ++) {
+                    for ($i = 2; $i < $typeDefCount; $i++) {
                         $typeVal = $typeDef[$i];
                         if ($typeVal != '{' && is_string($typeVal) && !empty($typeVal) && !$start) {
                             $then = false;
