@@ -5,7 +5,7 @@ namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 class TagMessage extends AbstractTag
 {
     /**
-     * @return null|\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart
+     * @return TagPart|null
      */
     public function getPart($name)
     {
