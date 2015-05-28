@@ -119,10 +119,11 @@ abstract class AbstractModel
     {
         $comments = array();
         array_push($comments, 'This class stands for ' . $this->getPackagedName() . ' originally named ' . $this->getName());
-        if ($this->getDocumentation() != '')
+        if ($this->getDocumentation() !== '') {
             array_push($comments, 'Documentation : ' . $this->getDocumentation());
+        }
         $this->addMetaComment($comments, false, true);
-        if ($this->getInheritance() != '') {
+        if ($this->getInheritance() !== '') {
             $inheritedModel = self::getModelByName($this->getInheritance());
             /**
              * A virtual struct exists only to store meta informations about itself
@@ -184,7 +185,7 @@ abstract class AbstractModel
         if (empty($extends) && Generator::instance()->getOptionGenerateWsdlClassFile()) {
             $extends = self::getGenericWsdlClassName();
         }
-        array_push($class, ($this->getIsAbstract() === true ? 'abstract ':'') . 'class ' . $this->getPackagedName() . (!empty($extends) ? ' extends ' . $extends : ''));
+        array_push($class, ($this->getIsAbstract() === true ? 'abstract ' : '') . 'class ' . $this->getPackagedName() . (!empty($extends) ? ' extends ' . $extends : ''));
         /**
          * Class body starts here
          */
