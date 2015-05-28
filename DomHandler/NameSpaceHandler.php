@@ -41,7 +41,7 @@ class NameSpaceHandler extends AttributeHandler
         return parent::getValue(true, $withNamespace, $asType);
     }
     /**
-     * @return null
+     * @return null|string
      */
     public function getValueNamespace()
     {
