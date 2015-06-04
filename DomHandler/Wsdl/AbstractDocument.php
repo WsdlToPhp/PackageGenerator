@@ -60,7 +60,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     protected $currentTag;
     /**
      * @param string $currentTag
-     * @return \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\AbstractWsdl
+     * @return AbstractDocument
      */
     public function setCurrentTag($currentTag)
     {
@@ -91,7 +91,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementByName()
-     * @return array[AbstractElementHandler]
+     * @return ElementHandler[]
      */
     public function getElementsByName($name)
     {

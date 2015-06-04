@@ -1,7 +1,6 @@
 {
     "name": "wsdltophp/packagegenerator",
     "description": "Generate hierarchical PHP classes based on a WSDL",
-    "version": "1.0.0",
     "type": "library",
     "keywords" : ["soap","wsdl","php","generator"],
     "homepage" : "https://github.com/WsdlToPhp/PackageGenerator",
