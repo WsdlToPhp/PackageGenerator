@@ -27,7 +27,11 @@ class TagElementTest extends WsdlParser
         $structs = $tagElementParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
             if ($structs->getStructByName('SearchRequest') instanceof Struct) {
-                $this->assertSame(array('default'=>'2.2', 'maxOccurs'=>'1', 'minOccurs'=>'0'), $structs->getStructByName('SearchRequest')->getAttribute('Version')->getMeta());
+                $this->assertSame(array(
+                    'default' => '2.2',
+                    'maxOccurs' => '1',
+                    'minOccurs' => '0',
+                ), $structs->getStructByName('SearchRequest')->getAttribute('Version')->getMeta());
                 $this->assertSame('string', $structs->getStructByName('SearchRequest')->getAttribute('Version')->getType());
                 $ok = true;
             }
