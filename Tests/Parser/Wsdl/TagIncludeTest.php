@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -24,7 +23,6 @@ class TagIncludeTest extends WsdlParser
     public function testIsWsdlParsed()
     {
         $tagIncludeParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagIncludeParser->parse();
 
@@ -36,7 +34,6 @@ class TagIncludeTest extends WsdlParser
     public function testGetExternalSchemas()
     {
         $tagIncludeParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagIncludeParser->parse();
 
@@ -64,7 +61,6 @@ class TagIncludeTest extends WsdlParser
     public function testCountWsdlsAfterParsing()
     {
         $tagIncludeParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagIncludeParser->parse();
 

@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
+use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude;
@@ -9,7 +10,7 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions;
 
-class WsdlParser extends TestCase
+abstract class WsdlParser extends TestCase
 {
     /**
      * @return string
@@ -87,6 +88,7 @@ class WsdlParser extends TestCase
      */
     public static function generatorInstance($wsdlPath)
     {
+        AbstractObjectContainer::purgeAllCache();
         $generator = new Generator($wsdlPath);
         $parsers = array(
             new TagInclude($generator),

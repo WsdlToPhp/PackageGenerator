@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -25,7 +24,6 @@ class TagImportTest extends WsdlParser
     public function testIsWsdlParsed()
     {
         $tagImportParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagImportParser->parse();
 
@@ -37,7 +35,6 @@ class TagImportTest extends WsdlParser
     public function testCountWsdlsAfterParsing()
     {
         $tagImportParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagImportParser->parse();
 
@@ -49,7 +46,6 @@ class TagImportTest extends WsdlParser
     public function testGetExternalSchemas()
     {
         $tagImportParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagImportParser->parse();
 
@@ -70,7 +66,6 @@ class TagImportTest extends WsdlParser
     public function testGetRestrictionFromExternalSchemas()
     {
         $tagImportParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagImportParser->parse();
 
@@ -82,7 +77,6 @@ class TagImportTest extends WsdlParser
     public function testGetEnumerationByAttributesFromExternalSchemas()
     {
         $tagImportParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagImportParser->parse();
 
@@ -96,7 +90,6 @@ class TagImportTest extends WsdlParser
     public function testGetElementsFromExternalSchemas()
     {
         $tagImportParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagImportParser->parse();
         $restrictions = $tagImportParser->getGenerator()->getWsdl(0)->getContent()->getElementsByName(WsdlDocument::TAG_RESTRICTION, true);
@@ -110,7 +103,6 @@ class TagImportTest extends WsdlParser
     public function testGetElementsByAttributeFromExternalSchemas()
     {
         $tagImportParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagImportParser->parse();
         $elements = $tagImportParser->getGenerator()->getWsdl(0)->getContent()->getElementsByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(

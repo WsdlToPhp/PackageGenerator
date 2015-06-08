@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
@@ -21,7 +20,6 @@ class TagElementTest extends WsdlParser
     public function testParseBing()
     {
         $tagElementParser = self::bingInstance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagElementParser->parse();
 

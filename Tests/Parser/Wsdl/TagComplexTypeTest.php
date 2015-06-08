@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType;
 
 class TagComplexTypeTest extends WsdlParser
@@ -20,7 +19,6 @@ class TagComplexTypeTest extends WsdlParser
     public function testParseEbay()
     {
         $tagComplexTypeParser = self::ebayInstance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagComplexTypeParser->parse();
 

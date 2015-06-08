@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
@@ -21,7 +20,6 @@ class TagListTest extends WsdlParser
     public function testParseOdigeo()
     {
         $tagListParser = self::odigeoInstance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagListParser->parse();
 

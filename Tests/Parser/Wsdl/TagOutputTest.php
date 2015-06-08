@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput;
 
 class TagOutputTest extends WsdlParser
@@ -27,8 +26,7 @@ class TagOutputTest extends WsdlParser
     public function testParseMyBoardpack()
     {
         $tagOutputParser = self::myBoardPackInstance();
-        $soapClient     = self::myBoardPackSoapClient();
-        AbstractObjectContainer::purgeAllCache();
+        $soapClient = self::myBoardPackSoapClient();
 
         $tagOutputParser->parse();
 

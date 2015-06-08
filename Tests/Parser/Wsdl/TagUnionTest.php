@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion;
 
 class TagUnionTest extends WsdlParser
@@ -20,7 +19,6 @@ class TagUnionTest extends WsdlParser
     public function testParseOrderContract()
     {
         $tagUnionParser = self::orderContractInstance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagUnionParser->parse();
 
