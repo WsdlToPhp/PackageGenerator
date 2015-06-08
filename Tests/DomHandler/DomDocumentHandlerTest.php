@@ -9,6 +9,7 @@ class DomDocumentHandlerTest extends TestCase
 {
     protected static $ebayInstance;
     protected static $bingInstance;
+    protected static $emptyInstance;
     /**
      * @return DomDocumentHandler
      */
@@ -32,6 +33,18 @@ class DomDocumentHandlerTest extends TestCase
             self::$bingInstance = new DomDocumentHandler($doc);
         }
         return self::$bingInstance;
+    }
+    /**
+     * @return DomDocumentHandler
+     */
+    public static function emptyInstance()
+    {
+        if (!isset(self::$emptyInstance)) {
+            $doc = new \DOMDocument('1.0', 'utf-8');
+            @$doc->load(dirname(__FILE__) . '/../resources/empty.wsdl');
+            self::$emptyInstance = new DomDocumentHandler($doc);
+        }
+        return self::$emptyInstance;
     }
     /**
      *
@@ -91,5 +104,12 @@ class DomDocumentHandlerTest extends TestCase
             'element' => 'tns:SearchRequest',
         ));
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler', $part);
+    }
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testInitRootElementWithException()
+    {
+        self::emptyInstance();
     }
 }
