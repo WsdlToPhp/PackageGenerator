@@ -17,4 +17,16 @@ abstract class AbstractModel extends AbstractObjectContainer
     {
         return parent::get($value, $key);
     }
+    /**
+     * Override this method to store object in cache using its name
+     * as most of the time objects are looked up using their name.
+     * @see \WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer::afterObjetIsStored()
+     * @param mixed $object
+     */
+    protected function afterObjetIsStored($object)
+    {
+        if ($object instanceof Model) {
+            $this->setSimpleCache(self::KEY_NAME, $object->getName(), $object);
+        }
+    }
 }

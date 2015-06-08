@@ -108,11 +108,11 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     abstract protected function objectClass();
     /**
-     * @param mixed $object
+     * This method is called before the object has been stored
      * @throws \InvalidArgumentException
-     * @return AbstractObjectContainer
+     * @param mixed $object
      */
-    public function add($object)
+    protected function beforeObjectIsStored($object)
     {
         if (!is_object($object)) {
             throw new \InvalidArgumentException(sprintf('You must only pass object to this container (%s), "%s" passed as parameter!', get_called_class(), gettype($object)));
@@ -121,7 +121,25 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
         if (get_class($object) !== $this->objectClass() && !$object instanceof $instanceOf) {
             throw new \InvalidArgumentException(sprintf('Model of type "%s" does not match the object contained by this class: "%s"', get_class($object), $this->objectClass()));
         }
+    }
+    /**
+     * This method is called after the object has been stored
+     * @param mixed $object
+     * @return AbstractObjectContainer
+     */
+    protected function afterObjetIsStored($object)
+    {
+    }
+    /**
+     * @throws \InvalidArgumentException
+     * @param mixed $object
+     * @return AbstractObjectContainer
+     */
+    public function add($object)
+    {
+        $this->beforeObjectIsStored($object);
         $this->objects[] = $object;
+        $this->afterObjetIsStored($object);
         return $this;
     }
     /**
@@ -132,20 +150,13 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
     public function get($value, $key)
     {
         if ($this->count() > 0) {
-            $cacheValues = array(
-                'class'        => get_called_class(),
-                'object_class' => $this->objectClass(),
-                'value'        => $value,
-                'key'          => $key,
-                'object'       => spl_object_hash($this),
-            );
-            $cachedModel = self::getCache($cacheValues);
+            $cachedModel = $this->getSimpleCache($key, $value);
             if ($cachedModel === null) {
                 $object = $this->findMatchingObject(array(
                     $key => $value,
                 ));
                 if ($object !== null) {
-                    self::setCache($cacheValues, $object);
+                    $this->setSimpleCache($key, $value, $object);
                     return $object;
                 }
             }
@@ -236,5 +247,36 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
     private static function cacheKey(array $values)
     {
         return sprintf('_%s', json_encode($values));
+    }
+    /**
+     * @param string $key
+     * @param string $value
+     * @return string
+     */
+    protected function getSimpleKey($key, $value)
+    {
+        return sprintf('_%s_%s_%s_%s', spl_object_hash($this), $this->objectClass(), $key, $value);
+    }
+    /**
+     * @param string $key
+     * @param string $value
+     * @param mixed $object
+     * @return AbstractObjectContainer
+     */
+    protected function setSimpleCache($key, $value, $object)
+    {
+        $cacheKey = $this->getSimpleKey($key, $value);
+        self::$cache[$cacheKey] = $object;
+        return $this;
+    }
+    /**
+     * @param string $key
+     * @param string $value
+     * @return mixed
+     */
+    protected function getSimpleCache($key, $value)
+    {
+        $cacheKey = $this->getSimpleKey($key, $value);
+        return array_key_exists($cacheKey, self::$cache) ? self::$cache[$cacheKey] : null;
     }
 }
