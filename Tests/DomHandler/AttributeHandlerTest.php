@@ -71,4 +71,16 @@ class AttributeHandlerTest extends TestCase
             $this->assertSame($namespaces[$index], $element->getAttribute('type')->getValueNamespace());
         }
     }
+    /**
+     *
+     */
+    public function testGetNamespaceNull()
+    {
+        $domDocument = DomDocumentHandlerTest::bingInstance();
+
+        // first element tag
+        $element = $domDocument->getElementByName('element');
+
+        $this->assertNull($element->getAttribute('minOccurs')->getNamespace());
+    }
 }
