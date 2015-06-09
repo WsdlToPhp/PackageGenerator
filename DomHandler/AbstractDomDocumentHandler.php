@@ -123,18 +123,14 @@ abstract class AbstractDomDocumentHandler
     /**
      * @param string $name
      * @param array $attributes
+     * @param \DOMNode $node
      * @return ElementHandler[]
      */
-    public function getElementsByNameAndAttributes($name, array $attributes)
+    public function getElementsByNameAndAttributes($name, array $attributes, \DOMNode $node = null)
     {
         $matchingElements = $this->getElementsByName($name);
         if (!empty($attributes) && !empty($matchingElements)) {
-            $xpath = new \DOMXPath($this->domDocument);
-            $xQuery = sprintf("//*[local-name() = '%s']", $name);
-            foreach ($attributes as $attributeName=>$attributeValue) {
-                $xQuery .= sprintf("[@%s='%s']", $attributeName, $attributeValue);
-            }
-            $nodes = $xpath->query($xQuery);
+            $nodes = $this->searchTagsByXpath($name, $attributes, $node);
             if (!empty($nodes)) {
                 $matchingElements = array();
                 $index = 0;
@@ -147,6 +143,21 @@ abstract class AbstractDomDocumentHandler
             }
         }
         return $matchingElements;
+    }
+    /**
+     * @param string $name
+     * @param array $attributes
+     * @param \DOMNode $node
+     * @return \DOMNodeList
+     */
+    public function searchTagsByXpath($name, array $attributes, \DOMNode $node = null)
+    {
+        $xpath = new \DOMXPath($this->domDocument);
+        $xQuery = sprintf("//*[local-name() = '%s']", $name);
+        foreach ($attributes as $attributeName=>$attributeValue) {
+            $xQuery .= sprintf("[@%s='%s']", $attributeName, $attributeValue);
+        }
+        return $xpath->query($xQuery, $node);
     }
     /**
      * @param string $name

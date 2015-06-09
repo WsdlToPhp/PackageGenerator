@@ -83,22 +83,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      */
     public function getChildrenByNameAndAttributes($name, array $attributes)
     {
-        $matchingChildren = $children = $this->getChildrenByName($name);
-        if (!empty($attributes) && !empty($children)) {
-            $matchingChildren = array();
-            foreach ($children as $child) {
-                if ($child->hasAttributes()) {
-                    $elementMatches = true;
-                    foreach ($attributes as $attributeName=>$attributeValue) {
-                        $elementMatches &= $child->hasAttribute($attributeName) ? $child->getAttribute($attributeName)->getValue() === $attributeValue : false;
-                    }
-                    if ((bool)$elementMatches === true) {
-                        $matchingChildren[] = $child;
-                    }
-                }
-            }
-        }
-        return $matchingChildren;
+        return $this->getDomDocumentHandler()->getElementsByNameAndAttributes($name, $attributes, $this->getNode());
     }
     /**
      * @param string $name
