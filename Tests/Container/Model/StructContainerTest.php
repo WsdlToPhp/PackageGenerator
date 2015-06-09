@@ -27,9 +27,6 @@ class StructContainerTest extends TestCase
 
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getStructByName('Foo'));
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getStructByName('Bar'));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getAs(array(
-            StructContainer::KEY_NAME => 'Bar',
-        )));
         $this->assertNull($structContainer->getStructByName('bar'));
     }
     /**
@@ -50,5 +47,43 @@ class StructContainerTest extends TestCase
     public function testGetInvalidProperty()
     {
         self::instance()->get(true, 'foo');
+    }
+    /**
+     *
+     */
+    public function testOffsetGet()
+    {
+        $instance = self::instance();
+
+        $instance->offsetSet(100, StructTest::instance('Foo', true));
+
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $instance->offsetGet(100));
+    }
+    /**
+     *
+     */
+    public function testOffsetUnset()
+    {
+        $instance = self::instance();
+
+        $instance->offsetSet(100, StructTest::instance('Foo', true));
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $instance->offsetGet(100));
+
+        $instance->offsetUnset(100);
+        $this->assertNull($instance->offsetGet(100));
+    }
+    /**
+     *
+     */
+    public function testGetAs()
+    {
+        $structContainer = self::instance();
+
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getAs(array(
+            StructContainer::KEY_NAME => 'Bar',
+        )));
+        $this->assertNull($structContainer->getAs(array(
+            StructContainer::KEY_NAME => null,
+        )));
     }
 }
