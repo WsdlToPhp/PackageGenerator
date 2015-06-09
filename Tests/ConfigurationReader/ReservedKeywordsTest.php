@@ -29,4 +29,11 @@ class ReservedKeywordsTest extends TestCase
     {
         ReservedKeywords::instance(dirname(__FILE__) . '/../resources/bad_reserved_keywords.yml');
     }
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testExceptionForUnexistingFile()
+    {
+        ReservedKeywords::instance(dirname(__FILE__) . '/../resources/bad_reserved_keywords');
+    }
 }
