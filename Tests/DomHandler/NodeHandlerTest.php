@@ -133,4 +133,22 @@ class NodeHandlerTest extends TestCase
         $children = $domDocument->getRootElement()->getChildren();
         $this->assertSame(2, $children[2]->getIndex());
     }
+    /**
+     *
+     */
+    public function testGetValue()
+    {
+        $domDocument = DomDocumentHandlerTest::bingInstance();
+
+        $this->assertSame('', $domDocument->getElementByName('complexType')->getValue());
+    }
+    /**
+     *
+     */
+    public function testGetValueNamespace()
+    {
+        $domDocument = DomDocumentHandlerTest::bingInstance();
+
+        $this->assertNull($domDocument->getElementByName('complexType')->getValueNamespace());
+    }
 }
