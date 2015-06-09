@@ -44,4 +44,11 @@ class StructContainerTest extends TestCase
 
         $this->assertCount(1, $structContainer->getStructByName('Foo')->getAttributes());
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetInvalidProperty()
+    {
+        self::instance()->get(true, 'foo');
+    }
 }
