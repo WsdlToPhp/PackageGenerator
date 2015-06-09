@@ -49,4 +49,14 @@ abstract class AbstractTagParser extends AbstractParser
     {
         return $this->generator->getServiceMethod($name);
     }
+    /**
+     * Most of he time, this method is not used, even if it used,
+     * for now, knowing that we are in a schema is not a useful information,
+     * so we can simply parse the tag with only the wsdl as parameter
+     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseSchema()
+     */
+    protected function parseSchema(Wsdl $wsdl, Schema $schema)
+    {
+        return $this->parseWsdl($wsdl);
+    }
 }

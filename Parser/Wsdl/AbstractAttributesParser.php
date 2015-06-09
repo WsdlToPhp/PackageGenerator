@@ -24,13 +24,6 @@ abstract class AbstractAttributesParser extends AbstractTagParser
         }
     }
     /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseSchema()
-     */
-    protected function parseSchema(Wsdl $wsdl, Schema $schema)
-    {
-        $this->parseWsdl($wsdl);
-    }
-    /**
      * @param AbstractTag $tag
      */
     public function parseTag(AbstractTag $tag)
