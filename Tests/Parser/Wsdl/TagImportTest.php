@@ -107,7 +107,7 @@ class TagImportTest extends WsdlParser
         $tagImportParser->parse();
         $elements = $tagImportParser->getGenerator()->getWsdl(0)->getContent()->getElementsByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(
             'name' => 'PartnerCredentials',
-        ), true);
+        ), null, true);
 
         $this->assertNotEmpty($elements);
         $this->assertContainsOnlyInstancesOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagElement', $elements);
