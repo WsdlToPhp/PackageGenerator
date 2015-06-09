@@ -113,4 +113,24 @@ class NodeHandlerTest extends TestCase
         $this->assertSame('sequence', $element->getParent()->getName());
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AbstractNodeHandler', $domDocument->getRootElement()->getParent());
     }
+    /**
+     *
+     */
+    public function testGetParentNull()
+    {
+        $domDocument = DomDocumentHandlerTest::bingInstance();
+
+        $this->assertNull($domDocument->getRootElement()->getParent()->getParent());
+    }
+    /**
+     *
+     */
+    public function testgetIndex()
+    {
+        $domDocument = DomDocumentHandlerTest::bingInstance();
+
+        $this->assertSame(-1, $domDocument->getRootElement()->getIndex());
+        $children = $domDocument->getRootElement()->getChildren();
+        $this->assertSame(2, $children[2]->getIndex());
+    }
 }
