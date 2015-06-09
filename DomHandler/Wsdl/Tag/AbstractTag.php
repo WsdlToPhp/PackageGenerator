@@ -3,9 +3,9 @@
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Schema as SchemaDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler as Attribute;
 use WsdlToPhp\PackageGenerator\DomHandler\ElementHandler;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Schema;
 use WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler;
 
 abstract class AbstractTag extends ElementHandler
@@ -97,7 +97,7 @@ abstract class AbstractTag extends ElementHandler
         return $this->getAttribute(Attribute::ATTRIBUTE_VALUE) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_VALUE)->getValue($withNamespace, $withinItsType, $asType) : '';
     }
     /**
-     * @return Wsdl|Schema
+     * @return WsdlDocument|SchemaDocument
      */
     public function getDomDocumentHandler()
     {
