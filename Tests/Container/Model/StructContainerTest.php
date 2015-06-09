@@ -27,6 +27,9 @@ class StructContainerTest extends TestCase
 
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getStructByName('Foo'));
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getStructByName('Bar'));
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getAs(array(
+            StructContainer::KEY_NAME => 'Bar',
+        )));
         $this->assertNull($structContainer->getStructByName('bar'));
     }
     /**
