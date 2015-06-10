@@ -33,6 +33,13 @@ abstract class AbstractNodeHandler
         return $this->node;
     }
     /**
+     * @return \DOMNodeList
+     */
+    public function getChildNodes()
+    {
+        return $this->getNode()->childNodes;
+    }
+    /**
      * @return AbstractNodeHandler
      */
     public function getParent()
