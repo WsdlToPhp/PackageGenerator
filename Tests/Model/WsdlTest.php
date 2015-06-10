@@ -70,4 +70,11 @@ class WsdlTest extends TestCase
     {
         return new Wsdl(dirname(__FILE__) . '/../resources/OrderContract.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/OrderContract.wsdl'));
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testException()
+    {
+        new Wsdl(dirname(__FILE__) . '/../resources/empty.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/empty.wsdl'));
+    }
 }
