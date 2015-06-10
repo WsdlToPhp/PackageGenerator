@@ -66,13 +66,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     {
         $children = array();
         if ($this->hasChildren()) {
-            $index = 0;
-            foreach ($this->getChildren() as $child) {
-                if ($child->getNode()->nodeType === XML_ELEMENT_NODE) {
-                    $children[] = $this->getDomDocumentHandler()->getHandler($child->getNode(), $index);
-                    $index++;
-                }
-            }
+            $children = $this->getDomDocumentHandler()->getElementsHandlers($this->getChildNodes());
         }
         return $children;
     }
