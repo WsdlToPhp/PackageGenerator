@@ -36,8 +36,8 @@ class TagDocumentation extends AbstractTag
      */
     public function getSuitableParentTags(array $additionalTags = array())
     {
-        return parent::getSuitableParentTags(array(
+        return parent::getSuitableParentTags(array_merge($additionalTags, array(
             WsdlDocument::TAG_OPERATION,
-        ));
+        )));
     }
 }
