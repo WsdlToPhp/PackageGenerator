@@ -34,13 +34,6 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
         }
     }
     /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseSchema()
-     */
-    protected function parseSchema(Wsdl $wsdl, Schema $schema)
-    {
-        $this->parseWsdl($wsdl);
-    }
-    /**
      * @param AbstractTagOperationElement $tag
      */
     public function parseInputOutput(AbstractTagOperationElement $tag)
