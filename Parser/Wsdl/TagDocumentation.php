@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagDocumentation as Documentation;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagEnumeration as Enumeration;
@@ -37,10 +36,9 @@ class TagDocumentation extends AbstractTagParser
      */
     public function parseDocumentation(Documentation $documentation)
     {
-        $content      = $documentation->getContent();
-        $parent       = $documentation->getSuitableParent();
+        $content = $documentation->getContent();
+        $parent = $documentation->getSuitableParent();
         $parentParent = $parent instanceof AbstractTag ? $parent->getSuitableParent() : null;
-
         if (!empty($content) && $parent instanceof AbstractTag) {
             /**
              * Is it an element ? part of a struct
