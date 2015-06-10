@@ -26,7 +26,7 @@ abstract class AbstractTag extends ElementHandler
     {
         $parentNode = null;
         if ($this->getParent() instanceof AbstractNodeHandler) {
-            $parentTags = $this->getSuitableParentTags($additionalTags);
+            $parentTags = $strict ? $additionalTags : $this->getSuitableParentTags($additionalTags);
             $parentNode = $this->getParent()->getNode();
             while ($maxDeep-- > 0 && ($parentNode instanceof \DOMElement) && !empty($parentNode->nodeName) && (!preg_match('/' . implode('|', $parentTags) . '/i', $parentNode->nodeName) || ($checkName && preg_match('/' . implode('|', $parentTags) . '/i', $parentNode->nodeName) && (!$parentNode->hasAttribute('name') || $parentNode->getAttribute('name') === '')))) {
                 $parentNode = $parentNode->parentNode;
@@ -55,7 +55,7 @@ abstract class AbstractTag extends ElementHandler
     /**
      * @param string $name
      * @param bool $checkName
-     * @return null|\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag
+     * @return AbstractTag|null
      */
     protected function getStrictParent($name, $checkName = false)
     {
