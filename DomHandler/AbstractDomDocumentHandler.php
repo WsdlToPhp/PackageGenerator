@@ -129,7 +129,7 @@ abstract class AbstractDomDocumentHandler
     public function getElementsByNameAndAttributes($name, array $attributes, \DOMNode $node = null)
     {
         $matchingElements = $this->getElementsByName($name);
-        if (!empty($attributes) && !empty($matchingElements)) {
+        if ((!empty($attributes) || $node instanceof \DOMNode) && !empty($matchingElements)) {
             $nodes = $this->searchTagsByXpath($name, $attributes, $node);
             if (!empty($nodes)) {
                 $matchingElements = array();
