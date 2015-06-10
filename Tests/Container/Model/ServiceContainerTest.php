@@ -41,4 +41,23 @@ class ServiceContainerTest extends TestCase
             ServiceContainer::KEY_NAME => 'foo',
         )));
     }
+    /**
+     *
+     */
+    public function testAddServiceNonUnique()
+    {
+        $serviceContainer = self::instance();
+
+        $serviceContainer->addService('Foo', 'bar', 'string', 'int');
+        $serviceContainer->addService('Foo', 'bar', 'int', 'string');
+
+        $fooService = $serviceContainer->getServiceByName('Foo');
+
+        $count = 0;
+        foreach ($fooService->getMethods() as $method) {
+            $this->assertFalse($method->getIsUnique());
+            $count++;
+        }
+        $this->assertSame(2, $count);
+    }
 }
