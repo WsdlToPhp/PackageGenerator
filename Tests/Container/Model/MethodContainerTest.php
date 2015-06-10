@@ -63,4 +63,28 @@ class MethodContainerTest extends TestCase
             'int',
         )));
     }
+    /**
+     *
+     */
+    public function testGetAs()
+    {
+        $methodContainer = new MethodContainer();
+
+        $service = ServiceTest::instance('Bar');
+        $foo = new Method('Foo', 'string', 'int', $service);
+        $bar = new Method('Bar', 'string', 'int', $service);
+        $methodContainer->add($foo);
+        $methodContainer->add($bar);
+
+        $this->assertSame($foo, $methodContainer->getAs(array(
+            'name'          => 'Foo',
+            'parameterType' => 'string',
+            'returnType'    => 'int',
+        )));
+
+        $this->assertSame($bar, $methodContainer->getAs(array(
+            'name'          => 'Bar',
+            'parameterType' => 'string',
+        )));
+    }
 }
