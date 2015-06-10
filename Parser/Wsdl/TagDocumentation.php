@@ -2,8 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
-
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagDocumentation as Documentation;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagEnumeration as Enumeration;
@@ -12,6 +10,7 @@ use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class TagDocumentation extends AbstractTagParser
 {
