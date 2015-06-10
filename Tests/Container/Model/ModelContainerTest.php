@@ -6,9 +6,6 @@ use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Container\Model\EmptyModel as ModelContainer;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
-use WsdlToPhp\PackageGenerator\Model\Method;
-use WsdlToPhp\PackageGenerator\Model\Service;
-use WsdlToPhp\PackageGenerator\Container\Model\Method as MethodContainer;
 
 class ModelContainerTest extends TestCase
 {
@@ -99,5 +96,20 @@ class ModelContainerTest extends TestCase
 
         $this->assertSame(4, $models->count());
         $this->assertSame(4, count($models));
+    }
+    /**
+     *
+     */
+    public function testGetAs()
+    {
+        $modelContainer = new ModelContainer();
+        $modelContainer->add(new EmptyModel('Foo'));
+
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\EmptyModel', $modelContainer->getAs(array(
+            ModelContainer::KEY_NAME => 'Foo',
+        )));
+        $this->assertNull($modelContainer->getAs(array(
+            ModelContainer::KEY_NAME => 'foo',
+        )));
     }
 }
