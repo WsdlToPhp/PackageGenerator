@@ -2,6 +2,8 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagDocumentation as Documentation;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagEnumeration as Enumeration;
@@ -45,12 +47,12 @@ class TagDocumentation extends AbstractTagParser
              * Finds parent node of this documentation node
              */
             if ($parent->hasAttribute('type') && $parentParent instanceof AbstractTag) {
-                if ($this->getModel($parentParent) instanceof Struct && $this->getModel($parentParent)->getAttribute($parent->getAttributeName())) {
-                    $this->getModel($parentParent)->getAttribute($parent->getAttributeName())->setDocumentation($content);
+                if (($model = $this->getModel($parentParent)) instanceof Struct && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
+                    $attribute->setDocumentation($content);
                 }
-            } elseif ($parent instanceof Enumeration) {
-                if ($parentParent instanceof AbstractTag && $this->getModel($parentParent) instanceof Struct && $this->getModel($parentParent)->getValue($parent->getAttributeName()) instanceof StructValue) {
-                    $this->getModel($parentParent)->getValue($parent->getAttributeName())->setDocumentation($content);
+            } elseif ($parent instanceof Enumeration && $parentParent instanceof AbstractTag) {
+                if (($model = $this->getModel($parentParent)) instanceof Struct && ($structValue = $model->getValue($parent->getValue())) instanceof StructValue) {
+                    $structValue->setDocumentation($content);
                 }
             } elseif ($this->getModel($parent) instanceof AbstractModel) {
                 $this->getModel($parent)->setDocumentation($content);
