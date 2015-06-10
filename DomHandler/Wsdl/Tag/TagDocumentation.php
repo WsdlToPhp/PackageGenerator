@@ -29,7 +29,7 @@ class TagDocumentation extends AbstractTag
                 return $enumerationTag;
             }
         }
-        return parent::getSuitableParent($checkName, $additionalTags, $maxDeep);
+        return parent::getSuitableParent($checkName, $additionalTags, $maxDeep, $strict);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag::getSuitableParentTags()
