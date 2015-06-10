@@ -31,10 +31,10 @@ abstract class AbstractDocument extends AbstractModel
     {
         $contentClass = $this->contentClass();
         $domDocument = new \DOMDocument('1.0', 'utf-8');
-        $domDocument->loadXML($content);
         try {
+            $domDocument->loadXML($content, LIBXML_NOERROR);
             $this->content = new $contentClass($domDocument);
-        } catch (\InvalidArgumentException $exception) {
+        } catch (\Exception $exception) {
             throw new \InvalidArgumentException(sprintf('Unable to load document at "%s"', $this->getName()), null, $exception);
         }
         return $this;
