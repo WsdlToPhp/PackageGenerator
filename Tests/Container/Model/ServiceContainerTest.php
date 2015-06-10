@@ -27,4 +27,18 @@ class ServiceContainerTest extends TestCase
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $serviceContainer->getServiceByName('Foo'));
         $this->assertNull($serviceContainer->getServiceByName('Bar'));
     }
+    /**
+     *
+     */
+    public function testGetAs()
+    {
+        $serviceContainer = self::instance();
+
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $serviceContainer->getAs(array(
+            ServiceContainer::KEY_NAME => 'Foo',
+        )));
+        $this->assertNull($serviceContainer->getAs(array(
+            ServiceContainer::KEY_NAME => 'foo',
+        )));
+    }
 }
