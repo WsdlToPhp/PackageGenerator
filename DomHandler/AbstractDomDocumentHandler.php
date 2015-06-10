@@ -132,17 +132,28 @@ abstract class AbstractDomDocumentHandler
         if ((!empty($attributes) || $node instanceof \DOMNode) && !empty($matchingElements)) {
             $nodes = $this->searchTagsByXpath($name, $attributes, $node);
             if (!empty($nodes)) {
-                $matchingElements = array();
-                $index = 0;
-                foreach ($nodes as $node) {
-                    if ($node instanceof \DOMElement) {
-                        $matchingElements[] = $this->getElementHandler($node, $this, $index);
-                        $index++;
-                    }
-                }
+                $matchingElements = $this->getElementsHandlers($nodes);
             }
         }
         return $matchingElements;
+    }
+    /**
+     * @param \DOMNodeList $nodeList
+     * @return ElementHandler[]
+     */
+    public function getElementsHandlers(\DOMNodeList $nodeList)
+    {
+        $nodes = array();
+        if (!empty($nodeList)) {
+            $index = 0;
+            foreach ($nodeList as $node) {
+                if ($node instanceof \DOMElement) {
+                    $nodes[] = $this->getElementHandler($node, $this, $index);
+                    $index++;
+                }
+            }
+        }
+        return $nodes;
     }
     /**
      * @param string $name
