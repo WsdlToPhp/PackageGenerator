@@ -80,7 +80,7 @@ class TagPart extends AbstractTag
         if (empty($attribute)) {
             $attribute = $this->getAttributeElement(false);
             if (empty($attribute)) {
-                return $attribute;
+                return null;
             }
         }
         return $attribute->getValueNamespace();
