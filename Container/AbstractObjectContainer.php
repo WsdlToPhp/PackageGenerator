@@ -149,20 +149,19 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     public function get($value, $key)
     {
+        $object = null;
         if ($this->count() > 0) {
-            $cachedModel = $this->getSimpleCache($key, $value);
-            if ($cachedModel === null) {
+            $object = $this->getSimpleCache($key, $value);
+            if ($object === null) {
                 $object = $this->findMatchingObject(array(
                     $key => $value,
                 ));
                 if ($object !== null) {
                     $this->setSimpleCache($key, $value, $object);
-                    return $object;
                 }
             }
-            return $cachedModel;
         }
-        return null;
+        return $object;
     }
     /**
      * @param array $properties
@@ -171,6 +170,7 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     public function getAs(array $properties)
     {
+        $object = null;
         if ($this->count() > 0) {
             $cacheValues = array(
                 'class'        => get_called_class(),
@@ -178,17 +178,15 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
                 'properties'   => $properties,
                 'object'       => spl_object_hash($this),
             );
-            $cachedModel = self::getCache($properties);
-            if ($cachedModel === null) {
+            $object = self::getCache($properties);
+            if ($object === null) {
                 $object = $this->findMatchingObject($properties);
                 if ($object !== null) {
                     self::setCache($cacheValues, $object);
-                    return $object;
                 }
             }
-            return $cachedModel;
         }
-        return null;
+        return $object;
     }
     /**
      * @param array $properties
