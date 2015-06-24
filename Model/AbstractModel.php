@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\ReservedKeywords;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 
 /**
  * Class AbstractModel defines the basic properties and methods to operations and structs extracted from the WSDL
@@ -169,22 +170,7 @@ abstract class AbstractModel
         /**
          * Extends
          */
-        $extends = '';
-        $base = Generator::instance()->getOptionInheritsClassIdentifier();
-        if (!empty($base) && ($model = self::getModelByName($this->getName() . $base))) {
-            if ($model->getIsStruct()) {
-                $extends = $model->getPackagedName();
-            }
-        } elseif ($this->getInheritance() != '' && ($model = self::getModelByName($this->getInheritance()))) {
-            if ($model->getIsStruct()) {
-                $extends = $model->getPackagedName();
-            }
-        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), Generator::getPackageName()) === 0) {
-            $extends = $this->getInheritance();
-        }
-        if (empty($extends) && Generator::instance()->getOptionGenerateWsdlClassFile()) {
-            $extends = self::getGenericWsdlClassName();
-        }
+        $extends = $this->getExtendsClassName();
         array_push($class, ($this->getIsAbstract() === true ? 'abstract ' : '') . 'class ' . $this->getPackagedName() . (!empty($extends) ? ' extends ' . $extends : ''));
         /**
          * Class body starts here
@@ -214,6 +200,29 @@ abstract class AbstractModel
          */
         array_push($class, '}');
         return $class;
+    }
+    /**
+     * @return string
+     */
+    public function getExtendsClassName()
+    {
+        $extends = '';
+        $base = Generator::instance()->getOptionInheritsClassIdentifier();
+        if (!empty($base) && ($model = self::getModelByName($this->getName() . $base))) {
+            if ($model->getIsStruct()) {
+                $extends = $model->getPackagedName();
+            }
+        } elseif ($this->getInheritance() != '' && ($model = self::getModelByName($this->getInheritance()))) {
+            if ($model->getIsStruct()) {
+                $extends = $model->getPackagedName();
+            }
+        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), Generator::getPackageName()) === 0) {
+            $extends = $this->getInheritance();
+        }
+        if (empty($extends) && Generator::instance()->getOptionGenerateWsdlClassFile()) {
+            $extends = self::getGenericWsdlClassName();
+        }
+        return $extends;
     }
     /**
      * Methods which fills the class body
@@ -595,10 +604,7 @@ abstract class AbstractModel
      */
     public static function cleanComment($comment, $glueSeparator = ',', $uniqueValues = true)
     {
-        if (!is_scalar($comment) && !is_array($comment)) {
-            return '';
-        }
-        return trim(str_replace('*/', '*[:slash:]', is_scalar($comment) ? $comment : implode($glueSeparator, $uniqueValues ? array_unique($comment) : $comment)));
+        return Utils::cleanComment($comment, $glueSeparator, $uniqueValues);
     }
     /**
      * Returns the generic name of the WsdlClass
