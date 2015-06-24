@@ -209,4 +209,18 @@ class Utils
         }
         return $resolvedPath;
     }
+    /**
+     * Clean comment
+     * @param string $comment the comment to clean
+     * @param string $glueSeparator ths string to use when gathering values
+     * @param bool $uniqueValues indicates if comment values must be unique or not
+     * @return string
+     */
+    public static function cleanComment($comment, $glueSeparator = ',', $uniqueValues = true)
+    {
+        if (!is_scalar($comment) && !is_array($comment)) {
+            return '';
+        }
+        return trim(str_replace('*/', '*[:slash:]', is_scalar($comment) ? $comment : implode($glueSeparator, $uniqueValues ? array_unique($comment) : $comment)));
+    }
 }
