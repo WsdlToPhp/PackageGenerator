@@ -19,7 +19,7 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
     private static $cache = array();
     /**
      * @return AbstractObjectContainer
-    */
+     */
     public function __construct()
     {
         $this->offset  = 0;
@@ -221,8 +221,7 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
         }
     }
     /**
-     * @param array $values
-     * @return AbstractObjectContainer
+     * purge all cache
      */
     public static function purgeAllCache()
     {
@@ -231,7 +230,6 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
     /**
      * @param array $values
      * @param mixed $value
-     * @return AbstractObjectContainer
      */
     private static function setCache(array $values, $value)
     {

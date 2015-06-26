@@ -284,8 +284,9 @@ class Generator extends \SoapClient
             arsort($structsToGenerateDone);
             $structTmp = $structs;
             $structs = array();
-            foreach (array_keys($structsToGenerateDone) as $structName)
+            foreach (array_keys($structsToGenerateDone) as $structName) {
                 $structs[$structName] = $structTmp->getStructByName($structName);
+            }
             unset($structTmp, $structsToGenerateDone);
             foreach ($structs as $structName => $struct) {
                 if (!$struct->getIsStruct()) {
@@ -343,8 +344,9 @@ class Generator extends \SoapClient
         foreach ($declarations as $declaration) {
             if (is_array($declaration) && array_key_exists('comment', $declaration) && is_array($declaration['comment'])) {
                 array_push($content, str_repeat($indentationString, $indentationLevel) . '/**');
-                foreach ($declaration['comment'] as $subComment)
+                foreach ($declaration['comment'] as $subComment) {
                     array_push($content, str_repeat($indentationString, $indentationLevel) . ' * ' . AbstractModel::cleanComment($subComment));
+                }
                 array_push($content, str_repeat($indentationString, $indentationLevel) . ' */');
             } elseif (is_string($declaration)) {
                 switch ($declaration) {
@@ -688,7 +690,6 @@ class Generator extends \SoapClient
      * @uses Generator::getService()
      * @uses Service::getMethod()
      * @param string $methodName the original function name
-     * @param mixed $methodParameter the original function paramter
      * @return Method|null
      */
     public function getServiceMethod($methodName)
@@ -927,11 +928,11 @@ class Generator extends \SoapClient
     /**
      * Gets the WSDL at the index
      * @param int $index
-     * @return Wsdl
+     * @return Wsdl|null
      */
     public function getWsdl($index)
     {
-        return $this->getWsdls()->offsetExists($index) ? $this->getWsdls()->offsetGet($index) : null;
+        return $this->getWsdls()->offsetGet($index);
     }
     /**
      * Sets the WSDLs

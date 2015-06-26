@@ -7,7 +7,7 @@ use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 abstract class AbstractTagOperationElement extends AbstractTag
 {
     const
-        ATTRIBUTE_MESSAGE  = 'message';
+        ATTRIBUTE_MESSAGE = 'message';
     /**
      * @return TagOperation|null
      */
@@ -37,7 +37,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
         return $this->hasAttribute(self::ATTRIBUTE_MESSAGE) === true ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValueNamespace() : '';
     }
     /**
-     * @return \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagMessage
+     * @return TagMessage
      */
     public function getMessage()
     {
@@ -50,7 +50,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
         return null;
     }
     /**
-     * @return null|array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart]
+     * @return TagPart[]|null
      */
     public function getParts()
     {
@@ -61,7 +61,8 @@ abstract class AbstractTagOperationElement extends AbstractTag
         return null;
     }
     /**
-     * @return null|\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart
+     * @param string $partName
+     * @return TagPart|null
      */
     public function getPart($partName)
     {
