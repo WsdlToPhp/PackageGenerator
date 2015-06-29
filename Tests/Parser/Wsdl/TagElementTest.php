@@ -23,7 +23,7 @@ class TagElementTest extends WsdlParser
 
         $tagElementParser->parse();
 
-        $ok = false;
+        $ok = 0;
         $structs = $tagElementParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
             if ($structs->getStructByName('SearchRequest') instanceof Struct) {
@@ -33,9 +33,17 @@ class TagElementTest extends WsdlParser
                     'minOccurs' => '0',
                 ), $structs->getStructByName('SearchRequest')->getAttribute('Version')->getMeta());
                 $this->assertSame('string', $structs->getStructByName('SearchRequest')->getAttribute('Version')->getType());
-                $ok = true;
+                $ok++;
+            }
+            if ($structs->getStructByName('ArrayOfNewsRelatedSearch') instanceof Struct) {
+                $this->assertSame(array(
+                    'maxOccurs' => 'unbounded',
+                    'minOccurs' => '0',
+                ), $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getMeta());
+                $this->assertSame('NewsRelatedSearch', $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getType());
+                $ok++;
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertEquals(2, $ok);
     }
 }
