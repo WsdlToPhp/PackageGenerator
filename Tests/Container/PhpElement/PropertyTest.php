@@ -19,6 +19,8 @@ class PropertyTest extends TestCase
         $property->add(new PhpProperty('foo'));
 
         $this->assertCount(1, $property);
+
+        $this->assertInstanceOf('\\WsdlToPhp\\PhpGenerator\\Element\\PhpProperty', $property->get('foo'));
     }
     /**
      * @expectedException \InvalidArgumentException
