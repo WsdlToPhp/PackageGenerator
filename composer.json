@@ -25,7 +25,8 @@
         "php" : ">=5.3.3",
         "ext-soap": "*",
         "symfony/console": "~2.6",
-        "symfony/yaml": "~2.6"
+        "symfony/yaml": "~2.6",
+        "wsdltophp/phpgenerator": "0.0.3"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "~1.8"
