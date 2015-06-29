@@ -204,7 +204,7 @@ abstract class AbstractModelFile extends AbstractFile
     /**
      * @param string $metaName
      * @param mixed $metaValue
-     * @return PhpAnnotation|null
+     * @return string|null
      */
     protected function getMetaValueAnnotation($metaName, $metaValue)
     {
@@ -219,7 +219,7 @@ abstract class AbstractModelFile extends AbstractFile
     }
     /**
      * @param string $metaName
-     * @param mixed $metaValue
+     * @param string $metaValue
      * @return string
      */
     protected function transformMetaValue($metaName, $metaValue)
@@ -230,7 +230,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $metaValue;
     }
     /**
-     * @return PhpClass
+     * @return AbstractModelFile
      */
     protected function addClassElement()
     {
@@ -307,6 +307,7 @@ abstract class AbstractModelFile extends AbstractFile
     abstract protected function getClassConstants(Constant $constants);
     /**
      * @param PhpConstant $constant
+     * @return PhpAnnotationBlock|null
      */
     abstract protected function getConstantAnnotationBlock(PhpConstant $constant);
     /**
@@ -314,6 +315,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getClassProperties(Property $properties);
     /**
+     * @param PhpProperty $property
      * @return PhpAnnotationBlock|null
      */
     abstract protected function getPropertyAnnotationBlock(PhpProperty $property);
@@ -322,6 +324,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getClassMethods(Method $methods);
     /**
+     * @param PhpMethod $method
      * @return PhpAnnotationBlock|null
      */
     abstract protected function getMethodAnnotationBlock(PhpMethod $method);
@@ -330,13 +333,12 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function defineStringMethod(PhpClass $class)
     {
-        $class
-            ->addAnnotationBlockElement($this->getToStringMethodAnnotationBlock())
-            ->addMethodElement($this->getToStringMethod());
+        $class->addAnnotationBlockElement($this->getToStringMethodAnnotationBlock());
+        $class->addMethodElement($this->getToStringMethod());
         return $this;
     }
     /**
-     * @param PhpClass $class
+     * @return PhpAnnotationBlock
      */
     protected function getToStringMethodAnnotationBlock()
     {
@@ -346,7 +348,7 @@ abstract class AbstractModelFile extends AbstractFile
         ));
     }
     /**
-     * @param PhpClass $class
+     * @return PhpMethod
      */
     protected function getToStringMethod()
     {
