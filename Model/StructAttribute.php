@@ -109,7 +109,7 @@ class StructAttribute extends AbstractModel
      */
     public function getDeclaration()
     {
-        return 'public $' . $this->getCleanName() . ';';
+        return sprintf('public $%s;', $this->getCleanName());
     }
     /**
      * Returns the getter name for this attribute
@@ -118,7 +118,7 @@ class StructAttribute extends AbstractModel
      */
     public function getGetterName()
     {
-        return 'get' . ucfirst(self::getUniqueName());
+        return sprintf('get%s', ucfirst(self::getUniqueName()));
     }
     /**
      * Returns the getter name for this attribute
@@ -127,7 +127,7 @@ class StructAttribute extends AbstractModel
      */
     public function getSetterName()
     {
-        return 'set' . ucfirst(self::getUniqueName());
+        return sprintf('set%s', ucfirst(self::getUniqueName()));
     }
     /**
      * Returns the array of lines to declare the getter
@@ -162,7 +162,7 @@ class StructAttribute extends AbstractModel
             array_push($comments, '@uses ' . $struct->getPackagedName() . '::' . $this->getSetterName() . '()');
             array_push($comments, '@param bool true or false whether to return XML value as string or as DOMDocument');
         }
-        array_push($comments, '@return ' . ($model ? (($model->getIsStruct() && $model->getPackagedName() != $this->getOwner()->getPackagedName()) ? $model->getPackagedName() : ($model->getInheritance() ? $model->getInheritance() : $this->getType())) : $this->getType()) . ($this->isRequired() ? '' : '|null'));
+        array_push($comments, '@return ' . $this->getReturnType());
         array_push($body, array('comment' => $comments));
         /**
          * get() method body
@@ -217,6 +217,7 @@ class StructAttribute extends AbstractModel
     public function getSetterDeclaration(&$body, Struct $struct)
     {
         $model = self::getModelByName($this->getType());
+        $paramType = $this->getParamType();
         /**
          * set() method comment
          */
@@ -227,14 +228,14 @@ class StructAttribute extends AbstractModel
         }
         if ($model) {
             if ($model->getIsStruct() && $model->getPackagedName() != $this->getOwner()->getPackagedName()) {
-                array_push($comments, '@param ' . $model->getPackagedName() . ' $' . lcfirst($this->getCleanName()) . ' the ' . $this->getName());
+                array_push($comments, '@param ' . $paramType . ' $' . lcfirst($this->getCleanName()) . ' the ' . $this->getName());
                 array_push($comments, '@return ' . $model->getPackagedName());
             } else {
-                array_push($comments, '@param ' . ($model->getInheritance() ? $model->getInheritance() : $this->getType()) . ' $' . lcfirst($this->getCleanName()) . ' the ' . $this->getName());
+                array_push($comments, '@param ' . $paramType . ' $' . lcfirst($this->getCleanName()) . ' the ' . $this->getName());
                 array_push($comments, '@return ' . ($model->getInheritance() ? $model->getInheritance() : $this->getType()));
             }
         } else {
-            array_push($comments, '@param ' . $this->getType() . ' $' . lcfirst($this->getCleanName()) . ' the ' . $this->getName());
+            array_push($comments, '@param ' . $paramType . ' $' . lcfirst($this->getCleanName()) . ' the ' . $this->getName());
             array_push($comments, '@return ' . $this->getType());
         }
         array_push($body, array('comment' => $comments));
@@ -256,6 +257,38 @@ class StructAttribute extends AbstractModel
         }
         array_push($body, '}');
         unset($model, $comments);
+    }
+    /**
+     * @return string
+     */
+    public function getParamType()
+    {
+        $paramType = $this->getType();
+        $model = self::getModelByName($this->getType());
+        if ($model instanceof AbstractModel) {
+            if ($model->getIsStruct() && $model->getPackagedName() != $this->getOwner()->getPackagedName()) {
+                $paramType = $model->getPackagedName();
+            } elseif ($model->getInheritance() !== '') {
+                $paramType = $model->getInheritance();
+            }
+        }
+        return $paramType;
+    }
+    /**
+     * @return string
+     */
+    public function getReturnType()
+    {
+        $returnType = $this->getType();
+        $model = self::getModelByName($this->getType());
+        if ($model instanceof Struct) {
+            if ($model->getIsStruct() && $model->getPackagedName() != $this->getOwner()->getPackagedName()) {
+                $returnType = $model->getPackagedName();
+            } elseif ($model->getInheritance() !== '') {
+                $returnType = $model->getInheritance();
+            }
+        }
+        return sprintf('%s%s', $returnType, $this->isRequired() ? '' : '|null');
     }
     /**
      * Returns the type value
