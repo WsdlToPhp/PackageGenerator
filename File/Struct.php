@@ -2,13 +2,13 @@
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PackageGenerator\Model\StructValue;
-use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
-use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PackageGenerator\Model\StructAttributeModel as StructAttributeModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
+use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
+use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
@@ -76,7 +76,9 @@ class Struct extends AbstractModelFile
         $annotationBlock = new PhpAnnotationBlock();
         $annotationBlock->addChild(sprintf('The %s', $property->getName()));
         $this->defineModelAnnotationsFromWsdl($annotationBlock);
-        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_VAR, $this->getModel()->getAttribute($property->getName())->getVarType()));
+        if (($attribute = $this->getModel()->getAttribute($property->getName())) instanceof StructAttributeModel) {
+            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_VAR, $attribute->getVarType()));
+        }
         return $annotationBlock;
     }
     /**
