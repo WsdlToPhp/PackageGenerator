@@ -194,7 +194,7 @@ abstract class AbstractModelFile extends AbstractFile
         $validMeta = array();
         foreach ($meta as $metaName=>$metaValue) {
             $finalMeta = $this->getMetaValueAnnotation($metaName, $metaValue);
-            if (!empty($finalMeta)) {
+            if (is_scalar($finalMeta)) {
                 $validMeta[] = $finalMeta;
             }
         }
@@ -210,7 +210,7 @@ abstract class AbstractModelFile extends AbstractFile
         $meta = null;
         if ($metaName !== AbstractModel::META_DOCUMENTATION) {
             $metaValue = Utils::cleanComment($metaValue, ', ', stripos($metaName, 'SOAPHeader') === false);
-            if (!empty($metaValue)) {
+            if (is_scalar($metaValue)) {
                 $meta = sprintf("\t- %s: %s", $metaName, $this->transformMetaValue($metaName, $metaValue));
             }
         }
