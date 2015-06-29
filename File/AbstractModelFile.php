@@ -43,6 +43,18 @@ abstract class AbstractModelFile extends AbstractFile
      */
     const ANNOTATION_VAR = 'var';
     /**
+     * @var string
+     */
+    const ANNOTATION_SEE = 'see';
+    /**
+     * @var string
+     */
+    const METHOD_CONSTRUCT = '__construct';
+    /**
+     * @var string
+     */
+    const METHOD_SET_STATE = '__set_state';
+    /**
      * @var AbstractModel
      */
     protected $model;
@@ -237,7 +249,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function addClassElement()
     {
-        $class = new PhpClass($this->getModel()->getPackagedName(), $this->getModel()->getIsAbstract(), $this->getModel()->getExtendsClassName());
+        $class = new PhpClass($this->getModel()->getPackagedName(), $this->getModel()->getIsAbstract(), empty($this->getModel()->getExtendsClassName()) ? null : $this->getModel()->getExtendsClassName());
         $this
             ->defineConstants($class)
             ->defineProperties($class)
