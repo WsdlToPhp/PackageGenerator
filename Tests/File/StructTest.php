@@ -80,7 +80,7 @@ class StructTest extends AbstractFile
     /**
      *
      */
-    public function __testWriteBingSearchStructQueryWithoutWsdlClass()
+    public function testWriteBingSearchStructQueryWithoutWsdlClass()
     {
         $generator = self::bingGeneratorInstance();
         $generator->setOptionGenerateWsdlClassFile(false);
