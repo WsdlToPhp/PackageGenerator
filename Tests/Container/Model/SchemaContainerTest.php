@@ -6,7 +6,7 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 
-class WSchemaContainerTest extends TestCase
+class SchemaContainerTest extends TestCase
 {
     const
         SCHEMA_BING = 'bingsearch.wsdl',
