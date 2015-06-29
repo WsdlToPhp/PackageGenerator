@@ -937,7 +937,7 @@ class Generator extends \SoapClient
      * @param string $packageName
      * @return string
      */
-    private static function setPackageName($packageName)
+    public static function setPackageName($packageName)
     {
         return (self::$packageName = $packageName);
     }
