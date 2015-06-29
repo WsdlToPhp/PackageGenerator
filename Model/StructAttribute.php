@@ -51,6 +51,7 @@ class StructAttribute extends AbstractModel
         array_push($comments, 'The ' . $this->getName());
         $this->addMetaComment($comments);
         $model = self::getModelByName($this->getType());
+        $varType = $this->getVarType();
         if ($model) {
             /**
              * A virtual struct exists only to store meta informations about itself
@@ -59,14 +60,35 @@ class StructAttribute extends AbstractModel
              */
             if (!$model->getIsStruct() || $model->getPackagedName() == $this->getOwner()->getPackagedName()) {
                 $model->addMetaComment($comments);
-                array_push($comments, '@var ' . ($model->getInheritance() ? $model->getInheritance() : $this->getType()));
+                array_push($comments, '@var ' . $varType);
             } else {
-                array_push($comments, '@var ' . $model->getPackagedName());
+                array_push($comments, '@var ' . $varType);
             }
         } else {
-            array_push($comments, '@var ' . $this->getType());
+            array_push($comments, '@var ' . $varType);
         }
         return $comments;
+    }
+    /**
+     * @return string
+     */
+    public function getVarType()
+    {
+        $varType = $this->getType();
+        $model = self::getModelByName($this->getType());
+        if ($model) {
+            /**
+             * A virtual struct exists only to store meta informations about itself
+             * A property for which the data type points to its actual owner class has to be of its native type
+             * So don't add meta informations about a valid struct
+             */
+            if (!$model->getIsStruct() || $model->getPackagedName() == $this->getOwner()->getPackagedName() && $model->getInheritance() !== '') {
+                $varType = $model->getInheritance();
+            } else {
+                $varType = $model->getPackagedName();
+            }
+        }
+        return $varType;
     }
     /**
      * Returns the unique name in the current struct (for setters/getters and struct contrusctor array)
