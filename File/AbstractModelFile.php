@@ -14,7 +14,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
-use WsdlToPhp\PhpGenerator\Component\PhpFile;
 use WsdlToPhp\PhpGenerator\Component\PhpClass;
 
 abstract class AbstractModelFile extends AbstractFile
