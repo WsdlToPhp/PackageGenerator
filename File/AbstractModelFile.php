@@ -39,6 +39,10 @@ abstract class AbstractModelFile extends AbstractFile
      */
     const ANNOTATION_PARAM = 'param';
     /**
+     * @var string
+     */
+    const ANNOTATION_VAR = 'var';
+    /**
      * @var AbstractModel
      */
     protected $model;
