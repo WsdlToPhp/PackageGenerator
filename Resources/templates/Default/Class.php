@@ -197,11 +197,11 @@ class PackageNameWsdlClass implements \ArrayAccess, \Iterator, \Countable
      * It allows to return an object instantiated with the values
      * @uses PackageNameWsdlClass::_set()
      * @param array $array the exported values
-     * @param string $className optional (used by inherited classes in order to always call this method)
      * @return PackageNameWsdlClass|null
      */
-    public static function __set_state(array $array, $className = __CLASS__)
+    public static function __set_state(array $array)
     {
+        $className = get_called_class();
         if (class_exists($className)) {
             $object = @new $className();
             if (is_object($object) && is_subclass_of($object, 'PackageNameWsdlClass')) {
