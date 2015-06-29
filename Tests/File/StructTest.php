@@ -66,14 +66,30 @@ class StructTest extends AbstractFile
      */
     public function testWriteBingSearchStructQuery()
     {
-        $file = $this->getTestDirectory();
         $generator = self::bingGeneratorInstance();
         if ($model = $generator->getStruct('Query')) {
-            $struct = new StructFile($generator, $model->getName(), $file);
+            $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();
             $this->assertSameFileContent('ValidApiStructQuery', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find Query struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function __testWriteBingSearchStructQueryWithoutWsdlClass()
+    {
+        $generator = self::bingGeneratorInstance();
+        $generator->setOptionGenerateWsdlClassFile(false);
+        if ($model = $generator->getStruct('Query')) {
+            $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiStructQueryWithoutWsdlClass', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find Query struct for file generation');
         }
