@@ -25,6 +25,13 @@ class Struct extends AbstractModelFile
     /**
      * @return bool
      */
+    public function isModelAnArray()
+    {
+        return $this->isModelAStruct() && stripos($this->getModel()->getName(), 'array') !== false;
+    }
+    /**
+     * @return bool
+     */
     public function isModelAnAnumeration()
     {
         return $this->isModelAStruct() && $this->getModel()->getIsRestriction() === true;
@@ -55,12 +62,22 @@ class Struct extends AbstractModelFile
      */
     protected function getClassProperties(Property $properties)
     {
+        if ($this->isModelAStruct() && $this->getModel()->getAttributes()->count() > 0) {
+            foreach ($this->getModel()->getAttributes() as $attribute) {
+                $properties->add(new PhpProperty($attribute->getName(), PhpProperty::NO_VALUE));
+            }
+        }
     }
     /**
      * @return PhpAnnotationBlock|null
      */
     protected function getPropertyAnnotationBlock(PhpProperty $property)
     {
+        $annotationBlock = new PhpAnnotationBlock();
+        $annotationBlock->addChild(sprintf('The %s', $property->getName()));
+        $this->defineModelAnnotationsFromWsdl($annotationBlock);
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_VAR, $this->getModel()->getAttribute($property->getName())->getVarType()));
+        return $annotationBlock;
     }
     /**
      * @return Method
@@ -83,6 +100,9 @@ class Struct extends AbstractModelFile
         $method->addChild(sprintf('return in_array($value, array(%s));', implode(', ', $this->getEnumMethodInArrayValues())));
         return $method;
     }
+    /**
+     * @return string[]
+     */
     protected function getEnumMethodInArrayValues()
     {
         $values = array();
