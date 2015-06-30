@@ -36,6 +36,10 @@ class StructArray extends Struct
      */
     const METHOD_OFFSET_GET = 'offsetGet';
     /**
+     * @var string
+     */
+    const METHOD_ADD = 'add';
+    /**
      * @see \WsdlToPhp\PackageGenerator\File\Struct::addStructMethodsSetAndGet()
      */
     public function addStructMethodsSetAndGet(MethodContainer $methods)
@@ -47,6 +51,7 @@ class StructArray extends Struct
             ->addArrayMethodFirst($methods)
             ->addArrayMethodLast($methods)
             ->addArrayMethodOffsetGet($methods)
+            ->addArrayMethodAdd($methods)
             ->addArrayMethodGetAttributeName($methods);
         return $this;
     }
@@ -122,6 +127,17 @@ class StructArray extends Struct
         }
         return $this;
     }
+    protected function addArrayMethodAdd(MethodContainer $methods)
+    {
+        if (($model = $this->getModelFromStructAttribute()) instanceof StructModel && $model->getIsRestriction()) {
+            $method = new PhpMethod(self::METHOD_ADD, array(
+                'item',
+            ));
+            $method->addChild(sprintf('return %s::valueIsValid($item) ? parent::add($item) : false;', $model->getPackagedName()));
+            $methods->add($method);
+        }
+        return $this;
+    }
     /**
      * @return PhpAnnotationBlock|null
      */
@@ -173,6 +189,19 @@ class StructArray extends Struct
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_OFFSET_GET, 'Returns the element at the offset', 'int $offset');
     }
     /**
+     * @return PhpAnnotationBlock
+     */
+    protected function getArrayMethodAddAnnotationBlock()
+    {
+        return new PhpAnnotationBlock(array(
+            'Add element to array',
+            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', AbstractModel::getGenericWsdlClassName())),
+            new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName())),
+            new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getModelFromStructAttribute()->getPackagedName())),
+            new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModelFromStructAttribute()->getPackagedName()),
+        ));
+    }
+    /**
      * @param string $name
      * @param string $description
      * @param string $return
@@ -183,7 +212,6 @@ class StructArray extends Struct
     {
         $annotationBlock = null;
         if ($this->getModel()->getAttributes()->count() === 1) {
-            $attributeModel = $this->getModelFromModelAttribute();
             $annotationBlock = new PhpAnnotationBlock(array(
                 $description,
                 new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', AbstractModel::getGenericWsdlClassName(), $name)),
@@ -191,7 +219,7 @@ class StructArray extends Struct
             if (!empty($param)) {
                 $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, $param));
             }
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getAttributes()->offsetGet(0)->getVarType()));
+            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeType()));
         }
         return $annotationBlock;
     }
@@ -227,22 +255,14 @@ class StructArray extends Struct
             case self::METHOD_OFFSET_GET:
                 $annotationBlock = $this->getArrayMethodOffsetGetAnnotationBlock();
                 break;
+            case self::METHOD_ADD:
+                $annotationBlock = $this->getArrayMethodAddAnnotationBlock();
+                break;
             default:
                 $annotationBlock = parent::getStructMethodAnnotationBlock($method);
                 break;
         }
         return $annotationBlock;
-    }
-    /**
-     * @return StructModel|null
-     */
-    protected function getModelFromModelAttribute()
-    {
-        $model = null;
-        if ($this->getModel()->getAttributes()->count() === 1) {
-            $model = $this->getGenerator()->getStruct($this->getModel()->getAttributes()->offsetGet(0)->getType());
-        }
-        return $model;
     }
     /**
      * @param string $method
