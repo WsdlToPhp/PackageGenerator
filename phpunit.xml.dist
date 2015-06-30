@@ -19,6 +19,7 @@
             <file>Tests/DomHandler/AttributeHandlerTest.php</file>
             <file>Tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
             <directory>Tests/DomHandler/Wsdl/Tag</directory>
+            <directory>Tests/File</directory>
             <directory>Tests/Model/</directory>
             <directory>Tests/Container/</directory>
             <directory>Tests/Parser/</directory>
@@ -30,6 +31,10 @@
         
         <testsuite name="utils">
             <file>Tests/Generator/UtilsTest.php</file>
+        </testsuite>
+        
+        <testsuite name="file">
+            <directory>Tests/File</directory>
         </testsuite>
         
         <testsuite name="domhandler">
