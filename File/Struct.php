@@ -174,7 +174,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
     {
-        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), $attribute->isRequired() ? PhpFunctionParameter::NO_VALUE : (empty($defaultValue) ? $attribute->getDefaultValue() : $defaultValue), $this->getStructMethodParameterType($attribute));
+        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), $attribute->isRequired() ? PhpFunctionParameter::NO_VALUE : (isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue()), $this->getStructMethodParameterType($attribute));
     }
     /**
      * @param StructAttributeModel $attribute
