@@ -6,6 +6,7 @@ use WsdlToPhp\PackageGenerator\Container\PhpElement\Method;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -371,5 +372,52 @@ abstract class AbstractModelFile extends AbstractFile
         $method = new PhpMethod('__toString');
         $method->addChild('return __CLASS__;');
         return $method;
+    }
+    /**
+     * @param StructAttribute $structAttribute
+     * @return StructAttribute
+     */
+    protected function getStructAttribute(StructAttribute $structAttribute = null)
+    {
+        $attribute = $structAttribute;
+        if (empty($structAttribute) && $this->getModel()->getAttributes()->count() === 1) {
+            $attribute = $this->getModel()->getAttributes()->offsetGet(0);
+        }
+        return $attribute;
+    }
+    /**
+     * @param StructAttribute $structAttribute
+     * @return Struct|null
+     */
+    protected function getModelFromStructAttribute(StructAttribute $structAttribute = null)
+    {
+        $model = null;
+        $attribute = $this->getStructAttribute($structAttribute);
+        if ($attribute instanceof StructAttribute) {
+            $model = $this->getGenerator()->getStruct($attribute->getType());
+        }
+        return $model;
+    }
+    /**
+     * @param StructAttribute $structAttribute
+     * @param string $returnAnnotation
+     * @return string
+     */
+    protected function getStructAttributeType(StructAttribute $structAttribute = null, $returnAnnotation = false)
+    {
+        $attribute = $this->getStructAttribute($structAttribute);
+        $type = $attribute->getType();
+        $model = $this->getModelFromStructAttribute($structAttribute);
+        if ($model instanceof Struct) {
+            if ($model->getIsStruct() === false || ($model->getPackagedName() === $attribute->getOwner()->getPackagedName() && $model->getInheritance() !== '')) {
+                $type = $model->getInheritance();
+            } else {
+                $type = $model->getPackagedName();
+            }
+        }
+        if ($returnAnnotation === true && $attribute->isRequired() === false) {
+            $type = sprintf('%s|null', $type);
+        }
+        return $type;
     }
 }
