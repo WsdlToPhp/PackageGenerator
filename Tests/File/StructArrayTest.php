@@ -8,6 +8,28 @@ use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 class StructArrayTest extends AbstractFile
 {
     /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetModelGoodNameTooManyAttributesWithException()
+    {
+        $struct = new StructModel('FooArray');
+        $struct
+            ->addAttribute('bar', 'string')
+            ->addAttribute('foo', 'int');
+        $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo', $this->getTestDirectory());
+        $array->setModel($struct);
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetModelBasNameOneAttributeWithException()
+    {
+        $struct = new StructModel('Foo');
+        $struct->addAttribute('bar', 'string');
+        $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo', $this->getTestDirectory());
+        $array->setModel($struct);
+    }
+    /**
      *
      */
     public function testWriteBingSearchArrayOfNewsRelatedSearch()

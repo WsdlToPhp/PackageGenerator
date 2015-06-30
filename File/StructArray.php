@@ -345,4 +345,17 @@ class StructArray extends Struct
     {
         return sprintf('return parent::%s(%s);', $method, $var);
     }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
+     * @throws \InvalidaArgumentException
+     * @param AbstractModel $model
+     * @return StructArray
+     */
+    public function setModel(AbstractModel $model)
+    {
+        if (!$model instanceof StructModel || !$model->isArray()) {
+            throw new \InvalidArgumentException(sprintf(''));
+        }
+        return parent::setModel($model);
+    }
 }
