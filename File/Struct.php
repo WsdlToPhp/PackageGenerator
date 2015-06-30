@@ -33,11 +33,17 @@ class Struct extends AbstractModelFile
         return $this->isModelAStruct() && $this->getModel()->isArray();
     }
     /**
-     * @return bool
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassConstants()
      */
-    public function isModelAnAnumeration()
+    protected function getClassConstants(ConstantContainer $constants)
     {
-        return $this->isModelAStruct() && $this->getModel()->getIsRestriction() === true;
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getConstantAnnotationBlock()
+     */
+    protected function getConstantAnnotationBlock(PhpConstant $constant)
+    {
+        return null;
     }
     /**
      *
@@ -46,27 +52,6 @@ class Struct extends AbstractModelFile
     protected function getModelAttributes()
     {
         return $this->getModel()->getAttributes(false, true);
-    }
-    /**
-     * @param ConstantContainer
-     */
-    protected function getClassConstants(ConstantContainer $constants)
-    {
-        if ($this->isModelAnAnumeration()) {
-            foreach ($this->getModel()->getValues() as $value) {
-                $constants->add(new PhpConstant($value->getCleanName(), $value->getValue()));
-            }
-        }
-    }
-    /**
-     * @return PhpAnnotationBlock|null
-     */
-    protected function getConstantAnnotationBlock(PhpConstant $constant)
-    {
-        return new PhpAnnotationBlock(array(
-            sprintf('Constant for value \'%s\'', $constant->getValue()),
-            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string \'%s\'', $constant->getValue())),
-        ));
     }
     /**
      * @param PropertyContainer
@@ -86,8 +71,8 @@ class Struct extends AbstractModelFile
     {
         $annotationBlock = new PhpAnnotationBlock();
         $annotationBlock->addChild(sprintf('The %s', $property->getName()));
-        $this->defineModelAnnotationsFromWsdl($annotationBlock);
         if (($attribute = $this->getModel()->getAttribute($property->getName())) instanceof StructAttributeModel) {
+            $this->defineModelAnnotationsFromWsdl($annotationBlock, $attribute);
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_VAR, $attribute->getVarType()));
         }
         return $annotationBlock;
@@ -97,9 +82,7 @@ class Struct extends AbstractModelFile
      */
     protected function getClassMethods(MethodContainer $methods)
     {
-        if ($this->isModelAnAnumeration()) {
-            $methods->add($this->getEnumMethodValueIsValid());
-        } elseif ($this->isModelAStruct()) {
+        if ($this->isModelAStruct()) {
             $this
                 ->addStructMethodConstruct($methods)
                 ->addStructMethodsSetAndGet($methods)
@@ -173,23 +156,13 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodConstructParentParameter(StructAttributeModel $attribute)
     {
-        $parentPrameter = '';
         $model = $this->getGenerator()->getStruct($attribute->getType());
-        if ($model instanceof StructModel) {
-            $parentPrameter = $this->getStructMethodConstructParentParameterWithStruct($attribute, $model);
+        if ($model instanceof StructModel && $model->getPackagedName() != $this->getModel()->getPackagedName() && $model->isArray()) {
+            $parentPrameter = sprintf('\'%1$s\'=>($%2$s instanceof %3$s) ? $%2$s : new %3$s(%2$s)', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()), $struct->getPackagedName());
         } else {
-            $parentPrameter = $this->getStructMethodConstructParentParameterName($attribute->getUniqueName(), $attribute->getCleanName());
+            $parentPrameter = sprintf('\'%s\'=>$%s', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()));
         }
         return $parentPrameter;
-    }
-    /**
-     * @param StructAttributeModel $attribute
-     * @param StructModel $struct
-     * @return string
-     */
-    protected function getStructMethodConstructParentParameterWithStruct(StructAttributeModel $attribute, StructModel $struct)
-    {
-        return '';
     }
     /**
      * @param string $name
@@ -319,36 +292,12 @@ class Struct extends AbstractModelFile
         return $this;
     }
     /**
-     * @return PhpMethod
-     */
-    protected function getEnumMethodValueIsValid()
-    {
-        $method = new PhpMethod('valueIsValid', array(
-            'value',
-        ), PhpMethod::ACCESS_PUBLIC, false, true);
-        $method->addChild(sprintf('return in_array($value, array(%s));', implode(', ', $this->getEnumMethodInArrayValues())));
-        return $method;
-    }
-    /**
-     * @return string[]
-     */
-    protected function getEnumMethodInArrayValues()
-    {
-        $values = array();
-        foreach ($this->getModel()->getValues() as $value) {
-            $values[] = sprintf('%s::%s', $this->getModel()->getPackagedName(), $value->getCleanName());
-        }
-        return $values;
-    }
-    /**
      * @return PhpAnnotationBlock|null
      */
     protected function getMethodAnnotationBlock(PhpMethod $method)
     {
         $annotationBlock = null;
-        if ($this->isModelAnAnumeration()) {
-            $annotationBlock = $this->getEnumValueIsValidAnnotationBlock();
-        } elseif ($this->isModelAStruct()) {
+        if ($this->isModelAStruct()) {
             $annotationBlock = $this->getStructMethodAnnotationBlock($method);
         }
         return $annotationBlock;
@@ -440,22 +389,6 @@ class Struct extends AbstractModelFile
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $attribute->getParamType(), lcfirst($attribute->getCleanName()))));
         }
         return $this;
-    }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getEnumValueIsValidAnnotationBlock()
-    {
-        $annotationBlock = new PhpAnnotationBlock(array(
-            'Return true if value is allowed',
-        ));
-        foreach ($this->getEnumMethodInArrayValues() as $value) {
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, $value));
-        }
-        $annotationBlock
-            ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value value'))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool true|false'));
-        return $annotationBlock;
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getModel()

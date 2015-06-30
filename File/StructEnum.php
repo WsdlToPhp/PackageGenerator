@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
@@ -10,15 +9,8 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 
-class Enum extends Struct
+class StructEnum extends Struct
 {
-    /**
-     * @return bool
-     */
-    public function isModelAnAnumeration()
-    {
-        return $this->isModelAStruct() && $this->getModel()->getIsRestriction() === true;
-    }
     /**
      * @param ConstantContainer
      */
@@ -89,13 +81,5 @@ class Enum extends Struct
             ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value value'))
             ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool true|false'));
         return $annotationBlock;
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getModel()
-     * @return StructModel
-     */
-    public function getModel()
-    {
-        return parent::getModel();
     }
 }

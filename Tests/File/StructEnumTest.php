@@ -2,9 +2,9 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
-use WsdlToPhp\PackageGenerator\File\Enum as EnumFile;
+use WsdlToPhp\PackageGenerator\File\StructEnum as EnumFile;
 
-class EnumTest extends AbstractFile
+class StructEnumTest extends AbstractFile
 {
     /**
      *
