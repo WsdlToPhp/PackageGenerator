@@ -158,7 +158,7 @@ class Struct extends AbstractModelFile
     {
         $model = $this->getGenerator()->getStruct($attribute->getType());
         if ($model instanceof StructModel && $model->getPackagedName() != $this->getModel()->getPackagedName() && $model->isArray()) {
-            $parentPrameter = sprintf('\'%1$s\'=>($%2$s instanceof %3$s) ? $%2$s : new %3$s(%2$s)', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()), $struct->getPackagedName());
+            $parentPrameter = sprintf('\'%1$s\'=>($%2$s instanceof %3$s) ? $%2$s : new %3$s(%2$s)', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()), $model->getPackagedName());
         } else {
             $parentPrameter = sprintf('\'%s\'=>$%s', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()));
         }
