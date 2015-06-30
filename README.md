@@ -138,6 +138,7 @@ You have several ```testsuite```s available which run test in the proper order:
 - model: tests models
 - container : tests containers
 - parser: tests parsers
+- file: tests files
 
 ```
     $ cd /path/to/src/WsdlToPhp/PackageGenerator/
