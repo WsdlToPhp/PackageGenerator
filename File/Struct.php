@@ -33,12 +33,13 @@ class Struct extends AbstractModelFile
         return null;
     }
     /**
-     *
+     * @param bool $includeInheritanceAttributes include the attributes of parent class, default parent attributes are not included. If true, then the array is an associative array containing and index "attribute" for the StructAttribute object and an index "model" for the Struct object.
+     * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _contrust method with the required attribute at first
      * @return StructAttributeContainer
      */
-    protected function getModelAttributes()
+    protected function getModelAttributes($includeInheritanceAttributes = false, $requiredFirst = true)
     {
-        return $this->getModel()->getAttributes(false, true);
+        return $this->getModel()->getAttributes($includeInheritanceAttributes, $requiredFirst);
     }
     /**
      * @param PropertyContainer
@@ -46,7 +47,7 @@ class Struct extends AbstractModelFile
     protected function getClassProperties(PropertyContainer $properties)
     {
         if ($this->getModel()->getAttributes()->count() > 0) {
-            foreach ($this->getModel()->getAttributes() as $attribute) {
+            foreach ($this->getModelAttributes() as $attribute) {
                 $properties->add(new PhpProperty($attribute->getName(), PhpProperty::NO_VALUE));
             }
         }
@@ -80,7 +81,7 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodConstruct(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_CONSTRUCT, $this->getStructMethodConstructParametersValues(true));
+        $method = new PhpMethod(self::METHOD_CONSTRUCT, $this->getStructMethodParametersValues(true));
         $this->addStructMethodConstructBody($method);
         $methods->add($method);
         return $this;
@@ -141,13 +142,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodConstructParentParameter(StructAttributeModel $attribute)
     {
-        $model = $this->getModelFromStructAttribute($attribute);
-        if ($model instanceof StructModel && $model->getPackagedName() != $this->getModel()->getPackagedName() && $model->isArray()) {
-            $parentPrameter = sprintf('\'%1$s\'=>($%2$s instanceof %3$s) ? $%2$s : new %3$s($%2$s)', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()), $model->getPackagedName());
-        } else {
-            $parentPrameter = sprintf('\'%s\'=>$%s', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()));
-        }
-        return $parentPrameter;
+        return sprintf('\'%s\'=>$%s', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()));
     }
     /**
      * @param string $name
@@ -172,22 +167,36 @@ class Struct extends AbstractModelFile
      * @param bool $lowCaseFirstLetter
      * @return PhpFunctionParameter[]
      */
-    protected function getStructMethodConstructParametersValues($lowCaseFirstLetter = false)
+    protected function getStructMethodParametersValues($lowCaseFirstLetter = false)
     {
         $parametersValues = array();
         foreach ($this->getModelAttributes() as $attribute) {
-            $parametersValues[] = $this->getStructMethodConstructParameter($attribute, $lowCaseFirstLetter);
+            $parametersValues[] = $this->getStructMethodParameter($attribute, $lowCaseFirstLetter);
         }
         return $parametersValues;
     }
     /**
      * @param StructAttributeModel $attribute
      * @param bool $lowCaseFirstLetter
+     * @param mixed $defaultValue
      * @return PhpFunctionParameter
      */
-    protected function getStructMethodConstructParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false)
+    protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
     {
-        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), $attribute->isRequired() ? PhpFunctionParameter::NO_VALUE : $attribute->getDefaultValue());
+        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), $attribute->isRequired() ? PhpFunctionParameter::NO_VALUE : (empty($defaultValue) ? $attribute->getDefaultValue() : $defaultValue), $this->getStructMethodParameterType($attribute));
+    }
+    /**
+     * @param StructAttributeModel $attribute
+     * @return string|null
+     */
+    protected function getStructMethodParameterType(StructAttributeModel $attribute)
+    {
+        $type = null;
+        $model = $this->getModelFromStructAttribute($attribute);
+        if ($model instanceof StructModel && !$model->getIsRestriction()) {
+            $type = $this->getStructAttributeType($attribute);
+        }
+        return $type;
     }
     /**
      * @param MethodContainer $methods
@@ -209,8 +218,9 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSet(MethodContainer $methods, StructAttributeModel $attribute)
     {
+
         $method = new PhpMethod($attribute->getSetterName(), array(
-            lcfirst($attribute->getCleanName()),
+            $this->getStructMethodParameter($attribute, true, PhpFunctionParameter::NO_VALUE),
         ));
         $this->addStructMethodSetBody($method, $attribute);
         $methods->add($method);
@@ -367,17 +377,27 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodsSetAndGetAnnotationBlock(PhpMethod $method)
     {
+        $parameters = $method->getParameters();
         $setOrGet = strtolower(substr($method->getName(), 0, 3));
-        $attributeName = substr($method->getName(), 3);
-        $attribute = $this->getModel()->getAttribute($attributeName);
+        $parameter = array_shift($parameters);
+        if ($parameter instanceof PhpFunctionParameter) {
+            $parameterName = ucfirst($parameter->getName());
+        } else {
+            $parameterName = substr($method->getName(), 3);
+        }
+        $attribute = $this->getModel()->getAttribute($parameterName);
+        if (!$attribute instanceof StructAttributeModel) {
+            $parameterName = lcfirst($parameterName);
+            $attribute = $this->getModel()->getAttribute($parameterName);
+        }
         $setValueAnnotation = '%s %s value';
         $annotationBlock = new PhpAnnotationBlock();
         if ($attribute instanceof StructAttributeModel) {
-            $annotationBlock->addChild(sprintf($setValueAnnotation, ucfirst($setOrGet), ucfirst($attributeName)));
+            $annotationBlock->addChild(sprintf($setValueAnnotation, ucfirst($setOrGet), $parameterName));
             $this->addStructMethodsSetAndGetAnnotationBlockFromStructAttribute($setOrGet, $annotationBlock, $attribute);
         } elseif (empty($attribute)) {
-            $annotationBlock->addChild(sprintf($setValueAnnotation, ucfirst($setOrGet), lcfirst($attributeName)));
-            $this->addStructMethodsSetAndGetAnnotationBlockFromScalar($setOrGet, $annotationBlock, $attributeName);
+            $annotationBlock->addChild(sprintf($setValueAnnotation, ucfirst($setOrGet), lcfirst($parameterName)));
+            $this->addStructMethodsSetAndGetAnnotationBlockFromScalar($setOrGet, $annotationBlock, $parameterName);
         }
         return $annotationBlock;
     }
@@ -415,7 +435,7 @@ class Struct extends AbstractModelFile
                 $this->addStructMethodsSetAnnotationBlock($annotationBlock, lcfirst($attributeName), lcfirst($attributeName));
                 break;
             case 'get':
-                $this->addStructMethodsGetAnnotationBlock($annotationBlock, $attributeName);
+                $this->addStructMethodsGetAnnotationBlock($annotationBlock, lcfirst($attributeName));
                 break;
         }
         return $this;

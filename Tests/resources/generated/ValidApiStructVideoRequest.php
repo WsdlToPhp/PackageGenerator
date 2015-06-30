@@ -53,9 +53,9 @@ class ApiStructVideoRequest extends ApiWsdlClass
      * @param ApiStructArrayOfString $filters
      * @param ApiEnumVideoSortOption $sortBy
      */
-    public function __construct($offset = null, $count = null, $filters = null, $sortBy = null)
+    public function __construct($offset = null, $count = null, ApiStructArrayOfString $filters = null, $sortBy = null)
     {
-        parent::__construct(array('Offset'=>$offset, 'Count'=>$count, 'Filters'=>($filters instanceof ApiStructArrayOfString) ? $filters : new ApiStructArrayOfString($filters), 'SortBy'=>$sortBy), false);
+        parent::__construct(array('Offset'=>$offset, 'Count'=>$count, 'Filters'=>$filters, 'SortBy'=>$sortBy), false);
     }
     /**
      * Get Offset value
@@ -106,7 +106,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
      * @param ApiStructArrayOfString $filters
      * @return ApiStructVideoRequest
      */
-    public function setFilters($filters)
+    public function setFilters(ApiStructArrayOfString $filters)
     {
         $this->Filters = $filters;
         return $this;

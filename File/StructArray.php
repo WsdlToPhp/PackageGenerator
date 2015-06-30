@@ -49,14 +49,15 @@ class StructArray extends Struct
      * @see \WsdlToPhp\PackageGenerator\File\Struct::getStructMethodConstructParameter()
      * @param StructAttributeModel $attribute
      * @param bool $lowCaseFirstLetter
+     * @param mixed $defaultValue
      * @return PhpFunctionParameter
      */
-    protected function getStructMethodConstructParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false)
+    protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
     {
         if ($this->getModel()->getAttributes()->count() === 1) {
             return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), array(), self::TYPE_ARRAY);
         }
-        return parent::getStructMethodConstructParameter($attribute, $lowCaseFirstLetter);
+        return parent::getStructMethodParameter($attribute, $lowCaseFirstLetter, $defaultValue);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\Struct::addStructMethodSet()

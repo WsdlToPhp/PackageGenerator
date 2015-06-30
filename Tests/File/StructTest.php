@@ -93,4 +93,21 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find VideoRequest struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteBingSearchStructSearchRequest()
+    {
+        $generator = self::bingGeneratorInstance();
+        $generator->setOptionGenerateWsdlClassFile(true);
+        if (($model = $generator->getStruct('SearchRequest')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiStructSearchRequest', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find SearchRequest struct for file generation');
+        }
+    }
 }
