@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\File\StructArray as ArrayFile;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
 class StructArrayTest extends AbstractFile
 {
@@ -13,7 +14,7 @@ class StructArrayTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         $generator->setOptionGenerateWsdlClassFile(true);
-        if ($model = $generator->getStruct('ArrayOfNewsRelatedSearch')) {
+        if (($model = $generator->getStruct('ArrayOfNewsRelatedSearch')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)
@@ -30,7 +31,7 @@ class StructArrayTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         $generator->setOptionGenerateWsdlClassFile(true);
-        if ($model = $generator->getStruct('ArrayOfWebSearchOption')) {
+        if (($model = $generator->getStruct('ArrayOfWebSearchOption')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)

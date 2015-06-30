@@ -49,7 +49,7 @@ class StructTest extends AbstractFile
     public function testWriteBingSearchStructQuery()
     {
         $generator = self::bingGeneratorInstance();
-        if ($model = $generator->getStruct('Query')) {
+        if (($model = $generator->getStruct('Query')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)
@@ -66,7 +66,7 @@ class StructTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         $generator->setOptionGenerateWsdlClassFile(false);
-        if ($model = $generator->getStruct('Query')) {
+        if (($model = $generator->getStruct('Query')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)
