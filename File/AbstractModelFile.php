@@ -60,15 +60,11 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected $model;
     /**
-     * @throws \InvalidArgumentException
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::beforeWrite()
      */
     public function beforeWrite()
     {
         parent::beforeWrite();
-        if (!$this->getModel() instanceof AbstractModel) {
-            throw new \InvalidArgumentException('You must at least affect a model to this file before writing it');
-        }
         $this
             ->addAnnotationBlocks()
             ->addClassElement();

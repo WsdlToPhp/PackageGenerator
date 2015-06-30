@@ -203,7 +203,6 @@ class StructArray extends Struct
     /**
      * @param string $name
      * @param string $description
-     * @param string $return
      * @param string $param
      * @return PhpAnnotationBlock|null
      */
@@ -228,7 +227,6 @@ class StructArray extends Struct
      */
     protected function getStructMethodAnnotationBlock(PhpMethod $method)
     {
-        $annotationBlock = null;
         switch ($method->getName()) {
             case self::METHOD_CONSTRUCT:
                 $annotationBlock = $this->getStructMethodConstructAnnotationBlock();
