@@ -61,10 +61,7 @@ class StructArray extends Struct
      */
     protected function addArrayMethodCurrent(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_CURRENT);
-        $method->addChild($this->getArrayMethodBody(self::METHOD_CURRENT));
-        $methods->add($method);
-        return $this;
+        return $this->addArrayMethodGenericMethod($methods, self::METHOD_CURRENT, $this->getArrayMethodBody(self::METHOD_CURRENT));
     }
     /**
      * @param MethodContainer $methods
@@ -72,12 +69,9 @@ class StructArray extends Struct
      */
     protected function addArrayMethodItem(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_ITEM, array(
+        return $this->addArrayMethodGenericMethod($methods, self::METHOD_ITEM, $this->getArrayMethodBody(self::METHOD_ITEM, '$index'), array(
             'index',
         ));
-        $method->addChild($this->getArrayMethodBody(self::METHOD_ITEM, '$index'));
-        $methods->add($method);
-        return $this;
     }
     /**
      * @param MethodContainer $methods
@@ -85,10 +79,7 @@ class StructArray extends Struct
      */
     protected function addArrayMethodFirst(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_FIRST);
-        $method->addChild($this->getArrayMethodBody(self::METHOD_FIRST));
-        $methods->add($method);
-        return $this;
+        return $this->addArrayMethodGenericMethod($methods, self::METHOD_FIRST, $this->getArrayMethodBody(self::METHOD_FIRST));
     }
     /**
      * @param MethodContainer $methods
@@ -96,10 +87,7 @@ class StructArray extends Struct
      */
     protected function addArrayMethodLast(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_LAST);
-        $method->addChild($this->getArrayMethodBody(self::METHOD_LAST));
-        $methods->add($method);
-        return $this;
+        return $this->addArrayMethodGenericMethod($methods, self::METHOD_LAST, $this->getArrayMethodBody(self::METHOD_LAST));
     }
     /**
      * @param MethodContainer $methods
@@ -107,12 +95,9 @@ class StructArray extends Struct
      */
     protected function addArrayMethodOffsetGet(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_OFFSET_GET, array(
+        return $this->addArrayMethodGenericMethod($methods, self::METHOD_OFFSET_GET, $this->getArrayMethodBody(self::METHOD_OFFSET_GET, '$offset'), array(
             'offset',
         ));
-        $method->addChild($this->getArrayMethodBody(self::METHOD_OFFSET_GET, '$offset'));
-        $methods->add($method);
-        return $this;
     }
     /**
      * @param MethodContainer $methods
@@ -121,21 +106,35 @@ class StructArray extends Struct
     protected function addArrayMethodGetAttributeName(MethodContainer $methods)
     {
         if ($this->getModel()->getAttributes()->count() === 1) {
-            $method = new PhpMethod(self::METHOD_GET_ATTRIBUTE_NAME);
-            $method->addChild(sprintf('return \'%s\';', $this->getModel()->getAttributes()->offsetGet(0)->getName()));
-            $methods->add($method);
+            return $this->addArrayMethodGenericMethod($methods, self::METHOD_GET_ATTRIBUTE_NAME, sprintf('return \'%s\';', $this->getModel()->getAttributes()->offsetGet(0)->getName()));
         }
         return $this;
     }
+    /**
+     * @param MethodContainer $methods
+     * @return StructArray
+     */
     protected function addArrayMethodAdd(MethodContainer $methods)
     {
         if (($model = $this->getModelFromStructAttribute()) instanceof StructModel && $model->getIsRestriction()) {
-            $method = new PhpMethod(self::METHOD_ADD, array(
+            return $this->addArrayMethodGenericMethod($methods, self::METHOD_ADD, sprintf('return %s::valueIsValid($item) ? parent::add($item) : false;', $model->getPackagedName()), array(
                 'item',
             ));
-            $method->addChild(sprintf('return %s::valueIsValid($item) ? parent::add($item) : false;', $model->getPackagedName()));
-            $methods->add($method);
         }
+        return $this;
+    }
+    /**
+     * @param MethodContainer $methods
+     * @param string $name
+     * @param string $body
+     * @param array $methodParameters
+     * @return StructArray
+     */
+    protected function addArrayMethodGenericMethod(MethodContainer $methods, $name, $body, array $methodParameters = array())
+    {
+        $method = new PhpMethod($name, $methodParameters);
+        $method->addChild($body);
+        $methods->add($method);
         return $this;
     }
     /**
