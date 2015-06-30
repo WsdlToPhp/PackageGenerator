@@ -19,20 +19,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 class Struct extends AbstractModelFile
 {
     /**
-     * @return bool
-     */
-    public function isModelAStruct()
-    {
-        return $this->getModel()->getIsStruct() === true;
-    }
-    /**
-     * @return bool
-     */
-    public function isModelAnArray()
-    {
-        return $this->isModelAStruct() && $this->getModel()->isArray();
-    }
-    /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassConstants()
      */
     protected function getClassConstants(ConstantContainer $constants)
@@ -59,7 +45,7 @@ class Struct extends AbstractModelFile
      */
     protected function getClassProperties(PropertyContainer $properties)
     {
-        if ($this->isModelAStruct() && $this->getModel()->getAttributes()->count() > 0) {
+        if ($this->getModel()->getAttributes()->count() > 0) {
             foreach ($this->getModel()->getAttributes() as $attribute) {
                 $properties->add(new PhpProperty($attribute->getName(), PhpProperty::NO_VALUE));
             }
@@ -83,12 +69,10 @@ class Struct extends AbstractModelFile
      */
     protected function getClassMethods(MethodContainer $methods)
     {
-        if ($this->isModelAStruct()) {
-            $this
-                ->addStructMethodConstruct($methods)
-                ->addStructMethodsSetAndGet($methods)
-                ->addStructMethodSetState($methods);
-        }
+        $this
+            ->addStructMethodConstruct($methods)
+            ->addStructMethodsSetAndGet($methods)
+            ->addStructMethodSetState($methods);
     }
     /**
      * @param MethodContainer $methods
@@ -292,11 +276,7 @@ class Struct extends AbstractModelFile
      */
     protected function getMethodAnnotationBlock(PhpMethod $method)
     {
-        $annotationBlock = null;
-        if ($this->isModelAStruct()) {
-            $annotationBlock = $this->getStructMethodAnnotationBlock($method);
-        }
-        return $annotationBlock;
+        return $this->getStructMethodAnnotationBlock($method);
     }
     /**
      * @param PhpMethod $method
