@@ -16,8 +16,8 @@ class ApiStructArrayOfString extends ApiWsdlClass
     /**
      * The string
      * Meta informations extracted from the WSDL
-     * - maxOccurs : unbounded
-     * - minOccurs : 0
+     * - maxOccurs: unbounded
+     * - minOccurs: 0
      * @var array
      */
     public $string;
@@ -87,7 +87,7 @@ class ApiStructArrayOfString extends ApiWsdlClass
     }
     /**
      * Returns the element at the offset
-     * @see ApiWsdlClass::last()
+     * @see ApiWsdlClass::offsetGet()
      * @param int $offset
      * @return string
      */
