@@ -25,7 +25,6 @@ class ApiStructArrayOfNewsRelatedSearch extends ApiWsdlClass
      * Constructor method for ArrayOfNewsRelatedSearch
      * @see parent::__construct()
      * @param ApiStructNewsRelatedSearch $newsRelatedSearch
-     * @return ApiStructArrayOfNewsRelatedSearch
      */
     public function __construct($newsRelatedSearch = null)
     {

@@ -43,11 +43,12 @@ class ApiStructQuery
     public $AlterationOverrideQuery;
     /**
      * Constructor method for Query
-     * @see parent::__construct()
+     * @uses ApiStructQuery::setSearchTerms()
+     * @uses ApiStructQuery::setAlteredQuery()
+     * @uses ApiStructQuery::setAlterationOverrideQuery()
      * @param string $searchTerms
      * @param string $alteredQuery
      * @param string $alterationOverrideQuery
-     * @return ApiStructQuery
      */
     public function __construct($searchTerms = null, $alteredQuery = null, $alterationOverrideQuery = null)
     {

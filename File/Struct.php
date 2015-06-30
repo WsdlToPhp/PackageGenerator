@@ -306,10 +306,11 @@ class Struct extends AbstractModelFile
     {
         $annotationBlock = new PhpAnnotationBlock(array(
             sprintf('Constructor method for %s', $this->getModel()->getName()),
-            new PhpAnnotation(self::ANNOTATION_SEE, 'parent::__construct()'),
         ));
+        if ($this->getGenerator()->getOptionGenerateWsdlClassFile()) {
+            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_SEE, 'parent::__construct()'));
+        }
         $this->addStructPropertiesToAnnotationBlock($annotationBlock);
-        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName()));
         return $annotationBlock;
     }
     /**
@@ -361,6 +362,11 @@ class Struct extends AbstractModelFile
      */
     protected function addStructPropertiesToAnnotationBlock(PhpAnnotationBlock $annotationBlock)
     {
+        if (!$this->getGenerator()->getOptionGenerateWsdlClassFile()) {
+            foreach ($this->getModelAttributes() as $attribute) {
+                $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()->getPackagedName(), $attribute->getSetterName())));
+            }
+        }
         foreach ($this->getModelAttributes() as $attribute) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $this->getStructAttributeType($attribute), lcfirst($attribute->getCleanName()))));
         }

@@ -47,7 +47,6 @@ class ApiStructQuery extends ApiWsdlClass
      * @param string $searchTerms
      * @param string $alteredQuery
      * @param string $alterationOverrideQuery
-     * @return ApiStructQuery
      */
     public function __construct($searchTerms = null, $alteredQuery = null, $alterationOverrideQuery = null)
     {

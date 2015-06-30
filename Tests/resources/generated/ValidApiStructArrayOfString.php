@@ -25,7 +25,6 @@ class ApiStructArrayOfString extends ApiWsdlClass
      * Constructor method for ArrayOfString
      * @see parent::__construct()
      * @param string $string
-     * @return ApiStructArrayOfString
      */
     public function __construct($string = null)
     {

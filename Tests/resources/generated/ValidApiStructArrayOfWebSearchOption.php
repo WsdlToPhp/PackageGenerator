@@ -25,7 +25,6 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
      * Constructor method for ArrayOfWebSearchOption
      * @see parent::__construct()
      * @param ApiEnumWebSearchOption $webSearchOption
-     * @return ApiStructArrayOfWebSearchOption
      */
     public function __construct($webSearchOption = null)
     {
