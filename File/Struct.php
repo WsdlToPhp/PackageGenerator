@@ -40,6 +40,7 @@ class Struct extends AbstractModelFile
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getConstantAnnotationBlock()
+     * @return null
      */
     protected function getConstantAnnotationBlock(PhpConstant $constant)
     {
@@ -65,7 +66,7 @@ class Struct extends AbstractModelFile
         }
     }
     /**
-     * @return PhpAnnotationBlock|null
+     * @return PhpAnnotationBlock
      */
     protected function getPropertyAnnotationBlock(PhpProperty $property)
     {
