@@ -24,4 +24,21 @@ class StructEnumTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find AdultOption enumeration for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteBingSearchEnumSourceType()
+    {
+        $file = $this->getTestDirectory();
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getStruct('SourceType')) instanceof StructModel) {
+            $struct = new EnumFile($generator, $model->getName(), $file);
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiEnumSourceType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find SourceType enumeration for file generation');
+        }
+    }
 }
