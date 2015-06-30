@@ -5,8 +5,8 @@ namespace WsdlToPhp\PackageGenerator\File;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
-use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -194,7 +194,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function defineModelAnnotationsFromInheritance(PhpAnnotationBlock $block)
     {
         $struct = $this->getGenerator()->getStruct($this->getModel()->getInheritance());
-        if ($struct instanceof Struct && $struct->getIsStruct() === false) {
+        if ($struct instanceof StructModel && $struct->getIsStruct() === false) {
             $validMeta = $this->getValidMetaValues($struct);
             foreach ($validMeta as $meta) {
                 $block->addChild($meta);
@@ -374,42 +374,42 @@ abstract class AbstractModelFile extends AbstractFile
         return $method;
     }
     /**
-     * @param StructAttribute $structAttribute
-     * @return StructAttribute
+     * @param StructAttributeModel $attribute
+     * @return StructAttributeModel
      */
-    protected function getStructAttribute(StructAttribute $structAttribute = null)
+    protected function getStructAttribute(StructAttributeModel $attribute = null)
     {
         $struct = $this->getModel();
-        $attribute = $structAttribute;
-        if (empty($structAttribute) && $struct instanceof Struct && $struct->getAttributes()->count() === 1) {
+        $attribute = $attribute;
+        if (empty($attribute) && $struct instanceof StructModel && $struct->getAttributes()->count() === 1) {
             $attribute = $struct->getAttributes()->offsetGet(0);
         }
         return $attribute;
     }
     /**
-     * @param StructAttribute $structAttribute
-     * @return Struct|null
+     * @param StructAttributeModel $attribute
+     * @return StructModel|null
      */
-    protected function getModelFromStructAttribute(StructAttribute $structAttribute = null)
+    protected function getModelFromStructAttribute(StructAttributeModel $attribute = null)
     {
         $model = null;
-        $attribute = $this->getStructAttribute($structAttribute);
-        if ($attribute instanceof StructAttribute) {
+        $attribute = $this->getStructAttribute($attribute);
+        if ($attribute instanceof StructAttributeModel) {
             $model = $this->getGenerator()->getStruct($attribute->getType());
         }
         return $model;
     }
     /**
-     * @param StructAttribute $structAttribute
+     * @param StructAttributeModel $attribute
      * @param bool $returnAnnotation
      * @return string
      */
-    protected function getStructAttributeType(StructAttribute $structAttribute = null, $returnAnnotation = false)
+    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false)
     {
-        $attribute = $this->getStructAttribute($structAttribute);
+        $attribute = $this->getStructAttribute($attribute);
         $type = $attribute->getType();
-        $model = $this->getModelFromStructAttribute($structAttribute);
-        if ($model instanceof Struct) {
+        $model = $this->getModelFromStructAttribute($attribute);
+        if ($model instanceof StructModel) {
             if ($model->getIsStruct() === false || ($model->getPackagedName() === $attribute->getOwner()->getPackagedName() && $model->getInheritance() !== '')) {
                 $type = $model->getInheritance();
             } else {
