@@ -168,15 +168,16 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function getClassDeclarationLine()
     {
-        return sprintf('This class stands for %s originally named %s', $this->getModel()->getPackagedName(), $this->getModel()->getName());
+        return sprintf('This class stands for %s %s', $this->getModel()->getName(), $this->getModel()->getContextualPart());
     }
     /**
      * @param PhpAnnotationBlock $block
+     * @param AbstractModel $model
      * @return AbstractModelFile
      */
-    protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block)
+    protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model = null)
     {
-        $validMeta = $this->getValidMetaValues($this->getModel());
+        $validMeta = $this->getValidMetaValues($model instanceof AbstractModel ? $model : $this->getModel());
         if (!empty($validMeta)) {
             $block->addChild('Meta informations extracted from the WSDL');
             foreach ($validMeta as $meta) {
