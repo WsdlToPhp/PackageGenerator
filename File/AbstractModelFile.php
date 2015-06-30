@@ -380,7 +380,6 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttribute(StructAttributeModel $attribute = null)
     {
         $struct = $this->getModel();
-        $attribute = $attribute;
         if (empty($attribute) && $struct instanceof StructModel && $struct->getAttributes()->count() === 1) {
             $attribute = $struct->getAttributes()->offsetGet(0);
         }
