@@ -226,7 +226,7 @@ class Struct extends AbstractModelFile
         return $this
             ->addStructMethodSetBodyForRestriction($method, $attribute)
             ->addStructMethodSetBodyAssignment($method, $attribute)
-            ->addStructMethodSetBodyReturn($method, $attribute);
+            ->addStructMethodSetBodyReturn($method);
     }
     /**
      * @param PhpMethod $method
@@ -240,10 +240,9 @@ class Struct extends AbstractModelFile
     }
     /**
      * @param PhpMethod $method
-     * @param StructAttributeModel $attribute
      * @return Struct
      */
-    protected function addStructMethodSetBodyReturn(PhpMethod $method, StructAttributeModel $attribute)
+    protected function addStructMethodSetBodyReturn(PhpMethod $method)
     {
         $method->addChild('return $this;');;
         return $this;
@@ -370,48 +369,78 @@ class Struct extends AbstractModelFile
     {
         $setOrGet = strtolower(substr($method->getName(), 0, 3));
         $attributeName = substr($method->getName(), 3);
-        $annotationBlock = new PhpAnnotationBlock(array(
-            sprintf('%s %s value', ucfirst($setOrGet), ucfirst($attributeName)),
-        ));
         $attribute = $this->getModel()->getAttribute($attributeName);
+        $setValueAnnotation = '%s %s value';
+        $annotationBlock = new PhpAnnotationBlock();
         if ($attribute instanceof StructAttributeModel) {
-            switch ($setOrGet) {
-                case 'set':
-                    $this->addStructMethodsSetAnnotationBlock($annotationBlock, $attribute);
-                    break;
-                case 'get':
-                    $this->addStructMethodsGetAnnotationBlock($annotationBlock, $attribute);
-                    break;
-            }
+            $annotationBlock->addChild(sprintf($setValueAnnotation, ucfirst($setOrGet), ucfirst($attributeName)));
+            $this->addStructMethodsSetAndGetAnnotationBlockFromStructAttribute($setOrGet, $annotationBlock, $attribute);
+        } elseif (empty($attribute)) {
+            $annotationBlock->addChild(sprintf($setValueAnnotation, ucfirst($setOrGet), lcfirst($attributeName)));
+            $this->addStructMethodsSetAndGetAnnotationBlockFromScalar($setOrGet, $annotationBlock, $attributeName);
         }
         return $annotationBlock;
     }
     /**
+     * @param string $setOrGet
      * @param PhpAnnotationBlock $annotationBlock
      * @param StructAttributeModel $attribute
      * @return Struct
      */
-    protected function addStructMethodsSetAnnotationBlock(PhpAnnotationBlock $annotationBlock, StructAttributeModel $attribute)
+    protected function addStructMethodsSetAndGetAnnotationBlockFromStructAttribute($setOrGet, PhpAnnotationBlock $annotationBlock, StructAttributeModel $attribute)
     {
-        if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction() && !$this->getModel()->isArray()) {
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $model->getPackagedName())));
+        switch ($setOrGet) {
+            case 'set':
+                if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction() && !$this->getModel()->isArray()) {
+                    $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $model->getPackagedName())));
+                }
+                $this->addStructMethodsSetAnnotationBlock($annotationBlock, $this->getStructAttributeType($attribute), lcfirst($attribute->getCleanName()));
+                break;
+            case 'get':
+                $this->addStructMethodsGetAnnotationBlock($annotationBlock, $this->getStructAttributeType($attribute, true));
+                break;
         }
-        if ($attribute instanceof StructAttributeModel) {
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $this->getStructAttributeType($attribute), lcfirst($attribute->getCleanName()))));
+        return $this;
+    }
+    /**
+     * @param string $setOrGet
+     * @param PhpAnnotationBlock $annotationBlock
+     * @param string $attributeName
+     * @return Struct
+     */
+    protected function addStructMethodsSetAndGetAnnotationBlockFromScalar($setOrGet, PhpAnnotationBlock $annotationBlock, $attributeName)
+    {
+        switch ($setOrGet) {
+            case 'set':
+                $this->addStructMethodsSetAnnotationBlock($annotationBlock, lcfirst($attributeName), lcfirst($attributeName));
+                break;
+            case 'get':
+                $this->addStructMethodsGetAnnotationBlock($annotationBlock, $attributeName);
+                break;
         }
-        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName()));
         return $this;
     }
     /**
      * @param PhpAnnotationBlock $annotationBlock
-     * @param StructAttributeModel $attribute
+     * @param string $type
+     * @param string $name
      * @return Struct
      */
-    protected function addStructMethodsGetAnnotationBlock(PhpAnnotationBlock $annotationBlock, StructAttributeModel $attribute)
+    protected function addStructMethodsSetAnnotationBlock(PhpAnnotationBlock $annotationBlock, $type, $name)
     {
-        if ($attribute instanceof StructAttributeModel) {
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeType($attribute, true)));
-        }
+        $annotationBlock
+            ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $type, $name)))
+            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName()));
+        return $this;
+    }
+    /**
+     * @param PhpAnnotationBlock $annotationBlock
+     * @param string $attribute
+     * @return Struct
+     */
+    protected function addStructMethodsGetAnnotationBlock(PhpAnnotationBlock $annotationBlock, $attribute)
+    {
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $attribute));
         return $this;
     }
     /**
