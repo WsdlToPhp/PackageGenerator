@@ -353,8 +353,8 @@ class StructArray extends Struct
      */
     public function setModel(AbstractModel $model)
     {
-        if (!$model instanceof StructModel || !$model->isArray()) {
-            throw new \InvalidArgumentException(sprintf(''));
+        if ($model instanceof StructModel && !$model->isArray()) {
+            throw new \InvalidArgumentException('The model is not a valid array struct (name must contain Array and the model must contain only one property');
         }
         return parent::setModel($model);
     }

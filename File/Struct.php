@@ -496,4 +496,17 @@ class Struct extends AbstractModelFile
     {
         return parent::getModel();
     }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
+     * @throws \InvalidaArgumentException
+     * @param AbstractModel $model
+     * @return StructArray
+     */
+    public function setModel(AbstractModel $model)
+    {
+        if (!$model instanceof StructModel) {
+            throw new \InvalidArgumentException('Model must be an instance of a Struct');
+        }
+        return parent::setModel($model);
+    }
 }

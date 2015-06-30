@@ -2,6 +2,8 @@
 
 namespace WsdlToPhp\PackageGenerator\File;
 
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
@@ -81,5 +83,18 @@ class StructEnum extends Struct
             ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value value'))
             ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool true|false'));
         return $annotationBlock;
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
+     * @throws \InvalidaArgumentException
+     * @param AbstractModel $model
+     * @return StructArray
+     */
+    public function setModel(AbstractModel $model)
+    {
+        if ($model instanceof StructModel && !$model->getIsRestriction()) {
+            throw new \InvalidArgumentException('Model must be a restriction containing values');
+        }
+        return parent::setModel($model);
     }
 }

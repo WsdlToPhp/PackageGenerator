@@ -8,6 +8,14 @@ use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 class StructEnumTest extends AbstractFile
 {
     /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetModelGoodNameTooManyAttributesWithException()
+    {
+        $enum = new EnumFile(self::bingGeneratorInstance(), 'Foo', $this->getTestDirectory());
+        $enum->setModel(new StructModel('FooEnum'));
+    }
+    /**
      *
      */
     public function testWriteBingSearchEnumAdultOption()

@@ -2,11 +2,20 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
+use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 
 class StructTest extends AbstractFile
 {
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetModelGoodNameTooManyAttributesWithException()
+    {
+        $struct = new StructFile(self::bingGeneratorInstance(), 'Foo', $this->getTestDirectory());
+        $struct->setModel(new EmptyModel('Foo'));
+    }
     /**
      * @expectedException \InvalidArgumentException
      */
