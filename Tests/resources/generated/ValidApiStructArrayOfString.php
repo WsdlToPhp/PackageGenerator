@@ -6,7 +6,7 @@
  * @release 1.1.0
  */
 /**
- * This class stands for ApiStructArrayOfString originally named ArrayOfString
+ * This class stands for ArrayOfString Struct
  * @package Api
  * @subpackage Structs
  * @release 1.1.0

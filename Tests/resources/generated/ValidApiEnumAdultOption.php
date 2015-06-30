@@ -6,7 +6,7 @@
  * @release 1.1.0
  */
 /**
- * This class stands for ApiEnumAdultOption originally named AdultOption
+ * This class stands for AdultOption Enum
  * @package Api
  * @subpackage Enumerations
  * @release 1.1.0

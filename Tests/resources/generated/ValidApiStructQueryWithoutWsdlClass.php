@@ -6,7 +6,7 @@
  * @release 1.1.0
  */
 /**
- * This class stands for ApiStructQuery originally named Query
+ * This class stands for Query Struct
  * Meta informations extracted from the WSDL
  * - maxOccurs: 1
  * - minOccurs: 0
@@ -22,7 +22,6 @@ class ApiStructQuery
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - type: tns:Query
      * @var string
      */
     public $SearchTerms;
@@ -31,7 +30,6 @@ class ApiStructQuery
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - type: tns:Query
      * @var string
      */
     public $AlteredQuery;
@@ -40,7 +38,6 @@ class ApiStructQuery
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - type: tns:Query
      * @var string
      */
     public $AlterationOverrideQuery;
