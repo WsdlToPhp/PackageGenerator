@@ -379,9 +379,10 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function getStructAttribute(StructAttribute $structAttribute = null)
     {
+        $struct = $this->getModel();
         $attribute = $structAttribute;
-        if (empty($structAttribute) && $this->getModel()->getAttributes()->count() === 1) {
-            $attribute = $this->getModel()->getAttributes()->offsetGet(0);
+        if (empty($structAttribute) && $struct instanceof Struct && $struct->getAttributes()->count() === 1) {
+            $attribute = $struct->getAttributes()->offsetGet(0);
         }
         return $attribute;
     }
@@ -400,7 +401,7 @@ abstract class AbstractModelFile extends AbstractFile
     }
     /**
      * @param StructAttribute $structAttribute
-     * @param string $returnAnnotation
+     * @param bool $returnAnnotation
      * @return string
      */
     protected function getStructAttributeType(StructAttribute $structAttribute = null, $returnAnnotation = false)
