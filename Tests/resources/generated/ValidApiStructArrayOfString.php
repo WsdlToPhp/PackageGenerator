@@ -18,21 +18,21 @@ class ApiStructArrayOfString extends ApiWsdlClass
      * Meta informations extracted from the WSDL
      * - maxOccurs : unbounded
      * - minOccurs : 0
-     * @var string
+     * @var array
      */
     public $string;
     /**
      * Constructor method for ArrayOfString
      * @see parent::__construct()
-     * @param string $string
+     * @param array $string
      */
-    public function __construct($string = null)
+    public function __construct(array $string = array())
     {
         parent::__construct(array('string'=>$string), false);
     }
     /**
      * Get string value
-     * @return string|null
+     * @return array
      */
     public function getString()
     {
@@ -40,12 +40,13 @@ class ApiStructArrayOfString extends ApiWsdlClass
     }
     /**
      * Set string value
-     * @param string $string the string
-     * @return string
+     * @param array $string
+     * @return ApiStructArrayOfString
      */
-    public function setString($string)
+    public function setString(array $string = array())
     {
-        return ($this->string = $string);
+        $this->string = $string;
+        return $this;
     }
     /**
      * Returns the current element
@@ -111,9 +112,9 @@ class ApiStructArrayOfString extends ApiWsdlClass
      * @param array $array the exported values
      * @return ApiStructArrayOfString
      */
-    public static function __set_state(array $array, $className = __CLASS__)
+    public static function __set_state(array $array)
     {
-        return parent::__set_state($array, $className);
+        return parent::__set_state($array);
     }
     /**
      * Method returning the class name

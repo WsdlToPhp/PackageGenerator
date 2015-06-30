@@ -141,9 +141,9 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodConstructParentParameter(StructAttributeModel $attribute)
     {
-        $model = $this->getGenerator()->getStruct($attribute->getType());
+        $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel && $model->getPackagedName() != $this->getModel()->getPackagedName() && $model->isArray()) {
-            $parentPrameter = sprintf('\'%1$s\'=>($%2$s instanceof %3$s) ? $%2$s : new %3$s(%2$s)', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()), $model->getPackagedName());
+            $parentPrameter = sprintf('\'%1$s\'=>($%2$s instanceof %3$s) ? $%2$s : new %3$s($%2$s)', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()), $model->getPackagedName());
         } else {
             $parentPrameter = sprintf('\'%s\'=>$%s', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()));
         }
@@ -223,9 +223,44 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSetBody(PhpMethod $method, StructAttributeModel $attribute)
     {
-        $method
-            ->addChild($this->getStructMethodSetBodyAssignment($attribute))
-            ->addChild('return $this;');
+        return $this
+            ->addStructMethodSetBodyForRestriction($method, $attribute)
+            ->addStructMethodSetBodyAssignment($method, $attribute)
+            ->addStructMethodSetBodyReturn($method, $attribute);
+    }
+    /**
+     * @param PhpMethod $method
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodSetBodyAssignment(PhpMethod $method, StructAttributeModel $attribute)
+    {
+        $method->addChild($this->getStructMethodSetBodyAssignment($attribute));
+        return $this;
+    }
+    /**
+     * @param PhpMethod $method
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodSetBodyReturn(PhpMethod $method, StructAttributeModel $attribute)
+    {
+        $method->addChild('return $this;');;
+        return $this;
+    }
+    /**
+     * @param PhpMethod $method
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodSetBodyForRestriction(PhpMethod $method, StructAttributeModel $attribute)
+    {
+        if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction()) {
+            $method
+                ->addChild(sprintf('if(!%s::valueIsValid($%s)) {', $model->getPackagedName(), lcfirst($attribute->getCleanName())))
+                ->addChild($method->getIndentedString('return false;', 1))
+                ->addChild('}');
+        }
         return $this;
     }
     /**
@@ -294,7 +329,7 @@ class Struct extends AbstractModelFile
                 break;
             case strpos($method->getName(), 'get') === 0:
             case strpos($method->getName(), 'set') === 0:
-                $annotationBlock = $this->getStructMethodsSeAndGetAnnotationBlock($method);
+                $annotationBlock = $this->getStructMethodsSetAndGetAnnotationBlock($method);
                 break;
         }
         return $annotationBlock;
@@ -331,7 +366,7 @@ class Struct extends AbstractModelFile
      * @param PhpMethod $method
      * @return PhpAnnotationBlock
      */
-    protected function getStructMethodsSeAndGetAnnotationBlock(PhpMethod $method)
+    protected function getStructMethodsSetAndGetAnnotationBlock(PhpMethod $method)
     {
         $setOrGet = strtolower(substr($method->getName(), 0, 3));
         $attributeName = substr($method->getName(), 3);
@@ -342,15 +377,10 @@ class Struct extends AbstractModelFile
         if ($attribute instanceof StructAttributeModel) {
             switch ($setOrGet) {
                 case 'set':
-                    if ($attribute instanceof StructAttributeModel) {
-                        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $this->getStructAttributeType($attribute), lcfirst($attribute->getCleanName()))));
-                    }
-                    $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName()));
+                    $this->addStructMethodsSetAnnotationBlock($annotationBlock, $attribute);
                     break;
                 case 'get':
-                    if ($attribute instanceof StructAttributeModel) {
-                        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeType($attribute, true)));
-                    }
+                    $this->addStructMethodsGetAnnotationBlock($annotationBlock, $attribute);
                     break;
             }
         }
@@ -358,15 +388,61 @@ class Struct extends AbstractModelFile
     }
     /**
      * @param PhpAnnotationBlock $annotationBlock
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodsSetAnnotationBlock(PhpAnnotationBlock $annotationBlock, StructAttributeModel $attribute)
+    {
+        if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction() && !$this->getModel()->isArray()) {
+            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $model->getPackagedName())));
+        }
+        if ($attribute instanceof StructAttributeModel) {
+            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $this->getStructAttributeType($attribute), lcfirst($attribute->getCleanName()))));
+        }
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName()));
+        return $this;
+    }
+    /**
+     * @param PhpAnnotationBlock $annotationBlock
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodsGetAnnotationBlock(PhpAnnotationBlock $annotationBlock, StructAttributeModel $attribute)
+    {
+        if ($attribute instanceof StructAttributeModel) {
+            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeType($attribute, true)));
+        }
+        return $this;
+    }
+    /**
+     * @param PhpAnnotationBlock $annotationBlock
      * @return Struct
      */
     protected function addStructPropertiesToAnnotationBlock(PhpAnnotationBlock $annotationBlock)
+    {
+        return $this
+            ->addStructPropertiesToAnnotationBlockUses($annotationBlock)
+            ->addStructPropertiesToAnnotationBlockParams($annotationBlock);
+    }
+    /**
+     * @param PhpAnnotationBlock $annotationBlock
+     * @return Struct
+     */
+    protected function addStructPropertiesToAnnotationBlockUses(PhpAnnotationBlock $annotationBlock)
     {
         if (!$this->getGenerator()->getOptionGenerateWsdlClassFile()) {
             foreach ($this->getModelAttributes() as $attribute) {
                 $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()->getPackagedName(), $attribute->getSetterName())));
             }
         }
+        return $this;
+    }
+    /**
+     * @param PhpAnnotationBlock $annotationBlock
+     * @return Struct
+     */
+    protected function addStructPropertiesToAnnotationBlockParams(PhpAnnotationBlock $annotationBlock)
+    {
         foreach ($this->getModelAttributes() as $attribute) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $this->getStructAttributeType($attribute), lcfirst($attribute->getCleanName()))));
         }

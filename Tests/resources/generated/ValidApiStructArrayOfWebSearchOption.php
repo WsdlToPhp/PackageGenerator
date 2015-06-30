@@ -18,21 +18,21 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var ApiEnumWebSearchOption
+     * @var array
      */
     public $WebSearchOption;
     /**
      * Constructor method for ArrayOfWebSearchOption
      * @see parent::__construct()
-     * @param ApiEnumWebSearchOption $webSearchOption
+     * @param array $webSearchOption
      */
-    public function __construct($webSearchOption = null)
+    public function __construct(array $webSearchOption = array())
     {
         parent::__construct(array('WebSearchOption'=>$webSearchOption), false);
     }
     /**
      * Get WebSearchOption value
-     * @return ApiEnumWebSearchOption|null
+     * @return array
      */
     public function getWebSearchOption()
     {
@@ -40,10 +40,10 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
     }
     /**
      * Set WebSearchOption value
-     * @param ApiEnumWebSearchOption $webSearchOption
+     * @param array $webSearchOption
      * @return ApiStructArrayOfWebSearchOption
      */
-    public function setWebSearchOption($webSearchOption)
+    public function setWebSearchOption(array $webSearchOption = array())
     {
         $this->WebSearchOption = $webSearchOption;
         return $this;

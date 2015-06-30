@@ -18,21 +18,21 @@ class ApiStructArrayOfNewsRelatedSearch extends ApiWsdlClass
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var ApiStructNewsRelatedSearch
+     * @var array
      */
     public $NewsRelatedSearch;
     /**
      * Constructor method for ArrayOfNewsRelatedSearch
      * @see parent::__construct()
-     * @param ApiStructNewsRelatedSearch $newsRelatedSearch
+     * @param array $newsRelatedSearch
      */
-    public function __construct($newsRelatedSearch = null)
+    public function __construct(array $newsRelatedSearch = array())
     {
         parent::__construct(array('NewsRelatedSearch'=>$newsRelatedSearch), false);
     }
     /**
      * Get NewsRelatedSearch value
-     * @return ApiStructNewsRelatedSearch|null
+     * @return array
      */
     public function getNewsRelatedSearch()
     {
@@ -40,10 +40,10 @@ class ApiStructArrayOfNewsRelatedSearch extends ApiWsdlClass
     }
     /**
      * Set NewsRelatedSearch value
-     * @param ApiStructNewsRelatedSearch $newsRelatedSearch
+     * @param array $newsRelatedSearch
      * @return ApiStructArrayOfNewsRelatedSearch
      */
-    public function setNewsRelatedSearch($newsRelatedSearch)
+    public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
         $this->NewsRelatedSearch = $newsRelatedSearch;
         return $this;

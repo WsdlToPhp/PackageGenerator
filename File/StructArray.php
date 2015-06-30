@@ -4,9 +4,11 @@ namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
+use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 
 class StructArray extends Struct
@@ -39,6 +41,63 @@ class StructArray extends Struct
      * @var string
      */
     const METHOD_ADD = 'add';
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\Struct::getStructMethodConstructParameter()
+     * @param StructAttributeModel $attribute
+     * @param bool $lowCaseFirstLetter
+     * @return PhpFunctionParameter
+     */
+    protected function getStructMethodConstructParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false)
+    {
+        if ($this->getModel()->getAttributes()->count() === 1) {
+            return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), array(), 'array');
+        }
+        return parent::getStructMethodConstructParameter($attribute, $lowCaseFirstLetter);
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\Struct::addStructMethodSet()
+     * @param MethodContainer $methods
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodSet(MethodContainer $methods, StructAttributeModel $attribute)
+    {
+        if ($this->getModel()->getAttributes()->count() === 1) {
+            $method = new PhpMethod($attribute->getSetterName(), array(
+                new PhpFunctionParameter(lcfirst($attribute->getCleanName()), array(), 'array'),
+            ));
+            $this->addStructMethodSetBody($method, $attribute);
+            $methods->add($method);
+            return $this;
+        }
+        return parent::addStructMethodSet($methods, $attribute);
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getStructAttributeType()
+     * @param StructAttributeModel $attribute
+     * @param bool $returnAnnotation
+     * @return string
+     */
+    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false)
+    {
+        if ($this->getModel()->getAttributes()->count() === 1 && $attribute === $this->getModel()->getAttributes()->offsetGet(0)) {
+            return 'array';
+        }
+        return parent::getStructAttributeType($attribute, $returnAnnotation);
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::addStructMethodSetBodyForRestriction()
+     * @param PhpMethod $method
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodSetBodyForRestriction(PhpMethod $method, StructAttributeModel $attribute)
+    {
+        if ($this->getModel()->getAttributes()->count() !== 1) {
+            return parent::addStructMethodSetBodyForRestriction($method, $attribute);
+        }
+        return $this;
+    }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\Struct::addStructMethodsSetAndGet()
      */
