@@ -134,7 +134,7 @@ class Utils
         if (is_int($value) || (!is_null($value) && in_array($knownType, array('time', 'positiveInteger', 'unsignedLong', 'unsignedInt', 'short', 'long', 'int', 'integer'), true))) {
             return intval($value);
         } elseif (is_float($value) || (!is_null($value) && in_array($knownType, array('float', 'double', 'decimal'), true))) {
-            return substr(floatval($value), 0, strlen($value));
+            return floatval($value);
         } elseif (is_numeric($value)) {
             return intval($value) == $value ? intval($value) : floatval($value);
         } elseif (is_bool($value) || (!is_null($value) && in_array($knownType, array('bool', 'boolean'), true))) {
