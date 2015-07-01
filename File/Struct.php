@@ -145,15 +145,6 @@ class Struct extends AbstractModelFile
         return sprintf('\'%s\'=>$%s', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()));
     }
     /**
-     * @param string $name
-     * @param string $value
-     * @return string
-     */
-    protected function getStructMethodConstructParentParameterName($name, $value)
-    {
-        return sprintf('\'%s\'=>$%s', $name, lcfirst($value));
-    }
-    /**
      * @param PhpMethod $method
      * @param StructAttributeModel $attribute
      * @return Struct
