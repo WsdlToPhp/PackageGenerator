@@ -189,7 +189,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructMobileWebRequest $mobileWeb
      * @param ApiStructTranslationRequest $translation
      */
-    public function __construct($query, $appId, ApiStructArrayOfSourceType $sources, ApiStructSearchRequest $parameters, $version = 2.2000000000000002, $market = null, $uILanguage = null, $adult = null, $latitude = null, $longitude = null, $radius = null, ApiStructArrayOfSearchOption $options = null, ApiStructWebRequest $web = null, ApiStructImageRequest $image = null, ApiStructPhonebookRequest $phonebook = null, ApiStructVideoRequest $video = null, ApiStructNewsRequest $news = null, ApiStructMobileWebRequest $mobileWeb = null, ApiStructTranslationRequest $translation = null)
+    public function __construct($query, $appId, ApiStructArrayOfSourceType $sources, ApiStructSearchRequest $parameters, $version = 2.2, $market = null, $uILanguage = null, $adult = null, $latitude = null, $longitude = null, $radius = null, ApiStructArrayOfSearchOption $options = null, ApiStructWebRequest $web = null, ApiStructImageRequest $image = null, ApiStructPhonebookRequest $phonebook = null, ApiStructVideoRequest $video = null, ApiStructNewsRequest $news = null, ApiStructMobileWebRequest $mobileWeb = null, ApiStructTranslationRequest $translation = null)
     {
         parent::__construct(array('Query'=>$query, 'AppId'=>$appId, 'Sources'=>$sources, 'parameters'=>$parameters, 'Version'=>$version, 'Market'=>$market, 'UILanguage'=>$uILanguage, 'Adult'=>$adult, 'Latitude'=>$latitude, 'Longitude'=>$longitude, 'Radius'=>$radius, 'Options'=>$options, 'Web'=>$web, 'Image'=>$image, 'Phonebook'=>$phonebook, 'Video'=>$video, 'News'=>$news, 'MobileWeb'=>$mobileWeb, 'Translation'=>$translation), false);
     }
