@@ -59,7 +59,7 @@ class StructArray extends Struct
     /**
      * @see \WsdlToPhp\PackageGenerator\File\Struct::getStructMethodParameterType()
      * @param StructAttributeModel $attribute
-     * @return string|null
+     * @return string
      */
     protected function getStructMethodParameterType(StructAttributeModel $attribute)
     {
@@ -209,7 +209,7 @@ class StructArray extends Struct
      * @param MethodContainer $methods
      * @param string $name
      * @param string $body
-     * @param array $methodParameters
+     * @param string[]|PhpFunctionParameter[] $methodParameters
      * @return StructArray
      */
     protected function addArrayMethodGenericMethod(MethodContainer $methods, $name, $body, array $methodParameters = array())
@@ -231,35 +231,35 @@ class StructArray extends Struct
         ));
     }
     /**
-     * @return PhpAnnotationBlock|null
+     * @return PhpAnnotationBlock
      */
     protected function getArrayMethodCurrentAnnotationBlock()
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_CURRENT, 'Returns the current element');
     }
     /**
-     * @return PhpAnnotationBlock|null
+     * @return PhpAnnotationBlock
      */
     protected function getArrayMethodFirstAnnotationBlock()
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_FIRST, 'Returns the first element');
     }
     /**
-     * @return PhpAnnotationBlock|null
+     * @return PhpAnnotationBlock
      */
     protected function getArrayMethodLastAnnotationBlock()
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_LAST, 'Returns the last element');
     }
     /**
-     * @return PhpAnnotationBlock|null
+     * @return PhpAnnotationBlock
      */
     protected function getArrayMethodItemAnnotationBlock()
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_ITEM, 'Returns the indexed element', 'int $index');
     }
     /**
-     * @return PhpAnnotationBlock|null
+     * @return PhpAnnotationBlock
      */
     protected function getArrayMethodOffsetGetAnnotationBlock()
     {
@@ -282,7 +282,7 @@ class StructArray extends Struct
      * @param string $name
      * @param string $description
      * @param string $param
-     * @return PhpAnnotationBlock|null
+     * @return PhpAnnotationBlock
      */
     protected function getArrayMethodGenericAnnotationBlock($name, $description, $param = null)
     {
