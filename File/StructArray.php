@@ -54,7 +54,7 @@ class StructArray extends Struct
      */
     protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
     {
-        return parent::getStructMethodParameter($attribute, $lowCaseFirstLetter, array(), self::TYPE_ARRAY);
+        return parent::getStructMethodParameter($attribute, $lowCaseFirstLetter, array());
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\Struct::getStructMethodParameterType()
