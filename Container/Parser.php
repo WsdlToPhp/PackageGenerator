@@ -12,11 +12,4 @@ class Parser extends AbstractObjectContainer
     {
         return '\\WsdlToPhp\\PackageGenerator\\Parser\\AbstractParser';
     }
-    /**
-     * @return ParserInterface
-     */
-    public function get($value, $key = self::KEY_NAME)
-    {
-        return parent::get($value, $key);
-    }
 }
