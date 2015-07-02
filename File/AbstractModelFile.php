@@ -56,6 +56,10 @@ abstract class AbstractModelFile extends AbstractFile
      */
     const METHOD_SET_STATE = '__set_state';
     /**
+     * @var string
+     */
+    const TYPE_STRING = 'string';
+    /**
      * @var AbstractModel
      */
     protected $model;
