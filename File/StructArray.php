@@ -274,7 +274,7 @@ class StructArray extends Struct
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', AbstractModel::getGenericWsdlClassName())),
             new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName())),
-            new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getModelFromStructAttribute()->getPackagedName())),
+            new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType())),
             new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModelFromStructAttribute()->getPackagedName()),
         ));
     }
