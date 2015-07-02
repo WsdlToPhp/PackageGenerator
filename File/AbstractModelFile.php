@@ -180,7 +180,12 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $validMeta = $this->getValidMetaValues($model instanceof AbstractModel ? $model : $this->getModel());
         if (!empty($validMeta)) {
-            $block->addChild('Meta informations extracted from the WSDL');
+            /**
+             * First line is the "The {propertyName}"
+             */
+            if (count($block->getChildren()) === 1) {
+                $block->addChild('Meta informations extracted from the WSDL');
+            }
             foreach ($validMeta as $meta) {
                 $block->addChild($meta);
             }
