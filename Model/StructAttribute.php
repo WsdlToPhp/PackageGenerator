@@ -148,7 +148,7 @@ class StructAttribute extends AbstractModel
     public function getGetterDeclaration(&$body, Struct $struct)
     {
         $model = self::getModelByName($this->getType());
-        $isXml = ($this->getType() == 'DOMDocument');
+        $isXml = $this->isXml();
         /**
          * get() method comment
          */
@@ -337,6 +337,13 @@ class StructAttribute extends AbstractModel
     public function getOwner()
     {
         return parent::getOwner();
+    }
+    /**
+     * @return bool
+     */
+    public function isXml()
+    {
+        return stripos($this->getType(), '\DOM') === 0;
     }
     /**
      * Returns class name
