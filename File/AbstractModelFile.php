@@ -226,11 +226,12 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getMetaValueAnnotation($metaName, $metaValue)
     {
         $meta = null;
-        if ($metaName !== AbstractModel::META_DOCUMENTATION) {
-            $metaValue = Utils::cleanComment($metaValue, ', ', stripos($metaName, 'SOAPHeader') === false);
-            if (is_scalar($metaValue)) {
-                $meta = sprintf("\t- %s: %s", $metaName, $this->transformMetaValue($metaName, $metaValue));
-            }
+        if (is_array($metaValue)) {
+            $metaValue = implode(' | ', $metaValue);
+        }
+        $metaValue = Utils::cleanComment($metaValue, ', ', stripos($metaName, 'SOAPHeader') === false);
+        if (is_scalar($metaValue)) {
+            $meta = sprintf("\t- %s: %s", $metaName, $this->transformMetaValue($metaName, $metaValue));
         }
         return $meta;
     }
