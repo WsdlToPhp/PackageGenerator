@@ -61,7 +61,7 @@ class Struct extends AbstractModelFile
         $annotationBlock->addChild(sprintf('The %s', $property->getName()));
         if (($attribute = $this->getModel()->getAttribute($property->getName())) instanceof StructAttributeModel) {
             $this->defineModelAnnotationsFromWsdl($annotationBlock, $attribute);
-            if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel) {
+            if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getName() !== $attribute->getName()) {
                 $this->defineModelAnnotationsFromWsdl($annotationBlock, $model);
             }
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_VAR, $this->getStructAttributeType($attribute)));
