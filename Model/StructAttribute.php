@@ -329,15 +329,6 @@ class StructAttribute extends AbstractModel
         return ($this->getMetaValue('use', '') === 'required' || $this->getMetaValueFirstSet(array('minOccurs', 'minoccurs', 'MinOccurs', 'Minoccurs'), false));
     }
     /**
-     * Returns the patern which the value must match
-     * @uses AbstractModel::getMetaValueFirstSet()
-     * @return string
-     */
-    public function getPattern()
-    {
-        return $this->getMetaValueFirstSet(array('pattern', 'Pattern', 'match', 'Match'), '');
-    }
-    /**
      * Returns the owner model object, meaning a Struct object
      * @see AbstractModel::getOwner()
      * @uses AbstractModel::getOwner()
