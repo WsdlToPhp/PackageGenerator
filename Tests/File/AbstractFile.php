@@ -31,9 +31,9 @@ abstract class AbstractFile extends TestCase
      */
     protected static $bingInstance;
     /**
-     * @var array
+     * @var Generator
      */
-    protected static $parsers = array();
+    protected static $actonInstance;
     /**
      * @return Generator
      */
@@ -45,48 +45,53 @@ abstract class AbstractFile extends TestCase
             self::$bingInstance->setOptionAddComments(array(
                 'release' => '1.1.0',
             ));
-            self::initParsers(self::$bingInstance, WsdlParser::wsdlBingPath());
-            foreach (self::$parsers[WsdlParser::wsdlBingPath()] as $parser) {
-                $parser->parse();
-            }
+            self::applyParsers(self::$bingInstance, WsdlParser::wsdlBingPath());
         }
         return self::$bingInstance;
+    }
+    /**
+     * @return Generator
+     */
+    public static function actonGeneratorInstance()
+    {
+        if (empty(self::$actonInstance)) {
+            Generator::resetInstance();
+            self::$actonInstance = Generator::instance(WsdlParser::wsdlActonPath());
+            self::$actonInstance->setPackageName('Api');
+            self::$actonInstance->setOptionAddComments(array(
+                'release' => '1.1.0',
+            ));
+            self::applyParsers(self::$actonInstance, WsdlParser::wsdlActonPath());
+        }
+        return self::$actonInstance;
     }
     /**
      * @param Generator $generator
      * @param unknown $wsdlPath
      */
-    private static function initParsers(Generator $generator, $wsdlPath)
+    private static function applyParsers(Generator $generator, $wsdlPath)
     {
-        if (!array_key_exists($wsdlPath, self::$parsers)) {
-            self::$parsers[$wsdlPath] = array();
+        $parsers = array(
+            new FunctionsParser($generator),
+            new StructsParser($generator),
+            new TagIncludeParser($generator),
+            new TagImportParser($generator),
+            new TagAttributeParser($generator),
+            new TagComplexTypeParser($generator),
+            new TagDocumentationParser($generator),
+            new TagElementParser($generator),
+            new TagEnumerationParser($generator),
+            new TagExtensionParser($generator),
+            new TagHeaderParser($generator),
+            new TagInputParser($generator),
+            new TagOutputParser($generator),
+            new TagRestrictionParser($generator),
+            new TagUnionParser($generator),
+            new TagListParser($generator),
+        );
+        foreach ($parsers as $parser) {
+            $parser->parse();
         }
-        if (count(self::$parsers[$wsdlPath]) === 0) {
-            self::addParser(new FunctionsParser($generator), $wsdlPath);
-            self::addParser(new StructsParser($generator), $wsdlPath);
-            self::addParser(new TagIncludeParser($generator), $wsdlPath);
-            self::addParser(new TagImportParser($generator), $wsdlPath);
-            self::addParser(new TagAttributeParser($generator), $wsdlPath);
-            self::addParser(new TagComplexTypeParser($generator), $wsdlPath);
-            self::addParser(new TagDocumentationParser($generator), $wsdlPath);
-            self::addParser(new TagElementParser($generator), $wsdlPath);
-            self::addParser(new TagEnumerationParser($generator), $wsdlPath);
-            self::addParser(new TagExtensionParser($generator), $wsdlPath);
-            self::addParser(new TagHeaderParser($generator), $wsdlPath);
-            self::addParser(new TagInputParser($generator), $wsdlPath);
-            self::addParser(new TagOutputParser($generator), $wsdlPath);
-            self::addParser(new TagRestrictionParser($generator), $wsdlPath);
-            self::addParser(new TagUnionParser($generator), $wsdlPath);
-            self::addParser(new TagListParser($generator), $wsdlPath);
-        }
-    }
-    /**
-     * @param ParserInterface $parser
-     * @param unknown $wsdlPath
-     */
-    private static function addParser(ParserInterface $parser, $wsdlPath)
-    {
-        self::$parsers[$wsdlPath][] = $parser;
     }
     /**
      * @return string

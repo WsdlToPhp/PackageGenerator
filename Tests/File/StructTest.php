@@ -119,4 +119,21 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find SearchRequest struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteActonStructItem()
+    {
+        $generator = self::actonGeneratorInstance();
+        $generator->setOptionGenerateWsdlClassFile(true);
+        if (($model = $generator->getStruct('Item')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiStructItem', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find Item struct for file generation');
+        }
+    }
 }

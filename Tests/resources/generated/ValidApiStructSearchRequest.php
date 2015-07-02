@@ -75,7 +75,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var ApiEnumAdultOption
+     * @var string
      */
     public $Adult;
     /**
@@ -176,7 +176,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param string $version
      * @param string $market
      * @param string $uILanguage
-     * @param ApiEnumAdultOption $adult
+     * @param string $adult
      * @param double $latitude
      * @param double $longitude
      * @param double $radius
@@ -321,7 +321,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
     }
     /**
      * Get Adult value
-     * @return ApiEnumAdultOption|null
+     * @return string|null
      */
     public function getAdult()
     {
@@ -330,7 +330,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
     /**
      * Set Adult value
      * @uses ApiEnumAdultOption::valueIsValid()
-     * @param ApiEnumAdultOption $adult
+     * @param string $adult
      * @return ApiStructSearchRequest
      */
     public function setAdult($adult)

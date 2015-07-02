@@ -42,7 +42,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var ApiEnumVideoSortOption
+     * @var string
      */
     public $SortBy;
     /**
@@ -51,7 +51,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
      * @param unsignedInt $offset
      * @param unsignedInt $count
      * @param ApiStructArrayOfString $filters
-     * @param ApiEnumVideoSortOption $sortBy
+     * @param string $sortBy
      */
     public function __construct($offset = null, $count = null, ApiStructArrayOfString $filters = null, $sortBy = null)
     {
@@ -113,7 +113,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
     }
     /**
      * Get SortBy value
-     * @return ApiEnumVideoSortOption|null
+     * @return string|null
      */
     public function getSortBy()
     {
@@ -122,7 +122,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
     /**
      * Set SortBy value
      * @uses ApiEnumVideoSortOption::valueIsValid()
-     * @param ApiEnumVideoSortOption $sortBy
+     * @param string $sortBy
      * @return ApiStructVideoRequest
      */
     public function setSortBy($sortBy)

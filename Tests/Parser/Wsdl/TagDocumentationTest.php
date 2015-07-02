@@ -23,6 +23,13 @@ class TagDocumentationTest extends WsdlParser
         return new TagDocumentation(self::generatorInstance(self::wsdlWhlPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
+     */
+    public static function actonInstance()
+    {
+        return new TagDocumentation(self::generatorInstance(self::wsdlActonPath()));
+    }
+    /**
      *
      */
     public function testParseImageViewService()
@@ -111,6 +118,31 @@ class TagDocumentationTest extends WsdlParser
                     $this->assertSame(array(
                         'Eurocard',
                     ), $struct->getValue('EC')->getMetaValue(Struct::META_DOCUMENTATION));
+                    $ok = true;
+                }
+            }
+        }
+        $this->assertTrue((bool)$ok);
+    }
+    /**
+     *
+     */
+    public function testParseActon()
+    {
+        $tagDocumentationParser = self::actonInstance();
+
+        $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
+        $tagEnumerationParser->parse();
+
+        $tagDocumentationParser->parse();
+
+        $ok = false;
+        foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
+            if ($struct instanceof Struct && $struct->getIsStruct() === false) {
+                if ($struct->getName() === 'ID') {
+                    $this->assertSame(array(
+                        'ID for an object',
+                    ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 }
             }
