@@ -13,6 +13,7 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Container\Model\Wsdl as WsdlContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
+use WsdlToPhp\PackageGenerator\Container\Parser as ParserContainer;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs as StructsParser;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions as FunctionsParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute as TagAttributeParser;
@@ -29,8 +30,10 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList as TagListParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput as TagOutputParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
-use WsdlToPhp\PackageGenerator\Container\Parser as ParserContainer;
 use WsdlToPhp\PackageGenerator\Parser\AbstractParser;
+use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
+use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
+use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class Generator extends \SoapClient
@@ -172,7 +175,7 @@ class Generator extends \SoapClient
      * @param string $password
      * @param array $wsdlOptions
      * @throws \InvalidArgumentException
-     * @return \WsdlToPhp\PackageGenerator\Generator\Generator
+     * @return Generator
      */
     public static function instance($pathToWsdl = null, $login = null, $password = null, array $wsdlOptions = array())
     {
@@ -328,7 +331,16 @@ class Generator extends \SoapClient
                 /**
                  * Generates file
                  */
-                self::populateFile($structClassFileName, $struct->getClassDeclaration());
+                if ($struct->getisRestriction()) {
+                    $file = new StructEnumFile($this, $struct->getPackagedName(), $elementFolder);
+                } elseif ($struct->isArray()) {
+                    $file = new StructArrayFile($this, $struct->getPackagedName(), $elementFolder);
+                } else {
+                    $file = new StructFile($this, $struct->getPackagedName(), $elementFolder);
+                }
+                $file
+                    ->setModel($struct)
+                    ->write();
             }
         }
         return $structsClassesFiles;
@@ -1113,7 +1125,7 @@ class Generator extends \SoapClient
     }
     /**
      * @param ParserContainer $container
-     * @return \WsdlToPhp\PackageGenerator\Generator\Generator
+     * @return Generator
      */
     protected function setParser(ParserContainer $container)
     {
@@ -1122,7 +1134,7 @@ class Generator extends \SoapClient
     }
     /**
      * @param AbstractParser $parser
-     * @return \WsdlToPhp\PackageGenerator\Generator\Generator
+     * @return Generator
      */
     protected function addParser(AbstractParser $parser)
     {
