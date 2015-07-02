@@ -51,7 +51,7 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
     /**
      * Returns the current element
      * @see ApiWsdlClass::current()
-     * @return ApiEnumWebSearchOption
+     * @return string
      */
     public function current()
     {
@@ -61,7 +61,7 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
      * Returns the indexed element
      * @see ApiWsdlClass::item()
      * @param int $index
-     * @return ApiEnumWebSearchOption
+     * @return string
      */
     public function item($index)
     {
@@ -70,7 +70,7 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
     /**
      * Returns the first element
      * @see ApiWsdlClass::first()
-     * @return ApiEnumWebSearchOption
+     * @return string
      */
     public function first()
     {
@@ -79,7 +79,7 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
     /**
      * Returns the last element
      * @see ApiWsdlClass::last()
-     * @return ApiEnumWebSearchOption
+     * @return string
      */
     public function last()
     {
@@ -89,7 +89,7 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
      * Returns the element at the offset
      * @see ApiWsdlClass::offsetGet()
      * @param int $offset
-     * @return ApiEnumWebSearchOption
+     * @return string
      */
     public function offsetGet($offset)
     {
@@ -99,7 +99,7 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
      * Add element to array
      * @see ApiWsdlClass::add()
      * @uses ApiEnumWebSearchOption::valueIsValid()
-     * @param ApiEnumWebSearchOption $item
+     * @param string $item
      * @return ApiEnumWebSearchOption
      */
     public function add($item)
