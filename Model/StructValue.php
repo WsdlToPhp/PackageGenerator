@@ -89,34 +89,6 @@ class StructValue extends AbstractModel
     {
     }
     /**
-     * Returns the comment lines for this value
-     * @see AbstractModel::getComment()
-     * @uses StructValue::getValue()
-     * @uses AbstractModel::addMetaComment()
-     * @return array
-     */
-    public function getComment()
-    {
-        $value = $this->getValue();
-        $comments = array();
-        array_push($comments, 'Constant for value ' . var_export($value, true));
-        $this->addMetaComment($comments);
-        array_push($comments, '@return ' . gettype($value) . ' ' . var_export($value, true));
-        return $comments;
-    }
-    /**
-     * Returns the declaration of the value
-     * @see StructValue::getCleanName()
-     * @see StructValue::getValue()
-     * @param string $structName the name of the struct which the value belongs to
-     * @param int $index the index of the constant contained by the struct class
-     * @return string
-     */
-    public function getDeclaration($structName, $index = -1)
-    {
-        return 'const ' . $this->getCleanName() . ' = ' . var_export($this->getValue(), true) . ';';
-    }
-    /**
      * Returns the index which has to be added at the end of natural constant name defined with the value cleaned
      * Allows to avoid multiple constant name to be indentic
      * @param string $structName the struct name
