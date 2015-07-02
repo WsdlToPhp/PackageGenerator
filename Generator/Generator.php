@@ -185,6 +185,13 @@ class Generator extends \SoapClient
         return self::$instance;
     }
     /**
+     * Reset instance for specific cases
+     */
+    public static function resetInstance()
+    {
+        self::$instance = null;
+    }
+    /**
      * Generates all classes based on options
      * @uses Generator::setPackageName()
      * @uses Generator::getWsdl()
