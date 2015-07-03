@@ -32,4 +32,20 @@ class ServiceTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Delete service for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteBingSearchMethodSearch()
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getService('Search')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName(), $this->getTestDirectory());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiServiceSearch', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Search service for file generation');
+        }
+    }
 }
