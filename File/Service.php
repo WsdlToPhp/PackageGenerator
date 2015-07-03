@@ -226,7 +226,7 @@ class Service extends AbstractModelFile
         $annotationBlock
             ->addChild('Returns the result')
             ->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', AbstractModel::getGenericWsdlClassName())))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes()));
+            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes(), self::ANNOTATION_LONG_LENGTH));
         return $this;
     }
     /**
@@ -238,7 +238,8 @@ class Service extends AbstractModelFile
         foreach ($this->getModel()->getMethods() as $method) {
             $returnTypes[] = self::getOperationMethodReturnType($method, $this->getGenerator());
         }
-        return implode(', ', array_unique($returnTypes));
+        natcasesort($returnTypes);
+        return implode('|', array_unique($returnTypes));
     }
     /**
      * @param MethodModel $method
