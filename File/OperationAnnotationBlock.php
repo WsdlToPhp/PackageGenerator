@@ -119,6 +119,7 @@ class OperationAnnotationBlock extends AbstractOperation
     protected function addOperationMethodParamFromString(PhpAnnotationBlock $annotationBlock)
     {
         if ($this->isParameterTypeAString() && !$this->isParameterTypeAModel()) {
+            $annotationBlock->addChild($this->getOperationMethodParam($this->getMethod()->getParameterType(), lcfirst($this->getMethod()->getParameterType())));
         }
         return $this;
     }
