@@ -93,7 +93,6 @@ class Service extends AbstractModelFile
     protected function addSoapHeaderFromMethod(MethodContainer $methods, MethodModel $method)
     {
         $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, array());
-        $soapHeaderTypes = $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, array());
         $soapHeaderNamespaces = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, array());
         foreach ($soapHeaderNames as $index=>$soapHeaderName) {
             $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
