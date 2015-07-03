@@ -90,6 +90,13 @@ abstract class WsdlParser extends TestCase
         return dirname(__FILE__) . '/../../resources/whl.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlPortalPath()
+    {
+        return dirname(__FILE__) . '/../../resources/portaplusapi.wsdl';
+    }
+    /**
      * @param srting $wsdlPath
      * @return Generator
      */
