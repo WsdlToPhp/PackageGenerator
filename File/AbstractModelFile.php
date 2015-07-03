@@ -19,6 +19,7 @@ use WsdlToPhp\PhpGenerator\Component\PhpClass;
 
 abstract class AbstractModelFile extends AbstractFile
 {
+    const ANNOTATION_LONG_LENGTH = '500';
     /**
      * @var string
      */
