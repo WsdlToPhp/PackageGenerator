@@ -10,9 +10,21 @@ use WsdlToPhp\PackageGenerator\Model\Method;
 
 class TagHeader extends AbstractTagParser
 {
-    const META_SOAP_HEADERS           = 'SOAPHeaders';
-    const META_SOAP_HEADER_NAMES      = 'SOAPHeaderNames';
-    const META_SOAP_HEADER_TYPES      = 'SOAPHeaderTypes';
+    /**
+     * @var string
+     */
+    const META_SOAP_HEADERS = 'SOAPHeaders';
+    /**
+     * @var string
+     */
+    const META_SOAP_HEADER_NAMES = 'SOAPHeaderNames';
+    /**
+     * @var string
+     */
+    const META_SOAP_HEADER_TYPES = 'SOAPHeaderTypes';
+    /**
+     * @var string
+     */
     const META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
