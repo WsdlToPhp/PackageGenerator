@@ -19,7 +19,7 @@ class ServiceTest extends AbstractFile
     /**
      *
      */
-    public function testWriteActonServiceMethodDelete()
+    public function testWriteActonServiceDeleteService()
     {
         $generator = self::actonGeneratorInstance();
         if (($model = $generator->getService('Delete')) instanceof ServiceModel) {
@@ -35,7 +35,7 @@ class ServiceTest extends AbstractFile
     /**
      *
      */
-    public function testWriteBingSearchMethodSearch()
+    public function testWriteBingSearchSearchService()
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getService('Search')) instanceof ServiceModel) {
@@ -46,6 +46,22 @@ class ServiceTest extends AbstractFile
             $this->assertSameFileContent('ValidApiServiceSearch', $service);
         } else {
             $this->assertFalse(true, 'Unable to find Search service for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWritePortalServiceAuthenticate()
+    {
+        $generator = self::portalGeneratorInstance();
+        if (($model = $generator->getService('Authenticate')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName(), $this->getTestDirectory());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiServiceAuthenticate', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Authenticate service for file generation');
         }
     }
 }
