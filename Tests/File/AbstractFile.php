@@ -29,41 +29,47 @@ abstract class AbstractFile extends TestCase
     /**
      * @var Generator
      */
-    protected static $bingInstance;
-    /**
-     * @var Generator
-     */
-    protected static $actonInstance;
+    protected static $instances = array();
     /**
      * @return Generator
      */
     public static function bingGeneratorInstance()
     {
-        if (empty(self::$bingInstance)) {
-            self::$bingInstance = Generator::instance(WsdlParser::wsdlBingPath());
-            self::$bingInstance->setPackageName('Api');
-            self::$bingInstance->setOptionAddComments(array(
-                'release' => '1.1.0',
-            ));
-            self::applyParsers(self::$bingInstance, WsdlParser::wsdlBingPath());
-        }
-        return self::$bingInstance;
+        return self::getInstance(WsdlParser::wsdlBingPath());
     }
     /**
      * @return Generator
      */
     public static function actonGeneratorInstance()
     {
-        if (empty(self::$actonInstance)) {
+        return self::getInstance(WsdlParser::wsdlActonPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function portalGeneratorInstance()
+    {
+        return self::getInstance(WsdlParser::wsdlPortalPath());
+    }
+    /**
+     * @param string $wsdl
+     * @return Generator
+     */
+    protected static function getInstance($wsdl)
+    {
+        if (!empty(self::$instances) && !isset(self::$instances[$wsdl])) {
             Generator::resetInstance();
-            self::$actonInstance = Generator::instance(WsdlParser::wsdlActonPath());
-            self::$actonInstance->setPackageName('Api');
-            self::$actonInstance->setOptionAddComments(array(
+        }
+        if (!isset(self::$instances[$wsdl])) {
+            $g = Generator::instance($wsdl);
+            $g->setPackageName('Api');
+            $g->setOptionAddComments(array(
                 'release' => '1.1.0',
             ));
-            self::applyParsers(self::$actonInstance, WsdlParser::wsdlActonPath());
+            self::applyParsers($g, $wsdl);
+            self::$instances[$wsdl] = $g;
         }
-        return self::$actonInstance;
+        return self::$instances[$wsdl];
     }
     /**
      * @param Generator $generator
