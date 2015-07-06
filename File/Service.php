@@ -100,7 +100,7 @@ class Service extends AbstractModelFile
             if ($methods->get($methodName) === null) {
                 $soapHeaderType = array_key_exists($index, $soapHeaderTypes) ? $soapHeaderTypes[$index] : null;
                 $soapHeaderNamespace = array_key_exists($index, $soapHeaderNamespaces) ? $soapHeaderNamespaces[$index] : null;
-                $methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderType, $soapHeaderNamespace));
+                $methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace));
             }
         }
         return $this;
@@ -108,11 +108,10 @@ class Service extends AbstractModelFile
     /**
      * @param string $methodName
      * @param string $soapHeaderName
-     * @param string $soapHeaderType
      * @param string $soapHeaderNamespace
      * @return PhpMethod
      */
-    protected function getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderType, $soapHeaderNamespace)
+    protected function getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace)
     {
         $method = new PhpMethod($methodName, array(
             new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE),

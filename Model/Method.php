@@ -42,8 +42,8 @@ class Method extends AbstractModel
         $this
             ->setParameterType($parameterType)
             ->setReturnType($returnType)
-            ->setOwner($service)
-            ->setIsUnique($isUnique);
+            ->setIsUnique($isUnique)
+            ->setOwner($service);
     }
     /**
      * Returns the name of the method that is used to call the operation
