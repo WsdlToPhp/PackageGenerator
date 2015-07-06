@@ -39,10 +39,11 @@ class Method extends AbstractModel
     public function __construct($name, $parameterType, $returnType, Service $service, $isUnique = true)
     {
         parent::__construct($name);
-        $this->setParameterType($parameterType);
-        $this->setReturnType($returnType);
-        $this->setOwner($service);
-        $this->setIsUnique($isUnique);
+        $this
+            ->setParameterType($parameterType)
+            ->setReturnType($returnType)
+            ->setOwner($service)
+            ->setIsUnique($isUnique);
     }
     /**
      * Returns the name of the method that is used to call the operation
@@ -264,7 +265,7 @@ class Method extends AbstractModel
     }
     /**
      * Returns the parameter type
-     * @return string
+     * @return string|string[]
      */
     public function getParameterType()
     {
@@ -272,12 +273,13 @@ class Method extends AbstractModel
     }
     /**
      * Set the parameter type
-     * @param string
-     * @return string
+     * @param string|string[]
+     * @return Method
      */
     public function setParameterType($parameterType)
     {
-        return ($this->parameterType = $parameterType);
+        $this->parameterType = $parameterType;
+        return $this;
     }
     /**
      * Returns the retrun type
@@ -289,12 +291,13 @@ class Method extends AbstractModel
     }
     /**
      * Set the retrun type
-     * @param string
-     * @return string
+     * @param string|string[]
+     * @return Method
      */
     public function setReturnType($returnType)
     {
-        return ($this->returnType = $returnType);
+        $this->returnType = $returnType;
+        return $this;
     }
     /**
      * Returns the isUnique property
@@ -307,11 +310,12 @@ class Method extends AbstractModel
     /**
      * Set the isUnique property
      * @param bool
-     * @return string
+     * @return Method
      */
     public function setIsUnique($isUnique)
     {
-        return ($this->isUnique = $isUnique);
+        $this->isUnique = $isUnique;
+        return $this;
     }
     /**
      * Returns the owner model object, meaning a Service object

@@ -66,7 +66,6 @@ abstract class AbstractOperation
     }
     /**
      * @param string $name
-     * @param mixed $value
      * @param string $type
      * @return PhpFunctionParameter
      */
@@ -76,7 +75,7 @@ abstract class AbstractOperation
     }
     /**
      * @param Generator $generator
-     * @return Method
+     * @return AbstractOperation
      */
     public function setGenerator(Generator $generator)
     {
@@ -92,7 +91,7 @@ abstract class AbstractOperation
     }
     /**
      * @param MethodModel $method
-     * @return Method
+     * @return AbstractOperation
      */
     public function setMethod(MethodModel $method)
     {

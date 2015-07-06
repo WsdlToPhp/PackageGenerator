@@ -2,10 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PackageGenerator\Generator\Utils;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
-use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
@@ -14,8 +10,8 @@ use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 class Operation extends AbstractOperation
 {
     /**
-     * @param MethodModel $method
-     * @return Method
+     * @param MethodContainer $methods
+     * @return Operation
      */
     public function addMainMethod(MethodContainer $methods)
     {
@@ -28,7 +24,7 @@ class Operation extends AbstractOperation
     }
     /**
      * @param PhpMethod $method
-     * @return Method
+     * @return Operation
      */
     protected function defineParameters(PhpMethod $method)
     {
@@ -39,7 +35,7 @@ class Operation extends AbstractOperation
     }
     /**
      * @param PhpMethod $method
-     * @return Method
+     * @return Operation
      */
     protected function defineParametersFromArray(PhpMethod $method)
     {
@@ -58,7 +54,7 @@ class Operation extends AbstractOperation
     }
     /**
      * @param PhpMethod $method
-     * @return Method
+     * @return Operation
      */
     protected function defineParametersFromModel(PhpMethod $method)
     {
@@ -74,7 +70,7 @@ class Operation extends AbstractOperation
     }
     /**
      * @param PhpMethod $method
-     * @return Method
+     * @return Operation
      */
     protected function defineParametersFromString(PhpMethod $method)
     {
@@ -86,8 +82,8 @@ class Operation extends AbstractOperation
         return $this;
     }
     /**
-     * @param MethodModel $method
-     * @return Method
+     * @param PhpMethod $method
+     * @return Operation
      */
     protected function defineBody(PhpMethod $method)
     {

@@ -114,7 +114,6 @@ class Service extends AbstractModelFile
      */
     protected function getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderType, $soapHeaderNamespace)
     {
-        $struct = $this->getGenerator()->getStruct($soapHeaderType);
         $method = new PhpMethod($methodName, array(
             new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE),
             new PhpFunctionParameter(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),

@@ -3,14 +3,10 @@
 namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
-use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 
 class OperationAnnotationBlock extends AbstractOperation
 {
@@ -76,7 +72,6 @@ class OperationAnnotationBlock extends AbstractOperation
     }
     /**
      * @param PhpAnnotationBlock $annotationBlock
-     * @param MethodModel $model
      * @return OperationAnnotationBlock
      */
     protected function addOperationMethodParam(PhpAnnotationBlock $annotationBlock)
@@ -94,7 +89,6 @@ class OperationAnnotationBlock extends AbstractOperation
     protected function addOperationMethodParamFromArray(PhpAnnotationBlock $annotationBlock)
     {
         if ($this->isParameterTypeAnArray()) {
-
         }
         return $this;
     }
@@ -125,7 +119,6 @@ class OperationAnnotationBlock extends AbstractOperation
     protected function addOperationMethodParamFromString(PhpAnnotationBlock $annotationBlock)
     {
         if ($this->isParameterTypeAString() && !$this->isParameterTypeAModel()) {
-
         }
         return $this;
     }

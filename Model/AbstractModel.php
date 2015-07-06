@@ -377,7 +377,7 @@ abstract class AbstractModel
      * Returns a meta value according to its name
      * @uses AbstractModel::getMeta()
      * @param string $metaName the meta information name
-     * @param string $fallback the fallback value if unset
+     * @param mixed $fallback the fallback value if unset
      * @return mixed the meta information value
      */
     public function getMetaValue($metaName, $fallback = null)
@@ -410,11 +410,12 @@ abstract class AbstractModel
     /**
      * Sets the original name extracted from the WSDL
      * @param string $name
-     * @return string
+     * @return AbstractModel
      */
     public function setName($name)
     {
-        return ($this->name = $name);
+        $this->name = $name;
+        return $this;
     }
     /**
      * Returns a valid clean name for PHP
@@ -445,7 +446,7 @@ abstract class AbstractModel
     {
         $this->owner = $owner;
         self::updateModels($this);
-        return $owner;
+        return $this;
     }
     /**
      * @return bool
@@ -456,7 +457,7 @@ abstract class AbstractModel
     }
     /**
      * @param bool $isAbstract
-     * @return \WsdlToPhp\PackageGenerator\Model\AbstractModel
+     * @return AbstractModel
      */
     public function setIsAbstract($isAbstract)
     {

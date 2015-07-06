@@ -4,7 +4,6 @@ namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 /**
  * Class Struct stands for an available struct described in the WSDL
