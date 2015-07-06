@@ -98,7 +98,6 @@ class Service extends AbstractModelFile
         foreach ($soapHeaderNames as $index=>$soapHeaderName) {
             $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
             if ($methods->get($methodName) === null) {
-                $soapHeaderType = array_key_exists($index, $soapHeaderTypes) ? $soapHeaderTypes[$index] : null;
                 $soapHeaderNamespace = array_key_exists($index, $soapHeaderNamespaces) ? $soapHeaderNamespaces[$index] : null;
                 $methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace));
             }
