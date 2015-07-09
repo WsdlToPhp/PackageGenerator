@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.0.4
+-----
+#10 - --wsdl-genautoload=false also controls creation of sample.php file (console mode)
+
 0.0.3
 -----
 #7 - PHP warning on str_repeat()
