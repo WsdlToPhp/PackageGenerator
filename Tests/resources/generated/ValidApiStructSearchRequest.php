@@ -11,7 +11,7 @@
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructSearchRequest extends ApiWsdlClass
+class ApiStructSearchRequest extends \WsdlToPhp\PackageBase\AbstractStructBase
 {
     /**
      * The Query
@@ -168,7 +168,25 @@ class ApiStructSearchRequest extends ApiWsdlClass
     public $Translation;
     /**
      * Constructor method for SearchRequest
-     * @see parent::__construct()
+     * @uses ApiStructSearchRequest::setQuery()
+     * @uses ApiStructSearchRequest::setAppId()
+     * @uses ApiStructSearchRequest::setSources()
+     * @uses ApiStructSearchRequest::setParameters()
+     * @uses ApiStructSearchRequest::setVersion()
+     * @uses ApiStructSearchRequest::setMarket()
+     * @uses ApiStructSearchRequest::setUILanguage()
+     * @uses ApiStructSearchRequest::setAdult()
+     * @uses ApiStructSearchRequest::setLatitude()
+     * @uses ApiStructSearchRequest::setLongitude()
+     * @uses ApiStructSearchRequest::setRadius()
+     * @uses ApiStructSearchRequest::setOptions()
+     * @uses ApiStructSearchRequest::setWeb()
+     * @uses ApiStructSearchRequest::setImage()
+     * @uses ApiStructSearchRequest::setPhonebook()
+     * @uses ApiStructSearchRequest::setVideo()
+     * @uses ApiStructSearchRequest::setNews()
+     * @uses ApiStructSearchRequest::setMobileWeb()
+     * @uses ApiStructSearchRequest::setTranslation()
      * @param string $query
      * @param string $appId
      * @param ApiStructArrayOfSourceType $sources
@@ -189,9 +207,28 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructMobileWebRequest $mobileWeb
      * @param ApiStructTranslationRequest $translation
      */
-    public function __construct($query, $appId, ApiStructArrayOfSourceType $sources, ApiStructSearchRequest $parameters, $version = 2.2, $market = null, $uILanguage = null, $adult = null, $latitude = null, $longitude = null, $radius = null, ApiStructArrayOfSearchOption $options = null, ApiStructWebRequest $web = null, ApiStructImageRequest $image = null, ApiStructPhonebookRequest $phonebook = null, ApiStructVideoRequest $video = null, ApiStructNewsRequest $news = null, ApiStructMobileWebRequest $mobileWeb = null, ApiStructTranslationRequest $translation = null)
+    public function __construct($query = null, $appId = null, ApiStructArrayOfSourceType $sources = null, ApiStructSearchRequest $parameters = null, $version = 2.2, $market = null, $uILanguage = null, $adult = null, $latitude = null, $longitude = null, $radius = null, ApiStructArrayOfSearchOption $options = null, ApiStructWebRequest $web = null, ApiStructImageRequest $image = null, ApiStructPhonebookRequest $phonebook = null, ApiStructVideoRequest $video = null, ApiStructNewsRequest $news = null, ApiStructMobileWebRequest $mobileWeb = null, ApiStructTranslationRequest $translation = null)
     {
-        parent::__construct(array('Query'=>$query, 'AppId'=>$appId, 'Sources'=>$sources, 'parameters'=>$parameters, 'Version'=>$version, 'Market'=>$market, 'UILanguage'=>$uILanguage, 'Adult'=>$adult, 'Latitude'=>$latitude, 'Longitude'=>$longitude, 'Radius'=>$radius, 'Options'=>$options, 'Web'=>$web, 'Image'=>$image, 'Phonebook'=>$phonebook, 'Video'=>$video, 'News'=>$news, 'MobileWeb'=>$mobileWeb, 'Translation'=>$translation), false);
+        $this
+            ->setQuery($query)
+            ->setAppId($appId)
+            ->setSources($sources)
+            ->setParameters($parameters)
+            ->setVersion($version)
+            ->setMarket($market)
+            ->setUILanguage($uILanguage)
+            ->setAdult($adult)
+            ->setLatitude($latitude)
+            ->setLongitude($longitude)
+            ->setRadius($radius)
+            ->setOptions($options)
+            ->setWeb($web)
+            ->setImage($image)
+            ->setPhonebook($phonebook)
+            ->setVideo($video)
+            ->setNews($news)
+            ->setMobileWeb($mobileWeb)
+            ->setTranslation($translation);
     }
     /**
      * Get Query value
@@ -206,7 +243,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param string $query
      * @return ApiStructSearchRequest
      */
-    public function setQuery($query)
+    public function setQuery($query = null)
     {
         $this->Query = $query;
         return $this;
@@ -224,7 +261,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param string $appId
      * @return ApiStructSearchRequest
      */
-    public function setAppId($appId)
+    public function setAppId($appId = null)
     {
         $this->AppId = $appId;
         return $this;
@@ -242,7 +279,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructArrayOfSourceType $sources
      * @return ApiStructSearchRequest
      */
-    public function setSources(ApiStructArrayOfSourceType $sources)
+    public function setSources(ApiStructArrayOfSourceType $sources = null)
     {
         $this->Sources = $sources;
         return $this;
@@ -260,7 +297,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructSearchRequest $parameters
      * @return ApiStructSearchRequest
      */
-    public function setParameters(ApiStructSearchRequest $parameters)
+    public function setParameters(ApiStructSearchRequest $parameters = null)
     {
         $this->parameters = $parameters;
         return $this;
@@ -278,7 +315,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param string $version
      * @return ApiStructSearchRequest
      */
-    public function setVersion($version)
+    public function setVersion($version = 2.2)
     {
         $this->Version = $version;
         return $this;
@@ -296,7 +333,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param string $market
      * @return ApiStructSearchRequest
      */
-    public function setMarket($market)
+    public function setMarket($market = null)
     {
         $this->Market = $market;
         return $this;
@@ -314,7 +351,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param string $uILanguage
      * @return ApiStructSearchRequest
      */
-    public function setUILanguage($uILanguage)
+    public function setUILanguage($uILanguage = null)
     {
         $this->UILanguage = $uILanguage;
         return $this;
@@ -333,7 +370,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param string $adult
      * @return ApiStructSearchRequest
      */
-    public function setAdult($adult)
+    public function setAdult($adult = null)
     {
         if(!ApiEnumAdultOption::valueIsValid($adult)) {
             return false;
@@ -354,7 +391,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param double $latitude
      * @return ApiStructSearchRequest
      */
-    public function setLatitude($latitude)
+    public function setLatitude($latitude = null)
     {
         $this->Latitude = $latitude;
         return $this;
@@ -372,7 +409,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param double $longitude
      * @return ApiStructSearchRequest
      */
-    public function setLongitude($longitude)
+    public function setLongitude($longitude = null)
     {
         $this->Longitude = $longitude;
         return $this;
@@ -390,7 +427,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param double $radius
      * @return ApiStructSearchRequest
      */
-    public function setRadius($radius)
+    public function setRadius($radius = null)
     {
         $this->Radius = $radius;
         return $this;
@@ -408,7 +445,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructArrayOfSearchOption $options
      * @return ApiStructSearchRequest
      */
-    public function setOptions(ApiStructArrayOfSearchOption $options)
+    public function setOptions(ApiStructArrayOfSearchOption $options = null)
     {
         $this->Options = $options;
         return $this;
@@ -426,7 +463,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructWebRequest $web
      * @return ApiStructSearchRequest
      */
-    public function setWeb(ApiStructWebRequest $web)
+    public function setWeb(ApiStructWebRequest $web = null)
     {
         $this->Web = $web;
         return $this;
@@ -444,7 +481,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructImageRequest $image
      * @return ApiStructSearchRequest
      */
-    public function setImage(ApiStructImageRequest $image)
+    public function setImage(ApiStructImageRequest $image = null)
     {
         $this->Image = $image;
         return $this;
@@ -462,7 +499,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructPhonebookRequest $phonebook
      * @return ApiStructSearchRequest
      */
-    public function setPhonebook(ApiStructPhonebookRequest $phonebook)
+    public function setPhonebook(ApiStructPhonebookRequest $phonebook = null)
     {
         $this->Phonebook = $phonebook;
         return $this;
@@ -480,7 +517,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructVideoRequest $video
      * @return ApiStructSearchRequest
      */
-    public function setVideo(ApiStructVideoRequest $video)
+    public function setVideo(ApiStructVideoRequest $video = null)
     {
         $this->Video = $video;
         return $this;
@@ -498,7 +535,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructNewsRequest $news
      * @return ApiStructSearchRequest
      */
-    public function setNews(ApiStructNewsRequest $news)
+    public function setNews(ApiStructNewsRequest $news = null)
     {
         $this->News = $news;
         return $this;
@@ -516,7 +553,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructMobileWebRequest $mobileWeb
      * @return ApiStructSearchRequest
      */
-    public function setMobileWeb(ApiStructMobileWebRequest $mobileWeb)
+    public function setMobileWeb(ApiStructMobileWebRequest $mobileWeb = null)
     {
         $this->MobileWeb = $mobileWeb;
         return $this;
@@ -534,7 +571,7 @@ class ApiStructSearchRequest extends ApiWsdlClass
      * @param ApiStructTranslationRequest $translation
      * @return ApiStructSearchRequest
      */
-    public function setTranslation(ApiStructTranslationRequest $translation)
+    public function setTranslation(ApiStructTranslationRequest $translation = null)
     {
         $this->Translation = $translation;
         return $this;

@@ -15,7 +15,7 @@
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructQuery
+class ApiStructQuery extends \WsdlToPhp\PackageBase\AbstractStructBase
 {
     /**
      * The SearchTerms
@@ -52,9 +52,10 @@ class ApiStructQuery
      */
     public function __construct($searchTerms = null, $alteredQuery = null, $alterationOverrideQuery = null)
     {
-        $this->setSearchTerms($searchTerms);
-        $this->setAlteredQuery($alteredQuery);
-        $this->setAlterationOverrideQuery($alterationOverrideQuery);
+        $this
+            ->setSearchTerms($searchTerms)
+            ->setAlteredQuery($alteredQuery)
+            ->setAlterationOverrideQuery($alterationOverrideQuery);
     }
     /**
      * Get SearchTerms value
@@ -69,7 +70,7 @@ class ApiStructQuery
      * @param string $searchTerms
      * @return ApiStructQuery
      */
-    public function setSearchTerms($searchTerms)
+    public function setSearchTerms($searchTerms = null)
     {
         $this->SearchTerms = $searchTerms;
         return $this;
@@ -87,7 +88,7 @@ class ApiStructQuery
      * @param string $alteredQuery
      * @return ApiStructQuery
      */
-    public function setAlteredQuery($alteredQuery)
+    public function setAlteredQuery($alteredQuery = null)
     {
         $this->AlteredQuery = $alteredQuery;
         return $this;
@@ -105,7 +106,7 @@ class ApiStructQuery
      * @param string $alterationOverrideQuery
      * @return ApiStructQuery
      */
-    public function setAlterationOverrideQuery($alterationOverrideQuery)
+    public function setAlterationOverrideQuery($alterationOverrideQuery = null)
     {
         $this->AlterationOverrideQuery = $alterationOverrideQuery;
         return $this;

@@ -11,7 +11,7 @@
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
+class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStructArrayBase
 {
     /**
      * The WebSearchOption
@@ -23,12 +23,13 @@ class ApiStructArrayOfWebSearchOption extends ApiWsdlClass
     public $WebSearchOption;
     /**
      * Constructor method for ArrayOfWebSearchOption
-     * @see parent::__construct()
+     * @uses ApiStructArrayOfWebSearchOption::setWebSearchOption()
      * @param array $webSearchOption
      */
     public function __construct(array $webSearchOption = array())
     {
-        parent::__construct(array('WebSearchOption'=>$webSearchOption), false);
+        $this
+            ->setWebSearchOption($webSearchOption);
     }
     /**
      * Get WebSearchOption value

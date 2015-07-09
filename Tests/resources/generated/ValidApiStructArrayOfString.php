@@ -11,7 +11,7 @@
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructArrayOfString extends ApiWsdlClass
+class ApiStructArrayOfString extends \WsdlToPhp\PackageBase\AbstractStructArrayBase
 {
     /**
      * The string
@@ -23,12 +23,13 @@ class ApiStructArrayOfString extends ApiWsdlClass
     public $string;
     /**
      * Constructor method for ArrayOfString
-     * @see parent::__construct()
+     * @uses ApiStructArrayOfString::setString()
      * @param array $string
      */
     public function __construct(array $string = array())
     {
-        parent::__construct(array('string'=>$string), false);
+        $this
+            ->setString($string);
     }
     /**
      * Get string value

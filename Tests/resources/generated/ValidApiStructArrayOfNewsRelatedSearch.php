@@ -11,7 +11,7 @@
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructArrayOfNewsRelatedSearch extends ApiWsdlClass
+class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractStructArrayBase
 {
     /**
      * The NewsRelatedSearch
@@ -23,12 +23,13 @@ class ApiStructArrayOfNewsRelatedSearch extends ApiWsdlClass
     public $NewsRelatedSearch;
     /**
      * Constructor method for ArrayOfNewsRelatedSearch
-     * @see parent::__construct()
+     * @uses ApiStructArrayOfNewsRelatedSearch::setNewsRelatedSearch()
      * @param array $newsRelatedSearch
      */
     public function __construct(array $newsRelatedSearch = array())
     {
-        parent::__construct(array('NewsRelatedSearch'=>$newsRelatedSearch), false);
+        $this
+            ->setNewsRelatedSearch($newsRelatedSearch);
     }
     /**
      * Get NewsRelatedSearch value

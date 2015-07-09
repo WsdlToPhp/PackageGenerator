@@ -11,7 +11,7 @@
  * @subpackage Services
  * @release 1.1.0
  */
-class ApiServiceDelete extends ApiWsdlClass
+class ApiServiceDelete extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
 {
     /**
      * Sets the SessionHeader SoapHeader param

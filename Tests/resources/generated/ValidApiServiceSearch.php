@@ -11,7 +11,7 @@
  * @subpackage Services
  * @release 1.1.0
  */
-class ApiServiceSearch extends ApiWsdlClass
+class ApiServiceSearch extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named Search

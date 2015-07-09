@@ -15,7 +15,7 @@
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructQuery extends ApiWsdlClass
+class ApiStructQuery extends \WsdlToPhp\PackageBase\AbstractStructBase
 {
     /**
      * The SearchTerms
@@ -43,14 +43,19 @@ class ApiStructQuery extends ApiWsdlClass
     public $AlterationOverrideQuery;
     /**
      * Constructor method for Query
-     * @see parent::__construct()
+     * @uses ApiStructQuery::setSearchTerms()
+     * @uses ApiStructQuery::setAlteredQuery()
+     * @uses ApiStructQuery::setAlterationOverrideQuery()
      * @param string $searchTerms
      * @param string $alteredQuery
      * @param string $alterationOverrideQuery
      */
     public function __construct($searchTerms = null, $alteredQuery = null, $alterationOverrideQuery = null)
     {
-        parent::__construct(array('SearchTerms'=>$searchTerms, 'AlteredQuery'=>$alteredQuery, 'AlterationOverrideQuery'=>$alterationOverrideQuery), false);
+        $this
+            ->setSearchTerms($searchTerms)
+            ->setAlteredQuery($alteredQuery)
+            ->setAlterationOverrideQuery($alterationOverrideQuery);
     }
     /**
      * Get SearchTerms value
@@ -65,7 +70,7 @@ class ApiStructQuery extends ApiWsdlClass
      * @param string $searchTerms
      * @return ApiStructQuery
      */
-    public function setSearchTerms($searchTerms)
+    public function setSearchTerms($searchTerms = null)
     {
         $this->SearchTerms = $searchTerms;
         return $this;
@@ -83,7 +88,7 @@ class ApiStructQuery extends ApiWsdlClass
      * @param string $alteredQuery
      * @return ApiStructQuery
      */
-    public function setAlteredQuery($alteredQuery)
+    public function setAlteredQuery($alteredQuery = null)
     {
         $this->AlteredQuery = $alteredQuery;
         return $this;
@@ -101,7 +106,7 @@ class ApiStructQuery extends ApiWsdlClass
      * @param string $alterationOverrideQuery
      * @return ApiStructQuery
      */
-    public function setAlterationOverrideQuery($alterationOverrideQuery)
+    public function setAlterationOverrideQuery($alterationOverrideQuery = null)
     {
         $this->AlterationOverrideQuery = $alterationOverrideQuery;
         return $this;

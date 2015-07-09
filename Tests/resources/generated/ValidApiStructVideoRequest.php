@@ -11,7 +11,7 @@
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructVideoRequest extends ApiWsdlClass
+class ApiStructVideoRequest extends \WsdlToPhp\PackageBase\AbstractStructBase
 {
     /**
      * The Offset
@@ -47,7 +47,10 @@ class ApiStructVideoRequest extends ApiWsdlClass
     public $SortBy;
     /**
      * Constructor method for VideoRequest
-     * @see parent::__construct()
+     * @uses ApiStructVideoRequest::setOffset()
+     * @uses ApiStructVideoRequest::setCount()
+     * @uses ApiStructVideoRequest::setFilters()
+     * @uses ApiStructVideoRequest::setSortBy()
      * @param unsignedInt $offset
      * @param unsignedInt $count
      * @param ApiStructArrayOfString $filters
@@ -55,7 +58,11 @@ class ApiStructVideoRequest extends ApiWsdlClass
      */
     public function __construct($offset = null, $count = null, ApiStructArrayOfString $filters = null, $sortBy = null)
     {
-        parent::__construct(array('Offset'=>$offset, 'Count'=>$count, 'Filters'=>$filters, 'SortBy'=>$sortBy), false);
+        $this
+            ->setOffset($offset)
+            ->setCount($count)
+            ->setFilters($filters)
+            ->setSortBy($sortBy);
     }
     /**
      * Get Offset value
@@ -70,7 +77,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
      * @param unsignedInt $offset
      * @return ApiStructVideoRequest
      */
-    public function setOffset($offset)
+    public function setOffset($offset = null)
     {
         $this->Offset = $offset;
         return $this;
@@ -88,7 +95,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
      * @param unsignedInt $count
      * @return ApiStructVideoRequest
      */
-    public function setCount($count)
+    public function setCount($count = null)
     {
         $this->Count = $count;
         return $this;
@@ -106,7 +113,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
      * @param ApiStructArrayOfString $filters
      * @return ApiStructVideoRequest
      */
-    public function setFilters(ApiStructArrayOfString $filters)
+    public function setFilters(ApiStructArrayOfString $filters = null)
     {
         $this->Filters = $filters;
         return $this;
@@ -125,7 +132,7 @@ class ApiStructVideoRequest extends ApiWsdlClass
      * @param string $sortBy
      * @return ApiStructVideoRequest
      */
-    public function setSortBy($sortBy)
+    public function setSortBy($sortBy = null)
     {
         if(!ApiEnumVideoSortOption::valueIsValid($sortBy)) {
             return false;

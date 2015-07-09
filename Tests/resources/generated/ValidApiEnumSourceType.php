@@ -15,7 +15,7 @@
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class ApiEnumSourceType extends ApiWsdlClass
+class ApiEnumSourceType
 {
     /**
      * Constant for value 'Spell'

@@ -13,7 +13,7 @@
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructItem extends ApiWsdlClass
+class ApiStructItem extends \WsdlToPhp\PackageBase\AbstractStructBase
 {
     /**
      * The itemType
@@ -41,7 +41,10 @@ class ApiStructItem extends ApiWsdlClass
     public $any;
     /**
      * Constructor method for Item
-     * @see parent::__construct()
+     * @uses ApiStructItem::setItemType()
+     * @uses ApiStructItem::setId()
+     * @uses ApiStructItem::setDisplayName()
+     * @uses ApiStructItem::setAny()
      * @param string $itemType
      * @param string $id
      * @param string $displayName
@@ -49,7 +52,11 @@ class ApiStructItem extends ApiWsdlClass
      */
     public function __construct($itemType = null, $id = null, $displayName = null, $any = null)
     {
-        parent::__construct(array('itemType'=>$itemType, 'id'=>$id, 'displayName'=>$displayName, 'any'=>$any), false);
+        $this
+            ->setItemType($itemType)
+            ->setId($id)
+            ->setDisplayName($displayName)
+            ->setAny($any);
     }
     /**
      * Get itemType value
@@ -65,7 +72,7 @@ class ApiStructItem extends ApiWsdlClass
      * @param string $itemType
      * @return ApiStructItem
      */
-    public function setItemType($itemType)
+    public function setItemType($itemType = null)
     {
         if(!ApiEnumItemType::valueIsValid($itemType)) {
             return false;
@@ -86,7 +93,7 @@ class ApiStructItem extends ApiWsdlClass
      * @param string $id
      * @return ApiStructItem
      */
-    public function setId($id)
+    public function setId($id = null)
     {
         $this->id = $id;
         return $this;
@@ -104,7 +111,7 @@ class ApiStructItem extends ApiWsdlClass
      * @param string $displayName
      * @return ApiStructItem
      */
-    public function setDisplayName($displayName)
+    public function setDisplayName($displayName = null)
     {
         $this->displayName = $displayName;
         return $this;
@@ -136,7 +143,7 @@ class ApiStructItem extends ApiWsdlClass
      * @param \DOMDocument $any
      * @return ApiStructItem
      */
-    public function setAny($any)
+    public function setAny($any = null)
     {
         $this->any = $any;
         return $this;

@@ -11,7 +11,7 @@
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class ApiEnumAdultOption extends ApiWsdlClass
+class ApiEnumAdultOption
 {
     /**
      * Constant for value 'Off'
