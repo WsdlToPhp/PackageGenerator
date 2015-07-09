@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simpleType name="ActionCode">
+	<restriction base="token">
+		<enumeration value="01" />
+		<enumeration value="02" />
+		<enumeration value="03" />
+		<enumeration value="04" />
+		<enumeration value="05" />
+		<enumeration value="06" />
+		<length value="2" />
+	</restriction>
+</simpleType>
