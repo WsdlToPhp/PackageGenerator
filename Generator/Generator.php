@@ -554,7 +554,7 @@ class Generator extends \SoapClient
      */
     private function generateTutorialFile($rootDirectory, array $methodsClassesFiles = array())
     {
-        if ($this->getOptionGenerateAutoloadFile() === true) {
+        if ($this->getOptionGenerateTutorialFile() === true) {
             $pathToTutorialTemplate = dirname(__FILE__) . '/../Resources/templates/Default/sample.php';
             if (!is_file($pathToTutorialTemplate)) {
                 throw new \InvalidArgumentException(sprintf('Unable to find tutorial template at "%s"', $pathToTutorialTemplate));
