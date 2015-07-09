@@ -84,7 +84,7 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodConstruct(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_CONSTRUCT, $this->getStructMethodParametersValues(true));
+        $method = new PhpMethod(self::METHOD_CONSTRUCT, $this->getStructMethodParametersValues());
         $this->addStructMethodConstructBody($method);
         $methods->add($method);
         return $this;
@@ -95,77 +95,34 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodConstructBody(PhpMethod $method)
     {
-        if ($this->getGenerator()->getOptionGenerateWsdlClassFile()) {
-            $this->addStructMethodConstructBodyUsingWsdlClass($method);
-        } else {
-            foreach ($this->getModelAttributes() as $attribute) {
-                $this->addStructMethodConstructBodyNotUsingWsdlClass($method, $attribute);
+        $count = $this->getModelAttributes()->count();
+        foreach ($this->getModelAttributes() as $index=>$attribute) {
+            if ($index === 0) {
+                $method->addChild('$this');
             }
+            $this->addStructMethodConstructBodyForAttribute($method, $attribute, $count - 1 === $index);
         }
         return $this;
     }
     /**
      * @param PhpMethod $method
+     * @param StructAttributeModel $attribute
+     * @param bool $isLast
      * @return Struct
      */
-    protected function addStructMethodConstructBodyUsingWsdlClass(PhpMethod $method)
+    protected function addStructMethodConstructBodyForAttribute(PhpMethod $method, StructAttributeModel $attribute, $isLast)
     {
-        $method->addChild(sprintf('%s::__construct(array(%s), false);', $this->getStructMethodConstructParentName(), $this->getStructMethodConstructParentParameters()));
+        $method->addChild($method->getIndentedString(sprintf('->%s($%s)%s', $attribute->getSetterName(), lcfirst($attribute->getCleanName()), $isLast ? ';' : ''), 1));
         return $this;
     }
     /**
-     * @return string
-     */
-    protected function getStructMethodConstructParentName()
-    {
-        $parentName = 'parent';
-        $inheritanceModel = $this->getGenerator()->getStruct($this->getModel()->getInheritance());
-        if ($inheritanceModel instanceof StructModel && $inheritanceModel->getIsStruct()) {
-            $parentName = AbstractModel::getGenericWsdlClassName();
-        }
-        return $parentName;
-    }
-    /**
-     * @return string
-     */
-    protected function getStructMethodConstructParentParameters()
-    {
-        $parentParameters = array();
-        foreach ($this->getModelAttributes() as $attribute) {
-            $parentPrameter = $this->getStructMethodConstructParentParameter($attribute);
-            if (!empty($parentPrameter)) {
-                $parentParameters[] = $this->getStructMethodConstructParentParameter($attribute);
-            }
-        }
-        return implode(', ', $parentParameters);
-    }
-    /**
-     * @param StructAttributeModel $attribute
-     * @return string
-     */
-    protected function getStructMethodConstructParentParameter(StructAttributeModel $attribute)
-    {
-        return sprintf('\'%s\'=>$%s', $attribute->getUniqueName(), lcfirst($attribute->getCleanName()));
-    }
-    /**
-     * @param PhpMethod $method
-     * @param StructAttributeModel $attribute
-     * @return Struct
-     */
-    protected function addStructMethodConstructBodyNotUsingWsdlClass(PhpMethod $method, StructAttributeModel $attribute)
-    {
-        $method->addChild(sprintf('$this->%s($%s);', $attribute->getSetterName(), lcfirst($attribute->getCleanName())));
-        return $this;
-    }
-    /**
-     * @param bool $lowCaseFirstLetter
      * @return PhpFunctionParameter[]
      */
-    protected function getStructMethodParametersValues($lowCaseFirstLetter = false)
+    protected function getStructMethodParametersValues()
     {
         $parametersValues = array();
         foreach ($this->getModelAttributes() as $attribute) {
-            $parametersValues[] = $this->getStructMethodParameter($attribute, $lowCaseFirstLetter);
+            $parametersValues[] = $this->getStructMethodParameter($attribute, true);
         }
         return $parametersValues;
     }
@@ -177,7 +134,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
     {
-        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), $attribute->isRequired() ? PhpFunctionParameter::NO_VALUE : (isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue()), $this->getStructMethodParameterType($attribute));
+        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue(), $this->getStructMethodParameterType($attribute));
     }
     /**
      * @param StructAttributeModel $attribute
@@ -220,7 +177,7 @@ class Struct extends AbstractModelFile
     {
 
         $method = new PhpMethod($attribute->getSetterName(), array(
-            $this->getStructMethodParameter($attribute, true, PhpFunctionParameter::NO_VALUE),
+            $this->getStructMethodParameter($attribute, true, null),
         ));
         $this->addStructMethodSetBody($method, $attribute);
         $methods->add($method);
@@ -411,9 +368,6 @@ class Struct extends AbstractModelFile
         $annotationBlock = new PhpAnnotationBlock(array(
             sprintf('Constructor method for %s', $this->getModel()->getName()),
         ));
-        if ($this->getGenerator()->getOptionGenerateWsdlClassFile()) {
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_SEE, 'parent::__construct()'));
-        }
         $this->addStructPropertiesToAnnotationBlock($annotationBlock);
         return $annotationBlock;
     }
@@ -559,10 +513,8 @@ class Struct extends AbstractModelFile
      */
     protected function addStructPropertiesToAnnotationBlockUses(PhpAnnotationBlock $annotationBlock)
     {
-        if (!$this->getGenerator()->getOptionGenerateWsdlClassFile()) {
-            foreach ($this->getModelAttributes() as $attribute) {
-                $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()->getPackagedName(), $attribute->getSetterName())));
-            }
+        foreach ($this->getModelAttributes() as $attribute) {
+            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()->getPackagedName(), $attribute->getSetterName())));
         }
         return $this;
     }
