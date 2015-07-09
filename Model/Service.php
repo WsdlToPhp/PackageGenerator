@@ -222,6 +222,14 @@ class Service extends AbstractModel
         return $this->methods->getMethodByName($methodName);
     }
     /**
+     * Allows to define from which class the curent model extends
+     * @return string
+     */
+    public function getExtends()
+    {
+        return '\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase';
+    }
+    /**
      * Returns class name
      * @return string __CLASS__
      */
