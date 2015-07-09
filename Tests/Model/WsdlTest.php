@@ -70,4 +70,11 @@ class WsdlTest extends TestCase
     {
         return new Wsdl(dirname(__FILE__) . '/../resources/OrderContract.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/OrderContract.wsdl'));
     }
+    /**
+     * @return Wsdl
+     */
+    public static function numericEnumerationInstance()
+    {
+        return new Wsdl(dirname(__FILE__) . '/../resources/numeric_enumeration.xml', file_get_contents(dirname(__FILE__) . '/../resources/numeric_enumeration.xml'));
+    }
 }
