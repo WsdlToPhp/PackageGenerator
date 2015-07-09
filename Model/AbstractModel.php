@@ -219,8 +219,8 @@ abstract class AbstractModel
         } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), Generator::getPackageName()) === 0) {
             $extends = $this->getInheritance();
         }
-        if (empty($extends) && Generator::instance()->getOptionGenerateWsdlClassFile()) {
-            $extends = self::getGenericWsdlClassName();
+        if (empty($extends)) {
+            $extends = $this->getExtends();
         }
         return $extends;
     }
@@ -492,6 +492,14 @@ abstract class AbstractModel
      * @return string
      */
     public function getContextualPart()
+    {
+        return '';
+    }
+    /**
+     * Allows to define from which class the curent model extends
+     * @return string|null
+     */
+    public function getExtends()
     {
         return '';
     }
