@@ -77,4 +77,11 @@ class WsdlTest extends TestCase
     {
         new Wsdl(dirname(__FILE__) . '/../resources/empty.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/empty.wsdl'));
     }
+    /**
+     * @return Wsdl
+     */
+    public static function numericEnumerationInstance()
+    {
+        return new Wsdl(dirname(__FILE__) . '/../resources/numeric_enumeration.xml', file_get_contents(dirname(__FILE__) . '/../resources/numeric_enumeration.xml'));
+    }
 }

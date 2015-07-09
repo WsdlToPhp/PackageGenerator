@@ -135,8 +135,6 @@ class Utils
             return intval($value);
         } elseif (is_float($value) || (!is_null($value) && in_array($knownType, array('float', 'double', 'decimal'), true))) {
             return floatval($value);
-        } elseif (is_numeric($value)) {
-            return intval($value) == $value ? intval($value) : floatval($value);
         } elseif (is_bool($value) || (!is_null($value) && in_array($knownType, array('bool', 'boolean'), true))) {
             return ($value === 'true' || $value === true || $value === 1 || $value === '1');
         }
