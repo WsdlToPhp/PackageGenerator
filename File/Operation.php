@@ -44,7 +44,7 @@ class Operation extends AbstractOperation
             foreach ($this->getMethod()->getParameterType() as $parameterName => $parameterType) {
                 $type = null;
                 if (($model = $this->getGenerator()->getStruct($parameterType)) instanceof StructModel && $model->getIsStruct() && !$model->getIsRestriction()) {
-                    $type = $model->getPackagedName();
+                    $type = $model->getPackagedName(true);
                 }
                 $parameters[] = $this->getMethodParameter($this->getParameterName($parameterName), $type);
             }
@@ -61,7 +61,7 @@ class Operation extends AbstractOperation
         if ($this->isParameterTypeAModel()) {
             if ($this->getParameterTypeModel()->getAttributes(true, true)->count() > 0) {
                 $method->setParameters(array(
-                    $this->getMethodParameter($this->getParameterName($this->getParameterTypeModel()->getPackagedName()), $this->getParameterTypeModel()->getPackagedName())
+                    $this->getMethodParameter($this->getParameterName($this->getParameterTypeModel()->getPackagedName()), $this->getParameterTypeModel()->getPackagedName(true))
                 ));
             }
 
@@ -89,9 +89,11 @@ class Operation extends AbstractOperation
     {
         $method
             ->addChild('try {')
-                ->addChild($method->getIndentedString(sprintf('return $this->setResult(self::getSoapClient()->%s(%s));', $method->getName(), $this->getOperationCallParameters($method)), 1))
-            ->addChild('} catch(SoapFault $soapFault) {')
-                ->addChild($method->getIndentedString('return !$this->saveLastError(__METHOD__, $soapFault);', 1))
+                ->addChild($method->getIndentedString(sprintf('$this->setResult(self::getSoapClient()->%s(%s));', $method->getName(), $this->getOperationCallParameters($method)), 1))
+                ->addChild($method->getIndentedString('return $this->getResult();', 1))
+            ->addChild('} catch(\SoapFault $soapFault) {')
+                ->addChild($method->getIndentedString('$this->saveLastError(__METHOD__, $soapFault);', 1))
+                ->addChild($method->getIndentedString('return false;', 1))
             ->addChild('}');
         return $this;
     }

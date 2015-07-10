@@ -112,7 +112,7 @@ class Service extends AbstractModelFile
     protected function getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace)
     {
         $method = new PhpMethod($methodName, array(
-            new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE),
+            new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE, $this->getTypeFromName($soapHeaderName, true)),
             new PhpFunctionParameter(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),
             new PhpFunctionParameter(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
             new PhpFunctionParameter(self::PARAM_SET_HEADER_ACTOR, null),
@@ -125,6 +125,20 @@ class Service extends AbstractModelFile
             self::PARAM_SET_HEADER_MUSTUNDERSTAND,
             self::PARAM_SET_HEADER_ACTOR));
         return $method;
+    }
+    /**
+     * @param string $name
+     * @param bool $namespaced
+     * @return string
+     */
+    protected function getTypeFromName($name, $namespaced = false)
+    {
+        $type = $name;
+        $model = $this->getModelByName($name);
+        if ($model instanceof AbstractModel) {
+            $type = $model->getPackagedName($namespaced);
+        }
+        return $type;
     }
     /**
      * @param string $soapHeaderName
@@ -195,7 +209,7 @@ class Service extends AbstractModelFile
             $annotationBlock
                 ->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::setSoapHeader()', $this->getModel()->getExtends(true))))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', ucfirst($firstParameter->getName()), $firstParameter->getName())))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $firstParameter->getType(), $firstParameter->getName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_NAMESPACE)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('bool $%s', self::PARAM_SET_HEADER_MUSTUNDERSTAND)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_ACTOR)))
@@ -248,7 +262,7 @@ class Service extends AbstractModelFile
     {
         $returnType = $method->getReturnType();
         if ((($struct = $generator->getStruct($returnType)) instanceof StructModel) && $struct->getIsStruct() && !$struct->getIsRestriction()) {
-            $returnType = $struct->getPackagedName();
+            $returnType = $struct->getPackagedName(true);
         }
         return $returnType;
     }

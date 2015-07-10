@@ -242,6 +242,7 @@ class Generator extends \SoapClient
                 $structsClassesFiles = $this->generateStructsClasses($rootDirectory, $rootDirectoryRights);
                 $servicesClassesFiles = $this->generateServicesClasses($rootDirectory, $rootDirectoryRights);
                 $classMapFile = $this->generateClassMap($rootDirectory);
+                $composerGenerated = $this->generateComposerFile($rootDirectory);
                 /**
                  * Generates autoload ?
                  */
@@ -251,7 +252,7 @@ class Generator extends \SoapClient
                 /**
                  * Generates tutorial ?
                  */
-                if ($this->getOptionGenerateTutorialFile() === true) {
+                if ($composerGenerated && $this->getOptionGenerateTutorialFile() === true) {
                     $this->generateTutorialFile($rootDirectory, $servicesClassesFiles);
                 }
                 return true;
@@ -313,7 +314,8 @@ class Generator extends \SoapClient
                 if (!$struct->getIsStruct()) {
                     continue;
                 }
-                $elementFolder = $this->getDirectory($rootDirectory, $rootDirectoryRights, $struct);
+                $elementFolder = $rootDirectory . $this->getDirectory($struct);
+                $this->createDirectory($elementFolder, $rootDirectoryRights);
                 array_push($structsClassesFiles, $structClassFileName = $elementFolder . $struct->getPackagedName() . '.php');
                 /**
                  * Generates file
@@ -349,7 +351,8 @@ class Generator extends \SoapClient
         $servicesClassesFiles = array();
         if (count($services)) {
             foreach ($services as $service) {
-                $elementFolder = $this->getDirectory($rootDirectory, $rootDirectoryRights, $service);
+                $elementFolder = $rootDirectory . $this->getDirectory($service);
+                $this->createDirectory($elementFolder, $rootDirectoryRights);
                 array_push($servicesClassesFiles, $serviceClassFileName = $elementFolder . $service->getPackagedName() . '.php');
                 /**
                  * Generates file
@@ -413,7 +416,11 @@ class Generator extends \SoapClient
      */
     private function generateClassMap($rootDirectory)
     {
-        $classMapDeclaration = array();
+        $classMapDeclaration = array(
+            '',
+            sprintf($this->getOptionNamespacePrefix() !== '' ? 'namespace %1$s\%2$s;' : 'namespace %2$s;', $this->getOptionNamespacePrefix(), self::getPackageName()),
+            '',
+        );
         /**
          * class map comments
          */
@@ -531,6 +538,11 @@ class Generator extends \SoapClient
             if (!is_file($pathToTutorialTemplate)) {
                 throw new \InvalidArgumentException(sprintf('Unable to find tutorial template at "%s"', $pathToTutorialTemplate));
             }
+            if (!is_file($rootDirectory . '/composer.json')) {
+                throw new \InvalidArgumentException(sprintf('Unable to find autoload file at "%s"', $rootDirectory . '/composer.json'));
+            } else {
+                exec('cd ' . $rootDirectory . ';composer update;');
+            }
             if (!is_file($rootDirectory . '/' . self::getPackageName() . 'Autoload.php')) {
                 throw new \InvalidArgumentException(sprintf('Unable to find autoload file at "%s"', $rootDirectory . '/' . self::getPackageName() . 'Autoload.php'));
             } else {
@@ -636,6 +648,29 @@ class Generator extends \SoapClient
                 throw new \InvalidArgumentException("Generator::generateTutorialFile() needs ReflectionClass, see http://fr2.php.net/manual/fr/class.reflectionclass.php");
             }
         }
+    }
+    /**
+     * @param string $rootDirectory
+     * @throws \InvalidArgumentException
+     * @return bool
+     */
+    private function generateComposerFile($rootDirectory)
+    {
+        $pathToComposerTemplate = dirname(__FILE__) . '/../Resources/templates/Default/composer.json';
+        if (is_file($pathToComposerTemplate)) {
+            $content = file_get_contents($pathToComposerTemplate);
+            $content = str_replace(array(
+                'packagename',
+                'PackageName',
+            ), array(
+                strtolower(self::getPackageName(false)),
+                self::getPackageName(false),
+            ), $content);
+            return file_put_contents($rootDirectory . 'composer.json', $content);
+        } else {
+            throw new \InvalidArgumentException(sprintf('Unable to find file "%s"', $pathToComposerTemplate));
+        }
+        return false;
     }
     /**
      * Gets the struct by its name
@@ -839,6 +874,23 @@ class Generator extends \SoapClient
         return $this->options->setGenerateTutorialFile($generateTutorialFile);
     }
     /**
+     * Gets the optionNamespacePrefix value
+     * @return bool
+     */
+    public function getOptionNamespacePrefix()
+    {
+        return $this->options->getNamespace();
+    }
+    /**
+     * Sets the optionGenerateTutorialFile value
+     * @param bool
+     * @return GeneratorOptions
+     */
+    public function setOptionNamespacePrefix($namespace)
+    {
+        return $this->options->setNamespace($namespace);
+    }
+    /**
      * Gets the optionAddComments value
      * @return array
      */
@@ -927,29 +979,33 @@ class Generator extends \SoapClient
      * Returns directory where to store class and create it if needed
      * @uses Generator::getCategory()
      * @uses Generator::getSubCategory()
-     * @param string $rootDirectory the directory
-     * @param int $rootDirectoryRights the permissions to apply
      * @param AbstractModel $model the model for which we generate the folder
      * @return string
      */
-    private function getDirectory($rootDirectory, $rootDirectoryRights, AbstractModel $model)
+    public function getDirectory(AbstractModel $model)
     {
-        $directory = $rootDirectory;
+        $directory = '';
         $mainCat = $this->getCategory($model);
         $subCat = $this->getSubCategory($model);
         if (!empty($mainCat)) {
             $directory .= ucfirst($mainCat) . '/';
-            if (!is_dir($directory)) {
-                mkdir($directory, $rootDirectoryRights);
-            }
         }
         if (!empty($subCat)) {
             $directory .= ucfirst($subCat) . '/';
-            if (!is_dir($directory)) {
-                mkdir($directory, $rootDirectoryRights);
-            }
         }
         return $directory;
+    }
+    /**
+     * @param string $directory
+     * @param int $permissions
+     * @return bool
+     */
+    private function createDirectory($directory, $permissions)
+    {
+        if (!is_dir($directory)) {
+            mkdir($directory, $permissions, true);
+        }
+        return true;
     }
     /**
      * Gets main category part

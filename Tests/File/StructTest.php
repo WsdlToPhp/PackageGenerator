@@ -50,7 +50,7 @@ class StructTest extends AbstractFile
         $file = new StructFile(self::bingGeneratorInstance(), 'foo', __DIR__ . '/../resources/');
         $file->setModel($model);
 
-        $this->assertSame(realpath(__DIR__ . '/../resources') . '/ApiStructFoo.php', $file->getFileName());
+        $this->assertSame(realpath(__DIR__ . '/../resources') . '/ApiFoo.php', $file->getFileName());
     }
     /**
      *
@@ -63,23 +63,7 @@ class StructTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiStructQuery', $struct);
-        } else {
-            $this->assertFalse(true, 'Unable to find Query struct for file generation');
-        }
-    }
-    /**
-     *
-     */
-    public function testWriteBingSearchStructQueryWithoutWsdlClass()
-    {
-        $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('Query')) instanceof StructModel) {
-            $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
-            $struct
-                ->setModel($model)
-                ->write();
-            $this->assertSameFileContent('ValidApiStructQueryWithoutWsdlClass', $struct);
+            $this->assertSameFileContent('ValidApiQuery', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find Query struct for file generation');
         }
@@ -95,7 +79,7 @@ class StructTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiStructVideoRequest', $struct);
+            $this->assertSameFileContent('ValidApiVideoRequest', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find VideoRequest struct for file generation');
         }
@@ -111,7 +95,7 @@ class StructTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiStructSearchRequest', $struct);
+            $this->assertSameFileContent('ValidApiSearchRequest', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find SearchRequest struct for file generation');
         }
@@ -127,7 +111,7 @@ class StructTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiStructItem', $struct);
+            $this->assertSameFileContent('ValidApiItem', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find Item struct for file generation');
         }

@@ -27,7 +27,7 @@ class ServiceTest extends AbstractFile
             $service
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiServiceDelete', $service);
+            $this->assertSameFileContent('ValidApiDelete', $service);
         } else {
             $this->assertFalse(true, 'Unable to find Delete service for file generation');
         }
@@ -43,7 +43,7 @@ class ServiceTest extends AbstractFile
             $service
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiServiceSearch', $service);
+            $this->assertSameFileContent('ValidApiSearch', $service);
         } else {
             $this->assertFalse(true, 'Unable to find Search service for file generation');
         }
@@ -59,7 +59,7 @@ class ServiceTest extends AbstractFile
             $service
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiServiceAuthenticate', $service);
+            $this->assertSameFileContent('ValidApiAuthenticate', $service);
         } else {
             $this->assertFalse(true, 'Unable to find Authenticate service for file generation');
         }

@@ -49,12 +49,38 @@ class OperationAnnotationBlock extends AbstractOperation
         if (!empty($soapHeaderNames) && !empty($soapHeaderTypes) && !empty($soapHeaderNamespaces)) {
             $annotationBlock
                 ->addChild('Meta informations extracted from the WSDL')
-                ->addChild(sprintf('- SOAPHeaderNames : %s', implode(', ', $soapHeaderNames)))
-                ->addChild(sprintf('- SOAPHeaderNamespaces : %s', implode(', ', $soapHeaderNamespaces)))
-                ->addChild(sprintf('- SOAPHeaderTypes : %s', implode(', ', $soapHeaderNames)))
-                ->addChild(sprintf('- SOAPHeaders : %s', implode(', ', $soapHeaders)));
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNames : %s', implode(', ', $soapHeaderNames)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNamespaces : %s', implode(', ', $soapHeaderNamespaces)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes : %s', implode(', ', $this->getSoapHeaderNamesTypes($soapHeaderNames))), AbstractModelFile::ANNOTATION_LONG_LENGTH))
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaders : %s', implode(', ', $soapHeaders)), AbstractModelFile::ANNOTATION_LONG_LENGTH));
         }
         return $this;
+    }
+    /**
+     * @param array $soapHeaderNames
+     * @return string[]
+     */
+    protected function getSoapHeaderNamesTypes(array $soapHeaderNames)
+    {
+        $soapHeaderTypes = array();
+        foreach ($soapHeaderNames as $soapHeaderName) {
+            $soapHeaderTypes[] = $this->getSoapHeaderNameType($soapHeaderName, true);
+        }
+        return $soapHeaderTypes;
+    }
+    /**
+     * @param string $soapHeaderName
+     * @param bool $namespaced
+     * @return string
+     */
+    protected function getSoapHeaderNameType($soapHeaderName, $namespaced = false)
+    {
+        $type = $soapHeaderName;
+        $model = $this->getModelByName($soapHeaderName);
+        if ($model instanceof AbstractModel) {
+            $type = $model->getPackagedName($namespaced);
+        }
+        return $type;
     }
     /**
      * @param PhpAnnotationBlock $annotationBlock
@@ -65,6 +91,7 @@ class OperationAnnotationBlock extends AbstractOperation
         $annotationBlock
             ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::getSoapClient()', $this->getMethod()->getOwner()->getExtends(true))))
             ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::setResult()', $this->getMethod()->getOwner()->getExtends(true))))
+            ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::getResult()', $this->getMethod()->getOwner()->getExtends(true))))
             ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::saveLastError()', $this->getMethod()->getOwner()->getExtends(true))));
         return $this;
     }
@@ -97,7 +124,7 @@ class OperationAnnotationBlock extends AbstractOperation
     protected function addOperationMethodParamFromModel(PhpAnnotationBlock $annotationBlock)
     {
         if ($this->isParameterTypeAModel()) {
-            $annotationBlock->addChild($this->getOperationMethodParam($this->getParameterTypeModel()->getPackagedName(), $this->getParameterName($this->getParameterTypeModel()->getPackagedName())));
+            $annotationBlock->addChild($this->getOperationMethodParam($this->getParameterTypeModel()->getPackagedName(true), $this->getParameterName($this->getParameterTypeModel()->getPackagedName())));
         }
         return $this;
     }
@@ -127,7 +154,7 @@ class OperationAnnotationBlock extends AbstractOperation
      */
     protected function addOperationMethodReturn(PhpAnnotationBlock $annotationBlock)
     {
-        $annotationBlock->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_RETURN, $this->getOperationMethodReturnType($this->getMethod())));
+        $annotationBlock->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_RETURN, sprintf('%s|bool', $this->getOperationMethodReturnType($this->getMethod()))));
         return $this;
     }
     /**

@@ -1,13 +1,16 @@
 <?php
+
+namespace Api\ArrayType;
+
 use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
- * This class stands for ArrayOfWebSearchOption Struct
+ * This class stands for ArrayOfWebSearchOption ArrayType
  * @package Api
- * @subpackage Structs
+ * @subpackage Arrays
  * @release 1.1.0
  */
-class ApiStructArrayOfWebSearchOption extends AbstractStructArrayBase
+class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
 {
     /**
      * The WebSearchOption
@@ -19,7 +22,7 @@ class ApiStructArrayOfWebSearchOption extends AbstractStructArrayBase
     public $WebSearchOption;
     /**
      * Constructor method for ArrayOfWebSearchOption
-     * @uses ApiStructArrayOfWebSearchOption::setWebSearchOption()
+     * @uses ApiArrayOfWebSearchOption::setWebSearchOption()
      * @param array $webSearchOption
      */
     public function __construct(array $webSearchOption = array())
@@ -38,7 +41,7 @@ class ApiStructArrayOfWebSearchOption extends AbstractStructArrayBase
     /**
      * Set WebSearchOption value
      * @param array $webSearchOption
-     * @return ApiStructArrayOfWebSearchOption
+     * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
     public function setWebSearchOption(array $webSearchOption = array())
     {
@@ -95,13 +98,13 @@ class ApiStructArrayOfWebSearchOption extends AbstractStructArrayBase
     /**
      * Add element to array
      * @see AbstractStructArrayBase::add()
-     * @uses ApiEnumWebSearchOption::valueIsValid()
+     * @uses \Api\EnumType\ApiWebSearchOption::valueIsValid()
      * @param string $item
-     * @return ApiEnumWebSearchOption
+     * @return \Api\ArrayType\ApiArrayOfWebSearchOption|bool
      */
     public function add($item)
     {
-        return ApiEnumWebSearchOption::valueIsValid($item) ? parent::add($item) : false;
+        return \Api\EnumType\ApiWebSearchOption::valueIsValid($item) ? parent::add($item) : false;
     }
     /**
      * Returns the attribute name
@@ -118,7 +121,7 @@ class ApiStructArrayOfWebSearchOption extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::__set_state()
      * @uses AbstractStructArrayBase::__set_state()
      * @param array $array the exported values
-     * @return ApiStructArrayOfWebSearchOption
+     * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
     public static function __set_state(array $array)
     {

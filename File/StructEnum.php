@@ -54,7 +54,7 @@ class StructEnum extends Struct
         $method = new PhpMethod('valueIsValid', array(
             'value',
         ), PhpMethod::ACCESS_PUBLIC, false, true);
-        $method->addChild(sprintf('return in_array($value, array(%s));', implode(', ', $this->getEnumMethodInArrayValues())));
+        $method->addChild(sprintf('return in_array($value, array(%s), true);', implode(', ', $this->getEnumMethodInArrayValues())));
         return $method;
     }
     /**
@@ -64,7 +64,7 @@ class StructEnum extends Struct
     {
         $values = array();
         foreach ($this->getModel()->getValues() as $value) {
-            $values[] = sprintf('%s::%s', $this->getModel()->getPackagedName(), $value->getCleanName());
+            $values[] = sprintf('self::%s', $value->getCleanName());
         }
         return $values;
     }

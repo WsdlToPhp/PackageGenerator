@@ -104,6 +104,14 @@ abstract class AbstractModelFile extends AbstractFile
         return $this->model;
     }
     /**
+     * @param string $name
+     * @return StructModel|null
+     */
+    protected function getModelByName($name)
+    {
+        return $this->getGenerator()->getStruct($name);
+    }
+    /**
      * @param PhpAnnotationBlock $block
      * @return AbstractModelFile
      */
@@ -253,6 +261,11 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function defineNamespace()
     {
+        if ($this->getModel()->getNamespace() !== '') {
+            $this
+                ->getFile()
+                    ->setNamespace($this->getModel()->getNamespace());
+        }
         return $this;
     }
     /**
@@ -407,9 +420,10 @@ abstract class AbstractModelFile extends AbstractFile
     /**
      * @param StructAttributeModel $attribute
      * @param bool $returnAnnotation
+     * @param bool $namespaced
      * @return string
      */
-    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false)
+    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false, $namespaced = false)
     {
         $attribute = $this->getStructAttribute($attribute);
         $type = $attribute->getType();
@@ -420,7 +434,7 @@ abstract class AbstractModelFile extends AbstractFile
             } elseif ($model->getIsRestriction() === true) {
                 $type = $model->getInheritance() !== '' ? $model->getInheritance() : self::TYPE_STRING;
             } else {
-                $type = $model->getPackagedName();
+                $type = $model->getPackagedName($namespaced);
             }
         }
         if ($returnAnnotation === true && $attribute->isRequired() === false) {

@@ -1,13 +1,16 @@
 <?php
+
+namespace Api\ArrayType;
+
 use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
- * This class stands for ArrayOfString Struct
+ * This class stands for ArrayOfString ArrayType
  * @package Api
- * @subpackage Structs
+ * @subpackage Arrays
  * @release 1.1.0
  */
-class ApiStructArrayOfString extends AbstractStructArrayBase
+class ApiArrayOfString extends AbstractStructArrayBase
 {
     /**
      * The string
@@ -19,7 +22,7 @@ class ApiStructArrayOfString extends AbstractStructArrayBase
     public $string;
     /**
      * Constructor method for ArrayOfString
-     * @uses ApiStructArrayOfString::setString()
+     * @uses ApiArrayOfString::setString()
      * @param array $string
      */
     public function __construct(array $string = array())
@@ -38,7 +41,7 @@ class ApiStructArrayOfString extends AbstractStructArrayBase
     /**
      * Set string value
      * @param array $string
-     * @return ApiStructArrayOfString
+     * @return \Api\ArrayType\ApiArrayOfString
      */
     public function setString(array $string = array())
     {
@@ -107,7 +110,7 @@ class ApiStructArrayOfString extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::__set_state()
      * @uses AbstractStructArrayBase::__set_state()
      * @param array $array the exported values
-     * @return ApiStructArrayOfString
+     * @return \Api\ArrayType\ApiArrayOfString
      */
     public static function __set_state(array $array)
     {

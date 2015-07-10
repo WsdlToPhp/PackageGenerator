@@ -40,7 +40,7 @@ class StructArrayTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiStructArrayOfNewsRelatedSearch', $struct);
+            $this->assertSameFileContent('ValidApiArrayOfNewsRelatedSearch', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find ArrayOfNewsRelatedSearch struct for file generation');
         }
@@ -56,7 +56,7 @@ class StructArrayTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiStructArrayOfWebSearchOption', $struct);
+            $this->assertSameFileContent('ValidApiArrayOfWebSearchOption', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find ArrayOfWebSearchOption struct for file generation');
         }
@@ -72,7 +72,7 @@ class StructArrayTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiStructArrayOfString', $struct);
+            $this->assertSameFileContent('ValidApiArrayOfString', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find ArrayOfString struct for file generation');
         }

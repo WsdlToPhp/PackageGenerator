@@ -1,13 +1,16 @@
 <?php
+
+namespace Api\ArrayType;
+
 use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
- * This class stands for ArrayOfNewsRelatedSearch Struct
+ * This class stands for ArrayOfNewsRelatedSearch ArrayType
  * @package Api
- * @subpackage Structs
+ * @subpackage Arrays
  * @release 1.1.0
  */
-class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
+class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
 {
     /**
      * The NewsRelatedSearch
@@ -19,7 +22,7 @@ class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     public $NewsRelatedSearch;
     /**
      * Constructor method for ArrayOfNewsRelatedSearch
-     * @uses ApiStructArrayOfNewsRelatedSearch::setNewsRelatedSearch()
+     * @uses ApiArrayOfNewsRelatedSearch::setNewsRelatedSearch()
      * @param array $newsRelatedSearch
      */
     public function __construct(array $newsRelatedSearch = array())
@@ -38,7 +41,7 @@ class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Set NewsRelatedSearch value
      * @param array $newsRelatedSearch
-     * @return ApiStructArrayOfNewsRelatedSearch
+     * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
      */
     public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
@@ -48,7 +51,7 @@ class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
-     * @return ApiStructNewsRelatedSearch
+     * @return ApiNewsRelatedSearch
      */
     public function current()
     {
@@ -58,7 +61,7 @@ class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Returns the indexed element
      * @see AbstractStructArrayBase::item()
      * @param int $index
-     * @return ApiStructNewsRelatedSearch
+     * @return ApiNewsRelatedSearch
      */
     public function item($index)
     {
@@ -67,7 +70,7 @@ class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the first element
      * @see AbstractStructArrayBase::first()
-     * @return ApiStructNewsRelatedSearch
+     * @return ApiNewsRelatedSearch
      */
     public function first()
     {
@@ -76,7 +79,7 @@ class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the last element
      * @see AbstractStructArrayBase::last()
-     * @return ApiStructNewsRelatedSearch
+     * @return ApiNewsRelatedSearch
      */
     public function last()
     {
@@ -86,7 +89,7 @@ class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Returns the element at the offset
      * @see AbstractStructArrayBase::offsetGet()
      * @param int $offset
-     * @return ApiStructNewsRelatedSearch
+     * @return ApiNewsRelatedSearch
      */
     public function offsetGet($offset)
     {
@@ -107,7 +110,7 @@ class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::__set_state()
      * @uses AbstractStructArrayBase::__set_state()
      * @param array $array the exported values
-     * @return ApiStructArrayOfNewsRelatedSearch
+     * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
      */
     public static function __set_state(array $array)
     {

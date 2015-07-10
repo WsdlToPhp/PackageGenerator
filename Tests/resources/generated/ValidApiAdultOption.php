@@ -1,11 +1,14 @@
 <?php
+
+namespace Api\EnumType;
+
 /**
- * This class stands for AdultOption Enum
+ * This class stands for AdultOption EnumType
  * @package Api
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class ApiEnumAdultOption
+class ApiAdultOption
 {
     /**
      * Constant for value 'Off'
@@ -24,15 +27,15 @@ class ApiEnumAdultOption
     const VALUE_STRICT = 'Strict';
     /**
      * Return true if value is allowed
-     * @uses ApiEnumAdultOption::VALUE_OFF
-     * @uses ApiEnumAdultOption::VALUE_MODERATE
-     * @uses ApiEnumAdultOption::VALUE_STRICT
+     * @uses self::VALUE_OFF
+     * @uses self::VALUE_MODERATE
+     * @uses self::VALUE_STRICT
      * @param mixed $value value
      * @return bool true|false
      */
     public static function valueIsValid($value)
     {
-        return in_array($value, array(ApiEnumAdultOption::VALUE_OFF, ApiEnumAdultOption::VALUE_MODERATE, ApiEnumAdultOption::VALUE_STRICT));
+        return in_array($value, array(self::VALUE_OFF, self::VALUE_MODERATE, self::VALUE_STRICT), true);
     }
     /**
      * Method returning the class name

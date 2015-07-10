@@ -1,6 +1,9 @@
 <?php
+
+namespace Api\EnumType;
+
 /**
- * This class stands for SourceType Enum
+ * This class stands for SourceType EnumType
  * Meta informations extracted from the WSDL
  * - maxOccurs: 1
  * - minOccurs: 0
@@ -9,7 +12,7 @@
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class ApiEnumSourceType
+class ApiSourceType
 {
     /**
      * Constant for value 'Spell'
@@ -88,27 +91,27 @@ class ApiEnumSourceType
     const VALUE_TRANSLATION = 'Translation';
     /**
      * Return true if value is allowed
-     * @uses ApiEnumSourceType::VALUE_SPELL
-     * @uses ApiEnumSourceType::VALUE_WEB
-     * @uses ApiEnumSourceType::VALUE_IMAGE
-     * @uses ApiEnumSourceType::VALUE_RELATEDSEARCH
-     * @uses ApiEnumSourceType::VALUE_PHONEBOOK
-     * @uses ApiEnumSourceType::VALUE_SHOWTIMES
-     * @uses ApiEnumSourceType::VALUE_WEATHER
-     * @uses ApiEnumSourceType::VALUE_VIDEO
-     * @uses ApiEnumSourceType::VALUE_AD
-     * @uses ApiEnumSourceType::VALUE_XRANK
-     * @uses ApiEnumSourceType::VALUE_INSTANTANSWER
-     * @uses ApiEnumSourceType::VALUE_NEWS
-     * @uses ApiEnumSourceType::VALUE_QUERYLOCATION
-     * @uses ApiEnumSourceType::VALUE_MOBILEWEB
-     * @uses ApiEnumSourceType::VALUE_TRANSLATION
+     * @uses self::VALUE_SPELL
+     * @uses self::VALUE_WEB
+     * @uses self::VALUE_IMAGE
+     * @uses self::VALUE_RELATEDSEARCH
+     * @uses self::VALUE_PHONEBOOK
+     * @uses self::VALUE_SHOWTIMES
+     * @uses self::VALUE_WEATHER
+     * @uses self::VALUE_VIDEO
+     * @uses self::VALUE_AD
+     * @uses self::VALUE_XRANK
+     * @uses self::VALUE_INSTANTANSWER
+     * @uses self::VALUE_NEWS
+     * @uses self::VALUE_QUERYLOCATION
+     * @uses self::VALUE_MOBILEWEB
+     * @uses self::VALUE_TRANSLATION
      * @param mixed $value value
      * @return bool true|false
      */
     public static function valueIsValid($value)
     {
-        return in_array($value, array(ApiEnumSourceType::VALUE_SPELL, ApiEnumSourceType::VALUE_WEB, ApiEnumSourceType::VALUE_IMAGE, ApiEnumSourceType::VALUE_RELATEDSEARCH, ApiEnumSourceType::VALUE_PHONEBOOK, ApiEnumSourceType::VALUE_SHOWTIMES, ApiEnumSourceType::VALUE_WEATHER, ApiEnumSourceType::VALUE_VIDEO, ApiEnumSourceType::VALUE_AD, ApiEnumSourceType::VALUE_XRANK, ApiEnumSourceType::VALUE_INSTANTANSWER, ApiEnumSourceType::VALUE_NEWS, ApiEnumSourceType::VALUE_QUERYLOCATION, ApiEnumSourceType::VALUE_MOBILEWEB, ApiEnumSourceType::VALUE_TRANSLATION));
+        return in_array($value, array(self::VALUE_SPELL, self::VALUE_WEB, self::VALUE_IMAGE, self::VALUE_RELATEDSEARCH, self::VALUE_PHONEBOOK, self::VALUE_SHOWTIMES, self::VALUE_WEATHER, self::VALUE_VIDEO, self::VALUE_AD, self::VALUE_XRANK, self::VALUE_INSTANTANSWER, self::VALUE_NEWS, self::VALUE_QUERYLOCATION, self::VALUE_MOBILEWEB, self::VALUE_TRANSLATION), true);
     }
     /**
      * Method returning the class name

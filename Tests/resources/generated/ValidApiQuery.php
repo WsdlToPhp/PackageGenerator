@@ -1,8 +1,11 @@
 <?php
+
+namespace Api\StructType;
+
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for Query Struct
+ * This class stands for Query StructType
  * Meta informations extracted from the WSDL
  * - maxOccurs: 1
  * - minOccurs: 0
@@ -11,7 +14,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructQuery extends AbstractStructBase
+class ApiQuery extends AbstractStructBase
 {
     /**
      * The SearchTerms
@@ -39,9 +42,9 @@ class ApiStructQuery extends AbstractStructBase
     public $AlterationOverrideQuery;
     /**
      * Constructor method for Query
-     * @uses ApiStructQuery::setSearchTerms()
-     * @uses ApiStructQuery::setAlteredQuery()
-     * @uses ApiStructQuery::setAlterationOverrideQuery()
+     * @uses ApiQuery::setSearchTerms()
+     * @uses ApiQuery::setAlteredQuery()
+     * @uses ApiQuery::setAlterationOverrideQuery()
      * @param string $searchTerms
      * @param string $alteredQuery
      * @param string $alterationOverrideQuery
@@ -64,7 +67,7 @@ class ApiStructQuery extends AbstractStructBase
     /**
      * Set SearchTerms value
      * @param string $searchTerms
-     * @return ApiStructQuery
+     * @return \Api\StructType\ApiQuery
      */
     public function setSearchTerms($searchTerms = null)
     {
@@ -82,7 +85,7 @@ class ApiStructQuery extends AbstractStructBase
     /**
      * Set AlteredQuery value
      * @param string $alteredQuery
-     * @return ApiStructQuery
+     * @return \Api\StructType\ApiQuery
      */
     public function setAlteredQuery($alteredQuery = null)
     {
@@ -100,7 +103,7 @@ class ApiStructQuery extends AbstractStructBase
     /**
      * Set AlterationOverrideQuery value
      * @param string $alterationOverrideQuery
-     * @return ApiStructQuery
+     * @return \Api\StructType\ApiQuery
      */
     public function setAlterationOverrideQuery($alterationOverrideQuery = null)
     {
@@ -113,7 +116,7 @@ class ApiStructQuery extends AbstractStructBase
      * @see AbstractStructBase::__set_state()
      * @uses AbstractStructBase::__set_state()
      * @param array $array the exported values
-     * @return ApiStructQuery
+     * @return \Api\StructType\ApiQuery
      */
     public static function __set_state(array $array)
     {

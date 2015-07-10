@@ -27,7 +27,7 @@ class StructEnumTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiEnumAdultOption', $struct);
+            $this->assertSameFileContent('ValidApiAdultOption', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find AdultOption enumeration for file generation');
         }
@@ -44,7 +44,7 @@ class StructEnumTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidApiEnumSourceType', $struct);
+            $this->assertSameFileContent('ValidApiSourceType', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find SourceType enumeration for file generation');
         }

@@ -84,14 +84,15 @@ class StructArray extends Struct
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getStructAttributeType()
      * @param StructAttributeModel $attribute
      * @param bool $returnAnnotation
+     * @param bool $namespaced
      * @return string
      */
-    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false)
+    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false, $namespaced = false)
     {
         if ($attribute === $this->getModel()->getAttributes()->offsetGet(0)) {
             return self::TYPE_ARRAY;
         }
-        return parent::getStructAttributeType($attribute, $returnAnnotation);
+        return parent::getStructAttributeType($attribute, $returnAnnotation, $namespaced);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::addStructMethodSetBodyForRestriction()
@@ -199,7 +200,7 @@ class StructArray extends Struct
     protected function addArrayMethodAdd(MethodContainer $methods)
     {
         if (($model = $this->getModelFromStructAttribute()) instanceof StructModel && $model->getIsRestriction()) {
-            return $this->addArrayMethodGenericMethod($methods, self::METHOD_ADD, sprintf('return %s::valueIsValid($item) ? parent::add($item) : false;', $model->getPackagedName()), array(
+            return $this->addArrayMethodGenericMethod($methods, self::METHOD_ADD, sprintf('return %s::valueIsValid($item) ? parent::add($item) : false;', $model->getPackagedName(true)), array(
                 'item',
             ));
         }
@@ -273,9 +274,9 @@ class StructArray extends Struct
         return new PhpAnnotationBlock(array(
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
-            new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName())),
+            new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName(true))),
             new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType())),
-            new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModelFromStructAttribute()->getPackagedName()),
+            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s|bool', $this->getModel()->getPackagedName(true))),
         ));
     }
     /**

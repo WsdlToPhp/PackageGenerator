@@ -1,13 +1,16 @@
 <?php
+
+namespace Api\StructType;
+
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for VideoRequest Struct
+ * This class stands for VideoRequest StructType
  * @package Api
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructVideoRequest extends AbstractStructBase
+class ApiVideoRequest extends AbstractStructBase
 {
     /**
      * The Offset
@@ -30,7 +33,7 @@ class ApiStructVideoRequest extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var ApiStructArrayOfString
+     * @var \Api\ArrayType\ApiArrayOfString
      */
     public $Filters;
     /**
@@ -43,16 +46,16 @@ class ApiStructVideoRequest extends AbstractStructBase
     public $SortBy;
     /**
      * Constructor method for VideoRequest
-     * @uses ApiStructVideoRequest::setOffset()
-     * @uses ApiStructVideoRequest::setCount()
-     * @uses ApiStructVideoRequest::setFilters()
-     * @uses ApiStructVideoRequest::setSortBy()
+     * @uses ApiVideoRequest::setOffset()
+     * @uses ApiVideoRequest::setCount()
+     * @uses ApiVideoRequest::setFilters()
+     * @uses ApiVideoRequest::setSortBy()
      * @param unsignedInt $offset
      * @param unsignedInt $count
-     * @param ApiStructArrayOfString $filters
+     * @param \Api\ArrayType\ApiArrayOfString $filters
      * @param string $sortBy
      */
-    public function __construct($offset = null, $count = null, ApiStructArrayOfString $filters = null, $sortBy = null)
+    public function __construct($offset = null, $count = null, \Api\ArrayType\ApiArrayOfString $filters = null, $sortBy = null)
     {
         $this
             ->setOffset($offset)
@@ -71,7 +74,7 @@ class ApiStructVideoRequest extends AbstractStructBase
     /**
      * Set Offset value
      * @param unsignedInt $offset
-     * @return ApiStructVideoRequest
+     * @return \Api\StructType\ApiVideoRequest
      */
     public function setOffset($offset = null)
     {
@@ -89,7 +92,7 @@ class ApiStructVideoRequest extends AbstractStructBase
     /**
      * Set Count value
      * @param unsignedInt $count
-     * @return ApiStructVideoRequest
+     * @return \Api\StructType\ApiVideoRequest
      */
     public function setCount($count = null)
     {
@@ -98,7 +101,7 @@ class ApiStructVideoRequest extends AbstractStructBase
     }
     /**
      * Get Filters value
-     * @return ApiStructArrayOfString|null
+     * @return \Api\ArrayType\ApiArrayOfString|null
      */
     public function getFilters()
     {
@@ -106,10 +109,10 @@ class ApiStructVideoRequest extends AbstractStructBase
     }
     /**
      * Set Filters value
-     * @param ApiStructArrayOfString $filters
-     * @return ApiStructVideoRequest
+     * @param \Api\ArrayType\ApiArrayOfString $filters
+     * @return \Api\StructType\ApiVideoRequest
      */
-    public function setFilters(ApiStructArrayOfString $filters = null)
+    public function setFilters(\Api\ArrayType\ApiArrayOfString $filters = null)
     {
         $this->Filters = $filters;
         return $this;
@@ -124,13 +127,13 @@ class ApiStructVideoRequest extends AbstractStructBase
     }
     /**
      * Set SortBy value
-     * @uses ApiEnumVideoSortOption::valueIsValid()
+     * @uses \Api\EnumType\ApiVideoSortOption::valueIsValid()
      * @param string $sortBy
-     * @return ApiStructVideoRequest
+     * @return \Api\StructType\ApiVideoRequest
      */
     public function setSortBy($sortBy = null)
     {
-        if(!ApiEnumVideoSortOption::valueIsValid($sortBy)) {
+        if(!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
             return false;
         }
         $this->SortBy = $sortBy;
@@ -142,7 +145,7 @@ class ApiStructVideoRequest extends AbstractStructBase
      * @see AbstractStructBase::__set_state()
      * @uses AbstractStructBase::__set_state()
      * @param array $array the exported values
-     * @return ApiStructVideoRequest
+     * @return \Api\StructType\ApiVideoRequest
      */
     public static function __set_state(array $array)
     {

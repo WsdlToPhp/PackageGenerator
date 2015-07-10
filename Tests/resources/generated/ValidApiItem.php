@@ -1,15 +1,18 @@
 <?php
+
+namespace Api\StructType;
+
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for Item Struct
+ * This class stands for Item StructType
  * Meta informations extracted from the WSDL
  * - maxOccurs: unbounded
  * @package Api
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructItem extends AbstractStructBase
+class ApiItem extends AbstractStructBase
 {
     /**
      * The itemType
@@ -37,10 +40,10 @@ class ApiStructItem extends AbstractStructBase
     public $any;
     /**
      * Constructor method for Item
-     * @uses ApiStructItem::setItemType()
-     * @uses ApiStructItem::setId()
-     * @uses ApiStructItem::setDisplayName()
-     * @uses ApiStructItem::setAny()
+     * @uses ApiItem::setItemType()
+     * @uses ApiItem::setId()
+     * @uses ApiItem::setDisplayName()
+     * @uses ApiItem::setAny()
      * @param string $itemType
      * @param string $id
      * @param string $displayName
@@ -64,13 +67,13 @@ class ApiStructItem extends AbstractStructBase
     }
     /**
      * Set itemType value
-     * @uses ApiEnumItemType::valueIsValid()
+     * @uses \Api\EnumType\ApiItemType::valueIsValid()
      * @param string $itemType
-     * @return ApiStructItem
+     * @return \Api\StructType\ApiItem
      */
     public function setItemType($itemType = null)
     {
-        if(!ApiEnumItemType::valueIsValid($itemType)) {
+        if(!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
             return false;
         }
         $this->itemType = $itemType;
@@ -87,7 +90,7 @@ class ApiStructItem extends AbstractStructBase
     /**
      * Set id value
      * @param string $id
-     * @return ApiStructItem
+     * @return \Api\StructType\ApiItem
      */
     public function setId($id = null)
     {
@@ -105,7 +108,7 @@ class ApiStructItem extends AbstractStructBase
     /**
      * Set displayName value
      * @param string $displayName
-     * @return ApiStructItem
+     * @return \Api\StructType\ApiItem
      */
     public function setDisplayName($displayName = null)
     {
@@ -118,7 +121,7 @@ class ApiStructItem extends AbstractStructBase
      * @uses \DOMDocument::hasChildNodes()
      * @uses \DOMDocument::saveXML()
      * @uses \DOMNode::item()
-     * @uses ApiStructItem::setAny()
+     * @uses \Api\StructType\ApiItem::setAny()
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
      * @return \DOMDocument|null
      */
@@ -137,7 +140,7 @@ class ApiStructItem extends AbstractStructBase
     /**
      * Set any value
      * @param \DOMDocument $any
-     * @return ApiStructItem
+     * @return \Api\StructType\ApiItem
      */
     public function setAny($any = null)
     {
@@ -150,7 +153,7 @@ class ApiStructItem extends AbstractStructBase
      * @see AbstractStructBase::__set_state()
      * @uses AbstractStructBase::__set_state()
      * @param array $array the exported values
-     * @return ApiStructItem
+     * @return \Api\StructType\ApiItem
      */
     public static function __set_state(array $array)
     {
