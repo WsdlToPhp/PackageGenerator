@@ -11,10 +11,12 @@ use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttribut
 class Struct extends AbstractModel
 {
     const
-        CONTEXTUAL_PART_STRUCT       = 'Struct',
-        DOC_SUB_PACKAGE_STRUCTS      = 'Structs',
-        CONTEXTUAL_PART_ENUMERATION  = 'Enum',
-        DOC_SUB_PACKAGE_ENUMERATIONS = 'Enumerations';
+        CONTEXTUAL_PART_STRUCT = 'StructType',
+        DOC_SUB_PACKAGE_STRUCTS = 'Structs',
+        CONTEXTUAL_PART_ENUMERATION = 'EnumType',
+        DOC_SUB_PACKAGE_ENUMERATIONS = 'Enumerations',
+        CONTEXTUAL_PART_ARRAY = 'ArrayType',
+        DOC_SUB_PACKAGE_ARRAYS = 'Arrays';
     /**
      * Attributes of the struct
      * @var StructAttributeContainer
@@ -62,7 +64,13 @@ class Struct extends AbstractModel
      */
     public function getContextualPart()
     {
-        return $this->getIsRestriction() ? self::CONTEXTUAL_PART_ENUMERATION : self::CONTEXTUAL_PART_STRUCT;
+        $part = self::CONTEXTUAL_PART_STRUCT;
+        if ($this->getIsRestriction()) {
+            $part = self::CONTEXTUAL_PART_ENUMERATION;
+        } elseif ($this->isArray()) {
+            $part = self::CONTEXTUAL_PART_ARRAY;
+        }
+        return $part;
     }
     /**
      * Returns the sub package name which the model belongs to
@@ -73,7 +81,15 @@ class Struct extends AbstractModel
      */
     public function getDocSubPackages()
     {
-        return array($this->getIsRestriction() ? self::DOC_SUB_PACKAGE_ENUMERATIONS : self::DOC_SUB_PACKAGE_STRUCTS);
+        $package = self::DOC_SUB_PACKAGE_STRUCTS;
+        if ($this->getIsRestriction()) {
+            $package = self::DOC_SUB_PACKAGE_ENUMERATIONS;
+        } elseif ($this->isArray()) {
+            $package = self::DOC_SUB_PACKAGE_ARRAYS;
+        }
+        return array(
+            $package,
+        );
     }
     /**
      * Returns true if the current struct is a collection of values (like an array)
