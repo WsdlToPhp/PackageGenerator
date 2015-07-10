@@ -6,7 +6,7 @@ class Structs extends AbstractParser
 {
     public function parse()
     {
-        $types   = $this->generator->__getTypes();
+        $types = $this->generator->__getTypes();
         $structs = $this->generator->getStructs();
         if (is_array($types) && count($types)) {
             $structsDefined = array();
