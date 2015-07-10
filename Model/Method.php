@@ -103,14 +103,6 @@ class Method extends AbstractModel
             array_push($comments, 'Documentation : ' . $this->getDocumentation());
         }
         $this->addMetaComment($comments, false, true);
-        /**
-         * @Uses and @Param
-         */
-        if (Generator::instance()->getOptionGenerateWsdlClassFile()) {
-            array_push($comments, '@uses ' . self::getGenericWsdlClassName() . '::getSoapClient()');
-            array_push($comments, '@uses ' . self::getGenericWsdlClassName() . '::setResult()');
-            array_push($comments, '@uses ' . self::getGenericWsdlClassName() . '::saveLastError()');
-        }
         if (is_string($this->getParameterType())) {
             $model = self::getModelByName($this->getParameterType());
             if ($model && $model->getIsStruct() && !$model->getIsRestriction()) {

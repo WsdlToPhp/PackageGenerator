@@ -66,7 +66,6 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('wsdl-category', null, InputOption::VALUE_OPTIONAL, 'First level directory name generation mode (start, end, cat, none)')
             ->addOption('wsdl-subcategory', null, InputOption::VALUE_OPTIONAL, 'Second level directory name generation mode (start, end, none), disabled if category=cat')
             ->addOption('wsdl-gathermethods', null, InputOption::VALUE_OPTIONAL, 'Gather methods based on operation name mode (start, end)')
-            ->addOption('wsdl-genwsdlclass', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable main Wsdl class generation, you should always enable this option')
             ->addOption('wsdl-gentutorial', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable tutorial file, you should enable this option only on dev')
             ->addOption('wsdl-genautoload', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable autoload file generation, this is useless if you use composer or your own autoloader')
             ->addOption('wsdl-sendarrayparam', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of an array to send the parameters, can be disabled as it will soon removed')
@@ -156,7 +155,6 @@ class GeneratePackageCommand extends AbstractCommand
             'wsdl-category'         => 'Category',
             'wsdl-subcategory'      => 'SubCategory',
             'wsdl-gathermethods'    => 'GatherMethods',
-            'wsdl-genwsdlclass'     => 'GenerateWsdlClassFile',
             'wsdl-gentutorial'      => 'GenerateTutorialFile',
             'wsdl-genautoload'      => 'GenerateAutoloadFile',
             'wsdl-sendarrayparam'   => 'SendArrayAsParameter',

@@ -200,9 +200,7 @@ class Generator extends \SoapClient
      * @uses Generator::getWsdl()
      * @uses Generator::getStructs()
      * @uses Generator::getServices()
-     * @uses Generator::getOptionGenerateWsdlClassFile()
      * @uses Generator::generateWsdlClassFile()
-     * @uses Generator::setOptionGenerateWsdlClassFile()
      * @uses Generator::generateStructsClasses()
      * @uses Generator::generateServicesClasses()
      * @uses Generator::generateClassMap()
@@ -237,17 +235,6 @@ class Generator extends \SoapClient
             if (is_dir($rootDirectory)) {
                 foreach ($this->parsers as $parser) {
                     $parser->parse();
-                }
-                /**
-                 * Generates Wsdl Class ?
-                 */
-                if ($this->getOptionGenerateWsdlClassFile() === true) {
-                    $wsdlClassFile = $this->generateWsdlClassFile($rootDirectory);
-                } else {
-                    $wsdlClassFile = array();
-                }
-                if (!count($wsdlClassFile)) {
-                    $this->setOptionGenerateWsdlClassFile(false);
                 }
                 /**
                  * Generates classes files
@@ -823,22 +810,6 @@ class Generator extends \SoapClient
     public function setOptionGenerateAutoloadFile($generateAutoloadFile)
     {
         return $this->options->setGenerateAutoloadFile($generateAutoloadFile);
-    }
-    /**
-     * Gets the optionGenerateWsdlClassFile value
-     * @return bool
-     */
-    public function getOptionGenerateWsdlClassFile()
-    {
-        return $this->options->getGenerateWsdlClass();
-    }
-    /**
-     * @param bool $optionGenerateWsdlClassFile
-     * @return GeneratorOptions
-     */
-    public function setOptionGenerateWsdlClassFile($optionGenerateWsdlClassFile)
-    {
-        return $this->options->setGenerateWsdlClass($optionGenerateWsdlClassFile);
     }
     /**
      * Gets the optionResponseAsWsdlObject value

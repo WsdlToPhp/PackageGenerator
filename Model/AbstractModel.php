@@ -156,7 +156,6 @@ abstract class AbstractModel
      * @uses AbstractModel::getClassBody()
      * @uses AbstractModel::getGenericWsdlClassName()
      * @uses Generator::instance()->getOptionInheritsClassIdentifier()
-     * @uses Generator::instance()->getOptionGenerateWsdlClassFile()
      * @return string
      */
     public function getClassDeclaration()

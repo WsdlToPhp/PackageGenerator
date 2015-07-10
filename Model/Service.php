@@ -58,7 +58,6 @@ class Service extends AbstractModel
      * @uses Method::getComment()
      * @uses Method::getBody()
      * @uses Generator::getPackageName()
-     * @uses Generator::instance()->getOptionGenerateWsdlClassFile()
      * @param array $body
      * @return void
      */
@@ -103,7 +102,7 @@ class Service extends AbstractModel
             /**
              * Generates the SoapHeaders setter methods
              */
-            if (count($soapHeaders) && Generator::instance()->getOptionGenerateWsdlClassFile()) {
+            if (count($soapHeaders)) {
                 $whateverStruct = new Struct('whatever');
                 $soapHeaderNameUniqueMethods = array();
                 foreach ($soapHeaders as $soapHeader) {
@@ -154,7 +153,7 @@ class Service extends AbstractModel
             /**
              * Generates the override getResult method if needed
              */
-            if (count($returnTypes) && Generator::instance()->getOptionGenerateWsdlClassFile()) {
+            if (count($returnTypes)) {
                 $returnTypes = array_unique($returnTypes);
                 natcasesort($returnTypes);
                 /**

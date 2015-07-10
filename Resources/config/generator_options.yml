@@ -16,9 +16,6 @@ send_array_as_parameter: # will be removed !
 generate_autoload_file:
     default: true
     values: [ true, false ]
-generate_wsdl_class: # will be removed !
-    default: true
-    values: [ true, false ]
 response_as_wsdl_object:
     default: false
     values: [ true, false ]

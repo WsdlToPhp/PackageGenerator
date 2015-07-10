@@ -35,7 +35,6 @@ class StructArrayTest extends AbstractFile
     public function testWriteBingSearchArrayOfNewsRelatedSearch()
     {
         $generator = self::bingGeneratorInstance();
-        $generator->setOptionGenerateWsdlClassFile(true);
         if (($model = $generator->getStruct('ArrayOfNewsRelatedSearch')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
@@ -52,7 +51,6 @@ class StructArrayTest extends AbstractFile
     public function testWriteBingSearchArrayOfWebSearchOption()
     {
         $generator = self::bingGeneratorInstance();
-        $generator->setOptionGenerateWsdlClassFile(true);
         if (($model = $generator->getStruct('ArrayOfWebSearchOption')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
@@ -69,7 +67,6 @@ class StructArrayTest extends AbstractFile
     public function testWriteBingSearchArrayOfString()
     {
         $generator = self::bingGeneratorInstance();
-        $generator->setOptionGenerateWsdlClassFile(true);
         if (($model = $generator->getStruct('ArrayOfString')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName(), $this->getTestDirectory());
             $struct

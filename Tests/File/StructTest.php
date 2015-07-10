@@ -74,7 +74,6 @@ class StructTest extends AbstractFile
     public function testWriteBingSearchStructQueryWithoutWsdlClass()
     {
         $generator = self::bingGeneratorInstance();
-        $generator->setOptionGenerateWsdlClassFile(false);
         if (($model = $generator->getStruct('Query')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
@@ -91,7 +90,6 @@ class StructTest extends AbstractFile
     public function testWriteBingSearchStructVideoRequest()
     {
         $generator = self::bingGeneratorInstance();
-        $generator->setOptionGenerateWsdlClassFile(true);
         if (($model = $generator->getStruct('VideoRequest')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
@@ -108,7 +106,6 @@ class StructTest extends AbstractFile
     public function testWriteBingSearchStructSearchRequest()
     {
         $generator = self::bingGeneratorInstance();
-        $generator->setOptionGenerateWsdlClassFile(true);
         if (($model = $generator->getStruct('SearchRequest')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
@@ -125,7 +122,6 @@ class StructTest extends AbstractFile
     public function testWriteActonStructItem()
     {
         $generator = self::actonGeneratorInstance();
-        $generator->setOptionGenerateWsdlClassFile(true);
         if (($model = $generator->getStruct('Item')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
