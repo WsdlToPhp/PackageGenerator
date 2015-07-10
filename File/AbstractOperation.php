@@ -11,6 +11,10 @@ use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 abstract class AbstractOperation
 {
     /**
+     * @var string
+     */
+    const DEFAULT_TYPE = 'string';
+    /**
      * @var MethodModel
      */
     protected $method;
@@ -41,6 +45,21 @@ abstract class AbstractOperation
     protected function isParameterTypeAnArray()
     {
         return is_array($this->getMethod()->getParameterType());
+    }
+    /**
+     * @return string[]
+     */
+    protected function getParameterTypeArrayTypes()
+    {
+        $types = array();
+        foreach ($this->getMethod()->getParameterType() as $parameterName => $parameterType) {
+            $type = self::DEFAULT_TYPE;
+            if (($model = $this->getGenerator()->getStruct($parameterType)) instanceof StructModel && $model->getIsStruct() && !$model->getIsRestriction()) {
+                $type = $model->getPackagedName(true);
+            }
+            $types[$parameterName] = $type;
+        }
+        return $types;
     }
     /**
      * @return bool
