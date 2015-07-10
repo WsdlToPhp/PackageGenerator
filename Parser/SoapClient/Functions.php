@@ -6,7 +6,7 @@ class Functions extends AbstractParser
 {
     public function parse()
     {
-        $methods  = $this->generator->__getFunctions();
+        $methods = $this->generator->__getFunctions();
         $services = $this->generator->getServices();
         if (is_array($methods) && count($methods)) {
             foreach ($methods as $method) {
@@ -38,8 +38,8 @@ class Functions extends AbstractParser
                     /**
                      * Returns type is not defined in some case
                      */
-                    $start              = 0;
-                    $returnType         = strpos($infos[0], '(') === false ? $infos[0] : '';
+                    $start = 0;
+                    $returnType = strpos($infos[0], '(') === false ? $infos[0] : '';
                     $firstParameterType = '';
                     if (empty($returnType) && strpos($infos[0], '(') !== false) {
                         $start = 1;
@@ -54,6 +54,7 @@ class Functions extends AbstractParser
                         for ($i = $start; $i < $infosCount; $i += 2) {
                             $info = str_replace(array(
                                 ', ',
+                                ',',
                                 '(',
                                 ')',
                                 '$',
