@@ -115,7 +115,7 @@ class OperationAnnotationBlock extends AbstractOperation
     {
         if ($this->isParameterTypeAnArray()) {
             foreach ($this->getParameterTypeArrayTypes() as $parameterName => $parameterType) {
-                $annotationBlock->addChild($this->getOperationMethodParam($this->getParameterName($parameterName), $parameterType));
+                $annotationBlock->addChild($this->getOperationMethodParam($parameterType, $this->getParameterName($parameterName)));
             }
         }
         return $this;
