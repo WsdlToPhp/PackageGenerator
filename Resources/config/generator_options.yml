@@ -34,3 +34,6 @@ generate_tutorial_file:
 add_comments:
     default: [ ]
     values: null
+namespace_prefix:
+    default: ''
+    values: ''
