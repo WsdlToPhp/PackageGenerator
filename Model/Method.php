@@ -88,7 +88,6 @@ class Method extends AbstractModel
      * @uses AbstractModel::getModelByName()
      * @uses AbstractModel::addMetaComment()
      * @uses AbstractModel::getDocumentation()
-     * @uses AbstractModel::getGenericWsdlClassName()
      * @uses AbstractModel::cleanString()
      * @return array
      */

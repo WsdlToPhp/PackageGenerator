@@ -154,7 +154,6 @@ abstract class AbstractModel
      * @uses AbstractModel::getComment()
      * @uses AbstractModel::getPackagedName()
      * @uses AbstractModel::getClassBody()
-     * @uses AbstractModel::getGenericWsdlClassName()
      * @uses Generator::instance()->getOptionInheritsClassIdentifier()
      * @return string
      */
@@ -614,15 +613,6 @@ abstract class AbstractModel
     public static function cleanComment($comment, $glueSeparator = ',', $uniqueValues = true)
     {
         return Utils::cleanComment($comment, $glueSeparator, $uniqueValues);
-    }
-    /**
-     * Returns the generic name of the WsdlClass
-     * @uses Generator::getPackageName()
-     * @return string
-     */
-    public static function getGenericWsdlClassName()
-    {
-        return Generator::getPackageName() . 'WsdlClass';
     }
     /**
      * Returns class name

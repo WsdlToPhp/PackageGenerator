@@ -49,7 +49,6 @@ class Service extends AbstractModel
      * Returns the comment lines for this service
      * @uses AbstractModel::getModelByName()
      * @uses AbstractModel::getPackagedName()
-     * @uses AbstractModel::getGenericWsdlClassName()
      * @uses AbstractModel::getMetaValue()
      * @uses AbstractModel::cleanString()
      * @uses Struct::getContextualPart()
