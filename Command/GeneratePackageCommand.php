@@ -151,7 +151,7 @@ class GeneratePackageCommand extends AbstractCommand
     protected function getPackageGenerationCommandLineOptions()
     {
         return array(
-            'wsdl-namespace'        => 'Namespace',
+            'wsdl-namespace'        => 'NamespacePrefix',
             'wsdl-category'         => 'Category',
             'wsdl-subcategory'      => 'SubCategory',
             'wsdl-gathermethods'    => 'GatherMethods',
