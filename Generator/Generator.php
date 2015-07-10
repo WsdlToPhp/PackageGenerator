@@ -34,6 +34,7 @@ use WsdlToPhp\PackageGenerator\Parser\AbstractParser;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
 use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
+use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class Generator extends \SoapClient
@@ -200,7 +201,6 @@ class Generator extends \SoapClient
      * @uses Generator::getWsdl()
      * @uses Generator::getStructs()
      * @uses Generator::getServices()
-     * @uses Generator::generateWsdlClassFile()
      * @uses Generator::generateStructsClasses()
      * @uses Generator::generateServicesClasses()
      * @uses Generator::generateClassMap()
@@ -246,7 +246,7 @@ class Generator extends \SoapClient
                  * Generates autoload ?
                  */
                 if ($this->getOptionGenerateAutoloadFile() === true) {
-                    $this->generateAutoloadFile($rootDirectory, array_merge($wsdlClassFile, $structsClassesFiles, $servicesClassesFiles, $classMapFile));
+                    $this->generateAutoloadFile($rootDirectory, array_merge($structsClassesFiles, $servicesClassesFiles, $classMapFile));
                 }
                 /**
                  * Generates tutorial ?
@@ -354,7 +354,10 @@ class Generator extends \SoapClient
                 /**
                  * Generates file
                  */
-                self::populateFile($serviceClassFileName, $service->getClassDeclaration());
+                $file = new ServiceFile($this, $service->getPackagedName(), $elementFolder);
+                $file
+                    ->setModel($service)
+                    ->write();
             }
         }
         return $servicesClassesFiles;
@@ -506,67 +509,6 @@ class Generator extends \SoapClient
             }
             self::populateFile($rootDirectory . '/' . self::getPackageName() . 'Autoload.php', $autoloadDeclaration);
             unset($autoloadDeclaration, $comments);
-        }
-    }
-    /**
-     * Generates Wsdl Class file
-     * @uses Generator::getPackageName()
-     * @uses AbstractModel::cleanComment()
-     * @param string $rootDirectory the directory
-     * @return array the absolute path to the generated file
-     */
-    private function generateWsdlClassFile($rootDirectory)
-    {
-        $pathToWsdlClassTemplate = dirname(__FILE__) . '/../Resources/templates/Default/Class.php';
-        if (is_file($pathToWsdlClassTemplate)) {
-            /**
-             * Adds additional PHP doc block tags if needed to the two main PHP doc block
-             */
-            if (count($this->getOptionAddComments())) {
-                $file = file($pathToWsdlClassTemplate);
-                $content = array();
-                $counter = 2;
-                foreach ($file as $line) {
-                    if (empty($line)) {
-                        continue;
-                    }
-                    if (strpos($line, ' */') === 0 && $counter) {
-                        foreach ($this->getOptionAddComments() as $tagName => $tagValue) {
-                            array_push($content, " * @$tagName $tagValue\n");
-                        }
-                        $counter--;
-                    }
-                    array_push($content, $line);
-                }
-                $content = implode('', $content);
-            } else {
-                $content = file_get_contents($pathToWsdlClassTemplate);
-            }
-            $metaInformation = '';
-            foreach ($this->getWsdls() as $wsdl) {
-                foreach ($wsdl->getMeta() as $metaName => $metaValue) {
-                    $metaValueCleaned = AbstractModel::cleanComment($metaValue);
-                    if ($metaValueCleaned === '') {
-                        continue;
-                    }
-                    $metaInformation .= (!empty($metaInformation) ? "\n * " : '') . ucfirst($metaName) . " : $metaValueCleaned";
-                }
-            }
-            $content = str_replace(array(
-                'packageName',
-                'PackageName',
-                'meta_informations',
-                "'wsdl_url_value'"
-            ), array(
-                lcfirst(self::getPackageName(false)),
-                self::getPackageName(),
-                $metaInformation,
-                var_export(self::getWsdl(0)->getName(), true)
-            ), $content);
-            file_put_contents($rootDirectory . self::getPackageName() . 'WsdlClass.php', $content);
-            return array($rootDirectory . self::getPackageName() . 'WsdlClass.php');
-        } else {
-            return array();
         }
     }
     /**
