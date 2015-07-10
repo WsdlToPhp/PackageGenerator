@@ -57,6 +57,7 @@ To generate a package, nothing as simple as this:
         --wsdl-addcomments="author:Me" \
         --wsdl-addcomments="release:1.1.0" \
         --wsdl-addcomments="team:Dream" \
+        --wsdl-namespace="My\Project" \
         --force
     $ cd /var/www/Api/
     $ ls -la => enjoy!
@@ -69,15 +70,15 @@ To generate a package, nothing as simple as this:
 #### The most basic way
 ```php
     <?php
-    require_once 'autoload.php'
-    use WsdlToPhp\PackageGenerator\Generator\Generator;
+    require_once __DIR__ . '/vendor/autoload.php'
+    use \WsdlToPhp\PackageGenerator\Generator\Generator;
     $generator = Generator::instance("http://www.mydomain.com/wsdl.xml");
     $generator->generateClasses("MyPackage", "/path/to/where/the/package/must/be/generated/");
 ```
 Then:
 ```php
     <?php
-    require_once "/path/to/where/the/package/must/be/generated/MyPackageAutoload.php";
+    require_once "/path/to/where/the/package/must/be/generated/vendor/autoload.php";
     // if getList operation is provided by the Web service
     $serviceGet = new MyPackageServiceGet();
     $result = $serviceGet->getList();
@@ -89,9 +90,9 @@ Then:
 #### Playing with options
 ```php
     <?php
-    require_once 'autoload.php'
-    use WsdlToPhp\PackageGenerator\Generator\Generator;
-    use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
+    require_once __DIR__ . '/vendor/autoload.php'
+    use \WsdlToPhp\PackageGenerator\Generator\Generator;
+    use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
     // required authentification informations to access the WSDL
     $login = 'MyLogin';
     $password = '********';
@@ -120,6 +121,7 @@ Then:
         'author'  => 'Me',
         'release' => 1.1.0,
     ));
+    $generator->setOptionNamespacePrefix('My\Project');
     $generator->generateClasses("MyPackage", "/path/to/where/the/package/must/be/generated/");
 ```
 ## Unit tests
