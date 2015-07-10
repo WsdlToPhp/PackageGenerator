@@ -71,17 +71,18 @@ abstract class AbstractModelFile extends AbstractFile
     {
         parent::beforeWrite();
         $this
-            ->addAnnotationBlocks()
+            ->defineNamespace()
+            ->defineUseStatement()
+            ->addAnnotationBlock()
             ->addClassElement();
     }
     /**
      * @return AbstractModelFile
      */
-    protected function addAnnotationBlocks()
+    protected function addAnnotationBlock()
     {
         $this
             ->getFile()
-                ->addAnnotationBlockElement($this->getFileAnnotationBlock())
                 ->addAnnotationBlockElement($this->getClassAnnotationBlock());
         return $this;
     }
@@ -101,27 +102,6 @@ abstract class AbstractModelFile extends AbstractFile
     public function getModel()
     {
         return $this->model;
-    }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getFileAnnotationBlock()
-    {
-        $block = new PhpAnnotationBlock();
-        $this
-            ->defineModelAnnotations($block)
-            ->defineGeneralAnnotations($block);
-        return $block;
-    }
-    /**
-     * @param PhpAnnotationBlock $block
-     * @return AbstractModelFile
-     */
-    protected function defineModelAnnotations(PhpAnnotationBlock $block)
-    {
-        $block->addChild(sprintf('File for class %s', $this->getModel()->getPackagedName()));
-        $this->definePackageAnnotations($block);
-        return $this;
     }
     /**
      * @param PhpAnnotationBlock $block
@@ -266,6 +246,25 @@ abstract class AbstractModelFile extends AbstractFile
             ->defineStringMethod($class)
             ->getFile()
                 ->addClassComponent($class);
+        return $this;
+    }
+    /**
+     * @return AbstractModelFile
+     */
+    protected function defineNamespace()
+    {
+        return $this;
+    }
+    /**
+     * @return AbstractModelFile
+     */
+    protected function defineUseStatement()
+    {
+        if ($this->getModel()->getExtends() !== '') {
+            $this
+                ->getFile()
+                    ->addUse($this->getModel()->getExtends(), null, true);
+        }
         return $this;
     }
     /**

@@ -1,21 +1,17 @@
 <?php
-/**
- * File for class ApiServiceDelete
- * @package Api
- * @subpackage Services
- * @release 1.1.0
- */
+use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+
 /**
  * This class stands for Delete Service
  * @package Api
  * @subpackage Services
  * @release 1.1.0
  */
-class ApiServiceDelete extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
+class ApiServiceDelete extends AbstractSoapClientBase
 {
     /**
      * Sets the SessionHeader SoapHeader param
-     * @uses ApiWsdlClass::setSoapHeader()
+     * @uses AbstractSoapClientBase::setSoapHeader()
      * @param SessionHeader $sessionHeader
      * @param string $nameSpace
      * @param bool $mustUnderstand
@@ -28,7 +24,7 @@ class ApiServiceDelete extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
     }
     /**
      * Sets the ClusterHeader SoapHeader param
-     * @uses ApiWsdlClass::setSoapHeader()
+     * @uses AbstractSoapClientBase::setSoapHeader()
      * @param ClusterHeader $clusterHeader
      * @param string $nameSpace
      * @param bool $mustUnderstand
@@ -46,9 +42,9 @@ class ApiServiceDelete extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
      * - SOAPHeaderNamespaces : urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes : SessionHeader, ClusterHeader
      * - SOAPHeaders : optional, required
-     * @uses ApiWsdlClass::getSoapClient()
-     * @uses ApiWsdlClass::setResult()
-     * @uses ApiWsdlClass::saveLastError()
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
      * @param ApiStructDeleteList $apiStructDeleteList
      * @return void
      */
@@ -62,7 +58,7 @@ class ApiServiceDelete extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
     }
     /**
      * Returns the result
-     * @see ApiWsdlClass::getResult()
+     * @see AbstractSoapClientBase::getResult()
      * @return void
      */
     public function getResult()

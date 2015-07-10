@@ -194,7 +194,7 @@ class Service extends AbstractModelFile
         if ($firstParameter instanceof PhpFunctionParameter) {
             $annotationBlock
                 ->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::setSoapHeader()', AbstractModel::getGenericWsdlClassName())))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::setSoapHeader()', $this->getModel()->getExtends(true))))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', ucfirst($firstParameter->getName()), $firstParameter->getName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_NAMESPACE)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('bool $%s', self::PARAM_SET_HEADER_MUSTUNDERSTAND)))
@@ -224,7 +224,7 @@ class Service extends AbstractModelFile
     {
         $annotationBlock
             ->addChild('Returns the result')
-            ->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', AbstractModel::getGenericWsdlClassName())))
+            ->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', $this->getModel()->getExtends(true))))
             ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes(), self::ANNOTATION_LONG_LENGTH));
         return $this;
     }

@@ -1,17 +1,13 @@
 <?php
-/**
- * File for class ApiStructSearchRequest
- * @package Api
- * @subpackage Structs
- * @release 1.1.0
- */
+use \WsdlToPhp\PackageBase\AbstractStructBase;
+
 /**
  * This class stands for SearchRequest Struct
  * @package Api
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructSearchRequest extends \WsdlToPhp\PackageBase\AbstractStructBase
+class ApiStructSearchRequest extends AbstractStructBase
 {
     /**
      * The Query
@@ -579,8 +575,8 @@ class ApiStructSearchRequest extends \WsdlToPhp\PackageBase\AbstractStructBase
     /**
      * Method called when an object has been exported with var_export() functions
      * It allows to return an object instantiated with the values
-     * @see ApiWsdlClass::__set_state()
-     * @uses ApiWsdlClass::__set_state()
+     * @see AbstractStructBase::__set_state()
+     * @uses AbstractStructBase::__set_state()
      * @param array $array the exported values
      * @return ApiStructSearchRequest
      */

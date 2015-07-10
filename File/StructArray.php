@@ -226,7 +226,7 @@ class StructArray extends Struct
     {
         return new PhpAnnotationBlock(array(
             'Returns the attribute name',
-            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', AbstractModel::getGenericWsdlClassName(), self::METHOD_GET_ATTRIBUTE_NAME)),
+            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $this->getModel()->getExtends(true), self::METHOD_GET_ATTRIBUTE_NAME)),
             new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string %s', $this->getModel()->getAttributes()->offsetGet(0)->getName())),
         ));
     }
@@ -272,7 +272,7 @@ class StructArray extends Struct
     {
         return new PhpAnnotationBlock(array(
             'Add element to array',
-            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', AbstractModel::getGenericWsdlClassName())),
+            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
             new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName())),
             new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType())),
             new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModelFromStructAttribute()->getPackagedName()),
@@ -288,7 +288,7 @@ class StructArray extends Struct
     {
         $annotationBlock = new PhpAnnotationBlock(array(
             $description,
-            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', AbstractModel::getGenericWsdlClassName(), $name)),
+            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $this->getModel()->getExtends(true), $name)),
         ));
         if (!empty($param)) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, $param));

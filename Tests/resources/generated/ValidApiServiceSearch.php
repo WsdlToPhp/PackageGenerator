@@ -1,23 +1,19 @@
 <?php
-/**
- * File for class ApiServiceSearch
- * @package Api
- * @subpackage Services
- * @release 1.1.0
- */
+use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+
 /**
  * This class stands for Search Service
  * @package Api
  * @subpackage Services
  * @release 1.1.0
  */
-class ApiServiceSearch extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
+class ApiServiceSearch extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named Search
-     * @uses ApiWsdlClass::getSoapClient()
-     * @uses ApiWsdlClass::setResult()
-     * @uses ApiWsdlClass::saveLastError()
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
      * @param ApiStructSearchRequest $apiStructSearchRequest
      * @return ApiStructSearchResponse
      */
@@ -31,7 +27,7 @@ class ApiServiceSearch extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
     }
     /**
      * Returns the result
-     * @see ApiWsdlClass::getResult()
+     * @see AbstractSoapClientBase::getResult()
      * @return ApiStructSearchResponse
      */
     public function getResult()

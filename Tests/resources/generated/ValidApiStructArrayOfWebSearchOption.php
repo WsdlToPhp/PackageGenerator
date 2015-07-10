@@ -1,17 +1,13 @@
 <?php
-/**
- * File for class ApiStructArrayOfWebSearchOption
- * @package Api
- * @subpackage Structs
- * @release 1.1.0
- */
+use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
+
 /**
  * This class stands for ArrayOfWebSearchOption Struct
  * @package Api
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStructArrayBase
+class ApiStructArrayOfWebSearchOption extends AbstractStructArrayBase
 {
     /**
      * The WebSearchOption
@@ -51,7 +47,7 @@ class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStr
     }
     /**
      * Returns the current element
-     * @see ApiWsdlClass::current()
+     * @see AbstractStructArrayBase::current()
      * @return string
      */
     public function current()
@@ -60,7 +56,7 @@ class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStr
     }
     /**
      * Returns the indexed element
-     * @see ApiWsdlClass::item()
+     * @see AbstractStructArrayBase::item()
      * @param int $index
      * @return string
      */
@@ -70,7 +66,7 @@ class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStr
     }
     /**
      * Returns the first element
-     * @see ApiWsdlClass::first()
+     * @see AbstractStructArrayBase::first()
      * @return string
      */
     public function first()
@@ -79,7 +75,7 @@ class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStr
     }
     /**
      * Returns the last element
-     * @see ApiWsdlClass::last()
+     * @see AbstractStructArrayBase::last()
      * @return string
      */
     public function last()
@@ -88,7 +84,7 @@ class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStr
     }
     /**
      * Returns the element at the offset
-     * @see ApiWsdlClass::offsetGet()
+     * @see AbstractStructArrayBase::offsetGet()
      * @param int $offset
      * @return string
      */
@@ -98,7 +94,7 @@ class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStr
     }
     /**
      * Add element to array
-     * @see ApiWsdlClass::add()
+     * @see AbstractStructArrayBase::add()
      * @uses ApiEnumWebSearchOption::valueIsValid()
      * @param string $item
      * @return ApiEnumWebSearchOption
@@ -109,7 +105,7 @@ class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStr
     }
     /**
      * Returns the attribute name
-     * @see ApiWsdlClass::getAttributeName()
+     * @see AbstractStructArrayBase::getAttributeName()
      * @return string WebSearchOption
      */
     public function getAttributeName()
@@ -119,8 +115,8 @@ class ApiStructArrayOfWebSearchOption extends \WsdlToPhp\PackageBase\AbstractStr
     /**
      * Method called when an object has been exported with var_export() functions
      * It allows to return an object instantiated with the values
-     * @see ApiWsdlClass::__set_state()
-     * @uses ApiWsdlClass::__set_state()
+     * @see AbstractStructArrayBase::__set_state()
+     * @uses AbstractStructArrayBase::__set_state()
      * @param array $array the exported values
      * @return ApiStructArrayOfWebSearchOption
      */

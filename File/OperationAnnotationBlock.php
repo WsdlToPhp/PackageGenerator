@@ -62,12 +62,10 @@ class OperationAnnotationBlock extends AbstractOperation
      */
     protected function addOperationMethodUses(PhpAnnotationBlock $annotationBlock)
     {
-        if ($this->getGenerator()->getOptionGenerateWsdlClassFile()) {
-            $annotationBlock
-                ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::getSoapClient()', AbstractModel::getGenericWsdlClassName())))
-                ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::setResult()', AbstractModel::getGenericWsdlClassName())))
-                ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::saveLastError()', AbstractModel::getGenericWsdlClassName())));
-        }
+        $annotationBlock
+            ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::getSoapClient()', $this->getMethod()->getOwner()->getExtends(true))))
+            ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::setResult()', $this->getMethod()->getOwner()->getExtends(true))))
+            ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::saveLastError()', $this->getMethod()->getOwner()->getExtends(true))));
         return $this;
     }
     /**

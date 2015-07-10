@@ -1,11 +1,5 @@
 <?php
 /**
- * File for class ApiEnumAdultOption
- * @package Api
- * @subpackage Enumerations
- * @release 1.1.0
- */
-/**
  * This class stands for AdultOption Enum
  * @package Api
  * @subpackage Enumerations

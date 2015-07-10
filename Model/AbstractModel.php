@@ -219,7 +219,7 @@ abstract class AbstractModel
             $extends = $this->getInheritance();
         }
         if (empty($extends)) {
-            $extends = $this->getExtends();
+            $extends = $this->getExtends(true);
         }
         return $extends;
     }
@@ -496,9 +496,10 @@ abstract class AbstractModel
     }
     /**
      * Allows to define from which class the curent model extends
+     * @param bool $short
      * @return string|null
      */
-    public function getExtends()
+    public function getExtends($short = false)
     {
         return '';
     }

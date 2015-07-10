@@ -126,7 +126,7 @@ class Service extends AbstractModel
                      */
                     $comments = array();
                     array_push($comments, 'Sets the ' . $soapHeaderName . ' SoapHeader param');
-                    array_push($comments, '@uses ' . self::getGenericWsdlClassName() . '::setSoapHeader()');
+                    array_push($comments, '@uses ' . $this->getExtends() . '::setSoapHeader()');
                     array_push($comments, '@param ' . $soapHeaderType . ' $' . lcfirst($headerParamKnown ? $soapHeaderType : $cleanedName));
                     array_push($comments, '@param string $nameSpace ' . implode(', ', $soapHeaderNameSpaces));
                     array_push($comments, '@param bool $mustUnderstand');
@@ -161,7 +161,7 @@ class Service extends AbstractModel
                  */
                 $comments = array();
                 array_push($comments, 'Returns the result');
-                array_push($comments, '@see ' . self::getGenericWsdlClassName() . '::getResult()');
+                array_push($comments, '@see ' . $this->getExtends() . '::getResult()');
                 array_push($comments, '@return ' . implode('|', $returnTypes));
                 /**
                  * getResult() method body
@@ -222,11 +222,12 @@ class Service extends AbstractModel
     }
     /**
      * Allows to define from which class the curent model extends
+     * @param bool $short
      * @return string
      */
-    public function getExtends()
+    public function getExtends($short = false)
     {
-        return '\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase';
+        return $short === true ? 'AbstractSoapClientBase' : '\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase';
     }
     /**
      * Returns class name

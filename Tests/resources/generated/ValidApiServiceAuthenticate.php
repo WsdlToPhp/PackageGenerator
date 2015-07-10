@@ -1,23 +1,19 @@
 <?php
-/**
- * File for class ApiServiceAuthenticate
- * @package Api
- * @subpackage Services
- * @release 1.1.0
- */
+use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+
 /**
  * This class stands for Authenticate Service
  * @package Api
  * @subpackage Services
  * @release 1.1.0
  */
-class ApiServiceAuthenticate extends \WsdlToPhp\PackageBase\AbstractSoapClientBase
+class ApiServiceAuthenticate extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named AuthenticateAccount
-     * @uses ApiWsdlClass::getSoapClient()
-     * @uses ApiWsdlClass::setResult()
-     * @uses ApiWsdlClass::saveLastError()
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
      * @param AuthenticateAccount $authenticateAccount
      * @return AuthenticateAccountResponse
      */
@@ -31,9 +27,9 @@ class ApiServiceAuthenticate extends \WsdlToPhp\PackageBase\AbstractSoapClientBa
     }
     /**
      * Method to call the operation originally named AuthenticateAdmin
-     * @uses ApiWsdlClass::getSoapClient()
-     * @uses ApiWsdlClass::setResult()
-     * @uses ApiWsdlClass::saveLastError()
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
      * @param AuthenticateAdmin $authenticateAdmin
      * @return AuthenticateAdminResponse
      */
@@ -47,9 +43,9 @@ class ApiServiceAuthenticate extends \WsdlToPhp\PackageBase\AbstractSoapClientBa
     }
     /**
      * Method to call the operation originally named AuthenticateReseller
-     * @uses ApiWsdlClass::getSoapClient()
-     * @uses ApiWsdlClass::setResult()
-     * @uses ApiWsdlClass::saveLastError()
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
      * @param AuthenticateReseller $authenticateReseller
      * @return AuthenticateResellerResponse
      */
@@ -63,9 +59,9 @@ class ApiServiceAuthenticate extends \WsdlToPhp\PackageBase\AbstractSoapClientBa
     }
     /**
      * Method to call the operation originally named AuthenticateCustomer
-     * @uses ApiWsdlClass::getSoapClient()
-     * @uses ApiWsdlClass::setResult()
-     * @uses ApiWsdlClass::saveLastError()
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
      * @param AuthenticateCustomer $authenticateCustomer
      * @return AuthenticateCustomerResponse
      */
@@ -79,7 +75,7 @@ class ApiServiceAuthenticate extends \WsdlToPhp\PackageBase\AbstractSoapClientBa
     }
     /**
      * Returns the result
-     * @see ApiWsdlClass::getResult()
+     * @see AbstractSoapClientBase::getResult()
      * @return AuthenticateAccountResponse|AuthenticateAdminResponse|AuthenticateCustomerResponse|AuthenticateResellerResponse
      */
     public function getResult()

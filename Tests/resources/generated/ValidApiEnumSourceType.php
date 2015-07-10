@@ -1,11 +1,5 @@
 <?php
 /**
- * File for class ApiEnumSourceType
- * @package Api
- * @subpackage Enumerations
- * @release 1.1.0
- */
-/**
  * This class stands for SourceType Enum
  * Meta informations extracted from the WSDL
  * - maxOccurs: 1

@@ -379,8 +379,8 @@ class Struct extends AbstractModelFile
         return new PhpAnnotationBlock(array(
             'Method called when an object has been exported with var_export() functions',
             'It allows to return an object instantiated with the values',
-            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::__set_state()', AbstractModel::getGenericWsdlClassName())),
-            new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::__set_state()', AbstractModel::getGenericWsdlClassName())),
+            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::__set_state()', $this->getModel()->getExtends(true))),
+            new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::__set_state()', $this->getModel()->getExtends(true))),
             new PhpAnnotation(self::ANNOTATION_PARAM, 'array $array the exported values'),
             new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName()),
         ));

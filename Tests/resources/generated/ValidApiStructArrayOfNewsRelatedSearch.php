@@ -1,17 +1,13 @@
 <?php
-/**
- * File for class ApiStructArrayOfNewsRelatedSearch
- * @package Api
- * @subpackage Structs
- * @release 1.1.0
- */
+use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
+
 /**
  * This class stands for ArrayOfNewsRelatedSearch Struct
  * @package Api
  * @subpackage Structs
  * @release 1.1.0
  */
-class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractStructArrayBase
+class ApiStructArrayOfNewsRelatedSearch extends AbstractStructArrayBase
 {
     /**
      * The NewsRelatedSearch
@@ -51,7 +47,7 @@ class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractS
     }
     /**
      * Returns the current element
-     * @see ApiWsdlClass::current()
+     * @see AbstractStructArrayBase::current()
      * @return ApiStructNewsRelatedSearch
      */
     public function current()
@@ -60,7 +56,7 @@ class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractS
     }
     /**
      * Returns the indexed element
-     * @see ApiWsdlClass::item()
+     * @see AbstractStructArrayBase::item()
      * @param int $index
      * @return ApiStructNewsRelatedSearch
      */
@@ -70,7 +66,7 @@ class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractS
     }
     /**
      * Returns the first element
-     * @see ApiWsdlClass::first()
+     * @see AbstractStructArrayBase::first()
      * @return ApiStructNewsRelatedSearch
      */
     public function first()
@@ -79,7 +75,7 @@ class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractS
     }
     /**
      * Returns the last element
-     * @see ApiWsdlClass::last()
+     * @see AbstractStructArrayBase::last()
      * @return ApiStructNewsRelatedSearch
      */
     public function last()
@@ -88,7 +84,7 @@ class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractS
     }
     /**
      * Returns the element at the offset
-     * @see ApiWsdlClass::offsetGet()
+     * @see AbstractStructArrayBase::offsetGet()
      * @param int $offset
      * @return ApiStructNewsRelatedSearch
      */
@@ -98,7 +94,7 @@ class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractS
     }
     /**
      * Returns the attribute name
-     * @see ApiWsdlClass::getAttributeName()
+     * @see AbstractStructArrayBase::getAttributeName()
      * @return string NewsRelatedSearch
      */
     public function getAttributeName()
@@ -108,8 +104,8 @@ class ApiStructArrayOfNewsRelatedSearch extends \WsdlToPhp\PackageBase\AbstractS
     /**
      * Method called when an object has been exported with var_export() functions
      * It allows to return an object instantiated with the values
-     * @see ApiWsdlClass::__set_state()
-     * @uses ApiWsdlClass::__set_state()
+     * @see AbstractStructArrayBase::__set_state()
+     * @uses AbstractStructArrayBase::__set_state()
      * @param array $array the exported values
      * @return ApiStructArrayOfNewsRelatedSearch
      */

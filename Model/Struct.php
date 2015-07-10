@@ -292,15 +292,16 @@ class Struct extends AbstractModel
     }
     /**
      * Allows to define from which class the curent model extends
+     * @param bool $short
      * @return string
      */
-    public function getExtends()
+    public function getExtends($short = false)
     {
-        $extends = null;
+        $extends = '';
         if ($this->isArray()) {
-            $extends = '\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase';
+            $extends = $short === true ? 'AbstractStructArrayBase' : '\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase';
         } elseif (!$this->getIsRestriction()) {
-            $extends = '\\WsdlToPhp\\PackageBase\\AbstractStructBase';
+            $extends = $short === true ? 'AbstractStructBase' : '\\WsdlToPhp\\PackageBase\\AbstractStructBase';
         }
         return $extends;
     }
