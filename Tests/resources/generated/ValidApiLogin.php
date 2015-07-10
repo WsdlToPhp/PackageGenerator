@@ -18,8 +18,8 @@ class ApiLogin extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param $login string
-     * @param $password string
+     * @param string $login
+     * @param string $password
      * @return string|bool
      */
     public function Login($login, $password)

@@ -64,4 +64,21 @@ class ServiceTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Authenticate service for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteReformServiceLogin()
+    {
+        $generator = self::reformaGeneratorInstance();
+        if (($model = $generator->getService('Login')) instanceof ServiceModel) {
+            $generator->setOptionNamespacePrefix('My\Project');
+            $service = new ServiceFile($generator, $model->getName(), $this->getTestDirectory());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiLogin', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Login service for file generation');
+        }
+    }
 }

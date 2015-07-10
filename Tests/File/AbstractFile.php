@@ -21,7 +21,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList as TagListParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput as TagOutputParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
-use WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl\self;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 
 abstract class AbstractFile extends TestCase
