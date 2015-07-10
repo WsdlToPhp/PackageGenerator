@@ -17,7 +17,7 @@ class DomDocumentHandlerTest extends TestCase
     {
         if (!isset(self::$ebayInstance)) {
             $doc = new \DOMDocument('1.0', 'utf-8');
-            $doc->load(dirname(__FILE__) . '/../resources/ebaySvc.wsdl');
+            $doc->load(__DIR__ . '/../resources/ebaySvc.wsdl');
             self::$ebayInstance = new DomDocumentHandler($doc);
         }
         return self::$ebayInstance;
@@ -29,7 +29,7 @@ class DomDocumentHandlerTest extends TestCase
     {
         if (!isset(self::$bingInstance)) {
             $doc = new \DOMDocument('1.0', 'utf-8');
-            $doc->load(dirname(__FILE__) . '/../resources/bingsearch.wsdl');
+            $doc->load(__DIR__ . '/../resources/bingsearch.wsdl');
             self::$bingInstance = new DomDocumentHandler($doc);
         }
         return self::$bingInstance;
@@ -41,7 +41,7 @@ class DomDocumentHandlerTest extends TestCase
     {
         if (!isset(self::$emptyInstance)) {
             $doc = new \DOMDocument('1.0', 'utf-8');
-            @$doc->load(dirname(__FILE__) . '/../resources/empty.wsdl');
+            @$doc->load(__DIR__ . '/../resources/empty.wsdl');
             self::$emptyInstance = new DomDocumentHandler($doc);
         }
         return self::$emptyInstance;

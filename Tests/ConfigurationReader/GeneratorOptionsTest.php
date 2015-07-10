@@ -12,7 +12,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public static function optionsInstance()
     {
-        return GeneratorOptions::instance(dirname(__FILE__) . '/../resources/generator_options.yml');
+        return GeneratorOptions::instance(__DIR__ . '/../resources/generator_options.yml');
     }
 
     public function testGetDefaultOptionValue()

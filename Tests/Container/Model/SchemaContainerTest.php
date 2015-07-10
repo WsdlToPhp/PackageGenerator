@@ -17,8 +17,8 @@ class SchemaContainerTest extends TestCase
     public static function instance()
     {
         $wsdlContainer = new SchemaContainer();
-        $wsdlContainer->add(new Schema(self::SCHEMA_BING, file_get_contents(dirname(__FILE__) . '/../../resources/' . self::SCHEMA_BING)));
-        $wsdlContainer->add(new Schema(self::SCHEMA_EBAY, file_get_contents(dirname(__FILE__) . '/../../resources/' . self::SCHEMA_EBAY)));
+        $wsdlContainer->add(new Schema(self::SCHEMA_BING, file_get_contents(__DIR__ . '/../../resources/' . self::SCHEMA_BING)));
+        $wsdlContainer->add(new Schema(self::SCHEMA_EBAY, file_get_contents(__DIR__ . '/../../resources/' . self::SCHEMA_EBAY)));
         return $wsdlContainer;
     }
     /**

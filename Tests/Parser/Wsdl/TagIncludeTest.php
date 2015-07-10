@@ -46,7 +46,7 @@ class TagIncludeTest extends WsdlParser
         );
         $schemaContainer = new SchemaContainer();
         foreach ($schemas as $schemaPath) {
-            $schemaPath = sprintf(dirname(__FILE__) . '/../../resources/%s', $schemaPath);
+            $schemaPath = sprintf(__DIR__ . '/../../resources/%s', $schemaPath);
             $schema = new Schema($schemaPath, file_get_contents($schemaPath));
             $schema->getContent()->setCurrentTag('include');
             $schemaContainer->add($schema);

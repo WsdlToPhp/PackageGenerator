@@ -21,7 +21,7 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList as TagListParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput as TagOutputParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
-use WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl\WsdlParser;
+use WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl\self;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 
 abstract class AbstractFile extends TestCase
@@ -35,21 +35,28 @@ abstract class AbstractFile extends TestCase
      */
     public static function bingGeneratorInstance()
     {
-        return self::getInstance(WsdlParser::wsdlBingPath());
+        return self::getInstance(self::wsdlBingPath());
     }
     /**
      * @return Generator
      */
     public static function actonGeneratorInstance()
     {
-        return self::getInstance(WsdlParser::wsdlActonPath());
+        return self::getInstance(self::wsdlActonPath());
     }
     /**
      * @return Generator
      */
     public static function portalGeneratorInstance()
     {
-        return self::getInstance(WsdlParser::wsdlPortalPath());
+        return self::getInstance(self::wsdlPortalPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function reformaGeneratorInstance()
+    {
+        return self::getInstance(self::wsdlReformaPath());
     }
     /**
      * @param string $wsdl

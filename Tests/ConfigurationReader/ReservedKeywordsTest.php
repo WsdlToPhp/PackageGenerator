@@ -12,7 +12,7 @@ class ReservedKeywordsTest extends TestCase
      */
     public static function instance()
     {
-        return ReservedKeywords::instance(dirname(__FILE__) . '/../resources/reserved_keywords.yml');
+        return ReservedKeywords::instance(__DIR__ . '/../resources/reserved_keywords.yml');
     }
     /**
      * @param string $keyword
@@ -27,13 +27,13 @@ class ReservedKeywordsTest extends TestCase
      */
     public function testException()
     {
-        ReservedKeywords::instance(dirname(__FILE__) . '/../resources/bad_reserved_keywords.yml');
+        ReservedKeywords::instance(__DIR__ . '/../resources/bad_reserved_keywords.yml');
     }
     /**
      * @expectedException InvalidArgumentException
      */
     public function testExceptionForUnexistingFile()
     {
-        ReservedKeywords::instance(dirname(__FILE__) . '/../resources/bad_reserved_keywords');
+        ReservedKeywords::instance(__DIR__ . '/../resources/bad_reserved_keywords');
     }
 }
