@@ -481,9 +481,9 @@ abstract class AbstractModel
      * @uses AbstractModel::uniqueName() to ensure unique naming of struct case sensitively
      * @return string
      */
-    public function getPackagedName()
+    public function getPackagedName($namespaced = false)
     {
-        return Generator::getPackageName() . $this->getContextualPart() . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+        return ($namespaced ? sprintf('\%s\\' , $this->getNamespace()) : '') . Generator::getPackageName() . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
     }
     /**
      * Allows to define the contextual part of the class name for the package
@@ -501,6 +501,17 @@ abstract class AbstractModel
     public function getExtends($short = false)
     {
         return '';
+    }
+    /**
+     * @return string
+     */
+    public function getNamespace()
+    {
+        $generator = Generator::instance();
+        $namespace = $generator->getOptionNamespacePrefix();
+        $directory = $generator->getDirectory($this);
+        $packageName = Generator::getPackageName();
+        return sprintf(empty($namespace) ? '%1$s\\%3$s' : '%2$s\\%1$s\\%3$s', $packageName, $namespace, implode('\\', explode('/', substr($directory, 0, -1))));
     }
     /**
      * Returns the sub package name which the model belongs to
