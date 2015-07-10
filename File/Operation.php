@@ -41,7 +41,7 @@ class Operation extends AbstractOperation
     {
         if ($this->isParameterTypeAnArray()) {
             $parameters = array();
-            foreach ($this->getParameterTypeArrayTypes() as $parameterName => $parameterType) {
+            foreach ($this->getParameterTypeArrayTypes(true) as $parameterName => $parameterType) {
                 $parameters[] = $this->getMethodParameter($this->getParameterName($parameterName), $parameterType);
             }
             $method->setParameters($parameters);
