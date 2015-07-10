@@ -207,7 +207,7 @@ class ApiStructSearchRequest extends \WsdlToPhp\PackageBase\AbstractStructBase
      * @param ApiStructMobileWebRequest $mobileWeb
      * @param ApiStructTranslationRequest $translation
      */
-    public function __construct($query = null, $appId = null, ApiStructArrayOfSourceType $sources = null, ApiStructSearchRequest $parameters = null, $version = 2.2, $market = null, $uILanguage = null, $adult = null, $latitude = null, $longitude = null, $radius = null, ApiStructArrayOfSearchOption $options = null, ApiStructWebRequest $web = null, ApiStructImageRequest $image = null, ApiStructPhonebookRequest $phonebook = null, ApiStructVideoRequest $video = null, ApiStructNewsRequest $news = null, ApiStructMobileWebRequest $mobileWeb = null, ApiStructTranslationRequest $translation = null)
+    public function __construct($query = null, $appId = null, ApiStructArrayOfSourceType $sources = null, ApiStructSearchRequest $parameters = null, $version = '2.2', $market = null, $uILanguage = null, $adult = null, $latitude = null, $longitude = null, $radius = null, ApiStructArrayOfSearchOption $options = null, ApiStructWebRequest $web = null, ApiStructImageRequest $image = null, ApiStructPhonebookRequest $phonebook = null, ApiStructVideoRequest $video = null, ApiStructNewsRequest $news = null, ApiStructMobileWebRequest $mobileWeb = null, ApiStructTranslationRequest $translation = null)
     {
         $this
             ->setQuery($query)
@@ -315,7 +315,7 @@ class ApiStructSearchRequest extends \WsdlToPhp\PackageBase\AbstractStructBase
      * @param string $version
      * @return ApiStructSearchRequest
      */
-    public function setVersion($version = 2.2)
+    public function setVersion($version = '2.2')
     {
         $this->Version = $version;
         return $this;
