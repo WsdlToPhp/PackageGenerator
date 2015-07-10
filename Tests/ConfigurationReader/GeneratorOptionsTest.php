@@ -29,6 +29,7 @@ class GeneratorOptionsTest extends TestCase
         $this->assertFalse(self::optionsInstance()->getOptionValue('generic_constants_names'));
         $this->assertTrue(self::optionsInstance()->getOptionValue('generate_tutorial_file'));
         $this->assertEquals(array(), self::optionsInstance()->getOptionValue('add_comments'));
+        $this->assertEmpty(self::optionsInstance()->getOptionValue('namespace_prefix'));
     }
 
     public function testSetExistingOptionValue()
