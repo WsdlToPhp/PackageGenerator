@@ -33,7 +33,7 @@ class Service extends AbstractModel
      */
     public function getContextualPart()
     {
-        return 'Service';
+        return 'ServiceType';
     }
     /**
      * Returns the sub package name which the model belongs to
@@ -43,7 +43,9 @@ class Service extends AbstractModel
      */
     public function getDocSubPackages()
     {
-        return array('Services');
+        return array(
+            'Services',
+        );
     }
     /**
      * Returns the comment lines for this service
