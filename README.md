@@ -110,7 +110,6 @@ Then:
     $generator->setOptionGetResponseAsWsdlObject(GeneratorOptions::VALUE_FALSE);
     $generator->setOptionSendArrayAsParameter(GeneratorOptions::VALUE_FALSE);
     $generator->setOptionGenerateAutoloadFile(GeneratorOptions::VALUE_TRUE);
-    $generator->setOptionGenerateWsdlClassFile(GeneratorOptions::VALUE_TRUE);
     $generator->setOptionSendParametersAsArray(GeneratorOptions::VALUE_FALSE);
     $generator->setOptionInheritsClassIdentifier('');
     $generator->setOptionGenericConstantsNames(VALUE_FALSE);
