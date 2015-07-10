@@ -105,4 +105,12 @@ abstract class AbstractOperation
     {
         return $this->method;
     }
+    /**
+     * @param string $name
+     * @return StructModel|null
+     */
+    protected function getModelByName($name)
+    {
+        return $this->getGenerator()->getStruct($name);
+    }
 }
