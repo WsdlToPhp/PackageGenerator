@@ -114,6 +114,9 @@ class OperationAnnotationBlock extends AbstractOperation
     protected function addOperationMethodParamFromArray(PhpAnnotationBlock $annotationBlock)
     {
         if ($this->isParameterTypeAnArray()) {
+            foreach ($this->getParameterTypeArrayTypes() as $parameterName => $parameterType) {
+                $annotationBlock->addChild($this->getOperationMethodParam($this->getParameterName($parameterName), $parameterType));
+            }
         }
         return $this;
     }

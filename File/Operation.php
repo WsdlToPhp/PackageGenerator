@@ -41,12 +41,8 @@ class Operation extends AbstractOperation
     {
         if ($this->isParameterTypeAnArray()) {
             $parameters = array();
-            foreach ($this->getMethod()->getParameterType() as $parameterName => $parameterType) {
-                $type = null;
-                if (($model = $this->getGenerator()->getStruct($parameterType)) instanceof StructModel && $model->getIsStruct() && !$model->getIsRestriction()) {
-                    $type = $model->getPackagedName(true);
-                }
-                $parameters[] = $this->getMethodParameter($this->getParameterName($parameterName), $type);
+            foreach ($this->getParameterTypeArrayTypes() as $parameterName => $parameterType) {
+                $parameters[] = $this->getMethodParameter($this->getParameterName($parameterName), $parameterType);
             }
             $method->setParameters($parameters);
         }
