@@ -17,20 +17,6 @@ class TagEnumerationTest extends WsdlParser
         return new TagEnumeration(self::generatorInstance(self::wsdlBingPath()));
     }
     /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration
-     */
-    public static function partnerInstance()
-    {
-        return new TagEnumeration(self::generatorInstance(self::wsdlPartnerPath()));
-    }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration
-     */
-    public static function imageViewInstance()
-    {
-        return new TagEnumeration(self::generatorInstance(self::wsdlImageViewServicePath()));
-    }
-    /**
      *
      */
     public function testBing()
