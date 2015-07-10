@@ -6,7 +6,7 @@
 /**
  * Load autoload
  */
-require_once dirname(__FILE__) . '/PackageNameAutoload.php';
+require_once dirname(__FILE__) . '/vendor/autoload.php';
 /**
  * Wsdl instanciation infos. By default, nothing has to be set.
  * If you wish to override the SoapClient's options, please refer to the sample below.
