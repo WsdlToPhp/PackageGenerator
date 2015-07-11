@@ -120,7 +120,10 @@ abstract class AbstractFile extends TestCase
         if (!is_file($file->getFileName())) {
             return $this->assertFalse(true, sprintf('Generated file "%s" could not be find', $file->getFileName()));
         }
-        $this->assertSame(file_get_contents(sprintf('%s%s.php', __DIR__ . '/../resources/generated/', $valid)), file_get_contents($file->getFileName()));
+        $validContent = file_get_contents(sprintf('%s%s.php', __DIR__ . '/../resources/generated/', $valid));
+        $validContent = str_replace('__WSDL_URL__', $file->getGenerator()->getWsdl(0)->getName(), $validContent);
+        $toBeValidatedContent = file_get_contents($file->getFileName());
+        $this->assertSame($validContent, $toBeValidatedContent);
         unlink($file->getFileName());
     }
 }

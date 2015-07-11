@@ -6,6 +6,9 @@ use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 
 class TutorialTest extends AbstractFile
 {
+    /**
+     *
+     */
     public function testBing()
     {
         $instance = self::bingGeneratorInstance();
@@ -14,5 +17,17 @@ class TutorialTest extends AbstractFile
         $tutorial->write();
 
         $this->assertSameFileContent('ValidBingTutorial', $tutorial);
+    }
+    /**
+     *
+     */
+    public function testReforma()
+    {
+        $instance = self::reformaGeneratorInstance();
+
+        $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
+        $tutorial->write();
+
+        $this->assertSameFileContent('ValidReformaTutorial', $tutorial);
     }
 }
