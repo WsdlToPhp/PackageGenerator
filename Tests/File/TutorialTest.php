@@ -30,4 +30,16 @@ class TutorialTest extends AbstractFile
 
         $this->assertSameFileContent('ValidReformaTutorial', $tutorial);
     }
+    /**
+     *
+     */
+    public function testActon()
+    {
+        $instance = self::actonGeneratorInstance();
+
+        $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
+        $tutorial->write();
+
+        $this->assertSameFileContent('ValidActonTutorial', $tutorial);
+    }
 }
