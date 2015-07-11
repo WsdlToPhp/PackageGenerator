@@ -347,7 +347,8 @@ abstract class AbstractModel
         $namespace = $generator->getOptionNamespacePrefix();
         $directory = $generator->getDirectory($this);
         $packageName = Generator::getPackageName();
-        return sprintf(empty($namespace) ? '%1$s\\%3$s' : '%2$s\\%1$s\\%3$s', $packageName, $namespace, implode('\\', explode('/', substr($directory, 0, -1))));
+        $namespaceEnding = implode('\\', explode('/', substr($directory, 0, -1)));
+        return sprintf(empty($namespace) ? '%1$s%4$s%3$s' : '%2$s\\%1$s%4$s%3$s', $packageName, $namespace, $namespaceEnding, empty($namespaceEnding) ? '' : '\\');
     }
     /**
      * Returns the sub package name which the model belongs to
