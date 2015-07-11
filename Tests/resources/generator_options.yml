@@ -2,11 +2,8 @@
 # Each option can be overridden when using the command line tool.
 # Each option option can be overridden using your own config file too.
 category:
-    default: 'start'
-    values: [ 'none', 'start', 'end', 'cat' ]
-sub_category:
-    default: 'start'
-    values: [ 'end', 'start', 'none' ]
+    default: 'cat'
+    values: [ 'none', 'cat' ]
 gather_methods:
     default: 'start'
     values: ['start', 'end' ]
@@ -15,9 +12,6 @@ send_array_as_parameter: # will be removed !
     values: [ true, false ]
 generate_autoload_file:
     default: false
-    values: [ true, false ]
-generate_wsdl_class: # will be removed !
-    default: true
     values: [ true, false ]
 response_as_wsdl_object:
     default: false

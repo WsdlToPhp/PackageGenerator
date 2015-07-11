@@ -64,7 +64,6 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('wsdl-prefix', null, InputOption::VALUE_REQUIRED, 'Prepend generated classes')
             ->addOption('wsdl-namespace', null, InputOption::VALUE_OPTIONAL, 'Package classes\' namespace')
             ->addOption('wsdl-category', null, InputOption::VALUE_OPTIONAL, 'First level directory name generation mode (start, end, cat, none)')
-            ->addOption('wsdl-subcategory', null, InputOption::VALUE_OPTIONAL, 'Second level directory name generation mode (start, end, none), disabled if category=cat')
             ->addOption('wsdl-gathermethods', null, InputOption::VALUE_OPTIONAL, 'Gather methods based on operation name mode (start, end)')
             ->addOption('wsdl-gentutorial', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable tutorial file, you should enable this option only on dev')
             ->addOption('wsdl-genautoload', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable autoload file generation, this is useless if you use composer or your own autoloader')
@@ -153,7 +152,6 @@ class GeneratePackageCommand extends AbstractCommand
         return array(
             'wsdl-namespace'        => 'NamespacePrefix',
             'wsdl-category'         => 'Category',
-            'wsdl-subcategory'      => 'SubCategory',
             'wsdl-gathermethods'    => 'GatherMethods',
             'wsdl-gentutorial'      => 'GenerateTutorialFile',
             'wsdl-genautoload'      => 'GenerateAutoloadFile',

@@ -721,23 +721,6 @@ class Generator extends \SoapClient
         return $this->options->setCategory($category);
     }
     /**
-     * Sets the optionSubCategory value
-     * @return string
-     */
-    public function getOptionSubCategory()
-    {
-        return $this->options->getSubCategory();
-    }
-    /**
-     * Sets the optionSubCategory value
-     * @param string
-     * @return GeneratorOptions
-     */
-    public function setOptionSubCategory($subCategory)
-    {
-        return $this->options->setSubCategory($subCategory);
-    }
-    /**
      * Sets the optionGatherMethods value
      * @return string
      */
@@ -978,7 +961,6 @@ class Generator extends \SoapClient
     /**
      * Returns directory where to store class and create it if needed
      * @uses Generator::getCategory()
-     * @uses Generator::getSubCategory()
      * @param AbstractModel $model the model for which we generate the folder
      * @return string
      */
@@ -986,12 +968,8 @@ class Generator extends \SoapClient
     {
         $directory = '';
         $mainCat = $this->getCategory($model);
-        $subCat = $this->getSubCategory($model);
         if (!empty($mainCat)) {
             $directory .= ucfirst($mainCat) . '/';
-        }
-        if (!empty($subCat)) {
-            $directory .= ucfirst($subCat) . '/';
         }
         return $directory;
     }
@@ -1015,15 +993,6 @@ class Generator extends \SoapClient
     private function getCategory(AbstractModel $model)
     {
         return Utils::getPart($this->options, $model, GeneratorOptions::CATEGORY);
-    }
-    /**
-     * Gets sub category part
-     * @param AbstractModel $model the model for which we generate the folder
-     * @return string
-     */
-    private function getSubCategory(AbstractModel $model)
-    {
-        return Utils::getPart($this->options, $model, GeneratorOptions::SUB_CATEGORY);
     }
     /**
      * Gets gather name class

@@ -18,7 +18,6 @@ class GeneratorOptions extends AbstractYamlReader
      * @var string
      */
     const CATEGORY = 'category';
-    const SUB_CATEGORY = 'sub_category';
     const ADD_COMMENTS = 'add_comments';
     const GATHER_METHODS = 'gather_methods';
     const NAMESPACE_PREFIX = 'namespace_prefix';
@@ -114,24 +113,6 @@ class GeneratorOptions extends AbstractYamlReader
     public function setCategory($category)
     {
         return $this->setOptionValue(self::CATEGORY, $category);
-    }
-    /**
-     * Get subcategory option value
-     * @return string|bool
-     */
-    public function getSubCategory()
-    {
-        return $this->getOptionValue(self::SUB_CATEGORY);
-    }
-    /**
-     * Set current subcategory option value
-     * @throws \InvalidArgumentException
-     * @param string $subCategory
-     * @return GeneratorOptions
-     */
-    public function setSubCategory($subCategory)
-    {
-        return $this->setOptionValue(self::SUB_CATEGORY, $subCategory);
     }
     /**
      * Get add comments option value

@@ -3,10 +3,7 @@
 # Each option option can be overridden using your own config file too.
 category:
     default: 'cat'
-    values: [ 'none', 'start', 'end', 'cat' ]
-sub_category:
-    default: 'start'
-    values: [ 'end', 'start', 'none' ]
+    values: [ 'none', 'cat' ]
 gather_methods:
     default: 'start'
     values: ['start', 'end' ]

@@ -43,7 +43,6 @@ To generate a package, nothing as simple as this:
         --wsdl-destination='/var/www/Api/' \
         --wsdl-prefix="Api" \
         --wsdl-category="cat" \
-        --wsdl-subcategory="" \
         --wsdl-gathermethods="start" \
         --wsdl-reponseasobj=false \
         --wsdl-sendarrayparam=false \
@@ -105,7 +104,6 @@ Then:
     );
     $generator = Generator::instance("http://www.mydomain.com/?wsdl", $login, $password, $options);
     $generator->setOptionCategory(GeneratorOptions::VALUE_CAT);
-    $generator->setOptionSubCategory('');
     $generator->setGatherMethods(GeneratorOptions::VALUE_START);
     $generator->setOptionGetResponseAsWsdlObject(GeneratorOptions::VALUE_FALSE);
     $generator->setOptionGetResponseAsWsdlObject(GeneratorOptions::VALUE_FALSE);
