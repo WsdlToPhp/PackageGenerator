@@ -23,7 +23,6 @@ class GeneratorOptions extends AbstractYamlReader
     const NAMESPACE_PREFIX = 'namespace_prefix';
     const GENERATE_WSDL_CLASS = 'generate_wsdl_class';
     const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
-    const GENERATE_AUTOLOAD_FILE = 'generate_autoload_file';
     const SEND_ARRAY_AS_PARAMETER = 'send_array_as_parameter';
     const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
     const GET_RESPONSE_AS_WSDL_OBJECT = 'response_as_wsdl_object';
@@ -179,24 +178,6 @@ class GeneratorOptions extends AbstractYamlReader
     public function setGenerateWsdlClass($generateWsdlClass)
     {
         return $this->setOptionValue(self::GENERATE_WSDL_CLASS, $generateWsdlClass);
-    }
-    /**
-     * Get generate autoload file option value
-     * @return string|bool
-     */
-    public function getGenerateAutoloadFile()
-    {
-        return $this->getOptionValue(self::GENERATE_AUTOLOAD_FILE);
-    }
-    /**
-     * Set current generate autoload file option value
-     * @throws \InvalidArgumentException
-     * @param bool $generateAutoloadFile
-     * @return GeneratorOptions
-     */
-    public function setGenerateAutoloadFile($generateAutoloadFile)
-    {
-        return $this->setOptionValue(self::GENERATE_AUTOLOAD_FILE, $generateAutoloadFile);
     }
     /**
      * Get generate tutorial file option value

@@ -10,9 +10,6 @@ gather_methods:
 send_array_as_parameter: # will be removed !
     default: false
     values: [ true, false ]
-generate_autoload_file:
-    default: false
-    values: [ true, false ]
 response_as_wsdl_object:
     default: false
     values: [ true, false ]

@@ -46,7 +46,6 @@ To generate a package, nothing as simple as this:
         --wsdl-gathermethods="start" \
         --wsdl-reponseasobj=false \
         --wsdl-sendarrayparam=false \
-        --wsdl-genautoload=true \
         --wsdl-genwsdlclass=true \
         --wsdl-paramsasarray=false \
         --wsdl-inherits="" \
@@ -108,7 +107,6 @@ Then:
     $generator->setOptionGetResponseAsWsdlObject(GeneratorOptions::VALUE_FALSE);
     $generator->setOptionGetResponseAsWsdlObject(GeneratorOptions::VALUE_FALSE);
     $generator->setOptionSendArrayAsParameter(GeneratorOptions::VALUE_FALSE);
-    $generator->setOptionGenerateAutoloadFile(GeneratorOptions::VALUE_TRUE);
     $generator->setOptionSendParametersAsArray(GeneratorOptions::VALUE_FALSE);
     $generator->setOptionInheritsClassIdentifier('');
     $generator->setOptionGenericConstantsNames(VALUE_FALSE);

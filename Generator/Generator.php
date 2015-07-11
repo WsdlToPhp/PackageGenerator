@@ -204,8 +204,6 @@ class Generator extends \SoapClient
      * @uses Generator::generateStructsClasses()
      * @uses Generator::generateServicesClasses()
      * @uses Generator::generateClassMap()
-     * @uses Generator::getOptionGenerateAutoloadFile()
-     * @uses Generator::generateAutoloadFile()
      * @uses Generator::getOptionGenerateTutorialFile()
      * @uses Generator::generateTutorialFile()
      * @param string $packageName the string used to prefix all generate classes
@@ -753,23 +751,6 @@ class Generator extends \SoapClient
     public function setOptionSendArrayAsParameter($sendArrayAsParameter)
     {
         return $this->options->setSendArrayAsParameter($sendArrayAsParameter);
-    }
-    /**
-     * Gets the optionGenerateAutoloadFile value
-     * @return bool
-     */
-    public function getOptionGenerateAutoloadFile()
-    {
-        return $this->options->getGenerateAutoloadFile();
-    }
-    /**
-     * Sts the optionGenerateAutoloadFile value
-     * @param bool
-     * @return GeneratorOptions
-     */
-    public function setOptionGenerateAutoloadFile($generateAutoloadFile)
-    {
-        return $this->options->setGenerateAutoloadFile($generateAutoloadFile);
     }
     /**
      * Gets the optionResponseAsWsdlObject value
