@@ -10,11 +10,18 @@ use WsdlToPhp\PackageGenerator\Model\StructValue;
 class TagEnumerationTest extends WsdlParser
 {
     /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration
+     * @return TagEnumeration
      */
     public static function bingInstance()
     {
         return new TagEnumeration(self::generatorInstance(self::wsdlBingPath()));
+    }
+    /**
+     * @return TagEnumeration
+     */
+    public static function reformaInstance()
+    {
+        return new TagEnumeration(self::generatorInstance(self::wsdlReformaPath()));
     }
     /**
      *
@@ -25,7 +32,7 @@ class TagEnumerationTest extends WsdlParser
 
         $tagEnumerationParser->parse();
 
-        $ok = false;
+        $count = 0;
         foreach ($tagEnumerationParser->getGenerator()->getStructs() as $struct) {
             if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
                 if ($struct->getName() === 'AdultOption') {
@@ -35,17 +42,51 @@ class TagEnumerationTest extends WsdlParser
                     $values->add(new StructValue('Strict', 2, $struct));
 
                     $this->assertEquals($values, $struct->getValues());
-                    $ok = true;
+                    $count++;
                 } elseif ($struct->getName() === 'SearchOption') {
                     $values = new StructValueContainer();
                     $values->add(new StructValue('DisableLocationDetection', 0, $struct));
                     $values->add(new StructValue('EnableHighlighting', 1, $struct));
 
                     $this->assertEquals($values, $struct->getValues());
-                    $ok = true;
+                    $count++;
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertSame(2, $count);
+    }
+    /**
+     *
+     */
+    public function testReforma()
+    {
+        $tagEnumerationParser = self::reformaInstance();
+
+        $tagEnumerationParser->parse();
+
+        $count = 0;
+        foreach ($tagEnumerationParser->getGenerator()->getStructs() as $struct) {
+            if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
+                if ($struct->getName() === 'HouseStateEnum') {
+                    $values = new StructValueContainer();
+                    $values->add(new StructValue('1', 0, $struct));
+                    $values->add(new StructValue('2', 1, $struct));
+                    $values->add(new StructValue('3', 2, $struct));
+                    $values->add(new StructValue('4', 3, $struct));
+
+                    $this->assertEquals($values, $struct->getValues());
+                    $count++;
+                } elseif ($struct->getName() === 'HouseStageEnum') {
+                    $values = new StructValueContainer();
+                    $values->add(new StructValue('1', 0, $struct));
+                    $values->add(new StructValue('2', 1, $struct));
+                    $values->add(new StructValue('3', 2, $struct));
+
+                    $this->assertEquals($values, $struct->getValues());
+                    $count++;
+                }
+            }
+        }
+        $this->assertSame(2, $count);
     }
 }

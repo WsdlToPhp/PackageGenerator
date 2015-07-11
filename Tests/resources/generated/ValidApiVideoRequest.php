@@ -133,7 +133,7 @@ class ApiVideoRequest extends AbstractStructBase
      */
     public function setSortBy($sortBy = null)
     {
-        if(!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
+        if (!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
             return false;
         }
         $this->SortBy = $sortBy;

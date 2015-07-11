@@ -6,10 +6,6 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for Query StructType
- * Meta informations extracted from the WSDL
- * - maxOccurs: 1
- * - minOccurs: 0
- * - type: tns:Query
  * @package Api
  * @subpackage Structs
  * @release 1.1.0

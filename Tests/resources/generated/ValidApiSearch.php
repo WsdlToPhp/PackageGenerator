@@ -26,7 +26,7 @@ class ApiSearch extends AbstractSoapClientBase
         try {
             $this->setResult(self::getSoapClient()->Search($apiSearchRequest));
             return $this->getResult();
-        } catch(\SoapFault $soapFault) {
+        } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
             return false;
         }

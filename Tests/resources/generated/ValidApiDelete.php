@@ -57,7 +57,7 @@ class ApiDelete extends AbstractSoapClientBase
         try {
             $this->setResult(self::getSoapClient()->deleteList($apiDeleteList));
             return $this->getResult();
-        } catch(\SoapFault $soapFault) {
+        } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
             return false;
         }

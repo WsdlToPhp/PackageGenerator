@@ -4,10 +4,6 @@ namespace Api\EnumType;
 
 /**
  * This class stands for SourceType EnumType
- * Meta informations extracted from the WSDL
- * - maxOccurs: 1
- * - minOccurs: 0
- * - type: xsd:string
  * @package Api
  * @subpackage Enumerations
  * @release 1.1.0

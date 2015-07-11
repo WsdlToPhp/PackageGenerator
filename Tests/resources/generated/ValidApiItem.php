@@ -6,8 +6,6 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for Item StructType
- * Meta informations extracted from the WSDL
- * - maxOccurs: unbounded
  * @package Api
  * @subpackage Structs
  * @release 1.1.0
@@ -73,7 +71,7 @@ class ApiItem extends AbstractStructBase
      */
     public function setItemType($itemType = null)
     {
-        if(!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
+        if (!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
             return false;
         }
         $this->itemType = $itemType;
@@ -127,10 +125,10 @@ class ApiItem extends AbstractStructBase
      */
     public function getAny($asString = true)
     {
-        if(!empty($this->any) && !($this->any instanceof \DOMDocument)) {
+        if (!empty($this->any) && !($this->any instanceof \DOMDocument)) {
             $dom = new \DOMDocument('1.0', 'UTF-8');
             $dom->formatOutput = true;
-            if($dom->loadXML($this->any)) {
+            if ($dom->loadXML($this->any)) {
                 $this->setAny($dom);
             }
             unset($dom);

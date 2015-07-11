@@ -371,7 +371,7 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setAdult($adult = null)
     {
-        if(!\Api\EnumType\ApiAdultOption::valueIsValid($adult)) {
+        if (!\Api\EnumType\ApiAdultOption::valueIsValid($adult)) {
             return false;
         }
         $this->Adult = $adult;
