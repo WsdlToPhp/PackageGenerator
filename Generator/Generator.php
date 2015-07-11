@@ -35,6 +35,7 @@ use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
 use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
 use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
+use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class Generator extends \SoapClient
@@ -237,22 +238,12 @@ class Generator extends \SoapClient
                 /**
                  * Generates classes files
                  */
-                $structsClassesFiles = $this->generateStructsClasses($rootDirectory, $rootDirectoryRights);
-                $servicesClassesFiles = $this->generateServicesClasses($rootDirectory, $rootDirectoryRights);
-                $classMapFile = $this->generateClassMap($rootDirectory);
-                $composerGenerated = $this->generateComposerFile($rootDirectory);
-                /**
-                 * Generates autoload ?
-                 */
-                if ($this->getOptionGenerateAutoloadFile() === true) {
-                    $this->generateAutoloadFile($rootDirectory, array_merge($structsClassesFiles, $servicesClassesFiles, $classMapFile));
-                }
-                /**
-                 * Generates tutorial ?
-                 */
-                if ($composerGenerated && $this->getOptionGenerateTutorialFile() === true) {
-                    $this->generateTutorialFile($rootDirectory, $servicesClassesFiles);
-                }
+                $this
+                    ->generateStructsClasses($rootDirectory, $rootDirectoryRights)
+                    ->generateServicesClasses($rootDirectory, $rootDirectoryRights)
+                    ->generateClassMap($rootDirectory)
+                    ->generateComposerFile($rootDirectory)
+                    ->generateTutorialFile($rootDirectory);
                 return true;
             } else {
                 return false;
@@ -274,6 +265,7 @@ class Generator extends \SoapClient
      * @uses Struct::getIsStruct()
      * @param string $rootDirectory the directory
      * @param int $rootDirectoryRights the directory permissions
+     * @return Generator
      */
     private function generateStructsClasses($rootDirectory, $rootDirectoryRights)
     {
@@ -330,7 +322,7 @@ class Generator extends \SoapClient
                     ->write();
             }
         }
-        return $structsClassesFiles;
+        return $this;
     }
     /**
      * Generates methods by class
@@ -341,7 +333,7 @@ class Generator extends \SoapClient
      * @uses AbstractModel::getClassDeclaration()
      * @param string $rootDirectory the directory
      * @param int $rootDirectoryRights the directory permissions
-     * @return array the absolute paths to the generated files
+     * @return Generator
      */
     private function generateServicesClasses($rootDirectory, $rootDirectoryRights)
     {
@@ -361,7 +353,7 @@ class Generator extends \SoapClient
                     ->write();
             }
         }
-        return $servicesClassesFiles;
+        return $this;
     }
     /**
      * Populate the php file with the object and the declarations
@@ -410,7 +402,7 @@ class Generator extends \SoapClient
      * @uses AbstractModel::getName()
      * @uses AbstractModel::getCleanName()
      * @param string $rootDirectory the directory
-     * @return array the absolute path to the generated file
+     * @return Generator
      */
     private function generateClassMap($rootDirectory)
     {
@@ -474,183 +466,27 @@ class Generator extends \SoapClient
          */
         self::populateFile($filename = $rootDirectory . self::getPackageName() . 'ClassMap.php', $classMapDeclaration);
         unset($comments, $classMapDeclaration, $structs, $classesToMap);
-        return array($filename);
-    }
-    /**
-     * Generates autoload file for all classes.
-     * The classes are loaded automatically in order of their dependency regarding their inheritance.
-     * @uses Generator::getPackageName()
-     * @uses Generator::getOptionAddComments()
-     * @uses Generator::populateFile()
-     * @param string $rootDirectory the directory
-     * @param array $classesFiles the generated classes files
-     * @return void
-     */
-    private function generateAutoloadFile($rootDirectory, array $classesFiles = array())
-    {
-        if (count($classesFiles)) {
-            $autoloadDeclaration = array();
-            $comments = array();
-            array_push($comments, 'File to load generated classes once at once time');
-            array_push($comments, '@package ' . self::getPackageName());
-            if (count($this->getOptionAddComments())) {
-                foreach ($this->getOptionAddComments() as $tagName => $tagValue) {
-                    array_push($comments, "@$tagName $tagValue");
-                }
-            }
-            array_push($autoloadDeclaration, array('comment' => $comments));
-            $comments = array();
-            array_push($comments, 'Includes for all generated classes files');
-            if (count($this->getOptionAddComments())) {
-                foreach ($this->getOptionAddComments() as $tagName => $tagValue) {
-                    array_push($comments, "@$tagName $tagValue");
-                }
-            }
-            array_push($autoloadDeclaration, array('comment' => $comments));
-            foreach ($classesFiles as $classFile) {
-                if (is_file($classFile)) {
-                    array_push($autoloadDeclaration, 'require_once ' . str_replace($rootDirectory, 'dirname(__FILE__) . \'/', $classFile) . '\';');
-                }
-            }
-            self::populateFile($rootDirectory . '/' . self::getPackageName() . 'Autoload.php', $autoloadDeclaration);
-            unset($autoloadDeclaration, $comments);
-        }
+        return $this;
     }
     /**
      * Generates tutorial file
-     * @uses Generator::getOptionGenerateAutoloadFile()
-     * @uses Generator::getWsdls()
-     * @uses Generator::getWsdl()
-     * @uses Generator::getPackageName()
-     * @uses ReflectionClass::getMethods()
-     * @uses ReflectionMethod::getName()
-     * @uses ReflectionMethod::getParameters()
+     * @uses Generator::getOptionGenerateTutorialFile()
      * @param string $rootDirectory the direcoty
      * @param array $methodsClassesFiles the generated class files
-     * @return bool true|false
+     * @return Generator
      */
     private function generateTutorialFile($rootDirectory, array $methodsClassesFiles = array())
     {
         if ($this->getOptionGenerateTutorialFile() === true) {
-            $pathToTutorialTemplate = dirname(__FILE__) . '/../Resources/templates/Default/sample.php';
-            if (!is_file($pathToTutorialTemplate)) {
-                throw new \InvalidArgumentException(sprintf('Unable to find tutorial template at "%s"', $pathToTutorialTemplate));
-            }
-            if (!is_file($rootDirectory . '/composer.json')) {
-                throw new \InvalidArgumentException(sprintf('Unable to find autoload file at "%s"', $rootDirectory . '/composer.json'));
-            } else {
-                exec('cd ' . $rootDirectory . ';composer update;');
-            }
-            if (!is_file($rootDirectory . '/' . self::getPackageName() . 'Autoload.php')) {
-                throw new \InvalidArgumentException(sprintf('Unable to find autoload file at "%s"', $rootDirectory . '/' . self::getPackageName() . 'Autoload.php'));
-            } else {
-                require_once $rootDirectory . '/' . self::getPackageName() . 'Autoload.php';
-            }
-            if (class_exists('ReflectionClass') && count($methodsClassesFiles)) {
-                $content = '';
-                foreach ($methodsClassesFiles as $classFilePath) {
-                    $pathinfo = pathinfo($classFilePath);
-                    $className = str_replace('.' . $pathinfo['extension'], '', $pathinfo['filename']);
-                    if (class_exists($className)) {
-                        $r = new \ReflectionClass($className);
-                        $methods = $r->getMethods();
-                        $classMethods = array();
-                        foreach ($methods as $method) {
-                            if ($method->class === $className && !in_array($method->getName(), array('__toString', '__construct', 'getResult'))) {
-                                array_push($classMethods, $method);
-                            }
-                        }
-                        if (count($classMethods)) {
-                            $classNameVar = lcfirst($className);
-                            $content .= "\n\n/**" . str_repeat('*', strlen("Example for $className")) . "\n * Example for $className\n */";
-                            $content .= "\n\$$classNameVar = new $className();";
-                            foreach ($classMethods as $classMethod) {
-                                $content .= "\n// sample call for $className::" . $classMethod->getName() . '()';
-                                $methodDoComment = $classMethod->getDocComment();
-                                $methodParameters = $classMethod->getParameters();
-                                $methodParametersCount = count($methodParameters);
-                                $isSetSoapHeaderMethod = (strpos($classMethod->getName(), 'setSoapHeader') === 0 && strlen($classMethod->getName()) > strlen('setSoapHeader'));
-                                $end = $isSetSoapHeaderMethod ? 1 : $methodParametersCount;
-                                $parameters = array();
-                                for ($i = 0; $i < $end; $i++) {
-                                    $methodParameter = $methodParameters[$i];
-                                    $methodParameterName = $methodParameter->getName();
-                                    /**
-                                     * Retrieve parameter type based on the method doc comment
-                                     */
-                                    $matches = array();
-                                    preg_match('/\@param\s(.*)\s\$' . $methodParameterName . '\n/', $methodDoComment, $matches);
-                                    $methodParameterType = (array_key_exists(1, $matches) && class_exists($matches[1])) ? ucfirst($matches[1]) : null;
-                                    array_push($parameters, !empty($methodParameterType) ? "new $methodParameterType(/*** update parameters list ***/)" : "\$$methodParameterName");
-                                }
-                                /**
-                                 * setSoapHeader call
-                                 */
-                                if ($isSetSoapHeaderMethod) {
-                                    $content .= " in order to initialize required SoapHeader";
-                                    $content .= "\n\$$classNameVar->" . $classMethod->getName() . '(' . implode(', ', $parameters) . ');';
-                                } else {
-                                    /**
-                                     * Operation call
-                                     */
-                                    $content .= "\nif(\$$classNameVar->" . $classMethod->getName() . '(' . implode(', ', $parameters) . '))';
-                                    $content .= "\n    " . 'print_r($' . $classNameVar . '->getResult());';
-                                    $content .= "\nelse";
-                                    $content .= "\n    print_r($" . $classNameVar . "->getLastError());";
-                                }
-                            }
-                        }
-                    }
-                }
-                if (!empty($content)) {
-                    /**
-                     * Adds additional PHP doc block tags if needed to the one main PHP doc block
-                     */
-                    if (count($this->getOptionAddComments())) {
-                        $file = file($pathToTutorialTemplate);
-                        $fileContent = array();
-                        $counter = 1;
-                        foreach ($file as $line) {
-                            if (empty($line)) {
-                                continue;
-                            }
-                            if (strpos($line, ' */') === 0 && $counter) {
-                                foreach ($this->getOptionAddComments() as $tagName => $tagValue) {
-                                    array_push($fileContent, " * @$tagName $tagValue\n");
-                                }
-                                $counter--;
-                            }
-                            array_push($fileContent, $line);
-                        }
-                        $fileContent = implode('', $fileContent);
-                    } else {
-                        $fileContent = file_get_contents($pathToTutorialTemplate);
-                    }
-                    $fileContent = str_replace(array(
-                        'packageName',
-                        'PackageName',
-                        'PACKAGENAME',
-                        'WSDL_PATH',
-                        '$content;'
-                    ), array(
-                        lcfirst(self::getPackageName()),
-                        ucfirst(self::getPackageName()),
-                        strtoupper(self::getPackageName()),
-                        var_export($this->getWsdl(0)->getName(), true),
-                        $content
-                    ), $fileContent);
-                    file_put_contents($rootDirectory . 'sample.php', $fileContent);
-                }
-                return true;
-            } elseif (!class_exists('ReflectionClass')) {
-                throw new \InvalidArgumentException("Generator::generateTutorialFile() needs ReflectionClass, see http://fr2.php.net/manual/fr/class.reflectionclass.php");
-            }
+            $tutorialFile = new TutorialFile($this, 'howtos', $rootDirectory);
+            $tutorialFile->write();
         }
+        return $this;
     }
     /**
      * @param string $rootDirectory
      * @throws \InvalidArgumentException
-     * @return bool
+     * @return Generator
      */
     private function generateComposerFile($rootDirectory)
     {
@@ -664,11 +500,14 @@ class Generator extends \SoapClient
                 strtolower(self::getPackageName(false)),
                 self::getPackageName(false),
             ), $content);
-            return file_put_contents($rootDirectory . 'composer.json', $content);
-        } else {
-            throw new \InvalidArgumentException(sprintf('Unable to find file "%s"', $pathToComposerTemplate));
+            file_put_contents($rootDirectory . 'composer.json', $content);
+            if (!is_file($rootDirectory . '/composer.json')) {
+                throw new \InvalidArgumentException(sprintf('Unable to find autoload file at "%s"', $rootDirectory . '/composer.json'));
+            } else {
+                exec('cd ' . $rootDirectory . ';composer update;');
+            }
         }
-        return false;
+        return $this;
     }
     /**
      * Gets the struct by its name
