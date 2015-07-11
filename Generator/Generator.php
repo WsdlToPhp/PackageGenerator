@@ -316,7 +316,7 @@ class Generator extends \SoapClient
                 }
                 $elementFolder = $rootDirectory . $this->getDirectory($struct);
                 $this->createDirectory($elementFolder, $rootDirectoryRights);
-                array_push($structsClassesFiles, $structClassFileName = $elementFolder . $struct->getPackagedName() . '.php');
+                array_push($structsClassesFiles, $elementFolder . $struct->getPackagedName() . '.php');
                 /**
                  * Generates file
                  */
@@ -353,7 +353,7 @@ class Generator extends \SoapClient
             foreach ($services as $service) {
                 $elementFolder = $rootDirectory . $this->getDirectory($service);
                 $this->createDirectory($elementFolder, $rootDirectoryRights);
-                array_push($servicesClassesFiles, $serviceClassFileName = $elementFolder . $service->getPackagedName() . '.php');
+                array_push($servicesClassesFiles, $elementFolder . $service->getPackagedName() . '.php');
                 /**
                  * Generates file
                  */
