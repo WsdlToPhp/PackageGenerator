@@ -222,7 +222,7 @@ class Struct extends AbstractModelFile
     {
         if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction()) {
             $method
-                ->addChild(sprintf('if(!%s::valueIsValid($%s)) {', $model->getPackagedName(true), lcfirst($attribute->getCleanName())))
+                ->addChild(sprintf('if (!%s::valueIsValid($%s)) {', $model->getPackagedName(true), lcfirst($attribute->getCleanName())))
                     ->addChild($method->getIndentedString('return false;', 1))
                 ->addChild('}');
         }
@@ -263,10 +263,10 @@ class Struct extends AbstractModelFile
     {
         if ($attribute->isXml()) {
             $method
-                ->addChild(sprintf('if(!empty($this->%1$s) && !($this->%1$s instanceof \DOMDocument)) {', $thisAccess))
+                ->addChild(sprintf('if (!empty($this->%1$s) && !($this->%1$s instanceof \DOMDocument)) {', $thisAccess))
                     ->addChild($method->getIndentedString('$dom = new \DOMDocument(\'1.0\', \'UTF-8\');', 1))
                     ->addChild($method->getIndentedString('$dom->formatOutput = true;', 1))
-                    ->addChild($method->getIndentedString(sprintf('if($dom->loadXML($this->%s)) {', $thisAccess), 1))
+                    ->addChild($method->getIndentedString(sprintf('if ($dom->loadXML($this->%s)) {', $thisAccess), 1))
                     ->addChild($method->getIndentedString(sprintf('$this->%s($dom);', $attribute->getSetterName()), 2))
                     ->addChild($method->getIndentedString('}', 1))
                     ->addChild($method->getIndentedString('unset($dom);', 1))

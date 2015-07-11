@@ -86,7 +86,7 @@ class Operation extends AbstractOperation
             ->addChild('try {')
                 ->addChild($method->getIndentedString(sprintf('$this->setResult(self::getSoapClient()->%s(%s));', $method->getName(), $this->getOperationCallParameters($method)), 1))
                 ->addChild($method->getIndentedString('return $this->getResult();', 1))
-            ->addChild('} catch(\SoapFault $soapFault) {')
+            ->addChild('} catch (\SoapFault $soapFault) {')
                 ->addChild($method->getIndentedString('$this->saveLastError(__METHOD__, $soapFault);', 1))
                 ->addChild($method->getIndentedString('return false;', 1))
             ->addChild('}');
