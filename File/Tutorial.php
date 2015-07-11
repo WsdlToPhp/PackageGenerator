@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\File;
 
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
@@ -96,6 +97,7 @@ class Tutorial extends AbstractFile
             $this
                 ->addAnnotationBlockFromService($service)
                 ->addServiceDeclaration($serviceVariableName, $service)
+                ->addServiceSoapHeadersDefinitions($serviceVariableName, $service)
                 ->addContentFromService($serviceVariableName, $service);
         }
         return $this;
@@ -160,6 +162,40 @@ class Tutorial extends AbstractFile
             ->getMainElement()
             ->addChild(sprintf('$%s = new %s($options);', $serviceVariableName, $service->getPackagedName(true)));
         return $this;
+    }
+    /**
+     * @param string $serviceVariableName
+     * @param ServiceModel $service
+     * @return Tutorial
+     */
+    protected function addServiceSoapHeadersDefinitions($serviceVariableName, ServiceModel $service)
+    {
+        $added = array();
+        foreach ($service->getMethods() as $method) {
+            $added = array_merge($added, $this->addServiceSoapHeadersDefinition($serviceVariableName, $method, $added));
+        }
+        return $this;
+    }
+    /**
+     * @param string $serviceVariableName
+     * @param MethodModel $method
+     * @param array $added
+     * @return string[]
+     */
+    protected function addServiceSoapHeadersDefinition($serviceVariableName, MethodModel $method, array $added)
+    {
+        $addedNames = array();
+        $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, array());
+        foreach ($soapHeaderNames as $soapHeaderName) {
+            if (!in_array($soapHeaderName, $added, true)) {
+                $addedNames[] = $soapHeaderName;
+                $this
+                    ->getFile()
+                    ->getMainElement()
+                    ->addChild(sprintf('$%s->%s%s(%s);', $serviceVariableName, Service::METHOD_SET_HEADER_PREFIX, ucfirst($soapHeaderName), $this->getMethodParameter($soapHeaderName)));
+            }
+        }
+        return $addedNames;
     }
     /**
      * @param MethodModel $method
