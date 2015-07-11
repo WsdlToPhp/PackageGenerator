@@ -11,7 +11,7 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 class Tutorial extends AbstractFile
 {
-    const FILE_NAME = 'howtos';
+    const FILE_NAME = 'tutorial';
     /**
      * @param Generator $generator
      * @param string $name
@@ -28,20 +28,11 @@ class Tutorial extends AbstractFile
     {
         parent::beforeWrite();
         $this
-            ->defineNamespace()
             ->addMainAnnotationBlock()
             ->addAutoload()
             ->addOptionsAnnotationBlock()
             ->addOptions()
             ->addContent();
-    }
-    /**
-     * @return Tutorial
-     */
-    public function defineNamespace()
-    {
-        $this->getFile()->setNamespace(Generator::getPackageName());
-        return $this;
     }
     /**
      * @return Tutorial
@@ -101,9 +92,11 @@ class Tutorial extends AbstractFile
     public function addContent()
     {
         foreach ($this->getGenerator()->getServices() as $service) {
+            $serviceVariableName = lcfirst($service->getName());
             $this
                 ->addAnnotationBlockFromService($service)
-                ->addContentFromService($service);
+                ->addServiceDeclaration($serviceVariableName, $service)
+                ->addContentFromService($serviceVariableName, $service);
         }
         return $this;
     }
@@ -141,15 +134,15 @@ class Tutorial extends AbstractFile
         ));
     }
     /**
+     * @param string $serviceVariableName
      * @param Service $service
      * @return Tutorial
      */
-    protected function addContentFromService(ServiceModel $service)
+    protected function addContentFromService($serviceVariableName, ServiceModel $service)
     {
         foreach ($service->getMethods() as $method) {
-            $serviceVariableName = lcfirst($service->getName());
+
             $this
-                ->addServiceDeclaration($serviceVariableName, $service)
                 ->addAnnotationBlockFromMethod($method)
                 ->addContentFromMethod($serviceVariableName, $method);
         }
@@ -165,7 +158,7 @@ class Tutorial extends AbstractFile
         $this
             ->getFile()
             ->getMainElement()
-            ->addChild(sprintf('$%s = new %s();', $serviceVariableName, $service->getName()));
+            ->addChild(sprintf('$%s = new %s($options);', $serviceVariableName, $service->getPackagedName(true)));
         return $this;
     }
     /**
@@ -204,7 +197,7 @@ class Tutorial extends AbstractFile
         $parameters = array();
         if (is_array($method->getParameterType())) {
             foreach ($method->getParameterType() as $parameterName => $parameterType) {
-                $parameters[] = $this->getMethodParameter($parameterType);
+                $parameters[] = $this->getMethodParameter($parameterType, $parameterName);
             }
         } else {
             $parameters[] = $this->getMethodParameter($method->getParameterType());
@@ -213,11 +206,12 @@ class Tutorial extends AbstractFile
     }
     /**
      * @param string $parameterType
+     * @param string $parameterName
      * @return string
      */
-    protected function getMethodParameter($parameterType)
+    protected function getMethodParameter($parameterType, $parameterName = null)
     {
-        $parameter = $parameterType;
+        $parameter = sprintf('%1$s%2$s', (empty($parameterType) && empty($parameterName)) ? '' : '$', empty($parameterName) ? $parameterType : $parameterName);
         $model = $this->getGenerator()->getStruct($parameterType);
         if ($model instanceof StructModel && $model->getIsStruct() && !$model->getIsRestriction()) {
             $parameter = sprintf('new %s()', $model->getPackagedName(true));
