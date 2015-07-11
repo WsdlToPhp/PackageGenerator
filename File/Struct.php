@@ -175,7 +175,6 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSet(MethodContainer $methods, StructAttributeModel $attribute)
     {
-
         $method = new PhpMethod($attribute->getSetterName(), array(
             $this->getStructMethodParameter($attribute, true, null),
         ));
@@ -211,7 +210,7 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSetBodyReturn(PhpMethod $method)
     {
-        $method->addChild('return $this;');;
+        $method->addChild('return $this;');
         return $this;
     }
     /**

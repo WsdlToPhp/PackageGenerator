@@ -60,7 +60,6 @@ class Operation extends AbstractOperation
                     $this->getMethodParameter($this->getParameterName($this->getParameterTypeModel()->getPackagedName()), $this->getParameterTypeModel()->getPackagedName(true))
                 ));
             }
-
         }
         return $this;
     }

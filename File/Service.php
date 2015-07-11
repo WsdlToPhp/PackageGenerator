@@ -3,7 +3,6 @@
 namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
-
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
