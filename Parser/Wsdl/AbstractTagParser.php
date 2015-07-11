@@ -1,9 +1,12 @@
 <?php
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
+use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
@@ -60,5 +63,58 @@ abstract class AbstractTagParser extends AbstractParser
     protected function parseSchema(Wsdl $wsdl, Schema $schema)
     {
         $this->parseWsdl($wsdl);
+    }
+    /**
+     * @param Tag $tag
+     * @param Struct $struct
+     * @param StructAttribute $structAttribute
+     */
+    protected function parseTagAttributes(Tag $tag, Struct $struct = null, StructAttribute $structAttribute = null)
+    {
+        $model = $struct instanceof Struct ? $struct : $this->getModel($tag);
+        if ($model instanceof Struct) {
+            foreach ($tag->getAttributes() as $attribute) {
+                switch ($attribute->getName()) {
+                    case AbstractAttributeHandler::ATTRIBUTE_NAME:
+                        /**
+                         * Avoid this attribute to be added as meta
+                         */
+                        break;
+                    case AbstractAttributeHandler::ATTRIBUTE_ABSTRACT:
+                        $model->setIsAbstract($attribute->getValue(false, true, 'bool'));
+                        break;
+                    case AbstractAttributeHandler::ATTRIBUTE_TYPE:
+                        if ($structAttribute instanceof StructAttribute) {
+                            $this->parseTagAttributeType($attribute, $structAttribute);
+                        } else {
+                            $model->addMeta($attribute->getName(), $attribute->getValue(true));
+                        }
+                        break;
+                    default:
+                        $currentModel = $structAttribute instanceof StructAttribute ? $structAttribute : $model;
+                        $currentModel->addMeta($attribute->getName(), $attribute->getValue(true));
+                        break;
+                }
+            }
+        }
+    }
+    /**
+     * @param AttributeHandler $tagAttribute
+     * @param StructAttribute $attribute
+     */
+    protected function parseTagAttributeType(AttributeHandler $tagAttribute, StructAttribute $attribute)
+    {
+        $type = $tagAttribute->getValue();
+        if ($type !== null) {
+            $typeModel = $this->generator->getStruct($type);
+            $modelAttributeType = $attribute->getType();
+            if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
+                if ($typeModel->getIsRestriction()) {
+                    $attribute->setType($typeModel->getName());
+                } elseif (!$typeModel->getIsStruct() && $typeModel->getInheritance()) {
+                    $attribute->setType($typeModel->getInheritance());
+                }
+            }
+        }
     }
 }
