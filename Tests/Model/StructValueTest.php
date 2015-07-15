@@ -19,7 +19,6 @@ class StructValueTest extends TestCase
 
         $this->assertSame(1, $struct->getValue(1)->getValue());
         $this->assertNotSame("1", $struct->getValue(1)->getValue());
-        $this->assertSame(5.3, $struct->getValue("5.3")->getValue());
-        $this->assertNotSame("5.3", $struct->getValue("5.3")->getValue());
+        $this->assertSame('5.3', $struct->getValue("5.3")->getValue());
     }
 }

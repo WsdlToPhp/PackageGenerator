@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.0.5
+-----
+# Fix unit tests according to previous changes
+
 0.0.4
 -----
 #9 - Leading zero not taken into account in enumeration classes
