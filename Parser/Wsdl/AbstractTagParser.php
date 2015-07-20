@@ -11,6 +11,8 @@ use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\StructValue;
 
 abstract class AbstractTagParser extends AbstractParser
 {
@@ -66,13 +68,13 @@ abstract class AbstractTagParser extends AbstractParser
     }
     /**
      * @param Tag $tag
-     * @param Struct $struct
+     * @param AbstractModel $model
      * @param StructAttribute $structAttribute
      */
-    protected function parseTagAttributes(Tag $tag, Struct $struct = null, StructAttribute $structAttribute = null)
+    protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null)
     {
-        $model = $struct instanceof Struct ? $struct : $this->getModel($tag);
-        if ($model instanceof Struct) {
+        $model = $model instanceof AbstractModel ? $model : $this->getModel($tag);
+        if ($model instanceof AbstractModel) {
             foreach ($tag->getAttributes() as $attribute) {
                 switch ($attribute->getName()) {
                     case AbstractAttributeHandler::ATTRIBUTE_NAME:
@@ -82,6 +84,16 @@ abstract class AbstractTagParser extends AbstractParser
                         break;
                     case AbstractAttributeHandler::ATTRIBUTE_ABSTRACT:
                         $model->setIsAbstract($attribute->getValue(false, true, 'bool'));
+                        break;
+                    case AbstractAttributeHandler::ATTRIBUTE_VALUE:
+                        if ($model instanceof StructValue) {
+                            /**
+                             * Enumeration does not need its own value as meta information,
+                             * it's like the name for struct attribute
+                             */
+                        } else {
+                            $model->addMeta($attribute->getName(), $attribute->getValue(true));
+                        }
                         break;
                     case AbstractAttributeHandler::ATTRIBUTE_TYPE:
                         if ($structAttribute instanceof StructAttribute) {
