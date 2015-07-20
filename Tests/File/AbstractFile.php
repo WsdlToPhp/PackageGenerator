@@ -3,7 +3,6 @@
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\File\AbstractFile as File;
-use WsdlToPhp\PackageGenerator\Parser\ParserInterface;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs as StructsParser;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions as FunctionsParser;

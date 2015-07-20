@@ -3,7 +3,6 @@
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag as Tag;
 
 class TagElement extends AbstractAttributesParser
 {
