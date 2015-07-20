@@ -48,12 +48,6 @@ abstract class AbstractDocument extends AbstractModel
         return $this->content;
     }
     /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getClassBody()
-     */
-    public function getClassBody(&$class)
-    {
-    }
-    /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::__toString()
      * @return string location
      */
