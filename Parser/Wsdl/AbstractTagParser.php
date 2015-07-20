@@ -86,12 +86,11 @@ abstract class AbstractTagParser extends AbstractParser
                         $model->setIsAbstract($attribute->getValue(false, true, 'bool'));
                         break;
                     case AbstractAttributeHandler::ATTRIBUTE_VALUE:
-                        if ($model instanceof StructValue) {
-                            /**
-                             * Enumeration does not need its own value as meta information,
-                             * it's like the name for struct attribute
-                             */
-                        } else {
+                        /**
+                         * Enumeration does not need its own value as meta information,
+                         * it's like the name for struct attribute
+                         */
+                        if (!$model instanceof StructValue) {
                             $model->addMeta($attribute->getName(), $attribute->getValue(true));
                         }
                         break;
