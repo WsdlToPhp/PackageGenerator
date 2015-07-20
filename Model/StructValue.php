@@ -85,9 +85,6 @@ class StructValue extends AbstractModel
         $this->index = $index;
         return $this;
     }
-    public function getClassBody(&$class)
-    {
-    }
     /**
      * Returns the index which has to be added at the end of natural constant name defined with the value cleaned
      * Allows to avoid multiple constant name to be indentic

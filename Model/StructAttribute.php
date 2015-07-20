@@ -29,9 +29,6 @@ class StructAttribute extends AbstractModel
         $this->setType($type);
         $this->setOwner($struct);
     }
-    public function getClassBody(&$class)
-    {
-    }
     /**
      * Returns the unique name in the current struct (for setters/getters and struct contrusctor array)
      * @uses AbstractModel::getCleanName()

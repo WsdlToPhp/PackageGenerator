@@ -53,9 +53,6 @@ class Struct extends AbstractModel
         $this->setAttributes(new StructAttributeContainer());
         $this->setValues(new StructValueContainer());
     }
-    public function getClassBody(&$body)
-    {
-    }
     /**
      * Returns the contextual part of the class name for the package
      * @see AbstractModel::getContextualPart()

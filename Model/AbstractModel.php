@@ -75,131 +75,6 @@ abstract class AbstractModel
         self::updateModels($this);
     }
     /**
-     * Returns comments for the element
-     * @return array
-     */
-    public function getComment()
-    {
-        return array();
-    }
-    /**
-     * Returns the comments for the file
-     * @uses AbstractModel::getPackagedName()
-     * @uses Generator::instance()->getOptionAddComments()
-     * @uses AbstractModel::getDocSubPackages()
-     * @uses Generator::getPackageName()
-     * @return array
-     */
-    private function getFileComment()
-    {
-        $comments = array();
-        array_push($comments, 'File for class ' . $this->getPackagedName());
-        array_push($comments, '@package ' . Generator::getPackageName());
-        if (count($this->getDocSubPackages())) {
-            array_push($comments, '@subpackage ' . implode(',', $this->getDocSubPackages()));
-        }
-        if (count(Generator::instance()->getOptionAddComments())) {
-            foreach (Generator::instance()->getOptionAddComments() as $tagName => $tagValue) {
-                array_push($comments, "@$tagName $tagValue");
-            }
-        }
-        return $comments;
-    }
-    /**
-     * Returns the comments for the class
-     * @uses AbstractModel::getPackagedName()
-     * @uses Generator::instance()->getOptionAddComments()
-     * @uses AbstractModel::getDocumentation()
-     * @uses AbstractModel::addMetaComment()
-     * @uses AbstractModel::getDocSubPackages()
-     * @uses Struct::getIsStruct()
-     * @uses Generator::getPackageName()
-     * @return array
-     */
-    private function getClassComment()
-    {
-        $comments = array();
-        array_push($comments, 'This class stands for ' . $this->getPackagedName() . ' originally named ' . $this->getName());
-        if ($this->getDocumentation() !== '') {
-            array_push($comments, 'Documentation : ' . $this->getDocumentation());
-        }
-        $this->addMetaComment($comments, false, true);
-        if ($this->getInheritance() !== '') {
-            $inheritedModel = self::getModelByName($this->getInheritance());
-            /**
-             * A virtual struct exists only to store meta informations about itself
-             * So don't add meta informations about a valid struct
-             */
-            if ($inheritedModel && !$inheritedModel->getIsStruct()) {
-                $inheritedModel->addMetaComment($comments, false, false);
-            }
-        }
-        array_push($comments, '@package ' . Generator::getPackageName());
-        if (count($this->getDocSubPackages())) {
-            array_push($comments, '@subpackage ' . implode(',', $this->getDocSubPackages()));
-        }
-        if (count(Generator::instance()->getOptionAddComments())) {
-            foreach (Generator::instance()->getOptionAddComments() as $tagName => $tagValue) {
-                array_push($comments, "@$tagName $tagValue");
-            }
-        }
-        return $comments;
-    }
-    /**
-     * Method to override in sub class
-     * Must return a string in order to declare the function, attribute or the value
-     * @uses Struct::getIsStruct()
-     * @uses AbstractModel::getModelByName()
-     * @uses AbstractModel::getInheritance()
-     * @uses AbstractModel::getComment()
-     * @uses AbstractModel::getPackagedName()
-     * @uses AbstractModel::getClassBody()
-     * @uses Generator::instance()->getOptionInheritsClassIdentifier()
-     * @return string
-     */
-    public function getClassDeclaration()
-    {
-        $class = array();
-        /**
-         * Class comments
-         */
-        array_push($class, array('comment' => $this->getFileComment()));
-        array_push($class, array('comment' => $this->getClassComment()));
-        /**
-         * Extends
-         */
-        $extends = $this->getExtendsClassName();
-        array_push($class, ($this->getIsAbstract() === true ? 'abstract ' : '') . 'class ' . $this->getPackagedName() . (!empty($extends) ? ' extends ' . $extends : ''));
-        /**
-         * Class body starts here
-         */
-        array_push($class, '{');
-        /**
-         * Populate class body
-         */
-        $this->getClassBody($class);
-        /**
-         * __toString() method comments
-         */
-        $comments = array();
-        array_push($comments, 'Method returning the class name');
-        array_push($comments, '@return string __CLASS__');
-        array_push($class, array('comment' => $comments));
-        unset($comments);
-        /**
-         * __toString method body
-         */
-        array_push($class, 'public function __toString()');
-        array_push($class, '{');
-        array_push($class, 'return __CLASS__;');
-        array_push($class, '}');
-        /**
-         * Class body ends here
-         */
-        array_push($class, '}');
-        return $class;
-    }
-    /**
      * @return string
      */
     public function getExtendsClassName()
@@ -223,13 +98,6 @@ abstract class AbstractModel
         return $extends;
     }
     /**
-     * Methods which fills the class body
-     * Must be overridden in classes
-     * @param array
-     * @return void
-     */
-    abstract public function getClassBody(&$class);
-    /**
      * Returns the name of the class the current class inherits from
      * @return string
      */
@@ -247,38 +115,6 @@ abstract class AbstractModel
         $this->inheritance = $inheritance;
         self::updateModels($this);
         return $inheritance;
-    }
-    /**
-     * Add meta informations to comment array
-     * @uses AbstractModel::META_DOCUMENTATION
-     * @uses AbstractModel::getMeta()
-     * @uses AbstractModel::cleanComment()
-     * @param array $comments array which meta are added to
-     * @param bool $addStars add comments tags
-     * @param bool $ignoreDocumentation ignore documentation info or not
-     * @return void
-     */
-    public function addMetaComment(array &$comments = array(), $addStars = false, $ignoreDocumentation = false)
-    {
-        $metaComments = array();
-        if (count($this->getMeta())) {
-            foreach ($this->getMeta() as $metaName => $metaValue) {
-                $cleanedMetaValue = self::cleanComment($metaValue, $metaName == self::META_DOCUMENTATION ? ' ' : ',', stripos($metaName, 'SOAPHeader') === false);
-                if (($ignoreDocumentation && $metaName == self::META_DOCUMENTATION) || $cleanedMetaValue === '') {
-                    continue;
-                }
-                array_push($metaComments, ($addStars ? ' * ' : '') . "    - $metaName : " . (($metaName == self::META_FROM_SCHEMA && stripos($cleanedMetaValue, 'http') === 0) ? "{@link $cleanedMetaValue}" : $cleanedMetaValue));
-            }
-        }
-        if (count($metaComments)) {
-            if (!in_array('Meta informations extracted from the WSDL', $comments)) {
-                array_push($comments, 'Meta informations extracted from the WSDL');
-            }
-            foreach ($metaComments as $metaComment) {
-                array_push($comments, $metaComment);
-            }
-        }
-        unset($metaComments);
     }
     /**
      * Returns the meta
