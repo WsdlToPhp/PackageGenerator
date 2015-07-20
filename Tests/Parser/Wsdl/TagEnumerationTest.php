@@ -69,18 +69,52 @@ class TagEnumerationTest extends WsdlParser
             if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
                 if ($struct->getName() === 'HouseStateEnum') {
                     $values = new StructValueContainer();
-                    $values->add(new StructValue('1', 0, $struct));
-                    $values->add(new StructValue('2', 1, $struct));
-                    $values->add(new StructValue('3', 2, $struct));
-                    $values->add(new StructValue('4', 3, $struct));
-
+                    $one = new StructValue('1', 0, $struct);
+                    $one->setMeta(array(
+                        'label' =>'normal',
+                        'description' =>'Исправный',
+                    ));
+                    $values->add($one);
+                    $two = new StructValue('2', 1, $struct);
+                    $two->setMeta(array(
+                        'label' =>'warning',
+                        'description' =>'Требующий капитального ремонта',
+                    ));
+                    $values->add($two);
+                    $three = new StructValue('3', 2, $struct);
+                    $three->setMeta(array(
+                        'label' =>'alarm',
+                        'description' =>'Аварийный',
+                    ));
+                    $values->add($three);
+                    $four = new StructValue('4', 3, $struct);
+                    $four->setMeta(array(
+                        'label' =>'noinfo',
+                        'description' =>'Нет данных',
+                    ));
+                    $values->add($four);
                     $this->assertEquals($values, $struct->getValues());
                     $count++;
                 } elseif ($struct->getName() === 'HouseStageEnum') {
                     $values = new StructValueContainer();
-                    $values->add(new StructValue('1', 0, $struct));
-                    $values->add(new StructValue('2', 1, $struct));
-                    $values->add(new StructValue('3', 2, $struct));
+                    $one = new StructValue('1', 0, $struct);
+                    $one->setMeta(array(
+                        'label' =>'exploited',
+                        'description' =>'Эксплуатируемый',
+                    ));
+                    $values->add($one);
+                    $two = new StructValue('2', 1, $struct);
+                    $two->setMeta(array(
+                        'label' =>'decommissioned',
+                        'description' =>'Выведенный из эксплуатации',
+                    ));
+                    $values->add($two);
+                    $three = new StructValue('3', 2, $struct);
+                    $three->setMeta(array(
+                        'label' =>'drifting',
+                        'description' =>'Снесенный',
+                    ));
+                    $values->add($three);
 
                     $this->assertEquals($values, $struct->getValues());
                     $count++;

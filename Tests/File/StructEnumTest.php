@@ -49,4 +49,21 @@ class StructEnumTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find SourceType enumeration for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteReformHouseStageEnum()
+    {
+        $file = $this->getTestDirectory();
+        $generator = self::reformaGeneratorInstance();
+        if (($model = $generator->getStruct('HouseStageEnum')) instanceof StructModel) {
+            $struct = new EnumFile($generator, $model->getName(), $file);
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiHouseStageEnum', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find HouseStageEnum enumeration for file generation');
+        }
+    }
 }

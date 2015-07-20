@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Model\StructValue as StructValueModel;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
@@ -23,14 +24,18 @@ class StructEnum extends Struct
         }
     }
     /**
-     * @return PhpAnnotationBlock|null
+     * @return PhpAnnotationBlock
      */
     protected function getConstantAnnotationBlock(PhpConstant $constant)
     {
-        return new PhpAnnotationBlock(array(
+        $block = new PhpAnnotationBlock(array(
             sprintf('Constant for value \'%s\'', $constant->getValue()),
-            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string \'%s\'', $constant->getValue())),
         ));
+        if (($value = $this->getModel()->getValue($constant->getValue())) instanceof StructValueModel) {
+            $this->defineModelAnnotationsFromWsdl($block, $value);
+        }
+        $block->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string \'%s\'', $constant->getValue())));
+        return $block;
     }
     /**
      * @param MethodContainer
