@@ -17,11 +17,9 @@ class GeneratorOptionsTest extends TestCase
 
     public function testGetDefaultOptionValue()
     {
-        $this->assertEquals('start', self::optionsInstance()->getOptionValue('category'));
-        $this->assertEquals('start', self::optionsInstance()->getOptionValue('sub_category'));
+        $this->assertEquals('cat', self::optionsInstance()->getOptionValue('category'));
         $this->assertEquals('start', self::optionsInstance()->getOptionValue('gather_methods'));
         $this->assertFalse(self::optionsInstance()->getOptionValue('send_array_as_parameter'));
-        $this->assertTrue(self::optionsInstance()->getOptionValue('generate_wsdl_class'));
         $this->assertFalse(self::optionsInstance()->getOptionValue('response_as_wsdl_object'));
         $this->assertFalse(self::optionsInstance()->getOptionValue('send_parameters_as_array'));
         $this->assertEmpty(self::optionsInstance()->getOptionValue('inherits_from_identifier'));
@@ -33,10 +31,10 @@ class GeneratorOptionsTest extends TestCase
 
     public function testSetExistingOptionValue()
     {
-        self::optionsInstance()->setOptionValue('category', 'end');
-        $this->assertEquals('end', self::optionsInstance()->getOptionValue('category'));
-        self::optionsInstance()->setCategory('start');
-        $this->assertEquals('start', self::optionsInstance()->getOptionValue('category'));
+        self::optionsInstance()->setOptionValue('category', 'cat');
+        $this->assertEquals('cat', self::optionsInstance()->getOptionValue('category'));
+        self::optionsInstance()->setCategory('none');
+        $this->assertEquals('none', self::optionsInstance()->getOptionValue('category'));
     }
     /**
      * @expectedException InvalidArgumentException
