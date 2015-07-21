@@ -226,7 +226,7 @@ class Generator extends \SoapClient
             if (!is_dir($rootDirectory) && !$createRootDirectory) {
                 throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been disabled', $rootDirectory));
             } elseif (!is_dir($rootDirectory) && $createRootDirectory) {
-                mkdir($rootDirectory, $rootDirectoryRights);
+                $this->createDirectory($rootDirectory, $rootDirectoryRights);
             }
             /**
              * Begin process
@@ -270,7 +270,6 @@ class Generator extends \SoapClient
     private function generateStructsClasses($rootDirectory, $rootDirectoryRights)
     {
         $structs = $this->getStructs();
-        $structsClassesFiles = array();
         if (count($structs)) {
             /**
              * Ordering structs in order to generate mother class first and to put them on top in the autoload file
@@ -306,7 +305,6 @@ class Generator extends \SoapClient
                 }
                 $elementFolder = $rootDirectory . $this->getDirectory($struct);
                 $this->createDirectory($elementFolder, $rootDirectoryRights);
-                array_push($structsClassesFiles, $elementFolder . $struct->getPackagedName() . '.php');
                 /**
                  * Generates file
                  */
@@ -338,12 +336,10 @@ class Generator extends \SoapClient
     private function generateServicesClasses($rootDirectory, $rootDirectoryRights)
     {
         $services = $this->getServices();
-        $servicesClassesFiles = array();
         if (count($services)) {
             foreach ($services as $service) {
                 $elementFolder = $rootDirectory . $this->getDirectory($service);
                 $this->createDirectory($elementFolder, $rootDirectoryRights);
-                array_push($servicesClassesFiles, $elementFolder . $service->getPackagedName() . '.php');
                 /**
                  * Generates file
                  */
