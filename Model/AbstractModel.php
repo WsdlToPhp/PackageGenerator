@@ -367,11 +367,7 @@ abstract class AbstractModel
      */
     public static function cleanString($string, $keepMultipleUnderscores = true)
     {
-        $cleanedString = preg_replace('/[^a-zA-Z0-9_]/', '_', $string);
-        if (!$keepMultipleUnderscores) {
-            $cleanedString = preg_replace('/[_]+/', '_', $cleanedString);
-        }
-        return $cleanedString;
+        return Utils::cleanString($string, $keepMultipleUnderscores);
     }
     /**
      * Get models
