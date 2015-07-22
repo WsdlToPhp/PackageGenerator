@@ -253,13 +253,7 @@ class Generator extends \SoapClient
      * Generates structs classes based on structs collected
      * @uses Generator::getStructs()
      * @uses Generator::getDirectory()
-     * @uses Generator::populateFile()
-     * @uses AbstractModel::getName()
-     * @uses AbstractModel::getModelByName()
-     * @uses AbstractModel::getInheritance()
-     * @uses AbstractModel::getCleanName()
      * @uses AbstractModel::getPackagedName()
-     * @uses AbstractModel::getClassDeclaration()
      * @uses Struct::getIsStruct()
      * @param string $rootDirectory the directory
      * @param int $rootDirectoryRights the directory permissions
@@ -267,56 +261,25 @@ class Generator extends \SoapClient
      */
     private function generateStructsClasses($rootDirectory, $rootDirectoryRights)
     {
-        $structs = $this->getStructs();
-        if (count($structs)) {
+        foreach ($this->getStructs() as $structName => $struct) {
+            if (!$struct->getIsStruct()) {
+                continue;
+            }
+            $elementFolder = $rootDirectory . $this->getDirectory($struct);
+            $this->createDirectory($elementFolder, $rootDirectoryRights);
             /**
-             * Ordering structs in order to generate mother class first and to put them on top in the autoload file
+             * Generates file
              */
-            $structsToGenerateDone = array();
-            foreach ($structs as $struct) {
-                if (!array_key_exists($struct->getName(), $structsToGenerateDone)) {
-                    $structsToGenerateDone[$struct->getName()] = 0;
-                }
-                $model = AbstractModel::getModelByName($struct->getInheritance());
-                while ($model && $model->getIsStruct()) {
-                    if (!array_key_exists($model->getName(), $structsToGenerateDone)) {
-                        $structsToGenerateDone[$model->getName()] = 1;
-                    } else {
-                        $structsToGenerateDone[$model->getName()]++;
-                    }
-                    $model = AbstractModel::getModelByName($model->getInheritance());
-                }
+            if ($struct->getisRestriction()) {
+                $file = new StructEnumFile($this, $struct->getPackagedName(), $elementFolder);
+            } elseif ($struct->isArray()) {
+                $file = new StructArrayFile($this, $struct->getPackagedName(), $elementFolder);
+            } else {
+                $file = new StructFile($this, $struct->getPackagedName(), $elementFolder);
             }
-            /**
-             * Order by priority desc
-             */
-            arsort($structsToGenerateDone);
-            $structTmp = $structs;
-            $structs = array();
-            foreach (array_keys($structsToGenerateDone) as $structName) {
-                $structs[$structName] = $structTmp->getStructByName($structName);
-            }
-            unset($structTmp, $structsToGenerateDone);
-            foreach ($structs as $structName => $struct) {
-                if (!$struct->getIsStruct()) {
-                    continue;
-                }
-                $elementFolder = $rootDirectory . $this->getDirectory($struct);
-                $this->createDirectory($elementFolder, $rootDirectoryRights);
-                /**
-                 * Generates file
-                 */
-                if ($struct->getisRestriction()) {
-                    $file = new StructEnumFile($this, $struct->getPackagedName(), $elementFolder);
-                } elseif ($struct->isArray()) {
-                    $file = new StructArrayFile($this, $struct->getPackagedName(), $elementFolder);
-                } else {
-                    $file = new StructFile($this, $struct->getPackagedName(), $elementFolder);
-                }
-                $file
-                    ->setModel($struct)
-                    ->write();
-            }
+            $file
+                ->setModel($struct)
+                ->write();
         }
         return $this;
     }
