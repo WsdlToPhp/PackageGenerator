@@ -9,17 +9,15 @@ use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 class Operation extends AbstractOperation
 {
     /**
-     * @param MethodContainer $methods
      * @return Operation
      */
-    public function addMainMethod(MethodContainer $methods)
+    public function getMainMethod()
     {
         $phpMethod = new PhpMethod($this->getMethod()->getMethodName());
         $this
             ->defineParameters($phpMethod)
             ->defineBody($phpMethod);
-        $methods->add($phpMethod);
-        return $this;
+        return $phpMethod;
     }
     /**
      * @param PhpMethod $method
@@ -109,8 +107,8 @@ class Operation extends AbstractOperation
     protected function getOperationCallParameters(PhpMethod $method)
     {
         $parameters = array();
-        foreach ($method->getParameters() as $parameter) {
-            $parameters[] = $this->getOperationCallParameterName($parameter, $method);
+        foreach ($method->getParameters() as $index=>$parameter) {
+            $parameters[] = $this->getOperationCallParameterName($index, $parameter, $method);
         }
         return sprintf('%s%s', implode($this->getOperationCallParametersSeparator(), $parameters), $this->getOperationCallParametersEnding());
     }
@@ -136,16 +134,17 @@ class Operation extends AbstractOperation
         return ($this->isParameterTypeAnArray() && $this->getMethod()->nameIsClean() === false) ? sprintf('%s)', PhpMethod::BREAK_LINE_CHAR) : '';
     }
     /**
+     * @param int $index
      * @param PhpFunctionParameter $parameter
      * @param PhpMethod $method
      * @return string
      */
-    protected function getOperationCallParameterName(PhpFunctionParameter $parameter, PhpMethod $method)
+    protected function getOperationCallParameterName($index, PhpFunctionParameter $parameter, PhpMethod $method)
     {
         $cloneParameter = clone $parameter;
         $cloneParameter->setType(null);
         if ($this->getMethod()->nameIsClean() === false) {
-            return $method->getIndentedString(sprintf('%s%s,', PhpMethod::BREAK_LINE_CHAR, $cloneParameter->getPhpDeclaration()), 1);
+            return sprintf('%s%s', PhpMethod::BREAK_LINE_CHAR, $method->getIndentedString(sprintf('%s,', $cloneParameter->getPhpDeclaration()), 1));
         } else {
             return $cloneParameter->getPhpDeclaration();
         }

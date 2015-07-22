@@ -18,13 +18,13 @@ class ApiSearch extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiSearchRequest $apiSearchRequest
+     * @param \Api\StructType\ApiSearchRequest $parameters
      * @return \Api\StructType\ApiSearchResponse|bool
      */
-    public function Search(\Api\StructType\ApiSearchRequest $apiSearchRequest)
+    public function Search(\Api\StructType\ApiSearchRequest $parameters)
     {
         try {
-            $this->setResult(self::getSoapClient()->Search($apiSearchRequest));
+            $this->setResult(self::getSoapClient()->Search($parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

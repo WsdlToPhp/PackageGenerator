@@ -41,6 +41,14 @@ class Service extends AbstractModelFile
      */
     const METHOD_GET_RESULT = 'getResult';
     /**
+     * Method model can't be found in case the original method's name is unclean:
+     * - ex: my.operation.name becomes my_operation_name
+     * thus the Model from Model\Service::getMethod() can't be found
+     * So we store the generated name associated to the original method object
+     * @var array
+     */
+    protected $methods = array();
+    /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassConstants()
      */
     protected function getClassConstants(ConstantContainer $constants)
@@ -177,7 +185,9 @@ class Service extends AbstractModelFile
     protected function addMainMethod(MethodContainer $methods, MethodModel $method)
     {
         $methodFile = new Operation($method, $this->getGenerator());
-        $methodFile->addMainMethod($methods);
+        $mainMethod = $methodFile->getMainMethod();
+        $methods->add($mainMethod);
+        $this->setModelFromMethod($mainMethod, $method);
         return $this;
     }
     /**
@@ -271,7 +281,21 @@ class Service extends AbstractModelFile
      */
     protected function getModelFromMethod(PhpMethod $method)
     {
-        return $this->getGenerator()->getServiceMethod($method->getName());
+        $model = $this->getGenerator()->getServiceMethod($method->getName());
+        if (!$model instanceof MethodModel) {
+            $model = array_key_exists($method->getName(), $this->methods) ? $this->methods[$method->getName()] : null;
+        }
+        return $model;
+    }
+    /**
+     * @param PhpMethod $phpMethod
+     * @param MethodModel $methodModel
+     * @return Service
+     */
+    protected function setModelFromMethod(PhpMethod $phpMethod, MethodModel $methodModel)
+    {
+        $this->methods[$phpMethod->getName()] = $methodModel;
+        return $this;
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getModel()

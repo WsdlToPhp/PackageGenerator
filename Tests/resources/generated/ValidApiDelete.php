@@ -49,13 +49,13 @@ class ApiDelete extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDeleteList $apiDeleteList
+     * @param \Api\StructType\ApiDeleteList $parameter
      * @return void|bool
      */
-    public function deleteList(\Api\StructType\ApiDeleteList $apiDeleteList)
+    public function deleteList(\Api\StructType\ApiDeleteList $parameter)
     {
         try {
-            $this->setResult(self::getSoapClient()->deleteList($apiDeleteList));
+            $this->setResult(self::getSoapClient()->deleteList($parameter));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
