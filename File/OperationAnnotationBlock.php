@@ -7,6 +7,7 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PackageGenerator\File\Utils as FileUtils;
 
 class OperationAnnotationBlock extends AbstractOperation
 {
@@ -54,6 +55,12 @@ class OperationAnnotationBlock extends AbstractOperation
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes : %s', implode(', ', $this->getSoapHeaderNamesTypes($soapHeaderNames))), AbstractModelFile::ANNOTATION_LONG_LENGTH))
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaders : %s', implode(', ', $soapHeaders)), AbstractModelFile::ANNOTATION_LONG_LENGTH));
         }
+        FileUtils::defineModelAnnotationsFromWsdl($annotationBlock, $this->getMethod(), array(
+            TagHeader::META_SOAP_HEADER_NAMES,
+            TagHeader::META_SOAP_HEADER_NAMESPACES,
+            TagHeader::META_SOAP_HEADER_TYPES,
+            TagHeader::META_SOAP_HEADERS,
+        ));
         return $this;
     }
     /**
