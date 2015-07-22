@@ -52,7 +52,7 @@ class StructEnumTest extends AbstractFile
     /**
      *
      */
-    public function testWriteReformHouseStageEnum()
+    public function testWriteReformaHouseStageEnum()
     {
         $file = $this->getTestDirectory();
         $generator = self::reformaGeneratorInstance();
@@ -64,6 +64,23 @@ class StructEnumTest extends AbstractFile
             $this->assertSameFileContent('ValidApiHouseStageEnum', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find HouseStageEnum enumeration for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteOmnitureDsWeblogFormats()
+    {
+        $file = $this->getTestDirectory();
+        $generator = self::omnitureGeneratorInstance();
+        if (($model = $generator->getStruct('ds_weblog_formats')) instanceof StructModel) {
+            $struct = new EnumFile($generator, $model->getName(), $file);
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiDs_weblog_formats', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find ds_weblog_formats enumeration for file generation');
         }
     }
 }
