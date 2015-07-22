@@ -144,29 +144,31 @@ class Generator extends \SoapClient
         /**
          * init containers
          */
-        $this->setStructs(new StructContainer());
-        $this->setServices(new ServiceContainer());
-        $this->setWsdls(new WsdlContainer());
-        $this->setParser(new ParserContainer());
+        $this
+            ->setStructs(new StructContainer())
+            ->setServices(new ServiceContainer())
+            ->setWsdls(new WsdlContainer())
+            ->setParser(new ParserContainer());
         /**
          * add parsers
          */
-        $this->addParser(new FunctionsParser($this));
-        $this->addParser(new StructsParser($this));
-        $this->addParser(new TagIncludeParser($this));
-        $this->addParser(new TagImportParser($this));
-        $this->addParser(new TagAttributeParser($this));
-        $this->addParser(new TagComplexTypeParser($this));
-        $this->addParser(new TagDocumentationParser($this));
-        $this->addParser(new TagElementParser($this));
-        $this->addParser(new TagEnumerationParser($this));
-        $this->addParser(new TagExtensionParser($this));
-        $this->addParser(new TagHeaderParser($this));
-        $this->addParser(new TagInputParser($this));
-        $this->addParser(new TagOutputParser($this));
-        $this->addParser(new TagRestrictionParser($this));
-        $this->addParser(new TagUnionParser($this));
-        $this->addParser(new TagListParser($this));
+        $this
+            ->addParser(new FunctionsParser($this))
+            ->addParser(new StructsParser($this))
+            ->addParser(new TagIncludeParser($this))
+            ->addParser(new TagImportParser($this))
+            ->addParser(new TagAttributeParser($this))
+            ->addParser(new TagComplexTypeParser($this))
+            ->addParser(new TagDocumentationParser($this))
+            ->addParser(new TagElementParser($this))
+            ->addParser(new TagEnumerationParser($this))
+            ->addParser(new TagExtensionParser($this))
+            ->addParser(new TagHeaderParser($this))
+            ->addParser(new TagInputParser($this))
+            ->addParser(new TagOutputParser($this))
+            ->addParser(new TagRestrictionParser($this))
+            ->addParser(new TagUnionParser($this))
+            ->addParser(new TagListParser($this));
         /**
          * add WSDL
          */
