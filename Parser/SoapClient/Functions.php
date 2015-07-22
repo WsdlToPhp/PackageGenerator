@@ -14,7 +14,7 @@ class Functions extends AbstractParser
                 /**
                  * "Regular" SOAP Style
                  */
-                if (count($infos) <= 3) {
+                if (count($infos) < 3) {
                     $returnType = $infos[0];
                     if (count($infos) < 3 && strpos($infos[1], '()') !== false && array_key_exists(1, $infos)) {
                         $methodName = trim(str_replace('()', '', $infos[1]));
@@ -25,7 +25,7 @@ class Functions extends AbstractParser
                     if (!empty($returnType) && !empty($methodName)) {
                         $services->addService($this->generator->getServiceName($methodName), $methodName, $parameterType, $returnType);
                     }
-                } elseif (count($infos) > 3) {
+                } elseif (count($infos) >= 3) {
                     /**
                      * RPC SOAP Style
                      * Some RPC WS defines the return type as a list of values
