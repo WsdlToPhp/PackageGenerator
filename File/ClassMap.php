@@ -61,7 +61,7 @@ class ClassMap extends AbstractFile
         $this
             ->getFile()
             ->addAnnotationBlockElement(new PhpAnnotationBlock(array(
-                new PhpAnnotation(PhpAnnotation::NO_NAME, 'Class which returns the class map definition by the static method ApiClassMap::classMap()', AbstractModelFile::ANNOTATION_LONG_LENGTH),
+                'Class which returns the class map definition',
                 new PhpAnnotation(AbstractModelFile::ANNOTATION_PACKAGE, Generator::getPackageName()),
             )));
         return $this;
@@ -86,7 +86,7 @@ class ClassMap extends AbstractFile
     {
         $class
             ->addAnnotationBlockElement(new PhpAnnotationBlock(array(
-                new PhpAnnotation(PhpAnnotation::NO_NAME, 'This method returns the array containing the mapping between WSDL structs and generated classes', AbstractModelFile::ANNOTATION_LONG_LENGTH),
+                'Returns the mapping between the WSDL Structs and generated Structs\' classes',
                 'This array is sent to the \SoapClient when calling the WS',
                 new PhpAnnotation(AbstractModelFile::ANNOTATION_RETURN, 'string[]'),
             )));
