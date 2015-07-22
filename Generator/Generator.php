@@ -287,28 +287,23 @@ class Generator extends \SoapClient
      * Generates methods by class
      * @uses Generator::getServices()
      * @uses Generator::getDirectory()
-     * @uses AbstractModel::getCleanName()
      * @uses AbstractModel::getPackagedName()
-     * @uses AbstractModel::getClassDeclaration()
      * @param string $rootDirectory the directory
      * @param int $rootDirectoryRights the directory permissions
      * @return Generator
      */
     private function generateServicesClasses($rootDirectory, $rootDirectoryRights)
     {
-        $services = $this->getServices();
-        if (count($services)) {
-            foreach ($services as $service) {
-                $elementFolder = $rootDirectory . $this->getDirectory($service);
-                $this->createDirectory($elementFolder, $rootDirectoryRights);
-                /**
-                 * Generates file
-                 */
-                $file = new ServiceFile($this, $service->getPackagedName(), $elementFolder);
-                $file
-                    ->setModel($service)
-                    ->write();
-            }
+        foreach ($this->getServices() as $service) {
+            $elementFolder = $rootDirectory . $this->getDirectory($service);
+            $this->createDirectory($elementFolder, $rootDirectoryRights);
+            /**
+             * Generates file
+             */
+            $file = new ServiceFile($this, $service->getPackagedName(), $elementFolder);
+            $file
+                ->setModel($service)
+                ->write();
         }
         return $this;
     }
