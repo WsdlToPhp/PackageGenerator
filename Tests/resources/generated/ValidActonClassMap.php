@@ -3,13 +3,13 @@
 namespace Api;
 
 /**
- * Class which returns the class map definition by the static method ApiClassMap::classMap()
+ * Class which returns the class map definition
  * @package Api
  */
 class ApiClassMap
 {
     /**
-     * This method returns the array containing the mapping between WSDL structs and generated classes
+     * Returns the mapping between the WSDL Structs and generated Structs' classes
      * This array is sent to the \SoapClient when calling the WS
      * @return string[]
      */

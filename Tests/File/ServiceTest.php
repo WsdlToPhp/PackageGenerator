@@ -83,17 +83,17 @@ class ServiceTest extends AbstractFile
     /**
      *
      */
-    public function testWriteQueueServiceCreateQueue()
+    public function testWriteQueueServiceCreate()
     {
         $generator = self::queueGeneratorInstance();
-        if (($model = $generator->getService('CreateQueue')) instanceof ServiceModel) {
+        if (($model = $generator->getService('Create')) instanceof ServiceModel) {
             $service = new ServiceFile($generator, $model->getName(), $this->getTestDirectory());
             $service
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('CreateQueue', $service);
+            $this->assertSameFileContent('ValidApiCreate', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find CreateQueue service for file generation');
+            $this->assertFalse(true, 'Unable to find Create service for file generation');
         }
     }
 }
