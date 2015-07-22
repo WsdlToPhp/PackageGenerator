@@ -57,6 +57,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlReformaPath());
     }
     /**
+     * @return Generator
+     */
+    public static function queueGeneratorInstance()
+    {
+        return self::getInstance(self::wsdlQueuePath());
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */

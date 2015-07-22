@@ -95,4 +95,11 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     {
         return __DIR__ . '/resources/reformagkh.wsdl';
     }
+    /**
+     * @return string
+     */
+    public static function wsdlQueuePath()
+    {
+        return __DIR__ . '/resources/QueueService.wsdl';
+    }
 }

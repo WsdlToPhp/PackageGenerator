@@ -80,4 +80,20 @@ class ServiceTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Login service for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteQueueServiceCreateQueue()
+    {
+        $generator = self::queueGeneratorInstance();
+        if (($model = $generator->getService('CreateQueue')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName(), $this->getTestDirectory());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('CreateQueue', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find CreateQueue service for file generation');
+        }
+    }
 }
