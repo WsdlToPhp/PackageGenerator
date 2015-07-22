@@ -102,4 +102,11 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     {
         return __DIR__ . '/resources/QueueService.wsdl';
     }
+    /**
+     * @return string
+     */
+    public static function wsdlBullhornstaffingPath()
+    {
+        return __DIR__ . '/resources/bullhornstaffing.local.wsdl';
+    }
 }
