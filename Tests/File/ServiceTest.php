@@ -96,4 +96,20 @@ class ServiceTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Create service for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteOmnitureServiceSaint()
+    {
+        $generator = self::omnitureGeneratorInstance();
+        if (($model = $generator->getService('Saint')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName(), $this->getTestDirectory());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiSaint', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Saint service for file generation');
+        }
+    }
 }
