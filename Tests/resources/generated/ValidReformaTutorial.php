@@ -100,7 +100,7 @@ if ($get->GetHouseProfileSF988($region_id, $page_number, $reporting_period_id) !
 /**
  * Sample call for GetHouseList operation/method
  */
-if ($get->GetHouseList($string) !== false) {
+if ($get->GetHouseList($inn) !== false) {
     print_r($get->getResult());
 } else {
     print_r($get->getLastError());
@@ -148,7 +148,7 @@ if ($get->GetReportingPeriodList() !== false) {
 /**
  * Sample call for GetFileByID operation/method
  */
-if ($get->GetFileByID($int) !== false) {
+if ($get->GetFileByID($file_id) !== false) {
     print_r($get->getResult());
 } else {
     print_r($get->getLastError());
@@ -160,7 +160,7 @@ $set = new \Api\ServiceType\ApiSet($options);
 /**
  * Sample call for SetRequestForSubmit operation/method
  */
-if ($set->SetRequestForSubmit($ArrayOfString) !== false) {
+if ($set->SetRequestForSubmit($inns) !== false) {
     print_r($set->getResult());
 } else {
     print_r($set->getLastError());
