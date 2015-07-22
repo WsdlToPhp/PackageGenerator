@@ -82,11 +82,6 @@ class Generator extends \SoapClient
      */
     private $wsdls;
     /**
-     * Use intern global variable instead of using the PHP $GLOBALS variable
-     * @var array
-     */
-    private static $globals;
-    /**
      * @var GeneratorOptions
      */
     private $options;
