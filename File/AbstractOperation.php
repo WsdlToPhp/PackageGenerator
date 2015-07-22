@@ -15,6 +15,10 @@ abstract class AbstractOperation
      */
     const DEFAULT_TYPE = 'string';
     /**
+     * @var string
+     */
+    const SOAP_CALL_NAME = '__call';
+    /**
      * @var MethodModel
      */
     protected $method;
@@ -38,6 +42,14 @@ abstract class AbstractOperation
     protected function getParameterTypeModel()
     {
         return $this->isParameterTypeAString() ? $this->getGenerator()->getStruct($this->getMethod()->getParameterType()) : null;
+    }
+    /**
+     * @return bool
+     */
+    protected function isParameterTypeEmpty()
+    {
+        $parameterType = $this->getMethod()->getParameterType();
+        return empty($parameterType);
     }
     /**
      * @return bool
