@@ -7,6 +7,9 @@ use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions;
 
 class FunctionsTest extends SoapClientParser
 {
+    /**
+     *
+     */
     public function testReforma()
     {
         $generator = self::getReformaInstance();
@@ -22,5 +25,18 @@ class FunctionsTest extends SoapClientParser
         } else {
             $this->assertFalse(true, 'Unable to find parsed Login operation');
         }
+    }
+    /**
+     *
+     */
+    public function testBullhornstaffing()
+    {
+        $generator = self::getBullhornstaffingInstance();
+
+        $parser = new Functions($generator);
+        $parser->parse();
+
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $generator->getService('Events'));
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $generator->getService('Export'));
     }
 }
