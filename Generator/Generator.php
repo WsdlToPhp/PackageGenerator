@@ -345,9 +345,11 @@ class Generator extends \SoapClient
             $content = str_replace(array(
                 'packagename',
                 'PackageName',
+                'wsdl_url',
             ), array(
                 strtolower(self::getPackageName(false)),
                 self::getPackageName(false),
+                $this->getWsdl(0)->getName(),
             ), $content);
             file_put_contents($rootDirectory . 'composer.json', $content);
             if (!is_file($rootDirectory . '/composer.json')) {
