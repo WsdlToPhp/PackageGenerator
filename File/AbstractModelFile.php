@@ -10,6 +10,7 @@ use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\File\Utils as FileUtils;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
@@ -19,7 +20,10 @@ use WsdlToPhp\PhpGenerator\Component\PhpClass;
 
 abstract class AbstractModelFile extends AbstractFile
 {
-    const ANNOTATION_LONG_LENGTH = '500';
+    /**
+     * @var Long annotation string
+     */
+    const ANNOTATION_LONG_LENGTH = '250';
     /**
      * @var string
      */
@@ -167,18 +171,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model = null)
     {
-        $validMeta = $this->getValidMetaValues($model instanceof AbstractModel ? $model : $this->getModel());
-        if (!empty($validMeta)) {
-            /**
-             * First line is the "The {propertyName}"
-             */
-            if (count($block->getChildren()) === 1) {
-                $block->addChild('Meta informations extracted from the WSDL');
-            }
-            foreach ($validMeta as $meta) {
-                $block->addChild($meta);
-            }
-        }
+        FileUtils::defineModelAnnotationsFromWsdl($block, $model instanceof AbstractModel ? $model : $this->getModel());
         return $this;
     }
     /**
@@ -202,44 +195,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function getValidMetaValues(AbstractModel $model)
     {
-        $meta = $model->getMeta();
-        $validMeta = array();
-        foreach ($meta as $metaName=>$metaValue) {
-            $finalMeta = $this->getMetaValueAnnotation($metaName, $metaValue);
-            if (is_scalar($finalMeta)) {
-                $validMeta[] = $finalMeta;
-            }
-        }
-        return $validMeta;
-    }
-    /**
-     * @param string $metaName
-     * @param mixed $metaValue
-     * @return string|null
-     */
-    protected function getMetaValueAnnotation($metaName, $metaValue)
-    {
-        $meta = null;
-        if (is_array($metaValue)) {
-            $metaValue = implode(' | ', $metaValue);
-        }
-        $metaValue = Utils::cleanComment($metaValue, ', ', stripos($metaName, 'SOAPHeader') === false);
-        if (is_scalar($metaValue)) {
-            $meta = sprintf("\t- %s: %s", $metaName, $this->transformMetaValue($metaName, $metaValue));
-        }
-        return $meta;
-    }
-    /**
-     * @param string $metaName
-     * @param string $metaValue
-     * @return string
-     */
-    protected function transformMetaValue($metaName, $metaValue)
-    {
-        if ($metaName === AbstractModel::META_FROM_SCHEMA && stripos($metaValue, 'http') !== false) {
-            $metaValue = sprintf('{@link %s}', $metaValue);
-        }
-        return $metaValue;
+       return FileUtils::getValidMetaValues($model);
     }
     /**
      * @return AbstractModelFile
