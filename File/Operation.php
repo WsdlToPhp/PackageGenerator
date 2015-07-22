@@ -83,13 +83,24 @@ class Operation extends AbstractOperation
     {
         $method
             ->addChild('try {')
-                ->addChild($method->getIndentedString(sprintf('$this->setResult(self::getSoapClient()->%s(%s));', $method->getName(), $this->getOperationCallParameters($method)), 1))
+                ->addChild($method->getIndentedString(sprintf('$this->setResult(self::getSoapClient()->%s%s));', $this->getSoapCallName(), $this->getOperationCallParameters($method)), 1))
                 ->addChild($method->getIndentedString('return $this->getResult();', 1))
             ->addChild('} catch (\SoapFault $soapFault) {')
                 ->addChild($method->getIndentedString('$this->saveLastError(__METHOD__, $soapFault);', 1))
                 ->addChild($method->getIndentedString('return false;', 1))
             ->addChild('}');
         return $this;
+    }
+    /**
+     * @return string
+     */
+    protected function getSoapCallName()
+    {
+        $soapCall = sprintf('%s(', $this->getMethod()->getName());
+        if ($this->getMethod()->nameIsClean() === false) {
+            $soapCall = sprintf('%s(\'%s\'%s', self::SOAP_CALL_NAME, $this->getMethod()->getName(), $this->getOperationCallParametersStarting());
+        }
+        return $soapCall;
     }
     /**
      * @param PhpMethod $method
@@ -99,18 +110,44 @@ class Operation extends AbstractOperation
     {
         $parameters = array();
         foreach ($method->getParameters() as $parameter) {
-            $parameters[] = $this->getOperationCallParameterName($parameter);
+            $parameters[] = $this->getOperationCallParameterName($parameter, $method);
         }
-        return implode(', ', $parameters);
+        return sprintf('%s%s', implode($this->getOperationCallParametersSeparator(), $parameters), $this->getOperationCallParametersEnding());
+    }
+    /**
+     * @return string
+     */
+    protected function getOperationCallParametersSeparator()
+    {
+        return $this->getMethod()->nameIsClean() === false ? '' : ', ';
+    }
+    /**
+     * @return string
+     */
+    protected function getOperationCallParametersStarting()
+    {
+        return ($this->isParameterTypeAnArray() && $this->getMethod()->nameIsClean() === false) ? ', array(' : ($this->isParameterTypeEmpty() ? '' : ', ');
+    }
+    /**
+     * @return string
+     */
+    protected function getOperationCallParametersEnding()
+    {
+        return ($this->isParameterTypeAnArray() && $this->getMethod()->nameIsClean() === false) ? sprintf('%s)', PhpMethod::BREAK_LINE_CHAR) : '';
     }
     /**
      * @param PhpFunctionParameter $parameter
+     * @param PhpMethod $method
      * @return string
      */
-    protected function getOperationCallParameterName(PhpFunctionParameter $parameter)
+    protected function getOperationCallParameterName(PhpFunctionParameter $parameter, PhpMethod $method)
     {
         $cloneParameter = clone $parameter;
         $cloneParameter->setType(null);
-        return $cloneParameter->getPhpDeclaration();
+        if ($this->getMethod()->nameIsClean() === false) {
+            return $method->getIndentedString(sprintf('%s%s,', PhpMethod::BREAK_LINE_CHAR, $cloneParameter->getPhpDeclaration()), 1);
+        } else {
+            return $cloneParameter->getPhpDeclaration();
+        }
     }
 }
