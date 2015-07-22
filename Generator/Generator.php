@@ -36,6 +36,7 @@ use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
 use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
 use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
+use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class Generator extends \SoapClient
@@ -352,126 +353,23 @@ class Generator extends \SoapClient
         return $this;
     }
     /**
-     * Populate the php file with the object and the declarations
-     * @uses AbstractModel::cleanComment()
-     * @param string $fileName the file name
-     * @param array $declarations the lines of code and comments
-     * @return void
-     */
-    private static function populateFile($fileName, array $declarations)
-    {
-        $content = array('<?php');
-        $indentationString = "    ";
-        $indentationLevel = 0;
-        foreach ($declarations as $declaration) {
-            if (is_array($declaration) && array_key_exists('comment', $declaration) && is_array($declaration['comment'])) {
-                array_push($content, str_repeat($indentationString, $indentationLevel) . '/**');
-                foreach ($declaration['comment'] as $subComment) {
-                    array_push($content, str_repeat($indentationString, $indentationLevel) . ' * ' . AbstractModel::cleanComment($subComment));
-                }
-                array_push($content, str_repeat($indentationString, $indentationLevel) . ' */');
-            } elseif (is_string($declaration)) {
-                switch ($declaration) {
-                    case '{':
-                        array_push($content, str_repeat($indentationString, $indentationLevel) . $declaration);
-                        $indentationLevel++;
-                        break;
-                    case '}':
-                        $indentationLevel--;
-                        array_push($content, str_repeat($indentationString, $indentationLevel) . $declaration);
-                        break;
-                    default:
-                        array_push($content, str_repeat($indentationString, $indentationLevel) . $declaration);
-                        break;
-                }
-            }
-        }
-        array_push($content, str_repeat($indentationString, $indentationLevel));
-        file_put_contents($fileName, implode("\n", $content));
-    }
-    /**
      * Generates classMap class
-     * @uses Generator::getStructs()
-     * @uses Generator::getPackageName()
-     * @uses Generator::getOptionAddComments()
-     * @uses Generator::populateFile()
-     * @uses AbstractModel::getName()
-     * @uses AbstractModel::getCleanName()
      * @param string $rootDirectory the directory
      * @return Generator
      */
     private function generateClassMap($rootDirectory)
     {
-        $classMapDeclaration = array(
-            '',
-            sprintf($this->getOptionNamespacePrefix() !== '' ? 'namespace %1$s\%2$s;' : 'namespace %2$s;', $this->getOptionNamespacePrefix(), self::getPackageName()),
-            '',
-        );
-        /**
-         * class map comments
-         */
-        $comments = array();
-        array_push($comments, 'File for the class which returns the class map definition');
-        array_push($comments, '@package ' . self::getPackageName());
-        if (count($this->getOptionAddComments())) {
-            foreach ($this->getOptionAddComments() as $tagName => $tagValue) {
-                array_push($comments, "@$tagName $tagValue");
-            }
-        }
-        array_push($classMapDeclaration, array('comment' => $comments));
-        $comments = array();
-        array_push($comments, 'Class which returns the class map definition by the static method ' . self::getPackageName() . 'ClassMap::classMap()');
-        array_push($comments, '@package ' . self::getPackageName());
-        if (count($this->getOptionAddComments())) {
-            foreach ($this->getOptionAddComments() as $tagName => $tagValue) {
-                array_push($comments, "@$tagName $tagValue");
-            }
-        }
-        array_push($classMapDeclaration, array('comment' => $comments));
-        /**
-         * class map declaration
-         */
-        array_push($classMapDeclaration, 'class ' . self::getPackageName() . 'ClassMap');
-        array_push($classMapDeclaration, '{');
-        /**
-         * classMap() method comments
-         */
-        $comments = array();
-        array_push($comments, 'This method returns the array containing the mapping between WSDL structs and generated classes');
-        array_push($comments, 'This array is sent to the \SoapClient when calling the WS');
-        array_push($comments, '@return array');
-        array_push($classMapDeclaration, array('comment' => $comments));
-        /**
-         * classMap() method body
-         */
-        array_push($classMapDeclaration, 'final public static function classMap()');
-        array_push($classMapDeclaration, '{');
-        $structs = $this->getStructs();
-        $classesToMap = array();
-        foreach ($structs as $struct) {
-            if ($struct->getIsStruct()) {
-                $classesToMap[$struct->getName()] = $struct->getPackagedName();
-            }
-        }
-        ksort($classesToMap);
-        array_push($classMapDeclaration, 'return ' . var_export($classesToMap, true) . ';');
-        array_push($classMapDeclaration, '}');
-        array_push($classMapDeclaration, '}');
-        /**
-         * Generates file
-         */
-        self::populateFile($filename = $rootDirectory . self::getPackageName() . 'ClassMap.php', $classMapDeclaration);
-        unset($comments, $classMapDeclaration, $structs, $classesToMap);
+        $clasMap = new ClassMapFile($this, '', $rootDirectory);
+        $clasMap->write();
         return $this;
     }
     /**
      * Generates tutorial file
      * @uses Generator::getOptionGenerateTutorialFile()
      * @param string $rootDirectory the direcoty
-     * @param array $methodsClassesFiles the generated class files
      * @return Generator
      */
-    private function generateTutorialFile($rootDirectory, array $methodsClassesFiles = array())
+    private function generateTutorialFile($rootDirectory)
     {
         if ($this->getOptionGenerateTutorialFile() === true) {
             $tutorialFile = new TutorialFile($this, 'howtos', $rootDirectory);
