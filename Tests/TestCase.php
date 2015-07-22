@@ -109,4 +109,11 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     {
         return __DIR__ . '/resources/bullhornstaffing.local.wsdl';
     }
+    /**
+     * @return string
+     */
+    public static function wsdlOmniturePath()
+    {
+        return __DIR__ . '/resources/OmnitureAdminServices.wsdl';
+    }
 }
