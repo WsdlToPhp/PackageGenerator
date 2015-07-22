@@ -64,6 +64,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlQueuePath());
     }
     /**
+     * @return Generator
+     */
+    public static function omnitureGeneratorInstance()
+    {
+        return self::getInstance(self::wsdlOmniturePath());
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */
