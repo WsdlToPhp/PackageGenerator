@@ -11,15 +11,15 @@ class Utils
      * Gets category part
      * @param GeneratorOptions $options
      * @param AbstractModel $model the model for which we generate the folder
-     * @param string $_optionName category type
+     * @param string $optionName category type
      * @return string
      */
-    public static function getPart(GeneratorOptions $options, AbstractModel $model, $_optionName)
+    public static function getPart(GeneratorOptions $options, AbstractModel $model, $optionName)
     {
         $elementType = '';
         $optionValue = null;
-        $string = $model->getCleanName();
-        switch ($_optionName) {
+        $string = str_replace('_', '', $model->getCleanName());
+        switch ($optionName) {
             case GeneratorOptions::CATEGORY:
                 $optionValue = $options->getCategory();
                 break;
@@ -30,7 +30,7 @@ class Utils
         if (!empty($string)) {
             switch ($optionValue) {
                 case GeneratorOptions::VALUE_END:
-                    $parts      = preg_split('/[A-Z]/', ucfirst($string));
+                    $parts = preg_split('/[A-Z]/', ucfirst($string));
                     $partsCount = count($parts);
                     if ($partsCount == 0) {
                         $elementType = $string;
@@ -47,7 +47,7 @@ class Utils
                     }
                     break;
                 case GeneratorOptions::VALUE_START:
-                    $parts      = preg_split('/[A-Z]/', ucfirst($string));
+                    $parts = preg_split('/[A-Z]/', ucfirst($string));
                     $partsCount = count($parts);
                     if ($partsCount == 0) {
                         $elementType = $string;
@@ -197,5 +197,19 @@ class Utils
             return '';
         }
         return trim(str_replace('*/', '*[:slash:]', is_scalar($comment) ? $comment : implode($glueSeparator, $uniqueValues ? array_unique($comment) : $comment)));
+    }
+    /**
+     * Clean a string to make it valid as PHP variable
+     * @param string $string the string to clean
+     * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
+     * @return string
+     */
+    public static function cleanString($string, $keepMultipleUnderscores = true)
+    {
+        $cleanedString = preg_replace('/[^a-zA-Z0-9_]/', '_', $string);
+        if (!$keepMultipleUnderscores) {
+            $cleanedString = preg_replace('/[_]+/', '_', $cleanedString);
+        }
+        return $cleanedString;
     }
 }
