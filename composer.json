@@ -26,7 +26,7 @@
         "ext-soap": "*",
         "symfony/console": "~2.6",
         "symfony/yaml": "~2.6",
-        "wsdltophp/phpgenerator": "0.0.13",
+        "wsdltophp/phpgenerator": "0.0.14",
         "wsdltophp/packagebase": "dev-master"
     },
     "require-dev": {
