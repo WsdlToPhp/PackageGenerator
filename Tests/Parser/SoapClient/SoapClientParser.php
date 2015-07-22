@@ -10,6 +10,13 @@ abstract class SoapClientParser extends TestCase
     /**
      * @return Generator
      */
+    public static function getBullhornstaffingInstance()
+    {
+        return self::getInstance(self::wsdlBullhornstaffingPath());
+    }
+    /**
+     * @return Generator
+     */
     public static function getReformaInstance()
     {
         return self::getInstance(self::wsdlReformaPath());
