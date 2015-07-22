@@ -19,6 +19,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 $options = array(
     \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
+    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Api\ApiClassMap::classMap(),
 );
 /**
  * Samples for Search ServiceType
