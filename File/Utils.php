@@ -16,7 +16,7 @@ class Utils
      * @param array $ignoreMeta
      * @return AbstractModelFile
      */
-    public static function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model = null, array $ignoreMeta = array())
+    public static function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model, array $ignoreMeta = array())
     {
         $validMeta = self::getValidMetaValues($model, $ignoreMeta);
         if (!empty($validMeta)) {
