@@ -42,4 +42,16 @@ class TutorialTest extends AbstractFile
 
         $this->assertSameFileContent('ValidActonTutorial', $tutorial);
     }
+    /**
+     *
+     */
+    public function testOmniture()
+    {
+        $instance = self::omnitureGeneratorInstance();
+
+        $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
+        $tutorial->write();
+
+        $this->assertSameFileContent('ValidOmnitureTutorial', $tutorial);
+    }
 }

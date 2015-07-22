@@ -205,7 +205,7 @@ class Tutorial extends AbstractFile
     protected function addAnnotationBlockFromMethod(MethodModel $method)
     {
         return $this->addAnnotationBlock(array(
-            sprintf('Sample call for %s operation/method', $method->getName()),
+            sprintf('Sample call for %s operation/method', $method->getMethodName()),
         ));
     }
     /**
@@ -218,7 +218,7 @@ class Tutorial extends AbstractFile
         $this
             ->getFile()
             ->getMainElement()
-            ->addChild(sprintf('if ($%s->%s(%s) !== false) {', $serviceVariableName, $method->getName(), $this->getMethodParameters($method)))
+            ->addChild(sprintf('if ($%s->%s(%s) !== false) {', $serviceVariableName, $method->getMethodName(), $this->getMethodParameters($method)))
                 ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('print_r($%s->getResult());', $serviceVariableName), 1))
             ->addChild('} else {')
                 ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('print_r($%s->getLastError());', $serviceVariableName), 1))
