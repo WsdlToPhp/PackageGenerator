@@ -27,9 +27,9 @@ $options = array(
 $login = new \Api\ServiceType\ApiLogin($options);
 $login->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
 /**
- * Sample call for login_1 operation/method
+ * Sample call for login operation/method
  */
-if ($login->login_1(new \Api\StructType\ApiLogin()) !== false) {
+if ($login->login(new \Api\StructType\ApiLogin()) !== false) {
     print_r($login->getResult());
 } else {
     print_r($login->getLastError());
