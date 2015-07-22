@@ -448,6 +448,14 @@ abstract class AbstractModel
         return $uniqueName;
     }
     /**
+     * Gives the avalibity for test purpose and multiple package generation to purge unique names
+     * @todo see if it can be removed by reviewing how unique names are generated
+     */
+    public static function purgeUniqueNames()
+    {
+        self::$uniqueNames = array();
+    }
+    /**
      * Clean comment
      * @param string $comment the comment to clean
      * @param string $glueSeparator ths string to use when gathering values

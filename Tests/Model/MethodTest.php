@@ -18,10 +18,10 @@ class MethodTest extends TestCase
         $service->addMethod('getIdString', 'string', 'id', false);
         $service->addMethod('getIdInt', 'int', 'id', false);
 
-        $this->assertEquals('getId', $service->getMethod('getId')->getMethodName());
-        $this->assertEquals('getid_1', $service->getMethod('getid')->getMethodName());
-        $this->assertEquals('getIdStringString', $service->getMethod('getIdString')->getMethodName());
-        $this->assertEquals('getIdIntInt', $service->getMethod('getIdInt')->getMethodName());
+        $this->assertSame('getId', $service->getMethod('getId')->getMethodName());
+        $this->assertSame('getid_1', $service->getMethod('getid')->getMethodName());
+        $this->assertSame('getIdStringString', $service->getMethod('getIdString')->getMethodName());
+        $this->assertSame('getIdIntInt', $service->getMethod('getIdInt')->getMethodName());
     }
     /**
      *
@@ -36,11 +36,32 @@ class MethodTest extends TestCase
         $service->addMethod('list', 'int', 'id', true);
 
         $method = $service->getMethod('get.id');
-        $this->assertEquals('get_id', $method->getMethodName());
-        $this->assertEquals('get_id', $method->getMethodName());
+        $this->assertSame('get_id', $method->getMethodName());
+        $this->assertSame('get_id', $method->getMethodName());
 
         $method = $service->getMethod('list');
-        $this->assertEquals('_list', $method->getMethodName());
-        $this->assertEquals('_list', $method->getMethodName());
+        $this->assertSame('_list', $method->getMethodName());
+        $this->assertSame('_list', $method->getMethodName());
+    }
+    /**
+     *
+     */
+    public function testMultipleServicesSameMethods()
+    {
+        $service1 = new Service('Login');
+        $service1->addMethod('Login', 'int', 'id');
+
+        $service2 = new Service('Login');
+        $service2->addMethod('login', 'int', 'id');
+
+        $service3 = new Service('login');
+        $service3->addMethod('Login', 'int', 'id');
+
+        $this->assertSame('Login', $service1->getMethod('Login')->getMethodName());
+        Service::purgeUniqueNames();
+        $this->assertSame('login', $service2->getMethod('login')->getMethodName());
+        Service::purgeUniqueNames();
+        $this->assertSame('Login', $service3->getMethod('Login')->getMethodName());
+
     }
 }
