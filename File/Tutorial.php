@@ -12,6 +12,9 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 class Tutorial extends AbstractFile
 {
+    /**
+     * @var string
+     */
     const FILE_NAME = 'tutorial';
     /**
      * @param Generator $generator
@@ -120,6 +123,7 @@ class Tutorial extends AbstractFile
             ->getMainElement()
             ->addChild('$options = array(')
                 ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl(0)->getName()), 1))
+                ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => %s::classMap(),', ClassMap::getClassMapName(true)), 1))
             ->addChild(');');
         return $this;
     }
@@ -141,7 +145,6 @@ class Tutorial extends AbstractFile
     protected function addContentFromService($serviceVariableName, ServiceModel $service)
     {
         foreach ($service->getMethods() as $method) {
-
             $this
                 ->addAnnotationBlockFromMethod($method)
                 ->addContentFromMethod($serviceVariableName, $method);
