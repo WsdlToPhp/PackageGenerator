@@ -23,6 +23,11 @@ class Method extends AbstractModel
      */
     private $isUnique = true;
     /**
+     * Generated method name stored as soon as it has been defined once
+     * @var string
+     */
+    private $methodName = null;
+    /**
      * Main constructor
      * @see AbstractModel::__construct()
      * @uses Method::setParameterType()
@@ -58,16 +63,19 @@ class Method extends AbstractModel
      */
     public function getMethodName()
     {
-        $methodName = $this->getCleanName();
-        if (!$this->getIsUnique()) {
-            if (is_string($this->getParameterType())) {
-                $methodName .= ucfirst($this->getParameterType());
-            } else {
-                $methodName .= '_' . md5(var_export($this->getParameterType(), true));
+        if (empty($this->methodName)) {
+            $methodName = $this->getCleanName();
+            if (!$this->getIsUnique()) {
+                if (is_string($this->getParameterType())) {
+                    $methodName .= ucfirst($this->getParameterType());
+                } else {
+                    $methodName .= '_' . md5(var_export($this->getParameterType(), true));
+                }
             }
+            $methodName = self::replaceReservedPhpKeyword($methodName, $this->getOwner()->getPackagedName());
+            $this->methodName = self::uniqueName($methodName, $this->getOwner()->getPackagedName());
         }
-        $methodName = self::replaceReservedPhpKeyword($methodName, $this->getOwner()->getPackagedName());
-        return self::uniqueName($methodName, $this->getOwner()->getPackagedName());
+        return $this->methodName;
     }
     /**
      * Returns the parameter type
