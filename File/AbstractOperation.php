@@ -103,7 +103,11 @@ abstract class AbstractOperation
      */
     protected function getMethodParameter($name, $type = null)
     {
-        return new PhpFunctionParameter($name, PhpFunctionParameter::NO_VALUE, $type);
+        try {
+            return new PhpFunctionParameter($name, PhpFunctionParameter::NO_VALUE, $type);
+        } catch (\InvalidArgumentException $exception) {
+            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for method "%s" with type "%s"', $this->getMethod()->getName(), var_export($type, true)), __LINE__, $exception);
+        }
     }
     /**
      * @param Generator $generator

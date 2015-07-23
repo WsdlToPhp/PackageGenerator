@@ -108,7 +108,7 @@ abstract class AbstractFile implements FileInterface
     {
         $dest = $this->cleanDestination($destination);
         if (empty($dest)) {
-            throw new \InvalidArgumentException(sprintf('Destination "%s" is not valid', $destination));
+            throw new \InvalidArgumentException(sprintf('Destination "%s" is not valid', $destination), __LINE__);
         }
         $this->destination = $dest;
         return $this;

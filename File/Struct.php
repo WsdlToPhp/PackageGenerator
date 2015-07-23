@@ -134,7 +134,12 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
     {
-        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getCleanName()) : $attribute->getCleanName(), isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue(), $this->getStructMethodParameterType($attribute));
+        try {
+            return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getCleanName()) : $attribute->getCleanName(), isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue(), $this->getStructMethodParameterType($attribute));
+        } catch (\InvalidArgumentException $exception) {
+            print_r($attribute->getType());
+            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for struct "%s" with type "%s" for attribute "%s"', $this->getModel()->getName(), var_export($this->getStructMethodParameterType($attribute), true), $attribute->getName()), __LINE__, $exception);
+        }
     }
     /**
      * @param StructAttributeModel $attribute
@@ -545,7 +550,7 @@ class Struct extends AbstractModelFile
     public function setModel(AbstractModel $model)
     {
         if (!$model instanceof StructModel) {
-            throw new \InvalidArgumentException('Model must be an instance of a Struct');
+            throw new \InvalidArgumentException('Model must be an instance of a Struct',__LINE__);
         }
         return parent::setModel($model);
     }

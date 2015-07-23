@@ -118,19 +118,23 @@ class Service extends AbstractModelFile
      */
     protected function getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace)
     {
-        $method = new PhpMethod($methodName, array(
-            new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE, $this->getTypeFromName($soapHeaderName, true)),
-            new PhpFunctionParameter(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),
-            new PhpFunctionParameter(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
-            new PhpFunctionParameter(self::PARAM_SET_HEADER_ACTOR, null),
-        ));
-        $method->addChild(sprintf('return $this->%s($%s, \'%s\', $%s, $%s, $%s);',
-            self::METHOD_SET_HEADER_PREFIX,
-            self::PARAM_SET_HEADER_NAMESPACE,
-            $soapHeaderName,
-            lcfirst($soapHeaderName),
-            self::PARAM_SET_HEADER_MUSTUNDERSTAND,
-            self::PARAM_SET_HEADER_ACTOR));
+        try {
+            $method = new PhpMethod($methodName, array(
+                new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE, $this->getTypeFromName($soapHeaderName, true)),
+                new PhpFunctionParameter(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),
+                new PhpFunctionParameter(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
+                new PhpFunctionParameter(self::PARAM_SET_HEADER_ACTOR, null),
+            ));
+            $method->addChild(sprintf('return $this->%s($%s, \'%s\', $%s, $%s, $%s);',
+                self::METHOD_SET_HEADER_PREFIX,
+                self::PARAM_SET_HEADER_NAMESPACE,
+                $soapHeaderName,
+                lcfirst($soapHeaderName),
+                self::PARAM_SET_HEADER_MUSTUNDERSTAND,
+                self::PARAM_SET_HEADER_ACTOR));
+        } catch (\InvalidArgumentException $exception) {
+            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for service "%s" with type "%s"', $this->getModel()->getName(), var_export($this->getTypeFromName($soapHeaderName, true), true)), __LINE__, $exception);
+        }
         return $method;
     }
     /**
@@ -314,7 +318,7 @@ class Service extends AbstractModelFile
     public function setModel(AbstractModel $model)
     {
         if (!$model instanceof ServiceModel) {
-            throw new \InvalidArgumentException('Model must be an instance of a Service');
+            throw new \InvalidArgumentException('Model must be an instance of a Service', __LINE__);
         }
         return parent::setModel($model);
     }
