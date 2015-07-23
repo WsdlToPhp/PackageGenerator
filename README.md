@@ -50,6 +50,7 @@ To generate a package, nothing as simple as this:
         --wsdl-gathermethods="start" \
         --wsdl-genericconstants=false \
         --wsdl-gentutorial=true \
+        --wsdl-standalone=true \
         --wsdl-addcomments="date:2015-04-22" \
         --wsdl-addcomments="author:Me" \
         --wsdl-addcomments="release:1.1.0" \
@@ -58,6 +59,29 @@ To generate a package, nothing as simple as this:
         --force
     $ cd /var/www/Api/
     $ ls -la => enjoy!
+```
+#### Debug options before actually generating the package
+Remove ```--force``` option to the previous sample command line to get this result:
+```
+    Generation not launched, use --force to force generation
+      Wsdl used:
+        url: Tests/resources/bingsearch.wsdl
+        login:
+        password:
+        Package name: Api
+        Package dest: /var/www/Api/
+      Wsdl options used:
+        proxy_host: ****************************
+        proxy_port: ****
+        proxy_login: ******
+        proxy_password: ******
+      Generator options used:
+        wsdl-category: cat
+        wsdl-gathermethods: start
+        wsdl-gentutorial: 1
+        wsdl-genericconstants:
+        wsdl-addcomments: date:2015-04-22, author:Me, release:1.1.0, team:Dream
+        wsdl-standalone: 1
 ```
 ### Programmatic usage
 ```
@@ -103,8 +127,9 @@ Then:
     $generator = Generator::instance("http://www.mydomain.com/?wsdl", $login, $password, $options);
     $generator->setOptionCategory(GeneratorOptions::VALUE_CAT);
     $generator->setGatherMethods(GeneratorOptions::VALUE_START);
-    $generator->setOptionGenericConstantsNames(VALUE_FALSE);
-    $generator->setOptionGenerateTutorialFile(VALUE_TRUE);
+    $generator->setOptionGenericConstantsNames(GeneratorOptions::VALUE_FALSE);
+    $generator->setOptionGenerateTutorialFile(GeneratorOptions::VALUE_TRUE);
+    $generator->setOptionStandalone(GeneratorOptions::VALUE_TRUE);
     $generator->setOptionAddComments(array(
         'date'    => date('Y-m-d'),
         'team'    => 'Dream',
