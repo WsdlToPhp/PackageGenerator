@@ -47,7 +47,7 @@ class ApiItem extends AbstractStructBase
      * @param string $displayName
      * @param \DOMDocument $any
      */
-    public function __construct($itemType = null, $id = null, $displayName = null, $any = null)
+    public function __construct($itemType = null, $id = null, $displayName = null, \DOMDocument $any = null)
     {
         $this
             ->setItemType($itemType)
@@ -140,7 +140,7 @@ class ApiItem extends AbstractStructBase
      * @param \DOMDocument $any
      * @return \Api\StructType\ApiItem
      */
-    public function setAny($any = null)
+    public function setAny(\DOMDocument $any = null)
     {
         $this->any = $any;
         return $this;

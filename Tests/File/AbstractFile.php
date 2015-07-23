@@ -71,6 +71,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlOmniturePath());
     }
     /**
+     * @return Generator
+     */
+    public static function odigeoGeneratorInstance()
+    {
+        return self::getInstance(self::wsdlOdigeoPath());
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */

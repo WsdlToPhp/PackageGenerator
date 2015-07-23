@@ -117,4 +117,20 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Item struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteOdigeoStructFareItinerary()
+    {
+        $generator = self::odigeoGeneratorInstance();
+        if (($model = $generator->getStruct('fareItinerary')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiFareItinerary', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find fareItinerary struct for file generation');
+        }
+    }
 }
