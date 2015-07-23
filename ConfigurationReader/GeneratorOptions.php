@@ -18,6 +18,7 @@ class GeneratorOptions extends AbstractYamlReader
      * @var string
      */
     const CATEGORY = 'category';
+    const STANDALONE = 'standalone';
     const ADD_COMMENTS = 'add_comments';
     const GATHER_METHODS = 'gather_methods';
     const NAMESPACE_PREFIX = 'namespace_prefix';
@@ -229,5 +230,23 @@ class GeneratorOptions extends AbstractYamlReader
     public function setGenericConstantsName($genericConstantsName)
     {
         return $this->setOptionValue(self::GENERIC_CONSTANTS_NAME, $genericConstantsName);
+    }
+    /**
+     * Get standalone option value
+     * @return string|bool
+     */
+    public function getStandalone()
+    {
+        return $this->getOptionValue(self::STANDALONE);
+    }
+    /**
+     * Set current standalone option value
+     * @throws \InvalidArgumentException
+     * @param bool $standalone
+     * @return GeneratorOptions
+     */
+    public function setStandalone($standalone)
+    {
+        return $this->setOptionValue(self::STANDALONE, $standalone);
     }
 }
