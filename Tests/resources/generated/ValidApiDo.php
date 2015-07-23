@@ -15,13 +15,13 @@ class ApiDo extends AbstractSoapClientBase
     /**
      * Sets the RequesterCredentials SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \Api\StructType\CustomSecurityHeaderType $requesterCredentials
+     * @param \Api\StructType\ApiCustomSecurityHeaderType $requesterCredentials
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderRequesterCredentials(\Api\StructType\CustomSecurityHeaderType $requesterCredentials, $nameSpace = 'urn:ebay:api:PayPalAPI', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderRequesterCredentials(\Api\StructType\ApiCustomSecurityHeaderType $requesterCredentials, $nameSpace = 'urn:ebay:api:PayPalAPI', $mustUnderstand = false, $actor = null)
     {
         return $this->setSoapHeader($nameSpace, 'RequesterCredentials', $requesterCredentials, $mustUnderstand, $actor);
     }
@@ -30,7 +30,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -55,7 +55,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -80,7 +80,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -105,7 +105,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -129,7 +129,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -153,7 +153,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -177,7 +177,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -201,7 +201,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -225,7 +225,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -249,7 +249,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -273,7 +273,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -298,7 +298,7 @@ class ApiDo extends AbstractSoapClientBase
      * Meta informations extracted from the WSDL
      * - SOAPHeaderNames : RequesterCredentials
      * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \Api\StructType\CustomSecurityHeaderType
+     * - SOAPHeaderTypes : \Api\StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders : required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
