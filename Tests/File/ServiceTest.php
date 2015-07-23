@@ -113,4 +113,20 @@ class ServiceTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Saint service for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWritePayPalServiceDo()
+    {
+        $generator = self::payPalGeneratorInstance();
+        if (($model = $generator->getService('Do')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName(), $this->getTestDirectory());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiDo', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Do service for file generation');
+        }
+    }
 }
