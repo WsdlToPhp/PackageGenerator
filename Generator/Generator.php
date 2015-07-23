@@ -341,30 +341,32 @@ class Generator extends \SoapClient
      */
     private function generateComposerFile($rootDirectory)
     {
-        $composer = new Application();
-        $composer->setAutoExit(false);
+        if ($this->getOptionStandalone() === true) {
+            $composer = new Application();
+            $composer->setAutoExit(false);
 
-        $composer->run(new ArrayInput(array(
-            'command' => 'init',
-            '--verbose' => true,
-            '--no-interaction' => true,
-            '--name' => sprintf('wsdltophp/generated-%s', strtolower(self::getPackageName())),
-            '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getWsdl(0)->getName()),
-            '--require' => array(
-                'php:>=5.3.3',
-                'ext-soap:*',
-                'wsdltophp/packagebase:dev-master',
-            ),
-            '--working-dir' => $rootDirectory,
-        )));
+            $composer->run(new ArrayInput(array(
+                'command' => 'init',
+                '--verbose' => true,
+                '--no-interaction' => true,
+                '--name' => sprintf('wsdltophp/generated-%s', strtolower(self::getPackageName())),
+                '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getWsdl(0)->getName()),
+                '--require' => array(
+                    'php:>=5.3.3',
+                    'ext-soap:*',
+                    'wsdltophp/packagebase:dev-master',
+                ),
+                '--working-dir' => $rootDirectory,
+            )));
 
-        $composer->run(new ArrayInput(array(
-            'command' => 'update',
-            '--verbose' => true,
-            '--optimize-autoloader' => true,
-            '--no-dev' => true,
-            '--working-dir' => $rootDirectory,
-        )));
+            $composer->run(new ArrayInput(array(
+                'command' => 'update',
+                '--verbose' => true,
+                '--optimize-autoloader' => true,
+                '--no-dev' => true,
+                '--working-dir' => $rootDirectory,
+            )));
+        }
         return $this;
     }
     /**
@@ -499,6 +501,23 @@ class Generator extends \SoapClient
     public function setOptionAddComments($addComments)
     {
         return $this->options->setAddComments($addComments);
+    }
+    /**
+     * Gets the optionStandalone value
+     * @return bool
+     */
+    public function getOptionStandalone()
+    {
+        return $this->options->getStandalone();
+    }
+    /**
+     * Sets the optionStandalone value
+     * @param bool
+     * @return GeneratorOptions
+     */
+    public function setOptionStandalone($standalone)
+    {
+        return $this->options->setStandalone($standalone);
     }
     /**
      * Gets the package name

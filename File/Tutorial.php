@@ -65,6 +65,12 @@ class Tutorial extends AbstractFile
             ->addChild($block, '\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD => \'you_secret_password\',')
             ->addChild($block, ');')
             ->addChild($block, 'etc....');
+        if ($this->getGenerator()->getOptionStandalone() === false) {
+            $this
+                ->addChild($block, '################################################################################')
+                ->addChild($block, 'Don\'t forget to add wsdltophp/packagebase:dev-master to your main composer.json.')
+                ->addChild($block, '################################################################################');
+        }
         return $block;
     }
     /**
@@ -82,10 +88,12 @@ class Tutorial extends AbstractFile
      */
     public function addAutoload()
     {
-        $this
-            ->getFile()
-            ->getMainElement()
-            ->addChild(sprintf('require_once __DIR__ . \'/vendor/autoload.php\';'));
+        if ($this->getGenerator()->getOptionStandalone() === true) {
+            $this
+                ->getFile()
+                ->getMainElement()
+                ->addChild(sprintf('require_once __DIR__ . \'/vendor/autoload.php\';'));
+        }
         return $this;
     }
     /**

@@ -19,3 +19,6 @@ add_comments:
 namespace_prefix:
     default: ''
     values: ''
+standalone:
+    default: true
+    values: [ true, false ]
