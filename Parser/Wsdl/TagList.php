@@ -43,6 +43,7 @@ class TagList extends AbstractTagParser
                 $model = $this->getModel($parentParent);
             }
             $itemType = $tag->getAttributeItemType();
+            $itemType = empty($itemType) ? 'string' : $itemType;
             $struct = $this->getStructByName($itemType);
             if ($model instanceof AbstractModel) {
                 $type = sprintf('%s[]', $struct instanceof Struct ? $struct->getName() : $itemType);

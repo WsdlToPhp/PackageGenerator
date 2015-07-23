@@ -15,6 +15,13 @@ class TagListTest extends WsdlParser
         return new TagList(self::generatorInstance(self::wsdlOdigeoPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
+     */
+    public static function myBaordInstance()
+    {
+        return new TagList(self::generatorInstance(self::wsdlMyBoardPackPath()));
+    }
+    /**
      *
      */
     public function testParseOdigeo()
@@ -49,6 +56,29 @@ class TagListTest extends WsdlParser
                 }
             }
         }
-        $this->assertSame(5, $count);
+        $this->assertSame(4, $count);
+    }
+    /**
+     *
+     */
+    public function testParseMyBoard()
+    {
+        $tagListParser = self::myBaordInstance();
+
+        $tagListParser->parse();
+
+        $count = 0;
+        $structs = $tagListParser->getGenerator()->getStructs();
+        if ($structs->count() > 0) {
+            foreach ($structs as $struct) {
+                switch ($struct->getName()) {
+                    case 'Rights':
+                        $this->assertSame('string[]', $struct->getInheritance());
+                        $count++;
+                        break;
+                }
+            }
+        }
+        $this->assertSame(1, $count);
     }
 }
