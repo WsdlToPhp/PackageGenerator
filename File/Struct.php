@@ -48,7 +48,7 @@ class Struct extends AbstractModelFile
     {
         if ($this->getModel()->getAttributes()->count() > 0) {
             foreach ($this->getModelAttributes() as $attribute) {
-                $properties->add(new PhpProperty($attribute->getName(), PhpProperty::NO_VALUE));
+                $properties->add(new PhpProperty($attribute->getCleanName(), PhpProperty::NO_VALUE));
             }
         }
     }
@@ -134,7 +134,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
     {
-        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getName()) : $attribute->getName(), isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue(), $this->getStructMethodParameterType($attribute));
+        return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getCleanName()) : $attribute->getCleanName(), isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue(), $this->getStructMethodParameterType($attribute));
     }
     /**
      * @param StructAttributeModel $attribute
