@@ -381,13 +381,15 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false, $namespaced = false)
     {
         $attribute = $this->getStructAttribute($attribute);
-        $type = $attribute->getType();
+        $inheritance = $attribute->getInheritance();
+        $type = empty($inheritance) ? $attribute->getType() : $inheritance;
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
-            if ($model->getIsStruct() === false || ($model->getPackagedName() === $attribute->getOwner()->getPackagedName() && $model->getInheritance() !== '')) {
-                $type = $model->getInheritance();
+            $modelInheritance = $model->getInheritance();
+            if ($model->getIsStruct() === false || ($model->getPackagedName() === $attribute->getOwner()->getPackagedName() && !empty($modelInheritance))) {
+                $type = !empty($modelInheritance) ? $modelInheritance : $type;
             } elseif ($model->getIsRestriction() === true) {
-                $type = $model->getInheritance() !== '' ? $model->getInheritance() : self::TYPE_STRING;
+                $type = !empty($modelInheritance) ? $modelInheritance : self::TYPE_STRING;
             } else {
                 $type = $model->getPackagedName($namespaced);
             }
@@ -396,5 +398,34 @@ abstract class AbstractModelFile extends AbstractFile
             $type = sprintf('%s|null', $type);
         }
         return $type;
+    }
+    /**
+     * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
+     * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp
+     * @param mixed $type
+     * @param mixed $fallback
+     * @return mixed
+     */
+    public static function getValidType($type, $fallback = null)
+    {
+        return in_array(str_replace('[]', '', $type), array(
+            'int',
+            'byte',
+            'long',
+            'float',
+            'short',
+            'string',
+            'double',
+            'decimal',
+            'integer',
+            'unsignedInt',
+            'unsignedLong',
+            'unsignedByte',
+            'unsignedShort',
+            'negativeInteger',
+            'positiveInteger',
+            'nonNegativeInteger',
+            'nonPositiveInteger',
+        ), true) ? $fallback : $type;
     }
 }
