@@ -16,9 +16,9 @@ class MethodContainerTest extends TestCase
     {
         $service = ServiceTest::instance('Bar');
         $methodContainer = new MethodContainer();
-        $methodContainer->add(new Method('Foo', 'string', 'int', $service));
-        $methodContainer->add(new Method('Bar', 'string', 'int', $service));
-        $methodContainer->add(new Method('FooBar', array(
+        $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'Foo', 'string', 'int', $service));
+        $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'Bar', 'string', 'int', $service));
+        $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'FooBar', array(
             'string',
             'int',
             'int',
@@ -71,8 +71,8 @@ class MethodContainerTest extends TestCase
         $methodContainer = new MethodContainer();
 
         $service = ServiceTest::instance('Bar');
-        $foo = new Method('Foo', 'string', 'int', $service);
-        $bar = new Method('Bar', 'string', 'int', $service);
+        $foo = new Method(self::getBingGeneratorInstance(), 'Foo', 'string', 'int', $service);
+        $bar = new Method(self::getBingGeneratorInstance(), 'Bar', 'string', 'int', $service);
         $methodContainer->add($foo);
         $methodContainer->add($bar);
 

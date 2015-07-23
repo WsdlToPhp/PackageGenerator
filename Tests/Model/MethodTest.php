@@ -12,7 +12,7 @@ class MethodTest extends TestCase
      */
     public function testGetMethodName()
     {
-        $service = new Service('Foo');
+        $service = new Service(self::getBingGeneratorInstance(), 'Foo');
         $service->addMethod('getId', 'string', 'string');
         $service->addMethod('getid', 'string', 'string');
         $service->addMethod('getIdString', 'string', 'id', false);
@@ -28,7 +28,7 @@ class MethodTest extends TestCase
      */
     public function testGetMethodNameCalledTwice()
     {
-        $service = new Service('Foo');
+        $service = new Service(self::getBingGeneratorInstance(), 'Foo');
         $service->addMethod('getId', 'string', 'string');
         $service->addMethod('get.id', 'string', 'string');
         $service->addMethod('getIdString', 'string', 'id', false);
@@ -48,13 +48,13 @@ class MethodTest extends TestCase
      */
     public function testMultipleServicesSameMethods()
     {
-        $service1 = new Service('Login');
+        $service1 = new Service(self::getBingGeneratorInstance(), 'Login');
         $service1->addMethod('Login', 'int', 'id');
 
-        $service2 = new Service('Login');
+        $service2 = new Service(self::getBingGeneratorInstance(), 'Login');
         $service2->addMethod('login', 'int', 'id');
 
-        $service3 = new Service('login');
+        $service3 = new Service(self::getBingGeneratorInstance(), 'login');
         $service3->addMethod('Login', 'int', 'id');
 
         Service::purgeUniqueNames();
@@ -69,13 +69,13 @@ class MethodTest extends TestCase
      */
     public function testMultipleServicesSameMethodsWithoutPurging()
     {
-        $service1 = new Service('Login');
+        $service1 = new Service(self::getBingGeneratorInstance(), 'Login');
         $service1->addMethod('Login', 'int', 'id');
 
-        $service2 = new Service('Login');
+        $service2 = new Service(self::getBingGeneratorInstance(), 'Login');
         $service2->addMethod('login', 'int', 'id');
 
-        $service3 = new Service('login');
+        $service3 = new Service(self::getBingGeneratorInstance(), 'login');
         $service3->addMethod('Login', 'int', 'id');
 
         Service::purgeUniqueNames();

@@ -13,8 +13,9 @@ class StructTest extends AbstractFile
      */
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
-        $struct = new StructFile(self::bingGeneratorInstance(), 'Foo', $this->getTestDirectory());
-        $struct->setModel(new EmptyModel('Foo'));
+        $instance = self::bingGeneratorInstance();
+        $struct = new StructFile($instance, 'Foo', $this->getTestDirectory());
+        $struct->setModel(new EmptyModel($instance, 'Foo'));
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -46,7 +47,7 @@ class StructTest extends AbstractFile
      */
     public function testGetFileName()
     {
-        $model = new StructModel('Foo');
+        $model = new StructModel(self::bingGeneratorInstance(), 'Foo');
         $file = new StructFile(self::bingGeneratorInstance(), 'foo', __DIR__ . '/../resources/');
         $file->setModel($model);
 

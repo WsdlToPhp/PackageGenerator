@@ -16,10 +16,10 @@ class StructAttributeContainerTest extends TestCase
     {
         $struct = StructTest::instance('Bar', true);
         $structAttributeContainer = new StructAttributeContainer();
-        $structAttributeContainer->add(new StructAttribute('foo', 'string', $struct));
-        $structAttributeContainer->add(new StructAttribute('bar', 'int', $struct));
-        $structAttributeContainer->add(new StructAttribute('Bar', 'float', $struct));
-        $structAttributeContainer->add(new StructAttribute('fooBar', 'bool', $struct));
+        $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'foo', 'string', $struct));
+        $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'bar', 'int', $struct));
+        $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'Bar', 'float', $struct));
+        $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'fooBar', 'bool', $struct));
         return $structAttributeContainer;
     }
     /**

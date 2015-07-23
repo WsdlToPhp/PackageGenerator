@@ -47,7 +47,7 @@ class Structs extends AbstractParser
                 $struct = $typeDef[0];
                 if ($struct != 'struct') {
                     if (!empty($typeDef[1])) {
-                        $structs->addVirtualStruct($typeDef[1]);
+                        $structs->addVirtualStruct($this->generator, $typeDef[1]);
                     }
                     continue;
                 }
@@ -88,7 +88,7 @@ class Structs extends AbstractParser
                         if ($then) {
                             $structParamName = $typeVal;
                             if (!empty($structParamType) && !empty($structParamName) && !empty($structName)) {
-                                $structs->addStructWithAttribute($structName, $structParamName, $structParamType);
+                                $structs->addStructWithAttribute($this->generator, $structName, $structParamName, $structParamType);
                                 array_push($structsDefined, $typeSignature);
                                 $structParamType = '';
                             }
@@ -103,7 +103,7 @@ class Structs extends AbstractParser
                         }
                     }
                 } else {
-                    $structs->addStruct($structName);
+                    $structs->addStruct($this->generator, $structName);
                 }
             }
         }

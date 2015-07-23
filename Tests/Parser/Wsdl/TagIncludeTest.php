@@ -26,7 +26,7 @@ class TagIncludeTest extends WsdlParser
 
         $tagIncludeParser->parse();
 
-        $this->assertTrue($tagIncludeParser->isWsdlParsed(new Wsdl(self::wsdlImageViewServicePath(), file_get_contents(self::wsdlImageViewServicePath()))));
+        $this->assertTrue($tagIncludeParser->isWsdlParsed(new Wsdl($tagIncludeParser->getGenerator(), self::wsdlImageViewServicePath(), file_get_contents(self::wsdlImageViewServicePath()))));
     }
     /**
      *
@@ -47,7 +47,7 @@ class TagIncludeTest extends WsdlParser
         $schemaContainer = new SchemaContainer();
         foreach ($schemas as $schemaPath) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/%s', $schemaPath));
-            $schema = new Schema($schemaPath, file_get_contents($schemaPath));
+            $schema = new Schema($tagIncludeParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schema->getContent()->setCurrentTag('include');
             $schemaContainer->add($schema);
         }

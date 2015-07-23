@@ -131,7 +131,7 @@ class Tutorial extends AbstractFile
             ->getMainElement()
             ->addChild('$options = array(')
                 ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl(0)->getName()), 1))
-                ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => %s::classMap(),', ClassMap::getClassMapName(true)), 1))
+                ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => %s::classMap(),', $this->getGenerator()->getClassmapFile()->getModel()->getPackagedName(true)), 1))
             ->addChild(');');
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlContent;
 
 abstract class AbstractDocument extends AbstractModel
@@ -12,11 +13,12 @@ abstract class AbstractDocument extends AbstractModel
      */
     protected $content;
     /**
+     * @param Generator $generator
      * @param string $name
      */
-    public function __construct($name, $content)
+    public function __construct(Generator $generator, $name, $content)
     {
-        parent::__construct($name);
+        parent::__construct($generator, $name);
         $this->setContent($content);
     }
     /**

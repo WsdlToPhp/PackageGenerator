@@ -2,14 +2,17 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests;
 
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+
 abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
+    private static $instances = array();
     /**
      * @return string
      */
-    public static function wsdlPartnerPath()
+    public static function wsdlPartnerPath($local = true)
     {
-        return __DIR__ . '/resources/PartnerService.local.wsdl';
+        return __DIR__ . sprintf('/resources/PartnerService%s.wsdl', $local ? '.local' : '');
     }
     /**
      * @return string
@@ -31,6 +34,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function schemaImageViewServicePath()
     {
         return __DIR__ . '/resources/imageViewCommon.xsd';
+    }
+    /**
+     * @return string
+     */
+    public static function schemaImageViewServiceAvailableImagesRequestPath()
+    {
+        return __DIR__ . '/resources/availableImagesRequest.xsd';
     }
     /**
      * @return string
@@ -115,5 +125,52 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function wsdlOmniturePath()
     {
         return __DIR__ . '/resources/OmnitureAdminServices.wsdl';
+    }
+    /**
+     * @param string $wsdlPath
+     * @return Generator
+     */
+    public static function getGeneratorInstance($wsdlPath)
+    {
+        return new Generator($wsdlPath);
+    }
+    /**
+     * @return Generator
+     */
+    public static function getBingGeneratorInstance()
+    {
+        return self::getGeneratorInstance(self::wsdlBingPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getOmnitureInstance()
+    {
+        return self::getInstance(self::wsdlOmniturePath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getBullhornstaffingInstance()
+    {
+        return self::getInstance(self::wsdlBullhornstaffingPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getReformaInstance()
+    {
+        return self::getInstance(self::wsdlReformaPath());
+    }
+    /**
+     * @param strin $wsdlPath
+     * @return Generator
+     */
+    protected static function getInstance($wsdlPath)
+    {
+        if (!isset(self::$instances[$wsdlPath])) {
+            self::$instances[$wsdlPath] = self::getGeneratorInstance($wsdlPath);
+        }
+        return self::$instances[$wsdlPath];
     }
 }

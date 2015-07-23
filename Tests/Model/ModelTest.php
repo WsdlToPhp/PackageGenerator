@@ -13,7 +13,7 @@ class ModelTest extends TestCase
      */
     public static function instance($name)
     {
-        return new EmptyModel($name);
+        return new EmptyModel(self::getBingGeneratorInstance(), $name);
     }
     /**
      *

@@ -25,13 +25,14 @@ class StructValue extends AbstractModel
      * @see AbstractModel::__construct()
      * @uses AbstractModel::setOwner()
      * @uses StructValue::setIndex()
+     * @param Generator $generator
      * @param string $name the original name
      * @param string $index the index of the value in the enumeration struct
      * @param Struct $struct defines the struct which owns this value
      */
-    public function __construct($name, $index, Struct $struct)
+    public function __construct(Generator $generator, $name, $index, Struct $struct)
     {
-        parent::__construct($name);
+        parent::__construct($generator, $name);
         $this->setIndex($index);
         $this->setOwner($struct);
     }

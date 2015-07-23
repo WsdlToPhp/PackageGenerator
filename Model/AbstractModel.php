@@ -22,6 +22,11 @@ abstract class AbstractModel
      */
     const META_FROM_SCHEMA = 'from schema';
     /**
+     * Generator used
+     * @var Generator
+     */
+    private $generator = null;
+    /**
      * Original name od the element
      * @var string
      */
@@ -67,11 +72,14 @@ abstract class AbstractModel
      * Main constructor
      * @uses AbstractModel::setName()
      * @uses AbstractModel::updateModels()
+     * @param Generator $generator
      * @param string $name the original name
      */
-    public function __construct($name)
+    public function __construct(Generator $generator, $name)
     {
-        $this->setName($name);
+        $this
+            ->setName($name)
+            ->setGenerator($generator);
         self::updateModels($this);
     }
     /**
@@ -84,7 +92,7 @@ abstract class AbstractModel
             if ($model->getIsStruct()) {
                 $extends = $model->getPackagedName();
             }
-        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), Generator::getPackageName()) === 0) {
+        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), $this->getGenerator()->getPackageName()) === 0) {
             $extends = $this->getInheritance();
         }
         if (empty($extends)) {
@@ -247,6 +255,24 @@ abstract class AbstractModel
         return $this;
     }
     /**
+     * Returns the Generator
+     * @return Generator
+     */
+    public function getGenerator()
+    {
+        return $this->generator;
+    }
+    /**
+     * Sets the Generator
+     * @param Generator $generator
+     * @return AbstractModel
+     */
+    public function setGenerator($generator)
+    {
+        $this->generator = $generator;
+        return $this;
+    }
+    /**
      * Returns a valid clean name for PHP
      * @uses AbstractModel::getName()
      * @uses AbstractModel::cleanString()
@@ -314,7 +340,7 @@ abstract class AbstractModel
      */
     public function getPackagedName($namespaced = false)
     {
-        return ($namespaced ? sprintf('\%s\\', $this->getNamespace()) : '') . Generator::getPackageName() . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+        return ($namespaced ? sprintf('\%s\\', $this->getNamespace()) : '') . $this->getGenerator()->getPackageName() . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
     }
     /**
      * Allows to define the contextual part of the class name for the package
@@ -341,7 +367,7 @@ abstract class AbstractModel
         $generator = Generator::instance();
         $namespace = $generator->getOptionNamespacePrefix();
         $directory = $generator->getDirectory($this);
-        $packageName = Generator::getPackageName();
+        $packageName = $this->getGenerator()->getPackageName();
         $namespaceEnding = implode('\\', explode('/', substr($directory, 0, -1)));
         return sprintf(empty($namespace) ? '%1$s%4$s%3$s' : '%2$s\\%1$s%4$s%3$s', $packageName, $namespace, $namespaceEnding, empty($namespaceEnding) ? '' : '\\');
     }

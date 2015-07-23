@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Container\Model\Method as MethodContainer;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 /**
  * Class Service stands for an available service containing the methods/operations described in the WSDL
@@ -18,11 +19,12 @@ class Service extends AbstractModel
      * Main constructor
      * @see AbstractModel::__construct()
      * @uses Service::setMethods()
+     * @param Generator $generator
      * @param string $name the service name
      */
-    public function __construct($name)
+    public function __construct(Generator $generator, $name)
     {
-        parent::__construct($name);
+        parent::__construct($generator, $name);
         $this->setMethods(new MethodContainer());
     }
     /**
@@ -75,7 +77,7 @@ class Service extends AbstractModel
      */
     public function addMethod($methodName, $methodParameterType, $methodReturnType, $methodIsUnique = true)
     {
-        $method = new Method($methodName, $methodParameterType, $methodReturnType, $this, $methodIsUnique);
+        $method = new Method($this->getGenerator(), $methodName, $methodParameterType, $methodReturnType, $this, $methodIsUnique);
         $this->methods->add($method);
         return $method;
     }

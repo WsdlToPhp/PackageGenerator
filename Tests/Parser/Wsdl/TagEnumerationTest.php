@@ -37,16 +37,16 @@ class TagEnumerationTest extends WsdlParser
             if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
                 if ($struct->getName() === 'AdultOption') {
                     $values = new StructValueContainer();
-                    $values->add(new StructValue('Off', 0, $struct));
-                    $values->add(new StructValue('Moderate', 1, $struct));
-                    $values->add(new StructValue('Strict', 2, $struct));
+                    $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Off', 0, $struct));
+                    $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Moderate', 1, $struct));
+                    $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Strict', 2, $struct));
 
                     $this->assertEquals($values, $struct->getValues());
                     $count++;
                 } elseif ($struct->getName() === 'SearchOption') {
                     $values = new StructValueContainer();
-                    $values->add(new StructValue('DisableLocationDetection', 0, $struct));
-                    $values->add(new StructValue('EnableHighlighting', 1, $struct));
+                    $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'DisableLocationDetection', 0, $struct));
+                    $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'EnableHighlighting', 1, $struct));
 
                     $this->assertEquals($values, $struct->getValues());
                     $count++;
@@ -69,25 +69,25 @@ class TagEnumerationTest extends WsdlParser
             if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
                 if ($struct->getName() === 'HouseStateEnum') {
                     $values = new StructValueContainer();
-                    $one = new StructValue('1', 0, $struct);
+                    $one = new StructValue($tagEnumerationParser->getGenerator(), '1', 0, $struct);
                     $one->setMeta(array(
                         'label' =>'normal',
                         'description' =>'Исправный',
                     ));
                     $values->add($one);
-                    $two = new StructValue('2', 1, $struct);
+                    $two = new StructValue($tagEnumerationParser->getGenerator(), '2', 1, $struct);
                     $two->setMeta(array(
                         'label' =>'warning',
                         'description' =>'Требующий капитального ремонта',
                     ));
                     $values->add($two);
-                    $three = new StructValue('3', 2, $struct);
+                    $three = new StructValue($tagEnumerationParser->getGenerator(), '3', 2, $struct);
                     $three->setMeta(array(
                         'label' =>'alarm',
                         'description' =>'Аварийный',
                     ));
                     $values->add($three);
-                    $four = new StructValue('4', 3, $struct);
+                    $four = new StructValue($tagEnumerationParser->getGenerator(), '4', 3, $struct);
                     $four->setMeta(array(
                         'label' =>'noinfo',
                         'description' =>'Нет данных',
@@ -97,19 +97,19 @@ class TagEnumerationTest extends WsdlParser
                     $count++;
                 } elseif ($struct->getName() === 'HouseStageEnum') {
                     $values = new StructValueContainer();
-                    $one = new StructValue('1', 0, $struct);
+                    $one = new StructValue($tagEnumerationParser->getGenerator(), '1', 0, $struct);
                     $one->setMeta(array(
                         'label' =>'exploited',
                         'description' =>'Эксплуатируемый',
                     ));
                     $values->add($one);
-                    $two = new StructValue('2', 1, $struct);
+                    $two = new StructValue($tagEnumerationParser->getGenerator(), '2', 1, $struct);
                     $two->setMeta(array(
                         'label' =>'decommissioned',
                         'description' =>'Выведенный из эксплуатации',
                     ));
                     $values->add($two);
-                    $three = new StructValue('3', 2, $struct);
+                    $three = new StructValue($tagEnumerationParser->getGenerator(), '3', 2, $struct);
                     $three->setMeta(array(
                         'label' =>'drifting',
                         'description' =>'Снесенный',

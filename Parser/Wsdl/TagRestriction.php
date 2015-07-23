@@ -38,7 +38,7 @@ class TagRestriction extends AbstractTagParser
         if ($parent instanceof Tag) {
             $model = $this->getModel($parent);
             if ($model instanceof Struct) {
-                $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName());
+                $this->getGenerator()->getStructs()->addVirtualStruct($this->getGenerator(), $parent->getAttributeName());
                 $this->parseRestrictionAttributes($parent, $model, $restriction);
                 $this->parseRestrictionChildren($parent, $restriction);
             }

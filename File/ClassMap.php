@@ -3,105 +3,84 @@
 namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PhpGenerator\Component\PhpClass;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
+use WsdlToPhp\PhpGenerator\Component\PhpClass;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
+use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\File\AbstractFile;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 
-class ClassMap extends AbstractFile
+class ClassMap extends AbstractModelFile
 {
     /**
-     * @var string
+     * @param ConstantContainer $constants
      */
-    const FILE_NAME_SUFFIX = 'ClassMap';
-    /**
-     * @param Generator $generator
-     * @param string $name
-     * @param string $destination
-     */
-    public function __construct(Generator $generator, $name, $destination)
+    protected function getClassConstants(ConstantContainer $constants)
     {
-        parent::__construct($generator, self::getClassMapName(), $destination);
     }
     /**
-     * @param bool $packagedName
-     * @return string
+     * @param PhpConstant $constant
+     * @return PhpAnnotationBlock|null
      */
-    public static function getClassMapName($packagedName = false)
+    protected function getConstantAnnotationBlock(PhpConstant $constant)
     {
-        return ($packagedName ? sprintf('\\%s\\', Generator::getPackageName()) : '') . sprintf('%s%s', Generator::getPackageName(), self::FILE_NAME_SUFFIX);
     }
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::beforeWrite()
+     * @param PropertyContainer $properties
      */
-    public function beforeWrite()
+    protected function getClassProperties(PropertyContainer $properties)
     {
-        parent::beforeWrite();
-        $this
-            ->addNamespace()
-            ->addMainAnnotationBlock()
-            ->addClassContent();
-
     }
     /**
-     * @return ClassMap
+     * @param PhpProperty $property
+     * @return PhpAnnotationBlock|null
      */
-    protected function addNamespace()
+    protected function getPropertyAnnotationBlock(PhpProperty $property)
     {
-        $this->getFile()->setNamespace(Generator::getPackageName());
-        return $this;
     }
     /**
-     * @return ClassMap
+     * @param MethodContainer $methods
      */
-    protected function addMainAnnotationBlock()
-    {
-        $this
-            ->getFile()
-            ->addAnnotationBlockElement(new PhpAnnotationBlock(array(
-                'Class which returns the class map definition',
-                new PhpAnnotation(AbstractModelFile::ANNOTATION_PACKAGE, Generator::getPackageName()),
-            )));
-        return $this;
-    }
-    /**
-     * @return ClassMap
-     */
-    protected function addClassContent()
-    {
-        $class = new PhpClass(self::getClassMapName());
-        return $this
-            ->addMethodAnnotationBlock($class)
-            ->addMethodContent($class)
-            ->getFile()
-                ->addClassComponent($class);
-    }
-    /**
-     * @param PhpClass $class
-     * @return ClassMap
-     */
-    protected function addMethodAnnotationBlock(PhpClass $class)
-    {
-        $class
-            ->addAnnotationBlockElement(new PhpAnnotationBlock(array(
-                'Returns the mapping between the WSDL Structs and generated Structs\' classes',
-                'This array is sent to the \SoapClient when calling the WS',
-                new PhpAnnotation(AbstractModelFile::ANNOTATION_RETURN, 'string[]'),
-            )));
-        return $this;
-    }
-    /**
-     * @param PhpClass $class
-     * @return ClassMap
-     */
-    protected function addMethodContent(PhpClass $class)
+    protected function getClassMethods(MethodContainer $methods)
     {
         $method = new PhpMethod('classMap', array(), PhpMethod::ACCESS_PUBLIC, false, true, true);
         $this->addMethodBody($method);
-        $class
-            ->addMethodElement($method);
+        $methods->add($method);
+        return $this;
+    }
+    /**
+     * @param PhpMethod $method
+     * @return PhpAnnotationBlock|null
+     */
+    protected function getMethodAnnotationBlock(PhpMethod $method)
+    {
+        return new PhpAnnotationBlock(array(
+            'Returns the mapping between the WSDL Structs and generated Structs\' classes',
+            'This array is sent to the \SoapClient when calling the WS',
+            new PhpAnnotation(AbstractModelFile::ANNOTATION_RETURN, 'string[]'),
+        ));
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassAnnotationBlock()
+     * @return PhpAnnotationBlock
+     */
+    protected function getClassAnnotationBlock()
+    {
+        return new PhpAnnotationBlock(array(
+            'Class which returns the class map definition',
+            new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getPackageName()),
+        ));
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::defineStringMethod()
+     */
+    protected function defineStringMethod(PhpClass $class)
+    {
         return $this;
     }
     /**

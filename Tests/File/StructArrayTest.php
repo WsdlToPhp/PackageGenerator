@@ -12,7 +12,7 @@ class StructArrayTest extends AbstractFile
      */
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
-        $struct = new StructModel('FooArray');
+        $struct = new StructModel(self::bingGeneratorInstance(), 'FooArray');
         $struct
             ->addAttribute('bar', 'string')
             ->addAttribute('foo', 'int');
@@ -24,7 +24,7 @@ class StructArrayTest extends AbstractFile
      */
     public function testSetModelBasNameOneAttributeWithException()
     {
-        $struct = new StructModel('Foo');
+        $struct = new StructModel(self::bingGeneratorInstance(), 'Foo');
         $struct->addAttribute('bar', 'string');
         $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo', $this->getTestDirectory());
         $array->setModel($struct);

@@ -13,8 +13,9 @@ class ServiceTest extends AbstractFile
      */
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
-        $struct = new ServiceFile(self::bingGeneratorInstance(), 'Foo', $this->getTestDirectory());
-        $struct->setModel(new EmptyModel('Foo'));
+        $instance = self::bingGeneratorInstance();
+        $struct = new ServiceFile($instance, 'Foo', $this->getTestDirectory());
+        $struct->setModel(new EmptyModel($instance, 'Foo'));
     }
     /**
      *

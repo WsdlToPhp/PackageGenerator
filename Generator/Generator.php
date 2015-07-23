@@ -77,7 +77,7 @@ class Generator extends \SoapClient
      * Name of the package to use
      * @var string
      */
-    private static $packageName;
+    private $packageName;
     /**
      * Wsdl lists
      * @var WsdlContainer
@@ -97,6 +97,11 @@ class Generator extends \SoapClient
      * @var ParserContainer
      */
     private $parsers;
+    /**
+     * Use classmap file object
+     * @var ClassMapFile
+     */
+    private $classmapFile;
     /**
      * Constructor
      * @uses \SoapClient::__construct()
@@ -218,7 +223,7 @@ class Generator extends \SoapClient
         $wsdl = $this->getWsdl(0);
         $wsdlLocation = $wsdl instanceof Wsdl ? $wsdl->getName() : '';
         if (!empty($wsdlLocation)) {
-            self::setPackageName($packageName);
+            $this->setPackageName($packageName);
             $rootDirectory = $rootDirectory . (substr($rootDirectory, -1) != '/' ? '/' : '');
             /**
              * Root directory
@@ -316,8 +321,10 @@ class Generator extends \SoapClient
      */
     private function generateClassMap($rootDirectory)
     {
-        $clasMap = new ClassMapFile($this, '', $rootDirectory);
-        $clasMap->write();
+        $this
+            ->getClassmapFile()
+            ->setDestination($rootDirectory)
+            ->write();
         return $this;
     }
     /**
@@ -328,7 +335,7 @@ class Generator extends \SoapClient
      */
     private function generateTutorialFile($rootDirectory)
     {
-        if ($this->getOptionGenerateTutorialFile() === true) {
+        if ($this->getOptionGenerateTutorialFile() === true && $this->getClassmapFile() instanceof ClassMapFile) {
             $tutorialFile = new TutorialFile($this, '', $rootDirectory);
             $tutorialFile->write();
         }
@@ -524,18 +531,19 @@ class Generator extends \SoapClient
      * @param bool $ucFirst ucfirst package name or not
      * @return string
      */
-    public static function getPackageName($ucFirst = true)
+    public function getPackageName($ucFirst = true)
     {
-        return $ucFirst ? ucfirst(self::$packageName) : self::$packageName;
+        return $ucFirst ? ucfirst($this->packageName) : $this->packageName;
     }
     /**
      * Sets the package name
      * @param string $packageName
-     * @return string
+     * @return Generator
      */
-    public static function setPackageName($packageName)
+    public function setPackageName($packageName)
     {
-        return (self::$packageName = $packageName);
+        $this->packageName = $packageName;
+        return $this;
     }
     /**
      * Gets the WSDLs
@@ -571,7 +579,7 @@ class Generator extends \SoapClient
     public function addWsdl($wsdlLocation)
     {
         if (!empty($wsdlLocation) && $this->wsdls->getWsdlByName($wsdlLocation) === null) {
-            $this->wsdls->add(new Wsdl($wsdlLocation, $this->getUrlContent($wsdlLocation)));
+            $this->wsdls->add(new Wsdl($this, $wsdlLocation, $this->getUrlContent($wsdlLocation)));
         }
         return $this;
     }
@@ -583,7 +591,7 @@ class Generator extends \SoapClient
     public function addSchemaToWsdl(Wsdl $wsdl, $schemaLocation)
     {
         if (!empty($schemaLocation) && $wsdl->getContent() instanceof WsdlDocument && $wsdl->getContent()->getExternalSchema($schemaLocation) === null) {
-            $wsdl->getContent()->addExternalSchema(new Schema($schemaLocation, $this->getUrlContent($schemaLocation)));
+            $wsdl->getContent()->addExternalSchema(new Schema($wsdl->getGenerator(), $schemaLocation, $this->getUrlContent($schemaLocation)));
         }
         return $this;
     }
@@ -640,7 +648,7 @@ class Generator extends \SoapClient
      */
     public function getServiceName($methodName)
     {
-        return ucfirst($this->getGather(new EmptyModel($methodName)));
+        return ucfirst($this->getGather(new EmptyModel($this, $methodName)));
     }
     /**
      * @param GeneratorOptions $options
@@ -707,6 +715,20 @@ class Generator extends \SoapClient
     {
         $this->parsers->add($parser);
         return $this;
+    }
+    /**
+     * @return ClassMapFile
+     */
+    public function getClassmapFile()
+    {
+        if (empty($this->classmapFile)) {
+            $classMapModel = new EmptyModel($this, 'ClassMap');
+            $classMap = new ClassMapFile($this, $classMapModel->getPackagedName(), __DIR__);
+            $classMap
+                ->setModel($classMapModel);
+            $this->classmapFile = $classMap;
+        }
+        return $this->classmapFile;
     }
     /**
      * @param string $url

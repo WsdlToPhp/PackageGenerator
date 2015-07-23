@@ -27,7 +27,7 @@ class TagImportTest extends WsdlParser
 
         $tagImportParser->parse();
 
-        $this->assertTrue($tagImportParser->isWsdlParsed(new Wsdl(self::wsdlPartnerPath(), file_get_contents(self::wsdlPartnerPath()))));
+        $this->assertTrue($tagImportParser->isWsdlParsed(new Wsdl($tagImportParser->getGenerator(), self::wsdlPartnerPath(), file_get_contents(self::wsdlPartnerPath()))));
     }
     /**
      *
@@ -52,7 +52,7 @@ class TagImportTest extends WsdlParser
         $schemaContainer = new SchemaContainer();
         for ($i=0; $i<19; $i++) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/PartnerService.%d.xsd', $i));
-            $schema = new Schema($schemaPath, file_get_contents($schemaPath));
+            $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schema->getContent()->setCurrentTag('import');
             $schemaContainer->add($schema);
         }

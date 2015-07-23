@@ -13,7 +13,7 @@ class ServiceTest extends TestCase
      */
     public static function instance($name)
     {
-        return new Service($name);
+        return new Service(self::getBingGeneratorInstance(), $name);
     }
     /**
      *

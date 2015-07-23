@@ -12,8 +12,9 @@ class StructEnumTest extends AbstractFile
      */
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
-        $enum = new EnumFile(self::bingGeneratorInstance(), 'Foo', $this->getTestDirectory());
-        $enum->setModel(new StructModel('FooEnum'));
+        $instance = self::bingGeneratorInstance();
+        $enum = new EnumFile($instance, 'Foo', $this->getTestDirectory());
+        $enum->setModel(new StructModel($instance, 'FooEnum'));
     }
     /**
      *

@@ -44,7 +44,7 @@ class UtilsTest extends TestCase
      */
     public function testCleanString()
     {
-        $this->assertSame('events', Utils::getPart(GeneratorOptionsTest::optionsInstance(), new EmptyModel('eventsGet'), GeneratorOptions::GATHER_METHODS));
-        $this->assertSame('events', Utils::getPart(GeneratorOptionsTest::optionsInstance(), new EmptyModel('_events'), GeneratorOptions::GATHER_METHODS));
+        $this->assertSame('events', Utils::getPart(GeneratorOptionsTest::optionsInstance(), new EmptyModel(self::getBingGeneratorInstance(), 'eventsGet'), GeneratorOptions::GATHER_METHODS));
+        $this->assertSame('events', Utils::getPart(GeneratorOptionsTest::optionsInstance(), new EmptyModel(self::getBingGeneratorInstance(), '_events'), GeneratorOptions::GATHER_METHODS));
     }
 }

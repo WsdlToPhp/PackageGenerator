@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 /**
  * Class Struct stands for an available struct described in the WSDL
@@ -41,13 +42,14 @@ class Struct extends AbstractModel
      * Main constructor
      * @see AbstractModel::__construct()
      * @uses Struct::setIsStruct()
+     * @param Generator $generator
      * @param string $name the original name
      * @param bool $isStruct defines if it's a real sruct or not
      * @param bool $isRestriction defines if it's an enumeration or not
      */
-    public function __construct($name, $isStruct = true, $isRestriction = false)
+    public function __construct(Generator $generator, $name, $isStruct = true, $isRestriction = false)
     {
-        parent::__construct($name);
+        parent::__construct($generator, $name);
         $this->setIsStruct($isStruct);
         $this->setIsRestriction($isRestriction);
         $this->setAttributes(new StructAttributeContainer());
@@ -198,7 +200,7 @@ class Struct extends AbstractModel
             throw new \InvalidArgumentException(sprintf('Attribute name "%s" and/or attribute type "%s" is invalid for Struct "%s"', $attributeName, $attributeType, $this->getName()));
         }
         if ($this->attributes->getStructAttributeByName($attributeName) === null) {
-            $structAttribute = new StructAttribute($attributeName, $attributeType, $this);
+            $structAttribute = new StructAttribute($this->getGenerator(), $attributeName, $attributeType, $this);
             $this->attributes->add($structAttribute);
             self::updateModels($this);
         }
@@ -285,7 +287,7 @@ class Struct extends AbstractModel
     public function addValue($value)
     {
         if ($this->getValue($value) === null) {
-            $this->values->add(new StructValue($value, $this->getValues()->count(), $this));
+            $this->values->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
             $this->setIsRestriction(true);
             $this->setIsStruct(true);
         }

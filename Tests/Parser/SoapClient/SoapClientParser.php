@@ -7,33 +7,4 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 
 abstract class SoapClientParser extends TestCase
 {
-    /**
-     * @return Generator
-     */
-    public static function getOmnitureInstance()
-    {
-        return self::getInstance(self::wsdlOmniturePath());
-    }
-    /**
-     * @return Generator
-     */
-    public static function getBullhornstaffingInstance()
-    {
-        return self::getInstance(self::wsdlBullhornstaffingPath());
-    }
-    /**
-     * @return Generator
-     */
-    public static function getReformaInstance()
-    {
-        return self::getInstance(self::wsdlReformaPath());
-    }
-    /**
-     * @param string $pathToWsdl
-     * @return Generator
-     */
-    public static function getInstance($pathToWsdl)
-    {
-        return new Generator($pathToWsdl);
-    }
 }

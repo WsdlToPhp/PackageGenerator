@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Generator\Utils;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 /**
  * Class StructAttribute stands for an available struct attribute described in the WSDL
@@ -19,13 +20,14 @@ class StructAttribute extends AbstractModel
      * @see AbstractModel::__construct()
      * @uses StructAttribute::setType()
      * @uses AbstractModel::setOwner()
+     * @param Generator $generator
      * @param string $name the original name
      * @param string $type the type
      * @param Struct $struct defines the struct which owns this value
      */
-    public function __construct($name, $type, Struct $struct)
+    public function __construct(Generator $generator, $name, $type, Struct $struct)
     {
-        parent::__construct($name);
+        parent::__construct($generator, $name);
         $this->setType($type);
         $this->setOwner($struct);
     }

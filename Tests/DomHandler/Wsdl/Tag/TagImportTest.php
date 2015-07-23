@@ -13,7 +13,7 @@ class TagImportTest extends TestCase
      */
     public function testGetLocationAttribute()
     {
-        $wsdl = WsdlTest::partnerInstance();
+        $wsdl = WsdlTest::partnerInstance(false);
 
         $imports = $wsdl->getContent()->getElementsByName(Wsdl::TAG_IMPORT);
 
