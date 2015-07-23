@@ -7,18 +7,6 @@ category:
 gather_methods:
     default: 'start'
     values: ['start', 'end' ]
-send_array_as_parameter: # will be removed !
-    default: false
-    values: [ true, false ]
-response_as_wsdl_object:
-    default: false
-    values: [ true, false ]
-send_parameters_as_array: # will be removed !
-    default: false
-    values: [ true, false ]
-inherits_from_identifier: # will be removed !
-    default: ''
-    values: null
 generic_constants_names:
     default: false
     values: [ true, false ]

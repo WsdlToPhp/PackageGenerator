@@ -44,11 +44,6 @@ To generate a package, nothing as simple as this:
         --wsdl-prefix="Api" \
         --wsdl-category="cat" \
         --wsdl-gathermethods="start" \
-        --wsdl-reponseasobj=false \
-        --wsdl-sendarrayparam=false \
-        --wsdl-genwsdlclass=true \
-        --wsdl-paramsasarray=false \
-        --wsdl-inherits="" \
         --wsdl-genericconstants=false \
         --wsdl-gentutorial=true \
         --wsdl-addcomments="date:2015-04-22" \
@@ -104,11 +99,6 @@ Then:
     $generator = Generator::instance("http://www.mydomain.com/?wsdl", $login, $password, $options);
     $generator->setOptionCategory(GeneratorOptions::VALUE_CAT);
     $generator->setGatherMethods(GeneratorOptions::VALUE_START);
-    $generator->setOptionGetResponseAsWsdlObject(GeneratorOptions::VALUE_FALSE);
-    $generator->setOptionGetResponseAsWsdlObject(GeneratorOptions::VALUE_FALSE);
-    $generator->setOptionSendArrayAsParameter(GeneratorOptions::VALUE_FALSE);
-    $generator->setOptionSendParametersAsArray(GeneratorOptions::VALUE_FALSE);
-    $generator->setOptionInheritsClassIdentifier('');
     $generator->setOptionGenericConstantsNames(VALUE_FALSE);
     $generator->setOptionGenerateTutorialFile(VALUE_TRUE);
     $generator->setOptionAddComments(array(

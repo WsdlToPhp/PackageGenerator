@@ -80,12 +80,7 @@ abstract class AbstractModel
     public function getExtendsClassName()
     {
         $extends = '';
-        $base = Generator::instance()->getOptionInheritsClassIdentifier();
-        if (!empty($base) && ($model = self::getModelByName($this->getName() . $base))) {
-            if ($model->getIsStruct()) {
-                $extends = $model->getPackagedName();
-            }
-        } elseif ($this->getInheritance() != '' && ($model = self::getModelByName($this->getInheritance()))) {
+        if ($this->getInheritance() != '' && ($model = self::getModelByName($this->getInheritance()))) {
             if ($model->getIsStruct()) {
                 $extends = $model->getPackagedName();
             }

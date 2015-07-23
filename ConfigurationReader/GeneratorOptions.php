@@ -23,10 +23,7 @@ class GeneratorOptions extends AbstractYamlReader
     const NAMESPACE_PREFIX = 'namespace_prefix';
     const GENERATE_WSDL_CLASS = 'generate_wsdl_class';
     const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
-    const SEND_ARRAY_AS_PARAMETER = 'send_array_as_parameter';
     const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
-    const GET_RESPONSE_AS_WSDL_OBJECT = 'response_as_wsdl_object';
-    const INHERITS_FROM_IDENTIFIER = 'inherits_from_identifier';
     const SEND_PARAMETERS_AS_ARRAY = 'send_parameters_as_array';
     /**
      * Generator's options
@@ -216,24 +213,6 @@ class GeneratorOptions extends AbstractYamlReader
         return $this->setOptionValue(self::NAMESPACE_PREFIX, $namespace);
     }
     /**
-     * Get send array as parameter option value
-     * @return string|bool
-     */
-    public function getSendArrayAsParameter()
-    {
-        return $this->getOptionValue(self::SEND_ARRAY_AS_PARAMETER);
-    }
-    /**
-     * Set current send array as parameter option value
-     * @throws \InvalidArgumentException
-     * @param bool $sendParameterAsArray
-     * @return GeneratorOptions
-     */
-    public function setSendArrayAsParameter($sendParameterAsArray)
-    {
-        return $this->setOptionValue(self::SEND_ARRAY_AS_PARAMETER, $sendParameterAsArray);
-    }
-    /**
      * Get generic constants name option value
      * @return string|bool
      */
@@ -250,59 +229,5 @@ class GeneratorOptions extends AbstractYamlReader
     public function setGenericConstantsName($genericConstantsName)
     {
         return $this->setOptionValue(self::GENERIC_CONSTANTS_NAME, $genericConstantsName);
-    }
-    /**
-     * Get get response as wsdl object option value
-     * @return string|bool
-     */
-    public function getGetResponseAsWsdlObject()
-    {
-        return $this->getOptionValue(self::GET_RESPONSE_AS_WSDL_OBJECT);
-    }
-    /**
-     * Set current get response as wsdl object option value
-     * @throws \InvalidArgumentException
-     * @param bool $getResponseAsWsdlObject
-     * @return GeneratorOptions
-     */
-    public function setGetResponseAsWsdlObject($getResponseAsWsdlObject)
-    {
-        return $this->setOptionValue(self::GET_RESPONSE_AS_WSDL_OBJECT, $getResponseAsWsdlObject);
-    }
-    /**
-     * Get inherits from identifier option value
-     * @return string|bool
-     */
-    public function getInheritsFromIdentifier()
-    {
-        return $this->getOptionValue(self::INHERITS_FROM_IDENTIFIER);
-    }
-    /**
-     * Set current inherits from identifier option value
-     * @throws \InvalidArgumentException
-     * @param string $inheritsFromIdentifier
-     * @return GeneratorOptions
-     */
-    public function setInheritsFromIdentifier($inheritsFromIdentifier)
-    {
-        return $this->setOptionValue(self::INHERITS_FROM_IDENTIFIER, $inheritsFromIdentifier);
-    }
-    /**
-     * Get send parameters as array option value
-     * @return string|bool
-     */
-    public function getSendParametersAsArray()
-    {
-        return $this->getOptionValue(self::SEND_PARAMETERS_AS_ARRAY);
-    }
-    /**
-     * Set current send parameters as array option value
-     * @throws \InvalidArgumentException
-     * @param bool $sendParametersAsArray
-     * @return GeneratorOptions
-     */
-    public function setSendParametersAsArray($sendParametersAsArray)
-    {
-        return $this->setOptionValue(self::SEND_PARAMETERS_AS_ARRAY, $sendParametersAsArray);
     }
 }

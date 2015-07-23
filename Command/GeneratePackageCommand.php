@@ -67,11 +67,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('wsdl-gathermethods', null, InputOption::VALUE_OPTIONAL, 'Gather methods based on operation name mode (start, end)')
             ->addOption('wsdl-gentutorial', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable tutorial file, you should enable this option only on dev')
             ->addOption('wsdl-genautoload', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable autoload file generation, this is useless if you use composer or your own autoloader')
-            ->addOption('wsdl-sendarrayparam', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of an array to send the parameters, can be disabled as it will soon removed')
             ->addOption('wsdl-genericconstants', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of generic constants name (ex : ENUM_VALUE_0, ENUM_VALUE_1, etc) or contextual values (ex : VALUE_STRING, VALUE_YES, VALUES_NO, etc)')
-            ->addOption('wsdl-reponseasobj', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of object to encapsulate Web Service response')
-            ->addOption('wsdl-inherits', null, InputOption::VALUE_OPTIONAL, 'Astracts struct base name to identify abtract structs, can be avoided as it will be soon removed')
-            ->addOption('wsdl-paramsasarray', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of a \'parameters\' parameter in an array to contain request parameters, disabled in most cases')
             ->addOption('wsdl-addcomments', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Set comments to be used within each generated file');
     }
 
@@ -150,17 +146,13 @@ class GeneratePackageCommand extends AbstractCommand
     protected function getPackageGenerationCommandLineOptions()
     {
         return array(
-            'wsdl-namespace'        => 'NamespacePrefix',
-            'wsdl-category'         => 'Category',
-            'wsdl-gathermethods'    => 'GatherMethods',
-            'wsdl-gentutorial'      => 'GenerateTutorialFile',
-            'wsdl-genautoload'      => 'GenerateAutoloadFile',
-            'wsdl-sendarrayparam'   => 'SendArrayAsParameter',
+            'wsdl-namespace' => 'NamespacePrefix',
+            'wsdl-category' => 'Category',
+            'wsdl-gathermethods' => 'GatherMethods',
+            'wsdl-gentutorial' => 'GenerateTutorialFile',
+            'wsdl-genautoload' => 'GenerateAutoloadFile',
             'wsdl-genericconstants' => 'GenericConstantsNames',
-            'wsdl-reponseasobj'     => 'GetResponseAsWsdlObject',
-            'wsdl-inherits'         => 'InheritsClassIdentifier',
-            'wsdl-paramsasarray'    => 'SendParametersAsArray',
-            'wsdl-addcomments'      => 'AddComments',
+            'wsdl-addcomments' => 'AddComments',
         );
     }
 

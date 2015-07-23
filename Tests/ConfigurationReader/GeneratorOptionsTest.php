@@ -19,10 +19,6 @@ class GeneratorOptionsTest extends TestCase
     {
         $this->assertEquals('cat', self::optionsInstance()->getOptionValue('category'));
         $this->assertEquals('start', self::optionsInstance()->getOptionValue('gather_methods'));
-        $this->assertFalse(self::optionsInstance()->getOptionValue('send_array_as_parameter'));
-        $this->assertFalse(self::optionsInstance()->getOptionValue('response_as_wsdl_object'));
-        $this->assertFalse(self::optionsInstance()->getOptionValue('send_parameters_as_array'));
-        $this->assertEmpty(self::optionsInstance()->getOptionValue('inherits_from_identifier'));
         $this->assertFalse(self::optionsInstance()->getOptionValue('generic_constants_names'));
         $this->assertTrue(self::optionsInstance()->getOptionValue('generate_tutorial_file'));
         $this->assertEquals(array(), self::optionsInstance()->getOptionValue('add_comments'));
