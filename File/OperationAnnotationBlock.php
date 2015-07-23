@@ -52,7 +52,7 @@ class OperationAnnotationBlock extends AbstractOperation
                 ->addChild('Meta informations extracted from the WSDL')
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNames : %s', implode(', ', $soapHeaderNames)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNamespaces : %s', implode(', ', $soapHeaderNamespaces)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
-                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes : %s', implode(', ', $this->getSoapHeaderNamesTypes($soapHeaderNames))), AbstractModelFile::ANNOTATION_LONG_LENGTH))
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes : %s', implode(', ', $this->getSoapHeaderTypesTypes($soapHeaderTypes))), AbstractModelFile::ANNOTATION_LONG_LENGTH))
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaders : %s', implode(', ', $soapHeaders)), AbstractModelFile::ANNOTATION_LONG_LENGTH));
         }
         FileUtils::defineModelAnnotationsFromWsdl($annotationBlock, $this->getMethod(), array(
@@ -64,26 +64,26 @@ class OperationAnnotationBlock extends AbstractOperation
         return $this;
     }
     /**
-     * @param array $soapHeaderNames
+     * @param array $soapHeaderTypes
      * @return string[]
      */
-    protected function getSoapHeaderNamesTypes(array $soapHeaderNames)
+    protected function getSoapHeaderTypesTypes(array $soapHeaderTypes)
     {
-        $soapHeaderTypes = array();
-        foreach ($soapHeaderNames as $soapHeaderName) {
-            $soapHeaderTypes[] = $this->getSoapHeaderNameType($soapHeaderName, true);
+        $soapHeaderTypesTypes = array();
+        foreach ($soapHeaderTypes as $soapHeaderType) {
+            $soapHeaderTypesTypes[] = $this->getSoapHeaderTypeType($soapHeaderType, true);
         }
-        return $soapHeaderTypes;
+        return $soapHeaderTypesTypes;
     }
     /**
-     * @param string $soapHeaderName
+     * @param string $soapHeaderType
      * @param bool $namespaced
      * @return string
      */
-    protected function getSoapHeaderNameType($soapHeaderName, $namespaced = false)
+    protected function getSoapHeaderTypeType($soapHeaderType, $namespaced = false)
     {
-        $type = $soapHeaderName;
-        $model = $this->getModelByName($soapHeaderName);
+        $type = $soapHeaderType;
+        $model = $this->getModelByName($soapHeaderType);
         if ($model instanceof AbstractModel) {
             $type = $model->getPackagedName($namespaced);
         }

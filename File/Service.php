@@ -101,11 +101,13 @@ class Service extends AbstractModelFile
     {
         $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, array());
         $soapHeaderNamespaces = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, array());
+        $soapHeaderTypes = $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, array());
         foreach ($soapHeaderNames as $index=>$soapHeaderName) {
             $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
             if ($methods->get($methodName) === null) {
                 $soapHeaderNamespace = array_key_exists($index, $soapHeaderNamespaces) ? $soapHeaderNamespaces[$index] : null;
-                $methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace));
+                $soapHeaderType = array_key_exists($index, $soapHeaderTypes) ? $soapHeaderTypes[$index] : null;
+                $methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace, $soapHeaderType));
             }
         }
         return $this;
@@ -114,13 +116,14 @@ class Service extends AbstractModelFile
      * @param string $methodName
      * @param string $soapHeaderName
      * @param string $soapHeaderNamespace
+     * @param string $soapHeaderType
      * @return PhpMethod
      */
-    protected function getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace)
+    protected function getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace, $soapHeaderType)
     {
         try {
             $method = new PhpMethod($methodName, array(
-                new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE, $this->getTypeFromName($soapHeaderName, true)),
+                new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE, $this->getTypeFromName($soapHeaderType, true)),
                 new PhpFunctionParameter(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),
                 new PhpFunctionParameter(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
                 new PhpFunctionParameter(self::PARAM_SET_HEADER_ACTOR, null),
