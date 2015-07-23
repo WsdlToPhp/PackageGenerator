@@ -57,6 +57,7 @@ class MethodTest extends TestCase
         $service3 = new Service('login');
         $service3->addMethod('Login', 'int', 'id');
 
+        Service::purgeUniqueNames();
         $this->assertSame('Login', $service1->getMethod('Login')->getMethodName());
         Service::purgeUniqueNames();
         $this->assertSame('login', $service2->getMethod('login')->getMethodName());
