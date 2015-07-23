@@ -13,7 +13,6 @@ class GeneratePackageCommand extends AbstractCommand
      * @var Generator
      */
     protected $generator;
-
     /**
      * @return Generator
      */
@@ -21,7 +20,6 @@ class GeneratePackageCommand extends AbstractCommand
     {
         return $this->generator;
     }
-
     /**
      * @param Generator $generator
      * @return GeneratePackageCommand
@@ -31,7 +29,6 @@ class GeneratePackageCommand extends AbstractCommand
         $this->generator = $generator;
         return $this;
     }
-
     /**
      * @param string $wsdlUrl
      * @param string $wsdlLogin
@@ -43,7 +40,6 @@ class GeneratePackageCommand extends AbstractCommand
     {
         return Generator::instance($wsdlUrl, $wsdlLogin, $wsdlPassword, $wsdlOptions);
     }
-
     /**
      * @see \WsdlToPhp\PackageGenerator\Command\AbstractCommand::configure()
      */
@@ -67,9 +63,9 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('wsdl-gathermethods', null, InputOption::VALUE_OPTIONAL, 'Gather methods based on operation name mode (start, end)')
             ->addOption('wsdl-gentutorial', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable tutorial file, you should enable this option only on dev')
             ->addOption('wsdl-genericconstants', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of generic constants name (ex : ENUM_VALUE_0, ENUM_VALUE_1, etc) or contextual values (ex : VALUE_STRING, VALUE_YES, VALUES_NO, etc)')
-            ->addOption('wsdl-addcomments', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Set comments to be used within each generated file');
+            ->addOption('wsdl-addcomments', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Set comments to be used within each generated file')
+            ->addOption('wsdl-standalone', null, InputOption::VALUE_OPTIONAL, 'By default, the generated package can be used as a standalone. Otherwise, you must add wsdltophp/packagebase:dev-master to your main composer.json.');
     }
-
     /**
      * @see \Sdc\AppBundle\Command\Command::execute()
      */
@@ -79,12 +75,12 @@ class GeneratePackageCommand extends AbstractCommand
         $start = new \DateTime();
         $this->writeLn(sprintf(" Start at %s", $start->format('Y-m-d H:i:s')));
 
-        $wsdlUrl            = $this->input->getOption('wsdl-urlorpath');
-        $wsdlLogin          = $this->input->getOption('wsdl-login');
-        $wsdlPassword       = $this->input->getOption('wsdl-password');
-        $packageName        = $this->input->getOption('wsdl-prefix');
+        $wsdlUrl = $this->input->getOption('wsdl-urlorpath');
+        $wsdlLogin = $this->input->getOption('wsdl-login');
+        $wsdlPassword = $this->input->getOption('wsdl-password');
+        $packageName = $this->input->getOption('wsdl-prefix');
         $packageDestination = $this->input->getOption('wsdl-destination');
-        $wsdlOptions        = $this->defineWsdlOptions();
+        $wsdlOptions = $this->defineWsdlOptions();
 
         $this->setGenerator($this->getInstanceOfGenerator($wsdlUrl, $wsdlLogin, $wsdlPassword, $wsdlOptions));
 
@@ -96,9 +92,9 @@ class GeneratePackageCommand extends AbstractCommand
             $this->writeLn("  Generation not launched, use --force to force generation");
             $this->writeLn("  Wsdl used:");
             $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole(array(
-                'url'          => $wsdlUrl,
-                'login'        => $wsdlLogin,
-                'password'     => $wsdlPassword,
+                'url' => $wsdlUrl,
+                'login' => $wsdlLogin,
+                'password' => $wsdlPassword,
                 'Package name' => $packageName,
                 'Package dest' => $packageDestination,
             ))));
@@ -111,17 +107,16 @@ class GeneratePackageCommand extends AbstractCommand
         $end = new \DateTime();
         $this->writeLn(sprintf(" End at %s, duration: %s", $end->format('Y-m-d H:i:s'), $start->diff($end)->format('%H:%I:%S')));
     }
-
     /**
      * @return array
      */
     protected function defineWsdlOptions()
     {
-        $options        = array();
-        $wsdlProxyHost  = $this->input->getOption('wsdl-proxy-host');
-        $wsdlProxyPort  = $this->input->getOption('wsdl-proxy-port');
+        $options = array();
+        $wsdlProxyHost = $this->input->getOption('wsdl-proxy-host');
+        $wsdlProxyPort = $this->input->getOption('wsdl-proxy-port');
         $wsdlProxyLogin = $this->input->getOption('wsdl-proxy-login');
-        $wsdlProxyPass  = $this->input->getOption('wsdl-proxy-password');
+        $wsdlProxyPass = $this->input->getOption('wsdl-proxy-password');
 
         if (!empty($wsdlProxyHost)) {
             $options['proxy_host'] = $wsdlProxyHost;
@@ -138,7 +133,6 @@ class GeneratePackageCommand extends AbstractCommand
 
         return $options;
     }
-
     /**
      * @return array
      */
@@ -149,12 +143,11 @@ class GeneratePackageCommand extends AbstractCommand
             'wsdl-category' => 'Category',
             'wsdl-gathermethods' => 'GatherMethods',
             'wsdl-gentutorial' => 'GenerateTutorialFile',
-            'wsdl-genautoload' => 'GenerateAutoloadFile',
             'wsdl-genericconstants' => 'GenericConstantsNames',
             'wsdl-addcomments' => 'AddComments',
+            'wsdl-standalone' => 'Standalone',
         );
     }
-
     /**
      * @return array
      */
@@ -180,7 +173,6 @@ class GeneratePackageCommand extends AbstractCommand
         }
         return $options;
     }
-
     /**
      * @param mixed $optionValue
      * @return boolean|mixed
