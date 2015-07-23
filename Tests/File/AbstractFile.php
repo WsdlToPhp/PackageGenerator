@@ -78,6 +78,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlOdigeoPath());
     }
     /**
+     * @return Generator
+     */
+    public static function payPalGeneratorInstance()
+    {
+        return self::getInstance(self::wsdlPayPalPath());
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */
