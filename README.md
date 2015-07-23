@@ -50,6 +50,7 @@ To generate a package, nothing as simple as this:
         --wsdl-gathermethods="start" \
         --wsdl-genericconstants=false \
         --wsdl-gentutorial=true \
+        --wsdl-namespace="My\Project" \
         --wsdl-standalone=true \
         --wsdl-addcomments="date:2015-04-22" \
         --wsdl-addcomments="author:Me" \
@@ -76,6 +77,7 @@ Remove ```--force``` option to the previous sample command line to get this resu
         proxy_login: ******
         proxy_password: ******
       Generator options used:
+        wsdl-namespace: My\Project
         wsdl-category: cat
         wsdl-gathermethods: start
         wsdl-gentutorial: 1
@@ -130,6 +132,7 @@ Then:
     $generator->setOptionGenericConstantsNames(GeneratorOptions::VALUE_FALSE);
     $generator->setOptionGenerateTutorialFile(GeneratorOptions::VALUE_TRUE);
     $generator->setOptionStandalone(GeneratorOptions::VALUE_TRUE);
+    $generator->setOptionNamespacePrefix('My\Project');
     $generator->setOptionAddComments(array(
         'date'    => date('Y-m-d'),
         'team'    => 'Dream',
