@@ -147,18 +147,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodParameterType(StructAttributeModel $attribute)
     {
-        $type = null;
-        $model = $this->getModelFromStructAttribute($attribute);
-        if ($model instanceof StructModel && $model->getIsStruct() === true) {
-            $type = $this->getStructAttributeType($attribute, false, true);
-        }
-        /**
-         * see http://php.net/manual/fr/language.oop5.typehinting.php for these cases
-         */
-        if ($type === 'int' || $type === 'string') {
-            $type = null;
-        }
-        return $type;
+        return self::getValidType($this->getStructAttributeType($attribute, false, true), null);
     }
     /**
      * @param MethodContainer $methods
