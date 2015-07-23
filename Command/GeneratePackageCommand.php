@@ -66,7 +66,6 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('wsdl-category', null, InputOption::VALUE_OPTIONAL, 'First level directory name generation mode (start, end, cat, none)')
             ->addOption('wsdl-gathermethods', null, InputOption::VALUE_OPTIONAL, 'Gather methods based on operation name mode (start, end)')
             ->addOption('wsdl-gentutorial', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable tutorial file, you should enable this option only on dev')
-            ->addOption('wsdl-genautoload', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable autoload file generation, this is useless if you use composer or your own autoloader')
             ->addOption('wsdl-genericconstants', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of generic constants name (ex : ENUM_VALUE_0, ENUM_VALUE_1, etc) or contextual values (ex : VALUE_STRING, VALUE_YES, VALUES_NO, etc)')
             ->addOption('wsdl-addcomments', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Set comments to be used within each generated file');
     }
