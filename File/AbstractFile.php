@@ -104,7 +104,7 @@ abstract class AbstractFile implements FileInterface
      * @param string $destination
      * @return AbstractFile
      */
-    protected function setDestination($destination)
+    public function setDestination($destination)
     {
         $dest = $this->cleanDestination($destination);
         if (empty($dest)) {
