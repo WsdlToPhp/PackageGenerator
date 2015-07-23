@@ -127,6 +127,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . '/resources/OmnitureAdminServices.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlPayPalPath()
+    {
+        return __DIR__ . '/resources/PayPalSvc.wsdl';
+    }
+    /**
      * @param string $wsdlPath
      * @return Generator
      */
