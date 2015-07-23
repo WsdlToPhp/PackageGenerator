@@ -3,7 +3,6 @@
 namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
-
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;

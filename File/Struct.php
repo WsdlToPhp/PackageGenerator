@@ -539,7 +539,7 @@ class Struct extends AbstractModelFile
     public function setModel(AbstractModel $model)
     {
         if (!$model instanceof StructModel) {
-            throw new \InvalidArgumentException('Model must be an instance of a Struct',__LINE__);
+            throw new \InvalidArgumentException('Model must be an instance of a Struct', __LINE__);
         }
         return parent::setModel($model);
     }
