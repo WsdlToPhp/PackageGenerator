@@ -9,12 +9,25 @@ use Symfony\Component\Console\Input\InputOption;
 
 abstract class AbstractCommand extends Command
 {
+    /**
+     * @var int
+     */
     const EXIT_OK     = 1;
+    /**
+     * @var int
+     */
     const EXIT_NOT_OK = 0;
-
+    /**
+     * @var InputInterface
+     */
     protected $input;
+    /**
+     * @var OutputInterface
+     */
     protected $output;
-
+    /**
+     * @see \Symfony\Component\Console\Command\Command::configure()
+     */
     protected function configure()
     {
         $this
@@ -25,19 +38,26 @@ abstract class AbstractCommand extends Command
                 'If true, then package is really generated otherwise debug informations are displayed'
             );
     }
-
+    /**
+     * @see \Symfony\Component\Console\Command\Command::execute()
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->input  = $input;
         $this->output = $output;
         return self::EXIT_OK;
     }
-
+    /**
+     * @return bool
+     */
     protected function canExecute()
     {
         return (bool)$this->input->getOption('force') === true;
     }
-
+    /**
+     * @param string|array $messages
+     * @param int $type
+     */
     protected function writeLn($messages, $type = OutputInterface::OUTPUT_NORMAL)
     {
         $this->output->writeln($messages, $type);
