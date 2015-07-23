@@ -108,7 +108,9 @@ class Operation extends AbstractOperation
     {
         $parameters = array();
         foreach ($method->getParameters() as $parameter) {
-            $parameters[] = $this->getOperationCallParameterName($parameter, $method);
+            if ($parameter instanceof PhpFunctionParameter) {
+                $parameters[] = $this->getOperationCallParameterName($parameter, $method);
+            }
         }
         return sprintf('%s%s', implode($this->getOperationCallParametersSeparator(), $parameters), $this->getOperationCallParametersEnding());
     }
