@@ -10,7 +10,11 @@ Its purpose is to provide a full OOP approach to send SOAP requests without need
 
 The generated package is a standalone wihtout any dependencies. It's only based on native PHP SoapClient class. After its generation, you can move it anywhere you want and use it right away.
 
-The generated package does not need PEAR nor NuSOAP nor anything else, at least PHP 5.3.3, SoapClient and DOM (which are natively installed from this PHP version)! 
+The generated package does not need PEAR nor NuSOAP, at least :
+- PHP 5.3.3,
+- SoapClient : natively installed with PHP,
+- DOM : natively installed with PHP,
+- [PackageBase](https://packagist.org/packages/wsdltophp/packagebase): automatically installed on standalone mode (default mode), it contains utility classes used by the generated classes
 
 ## Usages
 ### Command line
