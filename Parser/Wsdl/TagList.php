@@ -45,7 +45,7 @@ class TagList extends AbstractTagParser
             $itemType = $tag->getAttributeItemType();
             $struct = $this->getStructByName($itemType);
             if ($model instanceof AbstractModel) {
-                $type = sprintf('array[%s]', $struct instanceof Struct ? $struct->getName() : $itemType);
+                $type = sprintf('%s[]', $struct instanceof Struct ? $struct->getName() : $itemType);
                 if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
                     $attribute->setInheritance($type);
                 } else {

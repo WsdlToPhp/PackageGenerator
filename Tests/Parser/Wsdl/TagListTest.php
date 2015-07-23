@@ -23,7 +23,7 @@ class TagListTest extends WsdlParser
 
         $tagListParser->parse();
 
-        $ok = false;
+        $count = 0;
         $structs = $tagListParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
             foreach ($structs as $struct) {
@@ -34,20 +34,21 @@ class TagListTest extends WsdlParser
                                 case 'firstSegmentsIds':
                                 case 'secondSegmentsIds':
                                 case 'thirdSegmentsIds':
-                                    $this->assertSame('array[int]', $attribute->getInheritance());
-                                    $ok = true;
+                                    $this->assertSame('int[]', $attribute->getInheritance());
+                                    $count++;
                                     break;
                             }
                         }
                         break;
                     case 'segment':
                         if ($struct->getAttribute('sectionIds') instanceof StructAttribute) {
-                            $this->assertSame('array[int]', $struct->getAttribute('sectionIds')->getInheritance());
+                            $this->assertSame('int[]', $struct->getAttribute('sectionIds')->getInheritance());
+                            $count++;
                         }
                         break;
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertSame(5, $count);
     }
 }
