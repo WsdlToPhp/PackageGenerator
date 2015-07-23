@@ -38,6 +38,8 @@ use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
+use Symfony\Component\Console\Input\ArrayInput;
+use Composer\Console\Application;
 
 class Generator extends \SoapClient
 {
@@ -339,25 +341,30 @@ class Generator extends \SoapClient
      */
     private function generateComposerFile($rootDirectory)
     {
-        $pathToComposerTemplate = dirname(__FILE__) . '/../Resources/templates/Default/composer.json';
-        if (is_file($pathToComposerTemplate)) {
-            $content = file_get_contents($pathToComposerTemplate);
-            $content = str_replace(array(
-                'packagename',
-                'PackageName',
-                'wsdl_url',
-            ), array(
-                strtolower(self::getPackageName(false)),
-                self::getPackageName(false),
-                $this->getWsdl(0)->getName(),
-            ), $content);
-            file_put_contents($rootDirectory . 'composer.json', $content);
-            if (!is_file($rootDirectory . '/composer.json')) {
-                throw new \InvalidArgumentException(sprintf('Unable to find autoload file at "%s"', $rootDirectory . '/composer.json'));
-            } else {
-                exec('cd ' . $rootDirectory . ';composer update;');
-            }
-        }
+        $composer = new Application();
+        $composer->setAutoExit(false);
+
+        $composer->run(new ArrayInput(array(
+            'command' => 'init',
+            '--verbose' => true,
+            '--no-interaction' => true,
+            '--name' => sprintf('wsdltophp/generated-%s', strtolower(self::getPackageName())),
+            '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getWsdl(0)->getName()),
+            '--require' => array(
+                'php:>=5.3.3',
+                'ext-soap:*',
+                'wsdltophp/packagebase:dev-master',
+            ),
+            '--working-dir' => $rootDirectory,
+        )));
+
+        $composer->run(new ArrayInput(array(
+            'command' => 'update',
+            '--verbose' => true,
+            '--optimize-autoloader' => true,
+            '--no-dev' => true,
+            '--working-dir' => $rootDirectory,
+        )));
         return $this;
     }
     /**
