@@ -52,7 +52,7 @@ class TagHeader extends AbstractTagParser
         $operation = $header->getParentOperation();
         if ($operation instanceof Operation) {
             $serviceMethod = $this->getModel($operation);
-            if ($serviceMethod instanceof Method) {
+            if ($serviceMethod instanceof Method && !$this->isSoapHeaderAlreadyDefined($serviceMethod, $header->getHeaderName())) {
                 $serviceMethod
                     ->addMeta(self::META_SOAP_HEADERS, array($header->getHeaderRequired()))
                     ->addMeta(self::META_SOAP_HEADER_NAMES, array($header->getHeaderName()))
@@ -60,5 +60,15 @@ class TagHeader extends AbstractTagParser
                     ->addMeta(self::META_SOAP_HEADER_NAMESPACES, array($header->getHeaderNamespace()));
             }
         }
+    }
+    /**
+     * @param Method $method
+     * @param string $soapHeaderName
+     * @return bool
+     */
+    protected function isSoapHeaderAlreadyDefined(Method $method, $soapHeaderName)
+    {
+        $methodSoapHeaders = $method->getMetaValue(self::META_SOAP_HEADER_NAMES, array());
+        return in_array($soapHeaderName, $methodSoapHeaders, true);
     }
 }
