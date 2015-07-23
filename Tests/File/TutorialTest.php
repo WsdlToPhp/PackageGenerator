@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
-use WsdlToPhp\PackageGenerator\Container\Model\Service;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 
 class TutorialTest extends AbstractFile
@@ -24,7 +24,7 @@ class TutorialTest extends AbstractFile
      */
     public function testReforma()
     {
-        Service::purgeAllCache();
+        AbstractModel::purgeUniqueNames();
         $instance = self::reformaGeneratorInstance();
 
         $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
@@ -37,7 +37,7 @@ class TutorialTest extends AbstractFile
      */
     public function testActon()
     {
-        Service::purgeAllCache();
+        AbstractModel::purgeUniqueNames();
         $instance = self::actonGeneratorInstance();
 
         $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
