@@ -21,6 +21,13 @@ class TagHeaderTest extends WsdlParser
         return new TagHeader(self::generatorInstance(self::wsdlActonPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
+     */
+    public static function paypalInstance()
+    {
+        return new TagHeader(self::generatorInstance(self::wsdlPayPalPath()));
+    }
+    /**
      *
      */
     public function testParseImageViewService()
@@ -135,5 +142,39 @@ class TagHeaderTest extends WsdlParser
             }
         }
         $this->assertTrue((bool)$ok);
+    }
+    /**
+     *
+     */
+    public function testParsePayPal()
+    {
+        $tagHeaderParser = self::paypalInstance();
+
+        $tagHeaderParser->parse();
+
+        $count = 0;
+        $services = $tagHeaderParser->getGenerator()->getServices();
+        if ($services->count() > 0) {
+            foreach ($services as $service) {
+                foreach ($service->getMethods() as $method) {
+                    $this->assertSame(array(
+                        TagHeader::META_SOAP_HEADER_NAMES => array(
+                            'RequesterCredentials',
+                        ),
+                        TagHeader::META_SOAP_HEADER_NAMESPACES => array(
+                            'urn:ebay:api:PayPalAPI',
+                        ),
+                        TagHeader::META_SOAP_HEADER_TYPES => array(
+                            'CustomSecurityHeaderType',
+                        ),
+                        TagHeader::META_SOAP_HEADERS => array(
+                            'required',
+                        ),
+                    ), $method->getMeta());
+                    $count++;
+                }
+            }
+        }
+        $this->assertSame(57, $count);
     }
 }
