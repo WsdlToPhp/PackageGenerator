@@ -22,22 +22,22 @@ class TagUnionTest extends WsdlParser
 
         $tagUnionParser->parse();
 
-        $ok = false;
+        $count = 0;
         $structs = $tagUnionParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
             foreach ($structs as $struct) {
                 switch ($struct->getName()) {
                     case 'RelationshipTypeOpenEnum':
                         $this->assertSame('RelationshipType', $struct->getInheritance());
-                        $ok |= true;
+                        $count++;
                         break;
                     case 'FaultCodesOpenEnumType':
                         $this->assertSame('FaultCodesType', $struct->getInheritance());
-                        $ok |= true;
+                        $count++;
                         break;
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertSame(2, $count);
     }
 }
