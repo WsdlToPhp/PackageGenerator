@@ -4,7 +4,6 @@ namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
@@ -16,7 +15,7 @@ class TagImportTest extends WsdlParser
      */
     public static function instance()
     {
-        return new TagImport(new Generator(self::wsdlPartnerPath()));
+        return new TagImport(self::generatorInstance(self::wsdlPartnerPath()));
     }
     /**
      *
