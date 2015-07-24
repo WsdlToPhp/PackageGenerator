@@ -174,11 +174,12 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     }
     /**
      * @param string $wsdlPath
+     * @param bool $reset
      * @return Generator
      */
-    public static function getInstance($wsdlPath)
+    public static function getInstance($wsdlPath, $reset = false)
     {
-        if (!isset(self::$instances[$wsdlPath])) {
+        if (!isset(self::$instances[$wsdlPath]) || $reset === true) {
             self::$instances[$wsdlPath] = self::getGeneratorInstance($wsdlPath);
         }
         return self::$instances[$wsdlPath];
