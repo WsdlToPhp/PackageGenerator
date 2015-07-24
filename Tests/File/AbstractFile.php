@@ -25,10 +25,6 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 abstract class AbstractFile extends TestCase
 {
     /**
-     * @var Generator
-     */
-    protected static $instances = array();
-    /**
      * @return Generator
      */
     public static function bingGeneratorInstance()
@@ -88,21 +84,15 @@ abstract class AbstractFile extends TestCase
      * @param string $wsdl
      * @return Generator
      */
-    protected static function getInstance($wsdl)
+    public static function getInstance($wsdl)
     {
-        if (!empty(self::$instances) && !isset(self::$instances[$wsdl])) {
-            Generator::resetInstance();
-        }
-        if (!isset(self::$instances[$wsdl])) {
-            $g = Generator::instance($wsdl);
-            $g->setPackageName('Api');
-            $g->setOptionAddComments(array(
-                'release' => '1.1.0',
-            ));
-            self::applyParsers($g, $wsdl);
-            self::$instances[$wsdl] = $g;
-        }
-        return self::$instances[$wsdl];
+        $g = parent::getInstance($wsdl);
+        $g->setPackageName('Api');
+        $g->setOptionAddComments(array(
+            'release' => '1.1.0',
+        ));
+        self::applyParsers($g, $wsdl);
+        return $g;
     }
     /**
      * @param Generator $generator
@@ -148,7 +138,7 @@ abstract class AbstractFile extends TestCase
         if (!is_file($file->getFileName())) {
             return $this->assertFalse(true, sprintf('Generated file "%s" could not be find', $file->getFileName()));
         }
-        $validContent = file_get_contents(sprintf('%s%s.php', __DIR__ . '/../resources/generated/', $valid));
+        $validContent = file_get_contents(sprintf('%s%s.php', $this->getTestDirectory(), $valid));
         $validContent = str_replace('__WSDL_URL__', $file->getGenerator()->getWsdl(0)->getName(), $validContent);
         $toBeValidatedContent = file_get_contents($file->getFileName());
         $this->assertSame($validContent, $toBeValidatedContent);
