@@ -6,6 +6,9 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var Generator[]
+     */
     private static $instances = array();
     /**
      * @return string
@@ -137,7 +140,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      * @param string $wsdlPath
      * @return Generator
      */
-    public static function getGeneratorInstance($wsdlPath)
+    private static function getGeneratorInstance($wsdlPath)
     {
         return new Generator($wsdlPath);
     }
@@ -146,7 +149,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     public static function getBingGeneratorInstance()
     {
-        return self::getGeneratorInstance(self::wsdlBingPath());
+        return self::getInstance(self::wsdlBingPath());
     }
     /**
      * @return Generator
@@ -170,10 +173,10 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return self::getInstance(self::wsdlReformaPath());
     }
     /**
-     * @param strin $wsdlPath
+     * @param string $wsdlPath
      * @return Generator
      */
-    protected static function getInstance($wsdlPath)
+    public static function getInstance($wsdlPath)
     {
         if (!isset(self::$instances[$wsdlPath])) {
             self::$instances[$wsdlPath] = self::getGeneratorInstance($wsdlPath);
