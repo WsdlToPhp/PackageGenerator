@@ -13,6 +13,7 @@ before_install:
 
 install:
     - composer install
+    - travis_wait mvn install
 
 script:
     - phpunit --coverage-text --coverage-clover=coverage.clover
