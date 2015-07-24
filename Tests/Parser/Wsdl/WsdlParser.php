@@ -13,7 +13,8 @@ use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions;
 abstract class WsdlParser extends TestCase
 {
     /**
-     * @param srting $wsdlPath
+     * @param string $wsdlPath
+     * @param bool $reset
      * @return Generator
      */
     public static function generatorInstance($wsdlPath, $reset = false)
