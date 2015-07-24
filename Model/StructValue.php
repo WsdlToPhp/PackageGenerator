@@ -45,13 +45,13 @@ class StructValue extends AbstractModel
      * @uses StructValue::constantSuffix()
      * @uses StructValue::getIndex()
      * @uses StructValue::getOwner()
-     * @uses Generator::instance()->getOptionGenericConstantsNames()
+     * @uses Generator::getOptionGenericConstantsNames()
      * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      * @return string
      */
     public function getCleanName($keepMultipleUnderscores = false)
     {
-        if (Generator::instance()->getOptionGenericConstantsNames() && is_numeric($this->getIndex()) && $this->getIndex() >= 0) {
+        if ($this->getGenerator()->getOptionGenericConstantsNames() && is_numeric($this->getIndex()) && $this->getIndex() >= 0) {
             return 'ENUM_VALUE_' . $this->getIndex();
         } else {
             $key = self::constantSuffix($this->getOwner()->getName(), parent::getCleanName($keepMultipleUnderscores), $this->getIndex());
