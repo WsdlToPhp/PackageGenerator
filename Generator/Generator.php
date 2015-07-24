@@ -567,7 +567,7 @@ class Generator extends \SoapClient
      * @param WsdlContainer $wsdlContainer
      * @return Generator
      */
-    public function setWsdls(WsdlContainer $wsdlContainer)
+    protected function setWsdls(WsdlContainer $wsdlContainer)
     {
         $this->wsdls = $wsdlContainer;
         return $this;
