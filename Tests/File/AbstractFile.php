@@ -21,6 +21,7 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput as TagOutputParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 
 abstract class AbstractFile extends TestCase
 {
@@ -36,7 +37,7 @@ abstract class AbstractFile extends TestCase
      */
     public static function actonGeneratorInstance()
     {
-        return self::getInstance(self::wsdlActonPath());
+        return self::getInstance(self::wsdlActonPath(), true);
     }
     /**
      * @return Generator
@@ -50,7 +51,7 @@ abstract class AbstractFile extends TestCase
      */
     public static function reformaGeneratorInstance()
     {
-        return self::getInstance(self::wsdlReformaPath());
+        return self::getInstance(self::wsdlReformaPath(), true);
     }
     /**
      * @return Generator
@@ -84,9 +85,10 @@ abstract class AbstractFile extends TestCase
      * @param string $wsdl
      * @return Generator
      */
-    public static function getInstance($wsdl)
+    public static function getInstance($wsdl, $reset = false)
     {
-        $g = parent::getInstance($wsdl);
+        AbstractObjectContainer::purgeAllCache();
+        $g = parent::getInstance($wsdl, $reset);
         $g->setPackageName('Api');
         $g->setOptionAddComments(array(
             'release' => '1.1.0',
