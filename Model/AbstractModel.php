@@ -364,9 +364,8 @@ abstract class AbstractModel
      */
     public function getNamespace()
     {
-        $generator = Generator::instance();
-        $namespace = $generator->getOptionNamespacePrefix();
-        $directory = $generator->getDirectory($this);
+        $namespace = $this->getGenerator()->getOptionNamespacePrefix();
+        $directory = $this->getGenerator()->getDirectory($this);
         $packageName = $this->getGenerator()->getPackageName();
         $namespaceEnding = implode('\\', explode('/', substr($directory, 0, -1)));
         return sprintf(empty($namespace) ? '%1$s%4$s%3$s' : '%2$s\\%1$s%4$s%3$s', $packageName, $namespace, $namespaceEnding, empty($namespaceEnding) ? '' : '\\');
