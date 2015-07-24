@@ -4,43 +4,74 @@ namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\PackageGenerator\Model\Schema;
 
 class WsdlTest extends TestCase
 {
+    /**
+     * @var Wsdl[]
+     */
+    private static $wsdls = array();
+    /**
+     * @var Schema[]
+     */
+    private static $schemas = array();
+    /**
+     * @param string $wsdlPath
+     * @return Wsdl
+     */
+    public static function getWsdl($wsdlPath)
+    {
+        if (!isset(self::$wsdls[$wsdlPath])) {
+            self::$wsdls[$wsdlPath] = new Wsdl(self::getInstance($wsdlPath), $wsdlPath, file_get_contents($wsdlPath));
+        }
+        return self::$wsdls[$wsdlPath];
+    }
+    /**
+     * @param string $schemaPath
+     * @return Schema
+     */
+    public static function getSchema($schemaPath)
+    {
+        if (!isset(self::$schemas[$schemaPath])) {
+            self::$schemas[$schemaPath] = new Schema(self::getBingGeneratorInstance(), $schemaPath, file_get_contents($schemaPath));
+        }
+        return self::$schemas[$schemaPath];
+    }
     /**
      * @return Wsdl
      */
     public static function bingInstance()
     {
-        return new Wsdl(self::getBingGeneratorInstance(), self::wsdlBingPath(), file_get_contents(self::wsdlBingPath()));
+        return self::getWsdl(self::wsdlBingPath());
     }
     /**
      * @return Wsdl
      */
     public static function ebayInstance()
     {
-        return new Wsdl(self::getBingGeneratorInstance(), self::wsdlEbayPath(), file_get_contents(self::wsdlEbayPath()));
+        return self::getWsdl(self::wsdlEbayPath());
     }
     /**
      * @return Wsdl
      */
     public static function partnerInstance($local = true)
     {
-        return new Wsdl(self::getBingGeneratorInstance(), self::wsdlPartnerPath(), file_get_contents(self::wsdlPartnerPath($local)));
+        return self::getWsdl(self::wsdlPartnerPath($local));
     }
     /**
      * @return Wsdl
      */
     public static function imageServiceViewInstance()
     {
-        return new Wsdl(self::getBingGeneratorInstance(), self::wsdlImageViewServicePath(), file_get_contents(self::wsdlImageViewServicePath()));
+        return self::getWsdl(self::wsdlImageViewServicePath());
     }
     /**
-     * @return Wsdl
+     * @return $schema
      */
     public static function imageServiceViewAvailRequestInstance()
     {
-        return new Wsdl(self::getBingGeneratorInstance(), self::schemaImageViewServiceAvailableImagesRequestPath(), file_get_contents(self::schemaImageViewServiceAvailableImagesRequestPath()));
+        return self::getSchema(self::schemaImageViewServiceAvailableImagesRequestPath());
     }
     /**
      *
@@ -54,21 +85,21 @@ class WsdlTest extends TestCase
      */
     public static function actonInstance()
     {
-        return new Wsdl(self::getBingGeneratorInstance(), self::wsdlActonPath(), file_get_contents(self::wsdlActonPath()));
+        return self::getWsdl(self::wsdlActonPath());
     }
     /**
      * @return Wsdl
      */
     public static function odigeoInstance()
     {
-        return new Wsdl(self::getBingGeneratorInstance(), self::wsdlOdigeoPath(), file_get_contents(self::wsdlOdigeoPath()));
+        return self::getWsdl(self::wsdlOdigeoPath());
     }
     /**
      * @return Wsdl
      */
     public static function orderContractInstance()
     {
-        return new Wsdl(self::getBingGeneratorInstance(), self::wsdlOrderContractPath(), file_get_contents(self::wsdlOrderContractPath()));
+        return self::getWsdl(self::wsdlOrderContractPath());
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -78,10 +109,10 @@ class WsdlTest extends TestCase
         new Wsdl(self::getBingGeneratorInstance(), __DIR__ . '/../resources/empty.wsdl', file_get_contents(__DIR__ . '/../resources/empty.wsdl'));
     }
     /**
-     * @return Wsdl
+     * @return Schema
      */
     public static function numericEnumerationInstance()
     {
-        return new Wsdl(self::getBingGeneratorInstance(), __DIR__ . '/../resources/numeric_enumeration.xml', file_get_contents(__DIR__ . '/../resources/numeric_enumeration.xml'));
+        return self::getSchema(__DIR__ . '/../resources/numeric_enumeration.xml');
     }
 }
