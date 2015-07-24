@@ -41,6 +41,7 @@ class TagEnumerationTest extends WsdlParser
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Moderate', 1, $struct));
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Strict', 2, $struct));
 
+                    $struct->getValues()->rewind();
                     $this->assertEquals($values, $struct->getValues());
                     $count++;
                 } elseif ($struct->getName() === 'SearchOption') {
@@ -48,6 +49,7 @@ class TagEnumerationTest extends WsdlParser
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'DisableLocationDetection', 0, $struct));
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'EnableHighlighting', 1, $struct));
 
+                    $struct->getValues()->rewind();
                     $this->assertEquals($values, $struct->getValues());
                     $count++;
                 }
@@ -116,6 +118,7 @@ class TagEnumerationTest extends WsdlParser
                     ));
                     $values->add($three);
 
+                    $struct->getValues()->rewind();
                     $this->assertEquals($values, $struct->getValues());
                     $count++;
                 }
