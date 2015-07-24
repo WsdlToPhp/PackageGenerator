@@ -14,9 +14,9 @@ class TagDocumentationTest extends TestCase
      */
     public function testGetSuitableParent()
     {
-        $wsdl = WsdlTest::imageServiceViewAvailRequestInstance();
+        $schema = WsdlTest::imageServiceViewAvailRequestInstance();
 
-        $documentations = $wsdl->getContent()->getElementsByName(Wsdl::TAG_DOCUMENTATION);
+        $documentations = $schema->getContent()->getElementsByName(Wsdl::TAG_DOCUMENTATION);
 
         $ok = false;
         foreach ($documentations as $index=>$documentation) {
