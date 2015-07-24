@@ -31,6 +31,7 @@ To generate a package, nothing as simple as this:
         --force
     $ cd /path/to/where/the/package/must/be/generated/
     $ ls -la => enjoy!
+    $ vi tutorial.php :smile:
 ```
 #### With full options
 To generate a package, nothing as simple as this:
@@ -153,11 +154,11 @@ You have several ```testsuite```s available which run test in the proper order:
 
 - configuration: tests configuration readers
 - utils: tests utils class
-- domhandler: tests dom handlers
+- domhandler: tests dom handlers (Basic and Wsdl + Tag)
 - model: tests models
-- container : tests containers
-- parser: tests parsers
-- file: tests files
+- container : tests containers (Model and PhpElement)
+- parser: tests parsers (SoapClient and Wsdl)
+- file: tests files generation
 
 ```
     $ cd /path/to/src/WsdlToPhp/PackageGenerator/
