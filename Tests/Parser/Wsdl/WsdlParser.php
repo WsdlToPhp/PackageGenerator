@@ -16,10 +16,10 @@ abstract class WsdlParser extends TestCase
      * @param srting $wsdlPath
      * @return Generator
      */
-    public static function generatorInstance($wsdlPath)
+    public static function generatorInstance($wsdlPath, $reset = false)
     {
         AbstractObjectContainer::purgeAllCache();
-        $generator = self::getInstance($wsdlPath);
+        $generator = self::getInstance($wsdlPath, $reset);
         $parsers = array(
             new TagInclude($generator),
             new TagImport($generator),

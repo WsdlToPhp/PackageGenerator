@@ -28,7 +28,7 @@ class TagDocumentationTest extends WsdlParser
      */
     public static function actonInstance()
     {
-        return new TagDocumentation(self::generatorInstance(self::wsdlActonPath()));
+        return new TagDocumentation(self::generatorInstance(self::wsdlActonPath(), true));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
