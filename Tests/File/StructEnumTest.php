@@ -21,10 +21,9 @@ class StructEnumTest extends AbstractFile
      */
     public function testWriteBingSearchEnumAdultOption()
     {
-        $file = $this->getTestDirectory();
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('AdultOption')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), $file);
+            $struct = new EnumFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();
@@ -38,10 +37,9 @@ class StructEnumTest extends AbstractFile
      */
     public function testWriteBingSearchEnumSourceType()
     {
-        $file = $this->getTestDirectory();
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('SourceType')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), $file);
+            $struct = new EnumFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();
@@ -55,10 +53,9 @@ class StructEnumTest extends AbstractFile
      */
     public function testWriteReformaHouseStageEnum()
     {
-        $file = $this->getTestDirectory();
         $generator = self::reformaGeneratorInstance();
         if (($model = $generator->getStruct('HouseStageEnum')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), $file);
+            $struct = new EnumFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();
@@ -72,10 +69,9 @@ class StructEnumTest extends AbstractFile
      */
     public function testWriteOmnitureDsWeblogFormats()
     {
-        $file = $this->getTestDirectory();
         $generator = self::omnitureGeneratorInstance();
         if (($model = $generator->getStruct('ds_weblog_formats')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), $file);
+            $struct = new EnumFile($generator, $model->getName(), $this->getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();
