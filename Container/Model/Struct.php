@@ -31,21 +31,19 @@ class Struct extends AbstractModel
      */
     public function addVirtualStruct(Generator $generator, $structName)
     {
-        if ($this->get($structName) === null) {
-            $this->add(new Model($generator, $structName, false));
-        }
-        return $this;
+        return $this->addStruct($generator, $structName, false);
     }
     /**
      * Adds type to structs
      * @param Generator $generator
      * @param string $structName the original struct name
+     * @param bool $isStruct whether the Struct has to be generated or not
      * @return Struct
      */
-    public function addStruct(Generator $generator, $structName)
+    public function addStruct(Generator $generator, $structName, $isStruct = true)
     {
         if ($this->get($structName) === null) {
-            $this->add(new Model($generator, $structName));
+            $this->add(new Model($generator, $structName, $isStruct));
         }
         return $this;
     }
