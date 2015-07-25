@@ -31,18 +31,4 @@ class WSdlContainerTest extends TestCase
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Wsdl', $wsdlContainer->getWsdlByName(self::WSDL_EBAY));
         $this->assertNull($wsdlContainer->getWsdlByName('Bar'));
     }
-    /**
-     *
-     */
-    public function testGetAs()
-    {
-        $wsdlContainer = self::instance();
-
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Wsdl', $wsdlContainer->getAs(array(
-            WsdlContainer::KEY_NAME => self::WSDL_BING,
-        )));
-        $this->assertNull($wsdlContainer->getAs(array(
-            WsdlContainer::KEY_NAME => 'bar',
-        )));
-    }
 }

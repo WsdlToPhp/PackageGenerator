@@ -21,7 +21,7 @@ class Struct extends AbstractModel
      */
     public function getStructByName($name)
     {
-        return $this->get($name, parent::KEY_NAME);
+        return $this->get($name);
     }
     /**
      * Adds a virtual struct
@@ -69,16 +69,8 @@ class Struct extends AbstractModel
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
      * @return Model|null
      */
-    public function get($value, $key = parent::KEY_NAME)
+    public function get($value)
     {
-        return parent::get($value, $key);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getAs()
-     * @return Struct|null
-     */
-    public function getAs(array $properties)
-    {
-        return parent::getAs($properties);
+        return parent::get($value);
     }
 }

@@ -48,6 +48,7 @@ class MethodTest extends TestCase
      */
     public function testMultipleServicesSameMethods()
     {
+        Service::purgeUniqueNames();
         $service1 = new Service(self::getBingGeneratorInstance(), 'Login');
         $service1->addMethod('Login', 'int', 'id');
 
@@ -57,11 +58,8 @@ class MethodTest extends TestCase
         $service3 = new Service(self::getBingGeneratorInstance(), 'login');
         $service3->addMethod('Login', 'int', 'id');
 
-        Service::purgeUniqueNames();
         $this->assertSame('Login', $service1->getMethod('Login')->getMethodName());
-        Service::purgeUniqueNames();
-        $this->assertSame('login', $service2->getMethod('login')->getMethodName());
-        Service::purgeUniqueNames();
+        $this->assertSame('login_1', $service2->getMethod('login')->getMethodName());
         $this->assertSame('Login', $service3->getMethod('Login')->getMethodName());
     }
     /**
@@ -69,6 +67,7 @@ class MethodTest extends TestCase
      */
     public function testMultipleServicesSameMethodsWithoutPurging()
     {
+        Service::purgeUniqueNames();
         $service1 = new Service(self::getBingGeneratorInstance(), 'Login');
         $service1->addMethod('Login', 'int', 'id');
 
@@ -78,7 +77,6 @@ class MethodTest extends TestCase
         $service3 = new Service(self::getBingGeneratorInstance(), 'login');
         $service3->addMethod('Login', 'int', 'id');
 
-        Service::purgeUniqueNames();
         $this->assertSame('Login', $service1->getMethod('Login')->getMethodName());
         $this->assertSame('login_1', $service2->getMethod('login')->getMethodName());
         $this->assertSame('Login', $service3->getMethod('Login')->getMethodName());

@@ -34,18 +34,4 @@ class StructValueContainerTest extends TestCase
         $this->assertInstanceOf('\\WSdlToPhp\\PackageGenerator\\Model\\StructValue', $structvalueContainer->getStructValueByName('any'));
         $this->assertNull($structvalueContainer->getStructValueByName('Bar'));
     }
-    /**
-     *
-     */
-    public function testGetAs()
-    {
-        $structvalueContainer = self::instance();
-
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructValue', $structvalueContainer->getAs(array(
-            StructValueContainer::KEY_NAME => 'bar',
-        )));
-        $this->assertNull($structvalueContainer->getAs(array(
-            StructValueContainer::KEY_NAME => 'Bar',
-        )));
-    }
 }

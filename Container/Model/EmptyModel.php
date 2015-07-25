@@ -18,16 +18,8 @@ class EmptyModel extends AbstractModel
      * @see \WsdlToPhp\PackageGenerator\ModelContainer\AbstractModelContainer::get()
      * @return Model|null
      */
-    public function get($value, $key = parent::KEY_NAME)
+    public function get($value)
     {
-        return parent::get($value, $key);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\ModelContainer\AbstractModelContainer::getAs()
-     * @return Model|null
-     */
-    public function getAs(array $properties)
-    {
-        return parent::getAs($properties);
+        return parent::get($value);
     }
 }
