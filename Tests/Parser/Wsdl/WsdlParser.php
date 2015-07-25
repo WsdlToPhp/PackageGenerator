@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude;
@@ -19,7 +18,6 @@ abstract class WsdlParser extends TestCase
      */
     public static function generatorInstance($wsdlPath, $reset = false)
     {
-        AbstractObjectContainer::purgeAllCache();
         $generator = self::getInstance($wsdlPath, $reset);
         $parsers = array(
             new TagInclude($generator),

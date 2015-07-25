@@ -45,17 +45,6 @@ class ModelContainerTest extends TestCase
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\EmptyModel', $modelContainer->get('Foo'));
     }
     /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testGetWithException()
-    {
-        $modelContainer = new ModelContainer();
-        $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
-        $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Bar'));
-
-        $modelContainer->get('Foo', 'bar');
-    }
-    /**
      *
      */
     public function testForeach()
@@ -96,20 +85,5 @@ class ModelContainerTest extends TestCase
 
         $this->assertSame(4, $models->count());
         $this->assertSame(4, count($models));
-    }
-    /**
-     *
-     */
-    public function testGetAs()
-    {
-        $modelContainer = new ModelContainer();
-        $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
-
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\EmptyModel', $modelContainer->getAs(array(
-            ModelContainer::KEY_NAME => 'Foo',
-        )));
-        $this->assertNull($modelContainer->getAs(array(
-            ModelContainer::KEY_NAME => 'foo',
-        )));
     }
 }

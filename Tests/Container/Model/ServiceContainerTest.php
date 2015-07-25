@@ -30,20 +30,6 @@ class ServiceContainerTest extends TestCase
     /**
      *
      */
-    public function testGetAs()
-    {
-        $serviceContainer = self::instance();
-
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $serviceContainer->getAs(array(
-            ServiceContainer::KEY_NAME => 'Foo',
-        )));
-        $this->assertNull($serviceContainer->getAs(array(
-            ServiceContainer::KEY_NAME => 'foo',
-        )));
-    }
-    /**
-     *
-     */
     public function testAddServiceNonUnique()
     {
         $serviceContainer = self::instance();
@@ -52,6 +38,8 @@ class ServiceContainerTest extends TestCase
         $serviceContainer->addService(self::getBingGeneratorInstance(), 'Foo', 'bar', 'int', 'string');
 
         $fooService = $serviceContainer->getServiceByName('Foo');
+
+        $this->assertCount(2, $fooService->getMethods());
 
         $count = 0;
         foreach ($fooService->getMethods() as $method) {

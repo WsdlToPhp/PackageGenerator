@@ -468,12 +468,20 @@ abstract class AbstractModel
         return $uniqueName;
     }
     /**
-     * Gives the avalibity for test purpose and multiple package generation to purge unique names
+     * Gives the availability for test purpose and multiple package generation to purge unique names
      * @todo see if it can be removed by reviewing how unique names are generated
      */
     public static function purgeUniqueNames()
     {
         self::$uniqueNames = array();
+    }
+    /**
+     * Gives the availability for test purpose and multiple package generation to purge reserved keywords usage
+     * @todo see if it can be removed by reviewing how reserved keywords are generated
+     */
+    public static function purgeReservedKeywords()
+    {
+        self::$replacedReservedPhpKeywords = array();
     }
     /**
      * Clean comment

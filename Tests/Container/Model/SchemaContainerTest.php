@@ -32,18 +32,4 @@ class SchemaContainerTest extends TestCase
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Schema', $wsdlContainer->getSchemaByName(self::SCHEMA_EBAY));
         $this->assertNull($wsdlContainer->getSchemaByName('Bar'));
     }
-    /**
-     *
-     */
-    public function testGetAs()
-    {
-        $wsdlContainer = self::instance();
-
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Schema', $wsdlContainer->getAs(array(
-            SchemaContainer::KEY_NAME => self::SCHEMA_BING,
-        )));
-        $this->assertNull($wsdlContainer->getAs(array(
-            SchemaContainer::KEY_NAME => 'bar',
-        )));
-    }
 }

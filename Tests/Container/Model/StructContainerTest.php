@@ -42,48 +42,17 @@ class StructContainerTest extends TestCase
         $this->assertCount(1, $structContainer->getStructByName('Foo')->getAttributes());
     }
     /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testGetInvalidProperty()
-    {
-        self::instance()->get(true, 'foo');
-    }
-    /**
      *
      */
-    public function testOffsetGet()
-    {
-        $instance = self::instance();
+     public function testOffsetUnset()
+     {
+         $instance = self::instance();
 
-        $instance->offsetSet(100, StructTest::instance('Foo', true));
+         $instance->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'string');
+         $instance->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'int');
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $instance->offsetGet(100));
-    }
-    /**
-     *
-     */
-    public function testOffsetUnset()
-    {
-        $instance = self::instance();
+         $instance->offsetUnset(1);
 
-        $instance->offsetSet(100, StructTest::instance('Foo', true));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $instance->offsetGet(100));
-
-        $instance->offsetUnset(100);
-        $this->assertNull($instance->offsetGet(100));
-    }
-    /**
-     *
-     */
-    public function testGetAs()
-    {
-        $structContainer = self::instance();
-
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getAs(array(
-            StructContainer::KEY_NAME => 'Bar',
-        )));
-        $this->assertNull($structContainer->getAs(array(
-            StructContainer::KEY_NAME => null,
-        )));
-    }
+         $this->assertNull($instance->offsetGet(1));
+     }
 }

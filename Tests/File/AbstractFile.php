@@ -21,7 +21,7 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput as TagOutputParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
 abstract class AbstractFile extends TestCase
 {
@@ -87,7 +87,8 @@ abstract class AbstractFile extends TestCase
      */
     public static function getInstance($wsdl, $reset = false)
     {
-        AbstractObjectContainer::purgeAllCache();
+        AbstractModel::purgeUniqueNames();
+        AbstractModel::purgeReservedKeywords();
         $g = parent::getInstance($wsdl, $reset);
         $g->setPackageName('Api');
         $g->setOptionAddComments(array(
