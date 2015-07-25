@@ -74,7 +74,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @param int[] $thirdSegmentsIds
      */
-    public function __construct(\Api\StructType\ApiFareItineraryPrice $price = null, $key = null, $firstSegmentsIds = null, $clickoutURLParams = null, boolean $resident = null, $secondSegmentsIds = null, $thirdSegmentsIds = null)
+    public function __construct(\Api\StructType\ApiFareItineraryPrice $price = null, $key = null, $firstSegmentsIds = null, $clickoutURLParams = null, $resident = null, $secondSegmentsIds = null, $thirdSegmentsIds = null)
     {
         $this
             ->setPrice($price)
@@ -170,7 +170,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param boolean $resident
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setResident(boolean $resident = null)
+    public function setResident($resident = null)
     {
         $this->resident = $resident;
         return $this;
