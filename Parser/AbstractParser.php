@@ -18,4 +18,11 @@ abstract class AbstractParser implements ParserInterface
     {
         $this->generator = $generator;
     }
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return get_called_class();
+    }
 }
