@@ -88,11 +88,6 @@ class Generator extends \SoapClient
      */
     private $options;
     /**
-     * Current generator instance
-     * @var Generator
-     */
-    private static $instance;
-    /**
      * Used parsers
      * @var ParserContainer
      */
@@ -116,10 +111,27 @@ class Generator extends \SoapClient
      */
     public function __construct($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
     {
+        $this
+            ->initSoapClient($pathToWsdl, $login, $password, $wsdlOptions)
+            ->initContainers()
+            ->initParsers()
+            ->setOptions(GeneratorOptions::instance())
+            ->addWsdl($pathToWsdl);
+    }
+    /**
+     * @param string $pathToWsdl
+     * @param string $login
+     * @param string $password
+     * @param array $wsdlOptions
+     * @throws \InvalidArgumentException
+     * @return Generator
+     */
+    protected function initSoapClient($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
+    {
         $pathToWsdl = trim($pathToWsdl);
         /**
          * Options for WSDL
-         */
+        */
         $options = $wsdlOptions;
         $options['trace'] = true;
         $options['exceptions'] = true;
@@ -139,67 +151,48 @@ class Generator extends \SoapClient
             try {
                 parent::__construct($pathToWsdl, $options);
             } catch (\SoapFault $fault) {
-                throw new \Exception(sprintf('Unable to load WSDL at "%s"!', $pathToWsdl), null, $fault);
+                throw new \InvalidArgumentException(sprintf('Unable to load WSDL at "%s"!', $pathToWsdl), __LINE__, $fault);
             }
         }
-        $this->setOptions(GeneratorOptions::instance());
-        /**
-         * init containers
-         */
+        return $this;
+    }
+    /**
+     * @return Generator
+     */
+    protected function initContainers()
+    {
         $this
             ->setStructs(new StructContainer())
             ->setServices(new ServiceContainer())
             ->setWsdls(new WsdlContainer())
             ->setParser(new ParserContainer());
-        /**
-         * add parsers
-         */
-        $this
-            ->addParser(new FunctionsParser($this))
-            ->addParser(new StructsParser($this))
-            ->addParser(new TagIncludeParser($this))
-            ->addParser(new TagImportParser($this))
-            ->addParser(new TagAttributeParser($this))
-            ->addParser(new TagComplexTypeParser($this))
-            ->addParser(new TagDocumentationParser($this))
-            ->addParser(new TagElementParser($this))
-            ->addParser(new TagEnumerationParser($this))
-            ->addParser(new TagExtensionParser($this))
-            ->addParser(new TagHeaderParser($this))
-            ->addParser(new TagInputParser($this))
-            ->addParser(new TagOutputParser($this))
-            ->addParser(new TagRestrictionParser($this))
-            ->addParser(new TagUnionParser($this))
-            ->addParser(new TagListParser($this));
-        /**
-         * add WSDL
-         */
-        $this->addWsdl($pathToWsdl);
+        return $this;
     }
     /**
-     * @param string $pathToWsdl
-     * @param string $login
-     * @param string $password
-     * @param array $wsdlOptions
-     * @throws \InvalidArgumentException
      * @return Generator
      */
-    public static function instance($pathToWsdl = null, $login = null, $password = null, array $wsdlOptions = array())
+    protected function initParsers()
     {
-        if (!isset(self::$instance)) {
-            if (empty($pathToWsdl)) {
-                throw new \InvalidArgumentException('No Generator instance exists, you must provide the WSDL path to initiate the first instance!');
-            }
-            self::$instance = new static($pathToWsdl, $login, $password, $wsdlOptions);
+        if ($this->parsers->count() === 0) {
+            $this
+                ->addParser(new FunctionsParser($this))
+                ->addParser(new StructsParser($this))
+                ->addParser(new TagIncludeParser($this))
+                ->addParser(new TagImportParser($this))
+                ->addParser(new TagAttributeParser($this))
+                ->addParser(new TagComplexTypeParser($this))
+                ->addParser(new TagDocumentationParser($this))
+                ->addParser(new TagElementParser($this))
+                ->addParser(new TagEnumerationParser($this))
+                ->addParser(new TagExtensionParser($this))
+                ->addParser(new TagHeaderParser($this))
+                ->addParser(new TagInputParser($this))
+                ->addParser(new TagOutputParser($this))
+                ->addParser(new TagRestrictionParser($this))
+                ->addParser(new TagUnionParser($this))
+                ->addParser(new TagListParser($this));
         }
-        return self::$instance;
-    }
-    /**
-     * Reset instance for specific cases
-     */
-    public static function resetInstance()
-    {
-        self::$instance = null;
+        return $this;
     }
     /**
      * Generates all classes based on options
