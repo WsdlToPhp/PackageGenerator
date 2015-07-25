@@ -53,7 +53,6 @@ abstract class AbstractFile implements FileInterface
     {
         $this->beforeWrite();
         $state = $this->writeFile();
-        $this->afterWrite($state);
         return $state;
     }
     /**
@@ -68,15 +67,6 @@ abstract class AbstractFile implements FileInterface
      */
     public function beforeWrite()
     {
-    }
-    /**
-     * Called after actual write method is called
-     * @param int|bool
-     * @return int|bool
-     */
-    public function afterWrite($state)
-    {
-        return $state;
     }
     /**
      * @return string
