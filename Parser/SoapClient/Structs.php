@@ -71,7 +71,6 @@ class Structs extends AbstractParser
                  */
                 $start = false;
                 $then = false;
-                $structParamName = '';
                 $structParamType = '';
                 $typeDefCount = count($typeDef);
                 if ($typeDefCount > 3) {
