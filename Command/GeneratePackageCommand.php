@@ -38,7 +38,7 @@ class GeneratePackageCommand extends AbstractCommand
      */
     protected function getInstanceOfGenerator($wsdlUrl, $wsdlLogin = null, $wsdlPassword = null, array $wsdlOptions = array())
     {
-        return Generator::instance($wsdlUrl, $wsdlLogin, $wsdlPassword, $wsdlOptions);
+        return new Generator($wsdlUrl, $wsdlLogin, $wsdlPassword, $wsdlOptions);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Command\AbstractCommand::configure()
