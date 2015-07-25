@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\File\Utils as FileUtils;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;

@@ -9,8 +9,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\File\AbstractFile;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;

@@ -4,7 +4,6 @@ namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 
 class Operation extends AbstractOperation
 {
