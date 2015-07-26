@@ -63,20 +63,21 @@ To generate a package, nothing as simple as this:
     $ ls -la => enjoy!
 ```
 #### Debug options before actually generating the package
-Remove ```--force``` option to the previous sample command line to get this result:
+Remove ```--force``` option from the previous command line to get this result:
 ```
-    Generation not launched, use --force to force generation
+     Start at YYYY-MM-DD HH:MM:SS
+      Generation not launched, use --force to force generation
       Wsdl used:
-        url: Tests/resources/bingsearch.wsdl
+        url: http://developer.ebay.com/webservices/latest/ebaySvc.wsdl
         login:
         password:
         Package name: Api
         Package dest: /var/www/Api/
       Wsdl options used:
         proxy_host: ****************************
-        proxy_port: ****
-        proxy_login: ******
-        proxy_password: ******
+        proxy_port: 0
+        proxy_login: *******
+        proxy_password: *******
       Generator options used:
         wsdl-namespace: My\Project
         wsdl-category: cat
@@ -85,6 +86,7 @@ Remove ```--force``` option to the previous sample command line to get this resu
         wsdl-genericconstants:
         wsdl-addcomments: date:2015-04-22, author:Me, release:1.1.0, team:Dream
         wsdl-standalone: 1
+     End at YYYY-MM-DD HH:MM:SS, duration: 00:00:00
 ```
 ### Programmatic usage
 ```
