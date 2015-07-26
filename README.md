@@ -105,11 +105,15 @@ Then:
 ```php
     <?php
     require_once "/path/to/where/the/package/must/be/generated/vendor/autoload.php";
+    $options = array(
+        \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => 'http://developer.ebay.com/webservices/latest/ebaySvc.wsdl',
+        \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \MyPackage\MyPackageClassMap::classMap(),
+    );
     // if getList operation is provided by the Web service
-    $serviceGet = new MyPackageServiceGet();
+    $serviceGet = new \MyPackage\ServiceType\MyPackageServiceGet($options);
     $result = $serviceGet->getList();
     // if addRole operation is provided by the Web service
-    $serviceAdd = new MyPackageServiceAdd();
+    $serviceAdd = new \MyPackage\ServiceType\MyPackageServiceAdd($options);
     $result = $serviceAdd->addRole();
     // ...
 ```
