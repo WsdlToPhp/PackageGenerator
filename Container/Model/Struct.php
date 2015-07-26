@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\Struct as Model;
 
 class Struct extends AbstractModel
@@ -20,42 +21,43 @@ class Struct extends AbstractModel
      */
     public function getStructByName($name)
     {
-        return $this->get($name, parent::KEY_NAME);
+        return $this->get($name);
     }
     /**
      * Adds a virtual struct
+     * @param Generator $generator
      * @param string $structName the original struct name
      * @return Struct
      */
-    public function addVirtualStruct($structName)
+    public function addVirtualStruct(Generator $generator, $structName)
     {
-        if ($this->get($structName) === null) {
-            $this->add(new Model($structName, false));
-        }
-        return $this;
+        return $this->addStruct($generator, $structName, false);
     }
     /**
      * Adds type to structs
+     * @param Generator $generator
      * @param string $structName the original struct name
+     * @param bool $isStruct whether the Struct has to be generated or not
      * @return Struct
      */
-    public function addStruct($structName)
+    public function addStruct(Generator $generator, $structName, $isStruct = true)
     {
         if ($this->get($structName) === null) {
-            $this->add(new Model($structName));
+            $this->add(new Model($generator, $structName, $isStruct));
         }
         return $this;
     }
     /**
      * Adds type to structs and its attribute
+     * @param Generator $generator
      * @param string $structName the original struct name
      * @param string $attributeName the attribute name
      * @param string $attributeType the attribute type
      * @return Struct
      */
-    public function addStructWithAttribute($structName, $attributeName, $attributeType)
+    public function addStructWithAttribute(Generator $generator, $structName, $attributeName, $attributeType)
     {
-        $this->addStruct($structName);
+        $this->addStruct($generator, $structName);
         if (($struct = $this->getStructByName($structName)) instanceof Model) {
             $struct->addAttribute($attributeName, $attributeType);
         }
@@ -63,18 +65,10 @@ class Struct extends AbstractModel
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
-     * @return Struct|null
+     * @return Model|null
      */
-    public function get($value, $key = parent::KEY_NAME)
+    public function get($value)
     {
-        return parent::get($value, $key);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getAs()
-     * @return Struct|null
-     */
-    public function getAs(array $properties)
-    {
-        return parent::getAs($properties);
+        return parent::get($value);
     }
 }

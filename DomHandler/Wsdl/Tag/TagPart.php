@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
+use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class TagPart extends AbstractTag
@@ -11,33 +12,32 @@ class TagPart extends AbstractTag
         ATTRIBUTE_TYPE    = 'type';
     /**
      * @param bool $returnValue
-     * @return null|string|\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler
+     * @return AttributeHandler|mixed
      */
     public function getAttributeElement($returnValue = true)
     {
-        if ($this->hasAttribute(self::ATTRIBUTE_ELEMENT) === true) {
-            if ($returnValue === true) {
-                return $this->getAttribute(self::ATTRIBUTE_ELEMENT)->getValue();
-            } else {
-                return $this->getAttribute(self::ATTRIBUTE_ELEMENT);
-            }
-        }
-        return $returnValue === true ? '' : null;
+        return $this->getAttributeMixedValue(self::ATTRIBUTE_ELEMENT, $returnValue);
     }
     /**
      * @param bool $returnValue
-     * @return string|\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler
+     * @return AttributeHandler|mixed
      */
     public function getAttributeType($returnValue = true)
     {
-        if ($this->hasAttribute(self::ATTRIBUTE_TYPE) === true) {
-            if ($returnValue === true) {
-                return $this->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
-            } else {
-                return $this->getAttribute(self::ATTRIBUTE_TYPE);
-            }
+        return $this->getAttributeMixedValue(self::ATTRIBUTE_TYPE, $returnValue);
+    }
+    /**
+     * @param string $attributeName
+     * @param bool $returnValue
+     * @return AttributeHandler|mixed
+     */
+    private function getAttributeMixedValue($attributeName, $returnValue = true)
+    {
+        $value = $this->getAttribute($attributeName);
+        if ($returnValue === true && $value instanceof AttributeHandler) {
+            $value = $value->getValue();
         }
-        return $returnValue === true ? '' : null;
+        return $value;
     }
     /**
      * @return string
@@ -51,7 +51,7 @@ class TagPart extends AbstractTag
                 $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(
                     'name' => $elementName,
                 ), true);
-                if ($element !== null && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
+                if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
                     $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
                 } else {
                     $type = $elementName;
@@ -80,7 +80,7 @@ class TagPart extends AbstractTag
         if (empty($attribute)) {
             $attribute = $this->getAttributeElement(false);
             if (empty($attribute)) {
-                return $attribute;
+                return null;
             }
         }
         return $attribute->getValueNamespace();

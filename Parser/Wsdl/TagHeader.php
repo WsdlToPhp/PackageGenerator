@@ -4,39 +4,38 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagHeader as Header;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagOperation as Operation;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\PackageGenerator\Model\Schema;
+use WsdlToPhp\PackageGenerator\Model\Method;
 
 class TagHeader extends AbstractTagParser
 {
-    const
-        META_SOAP_HEADERS           = 'SOAPHeaders',
-        META_SOAP_HEADER_NAMES      = 'SOAPHeaderNames',
-        META_SOAP_HEADER_TYPES      = 'SOAPHeaderTypes',
-        META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
     /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagHeader]
+     * @var string
      */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
+    const META_SOAP_HEADERS = 'SOAPHeaders';
+    /**
+     * @var string
+     */
+    const META_SOAP_HEADER_NAMES = 'SOAPHeaderNames';
+    /**
+     * @var string
+     */
+    const META_SOAP_HEADER_TYPES = 'SOAPHeaderTypes';
+    /**
+     * @var string
+     */
+    const META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseHeader($tag);
+            if ($tag instanceof Header) {
+                $this->parseHeader($tag);
+            }
         }
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseSchema()
-     */
-    protected function parseSchema(Wsdl $wsdl, Schema $schema)
-    {
-        $this->parseWsdl($wsdl);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parsingTag()
@@ -51,9 +50,9 @@ class TagHeader extends AbstractTagParser
     public function parseHeader(Header $header)
     {
         $operation = $header->getParentOperation();
-        if ($operation !== null) {
+        if ($operation instanceof Operation) {
             $serviceMethod = $this->getModel($operation);
-            if ($serviceMethod !== null) {
+            if ($serviceMethod instanceof Method && !$this->isSoapHeaderAlreadyDefined($serviceMethod, $header->getHeaderName())) {
                 $serviceMethod
                     ->addMeta(self::META_SOAP_HEADERS, array($header->getHeaderRequired()))
                     ->addMeta(self::META_SOAP_HEADER_NAMES, array($header->getHeaderName()))
@@ -61,5 +60,15 @@ class TagHeader extends AbstractTagParser
                     ->addMeta(self::META_SOAP_HEADER_NAMESPACES, array($header->getHeaderNamespace()));
             }
         }
+    }
+    /**
+     * @param Method $method
+     * @param string $soapHeaderName
+     * @return bool
+     */
+    protected function isSoapHeaderAlreadyDefined(Method $method, $soapHeaderName)
+    {
+        $methodSoapHeaders = $method->getMetaValue(self::META_SOAP_HEADER_NAMES, array());
+        return in_array($soapHeaderName, $methodSoapHeaders, true);
     }
 }

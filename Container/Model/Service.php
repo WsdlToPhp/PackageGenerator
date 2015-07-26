@@ -2,7 +2,9 @@
 
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\Service as Model;
+use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 
 class Service extends AbstractModel
 {
@@ -16,22 +18,23 @@ class Service extends AbstractModel
     }
     /**
      * Adds a service
+     * @param Generator $generator
      * @param string $serviceName the service name to which add the method
      * @param string $methodName the original function name
-     * @param string $methodParameter the original parameter name
-     * @param string $methodReturn the original return name
+     * @param string|array $methodParameter the original parameter name
+     * @param string|array $methodReturn the original return name
      * @return Model
      */
-    public function addService($serviceName, $methodName, $methodParameter, $methodReturn)
+    public function addService(Generator $generator, $serviceName, $methodName, $methodParameter, $methodReturn)
     {
-        if ($this->get($serviceName) === null) {
-            $this->add(new Model($serviceName));
+        if (!$this->get($serviceName) instanceof Model) {
+            $this->add(new Model($generator, $serviceName));
         }
         $serviceMethod = $this->get($serviceName)->getMethod($methodName);
         /**
          * Service method does not already exist, register it
          */
-        if ($serviceMethod === null) {
+        if (!$serviceMethod instanceof MethodModel) {
             $this->get($serviceName)->addMethod($methodName, $methodParameter, $methodReturn);
         } elseif ($serviceMethod->getParameterType() != $methodParameter) {
             /**
@@ -47,22 +50,14 @@ class Service extends AbstractModel
      */
     public function getServiceByName($name)
     {
-        return $this->get($name, parent::KEY_NAME);
+        return $this->get($name);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
      * @return Model|null
      */
-    public function get($value, $key = parent::KEY_NAME)
+    public function get($value)
     {
-        return parent::get($value, $key);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getAs()
-     * @return Model|null
-     */
-    public function getAs(array $properties)
-    {
-        return parent::getAs($properties);
+        return parent::get($value);
     }
 }

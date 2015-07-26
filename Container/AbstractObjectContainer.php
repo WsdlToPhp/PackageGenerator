@@ -5,6 +5,10 @@ namespace WsdlToPhp\PackageGenerator\Container;
 abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Countable
 {
     /**
+     * @var string
+     */
+    const PROPERTY_NAME = 'name';
+    /**
      * @var array
      */
     protected $objects;
@@ -13,25 +17,21 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     protected $offset;
     /**
-     * Very simple cache, holds searches in order to improve preformance for big web services
-     * @var array
-     */
-    private static $cache = array();
-    /**
-     * @return AbstractObjectContainer
+     * Class constructor
      */
     public function __construct()
     {
-        $this->offset  = 0;
+        $this->offset = 0;
         $this->objects = array();
     }
     /**
-     * @param int $offset
+     * @param string $offset
      * @return bool
      */
     public function offsetExists($offset)
     {
-        return array_key_exists($offset, $this->objects);
+        $element = array_slice($this->objects, $offset, 1);
+        return !empty($element);
     }
     /**
      * @param int $offset
@@ -39,26 +39,26 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     public function offsetGet($offset)
     {
-        return $this->offsetExists($offset) ? $this->objects[$offset] : null;
+        $element = array_slice($this->objects, $offset, 1);
+        return $this->offsetExists($offset) ? array_shift($element) : null;
     }
     /**
-     * @param int $offset
+     * @param string $offset
      * @param mixed $value
      * @return AbstractObjectContainer
      */
     public function offsetSet($offset, $value)
     {
-        $this->objects[$offset] = $value;
-        return $this;
+        throw new \InvalidArgumentException('This method can\'t be used as object are stored with a string as array index');
     }
     /**
-     * @param int $offset
+     * @param string $offset
      * @return AbstractObjectContainer
      */
     public function offsetUnset($offset)
     {
         if ($this->offsetExists($offset)) {
-            unset($this->objects[$offset]);
+            unset($this->objects[$this->getObjectKey($this->offsetGet($offset))]);
         }
         return $this;
     }
@@ -67,7 +67,8 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     public function current()
     {
-        return $this->offsetGet($this->offset);
+        $current = array_slice($this->objects, $this->offset, 1);
+        return array_shift($current);
     }
     /**
      * @return mixed
@@ -88,7 +89,7 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     public function valid()
     {
-        return $this->offsetExists($this->offset);
+        return count(array_slice($this->objects, $this->offset, 1)) > 0;
     }
     /**
      * @return AbstractObjectContainer
@@ -107,14 +108,20 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
     }
     /**
      * Must return the object class name that this container is made to contain
+     * @return string
      */
     abstract protected function objectClass();
     /**
-     * @param unknown $object
-     * @throws \InvalidArgumentException
-     * @return AbstractObjectContainer
+     * Must return the object class name that this container is made to contain
+     * @return string
      */
-    public function add($object)
+    abstract protected function objectProperty();
+    /**
+     * This method is called before the object has been stored
+     * @throws \InvalidArgumentException
+     * @param mixed $object
+     */
+    protected function beforeObjectIsStored($object)
     {
         if (!is_object($object)) {
             throw new \InvalidArgumentException(sprintf('You must only pass object to this container (%s), "%s" passed as parameter!', get_called_class(), gettype($object)));
@@ -123,124 +130,41 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
         if (get_class($object) !== $this->objectClass() && !$object instanceof $instanceOf) {
             throw new \InvalidArgumentException(sprintf('Model of type "%s" does not match the object contained by this class: "%s"', get_class($object), $this->objectClass()));
         }
-        $this->objects[] = $object;
+    }
+    /**
+     * @param object $object
+     * @throws \InvalidArgumentException
+     * @return string
+     */
+    private function getObjectKey($object)
+    {
+        $get = sprintf('get%s', ucfirst($this->objectProperty()));
+        if (!method_exists($object, $get)) {
+            throw new \InvalidArgumentException(sprintf('Method "%s" is required in "%s" in order to be stored in "%s"', $get, get_class($object), get_class($this)), __LINE__);
+        }
+        $key = $object->$get();
+        if (!is_scalar($key)) {
+            throw new \InvalidArgumentException(sprintf('Property "%s" of "%s" must be scalar, "%s" returned', $this->objectProperty(), get_class($object), gettype($key)), __LINE__);
+        }
+        return $key;
+    }
+    /**
+     * @throws \InvalidArgumentException
+     * @param mixed $object
+     * @return AbstractObjectContainer
+     */
+    public function add($object)
+    {
+        $this->beforeObjectIsStored($object);
+        $this->objects[$this->getObjectKey($object)] = $object;
         return $this;
     }
     /**
-     * @param string $key
      * @param string $value
      * @return mixed
      */
-    public function get($value, $key)
+    public function get($value)
     {
-        if ($this->count() > 0) {
-            $cacheValues = array(
-                'class'        => get_called_class(),
-                'object_class' => $this->objectClass(),
-                'value'        => $value,
-                'key'          => $key,
-                'object'       => spl_object_hash($this),
-            );
-            $cachedModel = self::getCache($cacheValues);
-            if ($cachedModel === null) {
-                foreach ($this->objects as $object) {
-                    $get = sprintf('get%s', ucfirst($key));
-                    if (!method_exists($object, $get)) {
-                        throw new \InvalidArgumentException(sprintf('Property "%s" does not exist or its getter does not exist', $key));
-                    }
-                    $propertyValue = call_user_func(array(
-                        $object,
-                        $get,
-                    ));
-                    if ($value === $propertyValue) {
-                        self::setCache($cacheValues, $object);
-                        return $object;
-                    }
-                }
-            }
-            return $cachedModel;
-        }
-        return null;
-    }
-    /**
-     * @param array $properties
-     * @throws \InvalidArgumentException
-     * @return mixed|null
-     */
-    public function getAs(array $properties)
-    {
-        if ($this->count() > 0) {
-            $cacheValues = array(
-                'class'        => get_called_class(),
-                'object_class' => $this->objectClass(),
-                'properties'   => $properties,
-                'object'       => spl_object_hash($this),
-            );
-            $cachedModel = self::getCache($properties);
-            if ($cachedModel === null) {
-                foreach ($this->objects as $object) {
-                    $same = true;
-                    foreach ($properties as $name=>$value) {
-                        $get = sprintf('get%s', ucfirst($name));
-                        if (!method_exists($object, $get)) {
-                            throw new \InvalidArgumentException(sprintf('Property "%s" does not exist or its getter does not exist', $name));
-                        }
-                        $propertyValue = call_user_func(array(
-                            $object,
-                            $get,
-                        ));
-                        $same &= $propertyValue === $value;
-                    }
-                    if ((bool)$same === true) {
-                        self::setCache($cacheValues, $object);
-                        return $object;
-                    }
-                }
-            }
-            return $cachedModel;
-        }
-        return null;
-    }
-    /**
-     * @param array $values
-     * @return mixed
-     */
-    private static function getCache(array $values)
-    {
-        $key = self::cacheKey($values);
-        return array_key_exists($key, self::$cache) ? self::$cache[$key] : null;
-    }
-    /**
-     * @param array $values
-     * @return AbstractObjectContainer
-     */
-    private static function purgeCache(array $values)
-    {
-        if (self::getCache($values)) {
-            unset(self::$cache[self::cacheKey($values)]);
-        }
-    }
-    /**
-     * purge all cache
-     */
-    public static function purgeAllCache()
-    {
-        self::$cache = array();
-    }
-    /**
-     * @param array $values
-     * @param mixed $value
-     */
-    private static function setCache(array $values, $value)
-    {
-        self::$cache[self::cacheKey($values)] = $value;
-    }
-    /**
-     * @param array $values
-     * @return string
-     */
-    private static function cacheKey(array $values)
-    {
-        return sprintf('_%s', json_encode($values));
+        return array_key_exists($value, $this->objects) ? $this->objects[$value] : null;
     }
 }

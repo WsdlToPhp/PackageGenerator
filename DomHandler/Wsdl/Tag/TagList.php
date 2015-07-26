@@ -11,6 +11,6 @@ class TagList extends AbstractTag
      */
     public function getAttributeItemType()
     {
-        return $this->hasAttribute(self::ATTRIBUTE_ITEM_TYPE) === true ? $this->getAttribute(self::ATTRIBUTE_ITEM_TYPE)->getValue() : '';
+        return $this->hasAttribute(self::ATTRIBUTE_ITEM_TYPE) ? $this->getAttribute(self::ATTRIBUTE_ITEM_TYPE)->getValue() : '';
     }
 }

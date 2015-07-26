@@ -4,22 +4,21 @@ namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
 class TagUnion extends AbstractTag
 {
-    const
-        ATTRIBUTE_MEMBER_TYPES = 'memberTypes';
+    const ATTRIBUTE_MEMBER_TYPES = 'memberTypes';
     /**
-     * @return array[string]
+     * @return string[]
      */
     public function getAttributeMemberTypes()
     {
         return $this->parseMemberTypes();
     }
     /**
-     * @return array[string]
+     * @return string[]
      */
     protected function parseMemberTypes()
     {
         $memberTypes = array();
-        $value = $this->hasAttribute(self::ATTRIBUTE_MEMBER_TYPES) === true ? $this->getAttribute(self::ATTRIBUTE_MEMBER_TYPES)->getValue(true) : '';
+        $value = $this->hasAttribute(self::ATTRIBUTE_MEMBER_TYPES) ? $this->getAttribute(self::ATTRIBUTE_MEMBER_TYPES)->getValue(true) : '';
         if (!empty($value)) {
             $values = explode(' ', $value);
             foreach ($values as $val) {

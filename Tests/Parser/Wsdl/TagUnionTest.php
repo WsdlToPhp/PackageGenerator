@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion;
 
 class TagUnionTest extends WsdlParser
@@ -20,26 +19,25 @@ class TagUnionTest extends WsdlParser
     public function testParseOrderContract()
     {
         $tagUnionParser = self::orderContractInstance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagUnionParser->parse();
 
-        $ok = false;
+        $count = 0;
         $structs = $tagUnionParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
             foreach ($structs as $struct) {
                 switch ($struct->getName()) {
                     case 'RelationshipTypeOpenEnum':
                         $this->assertSame('RelationshipType', $struct->getInheritance());
-                        $ok |= true;
+                        $count++;
                         break;
                     case 'FaultCodesOpenEnumType':
                         $this->assertSame('FaultCodesType', $struct->getInheritance());
-                        $ok |= true;
+                        $count++;
                         break;
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertSame(2, $count);
     }
 }

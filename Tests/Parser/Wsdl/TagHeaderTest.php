@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 
 class TagHeaderTest extends WsdlParser
@@ -22,12 +21,18 @@ class TagHeaderTest extends WsdlParser
         return new TagHeader(self::generatorInstance(self::wsdlActonPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
+     */
+    public static function paypalInstance()
+    {
+        return new TagHeader(self::generatorInstance(self::wsdlPayPalPath()));
+    }
+    /**
      *
      */
     public function testParseImageViewService()
     {
         $tagHeaderParser = self::imageViewServiceInstance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagHeaderParser->parse();
 
@@ -38,19 +43,17 @@ class TagHeaderTest extends WsdlParser
                 if ($service->getName() === 'Image') {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame(array(
-                            TagHeader::META_SOAP_HEADER_NAMES => array(
-                                'auth',
-                            ),
-                            TagHeader::META_SOAP_HEADER_NAMESPACES => array(
-                                'http://ws.estesexpress.com/imageview',
-                            ),
-                            TagHeader::META_SOAP_HEADER_TYPES => array(
-                                'AuthenticationType',
-                            ),
-                            TagHeader::META_SOAP_HEADERS => array(
-                                'required',
-                            ),
-                        ), $method->getMeta());
+                            'auth',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES));
+                        $this->assertSame(array(
+                            'http://ws.estesexpress.com/imageview',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
+                        $this->assertSame(array(
+                            'AuthenticationType',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES));
+                        $this->assertSame(array(
+                            'required',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
                         $ok = true;
                     }
                 }
@@ -64,7 +67,6 @@ class TagHeaderTest extends WsdlParser
     public function testParseActon()
     {
         $tagHeaderParser = self::actonInstance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagHeaderParser->parse();
 
@@ -75,68 +77,94 @@ class TagHeaderTest extends WsdlParser
                 if ($service->getName() === 'Send') {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame(array(
-                            TagHeader::META_SOAP_HEADER_NAMES => array(
-                                'SessionHeader',
-                                'ClusterHeader',
-                            ),
-                            TagHeader::META_SOAP_HEADER_NAMESPACES => array(
-                                'urn:api.actonsoftware.com',
-                                'urn:api.actonsoftware.com',
-                            ),
-                            TagHeader::META_SOAP_HEADER_TYPES => array(
-                                'SessionHeader',
-                                'ClusterHeader',
-                            ),
-                            TagHeader::META_SOAP_HEADERS => array(
-                                'optional',
-                                'optional',
-                            ),
-                        ), $method->getMeta());
+                            'SessionHeader',
+                            'ClusterHeader',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES));
+                        $this->assertSame(array(
+                            'urn:api.actonsoftware.com',
+                            'urn:api.actonsoftware.com',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
+                        $this->assertSame(array(
+                            'SessionHeader',
+                            'ClusterHeader',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES));
+                        $this->assertSame(array(
+                            'optional',
+                            'optional',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
                         $ok = true;
                     }
                 } elseif ($service->getName() === 'List') {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame(array(
-                            TagHeader::META_SOAP_HEADER_NAMES => array(
-                                'SessionHeader',
-                                'ClusterHeader',
-                            ),
-                            TagHeader::META_SOAP_HEADER_NAMESPACES => array(
-                                'urn:api.actonsoftware.com',
-                                'urn:api.actonsoftware.com',
-                            ),
-                            TagHeader::META_SOAP_HEADER_TYPES => array(
-                                'SessionHeader',
-                                'ClusterHeader',
-                            ),
-                            TagHeader::META_SOAP_HEADERS => array(
-                                'optional',
-                                'required',
-                            ),
-                        ), $method->getMeta());
+                            'SessionHeader',
+                            'ClusterHeader',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES));
+                        $this->assertSame(array(
+                            'urn:api.actonsoftware.com',
+                            'urn:api.actonsoftware.com',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
+                        $this->assertSame(array(
+                            'SessionHeader',
+                            'ClusterHeader',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES));
+                        $this->assertSame(array(
+                            'optional',
+                            'required',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
                         $ok = true;
                     }
                 } elseif ($service->getName() === 'Login') {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame(array(
-                            TagHeader::META_SOAP_HEADER_NAMES => array(
-                                'ClusterHeader',
-                            ),
-                            TagHeader::META_SOAP_HEADER_NAMESPACES => array(
-                                'urn:api.actonsoftware.com',
-                            ),
-                            TagHeader::META_SOAP_HEADER_TYPES => array(
-                                'ClusterHeader',
-                            ),
-                            TagHeader::META_SOAP_HEADERS => array(
-                                'required',
-                            ),
-                        ), $method->getMeta());
+                            'ClusterHeader',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES));
+                        $this->assertSame(array(
+                            'urn:api.actonsoftware.com',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
+                        $this->assertSame(array(
+                            'ClusterHeader',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES));
+                        $this->assertSame(array(
+                            'required',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
                         $ok = true;
                     }
                 }
             }
         }
         $this->assertTrue((bool)$ok);
+    }
+    /**
+     *
+     */
+    public function testParsePayPal()
+    {
+        $tagHeaderParser = self::paypalInstance();
+
+        $tagHeaderParser->parse();
+
+        $count = 0;
+        $services = $tagHeaderParser->getGenerator()->getServices();
+        if ($services->count() > 0) {
+            foreach ($services as $service) {
+                foreach ($service->getMethods() as $method) {
+                    $this->assertSame(array(
+                        'RequesterCredentials',
+                    ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES));
+                    $this->assertSame(array(
+                        'urn:ebay:api:PayPalAPI',
+                    ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
+                    $this->assertSame(array(
+                        'CustomSecurityHeaderType',
+                    ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES));
+                    $this->assertSame(array(
+                        'required',
+                    ), $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
+                    $count++;
+                }
+            }
+        }
+        $this->assertSame(57, $count);
     }
 }

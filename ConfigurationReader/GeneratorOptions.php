@@ -7,30 +7,23 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Common values used as option's value
      */
-    const
-        VALUE_START = 'start',
-        VALUE_END   = 'end',
-        VALUE_NONE  = 'none',
-        VALUE_CAT   = 'cat',
-        VALUE_TRUE  = true,
-        VALUE_FALSE = false;
+    const VALUE_START = 'start';
+    const VALUE_END = 'end';
+    const VALUE_NONE = 'none';
+    const VALUE_CAT = 'cat';
+    const VALUE_TRUE = true;
+    const VALUE_FALSE = false;
     /**
      * Possible option keys
      * @var string
      */
-    const
-        CATEGORY                    = 'category',
-        SUB_CATEGORY                = 'sub_category',
-        ADD_COMMENTS                = 'add_comments',
-        GATHER_METHODS              = 'gather_methods',
-        GENERATE_WSDL_CLASS         = 'generate_wsdl_class',
-        GENERATE_TUTORIAL_FILE      = 'generate_tutorial_file',
-        GENERATE_AUTOLOAD_FILE      = 'generate_autoload_file',
-        SEND_ARRAY_AS_PARAMETER     = 'send_array_as_parameter',
-        GENERIC_CONSTANTS_NAME      = 'generic_constants_names',
-        GET_RESPONSE_AS_WSDL_OBJECT = 'response_as_wsdl_object',
-        INHERITS_FROM_IDENTIFIER    = 'inherits_from_identifier',
-        SEND_PARAMETERS_AS_ARRAY    = 'send_parameters_as_array';
+    const CATEGORY = 'category';
+    const STANDALONE = 'standalone';
+    const ADD_COMMENTS = 'add_comments';
+    const GATHER_METHODS = 'gather_methods';
+    const NAMESPACE_PREFIX = 'namespace_prefix';
+    const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
+    const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
     /**
      * Generator's options
      * @var array
@@ -61,7 +54,7 @@ class GeneratorOptions extends AbstractYamlReader
      * Returns the option value
      * @throws InvalidArgumentException
      * @param string $optionName
-     * @return string|bool
+     * @return mixed
      */
     public function getOptionValue($optionName)
     {
@@ -80,8 +73,8 @@ class GeneratorOptions extends AbstractYamlReader
     {
         if (!isset($this->options[$optionName])) {
             $this->options[$optionName] = array(
-                    'value'  => $optionValue,
-                    'values' => $values,
+                'value'  => $optionValue,
+                'values' => $values,
             );
         } elseif (!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
             throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])));
@@ -100,7 +93,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get category option value
-     * @return string|boolean
+     * @return string|bool
      */
     public function getCategory()
     {
@@ -117,26 +110,8 @@ class GeneratorOptions extends AbstractYamlReader
         return $this->setOptionValue(self::CATEGORY, $category);
     }
     /**
-     * Get subcategory option value
-     * @return string|boolean
-     */
-    public function getSubCategory()
-    {
-        return $this->getOptionValue(self::SUB_CATEGORY);
-    }
-    /**
-     * Set current subcategory option value
-     * @throws \InvalidArgumentException
-     * @param string $subCategory
-     * @return GeneratorOptions
-     */
-    public function setSubCategory($subCategory)
-    {
-        return $this->setOptionValue(self::SUB_CATEGORY, $subCategory);
-    }
-    /**
      * Get add comments option value
-     * @return string|boolean
+     * @return array
      */
     public function getAddComments()
     {
@@ -166,7 +141,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get gather methods option value
-     * @return string|boolean
+     * @return string|bool
      */
     public function getGatherMethods()
     {
@@ -183,44 +158,8 @@ class GeneratorOptions extends AbstractYamlReader
         return $this->setOptionValue(self::GATHER_METHODS, $gatherMethods);
     }
     /**
-     * Get generate wsdl class option value
-     * @return string|boolean
-     */
-    public function getGenerateWsdlClass()
-    {
-        return $this->getOptionValue(self::GENERATE_WSDL_CLASS);
-    }
-    /**
-     * Set current generate wsdl class option value
-     * @throws \InvalidArgumentException
-     * @param bool $generateWsdlClass
-     * @return GeneratorOptions
-     */
-    public function setGenerateWsdlClass($generateWsdlClass)
-    {
-        return $this->setOptionValue(self::GENERATE_WSDL_CLASS, $generateWsdlClass);
-    }
-    /**
-     * Get generate autoload file option value
-     * @return string|boolean
-     */
-    public function getGenerateAutoloadFile()
-    {
-        return $this->getOptionValue(self::GENERATE_AUTOLOAD_FILE);
-    }
-    /**
-     * Set current generate autoload file option value
-     * @throws \InvalidArgumentException
-     * @param bool $generateAutoloadFile
-     * @return GeneratorOptions
-     */
-    public function setGenerateAutoloadFile($generateAutoloadFile)
-    {
-        return $this->setOptionValue(self::GENERATE_AUTOLOAD_FILE, $generateAutoloadFile);
-    }
-    /**
      * Get generate tutorial file option value
-     * @return string|boolean
+     * @return string|bool
      */
     public function getGenerateTutorialFile()
     {
@@ -237,26 +176,26 @@ class GeneratorOptions extends AbstractYamlReader
         return $this->setOptionValue(self::GENERATE_TUTORIAL_FILE, $generateTutorialFile);
     }
     /**
-     * Get send array as parameter option value
-     * @return string|boolean
+     * Get namespace option value
+     * @return string|bool
      */
-    public function getSendArrayAsParameter()
+    public function getNamespace()
     {
-        return $this->getOptionValue(self::SEND_ARRAY_AS_PARAMETER);
+        return $this->getOptionValue(self::NAMESPACE_PREFIX);
     }
     /**
-     * Set current send array as parameter option value
+     * Set current namespace option value
      * @throws \InvalidArgumentException
-     * @param bool $sendParameterAsArray
+     * @param string $namespace
      * @return GeneratorOptions
      */
-    public function setSendArrayAsParameter($sendParameterAsArray)
+    public function setNamespace($namespace)
     {
-        return $this->setOptionValue(self::SEND_ARRAY_AS_PARAMETER, $sendParameterAsArray);
+        return $this->setOptionValue(self::NAMESPACE_PREFIX, $namespace);
     }
     /**
      * Get generic constants name option value
-     * @return string|boolean
+     * @return string|bool
      */
     public function getGenericConstantsName()
     {
@@ -273,57 +212,21 @@ class GeneratorOptions extends AbstractYamlReader
         return $this->setOptionValue(self::GENERIC_CONSTANTS_NAME, $genericConstantsName);
     }
     /**
-     * Get get response as wsdl object option value
-     * @return string|boolean
+     * Get standalone option value
+     * @return string|bool
      */
-    public function getGetResponseAsWsdlObject()
+    public function getStandalone()
     {
-        return $this->getOptionValue(self::GET_RESPONSE_AS_WSDL_OBJECT);
+        return $this->getOptionValue(self::STANDALONE);
     }
     /**
-     * Set current get response as wsdl object option value
+     * Set current standalone option value
      * @throws \InvalidArgumentException
-     * @param bool $getResponseAsWsdlObject
+     * @param bool $standalone
      * @return GeneratorOptions
      */
-    public function setGetResponseAsWsdlObject($getResponseAsWsdlObject)
+    public function setStandalone($standalone)
     {
-        return $this->setOptionValue(self::GET_RESPONSE_AS_WSDL_OBJECT, $getResponseAsWsdlObject);
-    }
-    /**
-     * Get inherits from identifier option value
-     * @return string|boolean
-     */
-    public function getInheritsFromIdentifier()
-    {
-        return $this->getOptionValue(self::INHERITS_FROM_IDENTIFIER);
-    }
-    /**
-     * Set current inherits from identifier option value
-     * @throws \InvalidArgumentException
-     * @param string $inheritsFromIdentifier
-     * @return GeneratorOptions
-     */
-    public function setInheritsFromIdentifier($inheritsFromIdentifier)
-    {
-        return $this->setOptionValue(self::INHERITS_FROM_IDENTIFIER, $inheritsFromIdentifier);
-    }
-    /**
-     * Get send parameters as array option value
-     * @return string|boolean
-     */
-    public function getSendParametersAsArray()
-    {
-        return $this->getOptionValue(self::SEND_PARAMETERS_AS_ARRAY);
-    }
-    /**
-     * Set current send parameters as array option value
-     * @throws \InvalidArgumentException
-     * @param bool $sendParametersAsArray
-     * @return GeneratorOptions
-     */
-    public function setSendParametersAsArray($sendParametersAsArray)
-    {
-        return $this->setOptionValue(self::SEND_PARAMETERS_AS_ARRAY, $sendParametersAsArray);
+        return $this->setOptionValue(self::STANDALONE, $standalone);
     }
 }

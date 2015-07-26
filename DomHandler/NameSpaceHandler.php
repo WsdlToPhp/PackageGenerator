@@ -12,7 +12,6 @@ class NameSpaceHandler extends AttributeHandler
      * @param \DOMNameSpaceNode $nameSpaceNode
      * @param AbstractDomDocumentHandler $domDocumentHandler
      * @param int $index
-     * @return NameSpaceHandler
      */
     public function __construct(\DOMNameSpaceNode $nameSpaceNode, AbstractDomDocumentHandler $domDocumentHandler, $index = -1)
     {
@@ -35,14 +34,14 @@ class NameSpaceHandler extends AttributeHandler
      * @param bool $withNamespace
      * @param bool $withinItsType
      * @param string $asType
-     * @return string
+     * @return mixed
      */
     public function getValue($withNamespace = false, $withinItsType = true, $asType = null)
     {
         return parent::getValue(true, $withNamespace, $asType);
     }
     /**
-     * @return null
+     * @return null|string
      */
     public function getValueNamespace()
     {

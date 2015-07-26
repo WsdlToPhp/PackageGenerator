@@ -4,35 +4,24 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagList as ListTag;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\PackageGenerator\Model\Schema;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class TagList extends AbstractTagParser
 {
-
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::getTags()
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagList]
-     */
-    public function getTags()
-    {
-        return parent::getTags();
-    }
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
      */
     protected function parseWsdl(Wsdl $wsdl)
     {
         foreach ($this->getTags() as $tag) {
-            $this->parseList($tag);
+            if ($tag instanceof ListTag) {
+                $this->parseList($tag);
+            }
         }
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseSchema()
-     */
-    protected function parseSchema(Wsdl $wsdl, Schema $schema)
-    {
-        $this->parseWsdl($wsdl);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parsingTag()
@@ -46,20 +35,23 @@ class TagList extends AbstractTagParser
      */
     public function parseList(ListTag $tag)
     {
-        $parent       = $tag->getSuitableParent();
-        $parentParent = $parent !== null ? $parent->getSuitableParent() : null;
-        $model        = $this->getModel($parent);
-        if ($model === null && $parentParent !== null) {
-            $model = $this->getModel($parentParent);
-        }
-        $itemType     = $tag->getAttributeItemType();
-        $struct       = $this->getStructByName($itemType);
-        if ($parent !== null && $model !== null) {
-            $type = sprintf('array[%s]', $struct !== null ? $struct->getName() : $itemType);
-            if ($parentParent !== null && ($attribute = $model->getAttribute($parent->getAttributeName())) !== null) {
-                $model->getAttribute($parent->getAttributeName())->setInheritance($type);
-            } else {
-                $model->setInheritance($type);
+        $parent = $tag->getSuitableParent();
+        if ($parent instanceof AbstractTag) {
+            $parentParent = $parent->getSuitableParent();
+            $model = $this->getModel($parent);
+            if ($model === null && $parentParent instanceof AbstractTag) {
+                $model = $this->getModel($parentParent);
+            }
+            $itemType = $tag->getAttributeItemType();
+            $itemType = empty($itemType) ? 'string' : $itemType;
+            $struct = $this->getStructByName($itemType);
+            if ($model instanceof AbstractModel) {
+                $type = sprintf('%s[]', $struct instanceof Struct ? $struct->getName() : $itemType);
+                if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
+                    $attribute->setInheritance($type);
+                } else {
+                    $model->setInheritance($type);
+                }
             }
         }
     }

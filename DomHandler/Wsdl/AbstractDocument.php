@@ -8,52 +8,51 @@ use WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler;
 
 abstract class AbstractDocument extends DomDocumentHandler
 {
-    const
-        TAG_ADDRESS         = 'address',
-        TAG_ALL             = 'all',
-        TAG_ANNOTATION      = 'annotation',
-        TAG_ANY             = 'any',
-        TAG_ANY_ATTRIBUTE   = 'anyAttribute',
-        TAG_APPINFO         = 'appinfo',
-        TAG_ATTRIBUTE       = 'attribute',
-        TAG_ATTRIBUTE_GROUP = 'attributeGroup',
-        TAG_BINDING         = 'binding',
-        TAG_BODY            = 'body',
-        TAG_CHOICE          = 'choice',
-        TAG_COMPLEX_CONTENT = 'complexContent',
-        TAG_COMPLEX_TYPE    = 'complexType',
-        TAG_DEFINITIONS     = 'definitions',
-        TAG_DOCUMENTATION   = 'documentation',
-        TAG_ELEMENT         = 'element',
-        TAG_ENUMERATION     = 'enumeration',
-        TAG_EXTENSION       = 'extension',
-        TAG_FIELD           = 'field',
-        TAG_GROUP           = 'group',
-        TAG_HEADER          = 'header',
-        TAG_IMPORT          = 'import',
-        TAG_INCLUDE         = 'include',
-        TAG_INPUT           = 'input',
-        TAG_KEY             = 'key',
-        TAG_KEYREF          = 'keyref',
-        TAG_LIST            = 'list',
-        TAG_MEMBER_TYPES    = 'memberTypes',
-        TAG_MESSAGE         = 'message',
-        TAG_NOTATION        = 'notation',
-        TAG_OPERATION       = 'operation',
-        TAG_OUTPUT          = 'output',
-        TAG_PART            = 'part',
-        TAG_PORT            = 'port',
-        TAG_PORT_TYPE       = 'portType',
-        TAG_REDEFINE        = 'redefine',
-        TAG_RESTRICTION     = 'restriction',
-        TAG_SELECTOR        = 'selector',
-        TAG_SEQUENCE        = 'sequence',
-        TAG_SCHEMA          = 'schema',
-        TAG_SIMPLE_CONTENT  = 'simpleContent',
-        TAG_SIMPLE_TYPE     = 'simpleType',
-        TAG_TYPES           = 'types',
-        TAG_UNION           = 'union',
-        TAG_UNIQUE          = 'unique';
+    const TAG_ADDRESS         = 'address';
+    const TAG_ALL             = 'all';
+    const TAG_ANNOTATION      = 'annotation';
+    const TAG_ANY             = 'any';
+    const TAG_ANY_ATTRIBUTE   = 'anyAttribute';
+    const TAG_APPINFO         = 'appinfo';
+    const TAG_ATTRIBUTE       = 'attribute';
+    const TAG_ATTRIBUTE_GROUP = 'attributeGroup';
+    const TAG_BINDING         = 'binding';
+    const TAG_BODY            = 'body';
+    const TAG_CHOICE          = 'choice';
+    const TAG_COMPLEX_CONTENT = 'complexContent';
+    const TAG_COMPLEX_TYPE    = 'complexType';
+    const TAG_DEFINITIONS     = 'definitions';
+    const TAG_DOCUMENTATION   = 'documentation';
+    const TAG_ELEMENT         = 'element';
+    const TAG_ENUMERATION     = 'enumeration';
+    const TAG_EXTENSION       = 'extension';
+    const TAG_FIELD           = 'field';
+    const TAG_GROUP           = 'group';
+    const TAG_HEADER          = 'header';
+    const TAG_IMPORT          = 'import';
+    const TAG_INCLUDE         = 'include';
+    const TAG_INPUT           = 'input';
+    const TAG_KEY             = 'key';
+    const TAG_KEYREF          = 'keyref';
+    const TAG_LIST            = 'list';
+    const TAG_MEMBER_TYPES    = 'memberTypes';
+    const TAG_MESSAGE         = 'message';
+    const TAG_NOTATION        = 'notation';
+    const TAG_OPERATION       = 'operation';
+    const TAG_OUTPUT          = 'output';
+    const TAG_PART            = 'part';
+    const TAG_PORT            = 'port';
+    const TAG_PORT_TYPE       = 'portType';
+    const TAG_REDEFINE        = 'redefine';
+    const TAG_RESTRICTION     = 'restriction';
+    const TAG_SELECTOR        = 'selector';
+    const TAG_SEQUENCE        = 'sequence';
+    const TAG_SCHEMA          = 'schema';
+    const TAG_SIMPLE_CONTENT  = 'simpleContent';
+    const TAG_SIMPLE_TYPE     = 'simpleType';
+    const TAG_TYPES           = 'types';
+    const TAG_UNION           = 'union';
+    const TAG_UNIQUE          = 'unique';
     /**
      * @var string
      */
@@ -106,7 +105,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     {
         $rootElement = $this->getRootElement();
         $uri = '';
-        if ($rootElement !== null && $rootElement->hasAttribute(sprintf('xmlns:%s', $namespace)) === true) {
+        if ($rootElement instanceof ElementHandler && $rootElement->hasAttribute(sprintf('xmlns:%s', $namespace))) {
             $uri = $rootElement->getAttribute(sprintf('xmlns:%s', $namespace))->getValue();
         }
         return $uri;

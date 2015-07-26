@@ -8,7 +8,6 @@ interface ParserInterface
 {
     /**
      * @param Generator $generator
-     * @return SoapClientParserInterface
      */
     public function __construct(Generator $generator);
     /**

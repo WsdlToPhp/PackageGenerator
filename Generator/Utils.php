@@ -11,40 +11,17 @@ class Utils
      * Gets category part
      * @param GeneratorOptions $options
      * @param AbstractModel $model the model for which we generate the folder
-     * @param string $_optionName category type
+     * @param string $optionName category type
      * @return string
      */
-    public static function getPart(GeneratorOptions $options, AbstractModel $model, $_optionName)
+    public static function getPart(GeneratorOptions $options, AbstractModel $model, $optionName)
     {
         $elementType = '';
         $optionValue = null;
-        $string = $model->getCleanName();
-        switch ($_optionName) {
+        $string = str_replace('_', '', $model->getCleanName());
+        switch ($optionName) {
             case GeneratorOptions::CATEGORY:
                 $optionValue = $options->getCategory();
-                break;
-            case GeneratorOptions::SUB_CATEGORY:
-                $optionValue = $options->getSubCategory();
-                $mainCatPart = self::getPart($options, $model, GeneratorOptions::CATEGORY);
-                switch ($options->getCategory()) {
-                    case GeneratorOptions::VALUE_END:
-                        if ($string != $mainCatPart && strlen($mainCatPart) < strlen($string)) {
-                            $string = substr($string, 0, strlen($string) - strlen($mainCatPart));
-                        } elseif ($string == $mainCatPart) {
-                            $string = '';
-                        }
-                        break;
-                    case GeneratorOptions::VALUE_START:
-                        if ($string != $mainCatPart && strlen($mainCatPart) < strlen($string)) {
-                            $string = substr($string, strlen($mainCatPart));
-                        } elseif ($string == $mainCatPart) {
-                            $string = '';
-                        }
-                        break;
-                    default:
-                        $string = '';
-                        break;
-                }
                 break;
             case GeneratorOptions::GATHER_METHODS:
                 $optionValue = $options->getGatherMethods();
@@ -54,13 +31,13 @@ class Utils
             switch ($optionValue) {
                 case GeneratorOptions::VALUE_END:
                     $parts = preg_split('/[A-Z]/', ucfirst($string));
-                    if (count($parts) == 0) {
+                    $partsCount = count($parts);
+                    if ($partsCount == 0) {
                         $elementType = $string;
-                    } elseif (!empty($parts[count($parts) - 1])) {
+                    } elseif (!empty($parts[$partsCount - 1])) {
                         $elementType = substr($string, strrpos($string, implode('', array_slice($parts, -1))) - 1);
                     } else {
-                        $part = '';
-                        for ($i = count($parts) - 1; $i >= 0; $i--) {
+                        for ($i = $partsCount - 1; $i >= 0; $i--) {
                             $part = trim($parts[$i]);
                             if (!empty($part)) {
                                 break;
@@ -71,13 +48,13 @@ class Utils
                     break;
                 case GeneratorOptions::VALUE_START:
                     $parts = preg_split('/[A-Z]/', ucfirst($string));
-                    if (count($parts) == 0) {
+                    $partsCount = count($parts);
+                    if ($partsCount == 0) {
                         $elementType = $string;
                     } elseif (empty($parts[0]) && !empty($parts[1])) {
                         $elementType = substr($string, 0, strlen($parts[1]) + 1);
                     } else {
-                        $part = '';
-                        for ($i = 0; $i < count($parts); $i++) {
+                        for ($i = 0; $i < $partsCount; $i++) {
                             $part = trim($parts[$i]);
                             if (!empty($part)) {
                                 break;
@@ -167,7 +144,6 @@ class Utils
     {
         $resolvedPath = $destination;
         if (!empty($destination) && strpos($destination, 'http://') === false && strpos($destination, 'https://') === false && !empty($origin)) {
-
             if (substr($destination, 0, 2) === './') {
                 $destination = substr($destination, 2);
             }
@@ -207,5 +183,33 @@ class Utils
             }
         }
         return $resolvedPath;
+    }
+    /**
+     * Clean comment
+     * @param string $comment the comment to clean
+     * @param string $glueSeparator ths string to use when gathering values
+     * @param bool $uniqueValues indicates if comment values must be unique or not
+     * @return string
+     */
+    public static function cleanComment($comment, $glueSeparator = ',', $uniqueValues = true)
+    {
+        if (!is_scalar($comment) && !is_array($comment)) {
+            return '';
+        }
+        return trim(str_replace('*/', '*[:slash:]', is_scalar($comment) ? $comment : implode($glueSeparator, $uniqueValues ? array_unique($comment) : $comment)));
+    }
+    /**
+     * Clean a string to make it valid as PHP variable
+     * @param string $string the string to clean
+     * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
+     * @return string
+     */
+    public static function cleanString($string, $keepMultipleUnderscores = true)
+    {
+        $cleanedString = preg_replace('/[^a-zA-Z0-9_]/', '_', $string);
+        if (!$keepMultipleUnderscores) {
+            $cleanedString = preg_replace('/[_]+/', '_', $cleanedString);
+        }
+        return $cleanedString;
     }
 }
