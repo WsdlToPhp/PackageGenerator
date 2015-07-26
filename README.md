@@ -24,8 +24,8 @@ The generated package does not need PEAR nor NuSOAP, at least :
         /ServiceType/: classes that give access to the operations
         /StructType/: any type that represents a request/response and their sub elements
         /vendor/: automatically created by composer on standalone mode (default: true)
-        /composer.json: automatically created by composer on **standalone mode** (default: true)
-        /composer.lock: automatically created by composer on **standalone mode** (default: true)
+        /composer.json: automatically created by composer on standalone mode (default: true)
+        /composer.lock: automatically created by composer on standalone mode (default: true)
         /tutorial.php: generated as soon the GenerateTutorial option is enabled (default: true)
 ```
 
