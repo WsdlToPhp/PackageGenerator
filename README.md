@@ -6,7 +6,9 @@
 
 Package Generator eases the creation of a PHP package in order to call any SOAP oriented Web Service.
 
-Its purpose is to provide a full OOP approach to send SOAP requests without needing any third party library.
+Its purpose is to provide a full OOP approach to send SOAP requests using:
+- PHP classes for parameters that match the Web Service parameter names
+- PHP Service classes that match the operation names provided by the Web Service
 
 The generated package is a standalone wihtout any dependencies. It's only based on native PHP SoapClient class. After its generation, you can move it anywhere you want and use it right away.
 
@@ -15,6 +17,19 @@ The generated package does not need PEAR nor NuSOAP, at least :
 - SoapClient : natively installed with PHP,
 - DOM : natively installed with PHP,
 - [PackageBase](https://packagist.org/packages/wsdltophp/packagebase): automatically installed on standalone mode (default mode), it contains utility classes used by the generated classes. **If you're not using the standalone mode, you must add ```wsdltophp/packagebase: dev-master``` in your main composer.json file.**
+
+## Generated package hierarchy
+```
+    /Api/
+        ArrayType/: classes that contains one property which is an array of items
+        EnumType/: classes that only contains constants, enumerations defined by the WSDL
+        ServiceType/: classes that give access to the operations, operations are gathered using the beginning of its name (getList + getProducts are contained by the Get class)
+        StructType/: any type that represent a request/response or an element of a request/response
+        vendor/: automatically created by composer on standalone mode (default: true)
+        composer.json: automatically created by composer on **standalone mode** (default: true)
+        composer.lock: automatically created by composer on **standalone mode** (default: true)
+        tutorial.php: generated as soon the GenerateTutorial option is enabled (default: true)
+```
 
 ## Usages
 ### Command line
@@ -98,7 +113,7 @@ Remove ```--force``` option from the previous command line to get this result:
     <?php
     require_once __DIR__ . '/vendor/autoload.php'
     use \WsdlToPhp\PackageGenerator\Generator\Generator;
-    $generator = Generator::instance("http://www.mydomain.com/wsdl.xml");
+    $generator = new Generator("http://www.mydomain.com/wsdl.xml");
     $generator->generateClasses("MyPackage", "/path/to/where/the/package/must/be/generated/");
 ```
 Then:
@@ -126,14 +141,15 @@ Then:
     // required authentification informations to access the WSDL
     $login = 'MyLogin';
     $password = '********';
-    // any option accepted by the [SoapClient](http://php.net/manual/fr/soapclient.soapclient.php) class
+    // any option accepted by the SoapClient class
+    // see http://php.net/manual/fr/soapclient.soapclient.php
     $options = array(
         'proxy_host'     => '',
         'proxy_port'     => '',
         'proxy_login'    => '',
         'proxy_password' => '',
     );
-    $generator = Generator::instance("http://www.mydomain.com/?wsdl", $login, $password, $options);
+    $generator = new Generator("http://www.mydomain.com/?wsdl", $login, $password, $options);
     $generator->setOptionCategory(GeneratorOptions::VALUE_CAT);
     $generator->setGatherMethods(GeneratorOptions::VALUE_START);
     $generator->setOptionGenericConstantsNames(GeneratorOptions::VALUE_FALSE);
