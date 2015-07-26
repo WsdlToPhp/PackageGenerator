@@ -16,10 +16,10 @@ class StructValueContainerTest extends TestCase
     {
         $struct = StructTest::instance('Foo', 'true');
         $structValueContainer = new StructValueContainer();
-        $structValueContainer->add(new StructValue(1, 0, $struct));
-        $structValueContainer->add(new StructValue(2, 1, $struct));
-        $structValueContainer->add(new StructValue('any', 2, $struct));
-        $structValueContainer->add(new StructValue('bar', 3, $struct));
+        $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 1, 0, $struct));
+        $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 2, 1, $struct));
+        $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 'any', 2, $struct));
+        $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 'bar', 3, $struct));
         return $structValueContainer;
     }
     /**

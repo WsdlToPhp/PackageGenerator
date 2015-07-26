@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlContent;
 
 abstract class AbstractDocument extends AbstractModel
@@ -12,12 +13,12 @@ abstract class AbstractDocument extends AbstractModel
      */
     protected $content;
     /**
+     * @param Generator $generator
      * @param string $name
-     * @return Wsdl
      */
-    public function __construct($name, $content)
+    public function __construct(Generator $generator, $name, $content)
     {
-        parent::__construct($name);
+        parent::__construct($generator, $name);
         $this->setContent($content);
     }
     /**
@@ -32,8 +33,12 @@ abstract class AbstractDocument extends AbstractModel
     {
         $contentClass = $this->contentClass();
         $domDocument = new \DOMDocument('1.0', 'utf-8');
-        $domDocument->loadXML($content);
-        $this->content = new $contentClass($domDocument);
+        try {
+            $domDocument->loadXML($content, LIBXML_NOERROR);
+            $this->content = new $contentClass($domDocument);
+        } catch (\Exception $exception) {
+            throw new \InvalidArgumentException(sprintf('Unable to load document at "%s"', $this->getName()), null, $exception);
+        }
         return $this;
     }
     /**
@@ -43,12 +48,6 @@ abstract class AbstractDocument extends AbstractModel
     public function getContent()
     {
         return $this->content;
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getClassBody()
-     */
-    public function getClassBody(&$class)
-    {
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::__toString()

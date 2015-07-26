@@ -12,31 +12,26 @@ class GeneratorOptionsTest extends TestCase
      */
     public static function optionsInstance()
     {
-        return GeneratorOptions::instance(dirname(__FILE__) . '/../resources/generator_options.yml');
+        return GeneratorOptions::instance(__DIR__ . '/../resources/generator_options.yml');
     }
 
     public function testGetDefaultOptionValue()
     {
-        $this->assertEquals('start', self::optionsInstance()->getOptionValue('category'));
-        $this->assertEquals('start', self::optionsInstance()->getOptionValue('sub_category'));
+        $this->assertEquals('cat', self::optionsInstance()->getOptionValue('category'));
         $this->assertEquals('start', self::optionsInstance()->getOptionValue('gather_methods'));
-        $this->assertFalse(self::optionsInstance()->getOptionValue('send_array_as_parameter'));
-        $this->assertFalse(self::optionsInstance()->getOptionValue('generate_autoload_file'));
-        $this->assertTrue(self::optionsInstance()->getOptionValue('generate_wsdl_class'));
-        $this->assertFalse(self::optionsInstance()->getOptionValue('response_as_wsdl_object'));
-        $this->assertFalse(self::optionsInstance()->getOptionValue('send_parameters_as_array'));
-        $this->assertEmpty(self::optionsInstance()->getOptionValue('inherits_from_identifier'));
         $this->assertFalse(self::optionsInstance()->getOptionValue('generic_constants_names'));
         $this->assertTrue(self::optionsInstance()->getOptionValue('generate_tutorial_file'));
         $this->assertEquals(array(), self::optionsInstance()->getOptionValue('add_comments'));
+        $this->assertEmpty(self::optionsInstance()->getOptionValue('namespace_prefix'));
+        $this->assertTrue(self::optionsInstance()->getOptionValue('standalone'));
     }
 
     public function testSetExistingOptionValue()
     {
-        self::optionsInstance()->setOptionValue('category', 'end');
-        $this->assertEquals('end', self::optionsInstance()->getOptionValue('category'));
-        self::optionsInstance()->setCategory('start');
-        $this->assertEquals('start', self::optionsInstance()->getOptionValue('category'));
+        self::optionsInstance()->setOptionValue('category', 'cat');
+        $this->assertEquals('cat', self::optionsInstance()->getOptionValue('category'));
+        self::optionsInstance()->setCategory('none');
+        $this->assertEquals('none', self::optionsInstance()->getOptionValue('category'));
     }
     /**
      * @expectedException InvalidArgumentException

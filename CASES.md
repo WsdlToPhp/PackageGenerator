@@ -1,6 +1,6 @@
 Test case examples. This list is not exhaustive nor perfect, it has been gathered in the time and can be used as a starting point.
 
-- "Full" documentation (functions, structs, enumerations, values) with "virual" structs inheritance documentation :
+- "Full" documentation (functions, structs, enumerations, values) with "virtual" structs inheritance documentation :
     - http://developer.ebay.com/webservices/latest/ebaySvc.wsdl
     - https://www.paypalobjects.com/wsdl/PayPalSvc.wsdl
     - http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl
@@ -15,6 +15,7 @@ Test case examples. This list is not exhaustive nor perfect, it has been gathere
     - http://api.fromdoppler.com/Default.asmx?WSDL
     - https://webapi.aukro.cz/uploader.php?wsdl
     - https://www.paypalobjects.com/wsdl/PayPalSvc.wsdl
+    - https://api5.successfactors.eu/sfapi/v1/soap12?wsdl
 
 - Simple function parameter (not a struct) :
     - http://traveltek-importer.planetcruiseluxury.co.uk/region.wsdl

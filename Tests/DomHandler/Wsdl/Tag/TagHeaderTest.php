@@ -5,6 +5,7 @@ namespace WsdlToPhp\PackageGenerator\Tests\DomHandler\Wsdl\Tag;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Tests\Model\WsdlTest;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagInput;
 
 class TagHeaderTest extends TestCase
 {
@@ -18,7 +19,7 @@ class TagHeaderTest extends TestCase
         $headers = $wsdl->getContent()->getElementsByName(Wsdl::TAG_HEADER);
 
         foreach ($headers as $index=>$header) {
-            if ($header->getParentInput() !== null) {
+            if ($header->getParentInput() instanceof TagInput) {
                 $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagOperation', $header->getParentOperation());
                 $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagInput', $header->getParentInput());
                 $this->assertSame('RequesterCredentials', $header->getAttributePart());

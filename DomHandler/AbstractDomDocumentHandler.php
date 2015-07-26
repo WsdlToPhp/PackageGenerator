@@ -9,7 +9,7 @@ abstract class AbstractDomDocumentHandler
      */
     protected $domDocument;
     /**
-     * @var AbsractNodeHandler
+     * @var ElementHandler
      */
     protected $rootElement;
     /**
@@ -41,26 +41,18 @@ abstract class AbstractDomDocumentHandler
      * Return the matching node handler based on current \DomNode type
      * @param \DOMNode|\DOMNameSpaceNode $node
      * @param int $index
-     * @return NodeHandler|ElementHandler
+     * @return NodeHandler|ElementHandler|AttributeHandler|NameSpaceHandler
      */
     public function getHandler($node, $index = -1)
     {
-
-        if ($node instanceof \DOMNode) {
-            switch ($node->nodeType) {
-                case XML_ELEMENT_NODE:
-                    return $this->getElementHandler($node, $this, $index);
-                    break;
-                case XML_ATTRIBUTE_NODE:
-                    return $this->getAttributeHandler($node, $this, $index);
-                    break;
-                default:
-                    return $this->getNodeHandler($node, $this, $index);
-                    break;
-            }
+        if ($node instanceof \DOMElement) {
+            return $this->getElementHandler($node, $this, $index);
+        } elseif ($node instanceof \DOMAttr) {
+            return $this->getAttributeHandler($node, $this, $index);
         } elseif ($node instanceof \DOMNameSpaceNode) {
             return new NameSpaceHandler($node, $this, $index);
         }
+        return $this->getNodeHandler($node, $this, $index);
     }
     /**
      * @param \DOMNode $node
@@ -98,21 +90,24 @@ abstract class AbstractDomDocumentHandler
     public function getElementByName($name)
     {
         $node = $this->getNodeByName($name);
-        if ($node !== null && $node->getNode() instanceof \DOMElement) {
+        if ($node instanceof AbstractNodeHandler && $node->getNode() instanceof \DOMElement) {
             return $this->getElementHandler($node->getNode(), $this);
         }
         return null;
     }
     /**
      * @param string $name
+     * @param string $checkInstance
      * @return NodeHandler[]
      */
-    public function getNodesByName($name)
+    public function getNodesByName($name, $checkInstance = null)
     {
         $nodes = array();
         if ($this->domDocument->getElementsByTagName($name)->length > 0) {
-            foreach ($this->domDocument->getElementsByTagName($name) as $index=>$node) {
-                $nodes[] = $this->getNodeHandler($node, $this, $index);
+            foreach ($this->domDocument->getElementsByTagName($name) as $node) {
+                if ($checkInstance === null || $node instanceof $checkInstance) {
+                    $nodes[] = $this->getHandler($node, count($nodes));
+                }
             }
         }
         return $nodes;
@@ -123,46 +118,57 @@ abstract class AbstractDomDocumentHandler
      */
     public function getElementsByName($name)
     {
-        $nodes    = $this->getNodesByName($name);
-        $elements = array();
-        if (!empty($nodes)) {
-            $index = 0;
-            foreach ($nodes as $node) {
-                if ($node->getNode() instanceof \DOMElement) {
-                    $elements[] = $this->getElementHandler($node->getNode(), $this, $index);
-                    $index++;
-                }
-            }
-        }
-        return $elements;
+        return $this->getNodesByName($name, 'DOMElement');
     }
     /**
      * @param string $name
      * @param array $attributes
+     * @param \DOMNode $node
      * @return ElementHandler[]
      */
-    public function getElementsByNameAndAttributes($name, array $attributes)
+    public function getElementsByNameAndAttributes($name, array $attributes, \DOMNode $node = null)
     {
         $matchingElements = $this->getElementsByName($name);
-        if (!empty($attributes) && !empty($matchingElements)) {
-            $xpath = new \DOMXPath($this->domDocument);
-            $xQuery = sprintf("//*[local-name() = '%s']", $name);
-            foreach ($attributes as $attributeName=>$attributeValue) {
-                $xQuery .= sprintf("[@%s='%s']", $attributeName, $attributeValue);
-            }
-            $nodes = $xpath->query($xQuery);
+        if ((!empty($attributes) || $node instanceof \DOMNode) && !empty($matchingElements)) {
+            $nodes = $this->searchTagsByXpath($name, $attributes, $node);
             if (!empty($nodes)) {
-                $matchingElements = array();
-                $index = 0;
-                foreach ($nodes as $node) {
-                    if ($node instanceof \DOMElement) {
-                        $matchingElements[] = $this->getElementHandler($node, $this, $index);
-                        $index++;
-                    }
-                }
+                $matchingElements = $this->getElementsHandlers($nodes);
             }
         }
         return $matchingElements;
+    }
+    /**
+     * @param \DOMNodeList $nodeList
+     * @return ElementHandler[]
+     */
+    public function getElementsHandlers(\DOMNodeList $nodeList)
+    {
+        $nodes = array();
+        if (!empty($nodeList)) {
+            $index = 0;
+            foreach ($nodeList as $node) {
+                if ($node instanceof \DOMElement) {
+                    $nodes[] = $this->getElementHandler($node, $this, $index);
+                    $index++;
+                }
+            }
+        }
+        return $nodes;
+    }
+    /**
+     * @param string $name
+     * @param array $attributes
+     * @param \DOMNode $node
+     * @return \DOMNodeList
+     */
+    public function searchTagsByXpath($name, array $attributes, \DOMNode $node = null)
+    {
+        $xpath = new \DOMXPath($this->domDocument);
+        $xQuery = sprintf("%s//*[local-name() = '%s']", $node instanceof \DOMNode ? '.' : '', $name);
+        foreach ($attributes as $attributeName=>$attributeValue) {
+            $xQuery .= sprintf("[@%s='%s']", $attributeName, $attributeValue);
+        }
+        return $xpath->query($xQuery, $node);
     }
     /**
      * @param string $name

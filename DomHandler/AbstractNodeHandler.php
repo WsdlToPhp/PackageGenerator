@@ -21,8 +21,8 @@ abstract class AbstractNodeHandler
      */
     public function __construct(\DOMNode $node, AbstractDomDocumentHandler $domDocumentHandler, $index = 0)
     {
-        $this->node               = $node;
-        $this->index              = $index;
+        $this->node = $node;
+        $this->index = $index;
         $this->domDocumentHandler = $domDocumentHandler;
     }
     /**
@@ -31,6 +31,13 @@ abstract class AbstractNodeHandler
     public function getNode()
     {
         return $this->node;
+    }
+    /**
+     * @return \DOMNodeList
+     */
+    public function getChildNodes()
+    {
+        return $this->getNode()->childNodes;
     }
     /**
      * @return AbstractNodeHandler
@@ -88,17 +95,11 @@ abstract class AbstractNodeHandler
         return $this->getNode()->hasAttributes();
     }
     /**
-     * @return array[\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler]
+     * @return AttributeHandler[]
      */
     public function getAttributes()
     {
-        $attributes = array();
-        if ($this->hasAttributes()) {
-            foreach ($this->getNode()->attributes as $index=>$attribute) {
-                $attributes[] = $this->getDomDocumentHandler()->getHandler($attribute, $index);
-            }
-        }
-        return $attributes;
+        return $this->getHandlers($this->getNode()->attributes);
     }
     /**
      * @return boolean
@@ -108,20 +109,26 @@ abstract class AbstractNodeHandler
         return $this->getNode()->hasChildNodes();
     }
     /**
-     * @return NULL|array[AbstractElementHandler]|array[AbstractNodeHandler]
+     * @return ElementHandler[]|NodeHandler[]
      */
     public function getChildren()
     {
-        $children = array();
-        if ($this->hasChildren()) {
-            foreach ($this->getNode()->childNodes as $index=>$node) {
-                $children[] = $this->getDomDocumentHandler()->getHandler($node, $index);
-            }
-        }
-        return $children;
+        return $this->getHandlers($this->getNode()->childNodes);
     }
     /**
-     * @return string
+     * @param \Traversable $nodes
+     * @return NodeHandler[]|ElementHandler[]|AttributeHandler[]|NameSpaceHandler[]
+     */
+    private function getHandlers(\Traversable $nodes)
+    {
+        $handlers = array();
+        foreach ($nodes as $index=>$node) {
+            $handlers[] = $this->getDomDocumentHandler()->getHandler($node, $index);
+        }
+        return $handlers;
+    }
+    /**
+     * @return mixed
      */
     public function getNodeValue()
     {
@@ -129,5 +136,20 @@ abstract class AbstractNodeHandler
         $nodeValue = str_replace(array("\r", "\n", "\t"), array('', '', ' '), $nodeValue);
         $nodeValue = preg_replace('[\s+]', ' ', $nodeValue);
         return $nodeValue;
+    }
+    /**
+     * Alias for AbstractNodeHandler::getNodeValue()
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->getNodeValue();
+    }
+    /**
+     * @return null|string
+     */
+    public function getValueNamespace()
+    {
+        return null;
     }
 }

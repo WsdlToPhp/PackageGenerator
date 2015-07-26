@@ -36,9 +36,23 @@ class StructContainerTest extends TestCase
     {
         $structContainer = self::instance();
 
-        $structContainer->addStructWithAttribute('Foo', 'bar', 'string');
-        $structContainer->addStructWithAttribute('Foo', 'bar', 'int');
+        $structContainer->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'string');
+        $structContainer->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'int');
 
         $this->assertCount(1, $structContainer->getStructByName('Foo')->getAttributes());
     }
+    /**
+     *
+     */
+     public function testOffsetUnset()
+     {
+         $instance = self::instance();
+
+         $instance->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'string');
+         $instance->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'int');
+
+         $instance->offsetUnset(1);
+
+         $this->assertNull($instance->offsetGet(1));
+     }
 }

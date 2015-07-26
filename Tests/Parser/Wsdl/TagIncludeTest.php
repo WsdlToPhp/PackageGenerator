@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -24,11 +23,10 @@ class TagIncludeTest extends WsdlParser
     public function testIsWsdlParsed()
     {
         $tagIncludeParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagIncludeParser->parse();
 
-        $this->assertTrue($tagIncludeParser->isWsdlParsed(new Wsdl(self::wsdlImageViewServicePath(), file_get_contents(self::wsdlImageViewServicePath()))));
+        $this->assertTrue($tagIncludeParser->isWsdlParsed(new Wsdl($tagIncludeParser->getGenerator(), self::wsdlImageViewServicePath(), file_get_contents(self::wsdlImageViewServicePath()))));
     }
     /**
      *
@@ -36,7 +34,6 @@ class TagIncludeTest extends WsdlParser
     public function testGetExternalSchemas()
     {
         $tagIncludeParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagIncludeParser->parse();
 
@@ -49,8 +46,8 @@ class TagIncludeTest extends WsdlParser
         );
         $schemaContainer = new SchemaContainer();
         foreach ($schemas as $schemaPath) {
-            $schemaPath = sprintf(dirname(__FILE__) . '/../../resources/%s', $schemaPath);
-            $schema = new Schema($schemaPath, file_get_contents($schemaPath));
+            $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/%s', $schemaPath));
+            $schema = new Schema($tagIncludeParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schema->getContent()->setCurrentTag('include');
             $schemaContainer->add($schema);
         }
@@ -64,7 +61,6 @@ class TagIncludeTest extends WsdlParser
     public function testCountWsdlsAfterParsing()
     {
         $tagIncludeParser = self::instance();
-        AbstractObjectContainer::purgeAllCache();
 
         $tagIncludeParser->parse();
 

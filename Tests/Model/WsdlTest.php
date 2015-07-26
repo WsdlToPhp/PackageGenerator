@@ -4,77 +4,115 @@ namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\PackageGenerator\Model\Schema;
 
 class WsdlTest extends TestCase
 {
+    /**
+     * @var Wsdl[]
+     */
+    private static $wsdls = array();
+    /**
+     * @var Schema[]
+     */
+    private static $schemas = array();
+    /**
+     * @param string $wsdlPath
+     * @return Wsdl
+     */
+    public static function getWsdl($wsdlPath)
+    {
+        if (!isset(self::$wsdls[$wsdlPath])) {
+            self::$wsdls[$wsdlPath] = new Wsdl(self::getInstance($wsdlPath), $wsdlPath, file_get_contents($wsdlPath));
+        }
+        return self::$wsdls[$wsdlPath];
+    }
+    /**
+     * @param string $schemaPath
+     * @return Schema
+     */
+    public static function getSchema($schemaPath)
+    {
+        if (!isset(self::$schemas[$schemaPath])) {
+            self::$schemas[$schemaPath] = new Schema(self::getBingGeneratorInstance(), $schemaPath, file_get_contents($schemaPath));
+        }
+        return self::$schemas[$schemaPath];
+    }
     /**
      * @return Wsdl
      */
     public static function bingInstance()
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/bingsearch.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/bingsearch.wsdl'));
+        return self::getWsdl(self::wsdlBingPath());
     }
     /**
      * @return Wsdl
      */
     public static function ebayInstance()
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/ebaySvc.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/ebaySvc.wsdl'));
+        return self::getWsdl(self::wsdlEbayPath());
     }
     /**
      * @return Wsdl
      */
-    public static function partnerInstance()
+    public static function partnerInstance($local = true)
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/PartnerService.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/PartnerService.wsdl'));
+        return self::getWsdl(self::wsdlPartnerPath($local));
     }
     /**
      * @return Wsdl
      */
     public static function imageServiceViewInstance()
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/ImageViewService.local.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/ImageViewService.local.wsdl'));
+        return self::getWsdl(self::wsdlImageViewServicePath());
     }
     /**
-     * @return Wsdl
+     * @return $schema
      */
     public static function imageServiceViewAvailRequestInstance()
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/availableImagesRequest.xsd', file_get_contents(dirname(__FILE__) . '/../resources/availableImagesRequest.xsd'));
+        return self::getSchema(self::schemaImageViewServiceAvailableImagesRequestPath());
     }
     /**
      *
      */
     public function testGetName()
     {
-        $this->assertSame(dirname(__FILE__) . '/../resources/bingsearch.wsdl', self::bingInstance()->getName());
+        $this->assertSame(self::wsdlBingPath(), self::bingInstance()->getName());
     }
     /**
      * @return Wsdl
      */
     public static function actonInstance()
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/ActonService2.local.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/ActonService2.local.wsdl'));
+        return self::getWsdl(self::wsdlActonPath());
     }
     /**
      * @return Wsdl
      */
     public static function odigeoInstance()
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/odigeo.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/odigeo.wsdl'));
+        return self::getWsdl(self::wsdlOdigeoPath());
     }
     /**
      * @return Wsdl
      */
     public static function orderContractInstance()
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/OrderContract.wsdl', file_get_contents(dirname(__FILE__) . '/../resources/OrderContract.wsdl'));
+        return self::getWsdl(self::wsdlOrderContractPath());
     }
     /**
-     * @return Wsdl
+     * @expectedException \InvalidArgumentException
+     */
+    public function testException()
+    {
+        new Wsdl(self::getBingGeneratorInstance(), __DIR__ . '/../resources/empty.wsdl', file_get_contents(__DIR__ . '/../resources/empty.wsdl'));
+    }
+    /**
+     * @return Schema
      */
     public static function numericEnumerationInstance()
     {
-        return new Wsdl(dirname(__FILE__) . '/../resources/numeric_enumeration.xml', file_get_contents(dirname(__FILE__) . '/../resources/numeric_enumeration.xml'));
+        return self::getSchema(__DIR__ . '/../resources/numeric_enumeration.xml');
     }
 }

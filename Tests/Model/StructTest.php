@@ -14,7 +14,7 @@ class StructTest extends TestCase
      */
     public static function instance($name, $isStruct)
     {
-        return new Struct($name, $isStruct);
+        return new Struct(self::getBingGeneratorInstance(), $name, $isStruct);
     }
     /**
      *

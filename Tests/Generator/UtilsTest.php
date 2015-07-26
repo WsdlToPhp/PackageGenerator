@@ -2,6 +2,9 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\Model\EmptyModel;
+use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 
@@ -22,7 +25,7 @@ class UtilsTest extends TestCase
      */
     public function testResolveCompletePath()
     {
-        $dirname = dirname(__FILE__);
+        $dirname = __DIR__;
         $this->assertSame(sprintf('%s/../resources/aukro.wsdl', $dirname), Utils::resolveCompletePath(sprintf('%s/../resources/ebaySvc.wsdl', $dirname), './folder/../aukro.wsdl'));
         $this->assertSame(sprintf('%s/../resources/aukro.wsdl', $dirname), Utils::resolveCompletePath(sprintf('%s/../resources/ebaySvc.wsdl', $dirname), 'folder/../aukro.wsdl'));
         $this->assertSame(sprintf('%s/../resources/aukro.wsdl', $dirname), Utils::resolveCompletePath(sprintf('%s/../resources/ebaySvc.wsdl', $dirname), 'folder/../toto/../aukro.wsdl'));
@@ -31,8 +34,17 @@ class UtilsTest extends TestCase
     /**
      *
      */
-    public function testGetvalueWithinItsType()
+    public function testGetValueWithinItsType()
     {
+        $this->assertSame('020', Utils::getValueWithinItsType('020', 'string'));
         $this->assertSame('01', Utils::getValueWithinItsType('01', 'string'));
+    }
+    /**
+     *
+     */
+    public function testCleanString()
+    {
+        $this->assertSame('events', Utils::getPart(GeneratorOptionsTest::optionsInstance(), new EmptyModel(self::getBingGeneratorInstance(), 'eventsGet'), GeneratorOptions::GATHER_METHODS));
+        $this->assertSame('events', Utils::getPart(GeneratorOptionsTest::optionsInstance(), new EmptyModel(self::getBingGeneratorInstance(), '_events'), GeneratorOptions::GATHER_METHODS));
     }
 }

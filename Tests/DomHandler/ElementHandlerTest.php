@@ -82,8 +82,8 @@ class ElementHandlerTest extends TestCase
         // first message tag
         $message = $domDocument->getElementByName('message');
         $part = $message->getChildByNameAndAttributes('part', array(
-            'name'    => 'parameters',
-            'element' => 'SearchRequest',
+            'name' => 'parameters',
+            'element' => 'tns:SearchRequest',
         ));
 
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler', $part);

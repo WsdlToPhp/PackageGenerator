@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput;
 
 class TagOutputTest extends WsdlParser
@@ -27,8 +26,7 @@ class TagOutputTest extends WsdlParser
     public function testParseMyBoardpack()
     {
         $tagOutputParser = self::myBoardPackInstance();
-        $soapClient     = self::myBoardPackSoapClient();
-        AbstractObjectContainer::purgeAllCache();
+        $soapClient = self::myBoardPackSoapClient();
 
         $tagOutputParser->parse();
 
@@ -46,11 +44,10 @@ class TagOutputTest extends WsdlParser
     }
     /**
      * @param string $soapFunction
-     * @return array[string]
+     * @return string[]
      */
     public static function getMethodDataFromSoapFunction($soapFunction)
     {
-        $returnType = '';
         if (stripos($soapFunction, TagOutput::UNKNOWN) === 0) {
             $returnType = sprintf('(%s)', TagOutput::UNKNOWN);
         } else {
@@ -59,7 +56,7 @@ class TagOutputTest extends WsdlParser
         $matches = array();
         preg_match(sprintf('/%s\s([a-zA-Z_]*)\(.*/i', $returnType), $soapFunction, $matches);
         return array(
-            'name'   => $matches[2],
+            'name' => $matches[2],
             'return' => $matches[1],
         );
     }

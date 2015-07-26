@@ -6,19 +6,18 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Container\Model\Wsdl as WsdlContainer;
 
-class WsdlContainerTest extends TestCase
+class WSdlContainerTest extends TestCase
 {
-    const
-        WSDL_BING = 'bingsearch.wsdl',
-        WSDL_EBAY = 'ebaySvc.wsdl';
+    const WSDL_BING = 'bingsearch.wsdl';
+    const WSDL_EBAY = 'ebaySvc.wsdl';
     /**
      * @return WsdlContainer
      */
     public static function instance()
     {
         $wsdlContainer = new WsdlContainer();
-        $wsdlContainer->add(new Wsdl(self::WSDL_BING, file_get_contents(dirname(__FILE__) . '/../../resources/' . self::WSDL_BING)));
-        $wsdlContainer->add(new Wsdl(self::WSDL_EBAY, file_get_contents(dirname(__FILE__) . '/../../resources/' . self::WSDL_EBAY)));
+        $wsdlContainer->add(new Wsdl(self::getBingGeneratorInstance(), self::WSDL_BING, file_get_contents(self::wsdlBingPath())));
+        $wsdlContainer->add(new Wsdl(self::getBingGeneratorInstance(), self::WSDL_EBAY, file_get_contents(self::wsdlEbayPath())));
         return $wsdlContainer;
     }
     /**

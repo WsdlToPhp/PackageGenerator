@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="Soap12" 
+    targetNamespace="http://schemas.servicestack.net/types" 
+    xmlns:svc="http://schemas.servicestack.net/types" 
+    xmlns:tns="http://schemas.servicestack.net/types" 
+    
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" 
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+    xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" 
+    xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" 
+    xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+    xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" 
+    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" 
+    xmlns:wsa10="http://www.w3.org/2005/08/addressing" 
+    xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="anyType" nillable="true" type="xs:anyType" />
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+  <xs:element name="boolean" nillable="true" type="xs:boolean" />
+  <xs:element name="byte" nillable="true" type="xs:byte" />
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+  <xs:element name="decimal" nillable="true" type="xs:decimal" />
+  <xs:element name="double" nillable="true" type="xs:double" />
+  <xs:element name="float" nillable="true" type="xs:float" />
+  <xs:element name="int" nillable="true" type="xs:int" />
+  <xs:element name="long" nillable="true" type="xs:long" />
+  <xs:element name="QName" nillable="true" type="xs:QName" />
+  <xs:element name="short" nillable="true" type="xs:short" />
+  <xs:element name="string" nillable="true" type="xs:string" />
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+  <xs:element name="char" nillable="true" type="tns:char" />
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration" />
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid" />
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName" />
+  <xs:attribute name="Id" type="xs:ID" />
+  <xs:attribute name="Ref" type="xs:IDREF" />
+</xs:schema>
+	</wsdl:types>
+
+	<wsdl:message name="AuthenticateAccountIn">
+        <wsdl:part name="par" element="tns:AuthenticateAccount" />
+    </wsdl:message>
+    <wsdl:message name="AuthenticateAccountOut">
+        <wsdl:part name="par" element="tns:AuthenticateAccountResponse" />
+    </wsdl:message><wsdl:message name="AddTenatFeaturesIn">
+        <wsdl:part name="par" element="tns:AddTenatFeatures" />
+    </wsdl:message>
+    <wsdl:message name="AddTenatFeaturesOut">
+        <wsdl:part name="par" element="tns:AddTenatFeaturesResponse" />
+    </wsdl:message><wsdl:message name="SubscribedTenantsIn">
+        <wsdl:part name="par" element="tns:SubscribedTenants" />
+    </wsdl:message>
+    <wsdl:message name="SubscribedTenantsOut">
+        <wsdl:part name="par" element="tns:SubscribedTenantsResponse" />
+    </wsdl:message><wsdl:message name="MonitorExecutionTimeIn">
+        <wsdl:part name="par" element="tns:MonitorExecutionTime" />
+    </wsdl:message>
+    <wsdl:message name="MonitorExecutionTimeOut">
+        <wsdl:part name="par" element="tns:MonitorExecutionTimeResponse" />
+    </wsdl:message><wsdl:message name="CustomerAutoPaymentIn">
+        <wsdl:part name="par" element="tns:CustomerAutoPayment" />
+    </wsdl:message>
+    <wsdl:message name="CustomerAutoPaymentOut">
+        <wsdl:part name="par" element="tns:CustomerAutoPaymentResponse" />
+    </wsdl:message><wsdl:message name="CustomerHuntGroupIn">
+        <wsdl:part name="par" element="tns:CustomerHuntGroup" />
+    </wsdl:message>
+    <wsdl:message name="CustomerHuntGroupOut">
+        <wsdl:part name="par" element="tns:CustomerHuntGroupResponse" />
+    </wsdl:message><wsdl:message name="FavouriteNumbersIn">
+        <wsdl:part name="par" element="tns:FavouriteNumbers" />
+    </wsdl:message>
+    <wsdl:message name="FavouriteNumbersOut">
+        <wsdl:part name="par" element="tns:FavouriteNumbersResponse" />
+    </wsdl:message><wsdl:message name="UMVoiceMailSettingsIn">
+        <wsdl:part name="par" element="tns:UMVoiceMailSettings" />
+    </wsdl:message>
+    <wsdl:message name="UMVoiceMailSettingsOut">
+        <wsdl:part name="par" element="tns:UMVoiceMailSettingsResponse" />
+    </wsdl:message><wsdl:message name="UMVoiceMailGreetingsIn">
+        <wsdl:part name="par" element="tns:UMVoiceMailGreetings" />
+    </wsdl:message>
+    <wsdl:message name="UMVoiceMailGreetingsOut">
+        <wsdl:part name="par" element="tns:UMVoiceMailGreetingsResponse" />
+    </wsdl:message><wsdl:message name="EmailClientIn">
+        <wsdl:part name="par" element="tns:EmailClient" />
+    </wsdl:message>
+    <wsdl:message name="EmailClientOut">
+        <wsdl:part name="par" element="tns:EmailClientResponse" />
+    </wsdl:message><wsdl:message name="SipStatusIn">
+        <wsdl:part name="par" element="tns:SipStatus" />
+    </wsdl:message>
+    <wsdl:message name="SipStatusOut">
+        <wsdl:part name="par" element="tns:SipStatusResponse" />
+    </wsdl:message><wsdl:message name="DeleteAccountIn">
+        <wsdl:part name="par" element="tns:DeleteAccount" />
+    </wsdl:message>
+    <wsdl:message name="DeleteAccountOut">
+        <wsdl:part name="par" element="tns:DeleteAccountResponse" />
+    </wsdl:message><wsdl:message name="DeleteCustomerIn">
+        <wsdl:part name="par" element="tns:DeleteCustomer" />
+    </wsdl:message>
+    <wsdl:message name="DeleteCustomerOut">
+        <wsdl:part name="par" element="tns:DeleteCustomerResponse" />
+    </wsdl:message><wsdl:message name="DeleteLocalNumberIn">
+        <wsdl:part name="par" element="tns:DeleteLocalNumber" />
+    </wsdl:message>
+    <wsdl:message name="DeleteLocalNumberOut">
+        <wsdl:part name="par" element="tns:DeleteLocalNumberResponse" />
+    </wsdl:message><wsdl:message name="ActiveCallsIn">
+        <wsdl:part name="par" element="tns:ActiveCalls" />
+    </wsdl:message>
+    <wsdl:message name="ActiveCallsOut">
+        <wsdl:part name="par" element="tns:ActiveCallsResponse" />
+    </wsdl:message><wsdl:message name="GetIpAddressesIn">
+        <wsdl:part name="par" element="tns:GetIpAddresses" />
+    </wsdl:message>
+    <wsdl:message name="GetIpAddressesOut">
+        <wsdl:part name="par" element="tns:GetIpAddressesResponse" />
+    </wsdl:message><wsdl:message name="ValidatePlatformOwnerIn">
+        <wsdl:part name="par" element="tns:ValidatePlatformOwner" />
+    </wsdl:message>
+    <wsdl:message name="ValidatePlatformOwnerOut">
+        <wsdl:part name="par" element="tns:ValidatePlatformOwnerResponse" />
+    </wsdl:message><wsdl:message name="CreateTenantIn">
+        <wsdl:part name="par" element="tns:CreateTenant" />
+    </wsdl:message>
+    <wsdl:message name="CreateTenantOut">
+        <wsdl:part name="par" element="tns:CreateTenantResponse" />
+    </wsdl:message><wsdl:message name="AuthenticateAdminIn">
+        <wsdl:part name="par" element="tns:AuthenticateAdmin" />
+    </wsdl:message>
+    <wsdl:message name="AuthenticateAdminOut">
+        <wsdl:part name="par" element="tns:AuthenticateAdminResponse" />
+    </wsdl:message><wsdl:message name="AddUpdatePaymentInformationIn">
+        <wsdl:part name="par" element="tns:AddUpdatePaymentInformation" />
+    </wsdl:message>
+    <wsdl:message name="AddUpdatePaymentInformationOut">
+        <wsdl:part name="par" element="tns:AddUpdatePaymentInformationResponse" />
+    </wsdl:message><wsdl:message name="AllocateIPIn">
+        <wsdl:part name="par" element="tns:AllocateIP" />
+    </wsdl:message>
+    <wsdl:message name="AllocateIPOut">
+        <wsdl:part name="par" element="tns:AllocateIPResponse" />
+    </wsdl:message><wsdl:message name="AuthenticateResellerIn">
+        <wsdl:part name="par" element="tns:AuthenticateReseller" />
+    </wsdl:message>
+    <wsdl:message name="AuthenticateResellerOut">
+        <wsdl:part name="par" element="tns:AuthenticateResellerResponse" />
+    </wsdl:message><wsdl:message name="AuthenticateCustomerIn">
+        <wsdl:part name="par" element="tns:AuthenticateCustomer" />
+    </wsdl:message>
+    <wsdl:message name="AuthenticateCustomerOut">
+        <wsdl:part name="par" element="tns:AuthenticateCustomerResponse" />
+    </wsdl:message><wsdl:message name="UpdateAccountIn">
+        <wsdl:part name="par" element="tns:UpdateAccount" />
+    </wsdl:message>
+    <wsdl:message name="UpdateAccountOut">
+        <wsdl:part name="par" element="tns:UpdateAccountResponse" />
+    </wsdl:message><wsdl:message name="GetAccountIn">
+        <wsdl:part name="par" element="tns:GetAccount" />
+    </wsdl:message>
+    <wsdl:message name="GetAccountOut">
+        <wsdl:part name="par" element="tns:GetAccountResponse" />
+    </wsdl:message><wsdl:message name="CreateAccountIn">
+        <wsdl:part name="par" element="tns:CreateAccount" />
+    </wsdl:message>
+    <wsdl:message name="CreateAccountOut">
+        <wsdl:part name="par" element="tns:CreateAccountResponse" />
+    </wsdl:message><wsdl:message name="UpdateCustomerStatusIn">
+        <wsdl:part name="par" element="tns:UpdateCustomerStatus" />
+    </wsdl:message>
+    <wsdl:message name="UpdateCustomerStatusOut">
+        <wsdl:part name="par" element="tns:UpdateCustomerStatusResponse" />
+    </wsdl:message><wsdl:message name="UpdateCustomerIn">
+        <wsdl:part name="par" element="tns:UpdateCustomer" />
+    </wsdl:message>
+    <wsdl:message name="UpdateCustomerOut">
+        <wsdl:part name="par" element="tns:UpdateCustomerResponse" />
+    </wsdl:message><wsdl:message name="CreateCustomerIn">
+        <wsdl:part name="par" element="tns:CreateCustomer" />
+    </wsdl:message>
+    <wsdl:message name="CreateCustomerOut">
+        <wsdl:part name="par" element="tns:CreateCustomerResponse" />
+    </wsdl:message><wsdl:message name="PortaFollowMeIn">
+        <wsdl:part name="par" element="tns:PortaFollowMe" />
+    </wsdl:message>
+    <wsdl:message name="PortaFollowMeOut">
+        <wsdl:part name="par" element="tns:PortaFollowMeResponse" />
+    </wsdl:message><wsdl:message name="AccountAliasIn">
+        <wsdl:part name="par" element="tns:AccountAlias" />
+    </wsdl:message>
+    <wsdl:message name="AccountAliasOut">
+        <wsdl:part name="par" element="tns:AccountAliasResponse" />
+    </wsdl:message><wsdl:message name="PortaPaymentIn">
+        <wsdl:part name="par" element="tns:PortaPayment" />
+    </wsdl:message>
+    <wsdl:message name="PortaPaymentOut">
+        <wsdl:part name="par" element="tns:PortaPaymentResponse" />
+    </wsdl:message><wsdl:message name="CustomerAccountSubscriptionIn">
+        <wsdl:part name="par" element="tns:CustomerAccountSubscription" />
+    </wsdl:message>
+    <wsdl:message name="CustomerAccountSubscriptionOut">
+        <wsdl:part name="par" element="tns:CustomerAccountSubscriptionResponse" />
+    </wsdl:message><wsdl:message name="SmsMessageIn">
+        <wsdl:part name="par" element="tns:SmsMessage" />
+    </wsdl:message>
+    <wsdl:message name="SmsMessageOut">
+        <wsdl:part name="par" element="tns:SmsMessageResponse" />
+    </wsdl:message><wsdl:message name="ApiSettingsIn">
+        <wsdl:part name="par" element="tns:ApiSettings" />
+    </wsdl:message>
+    <wsdl:message name="ApiSettingsOut">
+        <wsdl:part name="par" element="tns:ApiSettingsResponse" />
+    </wsdl:message><wsdl:message name="VNAssignDIDTenantIn">
+        <wsdl:part name="par" element="tns:VNAssignDIDTenant" />
+    </wsdl:message>
+    <wsdl:message name="VNAssignDIDTenantOut">
+        <wsdl:part name="par" element="tns:VNAssignDIDTenantResponse" />
+    </wsdl:message><wsdl:message name="VNGetDIDSPortaIn">
+        <wsdl:part name="par" element="tns:VNGetDIDSPorta" />
+    </wsdl:message>
+    <wsdl:message name="VNGetDIDSPortaOut">
+        <wsdl:part name="par" element="tns:VNGetDIDSPortaResponse" />
+    </wsdl:message><wsdl:message name="VNUpdateDIDAgreementIn">
+        <wsdl:part name="par" element="tns:VNUpdateDIDAgreement" />
+    </wsdl:message>
+    <wsdl:message name="VNUpdateDIDAgreementOut">
+        <wsdl:part name="par" element="tns:VNUpdateDIDAgreementResponse" />
+    </wsdl:message><wsdl:message name="VNAddDIDAgreementIn">
+        <wsdl:part name="par" element="tns:VNAddDIDAgreement" />
+    </wsdl:message>
+    <wsdl:message name="VNAddDIDAgreementOut">
+        <wsdl:part name="par" element="tns:VNAddDIDAgreementResponse" />
+    </wsdl:message><wsdl:message name="VNDIDUpdateTenantPriceIn">
+        <wsdl:part name="par" element="tns:VNDIDUpdateTenantPrice" />
+    </wsdl:message>
+    <wsdl:message name="VNDIDUpdateTenantPriceOut">
+        <wsdl:part name="par" element="tns:VNDIDUpdateTenantPriceResponse" />
+    </wsdl:message><wsdl:message name="VNAddDIDTenantPriceIn">
+        <wsdl:part name="par" element="tns:VNAddDIDTenantPrice" />
+    </wsdl:message>
+    <wsdl:message name="VNAddDIDTenantPriceOut">
+        <wsdl:part name="par" element="tns:VNAddDIDTenantPriceResponse" />
+    </wsdl:message><wsdl:message name="VNAvailableCityDIDSIn">
+        <wsdl:part name="par" element="tns:VNAvailableCityDIDS" />
+    </wsdl:message>
+    <wsdl:message name="VNAvailableCityDIDSOut">
+        <wsdl:part name="par" element="tns:VNAvailableCityDIDSResponse" />
+    </wsdl:message><wsdl:message name="VNAddDIDSIn">
+        <wsdl:part name="par" element="tns:VNAddDIDS" />
+    </wsdl:message>
+    <wsdl:message name="VNAddDIDSOut">
+        <wsdl:part name="par" element="tns:VNAddDIDSResponse" />
+    </wsdl:message><wsdl:message name="VNTenantDIDSIn">
+        <wsdl:part name="par" element="tns:VNTenantDIDS" />
+    </wsdl:message>
+    <wsdl:message name="VNTenantDIDSOut">
+        <wsdl:part name="par" element="tns:VNTenantDIDSResponse" />
+    </wsdl:message><wsdl:message name="VNAvailableCountryDIDSIn">
+        <wsdl:part name="par" element="tns:VNAvailableCountryDIDS" />
+    </wsdl:message>
+    <wsdl:message name="VNAvailableCountryDIDSOut">
+        <wsdl:part name="par" element="tns:VNAvailableCountryDIDSResponse" />
+    </wsdl:message><wsdl:message name="AddLocalNumberIn">
+        <wsdl:part name="par" element="tns:AddLocalNumber" />
+    </wsdl:message>
+    <wsdl:message name="AddLocalNumberOut">
+        <wsdl:part name="par" element="tns:AddLocalNumberResponse" />
+    </wsdl:message>
+
+	<wsdl:message name="MobileTopUpRequestIn">
+        <wsdl:part name="par" element="tns:MobileTopUpRequest" />
+    </wsdl:message><wsdl:message name="CallProcessingRequestIn">
+        <wsdl:part name="par" element="tns:CallProcessingRequest" />
+    </wsdl:message><wsdl:message name="NumberPortingReqIn">
+        <wsdl:part name="par" element="tns:NumberPortingReq" />
+    </wsdl:message><wsdl:message name="PortaCustomerInvoiceRequestIn">
+        <wsdl:part name="par" element="tns:PortaCustomerInvoiceRequest" />
+    </wsdl:message><wsdl:message name="CallQueueSettingsRequestIn">
+        <wsdl:part name="par" element="tns:CallQueueSettingsRequest" />
+    </wsdl:message><wsdl:message name="CustomerAbbreviatedDialingRequestListIn">
+        <wsdl:part name="par" element="tns:CustomerAbbreviatedDialingRequestList" />
+    </wsdl:message><wsdl:message name="CustomerAccountNotepadReqIn">
+        <wsdl:part name="par" element="tns:CustomerAccountNotepadReq" />
+    </wsdl:message><wsdl:message name="StemProCallPatternReqIn">
+        <wsdl:part name="par" element="tns:StemProCallPatternReq" />
+    </wsdl:message><wsdl:message name="AutoAttendantSettingsRequestIn">
+        <wsdl:part name="par" element="tns:AutoAttendantSettingsRequest" />
+    </wsdl:message><wsdl:message name="StemProVendorBalanceReqIn">
+        <wsdl:part name="par" element="tns:StemProVendorBalanceReq" />
+    </wsdl:message><wsdl:message name="IVRLocalNumberRequestIn">
+        <wsdl:part name="par" element="tns:IVRLocalNumberRequest" />
+    </wsdl:message><wsdl:message name="PortaAccountFollowMeInfoIn">
+        <wsdl:part name="par" element="tns:PortaAccountFollowMeInfo" />
+    </wsdl:message><wsdl:message name="APIAdminLoginIn">
+        <wsdl:part name="par" element="tns:APIAdminLogin" />
+    </wsdl:message><wsdl:message name="CreatePartnerAccountIn">
+        <wsdl:part name="par" element="tns:CreatePartnerAccount" />
+    </wsdl:message><wsdl:message name="VNReserveNumberReqIn">
+        <wsdl:part name="par" element="tns:VNReserveNumberReq" />
+    </wsdl:message><wsdl:message name="VNDIDDeleteTenantPriceIn">
+        <wsdl:part name="par" element="tns:VNDIDDeleteTenantPrice" />
+    </wsdl:message><wsdl:message name="VNBuyDIDTenantIn">
+        <wsdl:part name="par" element="tns:VNBuyDIDTenant" />
+    </wsdl:message><wsdl:message name="VNUpdateDIDSIn">
+        <wsdl:part name="par" element="tns:VNUpdateDIDS" />
+    </wsdl:message>
+
+	<wsdl:portType name="ISyncReply"><wsdl:operation name="AuthenticateAccount">
+        <wsdl:input message="svc:AuthenticateAccountIn" />
+        <wsdl:output message="svc:AuthenticateAccountOut" />
+    </wsdl:operation><wsdl:operation name="AddTenatFeatures">
+        <wsdl:input message="svc:AddTenatFeaturesIn" />
+        <wsdl:output message="svc:AddTenatFeaturesOut" />
+    </wsdl:operation><wsdl:operation name="SubscribedTenants">
+        <wsdl:input message="svc:SubscribedTenantsIn" />
+        <wsdl:output message="svc:SubscribedTenantsOut" />
+    </wsdl:operation><wsdl:operation name="MonitorExecutionTime">
+        <wsdl:input message="svc:MonitorExecutionTimeIn" />
+        <wsdl:output message="svc:MonitorExecutionTimeOut" />
+    </wsdl:operation><wsdl:operation name="CustomerAutoPayment">
+        <wsdl:input message="svc:CustomerAutoPaymentIn" />
+        <wsdl:output message="svc:CustomerAutoPaymentOut" />
+    </wsdl:operation><wsdl:operation name="CustomerHuntGroup">
+        <wsdl:input message="svc:CustomerHuntGroupIn" />
+        <wsdl:output message="svc:CustomerHuntGroupOut" />
+    </wsdl:operation><wsdl:operation name="FavouriteNumbers">
+        <wsdl:input message="svc:FavouriteNumbersIn" />
+        <wsdl:output message="svc:FavouriteNumbersOut" />
+    </wsdl:operation><wsdl:operation name="UMVoiceMailSettings">
+        <wsdl:input message="svc:UMVoiceMailSettingsIn" />
+        <wsdl:output message="svc:UMVoiceMailSettingsOut" />
+    </wsdl:operation><wsdl:operation name="UMVoiceMailGreetings">
+        <wsdl:input message="svc:UMVoiceMailGreetingsIn" />
+        <wsdl:output message="svc:UMVoiceMailGreetingsOut" />
+    </wsdl:operation><wsdl:operation name="EmailClient">
+        <wsdl:input message="svc:EmailClientIn" />
+        <wsdl:output message="svc:EmailClientOut" />
+    </wsdl:operation><wsdl:operation name="SipStatus">
+        <wsdl:input message="svc:SipStatusIn" />
+        <wsdl:output message="svc:SipStatusOut" />
+    </wsdl:operation><wsdl:operation name="DeleteAccount">
+        <wsdl:input message="svc:DeleteAccountIn" />
+        <wsdl:output message="svc:DeleteAccountOut" />
+    </wsdl:operation><wsdl:operation name="DeleteCustomer">
+        <wsdl:input message="svc:DeleteCustomerIn" />
+        <wsdl:output message="svc:DeleteCustomerOut" />
+    </wsdl:operation><wsdl:operation name="DeleteLocalNumber">
+        <wsdl:input message="svc:DeleteLocalNumberIn" />
+        <wsdl:output message="svc:DeleteLocalNumberOut" />
+    </wsdl:operation><wsdl:operation name="ActiveCalls">
+        <wsdl:input message="svc:ActiveCallsIn" />
+        <wsdl:output message="svc:ActiveCallsOut" />
+    </wsdl:operation><wsdl:operation name="GetIpAddresses">
+        <wsdl:input message="svc:GetIpAddressesIn" />
+        <wsdl:output message="svc:GetIpAddressesOut" />
+    </wsdl:operation><wsdl:operation name="ValidatePlatformOwner">
+        <wsdl:input message="svc:ValidatePlatformOwnerIn" />
+        <wsdl:output message="svc:ValidatePlatformOwnerOut" />
+    </wsdl:operation><wsdl:operation name="CreateTenant">
+        <wsdl:input message="svc:CreateTenantIn" />
+        <wsdl:output message="svc:CreateTenantOut" />
+    </wsdl:operation><wsdl:operation name="AuthenticateAdmin">
+        <wsdl:input message="svc:AuthenticateAdminIn" />
+        <wsdl:output message="svc:AuthenticateAdminOut" />
+    </wsdl:operation><wsdl:operation name="AddUpdatePaymentInformation">
+        <wsdl:input message="svc:AddUpdatePaymentInformationIn" />
+        <wsdl:output message="svc:AddUpdatePaymentInformationOut" />
+    </wsdl:operation><wsdl:operation name="AllocateIP">
+        <wsdl:input message="svc:AllocateIPIn" />
+        <wsdl:output message="svc:AllocateIPOut" />
+    </wsdl:operation><wsdl:operation name="AuthenticateReseller">
+        <wsdl:input message="svc:AuthenticateResellerIn" />
+        <wsdl:output message="svc:AuthenticateResellerOut" />
+    </wsdl:operation><wsdl:operation name="AuthenticateCustomer">
+        <wsdl:input message="svc:AuthenticateCustomerIn" />
+        <wsdl:output message="svc:AuthenticateCustomerOut" />
+    </wsdl:operation><wsdl:operation name="UpdateAccount">
+        <wsdl:input message="svc:UpdateAccountIn" />
+        <wsdl:output message="svc:UpdateAccountOut" />
+    </wsdl:operation><wsdl:operation name="GetAccount">
+        <wsdl:input message="svc:GetAccountIn" />
+        <wsdl:output message="svc:GetAccountOut" />
+    </wsdl:operation><wsdl:operation name="CreateAccount">
+        <wsdl:input message="svc:CreateAccountIn" />
+        <wsdl:output message="svc:CreateAccountOut" />
+    </wsdl:operation><wsdl:operation name="UpdateCustomerStatus">
+        <wsdl:input message="svc:UpdateCustomerStatusIn" />
+        <wsdl:output message="svc:UpdateCustomerStatusOut" />
+    </wsdl:operation><wsdl:operation name="UpdateCustomer">
+        <wsdl:input message="svc:UpdateCustomerIn" />
+        <wsdl:output message="svc:UpdateCustomerOut" />
+    </wsdl:operation><wsdl:operation name="CreateCustomer">
+        <wsdl:input message="svc:CreateCustomerIn" />
+        <wsdl:output message="svc:CreateCustomerOut" />
+    </wsdl:operation><wsdl:operation name="PortaFollowMe">
+        <wsdl:input message="svc:PortaFollowMeIn" />
+        <wsdl:output message="svc:PortaFollowMeOut" />
+    </wsdl:operation><wsdl:operation name="AccountAlias">
+        <wsdl:input message="svc:AccountAliasIn" />
+        <wsdl:output message="svc:AccountAliasOut" />
+    </wsdl:operation><wsdl:operation name="PortaPayment">
+        <wsdl:input message="svc:PortaPaymentIn" />
+        <wsdl:output message="svc:PortaPaymentOut" />
+    </wsdl:operation><wsdl:operation name="CustomerAccountSubscription">
+        <wsdl:input message="svc:CustomerAccountSubscriptionIn" />
+        <wsdl:output message="svc:CustomerAccountSubscriptionOut" />
+    </wsdl:operation><wsdl:operation name="SmsMessage">
+        <wsdl:input message="svc:SmsMessageIn" />
+        <wsdl:output message="svc:SmsMessageOut" />
+    </wsdl:operation><wsdl:operation name="ApiSettings">
+        <wsdl:input message="svc:ApiSettingsIn" />
+        <wsdl:output message="svc:ApiSettingsOut" />
+    </wsdl:operation><wsdl:operation name="VNAssignDIDTenant">
+        <wsdl:input message="svc:VNAssignDIDTenantIn" />
+        <wsdl:output message="svc:VNAssignDIDTenantOut" />
+    </wsdl:operation><wsdl:operation name="VNGetDIDSPorta">
+        <wsdl:input message="svc:VNGetDIDSPortaIn" />
+        <wsdl:output message="svc:VNGetDIDSPortaOut" />
+    </wsdl:operation><wsdl:operation name="VNUpdateDIDAgreement">
+        <wsdl:input message="svc:VNUpdateDIDAgreementIn" />
+        <wsdl:output message="svc:VNUpdateDIDAgreementOut" />
+    </wsdl:operation><wsdl:operation name="VNAddDIDAgreement">
+        <wsdl:input message="svc:VNAddDIDAgreementIn" />
+        <wsdl:output message="svc:VNAddDIDAgreementOut" />
+    </wsdl:operation><wsdl:operation name="VNDIDUpdateTenantPrice">
+        <wsdl:input message="svc:VNDIDUpdateTenantPriceIn" />
+        <wsdl:output message="svc:VNDIDUpdateTenantPriceOut" />
+    </wsdl:operation><wsdl:operation name="VNAddDIDTenantPrice">
+        <wsdl:input message="svc:VNAddDIDTenantPriceIn" />
+        <wsdl:output message="svc:VNAddDIDTenantPriceOut" />
+    </wsdl:operation><wsdl:operation name="VNAvailableCityDIDS">
+        <wsdl:input message="svc:VNAvailableCityDIDSIn" />
+        <wsdl:output message="svc:VNAvailableCityDIDSOut" />
+    </wsdl:operation><wsdl:operation name="VNAddDIDS">
+        <wsdl:input message="svc:VNAddDIDSIn" />
+        <wsdl:output message="svc:VNAddDIDSOut" />
+    </wsdl:operation><wsdl:operation name="VNTenantDIDS">
+        <wsdl:input message="svc:VNTenantDIDSIn" />
+        <wsdl:output message="svc:VNTenantDIDSOut" />
+    </wsdl:operation><wsdl:operation name="VNAvailableCountryDIDS">
+        <wsdl:input message="svc:VNAvailableCountryDIDSIn" />
+        <wsdl:output message="svc:VNAvailableCountryDIDSOut" />
+    </wsdl:operation><wsdl:operation name="AddLocalNumber">
+        <wsdl:input message="svc:AddLocalNumberIn" />
+        <wsdl:output message="svc:AddLocalNumberOut" />
+    </wsdl:operation></wsdl:portType>
+
+	<wsdl:portType name="IOneWay"><wsdl:operation name="MobileTopUpRequest">
+        <wsdl:input message="svc:MobileTopUpRequestIn" />
+    </wsdl:operation><wsdl:operation name="CallProcessingRequest">
+        <wsdl:input message="svc:CallProcessingRequestIn" />
+    </wsdl:operation><wsdl:operation name="NumberPortingReq">
+        <wsdl:input message="svc:NumberPortingReqIn" />
+    </wsdl:operation><wsdl:operation name="PortaCustomerInvoiceRequest">
+        <wsdl:input message="svc:PortaCustomerInvoiceRequestIn" />
+    </wsdl:operation><wsdl:operation name="CallQueueSettingsRequest">
+        <wsdl:input message="svc:CallQueueSettingsRequestIn" />
+    </wsdl:operation><wsdl:operation name="CustomerAbbreviatedDialingRequestList">
+        <wsdl:input message="svc:CustomerAbbreviatedDialingRequestListIn" />
+    </wsdl:operation><wsdl:operation name="CustomerAccountNotepadReq">
+        <wsdl:input message="svc:CustomerAccountNotepadReqIn" />
+    </wsdl:operation><wsdl:operation name="StemProCallPatternReq">
+        <wsdl:input message="svc:StemProCallPatternReqIn" />
+    </wsdl:operation><wsdl:operation name="AutoAttendantSettingsRequest">
+        <wsdl:input message="svc:AutoAttendantSettingsRequestIn" />
+    </wsdl:operation><wsdl:operation name="StemProVendorBalanceReq">
+        <wsdl:input message="svc:StemProVendorBalanceReqIn" />
+    </wsdl:operation><wsdl:operation name="IVRLocalNumberRequest">
+        <wsdl:input message="svc:IVRLocalNumberRequestIn" />
+    </wsdl:operation><wsdl:operation name="PortaAccountFollowMeInfo">
+        <wsdl:input message="svc:PortaAccountFollowMeInfoIn" />
+    </wsdl:operation><wsdl:operation name="APIAdminLogin">
+        <wsdl:input message="svc:APIAdminLoginIn" />
+    </wsdl:operation><wsdl:operation name="CreatePartnerAccount">
+        <wsdl:input message="svc:CreatePartnerAccountIn" />
+    </wsdl:operation><wsdl:operation name="VNReserveNumberReq">
+        <wsdl:input message="svc:VNReserveNumberReqIn" />
+    </wsdl:operation><wsdl:operation name="VNDIDDeleteTenantPrice">
+        <wsdl:input message="svc:VNDIDDeleteTenantPriceIn" />
+    </wsdl:operation><wsdl:operation name="VNBuyDIDTenant">
+        <wsdl:input message="svc:VNBuyDIDTenantIn" />
+    </wsdl:operation><wsdl:operation name="VNUpdateDIDS">
+        <wsdl:input message="svc:VNUpdateDIDSIn" />
+    </wsdl:operation></wsdl:portType>
+
+	<wsdl:binding name="WSHttpBinding_ISyncReply" type="svc:ISyncReply">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="AuthenticateAccount">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AuthenticateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="AddTenatFeatures">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AddTenatFeatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="SubscribedTenants">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/SubscribedTenants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="MonitorExecutionTime">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/MonitorExecutionTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="CustomerAutoPayment">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CustomerAutoPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="CustomerHuntGroup">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CustomerHuntGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="FavouriteNumbers">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/FavouriteNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="UMVoiceMailSettings">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/UMVoiceMailSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="UMVoiceMailGreetings">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/UMVoiceMailGreetings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="EmailClient">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/EmailClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="SipStatus">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/SipStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="DeleteAccount">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/DeleteAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="DeleteCustomer">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/DeleteCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="DeleteLocalNumber">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/DeleteLocalNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="ActiveCalls">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/ActiveCalls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="GetIpAddresses">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/GetIpAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="ValidatePlatformOwner">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/ValidatePlatformOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="CreateTenant">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CreateTenant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="AuthenticateAdmin">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AuthenticateAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="AddUpdatePaymentInformation">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AddUpdatePaymentInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="AllocateIP">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AllocateIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="AuthenticateReseller">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AuthenticateReseller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="AuthenticateCustomer">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AuthenticateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="UpdateAccount">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/UpdateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="GetAccount">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/GetAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="UpdateCustomerStatus">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/UpdateCustomerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="CreateCustomer">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CreateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="PortaFollowMe">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/PortaFollowMe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="AccountAlias">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AccountAlias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="PortaPayment">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/PortaPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="CustomerAccountSubscription">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CustomerAccountSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="SmsMessage">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/SmsMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="ApiSettings">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/ApiSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNAssignDIDTenant">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNAssignDIDTenant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNGetDIDSPorta">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNGetDIDSPorta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNUpdateDIDAgreement">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNUpdateDIDAgreement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNAddDIDAgreement">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNAddDIDAgreement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNDIDUpdateTenantPrice">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNDIDUpdateTenantPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNAddDIDTenantPrice">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNAddDIDTenantPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNAvailableCityDIDS">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNAvailableCityDIDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNAddDIDS">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNAddDIDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNTenantDIDS">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNTenantDIDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="VNAvailableCountryDIDS">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNAvailableCountryDIDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation><wsdl:operation name="AddLocalNumber">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AddLocalNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+	</wsdl:binding>
+        
+	<wsdl:binding name="WSHttpBinding_IOneWay" type="svc:IOneWay">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="MobileTopUpRequest">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/MobileTopUpRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="CallProcessingRequest">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CallProcessingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="NumberPortingReq">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/NumberPortingReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="PortaCustomerInvoiceRequest">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/PortaCustomerInvoiceRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="CallQueueSettingsRequest">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CallQueueSettingsRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="CustomerAbbreviatedDialingRequestList">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CustomerAbbreviatedDialingRequestList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="CustomerAccountNotepadReq">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CustomerAccountNotepadReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="StemProCallPatternReq">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/StemProCallPatternReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="AutoAttendantSettingsRequest">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/AutoAttendantSettingsRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="StemProVendorBalanceReq">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/StemProVendorBalanceReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="IVRLocalNumberRequest">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/IVRLocalNumberRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="PortaAccountFollowMeInfo">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/PortaAccountFollowMeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="APIAdminLogin">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/APIAdminLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="CreatePartnerAccount">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/CreatePartnerAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="VNReserveNumberReq">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNReserveNumberReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="VNDIDDeleteTenantPrice">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNDIDDeleteTenantPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="VNBuyDIDTenant">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNBuyDIDTenant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation><wsdl:operation name="VNUpdateDIDS">
+      <soap:operation soapAction="http://schemas.servicestack.net/types/VNUpdateDIDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="SyncReply">
+		<wsdl:port name="WSHttpBinding_ISyncReply" binding="svc:WSHttpBinding_ISyncReply">
+			<soap:address location="http://portaplusapi.icc-switch.com/soap12" />
+		</wsdl:port>
+	</wsdl:service>
+
+	<wsdl:service name="AsyncOneWay">
+		<wsdl:port name="WSHttpBinding_IOneWay" binding="svc:WSHttpBinding_IOneWay">
+			<soap:address location="http://portaplusapi.icc-switch.com/soap12" />
+		</wsdl:port>
+	</wsdl:service>
+	
+</wsdl:definitions>
