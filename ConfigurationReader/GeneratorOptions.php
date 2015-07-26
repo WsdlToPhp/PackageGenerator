@@ -22,10 +22,8 @@ class GeneratorOptions extends AbstractYamlReader
     const ADD_COMMENTS = 'add_comments';
     const GATHER_METHODS = 'gather_methods';
     const NAMESPACE_PREFIX = 'namespace_prefix';
-    const GENERATE_WSDL_CLASS = 'generate_wsdl_class';
     const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
     const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
-    const SEND_PARAMETERS_AS_ARRAY = 'send_parameters_as_array';
     /**
      * Generator's options
      * @var array
@@ -158,24 +156,6 @@ class GeneratorOptions extends AbstractYamlReader
     public function setGatherMethods($gatherMethods)
     {
         return $this->setOptionValue(self::GATHER_METHODS, $gatherMethods);
-    }
-    /**
-     * Get generate wsdl class option value
-     * @return string|bool
-     */
-    public function getGenerateWsdlClass()
-    {
-        return $this->getOptionValue(self::GENERATE_WSDL_CLASS);
-    }
-    /**
-     * Set current generate wsdl class option value
-     * @throws \InvalidArgumentException
-     * @param bool $generateWsdlClass
-     * @return GeneratorOptions
-     */
-    public function setGenerateWsdlClass($generateWsdlClass)
-    {
-        return $this->setOptionValue(self::GENERATE_WSDL_CLASS, $generateWsdlClass);
     }
     /**
      * Get generate tutorial file option value
