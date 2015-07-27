@@ -179,38 +179,6 @@ abstract class AbstractModel
         return $this->addMeta(self::META_DOCUMENTATION, is_array($documentation) ? $documentation : array($documentation));
     }
     /**
-     * Get the documentation meta value
-     * @uses AbstractModel::META_DOCUMENTATION
-     * @uses AbstractModel::getMetaValue()
-     * @uses AbstractModel::cleanComment()
-     * @return string the documentation from the WSDL
-     */
-    public function getDocumentation()
-    {
-        return self::cleanComment($this->getMetaValue(self::META_DOCUMENTATION, ''), ' ');
-    }
-    /**
-     * Sets the from schema meta value.
-     * @uses AbstractModel::META_FROM_SCHEMA
-     * @uses AbstractModel::addMeta()
-     * @param string $fromSchema the url from which the element comes from
-     * @return AbstractModel
-     */
-    public function setFromSchema($fromSchema)
-    {
-        return $this->addMeta(self::META_FROM_SCHEMA, $fromSchema);
-    }
-    /**
-     * Get the from schema meta value
-     * @uses AbstractModel::META_FROM_SCHEMA
-     * @uses AbstractModel::getMetaValue()
-     * @return string the from schema meta value
-     */
-    public function getFromSchema()
-    {
-        return $this->getMetaValue(self::META_FROM_SCHEMA, '');
-    }
-    /**
      * Returns a meta value according to its name
      * @uses AbstractModel::getMeta()
      * @param string $metaName the meta information name

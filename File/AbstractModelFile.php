@@ -145,9 +145,6 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $block = new PhpAnnotationBlock();
         $block->addChild($this->getClassDeclarationLine());
-        if ($this->getModel()->getDocumentation() !== '') {
-            $block->addChild($this->getModel()->getDocumentation());
-        }
         $this
             ->defineModelAnnotationsFromWsdl($block)
             ->defineModelAnnotationsFromInheritance($block)

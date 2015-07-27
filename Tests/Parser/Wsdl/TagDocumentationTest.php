@@ -157,39 +157,4 @@ class TagDocumentationTest extends WsdlParser
         }
         $this->assertTrue((bool)$ok);
     }
-    /**
-     *
-     */
-    public function testParseQueue()
-    {
-        $tagDocumentationParser = self::queueInstance();
-
-        $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
-        $tagEnumerationParser->parse();
-
-        $tagDocumentationParser->parse();
-
-        $count = 0;
-        foreach ($tagDocumentationParser->getGenerator()->getServices() as $service) {
-            if ($service instanceof Service) {
-                foreach ($service->getMethods() as $method) {
-                    switch ($method->getName()) {
-                        case 'CreateQueue':
-                            $this->assertSame('The CreateQueue action creates a new queue, or returns the URL of an existing one. When you request CreateQueue, you provide a name for the queue. To successfully create a new queue, you must provide a name that is unique within the scope of your own queues. If you provide the name of an existing queue, a new queue isn\'t created and an error isn\'t returned. Instead, the request succeeds and the queue URL for the existing queue is returned. A CreateQueue call may include attributes to set on a newly created queue. The effect is the same as the CreateQueue call followed by a SetQueueAttributes call (with the same attributes). However, when the queue already exists CreateQueue will not update any attributes. It simply compares the attribute values provided with the current settings on the existing queue, and returns the queue URL if the values match. Otherwise, it responds with an error otherwise. SetQueueAttributes should be used to change the values of attributes for an existing queue.', $method->getDocumentation());
-                            $count++;
-                            break;
-                        case 'GetQueueUrl':
-                            $this->assertSame('The GetQueueUrl action takes the name of a queue and returns its URL.', $method->getDocumentation());
-                            $count++;
-                            break;
-                        case 'ReceiveMessage':
-                            $this->assertSame('Retrieves one or more messages from the specified queue, including the message body, message ID, and message attributes of each message. Messages returned by this action stay in the queue until you delete them. However, once a message is returned to a ReceiveMessage request, it is not returned on subsequent ReceiveMessage requests for the duration of the VisibilityTimeout. If you do not specify a VisibilityTimeout in the request, the overall visibility timeout for the queue is used for the returned messages. If a message is available in the queue, the call will return immediately. Otherwise, it will wait up to WaitTimeSeconds for a message to arrive. If you do not specify WaitTimeSeconds in the request, the queue attribute ReceiveMessageWaitTimeSeconds is used to determine how long to wait. You could ask for additional system information about the message through through the attributes, which are seperate from message attributes. Possible attributes that can be requested with messages include [SenderId, ApproximateFirstReceiveTimestamp, ApproximateReceiveCount, SentTimestamp].', $method->getDocumentation());
-                            $count++;
-                            break;
-                    }
-                }
-            }
-        }
-        $this->assertSame(3, $count);
-    }
 }
