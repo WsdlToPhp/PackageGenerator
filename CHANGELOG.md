@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+WIP
+---
+- Reserved keywords only come from configuration file
+- Define \InvalidArgumentException's code as the current file line
+- Remove no more used methods/constants from Model\AbstractModel
+- Add editor config file
+
 1.0.0RC01
 ---------
 - First major release candidate version

@@ -8,10 +8,10 @@ class AbstractAttributeHandler extends AbstractNodeHandler
 {
     const
         ATTRIBUTE_NAMESPACE = 'namespace',
-        ATTRIBUTE_NAME      = 'name',
-        ATTRIBUTE_VALUE     = 'value',
-        ATTRIBUTE_TYPE      = 'type',
-        ATTRIBUTE_ABSTRACT  = 'abstract';
+        ATTRIBUTE_NAME = 'name',
+        ATTRIBUTE_VALUE = 'value',
+        ATTRIBUTE_TYPE = 'type',
+        ATTRIBUTE_ABSTRACT = 'abstract';
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler::getNode()
      * @return \DOMAttr
@@ -61,7 +61,7 @@ class AbstractAttributeHandler extends AbstractNodeHandler
      */
     public function getValueNamespace()
     {
-        $value     = $this->getAttribute()->value;
+        $value = $this->getAttribute()->value;
         $namespace = null;
         if (strpos($value, ':') !== false) {
             $namespace = implode('', array_slice(explode(':', $value), 0, -1));
