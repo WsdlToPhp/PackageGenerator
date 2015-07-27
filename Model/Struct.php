@@ -139,7 +139,7 @@ class Struct extends AbstractModel
              * Returns the required attributes at first position
              */
             if ($requiredFirst) {
-                $requiredAttributes    = new StructAttributeContainer();
+                $requiredAttributes = new StructAttributeContainer();
                 $notRequiredAttributes = new StructAttributeContainer();
                 foreach ($allAttributes as $attribute) {
                     if ($attribute->isRequired()) {
