@@ -1,0 +1,12 @@
+# For more information about the properties used in
+# this file, please see the EditorConfig documentation:
+# http://editorconfig.org/
+
+root = true
+
+[*]
+end_of_line = lf
+
+[*.php]
+indent_style = space
+indent_size = 4
