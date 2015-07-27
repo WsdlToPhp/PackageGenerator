@@ -40,6 +40,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Parse options for generator
      * @param string $filename options's file to parse
+     * @return GeneratorOptions
      */
     protected function parseOptions($filename)
     {
@@ -49,6 +50,7 @@ class GeneratorOptions extends AbstractYamlReader
         } else {
             throw new \InvalidArgumentException(sprintf('Settings contained by "%s" are not valid as the settings are not contained by an array: "%s"', $filename, gettype($options)), __LINE__);
         }
+        return $this;
     }
     /**
      * Returns the option value
