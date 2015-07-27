@@ -44,15 +44,6 @@ class StructAttribute extends AbstractModel
         return self::uniqueName($this->getCleanName(), $this->getOwner()->getName());
     }
     /**
-     * Returns the declaration of the attribute
-     * @uses AbstractModel::getCleanName()
-     * @return string
-     */
-    public function getDeclaration()
-    {
-        return sprintf('public $%s;', $this->getCleanName());
-    }
-    /**
      * Returns the getter name for this attribute
      * @uses StructAttribute::getUniqueName()
      * @return string

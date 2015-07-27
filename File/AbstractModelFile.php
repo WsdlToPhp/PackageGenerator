@@ -424,6 +424,7 @@ abstract class AbstractModelFile extends AbstractFile
             'unsignedLong',
             'unsignedByte',
             'unsignedShort',
+            'DayOfWeekType',
             'negativeInteger',
             'positiveInteger',
             'nonNegativeInteger',
