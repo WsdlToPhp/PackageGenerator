@@ -16,7 +16,7 @@ WIP
     - Performance optimizations
     - Usage of [PhpGenerator](https://github.com/WsdlToPhp/PhpGenerator) package for any generated PHP file
     - Namespace support
-    - Composer usage for 
+    - Composer usage for generated package dependencies
     - Externalization of main classes from which any Struct/Array/Service generated class
     - auto-generation sample.php file renamed to tutorial.php
     - Usage of [PackageBase](https://github.com/WsdlToPhp/PackageBase) package
@@ -30,7 +30,7 @@ WIP
         - GenerateAutoload,
         - GenerateWsdlClass,
         - SubCategory,
-        - InheritsClassIdentifier 
+        - InheritsClassIdentifier
 
 0.0.5
 -----
