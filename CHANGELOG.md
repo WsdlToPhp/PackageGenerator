@@ -3,7 +3,7 @@ CHANGELOG
 
 WIP
 ---
-- File\Tutorial Class alows to name the generated file as we want
+- File\Tutorial class alows to name the generated file as we want
 - Reserved keywords only come from configuration file
 - Define \InvalidArgumentException's code as the current file line
 - Remove no more used methods/constants from Model\AbstractModel
