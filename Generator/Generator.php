@@ -329,7 +329,7 @@ class Generator extends \SoapClient
     private function generateTutorialFile($rootDirectory)
     {
         if ($this->getOptionGenerateTutorialFile() === true && $this->getClassmapFile() instanceof ClassMapFile) {
-            $tutorialFile = new TutorialFile($this, '', $rootDirectory);
+            $tutorialFile = new TutorialFile($this, 'tutorial', $rootDirectory);
             $tutorialFile->write();
         }
         return $this;

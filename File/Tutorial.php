@@ -13,30 +13,27 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 class Tutorial extends AbstractFile
 {
     /**
-     * @var string
-     */
-    const FILE_NAME = 'tutorial';
-    /**
      * @param Generator $generator
      * @param string $name
      * @param string $destination
      */
     public function __construct(Generator $generator, $name, $destination)
     {
-        parent::__construct($generator, self::FILE_NAME, $destination);
+        parent::__construct($generator, $name, $destination);
     }
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::beforeWrite()
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
+     * @return int|bool
      */
-    public function beforeWrite()
+    public function writeFile()
     {
-        parent::beforeWrite();
         $this
             ->addMainAnnotationBlock()
             ->addAutoload()
             ->addOptionsAnnotationBlock()
             ->addOptions()
             ->addContent();
+        return parent::writeFile();
     }
     /**
      * @return Tutorial

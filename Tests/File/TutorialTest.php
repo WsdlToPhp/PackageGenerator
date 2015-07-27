@@ -6,6 +6,7 @@ use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 
 class TutorialTest extends AbstractFile
 {
+    const FILE_NAME = 'tutorial';
     /**
      *
      */
@@ -13,7 +14,7 @@ class TutorialTest extends AbstractFile
     {
         $instance = self::bingGeneratorInstance();
 
-        $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
+        $tutorial = new TutorialFile($instance, self::FILE_NAME, $this->getTestDirectory());
         $tutorial->write();
 
         $this->assertSameFileContent('ValidBingTutorial', $tutorial);
@@ -25,7 +26,7 @@ class TutorialTest extends AbstractFile
     {
         $instance = self::reformaGeneratorInstance();
 
-        $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
+        $tutorial = new TutorialFile($instance, self::FILE_NAME, $this->getTestDirectory());
         $tutorial->write();
 
         $this->assertSameFileContent('ValidReformaTutorial', $tutorial);
@@ -37,7 +38,7 @@ class TutorialTest extends AbstractFile
     {
         $instance = self::actonGeneratorInstance();
 
-        $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
+        $tutorial = new TutorialFile($instance, self::FILE_NAME, $this->getTestDirectory());
         $tutorial->write();
 
         $this->assertSameFileContent('ValidActonTutorial', $tutorial);
@@ -49,7 +50,7 @@ class TutorialTest extends AbstractFile
     {
         $instance = self::omnitureGeneratorInstance();
 
-        $tutorial = new TutorialFile($instance, '', $this->getTestDirectory());
+        $tutorial = new TutorialFile($instance, self::FILE_NAME, $this->getTestDirectory());
         $tutorial->write();
 
         $this->assertSameFileContent('ValidOmnitureTutorial', $tutorial);
