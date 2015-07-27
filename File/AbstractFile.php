@@ -51,22 +51,14 @@ abstract class AbstractFile implements FileInterface
      */
     public function write()
     {
-        $this->beforeWrite();
-        $state = $this->writeFile();
-        return $state;
+        return $this->writeFile();
     }
     /**
      * @return int|bool
      */
-    private function writeFile()
+    protected function writeFile()
     {
         return file_put_contents($this->getFileName(), $this->getFile()->toString(), LOCK_EX);
-    }
-    /**
-     * Called before actual write method is called
-     */
-    public function beforeWrite()
-    {
     }
     /**
      * @return string

@@ -67,16 +67,17 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected $model;
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::beforeWrite()
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
+     * @return int|bool
      */
-    public function beforeWrite()
+    public function writeFile()
     {
-        parent::beforeWrite();
         $this
             ->defineNamespace()
             ->defineUseStatement()
             ->addAnnotationBlock()
             ->addClassElement();
+        return parent::writeFile();
     }
     /**
      * @return AbstractModelFile
