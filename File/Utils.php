@@ -62,20 +62,8 @@ class Utils
         }
         $metaValue = GeneratorUtils::cleanComment($metaValue, ', ', stripos($metaName, 'SOAPHeader') === false);
         if (is_scalar($metaValue)) {
-            $meta = sprintf("\t- %s: %s", $metaName, self::transformMetaValue($metaName, $metaValue));
+            $meta = sprintf("\t- %s: %s", $metaName, $metaValue);
         }
         return $meta;
-    }
-    /**
-     * @param string $metaName
-     * @param string $metaValue
-     * @return string
-     */
-    public static function transformMetaValue($metaName, $metaValue)
-    {
-        if ($metaName === AbstractModel::META_FROM_SCHEMA && stripos($metaValue, 'http') !== false) {
-            $metaValue = sprintf('{@link %s}', $metaValue);
-        }
-        return $metaValue;
     }
 }
