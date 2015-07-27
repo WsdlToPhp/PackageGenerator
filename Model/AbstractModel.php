@@ -49,11 +49,6 @@ abstract class AbstractModel
      */
     private $isAbstract = false;
     /**
-     * Store all the models generated
-     * @var array
-     */
-    private static $models = array();
-    /**
      * Replaced keywords time in order to generate unique new keyword
      * @var array
      */
@@ -66,7 +61,6 @@ abstract class AbstractModel
     /**
      * Main constructor
      * @uses AbstractModel::setName()
-     * @uses AbstractModel::updateModels()
      * @param Generator $generator
      * @param string $name the original name
      */
@@ -75,7 +69,6 @@ abstract class AbstractModel
         $this
             ->setName($name)
             ->setGenerator($generator);
-        self::updateModels($this);
     }
     /**
      * @return string
@@ -83,7 +76,7 @@ abstract class AbstractModel
     public function getExtendsClassName()
     {
         $extends = '';
-        if ($this->getInheritance() != '' && ($model = self::getModelByName($this->getInheritance()))) {
+        if ($this->getInheritance() != '' && ($model = $this->getGenerator()->getStruct($this->getInheritance())) instanceof Struct) {
             if ($model->getIsStruct()) {
                 $extends = $model->getPackagedName();
             }
@@ -105,13 +98,11 @@ abstract class AbstractModel
     }
     /**
      * Sets the name of the class the current class inherits from
-     * @uses AbstractModel::updateModels()
      * @param string
      */
     public function setInheritance($inheritance = '')
     {
         $this->inheritance = $inheritance;
-        self::updateModels($this);
         return $inheritance;
     }
     /**
@@ -134,7 +125,6 @@ abstract class AbstractModel
     /**
      * Add meta information to the operation
      * @uses AbstractModel::getMeta()
-     * @uses AbstractModel::updateModels()
      * @throws \InvalidArgumentException
      * @param string $metaName
      * @param mixed $metaValue
@@ -157,7 +147,6 @@ abstract class AbstractModel
                 $this->meta[$metaName] = $metaValue;
             }
             ksort($this->meta);
-            self::updateModels($this);
         }
         return $this;
     }
@@ -257,13 +246,11 @@ abstract class AbstractModel
     /**
      * Sets the owner model object
      * @param AbstractModel $owner object the owner of the current model
-     * @uses AbstractModel::updateModels()
      * @return AbstractModel
      */
     public function setOwner(AbstractModel $owner)
     {
         $this->owner = $owner;
-        self::updateModels($this);
         return $this;
     }
     /**
@@ -280,7 +267,6 @@ abstract class AbstractModel
     public function setIsAbstract($isAbstract)
     {
         $this->isAbstract = $isAbstract;
-        self::updateModels($this);
         return $this;
     }
     /**
@@ -351,41 +337,6 @@ abstract class AbstractModel
     public static function cleanString($string, $keepMultipleUnderscores = true)
     {
         return Utils::cleanString($string, $keepMultipleUnderscores);
-    }
-    /**
-     * Get models
-     * @return array
-     */
-    public static function getModels()
-    {
-        return self::$models;
-    }
-    /**
-     * Returns the model by its name
-     * @uses AbstractModel::getModels()
-     * @param string $modelName the original Struct name
-     * @return Struct|null
-     */
-    public static function getModelByName($modelName)
-    {
-        if (!is_scalar($modelName)) {
-            return null;
-        }
-        return array_key_exists('_' . $modelName . '_', self::getModels()) ? self::$models['_' . $modelName . '_'] : null;
-    }
-    /**
-     * Updates models with model
-     * @uses AbstractModel::getName()
-     * @uses AbstractModel::__toString()
-     * @param AbstractModel $model a AbstractModel object
-     * @return Struct|bool
-     */
-    protected static function updateModels(AbstractModel $model)
-    {
-        if ($model->__toString() != 'Struct' || !$model->getName()) {
-            return false;
-        }
-        return (self::$models['_' . $model->getName() . '_'] = $model);
     }
     /**
      * Returns a usable keyword for a original keyword

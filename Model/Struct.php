@@ -103,7 +103,6 @@ class Struct extends AbstractModel
     /**
      * Returns the attributes of the struct and potentially from the parent class
      * @uses AbstractModel::getInheritance()
-     * @uses AbstractModel::getModelByName()
      * @uses Struct::getIsStruct()
      * @uses Struct::getAttributes()
      * @param bool $includeInheritanceAttributes include the attributes of parent class, default parent attributes are not included. If true, then the array is an associative array containing and index "attribute" for the StructAttribute object and an index "model" for the Struct object.
@@ -120,15 +119,14 @@ class Struct extends AbstractModel
              * Returns the inherited attributes
              */
             if ($includeInheritanceAttributes) {
-                if ($this->getInheritance() != '') {
-                    $model = AbstractModel::getModelByName($this->getInheritance());
-                    while ($model && $model->getIsStruct()) {
+                if ($this->getInheritance() != '' && ($model = $this->getGenerator()->getStruct($this->getInheritance())) instanceof Struct) {
+                    while ($model->getIsStruct()) {
                         if ($model->getAttributes()->count()) {
                             foreach ($model->getAttributes() as $attribute) {
                                 $allAttributes->add($attribute);
                             }
                         }
-                        $model = AbstractModel::getModelByName($model->getInheritance());
+                        $model = $this->getGenerator()->getStruct($model->getInheritance());
                     }
                 }
             }
@@ -189,7 +187,6 @@ class Struct extends AbstractModel
     /**
      * Adds attribute based on its original name
      * @throws \InvalidArgumentException
-     * @uses AbstractModel::updateModels()
      * @param string $attributeName the attribute name
      * @param string $attributeType the attribute type
      * @return Struct
@@ -202,7 +199,6 @@ class Struct extends AbstractModel
         if ($this->attributes->getStructAttributeByName($attributeName) === null) {
             $structAttribute = new StructAttribute($this->getGenerator(), $attributeName, $attributeType, $this);
             $this->attributes->add($structAttribute);
-            self::updateModels($this);
         }
         return $this;
     }
@@ -226,14 +222,12 @@ class Struct extends AbstractModel
     }
     /**
      * Sets the isRestriction value
-     * @uses AbstractModel::updateModels()
      * @param bool $isRestriction
      * @return bool
      */
     public function setIsRestriction($isRestriction = true)
     {
         $this->isRestriction = $isRestriction;
-        self::updateModels($this);
         return $isRestriction;
     }
     /**
@@ -246,14 +240,12 @@ class Struct extends AbstractModel
     }
     /**
      * Sets the isStruct value
-     * @uses AbstractModel::updateModels()
      * @param bool $isStruct
      * @return bool
      */
     public function setIsStruct($isStruct = true)
     {
         $this->isStruct = $isStruct;
-        self::updateModels($this);
         return $isStruct;
     }
     /**
@@ -266,19 +258,16 @@ class Struct extends AbstractModel
     }
     /**
      * Sets the values for an enumeration
-     * @uses AbstractModel::updateModels()
      * @param StructValueContainer $structValueContainer
      * @return Struct
      */
     private function setValues(StructValueContainer $structValueContainer)
     {
         $this->values = $structValueContainer;
-        self::updateModels($this);
         return $this;
     }
     /**
      * Adds value to values array
-     * @uses AbstractModel::updateModels()
      * @uses Struct::getValue()
      * @uses Struct::getValues()
      * @param mixed $value the original value
@@ -291,7 +280,6 @@ class Struct extends AbstractModel
             $this->setIsRestriction(true);
             $this->setIsStruct(true);
         }
-        self::updateModels($this);
         return $this;
     }
     /**
