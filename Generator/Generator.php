@@ -222,7 +222,7 @@ class Generator extends \SoapClient
              * Root directory
              */
             if (!is_dir($rootDirectory) && !$createRootDirectory) {
-                throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been disabled', $rootDirectory));
+                throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been disabled', $rootDirectory), __LINE__);
             } elseif (!is_dir($rootDirectory) && $createRootDirectory) {
                 $this->createDirectory($rootDirectory, $rootDirectoryRights);
             }

@@ -47,7 +47,7 @@ class GeneratorOptions extends AbstractYamlReader
         if (is_array($options)) {
             $this->options = $options;
         } else {
-            throw new \InvalidArgumentException(sprintf('Settings contained by "%s" are not valid as the settings are not contained by an array: "%s"', $filename, gettype($options)));
+            throw new \InvalidArgumentException(sprintf('Settings contained by "%s" are not valid as the settings are not contained by an array: "%s"', $filename, gettype($options)), __LINE__);
         }
     }
     /**
@@ -59,7 +59,7 @@ class GeneratorOptions extends AbstractYamlReader
     public function getOptionValue($optionName)
     {
         if (!isset($this->options[$optionName])) {
-            throw new \InvalidArgumentException(sprintf('Invalid option name "%s", possible options: %s', $optionName, implode(', ', array_keys($this->options))));
+            throw new \InvalidArgumentException(sprintf('Invalid option name "%s", possible options: %s', $optionName, implode(', ', array_keys($this->options))), __LINE__);
         }
         return array_key_exists('value', $this->options[$optionName]) ? $this->options[$optionName]['value'] : $this->options[$optionName]['default'];
     }
@@ -77,7 +77,7 @@ class GeneratorOptions extends AbstractYamlReader
                 'values' => $values,
             );
         } elseif (!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])));
+            throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])), __LINE__);
         } else {
             $this->options[$optionName]['value'] = $optionValue;
         }

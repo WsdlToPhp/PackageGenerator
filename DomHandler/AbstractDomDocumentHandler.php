@@ -34,7 +34,7 @@ abstract class AbstractDomDocumentHandler
                 }
             }
         } else {
-            throw new \InvalidArgumentException('Document seems to be invalid');
+            throw new \InvalidArgumentException('Document seems to be invalid', __LINE__);
         }
     }
     /**

@@ -133,7 +133,7 @@ abstract class AbstractModel
     public function addMeta($metaName, $metaValue)
     {
         if (!is_scalar($metaName) || (!is_scalar($metaValue) && !is_array($metaValue))) {
-            throw new \InvalidArgumentException(sprintf('Invalid meta name "%s" or value "%s". Please provide scalar meta name and scalar or array meta value.', gettype($metaName), gettype($metaValue)));
+            throw new \InvalidArgumentException(sprintf('Invalid meta name "%s" or value "%s". Please provide scalar meta name and scalar or array meta value.', gettype($metaName), gettype($metaValue)), __LINE__);
         }
         $metaValue = is_scalar($metaValue) ? trim($metaValue) : $metaValue;
         if ((is_scalar($metaValue) && $metaValue !== '') || is_array($metaValue)) {

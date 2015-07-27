@@ -36,7 +36,7 @@ abstract class AbstractYamlReader
     public static function instance($filename = null)
     {
         if (empty($filename) || !is_file($filename)) {
-            throw new \InvalidArgumentException(sprintf('Unable to locate file "%s"', $filename));
+            throw new \InvalidArgumentException(sprintf('Unable to locate file "%s"', $filename), __LINE__);
         }
         $key = sprintf('%s_%s', get_called_class(), $filename);
         if (!isset(self::$instances[$key])) {

@@ -49,7 +49,7 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     public function offsetSet($offset, $value)
     {
-        throw new \InvalidArgumentException('This method can\'t be used as object are stored with a string as array index');
+        throw new \InvalidArgumentException('This method can\'t be used as object are stored with a string as array index', __LINE__);
     }
     /**
      * @param string $offset
@@ -124,11 +124,11 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
     protected function beforeObjectIsStored($object)
     {
         if (!is_object($object)) {
-            throw new \InvalidArgumentException(sprintf('You must only pass object to this container (%s), "%s" passed as parameter!', get_called_class(), gettype($object)));
+            throw new \InvalidArgumentException(sprintf('You must only pass object to this container (%s), "%s" passed as parameter!', get_called_class(), gettype($object)), __LINE__);
         }
         $instanceOf = $this->objectClass();
         if (get_class($object) !== $this->objectClass() && !$object instanceof $instanceOf) {
-            throw new \InvalidArgumentException(sprintf('Model of type "%s" does not match the object contained by this class: "%s"', get_class($object), $this->objectClass()));
+            throw new \InvalidArgumentException(sprintf('Model of type "%s" does not match the object contained by this class: "%s"', get_class($object), $this->objectClass()), __LINE__);
         }
     }
     /**
