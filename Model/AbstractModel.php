@@ -17,11 +17,6 @@ abstract class AbstractModel
      */
     const META_DOCUMENTATION = 'documentation';
     /**
-     * Constant used to define the key to store from schema value in meta
-     * @var string
-     */
-    const META_FROM_SCHEMA = 'from schema';
-    /**
      * Generator used
      * @var Generator
      */
