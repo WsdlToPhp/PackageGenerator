@@ -103,12 +103,4 @@ class Service extends AbstractModel
         $extends = $this->getGenerator()->getOptionSoapClientClass();
         return $short ? Utils::removeNamespace($extends) : $extends;
     }
-    /**
-     * Returns class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return 'Service';
-    }
 }

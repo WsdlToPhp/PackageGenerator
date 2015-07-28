@@ -309,12 +309,4 @@ class Struct extends AbstractModel
         }
         return $short ? Utils::removeNamespace($extends) : $extends;
     }
-    /**
-     * Returns class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return 'Struct';
-    }
 }

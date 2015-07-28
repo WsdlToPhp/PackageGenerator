@@ -49,12 +49,4 @@ abstract class AbstractDocument extends AbstractModel
     {
         return $this->content;
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::__toString()
-     * @return string location
-     */
-    public function __toString()
-    {
-        return $this->getName();
-    }
 }

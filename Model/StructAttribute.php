@@ -116,12 +116,4 @@ class StructAttribute extends AbstractModel
     {
         return stripos($this->getType(), '\DOM') === 0;
     }
-    /**
-     * Returns class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return 'StructAttribute';
-    }
 }

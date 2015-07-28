@@ -408,12 +408,4 @@ abstract class AbstractModel
     {
         return Utils::cleanComment($comment, $glueSeparator, $uniqueValues);
     }
-    /**
-     * Returns class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return 'AbstractModel';
-    }
 }

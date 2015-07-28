@@ -118,12 +118,4 @@ class StructValue extends AbstractModel
     {
         return parent::getOwner();
     }
-    /**
-     * Returns class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return 'StructValue';
-    }
 }

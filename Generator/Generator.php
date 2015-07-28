@@ -787,12 +787,4 @@ class Generator extends \SoapClient
         }
         return null;
     }
-    /**
-     * Returns current class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
-    }
 }

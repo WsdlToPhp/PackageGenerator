@@ -144,12 +144,4 @@ class Method extends AbstractModel
     {
         return parent::getOwner();
     }
-    /**
-     * Return class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return 'Method';
-    }
 }
