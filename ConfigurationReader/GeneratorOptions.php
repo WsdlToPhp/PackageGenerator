@@ -146,7 +146,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get gather methods option value
-     * @return bool
+     * @return string
      */
     public function getGatherMethods()
     {
@@ -155,7 +155,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current gather methods option value
      * @throws \InvalidArgumentException
-     * @param bool $gatherMethods
+     * @param string $gatherMethods
      * @return GeneratorOptions
      */
     public function setGatherMethods($gatherMethods)
