@@ -8,27 +8,190 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 class GeneratorOptionsTest extends TestCase
 {
     /**
-     * @return \WsdlToPhp\Generator\GeneratorOptions
+     * @return GeneratorOptions
      */
     public static function optionsInstance()
     {
         return GeneratorOptions::instance(__DIR__ . '/../resources/generator_options.yml');
     }
-
-    public function testGetDefaultOptionValue()
+    /**
+     *
+     */
+    public function testGetCategory()
     {
-        $this->assertEquals('cat', self::optionsInstance()->getOptionValue('category'));
-        $this->assertEquals('start', self::optionsInstance()->getOptionValue('gather_methods'));
-        $this->assertFalse(self::optionsInstance()->getOptionValue('generic_constants_names'));
-        $this->assertTrue(self::optionsInstance()->getOptionValue('generate_tutorial_file'));
-        $this->assertEquals(array(), self::optionsInstance()->getOptionValue('add_comments'));
-        $this->assertEmpty(self::optionsInstance()->getOptionValue('namespace_prefix'));
-        $this->assertTrue(self::optionsInstance()->getOptionValue('standalone'));
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::optionsInstance()->getOptionValue('struct_class'));
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::optionsInstance()->getOptionValue('struct_array_class'));
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::optionsInstance()->getOptionValue('soap_client_class'));
+        $this->assertSame(GeneratorOptions::VALUE_CAT, self::optionsInstance()->getCategory());
     }
+    /**
+     *
+     */
+    public function testSetCategory()
+    {
+        $instance = self::optionsInstance();
+        $instance->setCategory(GeneratorOptions::VALUE_NONE);
 
+        $this->assertSame(GeneratorOptions::VALUE_NONE, $instance->getCategory());
+    }
+    /**
+     *
+     */
+    public function testGetGatherMethods()
+    {
+        $this->assertSame(GeneratorOptions::VALUE_START, self::optionsInstance()->getGatherMethods());
+    }
+    /**
+     *
+     */
+    public function testSetGatherMethods()
+    {
+        $instance = self::optionsInstance();
+        $instance->setGatherMethods(GeneratorOptions::VALUE_END);
+
+        $this->assertSame(GeneratorOptions::VALUE_END, $instance->getGatherMethods());
+    }
+    /**
+     *
+     */
+    public function testGetGenericConstantsName()
+    {
+        $this->assertFalse(self::optionsInstance()->getGenericConstantsName());
+    }
+    /**
+     *
+     */
+    public function testSetGenericConstantsName()
+    {
+        $instance = self::optionsInstance();
+        $instance->setGenericConstantsName(GeneratorOptions::VALUE_TRUE);
+
+        $this->assertTrue($instance->getGenericConstantsName());
+    }
+    /**
+     *
+     */
+    public function testGetGenerateTutorialFile()
+    {
+        $this->assertTrue(self::optionsInstance()->getGenerateTutorialFile());
+    }
+    /**
+     *
+     */
+    public function testSetGenerateTutorialFile()
+    {
+        $instance = self::optionsInstance();
+        $instance->setGenerateTutorialFile(GeneratorOptions::VALUE_FALSE);
+
+        $this->assertFalse($instance->getGenerateTutorialFile());
+    }
+    /**
+     *
+     */
+    public function testGetAddComments()
+    {
+        $this->assertSame(array(), self::optionsInstance()->getAddComments());
+    }
+    /**
+     *
+     */
+    public function testSetAddComments()
+    {
+        $comments = array(
+            'release' => '1.0.2',
+            'date' => '2015-09-08',
+        );
+
+        $instance = self::optionsInstance();
+        $instance->setAddComments($comments);
+
+        $this->assertSame($comments, $instance->getAddComments());
+    }
+    /**
+     *
+     */
+    public function testGetNamespace()
+    {
+        $this->assertSame('', self::optionsInstance()->getNamespace());
+    }
+    /**
+     *
+     */
+    public function testSetNamespace()
+    {
+        $instance = self::optionsInstance();
+        $instance->setNamespace('\\My\\Project');
+
+        $this->assertSame('\\My\\Project', $instance->getNamespace());
+    }
+    /**
+     *
+     */
+    public function testGetStandalone()
+    {
+        $this->assertTrue(self::optionsInstance()->getStandalone());
+    }
+    /**
+     *
+     */
+    public function testSetStandalone()
+    {
+        $instance = self::optionsInstance();
+        $instance->setStandalone(GeneratorOptions::VALUE_FALSE);
+
+        $this->assertFalse($instance->getStandalone());
+    }
+    /**
+     *
+     */
+    public function testGetStructClass()
+    {
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::optionsInstance()->getStructClass());
+    }
+    /**
+     *
+     */
+    public function testSetStructClass()
+    {
+        $instance = self::optionsInstance();
+        $instance->setStructClass('\\My\\Project\\StructClass');
+
+        $this->assertSame('\\My\\Project\\StructClass', $instance->getStructClass());
+    }
+    /**
+     *
+     */
+    public function testGetStructArrayClass()
+    {
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::optionsInstance()->getStructArrayClass());
+    }
+    /**
+     *
+     */
+    public function testSetStructArrayClass()
+    {
+        $instance = self::optionsInstance();
+        $instance->setStructArrayClass('\\My\\Project\\StructArrayClass');
+
+        $this->assertSame('\\My\\Project\\StructArrayClass', $instance->getStructArrayClass());
+    }
+    /**
+     *
+     */
+    public function testGetSoapClientClass()
+    {
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::optionsInstance()->getSoapClientClass());
+    }
+    /**
+     *
+     */
+    public function testSetSoapClientClass()
+    {
+        $instance = self::optionsInstance();
+        $instance->setSoapClientClass('\\My\\Project\\SoapClientClass');
+
+        $this->assertSame('\\My\\Project\\SoapClientClass', $instance->getSoapClientClass());
+    }
+    /**
+     *
+     */
     public function testSetExistingOptionValue()
     {
         self::optionsInstance()->setOptionValue('category', 'cat');
@@ -58,12 +221,6 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testSetUnexistingOptionValueWithInvalidValue()
     {
-        $newOptionKey = 'new_option';
-
-        self::optionsInstance()->setOptionValue($newOptionKey, '1', array(0, 1, 2));
-
-        $this->assertEquals(1, self::optionsInstance()->getOptionValue('new_option'));
-
-        self::optionsInstance()->setOptionValue($newOptionKey, 'null');
+        self::optionsInstance()->setGenerateTutorialFile('null');
     }
 }
