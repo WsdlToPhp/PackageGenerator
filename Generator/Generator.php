@@ -529,7 +529,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionStructClass value
-     * @param string $structClas
+     * @param string $structClass
      * @return GeneratorOptions
      */
     public function setOptionStructClass($structClass)
@@ -546,7 +546,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionStructArrayClass value
-     * @param string $structArrayClas
+     * @param string $structArrayClass
      * @return GeneratorOptions
      */
     public function setOptionStructArrayClass($structArrayClass)
@@ -563,12 +563,12 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionSoapClientClass value
-     * @param string $structArrayClas
+     * @param string $soapClientClass
      * @return GeneratorOptions
      */
-    public function setOptionSoapClientClass($soapClientClaass)
+    public function setOptionSoapClientClass($soapClientClass)
     {
-        return $this->options->setSoapClientClass($soapClientClaass);
+        return $this->options->setSoapClientClass($soapClientClass);
     }
     /**
      * Gets the package name

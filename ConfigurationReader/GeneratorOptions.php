@@ -98,7 +98,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get category option value
-     * @return string|bool
+     * @return string
      */
     public function getCategory()
     {
@@ -146,7 +146,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get gather methods option value
-     * @return string|bool
+     * @return bool
      */
     public function getGatherMethods()
     {
@@ -155,7 +155,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current gather methods option value
      * @throws \InvalidArgumentException
-     * @param string $gatherMethods
+     * @param bool $gatherMethods
      * @return GeneratorOptions
      */
     public function setGatherMethods($gatherMethods)
@@ -164,7 +164,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get generate tutorial file option value
-     * @return string|bool
+     * @return bool
      */
     public function getGenerateTutorialFile()
     {
@@ -182,7 +182,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get namespace option value
-     * @return string|bool
+     * @return string
      */
     public function getNamespace()
     {
@@ -200,7 +200,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get generic constants name option value
-     * @return string|bool
+     * @return bool
      */
     public function getGenericConstantsName()
     {
@@ -218,7 +218,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get standalone option value
-     * @return string|bool
+     * @return bool
      */
     public function getStandalone()
     {
@@ -236,7 +236,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get struct class option value
-     * @return string|bool
+     * @return string
      */
     public function getStructClass()
     {
@@ -245,7 +245,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current struct class option value
      * @throws \InvalidArgumentException
-     * @param bool $structClass
+     * @param string $structClass
      * @return GeneratorOptions
      */
     public function setStructClass($structClass)
@@ -254,7 +254,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get struct array class option value
-     * @return string|bool
+     * @return string
      */
     public function getStructArrayClass()
     {
@@ -263,7 +263,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current struct array class option value
      * @throws \InvalidArgumentException
-     * @param bool $structArrayClass
+     * @param string $structArrayClass
      * @return GeneratorOptions
      */
     public function setStructArrayClass($structArrayClass)
@@ -272,7 +272,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get struct array class option value
-     * @return string|bool
+     * @return string
      */
     public function getSoapClientClass()
     {
@@ -281,7 +281,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current struct array class option value
      * @throws \InvalidArgumentException
-     * @param bool $soapClientClass
+     * @param string $soapClientClass
      * @return GeneratorOptions
      */
     public function setSoapClientClass($soapClientClass)
