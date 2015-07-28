@@ -224,13 +224,14 @@ $ phpunit
 ```
 You have several ```testsuite```s available which run test in the proper order:
 
-- configuration: tests configuration readers
-- utils: tests utils class
-- domhandler: tests dom handlers (Basic and Wsdl + Tag)
-- model: tests models
-- container : tests containers (Model and PhpElement)
-- parser: tests parsers (SoapClient and Wsdl)
-- file: tests files generation
+- **configuration**: tests configuration readers
+- **utils**: tests utils class
+- **domhandler**: tests dom handlers (Basic and Wsdl + Tag)
+- **model**: tests models
+- **container**: tests containers (Model and PhpElement)
+- **parser**: tests parsers (SoapClient and Wsdl)
+- **file**: tests files generation
+- **packagegenerator**: tests generator methods
 
 ```
 $ cd /path/to/src/WsdlToPhp/PackageGenerator/
