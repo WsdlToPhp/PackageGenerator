@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -302,11 +303,11 @@ class Struct extends AbstractModel
     {
         $extends = '';
         if ($this->isArray()) {
-            $extends = $short === true ? 'AbstractStructArrayBase' : '\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase';
+            $extends = $this->getGenerator()->getOptionStructArrayClass();
         } elseif (!$this->getIsRestriction()) {
-            $extends = $short === true ? 'AbstractStructBase' : '\\WsdlToPhp\\PackageBase\\AbstractStructBase';
+            $extends = $this->getGenerator()->getOptionStructClass();
         }
-        return $extends;
+        return $short ? Utils::removeNamespace($extends) : $extends;
     }
     /**
      * Returns class name

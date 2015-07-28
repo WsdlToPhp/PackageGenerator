@@ -20,8 +20,11 @@ class GeneratorOptions extends AbstractYamlReader
     const CATEGORY = 'category';
     const STANDALONE = 'standalone';
     const ADD_COMMENTS = 'add_comments';
+    const STRUCT_CLASS = 'struct_class';
     const GATHER_METHODS = 'gather_methods';
     const NAMESPACE_PREFIX = 'namespace_prefix';
+    const SOAP_CLIENT_CLASS = 'soap_client_class';
+    const STRUCT_ARRAY_CLASS = 'struct_array_class';
     const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
     const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
     /**
@@ -230,5 +233,59 @@ class GeneratorOptions extends AbstractYamlReader
     public function setStandalone($standalone)
     {
         return $this->setOptionValue(self::STANDALONE, $standalone);
+    }
+    /**
+     * Get struct class option value
+     * @return string|bool
+     */
+    public function getStructClass()
+    {
+        return $this->getOptionValue(self::STRUCT_CLASS);
+    }
+    /**
+     * Set current struct class option value
+     * @throws \InvalidArgumentException
+     * @param bool $structClass
+     * @return GeneratorOptions
+     */
+    public function setStructClass($structClass)
+    {
+        return $this->setOptionValue(self::STRUCT_CLASS, $structClass);
+    }
+    /**
+     * Get struct array class option value
+     * @return string|bool
+     */
+    public function getStructArrayClass()
+    {
+        return $this->getOptionValue(self::STRUCT_ARRAY_CLASS);
+    }
+    /**
+     * Set current struct array class option value
+     * @throws \InvalidArgumentException
+     * @param bool $structArrayClass
+     * @return GeneratorOptions
+     */
+    public function setStructArrayClass($structArrayClass)
+    {
+        return $this->setOptionValue(self::STRUCT_ARRAY_CLASS, $structArrayClass);
+    }
+    /**
+     * Get struct array class option value
+     * @return string|bool
+     */
+    public function getSoapClientClass()
+    {
+        return $this->getOptionValue(self::SOAP_CLIENT_CLASS);
+    }
+    /**
+     * Set current struct array class option value
+     * @throws \InvalidArgumentException
+     * @param bool $soapClientClass
+     * @return GeneratorOptions
+     */
+    public function setSoapClientClass($soapClientClass)
+    {
+        return $this->setOptionValue(self::SOAP_CLIENT_CLASS, $soapClientClass);
     }
 }

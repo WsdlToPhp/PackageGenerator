@@ -24,6 +24,9 @@ class GeneratorOptionsTest extends TestCase
         $this->assertEquals(array(), self::optionsInstance()->getOptionValue('add_comments'));
         $this->assertEmpty(self::optionsInstance()->getOptionValue('namespace_prefix'));
         $this->assertTrue(self::optionsInstance()->getOptionValue('standalone'));
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::optionsInstance()->getOptionValue('struct_class'));
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::optionsInstance()->getOptionValue('struct_array_class'));
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::optionsInstance()->getOptionValue('soap_client_class'));
     }
 
     public function testSetExistingOptionValue()

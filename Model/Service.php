@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Container\Model\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 
@@ -99,7 +100,8 @@ class Service extends AbstractModel
      */
     public function getExtends($short = false)
     {
-        return $short === true ? 'AbstractSoapClientBase' : '\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase';
+        $extends = $this->getGenerator()->getOptionSoapClientClass();
+        return $short ? Utils::removeNamespace($extends) : $extends;
     }
     /**
      * Returns class name

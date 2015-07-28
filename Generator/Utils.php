@@ -212,4 +212,13 @@ class Utils
         }
         return $cleanedString;
     }
+    /**
+     * @param string $namespacedClassName
+     * @return string
+     */
+    public static function removeNamespace($namespacedClassName)
+    {
+        $elements = explode('\\', $namespacedClassName);
+        return (string)array_pop($elements);
+    }
 }

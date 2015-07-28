@@ -133,4 +133,21 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find fareItinerary struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteBingStructNewsArticle()
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getStruct('NewsArticle')) instanceof StructModel) {
+            $generator->setOptionStructClass('\Std\Opt\StructClass');
+            $struct = new StructFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiNewsArticle', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find NewsArticle struct for file generation');
+        }
+    }
 }

@@ -410,7 +410,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionCategory value
-     * @param string
+     * @param string $category
      * @return GeneratorOptions
      */
     public function setOptionCategory($category)
@@ -427,7 +427,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionGatherMethods value
-     * @param string
+     * @param string $gatherMethods
      * @return GeneratorOptions
      */
     public function setOptionGatherMethods($gatherMethods)
@@ -444,7 +444,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionGenericConstantsNames value
-     * @param bool
+     * @param bool $genericConstantsNames
      * @return GeneratorOptions
      */
     public function setOptionGenericConstantsNames($genericConstantsNames)
@@ -461,7 +461,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionGenerateTutorialFile value
-     * @param bool
+     * @param bool $generateTutorialFile
      * @return GeneratorOptions
      */
     public function setOptionGenerateTutorialFile($generateTutorialFile)
@@ -470,7 +470,7 @@ class Generator extends \SoapClient
     }
     /**
      * Gets the optionNamespacePrefix value
-     * @return bool
+     * @return string
      */
     public function getOptionNamespacePrefix()
     {
@@ -478,7 +478,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionGenerateTutorialFile value
-     * @param bool
+     * @param string $namespace
      * @return GeneratorOptions
      */
     public function setOptionNamespacePrefix($namespace)
@@ -495,7 +495,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionAddComments value
-     * @param array
+     * @param array $addComments
      * @return GeneratorOptions
      */
     public function setOptionAddComments($addComments)
@@ -512,12 +512,63 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionStandalone value
-     * @param bool
+     * @param bool $standalone
      * @return GeneratorOptions
      */
     public function setOptionStandalone($standalone)
     {
         return $this->options->setStandalone($standalone);
+    }
+    /**
+     * Gets the optionStructClass value
+     * @return string
+     */
+    public function getOptionStructClass()
+    {
+        return $this->options->getStructClass();
+    }
+    /**
+     * Sets the optionStructClass value
+     * @param string $structClas
+     * @return GeneratorOptions
+     */
+    public function setOptionStructClass($structClass)
+    {
+        return $this->options->setStructClass($structClass);
+    }
+    /**
+     * Gets the optionStructArrayClass value
+     * @return string
+     */
+    public function getOptionStructArrayClass()
+    {
+        return $this->options->getStructArrayClass();
+    }
+    /**
+     * Sets the optionStructArrayClass value
+     * @param string $structArrayClas
+     * @return GeneratorOptions
+     */
+    public function setOptionStructArrayClass($structArrayClass)
+    {
+        return $this->options->setStructArrayClass($structArrayClass);
+    }
+    /**
+     * Gets the optionSoapClientClass value
+     * @return string
+     */
+    public function getOptionSoapClientClass()
+    {
+        return $this->options->getSoapClientClass();
+    }
+    /**
+     * Sets the optionSoapClientClass value
+     * @param string $structArrayClas
+     * @return GeneratorOptions
+     */
+    public function setOptionSoapClientClass($soapClientClaass)
+    {
+        return $this->options->setSoapClientClass($soapClientClaass);
     }
     /**
      * Gets the package name

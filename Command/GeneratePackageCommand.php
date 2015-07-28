@@ -64,7 +64,10 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('wsdl-gentutorial', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable tutorial file, you should enable this option only on dev')
             ->addOption('wsdl-genericconstants', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of generic constants name (ex : ENUM_VALUE_0, ENUM_VALUE_1, etc) or contextual values (ex : VALUE_STRING, VALUE_YES, VALUES_NO, etc)')
             ->addOption('wsdl-addcomments', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Set comments to be used within each generated file')
-            ->addOption('wsdl-standalone', null, InputOption::VALUE_OPTIONAL, 'By default, the generated package can be used as a standalone. Otherwise, you must add wsdltophp/packagebase:dev-master to your main composer.json.');
+            ->addOption('wsdl-standalone', null, InputOption::VALUE_OPTIONAL, 'By default, the generated package can be used as a standalone. Otherwise, you must add wsdltophp/packagebase:dev-master to your main composer.json.')
+            ->addOption('wsdl-struct', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructType class. Default class is \WsdlToPhp\PackageBase\AbstractStructBase from wsdltophp/packagebase package')
+            ->addOption('wsdl-structarray', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package')
+            ->addOption('wsdl-soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package');
     }
     /**
      * @see \Sdc\AppBundle\Command\Command::execute()
@@ -146,6 +149,9 @@ class GeneratePackageCommand extends AbstractCommand
             'wsdl-genericconstants' => 'GenericConstantsNames',
             'wsdl-addcomments' => 'AddComments',
             'wsdl-standalone' => 'Standalone',
+            'wsdl-struct' => 'StructClass',
+            'wsdl-structarray' => 'StructArrayClass',
+            'wsdl-soapclient' => 'SoapClientClass',
         );
     }
     /**
