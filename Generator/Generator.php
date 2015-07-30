@@ -73,11 +73,6 @@ class Generator extends \SoapClient
      */
     private $services;
     /**
-     * Name of the package to use
-     * @var string
-     */
-    private $packageName;
-    /**
      * Wsdl
      * @var Wsdl
      */
@@ -320,7 +315,7 @@ class Generator extends \SoapClient
                 'command' => 'init',
                 '--verbose' => true,
                 '--no-interaction' => true,
-                '--name' => sprintf('wsdltophp/generated-%s', strtolower(self::getPackageName())),
+                '--name' => sprintf('wsdltophp/generated-%s', strtolower($this->getOptionPrefix())),
                 '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getWsdl()->getName()),
                 '--require' => array(
                     'php:>=5.3.3',
@@ -726,7 +721,7 @@ class Generator extends \SoapClient
     }
     /**
      * Sets the optionSoapOptions value
-     * @param string $optionSoapOptions
+     * @param array $optionSoapOptions
      * @return Generator
      */
     public function setOptionSoapOptions($optionSoapOptions)
