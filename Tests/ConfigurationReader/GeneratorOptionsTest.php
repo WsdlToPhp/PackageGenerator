@@ -18,6 +18,159 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetPrefix()
+    {
+        $this->assertEmpty(self::optionsInstance()->getPrefix());
+    }
+    /**
+     *
+     */
+    public function testSetPrefix()
+    {
+        $instance = self::optionsInstance();
+        $instance->setPrefix('MyPrefix');
+
+        $this->assertSame('MyPrefix', $instance->getPrefix());
+    }
+    /**
+     *
+     */
+    public function testGetDestination()
+    {
+        $this->assertEmpty(self::optionsInstance()->getDestination());
+    }
+    /**
+     *
+     */
+    public function testSetDestination()
+    {
+        $instance = self::optionsInstance();
+        $instance->setDestination('/my/destination/');
+
+        $this->assertSame('/my/destination/', $instance->getDestination());
+    }
+    /**
+     *
+     */
+    public function testGetOrigin()
+    {
+        $this->assertEmpty(self::optionsInstance()->getOrigin());
+    }
+    /**
+     *
+     */
+    public function testSetOrigin()
+    {
+        $instance = self::optionsInstance();
+        $instance->setOrigin('/my/path/to/the/wsdl/file.wsdl');
+
+        $this->assertSame('/my/path/to/the/wsdl/file.wsdl', $instance->getOrigin());
+    }
+    /**
+     *
+     */
+    public function testGetBasicLogin()
+    {
+        $this->assertEmpty(self::optionsInstance()->getBasicLogin());
+    }
+    /**
+     *
+     */
+    public function testSetBasicLogin()
+    {
+        $instance = self::optionsInstance();
+        $instance->setBasicLogin('MyLogin');
+
+        $this->assertSame('MyLogin', $instance->getBasicLogin());
+    }
+    /**
+     *
+     */
+    public function testGetBasicPassword()
+    {
+        $this->assertEmpty(self::optionsInstance()->getBasicPassword());
+    }
+    /**
+     *
+     */
+    public function testSetBasicPassword()
+    {
+        $instance = self::optionsInstance();
+        $instance->setBasicPassword('MyPassword');
+
+        $this->assertSame('MyPassword', $instance->getBasicPassword());
+    }
+    /**
+     *
+     */
+    public function testGetProxyHost()
+    {
+        $this->assertEmpty(self::optionsInstance()->getProxyHost());
+    }
+    /**
+     *
+     */
+    public function testSetProxyHost()
+    {
+        $instance = self::optionsInstance();
+        $instance->setProxyHost('MyProxyHost');
+
+        $this->assertSame('MyProxyHost', $instance->getProxyHost());
+    }
+    /**
+     *
+     */
+    public function testGetProxyPort()
+    {
+        $this->assertEmpty(self::optionsInstance()->getProxyPort());
+    }
+    /**
+     *
+     */
+    public function testSetProxyPort()
+    {
+        $instance = self::optionsInstance();
+        $instance->setProxyPort(3225);
+
+        $this->assertSame(3225, $instance->getProxyPort());
+    }
+    /**
+     *
+     */
+    public function testGetProxyLogin()
+    {
+        $this->assertEmpty(self::optionsInstance()->getProxyLogin());
+    }
+    /**
+     *
+     */
+    public function testSetProxyLogin()
+    {
+        $instance = self::optionsInstance();
+        $instance->setProxyLogin('MyProxyLogin');
+
+        $this->assertSame('MyProxyLogin', $instance->getProxyLogin());
+    }
+    /**
+     *
+     */
+    public function testGetProxyPassword()
+    {
+        $this->assertEmpty(self::optionsInstance()->getProxyPassword());
+    }
+    /**
+     *
+     */
+    public function testSetProxyPassword()
+    {
+        $instance = self::optionsInstance();
+        $instance->setProxyPassword('MyProxyPassword');
+
+        $this->assertSame('MyProxyPassword', $instance->getProxyPassword());
+    }
+    /**
+     *
+     */
     public function testGetCategory()
     {
         $this->assertSame(GeneratorOptions::VALUE_CAT, self::optionsInstance()->getCategory());
