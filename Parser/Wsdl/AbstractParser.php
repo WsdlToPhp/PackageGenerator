@@ -88,22 +88,6 @@ abstract class AbstractParser extends Parser
      */
     abstract protected function parsingTag();
     /**
-     * When looping, must return false to stop it
-     * @return bool
-     */
-    private function shouldContinue()
-    {
-        $shouldContinue = false;
-        $wsdl = $this->generator->getWsdl();
-        $shouldContinue |= $this->isWsdlParsed($wsdl) === false;
-        if ($wsdl->getContent() instanceof WsdlDocument) {
-            foreach ($wsdl->getContent()->getExternalSchemas() as $schema) {
-                $shouldContinue |= $this->isSchemaParsed($wsdl, $schema) === false;
-            }
-        }
-        return (bool)$shouldContinue;
-    }
-    /**
      * @param array $tags
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser
      */
