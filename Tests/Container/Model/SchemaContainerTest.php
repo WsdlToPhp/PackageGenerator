@@ -16,20 +16,20 @@ class SchemaContainerTest extends TestCase
      */
     public static function instance()
     {
-        $wsdlContainer = new SchemaContainer();
-        $wsdlContainer->add(new Schema(self::getBingGeneratorInstance(), self::SCHEMA_BING, file_get_contents(self::wsdlBingPath())));
-        $wsdlContainer->add(new Schema(self::getBingGeneratorInstance(), self::SCHEMA_EBAY, file_get_contents(self::wsdlEbayPath())));
-        return $wsdlContainer;
+        $schemaContainer = new SchemaContainer();
+        $schemaContainer->add(new Schema(self::getBingGeneratorInstance(), self::SCHEMA_BING, file_get_contents(self::wsdlBingPath())));
+        $schemaContainer->add(new Schema(self::getBingGeneratorInstance(), self::SCHEMA_EBAY, file_get_contents(self::wsdlEbayPath())));
+        return $schemaContainer;
     }
     /**
      *
      */
     public function testGetSchemaByName()
     {
-        $wsdlContainer = self::instance();
+        $schemaContainer = self::instance();
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Schema', $wsdlContainer->getSchemaByName(self::SCHEMA_BING));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Schema', $wsdlContainer->getSchemaByName(self::SCHEMA_EBAY));
-        $this->assertNull($wsdlContainer->getSchemaByName('Bar'));
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Schema', $schemaContainer->getSchemaByName(self::SCHEMA_BING));
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Schema', $schemaContainer->getSchemaByName(self::SCHEMA_EBAY));
+        $this->assertNull($schemaContainer->getSchemaByName('Bar'));
     }
 }

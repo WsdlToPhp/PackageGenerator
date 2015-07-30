@@ -10,7 +10,6 @@ use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\Service;
 use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\Container\Model\Wsdl as WsdlContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
 use WsdlToPhp\PackageGenerator\Container\Parser as ParserContainer;
@@ -79,10 +78,10 @@ class Generator extends \SoapClient
      */
     private $packageName;
     /**
-     * Wsdl lists
-     * @var WsdlContainer
+     * Wsdl
+     * @var Wsdl
      */
-    private $wsdls;
+    private $wsdl;
     /**
      * @var GeneratorOptions
      */
@@ -99,47 +98,49 @@ class Generator extends \SoapClient
     private $classmapFile;
     /**
      * Constructor
-     * @uses \SoapClient::__construct()
-     * @uses Generator::setStructs()
-     * @uses Generator::setServices()
-     * @uses Generator::setWsdls()
-     * @uses Generator::addWsdl()
-     * @param string $pathToWsdl WSDL url or path
-     * @param string $login login to get access to WSDL
-     * @param string $password password to get access to WSDL
-     * @param array $wsdlOptions options to get access to WSDL
+     * @param GeneratorOptions $options
      */
-    public function __construct($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
+    public function __construct(GeneratorOptions $options)
     {
         $this
-            ->initSoapClient($pathToWsdl, $login, $password, $wsdlOptions)
-            ->initContainers()
-            ->initParsers()
-            ->setOptions(GeneratorOptions::instance())
-            ->addWsdl($pathToWsdl);
+            ->setOptions($options)
+            ->initialize();
     }
     /**
-     * @param string $pathToWsdl
-     * @param string $login
-     * @param string $password
-     * @param array $wsdlOptions
+     * @return Generator
+     */
+    protected function initialize()
+    {
+        return $this
+            ->initContainers()
+            ->initParsers()
+            ->initWsdl()
+            ->initSoapClient()
+            ->initDirectory();
+    }
+    /**
      * @throws \InvalidArgumentException
      * @return Generator
      */
-    protected function initSoapClient($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
+    protected function initSoapClient()
     {
-        $pathToWsdl = trim($pathToWsdl);
+        $pathToWsdl = trim($this->getOptionOrigin());
         /**
          * Options for WSDL
         */
-        $options = $wsdlOptions;
-        $options['trace'] = true;
-        $options['exceptions'] = true;
-        $options['cache_wsdl'] = WSDL_CACHE_NONE;
-        $options['soap_version'] = SOAP_1_1;
+        $options = array_merge($this->getOptionSoapOptions(), array(
+            'trace' => true,
+            'exceptions' => true,
+            'cache_wsdl' => WSDL_CACHE_NONE,
+            'soap_version' => SOAP_1_1,
+        ));
+        $login = $this->getOptionBasicLogin();
+        $password = $this->getOptionBasicPassword();
         if (!empty($login) && !empty($password)) {
-            $options['login'] = $login;
-            $options['password'] = $password;
+            $options = array_merge($options, array(
+                'login' => $login,
+                'password' => $password,
+            ));
         }
         /**
          * Construct
@@ -161,12 +162,10 @@ class Generator extends \SoapClient
      */
     protected function initContainers()
     {
-        $this
+        return $this
             ->setStructs(new StructContainer())
             ->setServices(new ServiceContainer())
-            ->setWsdls(new WsdlContainer())
             ->setParser(new ParserContainer());
-        return $this;
     }
     /**
      * @return Generator
@@ -195,78 +194,59 @@ class Generator extends \SoapClient
         return $this;
     }
     /**
-     * Generates all classes based on options
-     * @uses Generator::setPackageName()
-     * @uses Generator::getWsdl()
-     * @uses Generator::getStructs()
-     * @uses Generator::getServices()
-     * @uses Generator::generateStructsClasses()
-     * @uses Generator::generateServicesClasses()
-     * @uses Generator::generateClassMap()
-     * @uses Generator::getOptionGenerateTutorialFile()
-     * @uses Generator::generateTutorialFile()
-     * @param string $packageName the string used to prefix all generate classes
-     * @param string $rootDirectory path where classes should be generated
-     * @param int $rootDirectoryRights system rights to apply on folder
-     * @param bool $createRootDirectory create root directory if not exist
-     * @return bool true|false depending on the well creation fot the root directory
+     * @throws \InvalidArgumentException
+     * @return Generator
      */
-    public function generateClasses($packageName, $rootDirectory, $rootDirectoryRights = 0775, $createRootDirectory = true)
+    protected function initDirectory()
     {
-        $wsdl = $this->getWsdl(0);
-        $wsdlLocation = $wsdl instanceof Wsdl ? $wsdl->getName() : '';
-        if (!empty($wsdlLocation)) {
-            $this->setPackageName($packageName);
-            $rootDirectory = $rootDirectory . (substr($rootDirectory, -1) != '/' ? '/' : '');
-            /**
-             * Root directory
-             */
-            if (!is_dir($rootDirectory) && !$createRootDirectory) {
-                throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been disabled', $rootDirectory), __LINE__);
-            } elseif (!is_dir($rootDirectory) && $createRootDirectory) {
-                $this->createDirectory($rootDirectory, $rootDirectoryRights);
-            }
-            /**
-             * Begin process
-             */
-            if (is_dir($rootDirectory)) {
-                foreach ($this->parsers as $parser) {
-                    $parser->parse();
-                }
-                /**
-                 * Generates classes files
-                 */
-                $this
-                    ->generateStructsClasses($rootDirectory, $rootDirectoryRights)
-                    ->generateServicesClasses($rootDirectory, $rootDirectoryRights)
-                    ->generateClassMap($rootDirectory)
-                    ->generateComposerFile($rootDirectory)
-                    ->generateTutorialFile($rootDirectory);
-                return true;
-            } else {
-                return false;
-            }
+        $this->createDirectory($this->getOptionDestination());
+        if (!is_dir($this->getOptionDestination())) {
+            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been disabled', $this->getOptionDestination()), __LINE__);
         }
-        return false;
+        return $this;
+    }
+    /**
+     * @return Generator
+     */
+    protected function initWsdl()
+    {
+        $this->setWsdl(new Wsdl($this, $this->getOptionOrigin(), $this->getUrlContent($this->getOptionOrigin())));
+        return $this;
+    }
+    /**
+     * Generates all classes based on options
+     * @return Generator
+     */
+    public function generateClasses()
+    {
+        /**
+         * Begin process
+         */
+        foreach ($this->parsers as $parser) {
+            $parser->parse();
+        }
+        /**
+         * Generates classes files
+         */
+        return $this
+            ->generateStructsClasses()
+            ->generateServicesClasses()
+            ->generateClassMap()
+            ->generateTutorialFile()
+            ->generateComposerFile();
     }
     /**
      * Generates structs classes based on structs collected
-     * @uses Generator::getStructs()
-     * @uses Generator::getDirectory()
-     * @uses AbstractModel::getPackagedName()
-     * @uses Struct::getIsStruct()
-     * @param string $rootDirectory the directory
-     * @param int $rootDirectoryRights the directory permissions
      * @return Generator
      */
-    private function generateStructsClasses($rootDirectory, $rootDirectoryRights)
+    private function generateStructsClasses()
     {
         foreach ($this->getStructs() as $structName => $struct) {
             if (!$struct->getIsStruct()) {
                 continue;
             }
-            $elementFolder = $rootDirectory . $this->getDirectory($struct);
-            $this->createDirectory($elementFolder, $rootDirectoryRights);
+            $elementFolder = $this->getOptionDestination() . $this->getDirectory($struct);
+            $this->createDirectory($elementFolder);
             /**
              * Generates file
              */
@@ -285,18 +265,13 @@ class Generator extends \SoapClient
     }
     /**
      * Generates methods by class
-     * @uses Generator::getServices()
-     * @uses Generator::getDirectory()
-     * @uses AbstractModel::getPackagedName()
-     * @param string $rootDirectory the directory
-     * @param int $rootDirectoryRights the directory permissions
      * @return Generator
      */
-    private function generateServicesClasses($rootDirectory, $rootDirectoryRights)
+    private function generateServicesClasses()
     {
         foreach ($this->getServices() as $service) {
-            $elementFolder = $rootDirectory . $this->getDirectory($service);
-            $this->createDirectory($elementFolder, $rootDirectoryRights);
+            $elementFolder = $this->getOptionDestination() . $this->getDirectory($service);
+            $this->createDirectory($elementFolder);
             /**
              * Generates file
              */
@@ -309,37 +284,33 @@ class Generator extends \SoapClient
     }
     /**
      * Generates classMap class
-     * @param string $rootDirectory the directory
      * @return Generator
      */
-    private function generateClassMap($rootDirectory)
+    private function generateClassMap()
     {
         $this
             ->getClassmapFile()
-            ->setDestination($rootDirectory)
+            ->setDestination($this->getOptionDestination())
             ->write();
         return $this;
     }
     /**
      * Generates tutorial file
-     * @uses Generator::getOptionGenerateTutorialFile()
-     * @param string $rootDirectory the direcoty
      * @return Generator
      */
-    private function generateTutorialFile($rootDirectory)
+    private function generateTutorialFile()
     {
         if ($this->getOptionGenerateTutorialFile() === true && $this->getClassmapFile() instanceof ClassMapFile) {
-            $tutorialFile = new TutorialFile($this, 'tutorial', $rootDirectory);
+            $tutorialFile = new TutorialFile($this, 'tutorial', $this->getOptionDestination());
             $tutorialFile->write();
         }
         return $this;
     }
     /**
-     * @param string $rootDirectory
      * @throws \InvalidArgumentException
      * @return Generator
      */
-    private function generateComposerFile($rootDirectory)
+    private function generateComposerFile()
     {
         if ($this->getOptionStandalone() === true) {
             $composer = new Application();
@@ -350,13 +321,13 @@ class Generator extends \SoapClient
                 '--verbose' => true,
                 '--no-interaction' => true,
                 '--name' => sprintf('wsdltophp/generated-%s', strtolower(self::getPackageName())),
-                '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getWsdl(0)->getName()),
+                '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getWsdl()->getName()),
                 '--require' => array(
                     'php:>=5.3.3',
                     'ext-soap:*',
                     'wsdltophp/packagebase:dev-master',
                 ),
-                '--working-dir' => $rootDirectory,
+                '--working-dir' => $this->getOptionDestination(),
             )));
 
             $composer->run(new ArrayInput(array(
@@ -364,7 +335,7 @@ class Generator extends \SoapClient
                 '--verbose' => true,
                 '--optimize-autoloader' => true,
                 '--no-dev' => true,
-                '--working-dir' => $rootDirectory,
+                '--working-dir' => $this->getOptionDestination(),
             )));
         }
         return $this;
@@ -411,11 +382,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionCategory value
      * @param string $category
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionCategory($category)
     {
-        return $this->options->setCategory($category);
+        $this->options->setCategory($category);
+        return $this;
     }
     /**
      * Sets the optionGatherMethods value
@@ -428,11 +400,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionGatherMethods value
      * @param string $gatherMethods
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionGatherMethods($gatherMethods)
     {
-        return $this->options->setGatherMethods($gatherMethods);
+        $this->options->setGatherMethods($gatherMethods);
+        return $this;
     }
     /**
      * Gets the optionGenericConstantsNames value
@@ -445,11 +418,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionGenericConstantsNames value
      * @param bool $genericConstantsNames
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionGenericConstantsNames($genericConstantsNames)
     {
-        return $this->options->setGenericConstantsName($genericConstantsNames);
+        $this->options->setGenericConstantsName($genericConstantsNames);
+        return $this;
     }
     /**
      * Gets the optionGenerateTutorialFile value
@@ -462,11 +436,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionGenerateTutorialFile value
      * @param bool $generateTutorialFile
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionGenerateTutorialFile($generateTutorialFile)
     {
-        return $this->options->setGenerateTutorialFile($generateTutorialFile);
+        $this->options->setGenerateTutorialFile($generateTutorialFile);
+        return $this;
     }
     /**
      * Gets the optionNamespacePrefix value
@@ -479,11 +454,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionGenerateTutorialFile value
      * @param string $namespace
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionNamespacePrefix($namespace)
     {
-        return $this->options->setNamespace($namespace);
+        $this->options->setNamespace($namespace);
+        return $this;
     }
     /**
      * Gets the optionAddComments value
@@ -496,11 +472,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionAddComments value
      * @param array $addComments
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionAddComments($addComments)
     {
-        return $this->options->setAddComments($addComments);
+        $this->options->setAddComments($addComments);
+        return $this;
     }
     /**
      * Gets the optionStandalone value
@@ -513,11 +490,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionStandalone value
      * @param bool $standalone
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionStandalone($standalone)
     {
-        return $this->options->setStandalone($standalone);
+        $this->options->setStandalone($standalone);
+        return $this;
     }
     /**
      * Gets the optionStructClass value
@@ -530,11 +508,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionStructClass value
      * @param string $structClass
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionStructClass($structClass)
     {
-        return $this->options->setStructClass($structClass);
+        $this->options->setStructClass($structClass);
+        return $this;
     }
     /**
      * Gets the optionStructArrayClass value
@@ -547,11 +526,12 @@ class Generator extends \SoapClient
     /**
      * Sets the optionStructArrayClass value
      * @param string $structArrayClass
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionStructArrayClass($structArrayClass)
     {
-        return $this->options->setStructArrayClass($structArrayClass);
+        $this->options->setStructArrayClass($structArrayClass);
+        return $this;
     }
     /**
      * Gets the optionSoapClientClass value
@@ -564,73 +544,219 @@ class Generator extends \SoapClient
     /**
      * Sets the optionSoapClientClass value
      * @param string $soapClientClass
-     * @return GeneratorOptions
+     * @return Generator
      */
     public function setOptionSoapClientClass($soapClientClass)
     {
-        return $this->options->setSoapClientClass($soapClientClass);
+        $this->options->setSoapClientClass($soapClientClass);
+        return $this;
     }
     /**
      * Gets the package name
      * @param bool $ucFirst ucfirst package name or not
      * @return string
      */
-    public function getPackageName($ucFirst = true)
+    public function getOptionPrefix($ucFirst = true)
     {
-        return $ucFirst ? ucfirst($this->packageName) : $this->packageName;
+        return $ucFirst ? ucfirst($this->getOptions()->getPrefix()) : $this->getOptions()->getPrefix();
     }
     /**
      * Sets the package name
-     * @param string $packageName
+     * @param string $optionPrefix
      * @return Generator
      */
-    public function setPackageName($packageName)
+    public function setOptionPrefix($optionPrefix)
     {
-        $this->packageName = $packageName;
+        $this->options->setPrefix($optionPrefix);
         return $this;
     }
     /**
-     * Gets the WSDLs
-     * @return WsdlContainer
+     * Gets the optionBasicLogin value
+     * @return string
      */
-    public function getWsdls()
+    public function getOptionBasicLogin()
     {
-        return $this->wsdls;
+        return $this->options->getBasicLogin();
     }
     /**
-     * Gets the WSDL at the index
-     * @param int $index
+     * Sets the optionBasicLogin value
+     * @param string $optionBasicLogin
+     * @return Generator
+     */
+    public function setOptionBasicLogin($optionBasicLogin)
+    {
+        $this->options->setBasicLogin($optionBasicLogin);
+        return $this;
+    }
+    /**
+     * Gets the optionBasicPassword value
+     * @return string
+     */
+    public function getOptionBasicPassword()
+    {
+        return $this->options->getBasicPassword();
+    }
+    /**
+     * Sets the optionBasicPassword value
+     * @param string $optionBasicPassword
+     * @return Generator
+     */
+    public function setOptionBasicPassword($optionBasicPassword)
+    {
+        $this->options->setBasicPassword($optionBasicPassword);
+        return $this;
+    }
+    /**
+     * Gets the optionProxyHost value
+     * @return string
+     */
+    public function getOptionProxyHost()
+    {
+        return $this->options->getProxyHost();
+    }
+    /**
+     * Sets the optionProxyHost value
+     * @param string $optionProxyHost
+     * @return Generator
+     */
+    public function setOptionProxyHost($optionProxyHost)
+    {
+        $this->options->setProxyHost($optionProxyHost);
+        return $this;
+    }
+    /**
+     * Gets the optionProxyPort value
+     * @return string
+     */
+    public function getOptionProxyPort()
+    {
+        return $this->options->getProxyPort();
+    }
+    /**
+     * Sets the optionProxyPort value
+     * @param string $optionProxyPort
+     * @return Generator
+     */
+    public function setOptionProxyPort($optionProxyPort)
+    {
+        $this->options->setProxyPort($optionProxyPort);
+        return $this;
+    }
+    /**
+     * Gets the optionProxyLogin value
+     * @return string
+     */
+    public function getOptionProxyLogin()
+    {
+        return $this->options->getProxyLogin();
+    }
+    /**
+     * Sets the optionProxyLogin value
+     * @param string $optionProxyLogin
+     * @return Generator
+     */
+    public function setOptionProxyLogin($optionProxyLogin)
+    {
+        $this->options->setProxyLogin($optionProxyLogin);
+        return $this;
+    }
+    /**
+     * Gets the optionProxyPassword value
+     * @return string
+     */
+    public function getOptionProxyPassword()
+    {
+        return $this->options->getProxyPassword();
+    }
+    /**
+     * Sets the optionProxyPassword value
+     * @param string $optionProxyPassword
+     * @return Generator
+     */
+    public function setOptionProxyPassword($optionProxyPassword)
+    {
+        $this->options->setProxyPassword($optionProxyPassword);
+        return $this;
+    }
+    /**
+     * Gets the optionOrigin value
+     * @return string
+     */
+    public function getOptionOrigin()
+    {
+        return $this->options->getOrigin();
+    }
+    /**
+     * Sets the optionOrigin value
+     * @param string $optionOrigin
+     * @return Generator
+     */
+    public function setOptionOrigin($optionOrigin)
+    {
+        $this->options->setOrigin($optionOrigin);
+        $this->initWsdl();
+        return $this;
+    }
+    /**
+     * Gets the optionDestination value
+     * @return string
+     */
+    public function getOptionDestination()
+    {
+        return $this->options->getDestination();
+    }
+    /**
+     * Sets the optionDestination value
+     * @param string $optionDestination
+     * @return Generator
+     */
+    public function setOptionDestination($optionDestination)
+    {
+        $this->options->setDestination($optionDestination);
+        $this->initDirectory();
+        return $this;
+    }
+    /**
+     * Gets the optionSoapOptions value
+     * @return string
+     */
+    public function getOptionSoapOptions()
+    {
+        return $this->options->getSoapOptions();
+    }
+    /**
+     * Sets the optionSoapOptions value
+     * @param string $optionSoapOptions
+     * @return Generator
+     */
+    public function setOptionSoapOptions($optionSoapOptions)
+    {
+        $this->options->setSoapOptions($optionSoapOptions);
+        return $this;
+    }
+    /**
+     * Gets the WSDL
      * @return Wsdl|null
      */
-    public function getWsdl($index)
+    public function getWsdl()
     {
-        return $this->getWsdls()->offsetGet($index);
+        return $this->wsdl;
     }
     /**
      * Sets the WSDLs
-     * @param WsdlContainer $wsdlContainer
+     * @param Wsdl $wsdl
      * @return Generator
      */
-    protected function setWsdls(WsdlContainer $wsdlContainer)
+    protected function setWsdl(Wsdl $wsdl)
     {
-        $this->wsdls = $wsdlContainer;
-        return $this;
-    }
-    /**
-     * Adds Wsdl location
-     * @param string $wsdlLocation
-     */
-    public function addWsdl($wsdlLocation)
-    {
-        if (!empty($wsdlLocation) && $this->wsdls->getWsdlByName($wsdlLocation) === null) {
-            $this->wsdls->add(new Wsdl($this, $wsdlLocation, $this->getUrlContent($wsdlLocation)));
-        }
+        $this->wsdl = $wsdl;
         return $this;
     }
     /**
      * Adds Wsdl location
      * @param Wsdl $wsdl
      * @param string $schemaLocation
+     * @return Generator
      */
     public function addSchemaToWsdl(Wsdl $wsdl, $schemaLocation)
     {
@@ -659,7 +785,7 @@ class Generator extends \SoapClient
      * @param int $permissions
      * @return bool
      */
-    private function createDirectory($directory, $permissions)
+    private function createDirectory($directory, $permissions = 0775)
     {
         if (!is_dir($directory)) {
             mkdir($directory, $permissions, true);
@@ -698,7 +824,7 @@ class Generator extends \SoapClient
      * @param GeneratorOptions $options
      * @return Generator
      */
-    protected function setOptions(GeneratorOptions $options)
+    protected function setOptions(GeneratorOptions $options = null)
     {
         $this->options = $options;
         return $this;
@@ -706,7 +832,7 @@ class Generator extends \SoapClient
     /**
      * @return GeneratorOptions
      */
-    public function getOptions()
+    protected function getOptions()
     {
         return $this->options;
     }

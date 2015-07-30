@@ -4,7 +4,6 @@ namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 
@@ -15,7 +14,7 @@ class TagIncludeTest extends WsdlParser
      */
     public static function instance()
     {
-        return new TagInclude(new Generator(self::wsdlImageViewServicePath()));
+        return new TagInclude(self::getInstance(self::wsdlImageViewServicePath()));
     }
     /**
      *
@@ -52,18 +51,7 @@ class TagIncludeTest extends WsdlParser
             $schemaContainer->add($schema);
         }
 
-        $tagIncludeParser->getGenerator()->getWsdl(0)->getContent()->getExternalSchemas()->rewind();
-        $this->assertEquals($schemaContainer, $tagIncludeParser->getGenerator()->getWsdl(0)->getContent()->getExternalSchemas());
-    }
-    /**
-     *
-     */
-    public function testCountWsdlsAfterParsing()
-    {
-        $tagIncludeParser = self::instance();
-
-        $tagIncludeParser->parse();
-
-        $this->assertCount(1, $tagIncludeParser->getGenerator()->getWsdls());
+        $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
+        $this->assertEquals($schemaContainer, $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas());
     }
 }

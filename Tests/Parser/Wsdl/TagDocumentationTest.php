@@ -5,7 +5,6 @@ namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation;
 use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Model\Service;
 
 class TagDocumentationTest extends WsdlParser
 {

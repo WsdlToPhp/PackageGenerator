@@ -56,7 +56,7 @@ class Tutorial extends AbstractFile
             ->addChild($block, '- the key must be a constant beginning with WSDL_ from AbstractSoapClientbase class each generated ServiceType class extends this class')
             ->addChild($block, '- the value must be the corresponding key value (each option matches a {@link http://www.php.net/manual/en/soapclient.soapclient.php} option)')
             ->addChild($block, '$options = array(')
-            ->addChild($block, sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl(0)->getName()))
+            ->addChild($block, sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl()->getName()))
             ->addChild($block, '\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_TRACE => true,')
             ->addChild($block, '\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_LOGIN => \'you_secret_login\',')
             ->addChild($block, '\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD => \'you_secret_password\',')
@@ -127,7 +127,7 @@ class Tutorial extends AbstractFile
             ->getFile()
             ->getMainElement()
             ->addChild('$options = array(')
-                ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl(0)->getName()), 1))
+                ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl()->getName()), 1))
                 ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => %s::classMap(),', $this->getGenerator()->getClassmapFile()->getModel()->getPackagedName(true)), 1))
             ->addChild(');');
         return $this;

@@ -120,7 +120,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function definePackageAnnotations(PhpAnnotationBlock $block)
     {
-        $block->addChild(new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getPackageName()));
+        $block->addChild(new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionPrefix()));
         if (count($this->getModel()->getDocSubPackages()) > 0) {
             $block->addChild(new PhpAnnotation(self::ANNOTATION_SUB_PACKAGE, implode(',', $this->getModel()->getDocSubPackages())));
         }

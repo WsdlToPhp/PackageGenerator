@@ -13,7 +13,7 @@ class StructEnumTest extends AbstractFile
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
         $instance = self::bingGeneratorInstance();
-        $enum = new EnumFile($instance, 'Foo', $this->getTestDirectory());
+        $enum = new EnumFile($instance, 'Foo', self::getTestDirectory());
         $enum->setModel(new StructModel($instance, 'FooEnum'));
     }
     /**
@@ -23,7 +23,7 @@ class StructEnumTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('AdultOption')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();
@@ -39,7 +39,7 @@ class StructEnumTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('SourceType')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();
@@ -55,7 +55,7 @@ class StructEnumTest extends AbstractFile
     {
         $generator = self::reformaGeneratorInstance();
         if (($model = $generator->getStruct('HouseStageEnum')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();
@@ -71,7 +71,7 @@ class StructEnumTest extends AbstractFile
     {
         $generator = self::omnitureGeneratorInstance();
         if (($model = $generator->getStruct('ds_weblog_formats')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), $this->getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
             $struct
                 ->setModel($model)
                 ->write();

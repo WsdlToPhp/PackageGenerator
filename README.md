@@ -185,35 +185,39 @@ $result = $serviceAdd->addRole();
 require_once __DIR__ . '/vendor/autoload.php'
 use \WsdlToPhp\PackageGenerator\Generator\Generator;
 use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
-// required authentification informations to access the WSDL
-$login = 'MyLogin';
-$password = '********';
-// any option accepted by the SoapClient class
-// see http://php.net/manual/fr/soapclient.soapclient.php
-$options = array(
-    'proxy_host'     => '',
-    'proxy_port'     => '',
-    'proxy_login'    => '',
-    'proxy_password' => '',
-);
-$generator = new Generator('http://www.mydomain.com/?wsdl', $login, $password, $options);
-$generator->setOptionCategory(GeneratorOptions::VALUE_CAT);
-$generator->setGatherMethods(GeneratorOptions::VALUE_START);
-$generator->setOptionGenericConstantsNames(GeneratorOptions::VALUE_FALSE);
-$generator->setOptionGenerateTutorialFile(GeneratorOptions::VALUE_TRUE);
-$generator->setOptionStandalone(GeneratorOptions::VALUE_TRUE);
-$generator->setOptionNamespacePrefix('My\Project');
-$generator->setOptionAddComments(array(
-    'date'    => date('Y-m-d'),
-    'team'    => 'Dream',
-    'author'  => 'Me',
-    'release' => 1.1.0,
-));
-$generator->setOptionNamespacePrefix('My\Project');
-$generator->setOptionStructClass('\Std\Opt\StructClass');
-$generator->setOptionStructArrayClass('\Std\Opt\StructArrayClass');
-$generator->setOptionSoapClientClass('\Std\Opt\SoapClientClass');
-$generator->generateClasses('MyPackage', '/path/to/where/the/package/must/be/generated/');
+
+// Options definition
+$options = GenerationOptions::instance();
+$options
+    ->setCategory(GeneratorOptions::VALUE_CAT)
+    ->setMethods(GeneratorOptions::VALUE_START)
+    ->setGenericConstantsNames(GeneratorOptions::VALUE_FALSE)
+    ->setGenerateTutorialFile(GeneratorOptions::VALUE_TRUE)
+    ->setStandalone(GeneratorOptions::VALUE_TRUE)
+    ->setNamespacePrefix('My\Project')
+    ->setAddComments(array(
+        'date'    => date('Y-m-d'),
+        'team'    => 'Dream',
+        'author'  => 'Me',
+        'release' => 1.1.0,
+    ))
+    ->setNamespacePrefix('My\Project')
+    ->setStructClass('\Std\Opt\StructClass')
+    ->setStructArrayClass('\Std\Opt\StructArrayClass')
+    ->setSoapClientClass('\Std\Opt\SoapClientClass')
+    ->setOrigin('http://www.mydomain.com/?wsdl')
+    ->setDestination('/path/to/where/the/package/must/be/generated/')
+    ->setPrefix('MyPackage')
+    ->setBasicLogin($login)
+    ->setBasicPassword($password)
+    ->setProxyHost($proxyHost)
+    ->setProxyPort($proxyPort)
+    ->setProxyLogin($proxyLogin)
+    ->setProxyPassword($proxyPassword);
+
+// Generator instanciation and package generation
+$generator = new Generator($options);
+$generator->generateClasses();
 ```
 ## Unit tests
 You can run the unit tests with the following command:

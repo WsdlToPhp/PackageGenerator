@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests;
 
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 
 abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
@@ -142,7 +143,11 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     private static function getGeneratorInstance($wsdlPath)
     {
-        return new Generator($wsdlPath);
+        $options = GeneratorOptionsTest::optionsInstance();
+        $options
+            ->setOrigin($wsdlPath)
+            ->setDestination(self::getTestDirectory());
+        return new Generator($options);
     }
     /**
      * @return Generator
@@ -182,5 +187,12 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
             self::$instances[$wsdlPath] = self::getGeneratorInstance($wsdlPath);
         }
         return self::$instances[$wsdlPath];
+    }
+    /**
+     * @return string
+     */
+    public static function getTestDirectory()
+    {
+        return __DIR__ . '/resources/generated/';
     }
 }

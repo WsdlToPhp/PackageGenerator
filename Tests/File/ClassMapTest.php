@@ -16,7 +16,7 @@ class ClassMapTest extends AbstractFile
         $instance = self::bingGeneratorInstance();
 
         $model = new EmptyModel($instance, 'ClassMap');
-        $classMap = new ClassMapFile($instance, $model->getPackagedName(), $this->getTestDirectory());
+        $classMap = new ClassMapFile($instance, $model->getPackagedName(), self::getTestDirectory());
         $classMap
             ->setModel($model)
             ->write();
@@ -31,7 +31,7 @@ class ClassMapTest extends AbstractFile
         $instance = self::reformaGeneratorInstance();
 
         $model = new EmptyModel($instance, 'ClassMap');
-        $classMap = new ClassMapFile($instance, $model->getPackagedName(), $this->getTestDirectory());
+        $classMap = new ClassMapFile($instance, $model->getPackagedName(), self::getTestDirectory());
         $classMap
             ->setModel($model)
             ->write();
@@ -46,7 +46,7 @@ class ClassMapTest extends AbstractFile
         $instance = self::actonGeneratorInstance();
 
         $model = new EmptyModel($instance, 'ClassMap');
-        $classMap = new ClassMapFile($instance, $model->getPackagedName(), $this->getTestDirectory());
+        $classMap = new ClassMapFile($instance, $model->getPackagedName(), self::getTestDirectory());
         $classMap
             ->setModel($model)
             ->write();

@@ -45,33 +45,30 @@ abstract class AbstractParser extends Parser
      */
     final public function parse()
     {
-        if ($this->generator->getWsdls()->count() > 0) {
-            do {
-                foreach ($this->generator->getWsdls() as $wsdl) {
-                    $content = $wsdl->getContent();
-                    if ($content instanceof WsdlDocument) {
-                        if ($this->isWsdlParsed($wsdl) === false) {
-                            $this->setTags($content->getElementsByName($this->parsingTag()));
-                            if (count($this->getTags()) > 0) {
-                                $this->parseWsdl($wsdl);
-                            }
-                        }
-                        foreach ($content->getExternalSchemas() as $schema) {
-                            if ($this->isSchemaParsed($wsdl, $schema) === false) {
-                                $schemaContent = $schema->getContent();
-                                if ($schemaContent instanceof SchemaDocument) {
-                                    $this->setTags($schemaContent->getElementsByName($this->parsingTag()));
-                                    if (count($this->getTags()) > 0) {
-                                        $this->parseSchema($wsdl, $schema);
-                                    }
-                                }
-                                $this->setSchemaAsParsed($wsdl, $schema);
-                            }
-                        }
+        $wsdl = $this->generator->getWsdl();
+        if ($wsdl instanceof Wsdl) {
+            $content = $wsdl->getContent();
+            if ($content instanceof WsdlDocument) {
+                if ($this->isWsdlParsed($wsdl) === false) {
+                    $this->setTags($content->getElementsByName($this->parsingTag()));
+                    if (count($this->getTags()) > 0) {
+                        $this->parseWsdl($wsdl);
                     }
-                    $this->setWsdlAsParsed($wsdl);
                 }
-            } while ($this->shouldContinue());
+                foreach ($content->getExternalSchemas() as $schema) {
+                    if ($this->isSchemaParsed($wsdl, $schema) === false) {
+                        $schemaContent = $schema->getContent();
+                        if ($schemaContent instanceof SchemaDocument) {
+                            $this->setTags($schemaContent->getElementsByName($this->parsingTag()));
+                            if (count($this->getTags()) > 0) {
+                                $this->parseSchema($wsdl, $schema);
+                            }
+                        }
+                        $this->setSchemaAsParsed($wsdl, $schema);
+                    }
+                }
+            }
+            $this->setWsdlAsParsed($wsdl);
         }
     }
     /**
@@ -97,12 +94,11 @@ abstract class AbstractParser extends Parser
     private function shouldContinue()
     {
         $shouldContinue = false;
-        foreach ($this->generator->getWsdls() as $wsdl) {
-            $shouldContinue |= $this->isWsdlParsed($wsdl) === false;
-            if ($wsdl->getContent() instanceof WsdlDocument) {
-                foreach ($wsdl->getContent()->getExternalSchemas() as $schema) {
-                    $shouldContinue |= $this->isSchemaParsed($wsdl, $schema) === false;
-                }
+        $wsdl = $this->generator->getWsdl();
+        $shouldContinue |= $this->isWsdlParsed($wsdl) === false;
+        if ($wsdl->getContent() instanceof WsdlDocument) {
+            foreach ($wsdl->getContent()->getExternalSchemas() as $schema) {
+                $shouldContinue |= $this->isSchemaParsed($wsdl, $schema) === false;
             }
         }
         return (bool)$shouldContinue;

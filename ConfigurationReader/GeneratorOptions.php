@@ -17,10 +17,20 @@ class GeneratorOptions extends AbstractYamlReader
      * Possible option keys
      * @var string
      */
+    const PREFIX = 'prefix';
+    const ORIGIN = 'origin';
     const CATEGORY = 'category';
     const STANDALONE = 'standalone';
+    const PROXY_HOST = 'proxy_host';
+    const PROXY_PORT = 'proxy_port';
+    const PROXY_LOGIN = 'proxy_login';
+    const BASIC_LOGIN = 'basic_login';
+    const DESTINATION = 'destination';
     const ADD_COMMENTS = 'add_comments';
     const STRUCT_CLASS = 'struct_class';
+    const SOAP_OPTIONS = 'soap_options';
+    const PROXY_PASSWORD = 'proxy_password';
+    const BASIC_PASSWORD = 'basic_password';
     const GATHER_METHODS = 'gather_methods';
     const NAMESPACE_PREFIX = 'namespace_prefix';
     const SOAP_CLIENT_CLASS = 'soap_client_class';
@@ -287,5 +297,185 @@ class GeneratorOptions extends AbstractYamlReader
     public function setSoapClientClass($soapClientClass)
     {
         return $this->setOptionValue(self::SOAP_CLIENT_CLASS, $soapClientClass);
+    }
+    /**
+     * Get origin option value
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->getOptionValue(self::ORIGIN);
+    }
+    /**
+     * Set current origin option value
+     * @throws \InvalidArgumentException
+     * @param string $origin
+     * @return GeneratorOptions
+     */
+    public function setOrigin($origin)
+    {
+        return $this->setOptionValue(self::ORIGIN, $origin);
+    }
+    /**
+     * Get destination option value
+     * @return string
+     */
+    public function getDestination()
+    {
+        return $this->getOptionValue(self::DESTINATION);
+    }
+    /**
+     * Set current destination option value
+     * @throws \InvalidArgumentException
+     * @param string $destination
+     * @return GeneratorOptions
+     */
+    public function setDestination($destination)
+    {
+        return $this->setOptionValue(self::DESTINATION, $destination);
+    }
+    /**
+     * Get prefix option value
+     * @return string
+     */
+    public function getPrefix()
+    {
+        return $this->getOptionValue(self::PREFIX);
+    }
+    /**
+     * Set current prefix option value
+     * @throws \InvalidArgumentException
+     * @param string $prefix
+     * @return GeneratorOptions
+     */
+    public function setPrefix($prefix)
+    {
+        return $this->setOptionValue(self::PREFIX, $prefix);
+    }
+    /**
+     * Get basic login option value
+     * @return string
+     */
+    public function getBasicLogin()
+    {
+        return $this->getOptionValue(self::BASIC_LOGIN);
+    }
+    /**
+     * Set current basic login option value
+     * @throws \InvalidArgumentException
+     * @param string $basicLogin
+     * @return GeneratorOptions
+     */
+    public function setBasicLogin($basicLogin)
+    {
+        return $this->setOptionValue(self::BASIC_LOGIN, $basicLogin);
+    }
+    /**
+     * Get basic password option value
+     * @return string
+     */
+    public function getBasicPassword()
+    {
+        return $this->getOptionValue(self::BASIC_PASSWORD);
+    }
+    /**
+     * Set current basic password option value
+     * @throws \InvalidArgumentException
+     * @param string $basicPassword
+     * @return GeneratorOptions
+     */
+    public function setBasicPassword($basicPassword)
+    {
+        return $this->setOptionValue(self::BASIC_PASSWORD, $basicPassword);
+    }
+    /**
+     * Get basic proxy host option value
+     * @return string
+     */
+    public function getProxyHost()
+    {
+        return $this->getOptionValue(self::PROXY_HOST);
+    }
+    /**
+     * Set current proxy host option value
+     * @throws \InvalidArgumentException
+     * @param string $proxyHost
+     * @return GeneratorOptions
+     */
+    public function setProxyHost($proxyHost)
+    {
+        return $this->setOptionValue(self::PROXY_HOST, $proxyHost);
+    }
+    /**
+     * Get basic proxy port option value
+     * @return string
+     */
+    public function getProxyPort()
+    {
+        return $this->getOptionValue(self::PROXY_PORT);
+    }
+    /**
+     * Set current proxy port option value
+     * @throws \InvalidArgumentException
+     * @param string $proxyPort
+     * @return GeneratorOptions
+     */
+    public function setProxyPort($proxyPort)
+    {
+        return $this->setOptionValue(self::PROXY_PORT, $proxyPort);
+    }
+    /**
+     * Get basic proxy login option value
+     * @return string
+     */
+    public function getProxyLogin()
+    {
+        return $this->getOptionValue(self::PROXY_LOGIN);
+    }
+    /**
+     * Set current proxy login option value
+     * @throws \InvalidArgumentException
+     * @param string $proxyLogin
+     * @return GeneratorOptions
+     */
+    public function setProxyLogin($proxyLogin)
+    {
+        return $this->setOptionValue(self::PROXY_LOGIN, $proxyLogin);
+    }
+    /**
+     * Get basic proxy password option value
+     * @return string
+     */
+    public function getProxyPassword()
+    {
+        return $this->getOptionValue(self::PROXY_PASSWORD);
+    }
+    /**
+     * Set current proxy password option value
+     * @throws \InvalidArgumentException
+     * @param string $proxyPassword
+     * @return GeneratorOptions
+     */
+    public function setProxyPassword($proxyPassword)
+    {
+        return $this->setOptionValue(self::PROXY_PASSWORD, $proxyPassword);
+    }
+    /**
+     * Get basic proxy password option value
+     * @return array
+     */
+    public function getSoapOptions()
+    {
+        return $this->getOptionValue(self::SOAP_OPTIONS);
+    }
+    /**
+     * Set current proxy password option value
+     * @throws \InvalidArgumentException
+     * @param array $soapOptions
+     * @return GeneratorOptions
+     */
+    public function setSoapOptions(array $soapOptions)
+    {
+        return $this->setOptionValue(self::SOAP_OPTIONS, $soapOptions);
     }
 }

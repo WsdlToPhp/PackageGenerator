@@ -142,16 +142,25 @@ class GeneratePackageCommand extends AbstractCommand
     protected function getPackageGenerationCommandLineOptions()
     {
         return array(
-            'wsdl-namespace' => 'NamespacePrefix',
+            'wsdl-prefix' => 'Prefix',
+            'wsdl-urlorpath' => 'Origin',
+            'wsdl-login' => 'BasicLogin',
             'wsdl-category' => 'Category',
+            'wsdl-struct' => 'StructClass',
+            'wsdl-proxy-host' => 'ProxyHost',
+            'wsdl-proxy-port' => 'ProxyPort',
+            'wsdl-standalone' => 'Standalone',
+            'wsdl-proxy-login' => 'ProxyLogin',
+            'wsdl-password' => 'BasicPassword',
+            'wsdl-destination' => 'Destination',
+            'wsdl-addcomments' => 'AddComments',
+            'wsdl-namespace' => 'NamespacePrefix',
+            'wsdl-soapclient' => 'SoapClientClass',
             'wsdl-gathermethods' => 'GatherMethods',
+            'wsdl-proxy-password' => 'ProxyPassword',
+            'wsdl-structarray' => 'StructArrayClass',
             'wsdl-gentutorial' => 'GenerateTutorialFile',
             'wsdl-genericconstants' => 'GenericConstantsNames',
-            'wsdl-addcomments' => 'AddComments',
-            'wsdl-standalone' => 'Standalone',
-            'wsdl-struct' => 'StructClass',
-            'wsdl-structarray' => 'StructArrayClass',
-            'wsdl-soapclient' => 'SoapClientClass',
         );
     }
     /**

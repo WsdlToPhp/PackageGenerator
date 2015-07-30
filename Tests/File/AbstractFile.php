@@ -22,6 +22,7 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParse
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 abstract class AbstractFile extends TestCase
 {
@@ -90,10 +91,12 @@ abstract class AbstractFile extends TestCase
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgeReservedKeywords();
         $g = parent::getInstance($wsdl, $reset);
-        $g->setPackageName('Api');
-        $g->setOptionAddComments(array(
-            'release' => '1.1.0',
-        ));
+        $g
+            ->setOptionPrefix('Api')
+            ->setOptionAddComments(array(
+                'release' => '1.1.0',
+            ))
+            ->setOptionCategory(GeneratorOptions::VALUE_CAT);
         self::applyParsers($g, $wsdl);
         return $g;
     }
@@ -126,13 +129,6 @@ abstract class AbstractFile extends TestCase
         }
     }
     /**
-     * @return string
-     */
-    protected function getTestDirectory()
-    {
-        return __DIR__ . '/../resources/generated/';
-    }
-    /**
      * @param string $valid
      * @param File $file
      */
@@ -141,8 +137,8 @@ abstract class AbstractFile extends TestCase
         if (!is_file($file->getFileName())) {
             return $this->assertFalse(true, sprintf('Generated file "%s" could not be find', $file->getFileName()));
         }
-        $validContent = file_get_contents(sprintf('%s%s.php', $this->getTestDirectory(), $valid));
-        $validContent = str_replace('__WSDL_URL__', $file->getGenerator()->getWsdl(0)->getName(), $validContent);
+        $validContent = file_get_contents(sprintf('%s%s.php', self::getTestDirectory(), $valid));
+        $validContent = str_replace('__WSDL_URL__', $file->getGenerator()->getWsdl()->getName(), $validContent);
         $toBeValidatedContent = file_get_contents($file->getFileName());
         $this->assertSame($validContent, $toBeValidatedContent);
         unlink($file->getFileName());

@@ -80,7 +80,7 @@ abstract class AbstractModel
             if ($model->getIsStruct()) {
                 $extends = $model->getPackagedName();
             }
-        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), $this->getGenerator()->getPackageName()) === 0) {
+        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), $this->getGenerator()->getOptionPrefix()) === 0) {
             $extends = $this->getInheritance();
         }
         if (empty($extends)) {
@@ -289,7 +289,7 @@ abstract class AbstractModel
      */
     public function getPackagedName($namespaced = false)
     {
-        return ($namespaced ? sprintf('\%s\\', $this->getNamespace()) : '') . $this->getGenerator()->getPackageName() . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+        return ($namespaced ? sprintf('\%s\\', $this->getNamespace()) : '') . $this->getGenerator()->getOptionPrefix() . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
     }
     /**
      * Allows to define the contextual part of the class name for the package
@@ -315,7 +315,7 @@ abstract class AbstractModel
     {
         $namespace = $this->getGenerator()->getOptionNamespacePrefix();
         $directory = $this->getGenerator()->getDirectory($this);
-        $packageName = $this->getGenerator()->getPackageName();
+        $packageName = $this->getGenerator()->getOptionPrefix();
         $namespaceEnding = implode('\\', explode('/', substr($directory, 0, -1)));
         return sprintf(empty($namespace) ? '%1$s%4$s%3$s' : '%2$s\\%1$s%4$s%3$s', $packageName, $namespace, $namespaceEnding, empty($namespaceEnding) ? '' : '\\');
     }

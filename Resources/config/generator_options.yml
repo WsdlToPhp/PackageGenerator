@@ -31,3 +31,33 @@ struct_array_class:
 soap_client_class:
     default: '\WsdlToPhp\PackageBase\AbstractSoapClientBase'
     values: ''
+origin:
+    default: ''
+    values: ''
+destination:
+    default: ''
+    values: ''
+prefix:
+    default: ''
+    values: ''
+basic_login:
+    default: ''
+    values: ''
+basic_password:
+    default: ''
+    values: ''
+proxy_host:
+    default: ''
+    values: ''
+proxy_port:
+    default: ''
+    values: ''
+proxy_login:
+    default: ''
+    values: ''
+proxy_password:
+    default: ''
+    values: ''
+soap_options:
+    default: []
+    values: null
