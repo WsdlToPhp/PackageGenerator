@@ -6,6 +6,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 class GeneratePackageCommand extends AbstractCommand
 {
@@ -13,6 +14,14 @@ class GeneratePackageCommand extends AbstractCommand
      * @var Generator
      */
     protected $generator;
+    /**
+     * @var GeneratorOptions
+     */
+    protected $generatorOptions;
+    /**
+     * @var array
+     */
+    protected $options;
     /**
      * @return Generator
      */
@@ -30,15 +39,11 @@ class GeneratePackageCommand extends AbstractCommand
         return $this;
     }
     /**
-     * @param string $wsdlUrl
-     * @param string $wsdlLogin
-     * @param string $wsdlPassword
-     * @param array $wsdlOptions
      * @return Generator
      */
-    protected function getInstanceOfGenerator($wsdlUrl, $wsdlLogin = null, $wsdlPassword = null, array $wsdlOptions = array())
+    protected function initGenerator()
     {
-        return new Generator($wsdlUrl, $wsdlLogin, $wsdlPassword, $wsdlOptions);
+        return $this->setGenerator(new Generator($this->generatorOptions));
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Command\AbstractCommand::configure()
@@ -78,63 +83,20 @@ class GeneratePackageCommand extends AbstractCommand
         $start = new \DateTime();
         $this->writeLn(sprintf(" Start at %s", $start->format('Y-m-d H:i:s')));
 
-        $wsdlUrl = $this->input->getOption('wsdl-urlorpath');
-        $wsdlLogin = $this->input->getOption('wsdl-login');
-        $wsdlPassword = $this->input->getOption('wsdl-password');
-        $packageName = $this->input->getOption('wsdl-prefix');
-        $packageDestination = $this->input->getOption('wsdl-destination');
-        $wsdlOptions = $this->defineWsdlOptions();
-
-        $this->setGenerator($this->getInstanceOfGenerator($wsdlUrl, $wsdlLogin, $wsdlPassword, $wsdlOptions));
-
-        $packageGenerationOptions = $this->definePackageGenerationOptions();
+        $this
+            ->initGeneratorOptions()
+            ->initGenerator();
 
         if ($this->canExecute()) {
-            $this->getGenerator()->generateClasses($packageName, $packageDestination);
+            $this->getGenerator()->generateClasses();
         } else {
-            $this->writeLn("  Generation not launched, use --force to force generation");
-            $this->writeLn("  Wsdl used:");
-            $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole(array(
-                'url' => $wsdlUrl,
-                'login' => $wsdlLogin,
-                'password' => $wsdlPassword,
-                'Package name' => $packageName,
-                'Package dest' => $packageDestination,
-            ))));
-            $this->writeLn("  Wsdl options used:");
-            $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($wsdlOptions)));
-            $this->writeLn("  Generator options used:");
-            $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($packageGenerationOptions)));
+            $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
+            $this->writeLn("  Used generator's options:");
+            $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->options)));
         }
 
         $end = new \DateTime();
         $this->writeLn(sprintf(" End at %s, duration: %s", $end->format('Y-m-d H:i:s'), $start->diff($end)->format('%H:%I:%S')));
-    }
-    /**
-     * @return array
-     */
-    protected function defineWsdlOptions()
-    {
-        $options = array();
-        $wsdlProxyHost = $this->input->getOption('wsdl-proxy-host');
-        $wsdlProxyPort = $this->input->getOption('wsdl-proxy-port');
-        $wsdlProxyLogin = $this->input->getOption('wsdl-proxy-login');
-        $wsdlProxyPass = $this->input->getOption('wsdl-proxy-password');
-
-        if (!empty($wsdlProxyHost)) {
-            $options['proxy_host'] = $wsdlProxyHost;
-        }
-        if (!empty($wsdlProxyPort)) {
-            $options['proxy_port'] = $wsdlProxyPort;
-        }
-        if (!empty($wsdlProxyLogin)) {
-            $options['proxy_login'] = $wsdlProxyLogin;
-        }
-        if (!empty($wsdlProxyPass)) {
-            $options['proxy_password'] = $wsdlProxyPass;
-        }
-
-        return $options;
     }
     /**
      * @return array
@@ -147,6 +109,7 @@ class GeneratePackageCommand extends AbstractCommand
             'wsdl-login' => 'BasicLogin',
             'wsdl-category' => 'Category',
             'wsdl-struct' => 'StructClass',
+            'wsdl-namespace' => 'Namespace',
             'wsdl-proxy-host' => 'ProxyHost',
             'wsdl-proxy-port' => 'ProxyPort',
             'wsdl-standalone' => 'Standalone',
@@ -154,39 +117,41 @@ class GeneratePackageCommand extends AbstractCommand
             'wsdl-password' => 'BasicPassword',
             'wsdl-destination' => 'Destination',
             'wsdl-addcomments' => 'AddComments',
-            'wsdl-namespace' => 'NamespacePrefix',
             'wsdl-soapclient' => 'SoapClientClass',
             'wsdl-gathermethods' => 'GatherMethods',
             'wsdl-proxy-password' => 'ProxyPassword',
             'wsdl-structarray' => 'StructArrayClass',
             'wsdl-gentutorial' => 'GenerateTutorialFile',
-            'wsdl-genericconstants' => 'GenericConstantsNames',
+            'wsdl-genericconstants' => 'GenericConstantsName',
         );
     }
     /**
      * @return array
      */
-    protected function definePackageGenerationOptions()
+    protected function initGeneratorOptions()
     {
+        $generatorOptions = GeneratorOptions::instance();
         $options = array();
-        if ($this->generator instanceof Generator) {
-            foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
-                $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
-                if ($optionValue !== null) {
-                    $setOption = sprintf('setOption%s', $optionMethod);
-                    if (method_exists($this->generator, $setOption)) {
-                        $options[$optionName] = $optionValue;
-                        call_user_func_array(array(
-                            $this->generator,
-                            $setOption,
-                        ), array(
-                            $optionValue,
-                        ));
-                    }
+        foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
+            $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
+            if ($optionValue !== null) {
+                $setOption = sprintf('set%s', $optionMethod);
+                if (method_exists($generatorOptions, $setOption)) {
+                    $options[$optionName] = $optionValue;
+                    call_user_func_array(array(
+                        $generatorOptions,
+                        $setOption,
+                    ), array(
+                        $optionValue,
+                    ));
+                } else {
+                    $this->writeLn(sprintf('Method "%s" not found', $setOption));
                 }
             }
         }
-        return $options;
+        $this->generatorOptions = $generatorOptions;
+        $this->options = $options;
+        return $this;
     }
     /**
      * @param mixed $optionValue
