@@ -4,15 +4,35 @@ namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 
 class GeneratorTest extends TestCase
 {
+    /**
+     * @var Generator
+     */
+    private static $localInstance;
+    /**
+     * @return Generator
+     */
+    public static function localInstance()
+    {
+        if (!isset(self::$localInstance)) {
+            $options = GeneratorOptionsTest::optionsInstance();
+            $options
+                ->setOrigin(self::wsdlBingPath())
+                ->setDestination(self::getTestDirectory());
+            self::$localInstance = new Generator($options);
+        }
+        return self::$localInstance;
+    }
     /**
      *
      */
     public function testGetOptionCategory()
     {
-        $this->assertSame(GeneratorOptions::VALUE_CAT, self::getBingGeneratorInstance()->getOptionCategory());
+        $this->assertSame(GeneratorOptions::VALUE_CAT, self::localInstance()->getOptionCategory());
     }
     /**
      *
@@ -29,7 +49,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionGatherMethods()
     {
-        $this->assertSame(GeneratorOptions::VALUE_START, self::getBingGeneratorInstance()->getOptionGatherMethods());
+        $this->assertSame(GeneratorOptions::VALUE_START, self::localInstance()->getOptionGatherMethods());
     }
     /**
      *
@@ -46,7 +66,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionGenerateTutorialFile()
     {
-        $this->assertTrue(self::getBingGeneratorInstance()->getOptionGenerateTutorialFile());
+        $this->assertTrue(self::localInstance()->getOptionGenerateTutorialFile());
     }
     /**
      *
@@ -63,7 +83,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionGenericConstantsNames()
     {
-        $this->assertFalse(self::getBingGeneratorInstance()->getOptionGenericConstantsNames());
+        $this->assertFalse(self::localInstance()->getOptionGenericConstantsNames());
     }
     /**
      *
@@ -80,7 +100,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionNamespacePrefix()
     {
-        $this->assertEmpty(self::getBingGeneratorInstance()->getOptionNamespacePrefix());
+        $this->assertEmpty(self::localInstance()->getOptionNamespacePrefix());
     }
     /**
      *
@@ -97,7 +117,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionSoapClientClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::getBingGeneratorInstance()->getOptionSoapClientClass());
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::localInstance()->getOptionSoapClientClass());
     }
     /**
      *
@@ -114,7 +134,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionStructClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::getBingGeneratorInstance()->getOptionStructClass());
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::localInstance()->getOptionStructClass());
     }
     /**
      *
@@ -131,7 +151,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionStructArrayClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::getBingGeneratorInstance()->getOptionStructArrayClass());
+        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::localInstance()->getOptionStructArrayClass());
     }
     /**
      *
@@ -148,7 +168,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionStandalone()
     {
-        $this->assertTrue(self::getBingGeneratorInstance()->getOptionStandalone());
+        $this->assertTrue(self::localInstance()->getOptionStandalone());
     }
     /**
      *
@@ -165,7 +185,7 @@ class GeneratorTest extends TestCase
      */
     public function testGetOptionAddComments()
     {
-        $this->assertEmpty(self::getBingGeneratorInstance()->getOptionAddComments());
+        $this->assertEmpty(self::localInstance()->getOptionAddComments());
     }
     /**
      *
@@ -187,9 +207,9 @@ class GeneratorTest extends TestCase
     public function testSetPackageName()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setPackageName('samplePackageName');
+        $instance->setOptionPrefix('samplePackageName');
 
-        $this->assertSame('samplePackageName', $instance->getPackageName(false));
+        $this->assertSame('samplePackageName', $instance->getOptionPrefix(false));
     }
     /**
      *
@@ -197,8 +217,8 @@ class GeneratorTest extends TestCase
     public function testSetPackageNameUcFirst()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setPackageName('samplePackageName');
+        $instance->setOptionPrefix('samplePackageName');
 
-        $this->assertSame('SamplePackageName', $instance->getPackageName(true));
+        $this->assertSame('SamplePackageName', $instance->getOptionPrefix(true));
     }
 }
