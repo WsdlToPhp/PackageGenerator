@@ -698,7 +698,7 @@ class Generator extends \SoapClient
      */
     public function getOptionDestination()
     {
-        return $this->options->getDestination();
+        return realpath($this->options->getDestination()) . DIRECTORY_SEPARATOR;
     }
     /**
      * Sets the optionDestination value
@@ -707,7 +707,7 @@ class Generator extends \SoapClient
      */
     public function setOptionDestination($optionDestination)
     {
-        $this->options->setDestination($optionDestination);
+        $this->options->setDestination(realpath($optionDestination) . DIRECTORY_SEPARATOR);
         $this->initDirectory();
         return $this;
     }
