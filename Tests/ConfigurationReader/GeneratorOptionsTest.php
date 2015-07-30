@@ -12,7 +12,8 @@ class GeneratorOptionsTest extends TestCase
      */
     public static function optionsInstance()
     {
-        return GeneratorOptions::instance(__DIR__ . '/../resources/generator_options.yml');
+        $options = clone GeneratorOptions::instance(__DIR__ . '/../resources/generator_options.yml');
+        return $options;
     }
     /**
      *
@@ -86,13 +87,6 @@ class GeneratorOptionsTest extends TestCase
      *
      */
     public function testGetAddComments()
-    {
-        $this->assertSame(array(), self::optionsInstance()->getAddComments());
-    }
-    /**
-     *
-     */
-    public function testSetAddComments()
     {
         $comments = array(
             'release' => '1.0.2',
@@ -194,10 +188,11 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testSetExistingOptionValue()
     {
-        self::optionsInstance()->setOptionValue('category', 'cat');
-        $this->assertEquals('cat', self::optionsInstance()->getOptionValue('category'));
-        self::optionsInstance()->setCategory('none');
-        $this->assertEquals('none', self::optionsInstance()->getOptionValue('category'));
+        $instance = self::optionsInstance();
+        $instance->setOptionValue('category', 'cat');
+        $this->assertEquals('cat', $instance->getOptionValue('category'));
+        $instance->setCategory('none');
+        $this->assertEquals('none', $instance->getOptionValue('category'));
     }
     /**
      * @expectedException InvalidArgumentException
@@ -207,14 +202,17 @@ class GeneratorOptionsTest extends TestCase
         self::optionsInstance()->setOptionValue('category', 'null');
         self::optionsInstance()->setCategory(null);
     }
-
+    /**
+     *
+     */
     public function testSetUnexistingOptionValue()
     {
         $newOptionKey = 'new_option';
+        $instance = self::optionsInstance();
 
-        self::optionsInstance()->setOptionValue($newOptionKey, '1', array(0, 1, 2));
+        $instance->setOptionValue($newOptionKey, '1', array(0, 1, 2));
 
-        $this->assertEquals(1, self::optionsInstance()->getOptionValue($newOptionKey));
+        $this->assertEquals(1, $instance->getOptionValue($newOptionKey));
     }
     /**
      * @expectedException InvalidArgumentException
