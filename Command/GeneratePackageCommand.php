@@ -133,7 +133,6 @@ class GeneratePackageCommand extends AbstractCommand
             if ($optionValue !== null) {
                 $setOption = sprintf('set%s', $optionMethod);
                 if (method_exists($generatorOptions, $setOption)) {
-                    $options[$optionName] = $optionValue;
                     call_user_func_array(array(
                         $generatorOptions,
                         $setOption,
