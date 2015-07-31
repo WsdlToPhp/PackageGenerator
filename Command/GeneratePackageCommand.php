@@ -19,10 +19,6 @@ class GeneratePackageCommand extends AbstractCommand
      */
     protected $generatorOptions;
     /**
-     * @var array
-     */
-    protected $options;
-    /**
      * @return Generator
      */
     public function getGenerator()
@@ -83,16 +79,17 @@ class GeneratePackageCommand extends AbstractCommand
         $start = new \DateTime();
         $this->writeLn(sprintf(" Start at %s", $start->format('Y-m-d H:i:s')));
 
-        $this
-            ->initGeneratorOptions()
-            ->initGenerator();
+        $this->initGeneratorOptions();
 
         if ($this->canExecute()) {
-            $this->getGenerator()->generateClasses();
+            $this
+                ->initGenerator()
+                ->getGenerator()
+                    ->generateClasses();
         } else {
             $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
             $this->writeLn("  Used generator's options:");
-            $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->options)));
+            $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
         }
 
         $end = new \DateTime();
@@ -131,7 +128,6 @@ class GeneratePackageCommand extends AbstractCommand
     protected function initGeneratorOptions()
     {
         $generatorOptions = GeneratorOptions::instance();
-        $options = array();
         foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
             $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
             if ($optionValue !== null) {
@@ -150,7 +146,6 @@ class GeneratePackageCommand extends AbstractCommand
             }
         }
         $this->generatorOptions = $generatorOptions;
-        $this->options = $options;
         return $this;
     }
     /**
