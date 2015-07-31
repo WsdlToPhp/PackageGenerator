@@ -80,4 +80,21 @@ class StructEnumTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find ds_weblog_formats enumeration for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteBingSearchEnumWebSearchOption()
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getStruct('WebSearchOption')) instanceof StructModel) {
+            $generator->setOptionGenericConstantsNames(true);
+            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiWebSearchOption', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find WebSearchOption enumeration for file generation');
+        }
+    }
 }
