@@ -261,6 +261,39 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testSetAddCommentsSimple()
+    {
+        $comments = array(
+            'release' => '1.0.2',
+            'date' => '2015-09-08',
+        );
+
+        $instance = self::optionsInstance();
+        $instance->setAddComments(array(
+            'release:1.0.2',
+            'date:2015-09-08',
+        ));
+
+        $this->assertSame($comments, $instance->getAddComments());
+    }
+    /**
+     *
+     */
+    public function testSetAddComments()
+    {
+        $comments = array(
+            'release' => '1.0.2',
+            'date' => '2015-09-08',
+        );
+
+        $instance = self::optionsInstance();
+        $instance->setAddComments($comments);
+
+        $this->assertSame($comments, $instance->getAddComments());
+    }
+    /**
+     *
+     */
     public function testGetNamespace()
     {
         $this->assertSame('', self::optionsInstance()->getNamespace());
