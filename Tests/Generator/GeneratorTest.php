@@ -30,6 +30,159 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testGetOptionPrefix()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionPrefix());
+    }
+    /**
+     *
+     */
+    public function testSetOptionPrefix()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionPrefix('MyPrefix');
+
+        $this->assertSame('MyPrefix', $instance->getOptionPrefix());
+    }
+    /**
+     *
+     */
+    public function testGetOptionDestination()
+    {
+        $this->assertSame(self::getTestDirectory(), self::localInstance()->getOptionDestination());
+    }
+    /**
+     *
+     */
+    public function testSetOptionDestination()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionDestination(self::getTestDirectory());
+
+        $this->assertSame(self::getTestDirectory(), $instance->getOptionDestination());
+    }
+    /**
+     *
+     */
+    public function testGetOptionOrigin()
+    {
+        $this->assertSame(self::wsdlBingPath(), self::localInstance()->getOptionOrigin());
+    }
+    /**
+     *
+     */
+    public function testSetOptionOrigin()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionOrigin(self::wsdlOdigeoPath());
+
+        $this->assertSame(self::wsdlOdigeoPath(), $instance->getOptionOrigin());
+    }
+    /**
+     *
+     */
+    public function testGetOptionBasicLogin()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionBasicLogin());
+    }
+    /**
+     *
+     */
+    public function testSetOptionBasicLogin()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionBasicLogin('MyLogin');
+
+        $this->assertSame('MyLogin', $instance->getOptionBasicLogin());
+    }
+    /**
+     *
+     */
+    public function testGetOptionBasicPassword()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionBasicPassword());
+    }
+    /**
+     *
+     */
+    public function testSetOptionBasicPassword()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionBasicPassword('MyPassword');
+
+        $this->assertSame('MyPassword', $instance->getOptionBasicPassword());
+    }
+    /**
+     *
+     */
+    public function testGetOptionProxyHost()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionProxyHost());
+    }
+    /**
+     *
+     */
+    public function testSetOptionProxyHost()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionProxyHost('MyProxyHost');
+
+        $this->assertSame('MyProxyHost', $instance->getOptionProxyHost());
+    }
+    /**
+     *
+     */
+    public function testGetOptionProxyPort()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionProxyPort());
+    }
+    /**
+     *
+     */
+    public function testSetOptionProxyPort()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionProxyPort(3225);
+
+        $this->assertSame(3225, $instance->getOptionProxyPort());
+    }
+    /**
+     *
+     */
+    public function testGetOptionProxyLogin()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionProxyLogin());
+    }
+    /**
+     *
+     */
+    public function testSetOptionProxyLogin()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionProxyLogin('MyProxyLogin');
+
+        $this->assertSame('MyProxyLogin', $instance->getOptionProxyLogin());
+    }
+    /**
+     *
+     */
+    public function testGetOptionProxyPassword()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionProxyPassword());
+    }
+    /**
+     *
+     */
+    public function testSetOptionProxyPassword()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionProxyPassword('MyProxyPassword');
+
+        $this->assertSame('MyProxyPassword', $instance->getOptionProxyPassword());
+    }
+    /**
+     *
+     */
     public function testGetOptionCategory()
     {
         $this->assertSame(GeneratorOptions::VALUE_CAT, self::localInstance()->getOptionCategory());
