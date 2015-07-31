@@ -124,4 +124,20 @@ class StructTest extends TestCase
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructAttribute', $struct->getAttribute('id'));
         $this->assertNotInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructAttribute', $struct->getAttribute('_id'));
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testAddEmptyAttributeNameWithException()
+    {
+        $struct = self::instance('Foo', true);
+        $struct->addAttribute('', 'string');
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testAddEmptyAttributeTypeWithException()
+    {
+        $struct = self::instance('Foo', true);
+        $struct->addAttribute('bar', '');
+    }
 }

@@ -194,7 +194,7 @@ class Struct extends AbstractModel
      */
     public function addAttribute($attributeName, $attributeType)
     {
-        if (empty($attributeName) || empty($attributeName)) {
+        if (empty($attributeName) || empty($attributeType)) {
             throw new \InvalidArgumentException(sprintf('Attribute name "%s" and/or attribute type "%s" is invalid for Struct "%s"', $attributeName, $attributeType, $this->getName()), __LINE__);
         }
         if ($this->attributes->getStructAttributeByName($attributeName) === null) {
