@@ -239,17 +239,16 @@ class Generator extends \SoapClient
             if (!$struct->getIsStruct()) {
                 continue;
             }
-            $elementFolder = $this->getOptionDestination() . $this->getDirectory($struct);
-            $this->createDirectory($elementFolder);
+            $this->createDirectory($this->getModelDestination($struct));
             /**
              * Generates file
              */
             if ($struct->getisRestriction()) {
-                $file = new StructEnumFile($this, $struct->getPackagedName(), $elementFolder);
+                $file = new StructEnumFile($this, $struct->getPackagedName());
             } elseif ($struct->isArray()) {
-                $file = new StructArrayFile($this, $struct->getPackagedName(), $elementFolder);
+                $file = new StructArrayFile($this, $struct->getPackagedName());
             } else {
-                $file = new StructFile($this, $struct->getPackagedName(), $elementFolder);
+                $file = new StructFile($this, $struct->getPackagedName());
             }
             $file
                 ->setModel($struct)
@@ -264,12 +263,11 @@ class Generator extends \SoapClient
     private function generateServicesClasses()
     {
         foreach ($this->getServices() as $service) {
-            $elementFolder = $this->getOptionDestination() . $this->getDirectory($service);
-            $this->createDirectory($elementFolder);
+            $this->createDirectory($this->getModelDestination($service));
             /**
              * Generates file
              */
-            $file = new ServiceFile($this, $service->getPackagedName(), $elementFolder);
+            $file = new ServiceFile($this, $service->getPackagedName());
             $file
                 ->setModel($service)
                 ->write();
@@ -284,7 +282,6 @@ class Generator extends \SoapClient
     {
         $this
             ->getClassmapFile()
-            ->setDestination($this->getOptionDestination())
             ->write();
         return $this;
     }
@@ -765,6 +762,14 @@ class Generator extends \SoapClient
         return true;
     }
     /**
+     * @param AbstractModel $model
+     * @return string
+     */
+    public function getModelDestination(AbstractModel $model)
+    {
+        return sprintf('%s%s', $this->getOptionDestination(), $this->getDirectory($model));
+    }
+    /**
      * Gets main category part
      * @param AbstractModel $model the model for which we generate the folder
      * @return string
@@ -865,7 +870,7 @@ class Generator extends \SoapClient
     {
         if (empty($this->classmapFile)) {
             $classMapModel = new EmptyModel($this, 'ClassMap');
-            $classMap = new ClassMapFile($this, $classMapModel->getPackagedName(), __DIR__);
+            $classMap = new ClassMapFile($this, $classMapModel->getPackagedName());
             $classMap
                 ->setModel($classMapModel);
             $this->classmapFile = $classMap;
