@@ -3,6 +3,8 @@ CHANGELOG
 
 WIP
 ---
+- export composer.json file generation into a new File\Composer class
+- improve unit tests
 - **BC**: 
     - From now, Wsdl origin, package destination, basic authentication credentials, proxy and SoapClient options are contained by the GeneratorOptions instance
     - Generator instanciation and usage reviewed, now it only accept one parameter, a GeneratorOptions object
