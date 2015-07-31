@@ -739,7 +739,7 @@ class Generator extends \SoapClient
      */
     private function getGather(AbstractModel $model)
     {
-        return Utils::getPart($this->getOptionGatherMethods(), $model, GeneratorOptions::GATHER_METHODS);
+        return Utils::getPart($this->getOptionGatherMethods(), $model->getCleanName());
     }
     /**
      * Returns the service name associated to the method/operation name in order to gather them in one service class

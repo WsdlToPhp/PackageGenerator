@@ -8,16 +8,15 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 class Utils
 {
     /**
-     * Gets category part
+     * Gets upper case word admong a string from the end or from the beginning part
      * @param string $optionValue
-     * @param AbstractModel $model the model for which we generate the folder
-     * @param string $optionName category type
+     * @param string $model the string from which we can extract the part
      * @return string
      */
-    public static function getPart($optionValue, AbstractModel $model, $optionName)
+    public static function getPart($optionValue, $string)
     {
         $elementType = '';
-        $string = str_replace('_', '', $model->getCleanName());
+        $string = str_replace('_', '', $string);
         if (!empty($string)) {
             switch ($optionValue) {
                 case GeneratorOptions::VALUE_END:

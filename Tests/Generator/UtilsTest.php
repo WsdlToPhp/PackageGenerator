@@ -3,8 +3,6 @@
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\Model\EmptyModel;
-use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 
@@ -44,8 +42,8 @@ class UtilsTest extends TestCase
      */
     public function testCleanString()
     {
-        $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, new EmptyModel(self::getBingGeneratorInstance(), 'eventsGet'), GeneratorOptions::GATHER_METHODS));
-        $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, new EmptyModel(self::getBingGeneratorInstance(), '_events'), GeneratorOptions::GATHER_METHODS));
+        $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, 'eventsGet'));
+        $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, '_events'));
     }
     /**
      *
