@@ -178,6 +178,27 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetSoapOptions()
+    {
+        $this->assertEmpty(self::optionsInstance()->getSoapOptions());
+    }
+    /**
+     *
+     */
+    public function testSetSoapOptions()
+    {
+        $soapOptions = array(
+            'trace' => true,
+            'soap_version' => SOAP_1_2,
+        );
+        $instance = self::optionsInstance();
+        $instance->setSoapOptions($soapOptions);
+
+        $this->assertSame($soapOptions, $instance->getSoapOptions());
+    }
+    /**
+     *
+     */
     public function testGetCategory()
     {
         $this->assertSame(GeneratorOptions::VALUE_CAT, self::optionsInstance()->getCategory());
