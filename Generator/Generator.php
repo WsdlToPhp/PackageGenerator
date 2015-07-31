@@ -36,9 +36,8 @@ use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
 use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
+use WsdlToPhp\PackageGenerator\File\Composer as ComposerFile;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
-use Symfony\Component\Console\Input\ArrayInput;
-use Composer\Console\Application;
 
 class Generator extends \SoapClient
 {
@@ -296,7 +295,7 @@ class Generator extends \SoapClient
     private function generateTutorialFile()
     {
         if ($this->getOptionGenerateTutorialFile() === true && $this->getClassmapFile() instanceof ClassMapFile) {
-            $tutorialFile = new TutorialFile($this, 'tutorial', $this->getOptionDestination());
+            $tutorialFile = new TutorialFile($this, 'tutorial');
             $tutorialFile->write();
         }
         return $this;
@@ -308,30 +307,8 @@ class Generator extends \SoapClient
     private function generateComposerFile()
     {
         if ($this->getOptionStandalone() === true) {
-            $composer = new Application();
-            $composer->setAutoExit(false);
-
-            $composer->run(new ArrayInput(array(
-                'command' => 'init',
-                '--verbose' => true,
-                '--no-interaction' => true,
-                '--name' => sprintf('wsdltophp/generated-%s', strtolower($this->getOptionPrefix())),
-                '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getWsdl()->getName()),
-                '--require' => array(
-                    'php:>=5.3.3',
-                    'ext-soap:*',
-                    'wsdltophp/packagebase:dev-master',
-                ),
-                '--working-dir' => $this->getOptionDestination(),
-            )));
-
-            $composer->run(new ArrayInput(array(
-                'command' => 'update',
-                '--verbose' => true,
-                '--optimize-autoloader' => true,
-                '--no-dev' => true,
-                '--working-dir' => $this->getOptionDestination(),
-            )));
+            $composerFile = new ComposerFile($this, 'composer');
+            $composerFile->write();
         }
         return $this;
     }

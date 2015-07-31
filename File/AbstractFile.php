@@ -16,19 +16,14 @@ abstract class AbstractFile implements FileInterface
      */
     protected $file;
     /**
-     * @var string
-     */
-    protected $destination;
-    /**
      * @param Generator $generator
      * @param string $name
-     * @param string $destination
      */
-    public function __construct(Generator $generator, $name, $destination)
+    public function __construct(Generator $generator, $name)
     {
-        $this->setDestination($destination);
-        $this->setFile(new PhpFile($name));
-        $this->setGenerator($generator);
+        $this
+            ->setFile(new PhpFile($name))
+            ->setGenerator($generator);
     }
     /**
      * @param Generator $generator
@@ -65,7 +60,7 @@ abstract class AbstractFile implements FileInterface
      */
     public function getFileName()
     {
-        return sprintf('%s/%s.php', $this->getDestination(), $this->getFile()->getMainElement()->getName());
+        return sprintf('%s%s.php', $this->getGenerator()->getOptionDestination(), $this->getFile()->getMainElement()->getName());
     }
     /**
      * @param PhpFile $file
@@ -82,34 +77,5 @@ abstract class AbstractFile implements FileInterface
     public function getFile()
     {
         return $this->file;
-    }
-    /**
-     * @throws \InvalidArgumentException
-     * @param string $destination
-     * @return AbstractFile
-     */
-    public function setDestination($destination)
-    {
-        $dest = $this->cleanDestination($destination);
-        if (empty($dest)) {
-            throw new \InvalidArgumentException(sprintf('Destination "%s" is not valid', $destination), __LINE__);
-        }
-        $this->destination = $dest;
-        return $this;
-    }
-    /**
-     * @param string $destination
-     * @return string
-     */
-    protected function cleanDestination($destination)
-    {
-        return realpath($destination);
-    }
-    /**
-     * @return string
-     */
-    public function getDestination()
-    {
-        return $this->destination;
     }
 }

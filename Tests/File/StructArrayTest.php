@@ -16,7 +16,7 @@ class StructArrayTest extends AbstractFile
         $struct
             ->addAttribute('bar', 'string')
             ->addAttribute('foo', 'int');
-        $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo', self::getTestDirectory());
+        $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo');
         $array->setModel($struct);
     }
     /**
@@ -26,7 +26,7 @@ class StructArrayTest extends AbstractFile
     {
         $struct = new StructModel(self::bingGeneratorInstance(), 'Foo');
         $struct->addAttribute('bar', 'string');
-        $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo', self::getTestDirectory());
+        $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo');
         $array->setModel($struct);
     }
     /**
@@ -36,7 +36,7 @@ class StructArrayTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('ArrayOfNewsRelatedSearch')) instanceof StructModel) {
-            $struct = new ArrayFile($generator, $model->getName(), self::getTestDirectory());
+            $struct = new ArrayFile($generator, $model->getName());
             $struct
                 ->setModel($model)
                 ->write();
@@ -52,7 +52,7 @@ class StructArrayTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('ArrayOfWebSearchOption')) instanceof StructModel) {
-            $struct = new ArrayFile($generator, $model->getName(), self::getTestDirectory());
+            $struct = new ArrayFile($generator, $model->getName());
             $struct
                 ->setModel($model)
                 ->write();
@@ -68,7 +68,7 @@ class StructArrayTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('ArrayOfString')) instanceof StructModel) {
-            $struct = new ArrayFile($generator, $model->getName(), self::getTestDirectory());
+            $struct = new ArrayFile($generator, $model->getName());
             $struct
                 ->setModel($model)
                 ->write();

@@ -13,7 +13,7 @@ class StructEnumTest extends AbstractFile
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
         $instance = self::bingGeneratorInstance();
-        $enum = new EnumFile($instance, 'Foo', self::getTestDirectory());
+        $enum = new EnumFile($instance, 'Foo');
         $enum->setModel(new StructModel($instance, 'FooEnum'));
     }
     /**
@@ -23,7 +23,7 @@ class StructEnumTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('AdultOption')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
                 ->write();
@@ -39,7 +39,7 @@ class StructEnumTest extends AbstractFile
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('SourceType')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
                 ->write();
@@ -55,7 +55,7 @@ class StructEnumTest extends AbstractFile
     {
         $generator = self::reformaGeneratorInstance();
         if (($model = $generator->getStruct('HouseStageEnum')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
                 ->write();
@@ -71,7 +71,7 @@ class StructEnumTest extends AbstractFile
     {
         $generator = self::omnitureGeneratorInstance();
         if (($model = $generator->getStruct('ds_weblog_formats')) instanceof StructModel) {
-            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
                 ->write();
@@ -88,7 +88,7 @@ class StructEnumTest extends AbstractFile
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('WebSearchOption')) instanceof StructModel) {
             $generator->setOptionGenericConstantsNames(true);
-            $struct = new EnumFile($generator, $model->getName(), self::getTestDirectory());
+            $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
                 ->write();

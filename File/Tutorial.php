@@ -13,15 +13,6 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 class Tutorial extends AbstractFile
 {
     /**
-     * @param Generator $generator
-     * @param string $name
-     * @param string $destination
-     */
-    public function __construct(Generator $generator, $name, $destination)
-    {
-        parent::__construct($generator, $name, $destination);
-    }
-    /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
      * @return int|bool
      */
