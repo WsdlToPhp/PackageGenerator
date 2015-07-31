@@ -9,6 +9,7 @@ use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\File\Utils as FileUtils;
+use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
@@ -69,9 +70,9 @@ abstract class AbstractModelFile extends AbstractFile
     /**
      * @return string
      */
-    protected function getFileDestination()
+    public function getFileDestination()
     {
-        return $this->getGenerator()->getModelDestination($this->getModel());
+        return sprintf('%s%s%s', $this->getGenerator()->getOptionDestination(), $this->getModel()->getSubDirectory(), $this->getModel()->getSubDirectory() !== '' ? '/' : '');
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
@@ -82,6 +83,7 @@ abstract class AbstractModelFile extends AbstractFile
         if (!$this->getModel() instanceof AbstractModel) {
             throw new \InvalidArgumentException('You MUST define the model before begin able to generate the file', __LINE__);
         }
+        GeneratorUtils::createDirectory($this->getFileDestination());
         $this
             ->defineNamespace()
             ->defineUseStatement()

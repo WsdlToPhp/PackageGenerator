@@ -135,12 +135,13 @@ abstract class AbstractFile extends TestCase
     protected function assertSameFileContent($valid, File $file, $fileExtension = 'php')
     {
         if (!is_file($file->getFileName())) {
-            return $this->assertFalse(true, sprintf('Generated file "%s" could not be find', $file->getFileName()));
+            return $this->assertFalse(true, sprintf('Generated file "%s" could not be found', $file->getFileName()));
         }
         $validContent = file_get_contents(sprintf('%s%s.%s', self::getTestDirectory(), $valid, $fileExtension));
         $validContent = str_replace('__WSDL_URL__', $file->getGenerator()->getWsdl()->getName(), $validContent);
         $toBeValidatedContent = file_get_contents($file->getFileName());
         $this->assertSame($validContent, $toBeValidatedContent);
+        $dir = dirname($file->getFileName());
         unlink($file->getFileName());
     }
 }

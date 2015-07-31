@@ -2,9 +2,10 @@
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\ReservedKeywords;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\Generator\Utils;
+use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
 
 /**
  * Class AbstractModel defines the basic properties and methods to operations and structs extracted from the WSDL
@@ -314,10 +315,21 @@ abstract class AbstractModel
     public function getNamespace()
     {
         $namespace = $this->getGenerator()->getOptionNamespacePrefix();
-        $directory = $this->getGenerator()->getDirectory($this);
+        $namespaceEnding = $this->getSubDirectory();
         $packageName = $this->getGenerator()->getOptionPrefix();
-        $namespaceEnding = implode('\\', explode('/', substr($directory, 0, -1)));
         return sprintf(empty($namespace) ? '%1$s%4$s%3$s' : '%2$s\\%1$s%4$s%3$s', $packageName, $namespace, $namespaceEnding, empty($namespaceEnding) ? '' : '\\');
+    }
+    /**
+     * Returns directory where to store class and create it if needed
+     * @return string
+     */
+    public function getSubDirectory()
+    {
+        $subDirectory = '';
+        if ($this->getGenerator()->getOptionCategory() === GeneratorOptions::VALUE_CAT) {
+            $subDirectory = $this->getContextualPart();
+        }
+        return $subDirectory;
     }
     /**
      * Returns the sub package name which the model belongs to
@@ -336,7 +348,7 @@ abstract class AbstractModel
      */
     public static function cleanString($string, $keepMultipleUnderscores = true)
     {
-        return Utils::cleanString($string, $keepMultipleUnderscores);
+        return GeneratorUtils::cleanString($string, $keepMultipleUnderscores);
     }
     /**
      * Returns a usable keyword for a original keyword

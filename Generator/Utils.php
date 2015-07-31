@@ -9,24 +9,15 @@ class Utils
 {
     /**
      * Gets category part
-     * @param GeneratorOptions $options
+     * @param string $optionValue
      * @param AbstractModel $model the model for which we generate the folder
      * @param string $optionName category type
      * @return string
      */
-    public static function getPart(GeneratorOptions $options, AbstractModel $model, $optionName)
+    public static function getPart($optionValue, AbstractModel $model, $optionName)
     {
         $elementType = '';
-        $optionValue = null;
         $string = str_replace('_', '', $model->getCleanName());
-        switch ($optionName) {
-            case GeneratorOptions::CATEGORY:
-                $optionValue = $options->getCategory();
-                break;
-            case GeneratorOptions::GATHER_METHODS:
-                $optionValue = $options->getGatherMethods();
-                break;
-        }
         if (!empty($string)) {
             switch ($optionValue) {
                 case GeneratorOptions::VALUE_END:
@@ -62,9 +53,6 @@ class Utils
                         }
                         $elementType = substr($string, 0, $i);
                     }
-                    break;
-                case GeneratorOptions::VALUE_CAT:
-                    $elementType = $model->getContextualPart();
                     break;
                 default:
                     break;

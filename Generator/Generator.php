@@ -193,7 +193,7 @@ class Generator extends \SoapClient
      */
     protected function initDirectory()
     {
-        $this->createDirectory($this->getOptionDestination());
+        Utils::createDirectory($this->getOptionDestination());
         if (!is_dir($this->getOptionDestination())) {
             throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been disabled', $this->getOptionDestination()), __LINE__);
         }
@@ -239,7 +239,6 @@ class Generator extends \SoapClient
             if (!$struct->getIsStruct()) {
                 continue;
             }
-            $this->createDirectory($this->getModelDestination($struct));
             /**
              * Generates file
              */
@@ -263,7 +262,6 @@ class Generator extends \SoapClient
     private function generateServicesClasses()
     {
         foreach ($this->getServices() as $service) {
-            $this->createDirectory($this->getModelDestination($service));
             /**
              * Generates file
              */
@@ -735,57 +733,13 @@ class Generator extends \SoapClient
         return $this;
     }
     /**
-     * Returns directory where to store class and create it if needed
-     * @uses Generator::getCategory()
-     * @param AbstractModel $model the model for which we generate the folder
-     * @return string
-     */
-    public function getDirectory(AbstractModel $model)
-    {
-        $directory = '';
-        $mainCat = $this->getCategory($model);
-        if (!empty($mainCat)) {
-            $directory .= ucfirst($mainCat) . '/';
-        }
-        return $directory;
-    }
-    /**
-     * @param string $directory
-     * @param int $permissions
-     * @return bool
-     */
-    private function createDirectory($directory, $permissions = 0775)
-    {
-        if (!is_dir($directory)) {
-            mkdir($directory, $permissions, true);
-        }
-        return true;
-    }
-    /**
-     * @param AbstractModel $model
-     * @return string
-     */
-    public function getModelDestination(AbstractModel $model)
-    {
-        return sprintf('%s%s', $this->getOptionDestination(), $this->getDirectory($model));
-    }
-    /**
-     * Gets main category part
-     * @param AbstractModel $model the model for which we generate the folder
-     * @return string
-     */
-    private function getCategory(AbstractModel $model)
-    {
-        return Utils::getPart($this->options, $model, GeneratorOptions::CATEGORY);
-    }
-    /**
      * Gets gather name class
      * @param AbstractModel $model the model for which we generate the folder
      * @return string
      */
     private function getGather(AbstractModel $model)
     {
-        return Utils::getPart($this->options, $model, GeneratorOptions::GATHER_METHODS);
+        return Utils::getPart($this->getOptionGatherMethods(), $model, GeneratorOptions::GATHER_METHODS);
     }
     /**
      * Returns the service name associated to the method/operation name in order to gather them in one service class

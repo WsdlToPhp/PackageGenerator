@@ -35,7 +35,7 @@ class StructTest extends AbstractFile
         $file = new StructFile(self::bingGeneratorInstance(), 'foo');
         $file->setModel($model);
 
-        $this->assertSame(self::getTestDirectory() . 'ApiFoo.php', $file->getFileName());
+        $this->assertSame(self::getTestDirectory() . 'StructType/ApiFoo.php', $file->getFileName());
     }
     /**
      *
