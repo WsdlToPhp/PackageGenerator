@@ -374,4 +374,32 @@ class GeneratorOptionsTest extends TestCase
     {
         self::optionsInstance()->setGenerateTutorialFile('null');
     }
+    /**
+     *
+     */
+    public function testToArray()
+    {
+        $this->assertSame(array(
+            'category' => 'cat',
+            'gather_methods' => 'start',
+            'generic_constants_names' => false,
+            'generate_tutorial_file' => true,
+            'add_comments' => array(),
+            'namespace_prefix' => '',
+            'standalone' => true,
+            'struct_class' => '\WsdlToPhp\PackageBase\AbstractStructBase',
+            'struct_array_class' => '\WsdlToPhp\PackageBase\AbstractStructArrayBase',
+            'soap_client_class' => '\WsdlToPhp\PackageBase\AbstractSoapClientBase',
+            'origin' => '',
+            'destination' => '',
+            'prefix' => '',
+            'basic_login' => '',
+            'basic_password' => '',
+            'proxy_host' => '',
+            'proxy_port' => '',
+            'proxy_login' => '',
+            'proxy_password' => '',
+            'soap_options' => array(),
+        ), self::optionsInstance()->toArray());
+    }
 }
