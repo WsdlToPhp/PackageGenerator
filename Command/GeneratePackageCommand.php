@@ -35,7 +35,7 @@ class GeneratePackageCommand extends AbstractCommand
         return $this;
     }
     /**
-     * @return Generator
+     * @return GeneratePackageCommand
      */
     protected function initGenerator()
     {
@@ -123,7 +123,7 @@ class GeneratePackageCommand extends AbstractCommand
         );
     }
     /**
-     * @return array
+     * @return GeneratePackageCommand
      */
     protected function initGeneratorOptions()
     {
