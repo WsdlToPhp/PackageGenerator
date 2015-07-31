@@ -72,6 +72,9 @@ abstract class AbstractModelFile extends AbstractFile
      */
     public function writeFile()
     {
+        if (!$this->getModel() instanceof AbstractModel) {
+            throw new \InvalidArgumentException('You MUST define the model before begin able to generate the file', __LINE__);
+        }
         $this
             ->defineNamespace()
             ->defineUseStatement()

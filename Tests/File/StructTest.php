@@ -22,7 +22,7 @@ class StructTest extends AbstractFile
      */
     public function testExceptionOnWrite()
     {
-        $file = new StructFile(self::bingGeneratorInstance(), 'foo', __DIR__ . '/../rsources/');
+        $file = new StructFile(self::bingGeneratorInstance(), 'foo');
 
         $file->write();
     }
@@ -32,10 +32,10 @@ class StructTest extends AbstractFile
     public function testGetFileName()
     {
         $model = new StructModel(self::bingGeneratorInstance(), 'Foo');
-        $file = new StructFile(self::bingGeneratorInstance(), 'foo', __DIR__ . '/../resources/');
+        $file = new StructFile(self::bingGeneratorInstance(), 'foo');
         $file->setModel($model);
 
-        $this->assertSame(realpath(__DIR__ . '/../resources') . '/ApiFoo.php', $file->getFileName());
+        $this->assertSame(self::getTestDirectory() . 'ApiFoo.php', $file->getFileName());
     }
     /**
      *

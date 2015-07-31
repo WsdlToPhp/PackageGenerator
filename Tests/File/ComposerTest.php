@@ -34,4 +34,16 @@ class ComposerTest extends AbstractFile
 
         $this->assertFalse($composerFile->getRunComposerUpdate());
     }
+    /**
+     *
+     */
+    public function testGetFileName()
+    {
+        $instance = clone self::getBingGeneratorInstance();
+        $instance
+            ->setOptionPrefix('Api');
+        $composerFile = new Composer($instance, 'composer');
+
+        $this->assertSame(self::getTestDirectory() . 'composer.json', $composerFile->getFileName());
+    }
 }

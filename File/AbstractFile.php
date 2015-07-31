@@ -8,6 +8,10 @@ use WsdlToPhp\PhpGenerator\Component\PhpFile;
 abstract class AbstractFile implements FileInterface
 {
     /**
+     * @var string
+     */
+    const PHP_FILE_EXTENSION = 'php';
+    /**
      * @var Generator
      */
     protected $generator;
@@ -60,7 +64,14 @@ abstract class AbstractFile implements FileInterface
      */
     public function getFileName()
     {
-        return sprintf('%s%s.php', $this->getGenerator()->getOptionDestination(), $this->getFile()->getMainElement()->getName());
+        return sprintf('%s%s.%s', $this->getGenerator()->getOptionDestination(), $this->getFile()->getMainElement()->getName(), $this->getFileExtension());
+    }
+    /**
+     * @return string
+     */
+    public function getFileExtension()
+    {
+        return self::PHP_FILE_EXTENSION;
     }
     /**
      * @param PhpFile $file

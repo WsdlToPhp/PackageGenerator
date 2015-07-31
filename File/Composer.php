@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\ArrayInput;
 
 class Composer extends AbstractFile
 {
+    const JSON_FILE_EXTENSION = 'json';
     /**
      * Tests purpose: do not run composer update command
      * @var bool
@@ -64,8 +65,8 @@ class Composer extends AbstractFile
     /**
      * @return string
      */
-    public function getFileName()
+    public function getFileExtension()
     {
-        return sprintf('%s%s.json', $this->getGenerator()->getOptionDestination(), $this->getFile()->getMainElement()->getName());
+        return self::JSON_FILE_EXTENSION;
     }
 }
