@@ -64,7 +64,14 @@ abstract class AbstractFile implements FileInterface
      */
     public function getFileName()
     {
-        return sprintf('%s%s.%s', $this->getGenerator()->getOptionDestination(), $this->getFile()->getMainElement()->getName(), $this->getFileExtension());
+        return sprintf('%s%s.%s', $this->getFileDestination(), $this->getFile()->getMainElement()->getName(), $this->getFileExtension());
+    }
+    /**
+     * @return string
+     */
+    protected function getFileDestination()
+    {
+        return $this->getGenerator()->getOptionDestination();
     }
     /**
      * @return string
