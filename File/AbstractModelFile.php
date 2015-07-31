@@ -144,10 +144,8 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function defineGeneralAnnotations(PhpAnnotationBlock $block)
     {
-        if (count($this->getGenerator()->getOptionAddComments()) > 0) {
-            foreach ($this->getGenerator()->getOptionAddComments() as $tagName => $tagValue) {
-                $block->addChild(new PhpAnnotation($tagName, $tagValue));
-            }
+        foreach ($this->getGenerator()->getOptionAddComments() as $tagName => $tagValue) {
+            $block->addChild(new PhpAnnotation($tagName, $tagValue));
         }
         return $this;
     }
@@ -252,14 +250,12 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $constants = new Constant();
         $this->getClassConstants($constants);
-        if ($constants->count() > 0) {
-            foreach ($constants as $constant) {
-                $annotationBlock = $this->getConstantAnnotationBlock($constant);
-                if (!empty($annotationBlock)) {
-                    $class->addAnnotationBlockElement($annotationBlock);
-                }
-                $class->addConstantElement($constant);
+        foreach ($constants as $constant) {
+            $annotationBlock = $this->getConstantAnnotationBlock($constant);
+            if (!empty($annotationBlock)) {
+                $class->addAnnotationBlockElement($annotationBlock);
             }
+            $class->addConstantElement($constant);
         }
         return $this;
     }
@@ -271,14 +267,12 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $properties = new Property();
         $this->getClassProperties($properties);
-        if ($properties->count() > 0) {
-            foreach ($properties as $property) {
-                $annotationBlock = $this->getPropertyAnnotationBlock($property);
-                if (!empty($annotationBlock)) {
-                    $class->addAnnotationBlockElement($annotationBlock);
-                }
-                $class->addPropertyElement($property);
+        foreach ($properties as $property) {
+            $annotationBlock = $this->getPropertyAnnotationBlock($property);
+            if (!empty($annotationBlock)) {
+                $class->addAnnotationBlockElement($annotationBlock);
             }
+            $class->addPropertyElement($property);
         }
         return $this;
     }
@@ -290,14 +284,12 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $methods = new Method();
         $this->getClassMethods($methods);
-        if ($methods->count() > 0) {
-            foreach ($methods as $method) {
-                $annotationBlock = $this->getMethodAnnotationBlock($method);
-                if (!empty($annotationBlock)) {
-                    $class->addAnnotationBlockElement($annotationBlock);
-                }
-                $class->addMethodElement($method);
+        foreach ($methods as $method) {
+            $annotationBlock = $this->getMethodAnnotationBlock($method);
+            if (!empty($annotationBlock)) {
+                $class->addAnnotationBlockElement($annotationBlock);
             }
+            $class->addMethodElement($method);
         }
         return $this;
     }
