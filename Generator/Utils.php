@@ -203,4 +203,16 @@ class Utils
         $elements = explode('\\', $namespacedClassName);
         return (string)array_pop($elements);
     }
+    /**
+     * @param string $directory
+     * @param int $permissions
+     * @return bool
+     */
+    public static function createDirectory($directory, $permissions = 0775)
+    {
+        if (!is_dir($directory)) {
+            mkdir($directory, $permissions, true);
+        }
+        return true;
+    }
 }
