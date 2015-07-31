@@ -183,6 +183,28 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testGetOptionSoapOptions()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionSoapOptions());
+    }
+    /**
+     *
+     */
+    public function testSetOptionSoapOptions()
+    {
+        $soapOptions = array(
+            'trace' => true,
+            'encoding' => 'utf8',
+            'cache_wsdl' => WSDL_CACHE_BOTH,
+        );
+        $instance = self::localInstance();
+        $instance->setOptionSoapOptions($soapOptions);
+
+        $this->assertSame($soapOptions, $instance->getOptionSoapOptions());
+    }
+    /**
+     *
+     */
     public function testGetOptionCategory()
     {
         $this->assertSame(GeneratorOptions::VALUE_CAT, self::localInstance()->getOptionCategory());
