@@ -47,4 +47,12 @@ class UtilsTest extends TestCase
         $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, new EmptyModel(self::getBingGeneratorInstance(), 'eventsGet'), GeneratorOptions::GATHER_METHODS));
         $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, new EmptyModel(self::getBingGeneratorInstance(), '_events'), GeneratorOptions::GATHER_METHODS));
     }
+    /**
+     *
+     */
+    public function testCleanComment()
+    {
+        $this->assertEmpty(Utils::cleanComment(null));
+        $this->assertEmpty(Utils::cleanComment(new \stdClass()));
+    }
 }
