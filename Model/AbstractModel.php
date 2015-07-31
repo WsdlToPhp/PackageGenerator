@@ -397,15 +397,4 @@ abstract class AbstractModel
     {
         self::$replacedReservedPhpKeywords = array();
     }
-    /**
-     * Clean comment
-     * @param string $comment the comment to clean
-     * @param string $glueSeparator ths string to use when gathering values
-     * @param bool $uniqueValues indicates if comment values must be unique or not
-     * @return string
-     */
-    public static function cleanComment($comment, $glueSeparator = ',', $uniqueValues = true)
-    {
-        return Utils::cleanComment($comment, $glueSeparator, $uniqueValues);
-    }
 }
