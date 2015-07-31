@@ -239,21 +239,27 @@ class Generator extends \SoapClient
             if (!$struct->getIsStruct()) {
                 continue;
             }
-            /**
-             * Generates file
-             */
-            if ($struct->getisRestriction()) {
-                $file = new StructEnumFile($this, $struct->getPackagedName());
-            } elseif ($struct->isArray()) {
-                $file = new StructArrayFile($this, $struct->getPackagedName());
-            } else {
-                $file = new StructFile($this, $struct->getPackagedName());
-            }
-            $file
+            $this
+                ->getStructFile($struct)
                 ->setModel($struct)
                 ->write();
         }
         return $this;
+    }
+    /**
+     * @param Struct $struct
+     * @return StructEnumFile|StructArrayFile|StructFile
+     */
+    private function getStructFile(Struct $struct)
+    {
+        if ($struct->getisRestriction()) {
+            $file = new StructEnumFile($this, $struct->getPackagedName());
+        } elseif ($struct->isArray()) {
+            $file = new StructArrayFile($this, $struct->getPackagedName());
+        } else {
+            $file = new StructFile($this, $struct->getPackagedName());
+        }
+        return $file;
     }
     /**
      * Generates methods by class
