@@ -118,24 +118,6 @@ class Utils
         return $value;
     }
     /**
-     * @param string $path
-     * @return string
-     */
-    public static function cleanPath($path)
-    {
-        $cleanDestination = array();
-        $destinationParts = explode('/', $path);
-        $pathParts = explode('/', $path);
-        foreach ($destinationParts as $locationPart) {
-            if ($locationPart == '..') {
-                $pathParts = count($pathParts) >= 2 ? array_slice($pathParts, 0, count($pathParts) - 2) : $pathParts;
-            } else {
-                array_push($cleanDestination, $locationPart);
-            }
-        }
-        return implode('/', $cleanDestination);
-    }
-    /**
      * @param string $origin
      * @param string $destination
      * @return string
