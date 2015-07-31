@@ -22,6 +22,19 @@ class TutorialTest extends AbstractFile
     /**
      *
      */
+    public function testBingNotStandalone()
+    {
+        $instance = self::bingGeneratorInstance();
+        $instance->setOptionStandalone(false);
+
+        $tutorial = new TutorialFile($instance, self::FILE_NAME, self::getTestDirectory());
+        $tutorial->write();
+
+        $this->assertSameFileContent('ValidBingTutorialNotStandalone', $tutorial);
+    }
+    /**
+     *
+     */
     public function testReforma()
     {
         $instance = self::reformaGeneratorInstance();
