@@ -67,6 +67,13 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected $model;
     /**
+     * @return string
+     */
+    protected function getFileDestination()
+    {
+        return $this->getGenerator()->getModelDestination($this->getModel());
+    }
+    /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
      * @return int|bool
      */
