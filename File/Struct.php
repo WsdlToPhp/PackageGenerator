@@ -26,11 +26,9 @@ class Struct extends AbstractModelFile
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getConstantAnnotationBlock()
-     * @return null
      */
     protected function getConstantAnnotationBlock(PhpConstant $constant)
     {
-        return null;
     }
     /**
      * @param bool $includeInheritanceAttributes include the attributes of parent class, default parent attributes are not included. If true, then the array is an associative array containing and index "attribute" for the StructAttribute object and an index "model" for the Struct object.

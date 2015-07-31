@@ -16,6 +16,13 @@ class GeneratorOptionsTest extends TestCase
         return $options;
     }
     /**
+     * @expectedException \InvalidArgumentException
+     */
+    public static function testParseException()
+    {
+        GeneratorOptions::instance(__DIR__ . '/../resources/bad_generator_options.yml');
+    }
+    /**
      *
      */
     public function testGetPrefix()
@@ -368,11 +375,18 @@ class GeneratorOptionsTest extends TestCase
         $this->assertEquals(1, $instance->getOptionValue($newOptionKey));
     }
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException \InvalidArgumentException
      */
     public function testSetUnexistingOptionValueWithInvalidValue()
     {
         self::optionsInstance()->setGenerateTutorialFile('null');
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetUnexistingOptionValue()
+    {
+        self::optionsInstance()->getOptionValue('myOption');
     }
     /**
      *
