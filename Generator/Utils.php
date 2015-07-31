@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Generator;
 
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 class Utils
@@ -10,7 +9,7 @@ class Utils
     /**
      * Gets upper case word admong a string from the end or from the beginning part
      * @param string $optionValue
-     * @param string $model the string from which we can extract the part
+     * @param string $string the string from which we can extract the part
      * @return string
      */
     public static function getPart($optionValue, $string)

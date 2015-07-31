@@ -51,10 +51,11 @@ class Struct extends AbstractModel
     public function __construct(Generator $generator, $name, $isStruct = true, $isRestriction = false)
     {
         parent::__construct($generator, $name);
-        $this->setIsStruct($isStruct);
-        $this->setIsRestriction($isRestriction);
-        $this->setAttributes(new StructAttributeContainer());
-        $this->setValues(new StructValueContainer());
+        $this
+            ->setIsStruct($isStruct)
+            ->setIsRestriction($isRestriction)
+            ->setAttributes(new StructAttributeContainer())
+            ->setValues(new StructValueContainer());
     }
     /**
      * Returns the contextual part of the class name for the package
@@ -224,12 +225,12 @@ class Struct extends AbstractModel
     /**
      * Sets the isRestriction value
      * @param bool $isRestriction
-     * @return bool
+     * @return Struct
      */
     public function setIsRestriction($isRestriction = true)
     {
         $this->isRestriction = $isRestriction;
-        return $isRestriction;
+        return $this;
     }
     /**
      * Returns the isStruct value
@@ -242,12 +243,12 @@ class Struct extends AbstractModel
     /**
      * Sets the isStruct value
      * @param bool $isStruct
-     * @return bool
+     * @return Struct
      */
     public function setIsStruct($isStruct = true)
     {
         $this->isStruct = $isStruct;
-        return $isStruct;
+        return $this;
     }
     /**
      * Returns the values for an enumeration
