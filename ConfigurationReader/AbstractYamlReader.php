@@ -48,7 +48,7 @@ abstract class AbstractYamlReader
      * @param string $filename
      * @param string $mainKey
      * @throws \InvalidArgumentException
-     * @return mixed
+     * @return array
      */
     protected function parseSimpleArray($filename, $mainKey)
     {
