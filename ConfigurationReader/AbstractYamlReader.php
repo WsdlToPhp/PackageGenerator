@@ -7,7 +7,7 @@ use Symfony\Component\Yaml\Parser;
 abstract class AbstractYamlReader
 {
     /**
-     * @var Options
+     * @var AbstractYamlReader[]
      */
     private static $instances;
     /**
@@ -43,5 +43,19 @@ abstract class AbstractYamlReader
             self::$instances[$key] = new static($filename);
         }
         return self::$instances[$key];
+    }
+    /**
+     * @param string $filename
+     * @param string $mainKey
+     * @throws \InvalidArgumentException
+     * @return mixed
+     */
+    protected function parseSimpleArray($filename, $mainKey)
+    {
+        $values = $this->loadYaml($filename);
+        if (!array_key_exists($mainKey, $values)) {
+            throw new \InvalidArgumentException(sprintf('Unable to find section "%s" in "%s"', $mainKey, $filename), __LINE__);
+        }
+        return $values[$mainKey];
     }
 }

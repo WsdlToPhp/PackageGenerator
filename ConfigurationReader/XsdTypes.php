@@ -5,6 +5,10 @@ namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 class XsdTypes extends AbstractYamlReader
 {
     /**
+     * @var string
+     */
+    const MAIN_KEY = 'xsd_types';
+    /**
      * List of PHP reserved types from config file
      * @var array
      */
@@ -23,11 +27,7 @@ class XsdTypes extends AbstractYamlReader
      */
     protected function parseXsdTypes($filename)
     {
-        $types = $this->loadYaml($filename);
-        if (!isset($types['xsd_types'])) {
-            throw new \InvalidArgumentException(sprintf('Unable to find section xsd_types in "%s"', $filename), __LINE__);
-        }
-        $this->types = array_merge($this->types, $types['xsd_types']);
+        $this->types = $this->parseSimpleArray($filename, self::MAIN_KEY);
         return $this;
     }
     /**

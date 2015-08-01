@@ -5,6 +5,10 @@ namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 class ReservedKeywords extends AbstractYamlReader
 {
     /**
+     * @var string
+     */
+    const MAIN_KEY = 'reserved_keywords';
+    /**
      * List of PHP reserved keywords from config file
      * @var array
      */
@@ -23,11 +27,7 @@ class ReservedKeywords extends AbstractYamlReader
      */
     protected function parseReservedKeywords($filename)
     {
-        $keywords = $this->loadYaml($filename);
-        if (!isset($keywords['reserved_keywords'])) {
-            throw new \InvalidArgumentException(sprintf('Unable to find section reserved_keywords in "%s"', $filename), __LINE__);
-        }
-        $this->keywords = array_merge($this->keywords, $keywords['reserved_keywords']);
+        $this->keywords = $this->parseSimpleArray($filename, self::MAIN_KEY);
         return $this;
     }
     /**
