@@ -85,7 +85,7 @@ class StructValue extends AbstractModel
     public function setIndex($index)
     {
         if (!is_int($index) || $index < 0) {
-            throw new \InvalidArgumentException(sprintf('The value\'s index must be aa positive integer, "%s" given', $index));
+            throw new \InvalidArgumentException(sprintf('The value\'s index must be aa positive integer, "%s" given', var_export($index, true)));
         }
         $this->index = $index;
         return $this;
