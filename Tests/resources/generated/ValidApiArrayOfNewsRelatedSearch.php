@@ -51,7 +51,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
-     * @return ApiNewsRelatedSearch
+     * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
     public function current()
     {
@@ -61,7 +61,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Returns the indexed element
      * @see AbstractStructArrayBase::item()
      * @param int $index
-     * @return ApiNewsRelatedSearch
+     * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
     public function item($index)
     {
@@ -70,7 +70,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the first element
      * @see AbstractStructArrayBase::first()
-     * @return ApiNewsRelatedSearch
+     * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
     public function first()
     {
@@ -79,7 +79,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the last element
      * @see AbstractStructArrayBase::last()
-     * @return ApiNewsRelatedSearch
+     * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
     public function last()
     {
@@ -89,7 +89,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Returns the element at the offset
      * @see AbstractStructArrayBase::offsetGet()
      * @param int $offset
-     * @return ApiNewsRelatedSearch
+     * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
     public function offsetGet($offset)
     {

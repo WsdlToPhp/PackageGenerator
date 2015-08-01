@@ -5,53 +5,53 @@ namespace Api\ArrayType;
 use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
- * This class stands for ArrayOfWebSearchOption ArrayType
+ * This class stands for ArrayOfError ArrayType
  * @package Api
  * @subpackage Arrays
  * @release 1.1.0
  */
-class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
+class ApiArrayOfError extends AbstractStructArrayBase
 {
     /**
-     * The WebSearchOption
+     * The Error
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var array
      */
-    public $WebSearchOption;
+    public $Error;
     /**
-     * Constructor method for ArrayOfWebSearchOption
-     * @uses ApiArrayOfWebSearchOption::setWebSearchOption()
-     * @param array $webSearchOption
+     * Constructor method for ArrayOfError
+     * @uses ApiArrayOfError::setError()
+     * @param array $error
      */
-    public function __construct(array $webSearchOption = array())
+    public function __construct(array $error = array())
     {
         $this
-            ->setWebSearchOption($webSearchOption);
+            ->setError($error);
     }
     /**
-     * Get WebSearchOption value
+     * Get Error value
      * @return array
      */
-    public function getWebSearchOption()
+    public function getError()
     {
-        return $this->WebSearchOption;
+        return $this->Error;
     }
     /**
-     * Set WebSearchOption value
-     * @param array $webSearchOption
-     * @return \Api\ArrayType\ApiArrayOfWebSearchOption
+     * Set Error value
+     * @param array $error
+     * @return \Api\ArrayType\ApiArrayOfError
      */
-    public function setWebSearchOption(array $webSearchOption = array())
+    public function setError(array $error = array())
     {
-        $this->WebSearchOption = $webSearchOption;
+        $this->Error = $error;
         return $this;
     }
     /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
-     * @return string|null
+     * @return \Api\StructType\ApiError|null
      */
     public function current()
     {
@@ -61,7 +61,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * Returns the indexed element
      * @see AbstractStructArrayBase::item()
      * @param int $index
-     * @return string|null
+     * @return \Api\StructType\ApiError|null
      */
     public function item($index)
     {
@@ -70,7 +70,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     /**
      * Returns the first element
      * @see AbstractStructArrayBase::first()
-     * @return string|null
+     * @return \Api\StructType\ApiError|null
      */
     public function first()
     {
@@ -79,7 +79,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     /**
      * Returns the last element
      * @see AbstractStructArrayBase::last()
-     * @return string|null
+     * @return \Api\StructType\ApiError|null
      */
     public function last()
     {
@@ -89,31 +89,20 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * Returns the element at the offset
      * @see AbstractStructArrayBase::offsetGet()
      * @param int $offset
-     * @return string|null
+     * @return \Api\StructType\ApiError|null
      */
     public function offsetGet($offset)
     {
         return parent::offsetGet($offset);
     }
     /**
-     * Add element to array
-     * @see AbstractStructArrayBase::add()
-     * @uses \Api\EnumType\ApiWebSearchOption::valueIsValid()
-     * @param string $item
-     * @return \Api\ArrayType\ApiArrayOfWebSearchOption|bool
-     */
-    public function add($item)
-    {
-        return \Api\EnumType\ApiWebSearchOption::valueIsValid($item) ? parent::add($item) : false;
-    }
-    /**
      * Returns the attribute name
      * @see AbstractStructArrayBase::getAttributeName()
-     * @return string WebSearchOption
+     * @return string Error
      */
     public function getAttributeName()
     {
-        return 'WebSearchOption';
+        return 'Error';
     }
     /**
      * Method called when an object has been exported with var_export() functions
@@ -121,7 +110,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::__set_state()
      * @uses AbstractStructArrayBase::__set_state()
      * @param array $array the exported values
-     * @return \Api\ArrayType\ApiArrayOfWebSearchOption
+     * @return \Api\ArrayType\ApiArrayOfError
      */
     public static function __set_state(array $array)
     {
