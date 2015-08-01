@@ -87,7 +87,13 @@ class StructAttribute extends AbstractModel
      */
     public function getDefaultValue()
     {
-        return Utils::getValueWithinItsType($this->getMetaValueFirstSet(array('default', 'Default', 'DefaultValue', 'defaultValue', 'defaultvalue')), $this->getType());
+        return Utils::getValueWithinItsType($this->getMetaValueFirstSet(array(
+            'default',
+            'Default',
+            'DefaultValue',
+            'defaultValue',
+            'defaultvalue',
+        )), $this->getType());
     }
     /**
      * Returns true or false depending on minOccurs information associated to the attribute
@@ -97,7 +103,12 @@ class StructAttribute extends AbstractModel
      */
     public function isRequired()
     {
-        return ($this->getMetaValue('use', '') === 'required' || $this->getMetaValueFirstSet(array('minOccurs', 'minoccurs', 'MinOccurs', 'Minoccurs'), false));
+        return ($this->getMetaValue('use', '') === 'required' || $this->getMetaValueFirstSet(array(
+            'minOccurs',
+            'minoccurs',
+            'MinOccurs',
+            'Minoccurs',
+        ), false));
     }
     /**
      * Returns the owner model object, meaning a Struct object
