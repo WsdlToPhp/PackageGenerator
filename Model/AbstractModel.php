@@ -77,7 +77,7 @@ abstract class AbstractModel
     public function getExtendsClassName()
     {
         $extends = '';
-        if ($this->getInheritance() != '' && ($model = $this->getGenerator()->getStruct($this->getInheritance())) instanceof Struct) {
+        if (($model = $this->getInheritedMoel()) instanceof Struct) {
             if ($model->getIsStruct()) {
                 $extends = $model->getPackagedName();
             }
@@ -105,6 +105,13 @@ abstract class AbstractModel
     {
         $this->inheritance = $inheritance;
         return $inheritance;
+    }
+    /**
+     * @return Struct
+     */
+    public function getInheritedMoel()
+    {
+        return $this->getGenerator()->getStruct($this->getInheritance());
     }
     /**
      * Returns the meta
