@@ -4,107 +4,117 @@ namespace WsdlToPhp\PackageGenerator\Parser\SoapClient;
 
 class Structs extends AbstractParser
 {
+    /**
+     * @var string
+     */
+    const STRUCT_DECLARATION = 'struct';
+    /**
+     * @var string
+     */
+    const ANY_XML_DECLARATION = '<anyXML>';
+    /**
+     * @var string
+     */
+    const ANY_XML_TYPE = '\DOMDocument';
+    /**
+     * @var string[]
+     */
+    private $definedStructs = array();
+    /**
+     * Parses the SoapClient types
+     * @see \WsdlToPhp\PackageGenerator\Parser\ParserInterface::parse()
+     */
     public function parse()
     {
         $types = $this->generator->__getTypes();
-        $structs = $this->generator->getStructs();
-        if (is_array($types) && count($types)) {
-            $structsDefined = array();
+        if (is_array($types)) {
             foreach ($types as $type) {
-                $typeSignature = md5($type);
-                /**
-                 * Remove useless break line, tabs
-                 */
-                $type = str_replace("\r", '', $type);
-                $type = str_replace("\n", '', $type);
-                $type = str_replace("\t", '', $type);
-                /**
-                 * Remove curly braces
-                 */
-                $type = str_replace("{", '', $type);
-                $type = str_replace("}", '', $type);
-                /**
-                 * Remove brackets
-                 */
-                $type = str_replace("[", '', $type);
-                $type = str_replace("]", '', $type);
-                /**
-                 * Adds space to parse it
-                 */
-                $type = str_replace(';', ' ;', $type);
-                /**
-                 * Remove duplicate spaces
-                 */
-                $type = preg_replace('/[\s]+/', ' ', $type);
-                /**
-                 * Explode definition based on format :
-                 * struct {struct_name} {paramName} {paramValue} ;[{paramName} {paramValue} ;]+
-                 */
-                $typeDef = explode(' ', $type);
-                /**
-                 * Gets struct definition start
-                 */
-                $struct = $typeDef[0];
-                if ($struct != 'struct') {
-                    if (!empty($typeDef[1])) {
-                        $structs->addVirtualStruct($this->generator, $typeDef[1]);
-                    }
-                    continue;
-                }
-                /**
-                 * Catch struct name
-                 */
-                $structName = $typeDef[1];
-                /**
-                 * Struct already known? If not, then parse it and add attributes to it.
-                 * We don't parse twice the same struct.
-                 * This test now lets pass identically named elements with different structure such as the two followings:
-                 * - struct Create { Create request; }
-                 * - struct Create { ArrayOfDetailItem Details; string UserID; string Password; string TestMode; etc. }
-                 * This will generate a Struct class containing the merge of all the different structures
-                 */
-                if (in_array($typeSignature, $structsDefined)) {
-                    continue;
-                }
-                /**
-                 * Collect struct params
-                 */
-                $start = false;
-                $then = false;
-                $structParamType = '';
-                $typeDefCount = count($typeDef);
-                if ($typeDefCount > 3) {
-                    for ($i = 2; $i < $typeDefCount; $i++) {
-                        $typeVal = $typeDef[$i];
-                        if ($typeVal != '{' && is_string($typeVal) && !empty($typeVal) && !$start) {
-                            $then = false;
-                            $start = true;
-                        }
-                        if ($typeVal === ';') {
-                            $then = false;
-                            $start = false;
-                        }
-                        if ($then) {
-                            $structParamName = $typeVal;
-                            if (!empty($structParamType) && !empty($structParamName) && !empty($structName)) {
-                                $structs->addStructWithAttribute($this->generator, $structName, $structParamName, $structParamType);
-                                array_push($structsDefined, $typeSignature);
-                                $structParamType = '';
-                            }
-                        }
-                        if ($start && !$then) {
-                            /**
-                             * Replace some weird definition to known valid type
-                             */
-                            $typeVal = str_replace('<anyXML>', '\DOMDocument', $typeVal);
-                            $structParamType = $typeVal;
-                            $then = true;
-                        }
-                    }
-                } else {
-                    $structs->addStruct($this->generator, $structName);
-                }
+                $this->parseType($type);
             }
         }
+    }
+    /**
+     * @param string $type
+     */
+    protected function parseType($type)
+    {
+        if (!$this->isStructDefined($type)) {
+            $cleanType = self::cleanType($type);
+            $typeDef = explode(' ', $cleanType);
+            if (array_key_exists(1, $typeDef) && !empty($typeDef)) {
+                $structName = $typeDef[1];
+                if ($typeDef[0] !== self::STRUCT_DECLARATION) {
+                    $this->generator->getStructs()->addVirtualStruct($this->generator, $structName);
+                } else {
+                    $this->parseComplexStruct($typeDef);
+                }
+            }
+            $this->structHasBeenDefined($type);
+        }
+    }
+    /**
+     * @param array $typeDef
+     */
+    protected function parseComplexStruct($typeDef)
+    {
+        $typeDefCount = count($typeDef);
+        if ($typeDefCount > 3) {
+            for ($i = 2; $i < $typeDefCount; $i += 2) {
+                $structParamType = str_replace(self::ANY_XML_DECLARATION, self::ANY_XML_TYPE, $typeDef[$i]);
+                $structParamName = $typeDef[$i + 1];
+                $this->generator->getStructs()->addStructWithAttribute($this->generator, $typeDef[1], $structParamName, $structParamType);
+            }
+        } else {
+            $this->generator->getStructs()->addStruct($this->generator, $typeDef[1]);
+        }
+    }
+    /**
+     * Remove useless break line, tabs
+     * Remove curly braces
+     * Remove brackets
+     * Adds space before semicolon to parse it
+     * Remove duplicated spaces
+     * @param string $type
+     * @return string
+     */
+    protected static function cleanType($type)
+    {
+        $type = str_replace(array(
+            "\r",
+            "\n",
+            "\t",
+            '{',
+            '}',
+            '[',
+            ']',
+            ';',
+        ), '', $type);
+        $type = preg_replace('/[\s]+/', ' ', $type);
+        return trim($type);
+    }
+    /**
+     * @param string $type
+     * @return boolean
+     */
+    private function isStructDefined($type)
+    {
+        return in_array(self::typeSignature($type), $this->definedStructs);
+    }
+    /**
+     * @param string $type
+     * @return Structs
+     */
+    private function structHasBeenDefined($type)
+    {
+        $this->definedStructs[] = self::typeSignature($type);
+        return $this;
+    }
+    /**
+     * @param string $type
+     * @return string
+     */
+    private static function typeSignature($type)
+    {
+        return md5($type);
     }
 }
