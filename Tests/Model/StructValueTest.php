@@ -32,6 +32,7 @@ class StructValueTest extends TestCase
         new StructValue($struct->getGenerator(), 'foo', 'bar', $struct);
     }
     /**
+     * @expectedException \InvalidArgumentException
      */
     public function testSetInvalidIndexValue()
     {
