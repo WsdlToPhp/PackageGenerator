@@ -3,6 +3,9 @@ CHANGELOG
 
 WIP
 ---
+- Use configuration file/reader for Xsd types
+- Improve SoapClient\Structs parser
+- Fix ArrayType methods (item, first, last, current, offetGet) return annotation
 - export composer.json file generation into a new File\Composer class
 - improve unit tests
 - **BC**: 
