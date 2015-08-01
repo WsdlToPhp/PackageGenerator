@@ -51,7 +51,7 @@ class StructValue extends AbstractModel
      */
     public function getCleanName($keepMultipleUnderscores = false)
     {
-        if ($this->getGenerator()->getOptionGenericConstantsNames() && is_numeric($this->getIndex()) && $this->getIndex() >= 0) {
+        if ($this->getGenerator()->getOptionGenericConstantsNames()) {
             return 'ENUM_VALUE_' . $this->getIndex();
         } else {
             $key = self::constantSuffix($this->getOwner()->getName(), parent::getCleanName($keepMultipleUnderscores), $this->getIndex());
@@ -78,11 +78,15 @@ class StructValue extends AbstractModel
     }
     /**
      * Sets the index attribute value
+     * @throws \InvalidArgumentException
      * @param int $index
      * @return StructValue
      */
     public function setIndex($index)
     {
+        if (!is_int($index) || $index < 0) {
+            throw new \InvalidArgumentException(sprintf('The value\'s index must be aa positive integer, "%s" given', $index));
+        }
         $this->index = $index;
         return $this;
     }
