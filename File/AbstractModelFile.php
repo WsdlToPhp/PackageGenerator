@@ -16,6 +16,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Component\PhpClass;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 
 abstract class AbstractModelFile extends AbstractFile
 {
@@ -409,31 +410,6 @@ abstract class AbstractModelFile extends AbstractFile
      */
     public static function getValidType($type, $fallback = null)
     {
-        return in_array(str_replace('[]', '', $type), array(
-            'int',
-            'byte',
-            'bool',
-            'date',
-            'long',
-            'float',
-            'short',
-            'string',
-            'double',
-            'boolean',
-            'decimal',
-            'integer',
-            'dateTime',
-            'timeStamp',
-            'timestamp',
-            'unsignedInt',
-            'unsignedLong',
-            'unsignedByte',
-            'unsignedShort',
-            'DayOfWeekType',
-            'negativeInteger',
-            'positiveInteger',
-            'nonNegativeInteger',
-            'nonPositiveInteger',
-        ), true) ? $fallback : $type;
+        return XsdTypes::instance()->isXsd(str_replace('[]', '', $type)) ? $fallback : $type;
     }
 }
