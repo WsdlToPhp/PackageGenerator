@@ -102,7 +102,7 @@ abstract class AbstractFile extends TestCase
     }
     /**
      * @param Generator $generator
-     * @param unknown $wsdlPath
+     * @param string $wsdlPath
      */
     private static function applyParsers(Generator $generator, $wsdlPath)
     {
