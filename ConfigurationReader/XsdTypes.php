@@ -39,6 +39,7 @@ class XsdTypes extends AbstractYamlReader
         return parent::instance(empty($filename) ? dirname(__FILE__) . '/../Resources/config/xsd_types.yml' : $filename);
     }
     /**
+     * @param string $xsdType
      * @return bool
      */
     public function isXsd($xsdType)
@@ -46,6 +47,7 @@ class XsdTypes extends AbstractYamlReader
         return array_key_exists($xsdType, $this->types);
     }
     /**
+     * @param string $xsdType
      * @return string
      */
     public function phpType($xsdType)
