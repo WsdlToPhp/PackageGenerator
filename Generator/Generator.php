@@ -111,11 +111,11 @@ class Generator extends \SoapClient
          * Construct
          */
         try {
-            parent::__construct($pathToWsdl, $options);
+            $this->SoapClient($pathToWsdl, $options);
         } catch (\SoapFault $fault) {
             $options['soap_version'] = SOAP_1_2;
             try {
-                parent::__construct($pathToWsdl, $options);
+                $this->SoapClient($pathToWsdl, $options);
             } catch (\SoapFault $fault) {
                 throw new \InvalidArgumentException(sprintf('Unable to load WSDL at "%s"!', $pathToWsdl), __LINE__, $fault);
             }
