@@ -6,12 +6,26 @@ use WsdlToPhp\PackageGenerator\Generator\Utils;
 
 class AbstractAttributeHandler extends AbstractNodeHandler
 {
-    const
-        ATTRIBUTE_NAMESPACE = 'namespace',
-        ATTRIBUTE_NAME = 'name',
-        ATTRIBUTE_VALUE = 'value',
-        ATTRIBUTE_TYPE = 'type',
-        ATTRIBUTE_ABSTRACT = 'abstract';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_NAMESPACE = 'namespace';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_NAME = 'name';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_VALUE = 'value';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_TYPE = 'type';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_ABSTRACT = 'abstract';
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler::getNode()
      * @return \DOMAttr
@@ -30,12 +44,13 @@ class AbstractAttributeHandler extends AbstractNodeHandler
     /**
      * Tries to get attribute type on the same node
      * in order to return the value of the attribute in its type
+     * @return string|null
      */
     public function getType()
     {
         $type = null;
-        if ($this->getParent() instanceof ElementHandler && $this->getParent()->hasAttribute('type')) {
-            $type = $this->getParent()->getAttribute('type');
+        if (($parent = $this->getParent()) instanceof ElementHandler && $parent->hasAttribute('type')) {
+            $type = $parent->getAttribute('type')->getValue(false, false);
         }
         return $type;
     }
