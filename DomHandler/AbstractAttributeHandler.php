@@ -9,6 +9,10 @@ class AbstractAttributeHandler extends AbstractNodeHandler
     /**
      * @var string
      */
+    const DEFAULT_VALUE_TYPE = 'string';
+    /**
+     * @var string
+     */
     const ATTRIBUTE_NAMESPACE = 'namespace';
     /**
      * @var string
@@ -60,7 +64,7 @@ class AbstractAttributeHandler extends AbstractNodeHandler
      * @param string $asType
      * @return mixed
      */
-    public function getValue($withNamespace = false, $withinItsType = true, $asType = null)
+    public function getValue($withNamespace = false, $withinItsType = true, $asType = self::DEFAULT_VALUE_TYPE)
     {
         $value = $this->getAttribute()->value;
         if ($withNamespace === false && !empty($value)) {
