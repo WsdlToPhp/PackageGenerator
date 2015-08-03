@@ -66,7 +66,7 @@ class GeneratorParsers extends AbstractGeneratorAware
      */
     public function doParse()
     {
-        foreach ($this->parsers->get as $parser) {
+        foreach ($this->parsers as $parser) {
             $parser->parse();
         }
         return $this;
