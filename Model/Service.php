@@ -26,7 +26,7 @@ class Service extends AbstractModel
     public function __construct(Generator $generator, $name)
     {
         parent::__construct($generator, $name);
-        $this->setMethods(new MethodContainer());
+        $this->setMethods(new MethodContainer($generator));
     }
     /**
      * Returns the contextual part of the class name for the package

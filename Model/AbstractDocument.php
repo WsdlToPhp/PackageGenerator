@@ -35,7 +35,7 @@ abstract class AbstractDocument extends AbstractModel
         $domDocument = new \DOMDocument('1.0', 'utf-8');
         try {
             $domDocument->loadXML($content, LIBXML_NOERROR);
-            $this->content = new $contentClass($domDocument);
+            $this->content = new $contentClass($domDocument, $this->generator);
         } catch (\Exception $exception) {
             throw new \InvalidArgumentException(sprintf('Unable to load document at "%s"', $this->getName()), __LINE__, $exception);
         }
