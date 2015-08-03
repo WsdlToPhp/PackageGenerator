@@ -3,6 +3,7 @@ CHANGELOG
 
 WIP
 ---
+- Use GeneratorAware layer to share Generator object among created objects
 - Use configuration file/reader for Xsd types
 - Improve SoapClient\Structs parser
 - Fix ArrayType methods (item, first, last, current, offetGet) return annotation
