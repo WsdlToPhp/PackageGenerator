@@ -6,22 +6,18 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\ReservedKeywords;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
+use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
 
 /**
  * Class AbstractModel defines the basic properties and methods to operations and structs extracted from the WSDL
  */
-abstract class AbstractModel
+abstract class AbstractModel extends AbstractGeneratorAware
 {
     /**
      * Constant used to define the key to store documentation value in meta
      * @var string
      */
     const META_DOCUMENTATION = 'documentation';
-    /**
-     * Generator used
-     * @var Generator
-     */
-    private $generator = null;
     /**
      * Original name od the element
      * @var string
@@ -67,9 +63,8 @@ abstract class AbstractModel
      */
     public function __construct(Generator $generator, $name)
     {
-        $this
-            ->setName($name)
-            ->setGenerator($generator);
+        parent::__construct($generator);
+        $this->setName($name);
     }
     /**
      * @return string
@@ -212,24 +207,6 @@ abstract class AbstractModel
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
-    }
-    /**
-     * Returns the Generator
-     * @return Generator
-     */
-    public function getGenerator()
-    {
-        return $this->generator;
-    }
-    /**
-     * Sets the Generator
-     * @param Generator $generator
-     * @return AbstractModel
-     */
-    public function setGenerator($generator)
-    {
-        $this->generator = $generator;
         return $this;
     }
     /**
