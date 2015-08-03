@@ -78,7 +78,7 @@ class Utils
                         $proxyHost,
                         empty($proxyPort) ? '' : sprintf(':%s', $proxyPort)
                     ),
-                    'header'=>array(
+                    'header' => array(
                         sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf(empty($proxyPassword) ? '%s@' : '%s:%s@', urlencode($proxyLogin), empty($proxyPassword) ? '' : urlencode($proxyPassword)))),
                     ),
                 ),
