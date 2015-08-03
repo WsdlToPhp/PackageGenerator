@@ -51,7 +51,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      */
     private function generateStructsClasses()
     {
-        foreach ($this->getStructs() as $structName => $struct) {
+        foreach ($this->getGenerator()->getStructs() as $structName => $struct) {
             if (!$struct->getIsStruct()) {
                 continue;
             }
@@ -83,7 +83,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      */
     private function generateServicesClasses()
     {
-        foreach ($this->getServices() as $service) {
+        foreach ($this->getGenerator()->getServices() as $service) {
             /**
              * Generates file
              */
