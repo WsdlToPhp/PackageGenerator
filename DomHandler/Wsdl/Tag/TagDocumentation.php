@@ -28,13 +28,15 @@ class TagDocumentation extends AbstractTag
                 return $enumerationTag;
             }
         }
-        // Reset current tag as using getStrictParent method set currentTag to enumeration
-        // as soon as currentTag has been set, if a valid DOMElement is found
-        // then without taking care of the actual DOMElement tag name,
-        // a TagEnumeration is always returned.
-        // Moreover, we reset current tag only if we're not in the case of the call
-        // for the current $this->getStrictParent(WsdlDocument::TAG_ENUMERATION); call.
-        // @todo If it's possible, find a cleaner way to solve this 'issue'
+        /**
+         * Reset current tag as using getStrictParent method set currentTag to enumeration
+         * as soon as currentTag has been set, if a valid DOMElement is found
+         * then without taking care of the actual DOMElement tag name,
+         * a TagEnumeration is always returned.
+         * Moreover, we reset current tag only if we're not in the case of the call
+         * for the current $this->getStrictParent(WsdlDocument::TAG_ENUMERATION); call.
+         * @todo If it's possible, find a cleaner way to solve this 'issue'
+         */
         if ($strict === false) {
             $this->getDomDocumentHandler()->setCurrentTag('');
         }
