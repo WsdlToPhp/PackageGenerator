@@ -2,7 +2,9 @@
 
 namespace WsdlToPhp\PackageGenerator\Container;
 
-abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Countable
+use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
+
+abstract class AbstractObjectContainer extends AbstractGeneratorAware implements \ArrayAccess, \Iterator, \Countable
 {
     /**
      * @var string
@@ -11,19 +13,11 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
     /**
      * @var array
      */
-    protected $objects;
+    protected $objects = array();
     /**
      * @var int
      */
-    protected $offset;
-    /**
-     * Class constructor
-     */
-    public function __construct()
-    {
-        $this->offset = 0;
-        $this->objects = array();
-    }
+    protected $offset = 0;
     /**
      * @param string $offset
      * @return bool
