@@ -15,6 +15,7 @@ class Composer extends AbstractFile
     protected $runComposerUpdate = true;
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
+     * @return int|bool
      */
     protected function writeFile()
     {
