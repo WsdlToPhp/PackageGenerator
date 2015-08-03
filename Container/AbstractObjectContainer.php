@@ -159,6 +159,9 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
      */
     public function get($value)
     {
+        if (!is_string($value) && !is_int($value)) {
+            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', var_export($value, true), get_class($this)), __LINE__);
+        }
         return array_key_exists($value, $this->objects) ? $this->objects[$value] : null;
     }
 }
