@@ -14,7 +14,7 @@ class PropertyTest extends TestCase
      */
     public function testAdd()
     {
-        $property = new Property();
+        $property = new Property(self::getBingGeneratorInstance());
 
         $property->add(new PhpProperty('foo'));
 
@@ -27,7 +27,7 @@ class PropertyTest extends TestCase
      */
     public function testAddWithException()
     {
-        $property = new Property();
+        $property = new Property(self::getBingGeneratorInstance());
 
         $property->add(new PhpConstant('Bar'));
     }

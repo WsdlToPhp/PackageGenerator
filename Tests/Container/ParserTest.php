@@ -12,7 +12,7 @@ class ParserTest extends TestCase
      */
     public function testAddWithException()
     {
-        $container = new Parser();
+        $container = new Parser(self::getBingGeneratorInstance());
         $container->add($container);
     }
 }

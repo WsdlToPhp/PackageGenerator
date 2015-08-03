@@ -13,7 +13,7 @@ class ServiceContainerTest extends TestCase
      */
     public static function instance()
     {
-        $serviceContainer = new ServiceContainer();
+        $serviceContainer = new ServiceContainer(self::getBingGeneratorInstance());
         $serviceContainer->add(new Service(self::getBingGeneratorInstance(), 'Foo'));
         return $serviceContainer;
     }

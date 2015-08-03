@@ -10,11 +10,18 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 class ModelContainerTest extends TestCase
 {
     /**
+     * @return ModelContainer
+     */
+    public static function instance()
+    {
+        return new ModelContainer(self::getBingGeneratorInstance());
+    }
+    /**
      *
      */
     public function testAdd()
     {
-        $modelContainer = new ModelContainer();
+        $modelContainer = self::instance();
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
     }
     /**
@@ -22,7 +29,7 @@ class ModelContainerTest extends TestCase
      */
     public function testExceptionOnObject()
     {
-        $modelContainer = new ModelContainer();
+        $modelContainer = self::instance();
         $modelContainer->add(array());
     }
     /**
@@ -30,7 +37,7 @@ class ModelContainerTest extends TestCase
      */
     public function testExceptionOnModelClass()
     {
-        $modelContainer = new ModelContainer();
+        $modelContainer = self::instance();
         $modelContainer->add(new Struct(self::getBingGeneratorInstance(), 'Foo'));
     }
     /**
@@ -38,7 +45,7 @@ class ModelContainerTest extends TestCase
      */
     public function testGet()
     {
-        $modelContainer = new ModelContainer();
+        $modelContainer = self::instance();
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Bar'));
 
@@ -49,7 +56,7 @@ class ModelContainerTest extends TestCase
      */
     public function testForeach()
     {
-        $models = new ModelContainer();
+        $models = self::instance();
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'Bar'));
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'FooBar'));
@@ -77,7 +84,7 @@ class ModelContainerTest extends TestCase
      */
     public function testCount()
     {
-        $models = new ModelContainer();
+        $models = self::instance();
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'Bar'));
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'FooBar'));

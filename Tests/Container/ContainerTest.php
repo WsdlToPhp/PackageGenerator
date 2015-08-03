@@ -11,7 +11,7 @@ class ContainerTest extends TestCase
      */
     public function testAddWithException()
     {
-        $container = new ObjectContainerTest();
+        $container = new ObjectContainerTest(self::getBingGeneratorInstance());
         $container->add(new ObjectTest());
     }
     /**
@@ -19,7 +19,7 @@ class ContainerTest extends TestCase
      */
     public function testOffsetSetWithException()
     {
-        $container = new ObjectContainerTest();
+        $container = new ObjectContainerTest(self::getBingGeneratorInstance());
         $container->offsetSet(1, new ObjectTest());
     }
     /**
@@ -27,7 +27,7 @@ class ContainerTest extends TestCase
      */
     public function testInvalidPropertyName()
     {
-        $container = new FalseObjectContainerTest();
+        $container = new FalseObjectContainerTest(self::getBingGeneratorInstance());
         $container->add(new FalseObjectTest());
     }
 }

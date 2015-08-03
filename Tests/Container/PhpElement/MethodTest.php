@@ -14,7 +14,7 @@ class MethodTest extends TestCase
      */
     public function testAdd()
     {
-        $method = new Method();
+        $method = new Method(self::getBingGeneratorInstance());
 
         $method->add(new PhpMethod('foo'));
 
@@ -27,7 +27,7 @@ class MethodTest extends TestCase
      */
     public function testAddWithException()
     {
-        $method = new Method();
+        $method = new Method(self::getBingGeneratorInstance());
 
         $method->add(new PhpConstant('Bar'));
     }

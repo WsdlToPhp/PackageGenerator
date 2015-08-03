@@ -36,7 +36,7 @@ class TagEnumerationTest extends WsdlParser
         foreach ($tagEnumerationParser->getGenerator()->getStructs() as $struct) {
             if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
                 if ($struct->getName() === 'AdultOption') {
-                    $values = new StructValueContainer();
+                    $values = new StructValueContainer($tagEnumerationParser->getGenerator());
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Off', 0, $struct));
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Moderate', 1, $struct));
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Strict', 2, $struct));
@@ -45,7 +45,7 @@ class TagEnumerationTest extends WsdlParser
                     $this->assertEquals($values, $struct->getValues());
                     $count++;
                 } elseif ($struct->getName() === 'SearchOption') {
-                    $values = new StructValueContainer();
+                    $values = new StructValueContainer($tagEnumerationParser->getGenerator());
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'DisableLocationDetection', 0, $struct));
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'EnableHighlighting', 1, $struct));
 
@@ -70,7 +70,7 @@ class TagEnumerationTest extends WsdlParser
         foreach ($tagEnumerationParser->getGenerator()->getStructs() as $struct) {
             if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
                 if ($struct->getName() === 'HouseStateEnum') {
-                    $values = new StructValueContainer();
+                    $values = new StructValueContainer($tagEnumerationParser->getGenerator());
                     $one = new StructValue($tagEnumerationParser->getGenerator(), '1', 0, $struct);
                     $one->setMeta(array(
                         'label' =>'normal',
@@ -98,7 +98,7 @@ class TagEnumerationTest extends WsdlParser
                     $this->assertEquals($values, $struct->getValues());
                     $count++;
                 } elseif ($struct->getName() === 'HouseStageEnum') {
-                    $values = new StructValueContainer();
+                    $values = new StructValueContainer($tagEnumerationParser->getGenerator());
                     $one = new StructValue($tagEnumerationParser->getGenerator(), '1', 0, $struct);
                     $one->setMeta(array(
                         'label' =>'exploited',

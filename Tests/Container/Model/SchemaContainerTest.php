@@ -16,7 +16,7 @@ class SchemaContainerTest extends TestCase
      */
     public static function instance()
     {
-        $schemaContainer = new SchemaContainer();
+        $schemaContainer = new SchemaContainer(self::getBingGeneratorInstance());
         $schemaContainer->add(new Schema(self::getBingGeneratorInstance(), self::SCHEMA_BING, file_get_contents(self::wsdlBingPath())));
         $schemaContainer->add(new Schema(self::getBingGeneratorInstance(), self::SCHEMA_EBAY, file_get_contents(self::wsdlEbayPath())));
         return $schemaContainer;

@@ -37,7 +37,7 @@ class TagImportTest extends WsdlParser
 
         $tagImportParser->parse();
 
-        $schemaContainer = new SchemaContainer();
+        $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
         for ($i=0; $i<19; $i++) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/PartnerService.%d.xsd', $i));
             $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));

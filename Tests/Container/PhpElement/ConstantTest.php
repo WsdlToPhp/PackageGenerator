@@ -14,7 +14,7 @@ class ConstantTest extends TestCase
      */
     public function testAdd()
     {
-        $constant = new Constant();
+        $constant = new Constant(self::getBingGeneratorInstance());
 
         $constant->add(new PhpConstant('foo', 1));
 
@@ -27,7 +27,7 @@ class ConstantTest extends TestCase
      */
     public function testAddWithException()
     {
-        $constant = new Constant();
+        $constant = new Constant(self::getBingGeneratorInstance());
 
         $constant->add(new PhpMethod('Bar'));
     }
