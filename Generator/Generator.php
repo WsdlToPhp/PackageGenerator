@@ -9,34 +9,9 @@ use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\Service;
 use WsdlToPhp\PackageGenerator\Model\Method;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
-use WsdlToPhp\PackageGenerator\Container\Parser as ParserContainer;
-use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs as StructsParser;
-use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions as FunctionsParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute as TagAttributeParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType as TagComplexTypeParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation as TagDocumentationParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement as TagElementParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration as TagEnumerationParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagExtension as TagExtensionParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader as TagHeaderParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport as TagImportParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude as TagIncludeParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput as TagInputParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList as TagListParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput as TagOutputParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
-use WsdlToPhp\PackageGenerator\Parser\AbstractParser;
-use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
-use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
-use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
-use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
-use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
-use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
-use WsdlToPhp\PackageGenerator\File\Composer as ComposerFile;
+use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class Generator extends \SoapClient
@@ -62,16 +37,6 @@ class Generator extends \SoapClient
      */
     public $_proxy_password;
     /**
-     * Structs
-     * @var StructContainer
-     */
-    private $structs;
-    /**
-     * Services
-     * @var ServiceContainer
-     */
-    private $services;
-    /**
      * Wsdl
      * @var Wsdl
      */
@@ -82,14 +47,19 @@ class Generator extends \SoapClient
     private $options;
     /**
      * Used parsers
-     * @var ParserContainer
+     * @var GeneratorParsers
      */
     private $parsers;
     /**
-     * Use classmap file object
-     * @var ClassMapFile
+     * Used files
+     * @var GeneratorFiles
      */
-    private $classmapFile;
+    private $files;
+    /**
+     * Used containers
+     * @var GeneratorContainers
+     */
+    private $containers;
     /**
      * Constructor
      * @param GeneratorOptions $options
@@ -108,6 +78,7 @@ class Generator extends \SoapClient
         return $this
             ->initContainers()
             ->initParsers()
+            ->initFiles()
             ->initWsdl()
             ->initSoapClient()
             ->initDirectory();
@@ -156,36 +127,37 @@ class Generator extends \SoapClient
      */
     protected function initContainers()
     {
-        return $this
-            ->setStructs(new StructContainer())
-            ->setServices(new ServiceContainer())
-            ->setParser(new ParserContainer());
+        if (!isset($this->containers)) {
+            $this->containers = new GeneratorContainers($this);
+        }
+        return $this;
     }
     /**
      * @return Generator
      */
     protected function initParsers()
     {
-        if ($this->parsers->count() === 0) {
-            $this
-                ->addParser(new FunctionsParser($this))
-                ->addParser(new StructsParser($this))
-                ->addParser(new TagIncludeParser($this))
-                ->addParser(new TagImportParser($this))
-                ->addParser(new TagAttributeParser($this))
-                ->addParser(new TagComplexTypeParser($this))
-                ->addParser(new TagDocumentationParser($this))
-                ->addParser(new TagElementParser($this))
-                ->addParser(new TagEnumerationParser($this))
-                ->addParser(new TagExtensionParser($this))
-                ->addParser(new TagHeaderParser($this))
-                ->addParser(new TagInputParser($this))
-                ->addParser(new TagOutputParser($this))
-                ->addParser(new TagRestrictionParser($this))
-                ->addParser(new TagUnionParser($this))
-                ->addParser(new TagListParser($this));
+        if (!isset($this->parsers)) {
+            $this->parsers = new GeneratorParsers($this);
         }
         return $this;
+    }
+    /**
+     * @return Generator
+     */
+    protected function initFiles()
+    {
+        if (!isset($this->files)) {
+            $this->files = new GeneratorFiles($this);
+        }
+        return $this;
+    }
+    /**
+     * @return GeneratorFiles
+     */
+    public function getFiles()
+    {
+        return $this->files;
     }
     /**
      * @throws \InvalidArgumentException
@@ -195,7 +167,7 @@ class Generator extends \SoapClient
     {
         Utils::createDirectory($this->getOptionDestination());
         if (!is_dir($this->getOptionDestination())) {
-            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been disabled', $this->getOptionDestination()), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been impossible', $this->getOptionDestination()), __LINE__);
         }
         return $this;
     }
@@ -213,105 +185,8 @@ class Generator extends \SoapClient
      */
     public function generateClasses()
     {
-        /**
-         * Begin process
-         */
-        foreach ($this->parsers as $parser) {
-            $parser->parse();
-        }
-        /**
-         * Generates classes files
-         */
-        return $this
-            ->generateStructsClasses()
-            ->generateServicesClasses()
-            ->generateClassMap()
-            ->generateTutorialFile()
-            ->generateComposerFile();
-    }
-    /**
-     * Generates structs classes based on structs collected
-     * @return Generator
-     */
-    private function generateStructsClasses()
-    {
-        foreach ($this->getStructs() as $structName => $struct) {
-            if (!$struct->getIsStruct()) {
-                continue;
-            }
-            $this
-                ->getStructFile($struct)
-                ->setModel($struct)
-                ->write();
-        }
-        return $this;
-    }
-    /**
-     * @param Struct $struct
-     * @return StructEnumFile|StructArrayFile|StructFile
-     */
-    private function getStructFile(Struct $struct)
-    {
-        if ($struct->getisRestriction()) {
-            $file = new StructEnumFile($this, $struct->getPackagedName());
-        } elseif ($struct->isArray()) {
-            $file = new StructArrayFile($this, $struct->getPackagedName());
-        } else {
-            $file = new StructFile($this, $struct->getPackagedName());
-        }
-        return $file;
-    }
-    /**
-     * Generates methods by class
-     * @return Generator
-     */
-    private function generateServicesClasses()
-    {
-        foreach ($this->getServices() as $service) {
-            /**
-             * Generates file
-             */
-            $file = new ServiceFile($this, $service->getPackagedName());
-            $file
-                ->setModel($service)
-                ->write();
-        }
-        return $this;
-    }
-    /**
-     * Generates classMap class
-     * @return Generator
-     */
-    private function generateClassMap()
-    {
-        $this
-            ->getClassmapFile()
-            ->write();
-        return $this;
-    }
-    /**
-     * Generates tutorial file
-     * @return Generator
-     */
-    private function generateTutorialFile()
-    {
-        if ($this->getOptionGenerateTutorialFile() === true && $this->getClassmapFile() instanceof ClassMapFile) {
-            $tutorialFile = new TutorialFile($this, 'tutorial');
-            $tutorialFile->write();
-        }
-        return $this;
-    }
-    /**
-     * @throws \InvalidArgumentException
-     * @return Generator
-     */
-    private function generateComposerFile()
-    {
-        if ($this->getOptionStandalone() === true) {
-            $composerFile = new ComposerFile($this, 'composer');
-            $composerFile->write();
-        }
-        return $this;
+        $this->parsers->doParse();
+        $this->files->doGenerate();
     }
     /**
      * Gets the struct by its name
@@ -321,7 +196,7 @@ class Generator extends \SoapClient
      */
     public function getStruct($structName)
     {
-        return $this->structs->getStructByName($structName);
+        return $this->getStructs()->getStructByName($structName);
     }
     /**
      * Gets a service by its name
@@ -330,7 +205,7 @@ class Generator extends \SoapClient
      */
     public function getService($serviceName)
     {
-        return $this->services->getServiceByName($serviceName);
+        return $this->getServices()->getServiceByName($serviceName);
     }
     /**
      * Returns the method
@@ -343,6 +218,20 @@ class Generator extends \SoapClient
     public function getServiceMethod($methodName)
     {
         return $this->getService($this->getServiceName($methodName)) instanceof Service ? $this->getService($this->getServiceName($methodName))->getMethod($methodName) : null;
+    }
+    /**
+     * @return ServiceContainer
+     */
+    public function getServices()
+    {
+        return $this->containers->getServices();
+    }
+    /**
+     * @return StructContainer
+     */
+    public function getStructs()
+    {
+        return $this->containers->getStructs();
     }
     /**
      * Sets the optionCategory value
@@ -772,70 +661,6 @@ class Generator extends \SoapClient
     protected function getOptions()
     {
         return $this->options;
-    }
-    /**
-     * @param StructContainer $structContainer
-     * @return Generator
-     */
-    protected function setStructs(StructContainer $structContainer)
-    {
-        $this->structs = $structContainer;
-        return $this;
-    }
-    /**
-     * @return StructContainer
-     */
-    public function getStructs()
-    {
-        return $this->structs;
-    }
-    /**
-     * @return ServiceContainer
-     */
-    public function getServices()
-    {
-        return $this->services;
-    }
-    /**
-     * @param ServiceContainer $serviceContainer
-     * @return Generator
-     */
-    protected function setServices(ServiceContainer $serviceContainer)
-    {
-        $this->services = $serviceContainer;
-        return $this;
-    }
-    /**
-     * @param ParserContainer $container
-     * @return Generator
-     */
-    protected function setParser(ParserContainer $container)
-    {
-        $this->parsers = $container;
-        return $this;
-    }
-    /**
-     * @param AbstractParser $parser
-     * @return Generator
-     */
-    protected function addParser(AbstractParser $parser)
-    {
-        $this->parsers->add($parser);
-        return $this;
-    }
-    /**
-     * @return ClassMapFile
-     */
-    public function getClassmapFile()
-    {
-        if (empty($this->classmapFile)) {
-            $classMapModel = new EmptyModel($this, 'ClassMap');
-            $classMap = new ClassMapFile($this, $classMapModel->getPackagedName());
-            $classMap
-                ->setModel($classMapModel);
-            $this->classmapFile = $classMap;
-        }
-        return $this->classmapFile;
     }
     /**
      * @param string $url
