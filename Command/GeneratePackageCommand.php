@@ -59,6 +59,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('wsdl-proxy-login', null, InputOption::VALUE_OPTIONAL, 'Use proxy login')
             ->addOption('wsdl-proxy-password', null, InputOption::VALUE_OPTIONAL, 'Use proxy password')
             ->addOption('wsdl-prefix', null, InputOption::VALUE_REQUIRED, 'Prepend generated classes')
+            ->addOption('wsdl-suffix', null, InputOption::VALUE_REQUIRED, 'Append generated classes')
             ->addOption('wsdl-namespace', null, InputOption::VALUE_OPTIONAL, 'Package classes\' namespace')
             ->addOption('wsdl-category', null, InputOption::VALUE_OPTIONAL, 'First level directory name generation mode (start, end, cat, none)')
             ->addOption('wsdl-gathermethods', null, InputOption::VALUE_OPTIONAL, 'Gather methods based on operation name mode (start, end)')
@@ -102,6 +103,7 @@ class GeneratePackageCommand extends AbstractCommand
     {
         return array(
             'wsdl-prefix' => 'Prefix',
+            'wsdl-suffix' => 'Suffix',
             'wsdl-urlorpath' => 'Origin',
             'wsdl-login' => 'BasicLogin',
             'wsdl-category' => 'Category',
