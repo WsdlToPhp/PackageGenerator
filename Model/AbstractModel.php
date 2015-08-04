@@ -298,10 +298,19 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function getNamespace()
     {
+        $namespaces = array();
         $namespace = $this->getGenerator()->getOptionNamespacePrefix();
-        $namespaceEnding = $this->getSubDirectory();
-        $packageName = $this->getGenerator()->getOptionPrefix();
-        return sprintf(empty($namespace) ? '%1$s%4$s%3$s' : '%2$s\\%1$s%4$s%3$s', $packageName, $namespace, $namespaceEnding, empty($namespaceEnding) ? '' : '\\');
+        if (empty($namespace)) {
+            if ($this->getGenerator()->getOptionPrefix() !== '') {
+                $namespaces[] = $this->getGenerator()->getOptionPrefix();
+            }
+        } else {
+            $namespaces[] = $namespace;
+        }
+        if ($this->getSubDirectory() !== '') {
+            $namespaces[] = $this->getSubDirectory();
+        }
+        return implode('\\', $namespaces);
     }
     /**
      * Returns directory where to store class and create it if needed
