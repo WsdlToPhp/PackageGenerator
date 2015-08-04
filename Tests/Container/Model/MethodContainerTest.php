@@ -15,7 +15,7 @@ class MethodContainerTest extends TestCase
     public static function instance()
     {
         $service = ServiceTest::instance('Bar');
-        $methodContainer = new MethodContainer();
+        $methodContainer = new MethodContainer(self::getBingGeneratorInstance());
         $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'Foo', 'string', 'int', $service));
         $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'Bar', 'string', 'int', $service));
         $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'FooBar', array(

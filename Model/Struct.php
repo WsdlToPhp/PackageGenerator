@@ -71,8 +71,8 @@ class Struct extends AbstractModel
         $this
             ->setIsStruct($isStruct)
             ->setIsRestriction($isRestriction)
-            ->setAttributes(new StructAttributeContainer())
-            ->setValues(new StructValueContainer());
+            ->setAttributes(new StructAttributeContainer($generator))
+            ->setValues(new StructValueContainer($generator));
     }
     /**
      * Returns the contextual part of the class name for the package
@@ -143,7 +143,7 @@ class Struct extends AbstractModel
      */
     protected function getAllAttributes($includeInheritanceAttributes, $requiredFirst)
     {
-        $allAttributes = new StructAttributeContainer();
+        $allAttributes = new StructAttributeContainer($this->getGenerator());
         if ($includeInheritanceAttributes === true) {
             $this->addInheritanceAttributes($allAttributes);
         }
@@ -177,9 +177,9 @@ class Struct extends AbstractModel
      */
     protected function putRequiredFirst(StructAttributeContainer $allAttributes)
     {
-        $attributes = new StructAttributeContainer();
-        $requiredAttributes = new StructAttributeContainer();
-        $notRequiredAttributes = new StructAttributeContainer();
+        $attributes = new StructAttributeContainer($this->getGenerator());
+        $requiredAttributes = new StructAttributeContainer($this->getGenerator());
+        $notRequiredAttributes = new StructAttributeContainer($this->getGenerator());
         foreach ($allAttributes as $attribute) {
             if ($attribute->isRequired()) {
                 $requiredAttributes->add($attribute);

@@ -2,7 +2,9 @@
 
 namespace WsdlToPhp\PackageGenerator\Container;
 
-abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Countable
+use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
+
+abstract class AbstractObjectContainer extends AbstractGeneratorAware implements \ArrayAccess, \Iterator, \Countable
 {
     /**
      * @var string
@@ -11,19 +13,11 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
     /**
      * @var array
      */
-    protected $objects;
+    protected $objects = array();
     /**
      * @var int
      */
-    protected $offset;
-    /**
-     * Class constructor
-     */
-    public function __construct()
-    {
-        $this->offset = 0;
-        $this->objects = array();
-    }
+    protected $offset = 0;
     /**
      * @param string $offset
      * @return bool
@@ -165,6 +159,9 @@ abstract class AbstractObjectContainer implements \ArrayAccess, \Iterator, \Coun
      */
     public function get($value)
     {
+        if (!is_string($value) && !is_int($value)) {
+            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', var_export($value, true), get_class($this)), __LINE__);
+        }
         return array_key_exists($value, $this->objects) ? $this->objects[$value] : null;
     }
 }

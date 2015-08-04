@@ -7,9 +7,9 @@ use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler as Attribute;
 
 class TagHeader extends AbstractTagOperationElement
 {
-    const ATTRIBUTE_PART     = 'part';
-    const REQUIRED_HEADER    = 'required';
-    const OPTIONAL_HEADER    = 'optional';
+    const ATTRIBUTE_PART = 'part';
+    const REQUIRED_HEADER = 'required';
+    const OPTIONAL_HEADER = 'optional';
     const ATTRIBUTE_REQUIRED = 'wsdl:required';
     /**
      * @return TagInput|null

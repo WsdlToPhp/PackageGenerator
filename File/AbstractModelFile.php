@@ -249,7 +249,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function defineConstants(PhpClass $class)
     {
-        $constants = new Constant();
+        $constants = new Constant($this->getGenerator());
         $this->getClassConstants($constants);
         foreach ($constants as $constant) {
             $annotationBlock = $this->getConstantAnnotationBlock($constant);
@@ -266,7 +266,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function defineProperties(PhpClass $class)
     {
-        $properties = new Property();
+        $properties = new Property($this->getGenerator());
         $this->getClassProperties($properties);
         foreach ($properties as $property) {
             $annotationBlock = $this->getPropertyAnnotationBlock($property);
@@ -283,7 +283,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function defineMethods(PhpClass $class)
     {
-        $methods = new Method();
+        $methods = new Method($this->getGenerator());
         $this->getClassMethods($methods);
         foreach ($methods as $method) {
             $annotationBlock = $this->getMethodAnnotationBlock($method);

@@ -19,7 +19,7 @@ class WsdlHandlerTest extends TestCase
         if (!isset(self::$ebayInstance)) {
             $doc = new \DOMDocument('1.0', 'utf-8');
             $doc->load(__DIR__ . '/../../resources/ebaySvc.wsdl');
-            self::$ebayInstance = new Wsdl($doc);
+            self::$ebayInstance = new Wsdl($doc, self::getBingGeneratorInstance());
         }
         return self::$ebayInstance;
     }
@@ -31,7 +31,7 @@ class WsdlHandlerTest extends TestCase
         if (!isset(self::$bingInstance)) {
             $doc = new \DOMDocument('1.0', 'utf-8');
             $doc->load(__DIR__ . '/../../resources/bingsearch.wsdl');
-            self::$bingInstance = new Wsdl($doc);
+            self::$bingInstance = new Wsdl($doc, self::getBingGeneratorInstance());
         }
         return self::$bingInstance;
     }
@@ -43,7 +43,7 @@ class WsdlHandlerTest extends TestCase
         if (!isset(self::$partnerInstance)) {
             $doc = new \DOMDocument('1.0', 'utf-8');
             $doc->load(__DIR__ . '/../../resources/PartnerService.wsdl');
-            self::$partnerInstance = new Wsdl($doc);
+            self::$partnerInstance = new Wsdl($doc, self::getBingGeneratorInstance());
         }
         return self::$partnerInstance;
     }
@@ -55,7 +55,7 @@ class WsdlHandlerTest extends TestCase
         if (!isset(self::$aukroInstance)) {
             $doc = new \DOMDocument('1.0', 'utf-8');
             $doc->load(__DIR__ . '/../../resources/aukro.wsdl');
-            self::$aukroInstance = new Wsdl($doc);
+            self::$aukroInstance = new Wsdl($doc, self::getBingGeneratorInstance());
         }
         return self::$aukroInstance;
     }

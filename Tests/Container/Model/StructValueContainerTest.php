@@ -15,7 +15,7 @@ class StructValueContainerTest extends TestCase
     public static function instance()
     {
         $struct = StructTest::instance('Foo', 'true');
-        $structValueContainer = new StructValueContainer();
+        $structValueContainer = new StructValueContainer(self::getBingGeneratorInstance());
         $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 1, 0, $struct));
         $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 2, 1, $struct));
         $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 'any', 2, $struct));

@@ -5,17 +5,19 @@ namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Schema as Model;
 use WsdlToPhp\PackageGenerator\Container\Model\Schema as ModelContainer;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 class Wsdl extends AbstractDocument
 {
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::__construct()
      * @param \DOMDocument $domDocument
+     * @param Generator $generator
      */
-    public function __construct(\DOMDocument $domDocument)
+    public function __construct(\DOMDocument $domDocument, Generator $generator)
     {
         parent::__construct($domDocument);
-        $this->externalSchemas = new ModelContainer();
+        $this->externalSchemas = new ModelContainer($generator);
     }
     /**
      * @var ModelContainer
@@ -68,7 +70,7 @@ class Wsdl extends AbstractDocument
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\AbstractDocument::getElementsByName()
-     * @return AbstractTag[]|null
+     * @return AbstractTag[]
      */
     public function getElementsByName($name, $includeExternals = false)
     {
@@ -78,7 +80,7 @@ class Wsdl extends AbstractDocument
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementsByNameAndAttributes()
-     * @return AbstractTag[]|null
+     * @return AbstractTag[]
      */
     public function getElementsByNameAndAttributes($name, array $attributes, \DOMNode $node = null, $includeExternals = false)
     {

@@ -49,7 +49,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
             return null;
         }
         if ($this->isKnownTypeUnknown($method)) {
-            $parts         = $tag->getParts();
+            $parts = $tag->getParts();
             $multipleParts = count($parts);
             if (is_array($parts) && $multipleParts > 1) {
                 $types = array();

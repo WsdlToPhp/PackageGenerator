@@ -13,7 +13,7 @@ class StructContainerTest extends TestCase
      */
     public static function instance()
     {
-        $structContainer = new StructContainer();
+        $structContainer = new StructContainer(self::getBingGeneratorInstance());
         $structContainer->add(StructTest::instance('Foo', true));
         $structContainer->add(StructTest::instance('Bar', false));
         return $structContainer;

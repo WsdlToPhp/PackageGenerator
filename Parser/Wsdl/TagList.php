@@ -6,7 +6,6 @@ use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagList as ListTag;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
@@ -45,7 +44,7 @@ class TagList extends AbstractTagParser
             $itemType = $tag->getAttributeItemType();
             $itemType = empty($itemType) ? 'string' : $itemType;
             $struct = $this->getStructByName($itemType);
-            if ($model instanceof AbstractModel) {
+            if ($model instanceof Struct) {
                 $type = sprintf('%s[]', $struct instanceof Struct ? $struct->getName() : $itemType);
                 if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
                     $attribute->setInheritance($type);

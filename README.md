@@ -161,8 +161,17 @@ $ composer install
 <?php
 require_once __DIR__ . '/vendor/autoload.php'
 use \WsdlToPhp\PackageGenerator\Generator\Generator;
-$generator = new Generator('http://www.mydomain.com/wsdl.xml');
-$generator->generateClasses('MyPackage', '/path/to/where/the/package/must/be/generated/');
+use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
+
+// Options definition
+$options = GenerationOptions::instance();
+$options
+    ->setOrigin('http://www.mydomain.com/?wsdl')
+    ->setDestination('/path/to/where/the/package/must/be/generated/')
+    ->setPrefix('MyPackage');
+
+$generator = new Generator($options);
+$generator->generateClasses();
 ```
 Then:
 ```php
