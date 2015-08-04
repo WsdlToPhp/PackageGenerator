@@ -29,7 +29,7 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function bingGeneratorInstance($reset = false)
+    public static function bingGeneratorInstance($reset = true)
     {
         return self::getInstance(self::wsdlBingPath(), $reset);
     }

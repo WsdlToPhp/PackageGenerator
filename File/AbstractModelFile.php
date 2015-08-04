@@ -133,11 +133,27 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function definePackageAnnotations(PhpAnnotationBlock $block)
     {
-        $block->addChild(new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionPrefix()));
+        $packageName = $this->getPackageName();
+        if (!empty($packageName)) {
+            $block->addChild(new PhpAnnotation(self::ANNOTATION_PACKAGE, $packageName));
+        }
         if (count($this->getModel()->getDocSubPackages()) > 0) {
             $block->addChild(new PhpAnnotation(self::ANNOTATION_SUB_PACKAGE, implode(',', $this->getModel()->getDocSubPackages())));
         }
         return $this;
+    }
+    /**
+     * @return string
+     */
+    protected function getPackageName()
+    {
+        $packageName = '';
+        if ($this->getGenerator()->getOptionPrefix() !== '') {
+            $packageName = $this->getGenerator()->getOptionPrefix();
+        } elseif ($this->getGenerator()->getOptionSuffix() !== '') {
+            $packageName = $this->getGenerator()->getOptionSuffix();
+        }
+        return $packageName;
     }
     /**
      * @param PhpAnnotationBlock $block
