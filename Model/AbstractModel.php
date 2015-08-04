@@ -274,7 +274,18 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function getPackagedName($namespaced = false)
     {
-        return ($namespaced ? sprintf('\%s\\', $this->getNamespace()) : '') . $this->getGenerator()->getOptionPrefix() . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+        $nameParts = array();
+        if ($namespaced) {
+            $nameParts[] = sprintf('\%s\\', $this->getNamespace());
+        }
+        if ($this->getGenerator()->getOptionPrefix() !== '') {
+            $nameParts[] = $this->getGenerator()->getOptionPrefix();
+        }
+        $nameParts[] = ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+        if ($this->getGenerator()->getOptionSuffix() !== '') {
+            $nameParts[] = $this->getGenerator()->getOptionSuffix();
+        }
+        return implode('', $nameParts);
     }
     /**
      * Allows to define the contextual part of the class name for the package
@@ -303,6 +314,8 @@ abstract class AbstractModel extends AbstractGeneratorAware
         if (empty($namespace)) {
             if ($this->getGenerator()->getOptionPrefix() !== '') {
                 $namespaces[] = $this->getGenerator()->getOptionPrefix();
+            } elseif ($this->getGenerator()->getOptionSuffix() !== '') {
+                $namespaces[] = $this->getGenerator()->getOptionSuffix();
             }
         } else {
             $namespaces[] = $namespace;
