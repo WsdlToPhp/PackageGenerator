@@ -41,6 +41,9 @@ destination:
 prefix:
     default: ''
     values: ''
+suffix:
+    default: ''
+    values: ''
 basic_login:
     default: ''
     values: ''

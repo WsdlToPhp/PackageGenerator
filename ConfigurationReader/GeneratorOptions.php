@@ -17,6 +17,7 @@ class GeneratorOptions extends AbstractYamlReader
      * Possible option keys
      * @var string
      */
+    const SUFFIX = 'suffix';
     const PREFIX = 'prefix';
     const ORIGIN = 'origin';
     const CATEGORY = 'category';
@@ -351,6 +352,24 @@ class GeneratorOptions extends AbstractYamlReader
     public function setPrefix($prefix)
     {
         return $this->setOptionValue(self::PREFIX, $prefix);
+    }
+    /**
+     * Get suffix option value
+     * @return string
+     */
+    public function getSuffix()
+    {
+        return $this->getOptionValue(self::SUFFIX);
+    }
+    /**
+     * Set current suffix option value
+     * @throws \InvalidArgumentException
+     * @param string $suffix
+     * @return GeneratorOptions
+     */
+    public function setSuffix($suffix)
+    {
+        return $this->setOptionValue(self::SUFFIX, $suffix);
     }
     /**
      * Get basic login option value

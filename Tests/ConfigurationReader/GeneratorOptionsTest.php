@@ -42,6 +42,23 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetSuffix()
+    {
+        $this->assertEmpty(self::optionsInstance()->getSuffix());
+    }
+    /**
+     *
+     */
+    public function testSetSuffix()
+    {
+        $instance = self::optionsInstance();
+        $instance->setSuffix('MySuffix');
+
+        $this->assertSame('MySuffix', $instance->getSuffix());
+    }
+    /**
+     *
+     */
     public function testGetDestination()
     {
         $this->assertEmpty(self::optionsInstance()->getDestination());
@@ -461,6 +478,7 @@ class GeneratorOptionsTest extends TestCase
             'origin' => '',
             'destination' => '',
             'prefix' => '',
+            'suffix' => '',
             'basic_login' => '',
             'basic_password' => '',
             'proxy_host' => '',
