@@ -85,7 +85,7 @@ class StructEnumTest extends AbstractFile
      */
     public function testWriteBingSearchEnumWebSearchOption()
     {
-        $generator = self::bingGeneratorInstance();
+        $generator = self::bingGeneratorInstance(true);
         if (($model = $generator->getStruct('WebSearchOption')) instanceof StructModel) {
             $generator->setOptionGenericConstantsNames(true);
             $struct = new EnumFile($generator, $model->getName());
@@ -95,6 +95,24 @@ class StructEnumTest extends AbstractFile
             $this->assertSameFileContent('ValidApiWebSearchOption', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find WebSearchOption enumeration for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteBingSearchEnumPhonebookSortOption()
+    {
+        $generator = self::bingGeneratorInstance(true);
+        if (($model = $generator->getStruct('PhonebookSortOption')) instanceof StructModel) {
+            $generator
+                ->setOptionNamespacePrefix('Std\Opt');
+            $struct = new EnumFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiPhonebookSortOption', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
 }
