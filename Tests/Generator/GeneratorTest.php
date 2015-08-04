@@ -47,6 +47,23 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testGetOptionSuffix()
+    {
+        $this->assertEmpty(self::localInstance()->getOptionSuffix());
+    }
+    /**
+     *
+     */
+    public function testSetOptionSuffix()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionSuffix('MySuffix');
+
+        $this->assertSame('MySuffix', $instance->getOptionSuffix());
+    }
+    /**
+     *
+     */
     public function testGetOptionDestination()
     {
         $this->assertSame(self::getTestDirectory(), self::localInstance()->getOptionDestination());

@@ -414,8 +414,8 @@ class Generator extends \SoapClient
         return $this;
     }
     /**
-     * Gets the package name
-     * @param bool $ucFirst ucfirst package name or not
+     * Gets the package name prefix
+     * @param bool $ucFirst ucfirst package name prefix or not
      * @return string
      */
     public function getOptionPrefix($ucFirst = true)
@@ -423,13 +423,32 @@ class Generator extends \SoapClient
         return $ucFirst ? ucfirst($this->getOptions()->getPrefix()) : $this->getOptions()->getPrefix();
     }
     /**
-     * Sets the package name
+     * Sets the package name prefix
      * @param string $optionPrefix
      * @return Generator
      */
     public function setOptionPrefix($optionPrefix)
     {
         $this->options->setPrefix($optionPrefix);
+        return $this;
+    }
+    /**
+     * Gets the package name suffix
+     * @param bool $ucFirst ucfirst package name suffix or not
+     * @return string
+     */
+    public function getOptionSuffix($ucFirst = true)
+    {
+        return $ucFirst ? ucfirst($this->getOptions()->getSuffix()) : $this->getOptions()->getSuffix();
+    }
+    /**
+     * Sets the package name suffix
+     * @param string $optionSuffix
+     * @return Generator
+     */
+    public function setOptionSuffix($optionSuffix)
+    {
+        $this->options->setSuffix($optionSuffix);
         return $this;
     }
     /**
