@@ -29,58 +29,58 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function bingGeneratorInstance()
+    public static function bingGeneratorInstance($reset = false)
     {
-        return self::getInstance(self::wsdlBingPath());
+        return self::getInstance(self::wsdlBingPath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function actonGeneratorInstance()
+    public static function actonGeneratorInstance($reset = true)
     {
-        return self::getInstance(self::wsdlActonPath(), true);
+        return self::getInstance(self::wsdlActonPath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function portalGeneratorInstance()
+    public static function portalGeneratorInstance($reset = false)
     {
-        return self::getInstance(self::wsdlPortalPath());
+        return self::getInstance(self::wsdlPortalPath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function reformaGeneratorInstance()
+    public static function reformaGeneratorInstance($reset = true)
     {
-        return self::getInstance(self::wsdlReformaPath(), true);
+        return self::getInstance(self::wsdlReformaPath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function queueGeneratorInstance()
+    public static function queueGeneratorInstance($reset = false)
     {
-        return self::getInstance(self::wsdlQueuePath());
+        return self::getInstance(self::wsdlQueuePath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function omnitureGeneratorInstance()
+    public static function omnitureGeneratorInstance($reset = false)
     {
-        return self::getInstance(self::wsdlOmniturePath());
+        return self::getInstance(self::wsdlOmniturePath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function odigeoGeneratorInstance()
+    public static function odigeoGeneratorInstance($reset = false)
     {
-        return self::getInstance(self::wsdlOdigeoPath());
+        return self::getInstance(self::wsdlOdigeoPath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function payPalGeneratorInstance()
+    public static function payPalGeneratorInstance($reset = false)
     {
-        return self::getInstance(self::wsdlPayPalPath());
+        return self::getInstance(self::wsdlPayPalPath(), $reset);
     }
     /**
      * @param string $wsdl
