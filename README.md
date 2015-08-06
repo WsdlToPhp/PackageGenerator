@@ -127,31 +127,31 @@ $ ls -la => enjoy!
 #### Debug options before actually generating the package
 Remove ```--force``` option from the previous command line to get this result:
 ```
- Start at YYYY-MM-DD HH:MM:SS
-  Generation not launched, use --force to force generation
-  Wsdl used:
-    url: http://developer.ebay.com/webservices/latest/ebaySvc.wsdl
-    login:
-    password:
-    Package name: Api
-    Package dest: /var/www/Api/
-  Wsdl options used:
+ Start at 2015-08-06 23:09:44
+  Generation not launched, use "--force" option to force generation
+  Used generator's options:
+    category: cat
+    gather_methods: start
+    generic_constants_names:
+    generate_tutorial_file: 1
+    add_comments: 2015-04-22, Me, 1.1.0, Dream
+    namespace_prefix: My\Project
+    standalone: 1
+    struct_class: \Std\Opt\StructClass
+    struct_array_class: \Std\Opt\StructArrayClass
+    soap_client_class: \Std\Opt\SoapClientClass
+    origin: http://developer.ebay.com/webservices/latest/ebaySvc.wsdl
+    destination: /var/www/Api/
+    prefix: Api
+    suffix: Project
+    basic_login:
+    basic_password:
     proxy_host: ****************************
-    proxy_port: 0
+    proxy_port: *******
     proxy_login: *******
     proxy_password: *******
-  Generator options used:
-    wsdl-namespace: My\Project
-    wsdl-category: cat
-    wsdl-gathermethods: start
-    wsdl-gentutorial: 1
-    wsdl-genericconstants:
-    wsdl-addcomments: date:2015-04-22, author:Me, release:1.1.0, team:Dream
-    wsdl-standalone: 1
-    wsdl-struct: \Std\Opt\StructClass
-    wsdl-structarray: \Std\Opt\StructArrayClass
-    wsdl-soapclient: \Std\Opt\SoapClientClass
- End at YYYY-MM-DD HH:MM:SS, duration: 00:00:00
+    soap_options:
+ End at 2015-08-06 23:09:44, duration: 00:00:00
 ```
 ### Programmatic usage
 ```
