@@ -35,6 +35,7 @@ The generator comes with several options:
 - **Required** package configuration:
     - **\-\-wsdl-urlorpath**: path or url to get the WSDL
     - **\-\-wsdl-prefix**: the classes prefix, used as the main namespace
+    - **\-\-wsdl-suffix**: the classes suffix, used as the main namespace if no prefix is defined
     - **\-\-wsdl-destination**: absolute path where the classes must be generated
     - **\-\-force**: must be present to generate the package, otherwise you'll get the debug informations
 - _**Optional**_ basic Authentication credentials, if the WSDL is protected by a Basic Authentication, then specify:
@@ -104,6 +105,7 @@ $ php console wsdltophp:generate:package \
     --wsdl-proxy-password="*******" \
     --wsdl-destination='/var/www/Api/' \
     --wsdl-prefix="Api" \
+    --wsdl-suffix="Project" \
     --wsdl-category="cat" \
     --wsdl-gathermethods="start" \
     --wsdl-genericconstants=false \
@@ -217,7 +219,8 @@ $options
     ->setSoapClientClass('\Std\Opt\SoapClientClass')
     ->setOrigin('http://www.mydomain.com/?wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
-    ->setPrefix('MyPackage')
+    ->setPrefix('Api')
+    ->setSuffix('Project')
     ->setBasicLogin($login)
     ->setBasicPassword($password)
     ->setProxyHost($proxyHost)
