@@ -16,7 +16,7 @@ abstract class WsdlParser extends TestCase
      * @param bool $reset
      * @return Generator
      */
-    public static function generatorInstance($wsdlPath, $reset = false)
+    public static function generatorInstance($wsdlPath, $reset = true)
     {
         $generator = self::getInstance($wsdlPath, $reset);
         $parsers = array(

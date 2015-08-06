@@ -43,7 +43,7 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function portalGeneratorInstance($reset = false)
+    public static function portalGeneratorInstance($reset = true)
     {
         return self::getInstance(self::wsdlPortalPath(), $reset);
     }
@@ -57,28 +57,28 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function queueGeneratorInstance($reset = false)
+    public static function queueGeneratorInstance($reset = true)
     {
         return self::getInstance(self::wsdlQueuePath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function omnitureGeneratorInstance($reset = false)
+    public static function omnitureGeneratorInstance($reset = true)
     {
         return self::getInstance(self::wsdlOmniturePath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function odigeoGeneratorInstance($reset = false)
+    public static function odigeoGeneratorInstance($reset = true)
     {
         return self::getInstance(self::wsdlOdigeoPath(), $reset);
     }
     /**
      * @return Generator
      */
-    public static function payPalGeneratorInstance($reset = false)
+    public static function payPalGeneratorInstance($reset = true)
     {
         return self::getInstance(self::wsdlPayPalPath(), $reset);
     }
@@ -86,7 +86,7 @@ abstract class AbstractFile extends TestCase
      * @param string $wsdl
      * @return Generator
      */
-    public static function getInstance($wsdl, $reset = false)
+    public static function getInstance($wsdl, $reset = true)
     {
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgeReservedKeywords();
