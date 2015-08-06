@@ -14,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
-class Generator extends \SoapClient
+class Generator
 {
     /**
      * Wsdl
@@ -40,6 +40,11 @@ class Generator extends \SoapClient
      * @var GeneratorContainers
      */
     private $containers;
+    /**
+     * Used SoapClient
+     * @var GeneratorSoapClient
+     */
+    private $soapClient;
     /**
      * Constructor
      * @param GeneratorOptions $options
@@ -69,36 +74,8 @@ class Generator extends \SoapClient
      */
     protected function initSoapClient()
     {
-        $pathToWsdl = trim($this->getOptionOrigin());
-        /**
-         * Options for WSDL
-        */
-        $options = array_merge($this->getOptionSoapOptions(), array(
-            'trace' => true,
-            'exceptions' => true,
-            'cache_wsdl' => WSDL_CACHE_NONE,
-            'soap_version' => SOAP_1_1,
-        ));
-        $login = $this->getOptionBasicLogin();
-        $password = $this->getOptionBasicPassword();
-        if (!empty($login) && !empty($password)) {
-            $options = array_merge($options, array(
-                'login' => $login,
-                'password' => $password,
-            ));
-        }
-        /**
-         * Construct
-         */
-        try {
-            $this->SoapClient($pathToWsdl, $options);
-        } catch (\SoapFault $fault) {
-            $options['soap_version'] = SOAP_1_2;
-            try {
-                $this->SoapClient($pathToWsdl, $options);
-            } catch (\SoapFault $fault) {
-                throw new \InvalidArgumentException(sprintf('Unable to load WSDL at "%s"!', $pathToWsdl), __LINE__, $fault);
-            }
+        if (!isset($this->soapClient)) {
+            $this->soapClient = new GeneratorSoapClient($this);
         }
         return $this;
     }
@@ -657,9 +634,25 @@ class Generator extends \SoapClient
     /**
      * @return GeneratorOptions
      */
-    protected function getOptions()
+    public function getOptions()
     {
         return $this->options;
+    }
+    /**
+     * @param GeneratorSoapClient $soapClient
+     * @return Generator
+     */
+    protected function setSoapClient(GeneratorSoapClient $soapClient)
+    {
+        $this->soapClient = $soapClient;
+        return $this;
+    }
+    /**
+     * @return GeneratorSoapClient
+     */
+    public function getSoapClient()
+    {
+        return $this->soapClient;
     }
     /**
      * @param string $url
