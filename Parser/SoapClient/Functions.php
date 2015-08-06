@@ -6,8 +6,13 @@ class Functions extends AbstractParser
 {
     public function parse()
     {
-        $methods = $this->generator->__getFunctions();
-        $services = $this->generator->getServices();
+        $methods = $this
+            ->getGenerator()
+            ->getSoapClient()
+            ->getSoapClient()
+            ->getSoapClient()
+            ->__getFunctions();
+        $services = $this->getGenerator()->getServices();
         if (is_array($methods) && count($methods)) {
             foreach ($methods as $method) {
                 $infos = explode(' ', $method);
@@ -23,7 +28,7 @@ class Functions extends AbstractParser
                         list($methodName, $parameterType) = explode('(', $infos[1]);
                     }
                     if (!empty($returnType) && !empty($methodName)) {
-                        $services->addService($this->generator, $this->generator->getServiceName($methodName), $methodName, $parameterType, $returnType);
+                        $services->addService($this->getGenerator(), $this->getGenerator()->getServiceName($methodName), $methodName, $parameterType, $returnType);
                     }
                 } elseif (count($infos) >= 3) {
                     /**
@@ -65,7 +70,7 @@ class Functions extends AbstractParser
                                 ));
                             }
                         }
-                        $services->addService($this->generator, $this->generator->getServiceName($methodName), $methodName, $methodParameters, empty($returnType) ? 'unknown' : $returnType);
+                        $services->addService($this->getGenerator(), $this->getGenerator()->getServiceName($methodName), $methodName, $methodParameters, empty($returnType) ? 'unknown' : $returnType);
                     }
                 }
             }

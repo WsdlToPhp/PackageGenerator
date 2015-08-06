@@ -26,7 +26,12 @@ class Structs extends AbstractParser
      */
     public function parse()
     {
-        $types = $this->generator->__getTypes();
+        $types = $this
+            ->getGenerator()
+            ->getSoapClient()
+            ->getSoapClient()
+            ->getSoapClient()
+            ->__getTypes();
         if (is_array($types)) {
             foreach ($types as $type) {
                 $this->parseType($type);
@@ -44,7 +49,7 @@ class Structs extends AbstractParser
             if (array_key_exists(1, $typeDef) && !empty($typeDef)) {
                 $structName = $typeDef[1];
                 if ($typeDef[0] !== self::STRUCT_DECLARATION) {
-                    $this->generator->getStructs()->addVirtualStruct($this->generator, $structName);
+                    $this->getGenerator()->getStructs()->addVirtualStruct($this->getGenerator(), $structName);
                 } else {
                     $this->parseComplexStruct($typeDef);
                 }
@@ -62,10 +67,10 @@ class Structs extends AbstractParser
             for ($i = 2; $i < $typeDefCount; $i += 2) {
                 $structParamType = str_replace(self::ANY_XML_DECLARATION, self::ANY_XML_TYPE, $typeDef[$i]);
                 $structParamName = $typeDef[$i + 1];
-                $this->generator->getStructs()->addStructWithAttribute($this->generator, $typeDef[1], $structParamName, $structParamType);
+                $this->getGenerator()->getStructs()->addStructWithAttribute($this->getGenerator(), $typeDef[1], $structParamName, $structParamType);
             }
         } else {
-            $this->generator->getStructs()->addStruct($this->generator, $typeDef[1]);
+            $this->getGenerator()->getStructs()->addStruct($this->getGenerator(), $typeDef[1]);
         }
     }
     /**
