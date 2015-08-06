@@ -3,13 +3,18 @@ CHANGELOG
 
 WIP
 ---
+- **BC**:
+    - Usage of GeneratorSoapClient as SoapClient handler that uses AbstractSoapClientBase as base SoapClient handler
+    - Generator class does not inherit from \SoapClient class anymore
+- Improve Utils::getContentFromUrl() and Generator::getUrlContent() methods
+- Suffix is now an option as Prefix, read the readme to learn more about it
 - Use GeneratorAware layer to share Generator object among created objects
 - Use configuration file/reader for Xsd types
 - Improve SoapClient\Structs parser
 - Fix ArrayType methods (item, first, last, current, offetGet) return annotation
 - export composer.json file generation into a new File\Composer class
 - improve unit tests
-- **BC**: 
+- **BC**:
     - From now, Wsdl origin, package destination, basic authentication credentials, proxy and SoapClient options are contained by the GeneratorOptions instance
     - Generator instanciation and usage reviewed, now it only accept one parameter, a GeneratorOptions object
     - Removal of WsdlContainer class
