@@ -52,6 +52,26 @@ class ServiceTest extends AbstractFile
     /**
      *
      */
+    public function testWriteBingSearchSearchServiceMyProjectApiProject()
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getService('Search')) instanceof ServiceModel) {
+            $generator
+                ->setOptionPrefix('Api')
+                ->setOptionSuffix('Project')
+                ->setOptionNamespacePrefix('My\Project');
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidMyProjectApiSearchProject', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Search service for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testWriteBingSearchSearchServiceBingApi()
     {
         $generator = self::bingGeneratorInstance();
