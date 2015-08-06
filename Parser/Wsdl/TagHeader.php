@@ -54,10 +54,18 @@ class TagHeader extends AbstractTagParser
             $serviceMethod = $this->getModel($operation);
             if ($serviceMethod instanceof Method && !$this->isSoapHeaderAlreadyDefined($serviceMethod, $header->getHeaderName())) {
                 $serviceMethod
-                    ->addMeta(self::META_SOAP_HEADERS, array($header->getHeaderRequired()))
-                    ->addMeta(self::META_SOAP_HEADER_NAMES, array($header->getHeaderName()))
-                    ->addMeta(self::META_SOAP_HEADER_TYPES, array($header->getHeaderType()))
-                    ->addMeta(self::META_SOAP_HEADER_NAMESPACES, array($header->getHeaderNamespace()));
+                    ->addMeta(self::META_SOAP_HEADERS, array(
+                        $header->getHeaderRequired(),
+                    ))
+                    ->addMeta(self::META_SOAP_HEADER_NAMES, array(
+                        $header->getHeaderName(),
+                    ))
+                    ->addMeta(self::META_SOAP_HEADER_TYPES, array(
+                        $header->getHeaderType(),
+                    ))
+                    ->addMeta(self::META_SOAP_HEADER_NAMESPACES, array(
+                        $header->getHeaderNamespace(),
+                    ));
             }
         }
     }
