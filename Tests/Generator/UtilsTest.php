@@ -53,4 +53,46 @@ class UtilsTest extends TestCase
         $this->assertEmpty(Utils::cleanComment(null));
         $this->assertEmpty(Utils::cleanComment(new \stdClass()));
     }
+    /**
+     *
+     */
+    public function testGetContentFromUrlContextOptionsBasicAuth()
+    {
+        $this->assertSame(array(
+            'http' => array(
+                'header' => array(
+                    sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
+                ),
+            ),
+        ), Utils::getContentFromUrlContextOptions('http://www.foo.com', 'foo', 'bar'));
+    }
+    /**
+     *
+     */
+    public function testGetContentFromUrlContextOptionsProxy()
+    {
+        $this->assertSame(array(
+            'http' => array(
+                'proxy' => 'tcp://dns.proxy.com:4545',
+                'header' => array(
+                    sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
+                ),
+            ),
+        ), Utils::getContentFromUrlContextOptions('http://www.foo.com', null, null, 'dns.proxy.com', 4545, 'foo', 'bar'));
+    }
+    /**
+     *
+     */
+    public function testGetContentFromUrlContextOptionsBasicAuthProxy()
+    {
+        $this->assertSame(array(
+            'http' => array(
+                'proxy' => 'tcp://dns.proxy.com:4545',
+                'header' => array(
+                    sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
+                    sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
+                ),
+            ),
+        ), Utils::getContentFromUrlContextOptions('http://www.foo.com', 'foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar'));
+    }
 }

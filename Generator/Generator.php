@@ -17,26 +17,6 @@ use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 class Generator extends \SoapClient
 {
     /**
-     * SoapClient undeclared native property for proxy host
-     * @var string
-     */
-    public $_proxy_host;
-    /**
-     * SoapClient undeclared native property for proxy port
-     * @var string
-     */
-    public $_proxy_port;
-    /**
-     * SoapClient undeclared native property for proxy login
-     * @var string
-     */
-    public $_proxy_login;
-    /**
-     * SoapClient undeclared native property for proxy password
-     * @var string
-     */
-    public $_proxy_password;
-    /**
      * Wsdl
      * @var Wsdl
      */
@@ -688,7 +668,7 @@ class Generator extends \SoapClient
     public function getUrlContent($url)
     {
         if (strpos($url, '://') !== false) {
-            return Utils::getContentFromUrl($url, isset($this->_proxy_host) ? $this->_proxy_host : null, isset($this->_proxy_port) ? $this->_proxy_port : null, isset($this->_proxy_login) ? $this->_proxy_login : null, isset($this->_proxy_password) ? $this->_proxy_password : null);
+            return Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword());
         } elseif (is_file($url)) {
             return file_get_contents($url);
         }

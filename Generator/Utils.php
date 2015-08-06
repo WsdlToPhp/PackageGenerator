@@ -61,31 +61,60 @@ class Utils
     /**
      * Get content from url using a proxy or not
      * @param string $url
+     * @param string $basicAuthLogin
+     * @param string $basicAuthPassword
      * @param string $proxyHost
      * @param string $proxyPort
      * @param string $proxyLogin
      * @param string $proxyPassword
      * @return string
      */
-    public static function getContentFromUrl($url, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null)
+    public static function getContentFromUrl($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null)
     {
         $context = null;
+        $options = self::getContentFromUrlContextOptions($url, $basicAuthLogin, $basicAuthPassword, $proxyHost, $proxyPort, $proxyLogin, $proxyPassword);
+        if (!empty($options)) {
+            $context = stream_context_create($options);
+        }
+        return file_get_contents($url, false, $context);
+    }
+    /**
+     * @param string $url
+     * @param string $basicAuthLogin
+     * @param string $basicAuthPassword
+     * @param string $proxyHost
+     * @param string $proxyPort
+     * @param string $proxyLogin
+     * @param string $proxyPassword
+     * @return string[]
+     */
+    public static function getContentFromUrlContextOptions($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null)
+    {
+        $protocol = strpos($url, 'https://') !== false ? 'https' : 'http';
+        $proxyOptions = $basicAuthOptions = array();
+        if (!empty($basicAuthLogin) && !empty($basicAuthPassword)) {
+            $basicAuthOptions = array(
+                $protocol => array(
+                    'header' => array(
+                        sprintf('Authorization: Basic %s', base64_encode(sprintf('%s:%s', $basicAuthLogin, $basicAuthPassword))),
+                    ),
+                ),
+            );
+        }
         if (!empty($proxyHost)) {
-            $protocol = strpos($proxyHost, 'https://') !== false ? 'https' : 'http';
-            $options = array(
+            $proxyOptions = array(
                 $protocol => array(
                     'proxy' => sprintf('tcp://%s%s',
                         $proxyHost,
                         empty($proxyPort) ? '' : sprintf(':%s', $proxyPort)
                     ),
                     'header' => array(
-                        sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf(empty($proxyPassword) ? '%s@' : '%s:%s@', urlencode($proxyLogin), empty($proxyPassword) ? '' : urlencode($proxyPassword)))),
+                        sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf('%s:%s', $proxyLogin, $proxyPassword))),
                     ),
                 ),
             );
-            $context = stream_context_create($options);
         }
-        return file_get_contents($url, false, $context);
+        return array_merge_recursive($proxyOptions, $basicAuthOptions);
     }
     /**
      * Returns the value with good type
