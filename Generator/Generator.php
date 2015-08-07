@@ -260,7 +260,7 @@ class Generator extends \SoapClient
      */
     private function generateStructsClasses($rootDirectory, $rootDirectoryRights)
     {
-        foreach ($this->getStructs() as $structName => $struct) {
+        foreach ($this->getStructs() as $struct) {
             if (!$struct->getIsStruct()) {
                 continue;
             }
