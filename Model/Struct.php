@@ -328,4 +328,23 @@ class Struct extends AbstractModel
     {
         return 'Struct';
     }
+    /**
+     * Returns a valid clean name for PHP
+     * @uses AbstractModel::getName()
+     * @uses AbstractModel::cleanString()
+     * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
+     * @return string
+     */
+    public function getCleanName($keepMultipleUnderscores = true)
+    {
+        $clean = self::cleanString($this->getName(), $keepMultipleUnderscores);
+        $context = $this->getContextualPart();
+        if (!$this->isArray()) {
+            return $clean . $context;
+        }
+        if (stripos($clean, $context) === false) {
+            return $context . $clean;
+        }
+        return $clean;
+    }
 }
