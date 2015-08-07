@@ -22,6 +22,7 @@ class GeneratorOptions extends AbstractYamlReader
     const ADD_COMMENTS = 'add_comments';
     const GATHER_METHODS = 'gather_methods';
     const NAMESPACE_PREFIX = 'namespace_prefix';
+    const COMPOSER_NAME = 'composer_name';
     const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
     const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
     /**
@@ -192,6 +193,24 @@ class GeneratorOptions extends AbstractYamlReader
     public function setNamespace($namespace)
     {
         return $this->setOptionValue(self::NAMESPACE_PREFIX, $namespace);
+    }
+    /**
+     * Get composer name option value
+     * @return string|bool
+     */
+    public function getComposerName()
+    {
+        return $this->getOptionValue(self::COMPOSER_NAME);
+    }
+    /**
+     * Set composer name option value
+     * @throws \InvalidArgumentException
+     * @param string $composerName
+     * @return GeneratorOptions
+     */
+    public function setComposerName($composerName)
+    {
+        return $this->setOptionValue(self::COMPOSER_NAME, $composerName);
     }
     /**
      * Get generic constants name option value

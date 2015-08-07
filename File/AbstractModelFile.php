@@ -119,7 +119,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function definePackageAnnotations(PhpAnnotationBlock $block)
     {
-        $block->addChild(new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getPackageName()));
+        $block->addChild(new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionNamespacePrefix()));
         if (count($this->getModel()->getDocSubPackages()) > 0) {
             $block->addChild(new PhpAnnotation(self::ANNOTATION_SUB_PACKAGE, implode(',', $this->getModel()->getDocSubPackages())));
         }
@@ -292,7 +292,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $this;
     }
     /**
-     * @param Constant
+     * @param Constant $constants
      */
     abstract protected function getClassConstants(Constant $constants);
     /**
@@ -301,7 +301,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getConstantAnnotationBlock(PhpConstant $constant);
     /**
-     * @param Property
+     * @param Property $properties
      */
     abstract protected function getClassProperties(Property $properties);
     /**
@@ -310,7 +310,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getPropertyAnnotationBlock(PhpProperty $property);
     /**
-     * @param Method
+     * @param Method $methods
      */
     abstract protected function getClassMethods(Method $methods);
     /**
@@ -320,6 +320,7 @@ abstract class AbstractModelFile extends AbstractFile
     abstract protected function getMethodAnnotationBlock(PhpMethod $method);
     /**
      * @param PhpClass $class
+     * @return ClassMap
      */
     protected function defineStringMethod(PhpClass $class)
     {

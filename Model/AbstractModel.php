@@ -92,7 +92,7 @@ abstract class AbstractModel
             if ($model->getIsStruct()) {
                 $extends = $model->getPackagedName();
             }
-        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), $this->getGenerator()->getPackageName()) === 0) {
+        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), $this->getGenerator()->getOptionNamespacePrefix()) === 0) {
             $extends = $this->getInheritance();
         }
         if (empty($extends)) {
@@ -112,6 +112,7 @@ abstract class AbstractModel
      * Sets the name of the class the current class inherits from
      * @uses AbstractModel::updateModels()
      * @param string
+     * @return string
      */
     public function setInheritance($inheritance = '')
     {
@@ -366,9 +367,8 @@ abstract class AbstractModel
     {
         $namespace = $this->getGenerator()->getOptionNamespacePrefix();
         $directory = $this->getGenerator()->getDirectory($this);
-        $packageName = $this->getGenerator()->getPackageName();
         $namespaceEnding = implode('\\', explode('/', substr($directory, 0, -1)));
-        return sprintf(empty($namespace) ? '%1$s%4$s%3$s' : '%2$s\\%1$s%4$s%3$s', $packageName, $namespace, $namespaceEnding, empty($namespaceEnding) ? '' : '\\');
+        return sprintf('%1$s%3$s%2$s', $namespace, $namespaceEnding, empty($namespaceEnding) ? '' : '\\');
     }
     /**
      * Returns the sub package name which the model belongs to
