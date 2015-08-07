@@ -340,7 +340,7 @@ abstract class AbstractModel
      */
     public function getPackagedName($namespaced = false)
     {
-        return ($namespaced ? sprintf('\%s\\', $this->getNamespace()) : '') . $this->getGenerator()->getPackageName() . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+        return ($namespaced ? sprintf('\%s\\', $this->getNamespace()) : '') . ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
     }
     /**
      * Allows to define the contextual part of the class name for the package

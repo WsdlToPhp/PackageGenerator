@@ -12,11 +12,11 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 class Struct extends AbstractModel
 {
     const
-        CONTEXTUAL_PART_STRUCT = 'StructType',
+        CONTEXTUAL_PART_STRUCT = 'Struct',
         DOC_SUB_PACKAGE_STRUCTS = 'Structs',
-        CONTEXTUAL_PART_ENUMERATION = 'EnumType',
+        CONTEXTUAL_PART_ENUMERATION = 'Enum',
         DOC_SUB_PACKAGE_ENUMERATIONS = 'Enumerations',
-        CONTEXTUAL_PART_ARRAY = 'ArrayType',
+        CONTEXTUAL_PART_ARRAY = 'ArrayOf',
         DOC_SUB_PACKAGE_ARRAYS = 'Arrays';
     /**
      * Attributes of the struct

@@ -109,7 +109,7 @@ class Generator extends \SoapClient
      * @param string $password password to get access to WSDL
      * @param array $wsdlOptions options to get access to WSDL
      */
-    public function __construct($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
+    public function __construct($pathToWsdl, $login = '', $password = '', array $wsdlOptions = array())
     {
         $this
             ->initSoapClient($pathToWsdl, $login, $password, $wsdlOptions)
@@ -126,7 +126,7 @@ class Generator extends \SoapClient
      * @throws \InvalidArgumentException
      * @return Generator
      */
-    protected function initSoapClient($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
+    protected function initSoapClient($pathToWsdl, $login = '', $password = '', array $wsdlOptions = array())
     {
         $pathToWsdl = trim($pathToWsdl);
         /**
