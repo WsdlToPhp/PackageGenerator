@@ -156,7 +156,7 @@ class Utils
             $pathParts = explode('/', $path);
             $finalPath = implode('/', $pathParts);
 
-            foreach ($destinationParts as $index=>$locationPart) {
+            foreach ($destinationParts as $locationPart) {
                 if ($locationPart == '..') {
                     $finalPath = substr($finalPath, 0, strrpos($finalPath, '/', 0));
                 } else {
