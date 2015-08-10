@@ -503,7 +503,7 @@ class GeneratorOptions extends AbstractYamlReader
     public function toArray()
     {
         $options = array();
-        foreach ($this->options as $name => $value) {
+        foreach (array_keys($this->options) as $name) {
             $options[$name] = $this->getOptionValue($name);
         }
         return $options;
