@@ -51,7 +51,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      */
     private function generateStructsClasses()
     {
-        foreach ($this->getGenerator()->getStructs() as $structName => $struct) {
+        foreach ($this->getGenerator()->getStructs() as $struct) {
             if (!$struct->getIsStruct()) {
                 continue;
             }
