@@ -17,6 +17,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 class Service extends AbstractModelFile
 {
@@ -71,6 +72,13 @@ class Service extends AbstractModelFile
      */
     protected function getPropertyAnnotationBlock(PhpProperty $property)
     {
+    }
+    /**
+     * @return string
+     */
+    protected function getClassDeclarationLineText()
+    {
+        return $this->getGenerator()->getOptionGatherMethods() === GeneratorOptions::VALUE_NONE ? 'This class stands for all operations' : parent::getClassDeclarationLineText();
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassMethods()
