@@ -620,7 +620,7 @@ class Generator
      */
     public function getServiceName($methodName)
     {
-        return ucfirst($this->getGather(new EmptyModel($this, $methodName)));
+        return ucfirst($this->getOptionGatherMethods() === GeneratorOptions::VALUE_NONE ? Service::DEFAULT_SERVICE_CLASS_NAME : $this->getGather(new EmptyModel($this, $methodName)));
     }
     /**
      * @param GeneratorOptions $options
