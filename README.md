@@ -110,7 +110,6 @@ $ php console wsdltophp:generate:package \
     --wsdl-gathermethods="start" \
     --wsdl-genericconstants=false \
     --wsdl-gentutorial=true \
-    --wsdl-namespace="My\Project" \
     --wsdl-standalone=true \
     --wsdl-addcomments="date:2015-04-22" \
     --wsdl-addcomments="author:Me" \
