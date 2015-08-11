@@ -1,0 +1,18 @@
+{
+  "alias": "wsdltophp.phar",
+  "chmod": "0755",
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": ["Tests", "tests", "res"],
+      "in": "."
+    }
+  ],
+  "files": [
+    "LICENSE"
+  ],
+  "git-version": "package_version",
+  "main": "console",
+  "output": "wsdltophp.phar",
+  "stub": true
+}

@@ -8,7 +8,7 @@ require_once __DIR__.'/vendor/autoload.php';
 use Symfony\Component\Console\Application;
 use WsdlToPhp\PackageGenerator\Command\GeneratePackageCommand;
 
-$console = new Application();
+$console = new Application('Wsdltophp', '@package_version@');
 $console->add(new GeneratePackageCommand());
 
 $console->run();
