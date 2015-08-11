@@ -185,7 +185,14 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function getClassDeclarationLine()
     {
-        return sprintf('This class stands for %s %s', $this->getModel()->getName(), $this->getModel()->getContextualPart());
+        return sprintf($this->getClassDeclarationLineText(), $this->getModel()->getName(), $this->getModel()->getContextualPart());
+    }
+    /**
+     * @return string
+     */
+    protected function getClassDeclarationLineText()
+    {
+        return 'This class stands for %s %s';
     }
     /**
      * @param PhpAnnotationBlock $block
