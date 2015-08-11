@@ -12,6 +12,10 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 class Service extends AbstractModel
 {
     /**
+     * @var string
+     */
+    const DEFAULT_SERVICE_CLASS_NAME = 'Service';
+    /**
      * Store the methods of the service
      * @var MethodContainer
      */
