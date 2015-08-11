@@ -250,6 +250,16 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testSetGatherMethodsNone()
+    {
+        $instance = self::optionsInstance();
+        $instance->setGatherMethods(GeneratorOptions::VALUE_NONE);
+
+        $this->assertSame(GeneratorOptions::VALUE_NONE, $instance->getGatherMethods());
+    }
+    /**
+     *
+     */
     public function testGetGenericConstantsName()
     {
         $this->assertFalse(self::optionsInstance()->getGenericConstantsName());

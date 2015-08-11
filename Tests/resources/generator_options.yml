@@ -6,7 +6,7 @@ category:
     values: [ 'none', 'cat' ]
 gather_methods:
     default: 'start'
-    values: ['start', 'end' ]
+    values: ['start', 'end', 'none' ]
 generic_constants_names:
     default: false
     values: [ true, false ]
