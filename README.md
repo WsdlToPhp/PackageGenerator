@@ -54,13 +54,15 @@ The generator comes with several options:
             - **ServiceType**: classes that contains the methods matching the _operations_
             - **StructType**: any class that is a _simpleType_ or _complexType_ or an _abstract_ element
         - **none**: all the classes are generated directly in the root directory defined by the destination
-- _**Optional**_ operation gathering method, if you have **getList**, **getUsers** and **getData** as operations:
+- _**Optional**_ operation gathering method, if you have **getList**, **getUsers**, **getData** and **setUser** as operations:
     - **\-\-wsdl-gathermethods**:
-        - **start** _(default)_: you'll have one **Get** class that contains the **getList**, **getUsers** and **getData** methods
-        - **end**, you'll have 3 classes :
-            - **List** that contains the getList method,
-            - **Users** that contains the getUsers method,
-            - **Data** that contains the getData method
+        - **start** _(default)_: you'll have one **Get** class that contains the **getList**, **getUsers** and **getData** methods and another class **Set** that contains only the **setUser** method
+        - **none**: you'll have only one class that contains all the methods **getList**, **getUsers**, **getData** and **setUser** methods
+        - **end**, you'll have 4 classes :
+            - **List** that contains the **getList method,
+            - **User** that contains the **setUser** method,
+            - **Users** that contains the **getUsers** method,
+            - **Data** that contains the **getData** method
 - _**Optional**_ generated classes namespace and inheritance:
     - **\-\-wsdl-namespace**: prefix classes' main namespace with your namespace
     - **\-\-wsdl-standalone** _(default: ```true```)_: enables/disables the installation of the [PackageBase](https://packagist.org/packages/wsdltophp/packagebase) package that contains the base class from which StructType, ArrayType and ServiceType classes inherit
@@ -201,7 +203,7 @@ use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
 $options = GenerationOptions::instance();
 $options
     ->setCategory(GeneratorOptions::VALUE_CAT)
-    ->setMethods(GeneratorOptions::VALUE_START)
+    ->setGatherMethods(GeneratorOptions::VALUE_START)
     ->setGenericConstantsNames(GeneratorOptions::VALUE_FALSE)
     ->setGenerateTutorialFile(GeneratorOptions::VALUE_TRUE)
     ->setStandalone(GeneratorOptions::VALUE_TRUE)
