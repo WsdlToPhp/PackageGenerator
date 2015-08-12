@@ -170,7 +170,7 @@ class Generator
      */
     public function generateClasses()
     {
-        $this
+        return $this
             ->doSanityChecks()
             ->doParse()
             ->doGenerate();
