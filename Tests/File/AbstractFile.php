@@ -36,9 +36,9 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function actonGeneratorInstance($reset = true)
+    public static function actonGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlActonPath(), $reset);
+        return self::getInstance(self::wsdlActonPath(), $reset, $gatherMethods);
     }
     /**
      * @return Generator
@@ -78,9 +78,9 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function payPalGeneratorInstance($reset = true)
+    public static function payPalGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlPayPalPath(), $reset);
+        return self::getInstance(self::wsdlPayPalPath(), $reset, $gatherMethods);
     }
     /**
      * @param string $wsdl

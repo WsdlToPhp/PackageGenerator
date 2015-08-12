@@ -202,4 +202,38 @@ class ServiceTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Service model for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWritePayPalService()
+    {
+        $generator = self::payPalGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
+        if (($model = $generator->getServices()->offsetGet(0)) instanceof ServiceModel) {
+            $generator->setOptionGatherMethods(GeneratorOptions::VALUE_NONE);
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidPayPalApiService', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Service model for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteActonService()
+    {
+        $generator = self::actonGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
+        if (($model = $generator->getServices()->offsetGet(0)) instanceof ServiceModel) {
+            $generator->setOptionGatherMethods(GeneratorOptions::VALUE_NONE);
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidActonApiService', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Service model for file generation');
+        }
+    }
 }
