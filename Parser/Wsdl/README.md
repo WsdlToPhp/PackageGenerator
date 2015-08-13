@@ -16,7 +16,7 @@ Neverthless, the goals of these parsers are various:
     - Values of type array
     - Inheritance between elements
 
-Knowing this, it is simpler to understand why complexType or simpleType are not parsed as parsing them would mean that:
+Knowing this, it is simpler to understand why simpleType are not parsed as parsing them would mean that:
 
 - We would retrieve each tag
 - For each tag we would apply various methods to test the presence of each possible information we want to get (possibly none) and each possibility
