@@ -59,7 +59,7 @@ The generator comes with several options:
         - **start** _(default)_: you'll have one **Get** class that contains the **getList**, **getUsers** and **getData** methods and another class **Set** that contains only the **setUser** method
         - **none**: you'll have only one class that contains all the methods **getList**, **getUsers**, **getData** and **setUser** methods
         - **end**, you'll have 4 classes :
-            - **List** that contains the **getList method,
+            - **List** that contains the **getList** method,
             - **User** that contains the **setUser** method,
             - **Users** that contains the **getUsers** method,
             - **Data** that contains the **getData** method
