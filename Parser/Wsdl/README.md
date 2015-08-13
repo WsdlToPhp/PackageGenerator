@@ -35,4 +35,4 @@ On the other hand, if there is no documentation node, then we won't do anything 
 After all!
 ----------
 
-After all, if you think it is not a good choice to not parse complexType, simpleType and so on, please let me know the reasons!
+After all, if you think it is not a good choice to not parse simpleType and so on, please let me know the reasons.
