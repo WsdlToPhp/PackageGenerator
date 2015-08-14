@@ -20,7 +20,7 @@ class TagUnionTest extends TestCase
         $this->assertCount(2, $unions);
 
         $ok = false;
-        foreach ($unions as $index=>$union) {
+        foreach ($unions as $union) {
             switch ($union->getSuitableParent()->getAttributeName()) {
                 case 'RelationshipTypeOpenEnum':
                     $this->assertSame(array(

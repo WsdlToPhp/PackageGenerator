@@ -19,7 +19,7 @@ class TagListTest extends TestCase
 
         $this->assertCount(4, $lists);
 
-        foreach ($lists as $index=>$list) {
+        foreach ($lists as $list) {
             $this->assertSame('int', $list->getAttributeItemType());
         }
     }

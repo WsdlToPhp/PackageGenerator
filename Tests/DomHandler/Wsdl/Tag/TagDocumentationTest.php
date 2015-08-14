@@ -19,7 +19,7 @@ class TagDocumentationTest extends TestCase
         $documentations = $schema->getContent()->getElementsByName(Wsdl::TAG_DOCUMENTATION);
 
         $ok = false;
-        foreach ($documentations as $index=>$documentation) {
+        foreach ($documentations as $documentation) {
             $parent = $documentation->getSuitableParent();
             if ($parent instanceof AbstractTag) {
                 $this->assertSame('availRequest', $parent->getAttributeName());

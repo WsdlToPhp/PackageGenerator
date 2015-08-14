@@ -137,13 +137,43 @@ class Generator
         return $this;
     }
     /**
+     * @return Generator
+     */
+    protected function doSanityChecks()
+    {
+        $prefix = $this->getOptionPrefix();
+        $suffix = $this->getOptionSuffix();
+        if (empty($prefix) && empty($suffix)) {
+            throw new \InvalidArgumentException('You MUST define at least a prefix or a suffix', __LINE__);
+        }
+        return $this;
+    }
+    /**
+     * @return Generator
+     */
+    protected function doParse()
+    {
+        $this->parsers->doParse();
+        return $this;
+    }
+    /**
+     * @return Generator
+     */
+    protected function doGenerate()
+    {
+        $this->files->doGenerate();
+        return $this;
+    }
+    /**
      * Generates all classes based on options
      * @return Generator
      */
     public function generateClasses()
     {
-        $this->parsers->doParse();
-        $this->files->doGenerate();
+        return $this
+            ->doSanityChecks()
+            ->doParse()
+            ->doGenerate();
     }
     /**
      * Gets the struct by its name
@@ -620,7 +650,7 @@ class Generator
      */
     public function getServiceName($methodName)
     {
-        return ucfirst($this->getGather(new EmptyModel($this, $methodName)));
+        return ucfirst($this->getOptionGatherMethods() === GeneratorOptions::VALUE_NONE ? Service::DEFAULT_SERVICE_CLASS_NAME : $this->getGather(new EmptyModel($this, $methodName)));
     }
     /**
      * @param GeneratorOptions $options

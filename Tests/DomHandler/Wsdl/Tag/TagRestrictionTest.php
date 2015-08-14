@@ -17,7 +17,7 @@ class TagRestrictionTest extends TestCase
 
         $restrictions = $wsdl->getContent()->getElementsByName(Wsdl::TAG_RESTRICTION);
 
-        foreach ($restrictions as $index=>$restriction) {
+        foreach ($restrictions as $restriction) {
             $this->assertTrue($restriction->isEnumeration());
         }
     }

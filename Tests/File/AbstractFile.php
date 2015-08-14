@@ -29,16 +29,16 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function bingGeneratorInstance($reset = true)
+    public static function bingGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlBingPath(), $reset);
+        return self::getInstance(self::wsdlBingPath(), $reset, $gatherMethods);
     }
     /**
      * @return Generator
      */
-    public static function actonGeneratorInstance($reset = true)
+    public static function actonGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlActonPath(), $reset);
+        return self::getInstance(self::wsdlActonPath(), $reset, $gatherMethods);
     }
     /**
      * @return Generator
@@ -64,9 +64,9 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function omnitureGeneratorInstance($reset = true)
+    public static function omnitureGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlOmniturePath(), $reset);
+        return self::getInstance(self::wsdlOmniturePath(), $reset, $gatherMethods);
     }
     /**
      * @return Generator
@@ -78,15 +78,15 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function payPalGeneratorInstance($reset = true)
+    public static function payPalGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlPayPalPath(), $reset);
+        return self::getInstance(self::wsdlPayPalPath(), $reset, $gatherMethods);
     }
     /**
      * @param string $wsdl
      * @return Generator
      */
-    public static function getInstance($wsdl, $reset = true)
+    public static function getInstance($wsdl, $reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgeReservedKeywords();
@@ -96,7 +96,8 @@ abstract class AbstractFile extends TestCase
             ->setOptionAddComments(array(
                 'release' => '1.1.0',
             ))
-            ->setOptionCategory(GeneratorOptions::VALUE_CAT);
+            ->setOptionCategory(GeneratorOptions::VALUE_CAT)
+            ->setOptionGatherMethods($gatherMethods);
         self::applyParsers($g, $wsdl);
         return $g;
     }
@@ -141,7 +142,6 @@ abstract class AbstractFile extends TestCase
         $validContent = str_replace('__WSDL_URL__', $file->getGenerator()->getWsdl()->getName(), $validContent);
         $toBeValidatedContent = file_get_contents($file->getFileName());
         $this->assertSame($validContent, $toBeValidatedContent);
-        $dir = dirname($file->getFileName());
         unlink($file->getFileName());
     }
 }

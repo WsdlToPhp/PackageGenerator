@@ -5,6 +5,7 @@ namespace WsdlToPhp\PackageGenerator\Tests\File;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 class ServiceTest extends AbstractFile
 {
@@ -166,6 +167,73 @@ class ServiceTest extends AbstractFile
             $this->assertSameFileContent('ValidApiDo', $service);
         } else {
             $this->assertFalse(true, 'Unable to find Do service for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteBingService()
+    {
+        $generator = self::bingGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
+        if (($model = $generator->getServices()->offsetGet(0)) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidBingApiService', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Service model for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteOmnitureService()
+    {
+        $generator = self::omnitureGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
+        if (($model = $generator->getServices()->offsetGet(0)) instanceof ServiceModel) {
+            $generator->setOptionGatherMethods(GeneratorOptions::VALUE_NONE);
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidOmnitureApiService', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Service model for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWritePayPalService()
+    {
+        $generator = self::payPalGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
+        if (($model = $generator->getServices()->offsetGet(0)) instanceof ServiceModel) {
+            $generator->setOptionGatherMethods(GeneratorOptions::VALUE_NONE);
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidPayPalApiService', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Service model for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteActonService()
+    {
+        $generator = self::actonGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
+        if (($model = $generator->getServices()->offsetGet(0)) instanceof ServiceModel) {
+            $generator->setOptionGatherMethods(GeneratorOptions::VALUE_NONE);
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidActonApiService', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Service model for file generation');
         }
     }
 }
