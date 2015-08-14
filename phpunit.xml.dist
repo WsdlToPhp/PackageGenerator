@@ -10,55 +10,55 @@
     </php>
     <testsuites>
         <testsuite name="full">
-            <directory>Tests/ConfigurationReader/</directory>
-            <file>Tests/Generator/UtilsTest.php</file>
-            <file>Tests/DomHandler/DomDocumentHandlerTest.php</file>
-            <file>Tests/DomHandler/NodeHandlerTest.php</file>
-            <file>Tests/DomHandler/ElementHandlerTest.php</file>
-            <file>Tests/DomHandler/AttributeHandlerTest.php</file>
-            <file>Tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
-            <directory>Tests/DomHandler/Wsdl/Tag</directory>
-            <directory>Tests/File</directory>
-            <directory>Tests/Model/</directory>
-            <directory>Tests/Container/</directory>
-            <directory>Tests/Parser/</directory>
+            <directory>./tests/ConfigurationReader/</directory>
+            <file>./tests/Generator/UtilsTest.php</file>
+            <file>./tests/DomHandler/DomDocumentHandlerTest.php</file>
+            <file>./tests/DomHandler/NodeHandlerTest.php</file>
+            <file>./tests/DomHandler/ElementHandlerTest.php</file>
+            <file>./tests/DomHandler/AttributeHandlerTest.php</file>
+            <file>./tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
+            <directory>./tests/DomHandler/Wsdl/Tag/</directory>
+            <directory>./tests/File</directory>
+            <directory>./tests/Model/</directory>
+            <directory>./tests/Container/</directory>
+            <directory>./tests/Parser/</directory>
         </testsuite>
 
         <testsuite name="configuration">
-            <directory>Tests/ConfigurationReader</directory>
+            <directory>./tests/ConfigurationReader/</directory>
         </testsuite>
 
         <testsuite name="utils">
-            <file>Tests/Generator/UtilsTest.php</file>
+            <file>./tests/Generator/UtilsTest.php</file>
         </testsuite>
 
         <testsuite name="packagegenerator">
-            <file>Tests/Generator/GeneratorTest.php</file>
+            <file>./tests/Generator/GeneratorTest.php</file>
         </testsuite>
 
         <testsuite name="file">
-            <directory>Tests/File</directory>
+            <directory>./tests/File/</directory>
         </testsuite>
 
         <testsuite name="domhandler">
-            <file>Tests/DomHandler/DomDocumentHandlerTest.php</file>
-            <file>Tests/DomHandler/NodeHandlerTest.php</file>
-            <file>Tests/DomHandler/ElementHandlerTest.php</file>
-            <file>Tests/DomHandler/AttributeHandlerTest.php</file>
-            <file>Tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
-            <directory>Tests/DomHandler/Wsdl/Tag</directory>
+            <file>./tests/DomHandler/DomDocumentHandlerTest.php</file>
+            <file>./tests/DomHandler/NodeHandlerTest.php</file>
+            <file>./tests/DomHandler/ElementHandlerTest.php</file>
+            <file>./tests/DomHandler/AttributeHandlerTest.php</file>
+            <file>./tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
+            <directory>./tests/DomHandler/Wsdl/Tag/</directory>
         </testsuite>
 
         <testsuite name="model">
-            <directory>Tests/Model</directory>
+            <directory>./tests/Model/</directory>
         </testsuite>
 
         <testsuite name="container">
-            <directory>Tests/Container</directory>
+            <directory>./tests/Container/</directory>
         </testsuite>
 
         <testsuite name="parser">
-            <directory>Tests/Parser</directory>
+            <directory>./tests/Parser/</directory>
         </testsuite>
     </testsuites>
 
@@ -66,9 +66,9 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
-                <directory>Resources</directory>
-                <directory>Tests</directory>
-                <directory>vendor</directory>
+                <directory>./src/resources</directory>
+                <directory>./tests</directory>
+                <directory>./vendor</directory>
             </exclude>
         </whitelist>
     </filter>

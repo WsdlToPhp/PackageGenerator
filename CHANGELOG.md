@@ -3,6 +3,7 @@ CHANGELOG
 
 WIP
 ---
+- Move classes under src folder, rename Tests to tests, rename Resources to resources, update composer.json and phpunit accordingly
 - **BC**:
     - Usage of GeneratorSoapClient as SoapClient handler that uses AbstractSoapClientBase as base SoapClient handler
     - Generator class does not inherit from \SoapClient class anymore
