@@ -36,7 +36,7 @@ class ReservedKeywords extends AbstractYamlReader
      */
     public static function instance($filename = null)
     {
-        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../Resources/config/reserved_keywords.yml' : $filename);
+        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../resources/config/reserved_keywords.yml' : $filename);
     }
     /**
      * @param string $keyword

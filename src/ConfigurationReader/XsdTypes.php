@@ -36,7 +36,7 @@ class XsdTypes extends AbstractYamlReader
      */
     public static function instance($filename = null)
     {
-        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../Resources/config/xsd_types.yml' : $filename);
+        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../resources/config/xsd_types.yml' : $filename);
     }
     /**
      * @param string $xsdType

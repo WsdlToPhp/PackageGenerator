@@ -105,7 +105,7 @@ class GeneratorOptions extends AbstractYamlReader
      */
     public static function instance($filename = null)
     {
-        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../Resources/config/generator_options.yml' : $filename);
+        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../resources/config/generator_options.yml' : $filename);
     }
     /**
      * Get category option value
