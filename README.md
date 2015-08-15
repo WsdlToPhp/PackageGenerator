@@ -101,6 +101,8 @@ $ composer install
 $ php console wsdltophp:generate:package -h => display help
 $ php console wsdltophp:generate:package \
     --wsdl-urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
+    --wsdl-login="*******" \
+    --wsdl-password="*******" \
     --wsdl-proxy-host="****************************" \
     --wsdl-proxy-port=*******  \
     --wsdl-proxy-login="*******" \
@@ -128,7 +130,7 @@ $ ls -la => enjoy!
 #### Debug options before actually generating the package
 Remove ```--force``` option from the previous command line to get this result:
 ```
- Start at 2015-08-06 23:09:44
+ Start at 2015-08-15 10:54:34
   Generation not launched, use "--force" option to force generation
   Used generator's options:
     category: cat
@@ -145,14 +147,14 @@ Remove ```--force``` option from the previous command line to get this result:
     destination: /var/www/Api/
     prefix: Api
     suffix: Project
-    basic_login:
-    basic_password:
+    basic_login: *******
+    basic_password: *******
     proxy_host: ****************************
     proxy_port: *******
     proxy_login: *******
     proxy_password: *******
     soap_options:
- End at 2015-08-06 23:09:44, duration: 00:00:00
+ End at 2015-08-15 10:54:34, duration: 00:00:00
 ```
 ### Programmatic usage
 ```
