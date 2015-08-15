@@ -79,7 +79,7 @@ The generator comes with several options:
 ## Usages
 ### Command line
 #### The most basic way
-To generate a package, nothing as simple as this:
+To generate a package:
 ```
 $ wget http://phar.wsdltophp/wsdltophp.phar
 $ ./wsdltophp.phar generate:package -h => display help
@@ -94,7 +94,7 @@ $ ls -la => enjoy!
 $ vi tutorial.php :smile:
 ```
 #### With full options
-To generate a package, nothing as simple as this:
+To generate a package:
 ```
 $ wget http://phar.wsdltophp/wsdltophp.phar
 $ ./wsdltophp.phar generate:package \
@@ -154,12 +154,12 @@ Remove ```--force``` option from the previous command line to get this result:
     soap_options:
  End at 2015-08-15 10:54:34, duration: 00:00:00
 ```
-### Programmatic usage
+### Programmatic
 ```
 $ cd /path/to/src/WsdlToPhp/PackageGenerator/
 $ composer install
 ```
-#### The most basic way
+#### The basic way
 ```php
 <?php
 require_once __DIR__ . '/vendor/autoload.php'
@@ -192,7 +192,7 @@ $serviceAdd = new \MyPackage\ServiceType\MyPackageServiceAdd($options);
 $result = $serviceAdd->addRole();
 // ...
 ```
-#### Playing with options
+#### Dealing with the options
 ```php
 <?php
 require_once __DIR__ . '/vendor/autoload.php'
