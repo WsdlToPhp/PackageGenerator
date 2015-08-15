@@ -1,0 +1,27 @@
+{
+    "alias": "wsdltophp.phar",
+    "chmod": "0755",
+    "directories": [
+        "src"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": [
+                "phpunit",
+                "Tests",
+                "tests"
+            ],
+            "in": "vendor"
+        }
+    ],
+    "files": [
+        "LICENSE",
+        "CHANGELOG.md",
+        "README.md"
+    ],
+    "git-version": "git-version",
+    "main": "console",
+    "output": "bin/wsdltophp.phar",
+    "stub": true
+}
