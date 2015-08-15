@@ -81,10 +81,10 @@ The generator comes with several options:
 #### The most basic way
 To generate a package, nothing as simple as this:
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
-$ php console generate:package -h => display help
-$ php console generate:package \
+$ wget http://phar.wsdltophp/wsdltophp.phar
+$ ./wsdltophp.phar generate:package -h => display help
+$ ./wsdltophp.phar generate:package --version => display the version
+$ ./wsdltophp.phar generate:package \
     --urlorpath="http://www.mydomain.com/wsdl.xml" \
     --destination="/path/to/where/the/package/must/be/generated/" \
     --prefix="MyPackage" \
@@ -96,10 +96,8 @@ $ vi tutorial.php :smile:
 #### With full options
 To generate a package, nothing as simple as this:
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
-$ php console generate:package -h => display help
-$ php console generate:package \
+$ wget http://phar.wsdltophp/wsdltophp.phar
+$ ./wsdltophp.phar generate:package \
     --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --login="*******" \
     --password="*******" \
