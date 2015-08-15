@@ -48,7 +48,7 @@ class GeneratePackageCommand extends AbstractCommand
     {
         parent::configure();
         $this
-            ->setName('wsdltophp:generate:package')
+            ->setName('generate:package')
             ->setDescription('Generate package based on options')
             ->addOption('wsdl-urlorpath', null, InputOption::VALUE_REQUIRED, 'Url or path to WSDL')
             ->addOption('wsdl-destination', null, InputOption::VALUE_REQUIRED, 'Path to destination directory, where the package will be generated')

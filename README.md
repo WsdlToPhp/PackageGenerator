@@ -83,8 +83,8 @@ To generate a package, nothing as simple as this:
 ```
 $ cd /path/to/src/WsdlToPhp/PackageGenerator/
 $ composer install
-$ php console wsdltophp:generate:package -h => display help
-$ php console wsdltophp:generate:package \
+$ php console generate:package -h => display help
+$ php console generate:package \
     --wsdl-urlorpath="http://www.mydomain.com/wsdl.xml" \
     --wsdl-destination="/path/to/where/the/package/must/be/generated/" \
     --wsdl-prefix="MyPackage" \
@@ -98,8 +98,8 @@ To generate a package, nothing as simple as this:
 ```
 $ cd /path/to/src/WsdlToPhp/PackageGenerator/
 $ composer install
-$ php console wsdltophp:generate:package -h => display help
-$ php console wsdltophp:generate:package \
+$ php console generate:package -h => display help
+$ php console generate:package \
     --wsdl-urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --wsdl-login="*******" \
     --wsdl-password="*******" \
