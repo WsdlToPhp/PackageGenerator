@@ -65,8 +65,7 @@ class Generator
             ->initParsers()
             ->initFiles()
             ->initWsdl()
-            ->initSoapClient()
-            ->initDirectory();
+            ->initSoapClient();
     }
     /**
      * @throws \InvalidArgumentException
@@ -171,6 +170,7 @@ class Generator
     public function generateClasses()
     {
         return $this
+            ->initDirectory()
             ->doSanityChecks()
             ->doParse()
             ->doGenerate();
@@ -581,7 +581,6 @@ class Generator
     public function setOptionDestination($optionDestination)
     {
         $this->options->setDestination(realpath($optionDestination) . DIRECTORY_SEPARATOR);
-        $this->initDirectory();
         return $this;
     }
     /**
