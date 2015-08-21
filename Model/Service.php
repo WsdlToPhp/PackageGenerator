@@ -34,7 +34,7 @@ class Service extends AbstractModel
      */
     public function getContextualPart()
     {
-        return 'ServiceType';
+        return 'Service';
     }
     /**
      * Returns the sub package name which the model belongs to

@@ -57,8 +57,8 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('wsdl-proxy-port', null, InputOption::VALUE_OPTIONAL, 'Use proxy port')
             ->addOption('wsdl-proxy-login', null, InputOption::VALUE_OPTIONAL, 'Use proxy login')
             ->addOption('wsdl-proxy-password', null, InputOption::VALUE_OPTIONAL, 'Use proxy password')
-            ->addOption('wsdl-prefix', null, InputOption::VALUE_REQUIRED, 'Prepend generated classes')
             ->addOption('wsdl-namespace', null, InputOption::VALUE_OPTIONAL, 'Package classes\' namespace')
+            ->addOption('wsdl-composername', null, InputOption::VALUE_OPTIONAL, 'Name for composer package. Defaults to namespace if not defined.')
             ->addOption('wsdl-category', null, InputOption::VALUE_OPTIONAL, 'First level directory name generation mode (start, end, cat, none)')
             ->addOption('wsdl-gathermethods', null, InputOption::VALUE_OPTIONAL, 'Gather methods based on operation name mode (start, end)')
             ->addOption('wsdl-gentutorial', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable tutorial file, you should enable this option only on dev')
@@ -78,7 +78,6 @@ class GeneratePackageCommand extends AbstractCommand
         $wsdlUrl = $this->input->getOption('wsdl-urlorpath');
         $wsdlLogin = $this->input->getOption('wsdl-login');
         $wsdlPassword = $this->input->getOption('wsdl-password');
-        $packageName = $this->input->getOption('wsdl-prefix');
         $packageDestination = $this->input->getOption('wsdl-destination');
         $wsdlOptions = $this->defineWsdlOptions();
 
@@ -87,7 +86,7 @@ class GeneratePackageCommand extends AbstractCommand
         $packageGenerationOptions = $this->definePackageGenerationOptions();
 
         if ($this->canExecute()) {
-            $this->getGenerator()->generateClasses($packageName, $packageDestination);
+            $this->getGenerator()->generateClasses($packageDestination);
         } else {
             $this->writeLn("  Generation not launched, use --force to force generation");
             $this->writeLn("  Wsdl used:");
@@ -95,7 +94,6 @@ class GeneratePackageCommand extends AbstractCommand
                 'url' => $wsdlUrl,
                 'login' => $wsdlLogin,
                 'password' => $wsdlPassword,
-                'Package name' => $packageName,
                 'Package dest' => $packageDestination,
             ))));
             $this->writeLn("  Wsdl options used:");
@@ -140,6 +138,7 @@ class GeneratePackageCommand extends AbstractCommand
     {
         return array(
             'wsdl-namespace' => 'NamespacePrefix',
+            'wsdl-composername' => 'ComposerName',
             'wsdl-category' => 'Category',
             'wsdl-gathermethods' => 'GatherMethods',
             'wsdl-gentutorial' => 'GenerateTutorialFile',

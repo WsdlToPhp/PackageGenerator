@@ -12,11 +12,11 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 class Struct extends AbstractModel
 {
     const
-        CONTEXTUAL_PART_STRUCT = 'StructType',
+        CONTEXTUAL_PART_STRUCT = 'Struct',
         DOC_SUB_PACKAGE_STRUCTS = 'Structs',
-        CONTEXTUAL_PART_ENUMERATION = 'EnumType',
+        CONTEXTUAL_PART_ENUMERATION = 'Enum',
         DOC_SUB_PACKAGE_ENUMERATIONS = 'Enumerations',
-        CONTEXTUAL_PART_ARRAY = 'ArrayType',
+        CONTEXTUAL_PART_ARRAY = 'ArrayOf',
         DOC_SUB_PACKAGE_ARRAYS = 'Arrays';
     /**
      * Attributes of the struct
@@ -327,5 +327,24 @@ class Struct extends AbstractModel
     public function __toString()
     {
         return 'Struct';
+    }
+    /**
+     * Returns a valid clean name for PHP
+     * @uses AbstractModel::getName()
+     * @uses AbstractModel::cleanString()
+     * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
+     * @return string
+     */
+    public function getCleanName($keepMultipleUnderscores = true)
+    {
+        $clean = self::cleanString($this->getName(), $keepMultipleUnderscores);
+        $context = $this->getContextualPart();
+        if (!$this->isArray()) {
+            return $clean . $context;
+        }
+        if (stripos($clean, $context) === false) {
+            return $context . $clean;
+        }
+        return $clean;
     }
 }

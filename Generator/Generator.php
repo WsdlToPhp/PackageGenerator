@@ -109,7 +109,7 @@ class Generator extends \SoapClient
      * @param string $password password to get access to WSDL
      * @param array $wsdlOptions options to get access to WSDL
      */
-    public function __construct($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
+    public function __construct($pathToWsdl, $login = '', $password = '', array $wsdlOptions = array())
     {
         $this
             ->initSoapClient($pathToWsdl, $login, $password, $wsdlOptions)
@@ -126,7 +126,7 @@ class Generator extends \SoapClient
      * @throws \InvalidArgumentException
      * @return Generator
      */
-    protected function initSoapClient($pathToWsdl, $login = false, $password = false, array $wsdlOptions = array())
+    protected function initSoapClient($pathToWsdl, $login = '', $password = '', array $wsdlOptions = array())
     {
         $pathToWsdl = trim($pathToWsdl);
         /**
@@ -211,12 +211,11 @@ class Generator extends \SoapClient
      * @param bool $createRootDirectory create root directory if not exist
      * @return bool true|false depending on the well creation fot the root directory
      */
-    public function generateClasses($packageName, $rootDirectory, $rootDirectoryRights = 0775, $createRootDirectory = true)
+    public function generateClasses($rootDirectory, $rootDirectoryRights = 0775, $createRootDirectory = true)
     {
         $wsdl = $this->getWsdl(0);
         $wsdlLocation = $wsdl instanceof Wsdl ? $wsdl->getName() : '';
         if (!empty($wsdlLocation)) {
-            $this->setPackageName($packageName);
             $rootDirectory = $rootDirectory . (substr($rootDirectory, -1) != '/' ? '/' : '');
             /**
              * Root directory
@@ -261,7 +260,7 @@ class Generator extends \SoapClient
      */
     private function generateStructsClasses($rootDirectory, $rootDirectoryRights)
     {
-        foreach ($this->getStructs() as $structName => $struct) {
+        foreach ($this->getStructs() as $struct) {
             if (!$struct->getIsStruct()) {
                 continue;
             }
@@ -349,7 +348,7 @@ class Generator extends \SoapClient
                 'command' => 'init',
                 '--verbose' => true,
                 '--no-interaction' => true,
-                '--name' => sprintf('wsdltophp/generated-%s', strtolower(self::getPackageName())),
+                '--name' => $this->getComposerName(),
                 '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getWsdl(0)->getName()),
                 '--require' => array(
                     'php:>=5.3.3',
@@ -477,13 +476,30 @@ class Generator extends \SoapClient
         return $this->options->getNamespace();
     }
     /**
-     * Sets the optionGenerateTutorialFile value
+     * Sets the optionNamespacePrefix value
      * @param bool
      * @return GeneratorOptions
      */
     public function setOptionNamespacePrefix($namespace)
     {
         return $this->options->setNamespace($namespace);
+    }
+    /**
+     * Gets the optionComposerName value
+     * @return string
+     */
+    public function getOptionComposerName()
+    {
+        return $this->options->getComposerName();
+    }
+    /**
+     * Sets the optionComposerName value
+     * @param string
+     * @return GeneratorOptions
+     */
+    public function setOptionComposerName($composerName)
+    {
+        return $this->options->setComposerName($composerName);
     }
     /**
      * Gets the optionAddComments value
@@ -520,25 +536,6 @@ class Generator extends \SoapClient
         return $this->options->setStandalone($standalone);
     }
     /**
-     * Gets the package name
-     * @param bool $ucFirst ucfirst package name or not
-     * @return string
-     */
-    public function getPackageName($ucFirst = true)
-    {
-        return $ucFirst ? ucfirst($this->packageName) : $this->packageName;
-    }
-    /**
-     * Sets the package name
-     * @param string $packageName
-     * @return Generator
-     */
-    public function setPackageName($packageName)
-    {
-        $this->packageName = $packageName;
-        return $this;
-    }
-    /**
      * Gets the WSDLs
      * @return WsdlContainer
      */
@@ -568,6 +565,7 @@ class Generator extends \SoapClient
     /**
      * Adds Wsdl location
      * @param string $wsdlLocation
+     * @return Generator
      */
     public function addWsdl($wsdlLocation)
     {
@@ -743,5 +741,23 @@ class Generator extends \SoapClient
     public function __toString()
     {
         return __CLASS__;
+    }
+
+    /**
+     * @return string
+     */
+    private function getComposerName()
+    {
+        $composerName = $this->options->getComposerName();
+        if ($composerName) {
+            return $composerName;
+        }
+
+        $composerName = str_replace('\\', '/', strtolower($this->getOptionNamespacePrefix()));
+        if (strpos($composerName, '/') !== false) {
+            return $composerName;
+        }
+
+        return $composerName . "/" . $composerName;
     }
 }

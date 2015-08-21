@@ -43,6 +43,7 @@ class ClassMap extends AbstractModelFile
     }
     /**
      * @param MethodContainer $methods
+     * @return ClassMap
      */
     protected function getClassMethods(MethodContainer $methods)
     {
@@ -71,7 +72,7 @@ class ClassMap extends AbstractModelFile
     {
         return new PhpAnnotationBlock(array(
             'Class which returns the class map definition',
-            new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getPackageName()),
+            new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionNamespacePrefix()),
         ));
     }
     /**
