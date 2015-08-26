@@ -3,6 +3,7 @@ CHANGELOG
 
 WIP
 ---
+- issue #24 - ErrorException: Use of undefined constant JSON_PRETTY_PRINT
 - issue #13 - classmap and namespaces are wrong when not using a prefix
 - issue #21 - Inherited class generates wrong object in php
 
