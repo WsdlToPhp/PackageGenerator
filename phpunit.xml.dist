@@ -11,7 +11,7 @@
     <testsuites>
         <testsuite name="full">
             <directory>./tests/ConfigurationReader/</directory>
-            <file>./tests/Generator/UtilsTest.php</file>
+            <directory>./tests/Generator</directory>
             <file>./tests/DomHandler/DomDocumentHandlerTest.php</file>
             <file>./tests/DomHandler/NodeHandlerTest.php</file>
             <file>./tests/DomHandler/ElementHandlerTest.php</file>
