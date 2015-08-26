@@ -35,8 +35,8 @@
     },
     "autoload": {
         "psr-4": {
-	    "WsdlToPhp\\PackageGenerator\\": "src",
-	    "WsdlToPhp\\PackageGenerator\\Tests\\": "tests"
-	}
+		    "WsdlToPhp\\PackageGenerator\\": "src",
+		    "WsdlToPhp\\PackageGenerator\\Tests\\": "tests"
+		}
     }
 }
