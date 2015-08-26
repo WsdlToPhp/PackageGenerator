@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File;
 
 use Composer\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
+use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 
 class Composer extends AbstractFile
 {
@@ -56,8 +57,11 @@ class Composer extends AbstractFile
     {
         $content = $this->getComposerFileContent();
         if (is_array($content) && !empty($content)) {
+            $namespace = new EmptyModel($this->getGenerator(), '');
             $content['autoload'] = array(
-
+                'psr-4' => array(
+                    sprintf('%s\\', $namespace->getNamespace()) => './',
+                ),
             );
         }
         return $this->setComposerFileContent($content);
@@ -82,7 +86,7 @@ class Composer extends AbstractFile
     {
         $composerFilePath = $this->getComposerFilePath();
         if (!empty($composerFilePath)) {
-            file_put_contents($composerFilePath, json_encode($content, JSON_PRETTY_PRINT));
+            file_put_contents($composerFilePath, json_encode($content, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
         }
         return $this;
     }
