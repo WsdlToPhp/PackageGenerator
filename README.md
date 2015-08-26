@@ -33,21 +33,21 @@ The generated package does not need PEAR nor NuSOAP, at least :
 ## Options
 The generator comes with several options:
 - **Required** package configuration:
-    - **\-\-wsdl-urlorpath**: path or url to get the WSDL
-    - **\-\-wsdl-prefix**: the classes prefix, used as the main namespace
-    - **\-\-wsdl-suffix**: the classes suffix, used as the main namespace if no prefix is defined
-    - **\-\-wsdl-destination**: absolute path where the classes must be generated
+    - **\-\-urlorpath**: path or url to get the WSDL
+    - **\-\-prefix**: the classes prefix, used as the main namespace
+    - **\-\-suffix**: the classes suffix, used as the main namespace if no prefix is defined
+    - **\-\-destination**: absolute path where the classes must be generated
     - **\-\-force**: must be present to generate the package, otherwise you'll get the debug informations
 - _**Optional**_ basic Authentication credentials, if the WSDL is protected by a Basic Authentication, then specify:
-    - **\-\-wsdl-login**: the basic authentication login
-    - **\-\-wsdl-password**: the basic authentication login
+    - **\-\-login**: the basic authentication login
+    - **\-\-password**: the basic authentication login
 - _**Optional**_ Proxy configuration, if you're behind a proxy:
-    - **\-\-wsdl-proxy-host**: the proxy host
-    - **\-\-wsdl-proxy-port**: the proxy port
-    - **\-\-wsdl-proxy-login**: your proxy login
-    - **\-\-wsdl-proxy-password**: your proxy password
+    - **\-\-proxy-host**: the proxy host
+    - **\-\-proxy-port**: the proxy port
+    - **\-\-proxy-login**: your proxy login
+    - **\-\-proxy-password**: your proxy password
 - _**Optional**_ directories structure:
-    - **\-\-wsdl-category**:
+    - **\-\-category**:
         - **cat** _(default)_, each class is put in a directory that matches its type such as:
             - **ArrayType**: any array type class
             - **EnumType**: any class that only contains constants _(enumerations)_
@@ -55,7 +55,7 @@ The generator comes with several options:
             - **StructType**: any class that is a _simpleType_ or _complexType_ or an _abstract_ element
         - **none**: all the classes are generated directly in the root directory defined by the destination
 - _**Optional**_ operation gathering method, if you have **getList**, **getUsers**, **getData** and **setUser** as operations:
-    - **\-\-wsdl-gathermethods**:
+    - **\-\-gathermethods**:
         - **start** _(default)_: you'll have one **Get** class that contains the **getList**, **getUsers** and **getData** methods and another class **Set** that contains only the **setUser** method
         - **none**: you'll have only one class that contains all the methods **getList**, **getUsers**, **getData** and **setUser** methods
         - **end**, you'll have 4 classes :
@@ -64,65 +64,63 @@ The generator comes with several options:
             - **Users** that contains the **getUsers** method,
             - **Data** that contains the **getData** method
 - _**Optional**_ generated classes namespace and inheritance:
-    - **\-\-wsdl-namespace**: prefix classes' main namespace with your namespace
-    - **\-\-wsdl-standalone** _(default: ```true```)_: enables/disables the installation of the [PackageBase](https://packagist.org/packages/wsdltophp/packagebase) package that contains the base class from which StructType, ArrayType and ServiceType classes inherit
-    - **\-\-wsdl-struct** _(default: \WsdlToPhp\PackageBase\AbstractStructBase)_: sets the class from which StructType classes inherit, see [StructInterface](https://github.com/WsdlToPhp/PackageBase#structinterface)
-    - **\-\-wsdl-structarray** _(default: \WsdlToPhp\PackageBase\AbstractStructArrayBase)_: sets the class from which StructArrayType classes inherit, see [StructArrayInterface](https://github.com/WsdlToPhp/PackageBase#structarrayinterface)
-    - **\-\-wsdl-soapclient** _(default: \WsdlToPhp\PackageBase\AbstractSoapClientBase)_: sets the class from which ServiceType classes inherit, see [SoapClientInterface](https://github.com/WsdlToPhp/PackageBase#soapclientinterface)
+    - **\-\-namespace**: prefix classes' main namespace with your namespace
+    - **\-\-standalone** _(default: ```true```)_: enables/disables the installation of the [PackageBase](https://packagist.org/packages/wsdltophp/packagebase) package that contains the base class from which StructType, ArrayType and ServiceType classes inherit
+    - **\-\-struct** _(default: \WsdlToPhp\PackageBase\AbstractStructBase)_: sets the class from which StructType classes inherit, see [StructInterface](https://github.com/WsdlToPhp/PackageBase#structinterface)
+    - **\-\-structarray** _(default: \WsdlToPhp\PackageBase\AbstractStructArrayBase)_: sets the class from which StructArrayType classes inherit, see [StructArrayInterface](https://github.com/WsdlToPhp/PackageBase#structarrayinterface)
+    - **\-\-soapclient** _(default: \WsdlToPhp\PackageBase\AbstractSoapClientBase)_: sets the class from which ServiceType classes inherit, see [SoapClientInterface](https://github.com/WsdlToPhp/PackageBase#soapclientinterface)
 - _**Optional**_ various other options:
-    - **\-\-wsdl-gentutorial** _(default: ```true```)_: enables/disables the tutorial file generation
-    - **\-\-wsdl-genericconstants** _(default: ```false```)_: enables/disables the naming of the constants (_enumerations_) with the constant value or as a generic name:
+    - **\-\-gentutorial** _(default: ```true```)_: enables/disables the tutorial file generation
+    - **\-\-genericconstants** _(default: ```false```)_: enables/disables the naming of the constants (_enumerations_) with the constant value or as a generic name:
         - **true**: ```const VALUE_DEFAULT = 'Default'```
         - **false**: ```const ENUM_VALUE_0 = 'Default'```
-    - **\-\-wsdl-addcomments**: alow to add PHP comments to classes' PHP DocBlock _(mulitple values allowed)_
+    - **\-\-addcomments**: alow to add PHP comments to classes' PHP DocBlock _(mulitple values allowed)_
 
 ## Usages
 ### Command line
 #### The most basic way
-To generate a package, nothing as simple as this:
+To generate a package:
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
-$ php console wsdltophp:generate:package -h => display help
-$ php console wsdltophp:generate:package \
-    --wsdl-urlorpath="http://www.mydomain.com/wsdl.xml" \
-    --wsdl-destination="/path/to/where/the/package/must/be/generated/" \
-    --wsdl-prefix="MyPackage" \
+$ wget http://phar.wsdltophp/wsdltophp.phar
+$ ./wsdltophp.phar generate:package -h => display help
+$ ./wsdltophp.phar generate:package --version => display the version
+$ ./wsdltophp.phar generate:package \
+    --urlorpath="http://www.mydomain.com/wsdl.xml" \
+    --destination="/path/to/where/the/package/must/be/generated/" \
+    --prefix="MyPackage" \
     --force
 $ cd /path/to/where/the/package/must/be/generated/
 $ ls -la => enjoy!
 $ vi tutorial.php :smile:
 ```
 #### With full options
-To generate a package, nothing as simple as this:
+To generate a package:
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
-$ php console wsdltophp:generate:package -h => display help
-$ php console wsdltophp:generate:package \
-    --wsdl-urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
-    --wsdl-login="*******" \
-    --wsdl-password="*******" \
-    --wsdl-proxy-host="****************************" \
-    --wsdl-proxy-port=*******  \
-    --wsdl-proxy-login="*******" \
-    --wsdl-proxy-password="*******" \
-    --wsdl-destination='/var/www/Api/' \
-    --wsdl-prefix="Api" \
-    --wsdl-suffix="Project" \
-    --wsdl-category="cat" \
-    --wsdl-gathermethods="start" \
-    --wsdl-genericconstants=false \
-    --wsdl-gentutorial=true \
-    --wsdl-standalone=true \
-    --wsdl-addcomments="date:2015-04-22" \
-    --wsdl-addcomments="author:Me" \
-    --wsdl-addcomments="release:1.1.0" \
-    --wsdl-addcomments="team:Dream" \
-    --wsdl-namespace="My\Project" \
-    --wsdl-struct="\Std\Opt\StructClass" \
-    --wsdl-structarray="\Std\Opt\StructArrayClass" \
-    --wsdl-soapclient="\Std\Opt\SoapClientClass" \
+$ wget http://phar.wsdltophp/wsdltophp.phar
+$ ./wsdltophp.phar generate:package \
+    --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
+    --login="*******" \
+    --password="*******" \
+    --proxy-host="****************************" \
+    --proxy-port=*******  \
+    --proxy-login="*******" \
+    --proxy-password="*******" \
+    --destination='/var/www/Api/' \
+    --prefix="Api" \
+    --suffix="Project" \
+    --category="cat" \
+    --gathermethods="start" \
+    --genericconstants=false \
+    --gentutorial=true \
+    --standalone=true \
+    --addcomments="date:2015-04-22" \
+    --addcomments="author:Me" \
+    --addcomments="release:1.1.0" \
+    --addcomments="team:Dream" \
+    --namespace="My\Project" \
+    --struct="\Std\Opt\StructClass" \
+    --structarray="\Std\Opt\StructArrayClass" \
+    --soapclient="\Std\Opt\SoapClientClass" \
     --force
 $ cd /var/www/Api/
 $ ls -la => enjoy!
@@ -156,12 +154,12 @@ Remove ```--force``` option from the previous command line to get this result:
     soap_options:
  End at 2015-08-15 10:54:34, duration: 00:00:00
 ```
-### Programmatic usage
+### Programmatic
 ```
 $ cd /path/to/src/WsdlToPhp/PackageGenerator/
 $ composer install
 ```
-#### The most basic way
+#### The basic way
 ```php
 <?php
 require_once __DIR__ . '/vendor/autoload.php'
@@ -194,7 +192,7 @@ $serviceAdd = new \MyPackage\ServiceType\MyPackageServiceAdd($options);
 $result = $serviceAdd->addRole();
 // ...
 ```
-#### Playing with options
+#### Dealing with the options
 ```php
 <?php
 require_once __DIR__ . '/vendor/autoload.php'

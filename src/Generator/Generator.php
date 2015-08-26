@@ -65,8 +65,7 @@ class Generator
             ->initParsers()
             ->initFiles()
             ->initWsdl()
-            ->initSoapClient()
-            ->initDirectory();
+            ->initSoapClient();
     }
     /**
      * @throws \InvalidArgumentException
@@ -122,7 +121,7 @@ class Generator
      */
     protected function initDirectory()
     {
-        Utils::createDirectory($this->getOptionDestination());
+        Utils::createDirectory($this->getOptions()->getDestination());
         if (!is_dir($this->getOptionDestination())) {
             throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been impossible', $this->getOptionDestination()), __LINE__);
         }
@@ -171,6 +170,7 @@ class Generator
     public function generateClasses()
     {
         return $this
+            ->initDirectory()
             ->doSanityChecks()
             ->doParse()
             ->doGenerate();
@@ -581,7 +581,6 @@ class Generator
     public function setOptionDestination($optionDestination)
     {
         $this->options->setDestination(realpath($optionDestination) . DIRECTORY_SEPARATOR);
-        $this->initDirectory();
         return $this;
     }
     /**
