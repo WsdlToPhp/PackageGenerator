@@ -5,5 +5,10 @@
         "php": ">=5.3.3",
         "ext-soap": "*",
         "wsdltophp/packagebase": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Api\\": "./"
+        }
     }
 }
