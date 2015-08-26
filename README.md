@@ -20,10 +20,12 @@ The generated package does not need PEAR nor NuSOAP, at least :
 ## Generated package hierarchy
 ```
 /Api
-    /ArrayType/: classes that contain one property which is an array of items
-    /EnumType/: classes that only contain constants, enumerations defined by the WSDL
-    /ServiceType/: classes that give access to the operations
-    /StructType/: any type that represents a request/response and their sub elements
+	/src
+	    /ArrayType/: classes that contain one property which is an array of items
+	    /EnumType/: classes that only contain constants, enumerations defined by the WSDL
+	    /ServiceType/: classes that give access to the operations
+	    /StructType/: any type that represents a request/response and their sub elements
+	    /ClassMap.php: the class that defines the mapping between generated classes and declared structs
     /vendor/: automatically created by composer on standalone mode (default: true)
     /composer.json: automatically created by composer on standalone mode (default: true)
     /composer.lock: automatically created by composer on standalone mode (default: true)
