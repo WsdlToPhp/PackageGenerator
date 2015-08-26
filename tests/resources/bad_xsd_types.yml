@@ -1,0 +1,5 @@
+# List oh PHP reserved keywords that must not be used within generated classes.
+# If an element matched one of this reserved keywords, it is replaced by "_" + {reserved_keyword} + nb_used_times
+
+xsdtypes:
+    string:string

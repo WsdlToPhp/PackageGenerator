@@ -1,0 +1,177 @@
+<?php
+
+namespace WsdlToPhp\PackageGenerator\Command;
+
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputInterface;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+
+class GeneratePackageCommand extends AbstractCommand
+{
+    /**
+     * @var Generator
+     */
+    protected $generator;
+    /**
+     * @var GeneratorOptions
+     */
+    protected $generatorOptions;
+    /**
+     * @return Generator
+     */
+    public function getGenerator()
+    {
+        return $this->generator;
+    }
+    /**
+     * @param Generator $generator
+     * @return GeneratePackageCommand
+     */
+    protected function setGenerator(Generator $generator)
+    {
+        $this->generator = $generator;
+        return $this;
+    }
+    /**
+     * @return GeneratePackageCommand
+     */
+    protected function initGenerator()
+    {
+        return $this->setGenerator(new Generator($this->generatorOptions));
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\Command\AbstractCommand::configure()
+     */
+    protected function configure()
+    {
+        parent::configure();
+        $this
+            ->setName('generate:package')
+            ->setDescription('Generate package based on options')
+            ->addOption('urlorpath', null, InputOption::VALUE_REQUIRED, 'Url or path to WSDL')
+            ->addOption('destination', null, InputOption::VALUE_REQUIRED, 'Path to destination directory, where the package will be generated')
+            ->addOption('login', null, InputOption::VALUE_OPTIONAL, 'Basic authentication login required to access the WSDL url, can be avoided mot of the time')
+            ->addOption('password', null, InputOption::VALUE_OPTIONAL, 'Basic authentication password required to access the WSDL url, can be avoided mot of the time')
+            ->addOption('proxy-host', null, InputOption::VALUE_OPTIONAL, 'Use proxy url')
+            ->addOption('proxy-port', null, InputOption::VALUE_OPTIONAL, 'Use proxy port')
+            ->addOption('proxy-login', null, InputOption::VALUE_OPTIONAL, 'Use proxy login')
+            ->addOption('proxy-password', null, InputOption::VALUE_OPTIONAL, 'Use proxy password')
+            ->addOption('prefix', null, InputOption::VALUE_REQUIRED, 'Prepend generated classes')
+            ->addOption('suffix', null, InputOption::VALUE_REQUIRED, 'Append generated classes')
+            ->addOption('namespace', null, InputOption::VALUE_OPTIONAL, 'Package classes\' namespace')
+            ->addOption('category', null, InputOption::VALUE_OPTIONAL, 'First level directory name generation mode (start, end, cat, none)')
+            ->addOption('gathermethods', null, InputOption::VALUE_OPTIONAL, 'Gather methods based on operation name mode (start, end)')
+            ->addOption('gentutorial', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable tutorial file, you should enable this option only on dev')
+            ->addOption('genericconstants', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of generic constants name (ex : ENUM_VALUE_0, ENUM_VALUE_1, etc) or contextual values (ex : VALUE_STRING, VALUE_YES, VALUES_NO, etc)')
+            ->addOption('addcomments', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Set comments to be used within each generated file')
+            ->addOption('standalone', null, InputOption::VALUE_OPTIONAL, 'By default, the generated package can be used as a standalone. Otherwise, you must add wsdltophp/packagebase:dev-master to your main composer.json.')
+            ->addOption('struct', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructType class. Default class is \WsdlToPhp\PackageBase\AbstractStructBase from wsdltophp/packagebase package')
+            ->addOption('structarray', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package')
+            ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package');
+    }
+    /**
+     * @see \Sdc\AppBundle\Command\Command::execute()
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        parent::execute($input, $output);
+        $start = new \DateTime();
+        $this->writeLn(sprintf(" Start at %s", $start->format('Y-m-d H:i:s')));
+
+        $this->initGeneratorOptions();
+
+        if ($this->canExecute()) {
+            $this
+                ->initGenerator()
+                ->getGenerator()
+                    ->generateClasses();
+        } else {
+            $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
+            $this->writeLn("  Used generator's options:");
+            $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
+        }
+
+        $end = new \DateTime();
+        $this->writeLn(sprintf(" End at %s, duration: %s", $end->format('Y-m-d H:i:s'), $start->diff($end)->format('%H:%I:%S')));
+    }
+    /**
+     * @return array
+     */
+    protected function getPackageGenerationCommandLineOptions()
+    {
+        return array(
+            'prefix' => 'Prefix',
+            'suffix' => 'Suffix',
+            'urlorpath' => 'Origin',
+            'login' => 'BasicLogin',
+            'category' => 'Category',
+            'struct' => 'StructClass',
+            'namespace' => 'Namespace',
+            'proxy-host' => 'ProxyHost',
+            'proxy-port' => 'ProxyPort',
+            'standalone' => 'Standalone',
+            'proxy-login' => 'ProxyLogin',
+            'password' => 'BasicPassword',
+            'destination' => 'Destination',
+            'addcomments' => 'AddComments',
+            'soapclient' => 'SoapClientClass',
+            'gathermethods' => 'GatherMethods',
+            'proxy-password' => 'ProxyPassword',
+            'structarray' => 'StructArrayClass',
+            'gentutorial' => 'GenerateTutorialFile',
+            'genericconstants' => 'GenericConstantsName',
+        );
+    }
+    /**
+     * @return GeneratePackageCommand
+     */
+    protected function initGeneratorOptions()
+    {
+        $generatorOptions = GeneratorOptions::instance();
+        foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
+            $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
+            if ($optionValue !== null) {
+                $setOption = sprintf('set%s', $optionMethod);
+                if (method_exists($generatorOptions, $setOption)) {
+                    call_user_func_array(array(
+                        $generatorOptions,
+                        $setOption,
+                    ), array(
+                        $optionValue,
+                    ));
+                } else {
+                    $this->writeLn(sprintf('Method "%s" not found', $setOption));
+                }
+            }
+        }
+        $this->generatorOptions = $generatorOptions;
+        return $this;
+    }
+    /**
+     * @param mixed $optionValue
+     * @return boolean|mixed
+     */
+    protected function formatOptionValue($optionValue)
+    {
+        if ($optionValue === 'true' || (is_numeric($optionValue) && (int)$optionValue === 1)) {
+            return true;
+        } elseif ($optionValue === 'false' || (is_numeric($optionValue) && (int)$optionValue === 0)) {
+            return false;
+        }
+        return $optionValue;
+    }
+    /**
+     * Utility method to return readeable array based on "key: value"
+     * @param array $array
+     * @return array
+     */
+    private function formatArrayForConsole($array)
+    {
+        array_walk($array, function (&$value, $index) {
+            $value = sprintf("%s: %s", $index, !is_array($value) ? $value : implode(', ', $value));
+        });
+        return $array;
+    }
+}
