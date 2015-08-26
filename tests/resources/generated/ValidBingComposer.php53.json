@@ -1,1 +1,1 @@
-{"name":"wsdltophp/generated-api","description":"Package generated from __WSDL_URL__ using wsdltophp/packagegenerator","require":{"php":">=5.3.3","ext-soap":"*","wsdltophp/packagebase":"dev-master"},"autoload":{"psr-4":{"Api\\":"./"}}}
+{"name":"wsdltophp/generated-api","description":"Package generated from __WSDL_URL__ using wsdltophp/packagegenerator","require":{"php":">=5.3.3","ext-soap":"*","wsdltophp/packagebase":"dev-master"},"autoload":{"psr-4":{"Api\\":"./src/"}}}

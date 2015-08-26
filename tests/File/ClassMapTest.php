@@ -53,4 +53,17 @@ class ClassMapTest extends AbstractFile
 
         $this->assertSameFileContent('ValidActonClassMap', $classMap);
     }
+    /**
+     *
+     */
+    public function testDestination()
+    {
+        $instance = self::bingGeneratorInstance();
+
+        $model = new EmptyModel($instance, 'ClassMap');
+        $classMap = new ClassMapFile($instance, $model->getPackagedName());
+        $classMap->setModel($model);
+
+        $this->assertSame(sprintf('%s%s', self::getTestDirectory(), ClassMapFile::SRC_FOLDER), $classMap->getFileDestination());
+    }
 }
