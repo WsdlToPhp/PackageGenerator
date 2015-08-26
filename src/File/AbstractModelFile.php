@@ -318,7 +318,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $this;
     }
     /**
-     * @param Constant
+     * @param Constant $constants
      */
     abstract protected function getClassConstants(Constant $constants);
     /**
@@ -327,7 +327,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getConstantAnnotationBlock(PhpConstant $constant);
     /**
-     * @param Property
+     * @param Property $properties
      */
     abstract protected function getClassProperties(Property $properties);
     /**
@@ -336,7 +336,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getPropertyAnnotationBlock(PhpProperty $property);
     /**
-     * @param Method
+     * @param Method $methods
      */
     abstract protected function getClassMethods(Method $methods);
     /**
