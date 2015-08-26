@@ -35,7 +35,7 @@ class StructTest extends AbstractFile
         $file = new StructFile(self::bingGeneratorInstance(), 'foo');
         $file->setModel($model);
 
-        $this->assertSame(self::getTestDirectory() . 'StructType/ApiFoo.php', $file->getFileName());
+        $this->assertSame(sprintf('%s%s%s/%s.php', self::getTestDirectory(), StructFile::SRC_FOLDER, $model->getContextualPart(), $model->getPackagedName(false)), $file->getFileName());
     }
     /**
      *
@@ -148,6 +148,22 @@ class StructTest extends AbstractFile
             $this->assertSameFileContent('ValidApiOffer', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find offer struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testDestination()
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getStruct('NewsArticle')) instanceof StructModel) {
+            $generator->setOptionStructClass('\Std\Opt\StructClass');
+            $struct = new StructFile($generator, $model->getName());
+            $struct->setModel($model);
+
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), StructFile::SRC_FOLDER, $model->getContextualPart()), $struct->getFileDestination());
+        } else {
+            $this->assertFalse(true, 'Unable to find NewsArticle struct for file generation');
         }
     }
 }

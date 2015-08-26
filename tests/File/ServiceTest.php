@@ -15,8 +15,8 @@ class ServiceTest extends AbstractFile
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
         $instance = self::bingGeneratorInstance();
-        $struct = new ServiceFile($instance, 'Foo');
-        $struct->setModel(new EmptyModel($instance, 'Foo'));
+        $service = new ServiceFile($instance, 'Foo');
+        $service->setModel(new EmptyModel($instance, 'Foo'));
     }
     /**
      *
@@ -234,6 +234,21 @@ class ServiceTest extends AbstractFile
             $this->assertSameFileContent('ValidActonApiService', $service);
         } else {
             $this->assertFalse(true, 'Unable to find Service model for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testDestination()
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getService('Search')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName());
+            $service->setModel($model);
+
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), ServiceFile::SRC_FOLDER, $model->getContextualPart()), $service->getFileDestination());
+        } else {
+            $this->assertFalse(true, 'Unable to find Search service for file generation');
         }
     }
 }
