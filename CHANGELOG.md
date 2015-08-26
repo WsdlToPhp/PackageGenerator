@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+1.0.0RC03
+---------
+- Fix URL to download phar file
+
 1.0.0RC02
 ---------
 - Add wsdltophp.phar file using Box project to create it, ```wsdltophp.phar``` should be used from now instead of ```console```

@@ -81,7 +81,7 @@ The generator comes with several options:
 #### The most basic way
 To generate a package:
 ```
-$ wget http://phar.wsdltophp/wsdltophp.phar
+$ wget https://phar.wsdltophp.com/wsdltophp.phar
 $ ./wsdltophp.phar generate:package -h => display help
 $ ./wsdltophp.phar generate:package --version => display the version
 $ ./wsdltophp.phar generate:package \
@@ -96,7 +96,7 @@ $ vi tutorial.php :smile:
 #### With full options
 To generate a package:
 ```
-$ wget http://phar.wsdltophp/wsdltophp.phar
+$ wget https://phar.wsdltophp.com/wsdltophp.phar
 $ ./wsdltophp.phar generate:package \
     --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --login="*******" \
