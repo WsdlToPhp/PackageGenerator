@@ -19,7 +19,7 @@ class ComposerTest extends AbstractFile
             ->setRunComposerUpdate(false)
             ->write();
 
-        $this->assertSameFileContent('ValidBingComposer', $composerFile, 'json');
+        $this->assertSameFileContent('ValidBingComposer' . (version_compare(PHP_VERSION, '5.4.0') === -1  ? '.php53' : ''), $composerFile, 'json');
     }
     /**
      *

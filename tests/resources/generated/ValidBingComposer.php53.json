@@ -1,0 +1,1 @@
+{"name":"wsdltophp\/generated-api","description":"Package generated from \/var\/www\/workspace\/PackageGenerator\/tests\/resources\/bingsearch.wsdl using wsdltophp\/packagegenerator","require":{"php":">=5.3.3","ext-soap":"*","wsdltophp\/packagebase":"dev-master"},"autoload":{"psr-4":{"Api\\":".\/"}}}
