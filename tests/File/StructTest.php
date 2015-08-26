@@ -134,4 +134,20 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find NewsArticle struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteWcfStructOffer()
+    {
+        $generator = self::wcfGeneratorInstance();
+        if (($model = $generator->getStruct('offer')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiOffer', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find offer struct for file generation');
+        }
+    }
 }

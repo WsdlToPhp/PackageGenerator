@@ -138,6 +138,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . '/resources/paypal/PayPalSvc.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlWcfPath()
+    {
+        return __DIR__ . '/resources/wcf/Service1.wsdl';
+    }
+    /**
      * @param string $wsdlPath
      * @return Generator
      */
@@ -176,6 +183,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getReformaInstance()
     {
         return self::getInstance(self::wsdlReformaPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getWcfInstance()
+    {
+        return self::getInstance(self::wsdlWcfPath());
     }
     /**
      * @param string $wsdlPath
