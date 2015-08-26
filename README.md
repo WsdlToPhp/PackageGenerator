@@ -41,7 +41,7 @@ The generator comes with several options:
 - _**Optional**_ basic Authentication credentials, if the WSDL is protected by a Basic Authentication, then specify:
     - **\-\-login**: the basic authentication login
     - **\-\-password**: the basic authentication login
-- _**Optional**_ Proxy configuration, if you're behind a proxy:
+- _**Optional**_ proxy configuration, if you're behind a proxy:
     - **\-\-proxy-host**: the proxy host
     - **\-\-proxy-port**: the proxy port
     - **\-\-proxy-login**: your proxy login
