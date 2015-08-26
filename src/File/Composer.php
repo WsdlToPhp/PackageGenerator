@@ -60,7 +60,7 @@ class Composer extends AbstractFile
             $namespace = new EmptyModel($this->getGenerator(), '');
             $content['autoload'] = array(
                 'psr-4' => array(
-                    sprintf('%s\\', $namespace->getNamespace()) => './',
+                    sprintf('%s\\', $namespace->getNamespace()) => sprintf('./%s', AbstractModelFile::SRC_FOLDER),
                 ),
             );
         }
@@ -96,7 +96,6 @@ class Composer extends AbstractFile
      */
     protected static function encodeToJson($content)
     {
-        $json = '';
         if (version_compare(PHP_VERSION, '5.4.0') === -1) {
             $json = str_replace('\/', '/', json_encode($content));
         } else {
