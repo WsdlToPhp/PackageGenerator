@@ -16,35 +16,35 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     public static function wsdlPartnerPath($local = true)
     {
-        return __DIR__ . sprintf('/resources/PartnerService%s.wsdl', $local ? '.local' : '');
+        return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local' : '');
     }
     /**
      * @return string
      */
     public static function schemaPartnerPath()
     {
-        return __DIR__ . '/resources/PartnerService.0.xsd';
+        return __DIR__ . '/resources/partner/PartnerService.0.xsd';
     }
     /**
      * @return string
      */
     public static function wsdlImageViewServicePath()
     {
-        return __DIR__ . '/resources/ImageViewService.local.wsdl';
+        return __DIR__ . '/resources/image/ImageViewService.local.wsdl';
     }
     /**
      * @return string
      */
     public static function schemaImageViewServicePath()
     {
-        return __DIR__ . '/resources/imageViewCommon.xsd';
+        return __DIR__ . '/resources/image/imageViewCommon.xsd';
     }
     /**
      * @return string
      */
     public static function schemaImageViewServiceAvailableImagesRequestPath()
     {
-        return __DIR__ . '/resources/availableImagesRequest.xsd';
+        return __DIR__ . '/resources/image/availableImagesRequest.xsd';
     }
     /**
      * @return string
@@ -135,7 +135,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     public static function wsdlPayPalPath()
     {
-        return __DIR__ . '/resources/PayPalSvc.wsdl';
+        return __DIR__ . '/resources/paypal/PayPalSvc.wsdl';
     }
     /**
      * @param string $wsdlPath
