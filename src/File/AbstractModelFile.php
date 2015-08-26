@@ -411,7 +411,7 @@ abstract class AbstractModelFile extends AbstractFile
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
             $modelInheritance = $model->getInheritance();
-            if ($model->getIsStruct() === false || ($model->getPackagedName() === $attribute->getOwner()->getPackagedName() && !empty($modelInheritance))) {
+            if ($model->getIsStruct() === false) {
                 $type = !empty($modelInheritance) ? $modelInheritance : $type;
             } elseif ($model->getIsRestriction() === true) {
                 $type = !empty($modelInheritance) ? $modelInheritance : self::TYPE_STRING;

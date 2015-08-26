@@ -15,6 +15,13 @@ class TagExtensionTest extends WsdlParser
         return new TagExtension(self::generatorInstance(self::wsdlEbayPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagExtension
+     */
+    public static function wcfInstance()
+    {
+        return new TagExtension(self::generatorInstance(self::wsdlWcfPath()));
+    }
+    /**
      *
      */
     public function testParseEbay()
@@ -23,18 +30,41 @@ class TagExtensionTest extends WsdlParser
 
         $tagEnumerationParser->parse();
 
-        $ok = false;
+        $count = 0;
         $structs = $tagEnumerationParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
             if ($structs->getStructByName('AddDisputeRequestType') instanceof Struct) {
                 $this->assertSame('AbstractRequestType', $structs->getStructByName('AddDisputeRequestType')->getInheritance());
-                $ok = true;
+                $count++;
             }
             if ($structs->getStructByName('TaxIdentifierAttributeType') instanceof Struct) {
                 $this->assertSame('string', $structs->getStructByName('TaxIdentifierAttributeType')->getInheritance());
-                $ok = true;
+                $count++;
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertSame(2, $count);
+    }
+    /**
+     *
+     */
+    public function testParseWcf()
+    {
+        $tagEnumerationParser = self::wcfInstance();
+
+        $tagEnumerationParser->parse();
+
+        $count = 0;
+        $structs = $tagEnumerationParser->getGenerator()->getStructs();
+        if ($structs->count() > 0) {
+            if ($structs->getStructByName('offer') instanceof Struct) {
+                $this->assertSame('order', $structs->getStructByName('offer')->getInheritance());
+                $count++;
+            }
+            if ($structs->getStructByName('order') instanceof Struct) {
+                $this->assertSame('', $structs->getStructByName('order')->getInheritance());
+                $count++;
+            }
+        }
+        $this->assertSame(2, $count);
     }
 }
