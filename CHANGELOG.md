@@ -3,6 +3,7 @@ CHANGELOG
 
 WIP
 ---
+- Add wsdltophp.phar file using Box project to create it, ```wsdltophp.phar``` should be used from now instead of ```console```
 - Move classes under src folder, rename Tests to tests, rename Resources to resources, update composer.json and phpunit accordingly
 - **BC**:
     - Usage of GeneratorSoapClient as SoapClient handler that uses AbstractSoapClientBase as base SoapClient handler
