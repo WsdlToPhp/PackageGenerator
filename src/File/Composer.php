@@ -86,9 +86,23 @@ class Composer extends AbstractFile
     {
         $composerFilePath = $this->getComposerFilePath();
         if (!empty($composerFilePath)) {
-            file_put_contents($composerFilePath, json_encode($content, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+            file_put_contents($composerFilePath, self::encodeToJson($content));
         }
         return $this;
+    }
+    /**
+     * @param array $content
+     * @return string
+     */
+    protected static function encodeToJson($content)
+    {
+        $json = '';
+        if (version_compare(PHP_VERSION, '5.4.0') === -1) {
+            $json = str_replace('\/', '/', json_encode($content));
+        } else {
+            $json = json_encode($content, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+        }
+        return $json;
     }
     /**
      * @return string
