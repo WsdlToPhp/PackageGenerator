@@ -23,29 +23,75 @@ class Composer extends AbstractFile
         $composer->setAutoExit(false);
 
         $composer->run(new ArrayInput(array(
-                'command' => 'init',
-                '--verbose' => true,
-                '--no-interaction' => true,
-                '--name' => sprintf('wsdltophp/generated-%s', strtolower($this->getGenerator()->getOptionPrefix())),
-                '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getGenerator()->getWsdl()->getName()),
-                '--require' => array(
-                    'php:>=5.3.3',
-                    'ext-soap:*',
-                    'wsdltophp/packagebase:dev-master',
-                ),
-                '--working-dir' => $this->getGenerator()->getOptionDestination(),
+            'command' => 'init',
+            '--verbose' => true,
+            '--no-interaction' => true,
+            '--name' => sprintf('wsdltophp/generated-%s', strtolower($this->getGenerator()->getOptionPrefix())),
+            '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getGenerator()->getWsdl()->getName()),
+            '--require' => array(
+                'php:>=5.3.3',
+                'ext-soap:*',
+                'wsdltophp/packagebase:dev-master',
+            ),
+            '--working-dir' => $this->getGenerator()->getOptionDestination(),
         )));
+
+        $this->addAutoloadToComposerJson();
 
         if ($this->getRunComposerUpdate() === true) {
             return $composer->run(new ArrayInput(array(
-                    'command' => 'update',
-                    '--verbose' => true,
-                    '--optimize-autoloader' => true,
-                    '--no-dev' => true,
-                    '--working-dir' => $this->getGenerator()->getOptionDestination(),
+                'command' => 'update',
+                '--verbose' => true,
+                '--optimize-autoloader' => true,
+                '--no-dev' => true,
+                '--working-dir' => $this->getGenerator()->getOptionDestination(),
             )));
         }
         return true;
+    }
+    /**
+     * @return Composer
+     */
+    protected function addAutoloadToComposerJson()
+    {
+        $content = $this->getComposerFileContent();
+        if (is_array($content) && !empty($content)) {
+            $content['autoload'] = array(
+
+            );
+        }
+        return $this->setComposerFileContent($content);
+    }
+    /**
+     * @return array
+     */
+    protected function getComposerFileContent()
+    {
+        $content = array();
+        $composerFilePath = $this->getComposerFilePath();
+        if (!empty($composerFilePath)) {
+            $content = json_decode(file_get_contents($composerFilePath), true);
+        }
+        return $content;
+    }
+    /**
+     * @param array $content
+     * @return Composer
+     */
+    protected function setComposerFileContent(array $content)
+    {
+        $composerFilePath = $this->getComposerFilePath();
+        if (!empty($composerFilePath)) {
+            file_put_contents($composerFilePath, json_encode($content, JSON_PRETTY_PRINT));
+        }
+        return $this;
+    }
+    /**
+     * @return string
+     */
+    protected function getComposerFilePath()
+    {
+        return realpath(sprintf('%s/composer.json', $this->getGenerator()->getOptionDestination()));
     }
     /**
      * @param bool $runComposerUpdate
