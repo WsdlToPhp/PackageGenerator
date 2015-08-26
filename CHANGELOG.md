@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+WIP
+---
+- issue #13 - classmap and namespaces are wrong when not using a prefix
+- issue #21 - Inherited class generates wrong object in php
+
 1.0.0RC03
 ---------
 - Fix URL to download phar file
