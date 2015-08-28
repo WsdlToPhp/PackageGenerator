@@ -36,10 +36,12 @@ The generated package does not need PEAR nor NuSOAP, at least :
 The generator comes with several options:
 - **Required** package configuration:
     - **\-\-urlorpath**: path or url to get the WSDL
-    - **\-\-prefix**: the classes prefix, used as the main namespace
-    - **\-\-suffix**: the classes suffix, used as the main namespace if no prefix is defined
     - **\-\-destination**: absolute path where the classes must be generated
+    - **\-\-composer-name**: must be present to define the composer name in the generated package's composer.json file
     - **\-\-force**: must be present to generate the package, otherwise you'll get the debug informations
+- _**Optional**_ generated class naming:
+    - **\-\-prefix**: the classes name prefix, used as the main namespace
+    - **\-\-suffix**: the classes name suffix, used as the main namespace if no prefix is defined
 - _**Optional**_ basic Authentication credentials, if the WSDL is protected by a Basic Authentication, then specify:
     - **\-\-login**: the basic authentication login
     - **\-\-password**: the basic authentication login
