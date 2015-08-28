@@ -13,7 +13,7 @@ class ApiClassMap
      * This array is sent to the \SoapClient when calling the WS
      * @return string[]
      */
-    final public static function classMap()
+    final public static function get()
     {
         return array(
             'base64Binary' => '\Api\StructType\ApiBase64Binary',

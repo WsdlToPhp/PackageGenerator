@@ -140,10 +140,9 @@ class Generator
      */
     protected function doSanityChecks()
     {
-        $prefix = $this->getOptionPrefix();
-        $suffix = $this->getOptionSuffix();
-        if (empty($prefix) && empty($suffix)) {
-            throw new \InvalidArgumentException('You MUST define at least a prefix or a suffix', __LINE__);
+        $destination = $this->getOptionDestination();
+        if (empty($destination)) {
+            throw new \InvalidArgumentException('Package\'s destination must be defined', __LINE__);
         }
         return $this;
     }
@@ -170,8 +169,8 @@ class Generator
     public function generateClasses()
     {
         return $this
-            ->initDirectory()
             ->doSanityChecks()
+            ->initDirectory()
             ->doParse()
             ->doGenerate();
     }
@@ -571,7 +570,11 @@ class Generator
      */
     public function getOptionDestination()
     {
-        return realpath($this->options->getDestination()) . DIRECTORY_SEPARATOR;
+        $destination = $this->options->getDestination();
+        if (!empty($destination)) {
+            $destination = realpath($this->options->getDestination()) . DIRECTORY_SEPARATOR;
+        }
+        return $destination;
     }
     /**
      * Sets the optionDestination value

@@ -57,14 +57,26 @@ class Composer extends AbstractFile
     {
         $content = $this->getComposerFileContent();
         if (is_array($content) && !empty($content)) {
-            $namespace = new EmptyModel($this->getGenerator(), '');
             $content['autoload'] = array(
-                'psr-4' => array(
-                    sprintf('%s\\', $namespace->getNamespace()) => sprintf('./%s', AbstractModelFile::SRC_FOLDER),
-                ),
+                'psr-4' => $this->getPsr4Autoload(),
             );
         }
         return $this->setComposerFileContent($content);
+    }
+    /**
+     * @return array
+     */
+    protected function getPsr4Autoload()
+    {
+        $namespace = new EmptyModel($this->getGenerator(), '');
+        if ($namespace->getNamespace() !== '') {
+            $namespaceKey = sprintf('%s\\', $namespace->getNamespace());
+        } else {
+            $namespaceKey = '';
+        }
+        return array(
+            $namespaceKey => sprintf('./%s', AbstractModelFile::SRC_FOLDER),
+        );
     }
     /**
      * @return array

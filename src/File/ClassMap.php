@@ -16,6 +16,10 @@ use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContaine
 class ClassMap extends AbstractModelFile
 {
     /**
+     * @var string
+     */
+    const METHOD_NAME = 'get';
+    /**
      * @param ConstantContainer $constants
      */
     protected function getClassConstants(ConstantContainer $constants)
@@ -46,7 +50,7 @@ class ClassMap extends AbstractModelFile
      */
     protected function getClassMethods(MethodContainer $methods)
     {
-        $method = new PhpMethod('classMap', array(), PhpMethod::ACCESS_PUBLIC, false, true, true);
+        $method = new PhpMethod(self::METHOD_NAME, array(), PhpMethod::ACCESS_PUBLIC, false, true, true);
         $this->addMethodBody($method);
         $methods->add($method);
         return $this;
