@@ -67,3 +67,15 @@ soap_options:
 composer_name:
     default: ''
     values: ''
+structs_folder:
+    default: 'StructType'
+    values: ''
+arrays_folder:
+    default: 'ArrayType'
+    values: ''
+enums_folder:
+    default: 'EnumType'
+    values: ''
+services_folder:
+    default: 'ServiceType'
+    values: ''

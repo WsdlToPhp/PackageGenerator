@@ -30,10 +30,14 @@ class GeneratorOptions extends AbstractYamlReader
     const ADD_COMMENTS = 'add_comments';
     const STRUCT_CLASS = 'struct_class';
     const SOAP_OPTIONS = 'soap_options';
+    const ENUMS_FOLDER = 'enums_folder';
+    const ARRAYS_FOLDER = 'arrays_folder';
     const COMPOSER_NAME = 'composer_name';
+    const STRUCTS_FOLDER = 'structs_folder';
     const PROXY_PASSWORD = 'proxy_password';
     const BASIC_PASSWORD = 'basic_password';
     const GATHER_METHODS = 'gather_methods';
+    const SERVICES_FOLDER = 'services_folder';
     const NAMESPACE_PREFIX = 'namespace_prefix';
     const SOAP_CLIENT_CLASS = 'soap_client_class';
     const STRUCT_ARRAY_CLASS = 'struct_array_class';
@@ -509,12 +513,84 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current composer name option value
      * @throws \InvalidArgumentException
-     * @param array $composerName
+     * @param string $composerName
      * @return GeneratorOptions
      */
     public function setComposerName($composerName)
     {
         return $this->setOptionValue(self::COMPOSER_NAME, $composerName);
+    }
+    /**
+     * Get structs folder option value
+     * @return string
+     */
+    public function getStructsFolder()
+    {
+        return $this->getOptionValue(self::STRUCTS_FOLDER);
+    }
+    /**
+     * Set current structs folder option value
+     * @throws \InvalidArgumentException
+     * @param string $structsFolder
+     * @return GeneratorOptions
+     */
+    public function setStructsFolder($structsFolder)
+    {
+        return $this->setOptionValue(self::STRUCTS_FOLDER, $structsFolder);
+    }
+    /**
+     * Get arrays folder option value
+     * @return string
+     */
+    public function getArraysFolder()
+    {
+        return $this->getOptionValue(self::ARRAYS_FOLDER);
+    }
+    /**
+     * Set current arrays folder option value
+     * @throws \InvalidArgumentException
+     * @param string $arraysFolder
+     * @return GeneratorOptions
+     */
+    public function setArraysFolder($arraysFolder)
+    {
+        return $this->setOptionValue(self::ARRAYS_FOLDER, $arraysFolder);
+    }
+    /**
+     * Get enums folder option value
+     * @return string
+     */
+    public function getEnumsFolder()
+    {
+        return $this->getOptionValue(self::ENUMS_FOLDER);
+    }
+    /**
+     * Set current enums folder option value
+     * @throws \InvalidArgumentException
+     * @param string $enumsFolder
+     * @return GeneratorOptions
+     */
+    public function setEnumsFolder($enumsFolder)
+    {
+        return $this->setOptionValue(self::ENUMS_FOLDER, $enumsFolder);
+    }
+    /**
+     * Get services folder option value
+     * @return string
+     */
+    public function getServicesFolder()
+    {
+        return $this->getOptionValue(self::SERVICES_FOLDER);
+    }
+    /**
+     * Set current services folder option value
+     * @throws \InvalidArgumentException
+     * @param string $servicesFolder
+     * @return GeneratorOptions
+     */
+    public function setServicesFolder($servicesFolder)
+    {
+        return $this->setOptionValue(self::SERVICES_FOLDER, $servicesFolder);
     }
     /**
      * @return string[]
