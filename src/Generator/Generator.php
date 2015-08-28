@@ -635,6 +635,78 @@ class Generator
         return $this;
     }
     /**
+     * Gets the optionStructsFolder value
+     * @return string
+     */
+    public function getOptionStructsFolder()
+    {
+        return $this->options->getStructsFolder();
+    }
+    /**
+     * Sets the optionStructsFolder value
+     * @param array $optionStructsFolder
+     * @return Generator
+     */
+    public function setOptionStructsFolder($optionStructsFolder)
+    {
+        $this->options->setStructsFolder($optionStructsFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionArraysFolder value
+     * @return string
+     */
+    public function getOptionArraysFolder()
+    {
+        return $this->options->getArraysFolder();
+    }
+    /**
+     * Sets the optionArraysFolder value
+     * @param array $optionArraysFolder
+     * @return Generator
+     */
+    public function setOptionArraysFolder($optionArraysFolder)
+    {
+        $this->options->setArraysFolder($optionArraysFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionEnumsFolder value
+     * @return string
+     */
+    public function getOptionEnumsFolder()
+    {
+        return $this->options->getEnumsFolder();
+    }
+    /**
+     * Sets the optionEnumsFolder value
+     * @param array $optionEnumsFolder
+     * @return Generator
+     */
+    public function setOptionEnumsFolder($optionEnumsFolder)
+    {
+        $this->options->setEnumsFolder($optionEnumsFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionServicesFolder value
+     * @return string
+     */
+    public function getOptionServicesFolder()
+    {
+        return $this->options->getServicesFolder();
+    }
+    /**
+     * Sets the optionServicesFolder value
+     * @param array $optionServicesFolder
+     * @return Generator
+     */
+    public function setOptionServicesFolder($optionServicesFolder)
+    {
+        $this->options->setServicesFolder($optionServicesFolder);
+        return $this;
+    }
+    /**
      * Gets the WSDL
      * @return Wsdl|null
      */
