@@ -69,7 +69,8 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('standalone', null, InputOption::VALUE_OPTIONAL, 'By default, the generated package can be used as a standalone. Otherwise, you must add wsdltophp/packagebase:dev-master to your main composer.json.')
             ->addOption('struct', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructType class. Default class is \WsdlToPhp\PackageBase\AbstractStructBase from wsdltophp/packagebase package')
             ->addOption('structarray', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package')
-            ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package');
+            ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package')
+            ->addOption('composer-name', null, InputOption::VALUE_REQUIRED, 'Composer name of the generated package');
     }
     /**
      * @see \Sdc\AppBundle\Command\Command::execute()
@@ -116,6 +117,7 @@ class GeneratePackageCommand extends AbstractCommand
             'password' => 'BasicPassword',
             'destination' => 'Destination',
             'addcomments' => 'AddComments',
+            'composer-name' => 'ComposerName',
             'soapclient' => 'SoapClientClass',
             'gathermethods' => 'GatherMethods',
             'proxy-password' => 'ProxyPassword',

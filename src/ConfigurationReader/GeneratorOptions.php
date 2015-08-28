@@ -30,6 +30,7 @@ class GeneratorOptions extends AbstractYamlReader
     const ADD_COMMENTS = 'add_comments';
     const STRUCT_CLASS = 'struct_class';
     const SOAP_OPTIONS = 'soap_options';
+    const COMPOSER_NAME = 'composer_name';
     const PROXY_PASSWORD = 'proxy_password';
     const BASIC_PASSWORD = 'basic_password';
     const GATHER_METHODS = 'gather_methods';
@@ -480,7 +481,7 @@ class GeneratorOptions extends AbstractYamlReader
         return $this->setOptionValue(self::PROXY_PASSWORD, $proxyPassword);
     }
     /**
-     * Get basic proxy password option value
+     * Get basic soap options option value
      * @return array
      */
     public function getSoapOptions()
@@ -488,7 +489,7 @@ class GeneratorOptions extends AbstractYamlReader
         return $this->getOptionValue(self::SOAP_OPTIONS);
     }
     /**
-     * Set current proxy password option value
+     * Set current soap options option value
      * @throws \InvalidArgumentException
      * @param array $soapOptions
      * @return GeneratorOptions
@@ -496,6 +497,24 @@ class GeneratorOptions extends AbstractYamlReader
     public function setSoapOptions(array $soapOptions)
     {
         return $this->setOptionValue(self::SOAP_OPTIONS, $soapOptions);
+    }
+    /**
+     * Get composer name option value
+     * @return string
+     */
+    public function getComposerName()
+    {
+        return $this->getOptionValue(self::COMPOSER_NAME);
+    }
+    /**
+     * Set current composer name option value
+     * @throws \InvalidArgumentException
+     * @param array $composerName
+     * @return GeneratorOptions
+     */
+    public function setComposerName($composerName)
+    {
+        return $this->setOptionValue(self::COMPOSER_NAME, $composerName);
     }
     /**
      * @return string[]

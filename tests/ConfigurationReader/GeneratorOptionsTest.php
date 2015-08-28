@@ -427,6 +427,23 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetComposerName()
+    {
+        $this->assertSame('', self::optionsInstance()->getComposerName());
+    }
+    /**
+     *
+     */
+    public function testSetComposerName()
+    {
+        $instance = self::optionsInstance();
+        $instance->setComposerName('foo/bar');
+
+        $this->assertSame('foo/bar', $instance->getComposerName());
+    }
+    /**
+     *
+     */
     public function testSetExistingOptionValue()
     {
         $instance = self::optionsInstance();
@@ -496,6 +513,7 @@ class GeneratorOptionsTest extends TestCase
             'proxy_login' => '',
             'proxy_password' => '',
             'soap_options' => array(),
+            'composer_name' => '',
         ), self::optionsInstance()->toArray());
     }
 }

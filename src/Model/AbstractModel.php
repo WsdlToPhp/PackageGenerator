@@ -275,7 +275,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     public function getPackagedName($namespaced = false)
     {
         $nameParts = array();
-        if ($namespaced) {
+        if ($namespaced && $this->getNamespace() !== '') {
             $nameParts[] = sprintf('\%s\\', $this->getNamespace());
         }
         if ($this->getGenerator()->getOptionPrefix() !== '') {

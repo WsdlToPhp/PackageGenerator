@@ -1,5 +1,5 @@
 {
-    "name": "wsdltophp/generated-api",
+    "name": "wsdltophp/bing",
     "description": "Package generated from __WSDL_URL__ using wsdltophp/packagegenerator",
     "require": {
         "php": ">=5.3.3",

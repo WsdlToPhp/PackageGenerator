@@ -64,3 +64,6 @@ proxy_password:
 soap_options:
     default: []
     values: null
+composer_name:
+    default: ''
+    values: ''
