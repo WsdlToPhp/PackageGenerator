@@ -27,7 +27,7 @@ class Composer extends AbstractFile
             'command' => 'init',
             '--verbose' => true,
             '--no-interaction' => true,
-            '--name' => sprintf('wsdltophp/generated-%s', strtolower($this->getGenerator()->getOptionPrefix())),
+            '--name' => $this->getGenerator()->getOptionComposerName(),
             '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getGenerator()->getWsdl()->getName()),
             '--require' => array(
                 'php:>=5.3.3',

@@ -406,6 +406,16 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testSetOptionComposerName()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionComposerName('foo/bar');
+
+        $this->assertSame('foo/bar', $instance->getOptionComposerName());
+    }
+    /**
+     *
+     */
     public function testSetPackageNameUcFirst()
     {
         $instance = self::getBingGeneratorInstance();
@@ -413,4 +423,26 @@ class GeneratorTest extends TestCase
 
         $this->assertSame('SamplePackageName', $instance->getOptionPrefix(true));
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExceptionOnInvalidDestination()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionDestination('');
+
+        print_r($instance->getOptions());
+        $instance->generateClasses();
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExceptionOnInvalidComposerName()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionComposerName('');
+
+        $instance->generateClasses();
+    }
+
 }

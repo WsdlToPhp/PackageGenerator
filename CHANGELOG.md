@@ -6,7 +6,8 @@ WIP
 - issue #26 - Global sanity checks for more flexibility
 	- add composer_name option
 	- **BC**:
-		- ClassMap::**classMap** method has been renamed to **get** as prefix and suffix are not required from now otherwise it generates a Fatal error such as _PHP Fatal error:  Constructor ClassMap::classMap() cannot be static_ 
+		- ClassMap::**classMap** method has been renamed to **get** as prefix and suffix are not required from now otherwise it generates a Fatal error such as _PHP Fatal error:  Constructor ClassMap::classMap() cannot be static_
+		- composer name for the generated package is new and required
 - issue #25 - Generate package under src folder
 - issue #24 - ErrorException: Use of undefined constant JSON_PRETTY_PRINT
 - issue #13 - classmap and namespaces are wrong when not using a prefix

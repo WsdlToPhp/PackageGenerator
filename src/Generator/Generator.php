@@ -144,6 +144,10 @@ class Generator
         if (empty($destination)) {
             throw new \InvalidArgumentException('Package\'s destination must be defined', __LINE__);
         }
+        $composerName = $this->getOptionComposerName();
+        if (empty($composerName)) {
+            throw new \InvalidArgumentException('Package\'s composer name must be defined', __LINE__);
+        }
         return $this;
     }
     /**
@@ -583,7 +587,11 @@ class Generator
      */
     public function setOptionDestination($optionDestination)
     {
-        $this->options->setDestination(realpath($optionDestination) . DIRECTORY_SEPARATOR);
+        if (!empty($optionDestination)) {
+            $this->options->setDestination(realpath($optionDestination) . DIRECTORY_SEPARATOR);
+        } else {
+            throw new \InvalidArgumentException('Package\'s destination can\'t be empty', __LINE__);
+        }
         return $this;
     }
     /**
@@ -602,6 +610,28 @@ class Generator
     public function setOptionSoapOptions($optionSoapOptions)
     {
         $this->options->setSoapOptions($optionSoapOptions);
+        return $this;
+    }
+    /**
+     * Gets the optionComposerName value
+     * @return string
+     */
+    public function getOptionComposerName()
+    {
+        return $this->options->getComposerName();
+    }
+    /**
+     * Sets the optionComposerName value
+     * @param array $optionComposerName
+     * @return Generator
+     */
+    public function setOptionComposerName($optionComposerName)
+    {
+        if (!empty($optionComposerName)) {
+            $this->options->setComposerName($optionComposerName);
+        } else {
+            throw new \InvalidArgumentException('Package\'s composer name can\'t be empty', __LINE__);
+        }
         return $this;
     }
     /**
