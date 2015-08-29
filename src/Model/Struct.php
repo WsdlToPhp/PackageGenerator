@@ -15,23 +15,11 @@ class Struct extends AbstractModel
     /**
      * @var string
      */
-    const CONTEXTUAL_PART_STRUCT = 'StructType';
-    /**
-     * @var string
-     */
     const DOC_SUB_PACKAGE_STRUCTS = 'Structs';
     /**
      * @var string
      */
-    const CONTEXTUAL_PART_ENUMERATION = 'EnumType';
-    /**
-     * @var string
-     */
     const DOC_SUB_PACKAGE_ENUMERATIONS = 'Enumerations';
-    /**
-     * @var string
-     */
-    const CONTEXTUAL_PART_ARRAY = 'ArrayType';
     /**
      * @var string
      */
@@ -82,11 +70,11 @@ class Struct extends AbstractModel
      */
     public function getContextualPart()
     {
-        $part = self::CONTEXTUAL_PART_STRUCT;
+        $part = $this->getGenerator()->getOptionStructsFolder();
         if ($this->getIsRestriction()) {
-            $part = self::CONTEXTUAL_PART_ENUMERATION;
+            $part = $this->getGenerator()->getOptionEnumsFolder();
         } elseif ($this->isArray()) {
-            $part = self::CONTEXTUAL_PART_ARRAY;
+            $part = $this->getGenerator()->getOptionArraysFolder();
         }
         return $part;
     }

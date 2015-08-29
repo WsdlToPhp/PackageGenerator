@@ -622,7 +622,7 @@ class Generator
     }
     /**
      * Sets the optionComposerName value
-     * @param array $optionComposerName
+     * @param string $optionComposerName
      * @return Generator
      */
     public function setOptionComposerName($optionComposerName)
@@ -632,6 +632,78 @@ class Generator
         } else {
             throw new \InvalidArgumentException('Package\'s composer name can\'t be empty', __LINE__);
         }
+        return $this;
+    }
+    /**
+     * Gets the optionStructsFolder value
+     * @return string
+     */
+    public function getOptionStructsFolder()
+    {
+        return $this->options->getStructsFolder();
+    }
+    /**
+     * Sets the optionStructsFolder value
+     * @param string $optionStructsFolder
+     * @return Generator
+     */
+    public function setOptionStructsFolder($optionStructsFolder)
+    {
+        $this->options->setStructsFolder($optionStructsFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionArraysFolder value
+     * @return string
+     */
+    public function getOptionArraysFolder()
+    {
+        return $this->options->getArraysFolder();
+    }
+    /**
+     * Sets the optionArraysFolder value
+     * @param string $optionArraysFolder
+     * @return Generator
+     */
+    public function setOptionArraysFolder($optionArraysFolder)
+    {
+        $this->options->setArraysFolder($optionArraysFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionEnumsFolder value
+     * @return string
+     */
+    public function getOptionEnumsFolder()
+    {
+        return $this->options->getEnumsFolder();
+    }
+    /**
+     * Sets the optionEnumsFolder value
+     * @param string $optionEnumsFolder
+     * @return Generator
+     */
+    public function setOptionEnumsFolder($optionEnumsFolder)
+    {
+        $this->options->setEnumsFolder($optionEnumsFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionServicesFolder value
+     * @return string
+     */
+    public function getOptionServicesFolder()
+    {
+        return $this->options->getServicesFolder();
+    }
+    /**
+     * Sets the optionServicesFolder value
+     * @param string $optionServicesFolder
+     * @return Generator
+     */
+    public function setOptionServicesFolder($optionServicesFolder)
+    {
+        $this->options->setServicesFolder($optionServicesFolder);
         return $this;
     }
     /**

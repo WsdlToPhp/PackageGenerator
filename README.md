@@ -58,6 +58,10 @@ The generator comes with several options:
             - **ServiceType**: classes that contains the methods matching the _operations_
             - **StructType**: any class that is a _simpleType_ or _complexType_ or an _abstract_ element
         - **none**: all the classes are generated directly in the root directory defined by the destination
+    - **\-\-structs-folder**: each struct is created in a sub directory of the root **src** folder. By default, the directory is named _StructType_
+    - **\-\-arrays-folder**: each array is created in a sub directory of the root **src** folder. By default, the directory is named _ArrayType_
+    - **\-\-enums-folder**: each enumeration is created in a sub directory of the root **src** folder. By default, the directory is named _EnumType_
+    - **\-\-services-folder**: each service class is created in a sub directory of the root **src** folder. By default, the directory is named _ServiceType_
 - _**Optional**_ operation gathering method, if you have **getList**, **getUsers**, **getData** and **setUser** as operations:
     - **\-\-gathermethods**:
         - **start** _(default)_: you'll have one **Get** class that contains the **getList**, **getUsers** and **getData** methods and another class **Set** that contains only the **setUser** method
@@ -125,6 +129,11 @@ $ ./wsdltophp.phar generate:package \
     --struct="\Std\Opt\StructClass" \
     --structarray="\Std\Opt\StructArrayClass" \
     --soapclient="\Std\Opt\SoapClientClass" \
+    --composer-name="wsdltophp/package" \
+    --structs-folder="Structs" \
+    --arrays-folder="Arrays" \
+    --enums-folder="Enums" \
+    --services-folder="Services" \
     --force
 $ cd /var/www/Api/
 $ ls -la => enjoy!
@@ -132,7 +141,7 @@ $ ls -la => enjoy!
 #### Debug options before actually generating the package
 Remove ```--force``` option from the previous command line to get this result:
 ```
- Start at 2015-08-15 10:54:34
+ Start at 2015-08-29 07:51:32
   Generation not launched, use "--force" option to force generation
   Used generator's options:
     category: cat
@@ -156,7 +165,12 @@ Remove ```--force``` option from the previous command line to get this result:
     proxy_login: *******
     proxy_password: *******
     soap_options:
- End at 2015-08-15 10:54:34, duration: 00:00:00
+    composer_name: wsdltophp/package
+    structs_folder: Structs
+    arrays_folder: Arrays
+    enums_folder: Enums
+    services_folder: Services
+ End at 2015-08-29 07:51:32, duration: 00:00:00
 ```
 ### Programmatic
 ```
@@ -231,7 +245,12 @@ $options
     ->setProxyHost($proxyHost)
     ->setProxyPort($proxyPort)
     ->setProxyLogin($proxyLogin)
-    ->setProxyPassword($proxyPassword);
+    ->setProxyPassword($proxyPassword)
+    ->setComposerName('wsdltophp/package')
+    ->setStructsFolder('Structs')
+    ->setArraysFolder('Arrays')
+    ->setEnumsFolder('Enums')
+    ->setServicesFolder('Services');
 
 // Generator instanciation and package generation
 $generator = new Generator($options);

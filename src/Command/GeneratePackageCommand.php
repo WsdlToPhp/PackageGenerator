@@ -70,7 +70,11 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('struct', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructType class. Default class is \WsdlToPhp\PackageBase\AbstractStructBase from wsdltophp/packagebase package')
             ->addOption('structarray', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package')
             ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package')
-            ->addOption('composer-name', null, InputOption::VALUE_REQUIRED, 'Composer name of the generated package');
+            ->addOption('composer-name', null, InputOption::VALUE_REQUIRED, 'Composer name of the generated package')
+            ->addOption('structs-folder', null, InputOption::VALUE_OPTIONAL, 'Structs folder name')
+            ->addOption('arrays-folder', null, InputOption::VALUE_OPTIONAL, 'Arrays folder name')
+            ->addOption('enums-folder', null, InputOption::VALUE_OPTIONAL, 'Enumerations folder name')
+            ->addOption('services-folder', null, InputOption::VALUE_OPTIONAL, 'Services class folder name');
     }
     /**
      * @see \Sdc\AppBundle\Command\Command::execute()
@@ -117,10 +121,14 @@ class GeneratePackageCommand extends AbstractCommand
             'password' => 'BasicPassword',
             'destination' => 'Destination',
             'addcomments' => 'AddComments',
+            'enums-folder' => 'EnumsFolder',
             'composer-name' => 'ComposerName',
             'soapclient' => 'SoapClientClass',
+            'arrays-folder' => 'ArraysFolder',
             'gathermethods' => 'GatherMethods',
+            'structs-folder' => 'StructsFolder',
             'proxy-password' => 'ProxyPassword',
+            'services-folder' => 'ServicesFolder',
             'structarray' => 'StructArrayClass',
             'gentutorial' => 'GenerateTutorialFile',
             'genericconstants' => 'GenericConstantsName',

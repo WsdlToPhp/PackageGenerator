@@ -23,11 +23,11 @@ class StructTest extends TestCase
     {
         $struct = self::instance('Foo', false);
         $struct->setIsRestriction(true);
-        $this->assertEquals(Struct::CONTEXTUAL_PART_ENUMERATION, $struct->getContextualPart());
+        $this->assertEquals('EnumType', $struct->getContextualPart());
         $struct->setIsStruct(false);
-        $this->assertEquals(Struct::CONTEXTUAL_PART_ENUMERATION, $struct->getContextualPart());
+        $this->assertEquals('EnumType', $struct->getContextualPart());
         $struct->setIsStruct(true);
-        $this->assertEquals(Struct::CONTEXTUAL_PART_ENUMERATION, $struct->getContextualPart());
+        $this->assertEquals('EnumType', $struct->getContextualPart());
     }
     /**
      *
@@ -48,11 +48,11 @@ class StructTest extends TestCase
     public function testGetContextualPartStruct()
     {
         $struct = self::instance('Foo', false);
-        $this->assertEquals(Struct::CONTEXTUAL_PART_STRUCT, $struct->getContextualPart());
+        $this->assertEquals('StructType', $struct->getContextualPart());
         $struct->setIsRestriction(false);
-        $this->assertEquals(Struct::CONTEXTUAL_PART_STRUCT, $struct->getContextualPart());
+        $this->assertEquals('StructType', $struct->getContextualPart());
         $struct->setIsStruct(true);
-        $this->assertEquals(Struct::CONTEXTUAL_PART_STRUCT, $struct->getContextualPart());
+        $this->assertEquals('StructType', $struct->getContextualPart());
     }
     /**
      *
