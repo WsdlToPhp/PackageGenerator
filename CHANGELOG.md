@@ -3,6 +3,8 @@ CHANGELOG
 
 WIP
 ---
+- issue #29 - Throw an exception instead of returning false
+	- add getValidValues to EnumType generated class
 - issue #28 - Define the destination folder name for each type
 - issue #26 - Global sanity checks for more flexibility
 	- add composer_name option
