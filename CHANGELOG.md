@@ -3,6 +3,7 @@ CHANGELOG
 
 WIP
 ---
+- issue #28 - Define the destination folder name for each type
 - issue #26 - Global sanity checks for more flexibility
 	- add composer_name option
 	- **BC**:
