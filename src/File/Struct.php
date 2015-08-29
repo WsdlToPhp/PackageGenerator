@@ -212,9 +212,10 @@ class Struct extends AbstractModelFile
     protected function addStructMethodSetBodyForRestriction(PhpMethod $method, StructAttributeModel $attribute)
     {
         if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction()) {
+            $parameterName = lcfirst($attribute->getCleanName());
             $method
-                ->addChild(sprintf('if (!%s::valueIsValid($%s)) {', $model->getPackagedName(true), lcfirst($attribute->getCleanName())))
-                    ->addChild($method->getIndentedString('return false;', 1))
+                ->addChild(sprintf('if (!%s::%s($%s)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID, $parameterName))
+                    ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Value "%%s" is invalid, please use one of: %%s\', $%s, implode(\', \', %s::%s())), __LINE__);', $parameterName, $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES), 1))
                 ->addChild('}');
         }
         return $this;
@@ -419,7 +420,9 @@ class Struct extends AbstractModelFile
         switch ($setOrGet) {
             case 'set':
                 if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction() && !$this->getModel()->isArray()) {
-                    $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $model->getPackagedName(true))));
+                    $annotationBlock
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES)));
                 }
                 $this->addStructMethodsSetAnnotationBlock($annotationBlock, $this->getStructAttributeType($attribute, false, true), lcfirst($attribute->getCleanName()));
                 break;

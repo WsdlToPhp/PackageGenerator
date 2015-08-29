@@ -22,14 +22,26 @@ class ApiWebSearchOption
     const ENUM_VALUE_1 = 'DisableQueryAlterations';
     /**
      * Return true if value is allowed
-     * @uses self::ENUM_VALUE_0
-     * @uses self::ENUM_VALUE_1
+     * @uses self::getValidValues()
      * @param mixed $value value
      * @return bool true|false
      */
     public static function valueIsValid($value)
     {
-        return in_array($value, array(self::ENUM_VALUE_0, self::ENUM_VALUE_1), true);
+        return in_array($value, self::getValidValues(), true);
+    }
+    /**
+     * Return allowed values
+     * @uses self::ENUM_VALUE_0
+     * @uses self::ENUM_VALUE_1
+     * @return string[]
+     */
+    public static function getValidValues()
+    {
+        return array(
+            self::ENUM_VALUE_0,
+            self::ENUM_VALUE_1,
+        );
     }
     /**
      * Method returning the class name

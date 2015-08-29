@@ -27,15 +27,28 @@ class PhonebookSortOptionApi
     const VALUE_DISTANCE = 'Distance';
     /**
      * Return true if value is allowed
-     * @uses self::VALUE_DEFAULT
-     * @uses self::VALUE_RELEVANCE
-     * @uses self::VALUE_DISTANCE
+     * @uses self::getValidValues()
      * @param mixed $value value
      * @return bool true|false
      */
     public static function valueIsValid($value)
     {
-        return in_array($value, array(self::VALUE_DEFAULT, self::VALUE_RELEVANCE, self::VALUE_DISTANCE), true);
+        return in_array($value, self::getValidValues(), true);
+    }
+    /**
+     * Return allowed values
+     * @uses self::VALUE_DEFAULT
+     * @uses self::VALUE_RELEVANCE
+     * @uses self::VALUE_DISTANCE
+     * @return string[]
+     */
+    public static function getValidValues()
+    {
+        return array(
+            self::VALUE_DEFAULT,
+            self::VALUE_RELEVANCE,
+            self::VALUE_DISTANCE,
+        );
     }
     /**
      * Method returning the class name

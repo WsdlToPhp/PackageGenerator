@@ -128,13 +128,14 @@ class ApiVideoRequest extends AbstractStructBase
     /**
      * Set SortBy value
      * @uses \Api\EnumType\ApiVideoSortOption::valueIsValid()
+     * @uses \Api\EnumType\ApiVideoSortOption::getValidValues()
      * @param string $sortBy
      * @return \Api\StructType\ApiVideoRequest
      */
     public function setSortBy($sortBy = null)
     {
         if (!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
-            return false;
+            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $sortBy, implode(', ', \Api\EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
         }
         $this->SortBy = $sortBy;
         return $this;

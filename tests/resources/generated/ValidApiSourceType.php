@@ -87,6 +87,16 @@ class ApiSourceType
     const VALUE_TRANSLATION = 'Translation';
     /**
      * Return true if value is allowed
+     * @uses self::getValidValues()
+     * @param mixed $value value
+     * @return bool true|false
+     */
+    public static function valueIsValid($value)
+    {
+        return in_array($value, self::getValidValues(), true);
+    }
+    /**
+     * Return allowed values
      * @uses self::VALUE_SPELL
      * @uses self::VALUE_WEB
      * @uses self::VALUE_IMAGE
@@ -102,12 +112,27 @@ class ApiSourceType
      * @uses self::VALUE_QUERYLOCATION
      * @uses self::VALUE_MOBILEWEB
      * @uses self::VALUE_TRANSLATION
-     * @param mixed $value value
-     * @return bool true|false
+     * @return string[]
      */
-    public static function valueIsValid($value)
+    public static function getValidValues()
     {
-        return in_array($value, array(self::VALUE_SPELL, self::VALUE_WEB, self::VALUE_IMAGE, self::VALUE_RELATEDSEARCH, self::VALUE_PHONEBOOK, self::VALUE_SHOWTIMES, self::VALUE_WEATHER, self::VALUE_VIDEO, self::VALUE_AD, self::VALUE_XRANK, self::VALUE_INSTANTANSWER, self::VALUE_NEWS, self::VALUE_QUERYLOCATION, self::VALUE_MOBILEWEB, self::VALUE_TRANSLATION), true);
+        return array(
+            self::VALUE_SPELL,
+            self::VALUE_WEB,
+            self::VALUE_IMAGE,
+            self::VALUE_RELATEDSEARCH,
+            self::VALUE_PHONEBOOK,
+            self::VALUE_SHOWTIMES,
+            self::VALUE_WEATHER,
+            self::VALUE_VIDEO,
+            self::VALUE_AD,
+            self::VALUE_XRANK,
+            self::VALUE_INSTANTANSWER,
+            self::VALUE_NEWS,
+            self::VALUE_QUERYLOCATION,
+            self::VALUE_MOBILEWEB,
+            self::VALUE_TRANSLATION,
+        );
     }
     /**
      * Method returning the class name
