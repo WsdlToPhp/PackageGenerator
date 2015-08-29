@@ -622,7 +622,7 @@ class Generator
     }
     /**
      * Sets the optionComposerName value
-     * @param array $optionComposerName
+     * @param string $optionComposerName
      * @return Generator
      */
     public function setOptionComposerName($optionComposerName)
@@ -644,7 +644,7 @@ class Generator
     }
     /**
      * Sets the optionStructsFolder value
-     * @param array $optionStructsFolder
+     * @param string $optionStructsFolder
      * @return Generator
      */
     public function setOptionStructsFolder($optionStructsFolder)
@@ -662,7 +662,7 @@ class Generator
     }
     /**
      * Sets the optionArraysFolder value
-     * @param array $optionArraysFolder
+     * @param string $optionArraysFolder
      * @return Generator
      */
     public function setOptionArraysFolder($optionArraysFolder)
@@ -680,7 +680,7 @@ class Generator
     }
     /**
      * Sets the optionEnumsFolder value
-     * @param array $optionEnumsFolder
+     * @param string $optionEnumsFolder
      * @return Generator
      */
     public function setOptionEnumsFolder($optionEnumsFolder)
@@ -698,7 +698,7 @@ class Generator
     }
     /**
      * Sets the optionServicesFolder value
-     * @param array $optionServicesFolder
+     * @param string $optionServicesFolder
      * @return Generator
      */
     public function setOptionServicesFolder($optionServicesFolder)
