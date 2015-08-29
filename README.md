@@ -129,6 +129,11 @@ $ ./wsdltophp.phar generate:package \
     --struct="\Std\Opt\StructClass" \
     --structarray="\Std\Opt\StructArrayClass" \
     --soapclient="\Std\Opt\SoapClientClass" \
+    --composer-name="wsdltophp/package" \
+    --structs-folder="Structs" \
+    --arrays-folder="Arrays" \
+    --enums-folder="Enums" \
+    --services-folder="Services" \
     --force
 $ cd /var/www/Api/
 $ ls -la => enjoy!
@@ -136,7 +141,7 @@ $ ls -la => enjoy!
 #### Debug options before actually generating the package
 Remove ```--force``` option from the previous command line to get this result:
 ```
- Start at 2015-08-15 10:54:34
+ Start at 2015-08-29 07:51:32
   Generation not launched, use "--force" option to force generation
   Used generator's options:
     category: cat
@@ -160,7 +165,12 @@ Remove ```--force``` option from the previous command line to get this result:
     proxy_login: *******
     proxy_password: *******
     soap_options:
- End at 2015-08-15 10:54:34, duration: 00:00:00
+    composer_name: wsdltophp/package
+    structs_folder: Structs
+    arrays_folder: Arrays
+    enums_folder: Enums
+    services_folder: Services
+ End at 2015-08-29 07:51:32, duration: 00:00:00
 ```
 ### Programmatic
 ```
@@ -235,7 +245,12 @@ $options
     ->setProxyHost($proxyHost)
     ->setProxyPort($proxyPort)
     ->setProxyLogin($proxyLogin)
-    ->setProxyPassword($proxyPassword);
+    ->setProxyPassword($proxyPassword)
+    ->setComposerName('wsdltophp/package')
+    ->setStructsFolder('Structs')
+    ->setArraysFolder('Arrays')
+    ->setEnumsFolder('Enums')
+    ->setServicesFolder('Services');
 
 // Generator instanciation and package generation
 $generator = new Generator($options);
