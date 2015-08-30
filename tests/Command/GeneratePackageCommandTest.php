@@ -75,7 +75,7 @@ class GeneratePackageCommandTest extends TestCase
             '--gentutorial' => 'true',
             '--genericconstants' => 'false',
         ));
-        $output = new ConsoleOutput(OutputInterface::VERBOSITY_VERY_VERBOSE);
+        $output = new ConsoleOutput(OutputInterface::VERBOSITY_QUIET);
 
         $command->run($input, $output);
 
