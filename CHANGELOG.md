@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-WIP
----
+1.0.0RC04
+---------
 - issue #29 - Throw an exception instead of returning false
 	- add getValidValues to EnumType generated class
 - issue #28 - Define the destination folder name for each type
