@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="PartnerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsp:Policy wsu:Id="PartnerServiceWSEndPoint_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<wsaw:UsingAddressing />
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tempuri.org/Imports">
+			<xsd:import schemaLocation="./PartnerService.0.xsd" namespace="http://tempuri.org/" />
+            <xsd:import schemaLocation="./PartnerService.1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+            <xsd:import schemaLocation="./PartnerService.2.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberrequest/2010/09/13" />
+			<xsd:import schemaLocation="./PartnerService.3.xsd" namespace="http://schemas.euroconsumers.com/partner/2010/09/13" />
+			<xsd:import schemaLocation="./PartnerService.4.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberresponse/2010/07/19" />
+			<xsd:import schemaLocation="./PartnerService.5.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberpartnerrequest/2010/09/13" />
+			<xsd:import schemaLocation="./PartnerService.6.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberpartnerresponse/2010/07/19" />
+			<xsd:import schemaLocation="./PartnerService.7.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/09/13" />
+			<xsd:import schemaLocation="./PartnerService.8.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberproductrequest/2010/11/18" />
+			<xsd:import schemaLocation="./PartnerService.9.xsd" namespace="http://schemas.euroconsumers.com/partner/validatememberproductresponse/2010/11/18" />
+			<xsd:import schemaLocation="./PartnerService.10.xsd" namespace="http://schemas.euroconsumers.com/partner/getmemberfortokenrequest/2010/09/13" />
+			<xsd:import schemaLocation="./PartnerService.11.xsd" namespace="http://schemas.euroconsumers.com/partner/getmemberfortokenrequest/2010/12/16" />
+			<xsd:import schemaLocation="./PartnerService.12.xsd" namespace="http://schemas.euroconsumers.com/partner/getmemberfortokenresponse/2010/07/19" />
+			<xsd:import schemaLocation="./PartnerService.13.xsd" namespace="http://schemas.euroconsumers.com/partner/validatetokenproductrequest/2010/09/13" />
+			<xsd:import schemaLocation="./PartnerService.14.xsd" namespace="http://schemas.euroconsumers.com/partner/validatetokenproductResponse/2010/07/19" />
+			<xsd:import schemaLocation="./PartnerService.15.xsd" namespace="http://schemas.euroconsumers.com/partner/validatepartnerrequest/2010/09/13" />
+			<xsd:import schemaLocation="./PartnerService.16.xsd" namespace="http://schemas.euroconsumers.com/partner/validatepartnerresponse/2010/07/19" />
+			<xsd:import schemaLocation="./PartnerService.17.xsd" namespace="http://schemas.datacontract.org/2004/07/EC.PI.Services.PartnerService.MessageContract.Member" />
+			<xsd:import schemaLocation="./PartnerService.18.xsd" namespace="http://schemas.euroconsumers.com/partner" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ValidateMemberRequest">
+		<wsdl:part name="parameters" element="tns:ValidateMemberRequest" />
+	</wsdl:message>
+	<wsdl:message name="ValidateMemberResponse">
+		<wsdl:part name="parameters" element="tns:ValidateMemberResponse" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_ValidateMember_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q1:ValidationFault" xmlns:q1="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	</wsdl:message>
+	<wsdl:message name="ValidateMemberPartnerRequest">
+		<wsdl:part name="parameters" element="tns:ValidateMemberPartnerRequest" />
+	</wsdl:message>
+	<wsdl:message name="ValidateMemberPartnerResponse">
+		<wsdl:part name="parameters" element="tns:ValidateMemberPartnerResponse" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_ValidateMemberPartner_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q2:ValidationFault" xmlns:q2="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	</wsdl:message>
+	<wsdl:message name="ValidateMemberProductRequest">
+		<wsdl:part name="parameters" element="tns:ValidateMemberProductRequest" />
+	</wsdl:message>
+	<wsdl:message name="ValidateMemberProductResponse">
+		<wsdl:part name="parameters" element="tns:ValidateMemberProductResponse" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_ValidateMemberProduct_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q3:ValidationFault" xmlns:q3="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	</wsdl:message>
+	<wsdl:message name="GetMemberForTokenRequest">
+		<wsdl:part name="parameters" element="tns:GetMemberForTokenRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetMemberForTokenResponse">
+		<wsdl:part name="parameters" element="tns:GetMemberForTokenResponse" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_GetMemberForToken_TokenFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q4:TokenFault" xmlns:q4="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	</wsdl:message>
+	<wsdl:message name="ValidateTokenProductRequest">
+		<wsdl:part name="parameters" element="tns:ValidateTokenProductRequest" />
+	</wsdl:message>
+	<wsdl:message name="ValidateTokenProductResponse">
+		<wsdl:part name="parameters" element="tns:ValidateTokenProductResponse" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_ValidateTokenProduct_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q5:ValidationFault" xmlns:q5="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	</wsdl:message>
+	<wsdl:message name="ValidatePartnerRequest">
+		<wsdl:part name="parameters" element="tns:ValidatePartnerRequest" />
+	</wsdl:message>
+	<wsdl:message name="ValidatePartnerResponse">
+		<wsdl:part name="parameters" element="tns:ValidatePartnerResponse" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_ValidatePartner_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q6:ValidationFault" xmlns:q6="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_IsMember_InputMessage">
+		<wsdl:part name="parameters" element="tns:IsMember" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_IsMember_OutputMessage">
+		<wsdl:part name="parameters" element="tns:IsMemberResponse" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_IsMember_ValidationFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q7:ValidationFault" xmlns:q7="http://schemas.euroconsumers.com/partner/2010/09/13" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_SimpleIsMember_InputMessage">
+		<wsdl:part name="parameters" element="tns:SimpleIsMember" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_SimpleIsMember_OutputMessage">
+		<wsdl:part name="parameters" element="tns:SimpleIsMemberResponse" />
+	</wsdl:message>
+	<wsdl:message name="IPartnerService_SimpleIsMember_SimpleIsMemberFaultFault_FaultMessage">
+		<wsdl:part name="detail" element="q8:SimpleIsMemberFault" xmlns:q8="http://schemas.euroconsumers.com/partner" />
+	</wsdl:message>
+	<wsdl:portType name="IPartnerService">
+		<wsdl:operation name="ValidateMember">
+			<wsdl:input wsaw:Action="http://tempuri.org/IPartnerService/ValidateMember" name="ValidateMemberRequest" message="tns:ValidateMemberRequest" />
+			<wsdl:output wsaw:Action="http://tempuri.org/IPartnerService/ValidateMemberResponse" name="ValidateMemberResponse" message="tns:ValidateMemberResponse" />
+			<wsdl:fault wsaw:Action="http://tempuri.org/IPartnerService/ValidateMemberValidationFaultFault" name="ValidationFaultFault" message="tns:IPartnerService_ValidateMember_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="ValidateMemberPartner">
+			<wsdl:input wsaw:Action="http://tempuri.org/IPartnerService/ValidateMemberPartner" name="ValidateMemberPartnerRequest" message="tns:ValidateMemberPartnerRequest" />
+			<wsdl:output wsaw:Action="http://tempuri.org/IPartnerService/ValidateMemberPartnerResponse" name="ValidateMemberPartnerResponse" message="tns:ValidateMemberPartnerResponse" />
+			<wsdl:fault wsaw:Action="http://tempuri.org/IPartnerService/ValidateMemberPartnerValidationFaultFault" name="ValidationFaultFault" message="tns:IPartnerService_ValidateMemberPartner_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="ValidateMemberProduct">
+			<wsdl:input wsaw:Action="http://tempuri.org/IPartnerService/ValidateMemberProduct" name="ValidateMemberProductRequest" message="tns:ValidateMemberProductRequest" />
+			<wsdl:output wsaw:Action="http://tempuri.org/IPartnerService/ValidateMemberProductResponse" name="ValidateMemberProductResponse" message="tns:ValidateMemberProductResponse" />
+			<wsdl:fault wsaw:Action="http://tempuri.org/IPartnerService/ValidateMemberProductValidationFaultFault" name="ValidationFaultFault" message="tns:IPartnerService_ValidateMemberProduct_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetMemberForToken">
+			<wsdl:input wsaw:Action="http://tempuri.org/IPartnerService/GetMemberForToken" name="GetMemberForTokenRequest" message="tns:GetMemberForTokenRequest" />
+			<wsdl:output wsaw:Action="http://tempuri.org/IPartnerService/GetMemberForTokenResponse" name="GetMemberForTokenResponse" message="tns:GetMemberForTokenResponse" />
+			<wsdl:fault wsaw:Action="http://tempuri.org/IPartnerService/GetMemberForTokenTokenFaultFault" name="TokenFaultFault" message="tns:IPartnerService_GetMemberForToken_TokenFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="ValidateTokenProduct">
+			<wsdl:input wsaw:Action="http://tempuri.org/IPartnerService/ValidateTokenProduct" name="ValidateTokenProductRequest" message="tns:ValidateTokenProductRequest" />
+			<wsdl:output wsaw:Action="http://tempuri.org/IPartnerService/ValidateTokenProductResponse" name="ValidateTokenProductResponse" message="tns:ValidateTokenProductResponse" />
+			<wsdl:fault wsaw:Action="http://tempuri.org/IPartnerService/ValidateTokenProductValidationFaultFault" name="ValidationFaultFault" message="tns:IPartnerService_ValidateTokenProduct_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="ValidatePartner">
+			<wsdl:input wsaw:Action="http://tempuri.org/IPartnerService/ValidatePartner" name="ValidatePartnerRequest" message="tns:ValidatePartnerRequest" />
+			<wsdl:output wsaw:Action="http://tempuri.org/IPartnerService/ValidatePartnerResponse" name="ValidatePartnerResponse" message="tns:ValidatePartnerResponse" />
+			<wsdl:fault wsaw:Action="http://tempuri.org/IPartnerService/ValidatePartnerValidationFaultFault" name="ValidationFaultFault" message="tns:IPartnerService_ValidatePartner_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="IsMember">
+			<wsdl:input wsaw:Action="http://tempuri.org/IPartnerService/IsMember" message="tns:IPartnerService_IsMember_InputMessage" />
+			<wsdl:output wsaw:Action="http://tempuri.org/IPartnerService/IsMemberResponse" message="tns:IPartnerService_IsMember_OutputMessage" />
+			<wsdl:fault wsaw:Action="http://tempuri.org/IPartnerService/IsMemberValidationFaultFault" name="ValidationFaultFault" message="tns:IPartnerService_IsMember_ValidationFaultFault_FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="SimpleIsMember">
+			<wsdl:input wsaw:Action="http://tempuri.org/IPartnerService/SimpleIsMember" message="tns:IPartnerService_SimpleIsMember_InputMessage" />
+			<wsdl:output wsaw:Action="http://tempuri.org/IPartnerService/SimpleIsMemberResponse" message="tns:IPartnerService_SimpleIsMember_OutputMessage" />
+			<wsdl:fault wsaw:Action="http://tempuri.org/IPartnerService/SimpleIsMemberSimpleIsMemberFaultFault" name="SimpleIsMemberFaultFault" message="tns:IPartnerService_SimpleIsMember_SimpleIsMemberFaultFault_FaultMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PartnerServiceBasicEndPoint" type="tns:IPartnerService">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="ValidateMember">
+			<soap:operation soapAction="http://tempuri.org/IPartnerService/ValidateMember" style="document" />
+			<wsdl:input name="ValidateMemberRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidateMemberResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidateMemberPartner">
+			<soap:operation soapAction="http://tempuri.org/IPartnerService/ValidateMemberPartner" style="document" />
+			<wsdl:input name="ValidateMemberPartnerRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidateMemberPartnerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidateMemberProduct">
+			<soap:operation soapAction="http://tempuri.org/IPartnerService/ValidateMemberProduct" style="document" />
+			<wsdl:input name="ValidateMemberProductRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidateMemberProductResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMemberForToken">
+			<soap:operation soapAction="http://tempuri.org/IPartnerService/GetMemberForToken" style="document" />
+			<wsdl:input name="GetMemberForTokenRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetMemberForTokenResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="TokenFaultFault">
+				<soap:fault name="TokenFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidateTokenProduct">
+			<soap:operation soapAction="http://tempuri.org/IPartnerService/ValidateTokenProduct" style="document" />
+			<wsdl:input name="ValidateTokenProductRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidateTokenProductResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidatePartner">
+			<soap:operation soapAction="http://tempuri.org/IPartnerService/ValidatePartner" style="document" />
+			<wsdl:input name="ValidatePartnerRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidatePartnerResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="IsMember">
+			<soap:operation soapAction="http://tempuri.org/IPartnerService/IsMember" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SimpleIsMember">
+			<soap:operation soapAction="http://tempuri.org/IPartnerService/SimpleIsMember" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="SimpleIsMemberFaultFault">
+				<soap:fault name="SimpleIsMemberFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="PartnerServiceWSEndPoint" type="tns:IPartnerService">
+		<wsp:PolicyReference URI="#PartnerServiceWSEndPoint_policy" />
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="ValidateMember">
+			<soap12:operation soapAction="http://tempuri.org/IPartnerService/ValidateMember" style="document" />
+			<wsdl:input name="ValidateMemberRequest">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidateMemberResponse">
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap12:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidateMemberPartner">
+			<soap12:operation soapAction="http://tempuri.org/IPartnerService/ValidateMemberPartner" style="document" />
+			<wsdl:input name="ValidateMemberPartnerRequest">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidateMemberPartnerResponse">
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap12:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidateMemberProduct">
+			<soap12:operation soapAction="http://tempuri.org/IPartnerService/ValidateMemberProduct" style="document" />
+			<wsdl:input name="ValidateMemberProductRequest">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidateMemberProductResponse">
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap12:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMemberForToken">
+			<soap12:operation soapAction="http://tempuri.org/IPartnerService/GetMemberForToken" style="document" />
+			<wsdl:input name="GetMemberForTokenRequest">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetMemberForTokenResponse">
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="TokenFaultFault">
+				<soap12:fault name="TokenFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidateTokenProduct">
+			<soap12:operation soapAction="http://tempuri.org/IPartnerService/ValidateTokenProduct" style="document" />
+			<wsdl:input name="ValidateTokenProductRequest">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidateTokenProductResponse">
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap12:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidatePartner">
+			<soap12:operation soapAction="http://tempuri.org/IPartnerService/ValidatePartner" style="document" />
+			<wsdl:input name="ValidatePartnerRequest">
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ValidatePartnerResponse">
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap12:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="IsMember">
+			<soap12:operation soapAction="http://tempuri.org/IPartnerService/IsMember" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ValidationFaultFault">
+				<soap12:fault name="ValidationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SimpleIsMember">
+			<soap12:operation soapAction="http://tempuri.org/IPartnerService/SimpleIsMember" style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="SimpleIsMemberFaultFault">
+				<soap12:fault name="SimpleIsMemberFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PartnerService">
+		<wsdl:port name="PartnerServiceBasicEndPoint" binding="tns:PartnerServiceBasicEndPoint">
+			<soap:address location="http://secapp.euroconsumers.org/partnerservice/PartnerService.svc/Basic" />
+		</wsdl:port>
+		<wsdl:port name="PartnerServiceWSEndPoint" binding="tns:PartnerServiceWSEndPoint">
+			<soap12:address location="http://secapp.euroconsumers.org/partnerservice/PartnerService.svc/WS" />
+			<wsa10:EndpointReference>
+				<wsa10:Address>http://secapp.euroconsumers.org/partnerservice/PartnerService.svc/WS</wsa10:Address>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

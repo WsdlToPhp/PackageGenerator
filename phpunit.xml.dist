@@ -17,6 +17,7 @@
             <file>./tests/DomHandler/NodeHandlerTest.php</file>
             <file>./tests/DomHandler/ElementHandlerTest.php</file>
             <file>./tests/DomHandler/AttributeHandlerTest.php</file>
+            <file>./tests/DomHandler/NameSpaceHandlerTest.php</file>
             <file>./tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
             <directory>./tests/DomHandler/Wsdl/Tag/</directory>
             <directory>./tests/File</directory>
@@ -50,6 +51,7 @@
             <file>./tests/DomHandler/NodeHandlerTest.php</file>
             <file>./tests/DomHandler/ElementHandlerTest.php</file>
             <file>./tests/DomHandler/AttributeHandlerTest.php</file>
+            <file>./tests/DomHandler/NameSpaceHandlerTest.php</file>
             <file>./tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
             <directory>./tests/DomHandler/Wsdl/Tag/</directory>
         </testsuite>
