@@ -70,7 +70,7 @@ class TagHeader extends AbstractTagOperationElement
     {
         $messageNamespace = $this->getAttributeMessageNamespace();
         if (empty($messageNamespace) || ($namespace = $this->getDomDocumentHandler()->getNamespaceUri($messageNamespace)) === '') {
-            $part      = $this->getPartTag();
+            $part = $this->getPartTag();
             $namespace = '';
             if ($part instanceof TagPart) {
                 $finalNamespace = $part->getFinalNamespace();
