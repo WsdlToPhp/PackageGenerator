@@ -10,6 +10,7 @@
     </php>
     <testsuites>
         <testsuite name="full">
+            <directory>./tests/Command/</directory>
             <directory>./tests/ConfigurationReader/</directory>
             <directory>./tests/Generator</directory>
             <file>./tests/DomHandler/DomDocumentHandlerTest.php</file>
@@ -22,6 +23,10 @@
             <directory>./tests/Model/</directory>
             <directory>./tests/Container/</directory>
             <directory>./tests/Parser/</directory>
+        </testsuite>
+
+        <testsuite name="command">
+            <directory>./tests/Command/</directory>
         </testsuite>
 
         <testsuite name="configuration">

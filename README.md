@@ -265,6 +265,7 @@ $ phpunit
 ```
 You have several ```testsuite```s available which run test in the proper order:
 
+- **command**: tests command class
 - **configuration**: tests configuration readers
 - **utils**: tests utils class
 - **domhandler**: tests dom handlers (Basic and Wsdl + Tag)

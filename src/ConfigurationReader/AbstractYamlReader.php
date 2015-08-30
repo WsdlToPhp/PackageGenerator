@@ -58,4 +58,11 @@ abstract class AbstractYamlReader
         }
         return $values[$mainKey];
     }
+    /**
+     * For tests purpose only!
+     */
+    public static function resetInstances()
+    {
+        self::$instances = array();
+    }
 }
