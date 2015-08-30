@@ -6,6 +6,7 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 
 class GeneratorTest extends TestCase
 {
@@ -471,7 +472,6 @@ class GeneratorTest extends TestCase
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionDestination('');
 
-        print_r($instance->getOptions());
         $instance->generateClasses();
     }
     /**
@@ -484,5 +484,86 @@ class GeneratorTest extends TestCase
 
         $instance->generateClasses();
     }
+    /**
+     *
+     */
+    public function testGenerateBing()
+    {
+        $this->generate('bing', self::wsdlBingPath());
+    }
+    /**
+     *
+     */
+    public function testGeneratePartner()
+    {
+        $this->generate('partner', self::wsdlPartnerPath());
+    }
+    /**
+     *
+     */
+    public function testGenerateMyBoard()
+    {
+        $this->generate('myboard', self::wsdlMyBoardPackPath());
+    }
+    /**
+     *
+     */
+    public function testGenerateOdigeo()
+    {
+        $this->generate('odigeo', self::wsdlOdigeoPath());
+    }
+    /**
+     *
+     */
+    public function testGenerateReforma()
+    {
+        $this->generate('reforma', self::wsdlReformaPath());
+    }
+    /**
+     * @param string $dir
+     * @param string $wsdl
+     */
+    private function generate($dir, $wsdl)
+    {
+        Utils::createDirectory($destination = self::getTestDirectory() . $dir);
 
+        $options = GeneratorOptions::instance();
+        $options
+            ->setGenerateTutorialFile(false)
+            ->setAddComments(array())
+            ->setArraysFolder('ArrayType')
+            ->setBasicLogin('')
+            ->setBasicPassword('')
+            ->setCategory(GeneratorOptions::VALUE_CAT)
+            ->setComposerName('wsdltophp/' . $dir)
+            ->setDestination($destination)
+            ->setEnumsFolder('EnumType')
+            ->setGatherMethods(GeneratorOptions::VALUE_START)
+            ->setGenerateTutorialFile(true)
+            ->setGenericConstantsName(false)
+            ->setNamespace('')
+            ->setOrigin($wsdl)
+            ->setPrefix('')
+            ->setProxyHost('')
+            ->setProxyLogin('')
+            ->setProxyPassword('')
+            ->setProxyPort('')
+            ->setServicesFolder('ServiceType')
+            ->setSoapClientClass('\WsdlToPhp\PackageBase\AbstractSoapClientBase')
+            ->setSoapOptions(array())
+            ->setStandalone(true)
+            ->setStructArrayClass('\WsdlToPhp\PackageBase\AbstractStructArrayBase')
+            ->setStructClass('\WsdlToPhp\PackageBase\AbstractStructBase')
+            ->setStructsFolder('StructType')
+            ->setSuffix('');
+
+        $generator = new Generator($options);
+        $generator->generateClasses();
+
+        $this->assertTrue(is_dir($destination));
+        $this->assertTrue(is_file(sprintf('%s/composer.json', $destination)));
+        $this->assertTrue(is_file(sprintf('%s/composer.lock', $destination)));
+        $this->assertTrue(is_file(sprintf('%s/tutorial.php', $destination)));
+        $this->assertTrue(is_file($generator->getFiles()->getClassmapFile()->getFileName()));
+    }
 }
