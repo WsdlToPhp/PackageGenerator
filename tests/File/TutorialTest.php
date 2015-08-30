@@ -35,6 +35,19 @@ class TutorialTest extends AbstractFile
     /**
      *
      */
+    public function testBingNoPrefix()
+    {
+        $instance = self::bingGeneratorInstance();
+        $instance->setOptionPrefix('');
+
+        $tutorial = new TutorialFile($instance, self::FILE_NAME);
+        $tutorial->write();
+
+        $this->assertSameFileContent('ValidBingTutorialNoPrefix', $tutorial);
+    }
+    /**
+     *
+     */
     public function testReforma()
     {
         $instance = self::reformaGeneratorInstance();

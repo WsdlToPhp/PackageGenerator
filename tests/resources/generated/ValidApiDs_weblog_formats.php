@@ -32,16 +32,30 @@ class ApiDs_weblog_formats
     const VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER_ = 'Microsoft IIS Log (IIS 3 and earlier)';
     /**
      * Return true if value is allowed
-     * @uses self::VALUE_NCSA_COMMON_APACHE_DEFAULT_
-     * @uses self::VALUE_NCSA_COMBINED_APACHE_
-     * @uses self::VALUE_W3C_EXTENDED_IIS_4_0_AND_LATER_
-     * @uses self::VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER_
+     * @uses self::getValidValues()
      * @param mixed $value value
      * @return bool true|false
      */
     public static function valueIsValid($value)
     {
-        return in_array($value, array(self::VALUE_NCSA_COMMON_APACHE_DEFAULT_, self::VALUE_NCSA_COMBINED_APACHE_, self::VALUE_W3C_EXTENDED_IIS_4_0_AND_LATER_, self::VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER_), true);
+        return in_array($value, self::getValidValues(), true);
+    }
+    /**
+     * Return allowed values
+     * @uses self::VALUE_NCSA_COMMON_APACHE_DEFAULT_
+     * @uses self::VALUE_NCSA_COMBINED_APACHE_
+     * @uses self::VALUE_W3C_EXTENDED_IIS_4_0_AND_LATER_
+     * @uses self::VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER_
+     * @return string[]
+     */
+    public static function getValidValues()
+    {
+        return array(
+            self::VALUE_NCSA_COMMON_APACHE_DEFAULT_,
+            self::VALUE_NCSA_COMBINED_APACHE_,
+            self::VALUE_W3C_EXTENDED_IIS_4_0_AND_LATER_,
+            self::VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER_,
+        );
     }
     /**
      * Method returning the class name

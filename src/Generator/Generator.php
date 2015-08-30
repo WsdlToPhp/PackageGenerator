@@ -140,10 +140,13 @@ class Generator
      */
     protected function doSanityChecks()
     {
-        $prefix = $this->getOptionPrefix();
-        $suffix = $this->getOptionSuffix();
-        if (empty($prefix) && empty($suffix)) {
-            throw new \InvalidArgumentException('You MUST define at least a prefix or a suffix', __LINE__);
+        $destination = $this->getOptionDestination();
+        if (empty($destination)) {
+            throw new \InvalidArgumentException('Package\'s destination must be defined', __LINE__);
+        }
+        $composerName = $this->getOptionComposerName();
+        if (empty($composerName)) {
+            throw new \InvalidArgumentException('Package\'s composer name must be defined', __LINE__);
         }
         return $this;
     }
@@ -170,8 +173,8 @@ class Generator
     public function generateClasses()
     {
         return $this
-            ->initDirectory()
             ->doSanityChecks()
+            ->initDirectory()
             ->doParse()
             ->doGenerate();
     }
@@ -571,7 +574,11 @@ class Generator
      */
     public function getOptionDestination()
     {
-        return realpath($this->options->getDestination()) . DIRECTORY_SEPARATOR;
+        $destination = $this->options->getDestination();
+        if (!empty($destination)) {
+            $destination = realpath($this->options->getDestination()) . DIRECTORY_SEPARATOR;
+        }
+        return $destination;
     }
     /**
      * Sets the optionDestination value
@@ -580,7 +587,11 @@ class Generator
      */
     public function setOptionDestination($optionDestination)
     {
-        $this->options->setDestination(realpath($optionDestination) . DIRECTORY_SEPARATOR);
+        if (!empty($optionDestination)) {
+            $this->options->setDestination(realpath($optionDestination) . DIRECTORY_SEPARATOR);
+        } else {
+            throw new \InvalidArgumentException('Package\'s destination can\'t be empty', __LINE__);
+        }
         return $this;
     }
     /**
@@ -599,6 +610,100 @@ class Generator
     public function setOptionSoapOptions($optionSoapOptions)
     {
         $this->options->setSoapOptions($optionSoapOptions);
+        return $this;
+    }
+    /**
+     * Gets the optionComposerName value
+     * @return string
+     */
+    public function getOptionComposerName()
+    {
+        return $this->options->getComposerName();
+    }
+    /**
+     * Sets the optionComposerName value
+     * @param string $optionComposerName
+     * @return Generator
+     */
+    public function setOptionComposerName($optionComposerName)
+    {
+        if (!empty($optionComposerName)) {
+            $this->options->setComposerName($optionComposerName);
+        } else {
+            throw new \InvalidArgumentException('Package\'s composer name can\'t be empty', __LINE__);
+        }
+        return $this;
+    }
+    /**
+     * Gets the optionStructsFolder value
+     * @return string
+     */
+    public function getOptionStructsFolder()
+    {
+        return $this->options->getStructsFolder();
+    }
+    /**
+     * Sets the optionStructsFolder value
+     * @param string $optionStructsFolder
+     * @return Generator
+     */
+    public function setOptionStructsFolder($optionStructsFolder)
+    {
+        $this->options->setStructsFolder($optionStructsFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionArraysFolder value
+     * @return string
+     */
+    public function getOptionArraysFolder()
+    {
+        return $this->options->getArraysFolder();
+    }
+    /**
+     * Sets the optionArraysFolder value
+     * @param string $optionArraysFolder
+     * @return Generator
+     */
+    public function setOptionArraysFolder($optionArraysFolder)
+    {
+        $this->options->setArraysFolder($optionArraysFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionEnumsFolder value
+     * @return string
+     */
+    public function getOptionEnumsFolder()
+    {
+        return $this->options->getEnumsFolder();
+    }
+    /**
+     * Sets the optionEnumsFolder value
+     * @param string $optionEnumsFolder
+     * @return Generator
+     */
+    public function setOptionEnumsFolder($optionEnumsFolder)
+    {
+        $this->options->setEnumsFolder($optionEnumsFolder);
+        return $this;
+    }
+    /**
+     * Gets the optionServicesFolder value
+     * @return string
+     */
+    public function getOptionServicesFolder()
+    {
+        return $this->options->getServicesFolder();
+    }
+    /**
+     * Sets the optionServicesFolder value
+     * @param string $optionServicesFolder
+     * @return Generator
+     */
+    public function setOptionServicesFolder($optionServicesFolder)
+    {
+        $this->options->setServicesFolder($optionServicesFolder);
         return $this;
     }
     /**

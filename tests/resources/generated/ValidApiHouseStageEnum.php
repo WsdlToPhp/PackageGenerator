@@ -36,15 +36,28 @@ class ApiHouseStageEnum
     const VALUE_3 = '3';
     /**
      * Return true if value is allowed
-     * @uses self::VALUE_1
-     * @uses self::VALUE_2
-     * @uses self::VALUE_3
+     * @uses self::getValidValues()
      * @param mixed $value value
      * @return bool true|false
      */
     public static function valueIsValid($value)
     {
-        return in_array($value, array(self::VALUE_1, self::VALUE_2, self::VALUE_3), true);
+        return in_array($value, self::getValidValues(), true);
+    }
+    /**
+     * Return allowed values
+     * @uses self::VALUE_1
+     * @uses self::VALUE_2
+     * @uses self::VALUE_3
+     * @return string[]
+     */
+    public static function getValidValues()
+    {
+        return array(
+            self::VALUE_1,
+            self::VALUE_2,
+            self::VALUE_3,
+        );
     }
     /**
      * Method returning the class name

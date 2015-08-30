@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File;
 
 use Composer\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
+use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 
 class Composer extends AbstractFile
 {
@@ -23,29 +24,103 @@ class Composer extends AbstractFile
         $composer->setAutoExit(false);
 
         $composer->run(new ArrayInput(array(
-                'command' => 'init',
-                '--verbose' => true,
-                '--no-interaction' => true,
-                '--name' => sprintf('wsdltophp/generated-%s', strtolower($this->getGenerator()->getOptionPrefix())),
-                '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getGenerator()->getWsdl()->getName()),
-                '--require' => array(
-                    'php:>=5.3.3',
-                    'ext-soap:*',
-                    'wsdltophp/packagebase:dev-master',
-                ),
-                '--working-dir' => $this->getGenerator()->getOptionDestination(),
+            'command' => 'init',
+            '--verbose' => true,
+            '--no-interaction' => true,
+            '--name' => $this->getGenerator()->getOptionComposerName(),
+            '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getGenerator()->getWsdl()->getName()),
+            '--require' => array(
+                'php:>=5.3.3',
+                'ext-soap:*',
+                'wsdltophp/packagebase:dev-master',
+            ),
+            '--working-dir' => $this->getGenerator()->getOptionDestination(),
         )));
+
+        $this->addAutoloadToComposerJson();
 
         if ($this->getRunComposerUpdate() === true) {
             return $composer->run(new ArrayInput(array(
-                    'command' => 'update',
-                    '--verbose' => true,
-                    '--optimize-autoloader' => true,
-                    '--no-dev' => true,
-                    '--working-dir' => $this->getGenerator()->getOptionDestination(),
+                'command' => 'update',
+                '--verbose' => true,
+                '--optimize-autoloader' => true,
+                '--no-dev' => true,
+                '--working-dir' => $this->getGenerator()->getOptionDestination(),
             )));
         }
         return true;
+    }
+    /**
+     * @return Composer
+     */
+    protected function addAutoloadToComposerJson()
+    {
+        $content = $this->getComposerFileContent();
+        if (is_array($content) && !empty($content)) {
+            $content['autoload'] = array(
+                'psr-4' => $this->getPsr4Autoload(),
+            );
+        }
+        return $this->setComposerFileContent($content);
+    }
+    /**
+     * @return array
+     */
+    protected function getPsr4Autoload()
+    {
+        $namespace = new EmptyModel($this->getGenerator(), '');
+        if ($namespace->getNamespace() !== '') {
+            $namespaceKey = sprintf('%s\\', $namespace->getNamespace());
+        } else {
+            $namespaceKey = '';
+        }
+        return array(
+            $namespaceKey => sprintf('./%s', AbstractModelFile::SRC_FOLDER),
+        );
+    }
+    /**
+     * @return array
+     */
+    protected function getComposerFileContent()
+    {
+        $content = array();
+        $composerFilePath = $this->getComposerFilePath();
+        if (!empty($composerFilePath)) {
+            $content = json_decode(file_get_contents($composerFilePath), true);
+        }
+        return $content;
+    }
+    /**
+     * @param array $content
+     * @return Composer
+     */
+    protected function setComposerFileContent(array $content)
+    {
+        $composerFilePath = $this->getComposerFilePath();
+        if (!empty($composerFilePath)) {
+            file_put_contents($composerFilePath, self::encodeToJson($content));
+        }
+        return $this;
+    }
+    /**
+     * @param array $content
+     * @return string
+     */
+    protected static function encodeToJson($content)
+    {
+        if (version_compare(PHP_VERSION, '5.4.0') === -1) {
+            $json = str_replace('\/', '/', json_encode($content));
+        } else {
+            $json = json_encode($content, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+        }
+        return $json;
+    }
+    /**
+     * @return string
+     */
+    protected function getComposerFilePath()
+    {
+        return realpath(sprintf('%s/composer.json', $this->getGenerator()->getOptionDestination()));
     }
     /**
      * @param bool $runComposerUpdate

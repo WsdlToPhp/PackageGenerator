@@ -112,4 +112,23 @@ class StructArrayTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find ArrayOfError struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testDestination()
+    {
+
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getStruct('ArrayOfError')) instanceof StructModel) {
+            $generator
+                ->setOptionPrefix('Api')
+                ->setOptionSuffix('Project');
+            $struct = new ArrayFile($generator, $model->getName());
+            $struct->setModel($model);
+
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), ArrayFile::SRC_FOLDER, $model->getContextualPart()), $struct->getFileDestination());
+        } else {
+            $this->assertFalse(true, 'Unable to find ArrayOfError struct for file generation');
+        }
+    }
 }

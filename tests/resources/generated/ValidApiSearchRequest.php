@@ -366,13 +366,14 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set Adult value
      * @uses \Api\EnumType\ApiAdultOption::valueIsValid()
+     * @uses \Api\EnumType\ApiAdultOption::getValidValues()
      * @param string $adult
      * @return \Api\StructType\ApiSearchRequest
      */
     public function setAdult($adult = null)
     {
         if (!\Api\EnumType\ApiAdultOption::valueIsValid($adult)) {
-            return false;
+            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $adult, implode(', ', \Api\EnumType\ApiAdultOption::getValidValues())), __LINE__);
         }
         $this->Adult = $adult;
         return $this;

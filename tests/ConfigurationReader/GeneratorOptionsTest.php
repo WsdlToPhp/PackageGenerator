@@ -427,6 +427,91 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetComposerName()
+    {
+        $this->assertSame('', self::optionsInstance()->getComposerName());
+    }
+    /**
+     *
+     */
+    public function testSetComposerName()
+    {
+        $instance = self::optionsInstance();
+        $instance->setComposerName('foo/bar');
+
+        $this->assertSame('foo/bar', $instance->getComposerName());
+    }
+    /**
+     *
+     */
+    public function testGetStructsFolder()
+    {
+        $this->assertSame('StructType', self::optionsInstance()->getStructsFolder());
+    }
+    /**
+     *
+     */
+    public function testSetStructsFolder()
+    {
+        $instance = self::optionsInstance();
+        $instance->setStructsFolder('Structs');
+
+        $this->assertSame('Structs', $instance->getStructsFolder());
+    }
+    /**
+     *
+     */
+    public function testGetEnumsFolder()
+    {
+        $this->assertSame('EnumType', self::optionsInstance()->getEnumsFolder());
+    }
+    /**
+     *
+     */
+    public function testSetEnumsFolder()
+    {
+        $instance = self::optionsInstance();
+        $instance->setEnumsFolder('Enums');
+
+        $this->assertSame('Enums', $instance->getEnumsFolder());
+    }
+    /**
+     *
+     */
+    public function testGetArraysFolder()
+    {
+        $this->assertSame('ArrayType', self::optionsInstance()->getArraysFolder());
+    }
+    /**
+     *
+     */
+    public function testSetArraysFolder()
+    {
+        $instance = self::optionsInstance();
+        $instance->setArraysFolder('Arrays');
+
+        $this->assertSame('Arrays', $instance->getArraysFolder());
+    }
+    /**
+     *
+     */
+    public function testGetServicesFolder()
+    {
+        $this->assertSame('ServiceType', self::optionsInstance()->getServicesFolder());
+    }
+    /**
+     *
+     */
+    public function testSetServicesFolder()
+    {
+        $instance = self::optionsInstance();
+        $instance->setServicesFolder('Services');
+
+        $this->assertSame('Services', $instance->getServicesFolder());
+    }
+    /**
+     *
+     */
     public function testSetExistingOptionValue()
     {
         $instance = self::optionsInstance();
@@ -496,6 +581,11 @@ class GeneratorOptionsTest extends TestCase
             'proxy_login' => '',
             'proxy_password' => '',
             'soap_options' => array(),
+            'composer_name' => '',
+            'structs_folder' => 'StructType',
+            'arrays_folder' => 'ArrayType',
+            'enums_folder' => 'EnumType',
+            'services_folder' => 'ServiceType',
         ), self::optionsInstance()->toArray());
     }
 }

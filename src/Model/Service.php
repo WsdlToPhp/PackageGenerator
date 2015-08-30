@@ -39,7 +39,7 @@ class Service extends AbstractModel
      */
     public function getContextualPart()
     {
-        return 'ServiceType';
+        return $this->getGenerator()->getOptionServicesFolder();
     }
     /**
      * Returns the sub package name which the model belongs to

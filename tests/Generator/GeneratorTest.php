@@ -406,6 +406,56 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testSetOptionComposerName()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionComposerName('foo/bar');
+
+        $this->assertSame('foo/bar', $instance->getOptionComposerName());
+    }
+    /**
+     *
+     */
+    public function testSetStructsFolder()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionStructsFolder('Structs');
+
+        $this->assertSame('Structs', $instance->getOptionStructsFolder());
+    }
+    /**
+     *
+     */
+    public function testSetArraysFolder()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionArraysFolder('Arrays');
+
+        $this->assertSame('Arrays', $instance->getOptionArraysFolder());
+    }
+    /**
+     *
+     */
+    public function testSetEnumsFolder()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionEnumsFolder('Enums');
+
+        $this->assertSame('Enums', $instance->getOptionEnumsFolder());
+    }
+    /**
+     *
+     */
+    public function testSetServicesFolder()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionServicesFolder('Services');
+
+        $this->assertSame('Services', $instance->getOptionServicesFolder());
+    }
+    /**
+     *
+     */
     public function testSetPackageNameUcFirst()
     {
         $instance = self::getBingGeneratorInstance();
@@ -413,4 +463,26 @@ class GeneratorTest extends TestCase
 
         $this->assertSame('SamplePackageName', $instance->getOptionPrefix(true));
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExceptionOnInvalidDestination()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionDestination('');
+
+        print_r($instance->getOptions());
+        $instance->generateClasses();
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExceptionOnInvalidComposerName()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionComposerName('');
+
+        $instance->generateClasses();
+    }
+
 }

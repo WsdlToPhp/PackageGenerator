@@ -65,26 +65,40 @@ abstract class AbstractModelFile extends AbstractFile
      */
     const TYPE_STRING = 'string';
     /**
+     * @var string
+     */
+    const SRC_FOLDER = 'src/';
+    /**
      * @var AbstractModel
      */
     protected $model;
     /**
+     * @param bool $withSrc
      * @return string
      */
-    public function getFileDestination()
+    public function getFileDestination($withSrc = true)
     {
-        return sprintf('%s%s%s', $this->getGenerator()->getOptionDestination(), $this->getModel()->getSubDirectory(), $this->getModel()->getSubDirectory() !== '' ? '/' : '');
+        return sprintf('%s%s%s', $this->getDestinationFolder($withSrc), $this->getModel()->getSubDirectory(), $this->getModel()->getSubDirectory() !== '' ? '/' : '');
+    }
+    /**
+     * @param bool $withSrc
+     * @return string
+     */
+    public function getDestinationFolder($withSrc = true)
+    {
+        return sprintf('%s%s', $this->getGenerator()->getOptionDestination(), $withSrc === true ? self::SRC_FOLDER : '');
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
+     * @param bool $withSrc
      * @return int|bool
      */
-    public function writeFile()
+    public function writeFile($withSrc = true)
     {
         if (!$this->getModel() instanceof AbstractModel) {
             throw new \InvalidArgumentException('You MUST define the model before begin able to generate the file', __LINE__);
         }
-        GeneratorUtils::createDirectory($this->getFileDestination());
+        GeneratorUtils::createDirectory($this->getFileDestination($withSrc));
         $this
             ->defineNamespace()
             ->defineUseStatement()
@@ -318,7 +332,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $this;
     }
     /**
-     * @param Constant
+     * @param Constant $constants
      */
     abstract protected function getClassConstants(Constant $constants);
     /**
@@ -327,7 +341,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getConstantAnnotationBlock(PhpConstant $constant);
     /**
-     * @param Property
+     * @param Property $properties
      */
     abstract protected function getClassProperties(Property $properties);
     /**
@@ -336,7 +350,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getPropertyAnnotationBlock(PhpProperty $property);
     /**
-     * @param Method
+     * @param Method $methods
      */
     abstract protected function getClassMethods(Method $methods);
     /**
@@ -411,7 +425,7 @@ abstract class AbstractModelFile extends AbstractFile
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
             $modelInheritance = $model->getInheritance();
-            if ($model->getIsStruct() === false || ($model->getPackagedName() === $attribute->getOwner()->getPackagedName() && !empty($modelInheritance))) {
+            if ($model->getIsStruct() === false) {
                 $type = !empty($modelInheritance) ? $modelInheritance : $type;
             } elseif ($model->getIsRestriction() === true) {
                 $type = !empty($modelInheritance) ? $modelInheritance : self::TYPE_STRING;

@@ -1,6 +1,21 @@
 CHANGELOG
 =========
 
+1.0.0RC04
+---------
+- issue #29 - Throw an exception instead of returning false
+	- add getValidValues to EnumType generated class
+- issue #28 - Define the destination folder name for each type
+- issue #26 - Global sanity checks for more flexibility
+	- add composer_name option
+	- **BC**:
+		- ClassMap::**classMap** method has been renamed to **get** as prefix and suffix are not required from now otherwise it generates a Fatal error such as _PHP Fatal error:  Constructor ClassMap::classMap() cannot be static_
+		- **composer name** for the generated package is **new** and **required**
+- issue #25 - Generate package under src folder
+- issue #24 - ErrorException: Use of undefined constant JSON_PRETTY_PRINT
+- issue #13 - classmap and namespaces are wrong when not using a prefix
+- issue #21 - Inherited class generates wrong object in php
+
 1.0.0RC03
 ---------
 - Fix URL to download phar file

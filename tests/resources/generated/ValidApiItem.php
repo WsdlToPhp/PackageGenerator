@@ -66,13 +66,14 @@ class ApiItem extends AbstractStructBase
     /**
      * Set itemType value
      * @uses \Api\EnumType\ApiItemType::valueIsValid()
+     * @uses \Api\EnumType\ApiItemType::getValidValues()
      * @param string $itemType
      * @return \Api\StructType\ApiItem
      */
     public function setItemType($itemType = null)
     {
         if (!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
-            return false;
+            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $itemType, implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
         }
         $this->itemType = $itemType;
         return $this;

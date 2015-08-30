@@ -83,6 +83,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlPayPalPath(), $reset, $gatherMethods);
     }
     /**
+     * @return Generator
+     */
+    public static function wcfGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlWcfPath(), $reset, $gatherMethods);
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */

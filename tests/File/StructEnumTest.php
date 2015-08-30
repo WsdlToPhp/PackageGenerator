@@ -134,4 +134,22 @@ class StructEnumTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testDestination()
+    {
+        $generator = self::bingGeneratorInstance(true);
+        if (($model = $generator->getStruct('PhonebookSortOption')) instanceof StructModel) {
+            $generator
+                ->setOptionPrefix('')
+                ->setOptionSuffix('Api');
+            $struct = new EnumFile($generator, $model->getName());
+            $struct->setModel($model);
+
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), EnumFile::SRC_FOLDER, $model->getContextualPart()), $struct->getFileDestination());
+        } else {
+            $this->assertFalse(true, 'Unable to find PhonebookSortOption enumeration for file generation');
+        }
+    }
 }

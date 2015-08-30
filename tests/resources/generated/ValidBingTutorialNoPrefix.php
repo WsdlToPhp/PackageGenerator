@@ -12,25 +12,23 @@
  * \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD => 'you_secret_password',
  * );
  * etc....
- * ################################################################################
- * Don't forget to add wsdltophp/packagebase:dev-master to your main composer.json.
- * ################################################################################
  */
+require_once __DIR__ . '/vendor/autoload.php';
 /**
  * Minimal options
  */
 $options = array(
     \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Api\ApiClassMap::get(),
+    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => ClassMap::get(),
 );
 /**
  * Samples for Search ServiceType
  */
-$search = new \Api\ServiceType\ApiSearch($options);
+$search = new \ServiceType\Search($options);
 /**
  * Sample call for Search operation/method
  */
-if ($search->Search(new \Api\StructType\ApiSearchRequest()) !== false) {
+if ($search->Search(new \StructType\SearchRequest()) !== false) {
     print_r($search->getResult());
 } else {
     print_r($search->getLastError());

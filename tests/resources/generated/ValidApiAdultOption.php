@@ -27,15 +27,28 @@ class ApiAdultOption
     const VALUE_STRICT = 'Strict';
     /**
      * Return true if value is allowed
-     * @uses self::VALUE_OFF
-     * @uses self::VALUE_MODERATE
-     * @uses self::VALUE_STRICT
+     * @uses self::getValidValues()
      * @param mixed $value value
      * @return bool true|false
      */
     public static function valueIsValid($value)
     {
-        return in_array($value, array(self::VALUE_OFF, self::VALUE_MODERATE, self::VALUE_STRICT), true);
+        return in_array($value, self::getValidValues(), true);
+    }
+    /**
+     * Return allowed values
+     * @uses self::VALUE_OFF
+     * @uses self::VALUE_MODERATE
+     * @uses self::VALUE_STRICT
+     * @return string[]
+     */
+    public static function getValidValues()
+    {
+        return array(
+            self::VALUE_OFF,
+            self::VALUE_MODERATE,
+            self::VALUE_STRICT,
+        );
     }
     /**
      * Method returning the class name

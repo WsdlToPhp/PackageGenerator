@@ -16,6 +16,11 @@
             "name": "Gemorroj",
             "email": "wapinet@mail.ru",
             "role": "Contributor"
+        },
+        {
+            "name": "ceeram",
+            "email": "c33ram@gmail.com",
+            "role": "Contributor"
         }
     ],
     "support" : {
@@ -35,8 +40,8 @@
     },
     "autoload": {
         "psr-4": {
-	    "WsdlToPhp\\PackageGenerator\\": "src",
-	    "WsdlToPhp\\PackageGenerator\\Tests\\": "tests"
-	}
+		    "WsdlToPhp\\PackageGenerator\\": "src",
+		    "WsdlToPhp\\PackageGenerator\\Tests\\": "tests"
+		}
     }
 }
