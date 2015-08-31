@@ -72,12 +72,8 @@ abstract class AbstractModel extends AbstractGeneratorAware
     public function getExtendsClassName()
     {
         $extends = '';
-        if (($model = $this->getInheritedMoel()) instanceof Struct) {
-            if ($model->getIsStruct()) {
-                $extends = $model->getPackagedName();
-            }
-        } elseif (class_exists($this->getInheritance()) && stripos($this->getInheritance(), $this->getGenerator()->getOptionPrefix()) === 0) {
-            $extends = $this->getInheritance();
+        if (($model = $this->getInheritedMoel()) instanceof Struct && $model->getIsStruct()) {
+            $extends = $model->getPackagedName();
         }
         if (empty($extends)) {
             $extends = $this->getExtends(true);
