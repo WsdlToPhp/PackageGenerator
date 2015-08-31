@@ -566,4 +566,29 @@ class GeneratorTest extends TestCase
         $this->assertTrue(is_file(sprintf('%s/tutorial.php', $destination)));
         $this->assertTrue(is_file($generator->getFiles()->getClassmapFile()->getFileName()));
     }
+    /**
+     *
+     */
+    public function testGetUrlContent()
+    {
+        $generator = self::getBingGeneratorInstance();
+
+        $phar = $generator->getUrlContent('https://phar.wsdltophp.com/wsdltophp.phar');
+
+        $this->assertNotNull($phar);
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExceptionOntInitDirectory()
+    {
+        Utils::createDirectory($destination = self::getTestDirectory() . 'notwritable', 0444);
+
+        $generator = self::getBingGeneratorInstance();
+        $generator
+            ->setOptionComposerName('wsdltophp/invalid')
+            ->setOptionDestination($destination);
+
+        $generator->generateClasses();
+    }
 }

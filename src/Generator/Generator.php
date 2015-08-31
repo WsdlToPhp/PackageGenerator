@@ -122,8 +122,8 @@ class Generator
     protected function initDirectory()
     {
         Utils::createDirectory($this->getOptions()->getDestination());
-        if (!is_dir($this->getOptionDestination())) {
-            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been impossible', $this->getOptionDestination()), __LINE__);
+        if (!is_writable($this->getOptionDestination())) {
+            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists, its creation has been impossible or it\'s not writable', $this->getOptionDestination()), __LINE__);
         }
         return $this;
     }
