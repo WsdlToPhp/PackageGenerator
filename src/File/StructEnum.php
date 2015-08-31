@@ -65,7 +65,6 @@ class StructEnum extends Struct
             case self::METHOD_VALUE_IS_VALID:
                 return $this->getEnumValueIsValidAnnotationBlock();
         }
-        return null;
     }
     /**
      * @return PhpMethod
