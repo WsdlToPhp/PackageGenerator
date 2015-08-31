@@ -589,6 +589,6 @@ class GeneratorTest extends TestCase
             ->setOptionComposerName('wsdltophp/invalid')
             ->setOptionDestination($destination);
 
-        $generator->generateClasses();
+        $generator->generatePackage();
     }
 }
