@@ -127,6 +127,7 @@ class Struct extends AbstractModel
     }
     /**
      * @param bool $includeInheritanceAttributes
+     * @param bool $requiredFirst
      * @return StructAttributeContainer
      */
     protected function getAllAttributes($includeInheritanceAttributes, $requiredFirst)
