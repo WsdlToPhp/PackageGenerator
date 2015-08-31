@@ -63,8 +63,10 @@ class StructEnum extends Struct
         switch ($method->getName()) {
             case self::METHOD_GET_VALID_VALUES:
                 $block = $this->getEnumGetValidValuesAnnotationBlock();
+                break;
             case self::METHOD_VALUE_IS_VALID:
                 $block = $this->getEnumValueIsValidAnnotationBlock();
+                break;
         }
         return $block;
     }
