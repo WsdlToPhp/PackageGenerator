@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+WIP
+---
+- **BC**:
+	- \Generator\Generator::_generateClasses_() has been renamed to _generatePackage_
+
 1.0.0RC04
 ---------
 - issue #29 - Throw an exception instead of returning false

@@ -91,7 +91,7 @@ class GeneratePackageCommand extends AbstractCommand
             $this
                 ->initGenerator()
                 ->getGenerator()
-                    ->generateClasses();
+                    ->generatePackage();
         } elseif ($this->canExecute() === false) {
             $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
             $this->writeLn("  Used generator's options:");

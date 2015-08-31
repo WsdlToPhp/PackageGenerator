@@ -472,7 +472,7 @@ class GeneratorTest extends TestCase
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionDestination('');
 
-        $instance->generateClasses();
+        $instance->generatePackage();
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -482,7 +482,7 @@ class GeneratorTest extends TestCase
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionComposerName('');
 
-        $instance->generateClasses();
+        $instance->generatePackage();
     }
     /**
      *
@@ -558,7 +558,7 @@ class GeneratorTest extends TestCase
             ->setSuffix('');
 
         $generator = new Generator($options);
-        $generator->generateClasses();
+        $generator->generatePackage();
 
         $this->assertTrue(is_dir($destination));
         $this->assertTrue(is_file(sprintf('%s/composer.json', $destination)));

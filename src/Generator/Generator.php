@@ -170,7 +170,7 @@ class Generator
      * Generates all classes based on options
      * @return Generator
      */
-    public function generateClasses()
+    public function generatePackage()
     {
         return $this
             ->doSanityChecks()
