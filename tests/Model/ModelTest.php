@@ -44,4 +44,37 @@ class ModelTest extends TestCase
     {
         $this->assertEmpty(self::instance('Foo')->getDocSubPackages());
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExceptionOnAddMetaName()
+    {
+        self::instance('foo')->addMeta(null, 'bar');
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testExceptionOnAddMetaValue()
+    {
+        self::instance('foo')->addMeta('', new \stdClass());
+    }
+    /**
+     *
+     */
+    public function testAddMeta()
+    {
+        $instance = self::instance('foo');
+
+        $instance->addMeta('foo', array(
+            'bar' => 1,
+        ));
+        $instance->addMeta('foo', 'bar');
+
+        $this->assertSame(array(
+            'foo' => array(
+                'bar' => 1,
+                'bar',
+            ),
+        ), $instance->getMeta());
+    }
 }

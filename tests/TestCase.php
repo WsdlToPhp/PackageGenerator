@@ -21,6 +21,20 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
+    public static function wsdlPartnerScdPath($local = true)
+    {
+        return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.scd' : '');
+    }
+    /**
+     * @return string
+     */
+    public static function wsdlPartnerThirdPath($local = true)
+    {
+        return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.third' : '');
+    }
+    /**
+     * @return string
+     */
     public static function schemaPartnerPath()
     {
         return __DIR__ . '/resources/partner/PartnerService.0.xsd';
