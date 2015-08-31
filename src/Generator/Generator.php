@@ -773,15 +773,6 @@ class Generator
         return $this->options;
     }
     /**
-     * @param GeneratorSoapClient $soapClient
-     * @return Generator
-     */
-    protected function setSoapClient(GeneratorSoapClient $soapClient)
-    {
-        $this->soapClient = $soapClient;
-        return $this;
-    }
-    /**
      * @return GeneratorSoapClient
      */
     public function getSoapClient()
