@@ -59,12 +59,14 @@ class StructEnum extends Struct
      */
     protected function getMethodAnnotationBlock(PhpMethod $method)
     {
+        $block = null;
         switch ($method->getName()) {
             case self::METHOD_GET_VALID_VALUES:
-                return $this->getEnumGetValidValuesAnnotationBlock();
+                $block = $this->getEnumGetValidValuesAnnotationBlock();
             case self::METHOD_VALUE_IS_VALID:
-                return $this->getEnumValueIsValidAnnotationBlock();
+                $block = $this->getEnumValueIsValidAnnotationBlock();
         }
+        return $block;
     }
     /**
      * @return PhpMethod
