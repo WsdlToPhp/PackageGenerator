@@ -70,4 +70,100 @@ class FunctionsTest extends SoapClientParser
             $this->assertTrue(false, 'Unable to find Saint.CheckJobStatus method');
         }
     }
+    /**
+     *
+     */
+    public function testLnp()
+    {
+        $generator = self::getLnpInstance();
+
+        $parser = new Functions($generator);
+        $parser->parse();
+
+        $count = 0;
+        foreach ($generator->getServices() as $service) {
+            foreach ($service->getMethods() as $method) {
+
+                switch ($method->getName()) {
+                    case 'portingQualification':
+                        $expected = array(
+                            'baseNumber' => 'string',
+                            'groupSize' => 'int',
+                        );
+                        $count++;
+                        break;
+                    case 'createPortingOrderCatA':
+                        $expected = array(
+                            'portingOrderCatACreationParameters' => 'UNKNOWN',
+                        );
+                        $count++;
+                        break;
+                    case 'createPortingOrderCatC':
+                        $expected = array(
+                            'portingOrderCatCCreationParameters' => 'UNKNOWN',
+                        );
+                        $count++;
+                        break;
+                    case 'uploadPaf':
+                        $expected = array(
+                            'orderId' => 'long',
+                            'fileName' => 'string',
+                            'fileContent' => 'base64Binary',
+                        );
+                        $count++;
+                        break;
+                    case 'getPortingOrderStatus':
+                        $expected = array(
+                            'orderId' => 'long',
+                        );
+                        $count++;
+                        break;
+                    case 'cancelPortingOrder':
+                        $expected = array(
+                            'orderId' => 'long',
+                        );
+                        $count++;
+                        break;
+                    case 'listActorPortingOrders':
+                        $expected = null;
+                        $count++;
+                        break;
+                    case 'listAvailablePublicNumberGroups':
+                        $expected = array(
+                            'publicNumberGroupSearchParams' => 'UNKNOWN',
+                        );
+                        $count++;
+                        break;
+                    case 'importPublicNumberGroup':
+                        $expected = array(
+                            'importPublicNumberGroupParams' => 'UNKNOWN',
+                        );
+                        $count++;
+                        break;
+                    case 'leasePublicNumberGroup':
+                        $expected = array(
+                            'params' => 'UNKNOWN',
+                        );
+                        $count++;
+                        break;
+                    case 'unleasePublicNumberGroup':
+                        $expected = array(
+                            'actorId' => 'long',
+                            'baseNumber' => 'string',
+                        );
+                        $count++;
+                        break;
+                    case 'mapIpndDetailsToNumber':
+                        $expected = array(
+                            'number' => 'string',
+                            'ipndInformation' => 'UNKNOWN',
+                        );
+                        $count++;
+                        break;
+                }
+                $this->assertSame($expected, $method->getParameterType());
+            }
+        }
+        $this->assertSame(12, $count);
+    }
 }

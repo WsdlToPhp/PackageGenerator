@@ -37,4 +37,16 @@ class StructsTest extends SoapClientParser
             $this->assertFalse(true, 'Unable to get order struct');
         }
     }
+    /**
+     *
+     */
+    public function testLnp()
+    {
+        $generator = self::getLnpInstance();
+
+        $parser = new Structs($generator);
+        $parser->parse();
+
+        $this->assertCount(0, $generator->getStructs());
+    }
 }

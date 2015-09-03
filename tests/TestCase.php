@@ -159,6 +159,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . '/resources/wcf/Service1.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlLnpPath()
+    {
+        return __DIR__ . '/resources/lnp/NumberManagement.wsdl';
+    }
+    /**
      * @param string $wsdlPath
      * @return Generator
      */
@@ -204,6 +211,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getWcfInstance()
     {
         return self::getInstance(self::wsdlWcfPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getLnpInstance()
+    {
+        return self::getInstance(self::wsdlLnpPath());
     }
     /**
      * @param string $wsdlPath
