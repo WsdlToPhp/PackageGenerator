@@ -106,7 +106,7 @@ abstract class AbstractOperation
         try {
             return new PhpFunctionParameter($name, PhpFunctionParameter::NO_VALUE, $type);
         } catch (\InvalidArgumentException $exception) {
-            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for method "%s" with type "%s"', $this->getMethod()->getName(), var_export($type, true)), __LINE__, $exception);
+            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for method "%s" with type "%s" and name "%s"', $this->getMethod()->getName(), var_export($type, true), $name), __LINE__, $exception);
         }
     }
     /**
