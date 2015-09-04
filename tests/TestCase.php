@@ -166,6 +166,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . '/resources/lnp/NumberManagement.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlEwsPath()
+    {
+        return __DIR__ . '/resources/ews/services.wsdl';
+    }
+    /**
      * @param string $wsdlPath
      * @return Generator
      */
@@ -218,6 +225,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getLnpInstance()
     {
         return self::getInstance(self::wsdlLnpPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getEwsInstance()
+    {
+        return self::getInstance(self::wsdlEwsPath());
     }
     /**
      * @param string $wsdlPath
