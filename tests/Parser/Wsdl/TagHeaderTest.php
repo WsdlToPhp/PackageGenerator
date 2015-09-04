@@ -28,6 +28,13 @@ class TagHeaderTest extends WsdlParser
         return new TagHeader(self::generatorInstance(self::wsdlPayPalPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
+     */
+    public static function ewsInstance()
+    {
+        return new TagHeader(self::generatorInstance(self::wsdlEwsPath(), false, false, false));
+    }
+    /**
      *
      */
     public function testParseImageViewService()
@@ -166,5 +173,60 @@ class TagHeaderTest extends WsdlParser
             }
         }
         $this->assertSame(57, $count);
+    }
+    /**
+     *
+     */
+    public function testParseEws()
+    {
+        $tagHeaderParser = self::ewsInstance();
+        // parsing the whole structs/functions is too long for only tests purpose!
+        $tagHeaderParser
+            ->getGenerator()
+                ->getServices()
+                    ->addService($tagHeaderParser->getGenerator(), 'Update', 'UpdateItemInRecoverableItems', 'string', 'string');
+
+        $tagHeaderParser->parse();
+
+        $count = 0;
+        $services = $tagHeaderParser->getGenerator()->getServices();
+        if ($services->count() > 0) {
+            foreach ($services as $service) {
+                foreach ($service->getMethods() as $method) {
+                    if ($method->getName() === 'UpdateItemInRecoverableItems') {
+                        $this->assertSame(array(
+                            'ExchangeImpersonation',
+                            'MailboxCulture',
+                            'RequestServerVersion',
+                            'TimeZoneContext',
+                            'ManagementRole',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES));
+                        $this->assertSame(array(
+                            'ExchangeImpersonationType',
+                            'MailboxCultureType',
+                            'RequestServerVersion',
+                            'TimeZoneContextType',
+                            'ManagementRoleType',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES));
+                        $this->assertSame(array(
+                            'required',
+                            'required',
+                            'required',
+                            'required',
+                            'required',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
+                        $this->assertSame(array(
+                            'http://schemas.microsoft.com/exchange/services/2006/types',
+                            'http://schemas.microsoft.com/exchange/services/2006/types',
+                            'http://schemas.microsoft.com/exchange/services/2006/types',
+                            'http://schemas.microsoft.com/exchange/services/2006/types',
+                            'http://schemas.microsoft.com/exchange/services/2006/types',
+                        ), $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
+                        $count++;
+                    }
+                }
+            }
+        }
+        $this->assertSame(1, $count);
     }
 }
