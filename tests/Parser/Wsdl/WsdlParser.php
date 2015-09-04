@@ -14,17 +14,23 @@ abstract class WsdlParser extends TestCase
     /**
      * @param string $wsdlPath
      * @param bool $reset
+     * @param bool $parseSoapStructs
+     * @param bool $parseSoapFunctions
      * @return Generator
      */
-    public static function generatorInstance($wsdlPath, $reset = true)
+    public static function generatorInstance($wsdlPath, $reset = true, $parseSoapStructs = true, $parseSoapFunctions = true)
     {
         $generator = self::getInstance($wsdlPath, $reset);
         $parsers = array(
             new TagInclude($generator),
             new TagImport($generator),
-            new Structs($generator),
-            new Functions($generator),
         );
+        if ($parseSoapStructs === true) {
+            $parsers[] = new Structs($generator);
+        }
+        if ($parseSoapFunctions === true) {
+            $parsers[] = new Functions($generator);
+        }
         foreach ($parsers as $parser) {
             $parser->parse();
         }

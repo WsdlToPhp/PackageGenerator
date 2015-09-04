@@ -3,6 +3,8 @@ CHANGELOG
 
 WIP
 ---
+- issue 32 - Wrong Header Namespace ?
+- issue 31 - Unable to create function parameter for method "mapIpndDetailsToNumber" with type "NULL"
 - **BC**:
 	- \Generator\Generator::_generateClasses_() has been renamed to _generatePackage_
 

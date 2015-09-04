@@ -68,16 +68,36 @@ class TagHeader extends AbstractTagOperationElement
      */
     public function getHeaderNamespace()
     {
-        $messageNamespace = $this->getAttributeMessageNamespace();
-        if (empty($messageNamespace) || ($namespace = $this->getDomDocumentHandler()->getNamespaceUri($messageNamespace)) === '') {
-            $part = $this->getPartTag();
-            $namespace = '';
-            if ($part instanceof TagPart) {
-                $finalNamespace = $part->getFinalNamespace();
-                if (!empty($finalNamespace)) {
-                    $namespace = $this->getDomDocumentHandler()->getNamespaceUri($finalNamespace);
-                }
+        $namespace = $this->getHeaderNamespaceFromPart();
+        if (empty($namespace)) {
+            $namespace = $this->getHeaderNamespaceFromMessage();
+        }
+        return $namespace;
+    }
+    /**
+     * @return string
+     */
+    protected function getHeaderNamespaceFromPart()
+    {
+        $part = $this->getPartTag();
+        $namespace = '';
+        if ($part instanceof TagPart) {
+            $finalNamespace = $part->getFinalNamespace();
+            if (!empty($finalNamespace)) {
+                $namespace = $this->getDomDocumentHandler()->getNamespaceUri($finalNamespace);
             }
+        }
+        return $namespace;
+    }
+    /**
+     * @return string
+     */
+    protected function getHeaderNamespaceFromMessage()
+    {
+        $namespace = '';
+        $messageNamespace = $this->getAttributeMessageNamespace();
+        if (!empty($messageNamespace)) {
+            $namespace = $this->getDomDocumentHandler()->getNamespaceUri($messageNamespace);
         }
         return $namespace;
     }
