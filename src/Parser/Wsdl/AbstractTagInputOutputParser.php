@@ -55,7 +55,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
                 $types = array();
                 foreach ($parts as $part) {
                     if (($type = $this->getTypeFromPart($part)) !== '') {
-                        $types[] = $type;
+                        $types[$part->getAttributeName()] = $type;
                     }
                 }
                 $this->setKnownType($method, $types);

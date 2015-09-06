@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is the Number Management Interface wsdl. This is currently at version 1. The endpoint for this service will be /sonar_soap/services/version_1/NumberManagement -->
+<wsdl:definitions name="NumberManagement" targetNamespace="http://localhost/soap/version_1/number" xmlns:ns1="http://localhost/model/version_1/number" xmlns:common="http://localhost/model/version_1/common" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/soap/version_1/number" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <!-- WSDL Type Definition -->
+    <wsdl:types>
+        <xsd:import namespace="http://localhost/model/version_1/number" schemaLocation="NumberManagementModel.xsd" />
+    </wsdl:types>
+    <!-- Porting Qualification -->
+    <wsdl:message name="portingQualificationRequest">
+        <wsdl:documentation>This is the SOAP representation of the Porting Qualification request message.</wsdl:documentation>
+        <wsdl:part name="baseNumber" type="xsd:string">
+            <wsdl:documentation>The E164 representation of the base number to perform a porting qualification request for</wsdl:documentation>
+        </wsdl:part>
+        <wsdl:part name="groupSize" type="xsd:int">
+            <wsdl:documentation>The size of the public number group required</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="portingQualificationResponse">
+        <wsdl:documentation>This is the SOAP representation of the Porting Qualification response message.</wsdl:documentation>
+        <wsdl:part name="pqResponse" type="ns1:PQResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <!-- Create Porting Order Cat A -->
+    <wsdl:message name="createPortingOrderCatARequest">
+        <wsdl:documentation>This is the SOAP representation of the create Porting Order category A request message.</wsdl:documentation>
+        <wsdl:part name="portingOrderCatACreationParameters" type="ns1:PortingOrderCatACreationParameters">
+            <wsdl:documentation>The creation parameters required to raise a category A porting order (simple port)</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createPortingOrderCatAResponse">
+        <wsdl:documentation>This is the SOAP representation of the create Porting Order Category A response message.</wsdl:documentation>
+        <wsdl:part name="portingOrder" type="ns1:PortingOrderCreationResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <!-- Create Porting Order Cat C -->
+    <wsdl:message name="createPortingOrderCatCRequest">
+        <wsdl:documentation>This is the SOAP representation of the create Porting Order category C request message.</wsdl:documentation>
+        <wsdl:part name="portingOrderCatCCreationParameters" type="ns1:PortingOrderCatCCreationParameters">
+            <wsdl:documentation>The creation parameters required to raise a category A porting order (simple port)</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createPortingOrderCatCResponse">
+        <wsdl:documentation>This is the SOAP representation of the create Porting Order Category C response message.</wsdl:documentation>
+        <wsdl:part name="portingOrder" type="ns1:PortingOrderCreationResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <!-- Upload PAF -->
+    <wsdl:message name="uploadPafRequest">
+        <wsdl:part name="orderId" type="xsd:long">
+        </wsdl:part>
+        <wsdl:part name="fileName" type="xsd:string">
+        </wsdl:part>
+        <wsdl:part name="fileContent" type="xsd:base64Binary">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="uploadPafResponse">
+    </wsdl:message>
+    <!-- Porting Order Status -->
+    <wsdl:message name="getPortingOrderStatusRequest">
+        <wsdl:documentation>This is the SOAP representation of the get porting order status request message. This request is used to retrieve the porting order status for a given proting order</wsdl:documentation>
+        <wsdl:part name="orderId" type="xsd:long">
+            <wsdl:documentation>The id of the porting order to get the status for</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getPortingOrderStatusResponse">
+        <wsdl:documentation>This is the SOAP representation of the get porting order status response message. It is the returned status of the order</wsdl:documentation>
+        <wsdl:part name="portingOrderStatus" type="ns1:PortingOrderStatus">
+            <wsdl:documentation>The status of the porting order</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <!-- Cancel Porting Order -->
+    <wsdl:message name="cancelPortingOrderRequest">
+        <wsdl:documentation>This is the SOAP representation of the cancel porting order request message. It will cancel the porting order if the porting order can still be cancelled</wsdl:documentation>
+        <wsdl:part name="orderId" type="xsd:long">
+            <wsdl:documentation>The id of the porting order to cancel</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="cancelPortingOrderResponse">
+        <wsdl:documentation>This is the SOAP representation of the cancel porting order response message.</wsdl:documentation>
+    </wsdl:message>
+    <!-- List Porting Orders For Actor -->
+    <wsdl:message name="listActorPortingOrdersRequest">
+        <wsdl:documentation>This is the SOAP representation of the list actor porting orders request</wsdl:documentation>
+    </wsdl:message>
+    <wsdl:message name="listActorPortingOrdersResponse">
+        <wsdl:documentation>This is the SOAP representation of the list actor porting orders response</wsdl:documentation>
+        <wsdl:part name="portingOrders" type="ns1:PortingOrderList">
+            <wsdl:documentation>The returned list of porting orders from the server</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="importPublicNumberGroupRequest">
+        <wsdl:documentation>This is the SOAP representation of the import public number group request.</wsdl:documentation>
+        <wsdl:part name="importPublicNumberGroupParams" type="ns1:ImportInternationalPublicNumberGroupParam">
+            <wsdl:documentation>The details of the public number group to be imported</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="importPublicNumberGroupResponse">
+    </wsdl:message>
+    <!-- Find Available Public Numbers -->
+    <wsdl:message name="listAvailablePublicNumberGroupsRequest">
+        <wsdl:documentation>This is the SOAP representation of the list available public number groups request.</wsdl:documentation>
+        <wsdl:part name="publicNumberGroupSearchParams" type="ns1:PublicNumberGroupSearchParams">
+            <wsdl:documentation>The search parameters to help filter a search for available public number groups</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="listAvailablePublicNumberGroupsResponse">
+        <wsdl:documentation>This is the SOAP representation of the response returned by the listAvailablePublicNumberGroups operation. Returns a list of public number groups matching the search criteria</wsdl:documentation>
+        <wsdl:part name="numbers" type="common:StringList">
+            <wsdl:documentation>The model representation of the list of public number groups that match the search criteria.</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <!-- Lease Public Number Group -->
+    <wsdl:message name="leasePublicNumberGroupRequest">
+        <wsdl:documentation>This is the SOAP representation of the lease public number group request. It will lease a public number group down to the specified account</wsdl:documentation>
+        <wsdl:part name="params" type="ns1:LeasePublicNumberParameters">
+            <wsdl:documentation>The parameters required to lease down a public number group stock item</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="leasePublicNumberGroupResponse">
+        <wsdl:documentation>This is the SOAP representation of the response returned by the leasePublicNumberGroup operation</wsdl:documentation>
+    </wsdl:message>
+    <!-- Unlease Public Number Group -->
+    <wsdl:message name="unleasePublicNumberGroupRequest">
+        <wsdl:documentation>The is the SOAP representation of the Unlease Public Number Group request message.</wsdl:documentation>
+        <wsdl:part name="actorId" type="xsd:long">
+            <wsdl:documentation>The id of the actor that owns the number</wsdl:documentation>
+        </wsdl:part>
+        <wsdl:part name="baseNumber" type="xsd:string">
+            <wsdl:documentation>The base number of the public number group to unlease</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="unleasePublicNumberGroupResponse">
+        <wsdl:documentation>The is the SOAP representation of the Unlease Public Number Group response message.</wsdl:documentation>
+    </wsdl:message>
+    <!-- Map IPND Details To Public Number -->
+    <wsdl:message name="mapIpndDetailsToNumberRequest">
+        <wsdl:documentation>This is the request operation to map IPND details to a specified number</wsdl:documentation>
+        <wsdl:part name="number" type="xsd:string">
+            <wsdl:documentation>The number on which to map the ipnd details to</wsdl:documentation>
+        </wsdl:part>
+        <wsdl:part name="ipndInformation" type="ns1:IpndInformation">
+            <wsdl:documentation>The IPND information to associate with the number</wsdl:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="mapIpndDetailsToNumberResponse">
+        <wsdl:documentation>This is the response to the operation of mapping IPND details to a specified number</wsdl:documentation>
+    </wsdl:message>
+    <!-- Number Management Error Message -->
+    <wsdl:message name="NumberManagementErrorMsg">
+        <wsdl:documentation>This is the SOAP representation of a sonar error message</wsdl:documentation>
+        <wsdl:part name="NumberManagementErrorMsg" element="ns1:NumberManagementError">
+        </wsdl:part>
+    </wsdl:message>
+    <!-- Port Definition -->
+    <wsdl:portType name="NumberManagement">
+        <!-- Porting Qualification -->
+        <wsdl:operation name="portingQualification">
+            <wsdl:input name="portingQualificationRequest" message="tns:portingQualificationRequest">
+            </wsdl:input>
+            <wsdl:output name="portingQualificationResponse" message="tns:portingQualificationResponse">
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Create Porting Order Cat A -->
+        <wsdl:operation name="createPortingOrderCatA">
+            <wsdl:input name="createPortingOrderCatARequest" message="tns:createPortingOrderCatARequest">
+            </wsdl:input>
+            <wsdl:output name="createPortingOrderCatAResponse" message="tns:createPortingOrderCatAResponse">
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Create Porting Order Cat C -->
+        <wsdl:operation name="createPortingOrderCatC">
+            <wsdl:input name="createPortingOrderCatCRequest" message="tns:createPortingOrderCatCRequest">
+            </wsdl:input>
+            <wsdl:output name="createPortingOrderCatCResponse" message="tns:createPortingOrderCatCResponse">
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Upload PAF -->
+        <wsdl:operation name="uploadPaf">
+            <wsdl:input name="uploadPafRequest" message="tns:uploadPafRequest">
+            </wsdl:input>
+            <wsdl:output name="uploadPafResponse" message="tns:uploadPafResponse">
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Porting Order Status -->
+        <wsdl:operation name="getPortingOrderStatus">
+            <wsdl:input name="getPortingOrderStatusRequest" message="tns:getPortingOrderStatusRequest">
+            </wsdl:input>
+            <wsdl:output name="getPortingOrderStatusResponse" message="tns:getPortingOrderStatusResponse">
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Cancel Porting Order -->
+        <wsdl:operation name="cancelPortingOrder">
+            <wsdl:input name="cancelPortingOrderRequest" message="tns:cancelPortingOrderRequest">
+            </wsdl:input>
+            <wsdl:output name="cancelPortingOrderResponse" message="tns:cancelPortingOrderResponse">
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- List Porting Orders For Actor -->
+        <wsdl:operation name="listActorPortingOrders">
+            <wsdl:documentation> Method for retrieving the list of porting orders for a given actor @param actorId The id of the actor to get the porting orders for @return PortingOrderList The list of porting orders associated with the actor 
+            </wsdl:documentation>
+            <wsdl:input name="listActorPortingOrdersRequest" message="tns:listActorPortingOrdersRequest">
+            </wsdl:input>
+            <wsdl:output name="listActorPortingOrdersResponse" message="tns:listActorPortingOrdersResponse">
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+                <wsdl:documentation>The error message if there was a problem processing this request</wsdl:documentation>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="importPublicNumberGroup">
+            <wsdl:documentation>Lists the set of available public number groups that can be leased for the given search parameters</wsdl:documentation>
+            <wsdl:input name="importPublicNumberGroupRequest" message="tns:importPublicNumberGroupRequest">
+                <wsdl:documentation>Search criteria to help filter the results of the available list of numbers</wsdl:documentation>
+            </wsdl:input>
+            <wsdl:output name="importPublicNumberGroupResponse" message="tns:importPublicNumberGroupResponse">
+                <wsdl:documentation>A list of numbers that match the given search criteria. A maximum of 1000 will be returned at any time</wsdl:documentation>
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+                <wsdl:documentation>The error message if there was a problem processing this request</wsdl:documentation>
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Find Available Public Numbers -->
+        <wsdl:operation name="listAvailablePublicNumberGroups">
+            <wsdl:documentation>Lists the set of available public number groups that can be leased for the given search parameters</wsdl:documentation>
+            <wsdl:input name="listAvailablePublicNumberGroupsRequest" message="tns:listAvailablePublicNumberGroupsRequest">
+                <wsdl:documentation>Search criteria to help filter the results of the available list of numbers</wsdl:documentation>
+            </wsdl:input>
+            <wsdl:output name="listAvailablePublicNumberGroupsResponse" message="tns:listAvailablePublicNumberGroupsResponse">
+                <wsdl:documentation>A list of numbers that match the given search criteria. A maximum of 1000 will be returned at any time</wsdl:documentation>
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+                <wsdl:documentation>The error message if there was a problem processing this request</wsdl:documentation>
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Lease Public Number Group -->
+        <wsdl:operation name="leasePublicNumberGroup">
+            <wsdl:documentation>Leases a public number group down to the specified account, on the specified offer.</wsdl:documentation>
+            <wsdl:input name="leasePublicNumberGroupRequest" message="tns:leasePublicNumberGroupRequest">
+                <wsdl:documentation>Input the required lease parameters to perform the lease operation</wsdl:documentation>
+            </wsdl:input>
+            <wsdl:output name="leasePublicNumberGroupResponse" message="tns:leasePublicNumberGroupResponse">
+                <wsdl:documentation>No response output if the operation was successful</wsdl:documentation>
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+                <wsdl:documentation>The error message if there was a problem processing this request</wsdl:documentation>
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Unlease Public Number Group -->
+        <wsdl:operation name="unleasePublicNumberGroup">
+            <wsdl:documentation>Unlease the public number group</wsdl:documentation>
+            <wsdl:input name="unleasePublicNumberGroupRequest" message="tns:unleasePublicNumberGroupRequest">
+            </wsdl:input>
+            <wsdl:output name="unleasePublicNumberGroupResponse" message="tns:unleasePublicNumberGroupResponse">
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Map IPND Details To Public Number -->
+        <wsdl:operation name="mapIpndDetailsToNumber">
+            <wsdl:documentation>Maps IPND information to a given number in your inventory.</wsdl:documentation>
+            <wsdl:input name="mapIpndDetailsToNumberRequest" message="tns:mapIpndDetailsToNumberRequest">
+                <wsdl:documentation>Input the required lease parameters to perform the lease operation</wsdl:documentation>
+            </wsdl:input>
+            <wsdl:output name="mapIpndDetailsToNumberResponse" message="tns:mapIpndDetailsToNumberResponse">
+                <wsdl:documentation>No response output if the operation was successful</wsdl:documentation>
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg" message="tns:NumberManagementErrorMsg">
+                <wsdl:documentation>The error message if there was a problem processing this request</wsdl:documentation>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:portType>
+    <!-- Binding Definition -->
+    <wsdl:binding name="NumberManagement" type="tns:NumberManagement">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <!-- Porting Qualification -->
+        <wsdl:operation name="portingQualification">
+            <soap:operation soapAction="portingQualification" style="rpc" />
+            <wsdl:input name="portingQualificationRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="portingQualificationResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Create Porting Order Cat A -->
+        <wsdl:operation name="createPortingOrderCatA">
+            <soap:operation soapAction="createPortingOrderCatA" style="rpc" />
+            <wsdl:input name="createPortingOrderCatARequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="createPortingOrderCatAResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Create Porting Order Cat C -->
+        <wsdl:operation name="createPortingOrderCatC">
+            <soap:operation soapAction="createPortingOrderCatC" style="rpc" />
+            <wsdl:input name="createPortingOrderCatCRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="createPortingOrderCatCResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Upload PAF -->
+        <wsdl:operation name="uploadPaf">
+            <soap:operation soapAction="uploadPaf" style="rpc" />
+            <wsdl:input name="uploadPafRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="uploadPafResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Porting Order Status -->
+        <wsdl:operation name="getPortingOrderStatus">
+            <soap:operation soapAction="getPortingOrderStatus" style="rpc" />
+            <wsdl:input name="getPortingOrderStatusRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="getPortingOrderStatusResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Cancel Porting Order -->
+        <wsdl:operation name="cancelPortingOrder">
+            <soap:operation soapAction="cancelPortingOrder" style="rpc" />
+            <wsdl:input name="cancelPortingOrderRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="cancelPortingOrderResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- List Porting Orders For Actor -->
+        <wsdl:operation name="listActorPortingOrders">
+            <soap:operation soapAction="listActorPortingOrders" style="rpc" />
+            <wsdl:input name="listActorPortingOrdersRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="listActorPortingOrdersResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="importPublicNumberGroup">
+            <soap:operation soapAction="importPublicNumberGroup" style="rpc" />
+            <wsdl:input name="importPublicNumberGroupRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="importPublicNumberGroupResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAvailablePublicNumberGroups">
+            <soap:operation soapAction="listAvailablePublicNumberGroups" style="rpc" />
+            <wsdl:input name="listAvailablePublicNumberGroupsRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="listAvailablePublicNumberGroupsResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Find Available Public Numbers -->
+        <wsdl:operation name="listAvailablePublicNumberGroups">
+            <soap:operation soapAction="listAvailablePublicNumberGroups" style="rpc" />
+            <wsdl:input name="listAvailablePublicNumberGroupsRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="listAvailablePublicNumberGroupsResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Lease Public Number Group -->
+        <wsdl:operation name="leasePublicNumberGroup">
+            <soap:operation soapAction="leasePublicNumberGroup" style="rpc" />
+            <wsdl:input name="leasePublicNumberGroupRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="leasePublicNumberGroupResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Unlease Public Number Group -->
+        <wsdl:operation name="unleasePublicNumberGroup">
+            <soap:operation soapAction="unleasePublicNumberGroup" style="rpc" />
+            <wsdl:input name="unleasePublicNumberGroupRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="unleasePublicNumberGroupResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- Map IPND Details To Public Number -->
+        <wsdl:operation name="mapIpndDetailsToNumber">
+            <soap:operation soapAction="mapIpndDetailsToNumber" style="rpc" />
+            <wsdl:input name="mapIpndDetailsToNumberRequest">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:input>
+            <wsdl:output name="mapIpndDetailsToNumberResponse">
+                <soap:body use="literal" namespace="http://localhost/soap/version_1/number" />
+            </wsdl:output>
+            <wsdl:fault name="NumberManagementErrorMsg">
+                <soap:fault name="NumberManagementErrorMsg" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <!-- Service Definition -->
+    <wsdl:service name="NumberManagement">
+        <wsdl:port name="NumberManagement" binding="tns:NumberManagement">
+            <soap:address location="http://localhost:8080/sonar_soap/services/version_1/NumberManagement" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

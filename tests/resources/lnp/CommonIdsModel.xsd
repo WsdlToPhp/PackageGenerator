@@ -1,0 +1,95 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost/model/version_1/common" targetNamespace="http://localhost/model/version_1/common" version="1.0">
+    <xs:complexType name="RouteId">
+        <xs:annotation>
+            <xs:documentation>The model representation of the unique identifier of a route on a network element</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="routeId" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>The route list id on the network element</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="networkElementId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The id of the network element the route list is on</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ClgTranslationTableId">
+        <xs:annotation>
+            <xs:documentation>A unique identifier of a calling translation table on a network element</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="clgTranslationTableId" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>The Id of a calling translation table on a network element</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="networkElementId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The id of the network element the route list is on</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SiteId">
+        <xs:annotation>
+            <xs:documentation>The model representation of the unique identifier of a route on a network element</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="actorId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The actor id that owns the site</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="siteId" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>The unique identifier of the site within the actor</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StockItemId">
+        <xs:annotation>
+            <xs:documentation>This is the model representation of a unique identifier for a stock item</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="productId" type="tns:ProductId">
+                <xs:annotation>
+                    <xs:documentation>The product Id of the stock item</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="stockItemId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The unique identifier of the stock item</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ProductId">
+        <xs:annotation>
+            <xs:documentation>This is the model representation of a unique identifier for a product</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="manufacturerId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The id of the manufacturer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="productId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The id of the product</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StringList">
+        <xs:annotation>
+            <xs:documentation>This is a list of strings. Any number of strings may be added to the list.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

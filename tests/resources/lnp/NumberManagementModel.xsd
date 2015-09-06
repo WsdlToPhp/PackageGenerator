@@ -1,0 +1,929 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://localhost/model/version_1/common" xmlns:tns="http://localhost/model/version_1/number" targetNamespace="http://localhost/model/version_1/number" version="1.0">
+    <!-- Import the common ids schema -->
+    <xs:import namespace="http://localhost/model/version_1/common" schemaLocation="CommonIdsModel.xsd" />
+    <xs:element name="NumberManagementError">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="errorCode" type="xs:long" />
+                <xs:element name="errorMessage" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="PortingOrder">
+        <xs:annotation>
+            <xs:documentation>This is the model representation of porting order</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="orderId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>This is the unique id of the porting order in sonar.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="actorId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>This is actor id</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <!--TODO number groups -->
+            <xs:element name="publicNumberGroups" type="tns:PortingOrderPublicNumberGroup" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>This is the list of public number groups associated with the porting order</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="accountNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This is carrier reseller account number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="networkElementId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>This is network element id</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="cutoverDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>This is customer authorised cutover date</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="addressableNumber" minOccurs="0" maxOccurs="1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This is addressable number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="actorOrderId" minOccurs="0" maxOccurs="1" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>This is customer order id</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="actorOrderItemId" minOccurs="0" maxOccurs="1" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>This is customer order item id</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="state" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This is porting order state</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="accountId" minOccurs="0" maxOccurs="1" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The account id that will be leased to</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="routeId" minOccurs="0" maxOccurs="1" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>The unique id of the vpbx route the porting order maps to</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="subscriptionId" minOccurs="0" maxOccurs="1" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The id of the subscription the addressable will be created against when mapping to a route.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="siteId" minOccurs="0" maxOccurs="1" type="common:SiteId">
+                <xs:annotation>
+                    <xs:documentation>The id of the site the addressable will be created against when mapping to a route.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PortingOrderList">
+        <xs:annotation>
+            <xs:documentation>This is the representation of a list of porting orders</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="portingOrders" minOccurs="0" maxOccurs="unbounded" type="tns:PortingOrder">
+                <xs:annotation>
+                    <xs:documentation>This is the array of porting orders</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PortingOrderCatACreationParameters">
+        <xs:sequence>
+            <xs:element name="phoneNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The phone number to be ported</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="accountNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This identifies the account under which the service being ported exists in the losing carrier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="cutoverDate" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>The date and time the port is to be cutover</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="accountId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The id of the account in sonar to be charged for the leasing</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="addressableNumber" minOccurs="0" maxOccurs="1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to an addressable on cutover, then this is the addressable number to map to.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="routeId" minOccurs="0" maxOccurs="1" type="common:RouteId">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to a remote route on cutover, then this is the id of the route to map to.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="subscriptionId" minOccurs="0" maxOccurs="1" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to a remote route on cutover, then this is the id of the subscription the addressable will be created against.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="siteId" minOccurs="0" maxOccurs="1" type="common:SiteId">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to a remote route on cutover, then this is the id of the site the addressable will be created against.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ipndInformation" minOccurs="0" maxOccurs="1" type="tns:IpndInformation">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to a remote route on cutover, then this is the id of the site the addressable will be created against.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="listCode" nillable="false" type="tns:PublicNumberListCode">
+                <xs:annotation>
+                    <xs:documentation>The white pages listing code to associate with this number. Default is UL (Unlisted Entry)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="typeOfService" nillable="false" type="tns:TypeOfService">
+                <xs:annotation>
+                    <xs:documentation>The type of service this number will be associated with (Fixed, Fax, Modem, etc)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PortingOrderCreationResponse">
+        <xs:sequence>
+            <xs:element name="orderId" type="xs:long" />
+            <xs:element name="expireDate" type="xs:dateTime" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PortingOrderCatCCreationParameters">
+        <xs:sequence>
+            <xs:element name="phoneNumberGroupList" type="tns:PortingOrderPublicNumberGroup" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>The list of public number groups to be ported in this porting order</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="accountNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This identifies the account under which the service being ported exists in the losing carrier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="cutoverDate" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>The date and time the port is to be cutover</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="accountId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The id of the account in sonar to be charged for the leasing</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="addressableNumber" minOccurs="0" maxOccurs="1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to an addressable on cutover, then this is the addressable number to map to.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="routeId" minOccurs="0" maxOccurs="1" type="common:RouteId">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to a remote route on cutover, then this is the id of the route to map to.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="subscriptionId" minOccurs="0" maxOccurs="1" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to a remote route on cutover, then this is the id of the subscription the addressable will be created against.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="siteId" minOccurs="0" maxOccurs="1" type="common:SiteId">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to a remote route on cutover, then this is the id of the site the addressable will be created against.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ipndInformation" minOccurs="0" maxOccurs="1" type="tns:IpndInformation">
+                <xs:annotation>
+                    <xs:documentation>Optional. If you want to have the ported number mapped to a remote route on cutover, then this is the id of the site the addressable will be created against.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="listCode" nillable="false" type="tns:PublicNumberListCode">
+                <xs:annotation>
+                    <xs:documentation>The white pages listing code to associate with this number. Default is UL (Unlisted Entry)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="typeOfService" nillable="false" type="tns:TypeOfService">
+                <xs:annotation>
+                    <xs:documentation>The type of service this number will be associated with (Fixed, Fax, Modem, etc)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentCustomerName" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The name of the customer (or company) that owns the service and signed the PAF</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="pafSignedDate" nillable="false" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>The date the customer (or company) that owns the service signed the PAF. Must have been signed within the last 3 months</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentServiceAddressFloorNumber" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The current service address details floor number (The building information, e.g. Level /Unit etc. Can be an empty value)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentServiceAddressStreetNumber" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The current service address details street number. (This can have letters or a range of numbers e.g. 10-14)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentServiceAddressStreetName" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The current service address details street name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentServiceAddressStreetType" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        The current service address details street type. Possible values are:
+                        <br></br>
+                        ''=Not used
+                        <br></br>
+                        ST=Street
+                        <br></br>
+                        ALLY=Alley
+                        <br></br>
+                        ARC=Arcade
+                        <br></br>
+                        AVE=Avenue
+                        <br></br>
+                        BVD=Boulevard
+                        <br></br>
+                        CL=Close
+                        <br></br>
+                        CT=Court
+                        <br></br>
+                        CRES=Crescent
+                        <br></br>
+                        DR=Drive
+                        <br></br>
+                        ESP=Esplanade
+                        <br></br>
+                        GR=Grove
+                        <br></br>
+                        HWY=Highway
+                        <br></br>
+                        LANE=Lane
+                        <br></br>
+                        PDE=Parade
+                        <br></br>
+                        PL=Place
+                        <br></br>
+                        RD=Road
+                        <br></br>
+                        SQ=Square
+                        <br></br>
+                        TCE=Terrace
+                        <br></br>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentServiceAddressLocality" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The current service address details suburb or town name. This field should be entered in uppercase.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentServiceAddressPostcode" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The current service address details postcode.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentServiceAddressProvinceId" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The current service address details province/state.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentServiceAddressCountryId" nillable="false" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The current service address details country id. The country id should be the ISO 3166-2 country id</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PortingOrderPublicNumberGroup">
+        <xs:sequence>
+            <xs:element name="baseNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This is base number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="groupSize" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>This is current carrier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="quantity" type="xs:int" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The quantity of sequential public number groups to get within the order. This MUST be specified when raising a CAT C order</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PQResponse">
+        <xs:annotation>
+            <xs:documentation>This is the model representation of porting qualification response</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="qualified" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>This is flag of qualification</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="number" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This is base number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="groupSize" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>This is current carrier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="allocatedCarrier" minOccurs="0" maxOccurs="1" type="tns:LNPCarrier">
+                <xs:annotation>
+                    <xs:documentation>Carrier to which this number range was originally assigned</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentHolder" minOccurs="0" maxOccurs="1" type="tns:LNPCarrier">
+                <xs:annotation>
+                    <xs:documentation>Carrier to which this number range is currently assigned</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="currentCarrier" minOccurs="0" maxOccurs="1" type="tns:LNPCarrier">
+                <xs:annotation>
+                    <xs:documentation>This is current carrier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="errorMessage" minOccurs="0" maxOccurs="1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This is error message</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="chargingZone" minOccurs="0" maxOccurs="1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This is charging zone</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="cca" minOccurs="0" maxOccurs="unbounded" type="tns:CallCollectionArea">
+                <xs:annotation>
+                    <xs:documentation>This is call collection area</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="actionIndicator" minOccurs="0" maxOccurs="1" type="xs:string" />
+            <xs:element name="actionIndicatorDescription" minOccurs="0" maxOccurs="1" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LNPCarrier">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int" />
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="portingEnabled" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CallCollectionArea">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="popped" type="xs:boolean" />
+            <xs:element name="portingEnabled" type="xs:boolean" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PortingOrderStatus">
+        <xs:annotation>
+            <xs:documentation> The representation of the status of a porting order 
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="id" type="xs:byte">
+                <xs:annotation>
+                    <xs:documentation>The id of the state the porting order is in</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="state" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The descriptive name of the porting order state.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="cutoverDate" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>The date the porting order is to be cutover on</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="IpndInformation">
+        <xs:annotation>
+            <xs:documentation>The representation of the ipnd information for a number</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="serviceAddress" type="tns:AS4212Address">
+                <xs:annotation>
+                    <xs:documentation>The service address the number is associated with.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="directoryAddress" type="tns:AS4212Address">
+                <xs:annotation>
+                    <xs:documentation>The directory address the number is associated with. This is only required in the case where the listing type is LE (Listed Entry).</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="contactInformation" type="tns:ContactInformation" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The contact information to populate the IPND details with</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ContactInformation">
+        <xs:annotation>
+            <xs:documentation> The representation of the contact information object 
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="customerFirstName" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The first name of the customer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="customerSurname" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The surname of the customer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="longName" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The full name of the customer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="customerTitle" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The title of the customer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="findingFirstName" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The first name to allow searching by</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="findingSurname" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The surname to allow searching by</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="findingTitle" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The title to allow searching by</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="customerContactFirstName" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The first name of the customer contact</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="customerContactSurname" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The surname of the customer contact</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="customerContactPhoneNumber" type="xs:string" nillable="false">
+                <xs:annotation>
+                    <xs:documentation>The contact phone number of the customer contact</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AS4212Address">
+        <xs:annotation>
+            <xs:documentation>This is the model representation of a AS4212 address (the format required by the Integrated Public Number Database)</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="actorId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The actor this address is assigned to</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="actorLocaleId" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>The actor this address is assigned to</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="addressClassId" type="xs:byte">
+                <xs:annotation>
+                    <xs:documentation>
+                        The class of AS4212 address. Possible values are:
+                        <br></br>
+                        1=Service
+                        <br></br>
+                        2=Directory
+                        <br></br>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="buildingType" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        The type of Building/Complex. Possible values are:
+                        <br></br>
+                        ''=Not used
+                        <br></br>
+                        APT=Apartment
+                        <br></br>
+                        FY=Factory
+                        <br></br>
+                        F=Flat
+                        <br></br>
+                        MB=Marine berth
+                        <br></br>
+                        OFF=Office
+                        <br></br>
+                        RM=Room
+                        <br></br>
+                        SHED=Shed
+                        <br></br>
+                        SHOP=Shop
+                        <br></br>
+                        SITE=Site
+                        <br></br>
+                        SL=Stall
+                        <br></br>
+                        SE=Suite
+                        <br></br>
+                        U=Unit
+                        <br></br>
+                        VLLA=Villa
+                        <br></br>
+                        WE=Warehouse
+                        <br></br>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="subunitFirstNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The first number used to identify the subunit. Must be numeric.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="subunitFirstNumberSuffix" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The suffix used in conjunction with the first number, if required.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="subunitSecondNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The second number used to identify the subunit, if required. Must be numeric.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="subunitSecondNumberSuffix" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The suffix used in conjunction with the second number, if required.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="buildingFloorType" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        The floor type. Possible values are:
+                        <br></br>
+                        ''=Not used
+                        <br></br>
+                        FL=Floor
+                        <br></br>
+                        B=Basement
+                        <br></br>
+                        L=Level
+                        <br></br>
+                        G=Ground Floor
+                        <br></br>
+                        LG=Lower Ground Floor
+                        <br></br>
+                        UG=Upper Ground Floor
+                        <br></br>
+                        M=Mezzanine
+                        <br></br>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="buildingFloorNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The floor number.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="buildingFloorNumberSuffix" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The suffix used in conjunction with the floor number, if required. 
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="buildingName" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The full name used to identify the physical building or property.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="buildingLocation" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The location or further precision of the building named above.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="houseOrBuildingFirstNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The first number used to identify the street address. Must be numeric.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="houseOrBuildingFirstNumberSuffix" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The suffix used in conjunction with the first number, if required. A dash (-) maybe be used to indicate a range of street numbers.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="houseOrBuildingSecondNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>he second number used to identify the street address. Must be numeric.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="houseOrBuildingSecondNumberSuffix" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The suffix used in conjunction with the second number, if required.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="streetName1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The street name.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="streetType1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        The street type. Possible values are:
+                        <br></br>
+                        ''=Not used
+                        <br></br>
+                        ST=Street
+                        <br></br>
+                        ALLY=Alley
+                        <br></br>
+                        ARC=Arcade
+                        <br></br>
+                        AVE=Avenue
+                        <br></br>
+                        BVD=Boulevard
+                        <br></br>
+                        CL=Close
+                        <br></br>
+                        CT=Court
+                        <br></br>
+                        CRES=Crescent
+                        <br></br>
+                        DR=Drive
+                        <br></br>
+                        ESP=Esplanade
+                        <br></br>
+                        GR=Grove
+                        <br></br>
+                        HWY=Highway
+                        <br></br>
+                        LANE=Lane
+                        <br></br>
+                        PDE=Parade
+                        <br></br>
+                        PL=Place
+                        <br></br>
+                        RD=Road
+                        <br></br>
+                        SQ=Square
+                        <br></br>
+                        TCE=Terrace
+                        <br></br>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="streetSuffix1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The suffix used in conjunction with the street name, if required.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="streetName2" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The street name.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="streetType2" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>
+                        The street type. Possible values are:
+                        <br></br>
+                        ''=Not used
+                        <br></br>
+                        ST=Street
+                        <br></br>
+                        ALLY=Alley
+                        <br></br>
+                        ARC=Arcade
+                        <br></br>
+                        AVE=Avenue
+                        <br></br>
+                        BVD=Boulevard
+                        <br></br>
+                        CL=Close
+                        <br></br>
+                        CT=Court
+                        <br></br>
+                        CRES=Crescent
+                        <br></br>
+                        DR=Drive
+                        <br></br>
+                        ESP=Esplanade
+                        <br></br>
+                        GR=Grove
+                        <br></br>
+                        HWY=Highway
+                        <br></br>
+                        LANE=Lane
+                        <br></br>
+                        PDE=Parade
+                        <br></br>
+                        PL=Place
+                        <br></br>
+                        RD=Road
+                        <br></br>
+                        SQ=Square
+                        <br></br>
+                        TCE=Terrace
+                        <br></br>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="streetSuffix2" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The suffix used in conjunction with the street name, if required.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="locality" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The suburb or town name. This field should be entered in uppercase.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="postcode" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The postcode.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="provinceId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The unique id province or state from the province table.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="countryId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The country id. The country id should be the ISO 3166-2 country id</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ImportInternationalPublicNumberGroupParam">
+        <xs:annotation>
+            <xs:documentation>The parameters required to import international public number groups into sonar</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="initialNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The first number to be created</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="finalNumber" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The final number to be created</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="groupSize" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>
+                        The size of each public number group to be created. The possible values for this field are:
+                        <br />
+                        1 - 1 number in the group
+                        <br />
+                        10 - 10 numbers in the group
+                        <br />
+                        100 - 100 numbers in the group
+                        <br />
+                        1000 - 1000 numbers in the group
+                        <br />
+                        10000 - 10000 numbers in the group
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="standardZoneUnit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The region the numbers are to be associated with</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="countryId" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The country id of the country associated with the numbers. The country id should be the ISO 3166-2 country id</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="callProcessorId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The unique identifier of the switch the numbers are associated with</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="voiceServiceTypeId" type="xs:byte">
+                <xs:annotation>
+                    <xs:documentation>
+                        The type of voice service used by the public number group to be created.
+                        <br />
+                        1 - Geographic
+                        <br />
+                        2 - Voice Service Type 1300
+                        <br />
+                        3 - Voice Service Type 1800
+                        <br />
+                        4 - Voice Service Type 1800, International Toll Free Service
+                        <br />
+                        5 - Mobile
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LeasePublicNumberParameters">
+        <xs:annotation>
+            <xs:documentation>This is a model representation of the parameters required to lease a public number group stock item</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="accountId" type="xs:long">
+                <xs:annotation>
+                    <xs:documentation>The id of the account the lease will belong to</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="stockItemId" type="common:StockItemId">
+                <xs:annotation>
+                    <xs:documentation>The unique identifier of the stock item of the public number group to be leased</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="offerName" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>This is the name of the offer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PublicNumberGroupSearchParams">
+        <xs:annotation>
+            <xs:documentation>The parameters used to search for public number groups matching the given criteria</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="countryId" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The country id of the country associated with the numbers. The country id should be the ISO 3166-2 country id</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="region" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>The region the public number groups are associated with</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="partialPhoneNumber" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Allows you to search for numbers that start with this partial phone number</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="groupSize" type="xs:int" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>Specify the group size the public numbers must be in</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="PublicNumberListCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LE" />
+            <xs:enumeration value="UL" />
+            <xs:enumeration value="SA" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TypeOfService">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Fax" />
+            <xs:enumeration value="Fixed" />
+            <xs:enumeration value="Fcall" />
+            <xs:enumeration value="One3" />
+            <xs:enumeration value="Info" />
+            <xs:enumeration value="Mobil" />
+            <xs:enumeration value="Modem" />
+            <xs:enumeration value="Pager" />
+            <xs:enumeration value="Payph" />
+            <xs:enumeration value="PCS" />
+            <xs:enumeration value="PRVPY" />
+            <xs:enumeration value="WLL" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

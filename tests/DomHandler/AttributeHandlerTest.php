@@ -35,6 +35,7 @@ class AttributeHandlerTest extends TestCase
         $this->assertSame('1', $element->getAttribute('maxOccurs')->getValue());
         $this->assertSame('Version', $element->getAttribute('name')->getValue());
         $this->assertSame('2.2', $element->getAttribute('default')->getValue());
+        $this->assertSame('2.2', $element->getAttribute('default')->getValue(false, true, null));
     }
     /**
      *

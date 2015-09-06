@@ -21,6 +21,20 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
+    public static function wsdlPartnerScdPath($local = true)
+    {
+        return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.scd' : '');
+    }
+    /**
+     * @return string
+     */
+    public static function wsdlPartnerThirdPath($local = true)
+    {
+        return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.third' : '');
+    }
+    /**
+     * @return string
+     */
     public static function schemaPartnerPath()
     {
         return __DIR__ . '/resources/partner/PartnerService.0.xsd';
@@ -145,6 +159,20 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . '/resources/wcf/Service1.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlLnpPath()
+    {
+        return __DIR__ . '/resources/lnp/NumberManagement.wsdl';
+    }
+    /**
+     * @return string
+     */
+    public static function wsdlEwsPath()
+    {
+        return __DIR__ . '/resources/ews/services.wsdl';
+    }
+    /**
      * @param string $wsdlPath
      * @return Generator
      */
@@ -190,6 +218,20 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getWcfInstance()
     {
         return self::getInstance(self::wsdlWcfPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getLnpInstance()
+    {
+        return self::getInstance(self::wsdlLnpPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getEwsInstance()
+    {
+        return self::getInstance(self::wsdlEwsPath());
     }
     /**
      * @param string $wsdlPath

@@ -122,8 +122,8 @@ class Generator
     protected function initDirectory()
     {
         Utils::createDirectory($this->getOptions()->getDestination());
-        if (!is_dir($this->getOptionDestination())) {
-            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists and its creation has been impossible', $this->getOptionDestination()), __LINE__);
+        if (!is_writable($this->getOptionDestination())) {
+            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists, its creation has been impossible or it\'s not writable', $this->getOptionDestination()), __LINE__);
         }
         return $this;
     }
@@ -170,7 +170,7 @@ class Generator
      * Generates all classes based on options
      * @return Generator
      */
-    public function generateClasses()
+    public function generatePackage()
     {
         return $this
             ->doSanityChecks()
@@ -771,15 +771,6 @@ class Generator
     public function getOptions()
     {
         return $this->options;
-    }
-    /**
-     * @param GeneratorSoapClient $soapClient
-     * @return Generator
-     */
-    protected function setSoapClient(GeneratorSoapClient $soapClient)
-    {
-        $this->soapClient = $soapClient;
-        return $this;
     }
     /**
      * @return GeneratorSoapClient

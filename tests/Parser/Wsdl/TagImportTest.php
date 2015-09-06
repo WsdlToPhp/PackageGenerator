@@ -18,6 +18,20 @@ class TagImportTest extends WsdlParser
         return new TagImport(self::generatorInstance(self::wsdlPartnerPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport
+     */
+    public static function instanceScd()
+    {
+        return new TagImport(self::generatorInstance(self::wsdlPartnerScdPath()));
+    }
+    /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport
+     */
+    public static function instanceThird()
+    {
+        return new TagImport(self::generatorInstance(self::wsdlPartnerThirdPath()));
+    }
+    /**
      *
      */
     public function testIsWsdlParsed()
@@ -34,6 +48,46 @@ class TagImportTest extends WsdlParser
     public function testGetExternalSchemas()
     {
         $tagImportParser = self::instance();
+
+        $tagImportParser->parse();
+
+        $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
+        for ($i=0; $i<19; $i++) {
+            $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/partner/PartnerService.%d.xsd', $i));
+            $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
+            $schema->getContent()->setCurrentTag('import');
+            $schemaContainer->add($schema);
+        }
+
+        $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
+        $this->assertEquals($schemaContainer, $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas());
+    }
+    /**
+     *
+     */
+    public function testGetExternalSchemasScd()
+    {
+        $tagImportParser = self::instanceScd();
+
+        $tagImportParser->parse();
+
+        $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
+        for ($i=0; $i<19; $i++) {
+            $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/partner/PartnerService.%d.xsd', $i));
+            $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
+            $schema->getContent()->setCurrentTag('import');
+            $schemaContainer->add($schema);
+        }
+
+        $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
+        $this->assertEquals($schemaContainer, $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas());
+    }
+    /**
+     *
+     */
+    public function testGetExternalSchemasThird()
+    {
+        $tagImportParser = self::instanceThird();
 
         $tagImportParser->parse();
 

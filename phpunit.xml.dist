@@ -10,18 +10,24 @@
     </php>
     <testsuites>
         <testsuite name="full">
+            <directory>./tests/Command/</directory>
             <directory>./tests/ConfigurationReader/</directory>
             <directory>./tests/Generator</directory>
             <file>./tests/DomHandler/DomDocumentHandlerTest.php</file>
             <file>./tests/DomHandler/NodeHandlerTest.php</file>
             <file>./tests/DomHandler/ElementHandlerTest.php</file>
             <file>./tests/DomHandler/AttributeHandlerTest.php</file>
+            <file>./tests/DomHandler/NameSpaceHandlerTest.php</file>
             <file>./tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
             <directory>./tests/DomHandler/Wsdl/Tag/</directory>
             <directory>./tests/File</directory>
             <directory>./tests/Model/</directory>
             <directory>./tests/Container/</directory>
             <directory>./tests/Parser/</directory>
+        </testsuite>
+
+        <testsuite name="command">
+            <directory>./tests/Command/</directory>
         </testsuite>
 
         <testsuite name="configuration">
@@ -45,6 +51,7 @@
             <file>./tests/DomHandler/NodeHandlerTest.php</file>
             <file>./tests/DomHandler/ElementHandlerTest.php</file>
             <file>./tests/DomHandler/AttributeHandlerTest.php</file>
+            <file>./tests/DomHandler/NameSpaceHandlerTest.php</file>
             <file>./tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
             <directory>./tests/DomHandler/Wsdl/Tag/</directory>
         </testsuite>

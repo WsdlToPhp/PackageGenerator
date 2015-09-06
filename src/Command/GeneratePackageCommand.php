@@ -87,12 +87,12 @@ class GeneratePackageCommand extends AbstractCommand
 
         $this->initGeneratorOptions();
 
-        if ($this->canExecute()) {
+        if ($this->canExecute() === true) {
             $this
                 ->initGenerator()
                 ->getGenerator()
-                    ->generateClasses();
-        } else {
+                    ->generatePackage();
+        } elseif ($this->canExecute() === false) {
             $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
             $this->writeLn("  Used generator's options:");
             $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
@@ -143,17 +143,12 @@ class GeneratePackageCommand extends AbstractCommand
         foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
             $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
             if ($optionValue !== null) {
-                $setOption = sprintf('set%s', $optionMethod);
-                if (method_exists($generatorOptions, $setOption)) {
-                    call_user_func_array(array(
-                        $generatorOptions,
-                        $setOption,
-                    ), array(
-                        $optionValue,
-                    ));
-                } else {
-                    $this->writeLn(sprintf('Method "%s" not found', $setOption));
-                }
+                call_user_func_array(array(
+                    $generatorOptions,
+                    sprintf('set%s', $optionMethod),
+                ), array(
+                    $optionValue,
+                ));
             }
         }
         $this->generatorOptions = $generatorOptions;

@@ -5,6 +5,7 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagHeader as Header;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagOperation as Operation;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagInput as Input;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Method;
 
@@ -50,7 +51,8 @@ class TagHeader extends AbstractTagParser
     public function parseHeader(Header $header)
     {
         $operation = $header->getParentOperation();
-        if ($operation instanceof Operation) {
+        $input = $header->getParentInput();
+        if ($operation instanceof Operation && $input instanceof Input) {
             $serviceMethod = $this->getModel($operation);
             if ($serviceMethod instanceof Method && !$this->isSoapHeaderAlreadyDefined($serviceMethod, $header->getHeaderName())) {
                 $serviceMethod

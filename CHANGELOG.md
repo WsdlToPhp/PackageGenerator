@@ -1,8 +1,13 @@
-CHANGELOG
-=========
+# CHANGELOG
 
-1.0.0RC04
----------
+## 1.0.0
+First major release:
+- issue #32 - Wrong Header Namespace ?
+- issue #31 - Unable to create function parameter for method "mapIpndDetailsToNumber" with type "NULL"
+- **BC**:
+	- \Generator\Generator::_generateClasses_() has been renamed to _generatePackage_
+
+## 1.0.0RC04
 - issue #29 - Throw an exception instead of returning false
 	- add getValidValues to EnumType generated class
 - issue #28 - Define the destination folder name for each type
@@ -16,12 +21,10 @@ CHANGELOG
 - issue #13 - classmap and namespaces are wrong when not using a prefix
 - issue #21 - Inherited class generates wrong object in php
 
-1.0.0RC03
----------
+## 1.0.0RC03
 - Fix URL to download phar file
 
-1.0.0RC02
----------
+## 1.0.0RC02
 - Add wsdltophp.phar file using Box project to create it, ```wsdltophp.phar``` should be used from now instead of ```console```
 - Move classes under src folder, rename Tests to tests, rename Resources to resources, update composer.json and phpunit accordingly
 - **BC**:
@@ -47,8 +50,7 @@ CHANGELOG
 - Remove no more used methods/constants from Model\AbstractModel
 - Add editor config file
 
-1.0.0RC01
----------
+## 1.0.0RC01
 - First major release candidate version
     - Deep refactoring of all old original classes
     - Performance optimizations
@@ -70,23 +72,18 @@ CHANGELOG
         - SubCategory,
         - InheritsClassIdentifier
 
-0.0.5
------
+## 0.0.5
 - Fix unit tests according to previous changes
 
-0.0.4
------
+## 0.0.4
 - issue #9 - Leading zero not taken into account in enumeration classes
 - 10 - --wsdl-genautoload=false also controls creation of sample.php file (console mode)
 
-0.0.3
------
+## 0.0.3
 - 7 - PHP warning on str_repeat()
 
-0.0.2
------
+## 0.0.2
 - Create tag with correct composer.json file
 
-0.0.1
------
+## 0.0.1
 - Initial version created from original project WsdlToPhp.

@@ -19,17 +19,6 @@ class NameSpaceHandler extends AttributeHandler
         $this->nodeNameSpace = $nameSpaceNode;
     }
     /**
-     * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler::getParent()
-     * @return AbstractNodeHandler
-     */
-    public function getParent()
-    {
-        if ($this->nodeNameSpace->parentNode instanceof \DOMNode) {
-            return $this->getDomDocumentHandler()->getHandler($this->nodeNameSpace->parentNode);
-        }
-        return null;
-    }
-    /**
      * value is always with [http|https]:// so we need to keep the full value
      * @param bool $withNamespace
      * @param bool $withinItsType
