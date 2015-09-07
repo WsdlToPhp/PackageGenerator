@@ -83,6 +83,11 @@ The generator comes with several options:
         - **true**: ```const VALUE_DEFAULT = 'Default'```
         - **false**: ```const ENUM_VALUE_0 = 'Default'```
     - **\-\-addcomments**: alow to add PHP comments to classes' PHP DocBlock _(mulitple values allowed)_
+- _**Optional**_ configuration file to use. It loads it first, then take into account the option you pass in the command line. By default, it uses:
+    - **\-\-config**: the path to any configuration file you want anywhere you want
+    - the **wsdltophp.yml.dist** (provided with the source code) file located under the root folder OTHERWISE
+    - the **wsdltophp.yml** file (your own file) located under the root folder OTHERWISE
+    - the default configuration file located at **[src/resources/config/generator_options.yml](src/resources/config/generator_options.yml)**
 
 ## Usages
 ### Command line
