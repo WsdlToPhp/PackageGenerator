@@ -139,6 +139,7 @@ $ ./wsdltophp.phar generate:package \
     --arrays-folder="Arrays" \
     --enums-folder="Enums" \
     --services-folder="Services" \
+    --config="/path/to/your/configuration/file.yml" \
     --force
 $ cd /var/www/Api/
 $ ls -la => enjoy!
@@ -148,6 +149,7 @@ Remove ```--force``` option from the previous command line to get this result:
 ```
  Start at 2015-08-29 07:51:32
   Generation not launched, use "--force" option to force generation
+  Generator's option file used: /path/to/your/configuration/file.yml
   Used generator's options:
     category: cat
     gather_methods: start
