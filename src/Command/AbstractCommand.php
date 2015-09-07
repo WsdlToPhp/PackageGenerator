@@ -43,7 +43,7 @@ abstract class AbstractCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->input  = $input;
+        $this->input = $input;
         $this->output = $output;
         return self::EXIT_OK;
     }
@@ -52,7 +52,7 @@ abstract class AbstractCommand extends Command
      */
     protected function canExecute()
     {
-        return (bool)$this->input->getOption('force') === true;
+        return (bool)$this->getOptionValue('force') === true;
     }
     /**
      * @param string|array $messages
@@ -61,5 +61,13 @@ abstract class AbstractCommand extends Command
     protected function writeLn($messages, $type = OutputInterface::OUTPUT_NORMAL)
     {
         $this->output->writeln($messages, $type);
+    }
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    protected function getOptionValue($name)
+    {
+        return $this->input->getOption($name);
     }
 }
