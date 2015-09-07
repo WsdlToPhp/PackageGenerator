@@ -192,7 +192,7 @@ use \WsdlToPhp\PackageGenerator\Generator\Generator;
 use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
 
 // Options definition
-$options = GenerationOptions::instance();
+$options = GenerationOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
     ->setOrigin('http://www.mydomain.com/?wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
@@ -225,7 +225,7 @@ use \WsdlToPhp\PackageGenerator\Generator\Generator;
 use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
 
 // Options definition
-$options = GenerationOptions::instance();
+$options = GenerationOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
     ->setCategory(GeneratorOptions::VALUE_CAT)
     ->setGatherMethods(GeneratorOptions::VALUE_START)
