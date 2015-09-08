@@ -2,7 +2,7 @@
 
 ## WIP
 - issue #30 - Possibility to load our own options file when using the command line
-- bin/wsdltopph.phar has been removed as it always be tagged with an anterior version than the actual published version. wsdltophp.phar will always be available at https://phar.wsdltophp.com/wsdltophp.phar
+- **bin/wsdltophp.phar** has been removed as it always be tagged with an anterior version than the actual published version. **wsdltophp.phar** is always available at https://phar.wsdltophp.com/wsdltophp.phar
 
 ## 1.0.0
 First major release:
