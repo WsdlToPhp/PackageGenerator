@@ -111,7 +111,7 @@ class Composer extends AbstractFile
         if (version_compare(PHP_VERSION, '5.4.0') === -1) {
             $json = str_replace('\/', '/', json_encode($content));
         } else {
-            $json = json_encode($content, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+            $json = json_encode($content, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
         return $json;
     }

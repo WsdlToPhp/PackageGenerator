@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.0
+- issue #30 - Possibility to load our own options file when using the command line
+- **bin/wsdltophp.phar** has been removed as it always be tagged with an anterior version than the actual published version. **wsdltophp.phar** is always available at https://phar.wsdltophp.com/wsdltophp.phar
+
 ## 1.0.0
 First major release:
 - issue #32 - Wrong Header Namespace ?

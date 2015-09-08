@@ -11,6 +11,18 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 class GeneratePackageCommand extends AbstractCommand
 {
     /**
+     * @var string
+     */
+    const GENERATOR_OPTIONS_CONFIG_OPTION = 'config';
+    /**
+     * @var string
+     */
+    const PROPER_USER_CONFIGURATION = 'wsdltophp.yml';
+    /**
+     * @var string
+     */
+    const DEFAULT_CONFIGURATION_FILE = 'wsdltophp.yml.dist';
+    /**
      * @var Generator
      */
     protected $generator;
@@ -74,7 +86,8 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('structs-folder', null, InputOption::VALUE_OPTIONAL, 'Structs folder name')
             ->addOption('arrays-folder', null, InputOption::VALUE_OPTIONAL, 'Arrays folder name')
             ->addOption('enums-folder', null, InputOption::VALUE_OPTIONAL, 'Enumerations folder name')
-            ->addOption('services-folder', null, InputOption::VALUE_OPTIONAL, 'Services class folder name');
+            ->addOption('services-folder', null, InputOption::VALUE_OPTIONAL, 'Services class folder name')
+            ->addOption(self::GENERATOR_OPTIONS_CONFIG_OPTION, null, InputOption::VALUE_OPTIONAL, 'Path to the generator\'s configuration file to load');
     }
     /**
      * @see \Sdc\AppBundle\Command\Command::execute()
@@ -94,6 +107,7 @@ class GeneratePackageCommand extends AbstractCommand
                     ->generatePackage();
         } elseif ($this->canExecute() === false) {
             $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
+            $this->writeLn(sprintf("  Generator's option file used: %s", $this->resolveGeneratorOptionsConfigPath()));
             $this->writeLn("  Used generator's options:");
             $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
         }
@@ -127,9 +141,9 @@ class GeneratePackageCommand extends AbstractCommand
             'arrays-folder' => 'ArraysFolder',
             'gathermethods' => 'GatherMethods',
             'structs-folder' => 'StructsFolder',
+            'structarray' => 'StructArrayClass',
             'proxy-password' => 'ProxyPassword',
             'services-folder' => 'ServicesFolder',
-            'structarray' => 'StructArrayClass',
             'gentutorial' => 'GenerateTutorialFile',
             'genericconstants' => 'GenericConstantsName',
         );
@@ -139,7 +153,7 @@ class GeneratePackageCommand extends AbstractCommand
      */
     protected function initGeneratorOptions()
     {
-        $generatorOptions = GeneratorOptions::instance();
+        $generatorOptions = GeneratorOptions::instance($this->resolveGeneratorOptionsConfigPath());
         foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
             $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
             if ($optionValue !== null) {
@@ -178,5 +192,39 @@ class GeneratePackageCommand extends AbstractCommand
             $value = sprintf("%s: %s", $index, !is_array($value) ? $value : implode(', ', $value));
         });
         return $array;
+    }
+    /**
+     *
+     */
+    public function getGeneratorOptionsConfigOption()
+    {
+        return $this->getOptionValue(self::GENERATOR_OPTIONS_CONFIG_OPTION);
+    }
+    /**
+     * @return string|null
+     */
+    public function resolveGeneratorOptionsConfigPath()
+    {
+        $path = null;
+        $possibilities = $this->getGeneratorOptionsPossibilities();
+        foreach ($possibilities as $possibility) {
+            if (!empty($possibility) && is_file($possibility)) {
+                $path = $possibility;
+                break;
+            }
+        }
+        return $path;
+    }
+    /**
+     * @return string[]
+     */
+    public function getGeneratorOptionsPossibilities()
+    {
+        return array(
+            $this->getGeneratorOptionsConfigOption(),
+            sprintf('%s/%s', getcwd(), self::PROPER_USER_CONFIGURATION),
+            sprintf('%s/%s', getcwd(), self::DEFAULT_CONFIGURATION_FILE),
+            GeneratorOptions::getDefaultConfigurationPath(),
+        );
     }
 }
