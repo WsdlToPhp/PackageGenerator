@@ -83,6 +83,11 @@ The generator comes with several options:
         - **true**: ```const VALUE_DEFAULT = 'Default'```
         - **false**: ```const ENUM_VALUE_0 = 'Default'```
     - **\-\-addcomments**: alow to add PHP comments to classes' PHP DocBlock _(mulitple values allowed)_
+- _**Optional**_ configuration file to use. It loads it first, then take into account the option you pass in the command line. By default, it uses:
+    - **\-\-config**: the path to any configuration file you want anywhere you want
+    - the **wsdltophp.yml.dist** (provided with the source code) file located under the root folder OTHERWISE
+    - the **wsdltophp.yml** file (your own file) located under the root folder OTHERWISE
+    - the default configuration file located at **[src/resources/config/generator_options.yml](src/resources/config/generator_options.yml)**
 
 ## Usages
 ### Command line
@@ -134,6 +139,7 @@ $ ./wsdltophp.phar generate:package \
     --arrays-folder="Arrays" \
     --enums-folder="Enums" \
     --services-folder="Services" \
+    --config="/path/to/your/configuration/file.yml" \
     --force
 $ cd /var/www/Api/
 $ ls -la => enjoy!
@@ -143,6 +149,7 @@ Remove ```--force``` option from the previous command line to get this result:
 ```
  Start at 2015-08-29 07:51:32
   Generation not launched, use "--force" option to force generation
+  Generator's option file used: /path/to/your/configuration/file.yml
   Used generator's options:
     category: cat
     gather_methods: start
@@ -185,7 +192,7 @@ use \WsdlToPhp\PackageGenerator\Generator\Generator;
 use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
 
 // Options definition
-$options = GenerationOptions::instance();
+$options = GenerationOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
     ->setOrigin('http://www.mydomain.com/?wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
@@ -218,7 +225,7 @@ use \WsdlToPhp\PackageGenerator\Generator\Generator;
 use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
 
 // Options definition
-$options = GenerationOptions::instance();
+$options = GenerationOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
     ->setCategory(GeneratorOptions::VALUE_CAT)
     ->setGatherMethods(GeneratorOptions::VALUE_START)

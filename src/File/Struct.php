@@ -276,7 +276,7 @@ class Struct extends AbstractModelFile
     {
         $return = sprintf('return $this->%s;', $thisAccess);
         if ($attribute->isXml()) {
-            $return  = sprintf('return ($asString && ($this->%1$s instanceof \DOMDocument) && $this->%1$s->hasChildNodes()) ? $this->%1$s->saveXML($this->%1$s->childNodes->item(0)) : $this->%1$s;', $thisAccess);
+            $return = sprintf('return ($asString && ($this->%1$s instanceof \DOMDocument) && $this->%1$s->hasChildNodes()) ? $this->%1$s->saveXML($this->%1$s->childNodes->item(0)) : $this->%1$s;', $thisAccess);
         }
         $method->addChild($return);
         return $this;

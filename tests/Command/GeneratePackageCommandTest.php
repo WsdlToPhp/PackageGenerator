@@ -2,6 +2,8 @@
 
 namespace WsdlToPhp\PackageGenerator\Command;
 
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
@@ -80,5 +82,105 @@ class GeneratePackageCommandTest extends TestCase
         $command->run($input, $output);
 
         $this->assertFalse(is_dir(self::getTestDirectory() . '/debug/'));
+    }
+    /**
+     *
+     */
+    public function testGetOptionValue()
+    {
+        $command = new GeneratePackageCommand('WsdlToPhp');
+        $input = new ArrayInput(array(
+                '--urlorpath' => self::wsdlBingPath(),
+                '--destination' => self::getTestDirectory() . '/debug/',
+                '--composer-name' => 'wsdltophp/package',
+                '--gentutorial' => 'true',
+                '--genericconstants' => 'false',
+                sprintf('--%s', GeneratePackageCommand::GENERATOR_OPTIONS_CONFIG_OPTION) => __DIR__ . '/../resources/generator_options.yml',
+        ));
+        $output = new ConsoleOutput(OutputInterface::VERBOSITY_QUIET);
+
+        $command->run($input, $output);
+
+        $this->assertSame(__DIR__ . '/../resources/generator_options.yml', $command->getGeneratorOptionsConfigOption());
+    }
+    /**
+     *
+     */
+    public function testResolveGeneratorOptionsConfigPathUsingOption()
+    {
+        $command = new GeneratePackageCommand('WsdlToPhp');
+        $input = new ArrayInput(array(
+                '--urlorpath' => self::wsdlBingPath(),
+                '--destination' => self::getTestDirectory() . '/debug/',
+                '--composer-name' => 'wsdltophp/package',
+                '--gentutorial' => 'true',
+                '--genericconstants' => 'false',
+                sprintf('--%s', GeneratePackageCommand::GENERATOR_OPTIONS_CONFIG_OPTION) => __DIR__ . '/../resources/generator_options.yml',
+        ));
+        $output = new ConsoleOutput(OutputInterface::VERBOSITY_QUIET);
+
+        $command->run($input, $output);
+
+        $this->assertSame(__DIR__ . '/../resources/generator_options.yml', $command->resolveGeneratorOptionsConfigPath());
+    }
+    /**
+     *
+     */
+    public function testResolveGeneratorOptionsConfigPathUsingExistingProperUserConfig()
+    {
+        $command = new GeneratePackageCommand('WsdlToPhp');
+        $input = new ArrayInput(array(
+                '--urlorpath' => self::wsdlBingPath(),
+                '--destination' => self::getTestDirectory() . '/debug/',
+                '--composer-name' => 'wsdltophp/package',
+                '--gentutorial' => 'true',
+                '--genericconstants' => 'false',
+        ));
+        chdir(self::getTestDirectory() . '../existing_config');
+        $output = new ConsoleOutput(OutputInterface::VERBOSITY_QUIET);
+
+        $command->run($input, $output);
+
+        $this->assertSame(realpath(self::getTestDirectory() . '../existing_config/' . GeneratePackageCommand::PROPER_USER_CONFIGURATION), $command->resolveGeneratorOptionsConfigPath());
+    }
+    /**
+     *
+     */
+    public function testResolveGeneratorOptionsConfigPathUsingExistingDistributedConfig()
+    {
+        $command = new GeneratePackageCommand('WsdlToPhp');
+        $input = new ArrayInput(array(
+                '--urlorpath' => self::wsdlBingPath(),
+                '--destination' => self::getTestDirectory() . '/debug/',
+                '--composer-name' => 'wsdltophp/package',
+                '--gentutorial' => 'true',
+                '--genericconstants' => 'false',
+        ));
+        chdir(self::getTestDirectory() . '../../../');
+        $output = new ConsoleOutput(OutputInterface::VERBOSITY_QUIET);
+
+        $command->run($input, $output);
+
+        $this->assertSame(realpath(self::getTestDirectory() . '../../../' . GeneratePackageCommand::DEFAULT_CONFIGURATION_FILE), $command->resolveGeneratorOptionsConfigPath());
+    }
+    /**
+     *
+     */
+    public function testResolveGeneratorOptionsConfigPathUsingDefaultConfig()
+    {
+        $command = new GeneratePackageCommand('WsdlToPhp');
+        $input = new ArrayInput(array(
+                '--urlorpath' => self::wsdlBingPath(),
+                '--destination' => self::getTestDirectory() . '/debug/',
+                '--composer-name' => 'wsdltophp/package',
+                '--gentutorial' => 'true',
+                '--genericconstants' => 'false',
+        ));
+        chdir(self::getTestDirectory());
+        $output = new ConsoleOutput(OutputInterface::VERBOSITY_QUIET);
+
+        $command->run($input, $output);
+
+        $this->assertSame(GeneratorOptions::getDefaultConfigurationPath(), $command->resolveGeneratorOptionsConfigPath());
     }
 }
