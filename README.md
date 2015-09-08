@@ -83,15 +83,32 @@ The generator comes with several options:
         - **true**: ```const VALUE_DEFAULT = 'Default'```
         - **false**: ```const ENUM_VALUE_0 = 'Default'```
     - **\-\-addcomments**: alow to add PHP comments to classes' PHP DocBlock _(mulitple values allowed)_
+- _**Optional**_ configuration file to use. It loads it first, then take into account the option you pass in the command line. By default, it uses:
+    - **\-\-config**: the path to any configuration file you want anywhere you want
+    - the **wsdltophp.yml.dist** (provided with the source code) file located under the root folder OTHERWISE
+    - the **wsdltophp.yml** file (your own file) located under the root folder OTHERWISE
+    - the default configuration file located at **[src/resources/config/generator_options.yml](src/resources/config/generator_options.yml)**
 
 ## Usages
 ### Command line
-#### The most basic way
-To generate a package:
+Download the binary file:
 ```
 $ wget https://phar.wsdltophp.com/wsdltophp.phar
-$ ./wsdltophp.phar generate:package -h => display help
-$ ./wsdltophp.phar generate:package --version => display the version
+```
+Check its version
+```
+$ ./wsdltophp.phar --version
+```
+Display generic help:
+```
+$ ./wsdltophp.phar --version
+```
+Display command line help:
+```
+$ ./wsdltophp.phar generate:package --help
+```
+#### The most basic way
+```
 $ ./wsdltophp.phar generate:package \
     --urlorpath="http://www.mydomain.com/wsdl.xml" \
     --destination="/path/to/where/the/package/must/be/generated/" \
@@ -99,12 +116,10 @@ $ ./wsdltophp.phar generate:package \
     --force
 $ cd /path/to/where/the/package/must/be/generated/
 $ ls -la => enjoy!
-$ vi tutorial.php :smile:
+$ vi tutorial.php
 ```
 #### With full options
-To generate a package:
 ```
-$ wget https://phar.wsdltophp.com/wsdltophp.phar
 $ ./wsdltophp.phar generate:package \
     --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --login="*******" \
@@ -134,6 +149,7 @@ $ ./wsdltophp.phar generate:package \
     --arrays-folder="Arrays" \
     --enums-folder="Enums" \
     --services-folder="Services" \
+    --config="/path/to/your/configuration/file.yml" \
     --force
 $ cd /var/www/Api/
 $ ls -la => enjoy!
@@ -143,6 +159,7 @@ Remove ```--force``` option from the previous command line to get this result:
 ```
  Start at 2015-08-29 07:51:32
   Generation not launched, use "--force" option to force generation
+  Generator's option file used: /path/to/your/configuration/file.yml
   Used generator's options:
     category: cat
     gather_methods: start
@@ -173,19 +190,26 @@ Remove ```--force``` option from the previous command line to get this result:
  End at 2015-08-29 07:51:32, duration: 00:00:00
 ```
 ### Programmatic
+Get the source code:
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
+$ git clone https://github.com/WsdlToPhp/PackageGenerator.git wsdltophp
+$ cd wsdltophp
+$ composer install --no-dev
 ```
 #### The basic way
+Create a PHP script to generate the package:
+```
+$ vi generate.php
+```
+With:
 ```php
 <?php
-require_once __DIR__ . '/vendor/autoload.php'
-use \WsdlToPhp\PackageGenerator\Generator\Generator;
-use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
+require_once __DIR__ . '/vendor/autoload.php';
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 // Options definition
-$options = GenerationOptions::instance();
+$options = GeneratorOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
     ->setOrigin('http://www.mydomain.com/?wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
@@ -194,13 +218,22 @@ $options
 $generator = new Generator($options);
 $generator->generateClasses();
 ```
-Then:
+Then execute it:
+```
+$ php generate.php
+```
+Create a PHP script to use the generate package:
+```
+$ vi use.php
+```
+With:
 ```php
 <?php
 require_once '/path/to/where/the/package/must/be/generated/vendor/autoload.php';
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 $options = array(
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => 'http://developer.ebay.com/webservices/latest/ebaySvc.wsdl',
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \MyPackage\MyPackageClassMap::classMap(),
+    AbstractSoapClientBase::WSDL_URL => 'http://developer.ebay.com/webservices/latest/ebaySvc.wsdl',
+    AbstractSoapClientBase::WSDL_CLASSMAP => \MyPackage\MyPackageClassMap::classMap(),
 );
 // if getList operation is provided by the Web service
 $serviceGet = new \MyPackage\ServiceType\MyPackageServiceGet($options);
@@ -210,15 +243,19 @@ $serviceAdd = new \MyPackage\ServiceType\MyPackageServiceAdd($options);
 $result = $serviceAdd->addRole();
 // ...
 ```
+Execute your PHP script:
+```
+$ php use.php
+```
 #### Dealing with the options
 ```php
 <?php
-require_once __DIR__ . '/vendor/autoload.php'
-use \WsdlToPhp\PackageGenerator\Generator\Generator;
-use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
+require_once __DIR__ . '/vendor/autoload.php';
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 // Options definition
-$options = GenerationOptions::instance();
+$options = GeneratorOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
     ->setCategory(GeneratorOptions::VALUE_CAT)
     ->setGatherMethods(GeneratorOptions::VALUE_START)
@@ -259,8 +296,6 @@ $generator->generateClasses();
 ## Unit tests
 You can run the unit tests with the following command:
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
 $ phpunit
 ```
 You have several ```testsuite```s available which run test in the proper order:
