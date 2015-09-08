@@ -91,12 +91,24 @@ The generator comes with several options:
 
 ## Usages
 ### Command line
-#### The most basic way
-To generate a package:
+Download the binary file:
 ```
 $ wget https://phar.wsdltophp.com/wsdltophp.phar
-$ ./wsdltophp.phar generate:package -h => display help
-$ ./wsdltophp.phar generate:package --version => display the version
+```
+Check its version
+```
+$ ./wsdltophp.phar --version
+```
+Display generic help:
+```
+$ ./wsdltophp.phar --version
+```
+Display command line help:
+```
+$ ./wsdltophp.phar generate:package --help
+```
+#### The most basic way
+```
 $ ./wsdltophp.phar generate:package \
     --urlorpath="http://www.mydomain.com/wsdl.xml" \
     --destination="/path/to/where/the/package/must/be/generated/" \
@@ -104,12 +116,10 @@ $ ./wsdltophp.phar generate:package \
     --force
 $ cd /path/to/where/the/package/must/be/generated/
 $ ls -la => enjoy!
-$ vi tutorial.php :smile:
+$ vi tutorial.php
 ```
 #### With full options
-To generate a package:
 ```
-$ wget https://phar.wsdltophp.com/wsdltophp.phar
 $ ./wsdltophp.phar generate:package \
     --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --login="*******" \
@@ -180,19 +190,26 @@ Remove ```--force``` option from the previous command line to get this result:
  End at 2015-08-29 07:51:32, duration: 00:00:00
 ```
 ### Programmatic
+Get the source code:
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
+$ git clone https://github.com/WsdlToPhp/PackageGenerator.git wsdltophp
+$ cd wsdltophp
+$ composer install --no-dev
 ```
 #### The basic way
+Create a PHP script to generate the package:
+```
+$ vi generate.php
+```
+With:
 ```php
 <?php
-require_once __DIR__ . '/vendor/autoload.php'
-use \WsdlToPhp\PackageGenerator\Generator\Generator;
-use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
+require_once __DIR__ . '/vendor/autoload.php';
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 // Options definition
-$options = GenerationOptions::instance(/* '/path/to/your/configuration/file.yml' */);
+$options = GeneratorOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
     ->setOrigin('http://www.mydomain.com/?wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
@@ -201,13 +218,22 @@ $options
 $generator = new Generator($options);
 $generator->generateClasses();
 ```
-Then:
+Then execute it:
+```
+$ php generate.php
+```
+Create a PHP script to use the generate package:
+```
+$ vi use.php
+```
+With:
 ```php
 <?php
 require_once '/path/to/where/the/package/must/be/generated/vendor/autoload.php';
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 $options = array(
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => 'http://developer.ebay.com/webservices/latest/ebaySvc.wsdl',
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \MyPackage\MyPackageClassMap::classMap(),
+    AbstractSoapClientBase::WSDL_URL => 'http://developer.ebay.com/webservices/latest/ebaySvc.wsdl',
+    AbstractSoapClientBase::WSDL_CLASSMAP => \MyPackage\MyPackageClassMap::classMap(),
 );
 // if getList operation is provided by the Web service
 $serviceGet = new \MyPackage\ServiceType\MyPackageServiceGet($options);
@@ -217,15 +243,19 @@ $serviceAdd = new \MyPackage\ServiceType\MyPackageServiceAdd($options);
 $result = $serviceAdd->addRole();
 // ...
 ```
+Execute your PHP script:
+```
+$ php use.php
+```
 #### Dealing with the options
 ```php
 <?php
-require_once __DIR__ . '/vendor/autoload.php'
-use \WsdlToPhp\PackageGenerator\Generator\Generator;
-use \WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions
+require_once __DIR__ . '/vendor/autoload.php';
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 // Options definition
-$options = GenerationOptions::instance(/* '/path/to/your/configuration/file.yml' */);
+$options = GeneratorOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
     ->setCategory(GeneratorOptions::VALUE_CAT)
     ->setGatherMethods(GeneratorOptions::VALUE_START)
@@ -266,8 +296,6 @@ $generator->generateClasses();
 ## Unit tests
 You can run the unit tests with the following command:
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
 $ phpunit
 ```
 You have several ```testsuite```s available which run test in the proper order:
