@@ -197,9 +197,11 @@ $ cd wsdltophp
 $ composer install --no-dev
 ```
 #### The basic way
+Create a PHP script to generate the package:
 ```
 $ vi generate.php
 ```
+With:
 ```php
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
@@ -216,7 +218,15 @@ $options
 $generator = new Generator($options);
 $generator->generateClasses();
 ```
-Then:
+Then execute it:
+```
+$ php generate.php
+```
+Create a PHP script to use the generate package:
+```
+$ vi use.php
+```
+With:
 ```php
 <?php
 require_once '/path/to/where/the/package/must/be/generated/vendor/autoload.php';
@@ -232,6 +242,10 @@ $result = $serviceGet->getList();
 $serviceAdd = new \MyPackage\ServiceType\MyPackageServiceAdd($options);
 $result = $serviceAdd->addRole();
 // ...
+```
+Execute your PHP script:
+```
+$ php use.php
 ```
 #### Dealing with the options
 ```php
