@@ -31,6 +31,8 @@ The generated package does not need PEAR nor NuSOAP, at least :
         - [The basic way](#the-basic-way)
         - [Dealing with the options](#dealing-with-the-options)
 - [Unit tests](#unit-tests)
+- [Wiki](https://github.com/WsdlToPhp/PackageGenerator/wiki)
+    - [FAQ](https://github.com/WsdlToPhp/PackageGenerator/wiki/FAQ)
     
 
 ## Generated package hierarchy
