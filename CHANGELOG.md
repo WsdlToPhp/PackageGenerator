@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.1
+- Improve readme file, Wiki has been created and filled up with useful additional informations into the FAQ page.
+
 ## 1.1.0
 - issue #30 - Possibility to load our own options file when using the command line
 - **bin/wsdltophp.phar** has been removed as it always be tagged with an anterior version than the actual published version. **wsdltophp.phar** is always available at https://phar.wsdltophp.com/wsdltophp.phar

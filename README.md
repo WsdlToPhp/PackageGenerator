@@ -1,8 +1,10 @@
 # WsdlToPhp Package Generator
+[![License](https://poser.pugx.org/wsdltophp/packagegenerator/license)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/packagegenerator/version.png)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![Build Status](https://api.travis-ci.org/WsdlToPhp/PackageGenerator.svg)](https://travis-ci.org/WsdlToPhp/PackageGenerator)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/quality-score.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
+[![Total Downloads](https://poser.pugx.org/wsdltophp/packagegenerator/downloads)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![Dependency Status](https://www.versioneye.com/user/projects/5571b3136634650018000001/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5571b3136634650018000001)
 
 Package Generator eases the creation of a PHP package in order to call any SOAP oriented Web Service.
@@ -17,6 +19,22 @@ The generated package does not need PEAR nor NuSOAP, at least :
 - DOM : natively installed with PHP,
 - [PackageBase](https://packagist.org/packages/wsdltophp/packagebase): automatically installed on standalone mode (default mode), it contains utility classes used by the generated classes. Full documentation about the classes is available at the project [homepage](https://github.com/WsdlToPhp/PackageBase). **If you're not using the standalone mode, you must add ```wsdltophp/packagebase: dev-master``` in your main composer.json file.**
 
+# Summary
+- [Generated package hierarchy](#generated-package-hierarchy)
+- [Options](#options)
+- [Usages](#usages)
+    - [Command line](#command-line)
+        - [The most basic way](#the-most-basic-way)
+        - [With full options](#with-full-options)
+        - [Debug options before actually generating the package](#debug-options-before-actually-generating-the-package)
+    - [Programmatic](#programmatic)
+        - [The basic way](#the-basic-way)
+        - [Dealing with the options](#dealing-with-the-options)
+- [Unit tests](#unit-tests)
+- [Wiki](https://github.com/WsdlToPhp/PackageGenerator/wiki)
+    - [FAQ](https://github.com/WsdlToPhp/PackageGenerator/wiki/FAQ)
+    
+
 ## Generated package hierarchy
 ```
 /Api
@@ -29,7 +47,7 @@ The generated package does not need PEAR nor NuSOAP, at least :
     /vendor/: automatically created by composer on standalone mode (default: true)
     /composer.json: automatically created by composer on standalone mode (default: true)
     /composer.lock: automatically created by composer on standalone mode (default: true)
-    /tutorial.php: generated as soon the GenerateTutorial option is enabled (default: true)
+    /tutorial.php: generated if ```--gentutorial``` option is enabled (default: true)
 ```
 
 ## Options
@@ -91,7 +109,7 @@ The generator comes with several options:
 
 ## Usages
 ### Command line
-Download the binary file:
+Download the binary file
 ```
 $ wget https://phar.wsdltophp.com/wsdltophp.phar
 ```
@@ -99,11 +117,11 @@ Check its version
 ```
 $ ./wsdltophp.phar --version
 ```
-Display generic help:
+Display generic help
 ```
 $ ./wsdltophp.phar --version
 ```
-Display command line help:
+Display command line help
 ```
 $ ./wsdltophp.phar generate:package --help
 ```
@@ -216,7 +234,7 @@ $options
     ->setPrefix('MyPackage');
 
 $generator = new Generator($options);
-$generator->generateClasses();
+$generator->generatePackage();
 ```
 Then execute it:
 ```
@@ -233,7 +251,7 @@ require_once '/path/to/where/the/package/must/be/generated/vendor/autoload.php';
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 $options = array(
     AbstractSoapClientBase::WSDL_URL => 'http://developer.ebay.com/webservices/latest/ebaySvc.wsdl',
-    AbstractSoapClientBase::WSDL_CLASSMAP => \MyPackage\MyPackageClassMap::classMap(),
+    AbstractSoapClientBase::WSDL_CLASSMAP => \MyPackage\MyPackageClassMap::get(),
 );
 // if getList operation is provided by the Web service
 $serviceGet = new \MyPackage\ServiceType\MyPackageServiceGet($options);
@@ -264,10 +282,10 @@ $options
     ->setStandalone(GeneratorOptions::VALUE_TRUE)
     ->setNamespacePrefix('My\Project')
     ->setAddComments(array(
-        'date'    => date('Y-m-d'),
-        'team'    => 'Dream',
-        'author'  => 'Me',
-        'release' => 1.1.0,
+        'date' => date('Y-m-d'),
+        'team' => 'Dream',
+        'author' => 'Me',
+        'release' => '1.1.0',
     ))
     ->setNamespacePrefix('My\Project')
     ->setStructClass('\Std\Opt\StructClass')
@@ -291,7 +309,7 @@ $options
 
 // Generator instanciation and package generation
 $generator = new Generator($options);
-$generator->generateClasses();
+$generator->generatePackage();
 ```
 ## Unit tests
 You can run the unit tests with the following command:
@@ -311,7 +329,5 @@ You have several ```testsuite```s available which run test in the proper order:
 - **packagegenerator**: tests generator methods
 
 ```
-$ cd /path/to/src/WsdlToPhp/PackageGenerator/
-$ composer install
 $ phpunit --testsuite=model
 ```
