@@ -1,7 +1,7 @@
 # CHANGELOG
 
-## WIP
-- Improve readme file
+## 1.1.1
+- Improve readme file, Wiki has been created and filled up with useful additional informations into the FAQ page.
 
 ## 1.1.0
 - issue #30 - Possibility to load our own options file when using the command line
