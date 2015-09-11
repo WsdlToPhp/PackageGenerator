@@ -16,6 +16,7 @@ class Utils
     {
         $elementType = '';
         $string = str_replace('_', '', $string);
+        $string = preg_replace('/([0-9])/', '', $string);
         if (!empty($string)) {
             switch ($optionValue) {
                 case GeneratorOptions::VALUE_END:

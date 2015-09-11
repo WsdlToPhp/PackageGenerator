@@ -40,10 +40,19 @@ class UtilsTest extends TestCase
     /**
      *
      */
-    public function testCleanString()
+    public function testGetPartStart()
     {
         $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, 'eventsGet'));
         $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, '_events'));
+    }
+    /**
+     *
+     */
+    public function testGetPartEnd()
+    {
+        $this->assertSame('Get', Utils::getPart(GeneratorOptions::VALUE_END, 'eventsGet'));
+        $this->assertSame('Partition', Utils::getPart(GeneratorOptions::VALUE_END, 'eventsGetPartition'));
+        $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_END, '_events'));
     }
     /**
      *
@@ -94,5 +103,33 @@ class UtilsTest extends TestCase
                 ),
             ),
         ), Utils::getContentFromUrlContextOptions('http://www.foo.com', 'foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar'));
+    }
+    /**
+     *
+     */
+    public function testGetPartStringBeginingWithInt()
+    {
+        $this->assertSame('My', Utils::getPart(GeneratorOptions::VALUE_START, '0MyOperation'));
+    }
+    /**
+     *
+     */
+    public function testGetPartStringBeginingWithMultipleInt()
+    {
+        $this->assertSame('My', Utils::getPart(GeneratorOptions::VALUE_START, '0123456789MyOperation'));
+    }
+    /**
+     *
+     */
+    public function testGetEndPartStringBeginingWithMultipleInt()
+    {
+        $this->assertSame('Operation', Utils::getPart(GeneratorOptions::VALUE_END, '012345678MyOperation'));
+    }
+    /**
+     *
+     */
+    public function testGetEndPartStringEndingWithInt()
+    {
+        $this->assertSame('Operation', Utils::getPart(GeneratorOptions::VALUE_END, 'MyOperation0'));
     }
 }
