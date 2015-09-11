@@ -52,9 +52,18 @@ class Method extends AbstractModel
             ->setOwner($service);
     }
     /**
+     * Method name can't starts with numbers
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getCleanName()
+     * @return string
+     */
+    public function getCleanName($keepMultipleUnderscores = true)
+    {
+        return preg_replace('/^(\d+)([a-zA-Z0-9]*)$/', '_$2', parent::getCleanName($keepMultipleUnderscores));
+    }
+    /**
      * Returns the name of the method that is used to call the operation
      * It takes care of the fact that the method might not be the only one named as it is.
-     * @uses AbstractModel::getCleanName()
+     * @uses Method::getCleanName()
      * @uses AbstractModel::replaceReservedPhpKeyword()
      * @uses AbstractModel::getOwner()
      * @uses AbstractModel::getPackagedName()

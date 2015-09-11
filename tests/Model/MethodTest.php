@@ -81,4 +81,48 @@ class MethodTest extends TestCase
         $this->assertSame('login_1', $service2->getMethod('login')->getMethodName());
         $this->assertSame('Login', $service3->getMethod('Login')->getMethodName());
     }
+    /**
+     *
+     */
+    public function testGetCleanNameWithOneInt()
+    {
+        Service::purgeUniqueNames();
+        $service1 = new Service(self::getBingGeneratorInstance(), 'Login');
+        $service1->addMethod('0MyOperation', 'int', 'id');
+
+        $this->assertSame('_MyOperation', $service1->getMethod('0MyOperation')->getCleanName());
+    }
+    /**
+     *
+     */
+    public function testGetCleanNameWithMultipleInt()
+    {
+        Service::purgeUniqueNames();
+        $service1 = new Service(self::getBingGeneratorInstance(), 'Login');
+        $service1->addMethod('0123456789MyOperation', 'int', 'id');
+
+        $this->assertSame('_MyOperation', $service1->getMethod('0123456789MyOperation')->getCleanName());
+    }
+    /**
+     *
+     */
+    public function testNameIsCleanWithOneInt()
+    {
+        Service::purgeUniqueNames();
+        $service1 = new Service(self::getBingGeneratorInstance(), 'Login');
+        $service1->addMethod('0MyOperation', 'int', 'id');
+
+        $this->assertFalse($service1->getMethod('0MyOperation')->nameIsClean());
+    }
+    /**
+     *
+     */
+    public function testNameIsCleanWithMultipleInt()
+    {
+        Service::purgeUniqueNames();
+        $service1 = new Service(self::getBingGeneratorInstance(), 'Login');
+        $service1->addMethod('0123456789MyOperation', 'int', 'id');
+
+        $this->assertFalse($service1->getMethod('0123456789MyOperation')->nameIsClean());
+    }
 }
