@@ -1,6 +1,6 @@
 # CHANGELOG
 
-# WIP
+# 1.1.3
 - issue #35 - __Construct set methods call and enum value conflict
 
 # 1.1.2
