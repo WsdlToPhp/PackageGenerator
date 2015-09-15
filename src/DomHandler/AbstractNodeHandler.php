@@ -133,7 +133,15 @@ abstract class AbstractNodeHandler
     public function getNodeValue()
     {
         $nodeValue = trim($this->getNode()->nodeValue);
-        $nodeValue = str_replace(array("\r", "\n", "\t"), array('', '', ' '), $nodeValue);
+        $nodeValue = str_replace(array(
+            "\r",
+            "\n",
+            "\t",
+        ), array(
+            '',
+            '',
+            ' ',
+        ), $nodeValue);
         $nodeValue = preg_replace('[\s+]', ' ', $nodeValue);
         return $nodeValue;
     }

@@ -48,7 +48,7 @@ class Composer extends AbstractFile
                 '--working-dir' => $this->getGenerator()->getOptionDestination(),
             )));
         }
-        return true;
+        return 1;
     }
     /**
      * @return Composer

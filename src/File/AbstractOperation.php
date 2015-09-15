@@ -65,12 +65,15 @@ abstract class AbstractOperation
     protected function getParameterTypeArrayTypes($methodUsage = false)
     {
         $types = array();
-        foreach ($this->getMethod()->getParameterType() as $parameterName => $parameterType) {
-            $type = $methodUsage ? null : self::DEFAULT_TYPE;
-            if (($model = $this->getGenerator()->getStruct($parameterType)) instanceof StructModel && $model->getIsStruct() && !$model->getIsRestriction()) {
-                $type = $model->getPackagedName(true);
+        $parameterTypes = $this->getMethod()->getParameterType();
+        if (is_array($parameterTypes)) {
+            foreach ($parameterTypes as $parameterName => $parameterType) {
+                $type = $methodUsage ? null : self::DEFAULT_TYPE;
+                if (($model = $this->getGenerator()->getStruct($parameterType)) instanceof StructModel && $model->getIsStruct() && !$model->getIsRestriction()) {
+                    $type = $model->getPackagedName(true);
+                }
+                $types[$parameterName] = $type;
             }
-            $types[$parameterName] = $type;
         }
         return $types;
     }
