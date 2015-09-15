@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# WIP
+- issue #35 - __Construct set methods call and enum value conflict
+
 # 1.1.2
 - issue #34 - Name "0001CreateRequest" is invalid, please provide a valid name
 - issue #33 - Name "" is invalid, please provide a valid name (operation named 0001CreateRequest)
