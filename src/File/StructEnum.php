@@ -78,7 +78,7 @@ class StructEnum extends Struct
         $method = new PhpMethod(self::METHOD_VALUE_IS_VALID, array(
             'value',
         ), PhpMethod::ACCESS_PUBLIC, false, true);
-        $method->addChild(sprintf('return in_array($value, self::%s(), true);', self::METHOD_GET_VALID_VALUES));
+        $method->addChild(sprintf('return ($value === null) || in_array($value, self::%s(), true);', self::METHOD_GET_VALID_VALUES));
         return $method;
     }
     /**
