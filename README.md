@@ -6,6 +6,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/packagegenerator/downloads)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![Dependency Status](https://www.versioneye.com/user/projects/5571b3136634650018000001/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5571b3136634650018000001)
+[![StyleCI](https://styleci.io/repos/35660532/shield)](https://styleci.io/repos/35660532)
 
 Package Generator eases the creation of a PHP package in order to call any SOAP oriented Web Service.
 

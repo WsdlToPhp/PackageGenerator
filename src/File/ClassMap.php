@@ -108,8 +108,17 @@ class ClassMap extends AbstractModelFile
     protected function addStructToClassMapList(PhpMethod $method, StructModel $struct)
     {
         if ($struct->getIsStruct() && !$struct->getIsRestriction()) {
-            $method->addChild($method->getIndentedString(sprintf('\'%s\' => \'%s\',', $struct->getName(), $struct->getPackagedName(true)), 1));
+            $method->addChild($method->getIndentedString(sprintf('\'%s\' => \'%s\',', $struct->getName(), $this->getStructName($struct)), 1));
         }
         return $this;
+    }
+    /**
+     * work around for https://bugs.php.net/bug.php?id=69280
+     * @param StructModel $struct
+     * @return ClassMap
+     */
+    protected function getStructName(StructModel $struct)
+    {
+        return substr($struct->getPackagedName(true), $struct->getNamespace() != '' ? 1 : 0);
     }
 }
