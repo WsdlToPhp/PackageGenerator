@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# WIP
+- issue #36 - All tags defined by a Type outs empty in soap requests
+
 # 1.1.3
 - issue #35 - __Construct set methods call and enum value conflict
 
