@@ -1,7 +1,9 @@
 # CHANGELOG
 
-# WIP
+# 1.2.0
 - issue #36 - All tags defined by a Type outs empty in soap requests
+- **BC**:
+    - classmap returned by ClassMap::get() method is now correct for namespaced struct classes, so it's more of a break changes fixation. Before that, your XML request may be incomplete due to this issue
 
 # 1.1.3
 - issue #35 - __Construct set methods call and enum value conflict
