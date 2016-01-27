@@ -173,6 +173,20 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . '/resources/ews/services.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlDirectApiCampaignsPath()
+    {
+        return __DIR__ . '/resources/directapi/campaigns.wsdl';
+    }
+    /**
+     * @return string
+     */
+    public static function wsdlDirectApiAdGroupsPath()
+    {
+        return __DIR__ . '/resources/directapi/adgroups.wsdl';
+    }
+    /**
      * @param string $wsdlPath
      * @return Generator
      */
@@ -232,6 +246,20 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getEwsInstance()
     {
         return self::getInstance(self::wsdlEwsPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getDirectApiCampaignsInstance()
+    {
+        return self::getInstance(self::wsdlDirectApiCampaignsPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getDirectApiAdGroupsInstance()
+    {
+        return self::getInstance(self::wsdlDirectApiAdGroupsPath());
     }
     /**
      * @param string $wsdlPath
