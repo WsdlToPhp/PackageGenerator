@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://localhost/v5/adgroups" xmlns:general="http://localhost/v5/general" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AdGroups" targetNamespace="http://localhost/v5/adgroups">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://localhost/v5/adgroups">
+            <xsd:import namespace="http://localhost/v5/general" schemaLocation="general.xsd" />
+            <xsd:simpleType name="AdGroupFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Id" />
+                    <xsd:enumeration value="CampaignId" />
+                    <xsd:enumeration value="Status" />
+                    <xsd:enumeration value="Name" />
+                    <xsd:enumeration value="RegionIds" />
+                    <xsd:enumeration value="NegativeKeywords" />
+                    <xsd:enumeration value="Type" />
+                    <xsd:enumeration value="TrackingParams" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppAdGroupFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="StoreUrl" />
+                    <xsd:enumeration value="TargetDeviceType" />
+                    <xsd:enumeration value="TargetCarrier" />
+                    <xsd:enumeration value="TargetOperatingSystemVersion" />
+                    <xsd:enumeration value="AppIconModeration" />
+                    <xsd:enumeration value="AppAvailabilityStatus" />
+                    <xsd:enumeration value="AppOperatingSystemType" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DynamicTextAdGroupFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="DomainUrl" />
+                    <xsd:enumeration value="DomainUrlProcessingStatus" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdGroupTypesEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="TEXT_AD_GROUP" />
+                    <xsd:enumeration value="MOBILE_APP_AD_GROUP" />
+                    <xsd:enumeration value="DYNAMIC_TEXT_AD_GROUP" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DomainUrlProcessingStatusEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="UNPROCESSED" />
+                    <xsd:enumeration value="PROCESSED" />
+                    <xsd:enumeration value="EMPTY_RESULT" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:complexType name="AdGroupsSelectionCriteria">
+                <xsd:sequence>
+                    <xsd:element name="CampaignIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="Ids" type="xsd:long" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="Types" type="ns:AdGroupTypesEnum" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="Statuses" type="general:StatusSelectionEnum" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="TagIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="Tags" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="AppIconStatuses" type="general:StatusSelectionEnum" minOccurs="0" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdGroupBase">
+                <xsd:sequence>
+                    <xsd:element name="RegionIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="NegativeKeywords" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="TrackingParams" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdGroupAddItem">
+                <xsd:sequence>
+                    <xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="CampaignId" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="RegionIds" type="xsd:long" minOccurs="1" maxOccurs="unbounded" />
+                    <!-- not required, if specified but couldn't be empty -->
+                    <xsd:element name="NegativeKeywords" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="TrackingParams" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="MobileAppAdGroup" type="ns:MobileAppAdGroupAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="DynamicTextAdGroup" type="ns:DynamicTextAdGroup" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdGroupGetItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdGroupBase">
+                        <xsd:sequence>
+                            <xsd:element name="Id" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Name" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="CampaignId" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Status" type="general:StatusEnum" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Type" type="ns:AdGroupTypesEnum" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="MobileAppAdGroup" type="ns:MobileAppAdGroupGet" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="DynamicTextAdGroup" type="ns:DynamicTextAdGroupGet" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:simpleType name="TargetDeviceTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="DEVICE_TYPE_MOBILE" />
+                    <xsd:enumeration value="DEVICE_TYPE_TABLET" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TargetCarrierEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="WI_FI_ONLY" />
+                    <xsd:enumeration value="WI_FI_AND_CELLULAR" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AppAvailabilityStatusEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="UNPROCESSED" />
+                    <xsd:enumeration value="AVAILABLE" />
+                    <xsd:enumeration value="NOT_AVAILABLE" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:complexType name="MobileAppAdGroupGet">
+                <xsd:sequence>
+                    <xsd:element name="StoreUrl" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="TargetDeviceType" type="ns:TargetDeviceTypeEnum" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="TargetCarrier" type="ns:TargetCarrierEnum" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="TargetOperatingSystemVersion" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AppIconModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable='true' />
+                    <xsd:element name="AppOperatingSystemType" type="general:MobileOperatingSystemTypeEnum" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AppAvailabilityStatus" type="ns:AppAvailabilityStatusEnum" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdGroupUpdate">
+                <xsd:sequence>
+                    <xsd:element name="TargetDeviceType" type="ns:TargetDeviceTypeEnum" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="TargetCarrier" type="ns:TargetCarrierEnum" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="TargetOperatingSystemVersion" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdGroupAdd">
+                <xsd:sequence>
+                    <xsd:element name="StoreUrl" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="TargetDeviceType" type="ns:TargetDeviceTypeEnum" minOccurs="1" maxOccurs="unbounded" />
+                    <xsd:element name="TargetCarrier" type="ns:TargetCarrierEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="TargetOperatingSystemVersion" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextAdGroup">
+                <xsd:sequence>
+                    <xsd:element name="DomainUrl" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextAdGroupGet">
+                <xsd:sequence>
+                    <xsd:element name="DomainUrl" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="DomainUrlProcessingStatus" type="ns:DomainUrlProcessingStatusEnum" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdGroupUpdateItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdGroupBase">
+                        <xsd:sequence>
+                            <xsd:element name="Id" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="Name" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="MobileAppAdGroup" type="ns:MobileAppAdGroupUpdate" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="DynamicTextAdGroup" type="ns:DynamicTextAdGroup" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <!-- Get operation in and our message types -->
+            <xsd:element name="GetRequest">
+                <xsd:complexType>
+                    <xsd:complexContent>
+                        <xsd:extension base="general:GetRequestGeneral">
+                            <xsd:sequence>
+                                <xsd:element name="SelectionCriteria" type="ns:AdGroupsSelectionCriteria" minOccurs="1" maxOccurs="1" />
+                                <xsd:element name="FieldNames" type="ns:AdGroupFieldEnum" minOccurs="1" maxOccurs="unbounded" />
+                                <xsd:element name="MobileAppAdGroupFieldNames" type="ns:MobileAppAdGroupFieldEnum" minOccurs="0" maxOccurs="unbounded" />
+                                <xsd:element name="DynamicTextAdGroupFieldNames" type="ns:DynamicTextAdGroupFieldEnum" minOccurs="0" maxOccurs="unbounded" />
+                            </xsd:sequence>
+                        </xsd:extension>
+                    </xsd:complexContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="GetResponse">
+                <xsd:complexType>
+                    <xsd:complexContent>
+                        <xsd:extension base="general:GetResponseGeneral">
+                            <xsd:sequence>
+                                <xsd:element name="AdGroups" type="ns:AdGroupGetItem" minOccurs="0" maxOccurs="unbounded" />
+                            </xsd:sequence>
+                        </xsd:extension>
+                    </xsd:complexContent>
+                </xsd:complexType>
+            </xsd:element>
+            <!-- / End of Get operation types -->
+            <!-- Add operation types -->
+            <xsd:element name="AddRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="AdGroups" type="ns:AdGroupAddItem" minOccurs="1" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AddResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="AddResults" type="general:ActionResult" minOccurs="1" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <!-- end of Add operation types -->
+            <!-- Update operation types -->
+            <xsd:element name="UpdateRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="AdGroups" type="ns:AdGroupUpdateItem" minOccurs="1" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UpdateResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="UpdateResults" type="general:ActionResult" minOccurs="1" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <!-- end of Update operation types -->
+            <!-- Delete operation types -->
+            <xsd:element name="DeleteRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DeleteResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DeleteResults" type="general:ActionResult" minOccurs="1" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <!-- Delete operation types -->
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="ApiException">
+        <wsdl:part element="general:FaultResponse" name="faultMessage" />
+    </wsdl:message>
+    <wsdl:message name="GetOperationRequest">
+        <wsdl:part element="ns:GetRequest" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="GetOperationResponse">
+        <wsdl:part element="ns:GetResponse" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="AddOperationRequest">
+        <wsdl:part element="ns:AddRequest" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="AddOperationResponse">
+        <wsdl:part element="ns:AddResponse" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="UpdateOperationRequest">
+        <wsdl:part element="ns:UpdateRequest" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="UpdateOperationResponse">
+        <wsdl:part element="ns:UpdateResponse" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="DeleteOperationRequest">
+        <wsdl:part element="ns:DeleteRequest" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="DeleteOperationResponse">
+        <wsdl:part element="ns:DeleteResponse" name="parameters" />
+    </wsdl:message>
+    <wsdl:portType name="AdGroupsPort">
+        <wsdl:operation name="get">
+            <wsdl:input message="ns:GetOperationRequest" name="getRequest" />
+            <wsdl:output message="ns:GetOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="add">
+            <wsdl:input message="ns:AddOperationRequest" name="addRequest" />
+            <wsdl:output message="ns:AddOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <wsdl:input message="ns:UpdateOperationRequest" name="updateRequest" />
+            <wsdl:output message="ns:UpdateOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <wsdl:input message="ns:DeleteOperationRequest" name="deleteRequest" />
+            <wsdl:output message="ns:DeleteOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AdGroupsSOAP" type="ns:AdGroupsPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="get">
+            <soap:operation soapAction="https://localhost/v5/adgroups/get" />
+            <wsdl:input name="getRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="add">
+            <soap:operation soapAction="https://localhost/v5/adgroups/add" />
+            <wsdl:input name="addRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <soap:operation soapAction="https://localhost/v5/adgroups/update" />
+            <wsdl:input name="updateRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <soap:operation soapAction="https://localhost/v5/adgroups/delete" />
+            <wsdl:input name="deleteRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AdGroups">
+        <wsdl:port binding="ns:AdGroupsSOAP" name="AdGroupsSOAP">
+            <soap:address location="https://localhost/v5/adgroups/" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
