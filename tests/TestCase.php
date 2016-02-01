@@ -175,14 +175,14 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
-    public static function wsdlDirectApiCampaignsPath()
+    public static function wsdlYandexDirectApiCampaignsPath()
     {
         return __DIR__ . '/resources/directapi/campaigns.wsdl';
     }
     /**
      * @return string
      */
-    public static function wsdlDirectApiAdGroupsPath()
+    public static function wsdlYandexDirectApiAdGroupsPath()
     {
         return __DIR__ . '/resources/directapi/adgroups.wsdl';
     }
@@ -250,16 +250,16 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return Generator
      */
-    public static function getDirectApiCampaignsInstance()
+    public static function getYandexDirectApiCampaignsInstance()
     {
-        return self::getInstance(self::wsdlDirectApiCampaignsPath());
+        return self::getInstance(self::wsdlYandexDirectApiCampaignsPath());
     }
     /**
      * @return Generator
      */
-    public static function getDirectApiAdGroupsInstance()
+    public static function getYandexDirectApiAdGroupsInstance()
     {
-        return self::getInstance(self::wsdlDirectApiAdGroupsPath());
+        return self::getInstance(self::wsdlYandexDirectApiAdGroupsPath());
     }
     /**
      * @param string $wsdlPath
