@@ -786,7 +786,7 @@ class Generator
     public function getUrlContent($url)
     {
         if (strpos($url, '://') !== false) {
-            return Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword());
+            return Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword(), $this->getSoapClient()->getSoapClientStreamContextOptions());
         } elseif (is_file($url)) {
             return file_get_contents($url);
         }
