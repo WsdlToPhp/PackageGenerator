@@ -610,6 +610,9 @@ class Generator
     public function setOptionSoapOptions($optionSoapOptions)
     {
         $this->options->setSoapOptions($optionSoapOptions);
+        if ($this->getSoapClient() instanceof GeneratorSoapClient) {
+            $this->getSoapClient()->initSoapClient();
+        }
         return $this;
     }
     /**
