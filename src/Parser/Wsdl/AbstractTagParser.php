@@ -104,7 +104,7 @@ abstract class AbstractTagParser extends AbstractParser
     /**
      * @param AttributeHandler $tagAttribute
      * @param AbstractModel $model
-     * @param StructAttribute $attribute
+     * @param StructAttribute $structAttribute
      */
     protected function parseTagAttributeType(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
     {
@@ -127,19 +127,15 @@ abstract class AbstractTagParser extends AbstractParser
     }
     /**
      * Avoid this attribute to be added as meta
-     * @param AttributeHandler $tagAttribute
-     * @param AbstractModel $model
-     * @param StructAttribute $structAttribute
      */
-    protected function parseTagAttributeName(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
+    protected function parseTagAttributeName()
     {
     }
     /**
      * @param AttributeHandler $tagAttribute
      * @param AbstractModel $model
-     * @param StructAttribute $structAttribute
      */
-    protected function parseTagAttributeAbstract(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
+    protected function parseTagAttributeAbstract(AttributeHandler $tagAttribute, AbstractModel $model)
     {
         $model->setIsAbstract($tagAttribute->getValue(false, true, 'bool'));
     }
@@ -147,9 +143,8 @@ abstract class AbstractTagParser extends AbstractParser
      * Enumeration does not need its own value as meta information, it's like the name for struct attribute
      * @param AttributeHandler $tagAttribute
      * @param AbstractModel $model
-     * @param StructAttribute $structAttribute
      */
-    protected function parseTagAttributeValue(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
+    protected function parseTagAttributeValue(AttributeHandler $tagAttribute, AbstractModel $model)
     {
         if (!$model instanceof StructValue) {
             $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
