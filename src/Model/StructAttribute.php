@@ -16,6 +16,12 @@ class StructAttribute extends AbstractModel
      */
     private $type = '';
     /**
+     * Defines that this property is not a simple value but an array of values
+     * Infos at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
+     * @var string
+     */
+    private $containsElements = false;
+    /**
      * Main constructor
      * @see AbstractModel::__construct()
      * @uses StructAttribute::setType()
@@ -72,11 +78,30 @@ class StructAttribute extends AbstractModel
     /**
      * Sets the type value
      * @param string $type
-     * @return string
+     * @return StructAttribute
      */
     public function setType($type)
     {
-        return ($this->type = $type);
+        $this->type = $type;
+        return $this;
+    }
+    /**
+     * Returns the type value
+     * @return string
+     */
+    public function getContainsElements()
+    {
+        return $this->containsElements;
+    }
+    /**
+     * Sets the type value
+     * @param bool $containsElements
+     * @return string
+     */
+    public function setContainsElements($containsElements)
+    {
+        $this->containsElements = $containsElements;
+        return $this;
     }
     /**
      * Returns potential default value
