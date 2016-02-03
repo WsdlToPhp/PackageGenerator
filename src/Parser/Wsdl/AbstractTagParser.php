@@ -76,56 +76,84 @@ abstract class AbstractTagParser extends AbstractParser
         $model = $model instanceof AbstractModel ? $model : $this->getModel($tag);
         if ($model instanceof AbstractModel) {
             foreach ($tag->getAttributes() as $attribute) {
-                switch ($attribute->getName()) {
-                    case AbstractAttributeHandler::ATTRIBUTE_NAME:
-                        /**
-                         * Avoid this attribute to be added as meta
-                         */
-                        break;
-                    case AbstractAttributeHandler::ATTRIBUTE_ABSTRACT:
-                        $model->setIsAbstract($attribute->getValue(false, true, 'bool'));
-                        break;
-                    case AbstractAttributeHandler::ATTRIBUTE_VALUE:
-                        /**
-                         * Enumeration does not need its own value as meta information,
-                         * it's like the name for struct attribute
-                         */
-                        if (!$model instanceof StructValue) {
-                            $model->addMeta($attribute->getName(), $attribute->getValue(true));
-                        }
-                        break;
-                    case AbstractAttributeHandler::ATTRIBUTE_TYPE:
-                        if ($structAttribute instanceof StructAttribute) {
-                            $this->parseTagAttributeType($attribute, $structAttribute);
-                        } else {
-                            $model->addMeta($attribute->getName(), $attribute->getValue(true));
-                        }
-                        break;
-                    default:
-                        $currentModel = $structAttribute instanceof StructAttribute ? $structAttribute : $model;
-                        $currentModel->addMeta($attribute->getName(), $attribute->getValue(true));
-                        break;
+                $methodToCall = $this->getParseTagAttributeMethod($attribute->getName());
+                if (is_array($methodToCall)) {
+                    call_user_func_array($methodToCall, array(
+                        $attribute,
+                        $model,
+                        $structAttribute,
+                    ));
+                } else {
+                    $currentModel = $structAttribute instanceof StructAttribute ? $structAttribute : $model;
+                    $currentModel->addMeta($attribute->getName(), $attribute->getValue(true));
                 }
             }
         }
     }
     /**
+     * @param string $tagName
+     * @return string
+     */
+    protected function getParseTagAttributeMethod($tagName)
+    {
+        $methodName = sprintf('parseTagAttribute%s', ucfirst($tagName));
+        if (method_exists($this, $methodName)) {
+            return array($this, $methodName);
+        }
+        return null;
+    }
+    /**
      * @param AttributeHandler $tagAttribute
+     * @param AbstractModel $model
      * @param StructAttribute $attribute
      */
-    protected function parseTagAttributeType(AttributeHandler $tagAttribute, StructAttribute $attribute)
+    protected function parseTagAttributeType(AttributeHandler $tagAttribute, AbstractModel $model = null, StructAttribute $structAttribute = null)
     {
-        $type = $tagAttribute->getValue();
-        if ($type !== null) {
-            $typeModel = $this->generator->getStruct($type);
-            $modelAttributeType = $attribute->getType();
-            if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
-                if ($typeModel->getIsRestriction()) {
-                    $attribute->setType($typeModel->getName());
-                } elseif (!$typeModel->getIsStruct() && $typeModel->getInheritance()) {
-                    $attribute->setType($typeModel->getInheritance());
+        if ($structAttribute instanceof StructAttribute) {
+            $type = $tagAttribute->getValue();
+            if ($type !== null) {
+                $typeModel = $this->generator->getStruct($type);
+                $modelAttributeType = $structAttribute->getType();
+                if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
+                    if ($typeModel->getIsRestriction()) {
+                        $structAttribute->setType($typeModel->getName());
+                    } elseif (!$typeModel->getIsStruct() && $typeModel->getInheritance()) {
+                        $structAttribute->setType($typeModel->getInheritance());
+                    }
                 }
             }
+        } else {
+            $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
+        }
+    }
+    /**
+     * Avoid this attribute to be added as meta
+     * @param AttributeHandler $tagAttribute
+     * @param AbstractModel $model
+     * @param StructAttribute $structAttribute
+     */
+    protected function parseTagAttributeName(AttributeHandler $tagAttribute, AbstractModel $model = null, StructAttribute $structAttribute = null)
+    {
+    }
+    /**
+     * @param AttributeHandler $tagAttribute
+     * @param AbstractModel $model
+     * @param StructAttribute $structAttribute
+     */
+    protected function parseTagAttributeAbstract(AttributeHandler $tagAttribute, AbstractModel $model = null, StructAttribute $structAttribute = null)
+    {
+        $model->setIsAbstract($tagAttribute->getValue(false, true, 'bool'));
+    }
+    /**
+     * Enumeration does not need its own value as meta information, it's like the name for struct attribute
+     * @param AttributeHandler $tagAttribute
+     * @param AbstractModel $model
+     * @param StructAttribute $structAttribute
+     */
+    protected function parseTagAttributeValue(AttributeHandler $tagAttribute, AbstractModel $model = null, StructAttribute $structAttribute = null)
+    {
+        if (!$model instanceof StructValue) {
+            $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
         }
     }
 }
