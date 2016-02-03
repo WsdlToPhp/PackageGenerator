@@ -123,11 +123,11 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      */
     public function getMinOccurs()
     {
-        $maxOccurs = $this->getAttributeValue(AbstractAttributeHandler::ATTRIBUTE_MIN_OCCURS);
-        if (!is_numeric($maxOccurs)) {
+        $minOccurs = $this->getAttributeValue(AbstractAttributeHandler::ATTRIBUTE_MIN_OCCURS);
+        if (!is_numeric($minOccurs)) {
             return AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE;
         }
-        return (int) $maxOccurs;
+        return (int) $minOccurs;
     }
     /**
      * Info at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
@@ -135,7 +135,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      */
     public function canOccurSeveralTimes()
     {
-        return ($this->getMinOccurs() > AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE) || ($this->getMaxOccurs() > AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE) || ($this->getMaxOccurs() === AbstractAttributeHandler::VALUE_UNBOUNDED);
+        return ($this->getMinOccurs() > 1) || ($this->getMaxOccurs() > 1) || ($this->getMaxOccurs() === AbstractAttributeHandler::VALUE_UNBOUNDED);
     }
     /**
      * Info at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
@@ -143,7 +143,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      */
     public function canOccurOnlyOnce()
     {
-        return ($this->getMinOccurs() === AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE) || ($this->getMaxOccurs()  === AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE);
+        return ($this->getMinOccurs() === 1) || ($this->getMaxOccurs()  === 1);
     }
     /**
      * Info at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
@@ -159,6 +159,6 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      */
     public function isRequired()
     {
-        return $this->getMinOccurs() === AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE;
+        return $this->getMinOccurs() >= 1;
     }
 }
