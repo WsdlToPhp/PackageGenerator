@@ -104,7 +104,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     }
     /**
      * Info at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
-     * @return int
+     * @return mixed
      */
     public function getMaxOccurs()
     {
