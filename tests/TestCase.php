@@ -187,6 +187,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . '/resources/directapi/adgroups.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlEmptyPath()
+    {
+        return __DIR__ . '/resources/empty.wsdl';
+    }
+    /**
      * @param string $wsdlPath
      * @return Generator
      */
