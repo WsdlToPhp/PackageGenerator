@@ -2,7 +2,6 @@
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
-use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\Model\Struct;
@@ -107,7 +106,7 @@ abstract class AbstractTagParser extends AbstractParser
      * @param AbstractModel $model
      * @param StructAttribute $attribute
      */
-    protected function parseTagAttributeType(AttributeHandler $tagAttribute, AbstractModel $model = null, StructAttribute $structAttribute = null)
+    protected function parseTagAttributeType(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
     {
         if ($structAttribute instanceof StructAttribute) {
             $type = $tagAttribute->getValue();
@@ -132,7 +131,7 @@ abstract class AbstractTagParser extends AbstractParser
      * @param AbstractModel $model
      * @param StructAttribute $structAttribute
      */
-    protected function parseTagAttributeName(AttributeHandler $tagAttribute, AbstractModel $model = null, StructAttribute $structAttribute = null)
+    protected function parseTagAttributeName(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
     {
     }
     /**
@@ -140,7 +139,7 @@ abstract class AbstractTagParser extends AbstractParser
      * @param AbstractModel $model
      * @param StructAttribute $structAttribute
      */
-    protected function parseTagAttributeAbstract(AttributeHandler $tagAttribute, AbstractModel $model = null, StructAttribute $structAttribute = null)
+    protected function parseTagAttributeAbstract(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
     {
         $model->setIsAbstract($tagAttribute->getValue(false, true, 'bool'));
     }
@@ -150,7 +149,7 @@ abstract class AbstractTagParser extends AbstractParser
      * @param AbstractModel $model
      * @param StructAttribute $structAttribute
      */
-    protected function parseTagAttributeValue(AttributeHandler $tagAttribute, AbstractModel $model = null, StructAttribute $structAttribute = null)
+    protected function parseTagAttributeValue(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
     {
         if (!$model instanceof StructValue) {
             $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
