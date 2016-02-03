@@ -89,7 +89,7 @@ class TagRestriction extends AbstractTagParser
     private function parseRestrictionChild(Tag $tag, Tag $child)
     {
         if ($child->hasAttributeValue() && ($model = $this->getModel($tag)) instanceof Struct) {
-            $model->addMeta($child->getName(), $child->getAttributeValue(true));
+            $model->addMeta($child->getName(), $child->getValueAttributeValue(true));
         }
     }
 }
