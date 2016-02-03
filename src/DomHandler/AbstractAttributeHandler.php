@@ -53,8 +53,8 @@ class AbstractAttributeHandler extends AbstractNodeHandler
     public function getType()
     {
         $type = null;
-        if (($parent = $this->getParent()) instanceof ElementHandler && $parent->hasAttribute('type')) {
-            $type = $parent->getAttribute('type')->getValue(false, false);
+        if (($parent = $this->getParent()) instanceof ElementHandler && $parent->hasAttribute(self::ATTRIBUTE_TYPE)) {
+            $type = $parent->getAttribute(self::ATTRIBUTE_TYPE)->getValue(false, false);
         }
         return $type;
     }
