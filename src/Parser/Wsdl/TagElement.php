@@ -16,6 +16,12 @@ class TagElement extends AbstractAttributesParser
     {
         return WsdlDocument::TAG_ELEMENT;
     }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractTagParser::parseTagAttributes()
+     * @uses AbstractTagParser::parseTagAttributes()
+     * @uses StructAttribute::setContainsElements()
+     * @uses AbstractElementHandler::canOccurSeveralTimes()
+     */
     protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null)
     {
         parent::parseTagAttributes($tag, $model, $structAttribute);
