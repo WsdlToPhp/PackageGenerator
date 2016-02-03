@@ -34,7 +34,7 @@ class GeneratorSoapClient extends AbstractGeneratorAware
         return $this->setSoapClient($soapClient);
     }
     /**
-     * @param int SOAP_1_1|SOAP_1_2
+     * @param int $soapVersion
      * @return string[]
      */
     public function getSoapClientOptions($soapVersion)
