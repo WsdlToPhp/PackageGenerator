@@ -31,6 +31,22 @@ class AbstractAttributeHandler extends AbstractNodeHandler
      */
     const ATTRIBUTE_ABSTRACT = 'abstract';
     /**
+     * @var string
+     */
+    const ATTRIBUTE_MAX_OCCURS = 'maxOccurs';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_MIN_OCCURS = 'minOccurs';
+    /**
+     * @var string
+     */
+    const VALUE_UNBOUNDED = 'unbounded';
+    /**
+     * @var string
+     */
+    const DEFAULT_OCCURENCE_VALUE = 1;
+    /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler::getNode()
      * @return \DOMAttr
      */

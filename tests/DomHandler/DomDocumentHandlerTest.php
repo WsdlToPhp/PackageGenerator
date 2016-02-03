@@ -10,6 +10,7 @@ class DomDocumentHandlerTest extends TestCase
     protected static $ebayInstance;
     protected static $bingInstance;
     protected static $emptyInstance;
+    protected static $yandexDirectApiAdGroupsInstance;
     /**
      * @return DomDocumentHandler
      */
@@ -45,6 +46,18 @@ class DomDocumentHandlerTest extends TestCase
             self::$emptyInstance = new DomDocumentHandler($doc);
         }
         return self::$emptyInstance;
+    }
+    /**
+     * @return DomDocumentHandler
+     */
+    public static function yandeDirectApiAdGroupsInstance()
+    {
+        if (!isset(self::$yandexDirectApiAdGroupsInstance)) {
+            $doc = new \DOMDocument('1.0', 'utf-8');
+            $doc->load(self::wsdlYandexDirectApiAdGroupsPath());
+            self::$yandexDirectApiAdGroupsInstance = new DomDocumentHandler($doc);
+        }
+        return self::$yandexDirectApiAdGroupsInstance;
     }
     /**
      *

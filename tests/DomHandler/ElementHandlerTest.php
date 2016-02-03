@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests\DomHandler;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler;
 
 class ElementHandlerTest extends TestCase
 {
@@ -87,7 +88,137 @@ class ElementHandlerTest extends TestCase
         ));
 
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler', $part);
-        $this->assertSame('parameters', $part->getAttribute('name')->getValue());
-        $this->assertSame('SearchRequest', $part->getAttribute('element')->getValue());
+        $this->assertSame('parameters', $part->getAttributeValue('name'));
+        $this->assertSame('SearchRequest', $part->getAttributeValue('element'));
+    }
+    /**
+     *
+     */
+    public function testGetMaxOccursUnbounded()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'CampaignIds',
+        ));
+
+        $this->assertSame('unbounded', $element->getMaxOccurs());
+    }
+    /**
+     *
+     */
+    public function testGetMaxOccursOne()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'NegativeKeywords',
+        ));
+
+        $this->assertSame(AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE, $element->getMaxOccurs());
+    }
+    /**
+     *
+     */
+    public function testGetMinOccursNone()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'NegativeKeywords',
+        ));
+
+        $this->assertSame(0, $element->getMinOccurs());
+    }
+    /**
+     *
+     */
+    public function testGetMinOccursOne()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'Name',
+        ));
+
+        $this->assertSame(1, $element->getMinOccurs());
+    }
+    /**
+     *
+     */
+    public function testCanOccurSeveralTimes()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'RegionIds',
+        ));
+
+        $this->assertTrue($element->canOccurSeveralTimes());
+    }
+    /**
+     *
+     */
+    public function testCanOccurOnlyOnce()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'CampaignId',
+        ));
+
+        $this->assertTrue($element->canOccurOnlyOnce());
+    }
+    /**
+     *
+     */
+    public function testCanOccurOnlyOnceEvenForOptionalElement()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'NegativeKeywords',
+        ));
+
+        $this->assertTrue($element->canOccurOnlyOnce());
+    }
+    /**
+     *
+     */
+    public function testIsOptional()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'NegativeKeywords',
+        ));
+
+        $this->assertTrue($element->isOptional());
+    }
+    /**
+     *
+     */
+    public function testIsRequired()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'Name',
+        ));
+
+        $this->assertTrue($element->isRequired());
+    }
+    /**
+     *
+     */
+    public function testIsNotRequired()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'NegativeKeywords',
+        ));
+
+        $this->assertFalse($element->isRequired());
     }
 }
