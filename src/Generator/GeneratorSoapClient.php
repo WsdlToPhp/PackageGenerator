@@ -20,7 +20,7 @@ class GeneratorSoapClient extends AbstractGeneratorAware
      * @throws \InvalidArgumentException
      * @return GeneratorSoapClient
      */
-    protected function initSoapClient()
+    public function initSoapClient()
     {
         try {
             $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_1), true);
