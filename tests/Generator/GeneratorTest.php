@@ -7,6 +7,7 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 class GeneratorTest extends TestCase
 {
@@ -590,5 +591,45 @@ class GeneratorTest extends TestCase
             ->setOptionDestination($destination);
 
         $generator->generatePackage();
+    }
+    /**
+     *
+     */
+    public function testGetEmptySoapClientStreamContextOptions()
+    {
+        $instance = self::getBingGeneratorInstance();
+
+        $this->assertSame(array(), $instance->getSoapClient()->getSoapClientStreamContextOptions());
+    }
+    /**
+     *
+     */
+    public function testGetSoapClientStreamContextOptions()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance
+            ->setOptionSoapOptions(array(
+                AbstractSoapClientBase::WSDL_STREAM_CONTEXT => stream_context_create(array(
+                    'http' => array(
+                        'proxy' => 'http.www.foo.bar',
+                    ),
+                    'ssl' => array(
+                        'ca_file' => basename(__FILE__),
+                        'ca_path' => __DIR__,
+                        'verify_peer' => true,
+                    )
+                ))
+            ));
+
+        $this->assertSame(array(
+            'http' => array(
+                'proxy' => 'http.www.foo.bar',
+            ),
+            'ssl' => array(
+                'ca_file' => basename(__FILE__),
+                'ca_path' => __DIR__,
+                'verify_peer' => true,
+            )
+        ), $instance->getSoapClient()->getSoapClientStreamContextOptions());
     }
 }
