@@ -83,16 +83,15 @@ class StructArray extends Struct
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getStructAttributeType()
      * @param StructAttributeModel $attribute
-     * @param bool $returnAnnotation
      * @param bool $namespaced
      * @return string
      */
-    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false, $namespaced = false)
+    protected function getStructAttributeType(StructAttributeModel $attribute = null, $namespaced = false)
     {
         if ($attribute === $this->getModel()->getAttributes()->offsetGet(0)) {
             return self::TYPE_ARRAY;
         }
-        return parent::getStructAttributeType($attribute, $returnAnnotation, $namespaced);
+        return parent::getStructAttributeType($attribute, $namespaced);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::addStructMethodSetBodyForRestriction()
@@ -301,7 +300,7 @@ class StructArray extends Struct
         if (!empty($param)) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, $param));
         }
-        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeType(null, true, true)));
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeTypeGetAnnotation()));
         return $annotationBlock;
     }
     /**
