@@ -113,7 +113,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setCampaignIds(array $campaignIds = array())
     {
         array_walk($campaignIds, function($item) {
-            if (is_int($item)) {
+            if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The CampaignIds property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
         });
@@ -137,7 +137,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setIds(array $ids = array())
     {
         array_walk($ids, function($item) {
-            if (is_int($item)) {
+            if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The Ids property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
         });
@@ -209,7 +209,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTagIds(array $tagIds = array())
     {
         array_walk($tagIds, function($item) {
-            if (is_int($item)) {
+            if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The TagIds property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
         });
@@ -233,7 +233,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTags(array $tags = array())
     {
         array_walk($tags, function($item) {
-            if (is_string($item)) {
+            if (!is_string($item)) {
                 throw new \InvalidArgumentException(sprintf('The Tags property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
         });

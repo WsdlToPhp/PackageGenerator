@@ -232,7 +232,7 @@ class Struct extends AbstractModelFile
             $parameterName = lcfirst($attribute->getCleanName());
             $method
                 ->addChild(sprintf('array_walk($%s, function($item) {', $parameterName))
-                    ->addChild($method->getIndentedString(sprintf('if (%s) {', $this->getStructMethodSetBodyForArrayItemSanityCheck($attribute)), 1))
+                    ->addChild($method->getIndentedString(sprintf('if (!%s) {', $this->getStructMethodSetBodyForArrayItemSanityCheck($attribute)), 1))
                         ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %s property can only contain items of %s, "%%s" given\', is_object($item) ? get_class($item) : gettype($item)), __LINE__);', $attribute->getCleanName(), $this->getStructAttributeType($attribute, true)), 2))
                     ->addChild($method->getIndentedString('}', 1))
                 ->addChild('});');
@@ -248,7 +248,7 @@ class Struct extends AbstractModelFile
         $model = $this->getModelFromStructAttribute($attribute);
         $sanityCheck = 'false';
         if ($model instanceof StructModel) {
-            $sanityCheck = sprintf('!$item instanceof %s', $this->getStructAttributeType($attribute, true));
+            $sanityCheck = sprintf('$item instanceof %s', $this->getStructAttributeType($attribute, true));
         } else {
             switch (self::getPhpType($attribute->getType())) {
                 case 'int';
