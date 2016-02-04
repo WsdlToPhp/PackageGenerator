@@ -129,6 +129,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Set SortBy value
      * @uses \Api\EnumType\ApiVideoSortOption::valueIsValid()
      * @uses \Api\EnumType\ApiVideoSortOption::getValidValues()
+     * @throws \InvalidArgumentException
      * @param string $sortBy
      * @return \Api\StructType\ApiVideoRequest
      */

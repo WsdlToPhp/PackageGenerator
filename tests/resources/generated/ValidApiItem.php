@@ -67,6 +67,7 @@ class ApiItem extends AbstractStructBase
      * Set itemType value
      * @uses \Api\EnumType\ApiItemType::valueIsValid()
      * @uses \Api\EnumType\ApiItemType::getValidValues()
+     * @throws \InvalidArgumentException
      * @param string $itemType
      * @return \Api\StructType\ApiItem
      */

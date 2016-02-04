@@ -17,7 +17,7 @@ class ApiAddRequest extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 1
-     * @var array
+     * @var \Api\StructType\ApiAdGroupAddItem[]
      */
     public $AdGroups;
     /**
@@ -48,7 +48,7 @@ class ApiAddRequest extends AbstractStructBase
     {
         array_walk($adGroups, function($item) {
             if (!$item instanceof \Api\StructType\ApiAdGroupAddItem) {
-                throw new \InvalidArgumentException(sprintf('The AdGroups property must only contain instances of \Api\StructType\ApiAdGroupAddItem, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+                throw new \InvalidArgumentException(sprintf('The AdGroups property can only contain items of \Api\StructType\ApiAdGroupAddItem, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
         });
         $this->AdGroups = $adGroups;
