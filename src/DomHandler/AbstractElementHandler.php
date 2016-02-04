@@ -143,7 +143,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
      */
     public function canOccurOnlyOnce()
     {
-        return ($this->getMinOccurs() === 1) || ($this->getMaxOccurs()  === 1);
+        return $this->getMaxOccurs() === 1;
     }
     /**
      * Info at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
