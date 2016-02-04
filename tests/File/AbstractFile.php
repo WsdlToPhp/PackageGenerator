@@ -90,6 +90,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlWcfPath(), $reset, $gatherMethods);
     }
     /**
+     * @return Generator
+     */
+    public static function yandexDirectApiAdGroupsGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlYandexDirectApiAdGroupsPath(), $reset, $gatherMethods);
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */
