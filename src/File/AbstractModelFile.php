@@ -446,7 +446,8 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return string
      */
-    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null) {
+    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null)
+    {
         $attribute = $this->getStructAttribute($attribute);
         return sprintf('%s%s%s', $this->getStructAttributeType($attribute, true), $attribute->isArray() ? '[]' : '', $attribute->isRequired() ? '': '|null');
     }
@@ -454,7 +455,8 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return string
      */
-    protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null) {
+    protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null)
+    {
         $attribute = $this->getStructAttribute($attribute);
         return sprintf('%s%s', $this->getStructAttributeType($attribute, true), $attribute->isArray() ? '[]' : '');
     }
@@ -462,7 +464,8 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return string
      */
-    protected function getStructAttributeTypeHint(StructAttributeModel $attribute = null) {
+    protected function getStructAttributeTypeHint(StructAttributeModel $attribute = null)
+    {
         $attribute = $this->getStructAttribute($attribute);
         return $attribute->isArray() ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
     }

@@ -244,7 +244,8 @@ class Struct extends AbstractModelFile
      * and the possible types defined in xsd_types.yml
      * @param StructAttributeModel $attribute
      */
-    protected function getStructMethodSetBodyForArrayItemSanityCheck(StructAttributeModel $attribute) {
+    protected function getStructMethodSetBodyForArrayItemSanityCheck(StructAttributeModel $attribute)
+    {
         $model = $this->getModelFromStructAttribute($attribute);
         $sanityCheck = 'false';
         if ($model instanceof StructModel) {
