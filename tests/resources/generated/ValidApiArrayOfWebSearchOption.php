@@ -98,13 +98,17 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     /**
      * Add element to array
      * @see AbstractStructArrayBase::add()
+     * @throws \InvalidArgumentException
      * @uses \Api\EnumType\ApiWebSearchOption::valueIsValid()
      * @param string $item
-     * @return \Api\ArrayType\ApiArrayOfWebSearchOption|bool
+     * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
     public function add($item)
     {
-        return \Api\EnumType\ApiWebSearchOption::valueIsValid($item) ? parent::add($item) : false;
+        if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
+            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
+        }
+        return parent::add($item);
     }
     /**
      * Returns the attribute name

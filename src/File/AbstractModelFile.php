@@ -55,6 +55,10 @@ abstract class AbstractModelFile extends AbstractFile
     /**
      * @var string
      */
+    const ANNOTATION_THROWS = 'throws';
+    /**
+     * @var string
+     */
     const METHOD_CONSTRUCT = '__construct';
     /**
      * @var string

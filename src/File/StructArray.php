@@ -200,9 +200,15 @@ class StructArray extends Struct
     protected function addArrayMethodAdd(MethodContainer $methods)
     {
         if (($model = $this->getModelFromStructAttribute()) instanceof StructModel && $model->getIsRestriction()) {
-            return $this->addArrayMethodGenericMethod($methods, self::METHOD_ADD, sprintf('return %s::valueIsValid($item) ? parent::add($item) : false;', $model->getPackagedName(true)), array(
+            $method = new PhpMethod(self::METHOD_ADD, array(
                 'item',
             ));
+            $method
+                ->addChild(sprintf('if (!%s::valueIsValid($item)) {', $model->getPackagedName(true)))
+                    ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Value "%%s" is invalid, please use one of: %%s\', $item, implode(\', \', %s::getValidValues())), __LINE__);', $model->getPackagedName(true)), 1))
+                ->addChild('}')
+                ->addChild('return parent::add($item);');
+            $methods->add($method);
         }
         return $this;
     }
@@ -274,9 +280,10 @@ class StructArray extends Struct
         return new PhpAnnotationBlock(array(
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
+            new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'),
             new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName(true))),
             new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType())),
-            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s|bool', $this->getModel()->getPackagedName(true))),
+            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s', $this->getModel()->getPackagedName(true))),
         ));
     }
     /**
