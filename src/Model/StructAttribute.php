@@ -104,14 +104,28 @@ class StructAttribute extends AbstractModel
         return $this;
     }
     /**
+     * If this attribute contains elements then it's an array
+     * only if its parent, the Struct, is not itself an array,
+     * if the parent is an array, then it is certainly not an array too
+     * @return bool
+     */
+    public function isArray()
+    {
+        return $this->containsElements && !$this->getOwner()->isArray();
+    }
+    /**
      * Returns potential default value
      * @uses AbstractModel::getMetaValueFirstSet()
      * @uses Utils::getValueWithinItsType()
      * @uses StructAttribute::getType()
+     * @uses StructAttribute::getContainsElements()
      * @return mixed
      */
     public function getDefaultValue()
     {
+        if ($this->isArray()) {
+            return array();
+        }
         return Utils::getValueWithinItsType($this->getMetaValueFirstSet(array(
             'default',
             'Default',
@@ -146,6 +160,7 @@ class StructAttribute extends AbstractModel
         return parent::getOwner();
     }
     /**
+     * @uses StructAttribute::getType()
      * @return bool
      */
     public function isXml()
