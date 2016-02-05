@@ -74,7 +74,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @param int[] $thirdSegmentsIds
      */
-    public function __construct(\Api\StructType\ApiFareItineraryPrice $price = null, $key = null, $firstSegmentsIds = null, $clickoutURLParams = null, $resident = null, $secondSegmentsIds = null, $thirdSegmentsIds = null)
+    public function __construct(\Api\StructType\ApiFareItineraryPrice $price = null, $key = null, array $firstSegmentsIds = array(), $clickoutURLParams = null, $resident = null, array $secondSegmentsIds = array(), array $thirdSegmentsIds = array())
     {
         $this
             ->setPrice($price)
@@ -131,12 +131,25 @@ class ApiFareItinerary extends AbstractStructBase
     }
     /**
      * Set firstSegmentsIds value
+     * @throws \InvalidArgumentException
      * @param int[] $firstSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setFirstSegmentsIds($firstSegmentsIds = null)
+    public function setFirstSegmentsIds(array $firstSegmentsIds = array())
     {
+        array_walk($firstSegmentsIds, function($item) {
+            if (!is_int($item)) {
+                throw new \InvalidArgumentException(sprintf('The firstSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            }
+        });
         $this->firstSegmentsIds = $firstSegmentsIds;
+        return $this;
+    }
+    /**
+     */
+    public function addToFirstSegmentsIds($item)
+    {
+        $this->firstSegmentsIds[] = $item;
         return $this;
     }
     /**
@@ -185,12 +198,25 @@ class ApiFareItinerary extends AbstractStructBase
     }
     /**
      * Set secondSegmentsIds value
+     * @throws \InvalidArgumentException
      * @param int[] $secondSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setSecondSegmentsIds($secondSegmentsIds = null)
+    public function setSecondSegmentsIds(array $secondSegmentsIds = array())
     {
+        array_walk($secondSegmentsIds, function($item) {
+            if (!is_int($item)) {
+                throw new \InvalidArgumentException(sprintf('The secondSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            }
+        });
         $this->secondSegmentsIds = $secondSegmentsIds;
+        return $this;
+    }
+    /**
+     */
+    public function addToSecondSegmentsIds($item)
+    {
+        $this->secondSegmentsIds[] = $item;
         return $this;
     }
     /**
@@ -203,12 +229,25 @@ class ApiFareItinerary extends AbstractStructBase
     }
     /**
      * Set thirdSegmentsIds value
+     * @throws \InvalidArgumentException
      * @param int[] $thirdSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setThirdSegmentsIds($thirdSegmentsIds = null)
+    public function setThirdSegmentsIds(array $thirdSegmentsIds = array())
     {
+        array_walk($thirdSegmentsIds, function($item) {
+            if (!is_int($item)) {
+                throw new \InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            }
+        });
         $this->thirdSegmentsIds = $thirdSegmentsIds;
+        return $this;
+    }
+    /**
+     */
+    public function addToThirdSegmentsIds($item)
+    {
+        $this->thirdSegmentsIds[] = $item;
         return $this;
     }
     /**
