@@ -453,21 +453,23 @@ abstract class AbstractModelFile extends AbstractFile
     }
     /**
      * @param StructAttributeModel $attribute
+     * @param bool $returnArrayType
      * @return string
      */
-    protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null)
+    protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return sprintf('%s%s', $this->getStructAttributeType($attribute, true), $attribute->isArray() ? '[]' : '');
+        return sprintf('%s%s', $this->getStructAttributeType($attribute, true), ($returnArrayType && $attribute->isArray()) ? '[]' : '');
     }
     /**
      * @param StructAttributeModel $attribute
+     * @param bool $returnArrayType
      * @return string
      */
-    protected function getStructAttributeTypeHint(StructAttributeModel $attribute = null)
+    protected function getStructAttributeTypeHint(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return $attribute->isArray() ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
+        return ($returnArrayType && $attribute->isArray()) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
     }
     /**
      * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
