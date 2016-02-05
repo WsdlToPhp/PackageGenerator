@@ -90,12 +90,12 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Sets the name of the class the current class inherits from
-     * @param string
+     * @param AbstractModel
      */
     public function setInheritance($inheritance = '')
     {
         $this->inheritance = $inheritance;
-        return $inheritance;
+        return $this;
     }
     /**
      * @return Struct
@@ -115,11 +115,12 @@ abstract class AbstractModel extends AbstractGeneratorAware
     /**
      * Sets the meta
      * @param array $meta
-     * @return array
+     * @return AbstractModel
      */
     public function setMeta(array $meta = array())
     {
-        return ($this->meta = $meta);
+        $this->meta = $meta;
+        return $this;
     }
     /**
      * Add meta information to the operation
