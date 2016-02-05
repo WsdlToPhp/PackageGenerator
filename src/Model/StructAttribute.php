@@ -96,7 +96,7 @@ class StructAttribute extends AbstractModel
     /**
      * Sets the type value
      * @param bool $containsElements
-     * @return string
+     * @return StructAttribute
      */
     public function setContainsElements($containsElements)
     {
