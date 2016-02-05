@@ -298,16 +298,16 @@ class Struct extends AbstractModelFile
             $sanityCheck = sprintf('$item instanceof %s', $this->getStructAttributeType($attribute, true));
         } else {
             switch (self::getPhpType($attribute->getType())) {
-                case 'int';
+                case 'int':
                     $sanityCheck = 'is_int($item)';
                     break;
-                case 'bool';
+                case 'bool':
                     $sanityCheck = 'is_bool($item)';
                     break;
-                case 'float';
+                case 'float':
                     $sanityCheck = 'is_float($item)';
                     break;
-                case 'string';
+                case 'string':
                     $sanityCheck = 'is_string($item)';
                     break;
             }
