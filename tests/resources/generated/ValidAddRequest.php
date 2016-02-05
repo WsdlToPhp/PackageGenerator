@@ -56,12 +56,12 @@ class ApiAddRequest extends AbstractStructBase
     }
     /**
      * Add item to AdGroups value
-     * @param \Api\StructType\ApiAdGroupAddItem $adGroupAddItem
+     * @param \Api\StructType\ApiAdGroupAddItem $item
      * @return \Api\StructType\ApiAddRequest
      */
-    public function addToAdGroups(\Api\StructType\ApiAdGroupAddItem $adGroupAddItem)
+    public function addToAdGroups(\Api\StructType\ApiAdGroupAddItem $item)
     {
-        $this->AdGroups[] = $adGroupAddItem;
+        $this->AdGroups[] = $item;
         return $this;
     }
     /**

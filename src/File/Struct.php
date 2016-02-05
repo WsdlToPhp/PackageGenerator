@@ -140,11 +140,12 @@ class Struct extends AbstractModelFile
     }
     /**
      * @param StructAttributeModel $attribute
+     * @param bool $returnArrayType
      * @return string|null
      */
-    protected function getStructMethodParameterType(StructAttributeModel $attribute)
+    protected function getStructMethodParameterType(StructAttributeModel $attribute, $returnArrayType = true)
     {
-        return self::getValidType($this->getStructAttributeTypeHint($attribute), null);
+        return self::getValidType($this->getStructAttributeTypeHint($attribute, $returnArrayType), null);
     }
     /**
      * @param MethodContainer $methods
@@ -155,8 +156,38 @@ class Struct extends AbstractModelFile
         foreach ($this->getModelAttributes() as $attribute) {
             $this
                 ->addStructMethodGet($methods, $attribute)
-                ->addStructMethodSet($methods, $attribute);
+                ->addStructMethodSet($methods, $attribute)
+                ->addStructMethodAddTo($methods, $attribute);
         }
+        return $this;
+    }
+    /**
+     * @param MethodContainer $methods
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodAddTo(MethodContainer $methods, StructAttributeModel $attribute)
+    {
+        if ($attribute->isArray()) {
+            $method = new PhpMethod(sprintf('addTo%s', ucfirst($attribute->getCleanName())), array(
+                new PhpFunctionParameter('item', PhpFunctionParameter::NO_VALUE, $this->getStructMethodParameterType($attribute, false)),
+            ));
+            $this->addStructMethodAddToBody($method, $attribute);
+            $methods->add($method);
+        }
+        return $this;
+    }
+    /**
+     * @param PhpMethod $method
+     * @param StructAttributeModel $attribute
+     * @return Struct
+     */
+    protected function addStructMethodAddToBody(PhpMethod $method, StructAttributeModel $attribute)
+    {
+        $this->addStructMethodSetBodyForRestriction($method, $attribute, 'item');
+        $method
+            ->addChild(sprintf('$this->%s[] = $item;', $attribute->getCleanName()))
+            ->addChild('return $this;');
         return $this;
     }
     /**
@@ -208,12 +239,13 @@ class Struct extends AbstractModelFile
     /**
      * @param PhpMethod $method
      * @param StructAttributeModel $attribute
+     * @param string $parameterName
      * @return Struct
      */
-    protected function addStructMethodSetBodyForRestriction(PhpMethod $method, StructAttributeModel $attribute)
+    protected function addStructMethodSetBodyForRestriction(PhpMethod $method, StructAttributeModel $attribute, $parameterName = null)
     {
-        if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction()) {
-            $parameterName = lcfirst($attribute->getCleanName());
+        if (($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel && $model->getIsRestriction() && !$attribute->isArray()) {
+            $parameterName = empty($parameterName) ? lcfirst($attribute->getCleanName()) : $parameterName;
             $method
                 ->addChild(sprintf('if (!%s::%s($%s)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID, $parameterName))
                     ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Value "%%s" is invalid, please use one of: %%s\', $%s, implode(\', \', %s::%s())), __LINE__);', $parameterName, $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES), 1))
@@ -228,14 +260,28 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSetBodyForArray(PhpMethod $method, StructAttributeModel $attribute)
     {
-        if ((!($model = $this->getModelFromStructAttribute($attribute)) instanceof StructModel || !$model->getIsRestriction()) && $attribute->isArray()) {
+        if ($attribute->isArray()) {
+            $model = $this->getModelFromStructAttribute($attribute);
             $parameterName = lcfirst($attribute->getCleanName());
-            $method
-                ->addChild(sprintf('array_walk($%s, function($item) {', $parameterName))
-                    ->addChild($method->getIndentedString(sprintf('if (!%s) {', $this->getStructMethodSetBodyForArrayItemSanityCheck($attribute)), 1))
-                        ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %s property can only contain items of %s, "%%s" given\', is_object($item) ? get_class($item) : gettype($item)), __LINE__);', $attribute->getCleanName(), $this->getStructAttributeType($attribute, true)), 2))
-                    ->addChild($method->getIndentedString('}', 1))
-                ->addChild('});');
+            if ($model instanceof StructModel && $model->getIsRestriction()) {
+                $method
+                    ->addChild('$invalidValues = array();')
+                    ->addChild(sprintf('array_walk($%s, function($item) {', $parameterName))
+                        ->addChild($method->getIndentedString(sprintf('if (!%s::%s($item)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID), 1))
+                            ->addChild($method->getIndentedString('$invalidValues[] = var_export($item);', 2))
+                        ->addChild($method->getIndentedString('}', 1))
+                    ->addChild('});')
+                    ->addChild('if (!empty($invalidValues)) {')
+                        ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Value(s) "%%s" is/are invalid, please use one of: %%s\', implode(\', \', $invalidValues), implode(\', \', %s::%s())), __LINE__);', $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES), 1))
+                    ->addChild('}');
+            } else {
+                $method
+                    ->addChild(sprintf('array_walk($%s, function($item) {', $parameterName))
+                        ->addChild($method->getIndentedString(sprintf('if (!%s) {', $this->getStructMethodSetBodyForArrayItemSanityCheck($attribute)), 1))
+                            ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %s property can only contain items of %s, "%%s" given\', is_object($item) ? get_class($item) : gettype($item)), __LINE__);', $attribute->getCleanName(), $this->getStructAttributeType($attribute, true)), 2))
+                        ->addChild($method->getIndentedString('}', 1))
+                    ->addChild('});');
+            }
         }
         return $this;
     }
@@ -395,6 +441,9 @@ class Struct extends AbstractModelFile
             case strpos($method->getName(), 'get') === 0:
             case strpos($method->getName(), 'set') === 0:
                 $annotationBlock = $this->getStructMethodsSetAndGetAnnotationBlock($method);
+                break;
+            case strpos($method->getName(), 'addTo') === 0:
+                $annotationBlock = $this->getStructMethodsAddToAnnotationBlock($method);
                 break;
         }
         return $annotationBlock;
@@ -572,6 +621,23 @@ class Struct extends AbstractModelFile
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $this->getStructAttributeTypeSetAnnotation($attribute), lcfirst($attribute->getCleanName()))));
         }
         return $this;
+    }
+    /**
+     * @param PhpMethod $method
+     * @return Struct
+     */
+    protected function getStructMethodsAddToAnnotationBlock(PhpMethod $method)
+    {
+        $attributeName = str_replace('addTo', '', $method->getName());
+        $attribute = $this->getModel()->getAttribute($attributeName);
+        $annotationBlock = new PhpAnnotationBlock();
+        if ($attribute instanceof StructAttributeModel) {
+            $annotationBlock
+                ->addChild(sprintf('Add item to %s value', $attribute->getCleanName()))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeTypeSetAnnotation($attribute, false))))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName(true)));
+        }
+        return $annotationBlock;
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getModel()

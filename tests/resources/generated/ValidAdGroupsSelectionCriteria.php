@@ -121,6 +121,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this;
     }
     /**
+     * Add item to CampaignIds value
+     * @param long $item
+     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     */
+    public function addToCampaignIds($item)
+    {
+        $this->CampaignIds[] = $item;
+        return $this;
+    }
+    /**
      * Get Ids value
      * @return long[]|null
      */
@@ -145,6 +155,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this;
     }
     /**
+     * Add item to Ids value
+     * @param long $item
+     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     */
+    public function addToIds($item)
+    {
+        $this->Ids[] = $item;
+        return $this;
+    }
+    /**
      * Get Types value
      * @return string[]|null
      */
@@ -162,10 +182,26 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setTypes(array $types = array())
     {
-        if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($types)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $types, implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues())), __LINE__);
+        $invalidValues = array();
+        array_walk($types, function($item) {
+            if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($item)) {
+                $invalidValues[] = var_export($item);
+            }
+        });
+        if (!empty($invalidValues)) {
+            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues())), __LINE__);
         }
         $this->Types = $types;
+        return $this;
+    }
+    /**
+     * Add item to Types value
+     * @param string $item
+     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     */
+    public function addToTypes($item)
+    {
+        $this->Types[] = $item;
         return $this;
     }
     /**
@@ -186,10 +222,26 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setStatuses(array $statuses = array())
     {
-        if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($statuses)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $statuses, implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
+        $invalidValues = array();
+        array_walk($statuses, function($item) {
+            if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
+                $invalidValues[] = var_export($item);
+            }
+        });
+        if (!empty($invalidValues)) {
+            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
         }
         $this->Statuses = $statuses;
+        return $this;
+    }
+    /**
+     * Add item to Statuses value
+     * @param string $item
+     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     */
+    public function addToStatuses($item)
+    {
+        $this->Statuses[] = $item;
         return $this;
     }
     /**
@@ -217,6 +269,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this;
     }
     /**
+     * Add item to TagIds value
+     * @param long $item
+     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     */
+    public function addToTagIds($item)
+    {
+        $this->TagIds[] = $item;
+        return $this;
+    }
+    /**
      * Get Tags value
      * @return string[]|null
      */
@@ -241,6 +303,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this;
     }
     /**
+     * Add item to Tags value
+     * @param string $item
+     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     */
+    public function addToTags($item)
+    {
+        $this->Tags[] = $item;
+        return $this;
+    }
+    /**
      * Get AppIconStatuses value
      * @return string[]|null
      */
@@ -258,10 +330,26 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setAppIconStatuses(array $appIconStatuses = array())
     {
-        if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($appIconStatuses)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $appIconStatuses, implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
+        $invalidValues = array();
+        array_walk($appIconStatuses, function($item) {
+            if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
+                $invalidValues[] = var_export($item);
+            }
+        });
+        if (!empty($invalidValues)) {
+            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
         }
         $this->AppIconStatuses = $appIconStatuses;
+        return $this;
+    }
+    /**
+     * Add item to AppIconStatuses value
+     * @param string $item
+     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     */
+    public function addToAppIconStatuses($item)
+    {
+        $this->AppIconStatuses[] = $item;
         return $this;
     }
     /**
