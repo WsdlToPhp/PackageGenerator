@@ -421,6 +421,18 @@ abstract class AbstractModelFile extends AbstractFile
     }
     /**
      * @param StructAttributeModel $attribute
+     * @return StructModel|null
+     */
+    protected function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null)
+    {
+        $model = $this->getModelFromStructAttribute($attribute);
+        if ($model instanceof StructModel && !$model->getIsRestriction()) {
+            $model = null;
+        }
+        return $model;
+    }
+    /**
+     * @param StructAttributeModel $attribute
      * @param bool $namespaced
      * @return string
      */
@@ -444,12 +456,13 @@ abstract class AbstractModelFile extends AbstractFile
     }
     /**
      * @param StructAttributeModel $attribute
+     * @param bool $returnArrayType
      * @return string
      */
-    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null)
+    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return sprintf('%s%s%s', $this->getStructAttributeType($attribute, true), $attribute->isArray() ? '[]' : '', $attribute->isRequired() ? '': '|null');
+        return sprintf('%s%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '': '|null');
     }
     /**
      * @param StructAttributeModel $attribute
@@ -459,7 +472,16 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return sprintf('%s%s', $this->getStructAttributeType($attribute, true), ($returnArrayType && $attribute->isArray()) ? '[]' : '');
+        return sprintf('%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '');
+    }
+    /**
+     * @param StructAttributeModel $attribute
+     * @param string $returnArrayType
+     * @return bool
+     */
+    protected function useBrackets(StructAttributeModel $attribute, $returnArrayType = true)
+    {
+        return $returnArrayType && $attribute->isArray();
     }
     /**
      * @param StructAttributeModel $attribute
