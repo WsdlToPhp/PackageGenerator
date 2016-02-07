@@ -111,7 +111,7 @@ class StructAttribute extends AbstractModel
      */
     public function isArray()
     {
-        return $this->containsElements && !$this->getOwner()->isArray();
+        return $this->containsElements;
     }
     /**
      * Returns potential default value
