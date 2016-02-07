@@ -187,7 +187,7 @@ class Struct extends AbstractModelFile
         if ($this->getRestrictionFromStructAttribute($attribute) instanceof StructModel) {
             $this->addStructMethodSetBodyForRestriction($method, $attribute, 'item');
         } else {
-            $this->addStructMethodSetBodyForAnyType($method, $attribute, 'item');
+            $this->addStructMethodSetBodyForAnyType($method, $attribute);
         }
         $method
             ->addChild(sprintf('$this->%s[] = $item;', $attribute->getCleanName()))
@@ -644,7 +644,7 @@ class Struct extends AbstractModelFile
     }
     /**
      * @param PhpMethod $method
-     * @return Struct
+     * @return PhpAnnotationBlock
      */
     protected function getStructMethodsAddToAnnotationBlock(PhpMethod $method)
     {

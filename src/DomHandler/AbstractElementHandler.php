@@ -115,7 +115,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
         if (!is_numeric($maxOccurs)) {
             return AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE;
         }
-        return (int) $maxOccurs;
+        return (int)$maxOccurs;
     }
     /**
      * Info at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
@@ -127,7 +127,7 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
         if (!is_numeric($minOccurs)) {
             return AbstractAttributeHandler::DEFAULT_OCCURENCE_VALUE;
         }
-        return (int) $minOccurs;
+        return (int)$minOccurs;
     }
     /**
      * Info at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}

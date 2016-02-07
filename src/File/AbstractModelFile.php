@@ -462,7 +462,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return sprintf('%s%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '': '|null');
+        return sprintf('%s%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '' : '|null');
     }
     /**
      * @param StructAttributeModel $attribute

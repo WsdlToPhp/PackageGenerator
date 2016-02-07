@@ -127,7 +127,7 @@ class StructArray extends Struct
      * @param MethodContainer $methods
      * @param string $name
      * @param string $body
-     * @param string[]|PhpFunctionParameter[] $methodParameters
+     * @param string[] $methodParameters
      * @return StructArray
      */
     protected function addArrayMethodGenericMethod(MethodContainer $methods, $name, $body, array $methodParameters = array())

@@ -87,7 +87,7 @@ class StructAttribute extends AbstractModel
     }
     /**
      * Returns the type value
-     * @return string
+     * @return bool
      */
     public function getContainsElements()
     {
