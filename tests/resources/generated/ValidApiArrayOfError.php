@@ -17,13 +17,13 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var array
+     * @var \Api\StructType\ApiError[]
      */
     public $Error;
     /**
      * Constructor method for ArrayOfError
      * @uses ApiArrayOfError::setError()
-     * @param array $error
+     * @param \Api\StructType\ApiError[] $error
      */
     public function __construct(array $error = array())
     {
@@ -32,7 +32,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
     }
     /**
      * Get Error value
-     * @return array
+     * @return \Api\StructType\ApiError[]|null
      */
     public function getError()
     {
@@ -40,12 +40,32 @@ class ApiArrayOfError extends AbstractStructArrayBase
     }
     /**
      * Set Error value
-     * @param array $error
+     * @throws \InvalidArgumentException
+     * @param \Api\StructType\ApiError[] $error
      * @return \Api\ArrayType\ApiArrayOfError
      */
     public function setError(array $error = array())
     {
+        foreach($error as $item) {
+            if (!$item instanceof \Api\StructType\ApiError) {
+                throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiError, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            }
+        }
         $this->Error = $error;
+        return $this;
+    }
+    /**
+     * Add item to Error value
+     * @throws \InvalidArgumentException
+     * @param \Api\StructType\ApiError $item
+     * @return \Api\ArrayType\ApiArrayOfError
+     */
+    public function addToError(\Api\StructType\ApiError $item)
+    {
+        if (!$item instanceof \Api\StructType\ApiError) {
+            throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiError, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        }
+        $this->Error[] = $item;
         return $this;
     }
     /**

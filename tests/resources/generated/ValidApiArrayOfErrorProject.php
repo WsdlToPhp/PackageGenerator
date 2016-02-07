@@ -17,13 +17,13 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var array
+     * @var \Api\StructType\ApiErrorProject[]
      */
     public $Error;
     /**
      * Constructor method for ArrayOfError
      * @uses ApiArrayOfErrorProject::setError()
-     * @param array $error
+     * @param \Api\StructType\ApiErrorProject[] $error
      */
     public function __construct(array $error = array())
     {
@@ -32,7 +32,7 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
     }
     /**
      * Get Error value
-     * @return array
+     * @return \Api\StructType\ApiErrorProject[]|null
      */
     public function getError()
     {
@@ -40,12 +40,32 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
     }
     /**
      * Set Error value
-     * @param array $error
+     * @throws \InvalidArgumentException
+     * @param \Api\StructType\ApiErrorProject[] $error
      * @return \Api\ArrayType\ApiArrayOfErrorProject
      */
     public function setError(array $error = array())
     {
+        foreach($error as $item) {
+            if (!$item instanceof \Api\StructType\ApiErrorProject) {
+                throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiErrorProject, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            }
+        }
         $this->Error = $error;
+        return $this;
+    }
+    /**
+     * Add item to Error value
+     * @throws \InvalidArgumentException
+     * @param \Api\StructType\ApiErrorProject $item
+     * @return \Api\ArrayType\ApiArrayOfErrorProject
+     */
+    public function addToError(\Api\StructType\ApiErrorProject $item)
+    {
+        if (!$item instanceof \Api\StructType\ApiErrorProject) {
+            throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiErrorProject, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        }
+        $this->Error[] = $item;
         return $this;
     }
     /**
