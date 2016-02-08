@@ -2,6 +2,7 @@
 
 xsd_types:
     int: "int"
+    UID: "string"
     byte: "string"
     bool: "bool"
     date: "string"
