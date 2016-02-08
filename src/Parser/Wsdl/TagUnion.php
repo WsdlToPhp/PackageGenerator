@@ -57,7 +57,7 @@ class TagUnion extends AbstractTagParser
             foreach ($values as $value) {
                 $model = $this->getStructByName($value);
                 while ($model instanceof AbstractModel && $model->getInheritance() !== '') {
-                    $model = $this->getStructByName($model->getInheritance());
+                    $model = $this->getStructByName($validInheritance = $model->getInheritance());
                 }
                 if ($model instanceof AbstractModel) {
                     $validInheritance = $model->getName();
