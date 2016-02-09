@@ -518,13 +518,13 @@ class GeneratorTest extends TestCase
      */
     public function testGenerateReforma()
     {
-        $this->generate('reforma', self::wsdlReformaPath());
+        $this->generate('reforma', self::wsdlReformaPath(), false);
     }
     /**
      * @param string $dir
      * @param string $wsdl
      */
-    private function generate($dir, $wsdl)
+    private function generate($dir, $wsdl, $standalone = true)
     {
         Utils::createDirectory($destination = self::getTestDirectory() . $dir);
 
@@ -536,7 +536,7 @@ class GeneratorTest extends TestCase
             ->setBasicLogin('')
             ->setBasicPassword('')
             ->setCategory(GeneratorOptions::VALUE_CAT)
-            ->setComposerName('wsdltophp/' . $dir)
+            ->setComposerName($standalone ? 'wsdltophp/' . $dir : '')
             ->setDestination($destination)
             ->setEnumsFolder('EnumType')
             ->setGatherMethods(GeneratorOptions::VALUE_START)
@@ -552,7 +552,7 @@ class GeneratorTest extends TestCase
             ->setServicesFolder('ServiceType')
             ->setSoapClientClass('\WsdlToPhp\PackageBase\AbstractSoapClientBase')
             ->setSoapOptions(array())
-            ->setStandalone(true)
+            ->setStandalone($standalone)
             ->setStructArrayClass('\WsdlToPhp\PackageBase\AbstractStructArrayBase')
             ->setStructClass('\WsdlToPhp\PackageBase\AbstractStructBase')
             ->setStructsFolder('StructType')
