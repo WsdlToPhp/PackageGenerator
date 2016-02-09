@@ -20,7 +20,7 @@ class GeneratorSoapClient extends AbstractGeneratorAware
      * @throws \InvalidArgumentException
      * @return GeneratorSoapClient
      */
-    protected function initSoapClient()
+    public function initSoapClient()
     {
         try {
             $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_1), true);
@@ -34,7 +34,7 @@ class GeneratorSoapClient extends AbstractGeneratorAware
         return $this->setSoapClient($soapClient);
     }
     /**
-     * @param int SOAP_1_1|SOAP_1_2
+     * @param int $soapVersion
      * @return string[]
      */
     public function getSoapClientOptions($soapVersion)
@@ -65,5 +65,17 @@ class GeneratorSoapClient extends AbstractGeneratorAware
     public function getSoapClient()
     {
         return $this->soapClient;
+    }
+    /**
+     * @return array
+     */
+    public function getSoapClientStreamContextOptions()
+    {
+        $options = array();
+        $soapClient = $this->getSoapClient();
+        if ($soapClient instanceof SoapClient) {
+            $options = $soapClient->getStreamContextOptions();
+        }
+        return $options;
     }
 }

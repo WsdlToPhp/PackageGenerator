@@ -64,8 +64,8 @@ class Generator
             ->initContainers()
             ->initParsers()
             ->initFiles()
-            ->initWsdl()
-            ->initSoapClient();
+            ->initSoapClient()
+            ->initWsdl();
     }
     /**
      * @throws \InvalidArgumentException
@@ -610,6 +610,9 @@ class Generator
     public function setOptionSoapOptions($optionSoapOptions)
     {
         $this->options->setSoapOptions($optionSoapOptions);
+        if ($this->getSoapClient() instanceof GeneratorSoapClient) {
+            $this->getSoapClient()->initSoapClient();
+        }
         return $this;
     }
     /**
@@ -786,7 +789,7 @@ class Generator
     public function getUrlContent($url)
     {
         if (strpos($url, '://') !== false) {
-            return Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword());
+            return Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword(), $this->getSoapClient()->getSoapClientStreamContextOptions());
         } elseif (is_file($url)) {
             return file_get_contents($url);
         }

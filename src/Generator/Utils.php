@@ -68,12 +68,13 @@ class Utils
      * @param string $proxyPort
      * @param string $proxyLogin
      * @param string $proxyPassword
+     * @param array $contextOptions
      * @return string
      */
-    public static function getContentFromUrl($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null)
+    public static function getContentFromUrl($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = array())
     {
         $context = null;
-        $options = self::getContentFromUrlContextOptions($url, $basicAuthLogin, $basicAuthPassword, $proxyHost, $proxyPort, $proxyLogin, $proxyPassword);
+        $options = self::getContentFromUrlContextOptions($url, $basicAuthLogin, $basicAuthPassword, $proxyHost, $proxyPort, $proxyLogin, $proxyPassword, $contextOptions);
         if (!empty($options)) {
             $context = stream_context_create($options);
         }
@@ -87,9 +88,10 @@ class Utils
      * @param string $proxyPort
      * @param string $proxyLogin
      * @param string $proxyPassword
+     * @param array $contextOptions
      * @return string[]
      */
-    public static function getContentFromUrlContextOptions($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null)
+    public static function getContentFromUrlContextOptions($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = array())
     {
         $protocol = strpos($url, 'https://') !== false ? 'https' : 'http';
         $proxyOptions = $basicAuthOptions = array();
@@ -115,7 +117,7 @@ class Utils
                 ),
             );
         }
-        return array_merge_recursive($proxyOptions, $basicAuthOptions);
+        return array_merge_recursive($contextOptions, $proxyOptions, $basicAuthOptions);
     }
     /**
      * Returns the value with good type

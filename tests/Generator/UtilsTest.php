@@ -107,6 +107,32 @@ class UtilsTest extends TestCase
     /**
      *
      */
+    public function testGetContentFromUrlContextOptions()
+    {
+        $this->assertSame(array(
+            'ssl' => array(
+                'verify_peer' => true,
+                'ca_file' => basename(__FILE__),
+                'ca_path' => __DIR__,
+            ),
+            'http' => array(
+                'proxy' => 'tcp://dns.proxy.com:4545',
+                'header' => array(
+                    sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
+                    sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
+                ),
+            ),
+        ), Utils::getContentFromUrlContextOptions('http://www.foo.com', 'foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar', array(
+            'ssl' => array(
+                'verify_peer' => true,
+                'ca_file' => basename(__FILE__),
+                'ca_path' => __DIR__,
+            ),
+        )));
+    }
+    /**
+     *
+     */
     public function testGetPartStringBeginingWithInt()
     {
         $this->assertSame('My', Utils::getPart(GeneratorOptions::VALUE_START, '0MyOperation'));
