@@ -9,6 +9,6 @@ class TagEnumeration extends AbstractTag
      */
     public function getValue()
     {
-        return $this->getAttributeValue(true);
+        return $this->getValueAttributeValue(true);
     }
 }

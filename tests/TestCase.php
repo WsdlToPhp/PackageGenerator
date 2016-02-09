@@ -70,6 +70,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
+    public static function onlineWsdlBingPath()
+    {
+        return 'http://api.search.live.net/search.wsdl';
+    }
+    /**
+     * @return string
+     */
     public static function wsdlEbayPath()
     {
         return __DIR__ . '/resources/ebaySvc.wsdl';
@@ -173,6 +180,27 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . '/resources/ews/services.wsdl';
     }
     /**
+     * @return string
+     */
+    public static function wsdlYandexDirectApiCampaignsPath()
+    {
+        return __DIR__ . '/resources/directapi/campaigns.wsdl';
+    }
+    /**
+     * @return string
+     */
+    public static function wsdlYandexDirectApiAdGroupsPath()
+    {
+        return __DIR__ . '/resources/directapi/adgroups.wsdl';
+    }
+    /**
+     * @return string
+     */
+    public static function wsdlEmptyPath()
+    {
+        return __DIR__ . '/resources/empty.wsdl';
+    }
+    /**
      * @param string $wsdlPath
      * @return Generator
      */
@@ -232,6 +260,20 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getEwsInstance()
     {
         return self::getInstance(self::wsdlEwsPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getYandexDirectApiCampaignsInstance()
+    {
+        return self::getInstance(self::wsdlYandexDirectApiCampaignsPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getYandexDirectApiAdGroupsInstance()
+    {
+        return self::getInstance(self::wsdlYandexDirectApiAdGroupsPath());
     }
     /**
      * @param string $wsdlPath

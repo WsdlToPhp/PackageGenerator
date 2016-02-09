@@ -7,6 +7,7 @@ use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 class GeneratorTest extends TestCase
 {
@@ -517,13 +518,13 @@ class GeneratorTest extends TestCase
      */
     public function testGenerateReforma()
     {
-        $this->generate('reforma', self::wsdlReformaPath());
+        $this->generate('reforma', self::wsdlReformaPath(), false);
     }
     /**
      * @param string $dir
      * @param string $wsdl
      */
-    private function generate($dir, $wsdl)
+    private function generate($dir, $wsdl, $standalone = true)
     {
         Utils::createDirectory($destination = self::getTestDirectory() . $dir);
 
@@ -535,7 +536,7 @@ class GeneratorTest extends TestCase
             ->setBasicLogin('')
             ->setBasicPassword('')
             ->setCategory(GeneratorOptions::VALUE_CAT)
-            ->setComposerName('wsdltophp/' . $dir)
+            ->setComposerName($standalone ? 'wsdltophp/' . $dir : '')
             ->setDestination($destination)
             ->setEnumsFolder('EnumType')
             ->setGatherMethods(GeneratorOptions::VALUE_START)
@@ -551,7 +552,7 @@ class GeneratorTest extends TestCase
             ->setServicesFolder('ServiceType')
             ->setSoapClientClass('\WsdlToPhp\PackageBase\AbstractSoapClientBase')
             ->setSoapOptions(array())
-            ->setStandalone(true)
+            ->setStandalone($standalone)
             ->setStructArrayClass('\WsdlToPhp\PackageBase\AbstractStructArrayBase')
             ->setStructClass('\WsdlToPhp\PackageBase\AbstractStructBase')
             ->setStructsFolder('StructType')
@@ -561,8 +562,10 @@ class GeneratorTest extends TestCase
         $generator->generatePackage();
 
         $this->assertTrue(is_dir($destination));
-        $this->assertTrue(is_file(sprintf('%s/composer.json', $destination)));
-        $this->assertTrue(is_file(sprintf('%s/composer.lock', $destination)));
+        if ($standalone) {
+            $this->assertTrue(is_file(sprintf('%s/composer.json', $destination)));
+            $this->assertTrue(is_file(sprintf('%s/composer.lock', $destination)));
+        }
         $this->assertTrue(is_file(sprintf('%s/tutorial.php', $destination)));
         $this->assertTrue(is_file($generator->getFiles()->getClassmapFile()->getFileName()));
     }
@@ -590,5 +593,58 @@ class GeneratorTest extends TestCase
             ->setOptionDestination($destination);
 
         $generator->generatePackage();
+    }
+    /**
+     *
+     */
+    public function testGetEmptySoapClientStreamContextOptions()
+    {
+        $instance = self::getBingGeneratorInstance();
+
+        $this->assertSame(array(), $instance->getSoapClient()->getSoapClientStreamContextOptions());
+    }
+    /**
+     *
+     */
+    public function testGetSoapClientStreamContextOptions()
+    {
+        $options = GeneratorOptionsTest::optionsInstance();
+        $options
+            ->setOrigin(self::onlineWsdlBingPath())
+            ->setDestination(self::getTestDirectory())
+            ->setSoapOptions(array(
+                AbstractSoapClientBase::WSDL_STREAM_CONTEXT => stream_context_create(array(
+                    'https' => array(
+                        'X-Header' => 'X-Value',
+                    ),
+                    'ssl' => array(
+                        'ca_file' => basename(__FILE__),
+                        'ca_path' => __DIR__,
+                        'verify_peer' => true,
+                    )
+                ))
+            ));
+        $instance = new Generator($options);
+
+        // HTTP headers are added to the context options with certain PHP version on certain platform
+        // this test is focused on the defined options and not those which are added after
+        // so we remove those we are not interested in!
+        $contextOptions = $instance->getSoapClient()->getSoapClientStreamContextOptions();
+        foreach(array_keys($contextOptions) as $index) {
+            if ($index !== 'https' && $index !== 'ssl') {
+                unset($contextOptions[$index]);
+            }
+        }
+
+        $this->assertSame(array(
+            'https' => array(
+                'X-Header' => 'X-Value',
+            ),
+            'ssl' => array(
+                'ca_file' => basename(__FILE__),
+                'ca_path' => __DIR__,
+                'verify_peer' => true,
+            )
+        ), $contextOptions);
     }
 }

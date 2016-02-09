@@ -92,7 +92,7 @@ abstract class AbstractTag extends ElementHandler
     /**
      * @return mixed
      */
-    public function getAttributeValue($withNamespace = false, $withinItsType = true, $asType = null)
+    public function getValueAttributeValue($withNamespace = false, $withinItsType = true, $asType = null)
     {
         return $this->getAttribute(Attribute::ATTRIBUTE_VALUE) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_VALUE)->getValue($withNamespace, $withinItsType, $asType) : '';
     }

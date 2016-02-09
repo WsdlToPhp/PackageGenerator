@@ -33,6 +33,7 @@ class TagElementTest extends WsdlParser
                     'minOccurs' => '0',
                 ), $structs->getStructByName('SearchRequest')->getAttribute('Version')->getMeta());
                 $this->assertSame('string', $structs->getStructByName('SearchRequest')->getAttribute('Version')->getType());
+                $this->assertFalse($structs->getStructByName('SearchRequest')->getAttribute('Version')->getContainsElements());
                 $ok++;
             }
             if ($structs->getStructByName('ArrayOfNewsRelatedSearch') instanceof Struct) {
@@ -41,6 +42,7 @@ class TagElementTest extends WsdlParser
                     'minOccurs' => '0',
                 ), $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getMeta());
                 $this->assertSame('NewsRelatedSearch', $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getType());
+                $this->assertTrue($structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getContainsElements());
                 $ok++;
             }
         }

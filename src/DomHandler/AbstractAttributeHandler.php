@@ -31,6 +31,22 @@ class AbstractAttributeHandler extends AbstractNodeHandler
      */
     const ATTRIBUTE_ABSTRACT = 'abstract';
     /**
+     * @var string
+     */
+    const ATTRIBUTE_MAX_OCCURS = 'maxOccurs';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_MIN_OCCURS = 'minOccurs';
+    /**
+     * @var string
+     */
+    const VALUE_UNBOUNDED = 'unbounded';
+    /**
+     * @var string
+     */
+    const DEFAULT_OCCURENCE_VALUE = 1;
+    /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler::getNode()
      * @return \DOMAttr
      */
@@ -53,8 +69,8 @@ class AbstractAttributeHandler extends AbstractNodeHandler
     public function getType()
     {
         $type = null;
-        if (($parent = $this->getParent()) instanceof ElementHandler && $parent->hasAttribute('type')) {
-            $type = $parent->getAttribute('type')->getValue(false, false);
+        if (($parent = $this->getParent()) instanceof ElementHandler && $parent->hasAttribute(self::ATTRIBUTE_TYPE)) {
+            $type = $parent->getAttribute(self::ATTRIBUTE_TYPE)->getValue(false, false);
         }
         return $type;
     }

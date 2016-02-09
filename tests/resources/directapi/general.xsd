@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:general="http://localhost/v5/general" targetNamespace="http://localhost/v5/general">
+    <xsd:complexType name="ArrayOfString">
+        <xsd:sequence>
+            <xsd:element name="Items" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ArrayOfInteger">
+        <xsd:sequence>
+            <xsd:element name="Items" type="xsd:int" minOccurs="1" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="MobileAppAdActionEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DOWNLOAD" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="ExceptionNotification">
+        <xsd:sequence>
+            <xsd:element name="Code" type="xsd:int" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Message" type="xsd:string" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Details" type="xsd:string" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- for Page -->
+    <xsd:complexType name="LimitOffset">
+        <xsd:sequence>
+            <xsd:element name="Limit" type="xsd:long" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Offset" type="xsd:long" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="YesNoEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="YES" />
+            <xsd:enumeration value="NO" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="YesNoUnknownEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="YES" />
+            <xsd:enumeration value="NO" />
+            <xsd:enumeration value="UNKNOWN" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="CurrencyEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="YND_FIXED" />
+            <xsd:enumeration value="RUB" />
+            <xsd:enumeration value="CHF" />
+            <xsd:enumeration value="EUR" />
+            <xsd:enumeration value="KZT" />
+            <xsd:enumeration value="TRY" />
+            <xsd:enumeration value="UAH" />
+            <xsd:enumeration value="USD" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="StateEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="OFF" />
+            <xsd:enumeration value="ON" />
+            <xsd:enumeration value="SUSPENDED" />
+            <xsd:enumeration value="OFF_BY_MONITORING" />
+            <xsd:enumeration value="ARCHIVED" />
+            <xsd:enumeration value="UNKNOWN" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="PriorityEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="LOW" />
+            <xsd:enumeration value="NORMAL" />
+            <xsd:enumeration value="HIGH" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="PositionEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="PREMIUMFIRST" />
+            <xsd:enumeration value="PREMIUMBLOCK" />
+            <xsd:enumeration value="FOOTERFIRST" />
+            <xsd:enumeration value="FOOTERBLOCK" />
+            <xsd:enumeration value="P11" />
+            <xsd:enumeration value="P12" />
+            <xsd:enumeration value="P13" />
+            <xsd:enumeration value="P21" />
+            <xsd:enumeration value="P22" />
+            <xsd:enumeration value="P23" />
+            <xsd:enumeration value="P24" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="CountryCodeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RU" />
+            <xsd:enumeration value="TR" />
+            <xsd:enumeration value="UA" />
+            <xsd:enumeration value="KZ" />
+            <xsd:enumeration value="BY" />
+            <xsd:enumeration value="US" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="StatusEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ACCEPTED" />
+            <xsd:enumeration value="DRAFT" />
+            <xsd:enumeration value="MODERATION" />
+            <xsd:enumeration value="PREACCEPTED" />
+            <xsd:enumeration value="REJECTED" />
+            <xsd:enumeration value="UNKNOWN" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="StatusSelectionEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ACCEPTED" />
+            <xsd:enumeration value="DRAFT" />
+            <xsd:enumeration value="MODERATION" />
+            <xsd:enumeration value="PREACCEPTED" />
+            <xsd:enumeration value="REJECTED" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="ScopeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SEARCH" />
+            <xsd:enumeration value="NETWORK" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="AgeRangeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AGE_0_17" />
+            <xsd:enumeration value="AGE_18_24" />
+            <xsd:enumeration value="AGE_25_34" />
+            <xsd:enumeration value="AGE_35_44" />
+            <xsd:enumeration value="AGE_45" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="GenderEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="GENDER_MALE" />
+            <xsd:enumeration value="GENDER_FEMALE" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="MobileOperatingSystemTypeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="IOS" />
+            <xsd:enumeration value="ANDROID" />
+            <xsd:enumeration value="OS_TYPE_OTHER" />
+            <xsd:enumeration value="OS_TYPE_UNKNOWN" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="Statistics">
+        <xsd:sequence>
+            <xsd:element name="Clicks" type="xsd:long" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="Impressions" type="xsd:long" minOccurs="1" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="IdsCriteria">
+        <xsd:sequence>
+            <xsd:element name="Ids" type="xsd:long" minOccurs="1" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GetRequestGeneral">
+        <xsd:sequence>
+            <xsd:element name="Page" type="general:LimitOffset" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GetResponseGeneral">
+        <xsd:sequence>
+            <xsd:element name="LimitedBy" type="xsd:long" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ApiExceptionMessage">
+        <xsd:sequence>
+            <xsd:element name="requestId" type="xsd:string" nillable="false" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="errorCode" type="xsd:int" nillable="false" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="errorDetail" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="FaultResponse" type="general:ApiExceptionMessage" />
+    <xsd:complexType name="ActionResultBase">
+        <xsd:sequence>
+            <xsd:element name="Warnings" type="general:ExceptionNotification" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Errors" type="general:ExceptionNotification" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ActionResult">
+        <xsd:complexContent>
+            <xsd:extension base="general:ActionResultBase">
+                <xsd:sequence>
+                    <xsd:element name="Id" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="MultiIdsActionResult">
+        <xsd:complexContent>
+            <xsd:extension base="general:ActionResultBase">
+                <xsd:sequence>
+                    <xsd:element name="Ids" type="xsd:long" minOccurs="0" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ExtensionModeration">
+        <xsd:sequence>
+            <xsd:element name="Status" type="general:StatusEnum" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="StatusClarification" type="xsd:string" minOccurs="0" maxOccurs="1" />
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

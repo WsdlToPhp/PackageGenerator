@@ -110,6 +110,7 @@ reserved_keywords:
     - "namespace"
     - "new"
     - "or"
+    - "parent"
     - "print"
     - "private"
     - "protected"

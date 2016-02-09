@@ -41,7 +41,7 @@ class TagListTest extends WsdlParser
                                 case 'firstSegmentsIds':
                                 case 'secondSegmentsIds':
                                 case 'thirdSegmentsIds':
-                                    $this->assertSame('int[]', $attribute->getInheritance());
+                                    $this->assertSame('int', $attribute->getInheritance());
                                     $count++;
                                     break;
                             }
@@ -49,7 +49,7 @@ class TagListTest extends WsdlParser
                         break;
                     case 'segment':
                         if ($struct->getAttribute('sectionIds') instanceof StructAttribute) {
-                            $this->assertSame('int[]', $struct->getAttribute('sectionIds')->getInheritance());
+                            $this->assertSame('int', $struct->getAttribute('sectionIds')->getInheritance());
                             $count++;
                         }
                         break;

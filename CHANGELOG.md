@@ -1,14 +1,21 @@
 # CHANGELOG
 
-# 1.2.0
+## 1.3.0
+- issue #40 - Support for SSL Context Options
+- issue #41 - Support for arrays
+	- The addTo{property name} method has been added and accept an item to be added to the property. If the item is not of the correct type depending on the item's type, it throws an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php).
+	- The set{property name} has been reviewed in order to throw an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php) if the array passed as parameter contains an invalid item. In the case of an array of values which are defined using an enumeration, it throws only one exception indicating which values are incorrect.
+- issue #43 - "composer-name" required even if "standalone=false"
+
+## 1.2.0
 - issue #36 - All tags defined by a Type outs empty in soap requests
 - **BC**:
     - classmap returned by ClassMap::get() method is now correct for namespaced struct classes, so it's more of a break changes fixation. Before that, your XML request may be incomplete due to this issue
 
-# 1.1.3
+## 1.1.3
 - issue #35 - __Construct set methods call and enum value conflict
 
-# 1.1.2
+## 1.1.2
 - issue #34 - Name "0001CreateRequest" is invalid, please provide a valid name
 - issue #33 - Name "" is invalid, please provide a valid name (operation named 0001CreateRequest)
 

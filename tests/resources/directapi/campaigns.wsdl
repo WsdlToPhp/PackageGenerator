@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://localhost/v5/campaigns" xmlns:general="http://localhost/v5/general" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Campaigns" targetNamespace="http://localhost/v5/campaigns">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://localhost/v5/campaigns">
+            <xsd:import namespace="http://localhost/v5/general" schemaLocation="general.xsd" />
+            <!-- ENUMERATES -->
+            <xsd:simpleType name="SmsEventsEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="MONITORING" />
+                    <xsd:enumeration value="MODERATION" />
+                    <xsd:enumeration value="MONEY_IN" />
+                    <xsd:enumeration value="MONEY_OUT" />
+                    <xsd:enumeration value="FINISHED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignStatusEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ACCEPTED" />
+                    <xsd:enumeration value="DRAFT" />
+                    <xsd:enumeration value="MODERATION" />
+                    <xsd:enumeration value="REJECTED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignStatusGetEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ACCEPTED" />
+                    <xsd:enumeration value="DRAFT" />
+                    <xsd:enumeration value="MODERATION" />
+                    <xsd:enumeration value="REJECTED" />
+                    <xsd:enumeration value="UNKNOWN" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignStateEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ARCHIVED" />
+                    <xsd:enumeration value="CONVERTED" />
+                    <xsd:enumeration value="ENDED" />
+                    <xsd:enumeration value="OFF" />
+                    <xsd:enumeration value="ON" />
+                    <xsd:enumeration value="SUSPENDED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignStateGetEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ARCHIVED" />
+                    <xsd:enumeration value="CONVERTED" />
+                    <xsd:enumeration value="ENDED" />
+                    <xsd:enumeration value="OFF" />
+                    <xsd:enumeration value="ON" />
+                    <xsd:enumeration value="SUSPENDED" />
+                    <xsd:enumeration value="UNKNOWN" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignStatusPaymentEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="DISALLOWED" />
+                    <xsd:enumeration value="ALLOWED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="RelevantKeywordsModeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="MINIMUM" />
+                    <xsd:enumeration value="OPTIMAL" />
+                    <xsd:enumeration value="MAXIMUM" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DailyBudgetModeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="STANDARD" />
+                    <xsd:enumeration value="DISTRIBUTED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignFundsEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="CAMPAIGN_FUNDS" />
+                    <xsd:enumeration value="SHARED_ACCOUNT_FUNDS" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="TEXT_CAMPAIGN" />
+                    <xsd:enumeration value="MOBILE_APP_CAMPAIGN" />
+                    <xsd:enumeration value="DYNAMIC_TEXT_CAMPAIGN" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignTypeGetEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="TEXT_CAMPAIGN" />
+                    <xsd:enumeration value="MOBILE_APP_CAMPAIGN" />
+                    <xsd:enumeration value="DYNAMIC_TEXT_CAMPAIGN" />
+                    <xsd:enumeration value="UNKNOWN" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CampaignFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="BlockedIps" />
+                    <xsd:enumeration value="ExcludedSites" />
+                    <xsd:enumeration value="Currency" />
+                    <xsd:enumeration value="DailyBudget" />
+                    <xsd:enumeration value="Notification" />
+                    <xsd:enumeration value="EndDate" />
+                    <xsd:enumeration value="Funds" />
+                    <xsd:enumeration value="ClientInfo" />
+                    <xsd:enumeration value="Id" />
+                    <xsd:enumeration value="Name" />
+                    <xsd:enumeration value="NegativeKeywords" />
+                    <xsd:enumeration value="RepresentedBy" />
+                    <xsd:enumeration value="StartDate" />
+                    <xsd:enumeration value="Statistics" />
+                    <xsd:enumeration value="State" />
+                    <xsd:enumeration value="Status" />
+                    <xsd:enumeration value="StatusPayment" />
+                    <xsd:enumeration value="StatusClarification" />
+                    <xsd:enumeration value="SourceId" />
+                    <xsd:enumeration value="TimeTargeting" />
+                    <xsd:enumeration value="TimeZone" />
+                    <xsd:enumeration value="Type" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TextCampaignFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="CounterIds" />
+                    <xsd:enumeration value="RelevantKeywords" />
+                    <xsd:enumeration value="Settings" />
+                    <xsd:enumeration value="BiddingStrategy" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppCampaignFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Settings" />
+                    <xsd:enumeration value="BiddingStrategy" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DynamicTextCampaignFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="CounterIds" />
+                    <xsd:enumeration value="Settings" />
+                    <xsd:enumeration value="BiddingStrategy" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TextCampaignSearchStrategyTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AVERAGE_CPC" />
+                    <xsd:enumeration value="AVERAGE_CPA" />
+                    <xsd:enumeration value="WB_MAXIMUM_CONVERSION_RATE" />
+                    <xsd:enumeration value="HIGHEST_POSITION" />
+                    <xsd:enumeration value="IMPRESSIONS_BELOW_SEARCH" />
+                    <xsd:enumeration value="LOWEST_COST" />
+                    <xsd:enumeration value="LOWEST_COST_GUARANTEE" />
+                    <xsd:enumeration value="LOWEST_COST_PREMIUM" />
+                    <xsd:enumeration value="SERVING_OFF" />
+                    <xsd:enumeration value="UNKNOWN" />
+                    <xsd:enumeration value="WB_MAXIMUM_CLICKS" />
+                    <xsd:enumeration value="WEEKLY_CLICK_PACKAGE" />
+                    <xsd:enumeration value="AVERAGE_ROI" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TextCampaignNetworkStrategyTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AVERAGE_CPC" />
+                    <xsd:enumeration value="AVERAGE_CPA" />
+                    <xsd:enumeration value="WB_MAXIMUM_CONVERSION_RATE" />
+                    <xsd:enumeration value="MAXIMUM_COVERAGE" />
+                    <xsd:enumeration value="NETWORK_DEFAULT" />
+                    <xsd:enumeration value="SERVING_OFF" />
+                    <xsd:enumeration value="UNKNOWN" />
+                    <xsd:enumeration value="WB_MAXIMUM_CLICKS" />
+                    <xsd:enumeration value="WEEKLY_CLICK_PACKAGE" />
+                    <xsd:enumeration value="AVERAGE_ROI" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppCampaignSearchStrategyTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AVERAGE_CPC" />
+                    <xsd:enumeration value="AVERAGE_CPI" />
+                    <xsd:enumeration value="WB_MAXIMUM_APP_INSTALLS" />
+                    <xsd:enumeration value="HIGHEST_POSITION" />
+                    <xsd:enumeration value="IMPRESSIONS_BELOW_SEARCH" />
+                    <xsd:enumeration value="LOWEST_COST" />
+                    <xsd:enumeration value="LOWEST_COST_GUARANTEE" />
+                    <xsd:enumeration value="LOWEST_COST_PREMIUM" />
+                    <xsd:enumeration value="SERVING_OFF" />
+                    <xsd:enumeration value="UNKNOWN" />
+                    <xsd:enumeration value="WB_MAXIMUM_CLICKS" />
+                    <xsd:enumeration value="WEEKLY_CLICK_PACKAGE" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppCampaignNetworkStrategyTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="NETWORK_DEFAULT" />
+                    <xsd:enumeration value="MAXIMUM_COVERAGE" />
+                    <xsd:enumeration value="AVERAGE_CPC" />
+                    <xsd:enumeration value="AVERAGE_CPI" />
+                    <xsd:enumeration value="WB_MAXIMUM_APP_INSTALLS" />
+                    <xsd:enumeration value="SERVING_OFF" />
+                    <xsd:enumeration value="UNKNOWN" />
+                    <xsd:enumeration value="WB_MAXIMUM_CLICKS" />
+                    <xsd:enumeration value="WEEKLY_CLICK_PACKAGE" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DynamicTextCampaignSearchStrategyTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AVERAGE_CPC" />
+                    <xsd:enumeration value="AVERAGE_CPA" />
+                    <xsd:enumeration value="WB_MAXIMUM_CONVERSION_RATE" />
+                    <xsd:enumeration value="HIGHEST_POSITION" />
+                    <xsd:enumeration value="IMPRESSIONS_BELOW_SEARCH" />
+                    <xsd:enumeration value="LOWEST_COST" />
+                    <xsd:enumeration value="LOWEST_COST_GUARANTEE" />
+                    <xsd:enumeration value="LOWEST_COST_PREMIUM" />
+                    <xsd:enumeration value="UNKNOWN" />
+                    <xsd:enumeration value="WB_MAXIMUM_CLICKS" />
+                    <xsd:enumeration value="WEEKLY_CLICK_PACKAGE" />
+                    <xsd:enumeration value="AVERAGE_ROI" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DynamicTextCampaignNetworkStrategyTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="SERVING_OFF" />
+                    <xsd:enumeration value="UNKNOWN" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <!-- CAMPAIGN FLAGS -->
+            <xsd:simpleType name="TextCampaignSettingsEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="EXCLUDE_PAUSED_COMPETING_ADS" />
+                    <xsd:enumeration value="ADD_OPENSTAT_TAG" />
+                    <xsd:enumeration value="ADD_METRICA_TAG" />
+                    <xsd:enumeration value="ADD_TO_FAVORITES" />
+                    <xsd:enumeration value="ENABLE_SITE_MONITORING" />
+                    <xsd:enumeration value="ENABLE_BEHAVIORAL_TARGETING" />
+                    <xsd:enumeration value="ENABLE_AUTOFOCUS" />
+                    <xsd:enumeration value="REQUIRE_SERVICING" />
+                    <xsd:enumeration value="ENABLE_RELATED_KEYWORDS" />
+                    <xsd:enumeration value="ENABLE_EXTENDED_AD_TITLE" />
+                    <xsd:enumeration value="MAINTAIN_NETWORK_CPC" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TextCampaignSettingsGetEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="EXCLUDE_PAUSED_COMPETING_ADS" />
+                    <xsd:enumeration value="ADD_OPENSTAT_TAG" />
+                    <xsd:enumeration value="ADD_METRICA_TAG" />
+                    <xsd:enumeration value="ADD_TO_FAVORITES" />
+                    <xsd:enumeration value="ENABLE_SITE_MONITORING" />
+                    <xsd:enumeration value="ENABLE_BEHAVIORAL_TARGETING" />
+                    <xsd:enumeration value="ENABLE_AUTOFOCUS" />
+                    <xsd:enumeration value="REQUIRE_SERVICING" />
+                    <xsd:enumeration value="ENABLE_RELATED_KEYWORDS" />
+                    <xsd:enumeration value="ENABLE_EXTENDED_AD_TITLE" />
+                    <xsd:enumeration value="MAINTAIN_NETWORK_CPC" />
+                    <xsd:enumeration value="SHARED_ACCOUNT_ENABLED" />
+                    <xsd:enumeration value="DAILY_BUDGET_ALLOWED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppCampaignSettingsEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ADD_TO_FAVORITES" />
+                    <xsd:enumeration value="ENABLE_BEHAVIORAL_TARGETING" />
+                    <xsd:enumeration value="ENABLE_AUTOFOCUS" />
+                    <xsd:enumeration value="REQUIRE_SERVICING" />
+                    <xsd:enumeration value="MAINTAIN_NETWORK_CPC" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppCampaignSettingsGetEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ADD_TO_FAVORITES" />
+                    <xsd:enumeration value="ENABLE_BEHAVIORAL_TARGETING" />
+                    <xsd:enumeration value="ENABLE_AUTOFOCUS" />
+                    <xsd:enumeration value="REQUIRE_SERVICING" />
+                    <xsd:enumeration value="MAINTAIN_NETWORK_CPC" />
+                    <xsd:enumeration value="SHARED_ACCOUNT_ENABLED" />
+                    <xsd:enumeration value="DAILY_BUDGET_ALLOWED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DynamicTextCampaignSettingsEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ADD_OPENSTAT_TAG" />
+                    <!-- External statistics, StatusOpenStat -->
+                    <xsd:enumeration value="ADD_METRICA_TAG" />
+                    <!--ClickTrackEnabled, Tag links for Metrica -->
+                    <xsd:enumeration value="ADD_TO_FAVORITES" />
+                    <xsd:enumeration value="ENABLE_SITE_MONITORING" />
+                    <!-- StatusMetricaControl -->
+                    <xsd:enumeration value="ENABLE_BEHAVIORAL_TARGETING" />
+                    <!-- StatusBehavior -->
+                    <!-- allow to create or pass campaigns to manager assistance, if applicable -->
+                    <xsd:enumeration value="REQUIRE_SERVICING" />
+                    <xsd:enumeration value="ENABLE_EXTENDED_AD_TITLE" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DynamicTextCampaignSettingsGetEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ADD_OPENSTAT_TAG" />
+                    <!-- External statistics, StatusOpenStat -->
+                    <xsd:enumeration value="ADD_METRICA_TAG" />
+                    <!--ClickTrackEnabled, Tag links for Metrica -->
+                    <xsd:enumeration value="ADD_TO_FAVORITES" />
+                    <xsd:enumeration value="ENABLE_SITE_MONITORING" />
+                    <!-- StatusMetricaControl -->
+                    <xsd:enumeration value="ENABLE_BEHAVIORAL_TARGETING" />
+                    <!-- StatusBehavior -->
+                    <!-- allow to create or pass campaigns to manager assistance, if applicable -->
+                    <xsd:enumeration value="REQUIRE_SERVICING" />
+                    <xsd:enumeration value="ENABLE_EXTENDED_AD_TITLE" />
+                    <xsd:enumeration value="SHARED_ACCOUNT_ENABLED" />
+                    <xsd:enumeration value="DAILY_BUDGET_ALLOWED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <!-- END CAMPAIGN FLAGS -->
+            <!-- END ENUMERATES -->
+            <!-- STRATEGIES DEFINITION -->
+            <!-- START BIDDING STRATEGIES SETTINGS -->
+            <xsd:complexType name="StrategyWeeklyBudgetBase">
+                <xsd:sequence>
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyMaximumClicks">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:StrategyWeeklyBudgetBase" />
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyMaximumConversionRate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:StrategyWeeklyBudgetBase">
+                        <xsd:sequence>
+                            <xsd:element name="GoalId" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyMaximumAppInstalls">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:StrategyWeeklyBudgetBase" />
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyAverageCpc">
+                <xsd:sequence>
+                    <xsd:element name="AverageCpc" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyAverageCpa">
+                <xsd:sequence>
+                    <xsd:element name="AverageCpa" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="GoalId" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyAverageCpi">
+                <xsd:sequence>
+                    <xsd:element name="AverageCpi" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyAverageRoi">
+                <xsd:sequence>
+                    <xsd:element name="ReserveReturn" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="RoiCoef" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="GoalId" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="Profitability" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyWeeklyClickPackage">
+                <xsd:sequence>
+                    <xsd:element name="ClicksPerWeek" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpc" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyNetworkDefault">
+                <xsd:sequence>
+                    <xsd:element name="LimitPercent" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="BidPercent" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignStrategyBase">
+                <xsd:sequence>
+                    <xsd:element name="WbMaximumClicks" type="ns:StrategyMaximumClicks" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WbMaximumConversionRate" type="ns:StrategyMaximumConversionRate" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpc" type="ns:StrategyAverageCpc" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpa" type="ns:StrategyAverageCpa" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklyClickPackage" type="ns:StrategyWeeklyClickPackage" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageRoi" type="ns:StrategyAverageRoi" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignNetworkStrategy">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextCampaignStrategyBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:TextCampaignNetworkStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="NetworkDefault" type="ns:StrategyNetworkDefault" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignSearchStrategy">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextCampaignStrategyBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:TextCampaignSearchStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignStrategyBase">
+                <xsd:sequence>
+                    <xsd:element name="WbMaximumClicks" type="ns:StrategyMaximumClicks" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WbMaximumAppInstalls" type="ns:StrategyMaximumAppInstalls" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpc" type="ns:StrategyAverageCpc" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpi" type="ns:StrategyAverageCpi" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklyClickPackage" type="ns:StrategyWeeklyClickPackage" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignSearchStrategy">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:MobileAppCampaignStrategyBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:MobileAppCampaignSearchStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignNetworkStrategy">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:MobileAppCampaignStrategyBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:MobileAppCampaignNetworkStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="NetworkDefault" type="ns:StrategyNetworkDefault" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignStrategyBase">
+                <xsd:sequence>
+                    <xsd:element name="WbMaximumClicks" type="ns:StrategyMaximumClicks" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WbMaximumConversionRate" type="ns:StrategyMaximumConversionRate" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpc" type="ns:StrategyAverageCpc" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpa" type="ns:StrategyAverageCpa" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklyClickPackage" type="ns:StrategyWeeklyClickPackage" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageRoi" type="ns:StrategyAverageRoi" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignSearchStrategy">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:DynamicTextCampaignStrategyBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:DynamicTextCampaignSearchStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignNetworkStrategy">
+                <xsd:sequence>
+                    <xsd:element name="BiddingStrategyType" type="ns:DynamicTextCampaignNetworkStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignStrategy">
+                <xsd:sequence>
+                    <xsd:element name="Search" type="ns:TextCampaignSearchStrategy" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="Network" type="ns:TextCampaignNetworkStrategy" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignStrategy">
+                <xsd:sequence>
+                    <xsd:element name="Search" type="ns:MobileAppCampaignSearchStrategy" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="Network" type="ns:MobileAppCampaignNetworkStrategy" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignStrategy">
+                <xsd:sequence>
+                    <xsd:element name="Search" type="ns:DynamicTextCampaignSearchStrategy" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="Network" type="ns:DynamicTextCampaignNetworkStrategy" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyWeeklyBudgetAddBase">
+                <xsd:sequence>
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyMaximumClicksAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:StrategyWeeklyBudgetAddBase" />
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyMaximumConversionRateAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:StrategyWeeklyBudgetAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="GoalId" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyMaximumAppInstallsAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:StrategyWeeklyBudgetAddBase" />
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyAverageCpcAdd">
+                <xsd:sequence>
+                    <xsd:element name="AverageCpc" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyAverageCpaAdd">
+                <xsd:sequence>
+                    <xsd:element name="AverageCpa" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="GoalId" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyAverageCpiAdd">
+                <xsd:sequence>
+                    <xsd:element name="AverageCpi" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyAverageRoiAdd">
+                <xsd:sequence>
+                    <xsd:element name="ReserveReturn" type="xsd:int" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="RoiCoef" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="GoalId" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="WeeklySpendLimit" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="Profitability" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyWeeklyClickPackageAdd">
+                <xsd:sequence>
+                    <xsd:element name="ClicksPerWeek" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="AverageCpc" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="BidCeiling" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="StrategyNetworkDefaultAdd">
+                <xsd:sequence>
+                    <xsd:element name="LimitPercent" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="BidPercent" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignStrategyAddBase">
+                <xsd:sequence>
+                    <xsd:element name="WbMaximumClicks" type="ns:StrategyMaximumClicksAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WbMaximumConversionRate" type="ns:StrategyMaximumConversionRateAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpc" type="ns:StrategyAverageCpcAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpa" type="ns:StrategyAverageCpaAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklyClickPackage" type="ns:StrategyWeeklyClickPackageAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageRoi" type="ns:StrategyAverageRoiAdd" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignNetworkStrategyAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextCampaignStrategyAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:TextCampaignNetworkStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="NetworkDefault" type="ns:StrategyNetworkDefaultAdd" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignSearchStrategyAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextCampaignStrategyAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:TextCampaignSearchStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignStrategyAddBase">
+                <xsd:sequence>
+                    <xsd:element name="WbMaximumClicks" type="ns:StrategyMaximumClicksAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WbMaximumAppInstalls" type="ns:StrategyMaximumAppInstallsAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpc" type="ns:StrategyAverageCpcAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpi" type="ns:StrategyAverageCpiAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklyClickPackage" type="ns:StrategyWeeklyClickPackageAdd" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignSearchStrategyAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:MobileAppCampaignStrategyAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:MobileAppCampaignSearchStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignNetworkStrategyAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:MobileAppCampaignStrategyAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:MobileAppCampaignNetworkStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="NetworkDefault" type="ns:StrategyNetworkDefaultAdd" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignStrategyAddBase">
+                <xsd:sequence>
+                    <xsd:element name="WbMaximumClicks" type="ns:StrategyMaximumClicksAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WbMaximumConversionRate" type="ns:StrategyMaximumConversionRateAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpc" type="ns:StrategyAverageCpcAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageCpa" type="ns:StrategyAverageCpaAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WeeklyClickPackage" type="ns:StrategyWeeklyClickPackageAdd" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AverageRoi" type="ns:StrategyAverageRoiAdd" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignSearchStrategyAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:DynamicTextCampaignStrategyAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategyType" type="ns:DynamicTextCampaignSearchStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignNetworkStrategyAdd">
+                <xsd:sequence>
+                    <xsd:element name="BiddingStrategyType" type="ns:DynamicTextCampaignNetworkStrategyTypeEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignStrategyAdd">
+                <xsd:sequence>
+                    <xsd:element name="Search" type="ns:TextCampaignSearchStrategyAdd" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Network" type="ns:TextCampaignNetworkStrategyAdd" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignStrategyAdd">
+                <xsd:sequence>
+                    <xsd:element name="Search" type="ns:MobileAppCampaignSearchStrategyAdd" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Network" type="ns:MobileAppCampaignNetworkStrategyAdd" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignStrategyAdd">
+                <xsd:sequence>
+                    <xsd:element name="Search" type="ns:DynamicTextCampaignSearchStrategyAdd" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Network" type="ns:DynamicTextCampaignNetworkStrategyAdd" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <!-- STRATEGIES DEFINITION END -->
+            <xsd:complexType name="Notification">
+                <xsd:sequence>
+                    <xsd:element name="SmsSettings" type="ns:SmsSettings" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="EmailSettings" type="ns:EmailSettings" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="SmsSettings">
+                <xsd:sequence>
+                    <xsd:element name="Events" type="ns:SmsEventsEnum" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="TimeFrom" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="TimeTo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="EmailSettings">
+                <xsd:sequence>
+                    <xsd:element name="Email" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="CheckPositionInterval" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="WarningBalance" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="SendAccountNews" type="general:YesNoEnum" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="SendWarnings" type="general:YesNoEnum" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TimeTargetingOnPublicHolidays">
+                <xsd:sequence>
+                    <xsd:element name="SuspendOnHolidays" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="BidPercent" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="StartHour" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="EndHour" type="xsd:int" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="RelevantKeywordsSetting">
+                <xsd:sequence>
+                    <xsd:element name="BudgetPercent" type="xsd:int" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Mode" type="ns:RelevantKeywordsModeEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DailyBudget">
+                <xsd:sequence>
+                    <xsd:element name="Amount" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Mode" type="ns:DailyBudgetModeEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignSetting">
+                <xsd:sequence>
+                    <xsd:element name="Option" type="ns:TextCampaignSettingsEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Value" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignSettingGet">
+                <xsd:sequence>
+                    <xsd:element name="Option" type="ns:TextCampaignSettingsGetEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Value" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignSetting">
+                <xsd:sequence>
+                    <xsd:element name="Option" type="ns:MobileAppCampaignSettingsEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Value" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignSettingGet">
+                <xsd:sequence>
+                    <xsd:element name="Option" type="ns:MobileAppCampaignSettingsGetEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Value" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignSetting">
+                <xsd:sequence>
+                    <xsd:element name="Option" type="ns:DynamicTextCampaignSettingsEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Value" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignSettingGet">
+                <xsd:sequence>
+                    <xsd:element name="Option" type="ns:DynamicTextCampaignSettingsGetEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Value" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignFundsParam">
+                <xsd:sequence>
+                    <xsd:element name="Sum" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Balance" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <!-- bonus money for those who has discount and work in currency -->
+                    <xsd:element name="BalanceBonus" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="SumAvailableForTransfer" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="SharedAccountFundsParam">
+                <xsd:sequence>
+                    <!-- if there are some money on campaign (some refund by statistic or other way, this is rest field -->
+                    <xsd:element name="Refund" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                    <!-- total money spend by the campaign from the beginning - this is field sum -->
+                    <xsd:element name="Spend" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="FundsParam">
+                <xsd:sequence>
+                    <xsd:element name="Mode" type="ns:CampaignFundsEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="CampaignFunds" type="ns:CampaignFundsParam" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="SharedAccountFunds" type="ns:SharedAccountFundsParam" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignAssistant">
+                <xsd:sequence>
+                    <xsd:element name="Manager" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="Agency" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TimeTargeting">
+                <xsd:sequence>
+                    <xsd:element name="Schedule" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="ConsiderWorkingWeekends" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="HolidaysSchedule" type="ns:TimeTargetingOnPublicHolidays" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignBase">
+                <xsd:sequence>
+                    <xsd:element name="ClientInfo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="Notification" type="ns:Notification" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="TimeTargeting" type="ns:TimeTargeting" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="TimeZone" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignBase">
+                <xsd:sequence>
+                    <xsd:element name="CounterIds" type="general:ArrayOfInteger" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="RelevantKeywords" type="ns:RelevantKeywordsSetting" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignBase">
+                <xsd:sequence>
+                    <xsd:element name="CounterIds" type="general:ArrayOfInteger" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignAddItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextCampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategy" type="ns:TextCampaignStrategyAdd" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="Settings" type="ns:TextCampaignSetting" minOccurs="0" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignAddItem">
+                <xsd:sequence>
+                    <xsd:element name="BiddingStrategy" type="ns:MobileAppCampaignStrategyAdd" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Settings" type="ns:MobileAppCampaignSetting" minOccurs="0" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignAddItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:DynamicTextCampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategy" type="ns:DynamicTextCampaignStrategyAdd" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="Settings" type="ns:DynamicTextCampaignSetting" minOccurs="0" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignAddItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:CampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="StartDate" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="DailyBudget" type="ns:DailyBudget" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="EndDate" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="NegativeKeywords" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="BlockedIps" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="ExcludedSites" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="TextCampaign" type="ns:TextCampaignAddItem" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="MobileAppCampaign" type="ns:MobileAppCampaignAddItem" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="DynamicTextCampaign" type="ns:DynamicTextCampaignAddItem" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignUpdateItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextCampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategy" type="ns:TextCampaignStrategy" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Settings" type="ns:TextCampaignSetting" minOccurs="0" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignUpdateItem">
+                <xsd:sequence>
+                    <xsd:element name="BiddingStrategy" type="ns:MobileAppCampaignStrategy" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="Settings" type="ns:MobileAppCampaignSetting" minOccurs="0" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignUpdateItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:DynamicTextCampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategy" type="ns:DynamicTextCampaignStrategy" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Settings" type="ns:DynamicTextCampaignSetting" minOccurs="0" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignUpdateItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:CampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="Id" type="xsd:long" minOccurs="1" maxOccurs="1" />
+                            <xsd:element name="Name" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="StartDate" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="DailyBudget" type="ns:DailyBudget" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="EndDate" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="NegativeKeywords" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="BlockedIps" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="ExcludedSites" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="TextCampaign" type="ns:TextCampaignUpdateItem" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="MobileAppCampaign" type="ns:MobileAppCampaignUpdateItem" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="DynamicTextCampaign" type="ns:DynamicTextCampaignUpdateItem" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TextCampaignGetItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextCampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategy" type="ns:TextCampaignStrategy" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Settings" type="ns:TextCampaignSettingGet" minOccurs="0" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppCampaignGetItem">
+                <xsd:sequence>
+                    <xsd:element name="BiddingStrategy" type="ns:MobileAppCampaignStrategy" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="Settings" type="ns:MobileAppCampaignSettingGet" minOccurs="0" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextCampaignGetItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:DynamicTextCampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="BiddingStrategy" type="ns:DynamicTextCampaignStrategy" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Settings" type="ns:DynamicTextCampaignSettingGet" minOccurs="0" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CampaignGetItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:CampaignBase">
+                        <xsd:sequence>
+                            <xsd:element name="Id" type="xsd:long" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Name" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="StartDate" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Type" type="ns:CampaignTypeGetEnum" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Status" type="ns:CampaignStatusGetEnum" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="State" type="ns:CampaignStateGetEnum" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="StatusPayment" type="ns:CampaignStatusPaymentEnum" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="StatusClarification" type="xsd:string" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="SourceId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="Statistics" type="general:Statistics" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Currency" type="general:CurrencyEnum" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="Funds" type="ns:FundsParam" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="RepresentedBy" type="ns:CampaignAssistant" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="DailyBudget" type="ns:DailyBudget" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="EndDate" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="NegativeKeywords" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="BlockedIps" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="ExcludedSites" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true" />
+                            <xsd:element name="TextCampaign" type="ns:TextCampaignGetItem" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="MobileAppCampaign" type="ns:MobileAppCampaignGetItem" minOccurs="0" maxOccurs="1" />
+                            <xsd:element name="DynamicTextCampaign" type="ns:DynamicTextCampaignGetItem" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <!-- Get Operation Types -->
+            <xsd:complexType name="CampaignsSelectionCriteria">
+                <xsd:sequence>
+                    <xsd:element name="Ids" type="xsd:long" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="Types" type="ns:CampaignTypeEnum" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="States" type="ns:CampaignStateEnum" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="Statuses" type="ns:CampaignStatusEnum" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="StatusesPayment" type="ns:CampaignStatusPaymentEnum" minOccurs="0" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <!-- Methods -->
+            <xsd:element name="GetRequest">
+                <xsd:complexType>
+                    <xsd:complexContent>
+                        <xsd:extension base="general:GetRequestGeneral">
+                            <xsd:sequence>
+                                <xsd:element name="SelectionCriteria" type="ns:CampaignsSelectionCriteria" minOccurs="1" maxOccurs="1" />
+                                <xsd:element name="FieldNames" type="ns:CampaignFieldEnum" minOccurs="1" maxOccurs="unbounded" />
+                                <xsd:element name="TextCampaignFieldNames" type="ns:TextCampaignFieldEnum" minOccurs="0" maxOccurs="unbounded" />
+                                <xsd:element name="MobileAppCampaignFieldNames" type="ns:MobileAppCampaignFieldEnum" minOccurs="0" maxOccurs="unbounded" />
+                                <xsd:element name="DynamicTextCampaignFieldNames" type="ns:DynamicTextCampaignFieldEnum" minOccurs="0" maxOccurs="unbounded" />
+                            </xsd:sequence>
+                        </xsd:extension>
+                    </xsd:complexContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="GetResponse">
+                <xsd:complexType>
+                    <xsd:complexContent>
+                        <xsd:extension base="general:GetResponseGeneral">
+                            <xsd:sequence>
+                                <xsd:element name="Campaigns" type="ns:CampaignGetItem" minOccurs="0" maxOccurs="unbounded" />
+                            </xsd:sequence>
+                        </xsd:extension>
+                    </xsd:complexContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AddRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Campaigns" type="ns:CampaignAddItem" minOccurs="1" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AddResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="AddResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UpdateRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Campaigns" type="ns:CampaignUpdateItem" minOccurs="1" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UpdateResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="UpdateResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DeleteRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DeleteResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DeleteResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ArchiveRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ArchiveResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="ArchiveResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UnarchiveRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UnarchiveResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="UnarchiveResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="SuspendRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="SuspendResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SuspendResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ResumeRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ResumeResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="ResumeResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="ApiException">
+        <wsdl:part element="general:FaultResponse" name="faultMessage" />
+    </wsdl:message>
+    <!-- ADD -->
+    <wsdl:message name="AddOperationRequest">
+        <wsdl:part element="ns:AddRequest" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="AddOperationResponse">
+        <wsdl:part name="parameters" element="ns:AddResponse" />
+    </wsdl:message>
+    <!-- UPDATE -->
+    <wsdl:message name="UpdateOperationRequest">
+        <wsdl:part name="parameters" element="ns:UpdateRequest" />
+    </wsdl:message>
+    <wsdl:message name="UpdateOperationResponse">
+        <wsdl:part name="parameters" element="ns:UpdateResponse" />
+    </wsdl:message>
+    <!-- GET -->
+    <wsdl:message name="GetOperationRequest">
+        <wsdl:part name="parameters" element="ns:GetRequest" />
+    </wsdl:message>
+    <wsdl:message name="GetOperationResponse">
+        <wsdl:part name="parameters" element="ns:GetResponse" />
+    </wsdl:message>
+    <!-- DELETE -->
+    <wsdl:message name="DeleteOperationRequest">
+        <wsdl:part name="parameters" element="ns:DeleteRequest" />
+    </wsdl:message>
+    <wsdl:message name="DeleteOperationResponse">
+        <wsdl:part name="parameters" element="ns:DeleteResponse" />
+    </wsdl:message>
+    <!-- ARCHIVE -->
+    <wsdl:message name="ArchiveOperationRequest">
+        <wsdl:part name="parameters" element="ns:ArchiveRequest" />
+    </wsdl:message>
+    <wsdl:message name="ArchiveOperationResponse">
+        <wsdl:part name="parameters" element="ns:ArchiveResponse" />
+    </wsdl:message>
+    <!-- UNARCHIVE -->
+    <wsdl:message name="UnarchiveOperationRequest">
+        <wsdl:part name="parameters" element="ns:UnarchiveRequest" />
+    </wsdl:message>
+    <wsdl:message name="UnarchiveOperationResponse">
+        <wsdl:part name="parameters" element="ns:UnarchiveResponse" />
+    </wsdl:message>
+    <!-- SUSPEND -->
+    <wsdl:message name="SuspendOperationRequest">
+        <wsdl:part name="parameters" element="ns:SuspendRequest" />
+    </wsdl:message>
+    <wsdl:message name="SuspendOperationResponse">
+        <wsdl:part name="parameters" element="ns:SuspendResponse" />
+    </wsdl:message>
+    <!-- RESUME -->
+    <wsdl:message name="ResumeOperationRequest">
+        <wsdl:part name="parameters" element="ns:ResumeRequest" />
+    </wsdl:message>
+    <wsdl:message name="ResumeOperationResponse">
+        <wsdl:part name="parameters" element="ns:ResumeResponse" />
+    </wsdl:message>
+    <!-- PORT -->
+    <wsdl:portType name="CampaignsPort">
+        <wsdl:operation name="add">
+            <wsdl:input message="ns:AddOperationRequest" name="addRequest" />
+            <wsdl:output message="ns:AddOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <wsdl:input message="ns:UpdateOperationRequest" name="updateRequest" />
+            <wsdl:output message="ns:UpdateOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="get">
+            <wsdl:input message="ns:GetOperationRequest" name="getRequest" />
+            <wsdl:output message="ns:GetOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <wsdl:input message="ns:DeleteOperationRequest" name="deleteRequest" />
+            <wsdl:output message="ns:DeleteOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="archive">
+            <wsdl:input message="ns:ArchiveOperationRequest" name="archiveRequest" />
+            <wsdl:output message="ns:ArchiveOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="unarchive">
+            <wsdl:input message="ns:UnarchiveOperationRequest" name="unarchiveRequest" />
+            <wsdl:output message="ns:UnarchiveOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="suspend">
+            <wsdl:input message="ns:SuspendOperationRequest" name="suspendRequest" />
+            <wsdl:output message="ns:SuspendOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+        <wsdl:operation name="resume">
+            <wsdl:input message="ns:ResumeOperationRequest" name="resumeRequest" />
+            <wsdl:output message="ns:ResumeOperationResponse" />
+            <wsdl:fault message="ns:ApiException" name="ApiException" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <!-- BINDING -->
+    <wsdl:binding name="CampaignsSOAP" type="ns:CampaignsPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="add">
+            <soap:operation soapAction="http://localhost/v5/campaigns/add" />
+            <wsdl:input name="addRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <soap:operation soapAction="http://localhost/v5/campaigns/update" />
+            <wsdl:input name="updateRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="get">
+            <soap:operation soapAction="http://localhost/v5/campaigns/get" />
+            <wsdl:input name="getRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <soap:operation soapAction="http://localhost/v5/campaigns/delete" />
+            <wsdl:input name="deleteRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="archive">
+            <soap:operation soapAction="http://localhost/v5/campaigns/archive" />
+            <wsdl:input name="archiveRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="unarchive">
+            <soap:operation soapAction="http://localhost/v5/campaigns/unarchive" />
+            <wsdl:input name="unarchiveRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="suspend">
+            <soap:operation soapAction="http://localhost/v5/campaigns/suspend" />
+            <wsdl:input name="suspendRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="resume">
+            <soap:operation soapAction="http://localhost/v5/campaigns/resume" />
+            <wsdl:input name="resumeRequest">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal" />
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <!-- SERVICE -->
+    <wsdl:service name="Campaigns">
+        <wsdl:port binding="ns:CampaignsSOAP" name="CampaignsSOAP">
+            <soap:address location="https://localhost/v5/campaigns" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -16,6 +16,12 @@ class StructAttribute extends AbstractModel
      */
     private $type = '';
     /**
+     * Defines that this property is not a simple value but an array of values
+     * Infos at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
+     * @var bool
+     */
+    private $containsElements = false;
+    /**
      * Main constructor
      * @see AbstractModel::__construct()
      * @uses StructAttribute::setType()
@@ -72,21 +78,54 @@ class StructAttribute extends AbstractModel
     /**
      * Sets the type value
      * @param string $type
-     * @return string
+     * @return StructAttribute
      */
     public function setType($type)
     {
-        return ($this->type = $type);
+        $this->type = $type;
+        return $this;
+    }
+    /**
+     * Returns the type value
+     * @return bool
+     */
+    public function getContainsElements()
+    {
+        return $this->containsElements;
+    }
+    /**
+     * Sets the type value
+     * @param bool $containsElements
+     * @return StructAttribute
+     */
+    public function setContainsElements($containsElements)
+    {
+        $this->containsElements = $containsElements;
+        return $this;
+    }
+    /**
+     * If this attribute contains elements then it's an array
+     * only if its parent, the Struct, is not itself an array,
+     * if the parent is an array, then it is certainly not an array too
+     * @return bool
+     */
+    public function isArray()
+    {
+        return $this->containsElements;
     }
     /**
      * Returns potential default value
      * @uses AbstractModel::getMetaValueFirstSet()
      * @uses Utils::getValueWithinItsType()
      * @uses StructAttribute::getType()
+     * @uses StructAttribute::getContainsElements()
      * @return mixed
      */
     public function getDefaultValue()
     {
+        if ($this->isArray()) {
+            return array();
+        }
         return Utils::getValueWithinItsType($this->getMetaValueFirstSet(array(
             'default',
             'Default',
@@ -121,6 +160,7 @@ class StructAttribute extends AbstractModel
         return parent::getOwner();
     }
     /**
+     * @uses StructAttribute::getType()
      * @return bool
      */
     public function isXml()
