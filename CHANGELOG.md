@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.3.0
+- issue #40 - Support for SSL Context Options
+- issue #41 - Support for arrays
+	- The addTo{property name} method has been added and accept an item to be added to the property. If the item is not of the correct type depending on the item's type, it throws an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php).
+	- The set{property name} has been reviewed in order to throw an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php) if the array passed as parameter contains an invalid item. In the case of an array of values which are defined using an enumeration, it throws only one exception indicating which values are incorrect.
+- issue #43 - "composer-name" required even if "standalone=false"
+
 ## 1.2.0
 - issue #36 - All tags defined by a Type outs empty in soap requests
 - **BC**:
