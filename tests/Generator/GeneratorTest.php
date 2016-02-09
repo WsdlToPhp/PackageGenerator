@@ -624,6 +624,16 @@ class GeneratorTest extends TestCase
             ));
         $instance = new Generator($options);
 
+        // HTTP headers are added to the context options with certain PHP version on certain platform
+        // this test is focused on the defined options and not those which are added after
+        // so we remove those we are not interested in!
+        $contextOptions = $instance->getSoapClient()->getSoapClientStreamContextOptions();
+        foreach(array_keys($contextOptions) as $index) {
+            if ($index !== 'https' && $index !== 'ssl') {
+                unset($contextOptions[$index]);
+            }
+        }
+
         $this->assertSame(array(
             'https' => array(
                 'X-Header' => 'X-Value',
@@ -633,6 +643,6 @@ class GeneratorTest extends TestCase
                 'ca_path' => __DIR__,
                 'verify_peer' => true,
             )
-        ), $instance->getSoapClient()->getSoapClientStreamContextOptions());
+        ), $contextOptions);
     }
 }
