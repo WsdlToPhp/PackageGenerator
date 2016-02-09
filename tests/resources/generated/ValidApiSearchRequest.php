@@ -367,6 +367,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Set Adult value
      * @uses \Api\EnumType\ApiAdultOption::valueIsValid()
      * @uses \Api\EnumType\ApiAdultOption::getValidValues()
+     * @throws \InvalidArgumentException
      * @param string $adult
      * @return \Api\StructType\ApiSearchRequest
      */

@@ -17,13 +17,13 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var array
+     * @var \Api\StructType\ApiNewsRelatedSearch[]
      */
     public $NewsRelatedSearch;
     /**
      * Constructor method for ArrayOfNewsRelatedSearch
      * @uses ApiArrayOfNewsRelatedSearch::setNewsRelatedSearch()
-     * @param array $newsRelatedSearch
+     * @param \Api\StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      */
     public function __construct(array $newsRelatedSearch = array())
     {
@@ -32,7 +32,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     }
     /**
      * Get NewsRelatedSearch value
-     * @return array
+     * @return \Api\StructType\ApiNewsRelatedSearch[]|null
      */
     public function getNewsRelatedSearch()
     {
@@ -40,12 +40,32 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     }
     /**
      * Set NewsRelatedSearch value
-     * @param array $newsRelatedSearch
+     * @throws \InvalidArgumentException
+     * @param \Api\StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
      */
     public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
+        foreach($newsRelatedSearch as $item) {
+            if (!$item instanceof \Api\StructType\ApiNewsRelatedSearch) {
+                throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of \Api\StructType\ApiNewsRelatedSearch, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            }
+        }
         $this->NewsRelatedSearch = $newsRelatedSearch;
+        return $this;
+    }
+    /**
+     * Add item to NewsRelatedSearch value
+     * @throws \InvalidArgumentException
+     * @param \Api\StructType\ApiNewsRelatedSearch $item
+     * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
+     */
+    public function addToNewsRelatedSearch(\Api\StructType\ApiNewsRelatedSearch $item)
+    {
+        if (!$item instanceof \Api\StructType\ApiNewsRelatedSearch) {
+            throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of \Api\StructType\ApiNewsRelatedSearch, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        }
+        $this->NewsRelatedSearch[] = $item;
         return $this;
     }
     /**

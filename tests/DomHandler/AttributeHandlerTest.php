@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests\DomHandler;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler;
 
 class AttributeHandlerTest extends TestCase
 {
@@ -16,8 +17,8 @@ class AttributeHandlerTest extends TestCase
         // first element tag
         $element = $domDocument->getElementByName('element');
 
-        $this->assertEquals('minOccurs', $element->getAttribute('minOccurs')->getName());
-        $this->assertEquals('maxOccurs', $element->getAttribute('maxOccurs')->getName());
+        $this->assertEquals(AbstractAttributeHandler::ATTRIBUTE_MIN_OCCURS, $element->getAttribute(AbstractAttributeHandler::ATTRIBUTE_MIN_OCCURS)->getName());
+        $this->assertEquals(AbstractAttributeHandler::ATTRIBUTE_MAX_OCCURS, $element->getAttribute(AbstractAttributeHandler::ATTRIBUTE_MAX_OCCURS)->getName());
         $this->assertEquals('name', $element->getAttribute('name')->getName());
         $this->assertEquals('default', $element->getAttribute('default')->getName());
     }
@@ -31,11 +32,11 @@ class AttributeHandlerTest extends TestCase
         // first element tag
         $element = $domDocument->getElementByName('element');
 
-        $this->assertSame('0', $element->getAttribute('minOccurs')->getValue());
-        $this->assertSame('1', $element->getAttribute('maxOccurs')->getValue());
-        $this->assertSame('Version', $element->getAttribute('name')->getValue());
-        $this->assertSame('2.2', $element->getAttribute('default')->getValue());
-        $this->assertSame('2.2', $element->getAttribute('default')->getValue(false, true, null));
+        $this->assertSame('0', $element->getAttributeValue(AbstractAttributeHandler::ATTRIBUTE_MIN_OCCURS));
+        $this->assertSame('1', $element->getAttributeValue(AbstractAttributeHandler::ATTRIBUTE_MAX_OCCURS));
+        $this->assertSame('Version', $element->getAttributeValue('name'));
+        $this->assertSame('2.2', $element->getAttributeValue('default'));
+        $this->assertSame('2.2', $element->getAttributeValue('default', false, true, null));
     }
     /**
      *
@@ -82,6 +83,20 @@ class AttributeHandlerTest extends TestCase
         // first element tag
         $element = $domDocument->getElementByName('element');
 
-        $this->assertNull($element->getAttribute('minOccurs')->getNamespace());
+        $this->assertNull($element->getAttribute(AbstractAttributeHandler::ATTRIBUTE_MIN_OCCURS)->getNamespace());
+    }
+    /**
+     *
+     */
+    public function testGetMaxOccurs()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByName('element', array(
+            'name' => 'CampaignIds',
+        ));
+
+        $this->assertEquals(AbstractAttributeHandler::VALUE_UNBOUNDED, $element->getAttributeValue(AbstractAttributeHandler::ATTRIBUTE_MAX_OCCURS));
+        $this->assertEquals(0, $element->getAttributeValue(AbstractAttributeHandler::ATTRIBUTE_MIN_OCCURS));
     }
 }

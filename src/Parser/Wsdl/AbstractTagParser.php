@@ -2,7 +2,6 @@
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
-use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\Model\Struct;
@@ -76,56 +75,79 @@ abstract class AbstractTagParser extends AbstractParser
         $model = $model instanceof AbstractModel ? $model : $this->getModel($tag);
         if ($model instanceof AbstractModel) {
             foreach ($tag->getAttributes() as $attribute) {
-                switch ($attribute->getName()) {
-                    case AbstractAttributeHandler::ATTRIBUTE_NAME:
-                        /**
-                         * Avoid this attribute to be added as meta
-                         */
-                        break;
-                    case AbstractAttributeHandler::ATTRIBUTE_ABSTRACT:
-                        $model->setIsAbstract($attribute->getValue(false, true, 'bool'));
-                        break;
-                    case AbstractAttributeHandler::ATTRIBUTE_VALUE:
-                        /**
-                         * Enumeration does not need its own value as meta information,
-                         * it's like the name for struct attribute
-                         */
-                        if (!$model instanceof StructValue) {
-                            $model->addMeta($attribute->getName(), $attribute->getValue(true));
-                        }
-                        break;
-                    case AbstractAttributeHandler::ATTRIBUTE_TYPE:
-                        if ($structAttribute instanceof StructAttribute) {
-                            $this->parseTagAttributeType($attribute, $structAttribute);
-                        } else {
-                            $model->addMeta($attribute->getName(), $attribute->getValue(true));
-                        }
-                        break;
-                    default:
-                        $currentModel = $structAttribute instanceof StructAttribute ? $structAttribute : $model;
-                        $currentModel->addMeta($attribute->getName(), $attribute->getValue(true));
-                        break;
+                $methodToCall = $this->getParseTagAttributeMethod($attribute->getName());
+                if (is_array($methodToCall)) {
+                    call_user_func_array($methodToCall, array(
+                        $attribute,
+                        $model,
+                        $structAttribute,
+                    ));
+                } else {
+                    $currentModel = $structAttribute instanceof StructAttribute ? $structAttribute : $model;
+                    $currentModel->addMeta($attribute->getName(), $attribute->getValue(true));
                 }
             }
         }
     }
     /**
-     * @param AttributeHandler $tagAttribute
-     * @param StructAttribute $attribute
+     * @param string $tagName
+     * @return string
      */
-    protected function parseTagAttributeType(AttributeHandler $tagAttribute, StructAttribute $attribute)
+    protected function getParseTagAttributeMethod($tagName)
     {
-        $type = $tagAttribute->getValue();
-        if ($type !== null) {
-            $typeModel = $this->generator->getStruct($type);
-            $modelAttributeType = $attribute->getType();
-            if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
-                if ($typeModel->getIsRestriction()) {
-                    $attribute->setType($typeModel->getName());
-                } elseif (!$typeModel->getIsStruct() && $typeModel->getInheritance()) {
-                    $attribute->setType($typeModel->getInheritance());
+        $methodName = sprintf('parseTagAttribute%s', ucfirst($tagName));
+        if (method_exists($this, $methodName)) {
+            return array($this, $methodName);
+        }
+        return null;
+    }
+    /**
+     * @param AttributeHandler $tagAttribute
+     * @param AbstractModel $model
+     * @param StructAttribute $structAttribute
+     */
+    protected function parseTagAttributeType(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null)
+    {
+        if ($structAttribute instanceof StructAttribute) {
+            $type = $tagAttribute->getValue();
+            if ($type !== null) {
+                $typeModel = $this->generator->getStruct($type);
+                $modelAttributeType = $structAttribute->getType();
+                if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
+                    if ($typeModel->getIsRestriction()) {
+                        $structAttribute->setType($typeModel->getName());
+                    } elseif (!$typeModel->getIsStruct() && $typeModel->getInheritance()) {
+                        $structAttribute->setType($typeModel->getInheritance());
+                    }
                 }
             }
+        } else {
+            $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
+        }
+    }
+    /**
+     * Avoid this attribute to be added as meta
+     */
+    protected function parseTagAttributeName()
+    {
+    }
+    /**
+     * @param AttributeHandler $tagAttribute
+     * @param AbstractModel $model
+     */
+    protected function parseTagAttributeAbstract(AttributeHandler $tagAttribute, AbstractModel $model)
+    {
+        $model->setIsAbstract($tagAttribute->getValue(false, true, 'bool'));
+    }
+    /**
+     * Enumeration does not need its own value as meta information, it's like the name for struct attribute
+     * @param AttributeHandler $tagAttribute
+     * @param AbstractModel $model
+     */
+    protected function parseTagAttributeValue(AttributeHandler $tagAttribute, AbstractModel $model)
+    {
+        if (!$model instanceof StructValue) {
+            $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
         }
     }
 }

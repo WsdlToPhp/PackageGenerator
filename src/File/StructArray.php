@@ -4,11 +4,9 @@ namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
-use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 
 class StructArray extends Struct
@@ -41,90 +39,6 @@ class StructArray extends Struct
      * @var string
      */
     const METHOD_ADD = 'add';
-    /**
-     * @var string
-     */
-    const TYPE_ARRAY = 'array';
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\Struct::getStructMethodConstructParameter()
-     * @param StructAttributeModel $attribute
-     * @param bool $lowCaseFirstLetter
-     * @param mixed $defaultValue
-     * @return PhpFunctionParameter
-     */
-    protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
-    {
-        return parent::getStructMethodParameter($attribute, $lowCaseFirstLetter, array());
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\Struct::getStructMethodParameterType()
-     * @param StructAttributeModel $attribute
-     * @return string
-     */
-    protected function getStructMethodParameterType(StructAttributeModel $attribute)
-    {
-        return self::TYPE_ARRAY;
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\Struct::addStructMethodSet()
-     * @param MethodContainer $methods
-     * @param StructAttributeModel $attribute
-     * @return Struct
-     */
-    protected function addStructMethodSet(MethodContainer $methods, StructAttributeModel $attribute)
-    {
-        $method = new PhpMethod($attribute->getSetterName(), array(
-            new PhpFunctionParameter(lcfirst($attribute->getCleanName()), array(), self::TYPE_ARRAY),
-        ));
-        $this->addStructMethodSetBody($method, $attribute);
-        $methods->add($method);
-        return $this;
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getStructAttributeType()
-     * @param StructAttributeModel $attribute
-     * @param bool $returnAnnotation
-     * @param bool $namespaced
-     * @return string
-     */
-    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false, $namespaced = false)
-    {
-        if ($attribute === $this->getModel()->getAttributes()->offsetGet(0)) {
-            return self::TYPE_ARRAY;
-        }
-        return parent::getStructAttributeType($attribute, $returnAnnotation, $namespaced);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::addStructMethodSetBodyForRestriction()
-     * @param PhpMethod $method
-     * @param StructAttributeModel $attribute
-     * @return Struct
-     */
-    protected function addStructMethodSetBodyForRestriction(PhpMethod $method, StructAttributeModel $attribute)
-    {
-        return $this;
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::addStructMethodsSetAnnotationBlock()
-     * @param PhpAnnotationBlock $annotationBlock
-     * @param string $type
-     * @param string $name
-     * @return Struct
-     */
-    protected function addStructMethodsSetAnnotationBlock(PhpAnnotationBlock $annotationBlock, $type, $name)
-    {
-        return parent::addStructMethodsSetAnnotationBlock($annotationBlock, self::TYPE_ARRAY, $name);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::addStructMethodsGetAnnotationBlock()
-     * @param PhpAnnotationBlock $annotationBlock
-     * @param string $attribute
-     * @return Struct
-     */
-    protected function addStructMethodsGetAnnotationBlock(PhpAnnotationBlock $annotationBlock, $attribute)
-    {
-        return parent::addStructMethodsGetAnnotationBlock($annotationBlock, self::TYPE_ARRAY);
-    }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\Struct::addStructMethodsSetAndGet()
      */
@@ -199,10 +113,13 @@ class StructArray extends Struct
      */
     protected function addArrayMethodAdd(MethodContainer $methods)
     {
-        if (($model = $this->getModelFromStructAttribute()) instanceof StructModel && $model->getIsRestriction()) {
-            return $this->addArrayMethodGenericMethod($methods, self::METHOD_ADD, sprintf('return %s::valueIsValid($item) ? parent::add($item) : false;', $model->getPackagedName(true)), array(
+        if (($model = $this->getRestrictionFromStructAttribute()) instanceof StructModel) {
+            $method = new PhpMethod(self::METHOD_ADD, array(
                 'item',
             ));
+            $this->addStructMethodSetBodyForRestriction($method, $this->getModel()->getAttributes()->offsetGet(0), 'item');
+            $method->addChild('return parent::add($item);');
+            $methods->add($method);
         }
         return $this;
     }
@@ -210,7 +127,7 @@ class StructArray extends Struct
      * @param MethodContainer $methods
      * @param string $name
      * @param string $body
-     * @param string[]|PhpFunctionParameter[] $methodParameters
+     * @param string[] $methodParameters
      * @return StructArray
      */
     protected function addArrayMethodGenericMethod(MethodContainer $methods, $name, $body, array $methodParameters = array())
@@ -274,9 +191,10 @@ class StructArray extends Struct
         return new PhpAnnotationBlock(array(
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
+            new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'),
             new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName(true))),
             new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType())),
-            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s|bool', $this->getModel()->getPackagedName(true))),
+            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s', $this->getModel()->getPackagedName(true))),
         ));
     }
     /**
@@ -294,7 +212,7 @@ class StructArray extends Struct
         if (!empty($param)) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, $param));
         }
-        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeType(null, true, true)));
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeTypeGetAnnotation(null, false)));
         return $annotationBlock;
     }
     /**

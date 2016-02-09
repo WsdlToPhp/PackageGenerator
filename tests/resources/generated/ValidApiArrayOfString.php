@@ -17,13 +17,13 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var array
+     * @var string[]
      */
     public $string;
     /**
      * Constructor method for ArrayOfString
      * @uses ApiArrayOfString::setString()
-     * @param array $string
+     * @param string[] $string
      */
     public function __construct(array $string = array())
     {
@@ -32,7 +32,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
     }
     /**
      * Get string value
-     * @return array
+     * @return string[]|null
      */
     public function getString()
     {
@@ -40,12 +40,32 @@ class ApiArrayOfString extends AbstractStructArrayBase
     }
     /**
      * Set string value
-     * @param array $string
+     * @throws \InvalidArgumentException
+     * @param string[] $string
      * @return \Api\ArrayType\ApiArrayOfString
      */
     public function setString(array $string = array())
     {
+        foreach($string as $item) {
+            if (!is_string($item)) {
+                throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            }
+        }
         $this->string = $string;
+        return $this;
+    }
+    /**
+     * Add item to string value
+     * @throws \InvalidArgumentException
+     * @param string $item
+     * @return \Api\ArrayType\ApiArrayOfString
+     */
+    public function addToString($item)
+    {
+        if (!is_string($item)) {
+            throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        }
+        $this->string[] = $item;
         return $this;
     }
     /**

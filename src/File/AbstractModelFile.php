@@ -55,6 +55,10 @@ abstract class AbstractModelFile extends AbstractFile
     /**
      * @var string
      */
+    const ANNOTATION_THROWS = 'throws';
+    /**
+     * @var string
+     */
     const METHOD_CONSTRUCT = '__construct';
     /**
      * @var string
@@ -64,6 +68,10 @@ abstract class AbstractModelFile extends AbstractFile
      * @var string
      */
     const TYPE_STRING = 'string';
+    /**
+     * @var string
+     */
+    const TYPE_ARRAY = 'array';
     /**
      * @var string
      */
@@ -413,11 +421,22 @@ abstract class AbstractModelFile extends AbstractFile
     }
     /**
      * @param StructAttributeModel $attribute
-     * @param bool $returnAnnotation
+     * @return StructModel|null
+     */
+    protected function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null)
+    {
+        $model = $this->getModelFromStructAttribute($attribute);
+        if ($model instanceof StructModel && !$model->getIsRestriction()) {
+            $model = null;
+        }
+        return $model;
+    }
+    /**
+     * @param StructAttributeModel $attribute
      * @param bool $namespaced
      * @return string
      */
-    protected function getStructAttributeType(StructAttributeModel $attribute = null, $returnAnnotation = false, $namespaced = false)
+    protected function getStructAttributeType(StructAttributeModel $attribute = null, $namespaced = false)
     {
         $attribute = $this->getStructAttribute($attribute);
         $inheritance = $attribute->getInheritance();
@@ -433,10 +452,46 @@ abstract class AbstractModelFile extends AbstractFile
                 $type = $model->getPackagedName($namespaced);
             }
         }
-        if ($returnAnnotation === true && $attribute->isRequired() === false) {
-            $type = sprintf('%s|null', $type);
-        }
         return $type;
+    }
+    /**
+     * @param StructAttributeModel $attribute
+     * @param bool $returnArrayType
+     * @return string
+     */
+    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
+    {
+        $attribute = $this->getStructAttribute($attribute);
+        return sprintf('%s%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '' : '|null');
+    }
+    /**
+     * @param StructAttributeModel $attribute
+     * @param bool $returnArrayType
+     * @return string
+     */
+    protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
+    {
+        $attribute = $this->getStructAttribute($attribute);
+        return sprintf('%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '');
+    }
+    /**
+     * @param StructAttributeModel $attribute
+     * @param string $returnArrayType
+     * @return bool
+     */
+    protected function useBrackets(StructAttributeModel $attribute, $returnArrayType = true)
+    {
+        return $returnArrayType && $attribute->isArray();
+    }
+    /**
+     * @param StructAttributeModel $attribute
+     * @param bool $returnArrayType
+     * @return string
+     */
+    protected function getStructAttributeTypeHint(StructAttributeModel $attribute = null, $returnArrayType = true)
+    {
+        $attribute = $this->getStructAttribute($attribute);
+        return ($returnArrayType && $attribute->isArray()) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
     }
     /**
      * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
@@ -448,5 +503,16 @@ abstract class AbstractModelFile extends AbstractFile
     public static function getValidType($type, $fallback = null)
     {
         return XsdTypes::instance()->isXsd(str_replace('[]', '', $type)) ? $fallback : $type;
+    }
+    /**
+     * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
+     * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp
+     * @param mixed $type
+     * @param mixed $fallback
+     * @return mixed
+     */
+    public static function getPhpType($type, $fallback = self::TYPE_STRING)
+    {
+        return XsdTypes::instance()->isXsd(str_replace('[]', '', $type)) ? XsdTypes::instance()->phpType($type) : $fallback;
     }
 }

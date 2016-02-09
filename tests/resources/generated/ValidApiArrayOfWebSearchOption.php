@@ -17,13 +17,13 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var array
+     * @var string[]
      */
     public $WebSearchOption;
     /**
      * Constructor method for ArrayOfWebSearchOption
      * @uses ApiArrayOfWebSearchOption::setWebSearchOption()
-     * @param array $webSearchOption
+     * @param string[] $webSearchOption
      */
     public function __construct(array $webSearchOption = array())
     {
@@ -32,7 +32,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     }
     /**
      * Get WebSearchOption value
-     * @return array
+     * @return string[]|null
      */
     public function getWebSearchOption()
     {
@@ -40,12 +40,38 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     }
     /**
      * Set WebSearchOption value
-     * @param array $webSearchOption
+     * @throws \InvalidArgumentException
+     * @param string[] $webSearchOption
      * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
     public function setWebSearchOption(array $webSearchOption = array())
     {
+        $invalidValues = array();
+        foreach($webSearchOption as $item) {
+            if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
+                $invalidValues[] = var_export($item);
+            }
+        }
+        if (!empty($invalidValues)) {
+            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
+        }
         $this->WebSearchOption = $webSearchOption;
+        return $this;
+    }
+    /**
+     * Add item to WebSearchOption value
+     * @uses \Api\EnumType\ApiWebSearchOption::valueIsValid()
+     * @uses \Api\EnumType\ApiWebSearchOption::getValidValues()
+     * @throws \InvalidArgumentException
+     * @param string $item
+     * @return \Api\ArrayType\ApiArrayOfWebSearchOption
+     */
+    public function addToWebSearchOption($item)
+    {
+        if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
+            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
+        }
+        $this->WebSearchOption[] = $item;
         return $this;
     }
     /**
@@ -98,13 +124,17 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     /**
      * Add element to array
      * @see AbstractStructArrayBase::add()
+     * @throws \InvalidArgumentException
      * @uses \Api\EnumType\ApiWebSearchOption::valueIsValid()
      * @param string $item
-     * @return \Api\ArrayType\ApiArrayOfWebSearchOption|bool
+     * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
     public function add($item)
     {
-        return \Api\EnumType\ApiWebSearchOption::valueIsValid($item) ? parent::add($item) : false;
+        if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
+            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
+        }
+        return parent::add($item);
     }
     /**
      * Returns the attribute name
