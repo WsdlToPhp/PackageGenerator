@@ -70,6 +70,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
+    public static function onlineWsdlBingPath()
+    {
+        return 'http://api.search.live.net/search.wsdl';
+    }
+    /**
+     * @return string
+     */
     public static function wsdlEbayPath()
     {
         return __DIR__ . '/resources/ebaySvc.wsdl';

@@ -64,8 +64,8 @@ class Generator
             ->initContainers()
             ->initParsers()
             ->initFiles()
-            ->initWsdl()
-            ->initSoapClient();
+            ->initSoapClient()
+            ->initWsdl();
     }
     /**
      * @throws \InvalidArgumentException

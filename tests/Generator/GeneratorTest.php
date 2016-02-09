@@ -606,12 +606,14 @@ class GeneratorTest extends TestCase
      */
     public function testGetSoapClientStreamContextOptions()
     {
-        $instance = self::getBingGeneratorInstance();
-        $instance
-            ->setOptionSoapOptions(array(
+        $options = GeneratorOptionsTest::optionsInstance();
+        $options
+            ->setOrigin(self::onlineWsdlBingPath())
+            ->setDestination(self::getTestDirectory())
+            ->setSoapOptions(array(
                 AbstractSoapClientBase::WSDL_STREAM_CONTEXT => stream_context_create(array(
-                    'http' => array(
-                        'proxy' => 'http.www.foo.bar',
+                    'https' => array(
+                        'X-Header' => 'X-Value',
                     ),
                     'ssl' => array(
                         'ca_file' => basename(__FILE__),
@@ -620,10 +622,11 @@ class GeneratorTest extends TestCase
                     )
                 ))
             ));
+        $instance = new Generator($options);
 
         $this->assertSame(array(
-            'http' => array(
-                'proxy' => 'http.www.foo.bar',
+            'https' => array(
+                'X-Header' => 'X-Value',
             ),
             'ssl' => array(
                 'ca_file' => basename(__FILE__),
