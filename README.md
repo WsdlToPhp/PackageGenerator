@@ -57,7 +57,7 @@ The generator comes with several options:
 - **Required** package configuration:
     - **\-\-urlorpath**: path or url to get the WSDL
     - **\-\-destination**: absolute path where the classes must be generated
-    - **\-\-composer-name**: must be present to define the composer name in the generated package's composer.json file
+    - **\-\-composer-name**: must be present to define the composer name in the generated package's composer.json file (**only on standalone mode**, see **standalone** option)
     - **\-\-force**: must be present to generate the package, otherwise you'll get the debug informations
 - _**Optional**_ generated class naming:
     - **\-\-prefix**: the classes name prefix, used as the main namespace
@@ -93,7 +93,7 @@ The generator comes with several options:
             - **Data** that contains the **getData** method
 - _**Optional**_ generated classes namespace and inheritance:
     - **\-\-namespace**: prefix classes' main namespace with your namespace
-    - **\-\-standalone** _(default: ```true```)_: enables/disables the installation of the [PackageBase](https://packagist.org/packages/wsdltophp/packagebase) package that contains the base class from which StructType, ArrayType and ServiceType classes inherit
+    - **\-\-standalone** _(default: ```true```)_: enables/disables the installation of the [PackageBase](https://packagist.org/packages/wsdltophp/packagebase) package that contains the base class from which StructType, ArrayType and ServiceType classes inherit. If enabled, you MUST provide the ```composer-name``` option
     - **\-\-struct** _(default: \WsdlToPhp\PackageBase\AbstractStructBase)_: sets the class from which StructType classes inherit, see [StructInterface](https://github.com/WsdlToPhp/PackageBase#structinterface)
     - **\-\-structarray** _(default: \WsdlToPhp\PackageBase\AbstractStructArrayBase)_: sets the class from which StructArrayType classes inherit, see [StructArrayInterface](https://github.com/WsdlToPhp/PackageBase#structarrayinterface)
     - **\-\-soapclient** _(default: \WsdlToPhp\PackageBase\AbstractSoapClientBase)_: sets the class from which ServiceType classes inherit, see [SoapClientInterface](https://github.com/WsdlToPhp/PackageBase#soapclientinterface)
@@ -121,7 +121,7 @@ $ ./wsdltophp.phar --version
 ```
 Display generic help
 ```
-$ ./wsdltophp.phar --version
+$ ./wsdltophp.phar --help
 ```
 Display command line help
 ```
@@ -130,9 +130,9 @@ $ ./wsdltophp.phar generate:package --help
 #### The most basic way
 ```
 $ ./wsdltophp.phar generate:package \
-    --urlorpath="http://www.mydomain.com/wsdl.xml" \
+    --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --destination="/path/to/where/the/package/must/be/generated/" \
-    --prefix="MyPackage" \
+    --composer-name="myproject\mypackage" \
     --force
 $ cd /path/to/where/the/package/must/be/generated/
 $ ls -la => enjoy!
@@ -233,7 +233,7 @@ $options = GeneratorOptions::instance(/* '/path/to/your/configuration/file.yml' 
 $options
     ->setOrigin('http://www.mydomain.com/?wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
-    ->setPrefix('MyPackage');
+    ->setComposerName('myproject\mypackage');
 
 $generator = new Generator($options);
 $generator->generatePackage();
@@ -303,7 +303,7 @@ $options
     ->setProxyPort($proxyPort)
     ->setProxyLogin($proxyLogin)
     ->setProxyPassword($proxyPassword)
-    ->setComposerName('wsdltophp/package')
+    ->setComposerName('myproject\mypackage')
     ->setStructsFolder('Structs')
     ->setArraysFolder('Arrays')
     ->setEnumsFolder('Enums')
