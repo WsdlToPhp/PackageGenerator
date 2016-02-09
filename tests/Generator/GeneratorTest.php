@@ -562,8 +562,10 @@ class GeneratorTest extends TestCase
         $generator->generatePackage();
 
         $this->assertTrue(is_dir($destination));
-        $this->assertTrue(is_file(sprintf('%s/composer.json', $destination)));
-        $this->assertTrue(is_file(sprintf('%s/composer.lock', $destination)));
+        if ($standalone) {
+            $this->assertTrue(is_file(sprintf('%s/composer.json', $destination)));
+            $this->assertTrue(is_file(sprintf('%s/composer.lock', $destination)));
+        }
         $this->assertTrue(is_file(sprintf('%s/tutorial.php', $destination)));
         $this->assertTrue(is_file($generator->getFiles()->getClassmapFile()->getFileName()));
     }
