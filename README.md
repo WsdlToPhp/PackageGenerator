@@ -132,7 +132,7 @@ $ ./wsdltophp.phar generate:package --help
 $ ./wsdltophp.phar generate:package \
     --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --destination="/path/to/where/the/package/must/be/generated/" \
-    --composer-name="myproject\mypackage" \
+    --composer-name="myproject/mypackage" \
     --force
 $ cd /path/to/where/the/package/must/be/generated/
 $ ls -la => enjoy!
@@ -164,7 +164,7 @@ $ ./wsdltophp.phar generate:package \
     --struct="\Std\Opt\StructClass" \
     --structarray="\Std\Opt\StructArrayClass" \
     --soapclient="\Std\Opt\SoapClientClass" \
-    --composer-name="wsdltophp/package" \
+    --composer-name="myproject/mypackage" \
     --structs-folder="Structs" \
     --arrays-folder="Arrays" \
     --enums-folder="Enums" \
@@ -202,7 +202,7 @@ Remove ```--force``` option from the previous command line to get this result:
     proxy_login: *******
     proxy_password: *******
     soap_options:
-    composer_name: wsdltophp/package
+    composer_name: myproject/mypackage
     structs_folder: Structs
     arrays_folder: Arrays
     enums_folder: Enums
@@ -233,7 +233,7 @@ $options = GeneratorOptions::instance(/* '/path/to/your/configuration/file.yml' 
 $options
     ->setOrigin('http://www.mydomain.com/?wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
-    ->setComposerName('myproject\mypackage');
+    ->setComposerName('myproject/mypackage');
 
 $generator = new Generator($options);
 $generator->generatePackage();
@@ -303,7 +303,7 @@ $options
     ->setProxyPort($proxyPort)
     ->setProxyLogin($proxyLogin)
     ->setProxyPassword($proxyPassword)
-    ->setComposerName('myproject\mypackage')
+    ->setComposerName('myproject/mypackage')
     ->setStructsFolder('Structs')
     ->setArraysFolder('Arrays')
     ->setEnumsFolder('Enums')
