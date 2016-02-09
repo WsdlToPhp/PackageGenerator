@@ -145,7 +145,7 @@ class Generator
             throw new \InvalidArgumentException('Package\'s destination must be defined', __LINE__);
         }
         $composerName = $this->getOptionComposerName();
-        if (empty($composerName)) {
+        if ($this->getOptionStandalone() && empty($composerName)) {
             throw new \InvalidArgumentException('Package\'s composer name must be defined', __LINE__);
         }
         return $this;
