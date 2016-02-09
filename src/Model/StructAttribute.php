@@ -18,7 +18,7 @@ class StructAttribute extends AbstractModel
     /**
      * Defines that this property is not a simple value but an array of values
      * Infos at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
-     * @var string
+     * @var bool
      */
     private $containsElements = false;
     /**
