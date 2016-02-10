@@ -215,7 +215,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function getCleanName($keepMultipleUnderscores = true)
     {
-        return self::replaceReservedPhpKeyword(self::cleanString($this->getName(), $keepMultipleUnderscores), null);
+        return self::cleanString($this->getName(), $keepMultipleUnderscores);
     }
     /**
      * Returns the owner model object
@@ -275,10 +275,14 @@ abstract class AbstractModel extends AbstractGeneratorAware
         if ($namespaced && $this->getNamespace() !== '') {
             $nameParts[] = sprintf('\%s\\', $this->getNamespace());
         }
+        $cleanName = $this->getCleanName();
         if ($this->getGenerator()->getOptionPrefix() !== '') {
             $nameParts[] = $this->getGenerator()->getOptionPrefix();
+        } else {
+            $cleanName = self::replaceReservedPhpKeyword($cleanName, null);
         }
-        $nameParts[] = ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+
+        $nameParts[] = ucfirst(self::uniqueName($cleanName, $this->getContextualPart()));
         if ($this->getGenerator()->getOptionSuffix() !== '') {
             $nameParts[] = $this->getGenerator()->getOptionSuffix();
         }
