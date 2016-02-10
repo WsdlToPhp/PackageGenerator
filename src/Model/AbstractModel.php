@@ -215,7 +215,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function getCleanName($keepMultipleUnderscores = true)
     {
-        return self::cleanString($this->getName(), $keepMultipleUnderscores);
+        return self::replaceReservedPhpKeyword(self::cleanString($this->getName(), $keepMultipleUnderscores), null);
     }
     /**
      * Returns the owner model object
@@ -359,17 +359,21 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @param string $context the context
      * @return string
      */
-    public static function replaceReservedPhpKeyword($keyword, $context)
+    public static function replaceReservedPhpKeyword($keyword, $context = null)
     {
         $phpReservedKeywordFound = '';
         if (ReservedKeywords::instance()->is($keyword)) {
-            $keywordKey = $phpReservedKeywordFound . '_' . $context;
-            if (!array_key_exists($keywordKey, self::$replacedReservedPhpKeywords)) {
-                self::$replacedReservedPhpKeywords[$keywordKey] = 0;
+            if ($context !== null) {
+                $keywordKey = $phpReservedKeywordFound . '_' . $context;
+                if (!array_key_exists($keywordKey, self::$replacedReservedPhpKeywords)) {
+                    self::$replacedReservedPhpKeywords[$keywordKey] = 0;
+                } else {
+                    self::$replacedReservedPhpKeywords[$keywordKey]++;
+                }
+                return '_' . $keyword . (self::$replacedReservedPhpKeywords[$keywordKey] ? '_' . self::$replacedReservedPhpKeywords[$keywordKey] : '');
             } else {
-                self::$replacedReservedPhpKeywords[$keywordKey]++;
+                return '_' . $keyword;
             }
-            return '_' . $keyword . (self::$replacedReservedPhpKeywords[$keywordKey] ? '_' . self::$replacedReservedPhpKeywords[$keywordKey] : '');
         } else {
             return $keyword;
         }
