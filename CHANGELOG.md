@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.3.1
+- Improve/fix readme
+
 ## 1.3.0
 - issue #40 - Support for SSL Context Options
 - issue #41 - Support for arrays
