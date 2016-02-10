@@ -231,7 +231,7 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 // Options definition
 $options = GeneratorOptions::instance(/* '/path/to/your/configuration/file.yml' */);
 $options
-    ->setOrigin('http://www.mydomain.com/?wsdl')
+    ->setOrigin('http://developer.ebay.com/webservices/latest/ebaySvc.wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
     ->setComposerName('myproject/mypackage');
 
@@ -293,7 +293,7 @@ $options
     ->setStructClass('\Std\Opt\StructClass')
     ->setStructArrayClass('\Std\Opt\StructArrayClass')
     ->setSoapClientClass('\Std\Opt\SoapClientClass')
-    ->setOrigin('http://www.mydomain.com/?wsdl')
+    ->setOrigin('http://developer.ebay.com/webservices/latest/ebaySvc.wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
     ->setPrefix('Api')
     ->setSuffix('Project')
