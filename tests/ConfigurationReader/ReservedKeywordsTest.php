@@ -220,6 +220,13 @@ class ReservedKeywordsTest extends TestCase
     {
         $this->assertTrue(self::instance()->is('setInternArrayIsArray'));
     }
+    public function testUppercasePHPReservedKeyword()
+    {
+        $this->assertTrue(self::instance()->is('Do'));
+    }
+    public function testUppercaseIsoffsetGet() {
+        $this->assertTrue(self::instance()->is('OffsetGet'));
+    }
     /**
      * @expectedException InvalidArgumentException
      */
