@@ -1,0 +1,2071 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-b01-. -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ddp="http://localhost/services/paymentservice/1_3/" targetNamespace="http://localhost/services/paymentservice/1_3/" elementFormDefault="qualified">
+    <!-- ps-api version, should match ps-web version -->
+    <include schemaLocation="1_3.2.xsd" />
+    <!-- ============================================================ -->
+    <!-- ==================== Business entities ================== -->
+    <!-- ============================================================ -->
+    <complexType name="name">
+        <sequence>
+            <element name="prefix" type="ddp:string50" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>For example: Mr., Mrs., Ms., Dr. This field is commonly omitted.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="initials" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The initials.</documentation>
+                </annotation>
+            </element>
+            <element name="first" type="ddp:string35" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>The first given name.</documentation>
+                </annotation>
+            </element>
+            <element name="middle" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>Any subsequent given name or names. May also be used as middle initial.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="last" type="ddp:string35" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>The family or inherited name(s).</documentation>
+                </annotation>
+            </element>
+            <element name="suffix" type="ddp:string50" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>For example: Ph.D., Jr. (Junior), 3rd, Esq. (Exquire). This field is commonly omitted.
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="destination">
+        <sequence>
+            <element name="name" type="ddp:name" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>Name of the destination.</documentation>
+                </annotation>
+            </element>
+            <sequence>
+                <element name="address" type="ddp:address" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Address of the destination.</documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </sequence>
+    </complexType>
+    <complexType name="technicalIntegrationInfo">
+        <annotation>
+            <documentation>This element contains information about the application contacting the webservice. This info is useful when debugging troubleshooting technical integration issues.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="webshopPlugin" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The name of the plugin used to contact this webservice.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="webshopPluginVersion" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The version of the plugin used to contact this webservice.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="integratorName" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The name of the plugin creator used to contact this webservice.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="programmingLanguage" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The programming language used to contact this webservice.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="operatingSystem" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The operating system from which this webservice is contacted.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="operatingSystemVersion" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The version number of the operating system from which this webservice is contacted.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="ddpXsdVersion" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The full version number (including minor e.q. 1.3.0) of the xsd which is used during integration. DDP can make minor (non-breaking) changes to the xsd. These are reflected in a minor version number. It can therefore be useful to know if a different minor version of the xsd was used during merchant development than the one currently active in production.
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="address">
+        <sequence>
+            <element name="company" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> The name of the company.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="kvkNummer" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> Chamber of commerce number. In the Netherlands KvK number is mandatory for a company. Other countries this is an optional feature. This field is for future usage.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="vatNumber" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> The European Union value added tax (EU VAT) is a value added tax encompassing member states in the European Union VAT area. Joining in this is compulsory for member states of the European Union. As consumption tax, the EU VAT taxes the consumption of goods and services in the EU VAT area. The EU VAT's key issue asks where the supply and consumption occurs thereby determining which member state will collect the VAT and which VAT rate will be charged. This field is for future usage.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="careOf" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> Care of, usually abbreviated as c/o on envelopes, signifies an intermediary who is responsible for transferring a piece of mail between the postal system and the final addressee. For example, when the addressee has no standard address, is under a corporate mail system, or is being manually forwarded mail sent to a more accessible location. In Australia and New Zealand c/- is often used in place of c/o. This field is for future usage.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="street" type="ddp:string100" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> Address lines must be filled as specific as possible using the house number and optionally the house number addition field.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="houseNumber" minOccurs="1" maxOccurs="1" type="ddp:string35">
+                <annotation>
+                    <documentation>The house number.</documentation>
+                </annotation>
+            </element>
+            <element name="houseNumberAddition" minOccurs="0" maxOccurs="1" type="ddp:string35">
+                <annotation>
+                    <documentation>The addition to the house number.</documentation>
+                </annotation>
+            </element>
+            <element name="postalCode" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="city" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+            <element name="state" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> A state or province. Is mandatory for Argentina, Brazil, Canada, China, Indonesia, India, Japan, Mexico, Thailand and the US of A. when PayPal is used as payment method.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="country" type="ddp:country" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="shopper">
+        <sequence>
+            <element name="name" type="ddp:name" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>Shopper's full name.</documentation>
+                </annotation>
+            </element>
+            <element name="email" type="ddp:emailAddress" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>Shopper's e-mail address.</documentation>
+                </annotation>
+            </element>
+            <element name="language" type="ddp:language" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>Shopper's preferred language.</documentation>
+                </annotation>
+            </element>
+            <element name="gender" minOccurs="1" maxOccurs="1" type="ddp:gender">
+                <annotation>
+                    <documentation>Shopper's gender.</documentation>
+                </annotation>
+            </element>
+            <element name="dateOfBirth" type="ddp:plainDate" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>Shopper's date of birth.</documentation>
+                </annotation>
+            </element>
+            <element name="phoneNumber" type="ddp:phoneNumber" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>Shopper's phone number.</documentation>
+                </annotation>
+            </element>
+            <element name="mobilePhoneNumber" type="ddp:phoneNumber" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>Shopper's mobile phone number.</documentation>
+                </annotation>
+            </element>
+            <element name="ipAddress" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> Ip address of the shopper. Will be used in the future for riskchecks. Can be ipv4 or ipv6.
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute name="id" type="ddp:string35" use="required" />
+    </complexType>
+    <complexType name="merchant">
+        <attribute name="name" type="ddp:string50" use="required">
+            <annotation>
+                <documentation>Merchant's login name.</documentation>
+            </annotation>
+        </attribute>
+        <attribute name="password" type="ddp:string35" use="required">
+            <annotation>
+                <documentation>Merchant's password.</documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+    <complexType name="paymentPreferences">
+        <sequence>
+            <element name="profile" type="ddp:string50" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The profile that is used to select the payment methods that can be used to pay this order.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="numberOfDaysToPay" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The expected number of days in which the payment should be processed, or be expired if not paid.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="exhortation" minOccurs="0" maxOccurs="1">
+                <complexType>
+                    <sequence>
+                        <element name="period1" type="ddp:exhortationPeriod" minOccurs="1" maxOccurs="1" />
+                        <element name="period2" type="ddp:exhortationPeriod" minOccurs="0" maxOccurs="1" />
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="terminalId" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> Identifies the Point Of Sale terminal.
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="paymentRequest">
+        <annotation>
+            <documentation>Request for a payment.</documentation>
+        </annotation>
+        <sequence>
+            <element name="initialPaymentReference" type="ddp:paymentReference" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="paymentReference">
+        <annotation>
+            <documentation>A reference identifying an initial payment.
+            </documentation>
+        </annotation>
+        <choice>
+            <element name="linkId" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>A linkID token, which is a UUID type 4 (see RFC-4122 and ITU-T Rec. X.667).
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}" />
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="paymentId" type="ddp:paymentId" minOccurs="1" maxOccurs="1" />
+            <element name="merchantReference" type="ddp:string50" minOccurs="1" maxOccurs="1" />
+        </choice>
+    </complexType>
+    <complexType name="threeDomainSecureAuthenticationResult">
+        <annotation>
+            <documentation>The result of 3DS authentication done by the shopper.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="MD" type="ddp:string2048" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>The MD - Merchant Data from the 3DS request/response. This is a parameter from the original start response, so the same type is used.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="PARes" type="string" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>The Payment Authentication Response, containing all relevant data according to the 3DS specifications.
+                    </documentation>
+                </annotation>
+            </element>
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="iDealAuthorizationResult">
+        <annotation>
+            <documentation>The result of iDEAL authorization done by the shopper.
+            </documentation>
+        </annotation>
+    </complexType>
+    <complexType name="refundItems">
+        <annotation>
+            <documentation> Refund zero or more items with a different quantity than originally ordered. Optionally, refund an additional amount. In all cases, the total of the refund request cannot exceed the original order including any already processed refunds.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="additionalRefund" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>Additional amount to refund when refunding an order.</documentation>
+                </annotation>
+                <complexType>
+                    <sequence>
+                        <element name="additionalAmount" type="ddp:amount" minOccurs="1" maxOccurs="1">
+                            <annotation>
+                                <documentation>The amount to refund additionally, including VAT.</documentation>
+                            </annotation>
+                        </element>
+                        <element name="description" type="ddp:string250" minOccurs="0" maxOccurs="1">
+                            <annotation>
+                                <documentation>Optional description for this refund.</documentation>
+                            </annotation>
+                        </element>
+                    </sequence>
+                    <attribute name="vatRate" type="ddp:vatRate" use="required">
+                        <annotation>
+                            <documentation>The VAT rate of the additionally refunded amount.</documentation>
+                        </annotation>
+                    </attribute>
+                </complexType>
+            </element>
+            <element name="itemLine" type="ddp:itemLine" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>Item lines can only be used, when the original order contains the different item lines.</documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <group name="simpleRefundGroup">
+        <annotation>
+            <documentation> Refund a single item code (the ordered quantity is refunded) and/or refund a specific amount. The total of the refund request cannot exceed the original order including any already processed refunds.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="amount" type="ddp:amount" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> Optional amount to refund
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="itemCode" type="ddp:string50" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> A code or article number identifying an earlier supplied item. Needs to be unique under the payment order the payment is associated with.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="description" type="ddp:string250" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>Optional description for this refund.
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </group>
+    <complexType name="itemLine">
+        <annotation>
+            <documentation> A code and quantity referring to an earlier supplied item.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="itemCode" type="ddp:string50" minOccurs="1" maxOccurs="1">
+            </element>
+            <element name="quantity" type="int" minOccurs="1" maxOccurs="1">
+            </element>
+        </sequence>
+    </complexType>
+    <simpleType name="paymentId">
+        <annotation>
+            <documentation>The payment ID with check digit as generated by the payment system.
+            </documentation>
+        </annotation>
+        <restriction base="positiveInteger" />
+    </simpleType>
+    <simpleType name="authorizationStatus">
+        <annotation>
+            <documentation>
+                The state of the authorization. Current known values:
+                <enumeration value="NEW">
+                    <annotation>
+                        <documentation>This is a new payment without any actions performed on it yet.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="RISK_CHECK_OK">
+                    <annotation>
+                        <documentation>For this payment the risk check was okay.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="RISK_CHECK_FAILED">
+                    <annotation>
+                        <documentation>The risk check for this payment triggered.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="STARTED">
+                    <annotation>
+                        <documentation>The user has provided details and is authenticated.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="START_ERROR">
+                    <annotation>
+                        <documentation>The payment system could not start the payment due to a technical error.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="AUTHENTICATED">
+                    <annotation>
+                        <documentation>The shopper is authenticated by the acquirer.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="REDIRECTED_FOR_AUTHENTICATION">
+                    <annotation>
+                        <documentation>The shopper is redirected to the acquirer web-site for authentication.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="AUTHENTICATION_FAILED">
+                    <annotation>
+                        <documentation>The shopper is not authenticated by the acquirer.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="AUTHENTICATION_ERROR">
+                    <annotation>
+                        <documentation>Unable to do the authentication of the shopper by the acquirer.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="AUTHORIZED">
+                    <annotation>
+                        <documentation>This payment is authorized.</documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="REDIRECTED_FOR_AUTHORIZATION">
+                    <annotation>
+                        <documentation>The shopper is redirected to the acquirer web-site for authorization.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="AUTHORIZATION_REQUESTED">
+                    <annotation>
+                        <documentation>Requested authorization for this payment, waiting for a notification from acquirer.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="AUTHORIZATION_FAILED">
+                    <annotation>
+                        <documentation>The payment was not authorized due to a functional error.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="AUTHORIZATION_ERROR">
+                    <annotation>
+                        <documentation>Unable to do the payment authorization due to a technical error.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="CANCELED">
+                    <annotation>
+                        <documentation>The payment is canceled.</documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="CANCEL_FAILED">
+                    <annotation>
+                        <documentation>Payment is not canceled, due to functional error.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="CANCEL_ERROR">
+                    <annotation>
+                        <documentation>Payment is not canceled, due to technical error.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="CANCEL_REQUESTED">
+                    <annotation>
+                        <documentation>A cancel request sent to acquirer.</documentation>
+                    </annotation>
+                </enumeration>
+            </documentation>
+        </annotation>
+        <restriction base="NMTOKEN" />
+    </simpleType>
+    <complexType name="paymentResponse">
+        <annotation>
+            <documentation>Only present when there was a paymentRequest element in the request.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="paymentSuccess" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>The payment was successfully authorized.
+                    </documentation>
+                </annotation>
+                <complexType>
+                    <sequence>
+                        <element name="status" type="ddp:authorizationStatus" minOccurs="1" maxOccurs="1" />
+                        <element name="id" type="ddp:paymentId" minOccurs="1" maxOccurs="1" />
+                        <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="paymentInsufficientData" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>There was insufficient payment data in the paymentRequest. Redirect the shopper to the payment menu.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="paymentError" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>There was an error initiating the payment.
+                    </documentation>
+                </annotation>
+                <complexType>
+                    <sequence>
+                        <element name="error" type="ddp:error" minOccurs="1" maxOccurs="1" />
+                        <element name="status" type="ddp:authorizationStatus" minOccurs="0" maxOccurs="1" />
+                        <element name="id" type="ddp:paymentId" minOccurs="0" maxOccurs="1" />
+                        <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+                    </sequence>
+                </complexType>
+            </element>
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="invoice">
+        <annotation>
+            <documentation>Optional additional data used for invoices.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="totalNetAmount" type="ddp:amount" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>Total net amount for this order.</documentation>
+                </annotation>
+            </element>
+            <element name="totalVatAmount" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation> Total VAT amount for this order.
+                    </documentation>
+                </annotation>
+                <complexType>
+                    <complexContent>
+                        <extension base="ddp:amount">
+                            <attribute name="rate" use="required">
+                                <simpleType>
+                                    <restriction base="decimal">
+                                        <whiteSpace value="collapse" />
+                                        <minInclusive value="0" />
+                                    </restriction>
+                                </simpleType>
+                            </attribute>
+                        </extension>
+                    </complexContent>
+                </complexType>
+            </element>
+            <element name="item" type="ddp:item" minOccurs="1" maxOccurs="unbounded">
+                <annotation>
+                    <documentation> Information concerning the ordered items.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="shipTo" type="ddp:destination" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> Name and address to use for shipping.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="additionalDescription" type="ddp:string100" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> Additional description concerning the payment order.
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="exhortationPeriod">
+        <attribute name="numberOfDays" type="int" use="required">
+            <annotation>
+                <documentation> The number of days after communication to the shopper the exhortation period will be initiated.
+                </documentation>
+            </annotation>
+        </attribute>
+        <attribute name="profile" type="ddp:string50" use="optional">
+            <annotation>
+                <documentation>The profile that is used to determine the payment methods for this order during this exhortation period.
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+    <complexType name="error">
+        <annotation>
+            <documentation>Message in case of errors or validation failure(s).
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="string">
+                <attribute name="code" type="ddp:errorCode" use="required" />
+            </extension>
+        </simpleContent>
+    </complexType>
+    <complexType name="success">
+        <annotation>
+            <documentation>Message in case of a successful request.
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="string">
+                <attribute name="code" type="ddp:successCode" use="required" />
+            </extension>
+        </simpleContent>
+    </complexType>
+    <complexType name="item">
+        <annotation>
+            <documentation>A single (line) item for this order.</documentation>
+        </annotation>
+        <sequence>
+            <element name="name" type="ddp:string50" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The human-readable name of this item.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="code" type="ddp:string50" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> A code or article number identifying this item.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="quantity" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>Quantity of this item that's being ordered.
+                    </documentation>
+                </annotation>
+                <complexType>
+                    <simpleContent>
+                        <extension base="int">
+                            <attribute name="unitOfMeasure" use="required">
+                                <annotation>
+                                    <documentation> Unit of measurement. The attribute can have the following values: PCS - pieces SEC- seconds BYT - bytes KB - kilobytes
+                                    </documentation>
+                                </annotation>
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="PCS" />
+                                        <enumeration value="SEC" />
+                                        <enumeration value="BYT" />
+                                        <enumeration value="KB" />
+                                    </restriction>
+                                </simpleType>
+                            </attribute>
+                        </extension>
+                    </simpleContent>
+                </complexType>
+            </element>
+            <element name="description" type="ddp:string100" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The description of the item.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="image" type="ddp:string2048" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>URL pointing to the location of the order item's image. The image itself can be subject to certain limitations on file size and image dimensions, defined by docdata.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="netAmount" type="ddp:amount" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The net amount for a single piece of this item.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="grossAmount" type="ddp:amount" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The gross amount for a single piece of this item.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="vat" type="ddp:vat" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The VAT amount for a single piece of this item.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalNetAmount" type="ddp:amount" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The total net amount for this item.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalGrossAmount" type="ddp:amount" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The total gross amount for this item.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalVat" type="ddp:vat" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The total VAT amount for this item.
+                    </documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute name="number" use="required" type="int" />
+    </complexType>
+    <complexType name="paymentRequestInput">
+        <annotation>
+            <documentation>Payment information to start a payment.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="paymentMethod" type="ddp:string50" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>Payment method to be used.
+                    </documentation>
+                </annotation>
+            </element>
+            <choice>
+                <element name="amexPaymentInput" type="ddp:cardPaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="masterCardPaymentInput" type="ddp:cardPaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="misterCashPaymentInput" type="ddp:cardPaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="maestroPaymentInput" type="ddp:cardPaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="visaPaymentInput" type="ddp:cardPaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="directDebitPaymentInput" type="ddp:directDebitPaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="bankTransferPaymentInput" type="ddp:bankTransferPaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="pointOfSalePaymentInput" type="ddp:pointOfSalePaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="offlinePaymentInput" type="ddp:offlinePaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="elvPaymentInput" type="ddp:elvPaymentInput" minOccurs="1" maxOccurs="1" />
+                <element name="iDealPaymentInput" type="ddp:iDealPaymentInput" minOccurs="1" maxOccurs="1" />
+            </choice>
+        </sequence>
+    </complexType>
+    <complexType name="cardPaymentInput">
+        <annotation>
+            <documentation> Generic credit or debit card payment input. This can be either: 1. A card number and an expiry date 2. A base64 encoded string containing the encrypted card details and the key alias
+            </documentation>
+        </annotation>
+        <choice>
+            <sequence>
+                <element name="cardHolderName" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+                <element name="cardNumber" type="ddp:primaryAccountNumber" minOccurs="1" maxOccurs="1" />
+                <element name="expiryDate" type="ddp:expiryDate" minOccurs="1" maxOccurs="1" />
+                <element name="securityCode" type="ddp:securityCode" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <element name="encryptedData" type="string" minOccurs="1" maxOccurs="1" />
+        </choice>
+    </complexType>
+    <complexType name="directDebitPaymentInput">
+        <annotation>
+            <documentation> Direct debit payment input.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="holderName" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="bic" type="ddp:bic" minOccurs="0" maxOccurs="1" />
+            <element name="iban" type="ddp:iban" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="bankTransferPaymentInput">
+        <annotation>
+            <documentation> Bank transfer payment input.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="emailAddress" type="ddp:emailAddress" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="pointOfSalePaymentInput">
+        <annotation>
+            <documentation> Point Of Sale payment input.
+            </documentation>
+        </annotation>
+    </complexType>
+    <complexType name="offlinePaymentInput">
+        <annotation>
+            <documentation> Offline payment input.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="register" type="ddp:register" minOccurs="0" maxOccurs="1" />
+            <element name="method" type="ddp:string50" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="elvPaymentInput">
+        <annotation>
+            <documentation> ELV payment input.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="accountNumber" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+            <element name="bankCode" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="iDealPaymentInput">
+        <annotation>
+            <documentation> iDEAL payment input.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="issuerId" type="ddp:iDealIssuerId" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="statusReport">
+        <sequence>
+            <element name="approximateTotals" type="ddp:approximateTotals" minOccurs="1" maxOccurs="1" />
+            <element name="payment" type="ddp:payment" minOccurs="0" maxOccurs="unbounded" />
+            <element name="consideredSafe" type="ddp:consideredSafe" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> Contains considered safe details. When the system is unable to determine if the order is considered safe, this element is omitted.
+                    </documentation>
+                </annotation>
+            </element>
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="approximateTotals">
+        <sequence>
+            <element name="totalRegistered" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The initial total amount requested for the order.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalShopperPending" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The amount for the order that is currently pending with the shopper.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalAcquirerPending" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The amount for the order that is currently pending with an acquirer.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalAcquirerApproved" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The amount for the order that is currently approved by an acquirer.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalCaptured" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The currently captured total amount for the order.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalRefunded" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The currently refunded total amount for the order.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalChargedback" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The currently chargedback amount for the order.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="totalReversed" type="int" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The currently reversed amount for the order.
+                    </documentation>
+                </annotation>
+            </element>
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+        <attribute name="exchangedTo" type="ddp:currency" use="optional">
+            <annotation>
+                <documentation> If multiple currencies are included in the totals, then the approximation, for convenience is based on a conversion. This is the currency that is used to convert to.
+                </documentation>
+            </annotation>
+        </attribute>
+        <attribute name="exchangeRateDate" type="ddp:plainDateTime" use="optional">
+            <annotation>
+                <documentation> If multiple currencies are included in the totals, then the approximation, for convenience is based on a conversion. This is the date on which the conversion was performed for the calculation of the totals.
+                </documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+    <complexType name="payment">
+        <sequence>
+            <element name="id" type="ddp:paymentId" minOccurs="1" maxOccurs="1" />
+            <element name="paymentMethod" type="ddp:string50" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>Payment method used for the payment.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="authorization" type="ddp:authorization" minOccurs="1" maxOccurs="1" />
+            <element name="extended" type="ddp:paymentInfo" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="paymentInfo">
+        <annotation>
+            <documentation> Extended payment information e.g. risk check scores and payment-specific information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="riskChecks" type="ddp:riskCheck" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation>Risk checks are controls which can prevent fraud. They can be configured in the back office.
+                    </documentation>
+                </annotation>
+            </element>
+            <choice minOccurs="0">
+                <annotation>
+                    <documentation>Note: there is no paymentInfo for PayPal, PaySafeCard, GiroPay, EPS and PostFinance. They only provide their PaymentMethodName. See the payment-element.
+                    </documentation>
+                </annotation>
+                <element name="amexPaymentInfo" type="ddp:amexPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="masterCardPaymentInfo" type="ddp:masterCardPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="visaPaymentInfo" type="ddp:visaPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="bankTransferPaymentInfo" type="ddp:bankTransferPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="maestroPaymentInfo" type="ddp:maestroPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="misterCashPaymentInfo" type="ddp:misterCashPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="giftCardPaymentInfo" type="ddp:giftCardPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="iDealPaymentInfo" type="ddp:iDealPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="afterpayOpenInvoicePaymentInfo" type="ddp:openInvoicePaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="afterpayDirectDebitPaymentInfo" type="ddp:openInvoicePaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="klarnaInvoicePaymentInfo" type="ddp:openInvoicePaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="klarnaAccountPaymentInfo" type="ddp:openInvoicePaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="elvPaymentInfo" type="ddp:elvPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="sepaDirectDebitPaymentInfo" type="ddp:sepaDirectDebitPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="pointOfSalePaymentInfo" type="ddp:pointOfSalePaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="offlinePaymentInfo" type="ddp:offlinePaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="sofortUeberweisungPaymentInfo" type="ddp:sofortPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="eBankingPaymentInfo" type="ddp:sofortPaymentInfo" minOccurs="1" maxOccurs="1" />
+                <element name="systemPaymentInfo" type="ddp:systemPaymentInfo" minOccurs="1" maxOccurs="1" />
+            </choice>
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="riskCheck">
+        <annotation>
+            <documentation> The sum of all risk checks. The higher the score, the higher the risk. Scores of 100 or above are canceled automatically.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="check" minOccurs="0" maxOccurs="unbounded">
+                <complexType>
+                    <simpleContent>
+                        <extension base="string">
+                            <attribute name="score" type="int" use="required" />
+                        </extension>
+                    </simpleContent>
+                </complexType>
+            </element>
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+        <attribute name="score" type="int" use="required" />
+    </complexType>
+    <complexType name="amexPaymentInfo">
+        <annotation>
+            <documentation> American Express credit card payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="cardHolder" type="ddp:string100" minOccurs="1" maxOccurs="1" />
+            <element name="cardCountry" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="panLast4" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="refusalReason" type="ddp:string250" minOccurs="0" maxOccurs="1" />
+            <element name="mandateNumber" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="masterCardPaymentInfo">
+        <annotation>
+            <documentation> MasterCard credit card payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="cardHolder" type="ddp:string100" minOccurs="1" maxOccurs="1" />
+            <element name="cardCountry" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="panLast4" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="refusalReason" type="ddp:string250" minOccurs="0" maxOccurs="1" />
+            <element name="mandateNumber" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="visaPaymentInfo">
+        <annotation>
+            <documentation> Visa credit card payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="cardHolder" type="ddp:string100" minOccurs="1" maxOccurs="1" />
+            <element name="cardCountry" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="panLast4" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="refusalReason" type="ddp:string250" minOccurs="0" maxOccurs="1" />
+            <element name="mandateNumber" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="maestroPaymentInfo">
+        <annotation>
+            <documentation> Maestro payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="cardHolder" type="ddp:string100" minOccurs="1" maxOccurs="1" />
+            <element name="cardCountry" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="panLast4" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="refusalReason" type="ddp:string250" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="misterCashPaymentInfo">
+        <annotation>
+            <documentation> Mister Cash payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="cardHolder" type="ddp:string100" minOccurs="1" maxOccurs="1" />
+            <element name="cardCountry" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="panLast4" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="refusalReason" type="ddp:string250" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="iDealPaymentInfo">
+        <annotation>
+            <documentation> Payment information concerning iDEAL.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="issuerId" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="holderName" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="shopperBankAccount" type="ddp:shopperBankAccount" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="sofortPaymentInfo">
+        <annotation>
+            <documentation> Payment information concerning Sofort.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="issuerId" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="shopperBankAccount" type="ddp:shopperBankAccount" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="bankTransferPaymentInfo">
+        <annotation>
+            <documentation> Payment information concerning the bank payment methods.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="beneficiaryName" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="beneficiaryCity" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="beneficiaryCountry" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="bankName" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="bankCity" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="bankCode" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="bankAccountNumber" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="bic" type="ddp:bic" minOccurs="0" maxOccurs="1" />
+            <element name="iban" type="ddp:iban" minOccurs="0" maxOccurs="1" />
+            <element name="shopperBankAccount" type="ddp:shopperBankAccount" minOccurs="0" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="giftCardPaymentInfo">
+        <annotation>
+            <documentation> Gift card payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="giftCardNumber" type="ddp:string50" minOccurs="1" maxOccurs="1" />
+            <element name="balance" type="ddp:string50" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="openInvoicePaymentInfo">
+        <annotation>
+            <documentation> Open invoice payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="invoiceNumber" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="reservationNumber" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="sepaDirectDebitPaymentInfo">
+        <annotation>
+            <documentation> SEPA Direct Debit payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="bic" type="ddp:bic" minOccurs="0" maxOccurs="1" />
+            <element name="iban" type="ddp:iban" minOccurs="0" maxOccurs="1" />
+            <element name="country" type="ddp:country" minOccurs="1" maxOccurs="1" />
+            <element name="mandateNumber" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="elvPaymentInfo">
+        <annotation>
+            <documentation> ELV payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="bankCode" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="bankAccountNumber" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <element name="shopperBankAccount" type="ddp:shopperBankAccount" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="pointOfSalePaymentInfo">
+        <annotation>
+            <documentation> Point Of Sale payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="receipt" type="ddp:pointOfSalePaymentReceipt" minOccurs="0" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="pointOfSalePaymentReceipt">
+        <annotation>
+            <documentation> Point Of Sale payment receipt.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="formattedReceipt" type="ddp:pointOfSalePaymentFormattedReceipt" minOccurs="1" maxOccurs="1" />
+            <element name="receiptValues" type="ddp:pointOfSalePaymentReceiptValues" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+        <attribute name="type" type="ddp:pointOfSalePaymentReceiptType" use="required" />
+    </complexType>
+    <simpleType name="pointOfSalePaymentReceiptType">
+        <annotation>
+            <documentation>
+                The receipt type.
+                <enumeration value="SHOPPER">
+                    <annotation>
+                        <documentation>A shopper receipt.</documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="MERCHANT">
+                    <annotation>
+                        <documentation>A merchant receipt.</documentation>
+                    </annotation>
+                </enumeration>
+            </documentation>
+        </annotation>
+        <restriction base="NMTOKEN" />
+    </simpleType>
+    <complexType name="pointOfSalePaymentFormattedReceipt">
+        <annotation>
+            <documentation> Point Of Sale formatted payment receipt lines.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="line" minOccurs="1" maxOccurs="unbounded">
+                <simpleType>
+                    <restriction base="string">
+                        <whiteSpace value="preserve" />
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="pointOfSalePaymentReceiptValues">
+        <annotation>
+            <documentation> Point Of Sale payment receipt values.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="value" minOccurs="1" maxOccurs="unbounded">
+                <complexType>
+                    <simpleContent>
+                        <extension base="string">
+                            <attribute name="key" use="required" />
+                        </extension>
+                    </simpleContent>
+                </complexType>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="systemPaymentInfo">
+        <annotation>
+            <documentation> Payment information concerning system payments.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="shopperBankAccount" type="ddp:shopperBankAccount" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="shopperBankAccount">
+        <annotation>
+            <documentation> Shopper bank account information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="iban" type="ddp:iban" minOccurs="0" maxOccurs="1" />
+            <element name="bic" type="ddp:bic" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="authorization">
+        <sequence>
+            <element name="status" type="ddp:authorizationStatus" minOccurs="1" maxOccurs="1" />
+            <element name="reason" type="ddp:string250" minOccurs="0" maxOccurs="1" />
+            <element name="amount" type="ddp:amount" minOccurs="1" maxOccurs="1" />
+            <element name="confidenceLevel" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+            <element name="capture" type="ddp:capture" minOccurs="0" maxOccurs="unbounded" />
+            <element name="refund" type="ddp:refund" minOccurs="0" maxOccurs="unbounded" />
+            <element name="chargeback" type="ddp:chargeback" minOccurs="0" maxOccurs="unbounded" />
+            <element name="reversal" type="ddp:reversal" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="capture">
+        <sequence>
+            <element name="merchantCaptureId" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="status" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+            <element name="amount" type="ddp:amount" minOccurs="1" maxOccurs="1" />
+            <element name="reason" type="ddp:string250" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="refund">
+        <sequence>
+            <element name="merchantRefundId" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="status" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+            <element name="amount" type="ddp:amount" minOccurs="1" maxOccurs="1" />
+            <element name="reason" type="ddp:string250" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="chargeback">
+        <sequence>
+            <element name="chargebackId" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="status" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+            <element name="amount" type="ddp:amount" minOccurs="1" maxOccurs="1" />
+            <element name="reason" type="ddp:string250" minOccurs="1" maxOccurs="1" />
+            <element name="enquiryReason" type="ddp:string250" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="reversal">
+        <sequence>
+            <element name="amount" type="ddp:amount" minOccurs="1" maxOccurs="1" />
+            <element name="reason" type="ddp:string250" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <simpleType name="cancelResult">
+        <annotation>
+            <documentation>
+                The results of the cancel operation.
+                <enumeration value="NO_PAYMENTS">
+                    <annotation>
+                        <documentation>No payments found for this order.</documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="ALREADY_CANCELED">
+                    <annotation>
+                        <documentation>All payments in this order were already canceled.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="SUCCESS">
+                    <annotation>
+                        <documentation>All payments in this order are canceled successfully.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="FAILED">
+                    <annotation>
+                        <documentation>At least one payment in this order was not canceled successfully. Use the status operation to get more details.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+                <enumeration value="PENDING">
+                    <annotation>
+                        <documentation>A request for cancelation has been sent to the acquirer, but no response received for at least one payment in this order. Use the status operation to get more details.
+                        </documentation>
+                    </annotation>
+                </enumeration>
+            </documentation>
+        </annotation>
+        <restriction base="NMTOKEN" />
+    </simpleType>
+    <!-- ============================================================ -->
+    <!-- ==================== Operation parameters ================== -->
+    <!-- ============================================================ -->
+    <element name="createRequest">
+        <annotation>
+            <documentation>Allows to request a new order to be registered.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> Merchant credentials.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="merchantOrderReference" type="ddp:string255" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> Unique merchant reference to this order.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="paymentPreferences" type="ddp:paymentPreferences" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> Preferences to use for this payment.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="menuPreferences" type="ddp:menuPreferences" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Preferences to be used for the webmenu.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="shopper" type="ddp:shopper" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> Information concerning the shopper who placed the order.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="totalGrossAmount" type="ddp:amount" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> Total order gross amount.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="billTo" type="ddp:destination" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> Name and address to use for billing.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="description" type="ddp:string255" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> The description of the order.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="receiptText" type="ddp:string50" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> The description that is used by payment providers on shopper statements.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="includeCosts" type="boolean" minOccurs="0" maxOccurs="1" default="false">
+                    <annotation>
+                        <documentation> Indicates if the cost of the chosen payment method should be added (true) or should not be added (false) to the order amount. Default is false. Note that this will not work for every payment method. In the future, DocData may no longer support this feature.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="paymentRequest" type="ddp:paymentRequest" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Optionally specifies a request. When it targets an existing previous payment, then that will be used to start a new payment with directly. If it does not point to a payment, then reservations are made as the starting point for upcoming repeated payments. Using "start" with the request instead is highly recommended.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="invoice" type="ddp:invoice" minOccurs="0" maxOccurs="1" />
+                <element name="integrationInfo" type="ddp:technicalIntegrationInfo" minOccurs="0" maxOccurs="1" />
+                <element name="salesPerson" type="ddp:salesPerson" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="version" type="decimal" fixed="1.3" use="required" />
+            <attribute name="testExtensibility" use="optional" type="boolean" default="false">
+                <annotation>
+                    <documentation>
+                        Test extensibility of client implementation by returning test elements and attributes indicated by
+                        <any />
+                        with the names and string value "_any".
+                    </documentation>
+                </annotation>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="createResponse">
+        <annotation>
+            <documentation>Response of the payment order create request.
+            </documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="createErrors" type="ddp:createErrors" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>An error occurred. No payment order was created.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="createSuccess" type="ddp:createSuccess" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> A payment order was successfully created. This does not mean that the whole request was processed successfully! The paymentResponse (see child elements) can still contain errors.
+                        </documentation>
+                    </annotation>
+                </element>
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <complexType name="createSuccess">
+        <sequence>
+            <element name="success" type="ddp:success" minOccurs="1" maxOccurs="1" />
+            <element name="key" type="ddp:paymentOrderKey" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> Generated key identifying the merchant and payment order.
+                    </documentation>
+                </annotation>
+            </element>
+            <element name="paymentResponse" type="ddp:paymentResponse" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="createErrors">
+        <sequence>
+            <element name="error" type="ddp:error" minOccurs="1" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="refundRequest">
+        <complexType>
+            <annotation>
+                <documentation>Allows to request a full or partial refund.
+                </documentation>
+            </annotation>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Merchant's credentials.</documentation>
+                    </annotation>
+                </element>
+                <element name="paymentId" type="ddp:paymentId" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> The payment ID on which the refund request needs to be performed. Can be retrieved from the status report.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="merchantRefundReference" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Merchant's internal ID for identifying this refund.
+                        </documentation>
+                    </annotation>
+                </element>
+                <choice>
+                    <annotation>
+                        <documentation>Either a simple a refund or a detailed refund.</documentation>
+                    </annotation>
+                    <group ref="ddp:simpleRefundGroup" minOccurs="1" maxOccurs="1" />
+                    <element name="refundItems" type="ddp:refundItems" minOccurs="1" maxOccurs="1" />
+                </choice>
+                <element name="cancelReserved" type="boolean" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Indicator if any reserved (new) refunds should be canceled in favor of this refund. Default is false, meaning that this new refund is in addition to already reserved refunds.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="requiredRefundDate" type="date" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> The date on which to refund. The first opportunity after this date for a refund will be used. The default is as soon as possible.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="refundBankAccount" type="ddp:sepaBankAccount" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Optional, refund bank account information for payment methods for which no information is known to the system yet. If provided here, but not needed, then it will be ignored (e.g. for iDEAL or credit card refunds).
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="integrationInfo" type="ddp:technicalIntegrationInfo" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="version" type="decimal" fixed="1.3" use="required" />
+            <attribute name="testExtensibility" use="optional" type="boolean" default="false">
+                <annotation>
+                    <documentation>
+                        Test extensibility of client implementation by returning test elements and attributes indicated by
+                        <any />
+                        with the names and string value "_any".
+                    </documentation>
+                </annotation>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="refundResponse">
+        <annotation>
+            <documentation>Response to a refund request.</documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="refundErrors" type="ddp:refundErrors" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>An error occurred. No refund request was created.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="refundSuccess" type="ddp:refundSuccess" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> A request for refund was successfully accepted. This does not mean that the whole request will be or has been processed successfully!
+                        </documentation>
+                    </annotation>
+                </element>
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <complexType name="refundErrors">
+        <sequence>
+            <element name="error" type="ddp:error" minOccurs="1" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="refundSuccess">
+        <sequence>
+            <element name="success" type="ddp:success" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="cancelRequest">
+        <annotation>
+            <documentation>Allows to request cancellation of the order and its payments.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Merchant credentials.</documentation>
+                    </annotation>
+                </element>
+                <element name="paymentOrderKey" type="ddp:paymentOrderKey" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Payment order key belonging to the order which needs to be canceled.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="integrationInfo" type="ddp:technicalIntegrationInfo" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="version" type="decimal" fixed="1.3" use="required" />
+            <attribute name="testExtensibility" use="optional" type="boolean" default="false">
+                <annotation>
+                    <documentation>
+                        Test extensibility of client implementation by returning test elements and attributes indicated by
+                        <any />
+                        with the names and string value "_any".
+                    </documentation>
+                </annotation>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="cancelResponse">
+        <annotation>
+            <documentation>Response to a cancel request.</documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="cancelErrors" type="ddp:cancelErrors" minOccurs="1" maxOccurs="1" />
+                <element name="cancelSuccess" type="ddp:cancelSuccess" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation> Returns summarized information about cancelation of the payments of this order. Use "status" to retrieve more information.
+                        </documentation>
+                    </annotation>
+                </element>
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <complexType name="cancelSuccess">
+        <sequence>
+            <element name="success" type="ddp:success" minOccurs="1" maxOccurs="1" />
+            <element name="result" type="ddp:cancelResult" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="cancelErrors">
+        <sequence>
+            <element name="error" type="ddp:error" minOccurs="1" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="startRequest">
+        <annotation>
+            <documentation>Allows to request the start of a new payment.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Merchant's credentials.</documentation>
+                    </annotation>
+                </element>
+                <element name="paymentOrderKey" type="ddp:paymentOrderKey" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Payment order key belonging to the order for which a transaction needs to be started.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="paymentAmount" type="ddp:amount" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>Optional payment amount to be used. If left empty, the full payment order's amount will be used.
+                        </documentation>
+                    </annotation>
+                </element>
+                <choice>
+                    <element name="recurringPaymentRequest" type="ddp:paymentRequest" minOccurs="1" maxOccurs="1">
+                        <annotation>
+                            <documentation> Specifies a request for a recurring payment. It should target an existing previous payment that will be used to start a new payment with directly. Reservations are also made as the starting point for upcoming repeated payments if needed. Must be specified if not giving direct payment request input.
+                            </documentation>
+                        </annotation>
+                    </element>
+                    <sequence>
+                        <choice>
+                            <element name="payment" type="ddp:paymentRequestInput" minOccurs="1" maxOccurs="1">
+                                <annotation>
+                                    <documentation> Specifies the details needed for starting a payment for a shopper without showing the hosted payment pages. Must be specified if not a subsequent recurring payment.
+                                    </documentation>
+                                </annotation>
+                            </element>
+                            <element name="token" type="ddp:token" minOccurs="1" maxOccurs="1">
+                                <annotation>
+                                    <documentation>Pay with a token.</documentation>
+                                </annotation>
+                            </element>
+                        </choice>
+                        <element name="returnUrl" type="ddp:string2048" minOccurs="0" maxOccurs="1">
+                            <annotation>
+                                <documentation> Optional return url to be used. If left empty, no return url will be used. (Limit is set by Internet Explorer of 2083 characters)
+                                </documentation>
+                            </annotation>
+                        </element>
+                        <element name="shopperInfo" type="ddp:shopperInfo" minOccurs="0" maxOccurs="1" />
+                    </sequence>
+                </choice>
+                <element name="integrationInfo" type="ddp:technicalIntegrationInfo" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="version" type="decimal" fixed="1.3" use="required" />
+            <attribute name="testExtensibility" use="optional" type="boolean" default="false">
+                <annotation>
+                    <documentation>
+                        Test extensibility of client implementation by returning test elements and attributes indicated by
+                        <any />
+                        with the names and string value "_any".
+                    </documentation>
+                </annotation>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="startResponse">
+        <annotation>
+            <documentation>Response to a start request.</documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="startErrors" type="ddp:startErrors" minOccurs="1" maxOccurs="1" />
+                <element name="startSuccess" type="ddp:startSuccess" minOccurs="1" maxOccurs="1" />
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <complexType name="startErrors">
+        <sequence>
+            <element name="error" type="ddp:error" minOccurs="1" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="startSuccess">
+        <sequence>
+            <element name="success" type="ddp:success" minOccurs="1" maxOccurs="1" />
+            <element name="paymentResponse" type="ddp:paymentResponse" minOccurs="1" maxOccurs="1" />
+            <element name="redirect" type="ddp:paymentRedirect" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="proceedRequest">
+        <annotation>
+            <documentation>Allows to request proceeding a payment that was started earlier.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Merchant's credentials.</documentation>
+                    </annotation>
+                </element>
+                <element name="paymentId" type="ddp:paymentId" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>The ID of the payment that should be proceeded.
+                        </documentation>
+                    </annotation>
+                </element>
+                <choice>
+                    <element name="threeDomainSecureAuthenticationResult" type="ddp:threeDomainSecureAuthenticationResult" minOccurs="1" maxOccurs="1">
+                        <annotation>
+                            <documentation>3DS Authentication result data. (tag name cannot start with a number)
+                            </documentation>
+                        </annotation>
+                    </element>
+                    <element name="iDealAuthorizationResult" type="ddp:iDealAuthorizationResult" minOccurs="1" maxOccurs="1">
+                        <annotation>
+                            <documentation>iDEAL authorization result data. No additional data is required.
+                            </documentation>
+                        </annotation>
+                    </element>
+                    <!-- This list will be extended with other payment methods which require shopper interaction. -->
+                </choice>
+                <element name="integrationInfo" type="ddp:technicalIntegrationInfo" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="version" type="decimal" fixed="1.3" use="required" />
+            <attribute name="testExtensibility" use="optional" type="boolean" default="false">
+                <annotation>
+                    <documentation>
+                        Test extensibility of client implementation by returning test elements and attributes indicated by
+                        <any />
+                        with the names and string value "_any".
+                    </documentation>
+                </annotation>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="proceedResponse">
+        <annotation>
+            <documentation>Response to a proceed request.</documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="proceedErrors" type="ddp:proceedErrors" minOccurs="1" maxOccurs="1" />
+                <element name="proceedSuccess" type="ddp:proceedSuccess" minOccurs="1" maxOccurs="1" />
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <complexType name="proceedErrors">
+        <sequence>
+            <element name="error" type="ddp:error" minOccurs="1" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="proceedSuccess">
+        <sequence>
+            <element name="success" type="ddp:success" minOccurs="1" maxOccurs="1" />
+            <element name="paymentResponse" type="ddp:paymentResponse" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="captureRequest">
+        <annotation>
+            <documentation>Allows to request capture of an amount for a payment authorization.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Merchant's credentials.</documentation>
+                    </annotation>
+                </element>
+                <element name="paymentId" type="ddp:paymentId" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Payment id with check digit identifying the payment.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="merchantCaptureReference" type="ddp:string35" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation>Merchant's internal ID for identifying this capture. Will be returned in the capture response and in status reports.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="amount" type="ddp:amount" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Amount to be captured. If no amount nor an order item code is specified, the capture will be done for the order's total amount.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="itemCode" type="ddp:string50" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> A code or article number identifying an item in the order. If specified, this order item's total (gross) amount will be used for this capture's amount and currency.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="description" type="ddp:string250" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Optional description for this capture.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="finalCapture" type="boolean" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Indicator whether this is the final capture for this order.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="cancelReserved" type="boolean" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> Indicator if any reserved (new) captures should be canceled in favor of this capture. Must always be true for captures.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="requiredCaptureDate" type="date" minOccurs="0" maxOccurs="1">
+                    <annotation>
+                        <documentation> The date on which to capture. The first opportunity after this date for a capture will be used. The default is as soon as possible.
+                        </documentation>
+                    </annotation>
+                </element>
+                <element name="integrationInfo" type="ddp:technicalIntegrationInfo" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="version" type="decimal" fixed="1.3" use="required" />
+            <attribute name="testExtensibility" use="optional" type="boolean" default="false">
+                <annotation>
+                    <documentation>
+                        Test extensibility of client implementation by returning test elements and attributes indicated by
+                        <any />
+                        with the names and string value "_any".
+                    </documentation>
+                </annotation>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="captureResponse">
+        <annotation>
+            <documentation>Response to a capture request.</documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="captureErrors" type="ddp:captureErrors" minOccurs="1" maxOccurs="1" />
+                <element name="captureSuccess" type="ddp:captureSuccess" minOccurs="1" maxOccurs="1" />
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <complexType name="captureErrors">
+        <sequence>
+            <element name="error" type="ddp:error" minOccurs="1" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="captureSuccess">
+        <sequence>
+            <element name="success" type="ddp:success" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="statusRequest">
+        <annotation>
+            <documentation>Allows to request the status of an order and its payments.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1" />
+                <element name="paymentOrderKey" type="ddp:paymentOrderKey" minOccurs="1" maxOccurs="1" />
+                <element name="integrationInfo" type="ddp:technicalIntegrationInfo" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="version" type="decimal" fixed="1.3" use="required" />
+            <attribute name="testExtensibility" use="optional" type="boolean" default="false">
+                <annotation>
+                    <documentation>
+                        Test extensibility of client implementation by returning test elements and attributes indicated by
+                        <any />
+                        with the names and string value "_any".
+                    </documentation>
+                </annotation>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="statusResponse">
+        <annotation>
+            <documentation>Response to a status request.</documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="statusErrors" type="ddp:statusErrors" minOccurs="1" maxOccurs="1" />
+                <element name="statusSuccess" type="ddp:statusSuccess" minOccurs="1" maxOccurs="1" />
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <element name="extendedStatusRequest">
+        <annotation>
+            <documentation>Allows to request the extended status of an order and its payments.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1" />
+                <element name="paymentOrderKey" type="ddp:paymentOrderKey" minOccurs="1" maxOccurs="1" />
+                <element name="integrationInfo" type="ddp:technicalIntegrationInfo" minOccurs="0" maxOccurs="1" />
+            </sequence>
+            <attribute name="version" type="decimal" fixed="1.3" use="required" />
+            <attribute name="testExtensibility" use="optional" type="boolean" default="false">
+                <annotation>
+                    <documentation>
+                        Test extensibility of client implementation by returning test elements and attributes indicated by
+                        <any />
+                        with the names and string value "_any".
+                    </documentation>
+                </annotation>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="extendedStatusResponse">
+        <annotation>
+            <documentation>Response to a extended status request.</documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="statusErrors" type="ddp:statusErrors" minOccurs="1" maxOccurs="1" />
+                <element name="statusSuccess" type="ddp:statusSuccess" minOccurs="1" maxOccurs="1" />
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <complexType name="statusErrors">
+        <sequence>
+            <element name="error" type="ddp:error" minOccurs="1" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="statusSuccess">
+        <sequence>
+            <element name="success" type="ddp:success" minOccurs="1" maxOccurs="1" />
+            <element name="report" type="ddp:statusReport" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="listPaymentMethodsRequest">
+        <annotation>
+            <!-- Note: when updating this description, also update the description in the WSDL. -->
+            <documentation>To be implemented in a future minor version upgrade.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="merchant" type="ddp:merchant" minOccurs="1" maxOccurs="1">
+                    <annotation>
+                        <documentation>Merchant's credentials.</documentation>
+                    </annotation>
+                </element>
+                <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <element name="listPaymentMethodsResponse">
+        <annotation>
+            <documentation>Response to a listPaymentMethods request.
+            </documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element name="listPaymentMethodsErrors" type="ddp:listPaymentMethodsErrors" minOccurs="1" maxOccurs="1" />
+                <element name="listPaymentMethodsSuccess" type="ddp:listPaymentMethodsSuccess" minOccurs="1" maxOccurs="1" />
+            </choice>
+            <attribute name="ddpXsdVersion" type="ddp:string35" use="required" />
+        </complexType>
+    </element>
+    <complexType name="listPaymentMethodsErrors">
+        <sequence>
+            <element name="error" type="ddp:error" minOccurs="1" maxOccurs="unbounded" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="listPaymentMethodsSuccess">
+        <sequence>
+            <element name="success" type="ddp:success" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="sepaBankAccount">
+        <sequence>
+            <element name="holderName" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+            <element name="holderCity" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+            <element name="holderCountry" type="ddp:country" minOccurs="1" maxOccurs="1" />
+            <element name="bic" type="ddp:string35" minOccurs="0" maxOccurs="1" />
+            <element name="iban" type="ddp:string35" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="salesPerson">
+        <sequence>
+            <element name="name" type="ddp:name" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation>The name of the sales person.</documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="register">
+        <sequence>
+            <element name="id" type="ddp:string50" minOccurs="1" maxOccurs="1" />
+            <element name="location" type="ddp:string50" minOccurs="0" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="offlinePaymentInfo">
+        <annotation>
+            <documentation> Offline payment information.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="register" type="ddp:register" minOccurs="0" maxOccurs="1" />
+            <element name="method" type="ddp:string50" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="token">
+        <sequence minOccurs="0" maxOccurs="1">
+            <choice>
+                <element name="amexTokenInput" type="ddp:cardTokenInput" minOccurs="1" maxOccurs="1" />
+                <element name="masterCardTokenInput" type="ddp:cardTokenInput" minOccurs="1" maxOccurs="1" />
+                <element name="visaTokenInput" type="ddp:cardTokenInput" minOccurs="1" maxOccurs="1" />
+            </choice>
+        </sequence>
+        <attribute name="key" type="ddp:string512" use="required">
+            <annotation>
+                <documentation>Key of the token</documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+    <complexType name="cardTokenInput">
+        <annotation>
+            <documentation> Generic credit or debit card payment input. This can be either: 1. A security code 2. A base64 encoded string containing the encrypted card details and the key alias
+            </documentation>
+        </annotation>
+        <choice>
+            <element name="securityCode" type="ddp:securityCode" minOccurs="1" maxOccurs="1" />
+            <element name="encryptedData" type="string" minOccurs="1" maxOccurs="1" />
+        </choice>
+    </complexType>
+    <complexType name="paymentRedirect">
+        <annotation>
+            <documentation>Redirect instructions.</documentation>
+        </annotation>
+        <sequence>
+            <element name="method" type="ddp:httpMethod" minOccurs="1" maxOccurs="1" />
+            <element name="url" type="ddp:string2048" minOccurs="1" maxOccurs="1" />
+            <element name="parameters" type="ddp:parameters" minOccurs="1" maxOccurs="1" />
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="shopperInfo">
+        <annotation>
+            <documentation>Shopper information needed by 3DS.</documentation>
+        </annotation>
+        <sequence>
+            <element name="shopperIp" type="ddp:string250" minOccurs="1" maxOccurs="1" />
+            <element name="browserAccept" type="ddp:string250" minOccurs="1" maxOccurs="1" />
+            <element name="browserUserAgent" type="ddp:string250" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+</schema>
