@@ -29,7 +29,7 @@ class ApiSourceType
      * Constant for value 'RelatedSearch'
      * @return string 'RelatedSearch'
      */
-    const VALUE_RELATEDSEARCH = 'RelatedSearch';
+    const VALUE_RELATED_SEARCH = 'RelatedSearch';
     /**
      * Constant for value 'Phonebook'
      * @return string 'Phonebook'
@@ -64,7 +64,7 @@ class ApiSourceType
      * Constant for value 'InstantAnswer'
      * @return string 'InstantAnswer'
      */
-    const VALUE_INSTANTANSWER = 'InstantAnswer';
+    const VALUE_INSTANT_ANSWER = 'InstantAnswer';
     /**
      * Constant for value 'News'
      * @return string 'News'
@@ -74,12 +74,12 @@ class ApiSourceType
      * Constant for value 'QueryLocation'
      * @return string 'QueryLocation'
      */
-    const VALUE_QUERYLOCATION = 'QueryLocation';
+    const VALUE_QUERY_LOCATION = 'QueryLocation';
     /**
      * Constant for value 'MobileWeb'
      * @return string 'MobileWeb'
      */
-    const VALUE_MOBILEWEB = 'MobileWeb';
+    const VALUE_MOBILE_WEB = 'MobileWeb';
     /**
      * Constant for value 'Translation'
      * @return string 'Translation'
@@ -100,17 +100,17 @@ class ApiSourceType
      * @uses self::VALUE_SPELL
      * @uses self::VALUE_WEB
      * @uses self::VALUE_IMAGE
-     * @uses self::VALUE_RELATEDSEARCH
+     * @uses self::VALUE_RELATED_SEARCH
      * @uses self::VALUE_PHONEBOOK
      * @uses self::VALUE_SHOWTIMES
      * @uses self::VALUE_WEATHER
      * @uses self::VALUE_VIDEO
      * @uses self::VALUE_AD
      * @uses self::VALUE_XRANK
-     * @uses self::VALUE_INSTANTANSWER
+     * @uses self::VALUE_INSTANT_ANSWER
      * @uses self::VALUE_NEWS
-     * @uses self::VALUE_QUERYLOCATION
-     * @uses self::VALUE_MOBILEWEB
+     * @uses self::VALUE_QUERY_LOCATION
+     * @uses self::VALUE_MOBILE_WEB
      * @uses self::VALUE_TRANSLATION
      * @return string[]
      */
@@ -120,17 +120,17 @@ class ApiSourceType
             self::VALUE_SPELL,
             self::VALUE_WEB,
             self::VALUE_IMAGE,
-            self::VALUE_RELATEDSEARCH,
+            self::VALUE_RELATED_SEARCH,
             self::VALUE_PHONEBOOK,
             self::VALUE_SHOWTIMES,
             self::VALUE_WEATHER,
             self::VALUE_VIDEO,
             self::VALUE_AD,
             self::VALUE_XRANK,
-            self::VALUE_INSTANTANSWER,
+            self::VALUE_INSTANT_ANSWER,
             self::VALUE_NEWS,
-            self::VALUE_QUERYLOCATION,
-            self::VALUE_MOBILEWEB,
+            self::VALUE_QUERY_LOCATION,
+            self::VALUE_MOBILE_WEB,
             self::VALUE_TRANSLATION,
         );
     }
