@@ -11,6 +11,14 @@ use WsdlToPhp\PackageGenerator\Generator\Utils;
 class StructValue extends AbstractModel
 {
     /**
+     * @var string
+     */
+    const MATCH_PATTERN = '/([[:upper:]]+[[:lower:]]*)|([[:lower:]]+)|(\d+)/';
+    /**
+     * @var string
+     */
+    const REAPLCEMENT_PATTERN = '$1$2$3_';
+    /**
      * Store the constants generated per structName
      * @var array
      */
@@ -54,9 +62,17 @@ class StructValue extends AbstractModel
         if ($this->getGenerator()->getOptionGenericConstantsNames()) {
             return 'ENUM_VALUE_' . $this->getIndex();
         } else {
-            $key = self::constantSuffix($this->getOwner()->getName(), parent::getCleanName($keepMultipleUnderscores), $this->getIndex());
-            return 'VALUE_' . strtoupper(parent::getCleanName($keepMultipleUnderscores)) . ($key ? '_' . $key : '');
+            $nameWithSeparatedWords = $this->getNameWithSeparatedWords($keepMultipleUnderscores);
+            $key = self::constantSuffix($this->getOwner()->getName(), $nameWithSeparatedWords, $this->getIndex());
+            return 'VALUE_' . strtoupper($nameWithSeparatedWords . ($key ? '_' . $key : ''));
         }
+    }
+    /**
+     * @return string
+     */
+    public function getNameWithSeparatedWords($keepMultipleUnderscores)
+    {
+        return trim(parent::cleanString(preg_replace(self::MATCH_PATTERN, self::REAPLCEMENT_PATTERN, $this->getName()), $keepMultipleUnderscores), '_');
     }
     /**
      * Returns the value with good type
