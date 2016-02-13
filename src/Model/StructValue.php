@@ -68,11 +68,12 @@ class StructValue extends AbstractModel
         }
     }
     /**
+     * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      * @return string
      */
-    public function getNameWithSeparatedWords($keepMultipleUnderscores)
+    public function getNameWithSeparatedWords($keepMultipleUnderscores = false)
     {
-        return trim(parent::cleanString(preg_replace(self::MATCH_PATTERN, self::REAPLCEMENT_PATTERN, $this->getName()), $keepMultipleUnderscores), '_');
+        return trim(self::cleanString(preg_replace(self::MATCH_PATTERN, self::REAPLCEMENT_PATTERN, $this->getName()), $keepMultipleUnderscores), '_');
     }
     /**
      * Returns the value with good type
@@ -110,7 +111,7 @@ class StructValue extends AbstractModel
      * Returns the index which has to be added at the end of natural constant name defined with the value cleaned
      * Allows to avoid multiple constant name to be indentic
      * @param string $structName the struct name
-     * @param string|int|float $value the value
+     * @param string $value the value
      * @param int $index the position of the value
      * @return int
      */
