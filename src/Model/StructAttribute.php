@@ -175,6 +175,14 @@ class StructAttribute extends AbstractModel
         return $this->getGenerator()->getStruct($this->getType());
     }
     /**
+     * @return string[]
+     */
+    public function getTypeStructMeta()
+    {
+        $typeStruct = $this->getTypeStruct();
+        return ($typeStruct && !$typeStruct->getIsStruct()) ? $typeStruct->getMeta() : array();
+    }
+    /**
      * @return Struct|null
      */
     public function getInheritanceStruct()
@@ -182,13 +190,19 @@ class StructAttribute extends AbstractModel
         return $this->getGenerator()->getStruct($this->getInheritance());
     }
     /**
+     * @return string[]
+     */
+    public function getInheritanceStructMeta()
+    {
+        $inheritanceStruct = $this->getInheritanceStruct();
+        return ($inheritanceStruct && !$inheritanceStruct->getIsStruct()) ? $inheritanceStruct->getMeta() : array();
+    }
+    /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getMeta()
      * @return string[]
      */
     public function getMeta()
     {
-        $typeStruct = $this->getTypeStruct();
-        $inheritanceStruct = $this->getInheritanceStruct();
-        return array_merge_recursive(parent::getMeta(), ($typeStruct && !$typeStruct->getIsStruct()) ? $typeStruct->getMeta() : array(), ($inheritanceStruct && !$inheritanceStruct->getIsStruct()) ? $inheritanceStruct->getMeta() : array());
+        return array_merge_recursive(parent::getMeta(), $this->getTypeStructMeta(), $this->getInheritanceStructMeta());
     }
 }
