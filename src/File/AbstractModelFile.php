@@ -197,7 +197,6 @@ abstract class AbstractModelFile extends AbstractFile
         $block->addChild($this->getClassDeclarationLine());
         $this
             ->defineModelAnnotationsFromWsdl($block)
-            ->defineModelAnnotationsFromInheritance($block)
             ->definePackageAnnotations($block)
             ->defineGeneralAnnotations($block);
         return $block;
@@ -224,21 +223,6 @@ abstract class AbstractModelFile extends AbstractFile
     protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model = null)
     {
         FileUtils::defineModelAnnotationsFromWsdl($block, $model instanceof AbstractModel ? $model : $this->getModel());
-        return $this;
-    }
-    /**
-     * @param PhpAnnotationBlock $block
-     * @return AbstractModelFile
-     */
-    protected function defineModelAnnotationsFromInheritance(PhpAnnotationBlock $block)
-    {
-        $struct = $this->getGenerator()->getStruct($this->getModel()->getInheritance());
-        if ($struct instanceof StructModel && $struct->getIsStruct() === false) {
-            $validMeta = $this->getValidMetaValues($struct);
-            foreach ($validMeta as $meta) {
-                $block->addChild($meta);
-            }
-        }
         return $this;
     }
     /**
@@ -415,7 +399,7 @@ abstract class AbstractModelFile extends AbstractFile
         $model = null;
         $attribute = $this->getStructAttribute($attribute);
         if ($attribute instanceof StructAttributeModel) {
-            $model = $this->getGenerator()->getStruct($attribute->getType());
+            $model = $attribute->getTypeStruct();
         }
         return $model;
     }
