@@ -446,7 +446,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return sprintf('%s%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '' : '|null');
+        return sprintf('%s%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '' : '|null');
     }
     /**
      * @param StructAttributeModel $attribute
@@ -456,7 +456,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return sprintf('%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '');
+        return sprintf('%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '');
     }
     /**
      * @param StructAttributeModel $attribute
@@ -476,6 +476,19 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $attribute = $this->getStructAttribute($attribute);
         return ($returnArrayType && $attribute->isArray()) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
+    }
+    /**
+     * @param StructAttributeModel $attribute
+     * @return string
+     */
+    protected function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null)
+    {
+        $attribute = $this->getStructAttribute($attribute);
+        $attributeType = $this->getStructAttributeType($attribute, true);
+        if (XsdTypes::isAnonymous($attributeType)) {
+            $attributeType = self::getPhpType($attributeType);
+        }
+        return $attributeType;
     }
     /**
      * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
