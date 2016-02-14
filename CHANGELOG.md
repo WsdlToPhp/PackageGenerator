@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## WIP
+## 1.4.0
 - issue #44 - Constant naming separate with underscore
     - **BC**:
         - enumeration constants are renamed such `myConstantValue` is now `MY_CONSTANT_VALUE` instead of previously being `MYCONSTANTVALUE`. Be sure to update your code that use enumeration's constants
