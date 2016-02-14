@@ -1,13 +1,21 @@
 <?php
-
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
-
 class XsdTypes extends AbstractYamlReader
 {
     /**
      * @var string
      */
     const MAIN_KEY = 'xsd_types';
+    /**
+     * This type is returned by the \SaoapClient class when
+     * it does not succeed to define the type of a struct or an attribute
+     * @var string
+     */
+    const ANONYMOUS_TYPE = '/anonymous\d+/';
+    /**
+     * @var string
+     */
+    const ANONYMOUS_KEY = 'anonymous';
     /**
      * List of PHP reserved types from config file
      * @var array
@@ -44,7 +52,15 @@ class XsdTypes extends AbstractYamlReader
      */
     public function isXsd($xsdType)
     {
-        return array_key_exists($xsdType, $this->types);
+        return array_key_exists($xsdType, $this->types) || self::isAnonymous($xsdType);
+    }
+    /**
+     * @param string $xsdType
+     * @return bool
+     */
+    public static function isAnonymous($xsdType)
+    {
+        return (bool) preg_match(self::ANONYMOUS_TYPE, $xsdType);
     }
     /**
      * @param string $xsdType
@@ -52,6 +68,6 @@ class XsdTypes extends AbstractYamlReader
      */
     public function phpType($xsdType)
     {
-        return $this->isXsd($xsdType) ? $this->types[$xsdType] : '';
+        return $this->isAnonymous($xsdType) ? $this->types[self::ANONYMOUS_KEY] : ($this->isXsd($xsdType) ? $this->types[$xsdType] : '');
     }
 }
