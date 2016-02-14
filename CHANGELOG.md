@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 1.4.1
-- add `time` XSD type matching `string`PHP type
+- Add `time` XSD type matching `string`PHP type
 
 ## 1.4.0
 - issue #44 - Constant naming separate with underscore
