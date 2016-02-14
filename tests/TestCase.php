@@ -259,7 +259,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     public static function getLnpInstance()
     {
-        return self::getInstance(self::wsdlLnpPath());
+        return self::getInstance(self::wsdlLnpPath(), true);
     }
     /**
      * @return Generator

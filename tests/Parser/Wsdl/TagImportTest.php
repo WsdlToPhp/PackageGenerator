@@ -66,6 +66,10 @@ class TagImportTest extends WsdlParser
             $schemaContainer->add($schema);
         }
 
+        foreach($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
+            $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
+        }
+
         $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
         $this->assertEquals($schemaContainer, $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas());
     }
@@ -84,6 +88,10 @@ class TagImportTest extends WsdlParser
             $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schema->getContent()->setCurrentTag('import');
             $schemaContainer->add($schema);
+        }
+
+        foreach($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
+            $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
         }
 
         $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
@@ -106,6 +114,10 @@ class TagImportTest extends WsdlParser
             $schemaContainer->add($schema);
         }
 
+        foreach($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
+            $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
+        }
+
         $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
         $this->assertEquals($schemaContainer, $tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas());
     }
@@ -119,7 +131,13 @@ class TagImportTest extends WsdlParser
         $tagImportParser->parse();
 
         $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
+
         $schemaPath = realpath(__DIR__ . '/../../resources/docdatapayments/1_3.1.xsd');
+        $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
+        $schema->getContent()->setCurrentTag('import');
+        $schemaContainer->add($schema);
+
+        $schemaPath = realpath(__DIR__ . '/../../resources/docdatapayments/1_3.2.xsd');
         $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
         $schema->getContent()->setCurrentTag('import');
         $schemaContainer->add($schema);

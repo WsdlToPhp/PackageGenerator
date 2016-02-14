@@ -19,6 +19,6 @@ class GeneratorSoapClientTest extends TestCase
             ->setDestination(self::getTestDirectory())
             ->setOrigin(self::schemaPartnerPath());
 
-        $generator = new Generator($options);
+        new Generator($options);
     }
 }
