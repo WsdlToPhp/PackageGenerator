@@ -4,6 +4,7 @@
 - issue #47 - XSD types are not well inherited by elements
     - Improvements on recursive schema loading
     - Improvements on meta gathering in generated classes
+    - Handle anonymous types
 
 ## 1.3.1
 - Improve/fix readme
