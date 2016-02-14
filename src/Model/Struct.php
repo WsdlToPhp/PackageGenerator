@@ -151,7 +151,7 @@ class Struct extends AbstractModel
      */
     protected function addInheritanceAttributes(StructAttributeContainer $attributes)
     {
-        if ($this->getInheritance() != '' && ($model = $this->getGenerator()->getStruct($this->getInheritance())) instanceof Struct) {
+        if ($this->getInheritance() != '' && ($model = $this->getInheritanceStruct()) instanceof Struct) {
             while ($model->getIsStruct()) {
                 foreach ($model->getAttributes() as $attribute) {
                     $attributes->add($attribute);
@@ -327,5 +327,21 @@ class Struct extends AbstractModel
             $extends = $this->getGenerator()->getOptionStructClass();
         }
         return $short ? Utils::removeNamespace($extends) : $extends;
+    }
+    /**
+     * @return Struct|null
+     */
+    public function getInheritanceStruct()
+    {
+        return $this->getGenerator()->getStruct($this->getInheritance());
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getMeta()
+     * @return string[]
+     */
+    public function getMeta()
+    {
+        $inheritanceStruct = $this->getInheritanceStruct();
+        return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->getIsStruct()) ? $inheritanceStruct->getMeta() : array());
     }
 }
