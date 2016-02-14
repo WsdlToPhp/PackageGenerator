@@ -113,7 +113,7 @@ class StructArray extends Struct
      */
     protected function addArrayMethodAdd(MethodContainer $methods)
     {
-        if (($model = $this->getRestrictionFromStructAttribute()) instanceof StructModel) {
+        if ($this->getRestrictionFromStructAttribute() instanceof StructModel) {
             $method = new PhpMethod(self::METHOD_ADD, array(
                 'item',
             ));

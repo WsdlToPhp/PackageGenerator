@@ -47,7 +47,7 @@ class XsdTypesTest extends TestCase
      */
     public function testPhpXsd()
     {
-        $this->assertSame('string', self::instance()->phpType('duration'));
+        $this->assertSame('int', self::instance()->phpType('duration'));
     }
     /**
      *
@@ -55,5 +55,19 @@ class XsdTypesTest extends TestCase
     public function testPhpNonXsd()
     {
         $this->assertSame('', self::instance()->phpType('Duration'));
+    }
+    /**
+     *
+     */
+    public function testIsAnonymous()
+    {
+        $this->assertTrue(self::instance()->isAnonymous('anonymous159'));
+    }
+    /**
+     *
+     */
+    public function testAnonymousPhpType()
+    {
+        $this->assertSame('string', self::instance()->phpType('anonymous159'));
     }
 }

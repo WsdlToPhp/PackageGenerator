@@ -33,6 +33,7 @@ xsd_types:
     gMonthDay: "int"
     gYearMonth: "int"
     unsignedInt: "int"
+    anonymous: "string"
     unsignedLong: "int"
     unsignedByte: "string"
     unsignedShort: "int"

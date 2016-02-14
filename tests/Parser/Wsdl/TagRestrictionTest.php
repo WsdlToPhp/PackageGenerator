@@ -22,6 +22,13 @@ class TagRestrictionTest extends WsdlParser
         return new TagRestriction(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
+     */
+    public static function docDataPaymentsViewInstance()
+    {
+        return new TagRestriction(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
+    }
+    /**
      *
      */
     public function testParseImageViewService()
@@ -65,5 +72,39 @@ class TagRestrictionTest extends WsdlParser
             }
         }
         $this->assertTrue($ok);
+    }
+    /**
+     *
+     */
+    public function testParseDocDataPayments()
+    {
+        $tagRestrictionParser = self::docDataPaymentsViewInstance();
+
+        $tagRestrictionParser->parse();
+
+        $count = 0;
+        foreach ($tagRestrictionParser->getGenerator()->getStructs() as $struct) {
+            if ($struct instanceof Struct) {
+                switch($struct->getName()) {
+                    case 'plainDateTime':
+                        if (!$struct->getIsStruct()) {
+                            $this->assertSame('19', $struct->getMetaValue('minLength'));
+                            $this->assertSame('19', $struct->getMetaValue('maxLength'));
+                            $this->assertSame('normalizedString', $struct->getInheritance());
+                            $count++;
+                        }
+                        break;
+                    case 'emailAddress':
+                        if (!$struct->getIsStruct()) {
+                            $this->assertSame('[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)', $struct->getMetaValue('pattern'));
+                            $this->assertSame('string100', $struct->getInheritance());
+                            $count++;
+                        }
+                        break;
+                }
+            }
+        }
+
+        $this->assertEquals(2, $count);
     }
 }

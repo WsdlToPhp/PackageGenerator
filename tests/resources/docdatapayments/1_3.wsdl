@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-b01-. -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ddp="http://localhost/services/paymentservice/1_3/" xmlns:tns="http://localhost/services/paymentservice/1_3/paymentservice.wsdl" name="paymentService" targetNamespace="http://localhost/services/paymentservice/1_3/paymentservice.wsdl">
+    <documentation>The SOAP payment service provides operations for dealing with the live transactional system of DocData.
+    </documentation>
+    <types>
+        <xsd:schema>
+            <xsd:import schemaLocation="1_3.1.xsd" namespace="http://localhost/services/paymentservice/1_3/" />
+        </xsd:schema>
+    </types>
+    <message name="createRequest">
+        <documentation>Parameters to the "create" operation.</documentation>
+        <part name="parameters" element="ddp:createRequest" />
+    </message>
+    <message name="createResponse">
+        <documentation>Response to the "create" operation.</documentation>
+        <part name="parameters" element="ddp:createResponse" />
+    </message>
+    <message name="refundRequest">
+        <part name="parameters" element="ddp:refundRequest" />
+    </message>
+    <message name="refundResponse">
+        <part name="parameters" element="ddp:refundResponse" />
+    </message>
+    <message name="cancelRequest">
+        <part name="parameters" element="ddp:cancelRequest" />
+    </message>
+    <message name="cancelResponse">
+        <part name="parameters" element="ddp:cancelResponse" />
+    </message>
+    <message name="startRequest">
+        <part name="parameters" element="ddp:startRequest" />
+    </message>
+    <message name="startResponse">
+        <part name="parameters" element="ddp:startResponse" />
+    </message>
+    <message name="proceedRequest">
+        <part name="parameters" element="ddp:proceedRequest" />
+    </message>
+    <message name="proceedResponse">
+        <part name="parameters" element="ddp:proceedResponse" />
+    </message>
+    <message name="captureRequest">
+        <part name="parameters" element="ddp:captureRequest" />
+    </message>
+    <message name="captureResponse">
+        <part name="parameters" element="ddp:captureResponse" />
+    </message>
+    <message name="statusRequest">
+        <part name="parameters" element="ddp:statusRequest" />
+    </message>
+    <message name="statusResponse">
+        <part name="parameters" element="ddp:statusResponse" />
+    </message>
+    <message name="extendedStatusRequest">
+        <part name="parameters" element="ddp:extendedStatusRequest" />
+    </message>
+    <message name="extendedStatusResponse">
+        <part name="parameters" element="ddp:extendedStatusResponse" />
+    </message>
+    <message name="listPaymentMethodsRequest">
+        <part name="parameters" element="ddp:listPaymentMethodsRequest" />
+    </message>
+    <message name="listPaymentMethodsResponse">
+        <part name="parameters" element="ddp:listPaymentMethodsResponse" />
+    </message>
+    <portType name="PaymentServiceSOAP">
+        <operation name="create">
+            <documentation>Creates a payment order in the DocData system, so it may be processed later.
+            </documentation>
+            <input message="tns:createRequest" />
+            <output message="tns:createResponse" />
+        </operation>
+        <operation name="start">
+            <documentation>Starts processing of a payment order in the DocData system. This is an alternative to using the web menu hosted payment pages. When an initial (previous) payment order is specified, the details will be reused from that payment order.
+            </documentation>
+            <input message="tns:startRequest" />
+            <output message="tns:startResponse" />
+        </operation>
+        <operation name="proceed">
+            <documentation>Proceeds processing of a payment order in the DocData system. This is a follow-up on the start operation, in case of any required shopper interaction, like 3DS or iDEAL. This operation is called with the result of the shopper interaction and proceeds handling the payment.
+            </documentation>
+            <input message="tns:proceedRequest" />
+            <output message="tns:proceedResponse" />
+        </operation>
+        <operation name="cancel">
+            <documentation>Cancels an authorized payment order, voiding the order. Only possible if not yet captured, and only for the full amount.
+            </documentation>
+            <input message="tns:cancelRequest" />
+            <output message="tns:cancelResponse" />
+        </operation>
+        <operation name="capture">
+            <documentation>Creates a capture request in the DocData system for (part of) a payment order, so it may be processed later.
+            </documentation>
+            <input message="tns:captureRequest" />
+            <output message="tns:captureResponse" />
+        </operation>
+        <operation name="refund">
+            <documentation>Creates a refund request in the DocData system to (partially) undo a captured amount, so it may be processed later.
+            </documentation>
+            <input message="tns:refundRequest" />
+            <output message="tns:refundResponse" />
+        </operation>
+        <operation name="status">
+            <documentation>Retrieves a report that describes the state of a specified payment order.
+            </documentation>
+            <input message="tns:statusRequest" />
+            <output message="tns:statusResponse" />
+        </operation>
+        <operation name="statusExtended">
+            <documentation>Retrieves an extended report that describes the state of a specified payment order.
+            </documentation>
+            <input message="tns:extendedStatusRequest" />
+            <output message="tns:extendedStatusResponse" />
+        </operation>
+        <operation name="listPaymentMethods">
+            <documentation>List the payment methods. To be implemented in a future minor version upgrade.</documentation>
+            <input message="tns:listPaymentMethodsRequest" />
+            <output message="tns:listPaymentMethodsResponse" />
+        </operation>
+    </portType>
+    <binding name="PaymentServiceBinding" type="tns:PaymentServiceSOAP">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="create">
+            <soap:operation soapAction="create" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="refund">
+            <soap:operation soapAction="refund" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="cancel">
+            <soap:operation soapAction="cancel" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="start">
+            <soap:operation soapAction="start" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="proceed">
+            <soap:operation soapAction="proceed" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="capture">
+            <soap:operation soapAction="capture" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="status">
+            <soap:operation soapAction="status" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="statusExtended">
+            <soap:operation soapAction="statusExtended" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="listPaymentMethods">
+            <soap:operation soapAction="listPaymentMethods" />
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+    </binding>
+    <service name="paymentService">
+        <port binding="tns:PaymentServiceBinding" name="PaymentServiceSOAP">
+            <soap:address location="https://localhost/services/paymentservice/1_3" />
+        </port>
+    </service>
+</definitions>

@@ -99,6 +99,13 @@ class Generator
         return $this;
     }
     /**
+     * @return GeneratorParsers
+     */
+    public function getParsers()
+    {
+        return $this->parsers;
+    }
+    /**
      * @return Generator
      */
     protected function initFiles()

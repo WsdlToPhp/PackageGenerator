@@ -197,7 +197,6 @@ abstract class AbstractModelFile extends AbstractFile
         $block->addChild($this->getClassDeclarationLine());
         $this
             ->defineModelAnnotationsFromWsdl($block)
-            ->defineModelAnnotationsFromInheritance($block)
             ->definePackageAnnotations($block)
             ->defineGeneralAnnotations($block);
         return $block;
@@ -224,21 +223,6 @@ abstract class AbstractModelFile extends AbstractFile
     protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model = null)
     {
         FileUtils::defineModelAnnotationsFromWsdl($block, $model instanceof AbstractModel ? $model : $this->getModel());
-        return $this;
-    }
-    /**
-     * @param PhpAnnotationBlock $block
-     * @return AbstractModelFile
-     */
-    protected function defineModelAnnotationsFromInheritance(PhpAnnotationBlock $block)
-    {
-        $struct = $this->getGenerator()->getStruct($this->getModel()->getInheritance());
-        if ($struct instanceof StructModel && $struct->getIsStruct() === false) {
-            $validMeta = $this->getValidMetaValues($struct);
-            foreach ($validMeta as $meta) {
-                $block->addChild($meta);
-            }
-        }
         return $this;
     }
     /**
@@ -415,7 +399,7 @@ abstract class AbstractModelFile extends AbstractFile
         $model = null;
         $attribute = $this->getStructAttribute($attribute);
         if ($attribute instanceof StructAttributeModel) {
-            $model = $this->getGenerator()->getStruct($attribute->getType());
+            $model = $attribute->getTypeStruct();
         }
         return $model;
     }
@@ -462,7 +446,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return sprintf('%s%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '' : '|null');
+        return sprintf('%s%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '' : '|null');
     }
     /**
      * @param StructAttributeModel $attribute
@@ -472,7 +456,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return sprintf('%s%s', $this->getStructAttributeType($attribute, true), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '');
+        return sprintf('%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '');
     }
     /**
      * @param StructAttributeModel $attribute
@@ -492,6 +476,19 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $attribute = $this->getStructAttribute($attribute);
         return ($returnArrayType && $attribute->isArray()) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
+    }
+    /**
+     * @param StructAttributeModel $attribute
+     * @return string
+     */
+    protected function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null)
+    {
+        $attribute = $this->getStructAttribute($attribute);
+        $attributeType = $this->getStructAttributeType($attribute, true);
+        if (XsdTypes::isAnonymous($attributeType)) {
+            $attributeType = self::getPhpType($attributeType);
+        }
+        return $attributeType;
     }
     /**
      * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases

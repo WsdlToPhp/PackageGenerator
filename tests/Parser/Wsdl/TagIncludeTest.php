@@ -6,6 +6,7 @@ use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class TagIncludeTest extends WsdlParser
 {
@@ -14,7 +15,14 @@ class TagIncludeTest extends WsdlParser
      */
     public static function instance()
     {
-        return new TagInclude(self::getInstance(self::wsdlImageViewServicePath()));
+        return new TagInclude(self::generatorInstance(self::wsdlImageViewServicePath()));
+    }
+    /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude
+     */
+    public static function instanceScd()
+    {
+        return new TagInclude(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
     /**
      *
@@ -47,9 +55,38 @@ class TagIncludeTest extends WsdlParser
         foreach ($schemas as $schemaPath) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/image/%s', $schemaPath));
             $schema = new Schema($tagIncludeParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
-            $schema->getContent()->setCurrentTag('include');
+            $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
             $schemaContainer->add($schema);
         }
+
+        foreach($tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
+            $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
+        }
+
+        $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
+        $this->assertEquals($schemaContainer, $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas());
+    }
+    /**
+     *
+     */
+    public function testGetExternalSchemasScd()
+    {
+        // import tag must be parsed first
+        $tagIncludeParser = self::instanceScd();
+
+        $tagIncludeParser->parse();
+
+        $schemaContainer = new SchemaContainer($tagIncludeParser->getGenerator());
+
+        $schema1Path = realpath(__DIR__ . '/../../resources/docdatapayments/1_3.1.xsd');
+        $schema1 = new Schema($tagIncludeParser->getGenerator(), $schema1Path, file_get_contents($schema1Path));
+        $schema1->getContent()->setCurrentTag(WsdlDocument::TAG_INCLUDE);
+        $schemaContainer->add($schema1);
+
+        $schema2Path = realpath(__DIR__ . '/../../resources/docdatapayments/1_3.2.xsd');
+        $schema2 = new Schema($tagIncludeParser->getGenerator(), $schema2Path, file_get_contents($schema2Path));
+        $schema2->getContent()->setCurrentTag(WsdlDocument::TAG_INCLUDE);
+        $schemaContainer->add($schema2);
 
         $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
         $this->assertEquals($schemaContainer, $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas());

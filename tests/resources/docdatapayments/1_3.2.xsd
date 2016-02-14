@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-b01-. -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ddp="http://localhost/services/paymentservice/1_3/" targetNamespace="http://localhost/services/paymentservice/1_3/" elementFormDefault="qualified">
+    <!-- ============================================================ -->
+    <!-- ====================== Basic Types ======================= -->
+    <!-- ============================================================ -->
+    <complexType name="country">
+        <annotation>
+            <documentation>Country code according to ISO 3166.</documentation>
+        </annotation>
+        <attribute name="code" use="required" type="ddp:countryCode" />
+    </complexType>
+    <complexType name="language">
+        <annotation>
+            <documentation>Language code according to ISO 639.</documentation>
+        </annotation>
+        <attribute name="code" use="required" type="ddp:languageCode" />
+    </complexType>
+    <simpleType name="languageCode">
+        <annotation>
+            <documentation>ISO 639-1:2002 Part 1: Alpha-2 Language Codes (lowercase)
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <pattern value="[a-z][a-z]" />
+        </restriction>
+    </simpleType>
+    <simpleType name="countryCode">
+        <annotation>
+            <documentation>ISO 3166-1:2006</documentation>
+        </annotation>
+        <restriction base="string">
+            <pattern value="[A-Z][A-Z]" />
+        </restriction>
+    </simpleType>
+    <simpleType name="currency">
+        <annotation>
+            <documentation>ISO 4217:2008</documentation>
+        </annotation>
+        <restriction base="string">
+            <pattern value="[A-Z][A-Z][A-Z]" />
+        </restriction>
+    </simpleType>
+    <simpleType name="plainDate">
+        <annotation>
+            <documentation> A date formatted as yyyy-MM-dd, for example February 25th, 2014 would become "2012-02-25".
+            </documentation>
+        </annotation>
+        <restriction base="normalizedString">
+            <minLength value="10" />
+            <maxLength value="10" />
+        </restriction>
+    </simpleType>
+    <simpleType name="plainDateTime">
+        <annotation>
+            <documentation> A date formatted as yyyy-MM-dd HH:mm:ss, for example February 25th, 2014, 3 past twelve and 4 seconds, would become "2012-02-25 12:03:04".
+            </documentation>
+        </annotation>
+        <restriction base="normalizedString">
+            <minLength value="19" />
+            <maxLength value="19" />
+        </restriction>
+    </simpleType>
+    <simpleType name="string35">
+        <restriction base="normalizedString">
+            <minLength value="1" />
+            <maxLength value="35" />
+        </restriction>
+    </simpleType>
+    <simpleType name="string50">
+        <restriction base="normalizedString">
+            <minLength value="1" />
+            <maxLength value="50" />
+        </restriction>
+    </simpleType>
+    <simpleType name="string100">
+        <restriction base="normalizedString">
+            <minLength value="1" />
+            <maxLength value="100" />
+        </restriction>
+    </simpleType>
+    <simpleType name="string250">
+        <restriction base="normalizedString">
+            <minLength value="1" />
+            <maxLength value="250" />
+        </restriction>
+    </simpleType>
+    <simpleType name="string255">
+        <restriction base="normalizedString">
+            <minLength value="1" />
+            <maxLength value="255" />
+        </restriction>
+    </simpleType>
+    <simpleType name="string512">
+        <restriction base="normalizedString">
+            <minLength value="1" />
+            <maxLength value="512" />
+        </restriction>
+    </simpleType>
+    <simpleType name="string2048">
+        <restriction base="normalizedString">
+            <minLength value="1" />
+            <maxLength value="2048" />
+        </restriction>
+    </simpleType>
+    <simpleType name="primaryAccountNumber">
+        <annotation>
+            <documentation>Debit- or credit card number.</documentation>
+        </annotation>
+        <restriction base="NMTOKEN">
+            <pattern value="[0-9]{13,19}" />
+        </restriction>
+    </simpleType>
+    <simpleType name="securityCode">
+        <annotation>
+            <documentation>3 or 4 digit security code (cvc2, cid, cvv2).</documentation>
+        </annotation>
+        <restriction base="NMTOKEN">
+            <pattern value="[0-9]{3,4}" />
+        </restriction>
+    </simpleType>
+    <complexType name="expiryDate">
+        <attribute name="month" use="required">
+            <simpleType>
+                <restriction base="NMTOKEN">
+                    <pattern value="(0[1-9]|1[012])" />
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="year" use="required">
+            <simpleType>
+                <restriction base="NMTOKEN">
+                    <pattern value="[0-9][0-9]" />
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <simpleType name="phoneNumber">
+        <annotation>
+            <documentation> Phone number, international numbers start with a +.
+            </documentation>
+        </annotation>
+        <restriction base="ddp:string50" />
+    </simpleType>
+    <simpleType name="simpleNMToken">
+        <restriction base="NMTOKEN">
+            <minLength value="1" />
+            <maxLength value="50" />
+        </restriction>
+    </simpleType>
+    <simpleType name="emailAddress">
+        <annotation>
+            <documentation> Email address.
+            </documentation>
+        </annotation>
+        <restriction base="ddp:string100">
+            <pattern value="[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)" />
+        </restriction>
+    </simpleType>
+    <simpleType name="gender">
+        <restriction base="string">
+            <enumeration value="M">
+                <annotation>
+                    <documentation>Male</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="F">
+                <annotation>
+                    <documentation>Female</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="U">
+                <annotation>
+                    <documentation>Undefined</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <complexType name="vat">
+        <sequence>
+            <element name="amount" type="ddp:amount" minOccurs="1" maxOccurs="1" />
+        </sequence>
+        <attribute name="rate" use="required" type="ddp:vatRate" />
+    </complexType>
+    <simpleType name="vatRate">
+        <restriction base="decimal">
+            <whiteSpace value="collapse" />
+            <minInclusive value="0" />
+        </restriction>
+    </simpleType>
+    <complexType name="amount">
+        <annotation>
+            <documentation>The amount in the minor unit for the given currency. (E.g. for EUR in cents)
+            </documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="int">
+                <attribute name="currency" type="ddp:currency" use="required" />
+            </extension>
+        </simpleContent>
+    </complexType>
+    <simpleType name="successCode">
+        <annotation>
+            <documentation>The success code of the success.</documentation>
+        </annotation>
+        <restriction base="NMTOKEN">
+            <enumeration value="SUCCESS">
+                <annotation>
+                    <documentation>The operation was generally successful.
+                    </documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <simpleType name="errorCode">
+        <annotation>
+            <documentation>
+                The error code of the error.
+                <!-- suggested enumerations -->
+                <restriction base="NMTOKEN">
+                    <enumeration value="UNKNOWN_ERROR">
+                        <annotation>
+                            <documentation>The reason of error is unknown.</documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="REQUEST_DATA_MISSING">
+                        <annotation>
+                            <documentation>Request data is missing.</documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="REQUEST_DATA_INCORRECT">
+                        <annotation>
+                            <documentation>Request data is incorrect.</documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="SECURITY_ERROR">
+                        <annotation>
+                            <documentation>Error related to security violations such as login failure or not allowed IP.
+                            </documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="INTERNAL_ERROR">
+                        <annotation>
+                            <documentation>Payment system error.</documentation>
+                        </annotation>
+                    </enumeration>
+                </restriction>
+            </documentation>
+        </annotation>
+        <restriction base="NMTOKEN" />
+    </simpleType>
+    <complexType name="menuPreferences">
+        <sequence>
+            <element name="css" minOccurs="0" maxOccurs="1">
+                <annotation>
+                    <documentation> The id of the CSS file that should be used in the payment menu.
+                    </documentation>
+                </annotation>
+                <complexType>
+                    <attribute name="id" type="int" use="required" />
+                </complexType>
+            </element>
+        </sequence>
+    </complexType>
+    <simpleType name="paymentOrderKey">
+        <restriction base="normalizedString">
+            <minLength value="32" />
+            <maxLength value="32" />
+            <pattern value="[A-Z,0-9]{32}" />
+        </restriction>
+    </simpleType>
+    <simpleType name="bic">
+        <restriction base="NMTOKEN">
+            <minLength value="8" />
+            <maxLength value="11" />
+        </restriction>
+    </simpleType>
+    <simpleType name="iban">
+        <restriction base="NMTOKEN">
+            <minLength value="15" />
+            <maxLength value="34" />
+        </restriction>
+    </simpleType>
+    <simpleType name="httpMethod">
+        <annotation>
+            <documentation>HTTP method</documentation>
+        </annotation>
+        <restriction base="string">
+            <pattern value="GET|POST|PUT|DELETE|HEAD|TRACE|OPTIONS" />
+        </restriction>
+    </simpleType>
+    <complexType name="parameters">
+        <sequence>
+            <element name="parameter" minOccurs="0" maxOccurs="unbounded">
+                <complexType>
+                    <simpleContent>
+                        <extension base="ddp:string2048">
+                            <attribute name="name" type="ddp:string50" use="required" />
+                        </extension>
+                    </simpleContent>
+                </complexType>
+            </element>
+        </sequence>
+    </complexType>
+    <simpleType name="iDealIssuerId">
+        <annotation>
+            <documentation> The iDEAL issuer id, for example RABO, ABNAMRO, ING, SNS. See the documentation for possible issuing banks.
+            </documentation>
+        </annotation>
+        <restriction base="NMTOKEN" />
+    </simpleType>
+    <complexType name="consideredSafe">
+        <sequence>
+            <element name="date" type="dateTime" minOccurs="1" maxOccurs="1">
+                <annotation>
+                    <documentation> The date when the order became considered safe.
+                    </documentation>
+                </annotation>
+            </element>
+            <any namespace="##local" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+</schema>

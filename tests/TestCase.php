@@ -196,6 +196,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
+    public static function wsdlDocDataPaymentsPath()
+    {
+        return __DIR__ . '/resources/docdatapayments/1_3.wsdl';
+    }
+    /**
+     * @return string
+     */
     public static function wsdlEmptyPath()
     {
         return __DIR__ . '/resources/empty.wsdl';
@@ -252,7 +259,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     public static function getLnpInstance()
     {
-        return self::getInstance(self::wsdlLnpPath());
+        return self::getInstance(self::wsdlLnpPath(), true);
     }
     /**
      * @return Generator
@@ -274,6 +281,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getYandexDirectApiAdGroupsInstance()
     {
         return self::getInstance(self::wsdlYandexDirectApiAdGroupsPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getDocDataPAymentsInstance()
+    {
+        return self::getInstance(self::wsdlDocDataPaymentsPath());
     }
     /**
      * @param string $wsdlPath

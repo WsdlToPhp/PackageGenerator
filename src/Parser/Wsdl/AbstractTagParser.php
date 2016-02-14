@@ -150,4 +150,12 @@ abstract class AbstractTagParser extends AbstractParser
             $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
         }
     }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\Parser\AbstractParser::getName()
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->parsingTag();
+    }
 }

@@ -10,6 +10,10 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 class Wsdl extends AbstractDocument
 {
     /**
+     * @var ModelContainer
+     */
+    protected $externalSchemas;
+    /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::__construct()
      * @param \DOMDocument $domDocument
      * @param Generator $generator
@@ -19,10 +23,6 @@ class Wsdl extends AbstractDocument
         parent::__construct($domDocument);
         $this->externalSchemas = new ModelContainer($generator);
     }
-    /**
-     * @var ModelContainer
-     */
-    protected $externalSchemas;
     /**
      * @param Model $schema
      * @return \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl

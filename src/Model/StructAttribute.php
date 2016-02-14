@@ -167,4 +167,42 @@ class StructAttribute extends AbstractModel
     {
         return stripos($this->getType(), '\DOM') === 0;
     }
+    /**
+     * @return Struct|null
+     */
+    public function getTypeStruct()
+    {
+        return $this->getGenerator()->getStruct($this->getType());
+    }
+    /**
+     * @return string[]
+     */
+    public function getTypeStructMeta()
+    {
+        $typeStruct = $this->getTypeStruct();
+        return ($typeStruct && !$typeStruct->getIsStruct()) ? $typeStruct->getMeta() : array();
+    }
+    /**
+     * @return Struct|null
+     */
+    public function getInheritanceStruct()
+    {
+        return $this->getGenerator()->getStruct($this->getInheritance());
+    }
+    /**
+     * @return string[]
+     */
+    public function getInheritanceStructMeta()
+    {
+        $inheritanceStruct = $this->getInheritanceStruct();
+        return ($inheritanceStruct && !$inheritanceStruct->getIsStruct()) ? $inheritanceStruct->getMeta() : array();
+    }
+    /**
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getMeta()
+     * @return string[]
+     */
+    public function getMeta()
+    {
+        return array_merge_recursive(parent::getMeta(), $this->getTypeStructMeta(), $this->getInheritanceStructMeta());
+    }
 }
