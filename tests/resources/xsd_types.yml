@@ -6,6 +6,7 @@ xsd_types:
     byte: "string"
     bool: "bool"
     date: "string"
+    time: "string"
     long: "int"
     Name: "string"
     IDREF: "string"
