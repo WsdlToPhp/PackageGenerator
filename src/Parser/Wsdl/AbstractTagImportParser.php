@@ -54,7 +54,7 @@ abstract class AbstractTagImportParser extends AbstractTagParser
     private function getTagParser()
     {
         $tagName = null;
-        switch($this->parsingTag()) {
+        switch ($this->parsingTag()) {
             case WsdlDocument::TAG_IMPORT:
                 $tagName = WsdlDocument::TAG_INCLUDE;
                 break;
