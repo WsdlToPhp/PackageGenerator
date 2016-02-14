@@ -22,8 +22,8 @@ abstract class WsdlParser extends TestCase
     {
         $generator = self::getInstance($wsdlPath, $reset);
         $parsers = array(
-            new TagInclude($generator),
             new TagImport($generator),
+            new TagInclude($generator),
         );
         if ($parseSoapStructs === true) {
             $parsers[] = new Structs($generator);

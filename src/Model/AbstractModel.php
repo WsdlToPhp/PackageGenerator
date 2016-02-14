@@ -25,7 +25,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     private $name = '';
     /**
      * Values associated to the operation
-     * @var array
+     * @var string[]
      */
     private $meta = array();
     /**
@@ -106,7 +106,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns the meta
-     * @return array
+     * @return string[]
      */
     public function getMeta()
     {
@@ -114,7 +114,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Sets the meta
-     * @param array $meta
+     * @param string[] $meta
      * @return AbstractModel
      */
     public function setMeta(array $meta = array())
@@ -137,7 +137,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
         }
         $metaValue = is_scalar($metaValue) ? trim($metaValue) : $metaValue;
         if ((is_scalar($metaValue) && $metaValue !== '') || is_array($metaValue)) {
-            if (!array_key_exists($metaName, $this->getMeta())) {
+            if (!array_key_exists($metaName, $this->meta)) {
                 $this->meta[$metaName] = $metaValue;
             } elseif (is_array($this->meta[$metaName]) && is_array($metaValue)) {
                 $this->meta[$metaName] = array_merge($this->meta[$metaName], $metaValue);
@@ -171,7 +171,8 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function getMetaValue($metaName, $fallback = null)
     {
-        return array_key_exists($metaName, $this->getMeta()) ? $this->meta[$metaName] : $fallback;
+        $meta = $this->getMeta();
+        return array_key_exists($metaName, $meta) ? $meta[$metaName] : $fallback;
     }
     /**
      * Returns the value of the first meta value assigned to the name
@@ -181,9 +182,10 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function getMetaValueFirstSet(array $names, $fallback = null)
     {
+        $meta = $this->getMeta();
         foreach ($names as $name) {
-            if (array_key_exists($name, $this->getMeta())) {
-                return $this->meta[$name];
+            if (array_key_exists($name, $meta)) {
+                return $meta[$name];
             }
         }
         return $fallback;

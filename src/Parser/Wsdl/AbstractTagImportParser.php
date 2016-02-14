@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTagImport;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
@@ -35,10 +36,32 @@ abstract class AbstractTagImportParser extends AbstractTagParser
         return $model->getName();
     }
     /**
+     * The goal of this method is to ensure that each schema is parsed by both TagInclude and TagImport in case of one of the two does not find tags that matches its tag name.
+     * As the GeneratorParsers loads the include/import tags parses in a certain order, it can occur that import tags might be found after the import tag parser has been launched and vice versa.
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseSchema()
      */
     protected function parseSchema(Wsdl $wsdl, Schema $schema)
     {
-        $this->parseWsdl($wsdl, $schema);
+        if (count($this->getTags())) {
+            $this->parseWsdl($wsdl, $schema);
+        } else {
+            $this->getTagParser()->parse();
+        }
+    }
+    /**
+     * @return AbstractTagImportParser
+     */
+    private function getTagParser()
+    {
+        $tagName = null;
+        switch ($this->parsingTag()) {
+            case WsdlDocument::TAG_IMPORT:
+                $tagName = WsdlDocument::TAG_INCLUDE;
+                break;
+            case WsdlDocument::TAG_INCLUDE:
+                $tagName = WsdlDocument::TAG_IMPORT;
+                break;
+        }
+        return $this->getGenerator()->getParsers()->getParsers()->getParserByName($tagName);
     }
 }

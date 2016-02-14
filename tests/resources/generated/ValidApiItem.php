@@ -14,8 +14,6 @@ class ApiItem extends AbstractStructBase
 {
     /**
      * The itemType
-     * Meta informations extracted from the WSDL
-     * - documentation: Enumerated type for objects
      * @var string
      */
     public $itemType;

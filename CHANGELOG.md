@@ -1,10 +1,22 @@
 # CHANGELOG
 
+## 1.4.0
+- issue #44 - Constant naming separate with underscore
+    - **BC**:
+        - enumeration constants are renamed such `myConstantValue` is now `MY_CONSTANT_VALUE` instead of previously being `MYCONSTANTVALUE`. Be sure to update your code that use enumeration's constants
+- issue #47 - XSD types are not well inherited by elements
+    - Improvements on recursive schema loading
+    - Improvements on meta gathering in generated classes
+    - Handle anonymous types
+
+## 1.3.1
+- Improve/fix readme
+
 ## 1.3.0
 - issue #40 - Support for SSL Context Options
 - issue #41 - Support for arrays
-	- The addTo{property name} method has been added and accept an item to be added to the property. If the item is not of the correct type depending on the item's type, it throws an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php).
-	- The set{property name} has been reviewed in order to throw an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php) if the array passed as parameter contains an invalid item. In the case of an array of values which are defined using an enumeration, it throws only one exception indicating which values are incorrect.
+    - The addTo{property name} method has been added and accept an item to be added to the property. If the item is not of the correct type depending on the item's type, it throws an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php).
+    - The set{property name} has been reviewed in order to throw an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php) if the array passed as parameter contains an invalid item. In the case of an array of values which are defined using an enumeration, it throws only one exception indicating which values are incorrect.
 - issue #43 - "composer-name" required even if "standalone=false"
 
 ## 1.2.0
@@ -31,17 +43,17 @@ First major release:
 - issue #32 - Wrong Header Namespace ?
 - issue #31 - Unable to create function parameter for method "mapIpndDetailsToNumber" with type "NULL"
 - **BC**:
-	- \Generator\Generator::_generateClasses_() has been renamed to _generatePackage_
+    - \Generator\Generator::_generateClasses_() has been renamed to _generatePackage_
 
 ## 1.0.0RC04
 - issue #29 - Throw an exception instead of returning false
-	- add getValidValues to EnumType generated class
+    - add getValidValues to EnumType generated class
 - issue #28 - Define the destination folder name for each type
 - issue #26 - Global sanity checks for more flexibility
-	- add composer_name option
-	- **BC**:
-		- ClassMap::**classMap** method has been renamed to **get** as prefix and suffix are not required from now otherwise it generates a Fatal error such as _PHP Fatal error:  Constructor ClassMap::classMap() cannot be static_
-		- **composer name** for the generated package is **new** and **required**
+    - add composer_name option
+    - **BC**:
+        - ClassMap::**classMap** method has been renamed to **get** as prefix and suffix are not required from now otherwise it generates a Fatal error such as _PHP Fatal error:  Constructor ClassMap::classMap() cannot be static_
+        - **composer name** for the generated package is **new** and **required**
 - issue #25 - Generate package under src folder
 - issue #24 - ErrorException: Use of undefined constant JSON_PRETTY_PRINT
 - issue #13 - classmap and namespaces are wrong when not using a prefix

@@ -35,8 +35,8 @@ abstract class AbstractParser extends Parser
      */
     public function __construct(Generator $generator)
     {
-        $this->generator     = $generator;
-        $this->parsedWsdls   = array();
+        $this->generator = $generator;
+        $this->parsedWsdls = array();
         $this->parsedSchemas = array();
     }
     /**
@@ -50,25 +50,23 @@ abstract class AbstractParser extends Parser
             $content = $wsdl->getContent();
             if ($content instanceof WsdlDocument) {
                 if ($this->isWsdlParsed($wsdl) === false) {
-                    $this->setTags($content->getElementsByName($this->parsingTag()));
-                    if (count($this->getTags()) > 0) {
-                        $this->parseWsdl($wsdl);
-                    }
+                    $this
+                        ->setWsdlAsParsed($wsdl)
+                        ->setTags($content->getElementsByName($this->parsingTag()))
+                        ->parseWsdl($wsdl);
                 }
                 foreach ($content->getExternalSchemas() as $schema) {
                     if ($this->isSchemaParsed($wsdl, $schema) === false) {
+                        $this->setSchemaAsParsed($wsdl, $schema);
                         $schemaContent = $schema->getContent();
                         if ($schemaContent instanceof SchemaDocument) {
-                            $this->setTags($schemaContent->getElementsByName($this->parsingTag()));
-                            if (count($this->getTags()) > 0) {
-                                $this->parseSchema($wsdl, $schema);
-                            }
+                            $this
+                                ->setTags($schemaContent->getElementsByName($this->parsingTag()))
+                                ->parseSchema($wsdl, $schema);
                         }
-                        $this->setSchemaAsParsed($wsdl, $schema);
                     }
                 }
             }
-            $this->setWsdlAsParsed($wsdl);
         }
     }
     /**

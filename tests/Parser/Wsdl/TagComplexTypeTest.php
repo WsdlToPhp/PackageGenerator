@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 
 class TagComplexTypeTest extends WsdlParser
 {
@@ -19,6 +20,13 @@ class TagComplexTypeTest extends WsdlParser
     public static function partnerInstance()
     {
         return new TagComplexType(self::generatorInstance(self::wsdlPartnerPath()));
+    }
+    /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
+     */
+    public static function docDataPaymentsInstance()
+    {
+        return new TagComplexType(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
     /**
      *
@@ -55,5 +63,34 @@ class TagComplexTypeTest extends WsdlParser
             $ok = true;
         }
         $this->assertTrue((bool)$ok);
+    }
+    /**
+     *
+     */
+    public function testParseDocDataPaymnts()
+    {
+        $tagComplexTypeParser = self::docDataPaymentsInstance();
+        $tagRestriction = new TagRestriction($tagComplexTypeParser->getGenerator());
+
+        $tagComplexTypeParser->parse();
+        $tagRestriction->parse();
+
+        $count = 0;
+        $structs = $tagComplexTypeParser->getGenerator()->getStructs();
+        $approximateTotals = $structs->getStructByName('approximateTotals');
+        if ($approximateTotals) {
+            $exchangeRateDate = $approximateTotals->getAttribute('exchangeRateDate');
+            if ($exchangeRateDate) {
+                $this->assertSame('plainDateTime', $exchangeRateDate->getType());
+                $this->assertSame('normalizedString', $exchangeRateDate->getTypeStruct()->getInheritance());
+                $this->assertSame('plainDateTime', $exchangeRateDate->getTypeStruct()->getName());
+                $this->assertSame(array(
+                    'maxLength' => '19',
+                    'minLength' => '19',
+                ), $exchangeRateDate->getMeta());
+                $count++;
+            }
+        }
+        $this->assertEquals(1, $count);
     }
 }

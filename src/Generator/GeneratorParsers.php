@@ -71,4 +71,11 @@ class GeneratorParsers extends AbstractGeneratorAware
         }
         return $this;
     }
+    /**
+     * @return ParserContainer
+     */
+    public function getParsers()
+    {
+        return $this->parsers;
+    }
 }
