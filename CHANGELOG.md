@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.4.1
+- Add `time` XSD type matching `string`PHP type
+
 ## 1.4.0
 - issue #44 - Constant naming separate with underscore
     - **BC**:
