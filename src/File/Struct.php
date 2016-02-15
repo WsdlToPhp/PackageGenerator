@@ -283,7 +283,7 @@ class Struct extends AbstractModelFile
             if ($model instanceof StructModel) {
                 $method
                     ->addChild('$invalidValues = array();')
-                    ->addChild(sprintf('foreach($%s as $item) {', $parameterName))
+                    ->addChild(sprintf('foreach ($%s as $item) {', $parameterName))
                         ->addChild($method->getIndentedString(sprintf('if (!%s::%s($item)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID), 1))
                             ->addChild($method->getIndentedString('$invalidValues[] = var_export($item);', 2))
                         ->addChild($method->getIndentedString('}', 1))
@@ -293,7 +293,7 @@ class Struct extends AbstractModelFile
                     ->addChild('}');
             } else {
                 $method
-                    ->addChild(sprintf('foreach($%s as $item) {', $parameterName))
+                    ->addChild(sprintf('foreach ($%s as $item) {', $parameterName))
                         ->addChild($method->getIndentedString(sprintf('if (!%s) {', $this->getStructMethodSetBodyForArrayItemSanityCheck($attribute)), 1))
                             ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %s property can only contain items of %s, "%%s" given\', is_object($item) ? get_class($item) : gettype($item)), __LINE__);', $attribute->getCleanName(), $this->getStructAttributeType($attribute, true)), 2))
                         ->addChild($method->getIndentedString('}', 1))
