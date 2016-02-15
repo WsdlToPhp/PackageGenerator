@@ -9,6 +9,14 @@ class ReservedKeywords extends AbstractYamlReader
      */
     const MAIN_KEY = 'reserved_keywords';
     /**
+     * @var string
+     */
+    const CASE_SENSITIVE_KEY = 'case_sensitive';
+    /**
+     * @var string
+     */
+    const CASE_INSENSITIVE_KEY = 'case_insensitive';
+    /**
      * List of PHP reserved keywords from config file
      * @var array
      */
@@ -27,7 +35,18 @@ class ReservedKeywords extends AbstractYamlReader
      */
     protected function parseReservedKeywords($filename)
     {
-        $this->keywords = $this->parseSimpleArray($filename, self::MAIN_KEY);
+        $allKeywords = $this->parseSimpleArray($filename, self::MAIN_KEY);
+        $caseSensitiveKeywords = $allKeywords[self::CASE_SENSITIVE_KEY];
+        $caseInsensitiveKeywords = $allKeywords[self::CASE_INSENSITIVE_KEY];
+
+        foreach ($caseInsensitiveKeywords as $index => $keyword) {
+            $caseInsensitiveKeywords[$index] = strtolower($keyword);
+        }
+
+        $this->keywords = array(
+            self::CASE_SENSITIVE_KEY => $caseSensitiveKeywords,
+            self::CASE_INSENSITIVE_KEY => $caseInsensitiveKeywords
+        );
         return $this;
     }
     /**
@@ -44,6 +63,7 @@ class ReservedKeywords extends AbstractYamlReader
      */
     public function is($keyword)
     {
-        return in_array($keyword, $this->keywords, true);
+        return in_array($keyword, $this->keywords[self::CASE_SENSITIVE_KEY], true)
+            || in_array(strtolower($keyword), $this->keywords[self::CASE_INSENSITIVE_KEY], true);
     }
 }

@@ -277,10 +277,14 @@ abstract class AbstractModel extends AbstractGeneratorAware
         if ($namespaced && $this->getNamespace() !== '') {
             $nameParts[] = sprintf('\%s\\', $this->getNamespace());
         }
+        $cleanName = $this->getCleanName();
         if ($this->getGenerator()->getOptionPrefix() !== '') {
             $nameParts[] = $this->getGenerator()->getOptionPrefix();
+        } else {
+            $cleanName = self::replaceReservedPhpKeyword($cleanName, null);
         }
-        $nameParts[] = ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+
+        $nameParts[] = ucfirst(self::uniqueName($cleanName, $this->getContextualPart()));
         if ($this->getGenerator()->getOptionSuffix() !== '') {
             $nameParts[] = $this->getGenerator()->getOptionSuffix();
         }
@@ -361,17 +365,21 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @param string $context the context
      * @return string
      */
-    public static function replaceReservedPhpKeyword($keyword, $context)
+    public static function replaceReservedPhpKeyword($keyword, $context = null)
     {
         $phpReservedKeywordFound = '';
         if (ReservedKeywords::instance()->is($keyword)) {
-            $keywordKey = $phpReservedKeywordFound . '_' . $context;
-            if (!array_key_exists($keywordKey, self::$replacedReservedPhpKeywords)) {
-                self::$replacedReservedPhpKeywords[$keywordKey] = 0;
+            if ($context !== null) {
+                $keywordKey = $phpReservedKeywordFound . '_' . $context;
+                if (!array_key_exists($keywordKey, self::$replacedReservedPhpKeywords)) {
+                    self::$replacedReservedPhpKeywords[$keywordKey] = 0;
+                } else {
+                    self::$replacedReservedPhpKeywords[$keywordKey]++;
+                }
+                return '_' . $keyword . (self::$replacedReservedPhpKeywords[$keywordKey] ? '_' . self::$replacedReservedPhpKeywords[$keywordKey] : '');
             } else {
-                self::$replacedReservedPhpKeywords[$keywordKey]++;
+                return '_' . $keyword;
             }
-            return '_' . $keyword . (self::$replacedReservedPhpKeywords[$keywordKey] ? '_' . self::$replacedReservedPhpKeywords[$keywordKey] : '');
         } else {
             return $keyword;
         }
