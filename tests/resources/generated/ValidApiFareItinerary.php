@@ -44,7 +44,7 @@ class ApiFareItinerary extends AbstractStructBase
     public $clickoutURLParams;
     /**
      * The resident
-     * @var boolean
+     * @var bool
      */
     public $resident;
     /**
@@ -70,7 +70,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param string $key
      * @param int[] $firstSegmentsIds
      * @param string $clickoutURLParams
-     * @param boolean $resident
+     * @param bool $resident
      * @param int[] $secondSegmentsIds
      * @param int[] $thirdSegmentsIds
      */
@@ -179,7 +179,7 @@ class ApiFareItinerary extends AbstractStructBase
     }
     /**
      * Get resident value
-     * @return boolean|null
+     * @return bool|null
      */
     public function getResident()
     {
@@ -187,7 +187,7 @@ class ApiFareItinerary extends AbstractStructBase
     }
     /**
      * Set resident value
-     * @param boolean $resident
+     * @param bool $resident
      * @return \Api\StructType\ApiFareItinerary
      */
     public function setResident($resident = null)

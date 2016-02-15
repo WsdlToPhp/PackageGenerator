@@ -17,7 +17,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var long[]
+     * @var int[]
      */
     public $CampaignIds;
     /**
@@ -25,7 +25,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var long[]
+     * @var int[]
      */
     public $Ids;
     /**
@@ -49,7 +49,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var long[]
+     * @var int[]
      */
     public $TagIds;
     /**
@@ -77,11 +77,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @uses ApiAdGroupsSelectionCriteria::setTagIds()
      * @uses ApiAdGroupsSelectionCriteria::setTags()
      * @uses ApiAdGroupsSelectionCriteria::setAppIconStatuses()
-     * @param long[] $campaignIds
-     * @param long[] $ids
+     * @param int[] $campaignIds
+     * @param int[] $ids
      * @param string[] $types
      * @param string[] $statuses
-     * @param long[] $tagIds
+     * @param int[] $tagIds
      * @param string[] $tags
      * @param string[] $appIconStatuses
      */
@@ -98,7 +98,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get CampaignIds value
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getCampaignIds()
     {
@@ -107,7 +107,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     /**
      * Set CampaignIds value
      * @throws \InvalidArgumentException
-     * @param long[] $campaignIds
+     * @param int[] $campaignIds
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
     public function setCampaignIds(array $campaignIds = array())
@@ -123,7 +123,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     /**
      * Add item to CampaignIds value
      * @throws \InvalidArgumentException
-     * @param long $item
+     * @param int $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToCampaignIds($item)
@@ -136,7 +136,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get Ids value
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getIds()
     {
@@ -145,7 +145,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     /**
      * Set Ids value
      * @throws \InvalidArgumentException
-     * @param long[] $ids
+     * @param int[] $ids
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
     public function setIds(array $ids = array())
@@ -161,7 +161,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     /**
      * Add item to Ids value
      * @throws \InvalidArgumentException
-     * @param long $item
+     * @param int $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToIds($item)
@@ -266,7 +266,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get TagIds value
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getTagIds()
     {
@@ -275,7 +275,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     /**
      * Set TagIds value
      * @throws \InvalidArgumentException
-     * @param long[] $tagIds
+     * @param int[] $tagIds
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
     public function setTagIds(array $tagIds = array())
@@ -291,7 +291,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     /**
      * Add item to TagIds value
      * @throws \InvalidArgumentException
-     * @param long $item
+     * @param int $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToTagIds($item)

@@ -82,7 +82,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var double
+     * @var float
      */
     public $Latitude;
     /**
@@ -90,7 +90,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var double
+     * @var float
      */
     public $Longitude;
     /**
@@ -98,7 +98,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var double
+     * @var float
      */
     public $Radius;
     /**
@@ -194,9 +194,9 @@ class ApiSearchRequest extends AbstractStructBase
      * @param string $market
      * @param string $uILanguage
      * @param string $adult
-     * @param double $latitude
-     * @param double $longitude
-     * @param double $radius
+     * @param float $latitude
+     * @param float $longitude
+     * @param float $radius
      * @param \Api\ArrayType\ApiArrayOfSearchOption $options
      * @param \Api\StructType\ApiWebRequest $web
      * @param \Api\StructType\ApiImageRequest $image
@@ -381,7 +381,7 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Get Latitude value
-     * @return double|null
+     * @return float|null
      */
     public function getLatitude()
     {
@@ -389,7 +389,7 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Latitude value
-     * @param double $latitude
+     * @param float $latitude
      * @return \Api\StructType\ApiSearchRequest
      */
     public function setLatitude($latitude = null)
@@ -399,7 +399,7 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Get Longitude value
-     * @return double|null
+     * @return float|null
      */
     public function getLongitude()
     {
@@ -407,7 +407,7 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Longitude value
-     * @param double $longitude
+     * @param float $longitude
      * @return \Api\StructType\ApiSearchRequest
      */
     public function setLongitude($longitude = null)
@@ -417,7 +417,7 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Get Radius value
-     * @return double|null
+     * @return float|null
      */
     public function getRadius()
     {
@@ -425,7 +425,7 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Radius value
-     * @param double $radius
+     * @param float $radius
      * @return \Api\StructType\ApiSearchRequest
      */
     public function setRadius($radius = null)
