@@ -424,7 +424,7 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $attribute = $this->getStructAttribute($attribute);
         $inheritance = $attribute->getInheritance();
-        if(empty($inheritance)) {
+        if (empty($inheritance)) {
             $type = $attribute->getType();
         } else {
             $type = $inheritance;

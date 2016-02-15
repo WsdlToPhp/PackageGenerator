@@ -343,7 +343,7 @@ class Struct extends AbstractModel
         $inheritance = $this->getInheritance();
         if (!empty($inheritance)) {
             $struct = $this->getInheritanceStruct();
-            while($struct instanceof Struct) {
+            while ($struct instanceof Struct) {
                 $structInheritance = $struct->getInheritance();
                 if (!empty($structInheritance)) {
                     $inheritance = $structInheritance;
