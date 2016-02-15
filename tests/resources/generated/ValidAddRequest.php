@@ -46,9 +46,9 @@ class ApiAddRequest extends AbstractStructBase
      */
     public function setAdGroups(array $adGroups = array())
     {
-        foreach ($adGroups as $item) {
-            if (!$item instanceof \Api\StructType\ApiAdGroupAddItem) {
-                throw new \InvalidArgumentException(sprintf('The AdGroups property can only contain items of \Api\StructType\ApiAdGroupAddItem, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($adGroups as $addRequestAdGroupsItem) {
+            if (!$addRequestAdGroupsItem instanceof \Api\StructType\ApiAdGroupAddItem) {
+                throw new \InvalidArgumentException(sprintf('The AdGroups property can only contain items of \Api\StructType\ApiAdGroupAddItem, "%s" given', is_object($addRequestAdGroupsItem) ? get_class($addRequestAdGroupsItem) : gettype($addRequestAdGroupsItem)), __LINE__);
             }
         }
         $this->AdGroups = $adGroups;

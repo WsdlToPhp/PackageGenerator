@@ -137,9 +137,9 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setFirstSegmentsIds(array $firstSegmentsIds = array())
     {
-        foreach ($firstSegmentsIds as $item) {
-            if (!is_int($item)) {
-                throw new \InvalidArgumentException(sprintf('The firstSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($firstSegmentsIds as $fareItineraryFirstSegmentsIdsItem) {
+            if (!is_int($fareItineraryFirstSegmentsIdsItem)) {
+                throw new \InvalidArgumentException(sprintf('The firstSegmentsIds property can only contain items of int, "%s" given', is_object($fareItineraryFirstSegmentsIdsItem) ? get_class($fareItineraryFirstSegmentsIdsItem) : gettype($fareItineraryFirstSegmentsIdsItem)), __LINE__);
             }
         }
         $this->firstSegmentsIds = $firstSegmentsIds;
@@ -211,9 +211,9 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setSecondSegmentsIds(array $secondSegmentsIds = array())
     {
-        foreach ($secondSegmentsIds as $item) {
-            if (!is_int($item)) {
-                throw new \InvalidArgumentException(sprintf('The secondSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($secondSegmentsIds as $fareItinerarySecondSegmentsIdsItem) {
+            if (!is_int($fareItinerarySecondSegmentsIdsItem)) {
+                throw new \InvalidArgumentException(sprintf('The secondSegmentsIds property can only contain items of int, "%s" given', is_object($fareItinerarySecondSegmentsIdsItem) ? get_class($fareItinerarySecondSegmentsIdsItem) : gettype($fareItinerarySecondSegmentsIdsItem)), __LINE__);
             }
         }
         $this->secondSegmentsIds = $secondSegmentsIds;
@@ -249,9 +249,9 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setThirdSegmentsIds(array $thirdSegmentsIds = array())
     {
-        foreach ($thirdSegmentsIds as $item) {
-            if (!is_int($item)) {
-                throw new \InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($thirdSegmentsIds as $fareItineraryThirdSegmentsIdsItem) {
+            if (!is_int($fareItineraryThirdSegmentsIdsItem)) {
+                throw new \InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of int, "%s" given', is_object($fareItineraryThirdSegmentsIdsItem) ? get_class($fareItineraryThirdSegmentsIdsItem) : gettype($fareItineraryThirdSegmentsIdsItem)), __LINE__);
             }
         }
         $this->thirdSegmentsIds = $thirdSegmentsIds;

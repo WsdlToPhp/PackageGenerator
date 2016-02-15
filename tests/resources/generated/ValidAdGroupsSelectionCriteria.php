@@ -112,9 +112,9 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setCampaignIds(array $campaignIds = array())
     {
-        foreach ($campaignIds as $item) {
-            if (!is_int($item)) {
-                throw new \InvalidArgumentException(sprintf('The CampaignIds property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($campaignIds as $adGroupsSelectionCriteriaCampaignIdsItem) {
+            if (!is_int($adGroupsSelectionCriteriaCampaignIdsItem)) {
+                throw new \InvalidArgumentException(sprintf('The CampaignIds property can only contain items of long, "%s" given', is_object($adGroupsSelectionCriteriaCampaignIdsItem) ? get_class($adGroupsSelectionCriteriaCampaignIdsItem) : gettype($adGroupsSelectionCriteriaCampaignIdsItem)), __LINE__);
             }
         }
         $this->CampaignIds = $campaignIds;
@@ -150,9 +150,9 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setIds(array $ids = array())
     {
-        foreach ($ids as $item) {
-            if (!is_int($item)) {
-                throw new \InvalidArgumentException(sprintf('The Ids property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($ids as $adGroupsSelectionCriteriaIdsItem) {
+            if (!is_int($adGroupsSelectionCriteriaIdsItem)) {
+                throw new \InvalidArgumentException(sprintf('The Ids property can only contain items of long, "%s" given', is_object($adGroupsSelectionCriteriaIdsItem) ? get_class($adGroupsSelectionCriteriaIdsItem) : gettype($adGroupsSelectionCriteriaIdsItem)), __LINE__);
             }
         }
         $this->Ids = $ids;
@@ -191,9 +191,9 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTypes(array $types = array())
     {
         $invalidValues = array();
-        foreach ($types as $item) {
-            if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($item)) {
-                $invalidValues[] = var_export($item);
+        foreach ($types as $adGroupsSelectionCriteriaTypesItem) {
+            if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($adGroupsSelectionCriteriaTypesItem)) {
+                $invalidValues[] = var_export($adGroupsSelectionCriteriaTypesItem);
             }
         }
         if (!empty($invalidValues)) {
@@ -237,9 +237,9 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setStatuses(array $statuses = array())
     {
         $invalidValues = array();
-        foreach ($statuses as $item) {
-            if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
-                $invalidValues[] = var_export($item);
+        foreach ($statuses as $adGroupsSelectionCriteriaStatusesItem) {
+            if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaStatusesItem)) {
+                $invalidValues[] = var_export($adGroupsSelectionCriteriaStatusesItem);
             }
         }
         if (!empty($invalidValues)) {
@@ -280,9 +280,9 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setTagIds(array $tagIds = array())
     {
-        foreach ($tagIds as $item) {
-            if (!is_int($item)) {
-                throw new \InvalidArgumentException(sprintf('The TagIds property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($tagIds as $adGroupsSelectionCriteriaTagIdsItem) {
+            if (!is_int($adGroupsSelectionCriteriaTagIdsItem)) {
+                throw new \InvalidArgumentException(sprintf('The TagIds property can only contain items of long, "%s" given', is_object($adGroupsSelectionCriteriaTagIdsItem) ? get_class($adGroupsSelectionCriteriaTagIdsItem) : gettype($adGroupsSelectionCriteriaTagIdsItem)), __LINE__);
             }
         }
         $this->TagIds = $tagIds;
@@ -318,9 +318,9 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setTags(array $tags = array())
     {
-        foreach ($tags as $item) {
-            if (!is_string($item)) {
-                throw new \InvalidArgumentException(sprintf('The Tags property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($tags as $adGroupsSelectionCriteriaTagsItem) {
+            if (!is_string($adGroupsSelectionCriteriaTagsItem)) {
+                throw new \InvalidArgumentException(sprintf('The Tags property can only contain items of string, "%s" given', is_object($adGroupsSelectionCriteriaTagsItem) ? get_class($adGroupsSelectionCriteriaTagsItem) : gettype($adGroupsSelectionCriteriaTagsItem)), __LINE__);
             }
         }
         $this->Tags = $tags;
@@ -359,9 +359,9 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setAppIconStatuses(array $appIconStatuses = array())
     {
         $invalidValues = array();
-        foreach ($appIconStatuses as $item) {
-            if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
-                $invalidValues[] = var_export($item);
+        foreach ($appIconStatuses as $adGroupsSelectionCriteriaAppIconStatusesItem) {
+            if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaAppIconStatusesItem)) {
+                $invalidValues[] = var_export($adGroupsSelectionCriteriaAppIconStatusesItem);
             }
         }
         if (!empty($invalidValues)) {
