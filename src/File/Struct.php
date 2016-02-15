@@ -313,7 +313,7 @@ class Struct extends AbstractModelFile
     {
         $model = $this->getModelFromStructAttribute($attribute);
         $sanityCheck = 'false';
-        if ($model instanceof StructModel) {
+        if ($model instanceof StructModel && $model->getIsStruct()) {
             $sanityCheck = sprintf('$%s instanceof %s', $itemName, $this->getStructAttributeType($attribute, true));
         } else {
             switch (self::getPhpType($attribute->getType())) {
