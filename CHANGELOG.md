@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## WIP
+- issue #47 - XSD types are not well inherited by elements
+    - Improve, once again, XSD to PHP type by ensuring usage of strict PHP types
+    - Improve struct attribute type determination based on recursive inheritance
+
 ## 1.4.1
 - Add `time` XSD type matching `string`PHP type
 
