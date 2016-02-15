@@ -226,14 +226,6 @@ abstract class AbstractModelFile extends AbstractFile
         return $this;
     }
     /**
-     * @param AbstractModel $model
-     * @return string[]
-     */
-    protected function getValidMetaValues(AbstractModel $model)
-    {
-        return FileUtils::getValidMetaValues($model);
-    }
-    /**
      * @return AbstractModelFile
      */
     protected function addClassElement()
