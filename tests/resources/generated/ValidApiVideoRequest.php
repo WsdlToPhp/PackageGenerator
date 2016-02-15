@@ -17,7 +17,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var unsignedInt
+     * @var int
      */
     public $Offset;
     /**
@@ -25,7 +25,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var unsignedInt
+     * @var int
      */
     public $Count;
     /**
@@ -50,8 +50,8 @@ class ApiVideoRequest extends AbstractStructBase
      * @uses ApiVideoRequest::setCount()
      * @uses ApiVideoRequest::setFilters()
      * @uses ApiVideoRequest::setSortBy()
-     * @param unsignedInt $offset
-     * @param unsignedInt $count
+     * @param int $offset
+     * @param int $count
      * @param \Api\ArrayType\ApiArrayOfString $filters
      * @param string $sortBy
      */
@@ -65,7 +65,7 @@ class ApiVideoRequest extends AbstractStructBase
     }
     /**
      * Get Offset value
-     * @return unsignedInt|null
+     * @return int|null
      */
     public function getOffset()
     {
@@ -73,7 +73,7 @@ class ApiVideoRequest extends AbstractStructBase
     }
     /**
      * Set Offset value
-     * @param unsignedInt $offset
+     * @param int $offset
      * @return \Api\StructType\ApiVideoRequest
      */
     public function setOffset($offset = null)
@@ -83,7 +83,7 @@ class ApiVideoRequest extends AbstractStructBase
     }
     /**
      * Get Count value
-     * @return unsignedInt|null
+     * @return int|null
      */
     public function getCount()
     {
@@ -91,7 +91,7 @@ class ApiVideoRequest extends AbstractStructBase
     }
     /**
      * Set Count value
-     * @param unsignedInt $count
+     * @param int $count
      * @return \Api\StructType\ApiVideoRequest
      */
     public function setCount($count = null)

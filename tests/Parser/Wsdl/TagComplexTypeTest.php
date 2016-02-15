@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement;
 
 class TagComplexTypeTest extends WsdlParser
 {
@@ -71,9 +72,11 @@ class TagComplexTypeTest extends WsdlParser
     {
         $tagComplexTypeParser = self::docDataPaymentsInstance();
         $tagRestriction = new TagRestriction($tagComplexTypeParser->getGenerator());
+        $tagElement = new TagElement($tagComplexTypeParser->getGenerator());
 
         $tagComplexTypeParser->parse();
         $tagRestriction->parse();
+        $tagElement->parse();
 
         $count = 0;
         $structs = $tagComplexTypeParser->getGenerator()->getStructs();
@@ -91,6 +94,24 @@ class TagComplexTypeTest extends WsdlParser
                 $count++;
             }
         }
-        $this->assertEquals(1, $count);
+        $shopper = $structs->getStructByName('shopper');
+        if ($shopper) {
+            $email = $shopper->getAttribute('email');
+            if ($email) {
+                $this->assertSame('emailAddress', $email->getType());
+                $this->assertSame('emailAddress', $email->getTypeStruct()->getName());
+                $this->assertSame('string100', $email->getTypeStruct()->getInheritance());
+                $this->assertSame('normalizedString', $email->getTypeStruct()->getTopInheritance());
+                $this->assertSame(array(
+                    'maxOccurs' => '1',
+                    'minOccurs' => '1',
+                    'pattern' => '[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)',
+                    'maxLength' => '100',
+                    'minLength' => '1',
+                ), $email->getMeta());
+                $count++;
+            }
+        }
+        $this->assertEquals(2, $count);
     }
 }

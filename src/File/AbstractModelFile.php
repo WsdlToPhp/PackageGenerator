@@ -226,14 +226,6 @@ abstract class AbstractModelFile extends AbstractFile
         return $this;
     }
     /**
-     * @param AbstractModel $model
-     * @return string[]
-     */
-    protected function getValidMetaValues(AbstractModel $model)
-    {
-        return FileUtils::getValidMetaValues($model);
-    }
-    /**
      * @return AbstractModelFile
      */
     protected function addClassElement()
@@ -424,15 +416,22 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $attribute = $this->getStructAttribute($attribute);
         $inheritance = $attribute->getInheritance();
-        $type = empty($inheritance) ? $attribute->getType() : $inheritance;
+        if (empty($inheritance)) {
+            $type = $attribute->getType();
+        } else {
+            $type = $inheritance;
+        }
+        if (!empty($type) && ($struct = $this->getGenerator()->getStruct($type))) {
+            $inheritance = $struct->getTopInheritance();
+            if (!empty($inheritance)) {
+                $type = $inheritance;
+            }
+        }
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
-            $modelInheritance = $model->getInheritance();
-            if ($model->getIsStruct() === false) {
-                $type = !empty($modelInheritance) ? $modelInheritance : $type;
-            } elseif ($model->getIsRestriction() === true) {
-                $type = !empty($modelInheritance) ? $modelInheritance : self::TYPE_STRING;
-            } else {
+            if ($model->getIsRestriction() === true) {
+                $type = self::TYPE_STRING;
+            } elseif ($model->getIsStruct()) {
                 $type = $model->getPackagedName($namespaced);
             }
         }
@@ -485,7 +484,7 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $attribute = $this->getStructAttribute($attribute);
         $attributeType = $this->getStructAttributeType($attribute, true);
-        if (XsdTypes::isAnonymous($attributeType)) {
+        if (XsdTypes::instance()->isXsd($attributeType)) {
             $attributeType = self::getPhpType($attributeType);
         }
         return $attributeType;

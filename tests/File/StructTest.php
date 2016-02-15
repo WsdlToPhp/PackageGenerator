@@ -185,9 +185,25 @@ class StructTest extends AbstractFile
     /**
      *
      */
+    public function testWriteDocDataPaymentsStructShopper()
+    {
+        $generator = self::docDataPaymentsGeneratorInstance(true);
+        if (($model = $generator->getStruct('shopper')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidShopper', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find shopper struct for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testWriteDocDataPaymentsStructExpiryDate()
     {
-        $generator = self::docDataPaymentsGeneratorInstance();
+        $generator = self::docDataPaymentsGeneratorInstance(true);
         if (($model = $generator->getStruct('expiryDate')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct

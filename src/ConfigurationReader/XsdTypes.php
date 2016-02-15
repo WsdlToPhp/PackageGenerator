@@ -1,5 +1,4 @@
 <?php
-
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
 class XsdTypes extends AbstractYamlReader
