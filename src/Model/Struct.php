@@ -336,6 +336,24 @@ class Struct extends AbstractModel
         return $this->getGenerator()->getStruct($this->getInheritance());
     }
     /**
+     * @return Struct|null
+     */
+    public function getTopInheritance()
+    {
+        $inheritance = $this->getInheritance();
+        if (!empty($inheritance)) {
+            $struct = $this->getInheritanceStruct();
+            while($struct instanceof Struct) {
+                $structInheritance = $struct->getInheritance();
+                if (!empty($structInheritance)) {
+                    $inheritance = $structInheritance;
+                }
+                $struct = $struct->getInheritanceStruct();
+            }
+        }
+        return $inheritance;
+    }
+    /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getMeta()
      * @return string[]
      */
