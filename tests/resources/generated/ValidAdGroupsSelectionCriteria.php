@@ -112,7 +112,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setCampaignIds(array $campaignIds = array())
     {
-        foreach($campaignIds as $item) {
+        foreach ($campaignIds as $item) {
             if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The CampaignIds property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
@@ -150,7 +150,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setIds(array $ids = array())
     {
-        foreach($ids as $item) {
+        foreach ($ids as $item) {
             if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The Ids property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
@@ -191,7 +191,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTypes(array $types = array())
     {
         $invalidValues = array();
-        foreach($types as $item) {
+        foreach ($types as $item) {
             if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($item)) {
                 $invalidValues[] = var_export($item);
             }
@@ -237,7 +237,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setStatuses(array $statuses = array())
     {
         $invalidValues = array();
-        foreach($statuses as $item) {
+        foreach ($statuses as $item) {
             if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
                 $invalidValues[] = var_export($item);
             }
@@ -280,7 +280,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setTagIds(array $tagIds = array())
     {
-        foreach($tagIds as $item) {
+        foreach ($tagIds as $item) {
             if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The TagIds property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
@@ -318,7 +318,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setTags(array $tags = array())
     {
-        foreach($tags as $item) {
+        foreach ($tags as $item) {
             if (!is_string($item)) {
                 throw new \InvalidArgumentException(sprintf('The Tags property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
@@ -359,7 +359,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setAppIconStatuses(array $appIconStatuses = array())
     {
         $invalidValues = array();
-        foreach($appIconStatuses as $item) {
+        foreach ($appIconStatuses as $item) {
             if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
                 $invalidValues[] = var_export($item);
             }

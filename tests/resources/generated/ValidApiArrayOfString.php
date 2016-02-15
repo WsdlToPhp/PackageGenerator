@@ -46,9 +46,9 @@ class ApiArrayOfString extends AbstractStructArrayBase
      */
     public function setString(array $string = array())
     {
-        foreach($string as $item) {
-            if (!is_string($item)) {
-                throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($string as $arrayOfStringStringItem) {
+            if (!is_string($arrayOfStringStringItem)) {
+                throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, "%s" given', is_object($arrayOfStringStringItem) ? get_class($arrayOfStringStringItem) : gettype($arrayOfStringStringItem)), __LINE__);
             }
         }
         $this->string = $string;

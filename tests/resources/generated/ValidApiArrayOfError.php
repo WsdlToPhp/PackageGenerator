@@ -46,9 +46,9 @@ class ApiArrayOfError extends AbstractStructArrayBase
      */
     public function setError(array $error = array())
     {
-        foreach($error as $item) {
-            if (!$item instanceof \Api\StructType\ApiError) {
-                throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiError, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($error as $arrayOfErrorErrorItem) {
+            if (!$arrayOfErrorErrorItem instanceof \Api\StructType\ApiError) {
+                throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiError, "%s" given', is_object($arrayOfErrorErrorItem) ? get_class($arrayOfErrorErrorItem) : gettype($arrayOfErrorErrorItem)), __LINE__);
             }
         }
         $this->Error = $error;

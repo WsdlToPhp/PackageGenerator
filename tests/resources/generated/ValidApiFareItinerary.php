@@ -137,7 +137,7 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setFirstSegmentsIds(array $firstSegmentsIds = array())
     {
-        foreach($firstSegmentsIds as $item) {
+        foreach ($firstSegmentsIds as $item) {
             if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The firstSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
@@ -211,7 +211,7 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setSecondSegmentsIds(array $secondSegmentsIds = array())
     {
-        foreach($secondSegmentsIds as $item) {
+        foreach ($secondSegmentsIds as $item) {
             if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The secondSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
@@ -249,7 +249,7 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setThirdSegmentsIds(array $thirdSegmentsIds = array())
     {
-        foreach($thirdSegmentsIds as $item) {
+        foreach ($thirdSegmentsIds as $item) {
             if (!is_int($item)) {
                 throw new \InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of int, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
             }
