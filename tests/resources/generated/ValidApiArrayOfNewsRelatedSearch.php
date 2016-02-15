@@ -46,9 +46,9 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      */
     public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
-        foreach($newsRelatedSearch as $item) {
-            if (!$item instanceof \Api\StructType\ApiNewsRelatedSearch) {
-                throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of \Api\StructType\ApiNewsRelatedSearch, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        foreach ($newsRelatedSearch as $arrayOfNewsRelatedSearchNewsRelatedSearchItem) {
+            if (!$arrayOfNewsRelatedSearchNewsRelatedSearchItem instanceof \Api\StructType\ApiNewsRelatedSearch) {
+                throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of \Api\StructType\ApiNewsRelatedSearch, "%s" given', is_object($arrayOfNewsRelatedSearchNewsRelatedSearchItem) ? get_class($arrayOfNewsRelatedSearchNewsRelatedSearchItem) : gettype($arrayOfNewsRelatedSearchNewsRelatedSearchItem)), __LINE__);
             }
         }
         $this->NewsRelatedSearch = $newsRelatedSearch;

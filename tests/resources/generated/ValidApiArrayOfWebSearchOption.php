@@ -47,9 +47,9 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     public function setWebSearchOption(array $webSearchOption = array())
     {
         $invalidValues = array();
-        foreach($webSearchOption as $item) {
-            if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
-                $invalidValues[] = var_export($item);
+        foreach ($webSearchOption as $arrayOfWebSearchOptionWebSearchOptionItem) {
+            if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($arrayOfWebSearchOptionWebSearchOptionItem)) {
+                $invalidValues[] = var_export($arrayOfWebSearchOptionWebSearchOptionItem);
             }
         }
         if (!empty($invalidValues)) {
