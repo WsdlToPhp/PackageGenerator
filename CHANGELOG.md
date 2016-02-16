@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## WIP
+## 1.4.2
 - issue #47 - XSD types are not well inherited by elements
     - Improve, once again, XSD to PHP type by ensuring usage of strict PHP types
     - Improve struct attribute type determination based on recursive inheritance
 - issue #41 - Support for arrays
-    - Ensure non conflicting variable name in setter when paramter is an array and named item (as previous item iteration variable was named item)
+    - Ensure non conflicting variable name in setter when paramter is an array and named `item` (as previous item iteration variable was named item)
 
 ## 1.4.1
 - Add `time` XSD type matching `string`PHP type
