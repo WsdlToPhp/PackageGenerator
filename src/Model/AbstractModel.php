@@ -281,7 +281,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
         if ($this->getGenerator()->getOptionPrefix() !== '') {
             $nameParts[] = $this->getGenerator()->getOptionPrefix();
         } else {
-            $cleanName = self::replaceReservedPhpKeyword($cleanName, null);
+            $cleanName = self::replaceReservedPhpKeyword($cleanName);
         }
 
         $nameParts[] = ucfirst(self::uniqueName($cleanName, $this->getContextualPart()));
