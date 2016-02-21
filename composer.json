@@ -26,6 +26,11 @@
             "name": "GroxExMachine",
             "email": "grox@mail.ru",
             "role": "Contributor"
+        },
+        {
+            "name": "Jan Zaeske",
+            "email": "mail@jzaeske.de",
+            "role": "Contributor"
         }
     ],
     "support" : {
