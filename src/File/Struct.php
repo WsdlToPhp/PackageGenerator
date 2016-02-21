@@ -249,7 +249,6 @@ class Struct extends AbstractModelFile
                 ->addChild('} else {', $parameterName)
                     ->addChild($method->getIndentedString($this->getStructMethodSetBodyAssignment($attribute, $parameterName), 1))
                 ->addChild('}', $parameterName);
-
         } else {
             $method->addChild($this->getStructMethodSetBodyAssignment($attribute, $parameterName));
         }
