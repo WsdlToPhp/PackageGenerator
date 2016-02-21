@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## WIP
+- issue #48 - minOccurs=0 not works
+
 ## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names
 
