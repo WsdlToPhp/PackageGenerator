@@ -572,7 +572,7 @@ class Struct extends AbstractModelFile
                 }
                 $this
                     ->addStructMethodsGetAnnotationBlockFromXmlAttribute($annotationBlock, $attribute)
-                    ->addStructMethodsGetAnnotationBlock($annotationBlock, $this->getStructAttributeTypeGetAnnotation($attribute), $attribute);
+                    ->addStructMethodsGetAnnotationBlock($annotationBlock, $this->getStructAttributeTypeGetAnnotation($attribute));
                 break;
         }
         return $this;
