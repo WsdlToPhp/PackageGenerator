@@ -172,6 +172,40 @@ class ServiceTest extends AbstractFile
     /**
      *
      */
+    public function testWritePayPalServiceDoWithoutPrefix()
+    {
+        $generator = self::payPalGeneratorInstance();
+        $generator->setOptionPrefix('');
+        if (($model = $generator->getService('Do')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidDoWithoutPrefix', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Do service for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteDocDataPaymentsServiceListWithoutPrefix()
+    {
+        $generator = self::docDataPaymentsGeneratorInstance();
+        $generator->setOptionPrefix('');
+        if (($model = $generator->getService('List')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidListWithoutPrefix', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find List service for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testWriteBingService()
     {
         $generator = self::bingGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
