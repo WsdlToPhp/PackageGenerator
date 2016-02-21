@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## WIP
+## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names
 
 ## 1.4.2
