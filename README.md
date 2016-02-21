@@ -52,6 +52,12 @@ The generated package does not need PEAR nor NuSOAP, at least :
     /tutorial.php: generated if ```--gentutorial``` option is enabled (default: true)
 ```
 
+## Warning about generated classes and their property usage
+Every generated classes which represent a Struct element that has to be sent or received have their property defined as public. Nevertheless you **SHOULD** always use the generated setters and getters in order to ensure the good behavior of the objects you create.
+Following the issue #48, it has been decided to unset `nillable` and non required (`minOccurs`=0) properties from the object as soon as the value assigned to the property is null. To handle this particularities:
+- the setter takes care of unsetting the property if the value passed as parameter to this method is `null`,
+- the getter ensure that no PHP notice (`Undefined property`) is fired when we try to access the property, `null` is then returned.
+
 ## Options
 The generator comes with several options:
 - **Required** package configuration:
