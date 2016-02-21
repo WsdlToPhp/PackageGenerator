@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.4.3
+- issue #45 - Reserved PHP-Keywords in Class Names
+
 ## 1.4.2
 - issue #47 - XSD types are not well inherited by elements
     - Improve, once again, XSD to PHP type by ensuring usage of strict PHP types

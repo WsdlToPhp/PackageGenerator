@@ -67,6 +67,10 @@ abstract class AbstractModel extends AbstractGeneratorAware
         $this->setName($name);
     }
     /**
+     * @uses AbstractModel::getInheritedMoel()
+     * @uses AbstractModel::getPackagedName()
+     * @uses AbstractModel::getExtends()
+     * @uses Struct::getIsStruct()
      * @return string
      */
     public function getExtendsClassName()
@@ -98,6 +102,9 @@ abstract class AbstractModel extends AbstractGeneratorAware
         return $this;
     }
     /**
+     * @uses AbstractGeneratorAware::getGenerator()
+     * @uses Generator::getStruct()
+     * @uses AbstractModel::getInheritance()
      * @return Struct
      */
     public function getInheritedMoel()
@@ -265,9 +272,14 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns the packaged name
-     * @uses Generator::getPackageName()
+     * @uses AbstractModel::getNamespace()
      * @uses AbstractModel::getCleanName()
      * @uses AbstractModel::getContextualPart()
+     * @uses AbstractModel::uniqueName()
+     * @uses AbstractModel::replaceReservedPhpKeyword()
+     * @uses AbstractGeneratorAware::getGenerator()
+     * @uses Generator::getOptionPrefix()
+     * @uses Generator::getOptionSuffix()
      * @uses AbstractModel::uniqueName() to ensure unique naming of struct case sensitively
      * @return string
      */
@@ -277,10 +289,13 @@ abstract class AbstractModel extends AbstractGeneratorAware
         if ($namespaced && $this->getNamespace() !== '') {
             $nameParts[] = sprintf('\%s\\', $this->getNamespace());
         }
+        $cleanName = $this->getCleanName();
         if ($this->getGenerator()->getOptionPrefix() !== '') {
             $nameParts[] = $this->getGenerator()->getOptionPrefix();
+        } else {
+            $cleanName = self::replaceReservedPhpKeyword($cleanName);
         }
-        $nameParts[] = ucfirst(self::uniqueName($this->getCleanName(), $this->getContextualPart()));
+        $nameParts[] = ucfirst(self::uniqueName($cleanName, $this->getContextualPart()));
         if ($this->getGenerator()->getOptionSuffix() !== '') {
             $nameParts[] = $this->getGenerator()->getOptionSuffix();
         }
@@ -304,6 +319,11 @@ abstract class AbstractModel extends AbstractGeneratorAware
         return '';
     }
     /**
+     * @uses AbstractGeneratorAware::getGenerator()
+     * @uses Generator::getOptionNamespacePrefix()
+     * @uses Generator::getOptionPrefix()
+     * @uses Generator::getOptionSuffix()
+     * @uses AbstractModel::getSubDirectory()
      * @return string
      */
     public function getNamespace()
@@ -326,6 +346,10 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns directory where to store class and create it if needed
+     * @uses AbstractGeneratorAware::getGenerator()
+     * @uses AbstractModel::getOptionCategory()
+     * @uses AbstractGeneratorAware::getContextualPart()
+     * @uses GeneratorOptions::VALUE_CAT
      * @return string
      */
     public function getSubDirectory()
@@ -347,6 +371,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Clean a string to make it valid as PHP variable
+     * @uses GeneratorUtils::cleanString()
      * @param string $string the string to clean
      * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      * @return string
@@ -357,21 +382,27 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns a usable keyword for a original keyword
+     * @uses ReservedKeywords::instance()
+     * @uses ReservedKeywords::is()
      * @param string $keyword the keyword
      * @param string $context the context
      * @return string
      */
-    public static function replaceReservedPhpKeyword($keyword, $context)
+    public static function replaceReservedPhpKeyword($keyword, $context = null)
     {
         $phpReservedKeywordFound = '';
         if (ReservedKeywords::instance()->is($keyword)) {
-            $keywordKey = $phpReservedKeywordFound . '_' . $context;
-            if (!array_key_exists($keywordKey, self::$replacedReservedPhpKeywords)) {
-                self::$replacedReservedPhpKeywords[$keywordKey] = 0;
+            if ($context !== null) {
+                $keywordKey = $phpReservedKeywordFound . '_' . $context;
+                if (!array_key_exists($keywordKey, self::$replacedReservedPhpKeywords)) {
+                    self::$replacedReservedPhpKeywords[$keywordKey] = 0;
+                } else {
+                    self::$replacedReservedPhpKeywords[$keywordKey]++;
+                }
+                return '_' . $keyword . (self::$replacedReservedPhpKeywords[$keywordKey] ? '_' . self::$replacedReservedPhpKeywords[$keywordKey] : '');
             } else {
-                self::$replacedReservedPhpKeywords[$keywordKey]++;
+                return '_' . $keyword;
             }
-            return '_' . $keyword . (self::$replacedReservedPhpKeywords[$keywordKey] ? '_' . self::$replacedReservedPhpKeywords[$keywordKey] : '');
         } else {
             return $keyword;
         }
