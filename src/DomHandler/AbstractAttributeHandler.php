@@ -41,6 +41,10 @@ class AbstractAttributeHandler extends AbstractNodeHandler
     /**
      * @var string
      */
+    const ATTRIBUTE_NILLABLE = 'nillable';
+    /**
+     * @var string
+     */
     const VALUE_UNBOUNDED = 'unbounded';
     /**
      * @var string
