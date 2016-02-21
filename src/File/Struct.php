@@ -246,9 +246,9 @@ class Struct extends AbstractModelFile
             $method
                 ->addChild(sprintf('if (is_null($%s)) {', $parameterName))
                     ->addChild($method->getIndentedString(sprintf('unset($this->%1$s%2$s);', $parameterName, $attribute->nameIsClean() ? '' : sprintf(', $this->{\'%s\'}', addslashes($attribute->getName()))), 1))
-                ->addChild('} else {', $parameterName)
+                ->addChild('} else {')
                     ->addChild($method->getIndentedString($this->getStructMethodSetBodyAssignment($attribute, $parameterName), 1))
-                ->addChild('}', $parameterName);
+                ->addChild('}');
         } else {
             $method->addChild($this->getStructMethodSetBodyAssignment($attribute, $parameterName));
         }
@@ -611,10 +611,9 @@ class Struct extends AbstractModelFile
     /**
      * @param PhpAnnotationBlock $annotationBlock
      * @param string $attributeType
-     * @param StructAttributeModel $attribute
      * @return Struct
      */
-    protected function addStructMethodsGetAnnotationBlock(PhpAnnotationBlock $annotationBlock, $attributeType, StructAttributeModel $attribute = null)
+    protected function addStructMethodsGetAnnotationBlock(PhpAnnotationBlock $annotationBlock, $attributeType)
     {
         $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $attributeType));
         return $this;
