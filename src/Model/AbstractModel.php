@@ -268,7 +268,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function nameIsClean()
     {
-        return ($this->getName() != '' && $this->getName() == $this->getCleanName());
+        return ($this->getName() !== '' && $this->getName() === $this->getCleanName());
     }
     /**
      * Returns the packaged name
