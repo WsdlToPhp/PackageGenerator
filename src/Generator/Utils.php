@@ -206,7 +206,7 @@ class Utils
      */
     public static function cleanString($string, $keepMultipleUnderscores = true)
     {
-        $cleanedString = preg_replace('/[^a-zA-Z0-9_]/', '_', $string);
+        $cleanedString = preg_replace('/[^\p{L}\p{N}_]/u', '_', $string);
         if (!$keepMultipleUnderscores) {
             $cleanedString = preg_replace('/[_]+/', '_', $cleanedString);
         }
