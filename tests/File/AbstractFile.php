@@ -104,6 +104,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlDocDataPaymentsPath(), $reset, $gatherMethods);
     }
     /**
+     * @return Generator
+     */
+    public static function deliveryServiceInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlDeliveryService(), $reset, $gatherMethods);
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */
