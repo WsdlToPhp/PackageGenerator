@@ -445,7 +445,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setSourceId($sourceId = null)
     {
         if (is_null($sourceId)) {
-            unset($this->sourceId);
+            unset($this->SourceId);
         } else {
             $this->SourceId = $sourceId;
         }
@@ -550,7 +550,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setDailyBudget(\Api\StructType\ApiDailyBudget $dailyBudget = null)
     {
         if (is_null($dailyBudget)) {
-            unset($this->dailyBudget);
+            unset($this->DailyBudget);
         } else {
             $this->DailyBudget = $dailyBudget;
         }
@@ -577,7 +577,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setEndDate($endDate = null)
     {
         if (is_null($endDate)) {
-            unset($this->endDate);
+            unset($this->EndDate);
         } else {
             $this->EndDate = $endDate;
         }
@@ -604,7 +604,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setNegativeKeywords(\Api\ArrayType\ApiArrayOfString $negativeKeywords = null)
     {
         if (is_null($negativeKeywords)) {
-            unset($this->negativeKeywords);
+            unset($this->NegativeKeywords);
         } else {
             $this->NegativeKeywords = $negativeKeywords;
         }
@@ -631,7 +631,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setBlockedIps(\Api\ArrayType\ApiArrayOfString $blockedIps = null)
     {
         if (is_null($blockedIps)) {
-            unset($this->blockedIps);
+            unset($this->BlockedIps);
         } else {
             $this->BlockedIps = $blockedIps;
         }
@@ -658,7 +658,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setExcludedSites(\Api\ArrayType\ApiArrayOfString $excludedSites = null)
     {
         if (is_null($excludedSites)) {
-            unset($this->excludedSites);
+            unset($this->ExcludedSites);
         } else {
             $this->ExcludedSites = $excludedSites;
         }
