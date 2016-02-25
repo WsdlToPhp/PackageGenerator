@@ -158,4 +158,15 @@ class UtilsTest extends TestCase
     {
         $this->assertSame('Operation', Utils::getPart(GeneratorOptions::VALUE_END, 'MyOperation0'));
     }
+    /**
+     *
+     */
+    public function testCleanString()
+    {
+        $this->assertSame('КонтактнаяИнформация', Utils::cleanString('КонтактнаяИнформация'));
+        $this->assertSame('____________________', Utils::cleanString('-"\'{&~(|`\\^¨@)°]+=}£'));
+        $this->assertSame('1234567890aBcD_EfGhI', Utils::cleanString('1234567890aBcD_EfGhI'));
+        $this->assertSame('äöüß', Utils::cleanString('äöüß'));
+        $this->assertSame('θωερτψυιοπασδφγηςκλζχξωβνμάέήίϊΐόύϋΰώ', 'θωερτψυιοπασδφγηςκλζχξωβνμάέήίϊΐόύϋΰώ');
+    }
 }

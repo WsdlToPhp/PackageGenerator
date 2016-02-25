@@ -217,6 +217,22 @@ class StructTest extends AbstractFile
     /**
      *
      */
+    public function testWriteDeliveryServiceStructExpiryDate()
+    {
+        $generator = self::deliveryServiceInstance();
+        if (($model = $generator->getStruct('АдресРФ')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidАдресРФ', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find АдресРФ struct for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();

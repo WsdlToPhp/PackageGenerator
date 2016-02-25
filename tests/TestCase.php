@@ -203,6 +203,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
+    public static function wsdlDeliveryService()
+    {
+        return __DIR__ . '/resources/DeliveryService.wsdl';
+    }
+    /**
+     * @return string
+     */
     public static function wsdlEmptyPath()
     {
         return __DIR__ . '/resources/empty.wsdl';
@@ -288,6 +295,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getDocDataPAymentsInstance()
     {
         return self::getInstance(self::wsdlDocDataPaymentsPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getDeliveryServiceInstance()
+    {
+        return self::getInstance(self::wsdlDeliveryService());
     }
     /**
      * @param string $wsdlPath

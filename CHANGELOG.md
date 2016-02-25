@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## WIP
+- issue #50 - Support for Cyrillic alphabet
+
 ## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names
 
