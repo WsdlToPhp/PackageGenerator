@@ -200,6 +200,10 @@ class Utils
     }
     /**
      * Clean a string to make it valid as PHP variable
+     * See more about the used regular expression at {@link http://www.regular-expressions.info/unicode.html}:
+     * - \p{L} for any valid letter
+     * - \p{N} for any valid number
+     * - /u for suporting unicode
      * @param string $string the string to clean
      * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      * @return string
