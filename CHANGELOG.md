@@ -6,6 +6,7 @@
     - Read more at [regular expression for unicode](http://www.regular-expressions.info/unicode.html)
 - issue #48 - minOccurs=0 not works
     - From now, any not required property that can be removed from request (minOccurs=0 and nillable=true) is unset on object instantiation
+- issue #49 - Use schema attribute's attributes to apply validation rule on generated properties
 
 ## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names
