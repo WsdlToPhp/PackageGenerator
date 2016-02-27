@@ -2,6 +2,8 @@
 
 ## WIP
 - issue #50 - Support for Cyrillic alphabet
+	- From now, any unicode character should be handled and generated as it is as a PHP variable/parameter/method/class
+	- Read more at [regular expression for unicode](http://www.regular-expressions.info/unicode.html)
 
 ## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names
