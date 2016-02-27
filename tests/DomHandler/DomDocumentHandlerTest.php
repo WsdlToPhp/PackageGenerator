@@ -7,10 +7,23 @@ use WsdlToPhp\PackageGenerator\DomHandler\DomDocumentHandler;
 
 class DomDocumentHandlerTest extends TestCase
 {
+    protected static $actonInstance;
     protected static $ebayInstance;
     protected static $bingInstance;
     protected static $emptyInstance;
     protected static $yandexDirectApiAdGroupsInstance;
+    /**
+     * @return DomDocumentHandler
+     */
+    public static function actonInstance()
+    {
+        if (!isset(self::$actonInstance)) {
+            $doc = new \DOMDocument('1.0', 'utf-8');
+            $doc->load(self::wsdlActonPath());
+            self::$actonInstance = new DomDocumentHandler($doc);
+        }
+        return self::$actonInstance;
+    }
     /**
      * @return DomDocumentHandler
      */

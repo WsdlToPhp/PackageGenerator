@@ -46,38 +46,56 @@ class ApiOffer extends ApiOrder
     }
     /**
      * Get offerClassMember value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (nillable=true+minOccurs=0)
      * @return string|null
      */
     public function getOfferClassMember()
     {
-        return $this->offerClassMember;
+        return isset($this->offerClassMember) ? $this->offerClassMember : null;
     }
     /**
      * Set offerClassMember value
+     * This property is removable from request (nillable=true+minOccurs=0), therefore
+     * if the value assigned to this property is null, it is removed from this object
      * @param string $offerClassMember
      * @return \Api\StructType\ApiOffer
      */
     public function setOfferClassMember($offerClassMember = null)
     {
-        $this->offerClassMember = $offerClassMember;
+        if (is_null($offerClassMember)) {
+            unset($this->offerClassMember);
+        } else {
+            $this->offerClassMember = $offerClassMember;
+        }
         return $this;
     }
     /**
      * Get offer value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (nillable=true+minOccurs=0)
      * @return \Api\StructType\ApiOffer|null
      */
     public function getOffer()
     {
-        return $this->offer;
+        return isset($this->offer) ? $this->offer : null;
     }
     /**
      * Set offer value
+     * This property is removable from request (nillable=true+minOccurs=0), therefore
+     * if the value assigned to this property is null, it is removed from this object
      * @param \Api\StructType\ApiOffer $offer
      * @return \Api\StructType\ApiOffer
      */
     public function setOffer(\Api\StructType\ApiOffer $offer = null)
     {
-        $this->offer = $offer;
+        if (is_null($offer)) {
+            unset($this->offer);
+        } else {
+            $this->offer = $offer;
+        }
         return $this;
     }
     /**

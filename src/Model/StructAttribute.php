@@ -22,6 +22,13 @@ class StructAttribute extends AbstractModel
      */
     private $containsElements = false;
     /**
+     * Defines that this property can be removed from request or not.
+     * The property cna be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
+     * Infos at {@link http://www.w3schools.com/xml/el_element.asp}
+     * @var bool
+     */
+    private $removableFromRequest = false;
+    /**
      * Main constructor
      * @see AbstractModel::__construct()
      * @uses StructAttribute::setType()
@@ -101,6 +108,22 @@ class StructAttribute extends AbstractModel
     public function setContainsElements($containsElements)
     {
         $this->containsElements = $containsElements;
+        return $this;
+    }
+    /**
+     * @return bool
+     */
+    public function getRemovableFromRequest()
+    {
+        return $this->removableFromRequest;
+    }
+    /**
+     * @param bool $removableFromRequest
+     * @return StructAttribute
+     */
+    public function setRemovableFromRequest($removableFromRequest)
+    {
+        $this->removableFromRequest = $removableFromRequest;
         return $this;
     }
     /**

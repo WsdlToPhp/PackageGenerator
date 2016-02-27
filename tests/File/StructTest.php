@@ -246,4 +246,20 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find NewsArticle struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteYandexDirectApiStructCampaignsCompaignAddItem()
+    {
+        $generator = self::yandexDirectApiCampaignsGeneratorInstance(true);
+        if (($model = $generator->getStruct('CampaignGetItem')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidCampaignGetItem', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find CampaignGetItem struct for file generation');
+        }
+    }
 }

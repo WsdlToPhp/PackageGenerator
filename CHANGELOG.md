@@ -2,8 +2,10 @@
 
 ## WIP
 - issue #50 - Support for Cyrillic alphabet
-	- From now, any unicode character should be handled and generated as it is as a PHP variable/parameter/method/class
-	- Read more at [regular expression for unicode](http://www.regular-expressions.info/unicode.html)
+    - From now, any unicode character should be handled and generated as it is as a PHP variable/parameter/method/class
+    - Read more at [regular expression for unicode](http://www.regular-expressions.info/unicode.html)
+- issue #48 - minOccurs=0 not works
+    - From now, any not required property that can be removed from request (minOccurs=0 and nillable=true) is unset on object instantiation
 
 ## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names
