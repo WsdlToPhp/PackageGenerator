@@ -21,6 +21,7 @@ class GeneratorOptions extends AbstractYamlReader
     const PREFIX = 'prefix';
     const ORIGIN = 'origin';
     const CATEGORY = 'category';
+    const VALIDATION = 'validation';
     const STANDALONE = 'standalone';
     const PROXY_HOST = 'proxy_host';
     const PROXY_PORT = 'proxy_port';
@@ -256,6 +257,24 @@ class GeneratorOptions extends AbstractYamlReader
     public function setStandalone($standalone)
     {
         return $this->setOptionValue(self::STANDALONE, $standalone);
+    }
+    /**
+     * Get validation option value
+     * @return bool
+     */
+    public function getValidation()
+    {
+        return $this->getOptionValue(self::VALIDATION);
+    }
+    /**
+     * Set current validation option value
+     * @throws \InvalidArgumentException
+     * @param bool $validation
+     * @return GeneratorOptions
+     */
+    public function setValidation($validation)
+    {
+        return $this->setOptionValue(self::VALIDATION, $validation);
     }
     /**
      * Get struct class option value

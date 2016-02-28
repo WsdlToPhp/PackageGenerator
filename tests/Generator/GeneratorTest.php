@@ -377,6 +377,23 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testGetOptionValidation()
+    {
+        $this->assertTrue(self::localInstance()->getOptionValidation());
+    }
+    /**
+     *
+     */
+    public function testSetOptionValidation()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionValidation(GeneratorOptions::VALUE_FALSE);
+
+        $this->assertFalse($instance->getOptionValidation());
+    }
+    /**
+     *
+     */
     public function testGetOptionAddComments()
     {
         $this->assertEmpty(self::localInstance()->getOptionAddComments());

@@ -23,6 +23,9 @@ namespace_prefix:
 standalone:
     default: true
     values: [ true, false ]
+validation:
+    default: true
+    values: [ true, false ]
 struct_class:
     default: '\WsdlToPhp\PackageBase\AbstractStructBase'
     values: ''
