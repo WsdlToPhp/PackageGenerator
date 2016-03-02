@@ -9,7 +9,7 @@
 
 ## 1.4.3.1
 - issue #51 - Error while passing array parameter
-    - The main issue waht not an issue, the detected issue was an error on the SoapHeader type hint defined in the setSoapHeader* method's signature
+    - The main issue was not an issue, the detected issue was an error on the SoapHeader type hint defined in the setSoapHeader* method's signature
 
 ## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names
