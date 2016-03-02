@@ -160,7 +160,7 @@ class Service extends AbstractModelFile
         if ($model instanceof AbstractModel) {
             $type = $model->getPackagedName($namespaced);
         }
-        return $type;
+        return self::getValidType($type);
     }
     /**
      * @param string $soapHeaderName

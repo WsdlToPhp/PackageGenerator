@@ -8,6 +8,10 @@
     - From now, any not required property that can be removed from request (minOccurs=0 and nillable=true) is unset on object instantiation
 - issue #49 - Use schema attribute's attributes to apply validation rule on generated properties
 
+## 1.4.3.1
+- issue #51 - Error while passing array parameter
+    - The main issue was not an issue, the detected issue was an error on the SoapHeader type hint defined in the setSoapHeader* method's signature
+
 ## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names
 
