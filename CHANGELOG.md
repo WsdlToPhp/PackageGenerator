@@ -8,7 +8,7 @@
     - From now, any not required property that can be removed from request (minOccurs=0 and nillable=true) is unset on object instantiation
 - issue #49 - Use schema attribute's attributes to apply validation rule on generated properties
     - From now, validation rules are automatically added to every setter so you're informed of an invalid value before sending the request which throws an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php)
-    - If you do not want the validation rules to be added to the setters, set the option `validation` to false before generating the package
+    - If you do not want the validation rules to be added to the setters, set the option `validation` to `false` before generating the package
 
 ## 1.4.3.1
 - issue #51 - Error while passing array parameter
