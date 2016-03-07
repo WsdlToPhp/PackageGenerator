@@ -244,6 +244,9 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setQuery($query = null)
     {
+        if (!is_null($query) && !is_string($query)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($query)), __LINE__);
+        }
         $this->Query = $query;
         return $this;
     }
@@ -262,6 +265,9 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setAppId($appId = null)
     {
+        if (!is_null($appId) && !is_string($appId)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($appId)), __LINE__);
+        }
         $this->AppId = $appId;
         return $this;
     }
@@ -316,6 +322,9 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setVersion($version = '2.2')
     {
+        if (!is_null($version) && !is_string($version)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($version)), __LINE__);
+        }
         $this->Version = $version;
         return $this;
     }
@@ -334,6 +343,9 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setMarket($market = null)
     {
+        if (!is_null($market) && !is_string($market)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($market)), __LINE__);
+        }
         $this->Market = $market;
         return $this;
     }
@@ -352,6 +364,9 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setUILanguage($uILanguage = null)
     {
+        if (!is_null($uILanguage) && !is_string($uILanguage)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($uILanguage)), __LINE__);
+        }
         $this->UILanguage = $uILanguage;
         return $this;
     }

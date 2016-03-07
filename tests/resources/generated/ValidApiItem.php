@@ -92,6 +92,9 @@ class ApiItem extends AbstractStructBase
      */
     public function setId($id = null)
     {
+        if (!is_null($id) && !is_string($id)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($id)), __LINE__);
+        }
         $this->id = $id;
         return $this;
     }
@@ -110,6 +113,9 @@ class ApiItem extends AbstractStructBase
      */
     public function setDisplayName($displayName = null)
     {
+        if (!is_null($displayName) && !is_string($displayName)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($displayName)), __LINE__);
+        }
         $this->displayName = $displayName;
         return $this;
     }

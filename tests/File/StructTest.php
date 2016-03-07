@@ -252,6 +252,7 @@ class StructTest extends AbstractFile
     public function testWriteYandexDirectApiStructCampaignsCompaignAddItem()
     {
         $generator = self::yandexDirectApiCampaignsGeneratorInstance(true);
+        $generator->setOptionValidation(false);
         if (($model = $generator->getStruct('CampaignGetItem')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct

@@ -118,6 +118,9 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setKey($key = null)
     {
+        if (!is_null($key) && !is_string($key)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($key)), __LINE__);
+        }
         $this->key = $key;
         return $this;
     }
@@ -174,6 +177,9 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setClickoutURLParams($clickoutURLParams = null)
     {
+        if (!is_null($clickoutURLParams) && !is_string($clickoutURLParams)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($clickoutURLParams)), __LINE__);
+        }
         $this->clickoutURLParams = $clickoutURLParams;
         return $this;
     }

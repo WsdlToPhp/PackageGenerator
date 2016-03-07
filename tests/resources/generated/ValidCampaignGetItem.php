@@ -328,9 +328,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setType($type = null)
     {
-        if (!\Api\EnumType\ApiCampaignTypeGetEnum::valueIsValid($type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $type, implode(', ', \Api\EnumType\ApiCampaignTypeGetEnum::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         return $this;
     }
@@ -352,9 +349,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setStatus($status = null)
     {
-        if (!\Api\EnumType\ApiCampaignStatusGetEnum::valueIsValid($status)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $status, implode(', ', \Api\EnumType\ApiCampaignStatusGetEnum::getValidValues())), __LINE__);
-        }
         $this->Status = $status;
         return $this;
     }
@@ -376,9 +370,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setState($state = null)
     {
-        if (!\Api\EnumType\ApiCampaignStateGetEnum::valueIsValid($state)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $state, implode(', ', \Api\EnumType\ApiCampaignStateGetEnum::getValidValues())), __LINE__);
-        }
         $this->State = $state;
         return $this;
     }
@@ -400,9 +391,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setStatusPayment($statusPayment = null)
     {
-        if (!\Api\EnumType\ApiCampaignStatusPaymentEnum::valueIsValid($statusPayment)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $statusPayment, implode(', ', \Api\EnumType\ApiCampaignStatusPaymentEnum::getValidValues())), __LINE__);
-        }
         $this->StatusPayment = $statusPayment;
         return $this;
     }
@@ -487,9 +475,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setCurrency($currency = null)
     {
-        if (!\Api\EnumType\ApiCurrencyEnum::valueIsValid($currency)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $currency, implode(', ', \Api\EnumType\ApiCurrencyEnum::getValidValues())), __LINE__);
-        }
         $this->Currency = $currency;
         return $this;
     }

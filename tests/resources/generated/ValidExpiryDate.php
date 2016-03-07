@@ -54,6 +54,9 @@ class ApiExpiryDate extends AbstractStructBase
      */
     public function setMonth($month = null)
     {
+        if (!is_null($month) && !is_string($month)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($month)), __LINE__);
+        }
         $this->month = $month;
         return $this;
     }
@@ -72,6 +75,9 @@ class ApiExpiryDate extends AbstractStructBase
      */
     public function setYear($year = null)
     {
+        if (!is_null($year) && !is_string($year)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($year)), __LINE__);
+        }
         $this->year = $year;
         return $this;
     }

@@ -105,6 +105,9 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setСубъектРФ($СубъектРФ = null)
     {
+        if (!is_null($СубъектРФ) && !is_string($СубъектРФ)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($СубъектРФ)), __LINE__);
+        }
         $this->СубъектРФ = $СубъектРФ;
         return $this;
     }
@@ -141,6 +144,9 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setГород($Город = null)
     {
+        if (!is_null($Город) && !is_string($Город)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($Город)), __LINE__);
+        }
         $this->Город = $Город;
         return $this;
     }
@@ -159,6 +165,9 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setВнутригРайон($ВнутригРайон = null)
     {
+        if (!is_null($ВнутригРайон) && !is_string($ВнутригРайон)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($ВнутригРайон)), __LINE__);
+        }
         $this->ВнутригРайон = $ВнутригРайон;
         return $this;
     }
@@ -177,6 +186,9 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setНаселПункт($НаселПункт = null)
     {
+        if (!is_null($НаселПункт) && !is_string($НаселПункт)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($НаселПункт)), __LINE__);
+        }
         $this->НаселПункт = $НаселПункт;
         return $this;
     }
@@ -195,6 +207,9 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setУлица($Улица = null)
     {
+        if (!is_null($Улица) && !is_string($Улица)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($Улица)), __LINE__);
+        }
         $this->Улица = $Улица;
         return $this;
     }
