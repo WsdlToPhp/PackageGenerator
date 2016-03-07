@@ -18,6 +18,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Component\PhpClass;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 
+
 abstract class AbstractModelFile extends AbstractFile
 {
     /**
@@ -386,7 +387,7 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return StructModel|null
      */
-    protected function getModelFromStructAttribute(StructAttributeModel $attribute = null)
+    public function getModelFromStructAttribute(StructAttributeModel $attribute = null)
     {
         $model = null;
         $attribute = $this->getStructAttribute($attribute);
@@ -399,7 +400,7 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return StructModel|null
      */
-    protected function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null)
+    public function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null)
     {
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel && !$model->getIsRestriction()) {
@@ -412,7 +413,7 @@ abstract class AbstractModelFile extends AbstractFile
      * @param bool $namespaced
      * @return string
      */
-    protected function getStructAttributeType(StructAttributeModel $attribute = null, $namespaced = false)
+    public function getStructAttributeType(StructAttributeModel $attribute = null, $namespaced = false)
     {
         $attribute = $this->getStructAttribute($attribute);
         $inheritance = $attribute->getInheritance();
@@ -480,7 +481,7 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return string
      */
-    protected function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null)
+    public function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null)
     {
         $attribute = $this->getStructAttribute($attribute);
         $attributeType = $this->getStructAttributeType($attribute, true);
