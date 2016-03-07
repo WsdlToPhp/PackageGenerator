@@ -36,7 +36,7 @@ class Rules
      */
     public function applyRules($parameterName, $itemType = false)
     {
-        foreach($this->getAttribute()->getMeta() as $metaName=>$metaValue) {
+        foreach ($this->getAttribute()->getMeta() as $metaName=>$metaValue) {
             $rule = $this->getRule($metaName);
             if ($rule instanceof AbstractRule) {
                 $rule->applyRule($parameterName, $metaValue, $itemType);
@@ -48,7 +48,7 @@ class Rules
             $this->getEnumerationRule()->applyRule($parameterName, null, $itemType);
         } elseif ($itemType) {
             $this->getItemTypeRule()->applyRule($parameterName, null, $itemType);
-        } elseif(($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute()))) instanceof AbstractRule) {
+        } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute()))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
     }
@@ -132,6 +132,4 @@ class Rules
         $this->method = $method;
         return $this;
     }
-
-
 }

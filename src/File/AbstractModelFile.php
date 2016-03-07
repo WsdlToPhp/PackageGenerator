@@ -18,7 +18,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Component\PhpClass;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 
-
 abstract class AbstractModelFile extends AbstractFile
 {
     /**
