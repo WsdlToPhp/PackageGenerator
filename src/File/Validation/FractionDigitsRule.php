@@ -15,8 +15,8 @@ class FractionDigitsRule extends AbstractRule
     {
         $this
             ->getMethod()
-                ->addChild(sprintf('if (is_float(%1$s) && strlen(substr(%1$s, strpos(%1$s, \'.\'))) !== %2$d) {', $parameterName, $value))
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, the value must at mot contain %d digits, %%d given\', strlen(substr(%s, strpos(%s, \'.\'))), __LINE__);', $value, $parameterName), 1))
+                ->addChild(sprintf('if (is_float($%1$s) && strlen(substr($%1$s, strpos($%1$s, \'.\'))) !== %2$d) {', $parameterName, $value))
+                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, the value must at most contain %1$d fraction digits, "%%d" given\', strlen(substr($%2$s, strpos($%2$s, \'.\')))), __LINE__);', $value, $parameterName), 1))
                 ->addChild('}');
         return $this;
     }
