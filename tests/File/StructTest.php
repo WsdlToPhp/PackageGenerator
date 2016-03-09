@@ -251,7 +251,7 @@ class StructTest extends AbstractFile
      */
     public function testOrderContractStructAddressDelivery_Type()
     {
-        $generator = self::orderContractInstance();
+        $generator = self::orderContractInstance(true);
         if (($model = $generator->getStruct('AddressDelivery_Type')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
