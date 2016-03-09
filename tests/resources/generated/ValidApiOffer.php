@@ -64,6 +64,10 @@ class ApiOffer extends ApiOrder
      */
     public function setOfferClassMember($offerClassMember = null)
     {
+        // validation for constraint: string
+        if (!is_null($offerClassMember) && !is_string($offerClassMember)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($offerClassMember)), __LINE__);
+        }
         if (is_null($offerClassMember)) {
             unset($this->offerClassMember);
         } else {

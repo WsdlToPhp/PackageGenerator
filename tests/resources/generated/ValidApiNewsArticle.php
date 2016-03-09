@@ -89,6 +89,10 @@ class ApiNewsArticle extends StructClass
      */
     public function setTitle($title = null)
     {
+        // validation for constraint: string
+        if (!is_null($title) && !is_string($title)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($title)), __LINE__);
+        }
         $this->Title = $title;
         return $this;
     }
@@ -107,6 +111,10 @@ class ApiNewsArticle extends StructClass
      */
     public function setUrl($url = null)
     {
+        // validation for constraint: string
+        if (!is_null($url) && !is_string($url)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($url)), __LINE__);
+        }
         $this->Url = $url;
         return $this;
     }
@@ -125,6 +133,10 @@ class ApiNewsArticle extends StructClass
      */
     public function setSource($source = null)
     {
+        // validation for constraint: string
+        if (!is_null($source) && !is_string($source)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($source)), __LINE__);
+        }
         $this->Source = $source;
         return $this;
     }
@@ -143,6 +155,10 @@ class ApiNewsArticle extends StructClass
      */
     public function setSnippet($snippet = null)
     {
+        // validation for constraint: string
+        if (!is_null($snippet) && !is_string($snippet)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($snippet)), __LINE__);
+        }
         $this->Snippet = $snippet;
         return $this;
     }
@@ -161,6 +177,10 @@ class ApiNewsArticle extends StructClass
      */
     public function setDate($date = null)
     {
+        // validation for constraint: string
+        if (!is_null($date) && !is_string($date)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($date)), __LINE__);
+        }
         $this->Date = $date;
         return $this;
     }

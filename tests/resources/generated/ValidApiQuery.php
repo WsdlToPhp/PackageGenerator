@@ -67,6 +67,10 @@ class ApiQuery extends AbstractStructBase
      */
     public function setSearchTerms($searchTerms = null)
     {
+        // validation for constraint: string
+        if (!is_null($searchTerms) && !is_string($searchTerms)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($searchTerms)), __LINE__);
+        }
         $this->SearchTerms = $searchTerms;
         return $this;
     }
@@ -85,6 +89,10 @@ class ApiQuery extends AbstractStructBase
      */
     public function setAlteredQuery($alteredQuery = null)
     {
+        // validation for constraint: string
+        if (!is_null($alteredQuery) && !is_string($alteredQuery)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($alteredQuery)), __LINE__);
+        }
         $this->AlteredQuery = $alteredQuery;
         return $this;
     }
@@ -103,6 +111,10 @@ class ApiQuery extends AbstractStructBase
      */
     public function setAlterationOverrideQuery($alterationOverrideQuery = null)
     {
+        // validation for constraint: string
+        if (!is_null($alterationOverrideQuery) && !is_string($alterationOverrideQuery)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($alterationOverrideQuery)), __LINE__);
+        }
         $this->AlterationOverrideQuery = $alterationOverrideQuery;
         return $this;
     }

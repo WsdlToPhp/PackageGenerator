@@ -15,6 +15,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
+use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 
 class Struct extends AbstractModelFile
 {
@@ -181,27 +182,13 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodAddToBody(PhpMethod $method, StructAttributeModel $attribute)
     {
-        if ($this->getRestrictionFromStructAttribute($attribute) instanceof StructModel) {
-            $this->addStructMethodSetBodyForRestriction($method, $attribute, 'item');
-        } else {
-            $this->addStructMethodSetBodyForAnyType($method, $attribute);
+        if ($this->getGenerator()->getOptionValidation()) {
+            $rules = new Rules($this, $method, $attribute);
+            $rules->applyRules('item', true);
         }
         $method
             ->addChild(sprintf('$this->%s[] = $item;', $attribute->getCleanName()))
             ->addChild('return $this;');
-        return $this;
-    }
-    /**
-     * @param PhpMethod $method
-     * @param StructAttributeModel $attribute
-     * @return Struct
-     */
-    protected function addStructMethodSetBodyForAnyType(PhpMethod $method, StructAttributeModel $attribute)
-    {
-        $method
-            ->addChild(sprintf('if (!%s) {', $this->getStructMethodSetBodyForArrayItemSanityCheck($attribute, 'item')))
-                ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %s property can only contain items of %s, "%%s" given\', is_object($item) ? get_class($item) : gettype($item)), __LINE__);', $attribute->getCleanName(), $this->getStructAttributeType($attribute, true)), 1))
-            ->addChild('}');
         return $this;
     }
     /**
@@ -225,10 +212,9 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSetBody(PhpMethod $method, StructAttributeModel $attribute)
     {
-        if ($attribute->isArray()) {
-            $this->addStructMethodSetBodyForArray($method, $attribute);
-        } else {
-            $this->addStructMethodSetBodyForRestriction($method, $attribute);
+        if ($this->getGenerator()->getOptionValidation()) {
+            $rules = new Rules($this, $method, $attribute);
+            $rules->applyRules(lcfirst($attribute->getCleanName()));
         }
         return $this
             ->addStructMethodSetBodyAssignment($method, $attribute)
@@ -279,70 +265,6 @@ class Struct extends AbstractModelFile
                 ->addChild('}');
         }
         return $this;
-    }
-    /**
-     * @param PhpMethod $method
-     * @param StructAttributeModel $attribute
-     * @return Struct
-     */
-    protected function addStructMethodSetBodyForArray(PhpMethod $method, StructAttributeModel $attribute)
-    {
-        if ($attribute->isArray()) {
-            $model = $this->getRestrictionFromStructAttribute($attribute);
-            $parameterName = lcfirst($attribute->getCleanName());
-            $itemName = sprintf('%s%sItem', lcfirst($this->getModel()->getCleanName(false)), ucfirst($attribute->getCleanName()));
-            if ($model instanceof StructModel) {
-                $method
-                    ->addChild('$invalidValues = array();')
-                    ->addChild(sprintf('foreach ($%s as $%s) {', $parameterName, $itemName))
-                        ->addChild($method->getIndentedString(sprintf('if (!%s::%s($%s)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID, $itemName), 1))
-                            ->addChild($method->getIndentedString(sprintf('$invalidValues[] = var_export($%s);', $itemName), 2))
-                        ->addChild($method->getIndentedString('}', 1))
-                    ->addChild('}')
-                    ->addChild('if (!empty($invalidValues)) {')
-                        ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Value(s) "%%s" is/are invalid, please use one of: %%s\', implode(\', \', $invalidValues), implode(\', \', %s::%s())), __LINE__);', $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES), 1))
-                    ->addChild('}');
-            } else {
-                $method
-                    ->addChild(sprintf('foreach ($%s as $%s) {', $parameterName, $itemName))
-                        ->addChild($method->getIndentedString(sprintf('if (!%s) {', $this->getStructMethodSetBodyForArrayItemSanityCheck($attribute, $itemName)), 1))
-                            ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %s property can only contain items of %s, "%%s" given\', is_object($%s) ? get_class($%s) : gettype($%s)), __LINE__);', $attribute->getCleanName(), $this->getStructAttributeType($attribute, true), $itemName, $itemName, $itemName), 2))
-                        ->addChild($method->getIndentedString('}', 1))
-                    ->addChild('}');
-            }
-        }
-        return $this;
-    }
-    /**
-     * The second case which used PHP native functions is volontary limited by the native functions provided by PHP,
-     * and the possible types defined in xsd_types.yml
-     * @param StructAttributeModel $attribute
-     * @param string $itemName
-     */
-    protected function getStructMethodSetBodyForArrayItemSanityCheck(StructAttributeModel $attribute, $itemName)
-    {
-        $model = $this->getModelFromStructAttribute($attribute);
-        $sanityCheck = 'false';
-        if ($model instanceof StructModel && $model->getIsStruct()) {
-            $sanityCheck = sprintf('$%s instanceof %s', $itemName, $this->getStructAttributeType($attribute, true));
-        } else {
-            switch (self::getPhpType($attribute->getType())) {
-                case 'int':
-                    $sanityCheck = 'is_int($%s)';
-                    break;
-                case 'bool':
-                    $sanityCheck = 'is_bool($%s)';
-                    break;
-                case 'float':
-                    $sanityCheck = 'is_float($%s)';
-                    break;
-                case 'string':
-                    $sanityCheck = 'is_string($%s)';
-                    break;
-            }
-            $sanityCheck = sprintf($sanityCheck, $itemName);
-        }
-        return $sanityCheck;
     }
     /**
      * @param StructAttributeModel $attribute

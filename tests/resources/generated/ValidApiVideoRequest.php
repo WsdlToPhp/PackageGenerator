@@ -78,6 +78,10 @@ class ApiVideoRequest extends AbstractStructBase
      */
     public function setOffset($offset = null)
     {
+        // validation for constraint: int
+        if (!is_null($offset) && !is_int($offset)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($offset)), __LINE__);
+        }
         $this->Offset = $offset;
         return $this;
     }
@@ -96,6 +100,10 @@ class ApiVideoRequest extends AbstractStructBase
      */
     public function setCount($count = null)
     {
+        // validation for constraint: int
+        if (!is_null($count) && !is_int($count)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($count)), __LINE__);
+        }
         $this->Count = $count;
         return $this;
     }
@@ -135,6 +143,7 @@ class ApiVideoRequest extends AbstractStructBase
      */
     public function setSortBy($sortBy = null)
     {
+        // validation for constraint: enumeration
         if (!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
             throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $sortBy, implode(', ', \Api\EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
         }

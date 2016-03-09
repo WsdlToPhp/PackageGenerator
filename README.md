@@ -106,6 +106,7 @@ The generator comes with several options:
     - **\-\-soapclient** _(default: \WsdlToPhp\PackageBase\AbstractSoapClientBase)_: sets the class from which ServiceType classes inherit, see [SoapClientInterface](https://github.com/WsdlToPhp/PackageBase#soapclientinterface)
 - _**Optional**_ various other options:
     - **\-\-gentutorial** _(default: ```true```)_: enables/disables the tutorial file generation
+    - **\-\-validation** _(default: ```true```)_: enables/disables the generation of validation rules in every setter
     - **\-\-genericconstants** _(default: ```false```)_: enables/disables the naming of the constants (_enumerations_) with the constant value or as a generic name:
         - **true**: ```const VALUE_DEFAULT = 'Default'```
         - **false**: ```const ENUM_VALUE_0 = 'Default'```
@@ -162,6 +163,7 @@ $ ./wsdltophp.phar generate:package \
     --gathermethods="start" \
     --genericconstants=false \
     --gentutorial=true \
+    --validation=true \
     --standalone=true \
     --addcomments="date:2015-04-22" \
     --addcomments="author:Me" \
@@ -195,6 +197,7 @@ Remove ```--force``` option from the previous command line to get this result:
     add_comments: 2015-04-22, Me, 1.1.0, Dream
     namespace_prefix: My\Project
     standalone: 1
+    validation: 1
     struct_class: \Std\Opt\StructClass
     struct_array_class: \Std\Opt\StructArrayClass
     soap_client_class: \Std\Opt\SoapClientClass
@@ -289,6 +292,7 @@ $options
     ->setGenericConstantsNames(GeneratorOptions::VALUE_FALSE)
     ->setGenerateTutorialFile(GeneratorOptions::VALUE_TRUE)
     ->setStandalone(GeneratorOptions::VALUE_TRUE)
+    ->setValidation(GeneratorOptions::VALUE_TRUE)
     ->setNamespacePrefix('My\Project')
     ->setAddComments(array(
         'date' => date('Y-m-d'),

@@ -47,6 +47,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
     public function setString(array $string = array())
     {
         foreach ($string as $arrayOfStringStringItem) {
+            // validation for constraint: itemType
             if (!is_string($arrayOfStringStringItem)) {
                 throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, "%s" given', is_object($arrayOfStringStringItem) ? get_class($arrayOfStringStringItem) : gettype($arrayOfStringStringItem)), __LINE__);
             }
@@ -62,6 +63,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      */
     public function addToString($item)
     {
+        // validation for constraint: itemType
         if (!is_string($item)) {
             throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
         }

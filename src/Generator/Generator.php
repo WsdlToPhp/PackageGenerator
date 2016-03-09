@@ -357,6 +357,24 @@ class Generator
         return $this;
     }
     /**
+     * Gets the optionValidation value
+     * @return bool
+     */
+    public function getOptionValidation()
+    {
+        return $this->options->getValidation();
+    }
+    /**
+     * Sets the optionValidation value
+     * @param bool $validation
+     * @return Generator
+     */
+    public function setOptionValidation($validation)
+    {
+        $this->options->setValidation($validation);
+        return $this;
+    }
+    /**
      * Gets the optionStructClass value
      * @return string
      */

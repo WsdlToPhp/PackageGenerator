@@ -118,6 +118,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlDeliveryService(), $reset, $gatherMethods);
     }
     /**
+     * @return Generator
+     */
+    public static function orderContractInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlOrderContractPath(), $reset, $gatherMethods);
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */
