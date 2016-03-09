@@ -233,6 +233,38 @@ class StructTest extends AbstractFile
     /**
      *
      */
+    public function testWriteReformaStructHouseProfileData()
+    {
+        $generator = self::reformaGeneratorInstance(true);
+        if (($model = $generator->getStruct('HouseProfileData')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidHouseProfileData', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find HouseProfileData struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testOrderContractStructAddressDelivery_Type()
+    {
+        $generator = self::orderContractInstance();
+        if (($model = $generator->getStruct('AddressDelivery_Type')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidAddressDelivery_Type', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find AddressDelivery_Type struct for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();
