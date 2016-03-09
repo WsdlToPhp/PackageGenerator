@@ -24,7 +24,7 @@ abstract class AbstractRule
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return AbstractValidation
+     * @return AbstractRule
      */
     abstract public function applyRule($parameterName, $value, $itemType = false);
     /**

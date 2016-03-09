@@ -21,6 +21,8 @@ class Rules
      */
     private $method;
     /**
+     * @param AbstractModelFile $file
+     * @param PhpMethod $method
      * @param StructAttribute $attribute
      */
     public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute)
@@ -96,6 +98,7 @@ class Rules
     }
     /**
      * @param StructAttribute $attribute
+     * @return Rules
      */
     public function setAttribute(StructAttribute $attribute)
     {
@@ -111,6 +114,7 @@ class Rules
     }
     /**
      * @param AbstractModelFile $file
+     * @return Rules
      */
     public function setFile(AbstractModelFile $file)
     {
@@ -126,6 +130,7 @@ class Rules
     }
     /**
      * @param PhpMethod $method
+     * @return Rules
      */
     public function setMethod(PhpMethod $method)
     {

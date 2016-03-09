@@ -13,12 +13,13 @@ class ItemTypeRule extends AbstractRule
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return Enumeration
+     * @return ItemTypeRule
      */
     public function applyRule($parameterName, $value, $itemType = false)
     {
         $this
             ->getMethod()
+                ->addChild($this->getMethod()->getIndentedString('// validation for constraint: itemType', $itemType ? 0 : 1))
                 ->addChild($this->getMethod()->getIndentedString(sprintf('if (!%s) {', $this->getItemSanityCheck($this->getAttribute(), $parameterName)), $itemType ? 0 : 1))
                     ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %1$s property can only contain items of %2$s, "%%s" given\', is_object($%3$s) ? get_class($%3$s) : gettype($%3$s)), __LINE__);', $this->getAttribute()->getCleanName(), $this->getFile()->getStructAttributeType($this->getAttribute(), true), $parameterName), $itemType ? 1 : 2))
                 ->addChild($this->getMethod()->getIndentedString('}', $itemType ? 0 : 1));
@@ -29,6 +30,7 @@ class ItemTypeRule extends AbstractRule
      * and the possible types defined in xsd_types.yml
      * @param StructAttributeModel $attribute
      * @param string $itemName
+     * @return string
      */
     protected function getItemSanityCheck(StructAttribute $attribute, $itemName)
     {

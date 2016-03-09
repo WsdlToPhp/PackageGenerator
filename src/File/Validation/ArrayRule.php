@@ -12,7 +12,7 @@ class ArrayRule extends AbstractRule
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return Enumeration
+     * @return ArrayRule
      */
     public function applyRule($parameterName, $value, $itemType = false)
     {
