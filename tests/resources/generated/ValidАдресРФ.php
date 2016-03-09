@@ -105,6 +105,7 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setСубъектРФ($СубъектРФ = null)
     {
+        // validation for constraint: string
         if (!is_null($СубъектРФ) && !is_string($СубъектРФ)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($СубъектРФ)), __LINE__);
         }
@@ -144,6 +145,7 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setГород($Город = null)
     {
+        // validation for constraint: string
         if (!is_null($Город) && !is_string($Город)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($Город)), __LINE__);
         }
@@ -165,6 +167,7 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setВнутригРайон($ВнутригРайон = null)
     {
+        // validation for constraint: string
         if (!is_null($ВнутригРайон) && !is_string($ВнутригРайон)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($ВнутригРайон)), __LINE__);
         }
@@ -186,6 +189,7 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setНаселПункт($НаселПункт = null)
     {
+        // validation for constraint: string
         if (!is_null($НаселПункт) && !is_string($НаселПункт)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($НаселПункт)), __LINE__);
         }
@@ -207,6 +211,7 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setУлица($Улица = null)
     {
+        // validation for constraint: string
         if (!is_null($Улица) && !is_string($Улица)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($Улица)), __LINE__);
         }
@@ -230,6 +235,7 @@ class ApiАдресРФ extends ApiСостав
     public function setДопАдрЭл(array $ДопАдрЭл = array())
     {
         foreach ($ДопАдрЭл as $АдресРФДопАдрЭлItem) {
+            // validation for constraint: itemType
             if (!$АдресРФДопАдрЭлItem instanceof \Api\StructType\ApiДопАдрЭл) {
                 throw new \InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of \Api\StructType\ApiДопАдрЭл, "%s" given', is_object($АдресРФДопАдрЭлItem) ? get_class($АдресРФДопАдрЭлItem) : gettype($АдресРФДопАдрЭлItem)), __LINE__);
             }
@@ -245,6 +251,7 @@ class ApiАдресРФ extends ApiСостав
      */
     public function addToДопАдрЭл(\Api\StructType\ApiДопАдрЭл $item)
     {
+        // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiДопАдрЭл) {
             throw new \InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of \Api\StructType\ApiДопАдрЭл, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
         }

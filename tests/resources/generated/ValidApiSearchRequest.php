@@ -244,6 +244,7 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setQuery($query = null)
     {
+        // validation for constraint: string
         if (!is_null($query) && !is_string($query)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($query)), __LINE__);
         }
@@ -265,6 +266,7 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setAppId($appId = null)
     {
+        // validation for constraint: string
         if (!is_null($appId) && !is_string($appId)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($appId)), __LINE__);
         }
@@ -322,6 +324,7 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setVersion($version = '2.2')
     {
+        // validation for constraint: string
         if (!is_null($version) && !is_string($version)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($version)), __LINE__);
         }
@@ -343,6 +346,7 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setMarket($market = null)
     {
+        // validation for constraint: string
         if (!is_null($market) && !is_string($market)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($market)), __LINE__);
         }
@@ -364,6 +368,7 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setUILanguage($uILanguage = null)
     {
+        // validation for constraint: string
         if (!is_null($uILanguage) && !is_string($uILanguage)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($uILanguage)), __LINE__);
         }
@@ -388,6 +393,7 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setAdult($adult = null)
     {
+        // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAdultOption::valueIsValid($adult)) {
             throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $adult, implode(', ', \Api\EnumType\ApiAdultOption::getValidValues())), __LINE__);
         }

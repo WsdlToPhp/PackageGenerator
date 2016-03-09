@@ -47,6 +47,7 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
     public function setError(array $error = array())
     {
         foreach ($error as $arrayOfErrorErrorItem) {
+            // validation for constraint: itemType
             if (!$arrayOfErrorErrorItem instanceof \Api\StructType\ApiErrorProject) {
                 throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiErrorProject, "%s" given', is_object($arrayOfErrorErrorItem) ? get_class($arrayOfErrorErrorItem) : gettype($arrayOfErrorErrorItem)), __LINE__);
             }
@@ -62,6 +63,7 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      */
     public function addToError(\Api\StructType\ApiErrorProject $item)
     {
+        // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiErrorProject) {
             throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiErrorProject, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
         }
