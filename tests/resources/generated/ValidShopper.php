@@ -172,8 +172,8 @@ class ApiShopper extends AbstractStructBase
     public function setEmail($email = null)
     {
         // validation for constraint: pattern
-        if (!is_null($email) && !preg_match('/[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)/', $email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($email)), __LINE__);
+        if (is_scalar($email) && !preg_match('/[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)/', $email)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)", "%s" given', var_export($email, true)), __LINE__);
         }
         // validation for constraint: maxLength
         if ((is_scalar($email) && strlen($email) > 100) || (is_array($email) && count($email) > 100)) {

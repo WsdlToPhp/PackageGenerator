@@ -16,8 +16,8 @@ class PatternRule extends AbstractRule
         $this
             ->getMethod()
                 ->addChild('// validation for constraint: pattern')
-                ->addChild(sprintf('if (!is_null($%1$s) && !preg_match(\'/%2$s/\', $%1$s)) {', $parameterName, $value))
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, please provide an int, "%%s" given\', gettype($%s)), __LINE__);', $parameterName), 1))
+                ->addChild(sprintf('if (is_scalar($%1$s) && !preg_match(\'/%2$s/\', $%1$s)) {', $parameterName, $value))
+                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, please provide a scalar value that matches "%s", "%%s" given\', var_export($%s, true)), __LINE__);', str_replace("'", "\'", $value), $parameterName), 1))
                 ->addChild('}');
         return $this;
     }
