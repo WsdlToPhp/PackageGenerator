@@ -180,7 +180,7 @@ class ApiShopper extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 100 element(s) or a scalar of 100 character(s) at most, "%d" length given', is_scalar($email) ? strlen($email) : count($email)), __LINE__);
         }
         // validation for constraint: minLength
-        if ((is_scalar(email) && strlen(email) < 1) || (is_array(email) && count(email) < 1)) {
+        if ((is_scalar($email) && strlen($email) < 1) || (is_array($email) && count($email) < 1)) {
             throw new \InvalidArgumentException('Invalid length, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', __LINE__);
         }
         // validation for constraint: string
@@ -253,7 +253,7 @@ class ApiShopper extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 35 element(s) or a scalar of 35 character(s) at most, "%d" length given', is_scalar($id) ? strlen($id) : count($id)), __LINE__);
         }
         // validation for constraint: minLength
-        if ((is_scalar(id) && strlen(id) < 1) || (is_array(id) && count(id) < 1)) {
+        if ((is_scalar($id) && strlen($id) < 1) || (is_array($id) && count($id) < 1)) {
             throw new \InvalidArgumentException('Invalid length, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', __LINE__);
         }
         // validation for constraint: string
@@ -283,7 +283,7 @@ class ApiShopper extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 10 element(s) or a scalar of 10 character(s) at most, "%d" length given', is_scalar($dateOfBirth) ? strlen($dateOfBirth) : count($dateOfBirth)), __LINE__);
         }
         // validation for constraint: minLength
-        if ((is_scalar(dateOfBirth) && strlen(dateOfBirth) < 10) || (is_array(dateOfBirth) && count(dateOfBirth) < 10)) {
+        if ((is_scalar($dateOfBirth) && strlen($dateOfBirth) < 10) || (is_array($dateOfBirth) && count($dateOfBirth) < 10)) {
             throw new \InvalidArgumentException('Invalid length, please provide an array with 10 element(s) or a scalar of 10 character(s) at least', __LINE__);
         }
         // validation for constraint: string
@@ -313,7 +313,7 @@ class ApiShopper extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 50 element(s) or a scalar of 50 character(s) at most, "%d" length given', is_scalar($phoneNumber) ? strlen($phoneNumber) : count($phoneNumber)), __LINE__);
         }
         // validation for constraint: minLength
-        if ((is_scalar(phoneNumber) && strlen(phoneNumber) < 1) || (is_array(phoneNumber) && count(phoneNumber) < 1)) {
+        if ((is_scalar($phoneNumber) && strlen($phoneNumber) < 1) || (is_array($phoneNumber) && count($phoneNumber) < 1)) {
             throw new \InvalidArgumentException('Invalid length, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', __LINE__);
         }
         // validation for constraint: string
@@ -343,7 +343,7 @@ class ApiShopper extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 50 element(s) or a scalar of 50 character(s) at most, "%d" length given', is_scalar($mobilePhoneNumber) ? strlen($mobilePhoneNumber) : count($mobilePhoneNumber)), __LINE__);
         }
         // validation for constraint: minLength
-        if ((is_scalar(mobilePhoneNumber) && strlen(mobilePhoneNumber) < 1) || (is_array(mobilePhoneNumber) && count(mobilePhoneNumber) < 1)) {
+        if ((is_scalar($mobilePhoneNumber) && strlen($mobilePhoneNumber) < 1) || (is_array($mobilePhoneNumber) && count($mobilePhoneNumber) < 1)) {
             throw new \InvalidArgumentException('Invalid length, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', __LINE__);
         }
         // validation for constraint: string
@@ -373,7 +373,7 @@ class ApiShopper extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 35 element(s) or a scalar of 35 character(s) at most, "%d" length given', is_scalar($ipAddress) ? strlen($ipAddress) : count($ipAddress)), __LINE__);
         }
         // validation for constraint: minLength
-        if ((is_scalar(ipAddress) && strlen(ipAddress) < 1) || (is_array(ipAddress) && count(ipAddress) < 1)) {
+        if ((is_scalar($ipAddress) && strlen($ipAddress) < 1) || (is_array($ipAddress) && count($ipAddress) < 1)) {
             throw new \InvalidArgumentException('Invalid length, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', __LINE__);
         }
         // validation for constraint: string
