@@ -196,6 +196,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
+    public static function wsdlYandexDirectApiLivePath()
+    {
+        return __DIR__ . '/resources/directapi/live.wsdl';
+    }
+    /**
+     * @return string
+     */
     public static function wsdlDocDataPaymentsPath()
     {
         return __DIR__ . '/resources/docdatapayments/1_3.wsdl';
