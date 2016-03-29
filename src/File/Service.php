@@ -290,7 +290,7 @@ class Service extends AbstractModelFile
                 $returnType = $struct->getPackagedName(true);
             } elseif ($struct->isArray()) {
                 if (($structInheritance = $struct->getInheritanceStruct()) instanceof StructModel) {
-                    $returnType = sprintf('%s[]' , $structInheritance->getPackagedName(true));
+                    $returnType = sprintf('%s[]', $structInheritance->getPackagedName(true));
                 } else {
                     $returnType = $struct->getInheritance();
                 }
