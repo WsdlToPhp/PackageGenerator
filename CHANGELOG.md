@@ -10,7 +10,10 @@
     - From now, validation rules are automatically added to every setter so you're informed of an invalid value before sending the request which throws an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php)
     - If you do not want the validation rules to be added to the setters, set the option `validation` to `false` before generating the package
 - issue #52 - No autocomplete because of return type on a new line after @return in annotation
-	- Fixed thanks to [PhpGenerator issue 5](https://github.com/WsdlToPhp/PhpGenerator/issues/5)
+    - Fixed thanks to [PhpGenerator issue 5](https://github.com/WsdlToPhp/PhpGenerator/issues/5)
+- issue #53 - Incorrect variable type
+    - This issue only affects struct properties that match "virtual" structs which are array
+    - **BC**: the array type attribute detection is now better (hopefully perfect) and can change attributes from simple type hiny to array type hint. This means that you now have to pass an array as parameter otherwise it will break
 
 ## 1.4.3.1
 - issue #51 - Error while passing array parameter
