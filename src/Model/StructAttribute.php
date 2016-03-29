@@ -134,7 +134,7 @@ class StructAttribute extends AbstractModel
      */
     public function isArray()
     {
-        return $this->containsElements;
+        return $this->containsElements || $this->isTypeStructArray();
     }
     /**
      * Returns potential default value
@@ -204,6 +204,14 @@ class StructAttribute extends AbstractModel
     {
         $typeStruct = $this->getTypeStruct();
         return ($typeStruct && !$typeStruct->getIsStruct()) ? $typeStruct->getMeta() : array();
+    }
+    /**
+     * @return bool
+     */
+    public function isTypeStructArray()
+    {
+        $typeStruct = $this->getTypeStruct();
+        return $typeStruct && $typeStruct->isArray() && !$typeStruct->getIsStruct();
     }
     /**
      * @return Struct|null
