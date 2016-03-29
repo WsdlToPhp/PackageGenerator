@@ -309,7 +309,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return string_array|bool
+     * @return string[]|bool
      */
     public function Company_GetVersionAccess()
     {
@@ -569,7 +569,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $reportSuiteID
-     * @return simpleDataSourceArray|bool
+     * @return \Api\StructType\ApiSimpleDataSource[]|bool
      */
     public function DataSource_GetIDs($reportSuiteID)
     {
@@ -1061,7 +1061,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $search_name
-     * @return publishingLists_array|bool
+     * @return \Api\StructType\ApiPublishingList[]|bool
      */
     public function DeliveryList_Get($search_name)
     {
@@ -1504,7 +1504,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $field
      * @param string $search
-     * @return permission_group_array|bool
+     * @return \Api\StructType\ApiPermission_group[]|bool
      */
     public function Permissions_GetGroups($field, $search)
     {
@@ -1552,7 +1552,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $login_search_field
      * @param string $login_search_value
-     * @return perm_login_array|bool
+     * @return \Api\StructType\ApiPerm_login[]|bool
      */
     public function Permissions_GetLogins($login_search_field, $login_search_value)
     {
@@ -1601,7 +1601,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $search_field
      * @param string $search_val
-     * @return permissions_account_array|bool
+     * @return \Api\StructType\ApiPermissions_account[]|bool
      */
     public function Permissions_GetReportSuiteGroupCount($search_field, $search_val)
     {
@@ -2134,7 +2134,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $savedFilters
-     * @return saved_filters_array|bool
+     * @return \Api\StructType\ApiSaved_filter[]|bool
      */
     public function ReportSuite_AddSavedFilters($savedFilters)
     {
@@ -3159,7 +3159,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $rsid_list
      * @param string $sc_period
      * @param string $start_point
-     * @return report_suite_pages_array|bool
+     * @return \Api\StructType\ApiReport_suite_pages[]|bool
      */
     public function ReportSuite_GetPages($limit, $page_search, $rsid_list, $sc_period, $start_point)
     {
@@ -3209,7 +3209,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rsid_list
-     * @return permanent_traffic_array|bool
+     * @return \Api\StructType\ApiPermanent_traffic[]|bool
      */
     public function ReportSuite_GetPermanentTraffic($rsid_list)
     {
@@ -3277,7 +3277,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return rollup_array|bool
+     * @return \Api\StructType\ApiRollup[]|bool
      */
     public function ReportSuite_GetRollups()
     {
@@ -3297,7 +3297,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return saved_filters_array|bool
+     * @return \Api\StructType\ApiSaved_filter[]|bool
      */
     public function ReportSuite_GetSavedFilters()
     {
@@ -3318,7 +3318,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rsid_list
-     * @return schedule_spike_array|bool
+     * @return \Api\StructType\ApiSchedule_spike[]|bool
      */
     public function ReportSuite_GetScheduledSpike($rsid_list)
     {
@@ -4138,7 +4138,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $savedFilters
-     * @return saved_filters_array|bool
+     * @return \Api\StructType\ApiSaved_filter[]|bool
      */
     public function ReportSuite_SaveSavedFilters($savedFilters)
     {
@@ -4820,7 +4820,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $product
      * @param string $username
-     * @return scheduledReports_array|bool
+     * @return \Api\StructType\ApiScheduledReport[]|bool
      */
     public function Scheduling_GetPublishedReports($product, $username)
     {
@@ -4847,7 +4847,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $offset
      * @param string $product
      * @param string $username
-     * @return scheduleLogs_array|bool
+     * @return \Api\StructType\ApiScheduleLog[]|bool
      */
     public function Scheduling_GetReportsRunHistory($limit, $offset, $product, $username)
     {
@@ -4874,7 +4874,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $location
      * @param string $product
-     * @return excelWorkbooks_array|bool
+     * @return \Api\StructType\ApiExcelWorkbook[]|bool
      */
     public function Scheduling_GetWorkbookList($location, $product)
     {
@@ -5087,7 +5087,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return array|base64Binary|boolean|code_archives|code_items|compatabilitys|dashboard_list|dwsegments|excelWorkbooks_array|expiration_event_list|export_filters|fileInfoResult|folder_list|infoResult|int|log_entries|mchannels_list|multi_rs_mchannel_rulesets|pagedetails|permanent_traffic_array|permissions_account_array|permission_group_array|perm_categories|perm_login_array|publishingLists_array|queue_items|report_element_mappings|report_queue|report_suite_pages_array|rollup_array|rscollection_activation|rscollection_axle_start_date|rscollection_base_currency|rscollection_base_url|rscollection_calculated_metric|rscollection_classification|rscollection_correlation|rscollection_costs|rscollection_custom_calendar|rscollection_default_page|rscollection_ecommerce|rscollection_elements|rscollection_evar|rscollection_event|rscollection_finding_method|rscollection_hierarchy|rscollection_internal_url_filter|rscollection_ip_exclusions|rscollection_ip_obfuscation|rscollection_key_visitor|rscollection_localization|rscollection_metrics|rscollection_paid_search|rscollection_processing_status|rscollection_rollup_dates|rscollection_sc_segments|rscollection_settings|rscollection_site_title|rscollection_template|rscollection_time_zone|rscollection_traffic_var|rscollection_ui_element|rscollection_unique_visitor_variable|rscollection_video_tracking|saintresults|saint_ftp_list|saved_filters_array|scheduledReports_array|scheduleLogs_array|schedule_spike_array|segment_folders|simpleDataSourceArray|string|string_array|survey_summary_list|usage_log_entries|void|\Api\StructType\ApiChannel_sub_relations_element|\Api\StructType\ApiCrm_info|\Api\StructType\ApiDashboard_element|\Api\StructType\ApiData_warehouse_report|\Api\StructType\ApiData_warehouse_request|\Api\StructType\ApiData_warehouse_segment|\Api\StructType\ApiDs_setup_result|\Api\StructType\ApiFileIDResult|\Api\StructType\ApiFileStatusResult|\Api\StructType\ApiGroup_data|\Api\StructType\ApiLogin|\Api\StructType\ApiPermissions_account_groups|\Api\StructType\ApiReportBuilderLogin|\Api\StructType\ApiReportlet|\Api\StructType\ApiReportQueueResponse|\Api\StructType\ApiReportResponse|\Api\StructType\ApiReport_status|\Api\StructType\ApiReport_suite_id|\Api\StructType\ApiSaint_ftp_info|\Api\StructType\ApiScheduledReport|\Api\StructType\ApiSimple_report_suites_rval|\Api\StructType\ApiStatus|\Api\StructType\ApiToken_usage_container|\Api\StructType\ApiTracking_server_data
+     * @return array|base64Binary|boolean|code_archives|code_items|compatabilitys|dashboard_list|dwsegments|expiration_event_list|export_filters|fileInfoResult|folder_list|infoResult|int|log_entries|mchannels_list|multi_rs_mchannel_rulesets|pagedetails|perm_categories|queue_items|report_element_mappings|report_queue|rscollection_activation|rscollection_axle_start_date|rscollection_base_currency|rscollection_base_url|rscollection_calculated_metric|rscollection_classification|rscollection_correlation|rscollection_costs|rscollection_custom_calendar|rscollection_default_page|rscollection_ecommerce|rscollection_elements|rscollection_evar|rscollection_event|rscollection_finding_method|rscollection_hierarchy|rscollection_internal_url_filter|rscollection_ip_exclusions|rscollection_ip_obfuscation|rscollection_key_visitor|rscollection_localization|rscollection_metrics|rscollection_paid_search|rscollection_processing_status|rscollection_rollup_dates|rscollection_sc_segments|rscollection_settings|rscollection_site_title|rscollection_template|rscollection_time_zone|rscollection_traffic_var|rscollection_ui_element|rscollection_unique_visitor_variable|rscollection_video_tracking|saintresults|saint_ftp_list|segment_folders|string|string[]|survey_summary_list|usage_log_entries|void|\Api\StructType\ApiChannel_sub_relations_element|\Api\StructType\ApiCrm_info|\Api\StructType\ApiDashboard_element|\Api\StructType\ApiData_warehouse_report|\Api\StructType\ApiData_warehouse_request|\Api\StructType\ApiData_warehouse_segment|\Api\StructType\ApiDs_setup_result|\Api\StructType\ApiExcelWorkbook[]|\Api\StructType\ApiFileIDResult|\Api\StructType\ApiFileStatusResult|\Api\StructType\ApiGroup_data|\Api\StructType\ApiLogin|\Api\StructType\ApiPermanent_traffic[]|\Api\StructType\ApiPermissions_account[]|\Api\StructType\ApiPermissions_account_groups|\Api\StructType\ApiPermission_group[]|\Api\StructType\ApiPerm_login[]|\Api\StructType\ApiPublishingList[]|\Api\StructType\ApiReportBuilderLogin|\Api\StructType\ApiReportlet|\Api\StructType\ApiReportQueueResponse|\Api\StructType\ApiReportResponse|\Api\StructType\ApiReport_status|\Api\StructType\ApiReport_suite_id|\Api\StructType\ApiReport_suite_pages[]|\Api\StructType\ApiRollup[]|\Api\StructType\ApiSaint_ftp_info|\Api\StructType\ApiSaved_filter[]|\Api\StructType\ApiScheduledReport|\Api\StructType\ApiScheduledReport[]|\Api\StructType\ApiScheduleLog[]|\Api\StructType\ApiSchedule_spike[]|\Api\StructType\ApiSimpleDataSource[]|\Api\StructType\ApiSimple_report_suites_rval|\Api\StructType\ApiStatus|\Api\StructType\ApiToken_usage_container|\Api\StructType\ApiTracking_server_data
      */
     public function getResult()
     {
