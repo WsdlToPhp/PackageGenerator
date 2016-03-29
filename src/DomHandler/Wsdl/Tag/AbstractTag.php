@@ -76,11 +76,25 @@ abstract class AbstractTag extends ElementHandler
         return $this->hasAttribute(Attribute::ATTRIBUTE_NAME);
     }
     /**
+     * @return bool
+     */
+    public function hasAttributeRef()
+    {
+        return $this->hasAttribute(Attribute::ATTRIBUTE_REF);
+    }
+    /**
      * @return string
      */
     public function getAttributeName()
     {
         return $this->getAttribute(Attribute::ATTRIBUTE_NAME) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_NAME)->getValue() : '';
+    }
+    /**
+     * @return string
+     */
+    public function getAttributeRef()
+    {
+        return $this->getAttribute(Attribute::ATTRIBUTE_REF) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_REF)->getValue() : '';
     }
     /**
      * @return boolean
