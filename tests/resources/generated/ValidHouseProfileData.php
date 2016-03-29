@@ -353,7 +353,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - nillable: true
      * - arrayType: tns:Lift[]
      * - ref: soap-enc:arrayType
-     * @var Array
+     * @var \Api\StructType\ApiLift[]
      */
     public $lifts;
     /**
@@ -511,7 +511,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiSewerageSystem $sewerage_system
      * @param \Api\StructType\ApiElectricitySystem $electricity_system
      * @param \Api\StructType\ApiGasSystem $gas_system
-     * @param Array $lifts
+     * @param \Api\StructType\ApiLift[] $lifts
      * @param \Api\StructType\ApiManagementContract $management_contract
      * @param \Api\StructType\ApiProvider $heating_provider
      * @param \Api\StructType\ApiProvider $electricity_provider
@@ -521,7 +521,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $drainage_provider
      * @param \Api\StructType\ApiFinance $finance
      */
-    public function __construct($area_total = null, $area_residential = null, $area_non_residential = null, $cadastral_number = null, $project_type = null, $location_description = null, $individual_name = null, $house_type = null, $exploitation_start_year = null, $wall_material = null, $floor_type = null, $storeys_count = null, $entrance_count = null, $elevators_count = null, $area_private = null, $area_municipal = null, $area_national = null, $area_land = null, $area_territory = null, $inventory_number = null, $flats_count = null, $residents_count = null, $accounts_count = null, $construction_features = null, $thermal_actual_expense = null, $thermal_normative_expense = null, $energy_efficiency = null, $energy_audit_date = null, $privatization_start_date = null, $deterioration_total = null, $deterioration_foundation = null, $deterioration_bearing_walls = null, $deterioration_floor = null, \Api\StructType\ApiFacade $facade = null, \Api\StructType\ApiRoof $roof = null, \Api\StructType\ApiBasement $basement = null, \Api\StructType\ApiCommonSpace $common_space = null, \Api\StructType\ApiChute $chute = null, \Api\StructType\ApiHeatingSystem $heating_system = null, \Api\StructType\ApiHotWaterSystem $hot_water_system = null, \Api\StructType\ApiColdWaterSystem $cold_water_system = null, \Api\StructType\ApiSewerageSystem $sewerage_system = null, \Api\StructType\ApiElectricitySystem $electricity_system = null, \Api\StructType\ApiGasSystem $gas_system = null, Array $lifts = null, \Api\StructType\ApiManagementContract $management_contract = null, \Api\StructType\ApiProvider $heating_provider = null, \Api\StructType\ApiProvider $electricity_provider = null, \Api\StructType\ApiProvider $gas_provider = null, \Api\StructType\ApiProvider $hot_water_provider = null, \Api\StructType\ApiProvider $cold_water_provider = null, \Api\StructType\ApiProvider $drainage_provider = null, \Api\StructType\ApiFinance $finance = null)
+    public function __construct($area_total = null, $area_residential = null, $area_non_residential = null, $cadastral_number = null, $project_type = null, $location_description = null, $individual_name = null, $house_type = null, $exploitation_start_year = null, $wall_material = null, $floor_type = null, $storeys_count = null, $entrance_count = null, $elevators_count = null, $area_private = null, $area_municipal = null, $area_national = null, $area_land = null, $area_territory = null, $inventory_number = null, $flats_count = null, $residents_count = null, $accounts_count = null, $construction_features = null, $thermal_actual_expense = null, $thermal_normative_expense = null, $energy_efficiency = null, $energy_audit_date = null, $privatization_start_date = null, $deterioration_total = null, $deterioration_foundation = null, $deterioration_bearing_walls = null, $deterioration_floor = null, \Api\StructType\ApiFacade $facade = null, \Api\StructType\ApiRoof $roof = null, \Api\StructType\ApiBasement $basement = null, \Api\StructType\ApiCommonSpace $common_space = null, \Api\StructType\ApiChute $chute = null, \Api\StructType\ApiHeatingSystem $heating_system = null, \Api\StructType\ApiHotWaterSystem $hot_water_system = null, \Api\StructType\ApiColdWaterSystem $cold_water_system = null, \Api\StructType\ApiSewerageSystem $sewerage_system = null, \Api\StructType\ApiElectricitySystem $electricity_system = null, \Api\StructType\ApiGasSystem $gas_system = null, array $lifts = array(), \Api\StructType\ApiManagementContract $management_contract = null, \Api\StructType\ApiProvider $heating_provider = null, \Api\StructType\ApiProvider $electricity_provider = null, \Api\StructType\ApiProvider $gas_provider = null, \Api\StructType\ApiProvider $hot_water_provider = null, \Api\StructType\ApiProvider $cold_water_provider = null, \Api\StructType\ApiProvider $drainage_provider = null, \Api\StructType\ApiFinance $finance = null)
     {
         $this
             ->setArea_total($area_total)
@@ -1572,7 +1572,7 @@ class ApiHouseProfileData extends AbstractStructBase
     }
     /**
      * Get lifts value
-     * @return Array|null
+     * @return \Api\StructType\ApiLift[]|null
      */
     public function getLifts()
     {
@@ -1580,12 +1580,34 @@ class ApiHouseProfileData extends AbstractStructBase
     }
     /**
      * Set lifts value
-     * @param Array $lifts
+     * @throws \InvalidArgumentException
+     * @param \Api\StructType\ApiLift[] $lifts
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setLifts(Array $lifts = null)
+    public function setLifts(array $lifts = array())
     {
+        foreach ($lifts as $houseProfileDataLiftsItem) {
+            // validation for constraint: itemType
+            if (!$houseProfileDataLiftsItem instanceof \Api\StructType\ApiLift) {
+                throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, "%s" given', is_object($houseProfileDataLiftsItem) ? get_class($houseProfileDataLiftsItem) : gettype($houseProfileDataLiftsItem)), __LINE__);
+            }
+        }
         $this->lifts = $lifts;
+        return $this;
+    }
+    /**
+     * Add item to lifts value
+     * @throws \InvalidArgumentException
+     * @param \Api\StructType\ApiLift $item
+     * @return \Api\StructType\ApiHouseProfileData
+     */
+    public function addToLifts(\Api\StructType\ApiLift $item)
+    {
+        // validation for constraint: itemType
+        if (!$item instanceof \Api\StructType\ApiLift) {
+            throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        }
+        $this->lifts[] = $item;
         return $this;
     }
     /**

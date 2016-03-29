@@ -273,6 +273,23 @@ class ServiceTest extends AbstractFile
     /**
      *
      */
+    public function testWriteYandexDirectApiLiveGetService()
+    {
+        $generator = self::yandexDirectApiLiveGeneratorInstance();
+        $generator->setOptionPrefix('');
+        if (($model = $generator->getService('Get')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidYandexDirectApiLiveGet', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Get service for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();

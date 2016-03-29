@@ -281,7 +281,7 @@ class StructTest extends AbstractFile
     /**
      *
      */
-    public function testWriteYandexDirectApiStructCampaignsCompaignAddItem()
+    public function testWriteYandexDirectApiStructCampaignsCompaignGetItem()
     {
         $generator = self::yandexDirectApiCampaignsGeneratorInstance(true);
         $generator->setOptionValidation(false);
@@ -293,6 +293,23 @@ class StructTest extends AbstractFile
             $this->assertSameFileContent('ValidCampaignGetItem', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find CampaignGetItem struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteYandexDirectApiStructLiveBannerInfo()
+    {
+        $generator = self::yandexDirectApiLiveGeneratorInstance(true);
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('BannerInfo')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidBannerInfo', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find BannerInfo struct for file generation');
         }
     }
 }
