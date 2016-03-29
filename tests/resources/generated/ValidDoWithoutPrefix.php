@@ -83,8 +83,7 @@ class _Do extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \StructType\DoUATPExpressCheckoutPaymentReq
-     * $doUATPExpressCheckoutPaymentRequest
+     * @param \StructType\DoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest
      * @return \StructType\DoUATPExpressCheckoutPaymentResponseType|bool
      */
     public function DoUATPExpressCheckoutPayment(\StructType\DoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest)
@@ -316,10 +315,7 @@ class _Do extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return
-     * \StructType\DoAuthorizationResponseType|\StructType\DoCancelResponseType|\StructType\DoCaptureResponseType|\StructType\DoDirectPaymentResponseType|\StructType\DoExpressCheckoutPaymentResponseType|\StructType\DoMobileCheckoutPaymentResponseType|\Struc
-     * tType\DoNonReferencedCreditResponseType|\StructType\DoReauthorizationResponseType|\StructType\DoReferenceTransactionResponseType|\StructType\DoUATPAuthorizationResponseType|\StructType\DoUATPExpressCheckoutPaymentResponseType|\StructType\DoVoidRespon
-     * seType
+     * @return \StructType\DoAuthorizationResponseType|\StructType\DoCancelResponseType|\StructType\DoCaptureResponseType|\StructType\DoDirectPaymentResponseType|\StructType\DoExpressCheckoutPaymentResponseType|\StructType\DoMobileCheckoutPaymentResponseType|\StructType\DoNonReferencedCreditResponseType|\StructType\DoReauthorizationResponseType|\StructType\DoReferenceTransactionResponseType|\StructType\DoUATPAuthorizationResponseType|\StructType\DoUATPExpressCheckoutPaymentResponseType|\StructType\DoVoidResponseType
      */
     public function getResult()
     {
