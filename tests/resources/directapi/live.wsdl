@@ -1,0 +1,3114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="API" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:namesp1="API" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+        <schema targetNamespace="API" xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+            <complexType name="ArrayOfString">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfInteger">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:int[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfLong">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:long[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="NewReportFilterInfo">
+                <sequence>
+                    <element name="PageType" type="xsd:string" nillable="true" />
+                    <element name="PositionType" type="xsd:string" nillable="true" />
+                    <element name="Banner" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Geo" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Phrase" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="PageName" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatGoals" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="WithImage" type="xsd:string" nillable="true" />
+                    <element name="DeviceType" type="xsd:string" nillable="true" />
+                    <element name="Age" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="Gender" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="CarrierType" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="MobilePlatform" type="namesp1:ArrayOfString" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="NewReportInfo">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="StartDate" type="xsd:date" />
+                    <element name="EndDate" type="xsd:date" />
+                    <element name="GroupByColumns" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="Filter" type="namesp1:NewReportFilterInfo" nillable="true" />
+                    <element name="Limit" type="xsd:int" nillable="true" />
+                    <element name="Offset" type="xsd:int" nillable="true" />
+                    <element name="GroupByDate" type="xsd:string" nillable="true" />
+                    <element name="OrderBy" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="TypeResultReport" type="xsd:string" nillable="true" />
+                    <element name="CompressReport" type="xsd:int" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="IncludeVAT" type="xsd:string" nillable="true" />
+                    <element name="IncludeDiscount" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CreateOfflineReportRequest">
+                <sequence>
+                    <element name="Type" type="xsd:string" />
+                    <element name="CampaignIds" type="namesp1:ArrayOfInteger" />
+                    <element name="StartDate" type="xsd:date" />
+                    <element name="EndDate" type="xsd:date" />
+                    <element name="ImpressionsThreshold" type="xsd:int" nillable="true" />
+                    <element name="ClicksThreshold" type="xsd:int" nillable="true" />
+                    <element name="GroupByDate" type="xsd:string" nillable="true" />
+                    <element name="FieldNames" type="namesp1:ArrayOfString" />
+                </sequence>
+            </complexType>
+            <complexType name="OfflineReportInfo">
+                <sequence>
+                    <element name="Type" type="xsd:string" />
+                    <element name="Id" type="xsd:int" />
+                    <element name="Status" type="xsd:string" />
+                    <element name="Url" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfOfflineReportInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:OfflineReportInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfCampaignInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:CampaignInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfShortCampaignInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:ShortCampaignInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfRubricInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RubricInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfTimeZoneInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:TimeZoneInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="TimeZoneInfo">
+                <sequence>
+                    <element name="TimeZone" type="xsd:string" />
+                    <element name="GMTOffset" type="xsd:int" />
+                    <element name="Name" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfCampaignBalanceInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:CampaignBalanceInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="StatGoalsCampaignIDInfo">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" nillable="true" />
+                    <element name="CampaignIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CampaignIDInfo">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CampaignIDSInfo">
+                <sequence>
+                    <element name="CampaignIDS" type="namesp1:ArrayOfCampaignIDInfo" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfCampaignIDInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:int[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="CampaignInfo">
+                <sequence>
+                    <element name="Login" type="xsd:string" />
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="Name" type="xsd:string" />
+                    <element name="FIO" type="xsd:string" />
+                    <element name="StartDate" type="xsd:date" nillable="true" />
+                    <element name="Sum" type="xsd:float" nillable="true" />
+                    <element name="Rest" type="xsd:float" nillable="true" />
+                    <element name="Shows" type="xsd:int" nillable="true" />
+                    <element name="Clicks" type="xsd:int" nillable="true" />
+                    <element name="Strategy" type="namesp1:CampaignStrategy" nillable="true" />
+                    <element name="ClickTrackingEnabled" type="xsd:string" nillable="true" />
+                    <element name="BonusDiscount" type="xsd:float" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="CampaignCurrency" type="xsd:string" nillable="true" />
+                    <element name="SourceCampaignID" type="xsd:int" nillable="true" />
+                    <element name="ContextStrategy" type="namesp1:CampaignContextStrategy" nillable="true" />
+                    <element name="AdditionalMetrikaCounters" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="MobileBidAdjustment" type="xsd:int" nillable="true" />
+                    <element name="TradeType" type="xsd:string" nillable="true" />
+                    <element name="SmsNotification" type="namesp1:SmsNotificationInfo" nillable="true" />
+                    <element name="EmailNotification" type="namesp1:EmailNotificationInfo" nillable="true" />
+                    <element name="StatusBehavior" type="xsd:string" nillable="true" />
+                    <element name="Status" type="xsd:string" nillable="true" />
+                    <element name="TimeTarget" type="namesp1:TimeTargetInfo" nillable="true" />
+                    <element name="StatusContextStop" type="xsd:string" nillable="true" />
+                    <element name="ContextLimit" type="xsd:string" nillable="true" />
+                    <element name="ContextLimitSum" type="xsd:int" nillable="true" />
+                    <element name="ContextPricePercent" type="xsd:int" nillable="true" />
+                    <element name="AutoOptimization" type="xsd:string" nillable="true" />
+                    <element name="StatusMetricaControl" type="xsd:string" nillable="true" />
+                    <element name="DisabledDomains" type="xsd:string" nillable="true" />
+                    <element name="DisabledIps" type="xsd:string" nillable="true" />
+                    <element name="StatusOpenStat" type="xsd:string" nillable="true" />
+                    <element name="ConsiderTimeTarget" type="xsd:string" nillable="true" />
+                    <element name="ManagerName" type="xsd:string" nillable="true" />
+                    <element name="AgencyName" type="xsd:string" nillable="true" />
+                    <element name="StatusShow" type="xsd:string" nillable="true" />
+                    <element name="StatusArchive" type="xsd:string" nillable="true" />
+                    <element name="StatusActivating" type="xsd:string" nillable="true" />
+                    <element name="StatusModerate" type="xsd:string" nillable="true" />
+                    <element name="IsActive" type="xsd:string" nillable="true" />
+                    <element name="MinusKeywords" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="AddRelevantPhrases" type="xsd:string" nillable="true" />
+                    <element name="RelevantPhrasesBudgetLimit" type="xsd:int" nillable="true" />
+                    <element name="DayBudget" type="namesp1:DayBudgetInfo" nillable="true" />
+                    <element name="DayBudgetEnabled" type="xsd:string" nillable="true" />
+                    <element name="EnableRelatedKeywords" type="xsd:string" nillable="true" />
+                    <element name="ExtendedAdTitleEnabled" type="xsd:string" nillable="true" />
+                    <element name="MaintainNetworkCPC" type="xsd:string" nillable="true" />
+                    <element name="SumAvailableForTransfer" type="xsd:float" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="DayBudgetInfo">
+                <sequence>
+                    <element name="Amount" type="xsd:float" />
+                    <element name="SpendMode" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CampaignStrategy">
+                <sequence>
+                    <element name="MaxPrice" type="xsd:float" nillable="true" />
+                    <element name="AveragePrice" type="xsd:float" nillable="true" />
+                    <element name="WeeklySumLimit" type="xsd:float" nillable="true" />
+                    <element name="ClicksPerWeek" type="xsd:int" nillable="true" />
+                    <element name="StrategyName" type="xsd:string" />
+                    <element name="AverageCPA" type="xsd:float" nillable="true" />
+                    <element name="GoalID" type="xsd:int" nillable="true" />
+                    <element name="ReserveReturn" type="xsd:int" nillable="true" />
+                    <element name="ROICoef" type="xsd:float" nillable="true" />
+                    <element name="Profitability" type="xsd:float" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CampaignContextStrategy">
+                <sequence>
+                    <element name="StrategyName" type="xsd:string" />
+                    <element name="ContextLimit" type="xsd:string" nillable="true" />
+                    <element name="ContextLimitSum" type="xsd:int" nillable="true" />
+                    <element name="ContextPricePercent" type="xsd:int" nillable="true" />
+                    <element name="MaxPrice" type="xsd:float" nillable="true" />
+                    <element name="AveragePrice" type="xsd:float" nillable="true" />
+                    <element name="WeeklySumLimit" type="xsd:float" nillable="true" />
+                    <element name="ClicksPerWeek" type="xsd:int" nillable="true" />
+                    <element name="AverageCPA" type="xsd:float" nillable="true" />
+                    <element name="GoalID" type="xsd:int" nillable="true" />
+                    <element name="ReserveReturn" type="xsd:int" nillable="true" />
+                    <element name="ROICoef" type="xsd:float" nillable="true" />
+                    <element name="Profitability" type="xsd:float" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="SmsNotificationInfo">
+                <sequence>
+                    <element name="MetricaSms" type="xsd:string" nillable="true" />
+                    <element name="ModerateResultSms" type="xsd:string" nillable="true" />
+                    <element name="MoneyInSms" type="xsd:string" nillable="true" />
+                    <element name="MoneyOutSms" type="xsd:string" nillable="true" />
+                    <element name="SmsTimeFrom" type="xsd:string" nillable="true" />
+                    <element name="SmsTimeTo" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="EmailNotificationInfo">
+                <sequence>
+                    <element name="Email" type="xsd:string" nillable="true" />
+                    <element name="WarnPlaceInterval" type="xsd:int" />
+                    <element name="MoneyWarningValue" type="xsd:int" nillable="true" />
+                    <element name="SendAccNews" type="xsd:string" nillable="true" />
+                    <element name="SendWarn" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CampaignBalanceInfo">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="Sum" type="xsd:float" />
+                    <element name="Rest" type="xsd:float" />
+                    <element name="SumAvailableForTransfer" type="xsd:float" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ShortCampaignInfo">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="Login" type="xsd:string" />
+                    <element name="Name" type="xsd:string" />
+                    <element name="StartDate" type="xsd:date" />
+                    <element name="StrategyName" type="xsd:string" />
+                    <element name="ContextStrategyName" type="xsd:string" />
+                    <element name="Sum" type="xsd:float" />
+                    <element name="Rest" type="xsd:float" />
+                    <element name="SumAvailableForTransfer" type="xsd:float" nillable="true" />
+                    <element name="Shows" type="xsd:int" />
+                    <element name="Clicks" type="xsd:int" />
+                    <element name="Status" type="xsd:string" nillable="true" />
+                    <element name="StatusShow" type="xsd:string" />
+                    <element name="StatusArchive" type="xsd:string" />
+                    <element name="StatusActivating" type="xsd:string" />
+                    <element name="StatusModerate" type="xsd:string" />
+                    <element name="IsActive" type="xsd:string" nillable="true" />
+                    <element name="ManagerName" type="xsd:string" nillable="true" />
+                    <element name="AgencyName" type="xsd:string" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="CampaignCurrency" type="xsd:string" nillable="true" />
+                    <element name="SourceCampaignID" type="xsd:int" nillable="true" />
+                    <element name="BonusDiscount" type="xsd:float" nillable="true" />
+                    <element name="DayBudgetEnabled" type="xsd:string" nillable="true" />
+                    <element name="EnableRelatedKeywords" type="xsd:string" nillable="true" />
+                    <element name="ExtendedAdTitleEnabled" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfClientsUnitInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:ClientsUnitInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ClientsUnitInfo">
+                <sequence>
+                    <element name="Login" type="xsd:string" />
+                    <element name="UnitsRest" type="xsd:int" />
+                </sequence>
+            </complexType>
+            <complexType name="RubricInfo">
+                <sequence>
+                    <element name="ParentID" type="xsd:int" />
+                    <element name="RubricID" type="xsd:int" />
+                    <element name="Url" type="xsd:string" />
+                    <element name="RubricFullName" type="xsd:string" />
+                    <element name="RubricName" type="xsd:string" />
+                    <element name="Checkable" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfForecastStatusInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:ForecastStatusInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ForecastStatusInfo">
+                <sequence>
+                    <element name="ForecastID" type="xsd:int" />
+                    <element name="StatusForecast" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ReportInfo">
+                <sequence>
+                    <element name="ReportID" type="xsd:int" />
+                    <element name="Url" type="xsd:string" />
+                    <element name="StatusReport" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfReportInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:ReportInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="GetSummaryStatRequest">
+                <sequence>
+                    <element name="CampaignIDS" type="namesp1:ArrayOfInteger" />
+                    <element name="StartDate" type="xsd:date" />
+                    <element name="EndDate" type="xsd:date" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="IncludeVAT" type="xsd:string" nillable="true" />
+                    <element name="IncludeDiscount" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfStatItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:StatItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="StatItem">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="StatDate" type="xsd:date" />
+                    <element name="SumSearch" type="xsd:float" nillable="true" />
+                    <element name="SumContext" type="xsd:float" nillable="true" />
+                    <element name="ShowsSearch" type="xsd:int" nillable="true" />
+                    <element name="ShowsContext" type="xsd:int" nillable="true" />
+                    <element name="ClicksSearch" type="xsd:int" nillable="true" />
+                    <element name="ClicksContext" type="xsd:int" nillable="true" />
+                    <element name="SessionDepthSearch" type="xsd:float" nillable="true" />
+                    <element name="SessionDepthContext" type="xsd:float" nillable="true" />
+                    <element name="GoalConversionSearch" type="xsd:float" nillable="true" />
+                    <element name="GoalConversionContext" type="xsd:float" nillable="true" />
+                    <element name="GoalCostSearch" type="xsd:float" nillable="true" />
+                    <element name="GoalCostContext" type="xsd:float" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ContactInfo">
+                <sequence>
+                    <element name="ContactPerson" type="xsd:string" nillable="true" />
+                    <element name="Country" type="xsd:string" />
+                    <element name="CountryCode" type="xsd:string" />
+                    <element name="City" type="xsd:string" />
+                    <element name="Street" type="xsd:string" nillable="true" />
+                    <element name="House" type="xsd:string" nillable="true" />
+                    <element name="Build" type="xsd:string" nillable="true" />
+                    <element name="Apart" type="xsd:string" nillable="true" />
+                    <element name="CityCode" type="xsd:string" />
+                    <element name="Phone" type="xsd:string" />
+                    <element name="PhoneExt" type="xsd:string" nillable="true" />
+                    <element name="CompanyName" type="xsd:string" />
+                    <element name="IMClient" type="xsd:string" nillable="true" />
+                    <element name="IMLogin" type="xsd:string" nillable="true" />
+                    <element name="ExtraMessage" type="xsd:string" nillable="true" />
+                    <element name="ContactEmail" type="xsd:string" nillable="true" />
+                    <element name="WorkTime" type="xsd:string" />
+                    <element name="OGRN" type="xsd:string" nillable="true" />
+                    <element name="PointOnMap" type="namesp1:MapPoint" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="RegionInfo">
+                <sequence>
+                    <element name="RegionID" type="xsd:int" />
+                    <element name="ParentID" type="xsd:int" nillable="true" />
+                    <element name="RegionName" type="xsd:string" />
+                    <element name="RegionType" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="MapPoint">
+                <sequence>
+                    <element name="x" type="xsd:float" />
+                    <element name="y" type="xsd:float" />
+                    <element name="x1" type="xsd:float" />
+                    <element name="y1" type="xsd:float" />
+                    <element name="x2" type="xsd:float" />
+                    <element name="y2" type="xsd:float" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfPhrasePriceInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:PhrasePriceInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfBannerPhraseInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:BannerPhraseInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfCoverageInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:CoverageInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfPingAPI_XInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:PingAPI_XInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfPingAPI_XStructInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:PingAPI_XStructInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="PingAPI_XStructInfo">
+                <sequence>
+                    <element name="Field1" type="xsd:string" />
+                    <element name="Field2" type="xsd:int" />
+                </sequence>
+            </complexType>
+            <complexType name="PingAPI_XInfo">
+                <sequence>
+                    <element name="IntValue" type="xsd:int" />
+                    <element name="DateValue" type="xsd:date" />
+                    <element name="StrValue" type="xsd:string" />
+                    <element name="IntArray" type="namesp1:ArrayOfInteger" />
+                    <element name="StrArray" type="namesp1:ArrayOfString" />
+                    <element name="StructArray" type="namesp1:ArrayOfPingAPI_XStructInfo" />
+                </sequence>
+            </complexType>
+            <complexType name="TimeTargetInfo">
+                <sequence>
+                    <element name="ShowOnHolidays" type="xsd:string" nillable="true" />
+                    <element name="HolidayShowFrom" type="xsd:int" nillable="true" />
+                    <element name="HolidayShowTo" type="xsd:int" nillable="true" />
+                    <element name="DaysHours" type="namesp1:ArrayOfTimeTargetItem" />
+                    <element name="TimeZone" type="xsd:string" nillable="true" />
+                    <element name="WorkingHolidays" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfTimeTargetItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:TimeTargetItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="TimeTargetItem">
+                <sequence>
+                    <element name="Hours" type="namesp1:ArrayOfInteger" />
+                    <element name="Days" type="namesp1:ArrayOfInteger" />
+                    <element name="BidCoefs" type="namesp1:ArrayOfInteger" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CoverageInfo">
+                <sequence>
+                    <element name="Probability" type="xsd:float" />
+                    <element name="Price" type="xsd:float" />
+                </sequence>
+            </complexType>
+            <complexType name="BannerPhrasesFilterRequestInfo">
+                <sequence>
+                    <element name="BannerIDS" type="namesp1:ArrayOfInteger" />
+                    <element name="FieldsNames" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="ConsiderTimeTarget" type="xsd:string" nillable="true" />
+                    <element name="RequestPrices" type="xsd:string" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="PhrasePriceInfo">
+                <sequence>
+                    <element name="PhraseID" type="xsd:long" />
+                    <element name="BannerID" type="xsd:int" nillable="true" />
+                    <element name="CampaignID" type="xsd:int" nillable="true" />
+                    <element name="Price" type="xsd:float" nillable="true" />
+                    <element name="AutoBroker" type="xsd:string" nillable="true" />
+                    <element name="AutoBudgetPriority" type="xsd:string" nillable="true" />
+                    <element name="ContextPrice" type="xsd:float" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="BannerPhraseInfo">
+                <sequence>
+                    <element name="Phrase" type="xsd:string" nillable="true" />
+                    <element name="IsRubric" type="xsd:string" nillable="true" />
+                    <element name="Clicks" type="xsd:int" nillable="true" />
+                    <element name="FirstPlaceClicks" type="xsd:int" nillable="true" />
+                    <element name="PremiumClicks" type="xsd:int" nillable="true" />
+                    <element name="Shows" type="xsd:int" nillable="true" />
+                    <element name="Min" type="xsd:float" nillable="true" />
+                    <element name="Max" type="xsd:float" nillable="true" />
+                    <element name="PremiumMin" type="xsd:float" nillable="true" />
+                    <element name="PremiumMax" type="xsd:float" nillable="true" />
+                    <element name="CTR" type="xsd:float" nillable="true" />
+                    <element name="FirstPlaceCTR" type="xsd:float" nillable="true" />
+                    <element name="PremiumCTR" type="xsd:float" nillable="true" />
+                    <element name="LowCTRWarning" type="xsd:string" nillable="true" />
+                    <element name="LowCTR" type="xsd:string" nillable="true" />
+                    <element name="ContextPrice" type="xsd:float" nillable="true" />
+                    <element name="ContextCoverage" type="namesp1:ArrayOfCoverageInfo" nillable="true" />
+                    <element name="BannerID" type="xsd:int" nillable="true" />
+                    <element name="Price" type="xsd:float" nillable="true" />
+                    <element name="Prices" type="namesp1:ArrayOfFloat" nillable="true" />
+                    <element name="Coverage" type="namesp1:ArrayOfCoverageInfo" nillable="true" />
+                    <element name="AutoBroker" type="xsd:string" nillable="true" />
+                    <element name="PhraseID" type="xsd:long" />
+                    <element name="CurrentOnSearch" type="xsd:float" nillable="true" />
+                    <element name="CampaignID" type="xsd:int" nillable="true" />
+                    <element name="MinPrice" type="xsd:float" nillable="true" />
+                    <element name="AutoBudgetPriority" type="xsd:string" nillable="true" />
+                    <element name="StatusPhraseModerate" type="xsd:string" nillable="true" />
+                    <element name="ContextLowCTR" type="xsd:string" nillable="true" />
+                    <element name="UserParams" type="namesp1:PhraseUserParams" nillable="true" />
+                    <element name="AuctionBids" type="namesp1:ArrayOfPhraseAuctionBids" nillable="true" />
+                    <element name="AdGroupID" type="xsd:int" nillable="true" />
+                    <element name="StatusPaused" type="xsd:string" nillable="true" />
+                    <element name="ContextClicks" type="xsd:int" nillable="true" />
+                    <element name="ContextShows" type="xsd:int" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="PhraseUserParams">
+                <sequence>
+                    <element name="Param1" type="xsd:string" nillable="true" />
+                    <element name="Param2" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfPhraseAuctionBids">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:PhraseAuctionBids[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="PhraseAuctionBids">
+                <sequence>
+                    <element name="Position" type="xsd:string" nillable="true" />
+                    <element name="Bid" type="xsd:float" nillable="true" />
+                    <element name="Price" type="xsd:float" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="TransferMoneyInfo">
+                <sequence>
+                    <element name="FromCampaigns" type="namesp1:ArrayOfPayCampElement" />
+                    <element name="ToCampaigns" type="namesp1:ArrayOfPayCampElement" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfPayCampElement">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:PayCampElement[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="PayCampElement">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="Sum" type="xsd:float" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CreateInvoiceInfo">
+                <sequence>
+                    <element name="Payments" type="namesp1:ArrayOfPayCampElement" />
+                </sequence>
+            </complexType>
+            <complexType name="PayCampaignsInfo">
+                <sequence>
+                    <element name="Payments" type="namesp1:ArrayOfPayCampElement" />
+                    <element name="ContractID" type="xsd:string" nillable="true" />
+                    <element name="PayMethod" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="PayCampaignsByCardInfo">
+                <sequence>
+                    <element name="PayMethodID" type="xsd:string" />
+                    <element name="CustomTransactionID" type="xsd:string" />
+                    <element name="Payments" type="namesp1:ArrayOfPayCampElement" />
+                </sequence>
+            </complexType>
+            <complexType name="CheckPaymentInfo">
+                <sequence>
+                    <element name="CustomTransactionID" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfFloat">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:float[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfRegionInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RegionInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfBannerInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:BannerInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="BannerInfo">
+                <sequence>
+                    <element name="BannerID" type="xsd:int" nillable="true" />
+                    <element name="CampaignID" type="xsd:int" nillable="true" />
+                    <element name="Title" type="xsd:string" nillable="true" />
+                    <element name="Text" type="xsd:string" nillable="true" />
+                    <element name="Href" type="xsd:string" nillable="true" />
+                    <element name="Domain" type="xsd:string" nillable="true" />
+                    <element name="ContactInfo" type="namesp1:ContactInfo" nillable="true" />
+                    <element name="Geo" type="xsd:string" nillable="true" />
+                    <element name="Phrases" type="namesp1:ArrayOfBannerPhraseInfo" nillable="true" />
+                    <element name="MinusKeywords" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusActivating" type="xsd:string" nillable="true" />
+                    <element name="StatusArchive" type="xsd:string" nillable="true" />
+                    <element name="StatusBannerModerate" type="xsd:string" nillable="true" />
+                    <element name="StatusPhrasesModerate" type="xsd:string" nillable="true" />
+                    <element name="StatusPhoneModerate" type="xsd:string" nillable="true" />
+                    <element name="StatusShow" type="xsd:string" nillable="true" />
+                    <element name="IsActive" type="xsd:string" nillable="true" />
+                    <element name="StatusSitelinksModerate" type="xsd:string" nillable="true" />
+                    <element name="Sitelinks" type="namesp1:ArrayOfSitelink" nillable="true" />
+                    <element name="AdWarnings" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="FixedOnModeration" type="xsd:string" nillable="true" />
+                    <element name="ModerateRejectionReasons" type="namesp1:ArrayOfRejectReason" nillable="true" />
+                    <element name="Type" type="xsd:string" nillable="true" />
+                    <element name="AdGroupID" type="xsd:int" nillable="true" />
+                    <element name="AdGroupName" type="xsd:string" nillable="true" />
+                    <element name="AutoMinusWords" type="xsd:string" nillable="true" />
+                    <element name="AgeLabel" type="xsd:string" nillable="true" />
+                    <element name="AdImageHash" type="xsd:string" nillable="true" />
+                    <element name="StatusAdImageModerate" type="xsd:string" nillable="true" />
+                    <element name="AdGroupMobileBidAdjustment" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfSitelink">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:Sitelink[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="Sitelink">
+                <sequence>
+                    <element name="Title" type="xsd:string" />
+                    <element name="Href" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfRejectReason">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RejectReason[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="RejectReason">
+                <sequence>
+                    <element name="Type" type="xsd:string" />
+                    <element name="Text" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="CampaignBidsInfo">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" nillable="true" />
+                    <element name="BannerIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="GetCampaignsInfo">
+                <sequence>
+                    <element name="Logins" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="Filter" type="namesp1:CampaignsFilterInfo" nillable="true" />
+                    <element name="Limit" type="xsd:int" nillable="true" />
+                    <element name="Offset" type="xsd:int" nillable="true" />
+                    <element name="CurrencySupported" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CampaignsFilterInfo">
+                <sequence>
+                    <element name="StatusModerate" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="IsActive" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusArchive" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusActivating" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusShow" type="namesp1:ArrayOfString" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="BannersFilterInfo">
+                <sequence>
+                    <element name="StatusPhoneModerate" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusBannerModerate" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusPhrasesModerate" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusActivating" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusShow" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="IsActive" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusArchive" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="TagIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Tags" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusAdImageModerate" type="namesp1:ArrayOfString" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="GetBannersInfo">
+                <sequence>
+                    <element name="CampaignIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="BannerIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Filter" type="namesp1:BannersFilterInfo" nillable="true" />
+                    <element name="GetPhrases" type="xsd:string" nillable="true" />
+                    <element name="FieldsNames" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="Limit" type="xsd:int" nillable="true" />
+                    <element name="Offset" type="xsd:int" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="AuctionBids" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="NewForecastInfo">
+                <sequence>
+                    <element name="Categories" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Phrases" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="GeoID" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="AuctionBids" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ForecastCommonInfo">
+                <sequence>
+                    <element name="Geo" type="xsd:string" />
+                    <element name="Shows" type="xsd:int" />
+                    <element name="Clicks" type="xsd:int" />
+                    <element name="FirstPlaceClicks" type="xsd:int" />
+                    <element name="PremiumClicks" type="xsd:int" />
+                    <element name="Min" type="xsd:float" />
+                    <element name="Max" type="xsd:float" />
+                    <element name="PremiumMin" type="xsd:float" />
+                </sequence>
+            </complexType>
+            <complexType name="GetForecastInfo">
+                <sequence>
+                    <element name="Categories" type="namesp1:ArrayOfBannerPhraseInfo" />
+                    <element name="Phrases" type="namesp1:ArrayOfBannerPhraseInfo" />
+                    <element name="Common" type="namesp1:ForecastCommonInfo" />
+                </sequence>
+            </complexType>
+            <complexType name="NewWordstatReportInfo">
+                <sequence>
+                    <element name="Phrases" type="namesp1:ArrayOfString" />
+                    <element name="GeoID" type="namesp1:ArrayOfInteger" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfWordstatReportStatusInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:WordstatReportStatusInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="WordstatReportStatusInfo">
+                <sequence>
+                    <element name="ReportID" type="xsd:int" />
+                    <element name="StatusReport" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfWordstatReportInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:WordstatReportInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="WordstatReportInfo">
+                <sequence>
+                    <element name="Phrase" type="xsd:string" />
+                    <element name="GeoID" type="namesp1:ArrayOfInteger" />
+                    <element name="SearchedWith" type="namesp1:ArrayOfWordstatItem" />
+                    <element name="SearchedAlso" type="namesp1:ArrayOfWordstatItem" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfWordstatItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:WordstatItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="WordstatItem">
+                <sequence>
+                    <element name="Phrase" type="xsd:string" />
+                    <element name="Shows" type="xsd:int" />
+                </sequence>
+            </complexType>
+            <complexType name="StatGoalInfo">
+                <sequence>
+                    <element name="GoalID" type="xsd:int" />
+                    <element name="Name" type="xsd:string" />
+                    <element name="AvailableForStrategy" type="xsd:string" />
+                    <element name="AvailableForContextStrategy" type="xsd:string" />
+                    <element name="GoalsReached" type="xsd:int" />
+                    <element name="ContextGoalsReached" type="xsd:int" />
+                    <element name="CampaignID" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfStatGoalInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:StatGoalInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfShortClientInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:ShortClientInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ArrayOfClientInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:ClientInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AutoPriceInfo">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="BannerIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="PhraseIDS" type="namesp1:ArrayOfLong" nillable="true" />
+                    <element name="Mode" type="xsd:string" />
+                    <element name="SinglePrice" type="xsd:float" nillable="true" />
+                    <element name="PriceBase" type="xsd:string" nillable="true" />
+                    <element name="ProcBase" type="xsd:string" nillable="true" />
+                    <element name="MaxPrice" type="xsd:float" nillable="true" />
+                    <element name="Proc" type="xsd:int" nillable="true" />
+                    <element name="UpdatePhrases" type="xsd:string" nillable="true" />
+                    <element name="UpdateCategories" type="xsd:string" nillable="true" />
+                    <element name="Scope" type="xsd:int" nillable="true" />
+                    <element name="PhrasesType" type="xsd:string" nillable="true" />
+                    <element name="Price" type="xsd:float" nillable="true" />
+                    <element name="ContextPrice" type="xsd:float" nillable="true" />
+                    <element name="BannersType" type="xsd:string" nillable="true" />
+                    <element name="DontWaitForPriceUpdate" type="xsd:string" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ClientInfo">
+                <sequence>
+                    <element name="Phone" type="xsd:string" nillable="true" />
+                    <element name="DateCreate" type="xsd:date" nillable="true" />
+                    <element name="FIO" type="xsd:string" />
+                    <element name="Email" type="xsd:string" />
+                    <element name="Login" type="xsd:string" />
+                    <element name="StatusArch" type="xsd:string" nillable="true" />
+                    <element name="Discount" type="xsd:float" nillable="true" />
+                    <element name="OverdraftSumAvailable" type="xsd:float" nillable="true" />
+                    <element name="OverdraftSumAvailableInCurrency" type="xsd:float" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="VATRate" type="xsd:float" nillable="true" />
+                    <element name="ClientCurrencies" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="DisplayStoreRating" type="xsd:string" nillable="true" />
+                    <element name="SmsPhone" type="xsd:string" nillable="true" />
+                    <element name="CampaignEmails" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="ClientRights" type="namesp1:ArrayOfClientRight" nillable="true" />
+                    <element name="Role" type="xsd:string" nillable="true" />
+                    <element name="NonResident" type="xsd:string" nillable="true" />
+                    <element name="SendNews" type="xsd:string" nillable="true" />
+                    <element name="SendAccNews" type="xsd:string" nillable="true" />
+                    <element name="SendWarn" type="xsd:string" nillable="true" />
+                    <element name="ManagersLogins" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="SharedAccountEnabled" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ShortClientInfo">
+                <sequence>
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="FIO" type="xsd:string" nillable="true" />
+                    <element name="Role" type="xsd:string" nillable="true" />
+                    <element name="SharedAccountEnabled" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="GetSubClientsRequest">
+                <sequence>
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="Filter" type="namesp1:ClientFilter" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ClientInfoRequest">
+                <sequence>
+                    <element name="Filter" type="namesp1:ClientFilter" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ClientFilter">
+                <sequence>
+                    <element name="StatusArch" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfClientRight">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:ClientRight[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ClientRight">
+                <sequence>
+                    <element name="RightName" type="xsd:string" />
+                    <element name="Value" type="xsd:string" />
+                    <element name="AgencyName" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="VersionDesc">
+                <sequence>
+                    <element name="VersionNumber" type="xsd:int" />
+                    <element name="LinkWSDL" type="xsd:string" />
+                    <element name="BorderDate" type="xsd:date" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfVersionDesc">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:VersionDesc[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="KeywordsSuggestionInfo">
+                <sequence>
+                    <element name="Keywords" type="namesp1:ArrayOfString" />
+                </sequence>
+            </complexType>
+            <complexType name="GetEventsLogRequest">
+                <sequence>
+                    <element name="TimestampFrom" type="xsd:string" />
+                    <element name="TimestampTo" type="xsd:string" nillable="true" />
+                    <element name="LastEventOnly" type="xsd:string" nillable="true" />
+                    <element name="WithTextDescription" type="xsd:string" nillable="true" />
+                    <element name="Logins" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="Filter" type="namesp1:GetEventsLogFilter" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="Limit" type="xsd:int" nillable="true" />
+                    <element name="Offset" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="GetEventsLogFilter">
+                <sequence>
+                    <element name="CampaignIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="BannerIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="PhraseIDS" type="namesp1:ArrayOfLong" nillable="true" />
+                    <element name="AccountIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="EventType" type="namesp1:ArrayOfString" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfEventsLogItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:EventsLogItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="EventsLogItem">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" nillable="true" />
+                    <element name="BannerID" type="xsd:int" nillable="true" />
+                    <element name="PhraseID" type="xsd:long" nillable="true" />
+                    <element name="AccountID" type="xsd:int" nillable="true" />
+                    <element name="TextDescription" type="xsd:string" nillable="true" />
+                    <element name="EventType" type="xsd:string" />
+                    <element name="Timestamp" type="xsd:string" />
+                    <element name="EventName" type="xsd:string" />
+                    <element name="Attributes" type="namesp1:EventsLogItemAttributes" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="EventsLogItemAttributes">
+                <sequence>
+                    <element name="ModerationResult" type="xsd:string" nillable="true" />
+                    <element name="MinPrice" type="xsd:float" nillable="true" />
+                    <element name="Rest" type="xsd:float" nillable="true" />
+                    <element name="Payed" type="xsd:float" nillable="true" />
+                    <element name="FinishDate" type="xsd:date" nillable="true" />
+                    <element name="OldPlace" type="xsd:string" nillable="true" />
+                    <element name="IsEditedByModerator" type="xsd:string" nillable="true" />
+                    <element name="StopTime" type="xsd:string" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CampaignTagsInfo">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="Tags" type="namesp1:ArrayOfTagInfo" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfCampaignTagsInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:CampaignTagsInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="TagInfo">
+                <sequence>
+                    <element name="TagID" type="xsd:int" />
+                    <element name="Tag" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfTagInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:TagInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="BannersRequestInfo">
+                <sequence>
+                    <element name="CampaignIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="BannerIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="BannerTagsInfo">
+                <sequence>
+                    <element name="BannerID" type="xsd:int" />
+                    <element name="TagIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfBannerTagsInfo">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:BannerTagsInfo[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="BannersStatItem">
+                <sequence>
+                    <element name="Sum" type="xsd:float" nillable="true" />
+                    <element name="SumContext" type="xsd:float" nillable="true" />
+                    <element name="SumSearch" type="xsd:float" nillable="true" />
+                    <element name="Clicks" type="xsd:int" nillable="true" />
+                    <element name="ClicksContext" type="xsd:int" nillable="true" />
+                    <element name="ClicksSearch" type="xsd:int" nillable="true" />
+                    <element name="Shows" type="xsd:int" nillable="true" />
+                    <element name="ShowsContext" type="xsd:int" nillable="true" />
+                    <element name="ShowsSearch" type="xsd:int" nillable="true" />
+                    <element name="StatDate" type="xsd:date" nillable="true" />
+                    <element name="BannerID" type="xsd:int" nillable="true" />
+                    <element name="PhraseID" type="xsd:long" nillable="true" />
+                    <element name="RubricID" type="xsd:int" nillable="true" />
+                    <element name="RetargetingID" type="xsd:int" nillable="true" />
+                    <element name="WebpageID" type="xsd:int" nillable="true" />
+                    <element name="Phrase" type="xsd:string" nillable="true" />
+                    <element name="StatType" type="xsd:string" nillable="true" />
+                    <element name="DeviceType" type="xsd:string" nillable="true" />
+                    <element name="ShowsAveragePosition" type="xsd:float" nillable="true" />
+                    <element name="ClicksAveragePosition" type="xsd:float" nillable="true" />
+                    <element name="Revenue" type="xsd:float" nillable="true" />
+                    <element name="ROI" type="xsd:float" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfBannersStatItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:BannersStatItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="GetBannersStatResponse">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="StartDate" type="xsd:date" />
+                    <element name="EndDate" type="xsd:date" />
+                    <element name="Stat" type="namesp1:ArrayOfBannersStatItem" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="GetChangesRequest">
+                <sequence>
+                    <element name="CampaignIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="BannerIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Logins" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="Timestamp" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="GetChangesResponse">
+                <sequence>
+                    <element name="Campaigns" type="namesp1:GetChangesIntData" nillable="true" />
+                    <element name="Banners" type="namesp1:GetChangesIntData" nillable="true" />
+                    <element name="Logins" type="namesp1:GetChangesStringData" nillable="true" />
+                    <element name="CampaignsStatChange" type="namesp1:ArrayOfCampaignStatChangeItem" nillable="true" />
+                    <element name="Timestamp" type="xsd:string" />
+                    <element name="RubricsChanged" type="xsd:string" nillable="true" />
+                    <element name="TimeZonesChanged" type="xsd:string" nillable="true" />
+                    <element name="RegionsChanged" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="GetChangesIntData">
+                <sequence>
+                    <element name="Updated" type="namesp1:ArrayOfInteger" />
+                    <element name="NotUpdated" type="namesp1:ArrayOfInteger" />
+                    <element name="NotFound" type="namesp1:ArrayOfInteger" />
+                </sequence>
+            </complexType>
+            <complexType name="GetChangesStringData">
+                <sequence>
+                    <element name="Updated" type="namesp1:ArrayOfString" />
+                    <element name="NotUpdated" type="namesp1:ArrayOfString" />
+                    <element name="NotFound" type="namesp1:ArrayOfString" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfCampaignStatChangeItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:CampaignStatChangeItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="CampaignStatChangeItem">
+                <sequence>
+                    <element name="CampaignID" type="xsd:int" />
+                    <element name="BorderDate" type="xsd:date" />
+                </sequence>
+            </complexType>
+            <complexType name="CreateNewSubclientRequest">
+                <sequence>
+                    <element name="Login" type="xsd:string" />
+                    <element name="AgencyLogin" type="xsd:string" nillable="true" />
+                    <element name="Name" type="xsd:string" nillable="true" />
+                    <element name="Surname" type="xsd:string" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="CreateNewSubclientResponse">
+                <sequence>
+                    <element name="Login" type="xsd:string" />
+                    <element name="Password" type="xsd:string" />
+                    <element name="FIO" type="xsd:string" />
+                    <element name="Email" type="xsd:string" />
+                    <element name="ClientID" type="xsd:int" />
+                </sequence>
+            </complexType>
+            <complexType name="CreditLimitsInfo">
+                <sequence>
+                    <element name="Currency" type="xsd:string" />
+                    <element name="Limits" type="namesp1:ArrayOfCreditLimitsItem" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfCreditLimitsItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:CreditLimitsItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="CreditLimitsItem">
+                <sequence>
+                    <element name="ContractID" type="xsd:string" />
+                    <element name="Limit" type="xsd:float" />
+                    <element name="LimitSpent" type="xsd:float" />
+                </sequence>
+            </complexType>
+            <complexType name="Error">
+                <sequence>
+                    <element name="FaultCode" type="xsd:int" />
+                    <element name="FaultString" type="xsd:string" />
+                    <element name="FaultDetail" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfError">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:Error[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="Warning">
+                <sequence>
+                    <element name="WarningCode" type="xsd:int" />
+                    <element name="WarningString" type="xsd:string" />
+                    <element name="Description" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfWarning">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:Warning[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="GetRetargetingGoalsRequest">
+                <sequence>
+                    <element name="Logins" type="namesp1:ArrayOfString" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfRetargetingGoal">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RetargetingGoal[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="RetargetingGoal">
+                <sequence>
+                    <element name="GoalID" type="xsd:long" />
+                    <element name="Name" type="xsd:string" />
+                    <element name="GoalDomain" type="xsd:string" />
+                    <element name="Login" type="xsd:string" />
+                    <element name="Type" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="RetargetingConditionRequest">
+                <sequence>
+                    <element name="Action" type="xsd:string" />
+                    <element name="SelectionCriteria" type="namesp1:RetargetingConditionSelectionCriteria" nillable="true" />
+                    <element name="RetargetingConditions" type="namesp1:ArrayOfRetargetingCondition" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfRetargetingCondition">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RetargetingCondition[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="RetargetingCondition">
+                <sequence>
+                    <element name="IsAccessible" type="xsd:string" nillable="true" />
+                    <element name="Fields" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="RetargetingConditionName" type="xsd:string" nillable="true" />
+                    <element name="RetargetingConditionDescription" type="xsd:string" nillable="true" />
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="RetargetingConditionID" type="xsd:int" nillable="true" />
+                    <element name="RetargetingCondition" type="namesp1:ArrayOfRetargetingConditionItem" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfRetargetingConditionItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RetargetingConditionItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="RetargetingConditionItem">
+                <sequence>
+                    <element name="Type" type="xsd:string" />
+                    <element name="Goals" type="namesp1:ArrayOfRetargetingConditionGoalItem" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfRetargetingConditionGoalItem">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RetargetingConditionGoalItem[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="RetargetingConditionGoalItem">
+                <sequence>
+                    <element name="Time" type="xsd:int" />
+                    <element name="GoalID" type="xsd:long" />
+                </sequence>
+            </complexType>
+            <complexType name="RetargetingConditionSelectionCriteria">
+                <sequence>
+                    <element name="RetargetingConditionIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Logins" type="namesp1:ArrayOfString" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="RetargetingConditionActionResult">
+                <sequence>
+                    <element name="Warnings" type="namesp1:ArrayOfWarning" nillable="true" />
+                    <element name="Errors" type="namesp1:ArrayOfError" nillable="true" />
+                    <element name="RetargetingConditionID" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfRetargetingConditionActionResult">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RetargetingConditionActionResult[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="RetargetingConditionResponse">
+                <sequence>
+                    <element name="ActionsResult" type="namesp1:ArrayOfRetargetingConditionActionResult" nillable="true" />
+                    <element name="RetargetingConditions" type="namesp1:ArrayOfRetargetingCondition" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="RetargetingRequest">
+                <sequence>
+                    <element name="Action" type="xsd:string" />
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="SelectionCriteria" type="namesp1:RetargetingSelectionCriteria" nillable="true" />
+                    <element name="Retargetings" type="namesp1:ArrayOfRetargeting" nillable="true" />
+                    <element name="Options" type="namesp1:RetargetingRequestOptions" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="RetargetingRequestOptions">
+                <sequence>
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfRetargeting">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:Retargeting[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="Retargeting">
+                <sequence>
+                    <element name="Fields" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="RetargetingID" type="xsd:int" nillable="true" />
+                    <element name="AdGroupID" type="xsd:int" nillable="true" />
+                    <element name="AdID" type="xsd:int" nillable="true" />
+                    <element name="RetargetingConditionID" type="xsd:int" nillable="true" />
+                    <element name="ContextPrice" type="xsd:float" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="AutoBudgetPriority" type="xsd:string" nillable="true" />
+                    <element name="StatusPaused" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="RetargetingSelectionCriteria">
+                <sequence>
+                    <element name="RetargetingConditionIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="RetargetingIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="AdIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="RetargetingActionResult">
+                <sequence>
+                    <element name="Warnings" type="namesp1:ArrayOfWarning" nillable="true" />
+                    <element name="Errors" type="namesp1:ArrayOfError" nillable="true" />
+                    <element name="RetargetingID" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfRetargetingActionResult">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:RetargetingActionResult[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="RetargetingResponse">
+                <sequence>
+                    <element name="ActionsResult" type="namesp1:ArrayOfRetargetingActionResult" nillable="true" />
+                    <element name="Retargetings" type="namesp1:ArrayOfRetargeting" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AdImageRequest">
+                <sequence>
+                    <element name="Action" type="xsd:string" />
+                    <element name="SelectionCriteria" type="namesp1:AdImageSelectionCriteria" nillable="true" />
+                    <element name="AdImageRawData" type="namesp1:ArrayOfAdImageRaw" nillable="true" />
+                    <element name="AdImageURLData" type="namesp1:ArrayOfAdImageURL" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AdImageSelectionCriteria">
+                <sequence>
+                    <element name="Logins" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="AdImageHashes" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="AdImageUploadTaskIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Assigned" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="Limit" type="xsd:int" nillable="true" />
+                    <element name="Offset" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AdImageRaw">
+                <sequence>
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="RawData" type="xsd:string" />
+                    <element name="Name" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAdImageRaw">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AdImageRaw[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AdImageURL">
+                <sequence>
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="URL" type="xsd:string" />
+                    <element name="Name" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAdImageURL">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AdImageURL[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AdImageResponse">
+                <sequence>
+                    <element name="AdImages" type="namesp1:ArrayOfAdImage" nillable="true" />
+                    <element name="AdImageUploads" type="namesp1:ArrayOfAdImageUpload" nillable="true" />
+                    <element name="ActionsResult" type="namesp1:ArrayOfAdImageActionResult" nillable="true" />
+                    <element name="AdImageLimits" type="namesp1:ArrayOfAdImageLimit" nillable="true" />
+                    <element name="TotalObjectsCount" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="KeywordRequest">
+                <sequence>
+                    <element name="Action" type="xsd:string" />
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="KeywordIDS" type="namesp1:ArrayOfLong" />
+                </sequence>
+            </complexType>
+            <complexType name="KeywordActionResult">
+                <sequence>
+                    <element name="Warnings" type="namesp1:ArrayOfWarning" nillable="true" />
+                    <element name="Errors" type="namesp1:ArrayOfError" nillable="true" />
+                    <element name="KeywordID" type="xsd:long" nillable="true" />
+                    <element name="QualityIndex" type="namesp1:QualityIndex" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="QualityIndex">
+                <sequence>
+                    <element name="Value" type="xsd:decimal" />
+                    <element name="References" type="namesp1:ArrayOfInteger" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfKeywordActionResult">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:KeywordActionResult[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="KeywordResponse">
+                <sequence>
+                    <element name="ActionsResult" type="namesp1:ArrayOfKeywordActionResult" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AdImageLimit">
+                <sequence>
+                    <element name="Login" type="xsd:string" />
+                    <element name="Capacity" type="xsd:int" />
+                    <element name="Utilized" type="xsd:int" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAdImageLimit">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AdImageLimit[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AdImage">
+                <sequence>
+                    <element name="Login" type="xsd:string" />
+                    <element name="AdImageHash" type="xsd:string" />
+                    <element name="AdImageURL" type="xsd:string" />
+                    <element name="Assigned" type="xsd:string" />
+                    <element name="Name" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAdImage">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AdImage[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AdImageUpload">
+                <sequence>
+                    <element name="Login" type="xsd:string" />
+                    <element name="AdImageHash" type="xsd:string" />
+                    <element name="AdImageURL" type="xsd:string" />
+                    <element name="SourceURL" type="xsd:string" />
+                    <element name="Name" type="xsd:string" nillable="true" />
+                    <element name="Error" type="namesp1:Error" nillable="true" />
+                    <element name="AdImageUploadTaskID" type="xsd:int" nillable="true" />
+                    <element name="Status" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAdImageUpload">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AdImageUpload[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AdImageActionResult">
+                <sequence>
+                    <element name="Warnings" type="namesp1:ArrayOfWarning" nillable="true" />
+                    <element name="Errors" type="namesp1:ArrayOfError" nillable="true" />
+                    <element name="AdImageUploadTaskID" type="xsd:int" nillable="true" />
+                    <element name="AdImageHash" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAdImageActionResult">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AdImageActionResult[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AdImageAssociationRequest">
+                <sequence>
+                    <element name="Action" type="xsd:string" />
+                    <element name="SelectionCriteria" type="namesp1:AdImageAssociationSelectionCriteria" nillable="true" />
+                    <element name="AdImageAssociations" type="namesp1:ArrayOfAdImageAssociation" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AdImageAssociationSelectionCriteria">
+                <sequence>
+                    <element name="Logins" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="AdImageHashes" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="StatusAdImageModerate" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="AdIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="CampaignIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                    <element name="Limit" type="xsd:int" nillable="true" />
+                    <element name="Offset" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AdImageAssociation">
+                <sequence>
+                    <element name="AdID" type="xsd:int" />
+                    <element name="AdImageHash" type="xsd:string" nillable="true" />
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="CampaignID" type="xsd:int" nillable="true" />
+                    <element name="StatusAdImageModerate" type="xsd:string" nillable="true" />
+                    <element name="ModerateRejectionReasons" type="namesp1:ArrayOfRejectReason" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAdImageAssociation">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AdImageAssociation[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AdImageAssociationResponse">
+                <sequence>
+                    <element name="ActionsResult" type="namesp1:ArrayOfAdImageAssociationActionResult" nillable="true" />
+                    <element name="AdImageAssociations" type="namesp1:ArrayOfAdImageAssociation" nillable="true" />
+                    <element name="TotalObjectsCount" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AdImageAssociationActionResult">
+                <sequence>
+                    <element name="Warnings" type="namesp1:ArrayOfWarning" nillable="true" />
+                    <element name="Errors" type="namesp1:ArrayOfError" nillable="true" />
+                    <element name="AdID" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAdImageAssociationActionResult">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AdImageAssociationActionResult[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="EnableSharedAccountRequest">
+                <sequence>
+                    <element name="Login" type="xsd:string" />
+                </sequence>
+            </complexType>
+            <complexType name="EnableSharedAccountResponse">
+                <sequence>
+                    <element name="Errors" type="namesp1:ArrayOfError" nillable="true" />
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="AccountID" type="xsd:int" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AccountManagementRequest">
+                <sequence>
+                    <element name="Action" type="xsd:string" />
+                    <element name="SelectionCriteria" type="namesp1:AccountSelectionCriteria" nillable="true" />
+                    <element name="Payments" type="namesp1:ArrayOfPayment" nillable="true" />
+                    <element name="Transfers" type="namesp1:ArrayOfTransfer" nillable="true" />
+                    <element name="Accounts" type="namesp1:ArrayOfAccount" nillable="true" />
+                    <element name="PayMethodID" type="xsd:string" nillable="true" />
+                    <element name="CustomTransactionID" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AccountSelectionCriteria">
+                <sequence>
+                    <element name="Logins" type="namesp1:ArrayOfString" nillable="true" />
+                    <element name="AccountIDS" type="namesp1:ArrayOfInteger" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="Payment">
+                <sequence>
+                    <element name="AccountID" type="xsd:int" />
+                    <element name="Amount" type="xsd:float" />
+                    <element name="Origin" type="xsd:string" nillable="true" />
+                    <element name="Contract" type="xsd:string" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfPayment">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:Payment[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="Transfer">
+                <sequence>
+                    <element name="FromAccountID" type="xsd:int" />
+                    <element name="ToAccountID" type="xsd:int" />
+                    <element name="Amount" type="xsd:float" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfTransfer">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:Transfer[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="Account">
+                <sequence>
+                    <element name="AgencyName" type="xsd:string" nillable="true" />
+                    <element name="AccountID" type="xsd:int" />
+                    <element name="Amount" type="xsd:float" nillable="true" />
+                    <element name="AmountAvailableForTransfer" type="xsd:float" nillable="true" />
+                    <element name="Currency" type="xsd:string" nillable="true" />
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="Discount" type="xsd:float" nillable="true" />
+                    <element name="SmsNotification" type="namesp1:SmsNotificationInfo" nillable="true" />
+                    <element name="EmailNotification" type="namesp1:EmailNotificationInfo" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAccount">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:Account[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="AccountManagementResponse">
+                <sequence>
+                    <element name="ActionsResult" type="namesp1:ArrayOfAccountActionResult" nillable="true" />
+                    <element name="Accounts" type="namesp1:ArrayOfAccount" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="AccountActionResult">
+                <sequence>
+                    <element name="Errors" type="namesp1:ArrayOfError" nillable="true" />
+                    <element name="AccountID" type="xsd:int" nillable="true" />
+                    <element name="Login" type="xsd:string" nillable="true" />
+                    <element name="URL" type="xsd:string" nillable="true" />
+                    <element name="PurchaseToken" type="xsd:string" nillable="true" />
+                    <element name="Status" type="xsd:string" nillable="true" />
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAccountActionResult">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="namesp1:AccountActionResult[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="GetVersionRequest">
+    </wsdl:message>
+    <wsdl:message name="GetVersionResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetClientsListRequest">
+        <wsdl:part name="params" type="namesp1:ClientInfoRequest" />
+    </wsdl:message>
+    <wsdl:message name="GetClientsListResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfClientInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetSubClientsRequest">
+        <wsdl:part name="params" type="namesp1:GetSubClientsRequest" />
+    </wsdl:message>
+    <wsdl:message name="GetSubClientsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfShortClientInfo" />
+    </wsdl:message>
+    <wsdl:message name="SetAutoPriceRequest">
+        <wsdl:part name="params" type="namesp1:AutoPriceInfo" />
+    </wsdl:message>
+    <wsdl:message name="SetAutoPriceResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfPhrasePriceInfo" />
+    </wsdl:message>
+    <wsdl:message name="DeleteReportRequest">
+        <wsdl:part name="params" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="DeleteReportResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetSummaryStatRequest">
+        <wsdl:part name="params" type="namesp1:GetSummaryStatRequest" />
+    </wsdl:message>
+    <wsdl:message name="GetSummaryStatResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfStatItem" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignParamsRequest">
+        <wsdl:part name="params" type="namesp1:CampaignIDInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignParamsResponse">
+        <wsdl:part name="return" type="namesp1:CampaignInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignsParamsRequest">
+        <wsdl:part name="params" type="namesp1:CampaignIDSInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignsParamsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfCampaignInfo" />
+    </wsdl:message>
+    <wsdl:message name="DeleteForecastReportRequest">
+        <wsdl:part name="params" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="DeleteForecastReportResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="ModerateBannersRequest">
+        <wsdl:part name="params" type="namesp1:CampaignBidsInfo" />
+    </wsdl:message>
+    <wsdl:message name="ModerateBannersResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="StopBannersRequest">
+        <wsdl:part name="params" type="namesp1:CampaignBidsInfo" />
+    </wsdl:message>
+    <wsdl:message name="StopBannersResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="ResumeBannersRequest">
+        <wsdl:part name="params" type="namesp1:CampaignBidsInfo" />
+    </wsdl:message>
+    <wsdl:message name="ResumeBannersResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="ArchiveBannersRequest">
+        <wsdl:part name="params" type="namesp1:CampaignBidsInfo" />
+    </wsdl:message>
+    <wsdl:message name="ArchiveBannersResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="UnArchiveBannersRequest">
+        <wsdl:part name="params" type="namesp1:CampaignBidsInfo" />
+    </wsdl:message>
+    <wsdl:message name="UnArchiveBannersResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="DeleteBannersRequest">
+        <wsdl:part name="params" type="namesp1:CampaignBidsInfo" />
+    </wsdl:message>
+    <wsdl:message name="DeleteBannersResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="StopCampaignRequest">
+        <wsdl:part name="params" type="namesp1:CampaignIDInfo" />
+    </wsdl:message>
+    <wsdl:message name="StopCampaignResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="DeleteCampaignRequest">
+        <wsdl:part name="params" type="namesp1:CampaignIDInfo" />
+    </wsdl:message>
+    <wsdl:message name="DeleteCampaignResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="UnArchiveCampaignRequest">
+        <wsdl:part name="params" type="namesp1:CampaignIDInfo" />
+    </wsdl:message>
+    <wsdl:message name="UnArchiveCampaignResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="ArchiveCampaignRequest">
+        <wsdl:part name="params" type="namesp1:CampaignIDInfo" />
+    </wsdl:message>
+    <wsdl:message name="ArchiveCampaignResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="ResumeCampaignRequest">
+        <wsdl:part name="params" type="namesp1:CampaignIDInfo" />
+    </wsdl:message>
+    <wsdl:message name="ResumeCampaignResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetReportListRequest">
+    </wsdl:message>
+    <wsdl:message name="GetReportListResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfReportInfo" />
+    </wsdl:message>
+    <wsdl:message name="PingAPI_XRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfPingAPI_XInfo" />
+    </wsdl:message>
+    <wsdl:message name="PingAPI_XResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfPingAPI_XInfo" />
+    </wsdl:message>
+    <wsdl:message name="PingAPIRequest">
+    </wsdl:message>
+    <wsdl:message name="PingAPIResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetClientsUnitsRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfString" />
+    </wsdl:message>
+    <wsdl:message name="GetClientsUnitsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfClientsUnitInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetClientInfoRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfString" />
+    </wsdl:message>
+    <wsdl:message name="GetClientInfoResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfClientInfo" />
+    </wsdl:message>
+    <wsdl:message name="UpdateClientInfoRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfClientInfo" />
+    </wsdl:message>
+    <wsdl:message name="UpdateClientInfoResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetBannersRequest">
+        <wsdl:part name="params" type="namesp1:GetBannersInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetBannersResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfBannerInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignsListRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfString" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignsListResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfShortCampaignInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignsListFilterRequest">
+        <wsdl:part name="params" type="namesp1:GetCampaignsInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignsListFilterResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfShortCampaignInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetBalanceRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfInteger" />
+    </wsdl:message>
+    <wsdl:message name="GetBalanceResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfCampaignBalanceInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetBannerPhrasesRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfInteger" />
+    </wsdl:message>
+    <wsdl:message name="GetBannerPhrasesResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfBannerPhraseInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetBannerPhrasesFilterRequest">
+        <wsdl:part name="params" type="namesp1:BannerPhrasesFilterRequestInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetBannerPhrasesFilterResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfBannerPhraseInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetRegionsRequest">
+    </wsdl:message>
+    <wsdl:message name="GetRegionsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfRegionInfo" />
+    </wsdl:message>
+    <wsdl:message name="CreateNewReportRequest">
+        <wsdl:part name="params" type="namesp1:NewReportInfo" />
+    </wsdl:message>
+    <wsdl:message name="CreateNewReportResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetBannersStatRequest">
+        <wsdl:part name="params" type="namesp1:NewReportInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetBannersStatResponse">
+        <wsdl:part name="return" type="namesp1:GetBannersStatResponse" />
+    </wsdl:message>
+    <wsdl:message name="CreateNewForecastRequest">
+        <wsdl:part name="params" type="namesp1:NewForecastInfo" />
+    </wsdl:message>
+    <wsdl:message name="CreateNewForecastResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetForecastRequest">
+        <wsdl:part name="params" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetForecastResponse">
+        <wsdl:part name="return" type="namesp1:GetForecastInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetRubricsRequest">
+    </wsdl:message>
+    <wsdl:message name="GetRubricsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfRubricInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetTimeZonesRequest">
+    </wsdl:message>
+    <wsdl:message name="GetTimeZonesResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfTimeZoneInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetForecastListRequest">
+    </wsdl:message>
+    <wsdl:message name="GetForecastListResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfForecastStatusInfo" />
+    </wsdl:message>
+    <wsdl:message name="UpdatePricesRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfPhrasePriceInfo" />
+    </wsdl:message>
+    <wsdl:message name="UpdatePricesResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="CreateOrUpdateCampaignRequest">
+        <wsdl:part name="params" type="namesp1:CampaignInfo" />
+    </wsdl:message>
+    <wsdl:message name="CreateOrUpdateCampaignResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="CreateOrUpdateBannersRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfBannerInfo" />
+    </wsdl:message>
+    <wsdl:message name="CreateOrUpdateBannersResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfInteger" />
+    </wsdl:message>
+    <wsdl:message name="GetAvailableVersionsRequest">
+    </wsdl:message>
+    <wsdl:message name="GetAvailableVersionsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfVersionDesc" />
+    </wsdl:message>
+    <wsdl:message name="GetKeywordsSuggestionRequest">
+        <wsdl:part name="params" type="namesp1:KeywordsSuggestionInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetKeywordsSuggestionResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfString" />
+    </wsdl:message>
+    <wsdl:message name="CreateNewSubclientRequest">
+        <wsdl:part name="params" type="namesp1:CreateNewSubclientRequest" />
+    </wsdl:message>
+    <wsdl:message name="CreateNewSubclientResponse">
+        <wsdl:part name="return" type="namesp1:CreateNewSubclientResponse" />
+    </wsdl:message>
+    <wsdl:message name="CreateNewWordstatReportRequest">
+        <wsdl:part name="params" type="namesp1:NewWordstatReportInfo" />
+    </wsdl:message>
+    <wsdl:message name="CreateNewWordstatReportResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetWordstatReportListRequest">
+    </wsdl:message>
+    <wsdl:message name="GetWordstatReportListResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfWordstatReportStatusInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetWordstatReportRequest">
+        <wsdl:part name="params" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetWordstatReportResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfWordstatReportInfo" />
+    </wsdl:message>
+    <wsdl:message name="DeleteWordstatReportRequest">
+        <wsdl:part name="params" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="DeleteWordstatReportResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetStatGoalsRequest">
+        <wsdl:part name="params" type="namesp1:StatGoalsCampaignIDInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetStatGoalsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfStatGoalInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetChangesRequest">
+        <wsdl:part name="params" type="namesp1:GetChangesRequest" />
+    </wsdl:message>
+    <wsdl:message name="GetChangesResponse">
+        <wsdl:part name="return" type="namesp1:GetChangesResponse" />
+    </wsdl:message>
+    <wsdl:message name="GetEventsLogRequest">
+        <wsdl:part name="params" type="namesp1:GetEventsLogRequest" />
+    </wsdl:message>
+    <wsdl:message name="GetEventsLogResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfEventsLogItem" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignsTagsRequest">
+        <wsdl:part name="params" type="namesp1:CampaignIDSInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetCampaignsTagsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfCampaignTagsInfo" />
+    </wsdl:message>
+    <wsdl:message name="UpdateCampaignsTagsRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfCampaignTagsInfo" />
+    </wsdl:message>
+    <wsdl:message name="UpdateCampaignsTagsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfCampaignTagsInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetBannersTagsRequest">
+        <wsdl:part name="params" type="namesp1:BannersRequestInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetBannersTagsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfBannerTagsInfo" />
+    </wsdl:message>
+    <wsdl:message name="UpdateBannersTagsRequest">
+        <wsdl:part name="params" type="namesp1:ArrayOfBannerTagsInfo" />
+    </wsdl:message>
+    <wsdl:message name="UpdateBannersTagsResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="TransferMoneyRequest">
+        <wsdl:part name="params" type="namesp1:TransferMoneyInfo" />
+    </wsdl:message>
+    <wsdl:message name="TransferMoneyResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetCreditLimitsRequest">
+    </wsdl:message>
+    <wsdl:message name="GetCreditLimitsResponse">
+        <wsdl:part name="return" type="namesp1:CreditLimitsInfo" />
+    </wsdl:message>
+    <wsdl:message name="CreateInvoiceRequest">
+        <wsdl:part name="params" type="namesp1:CreateInvoiceInfo" />
+    </wsdl:message>
+    <wsdl:message name="CreateInvoiceResponse">
+        <wsdl:part name="return" type="xsd:string" />
+    </wsdl:message>
+    <wsdl:message name="PayCampaignsRequest">
+        <wsdl:part name="params" type="namesp1:PayCampaignsInfo" />
+    </wsdl:message>
+    <wsdl:message name="PayCampaignsResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="PayCampaignsByCardRequest">
+        <wsdl:part name="params" type="namesp1:PayCampaignsByCardInfo" />
+    </wsdl:message>
+    <wsdl:message name="PayCampaignsByCardResponse">
+        <wsdl:part name="return" type="xsd:string" />
+    </wsdl:message>
+    <wsdl:message name="CheckPaymentRequest">
+        <wsdl:part name="params" type="namesp1:CheckPaymentInfo" />
+    </wsdl:message>
+    <wsdl:message name="CheckPaymentResponse">
+        <wsdl:part name="return" type="xsd:string" />
+    </wsdl:message>
+    <wsdl:message name="GetRetargetingGoalsRequest">
+        <wsdl:part name="params" type="namesp1:GetRetargetingGoalsRequest" />
+    </wsdl:message>
+    <wsdl:message name="GetRetargetingGoalsResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfRetargetingGoal" />
+    </wsdl:message>
+    <wsdl:message name="RetargetingConditionRequest">
+        <wsdl:part name="params" type="namesp1:RetargetingConditionRequest" />
+    </wsdl:message>
+    <wsdl:message name="RetargetingConditionResponse">
+        <wsdl:part name="return" type="namesp1:RetargetingConditionResponse" />
+    </wsdl:message>
+    <wsdl:message name="RetargetingRequest">
+        <wsdl:part name="params" type="namesp1:RetargetingRequest" />
+    </wsdl:message>
+    <wsdl:message name="RetargetingResponse">
+        <wsdl:part name="return" type="namesp1:RetargetingResponse" />
+    </wsdl:message>
+    <wsdl:message name="AdImageRequest">
+        <wsdl:part name="params" type="namesp1:AdImageRequest" />
+    </wsdl:message>
+    <wsdl:message name="AdImageResponse">
+        <wsdl:part name="return" type="namesp1:AdImageResponse" />
+    </wsdl:message>
+    <wsdl:message name="AdImageAssociationRequest">
+        <wsdl:part name="params" type="namesp1:AdImageAssociationRequest" />
+    </wsdl:message>
+    <wsdl:message name="AdImageAssociationResponse">
+        <wsdl:part name="return" type="namesp1:AdImageAssociationResponse" />
+    </wsdl:message>
+    <wsdl:message name="EnableSharedAccountRequest">
+        <wsdl:part name="params" type="namesp1:EnableSharedAccountRequest" />
+    </wsdl:message>
+    <wsdl:message name="EnableSharedAccountResponse">
+        <wsdl:part name="return" type="namesp1:EnableSharedAccountResponse" />
+    </wsdl:message>
+    <wsdl:message name="AccountManagementRequest">
+        <wsdl:part name="params" type="namesp1:AccountManagementRequest" />
+    </wsdl:message>
+    <wsdl:message name="AccountManagementResponse">
+        <wsdl:part name="return" type="namesp1:AccountManagementResponse" />
+    </wsdl:message>
+    <wsdl:message name="KeywordRequest">
+        <wsdl:part name="params" type="namesp1:KeywordRequest" />
+    </wsdl:message>
+    <wsdl:message name="KeywordResponse">
+        <wsdl:part name="return" type="namesp1:KeywordResponse" />
+    </wsdl:message>
+    <wsdl:message name="CreateOfflineReportRequest">
+        <wsdl:part name="params" type="namesp1:CreateOfflineReportRequest" />
+    </wsdl:message>
+    <wsdl:message name="CreateOfflineReportResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="DeleteOfflineReportRequest">
+        <wsdl:part name="params" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="DeleteOfflineReportResponse">
+        <wsdl:part name="return" type="xsd:int" />
+    </wsdl:message>
+    <wsdl:message name="GetOfflineReportListRequest">
+    </wsdl:message>
+    <wsdl:message name="GetOfflineReportListResponse">
+        <wsdl:part name="return" type="namesp1:ArrayOfOfflineReportInfo" />
+    </wsdl:message>
+    <wsdl:portType name="APIPort">
+        <wsdl:operation name="GetVersion">
+            <wsdl:input message="namesp1:GetVersionRequest" name="GetVersionRequest" />
+            <wsdl:output message="namesp1:GetVersionResponse" name="GetVersionResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetClientsList">
+            <wsdl:input message="namesp1:GetClientsListRequest" name="GetClientsListRequest" />
+            <wsdl:output message="namesp1:GetClientsListResponse" name="GetClientsListResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetSubClients">
+            <wsdl:input message="namesp1:GetSubClientsRequest" name="GetSubClientsRequest" />
+            <wsdl:output message="namesp1:GetSubClientsResponse" name="GetSubClientsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="SetAutoPrice">
+            <wsdl:input message="namesp1:SetAutoPriceRequest" name="SetAutoPriceRequest" />
+            <wsdl:output message="namesp1:SetAutoPriceResponse" name="SetAutoPriceResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DeleteReport">
+            <wsdl:input message="namesp1:DeleteReportRequest" name="DeleteReportRequest" />
+            <wsdl:output message="namesp1:DeleteReportResponse" name="DeleteReportResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetSummaryStat">
+            <wsdl:input message="namesp1:GetSummaryStatRequest" name="GetSummaryStatRequest" />
+            <wsdl:output message="namesp1:GetSummaryStatResponse" name="GetSummaryStatResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignParams">
+            <wsdl:input message="namesp1:GetCampaignParamsRequest" name="GetCampaignParamsRequest" />
+            <wsdl:output message="namesp1:GetCampaignParamsResponse" name="GetCampaignParamsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignsParams">
+            <wsdl:input message="namesp1:GetCampaignsParamsRequest" name="GetCampaignsParamsRequest" />
+            <wsdl:output message="namesp1:GetCampaignsParamsResponse" name="GetCampaignsParamsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DeleteForecastReport">
+            <wsdl:input message="namesp1:DeleteForecastReportRequest" name="DeleteForecastReportRequest" />
+            <wsdl:output message="namesp1:DeleteForecastReportResponse" name="DeleteForecastReportResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="ModerateBanners">
+            <wsdl:input message="namesp1:ModerateBannersRequest" name="ModerateBannersRequest" />
+            <wsdl:output message="namesp1:ModerateBannersResponse" name="ModerateBannersResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="StopBanners">
+            <wsdl:input message="namesp1:StopBannersRequest" name="StopBannersRequest" />
+            <wsdl:output message="namesp1:StopBannersResponse" name="StopBannersResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="ResumeBanners">
+            <wsdl:input message="namesp1:ResumeBannersRequest" name="ResumeBannersRequest" />
+            <wsdl:output message="namesp1:ResumeBannersResponse" name="ResumeBannersResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="ArchiveBanners">
+            <wsdl:input message="namesp1:ArchiveBannersRequest" name="ArchiveBannersRequest" />
+            <wsdl:output message="namesp1:ArchiveBannersResponse" name="ArchiveBannersResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="UnArchiveBanners">
+            <wsdl:input message="namesp1:UnArchiveBannersRequest" name="UnArchiveBannersRequest" />
+            <wsdl:output message="namesp1:UnArchiveBannersResponse" name="UnArchiveBannersResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DeleteBanners">
+            <wsdl:input message="namesp1:DeleteBannersRequest" name="DeleteBannersRequest" />
+            <wsdl:output message="namesp1:DeleteBannersResponse" name="DeleteBannersResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="StopCampaign">
+            <wsdl:input message="namesp1:StopCampaignRequest" name="StopCampaignRequest" />
+            <wsdl:output message="namesp1:StopCampaignResponse" name="StopCampaignResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DeleteCampaign">
+            <wsdl:input message="namesp1:DeleteCampaignRequest" name="DeleteCampaignRequest" />
+            <wsdl:output message="namesp1:DeleteCampaignResponse" name="DeleteCampaignResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="UnArchiveCampaign">
+            <wsdl:input message="namesp1:UnArchiveCampaignRequest" name="UnArchiveCampaignRequest" />
+            <wsdl:output message="namesp1:UnArchiveCampaignResponse" name="UnArchiveCampaignResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="ArchiveCampaign">
+            <wsdl:input message="namesp1:ArchiveCampaignRequest" name="ArchiveCampaignRequest" />
+            <wsdl:output message="namesp1:ArchiveCampaignResponse" name="ArchiveCampaignResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="ResumeCampaign">
+            <wsdl:input message="namesp1:ResumeCampaignRequest" name="ResumeCampaignRequest" />
+            <wsdl:output message="namesp1:ResumeCampaignResponse" name="ResumeCampaignResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetReportList">
+            <wsdl:input message="namesp1:GetReportListRequest" name="GetReportListRequest" />
+            <wsdl:output message="namesp1:GetReportListResponse" name="GetReportListResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="PingAPI_X">
+            <wsdl:input message="namesp1:PingAPI_XRequest" name="PingAPI_XRequest" />
+            <wsdl:output message="namesp1:PingAPI_XResponse" name="PingAPI_XResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="PingAPI">
+            <wsdl:input message="namesp1:PingAPIRequest" name="PingAPIRequest" />
+            <wsdl:output message="namesp1:PingAPIResponse" name="PingAPIResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetClientsUnits">
+            <wsdl:input message="namesp1:GetClientsUnitsRequest" name="GetClientsUnitsRequest" />
+            <wsdl:output message="namesp1:GetClientsUnitsResponse" name="GetClientsUnitsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetClientInfo">
+            <wsdl:input message="namesp1:GetClientInfoRequest" name="GetClientInfoRequest" />
+            <wsdl:output message="namesp1:GetClientInfoResponse" name="GetClientInfoResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="UpdateClientInfo">
+            <wsdl:input message="namesp1:UpdateClientInfoRequest" name="UpdateClientInfoRequest" />
+            <wsdl:output message="namesp1:UpdateClientInfoResponse" name="UpdateClientInfoResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetBanners">
+            <wsdl:input message="namesp1:GetBannersRequest" name="GetBannersRequest" />
+            <wsdl:output message="namesp1:GetBannersResponse" name="GetBannersResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignsList">
+            <wsdl:input message="namesp1:GetCampaignsListRequest" name="GetCampaignsListRequest" />
+            <wsdl:output message="namesp1:GetCampaignsListResponse" name="GetCampaignsListResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignsListFilter">
+            <wsdl:input message="namesp1:GetCampaignsListFilterRequest" name="GetCampaignsListFilterRequest" />
+            <wsdl:output message="namesp1:GetCampaignsListFilterResponse" name="GetCampaignsListFilterResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetBalance">
+            <wsdl:input message="namesp1:GetBalanceRequest" name="GetBalanceRequest" />
+            <wsdl:output message="namesp1:GetBalanceResponse" name="GetBalanceResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetBannerPhrases">
+            <wsdl:input message="namesp1:GetBannerPhrasesRequest" name="GetBannerPhrasesRequest" />
+            <wsdl:output message="namesp1:GetBannerPhrasesResponse" name="GetBannerPhrasesResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetBannerPhrasesFilter">
+            <wsdl:input message="namesp1:GetBannerPhrasesFilterRequest" name="GetBannerPhrasesFilterRequest" />
+            <wsdl:output message="namesp1:GetBannerPhrasesFilterResponse" name="GetBannerPhrasesFilterResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetRegions">
+            <wsdl:input message="namesp1:GetRegionsRequest" name="GetRegionsRequest" />
+            <wsdl:output message="namesp1:GetRegionsResponse" name="GetRegionsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateNewReport">
+            <wsdl:input message="namesp1:CreateNewReportRequest" name="CreateNewReportRequest" />
+            <wsdl:output message="namesp1:CreateNewReportResponse" name="CreateNewReportResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetBannersStat">
+            <wsdl:input message="namesp1:GetBannersStatRequest" name="GetBannersStatRequest" />
+            <wsdl:output message="namesp1:GetBannersStatResponse" name="GetBannersStatResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateNewForecast">
+            <wsdl:input message="namesp1:CreateNewForecastRequest" name="CreateNewForecastRequest" />
+            <wsdl:output message="namesp1:CreateNewForecastResponse" name="CreateNewForecastResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetForecast">
+            <wsdl:input message="namesp1:GetForecastRequest" name="GetForecastRequest" />
+            <wsdl:output message="namesp1:GetForecastResponse" name="GetForecastResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetRubrics">
+            <wsdl:input message="namesp1:GetRubricsRequest" name="GetRubricsRequest" />
+            <wsdl:output message="namesp1:GetRubricsResponse" name="GetRubricsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetTimeZones">
+            <wsdl:input message="namesp1:GetTimeZonesRequest" name="GetTimeZonesRequest" />
+            <wsdl:output message="namesp1:GetTimeZonesResponse" name="GetTimeZonesResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetForecastList">
+            <wsdl:input message="namesp1:GetForecastListRequest" name="GetForecastListRequest" />
+            <wsdl:output message="namesp1:GetForecastListResponse" name="GetForecastListResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="UpdatePrices">
+            <wsdl:input message="namesp1:UpdatePricesRequest" name="UpdatePricesRequest" />
+            <wsdl:output message="namesp1:UpdatePricesResponse" name="UpdatePricesResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateOrUpdateCampaign">
+            <wsdl:input message="namesp1:CreateOrUpdateCampaignRequest" name="CreateOrUpdateCampaignRequest" />
+            <wsdl:output message="namesp1:CreateOrUpdateCampaignResponse" name="CreateOrUpdateCampaignResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateOrUpdateBanners">
+            <wsdl:input message="namesp1:CreateOrUpdateBannersRequest" name="CreateOrUpdateBannersRequest" />
+            <wsdl:output message="namesp1:CreateOrUpdateBannersResponse" name="CreateOrUpdateBannersResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetAvailableVersions">
+            <wsdl:input message="namesp1:GetAvailableVersionsRequest" name="GetAvailableVersionsRequest" />
+            <wsdl:output message="namesp1:GetAvailableVersionsResponse" name="GetAvailableVersionsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetKeywordsSuggestion">
+            <wsdl:input message="namesp1:GetKeywordsSuggestionRequest" name="GetKeywordsSuggestionRequest" />
+            <wsdl:output message="namesp1:GetKeywordsSuggestionResponse" name="GetKeywordsSuggestionResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateNewSubclient">
+            <wsdl:input message="namesp1:CreateNewSubclientRequest" name="CreateNewSubclientRequest" />
+            <wsdl:output message="namesp1:CreateNewSubclientResponse" name="CreateNewSubclientResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateNewWordstatReport">
+            <wsdl:input message="namesp1:CreateNewWordstatReportRequest" name="CreateNewWordstatReportRequest" />
+            <wsdl:output message="namesp1:CreateNewWordstatReportResponse" name="CreateNewWordstatReportResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetWordstatReportList">
+            <wsdl:input message="namesp1:GetWordstatReportListRequest" name="GetWordstatReportListRequest" />
+            <wsdl:output message="namesp1:GetWordstatReportListResponse" name="GetWordstatReportListResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetWordstatReport">
+            <wsdl:input message="namesp1:GetWordstatReportRequest" name="GetWordstatReportRequest" />
+            <wsdl:output message="namesp1:GetWordstatReportResponse" name="GetWordstatReportResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DeleteWordstatReport">
+            <wsdl:input message="namesp1:DeleteWordstatReportRequest" name="DeleteWordstatReportRequest" />
+            <wsdl:output message="namesp1:DeleteWordstatReportResponse" name="DeleteWordstatReportResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetStatGoals">
+            <wsdl:input message="namesp1:GetStatGoalsRequest" name="GetStatGoalsRequest" />
+            <wsdl:output message="namesp1:GetStatGoalsResponse" name="GetStatGoalsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetChanges">
+            <wsdl:input message="namesp1:GetChangesRequest" name="GetChangesRequest" />
+            <wsdl:output message="namesp1:GetChangesResponse" name="GetChangesResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetEventsLog">
+            <wsdl:input message="namesp1:GetEventsLogRequest" name="GetEventsLogRequest" />
+            <wsdl:output message="namesp1:GetEventsLogResponse" name="GetEventsLogResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignsTags">
+            <wsdl:input message="namesp1:GetCampaignsTagsRequest" name="GetCampaignsTagsRequest" />
+            <wsdl:output message="namesp1:GetCampaignsTagsResponse" name="GetCampaignsTagsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="UpdateCampaignsTags">
+            <wsdl:input message="namesp1:UpdateCampaignsTagsRequest" name="UpdateCampaignsTagsRequest" />
+            <wsdl:output message="namesp1:UpdateCampaignsTagsResponse" name="UpdateCampaignsTagsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetBannersTags">
+            <wsdl:input message="namesp1:GetBannersTagsRequest" name="GetBannersTagsRequest" />
+            <wsdl:output message="namesp1:GetBannersTagsResponse" name="GetBannersTagsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="UpdateBannersTags">
+            <wsdl:input message="namesp1:UpdateBannersTagsRequest" name="UpdateBannersTagsRequest" />
+            <wsdl:output message="namesp1:UpdateBannersTagsResponse" name="UpdateBannersTagsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="TransferMoney">
+            <wsdl:input message="namesp1:TransferMoneyRequest" name="TransferMoneyRequest" />
+            <wsdl:output message="namesp1:TransferMoneyResponse" name="TransferMoneyResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetCreditLimits">
+            <wsdl:input message="namesp1:GetCreditLimitsRequest" name="GetCreditLimitsRequest" />
+            <wsdl:output message="namesp1:GetCreditLimitsResponse" name="GetCreditLimitsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateInvoice">
+            <wsdl:input message="namesp1:CreateInvoiceRequest" name="CreateInvoiceRequest" />
+            <wsdl:output message="namesp1:CreateInvoiceResponse" name="CreateInvoiceResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="PayCampaigns">
+            <wsdl:input message="namesp1:PayCampaignsRequest" name="PayCampaignsRequest" />
+            <wsdl:output message="namesp1:PayCampaignsResponse" name="PayCampaignsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="PayCampaignsByCard">
+            <wsdl:input message="namesp1:PayCampaignsByCardRequest" name="PayCampaignsByCardRequest" />
+            <wsdl:output message="namesp1:PayCampaignsByCardResponse" name="PayCampaignsByCardResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CheckPayment">
+            <wsdl:input message="namesp1:CheckPaymentRequest" name="CheckPaymentRequest" />
+            <wsdl:output message="namesp1:CheckPaymentResponse" name="CheckPaymentResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetRetargetingGoals">
+            <wsdl:input message="namesp1:GetRetargetingGoalsRequest" name="GetRetargetingGoalsRequest" />
+            <wsdl:output message="namesp1:GetRetargetingGoalsResponse" name="GetRetargetingGoalsResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="RetargetingCondition">
+            <wsdl:input message="namesp1:RetargetingConditionRequest" name="RetargetingConditionRequest" />
+            <wsdl:output message="namesp1:RetargetingConditionResponse" name="RetargetingConditionResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="Retargeting">
+            <wsdl:input message="namesp1:RetargetingRequest" name="RetargetingRequest" />
+            <wsdl:output message="namesp1:RetargetingResponse" name="RetargetingResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="AdImage">
+            <wsdl:input message="namesp1:AdImageRequest" name="AdImageRequest" />
+            <wsdl:output message="namesp1:AdImageResponse" name="AdImageResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="AdImageAssociation">
+            <wsdl:input message="namesp1:AdImageAssociationRequest" name="AdImageAssociationRequest" />
+            <wsdl:output message="namesp1:AdImageAssociationResponse" name="AdImageAssociationResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="EnableSharedAccount">
+            <wsdl:input message="namesp1:EnableSharedAccountRequest" name="EnableSharedAccountRequest" />
+            <wsdl:output message="namesp1:EnableSharedAccountResponse" name="EnableSharedAccountResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="AccountManagement">
+            <wsdl:input message="namesp1:AccountManagementRequest" name="AccountManagementRequest" />
+            <wsdl:output message="namesp1:AccountManagementResponse" name="AccountManagementResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="Keyword">
+            <wsdl:input message="namesp1:KeywordRequest" name="KeywordRequest" />
+            <wsdl:output message="namesp1:KeywordResponse" name="KeywordResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="CreateOfflineReport">
+            <wsdl:input message="namesp1:CreateOfflineReportRequest" name="CreateOfflineReportRequest" />
+            <wsdl:output message="namesp1:CreateOfflineReportResponse" name="CreateOfflineReportResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="DeleteOfflineReport">
+            <wsdl:input message="namesp1:DeleteOfflineReportRequest" name="DeleteOfflineReportRequest" />
+            <wsdl:output message="namesp1:DeleteOfflineReportResponse" name="DeleteOfflineReportResponse" />
+        </wsdl:operation>
+        <wsdl:operation name="GetOfflineReportList">
+            <wsdl:input message="namesp1:GetOfflineReportListRequest" name="GetOfflineReportListRequest" />
+            <wsdl:output message="namesp1:GetOfflineReportListResponse" name="GetOfflineReportListResponse" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="GeocodingSoapBinding" type="namesp1:APIPort">
+        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="GetVersion">
+            <wsdlsoap:operation soapAction="API#GetVersion" />
+            <wsdl:input name="GetVersionRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetVersionResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetClientsList">
+            <wsdlsoap:operation soapAction="API#GetClientsList" />
+            <wsdl:input name="GetClientsListRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetClientsListResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetSubClients">
+            <wsdlsoap:operation soapAction="API#GetSubClients" />
+            <wsdl:input name="GetSubClientsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetSubClientsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SetAutoPrice">
+            <wsdlsoap:operation soapAction="API#SetAutoPrice" />
+            <wsdl:input name="SetAutoPriceRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="SetAutoPriceResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteReport">
+            <wsdlsoap:operation soapAction="API#DeleteReport" />
+            <wsdl:input name="DeleteReportRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="DeleteReportResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetSummaryStat">
+            <wsdlsoap:operation soapAction="API#GetSummaryStat" />
+            <wsdl:input name="GetSummaryStatRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetSummaryStatResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignParams">
+            <wsdlsoap:operation soapAction="API#GetCampaignParams" />
+            <wsdl:input name="GetCampaignParamsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetCampaignParamsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignsParams">
+            <wsdlsoap:operation soapAction="API#GetCampaignsParams" />
+            <wsdl:input name="GetCampaignsParamsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetCampaignsParamsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteForecastReport">
+            <wsdlsoap:operation soapAction="API#DeleteForecastReport" />
+            <wsdl:input name="DeleteForecastReportRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="DeleteForecastReportResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ModerateBanners">
+            <wsdlsoap:operation soapAction="API#ModerateBanners" />
+            <wsdl:input name="ModerateBannersRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="ModerateBannersResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="StopBanners">
+            <wsdlsoap:operation soapAction="API#StopBanners" />
+            <wsdl:input name="StopBannersRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="StopBannersResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ResumeBanners">
+            <wsdlsoap:operation soapAction="API#ResumeBanners" />
+            <wsdl:input name="ResumeBannersRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="ResumeBannersResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ArchiveBanners">
+            <wsdlsoap:operation soapAction="API#ArchiveBanners" />
+            <wsdl:input name="ArchiveBannersRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="ArchiveBannersResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UnArchiveBanners">
+            <wsdlsoap:operation soapAction="API#UnArchiveBanners" />
+            <wsdl:input name="UnArchiveBannersRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="UnArchiveBannersResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteBanners">
+            <wsdlsoap:operation soapAction="API#DeleteBanners" />
+            <wsdl:input name="DeleteBannersRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="DeleteBannersResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="StopCampaign">
+            <wsdlsoap:operation soapAction="API#StopCampaign" />
+            <wsdl:input name="StopCampaignRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="StopCampaignResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteCampaign">
+            <wsdlsoap:operation soapAction="API#DeleteCampaign" />
+            <wsdl:input name="DeleteCampaignRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="DeleteCampaignResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UnArchiveCampaign">
+            <wsdlsoap:operation soapAction="API#UnArchiveCampaign" />
+            <wsdl:input name="UnArchiveCampaignRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="UnArchiveCampaignResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ArchiveCampaign">
+            <wsdlsoap:operation soapAction="API#ArchiveCampaign" />
+            <wsdl:input name="ArchiveCampaignRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="ArchiveCampaignResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ResumeCampaign">
+            <wsdlsoap:operation soapAction="API#ResumeCampaign" />
+            <wsdl:input name="ResumeCampaignRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="ResumeCampaignResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetReportList">
+            <wsdlsoap:operation soapAction="API#GetReportList" />
+            <wsdl:input name="GetReportListRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetReportListResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PingAPI_X">
+            <wsdlsoap:operation soapAction="API#PingAPI_X" />
+            <wsdl:input name="PingAPI_XRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="PingAPI_XResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PingAPI">
+            <wsdlsoap:operation soapAction="API#PingAPI" />
+            <wsdl:input name="PingAPIRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="PingAPIResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetClientsUnits">
+            <wsdlsoap:operation soapAction="API#GetClientsUnits" />
+            <wsdl:input name="GetClientsUnitsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetClientsUnitsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetClientInfo">
+            <wsdlsoap:operation soapAction="API#GetClientInfo" />
+            <wsdl:input name="GetClientInfoRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetClientInfoResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateClientInfo">
+            <wsdlsoap:operation soapAction="API#UpdateClientInfo" />
+            <wsdl:input name="UpdateClientInfoRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="UpdateClientInfoResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetBanners">
+            <wsdlsoap:operation soapAction="API#GetBanners" />
+            <wsdl:input name="GetBannersRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetBannersResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignsList">
+            <wsdlsoap:operation soapAction="API#GetCampaignsList" />
+            <wsdl:input name="GetCampaignsListRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetCampaignsListResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignsListFilter">
+            <wsdlsoap:operation soapAction="API#GetCampaignsListFilter" />
+            <wsdl:input name="GetCampaignsListFilterRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetCampaignsListFilterResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetBalance">
+            <wsdlsoap:operation soapAction="API#GetBalance" />
+            <wsdl:input name="GetBalanceRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetBalanceResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetBannerPhrases">
+            <wsdlsoap:operation soapAction="API#GetBannerPhrases" />
+            <wsdl:input name="GetBannerPhrasesRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetBannerPhrasesResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetBannerPhrasesFilter">
+            <wsdlsoap:operation soapAction="API#GetBannerPhrasesFilter" />
+            <wsdl:input name="GetBannerPhrasesFilterRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetBannerPhrasesFilterResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetRegions">
+            <wsdlsoap:operation soapAction="API#GetRegions" />
+            <wsdl:input name="GetRegionsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetRegionsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateNewReport">
+            <wsdlsoap:operation soapAction="API#CreateNewReport" />
+            <wsdl:input name="CreateNewReportRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CreateNewReportResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetBannersStat">
+            <wsdlsoap:operation soapAction="API#GetBannersStat" />
+            <wsdl:input name="GetBannersStatRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetBannersStatResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateNewForecast">
+            <wsdlsoap:operation soapAction="API#CreateNewForecast" />
+            <wsdl:input name="CreateNewForecastRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CreateNewForecastResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetForecast">
+            <wsdlsoap:operation soapAction="API#GetForecast" />
+            <wsdl:input name="GetForecastRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetForecastResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetRubrics">
+            <wsdlsoap:operation soapAction="API#GetRubrics" />
+            <wsdl:input name="GetRubricsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetRubricsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTimeZones">
+            <wsdlsoap:operation soapAction="API#GetTimeZones" />
+            <wsdl:input name="GetTimeZonesRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetTimeZonesResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetForecastList">
+            <wsdlsoap:operation soapAction="API#GetForecastList" />
+            <wsdl:input name="GetForecastListRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetForecastListResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UpdatePrices">
+            <wsdlsoap:operation soapAction="API#UpdatePrices" />
+            <wsdl:input name="UpdatePricesRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="UpdatePricesResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateOrUpdateCampaign">
+            <wsdlsoap:operation soapAction="API#CreateOrUpdateCampaign" />
+            <wsdl:input name="CreateOrUpdateCampaignRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CreateOrUpdateCampaignResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateOrUpdateBanners">
+            <wsdlsoap:operation soapAction="API#CreateOrUpdateBanners" />
+            <wsdl:input name="CreateOrUpdateBannersRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CreateOrUpdateBannersResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetAvailableVersions">
+            <wsdlsoap:operation soapAction="API#GetAvailableVersions" />
+            <wsdl:input name="GetAvailableVersionsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetAvailableVersionsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetKeywordsSuggestion">
+            <wsdlsoap:operation soapAction="API#GetKeywordsSuggestion" />
+            <wsdl:input name="GetKeywordsSuggestionRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetKeywordsSuggestionResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateNewSubclient">
+            <wsdlsoap:operation soapAction="API#CreateNewSubclient" />
+            <wsdl:input name="CreateNewSubclientRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CreateNewSubclientResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateNewWordstatReport">
+            <wsdlsoap:operation soapAction="API#CreateNewWordstatReport" />
+            <wsdl:input name="CreateNewWordstatReportRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CreateNewWordstatReportResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetWordstatReportList">
+            <wsdlsoap:operation soapAction="API#GetWordstatReportList" />
+            <wsdl:input name="GetWordstatReportListRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetWordstatReportListResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetWordstatReport">
+            <wsdlsoap:operation soapAction="API#GetWordstatReport" />
+            <wsdl:input name="GetWordstatReportRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetWordstatReportResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteWordstatReport">
+            <wsdlsoap:operation soapAction="API#DeleteWordstatReport" />
+            <wsdl:input name="DeleteWordstatReportRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="DeleteWordstatReportResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetStatGoals">
+            <wsdlsoap:operation soapAction="API#GetStatGoals" />
+            <wsdl:input name="GetStatGoalsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetStatGoalsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetChanges">
+            <wsdlsoap:operation soapAction="API#GetChanges" />
+            <wsdl:input name="GetChangesRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetChangesResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetEventsLog">
+            <wsdlsoap:operation soapAction="API#GetEventsLog" />
+            <wsdl:input name="GetEventsLogRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetEventsLogResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCampaignsTags">
+            <wsdlsoap:operation soapAction="API#GetCampaignsTags" />
+            <wsdl:input name="GetCampaignsTagsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetCampaignsTagsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateCampaignsTags">
+            <wsdlsoap:operation soapAction="API#UpdateCampaignsTags" />
+            <wsdl:input name="UpdateCampaignsTagsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="UpdateCampaignsTagsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetBannersTags">
+            <wsdlsoap:operation soapAction="API#GetBannersTags" />
+            <wsdl:input name="GetBannersTagsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetBannersTagsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateBannersTags">
+            <wsdlsoap:operation soapAction="API#UpdateBannersTags" />
+            <wsdl:input name="UpdateBannersTagsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="UpdateBannersTagsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="TransferMoney">
+            <wsdlsoap:operation soapAction="API#TransferMoney" />
+            <wsdl:input name="TransferMoneyRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="TransferMoneyResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetCreditLimits">
+            <wsdlsoap:operation soapAction="API#GetCreditLimits" />
+            <wsdl:input name="GetCreditLimitsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetCreditLimitsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateInvoice">
+            <wsdlsoap:operation soapAction="API#CreateInvoice" />
+            <wsdl:input name="CreateInvoiceRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CreateInvoiceResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PayCampaigns">
+            <wsdlsoap:operation soapAction="API#PayCampaigns" />
+            <wsdl:input name="PayCampaignsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="PayCampaignsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PayCampaignsByCard">
+            <wsdlsoap:operation soapAction="API#PayCampaignsByCard" />
+            <wsdl:input name="PayCampaignsByCardRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="PayCampaignsByCardResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CheckPayment">
+            <wsdlsoap:operation soapAction="API#CheckPayment" />
+            <wsdl:input name="CheckPaymentRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CheckPaymentResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetRetargetingGoals">
+            <wsdlsoap:operation soapAction="API#GetRetargetingGoals" />
+            <wsdl:input name="GetRetargetingGoalsRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetRetargetingGoalsResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RetargetingCondition">
+            <wsdlsoap:operation soapAction="API#RetargetingCondition" />
+            <wsdl:input name="RetargetingConditionRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="RetargetingConditionResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Retargeting">
+            <wsdlsoap:operation soapAction="API#Retargeting" />
+            <wsdl:input name="RetargetingRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="RetargetingResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AdImage">
+            <wsdlsoap:operation soapAction="API#AdImage" />
+            <wsdl:input name="AdImageRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="AdImageResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AdImageAssociation">
+            <wsdlsoap:operation soapAction="API#AdImageAssociation" />
+            <wsdl:input name="AdImageAssociationRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="AdImageAssociationResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="EnableSharedAccount">
+            <wsdlsoap:operation soapAction="API#EnableSharedAccount" />
+            <wsdl:input name="EnableSharedAccountRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="EnableSharedAccountResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="AccountManagement">
+            <wsdlsoap:operation soapAction="API#AccountManagement" />
+            <wsdl:input name="AccountManagementRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="AccountManagementResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Keyword">
+            <wsdlsoap:operation soapAction="API#Keyword" />
+            <wsdl:input name="KeywordRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="KeywordResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="CreateOfflineReport">
+            <wsdlsoap:operation soapAction="API#CreateOfflineReport" />
+            <wsdl:input name="CreateOfflineReportRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="CreateOfflineReportResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteOfflineReport">
+            <wsdlsoap:operation soapAction="API#DeleteOfflineReport" />
+            <wsdl:input name="DeleteOfflineReportRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="DeleteOfflineReportResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetOfflineReportList">
+            <wsdlsoap:operation soapAction="API#GetOfflineReportList" />
+            <wsdl:input name="GetOfflineReportListRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:input>
+            <wsdl:output name="GetOfflineReportListResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="API" use="encoded" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="YandexAPIService">
+        <wsdl:port binding="namesp1:GeocodingSoapBinding" name="APIPort">
+            <wsdlsoap:address location="https://localhost/live/v4/soap/" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
