@@ -9,6 +9,8 @@
 - issue #49 - Use schema attribute's attributes to apply validation rule on generated properties
     - From now, validation rules are automatically added to every setter so you're informed of an invalid value before sending the request which throws an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php)
     - If you do not want the validation rules to be added to the setters, set the option `validation` to `false` before generating the package
+- issue #52 - No autocomplete because of return type on a new line after @return in annotation
+	- Fixed thanks to [PhpGenerator issue 5](https://github.com/WsdlToPhp/PhpGenerator/issues/5)
 
 ## 1.4.3.1
 - issue #51 - Error while passing array parameter
