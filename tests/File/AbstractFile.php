@@ -106,6 +106,13 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
+    public static function yandexDirectApiLiveGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlYandexDirectApiLivePath(), $reset, $gatherMethods);
+    }
+    /**
+     * @return Generator
+     */
     public static function docDataPaymentsGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
     {
         return self::getInstance(self::wsdlDocDataPaymentsPath(), $reset, $gatherMethods);
