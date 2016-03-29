@@ -424,15 +424,17 @@ abstract class AbstractModelFile extends AbstractFile
         if (!empty($type) && ($struct = $this->getGenerator()->getStruct($type))) {
             $inheritance = $struct->getTopInheritance();
             if (!empty($inheritance)) {
-                $type = $inheritance;
+                $type = str_replace('[]', '', $inheritance);
             }
         }
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
-            if ($model->getIsRestriction() === true) {
+            if ($model->getIsRestriction()) {
                 $type = self::TYPE_STRING;
             } elseif ($model->getIsStruct()) {
                 $type = $model->getPackagedName($namespaced);
+            } elseif ($model->isArray() && ($inheritanceStruct = $model->getInheritanceStruct()) instanceof StructModel) {
+                $type = $inheritanceStruct->getPackagedName($namespaced);
             }
         }
         return $type;
