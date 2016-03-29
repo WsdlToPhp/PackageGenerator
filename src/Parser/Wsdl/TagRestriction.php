@@ -72,7 +72,7 @@ class TagRestriction extends AbstractTagParser
     private function parseRestrictionAttribute(Tag $parent, Struct $struct, AttributeHandler $attribute)
     {
         if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
-            $struct->setInheritance(strtolower($attribute->getValue()));
+            $struct->setInheritance($attribute->getValue());
         } else {
             $struct->addMeta($attribute->getName(), $attribute->getValue(true));
         }
