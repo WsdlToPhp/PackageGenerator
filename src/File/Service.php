@@ -263,7 +263,7 @@ class Service extends AbstractModelFile
         $annotationBlock
             ->addChild('Returns the result')
             ->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', $this->getModel()->getExtends(true))))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes(), self::ANNOTATION_LONG_LENGTH));
+            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes()));
         return $this;
     }
     /**
