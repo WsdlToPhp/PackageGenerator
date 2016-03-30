@@ -230,7 +230,7 @@ class Struct extends AbstractModelFile
         $parameterName = lcfirst($attribute->getCleanName());
         if ($attribute->getRemovableFromRequest()) {
             $method
-                ->addChild(sprintf('if (is_null($%s)) {', $parameterName))
+                ->addChild(sprintf('if (is_null($%1$s) || (is_array($%1$s) && empty($%1$s))) {', $parameterName))
                     ->addChild($method->getIndentedString(sprintf('unset($this->%1$s%2$s);', $attribute->getCleanName(), $attribute->nameIsClean() ? '' : sprintf(', $this->{\'%s\'}', addslashes($attribute->getName()))), 1))
                 ->addChild('} else {')
                     ->addChild($method->getIndentedString($this->getStructMethodSetBodyAssignment($attribute, $parameterName), 1))

@@ -432,7 +432,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setSourceId($sourceId = null)
     {
-        if (is_null($sourceId)) {
+        if (is_null($sourceId) || (is_array($sourceId) && empty($sourceId))) {
             unset($this->SourceId);
         } else {
             $this->SourceId = $sourceId;
@@ -534,7 +534,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setDailyBudget(\Api\StructType\ApiDailyBudget $dailyBudget = null)
     {
-        if (is_null($dailyBudget)) {
+        if (is_null($dailyBudget) || (is_array($dailyBudget) && empty($dailyBudget))) {
             unset($this->DailyBudget);
         } else {
             $this->DailyBudget = $dailyBudget;
@@ -561,7 +561,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setEndDate($endDate = null)
     {
-        if (is_null($endDate)) {
+        if (is_null($endDate) || (is_array($endDate) && empty($endDate))) {
             unset($this->EndDate);
         } else {
             $this->EndDate = $endDate;
@@ -588,7 +588,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setNegativeKeywords(\Api\ArrayType\ApiArrayOfString $negativeKeywords = null)
     {
-        if (is_null($negativeKeywords)) {
+        if (is_null($negativeKeywords) || (is_array($negativeKeywords) && empty($negativeKeywords))) {
             unset($this->NegativeKeywords);
         } else {
             $this->NegativeKeywords = $negativeKeywords;
@@ -615,7 +615,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setBlockedIps(\Api\ArrayType\ApiArrayOfString $blockedIps = null)
     {
-        if (is_null($blockedIps)) {
+        if (is_null($blockedIps) || (is_array($blockedIps) && empty($blockedIps))) {
             unset($this->BlockedIps);
         } else {
             $this->BlockedIps = $blockedIps;
@@ -642,7 +642,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function setExcludedSites(\Api\ArrayType\ApiArrayOfString $excludedSites = null)
     {
-        if (is_null($excludedSites)) {
+        if (is_null($excludedSites) || (is_array($excludedSites) && empty($excludedSites))) {
             unset($this->ExcludedSites);
         } else {
             $this->ExcludedSites = $excludedSites;

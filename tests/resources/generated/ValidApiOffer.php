@@ -68,7 +68,7 @@ class ApiOffer extends ApiOrder
         if (!is_null($offerClassMember) && !is_string($offerClassMember)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($offerClassMember)), __LINE__);
         }
-        if (is_null($offerClassMember)) {
+        if (is_null($offerClassMember) || (is_array($offerClassMember) && empty($offerClassMember))) {
             unset($this->offerClassMember);
         } else {
             $this->offerClassMember = $offerClassMember;
@@ -95,7 +95,7 @@ class ApiOffer extends ApiOrder
      */
     public function setOffer(\Api\StructType\ApiOffer $offer = null)
     {
-        if (is_null($offer)) {
+        if (is_null($offer) || (is_array($offer) && empty($offer))) {
             unset($this->offer);
         } else {
             $this->offer = $offer;
