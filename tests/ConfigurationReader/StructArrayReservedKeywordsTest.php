@@ -3,23 +3,23 @@
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeywords;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedKeywords;
 
-class PhpReservedKeywordsTest extends TestCase
+class StructArrayReservedKeywordsTest extends TestCase
 {
     /**
-     * @return PhpReservedKeywords
+     * @return StructArrayReservedKeywords
      */
     public static function instance()
     {
-        return PhpReservedKeywords::instance(__DIR__ . '/../resources/php_reserved_keywords.yml');
+        return StructArrayReservedKeywords::instance(__DIR__ . '/../resources/struct_array_reserved_keywords.yml');
     }
     /**
      *
      */
     public function testIs__CLASS__()
     {
-        $this->assertTrue(self::instance()->is('__CLASS__'));
+        $this->assertFalse(self::instance()->is('__CLASS__'));
     }
     /**
      *
@@ -30,7 +30,7 @@ class PhpReservedKeywordsTest extends TestCase
     }
     public function testIs__construct()
     {
-        $this->assertTrue(self::instance()->is('__construct'));
+        $this->assertFalse(self::instance()->is('__construct'));
     }
     public function testIsgetSoapClient()
     {
@@ -122,123 +122,109 @@ class PhpReservedKeywordsTest extends TestCase
     }
     public function testIs_set()
     {
-        $this->assertFalse(self::instance()->is('_set'));
+        $this->assertTrue(self::instance()->is('_set'));
     }
     public function testIs_get()
     {
-        $this->assertFalse(self::instance()->is('_get'));
+        $this->assertTrue(self::instance()->is('_get'));
     }
     public function testIsgetAttributeName()
     {
-        $this->assertFalse(self::instance()->is('getAttributeName'));
+        $this->assertTrue(self::instance()->is('getAttributeName'));
     }
     public function testIslength()
     {
-        $this->assertFalse(self::instance()->is('length'));
+        $this->assertTrue(self::instance()->is('length'));
     }
     public function testIscount()
     {
-        $this->assertFalse(self::instance()->is('count'));
+        $this->assertTrue(self::instance()->is('count'));
     }
     public function testIscurrent()
     {
-        $this->assertFalse(self::instance()->is('current'));
+        $this->assertTrue(self::instance()->is('current'));
     }
     public function testIsnext()
     {
-        $this->assertFalse(self::instance()->is('next'));
+        $this->assertTrue(self::instance()->is('next'));
     }
     public function testIsrewind()
     {
-        $this->assertFalse(self::instance()->is('rewind'));
+        $this->assertTrue(self::instance()->is('rewind'));
     }
     public function testIsvalid()
     {
-        $this->assertFalse(self::instance()->is('valid'));
+        $this->assertTrue(self::instance()->is('valid'));
     }
     public function testIskey()
     {
-        $this->assertFalse(self::instance()->is('key'));
+        $this->assertTrue(self::instance()->is('key'));
     }
     public function testIsitem()
     {
-        $this->assertFalse(self::instance()->is('item'));
+        $this->assertTrue(self::instance()->is('item'));
     }
     public function testIsadd()
     {
-        $this->assertFalse(self::instance()->is('add'));
+        $this->assertTrue(self::instance()->is('add'));
     }
     public function testIsfirst()
     {
-        $this->assertFalse(self::instance()->is('first'));
+        $this->assertTrue(self::instance()->is('first'));
     }
     public function testIslast()
     {
-        $this->assertFalse(self::instance()->is('last'));
+        $this->assertTrue(self::instance()->is('last'));
     }
     public function testIsoffsetExists()
     {
-        $this->assertFalse(self::instance()->is('offsetExists'));
+        $this->assertTrue(self::instance()->is('offsetExists'));
     }
     public function testIsoffsetGet()
     {
-        $this->assertFalse(self::instance()->is('offsetGet'));
+        $this->assertTrue(self::instance()->is('offsetGet'));
     }
     public function testIsoffsetSet()
     {
-        $this->assertFalse(self::instance()->is('offsetSet'));
+        $this->assertTrue(self::instance()->is('offsetSet'));
     }
     public function testIsoffsetUnset()
     {
-        $this->assertFalse(self::instance()->is('offsetUnset'));
+        $this->assertTrue(self::instance()->is('offsetUnset'));
     }
     public function testIsgetInternArray()
     {
-        $this->assertFalse(self::instance()->is('getInternArray'));
+        $this->assertTrue(self::instance()->is('getInternArray'));
     }
     public function testIssetInternArray()
     {
-        $this->assertFalse(self::instance()->is('setInternArray'));
+        $this->assertTrue(self::instance()->is('setInternArray'));
     }
     public function testIsgetInternArrayOffset()
     {
-        $this->assertFalse(self::instance()->is('getInternArrayOffset'));
+        $this->assertTrue(self::instance()->is('getInternArrayOffset'));
     }
     public function testIsinitInternArray()
     {
-        $this->assertFalse(self::instance()->is('initInternArray'));
+        $this->assertTrue(self::instance()->is('initInternArray'));
     }
     public function testIssetInternArrayOffset()
     {
-        $this->assertFalse(self::instance()->is('setInternArrayOffset'));
+        $this->assertTrue(self::instance()->is('setInternArrayOffset'));
     }
     public function testIsgetInternArrayIsArray()
     {
-        $this->assertFalse(self::instance()->is('getInternArrayIsArray'));
+        $this->assertTrue(self::instance()->is('getInternArrayIsArray'));
     }
     public function testIssetInternArrayIsArray()
     {
-        $this->assertFalse(self::instance()->is('setInternArrayIsArray'));
+        $this->assertTrue(self::instance()->is('setInternArrayIsArray'));
     }
     public function testUppercasePHPReservedKeyword()
     {
-        $this->assertTrue(self::instance()->is('Do'));
+        $this->assertFalse(self::instance()->is('Do'));
     }
     public function testUppercaseIsoffsetGet() {
-        $this->assertFalse(self::instance()->is('OffsetGet'));
-    }
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testException()
-    {
-        PhpReservedKeywords::instance(__DIR__ . '/../resources/bad_php_reserved_keywords.yml');
-    }
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testExceptionForUnexistingFile()
-    {
-        PhpReservedKeywords::instance(__DIR__ . '/../resources/bad_php_reserved_keywords');
+        $this->assertTrue(self::instance()->is('OffsetGet'));
     }
 }

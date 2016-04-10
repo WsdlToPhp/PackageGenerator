@@ -1,0 +1,11 @@
+# List of PHP reserved keywords that must not be used within generated classes.
+# If an element matched one of this reserved keywords, it is replaced by "_" + {reserved_keyword} + nb_used_times
+# It includes the pre defined functions by PackageBase classes too.
+
+reserved_keywords:
+    case_sensitive:
+        -
+    case_insensitive:
+        # methods from AbstractStructBase
+        - "_set"
+        - "_get"

@@ -3,23 +3,23 @@
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeywords;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedKeywords;
 
-class PhpReservedKeywordsTest extends TestCase
+class ServiceReservedKeywordsTest extends TestCase
 {
     /**
-     * @return PhpReservedKeywords
+     * @return ServiceReservedKeywords
      */
     public static function instance()
     {
-        return PhpReservedKeywords::instance(__DIR__ . '/../resources/php_reserved_keywords.yml');
+        return ServiceReservedKeywords::instance(__DIR__ . '/../resources/service_reserved_keywords.yml');
     }
     /**
      *
      */
     public function testIs__CLASS__()
     {
-        $this->assertTrue(self::instance()->is('__CLASS__'));
+        $this->assertFalse(self::instance()->is('__CLASS__'));
     }
     /**
      *
@@ -34,91 +34,91 @@ class PhpReservedKeywordsTest extends TestCase
     }
     public function testIsgetSoapClient()
     {
-        $this->assertFalse(self::instance()->is('getSoapClient'));
+        $this->assertTrue(self::instance()->is('getSoapClient'));
     }
     public function testIssetSoapClient()
     {
-        $this->assertFalse(self::instance()->is('setSoapClient'));
+        $this->assertTrue(self::instance()->is('setSoapClient'));
     }
     public function testIsinitSoapClient()
     {
-        $this->assertFalse(self::instance()->is('initSoapClient'));
+        $this->assertTrue(self::instance()->is('initSoapClient'));
     }
     public function testIsgetSoapClientClassName()
     {
-        $this->assertFalse(self::instance()->is('getSoapClientClassName'));
+        $this->assertTrue(self::instance()->is('getSoapClientClassName'));
     }
     public function testIsgetDefaultWsdlOptions()
     {
-        $this->assertFalse(self::instance()->is('getDefaultWsdlOptions'));
+        $this->assertTrue(self::instance()->is('getDefaultWsdlOptions'));
     }
     public function testIssetLocation()
     {
-        $this->assertFalse(self::instance()->is('setLocation'));
+        $this->assertTrue(self::instance()->is('setLocation'));
     }
     public function testIsgetLastRequest()
     {
-        $this->assertFalse(self::instance()->is('getLastRequest'));
+        $this->assertTrue(self::instance()->is('getLastRequest'));
     }
     public function testIsgetLastResponse()
     {
-        $this->assertFalse(self::instance()->is('getLastResponse'));
+        $this->assertTrue(self::instance()->is('getLastResponse'));
     }
     public function testIsgetLastXml()
     {
-        $this->assertFalse(self::instance()->is('getLastXml'));
+        $this->assertTrue(self::instance()->is('getLastXml'));
     }
     public function testIsgetLastRequestHeaders()
     {
-        $this->assertFalse(self::instance()->is('getLastRequestHeaders'));
+        $this->assertTrue(self::instance()->is('getLastRequestHeaders'));
     }
     public function testIsgetLastResponseHeaders()
     {
-        $this->assertFalse(self::instance()->is('getLastResponseHeaders'));
+        $this->assertTrue(self::instance()->is('getLastResponseHeaders'));
     }
     public function testIsgetLastHeaders()
     {
-        $this->assertFalse(self::instance()->is('getLastHeaders'));
+        $this->assertTrue(self::instance()->is('getLastHeaders'));
     }
     public function testIsgetFormatedXml()
     {
-        $this->assertFalse(self::instance()->is('getFormatedXml'));
+        $this->assertTrue(self::instance()->is('getFormatedXml'));
     }
     public function testIsconvertStringHeadersToArray()
     {
-        $this->assertFalse(self::instance()->is('convertStringHeadersToArray'));
+        $this->assertTrue(self::instance()->is('convertStringHeadersToArray'));
     }
     public function testIssetSoapHeader()
     {
-        $this->assertFalse(self::instance()->is('setSoapHeader'));
+        $this->assertTrue(self::instance()->is('setSoapHeader'));
     }
     public function testIssetHttpHeader()
     {
-        $this->assertFalse(self::instance()->is('setHttpHeader'));
+        $this->assertTrue(self::instance()->is('setHttpHeader'));
     }
     public function testIsgetLastError()
     {
-        $this->assertFalse(self::instance()->is('getLastError'));
+        $this->assertTrue(self::instance()->is('getLastError'));
     }
     public function testIssetLastError()
     {
-        $this->assertFalse(self::instance()->is('setLastError'));
+        $this->assertTrue(self::instance()->is('setLastError'));
     }
     public function testIssaveLastError()
     {
-        $this->assertFalse(self::instance()->is('saveLastError'));
+        $this->assertTrue(self::instance()->is('saveLastError'));
     }
     public function testIsgetLastErrorForMethod()
     {
-        $this->assertFalse(self::instance()->is('getLastErrorForMethod'));
+        $this->assertTrue(self::instance()->is('getLastErrorForMethod'));
     }
     public function testIsgetResult()
     {
-        $this->assertFalse(self::instance()->is('getResult'));
+        $this->assertTrue(self::instance()->is('getResult'));
     }
     public function testIssetResult()
     {
-        $this->assertFalse(self::instance()->is('setResult'));
+        $this->assertTrue(self::instance()->is('setResult'));
     }
     public function testIs_set()
     {
@@ -222,23 +222,9 @@ class PhpReservedKeywordsTest extends TestCase
     }
     public function testUppercasePHPReservedKeyword()
     {
-        $this->assertTrue(self::instance()->is('Do'));
+        $this->assertFalse(self::instance()->is('Do'));
     }
     public function testUppercaseIsoffsetGet() {
         $this->assertFalse(self::instance()->is('OffsetGet'));
-    }
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testException()
-    {
-        PhpReservedKeywords::instance(__DIR__ . '/../resources/bad_php_reserved_keywords.yml');
-    }
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testExceptionForUnexistingFile()
-    {
-        PhpReservedKeywords::instance(__DIR__ . '/../resources/bad_php_reserved_keywords');
     }
 }

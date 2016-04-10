@@ -43,10 +43,10 @@ class AbstractReservedKeywords extends AbstractYamlReader
             $caseInsensitiveKeywords[$index] = strtolower($keyword);
         }
 
-        $this->keywords = array(
+        $this->keywords = array_merge_recursive($this->keywords, array(
             self::CASE_SENSITIVE_KEY => $caseSensitiveKeywords,
             self::CASE_INSENSITIVE_KEY => $caseInsensitiveKeywords
-        );
+        ));
         return $this;
     }
     /**
