@@ -84,8 +84,7 @@ class Method extends AbstractModel
                     $methodName .= '_' . md5(var_export($this->getParameterType(), true));
                 }
             }
-            $methodName = self::replaceReservedPhpKeyword($methodName, $this->getOwner()->getPackagedName());
-            $this->methodName = self::uniqueName($methodName, $this->getOwner()->getPackagedName());
+            $this->methodName = self::uniqueName(self::replaceReservedPhpKeyword($methodName, $this->getOwner()->getPackagedName()), $this->getOwner()->getPackagedName());
         }
         return $this->methodName;
     }
