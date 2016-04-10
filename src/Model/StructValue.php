@@ -17,7 +17,7 @@ class StructValue extends AbstractModel
     /**
      * @var string
      */
-    const REAPLCEMENT_PATTERN = '$1$2$3_';
+    const REPLACEMENT_PATTERN = '$1$2$3_';
     /**
      * Store the constants generated per structName
      * @var array
@@ -41,8 +41,9 @@ class StructValue extends AbstractModel
     public function __construct(Generator $generator, $name, $index, Struct $struct)
     {
         parent::__construct($generator, $name);
-        $this->setIndex($index);
-        $this->setOwner($struct);
+        $this
+            ->setIndex($index)
+            ->setOwner($struct);
     }
     /**
      * Returns the name of the value as constant
@@ -73,7 +74,7 @@ class StructValue extends AbstractModel
      */
     public function getNameWithSeparatedWords($keepMultipleUnderscores = false)
     {
-        return trim(self::cleanString(preg_replace(self::MATCH_PATTERN, self::REAPLCEMENT_PATTERN, $this->getName()), $keepMultipleUnderscores), '_');
+        return trim(self::cleanString(preg_replace(self::MATCH_PATTERN, self::REPLACEMENT_PATTERN, $this->getName()), $keepMultipleUnderscores), '_');
     }
     /**
      * Returns the value with good type
