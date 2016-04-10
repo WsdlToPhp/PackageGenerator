@@ -17,7 +17,7 @@ class StructArrayReservedKeywords extends StructReservedKeywords
      * @param string options's file to parse
      * @return StructArrayReservedKeywords
      */
-    public static function instance($filename)
+    public static function instance($filename = null)
     {
         return parent::instance(empty($filename) ? self::getDefaultArrayConfigurationPath() : $filename);
     }

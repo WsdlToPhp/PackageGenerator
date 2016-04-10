@@ -54,7 +54,7 @@ class AbstractReservedKeywords extends AbstractYamlReader
      * @param string options's file to parse
      * @return AbstractReservedKeywords
      */
-    public static function instance($filename)
+    public static function instance($filename = null)
     {
         return parent::instance($filename);
     }

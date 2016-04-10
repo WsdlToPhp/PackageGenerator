@@ -34,7 +34,7 @@ abstract class AbstractYamlReader
      * @param string options's file to parse
      * @return AbstractYamlReader
      */
-    public static function instance($filename)
+    public static function instance($filename = null)
     {
         if (empty($filename) || !is_file($filename)) {
             throw new \InvalidArgumentException(sprintf('Unable to locate file "%s"', $filename), __LINE__);

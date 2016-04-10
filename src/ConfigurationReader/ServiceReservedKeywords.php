@@ -9,7 +9,7 @@ class ServiceReservedKeywords extends AbstractReservedKeywords
      * @param string options's file to parse
      * @return ServiceReservedKeywords
      */
-    public static function instance($filename)
+    public static function instance($filename = null)
     {
         return parent::instance(empty($filename) ? self::getDefaultConfigurationPath() : $filename);
     }

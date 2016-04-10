@@ -9,7 +9,7 @@ class PhpReservedKeywords extends AbstractReservedKeywords
      * @param string options's file to parse
      * @return PhpReservedKeywords
      */
-    public static function instance($filename)
+    public static function instance($filename = null)
     {
         return parent::instance(empty($filename) ? self::getDefaultConfigurationPath() : $filename);
     }
