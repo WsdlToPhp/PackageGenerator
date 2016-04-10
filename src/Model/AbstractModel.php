@@ -3,7 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\ReservedKeywords;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeywords;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
 use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
@@ -382,8 +382,8 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns a usable keyword for a original keyword
-     * @uses ReservedKeywords::instance()
-     * @uses ReservedKeywords::is()
+     * @uses PhpReservedKeywords::instance()
+     * @uses PhpReservedKeywords::is()
      * @param string $keyword the keyword
      * @param string $context the context
      * @return string
@@ -391,7 +391,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     public static function replaceReservedPhpKeyword($keyword, $context = null)
     {
         $phpReservedKeywordFound = '';
-        if (ReservedKeywords::instance()->is($keyword)) {
+        if (PhpReservedKeywords::instance()->is($keyword)) {
             if ($context !== null) {
                 $keywordKey = $phpReservedKeywordFound . '_' . $context;
                 if (!array_key_exists($keywordKey, self::$replacedReservedPhpKeywords)) {
