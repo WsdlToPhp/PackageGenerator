@@ -41,8 +41,9 @@ class StructAttribute extends AbstractModel
     public function __construct(Generator $generator, $name, $type, Struct $struct)
     {
         parent::__construct($generator, $name);
-        $this->setType($type);
-        $this->setOwner($struct);
+        $this
+            ->setType($type)
+            ->setOwner($struct);
     }
     /**
      * Returns the unique name in the current struct (for setters/getters and struct contrusctor array)
