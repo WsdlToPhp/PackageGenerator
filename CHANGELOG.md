@@ -14,6 +14,12 @@
 - issue #53 - Incorrect variable type
     - This issue only affects struct properties that match "virtual" structs which are array
     - **BC**: the array type attribute detection is now better (hopefully perfect) and can change attributes from simple type hiny to array type hint. This means that you now have to pass an array as parameter otherwise it will break
+- issue #54 - Naming. Class _Add and method _add_1/2/3... names. Need to minify reserved_keywords.yml
+	- **BC**: generated classes/methods may change after a new generation
+		- Classes are now not renamed if they don't use PHP reserved keywords (before, methods were used too to rename the class)
+		- Struct methods are now renamed only if they use Struct methods (one of [AbstractStructBase](https://github.com/WsdlToPhp/PackageBase/blob/develop/src/AbstractStructBase.php) methods)
+		- StructArray methods are now renamed only if they use Struct and StructArray methods (one of [AbstractStructArrayBase](https://github.com/WsdlToPhp/PackageBase/blob/develop/src/AbstractStructArrayBase.php) methods)
+		- Service methods are now renamed only if they use Service methods (one of [AbstractSoapClientBase](https://github.com/WsdlToPhp/PackageBase/blob/develop/src/AbstractSoapClientBase.php) methods)
 
 ## 1.4.3.1
 - issue #51 - Error while passing array parameter
