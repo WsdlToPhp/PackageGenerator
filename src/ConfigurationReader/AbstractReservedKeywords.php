@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class ReservedKeywords extends AbstractYamlReader
+class AbstractReservedKeywords extends AbstractYamlReader
 {
     /**
      * @var string
@@ -31,7 +31,7 @@ class ReservedKeywords extends AbstractYamlReader
     }
     /**
      * @param string $filename
-     * @return ReservedKeywords
+     * @return AbstractReservedKeywords
      */
     protected function parseReservedKeywords($filename)
     {
@@ -50,12 +50,13 @@ class ReservedKeywords extends AbstractYamlReader
         return $this;
     }
     /**
+     * @throws \InvalidArgumentException
      * @param string options's file to parse
-     * @return ReservedKeywords
+     * @return AbstractReservedKeywords
      */
-    public static function instance($filename = null)
+    public static function instance($filename)
     {
-        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../resources/config/reserved_keywords.yml' : $filename);
+        return parent::instance($filename);
     }
     /**
      * @param string $keyword
