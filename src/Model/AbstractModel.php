@@ -413,6 +413,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
         }
     }
     /**
+     * @throws \InvalidArgumentException
      * @param $filename
      * @return AbstractReservedWord
      */
@@ -430,7 +431,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function replaceReservedMethod($methodName, $context = null)
     {
-        if (static::getReservedMethodsInstance()->is($methodName)) {
+        if ($this->getReservedMethodsInstance()->is($methodName)) {
             if ($context !== null) {
                 $methodKey = $methodName . '_' . $context;
                 if (!array_key_exists($methodKey, $this->replacedReservedMethods)) {

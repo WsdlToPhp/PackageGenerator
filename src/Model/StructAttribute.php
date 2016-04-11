@@ -4,6 +4,8 @@ namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 
 /**
  * Class StructAttribute stands for an available struct attribute described in the WSDL
@@ -64,7 +66,7 @@ class StructAttribute extends AbstractModel
      */
     public function getGetterName()
     {
-        return sprintf('get%s', ucfirst(self::getUniqueName()));
+        return $this->replaceReservedMethod(sprintf('get%s', ucfirst(self::getUniqueName())), $this->getOwner()->getPackagedName());
     }
     /**
      * Returns the getter name for this attribute
@@ -73,7 +75,7 @@ class StructAttribute extends AbstractModel
      */
     public function getSetterName()
     {
-        return sprintf('set%s', ucfirst(self::getUniqueName()));
+        return $this->replaceReservedMethod(sprintf('set%s', ucfirst(self::getUniqueName())), $this->getOwner()->getPackagedName());
     }
     /**
      * Returns the type value
@@ -236,5 +238,13 @@ class StructAttribute extends AbstractModel
     public function getMeta()
     {
         return array_merge_recursive(parent::getMeta(), $this->getTypeStructMeta(), $this->getInheritanceStructMeta());
+    }
+    /**
+     * @param $filename
+     * @return StructReservedMethod|StructArrayReservedMethod
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        return $this->getOwner()->getReservedMethodsInstance($filename);
     }
 }
