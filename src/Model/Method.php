@@ -64,7 +64,7 @@ class Method extends AbstractModel
      * Returns the name of the method that is used to call the operation
      * It takes care of the fact that the method might not be the only one named as it is.
      * @uses Method::getCleanName()
-     * @uses AbstractModel::replaceReservedPhpKeyword()
+     * @uses AbstractModel::replacePhpReservedKeyword()
      * @uses AbstractModel::getOwner()
      * @uses AbstractModel::getPackagedName()
      * @uses AbstractModel::uniqueName()
@@ -84,7 +84,7 @@ class Method extends AbstractModel
                     $methodName .= '_' . md5(var_export($this->getParameterType(), true));
                 }
             }
-            $this->methodName = self::uniqueName(self::replaceReservedPhpKeyword($methodName, $this->getOwner()->getPackagedName()), $this->getOwner()->getPackagedName());
+            $this->methodName = self::uniqueName(self::replacePhpReservedKeyword($methodName, $this->getOwner()->getPackagedName()), $this->getOwner()->getPackagedName());
         }
         return $this->methodName;
     }
