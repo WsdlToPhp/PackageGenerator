@@ -5,6 +5,7 @@ namespace WsdlToPhp\PackageGenerator\Model;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Container\Model\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
 
 /**
  * Class Service stands for an available service containing the methods/operations described in the WSDL
@@ -106,5 +107,13 @@ class Service extends AbstractModel
     {
         $extends = $this->getGenerator()->getOptionSoapClientClass();
         return $short ? Utils::removeNamespace($extends) : $extends;
+    }
+    /**
+     * @param $filename
+     * @return ServiceReservedMethod
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        return ServiceReservedMethod::instance($filename);
     }
 }

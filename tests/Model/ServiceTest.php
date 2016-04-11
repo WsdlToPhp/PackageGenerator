@@ -30,4 +30,8 @@ class ServiceTest extends TestCase
         $service->getMethod('getBar')->setName('getbar');
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Method', $service->getMethod('getbar'));
     }
+    public function testGetReservedMethodsInstance()
+    {
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\ServiceReservedMethod', self::instance('foo')->getReservedMethodsInstance());
+    }
 }

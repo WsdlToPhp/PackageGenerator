@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class StructArrayReservedKeywords extends StructReservedKeywords
+class StructArrayReservedMethod extends StructReservedMethod
 {
     /**
      * @param string $filename
@@ -15,7 +15,7 @@ class StructArrayReservedKeywords extends StructReservedKeywords
     /**
      * @throws \InvalidArgumentException
      * @param string options's file to parse
-     * @return StructArrayReservedKeywords
+     * @return StructArrayReservedMethod
      */
     public static function instance($filename = null)
     {

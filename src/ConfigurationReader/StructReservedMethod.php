@@ -2,12 +2,12 @@
 
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class ServiceReservedKeywords extends AbstractReservedKeywords
+class StructReservedMethod extends AbstractReservedWord
 {
     /**
      * @throws \InvalidArgumentException
      * @param string options's file to parse
-     * @return ServiceReservedKeywords
+     * @return StructReservedMethod
      */
     public static function instance($filename = null)
     {
@@ -18,6 +18,6 @@ class ServiceReservedKeywords extends AbstractReservedKeywords
      */
     public static function getDefaultConfigurationPath()
     {
-        return dirname(__FILE__) . '/../resources/config/service_reserved_keywords.yml';
+        return dirname(__FILE__) . '/../resources/config/struct_reserved_keywords.yml';
     }
 }

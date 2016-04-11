@@ -3,7 +3,8 @@
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeywords;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeyword;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
 use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
@@ -50,6 +51,11 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @var array
      */
     private static $replacedPhpReservedKeywords = array();
+    /**
+     * Replaced methods time in order to generate unique new method
+     * @var array
+     */
+    private $replacedReservedMethods = array();
     /**
      * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name whith same value)
      * @var array
@@ -382,18 +388,17 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns a usable keyword for a original keyword
-     * @uses PhpReservedKeywords::instance()
-     * @uses PhpReservedKeywords::is()
+     * @uses PhpReservedKeyword::instance()
+     * @uses PhpReservedKeyword::is()
      * @param string $keyword the keyword
      * @param string $context the context
      * @return string
      */
     public static function replacePhpReservedKeyword($keyword, $context = null)
     {
-        $phpReservedKeywordFound = '';
-        if (PhpReservedKeywords::instance()->is($keyword)) {
+        if (PhpReservedKeyword::instance()->is($keyword)) {
             if ($context !== null) {
-                $keywordKey = $phpReservedKeywordFound . '_' . $context;
+                $keywordKey = $keyword . '_' . $context;
                 if (!array_key_exists($keywordKey, self::$replacedPhpReservedKeywords)) {
                     self::$replacedPhpReservedKeywords[$keywordKey] = 0;
                 } else {
@@ -405,6 +410,40 @@ abstract class AbstractModel extends AbstractGeneratorAware
             }
         } else {
             return $keyword;
+        }
+    }
+    /**
+     * @param $filename
+     * @return AbstractReservedWord
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        throw new \InvalidArgumentException(sprintf('The method %s should be defined in the class %s', __FUNCTION__, get_called_class(), __LINE__));
+    }
+    /**
+     * Returns a usable method for a original method
+     * @uses PhpReservedKeywords::instance()
+     * @uses PhpReservedKeywords::is()
+     * @param string $keyword the keyword
+     * @param string $context the context
+     * @return string
+     */
+    public function replaceReservedMethod($methodName, $context = null)
+    {
+        if (static::getReservedMethodsInstance()->is($methodName)) {
+            if ($context !== null) {
+                $methodKey = $methodName . '_' . $context;
+                if (!array_key_exists($methodKey, $this->replacedReservedMethods)) {
+                    $this->replacedReservedMethods[$methodKey] = 0;
+                } else {
+                    $this->replacedReservedMethods[$methodKey]++;
+                }
+                return '_' . $methodName . ($this->replacedReservedMethods[$methodKey] ? '_' . $this->replacedReservedMethods[$methodKey] : '');
+            } else {
+                return '_' . $methodName;
+            }
+        } else {
+            return $methodName;
         }
     }
     /**
@@ -444,5 +483,13 @@ abstract class AbstractModel extends AbstractGeneratorAware
     public static function purgePhpReservedKeywords()
     {
         self::$replacedPhpReservedKeywords = array();
+    }
+    /**
+     * Gives the availability for test purpose and multiple package generation to purge reserved methods usage
+     * @todo see if it can be removed by reviewing how reserved methods are generated
+     */
+    public static function purgeReservedMethods()
+    {
+        self::$replacedReservedMethods = array();
     }
 }
