@@ -3,23 +3,23 @@
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeywords;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
 
-class PhpReservedKeywordsTest extends TestCase
+class StructReservedMethodTest extends TestCase
 {
     /**
-     * @return PhpReservedKeywords
+     * @return StructReservedMethod
      */
     public static function instance()
     {
-        return PhpReservedKeywords::instance(__DIR__ . '/../resources/php_reserved_keywords.yml');
+        return StructReservedMethod::instance(__DIR__ . '/../resources/struct_reserved_keywords.yml');
     }
     /**
      *
      */
     public function testIs__CLASS__()
     {
-        $this->assertTrue(self::instance()->is('__CLASS__'));
+        $this->assertFalse(self::instance()->is('__CLASS__'));
     }
     /**
      *
@@ -30,7 +30,7 @@ class PhpReservedKeywordsTest extends TestCase
     }
     public function testIs__construct()
     {
-        $this->assertTrue(self::instance()->is('__construct'));
+        $this->assertFalse(self::instance()->is('__construct'));
     }
     public function testIsgetSoapClient()
     {
@@ -122,11 +122,11 @@ class PhpReservedKeywordsTest extends TestCase
     }
     public function testIs_set()
     {
-        $this->assertFalse(self::instance()->is('_set'));
+        $this->assertTrue(self::instance()->is('_set'));
     }
     public function testIs_get()
     {
-        $this->assertFalse(self::instance()->is('_get'));
+        $this->assertTrue(self::instance()->is('_get'));
     }
     public function testIsgetAttributeName()
     {
@@ -222,23 +222,9 @@ class PhpReservedKeywordsTest extends TestCase
     }
     public function testUppercasePHPReservedKeyword()
     {
-        $this->assertTrue(self::instance()->is('Do'));
+        $this->assertFalse(self::instance()->is('Do'));
     }
     public function testUppercaseIsoffsetGet() {
         $this->assertFalse(self::instance()->is('OffsetGet'));
-    }
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testException()
-    {
-        PhpReservedKeywords::instance(__DIR__ . '/../resources/bad_php_reserved_keywords.yml');
-    }
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testExceptionForUnexistingFile()
-    {
-        PhpReservedKeywords::instance(__DIR__ . '/../resources/bad_php_reserved_keywords');
     }
 }

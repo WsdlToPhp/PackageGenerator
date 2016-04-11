@@ -3,16 +3,16 @@
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedKeywords;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 
-class StructArrayReservedKeywordsTest extends TestCase
+class StructArrayReservedMethodTest extends TestCase
 {
     /**
-     * @return StructArrayReservedKeywords
+     * @return StructArrayReservedMethod
      */
     public static function instance()
     {
-        return StructArrayReservedKeywords::instance(__DIR__ . '/../resources/struct_array_reserved_keywords.yml');
+        return StructArrayReservedMethod::instance(__DIR__ . '/../resources/struct_array_reserved_keywords.yml');
     }
     /**
      *

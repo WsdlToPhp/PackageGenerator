@@ -3,16 +3,16 @@
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedKeywords;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
 
-class ServiceReservedKeywordsTest extends TestCase
+class ServiceReservedMethodTest extends TestCase
 {
     /**
-     * @return ServiceReservedKeywords
+     * @return ServiceReservedMethod
      */
     public static function instance()
     {
-        return ServiceReservedKeywords::instance(__DIR__ . '/../resources/service_reserved_keywords.yml');
+        return ServiceReservedMethod::instance(__DIR__ . '/../resources/service_reserved_keywords.yml');
     }
     /**
      *
