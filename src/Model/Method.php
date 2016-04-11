@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
 
 /**
  * Class Method stands for an available operation described in the WSDL
@@ -84,7 +85,10 @@ class Method extends AbstractModel
                     $methodName .= '_' . md5(var_export($this->getParameterType(), true));
                 }
             }
-            $this->methodName = self::uniqueName(self::replacePhpReservedKeyword($methodName, $this->getOwner()->getPackagedName()), $this->getOwner()->getPackagedName());
+            $context = $this->getOwner()->getPackagedName();
+            $methodName = $this->replaceReservedMethod($methodName, $context);
+            $methodName = self::replacePhpReservedKeyword($methodName, $context);
+            $this->methodName = self::uniqueName($methodName, $this->getOwner()->getPackagedName());
         }
         return $this->methodName;
     }
@@ -151,5 +155,13 @@ class Method extends AbstractModel
     public function getOwner()
     {
         return parent::getOwner();
+    }
+    /**
+     * @param $filename
+     * @return ServiceReservedMethod
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        return ServiceReservedMethod::instance($filename);
     }
 }

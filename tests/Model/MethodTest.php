@@ -4,7 +4,6 @@ namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Model\Service;
-use WsdlToPhp\PackageGenerator\Model\Method;
 
 class MethodTest extends TestCase
 {
@@ -125,5 +124,11 @@ class MethodTest extends TestCase
         $service1->addMethod('0123456789MyOperation', 'int', 'id');
 
         $this->assertFalse($service1->getMethod('0123456789MyOperation')->nameIsClean());
+    }
+    public function testGetReservedMethodsInstance()
+    {
+        $service = new Service(self::getBingGeneratorInstance(), 'Foo');
+        $service->addMethod('getId', 'string', 'string');
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\ServiceReservedMethod', $service->getMethod('getId')->getReservedMethodsInstance());
     }
 }
