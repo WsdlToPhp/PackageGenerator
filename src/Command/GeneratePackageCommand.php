@@ -79,6 +79,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('genericconstants', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable usage of generic constants name (ex : ENUM_VALUE_0, ENUM_VALUE_1, etc) or contextual values (ex : VALUE_STRING, VALUE_YES, VALUES_NO, etc)')
             ->addOption('addcomments', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Set comments to be used within each generated file')
             ->addOption('standalone', null, InputOption::VALUE_OPTIONAL, 'By default, the generated package can be used as a standalone. Otherwise, you must add wsdltophp/packagebase:dev-master to your main composer.json.')
+            ->addOption('validation', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable the generation of validation rules in every generated setter.')
             ->addOption('struct', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructType class. Default class is \WsdlToPhp\PackageBase\AbstractStructBase from wsdltophp/packagebase package')
             ->addOption('structarray', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package')
             ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package')
@@ -131,6 +132,7 @@ class GeneratePackageCommand extends AbstractCommand
             'proxy-host' => 'ProxyHost',
             'proxy-port' => 'ProxyPort',
             'standalone' => 'Standalone',
+            'validation' => 'Validation',
             'proxy-login' => 'ProxyLogin',
             'password' => 'BasicPassword',
             'destination' => 'Destination',

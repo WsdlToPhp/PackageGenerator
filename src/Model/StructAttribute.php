@@ -4,6 +4,8 @@ namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 
 /**
  * Class StructAttribute stands for an available struct attribute described in the WSDL
@@ -22,6 +24,13 @@ class StructAttribute extends AbstractModel
      */
     private $containsElements = false;
     /**
+     * Defines that this property can be removed from request or not.
+     * The property cna be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
+     * Infos at {@link http://www.w3schools.com/xml/el_element.asp}
+     * @var bool
+     */
+    private $removableFromRequest = false;
+    /**
      * Main constructor
      * @see AbstractModel::__construct()
      * @uses StructAttribute::setType()
@@ -34,8 +43,9 @@ class StructAttribute extends AbstractModel
     public function __construct(Generator $generator, $name, $type, Struct $struct)
     {
         parent::__construct($generator, $name);
-        $this->setType($type);
-        $this->setOwner($struct);
+        $this
+            ->setType($type)
+            ->setOwner($struct);
     }
     /**
      * Returns the unique name in the current struct (for setters/getters and struct contrusctor array)
@@ -56,7 +66,7 @@ class StructAttribute extends AbstractModel
      */
     public function getGetterName()
     {
-        return sprintf('get%s', ucfirst(self::getUniqueName()));
+        return $this->replaceReservedMethod(sprintf('get%s', ucfirst(self::getUniqueName())), $this->getOwner()->getPackagedName());
     }
     /**
      * Returns the getter name for this attribute
@@ -65,7 +75,7 @@ class StructAttribute extends AbstractModel
      */
     public function getSetterName()
     {
-        return sprintf('set%s', ucfirst(self::getUniqueName()));
+        return $this->replaceReservedMethod(sprintf('set%s', ucfirst(self::getUniqueName())), $this->getOwner()->getPackagedName());
     }
     /**
      * Returns the type value
@@ -104,6 +114,22 @@ class StructAttribute extends AbstractModel
         return $this;
     }
     /**
+     * @return bool
+     */
+    public function getRemovableFromRequest()
+    {
+        return $this->removableFromRequest;
+    }
+    /**
+     * @param bool $removableFromRequest
+     * @return StructAttribute
+     */
+    public function setRemovableFromRequest($removableFromRequest)
+    {
+        $this->removableFromRequest = $removableFromRequest;
+        return $this;
+    }
+    /**
      * If this attribute contains elements then it's an array
      * only if its parent, the Struct, is not itself an array,
      * if the parent is an array, then it is certainly not an array too
@@ -111,7 +137,7 @@ class StructAttribute extends AbstractModel
      */
     public function isArray()
     {
-        return $this->containsElements;
+        return $this->containsElements || $this->isTypeStructArray();
     }
     /**
      * Returns potential default value
@@ -183,6 +209,14 @@ class StructAttribute extends AbstractModel
         return ($typeStruct && !$typeStruct->getIsStruct()) ? $typeStruct->getMeta() : array();
     }
     /**
+     * @return bool
+     */
+    public function isTypeStructArray()
+    {
+        $typeStruct = $this->getTypeStruct();
+        return $typeStruct && $typeStruct->isArray() && !$typeStruct->getIsStruct();
+    }
+    /**
      * @return Struct|null
      */
     public function getInheritanceStruct()
@@ -204,5 +238,13 @@ class StructAttribute extends AbstractModel
     public function getMeta()
     {
         return array_merge_recursive(parent::getMeta(), $this->getTypeStructMeta(), $this->getInheritanceStructMeta());
+    }
+    /**
+     * @param $filename
+     * @return StructReservedMethod|StructArrayReservedMethod
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        return $this->getOwner()->getReservedMethodsInstance($filename);
     }
 }

@@ -3,7 +3,8 @@
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\ReservedKeywords;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeyword;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
 use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
@@ -49,7 +50,12 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * Replaced keywords time in order to generate unique new keyword
      * @var array
      */
-    private static $replacedReservedPhpKeywords = array();
+    private static $replacedPhpReservedKeywords = array();
+    /**
+     * Replaced methods time in order to generate unique new method
+     * @var array
+     */
+    private $replacedReservedMethods = array();
     /**
      * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name whith same value)
      * @var array
@@ -268,7 +274,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function nameIsClean()
     {
-        return ($this->getName() != '' && $this->getName() == $this->getCleanName());
+        return ($this->getName() !== '' && $this->getName() === $this->getCleanName());
     }
     /**
      * Returns the packaged name
@@ -276,7 +282,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @uses AbstractModel::getCleanName()
      * @uses AbstractModel::getContextualPart()
      * @uses AbstractModel::uniqueName()
-     * @uses AbstractModel::replaceReservedPhpKeyword()
+     * @uses AbstractModel::replacePhpReservedKeyword()
      * @uses AbstractGeneratorAware::getGenerator()
      * @uses Generator::getOptionPrefix()
      * @uses Generator::getOptionSuffix()
@@ -293,7 +299,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
         if ($this->getGenerator()->getOptionPrefix() !== '') {
             $nameParts[] = $this->getGenerator()->getOptionPrefix();
         } else {
-            $cleanName = self::replaceReservedPhpKeyword($cleanName);
+            $cleanName = self::replacePhpReservedKeyword($cleanName);
         }
         $nameParts[] = ucfirst(self::uniqueName($cleanName, $this->getContextualPart()));
         if ($this->getGenerator()->getOptionSuffix() !== '') {
@@ -382,29 +388,63 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns a usable keyword for a original keyword
-     * @uses ReservedKeywords::instance()
-     * @uses ReservedKeywords::is()
+     * @uses PhpReservedKeyword::instance()
+     * @uses PhpReservedKeyword::is()
      * @param string $keyword the keyword
      * @param string $context the context
      * @return string
      */
-    public static function replaceReservedPhpKeyword($keyword, $context = null)
+    public static function replacePhpReservedKeyword($keyword, $context = null)
     {
-        $phpReservedKeywordFound = '';
-        if (ReservedKeywords::instance()->is($keyword)) {
+        if (PhpReservedKeyword::instance()->is($keyword)) {
             if ($context !== null) {
-                $keywordKey = $phpReservedKeywordFound . '_' . $context;
-                if (!array_key_exists($keywordKey, self::$replacedReservedPhpKeywords)) {
-                    self::$replacedReservedPhpKeywords[$keywordKey] = 0;
+                $keywordKey = $keyword . '_' . $context;
+                if (!array_key_exists($keywordKey, self::$replacedPhpReservedKeywords)) {
+                    self::$replacedPhpReservedKeywords[$keywordKey] = 0;
                 } else {
-                    self::$replacedReservedPhpKeywords[$keywordKey]++;
+                    self::$replacedPhpReservedKeywords[$keywordKey]++;
                 }
-                return '_' . $keyword . (self::$replacedReservedPhpKeywords[$keywordKey] ? '_' . self::$replacedReservedPhpKeywords[$keywordKey] : '');
+                return '_' . $keyword . (self::$replacedPhpReservedKeywords[$keywordKey] ? '_' . self::$replacedPhpReservedKeywords[$keywordKey] : '');
             } else {
                 return '_' . $keyword;
             }
         } else {
             return $keyword;
+        }
+    }
+    /**
+     * @throws \InvalidArgumentException
+     * @param $filename
+     * @return AbstractReservedWord
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        throw new \InvalidArgumentException(sprintf('The method %s should be defined in the class %s', __FUNCTION__, get_called_class(), __LINE__));
+    }
+    /**
+     * Returns a usable method for a original method
+     * @uses PhpReservedKeywords::instance()
+     * @uses PhpReservedKeywords::is()
+     * @param string $keyword the keyword
+     * @param string $context the context
+     * @return string
+     */
+    public function replaceReservedMethod($methodName, $context = null)
+    {
+        if ($this->getReservedMethodsInstance()->is($methodName)) {
+            if ($context !== null) {
+                $methodKey = $methodName . '_' . $context;
+                if (!array_key_exists($methodKey, $this->replacedReservedMethods)) {
+                    $this->replacedReservedMethods[$methodKey] = 0;
+                } else {
+                    $this->replacedReservedMethods[$methodKey]++;
+                }
+                return '_' . $methodName . ($this->replacedReservedMethods[$methodKey] ? '_' . $this->replacedReservedMethods[$methodKey] : '');
+            } else {
+                return '_' . $methodName;
+            }
+        } else {
+            return $methodName;
         }
     }
     /**
@@ -441,8 +481,16 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * Gives the availability for test purpose and multiple package generation to purge reserved keywords usage
      * @todo see if it can be removed by reviewing how reserved keywords are generated
      */
-    public static function purgeReservedKeywords()
+    public static function purgePhpReservedKeywords()
     {
-        self::$replacedReservedPhpKeywords = array();
+        self::$replacedPhpReservedKeywords = array();
+    }
+    /**
+     * Gives the availability for test purpose and multiple package generation to purge reserved methods usage
+     * @todo see if it can be removed by reviewing how reserved methods are generated
+     */
+    public static function purgeReservedMethods()
+    {
+        self::$replacedReservedMethods = array();
     }
 }

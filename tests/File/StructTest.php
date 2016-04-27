@@ -217,6 +217,54 @@ class StructTest extends AbstractFile
     /**
      *
      */
+    public function testWriteDeliveryServiceStructExpiryDate()
+    {
+        $generator = self::deliveryServiceInstance();
+        if (($model = $generator->getStruct('АдресРФ')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidАдресРФ', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find АдресРФ struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteReformaStructHouseProfileData()
+    {
+        $generator = self::reformaGeneratorInstance(true);
+        if (($model = $generator->getStruct('HouseProfileData')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidHouseProfileData', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find HouseProfileData struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testOrderContractStructAddressDelivery_Type()
+    {
+        $generator = self::orderContractInstance(true);
+        if (($model = $generator->getStruct('AddressDelivery_Type')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidAddressDelivery_Type', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find AddressDelivery_Type struct for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();
@@ -228,6 +276,40 @@ class StructTest extends AbstractFile
             $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), StructFile::SRC_FOLDER, $model->getContextualPart()), $struct->getFileDestination());
         } else {
             $this->assertFalse(true, 'Unable to find NewsArticle struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteYandexDirectApiStructCampaignsCompaignGetItem()
+    {
+        $generator = self::yandexDirectApiCampaignsGeneratorInstance(true);
+        $generator->setOptionValidation(false);
+        if (($model = $generator->getStruct('CampaignGetItem')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidCampaignGetItem', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find CampaignGetItem struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteYandexDirectApiStructLiveBannerInfo()
+    {
+        $generator = self::yandexDirectApiLiveGeneratorInstance(true);
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('BannerInfo')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidBannerInfo', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find BannerInfo struct for file generation');
         }
     }
 }

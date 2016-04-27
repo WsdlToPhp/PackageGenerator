@@ -221,4 +221,108 @@ class ElementHandlerTest extends TestCase
 
         $this->assertFalse($element->isRequired());
     }
+    /**
+     *
+     */
+    public function testYandexGetNillableTrue()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'NegativeKeywords',
+        ));
+
+        $this->assertTrue($element->getNillable());
+    }
+    /**
+     *
+     */
+    public function testYandexIsRemovableTrue()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'NegativeKeywords',
+        ));
+
+        $this->assertTrue($element->isRemovable());
+    }
+    /**
+     *
+     */
+    public function testYandexGetNillableFalse()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'TrackingParams',
+        ));
+
+        $this->assertFalse($element->getNillable());
+    }
+    /**
+     *
+     */
+    public function testYandexIsRemovableFalse()
+    {
+        $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'TrackingParams',
+        ));
+
+        $this->assertFalse($element->isRemovable());
+    }
+    /**
+     *
+     */
+    public function testActonGetNillableFalse()
+    {
+        $domDocument = DomDocumentHandlerTest::actonInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'email',
+        ));
+
+        $this->assertFalse($element->getNillable());
+    }
+    /**
+     *
+     */
+    public function testActonIsRemovableFalse()
+    {
+        $domDocument = DomDocumentHandlerTest::actonInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'email',
+        ));
+
+        $this->assertFalse($element->isRemovable());
+    }
+    /**
+     *
+     */
+    public function testActonGetNillableTrue()
+    {
+        $domDocument = DomDocumentHandlerTest::actonInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'serverUrl',
+        ));
+
+        $this->assertTrue($element->getNillable());
+    }
+    /**
+     *
+     */
+    public function testActonGetNillableTrueIsRemovableFalse()
+    {
+        $domDocument = DomDocumentHandlerTest::actonInstance();
+
+        $element = $domDocument->getElementByNameAndAttributes('element', array(
+            'name' => 'serverUrl',
+        ));
+
+        $this->assertFalse($element->isRemovable());
+    }
 }

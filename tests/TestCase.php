@@ -196,9 +196,23 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
+    public static function wsdlYandexDirectApiLivePath()
+    {
+        return __DIR__ . '/resources/directapi/live.wsdl';
+    }
+    /**
+     * @return string
+     */
     public static function wsdlDocDataPaymentsPath()
     {
         return __DIR__ . '/resources/docdatapayments/1_3.wsdl';
+    }
+    /**
+     * @return string
+     */
+    public static function wsdlDeliveryService()
+    {
+        return __DIR__ . '/resources/DeliveryService.wsdl';
     }
     /**
      * @return string
@@ -288,6 +302,13 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     public static function getDocDataPAymentsInstance()
     {
         return self::getInstance(self::wsdlDocDataPaymentsPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function getDeliveryServiceInstance()
+    {
+        return self::getInstance(self::wsdlDeliveryService());
     }
     /**
      * @param string $wsdlPath

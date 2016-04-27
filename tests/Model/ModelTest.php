@@ -23,8 +23,8 @@ class ModelTest extends TestCase
         $this->assertEquals('_foo_', self::instance('-foo-')->getCleanName());
         $this->assertEquals('_foo_', self::instance('-foo-----')->getCleanName(false));
         $this->assertEquals('___foo', self::instance('---foo')->getCleanName(true));
-        $this->assertEquals('_foo', self::instance('___é%àç_çfoo')->getCleanName(false));
-        $this->assertEquals('_foo_245', self::instance('___é%àç_çfoo----245')->getCleanName(false));
+        $this->assertEquals('_é_àç_çfoo', self::instance('___é%àç_çfoo')->getCleanName(false));
+        $this->assertEquals('_é_àç_çfoo_245', self::instance('___é%àç_çfoo----245')->getCleanName(false));
     }
     /**
      *
@@ -35,7 +35,7 @@ class ModelTest extends TestCase
         $this->assertTrue(self::instance('foo_54')->nameIsClean());
         $this->assertFalse(self::instance('%foo_')->nameIsClean());
         $this->assertFalse(self::instance('-foo_')->nameIsClean());
-        $this->assertFalse(self::instance('éfoo_')->nameIsClean());
+        $this->asserttrue(self::instance('éfoo_')->nameIsClean());
     }
     /**
      *
@@ -76,5 +76,12 @@ class ModelTest extends TestCase
                 'bar',
             ),
         ), $instance->getMeta());
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetReservedMethodsInstance()
+    {
+        self::instance('foo')->getReservedMethodsInstance();
     }
 }

@@ -130,6 +130,14 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
         return (int)$minOccurs;
     }
     /**
+     * Info at {@link http://www.w3schools.com/xml/el_element.asp}
+     * @return bool
+     */
+    public function getNillable()
+    {
+        return (bool)$this->getAttributeValue(AbstractAttributeHandler::ATTRIBUTE_NILLABLE, false, true, 'bool');
+    }
+    /**
      * Info at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
      * @return bool
      */
@@ -160,5 +168,12 @@ abstract class AbstractElementHandler extends AbstractNodeHandler
     public function isRequired()
     {
         return $this->getMinOccurs() >= 1;
+    }
+    /**
+     * @return bool
+     */
+    public function isRemovable()
+    {
+        return $this->isOptional() && $this->getNillable();
     }
 }

@@ -376,6 +376,23 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetValidation()
+    {
+        $this->assertTrue(self::optionsInstance()->getValidation());
+    }
+    /**
+     *
+     */
+    public function testSetValidation()
+    {
+        $instance = self::optionsInstance();
+        $instance->setValidation(GeneratorOptions::VALUE_FALSE);
+
+        $this->assertFalse($instance->getValidation());
+    }
+    /**
+     *
+     */
     public function testGetStructClass()
     {
         $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::optionsInstance()->getStructClass());
@@ -567,6 +584,7 @@ class GeneratorOptionsTest extends TestCase
             'add_comments' => array(),
             'namespace_prefix' => '',
             'standalone' => true,
+            'validation' => true,
             'struct_class' => '\WsdlToPhp\PackageBase\AbstractStructBase',
             'struct_array_class' => '\WsdlToPhp\PackageBase\AbstractStructArrayBase',
             'soap_client_class' => '\WsdlToPhp\PackageBase\AbstractSoapClientBase',

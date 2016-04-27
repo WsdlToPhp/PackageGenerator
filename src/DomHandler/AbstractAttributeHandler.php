@@ -21,6 +21,10 @@ class AbstractAttributeHandler extends AbstractNodeHandler
     /**
      * @var string
      */
+    const ATTRIBUTE_REF = 'ref';
+    /**
+     * @var string
+     */
     const ATTRIBUTE_VALUE = 'value';
     /**
      * @var string
@@ -38,6 +42,10 @@ class AbstractAttributeHandler extends AbstractNodeHandler
      * @var string
      */
     const ATTRIBUTE_MIN_OCCURS = 'minOccurs';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_NILLABLE = 'nillable';
     /**
      * @var string
      */

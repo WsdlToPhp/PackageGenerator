@@ -239,9 +239,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return
-     * void|\Api\StructType\ApiAttachmentType|\Api\StructType\ApiGetUploadResultResponse|\Api\StructType\ApiListResponse|\Api\StructType\ApiLoginResponse|\Api\StructType\ApiMessageReportResponse|\Api\StructType\ApiSendEmailResponse|\Api\StructType\ApiUpload
-     * ListResponse
+     * @return void|\Api\StructType\ApiAttachmentType|\Api\StructType\ApiGetUploadResultResponse|\Api\StructType\ApiListResponse|\Api\StructType\ApiLoginResponse|\Api\StructType\ApiMessageReportResponse|\Api\StructType\ApiSendEmailResponse|\Api\StructType\ApiUploadListResponse
      */
     public function getResult()
     {

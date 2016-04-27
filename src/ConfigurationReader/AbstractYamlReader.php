@@ -30,8 +30,9 @@ abstract class AbstractYamlReader
         return $ymlParser->parse(file_get_contents($filename));
     }
     /**
+     * @throws \InvalidArgumentException
      * @param string options's file to parse
-     * @return \WsdlToPhp\Generator\Options
+     * @return AbstractYamlReader
      */
     public static function instance($filename = null)
     {

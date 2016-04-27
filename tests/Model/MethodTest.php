@@ -125,4 +125,10 @@ class MethodTest extends TestCase
 
         $this->assertFalse($service1->getMethod('0123456789MyOperation')->nameIsClean());
     }
+    public function testGetReservedMethodsInstance()
+    {
+        $service = new Service(self::getBingGeneratorInstance(), 'Foo');
+        $service->addMethod('getId', 'string', 'string');
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\ServiceReservedMethod', $service->getMethod('getId')->getReservedMethodsInstance());
+    }
 }

@@ -140,4 +140,14 @@ class StructTest extends TestCase
         $struct = self::instance('Foo', true);
         $struct->addAttribute('bar', '');
     }
+    public function testGetReservedMethodsInstance()
+    {
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\StructReservedMethod', self::instance('foo', true)->getReservedMethodsInstance());
+    }
+    public function testGetReservedMethodsInstanceForArray()
+    {
+        $instance = self::instance('array', true);
+        $instance->addAttribute('bar', 'string');
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\StructArrayReservedMethod', $instance->getReservedMethodsInstance());
+    }
 }

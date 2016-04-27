@@ -31,6 +31,8 @@ abstract class AbstractAttributesParser extends AbstractTagParser
             if ($model instanceof Struct) {
                 if ($tag->hasAttributeName() && ($modelAttribute = $model->getAttribute($tag->getAttributeName())) instanceof StructAttribute) {
                     return $this->parseTagAttributes($tag, $model, $modelAttribute);
+                } elseif ($tag->hasAttributeRef() && ($modelAttribute = $model->getAttribute($tag->getAttributeRef())) instanceof StructAttribute) {
+                    return $this->parseTagAttributes($tag, $model, $modelAttribute);
                 }
                 $this->parseTagAttributes($tag, $model);
             }

@@ -99,9 +99,37 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
+    public static function yandexDirectApiCampaignsGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlYandexDirectApiCampaignsPath(), $reset, $gatherMethods);
+    }
+    /**
+     * @return Generator
+     */
+    public static function yandexDirectApiLiveGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlYandexDirectApiLivePath(), $reset, $gatherMethods);
+    }
+    /**
+     * @return Generator
+     */
     public static function docDataPaymentsGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
     {
         return self::getInstance(self::wsdlDocDataPaymentsPath(), $reset, $gatherMethods);
+    }
+    /**
+     * @return Generator
+     */
+    public static function deliveryServiceInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlDeliveryService(), $reset, $gatherMethods);
+    }
+    /**
+     * @return Generator
+     */
+    public static function orderContractInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlOrderContractPath(), $reset, $gatherMethods);
     }
     /**
      * @param string $wsdl
@@ -110,7 +138,7 @@ abstract class AbstractFile extends TestCase
     public static function getInstance($wsdl, $reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
         AbstractModel::purgeUniqueNames();
-        AbstractModel::purgeReservedKeywords();
+        AbstractModel::purgePhpReservedKeywords();
         $g = parent::getInstance($wsdl, $reset);
         $g
             ->setOptionPrefix('Api')

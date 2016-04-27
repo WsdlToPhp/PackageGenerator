@@ -1,0 +1,2590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.pa.post.aplix.ru/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="DeliveryService" targetNamespace="http://service.pa.post.aplix.ru/">
+    <wsdl:types>
+        <xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.v8.1c.ru/ssl/contactinfo" elementFormDefault="qualified" targetNamespace="http://www.v8.1c.ru/ssl/contactinfo" version="1.0">
+            <xs:element name="КонтактнаяИнформация" type="tns:КонтактнаяИнформация" />
+            <xs:complexType name="КонтактнаяИнформация">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Комментарий" type="xs:string" />
+                    <xs:element name="Состав" type="tns:Состав" />
+                </xs:sequence>
+                <xs:attribute name="Представление" type="xs:string" />
+            </xs:complexType>
+            <xs:complexType abstract="true" name="Состав">
+                <xs:sequence />
+            </xs:complexType>
+            <xs:complexType name="Адрес">
+                <xs:complexContent>
+                    <xs:extension base="tns:Состав">
+                        <xs:sequence>
+                            <xs:element name="Состав" type="tns:Состав" />
+                        </xs:sequence>
+                        <xs:attribute name="Страна" type="xs:string" />
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="АдресРФ">
+                <xs:complexContent>
+                    <xs:extension base="tns:Состав">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="СубъектРФ" type="xs:string" />
+                            <xs:element minOccurs="0" name="СвРайМО" type="tns:СвРайМО" />
+                            <xs:element minOccurs="0" name="Город" type="xs:string" />
+                            <xs:element minOccurs="0" name="ВнутригРайон" type="xs:string" />
+                            <xs:element minOccurs="0" name="НаселПункт" type="xs:string" />
+                            <xs:element minOccurs="0" name="Улица" type="xs:string" />
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="ДопАдрЭл" type="tns:ДопАдрЭл" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="СвРайМО">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Район" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ДопАдрЭл">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="Номер" type="tns:Номер" />
+                </xs:sequence>
+                <xs:attribute name="ТипАдрЭл" type="xs:string" />
+                <xs:attribute name="Значение" type="xs:string" />
+            </xs:complexType>
+            <xs:complexType name="Номер">
+                <xs:sequence />
+                <xs:attribute name="Тип" type="xs:string" use="required" />
+                <xs:attribute name="Значение" type="xs:string" use="required" />
+            </xs:complexType>
+            <xs:complexType name="АдресРБ">
+                <xs:complexContent>
+                    <xs:extension base="tns:Состав">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="Область" type="xs:string" />
+                            <xs:element minOccurs="0" name="Район" type="xs:string" />
+                            <xs:element minOccurs="0" name="Сельсовет" type="xs:string" />
+                            <xs:element minOccurs="0" name="НаселПункт" type="xs:string" />
+                            <xs:element minOccurs="0" name="Улица" type="xs:string" />
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="ДопАдрЭл" type="tns:ДопАдрЭл" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.pa.post.aplix.ru/" xmlns:ns1="http://www.v8.1c.ru/ssl/contactinfo" elementFormDefault="unqualified" targetNamespace="http://service.pa.post.aplix.ru/" version="1.0">
+            <xs:import namespace="http://www.v8.1c.ru/ssl/contactinfo" />
+            <xs:element name="address" type="tns:address" />
+            <xs:element name="calc" type="tns:deliveryRequest" />
+            <xs:element name="calculateDimensions" type="tns:calculateDimensions" />
+            <xs:element name="calculateDimensionsRequest" type="tns:calculateDimensionsRequest" />
+            <xs:element name="calculateDimensionsResponse" type="tns:calculateDimensionsResponse" />
+            <xs:element name="calculateShippingCost" type="tns:calculateShippingCost" />
+            <xs:element name="calculateShippingCostResponse" type="tns:calculateShippingCostResponse" />
+            <xs:element name="consignee" type="tns:consignee" />
+            <xs:element name="consigneeList" type="tns:consigneeList" />
+            <xs:element name="contact" type="tns:contact" />
+            <xs:element name="contractor" type="tns:contractor" />
+            <xs:element name="contractorList" type="tns:contractorList" />
+            <xs:element name="country" type="tns:country" />
+            <xs:element name="countryList" type="tns:countryList" />
+            <xs:element name="createConsignee" type="tns:createConsignee" />
+            <xs:element name="createConsigneeRequest" type="tns:createConsigneeRequest" />
+            <xs:element name="createConsigneeResponse" type="tns:createConsigneeResponse" />
+            <xs:element name="createOrder" type="tns:createOrder" />
+            <xs:element name="createOrderRequest" type="tns:createOrderRequest" />
+            <xs:element name="createOrderResponse" type="tns:createOrderResponse" />
+            <xs:element name="createProduct" type="tns:createProduct" />
+            <xs:element name="createProductRequest" type="tns:createProductRequest" />
+            <xs:element name="createProductResponse" type="tns:createProductResponse" />
+            <xs:element name="createShipper" type="tns:createShipper" />
+            <xs:element name="createShipperRequest" type="tns:createShipperRequest" />
+            <xs:element name="createShipperResponse" type="tns:createShipperResponse" />
+            <xs:element name="deleteConsignee" type="tns:deleteConsignee" />
+            <xs:element name="deleteConsigneeResponse" type="tns:deleteConsigneeResponse" />
+            <xs:element name="deleteOrder" type="tns:deleteOrder" />
+            <xs:element name="deleteOrderResponse" type="tns:deleteOrderResponse" />
+            <xs:element name="deleteProduct" type="tns:deleteProduct" />
+            <xs:element name="deleteProductResponse" type="tns:deleteProductResponse" />
+            <xs:element name="deleteShipper" type="tns:deleteShipper" />
+            <xs:element name="deleteShipperResponse" type="tns:deleteShipperResponse" />
+            <xs:element name="deliveryMethod" type="tns:deliveryMethod" />
+            <xs:element name="deliveryTree" type="tns:deliveryTree" />
+            <xs:element name="deliveryType" type="tns:deliveryType" />
+            <xs:element name="email" type="tns:email" />
+            <xs:element name="generateMarkers" type="tns:generateMarkers" />
+            <xs:element name="generateMarkersResponse" type="tns:generateMarkersResponse" />
+            <xs:element name="getConsignee" type="tns:getConsignee" />
+            <xs:element name="getConsigneeResponse" type="tns:getConsigneeResponse" />
+            <xs:element name="getContractors" type="tns:getContractors" />
+            <xs:element name="getContractorsResponse" type="tns:getContractorsResponse" />
+            <xs:element name="getCountries" type="tns:getCountries" />
+            <xs:element name="getCountriesResponse" type="tns:getCountriesResponse" />
+            <xs:element name="getMutualSettlements" type="tns:getMutualSettlements" />
+            <xs:element name="getMutualSettlementsResponse" type="tns:getMutualSettlementsResponse" />
+            <xs:element name="getOrder" type="tns:getOrder" />
+            <xs:element name="getOrderResponse" type="tns:getOrderResponse" />
+            <xs:element name="getPickupPoint" type="tns:getPickupPoint" />
+            <xs:element name="getPickupPointResponse" type="tns:getPickupPointResponse" />
+            <xs:element name="getProduct" type="tns:getProduct" />
+            <xs:element name="getProductRemnants" type="tns:getProductRemnants" />
+            <xs:element name="getProductRemnantsResponse" type="tns:getProductRemnantsResponse" />
+            <xs:element name="getProductResponse" type="tns:getProductResponse" />
+            <xs:element name="getShipper" type="tns:getShipper" />
+            <xs:element name="getShipperResponse" type="tns:getShipperResponse" />
+            <xs:element name="getTrackHistory" type="tns:getTrackHistory" />
+            <xs:element name="getTrackHistoryResponse" type="tns:getTrackHistoryResponse" />
+            <xs:element name="getTrackings" type="tns:getTrackings" />
+            <xs:element name="getTrackingsResponse" type="tns:getTrackingsResponse" />
+            <xs:element name="getVersions" type="tns:getVersions" />
+            <xs:element name="getVersionsResponse" type="tns:getVersionsResponse" />
+            <xs:element name="markerList" type="tns:markerList" />
+            <xs:element name="mutualSettlement" type="tns:mutualSettlement" />
+            <xs:element name="mutualSettlementDetail" type="tns:mutualSettlementDetail" />
+            <xs:element name="mutualSettlementDetailAcceptanceRegistry" type="tns:mutualSettlementDetailAcceptanceRegistry" />
+            <xs:element name="mutualSettlementDetailAdditionalChargeFare" type="tns:mutualSettlementDetailAdditionalChargeFare" />
+            <xs:element name="mutualSettlementDetailAdjustmentWriteRegisters" type="tns:mutualSettlementDetailAdjustmentWriteRegisters" />
+            <xs:element name="mutualSettlementDetailBuyerGoodsReturn" type="tns:mutualSettlementDetailBuyerGoodsReturn" />
+            <xs:element name="mutualSettlementDetailCalcCostShipping" type="tns:mutualSettlementDetailCalcCostShipping" />
+            <xs:element name="mutualSettlementDetailCashFlow" type="tns:mutualSettlementDetailCashFlow" />
+            <xs:element name="mutualSettlementDetailClientPayment" type="tns:mutualSettlementDetailClientPayment" />
+            <xs:element name="mutualSettlementDetailOutgoingRequestToCarrier" type="tns:mutualSettlementDetailOutgoingRequestToCarrier" />
+            <xs:element name="mutualSettlementDetailPostReturnRegistry" type="tns:mutualSettlementDetailPostReturnRegistry" />
+            <xs:element name="mutualSettlementDetailProductsPackaging" type="tns:mutualSettlementDetailProductsPackaging" />
+            <xs:element name="mutualSettlementDetailRegisterStorage" type="tns:mutualSettlementDetailRegisterStorage" />
+            <xs:element name="mutualSettlementDetailRouteList" type="tns:mutualSettlementDetailRouteList" />
+            <xs:element name="mutualSettlementDetailRouteListOrder" type="tns:mutualSettlementDetailRouteListOrder" />
+            <xs:element name="mutualSettlementDetailRouteListPickupRequest" type="tns:mutualSettlementDetailRouteListPickupRequest" />
+            <xs:element name="mutualSettlementDetailSMSInformation" type="tns:mutualSettlementDetailSMSInformation" />
+            <xs:element name="mutualSettlementDetailSafeCustody" type="tns:mutualSettlementDetailSafeCustody" />
+            <xs:element name="mutualSettlementDetailSafeCustodyCalculation" type="tns:mutualSettlementDetailSafeCustodyCalculation" />
+            <xs:element name="mutualSettlementDetailServiceRegistration" type="tns:mutualSettlementDetailServiceRegistration" />
+            <xs:element name="mutualSettlementDetailTrackNumberPayment" type="tns:mutualSettlementDetailTrackNumberPayment" />
+            <xs:element name="order" type="tns:order" />
+            <xs:element name="orderList" type="tns:orderList" />
+            <xs:element name="packingDimensions" type="tns:packingDimensions" />
+            <xs:element name="phone" type="tns:phone" />
+            <xs:element name="pickupPoint" type="tns:pickupPoint" />
+            <xs:element name="product" type="tns:product" />
+            <xs:element name="productList" type="tns:productList" />
+            <xs:element name="productRemnantsOnStoreList" type="tns:productRemnantsOnStoreList" />
+            <xs:element name="searchConsignees" type="tns:searchConsignees" />
+            <xs:element name="searchConsigneesCount" type="tns:searchConsigneesCount" />
+            <xs:element name="searchConsigneesCountResponse" type="tns:searchConsigneesCountResponse" />
+            <xs:element name="searchConsigneesResponse" type="tns:searchConsigneesResponse" />
+            <xs:element name="searchMarkers" type="tns:searchMarkers" />
+            <xs:element name="searchMarkersCount" type="tns:searchMarkersCount" />
+            <xs:element name="searchMarkersCountResponse" type="tns:searchMarkersCountResponse" />
+            <xs:element name="searchMarkersResponse" type="tns:searchMarkersResponse" />
+            <xs:element name="searchOrders" type="tns:searchOrders" />
+            <xs:element name="searchOrdersCount" type="tns:searchOrdersCount" />
+            <xs:element name="searchOrdersCountResponse" type="tns:searchOrdersCountResponse" />
+            <xs:element name="searchOrdersResponse" type="tns:searchOrdersResponse" />
+            <xs:element name="searchProducts" type="tns:searchProducts" />
+            <xs:element name="searchProductsCount" type="tns:searchProductsCount" />
+            <xs:element name="searchProductsCountResponse" type="tns:searchProductsCountResponse" />
+            <xs:element name="searchProductsResponse" type="tns:searchProductsResponse" />
+            <xs:element name="searchShippers" type="tns:searchShippers" />
+            <xs:element name="searchShippersCount" type="tns:searchShippersCount" />
+            <xs:element name="searchShippersCountResponse" type="tns:searchShippersCountResponse" />
+            <xs:element name="searchShippersResponse" type="tns:searchShippersResponse" />
+            <xs:element name="shipper" type="tns:shipper" />
+            <xs:element name="shipperList" type="tns:shipperList" />
+            <xs:element name="tracking" type="tns:tracking" />
+            <xs:element name="trackingList" type="tns:trackingList" />
+            <xs:element name="trackingResponse" type="tns:trackingResponse" />
+            <xs:complexType name="createShipper">
+                <xs:sequence>
+                    <xs:element name="request" type="tns:createShipperRequest" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createShipperRequest">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element ref="tns:shipper" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="shipper">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" name="contractorId" type="xs:string" />
+                    <xs:element form="qualified" name="description" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="identifier" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="inn" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="kpp" type="xs:string" />
+                    <xs:element minOccurs="0" ref="tns:address" />
+                    <xs:element minOccurs="0" ref="tns:phone" />
+                    <xs:element minOccurs="0" ref="tns:email" />
+                    <xs:element form="qualified" minOccurs="0" name="federalCode" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="url" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="contactPerson" type="tns:contact" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="address">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="description" type="xs:string" />
+                    <xs:element minOccurs="0" ref="ns1:КонтактнаяИнформация" />
+                    <xs:element form="qualified" minOccurs="0" name="comment" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="addition" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="territoryId" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="kladrId" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="gpsLatitude" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="gpsLongitude" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="aoId" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="houseId" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="postalCode" type="xs:string" />
+                    <xs:element minOccurs="0" ref="tns:country" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="country">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="description" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="fullName" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="codeAlpha2" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="codeAlpha3" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="engName" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="phone">
+                <xs:sequence>
+                    <xs:element form="qualified" name="value" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="email">
+                <xs:sequence>
+                    <xs:element form="qualified" name="value" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="contact">
+                <xs:sequence>
+                    <xs:element form="qualified" name="description" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createShipperResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="shipperId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchMarkers">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element name="first" type="xs:int" />
+                    <xs:element name="pageSize" type="xs:int" />
+                    <xs:element minOccurs="0" name="sortField" type="xs:string" />
+                    <xs:element name="ascending" type="xs:boolean" />
+                    <xs:element name="contractorId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchMarkersResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:markerList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="markerList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="marker" type="tns:marker" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="marker">
+                <xs:sequence>
+                    <xs:element form="qualified" name="value" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="changeDate" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchConsignees">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element name="first" type="xs:int" />
+                    <xs:element name="pageSize" type="xs:int" />
+                    <xs:element minOccurs="0" name="sortField" type="xs:string" />
+                    <xs:element name="ascending" type="xs:boolean" />
+                    <xs:element name="contractorId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchConsigneesResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:consigneeList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="consigneeList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:consignee" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="consignee">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" name="contractorId" type="xs:string" />
+                    <xs:element form="qualified" name="familyName" type="xs:string" />
+                    <xs:element form="qualified" name="firstName" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="middleName" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="identifier" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="comment" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:phone" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:email" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:address" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getShipper">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="shipperId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getShipperResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:shipper" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getConsignee">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="consigneeId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getConsigneeResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:consignee" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createOrder">
+                <xs:sequence>
+                    <xs:element name="request" type="tns:createOrderRequest" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createOrderRequest">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element ref="tns:order" />
+                    <xs:element minOccurs="0" name="marker" type="tns:marker" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="order">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="identifier" type="xs:string" />
+                    <xs:element ref="tns:shipper" />
+                    <xs:element ref="tns:consignee" />
+                    <xs:element form="qualified" name="contractorId" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="externalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="declaredValue" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="amountToBePaid" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="sealType" type="tns:sealType" />
+                    <xs:element form="qualified" minOccurs="0" name="comment" type="xs:string" />
+                    <xs:element form="qualified" name="deliveryAddress" type="tns:address" />
+                    <xs:element minOccurs="0" ref="tns:phone" />
+                    <xs:element minOccurs="0" ref="tns:email" />
+                    <xs:element form="qualified" minOccurs="0" name="expectedDeliveryDate" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="deliveryIntervalStart" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="deliveryIntervalEnd" type="xs:int" />
+                    <xs:element ref="tns:deliveryMethod" />
+                    <xs:element form="qualified" name="paymentMethod" type="tns:paymentMethod" />
+                    <xs:element minOccurs="0" ref="tns:pickupPoint" />
+                    <xs:element form="qualified" maxOccurs="unbounded" name="productsToDeliver" type="tns:orderProduct" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:tracking" />
+                    <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="marker" type="tns:orderMarker" />
+                    <xs:element form="qualified" minOccurs="0" name="status" type="tns:orderStatus" />
+                    <xs:element form="qualified" minOccurs="0" name="minimalDeliveryTerm" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="maximalDeliveryTerm" type="xs:int" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryMethod">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="description" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="fullDescription" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="type" type="tns:deliveryType" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryType">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="description" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="summary" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="pickupPoint">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" name="deliveryMethodId" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="description" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="address" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="view" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="phone" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="worktime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="city" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="cityCode" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="region" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="countryId" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="remark" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="gpsLatitude" type="xs:double" />
+                    <xs:element form="qualified" minOccurs="0" name="gpsLongitude" type="xs:double" />
+                    <xs:element form="qualified" minOccurs="0" name="email" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="startWork" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="endWork" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="orderProduct">
+                <xs:sequence>
+                    <xs:element ref="tns:product" />
+                    <xs:element form="qualified" name="count" type="xs:int" />
+                    <xs:element form="qualified" name="vatRate" type="tns:vatRate" />
+                    <xs:element form="qualified" minOccurs="0" name="storeId" type="xs:string" />
+                    <xs:element form="qualified" name="price" type="xs:float" />
+                    <xs:element form="qualified" name="total" type="xs:float" />
+                    <xs:element form="qualified" name="vat" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="discount" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="serialNumber" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="product">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="parentId" type="xs:string" />
+                    <xs:element form="qualified" name="contractorId" type="xs:string" />
+                    <xs:element form="qualified" name="description" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="article" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="length" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="width" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="height" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="weight" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="barcode" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="type" type="tns:productType" />
+                    <xs:element form="qualified" minOccurs="0" name="price" type="tns:productPrice" />
+                    <xs:element form="qualified" minOccurs="0" name="totalBalance" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="folder" type="xs:boolean" />
+                    <xs:element form="qualified" minOccurs="0" name="hidden" type="xs:boolean" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productPrice">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="value" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="tracking">
+                <xs:sequence>
+                    <xs:element form="qualified" name="orderId" type="xs:string" />
+                    <xs:element form="qualified" name="trackNumber" type="xs:string" />
+                    <xs:element form="qualified" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="payment" type="tns:payment" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="payment">
+                <xs:sequence>
+                    <xs:element form="qualified" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="orderMarker">
+                <xs:sequence>
+                    <xs:element form="qualified" name="value" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="changeDate" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="orderStatus">
+                <xs:sequence>
+                    <xs:element form="qualified" name="value" type="tns:status" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="weight" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="comment" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createOrderResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="orderId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteProduct">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="productId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteProductResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteOrder">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="orderId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteOrderResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getVersions">
+                <xs:sequence />
+            </xs:complexType>
+            <xs:complexType name="getVersionsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="versions" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchOrders">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element name="first" type="xs:int" />
+                    <xs:element name="pageSize" type="xs:int" />
+                    <xs:element minOccurs="0" name="sortField" type="xs:string" />
+                    <xs:element name="ascending" type="xs:boolean" />
+                    <xs:element minOccurs="0" name="startDate" type="xs:string" />
+                    <xs:element minOccurs="0" name="endDate" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="status" type="tns:status" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchOrdersResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:orderList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="orderList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:order" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchProducts">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element name="first" type="xs:int" />
+                    <xs:element name="pageSize" type="xs:int" />
+                    <xs:element minOccurs="0" name="sortField" type="xs:string" />
+                    <xs:element name="ascending" type="xs:boolean" />
+                    <xs:element minOccurs="0" name="parentId" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="filter" type="tns:productFilter" />
+                    <xs:element name="noHidden" type="xs:boolean" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchProductsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:productList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:product" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteShipper">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="shipperId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteShipperResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getTrackHistory">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="orderId" type="xs:string" />
+                    <xs:element minOccurs="0" name="trackNumber" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getTrackHistoryResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:trackingResponse" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="trackingResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="trackHistory" type="tns:trackHistory" />
+                    <xs:element minOccurs="0" name="operationHistory" type="tns:operationHistory" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="trackHistory">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="trackName" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="operationHistory">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="operationParameter" type="tns:operationParameter" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="operationParameter">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="operation" type="tns:operation" />
+                    <xs:element minOccurs="0" name="address" type="tns:TrackingAddress" />
+                    <xs:element minOccurs="0" name="destinationAddress" type="tns:TrackingAddress" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="operation">
+                <xs:sequence />
+                <xs:attribute name="attribute" type="xs:string" />
+                <xs:attribute name="date" type="xs:dateTime" />
+                <xs:attribute name="photo" type="xs:string" />
+                <xs:attribute name="type" type="xs:string" />
+                <xs:attribute name="video" type="xs:string" />
+                <xs:attribute name="weight" type="xs:float" />
+            </xs:complexType>
+            <xs:complexType name="TrackingAddress">
+                <xs:sequence />
+                <xs:attribute name="index" type="xs:string" />
+                <xs:attribute name="address" type="xs:string" />
+            </xs:complexType>
+            <xs:complexType name="searchShippersCount">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchShippersCountResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="shipperCount" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchProductsCount">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element minOccurs="0" name="parentId" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="filter" type="tns:productFilter" />
+                    <xs:element name="noHidden" type="xs:boolean" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchProductsCountResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="productCount" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getTrackings">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                    <xs:element minOccurs="0" name="startDate" type="xs:string" />
+                    <xs:element minOccurs="0" name="endDate" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getTrackingsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:trackingList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="trackingList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:tracking" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getContractors">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="first" type="xs:int" />
+                    <xs:element name="pageSize" type="xs:int" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getContractorsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:contractorList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="contractorList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:contractor" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="contractor">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="id" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="entityType" type="tns:entityType" />
+                    <xs:element form="qualified" minOccurs="0" name="description" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="fullName" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="inn" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="codeOKPO" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="kpp" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="email" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="defaultVatRate" type="tns:vatRate" />
+                    <xs:element form="qualified" minOccurs="0" name="contactPerson" type="tns:contact" />
+                    <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="contact" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="calculateShippingCost">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="request" type="tns:deliveryRequest" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="country" type="xs:string" />
+                    <xs:element minOccurs="0" name="region" type="xs:string" />
+                    <xs:element minOccurs="0" name="area" type="xs:string" />
+                    <xs:element minOccurs="0" name="city" type="xs:string" />
+                    <xs:element minOccurs="0" name="street" type="xs:string" />
+                    <xs:element minOccurs="0" name="house" type="xs:string" />
+                    <xs:element minOccurs="0" name="index" type="xs:string" />
+                    <xs:element minOccurs="0" name="cityKladrCode" type="xs:string" />
+                    <xs:element minOccurs="0" name="streetKladrCode" type="xs:string" />
+                    <xs:element minOccurs="0" name="weight" type="xs:float" />
+                    <xs:element minOccurs="0" name="payment" type="xs:float" />
+                    <xs:element minOccurs="0" name="cost" type="xs:float" />
+                    <xs:element minOccurs="0" name="width" type="xs:float" />
+                    <xs:element minOccurs="0" name="height" type="xs:float" />
+                    <xs:element minOccurs="0" name="length" type="xs:float" />
+                    <xs:element minOccurs="0" name="carrierConstraints" type="tns:carrierConstraintsType" />
+                    <xs:element minOccurs="0" name="documents" type="xs:boolean" />
+                    <xs:element minOccurs="0" name="docsForRiskyCargo" type="xs:boolean" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="calculateShippingCostResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:deliveryTree" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryTree">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="node" type="tns:deliveryTreeItem" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryTreeItem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="deliveryType" type="tns:deliveryTypeContainer" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="deliveryRate" type="tns:deliveryRateContainer" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryTypeContainer">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="description" type="xs:string" />
+                    <xs:element minOccurs="0" name="summary" type="xs:string" />
+                    <xs:element minOccurs="0" name="minimalCost" type="xs:float" />
+                    <xs:element minOccurs="0" name="maximalCost" type="xs:float" />
+                    <xs:element minOccurs="0" name="minPeriod" type="xs:int" />
+                    <xs:element minOccurs="0" name="maxPeriod" type="xs:int" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="postType" type="tns:postType" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryRateContainer">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="deliveryMethod" type="tns:deliveryMethodContainer" />
+                    <xs:element minOccurs="0" name="quote" type="tns:quote" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryMethodContainer">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="id" type="xs:string" />
+                    <xs:element minOccurs="0" name="description" type="xs:string" />
+                    <xs:element minOccurs="0" name="postType" type="tns:postType" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="quote">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type_id" type="xs:int" />
+                    <xs:element minOccurs="0" name="available" type="xs:boolean" />
+                    <xs:element minOccurs="0" name="name" type="xs:string" />
+                    <xs:element minOccurs="0" name="cost" type="xs:float" />
+                    <xs:element minOccurs="0" name="includedExtraCost" type="xs:float" />
+                    <xs:element minOccurs="0" name="minperiod" type="xs:int" />
+                    <xs:element minOccurs="0" name="maxperiod" type="xs:int" />
+                    <xs:element minOccurs="0" name="worktimes" type="xs:string" />
+                    <xs:element minOccurs="0" name="address" type="xs:string" />
+                    <xs:element minOccurs="0" name="remark" type="xs:string" />
+                    <xs:element minOccurs="0" name="point_id" type="xs:string" />
+                    <xs:element minOccurs="0" name="gps_lat" type="xs:float" />
+                    <xs:element minOccurs="0" name="gps_long" type="xs:float" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="photos" type="xs:string" />
+                    <xs:element minOccurs="0" name="interval_start" type="xs:int" />
+                    <xs:element minOccurs="0" name="interval_end" type="xs:int" />
+                    <xs:element minOccurs="0" name="interval_min" type="xs:int" />
+                    <xs:element minOccurs="0" name="volumeWeight" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deliveryRateContainerList">
+                <xs:complexContent>
+                    <xs:extension base="tns:arrayList">
+                        <xs:sequence />
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="arrayList">
+                <xs:complexContent>
+                    <xs:extension base="tns:abstractList">
+                        <xs:sequence />
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="abstractList">
+                <xs:complexContent>
+                    <xs:extension base="tns:abstractCollection">
+                        <xs:sequence />
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="abstractCollection">
+                <xs:sequence />
+            </xs:complexType>
+            <xs:complexType name="deleteConsignee">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="consigneeId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="deleteConsigneeResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="calculateDimensions">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="request" type="tns:calculateDimensionsRequest" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="calculateDimensionsRequest">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="incomingDimention" type="tns:incomingDimensions" />
+                    <xs:element name="sealType" type="tns:sealType" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="incomingDimensions">
+                <xs:sequence>
+                    <xs:element form="qualified" name="width" type="xs:float" />
+                    <xs:element form="qualified" name="height" type="xs:float" />
+                    <xs:element form="qualified" name="length" type="xs:float" />
+                    <xs:element form="qualified" name="weight" type="xs:float" />
+                    <xs:element form="qualified" name="count" type="xs:int" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="calculateDimensionsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:packingDimensions" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="packingDimensions">
+                <xs:sequence>
+                    <xs:element form="qualified" name="width" type="xs:float" />
+                    <xs:element form="qualified" name="height" type="xs:float" />
+                    <xs:element form="qualified" name="length" type="xs:float" />
+                    <xs:element form="qualified" name="weight" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createConsignee">
+                <xs:sequence>
+                    <xs:element name="request" type="tns:createConsigneeRequest" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createConsigneeRequest">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element ref="tns:consignee" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createConsigneeResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="consigneeId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="generateMarkers">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                    <xs:element name="count" type="xs:int" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="generateMarkersResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="markerCount" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createProduct">
+                <xs:sequence>
+                    <xs:element name="request" type="tns:createProductRequest" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createProductRequest">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element ref="tns:product" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="createProductResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="productId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getMutualSettlements">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="shipperId" type="xs:string" />
+                    <xs:element name="first" type="xs:int" />
+                    <xs:element name="pageSize" type="xs:int" />
+                    <xs:element name="startDate" type="xs:string" />
+                    <xs:element name="endDate" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getMutualSettlementsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="mutualSettlements" type="tns:mutualSettlement" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlement">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="shipperName" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="balance" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="locked" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="available" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="details">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                    <xs:element ref="tns:mutualSettlementDetailCalcCostShipping" />
+                                    <xs:element ref="tns:mutualSettlementDetailCashFlow" />
+                                    <xs:element ref="tns:mutualSettlementDetailClientPayment" />
+                                    <xs:element ref="tns:mutualSettlementDetailPostReturnRegistry" />
+                                    <xs:element ref="tns:mutualSettlementDetailRouteList" />
+                                    <xs:element ref="tns:mutualSettlementDetailTrackNumberPayment" />
+                                    <xs:element ref="tns:mutualSettlementDetailServiceRegistration" />
+                                    <xs:element ref="tns:mutualSettlementDetailAcceptanceRegistry" />
+                                    <xs:element ref="tns:mutualSettlementDetailAdditionalChargeFare" />
+                                    <xs:element ref="tns:mutualSettlementDetailOutgoingRequestToCarrier" />
+                                    <xs:element ref="tns:mutualSettlementDetailSMSInformation" />
+                                    <xs:element ref="tns:mutualSettlementDetailBuyerGoodsReturn" />
+                                    <xs:element ref="tns:mutualSettlementDetailProductsPackaging" />
+                                    <xs:element ref="tns:mutualSettlementDetailAdjustmentWriteRegisters" />
+                                    <xs:element ref="tns:mutualSettlementDetailSafeCustody" />
+                                    <xs:element ref="tns:mutualSettlementDetailSafeCustodyCalculation" />
+                                    <xs:element ref="tns:mutualSettlementDetailRegisterStorage" />
+                                </xs:choice>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailCalcCostShipping">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailCalcCostShippingContent" />
+                            <xs:element form="qualified" minOccurs="0" name="items">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailCalcCostShippingItem" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetail">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="date" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="balance" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailCalcCostShippingContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderExternalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderDatetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="deliveryMethod" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="postType" type="tns:postType" />
+                    <xs:element form="qualified" minOccurs="0" name="postWeight" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="postVolumeWeight" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="postLength" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="postWidth" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="postHeight" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="deliveryCost" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="tarifWeight" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="tarifInsurance" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="tarifAvia" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailCalcCostShippingItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailCashFlow">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailCashFlowContent" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailCashFlowContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="comment" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="type" type="tns:cashFlowType" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailClientPayment">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailClientPaymentContent" />
+                            <xs:element form="qualified" minOccurs="0" name="items">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailClientPaymentItem" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailClientPaymentContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailClientPaymentItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="orderNumber" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="orderExternalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderDate" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="withheld" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailPostReturnRegistry">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailPostReturnRegistryContent" />
+                            <xs:element form="qualified" minOccurs="0" name="orders">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="order" type="tns:mutualSettlementDetailPostReturnRegistryOrder" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailPostReturnRegistryContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailPostReturnRegistryOrder">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="externalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="items">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailPostReturnRegistryItem" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailPostReturnRegistryItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="period" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailRouteList">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailRouteListContent" />
+                            <xs:element form="qualified" minOccurs="0" name="documents">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                            <xs:element ref="tns:mutualSettlementDetailRouteListOrder" />
+                                            <xs:element ref="tns:mutualSettlementDetailRouteListPickupRequest" />
+                                        </xs:choice>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailRouteListContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailRouteListOrder">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetailRouteListDocument">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                            <xs:element form="qualified" minOccurs="0" name="externalNumber" type="xs:string" />
+                            <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType abstract="true" name="mutualSettlementDetailRouteListDocument">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="items">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailRouteListItem" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailRouteListItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="period" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailRouteListPickupRequest">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetailRouteListDocument">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                            <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailTrackNumberPayment">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailTrackNumberPaymentContent" />
+                            <xs:element form="qualified" minOccurs="0" name="orders">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="order" type="tns:mutualSettlementDetailTrackNumberPaymentOrder" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailTrackNumberPaymentContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailTrackNumberPaymentOrder">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="externalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="items">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailTrackNumberPaymentItem" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailTrackNumberPaymentItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="period" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="trackNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailServiceRegistration">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailServiceRegistrationContent" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailServiceRegistrationContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="comment" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAcceptanceRegistry">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailAcceptanceRegistryContent" />
+                            <xs:element form="qualified" minOccurs="0" name="pickupRequests">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="pickupRequests" type="tns:mutualSettlementDetailAcceptanceRegistryPickupRequest" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAcceptanceRegistryContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAcceptanceRegistryPickupRequest">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="numberOfAcceptedOrders" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="items">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailAcceptanceRegistryItem" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAcceptanceRegistryItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="period" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAdditionalChargeFare">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailAdditionalChargeFareContent" />
+                            <xs:element form="qualified" minOccurs="0" name="orders">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="order" type="tns:mutualSettlementDetailAdditionalChargeFareOrder" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAdditionalChargeFareContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAdditionalChargeFareOrder">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="externalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="items">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailAdditionalChargeFareItem" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAdditionalChargeFareItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="period" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailOutgoingRequestToCarrier">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailOutgoingRequestToCarrierContent" />
+                            <xs:element form="qualified" minOccurs="0" name="orders">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="order" type="tns:mutualSettlementDetailOutgoingRequestToCarrierOrder" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailOutgoingRequestToCarrierContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailOutgoingRequestToCarrierOrder">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="externalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="items">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailOutgoingRequestToCarrierItem" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailOutgoingRequestToCarrierItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="period" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailSMSInformation">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailSMSInformationContent" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailSMSInformationContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="sentDatetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="type" type="tns:smsMessageType" />
+                    <xs:element form="qualified" minOccurs="0" name="orderNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderExternalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderDatetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailBuyerGoodsReturn">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailBuyerGoodsReturnContent" />
+                            <xs:element form="qualified" minOccurs="0" name="items">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailBuyerGoodsReturnItem" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailBuyerGoodsReturnContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderExternalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderDatetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailBuyerGoodsReturnItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailProductsPackaging">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailProductsPackagingContent" />
+                            <xs:element form="qualified" minOccurs="0" name="items">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailProductsPackagingItem" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailProductsPackagingContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderExternalNumber" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="orderDatetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="store" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailProductsPackagingItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAdjustmentWriteRegisters">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailAdjustmentWriteRegistersContent" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailAdjustmentWriteRegistersContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailSafeCustody">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailSafeCustodyContent" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailSafeCustodyContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailSafeCustodyCalculation">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailSafeCustodyCalculationContent" />
+                            <xs:element form="qualified" minOccurs="0" name="items">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="item" type="tns:mutualSettlementDetailSafeCustodyCalculationItem" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailSafeCustodyCalculationContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="periodStart" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="periodEnd" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="totalSum" type="xs:float" />
+                    <xs:element form="qualified" minOccurs="0" name="computations">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="computation" type="tns:mutualSettlementDetailSafeCustodyCalculationComputation" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailSafeCustodyCalculationComputation">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="period" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="basis" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailSafeCustodyCalculationItem">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="service" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="sum" type="xs:float" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailRegisterStorage">
+                <xs:complexContent>
+                    <xs:extension base="tns:mutualSettlementDetail">
+                        <xs:sequence>
+                            <xs:element form="qualified" minOccurs="0" name="content" type="tns:mutualSettlementDetailRegisterStorageContent" />
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="mutualSettlementDetailRegisterStorageContent">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="number" type="xs:int" />
+                    <xs:element form="qualified" minOccurs="0" name="datetime" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getProductRemnants">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getProductRemnantsResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="productRemnants" type="tns:productRemnantsOnStoreList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productRemnantsOnStoreList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productRemnantOnStore" type="tns:productRemnantsOnStore" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productRemnantsOnStore">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="storeName" type="xs:string" />
+                    <xs:element minOccurs="0" name="storeId" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="productRemnats" type="tns:productRemnants" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="productRemnants">
+                <xs:sequence>
+                    <xs:element form="qualified" minOccurs="0" name="productId" type="xs:string" />
+                    <xs:element form="qualified" minOccurs="0" name="productName" type="xs:string" />
+                    <xs:element form="qualified" name="nStored" type="xs:int" />
+                    <xs:element form="qualified" name="nReserved" type="xs:int" />
+                    <xs:element form="qualified" name="nTransferred" type="xs:int" />
+                    <xs:element form="qualified" name="nReceived" type="xs:int" />
+                    <xs:element form="qualified" name="nSupplied" type="xs:int" />
+                    <xs:element form="qualified" name="nDiscard" type="xs:int" />
+                    <xs:element form="qualified" name="nAvailable" type="xs:int" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getProduct">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="productId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getProductResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:product" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchShippers">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element name="first" type="xs:int" />
+                    <xs:element name="pageSize" type="xs:int" />
+                    <xs:element minOccurs="0" name="sortField" type="xs:string" />
+                    <xs:element name="ascending" type="xs:boolean" />
+                    <xs:element name="contractorId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchShippersResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:shipperList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="shipperList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:shipper" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchOrdersCount">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element minOccurs="0" name="startDate" type="xs:string" />
+                    <xs:element minOccurs="0" name="endDate" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="status" type="tns:status" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchOrdersCountResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="orderCount" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchConsigneesCount">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchConsigneesCountResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="consigneeCount" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getPickupPoint">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="pickupPointCode" type="xs:string" />
+                    <xs:element name="deliveryMethodId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getPickupPointResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:pickupPoint" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchMarkersCount">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element minOccurs="0" name="searchTerm" type="xs:string" />
+                    <xs:element name="contractorId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="searchMarkersCountResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="markerCount" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getOrder">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                    <xs:element name="orderId" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getOrderResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:order" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getCountries">
+                <xs:sequence>
+                    <xs:element name="apiKey" type="xs:string" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getCountriesResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" ref="tns:countryList" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="countryList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:country" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="sealType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="NOT_REQUIRED" />
+                    <xs:enumeration value="FILLER" />
+                    <xs:enumeration value="BUBBLE_WRAP" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="paymentMethod">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="CASH" />
+                    <xs:enumeration value="ONLINE" />
+                    <xs:enumeration value="CARD" />
+                    <xs:enumeration value="RECIPIENT" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="productType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="GOODS" />
+                    <xs:enumeration value="SERVICE" />
+                    <xs:enumeration value="DOCUMENTS" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="vatRate">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="PCT_18" />
+                    <xs:enumeration value="PCT_10" />
+                    <xs:enumeration value="PCT_0" />
+                    <xs:enumeration value="NO_VAT" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="status">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="NEW" />
+                    <xs:enumeration value="CONFIRMED" />
+                    <xs:enumeration value="IN_COMPLETION" />
+                    <xs:enumeration value="READY_FOR_SHIPMENT" />
+                    <xs:enumeration value="OBTAINED_IN_PROCESSING" />
+                    <xs:enumeration value="PACKED" />
+                    <xs:enumeration value="DELIVERED_TO_THECARRIER" />
+                    <xs:enumeration value="DELIVERED" />
+                    <xs:enumeration value="RETURNED_TO_THE_PROCESSING_CENTER" />
+                    <xs:enumeration value="TRANSFERRED_FOR_RETURN" />
+                    <xs:enumeration value="RETURNED_TO_THE_SENDER" />
+                    <xs:enumeration value="PARTIAL_DELIVERY" />
+                    <xs:enumeration value="CANCELLED" />
+                    <xs:enumeration value="REFUSED" />
+                    <xs:enumeration value="PAID" />
+                    <xs:enumeration value="DELIVERING_TO_THE_SHOWROOM" />
+                    <xs:enumeration value="LOCATED_IN_THE_SHOWROOM" />
+                    <xs:enumeration value="AWAITING_DELIVERY" />
+                    <xs:enumeration value="DELIVERING" />
+                    <xs:enumeration value="AT_COURIER" />
+                    <xs:enumeration value="AT_CLIENT" />
+                    <xs:enumeration value="LABELING" />
+                    <xs:enumeration value="READY_TO_LABELING" />
+                    <xs:enumeration value="READY_TO_SHIP" />
+                    <xs:enumeration value="LOCATION_PROBLEM" />
+                    <xs:enumeration value="WEIGHT_PROBLEM" />
+                    <xs:enumeration value="DIMENSIONS_PROBLEM" />
+                    <xs:enumeration value="DELIVERY_POSTPONED" />
+                    <xs:enumeration value="PARTIAL_WAIVER" />
+                    <xs:enumeration value="RETURN_EXECUTED" />
+                    <xs:enumeration value="ON_RETURNING_AT_COURIER" />
+                    <xs:enumeration value="REQUIRES_FULL_RETURN" />
+                    <xs:enumeration value="REQUIRES_PARTIAL_RETURN" />
+                    <xs:enumeration value="REQUIRES_POSTPONEMENT" />
+                    <xs:enumeration value="ASSEMBLING" />
+                    <xs:enumeration value="COLLECTED" />
+                    <xs:enumeration value="COMPLETING" />
+                    <xs:enumeration value="PARTIAL_ASSEMBLY" />
+                    <xs:enumeration value="POSTED_IN_SEARCH" />
+                    <xs:enumeration value="PHONE_CALL_FAILED_1_TIME" />
+                    <xs:enumeration value="PHONE_CALL_FAILED_2_TIMES" />
+                    <xs:enumeration value="PHONE_CALL_FAILED_3_TIMES" />
+                    <xs:enumeration value="LIMITED_COD_ACCEPTANCE" />
+                    <xs:enumeration value="LIMITED_DELIVERY" />
+                    <xs:enumeration value="DELIVERY_ON_ANOTHER_ORDER" />
+                    <xs:enumeration value="CONTROL_OF_RETURN" />
+                    <xs:enumeration value="POST_STORAGE" />
+                    <xs:enumeration value="RETURN_STORAGE" />
+                    <xs:enumeration value="ARRIVED_AT_DELIVERY_PLACE" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="productFilter">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="FOLDERS" />
+                    <xs:enumeration value="PRODUCTS" />
+                    <xs:enumeration value="PRODUCTS_ON_STORE" />
+                    <xs:enumeration value="SERVICES" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="entityType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="LEGAL" />
+                    <xs:enumeration value="INDIVIDUAL" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="carrierConstraintsType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="ALL" />
+                    <xs:enumeration value="ALL_EXCEPT_TERMS_VIOLATION" />
+                    <xs:enumeration value="MINIMAL_COST" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="postType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="UNKNOWN" />
+                    <xs:enumeration value="BOOKPOST" />
+                    <xs:enumeration value="BOXBERRY" />
+                    <xs:enumeration value="CDEK" />
+                    <xs:enumeration value="DHL" />
+                    <xs:enumeration value="DPD" />
+                    <xs:enumeration value="EMS" />
+                    <xs:enumeration value="FIRSTCLASS" />
+                    <xs:enumeration value="FORBOOKPOST" />
+                    <xs:enumeration value="FORLETTER" />
+                    <xs:enumeration value="FORPARCEL" />
+                    <xs:enumeration value="HERMES" />
+                    <xs:enumeration value="IML" />
+                    <xs:enumeration value="LETTER" />
+                    <xs:enumeration value="LOGIBOX" />
+                    <xs:enumeration value="PACKAGE" />
+                    <xs:enumeration value="PARCEL" />
+                    <xs:enumeration value="PETITPAQUET" />
+                    <xs:enumeration value="PICKPOINT" />
+                    <xs:enumeration value="PONYEXPRESS" />
+                    <xs:enumeration value="QIWIPOST" />
+                    <xs:enumeration value="SPSR" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="cashFlowType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="CASH" />
+                    <xs:enumeration value="CASHLESS" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType name="smsMessageType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="ARRIVED_TO_DELIVERY_PLACE" />
+                    <xs:enumeration value="TRACK_NUMBER_BOUND" />
+                    <xs:enumeration value="AT_COURIER" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="searchMarkers">
+        <wsdl:part element="tns:searchMarkers" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchConsignees">
+        <wsdl:part element="tns:searchConsignees" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getContractorsResponse">
+        <wsdl:part element="tns:getContractorsResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getConsignee">
+        <wsdl:part element="tns:getConsignee" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteShipperResponse">
+        <wsdl:part element="tns:deleteShipperResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getProductResponse">
+        <wsdl:part element="tns:getProductResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteOrder">
+        <wsdl:part element="tns:deleteOrder" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getOrderResponse">
+        <wsdl:part element="tns:getOrderResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getConsigneeResponse">
+        <wsdl:part element="tns:getConsigneeResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchOrdersResponse">
+        <wsdl:part element="tns:searchOrdersResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="calculateDimensionsResponse">
+        <wsdl:part element="tns:calculateDimensionsResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getVersionsResponse">
+        <wsdl:part element="tns:getVersionsResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchShippersCount">
+        <wsdl:part element="tns:searchShippersCount" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchProductsCount">
+        <wsdl:part element="tns:searchProductsCount" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchProductsCountResponse">
+        <wsdl:part element="tns:searchProductsCountResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getPickupPointResponse">
+        <wsdl:part element="tns:getPickupPointResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="calculateShippingCost">
+        <wsdl:part element="tns:calculateShippingCost" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchProductsResponse">
+        <wsdl:part element="tns:searchProductsResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteConsignee">
+        <wsdl:part element="tns:deleteConsignee" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createConsignee">
+        <wsdl:part element="tns:createConsignee" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getMutualSettlements">
+        <wsdl:part element="tns:getMutualSettlements" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createOrderResponse">
+        <wsdl:part element="tns:createOrderResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteOrderResponse">
+        <wsdl:part element="tns:deleteOrderResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getProduct">
+        <wsdl:part element="tns:getProduct" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchShippersResponse">
+        <wsdl:part element="tns:searchShippersResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteConsigneeResponse">
+        <wsdl:part element="tns:deleteConsigneeResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchMarkersCountResponse">
+        <wsdl:part element="tns:searchMarkersCountResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchOrdersCount">
+        <wsdl:part element="tns:searchOrdersCount" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchMarkersResponse">
+        <wsdl:part element="tns:searchMarkersResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchShippersCountResponse">
+        <wsdl:part element="tns:searchShippersCountResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getOrder">
+        <wsdl:part element="tns:getOrder" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="generateMarkersResponse">
+        <wsdl:part element="tns:generateMarkersResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getCountries">
+        <wsdl:part element="tns:getCountries" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createProductResponse">
+        <wsdl:part element="tns:createProductResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createShipper">
+        <wsdl:part element="tns:createShipper" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getTrackingsResponse">
+        <wsdl:part element="tns:getTrackingsResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getShipper">
+        <wsdl:part element="tns:getShipper" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getProductRemnantsResponse">
+        <wsdl:part element="tns:getProductRemnantsResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createOrder">
+        <wsdl:part element="tns:createOrder" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchConsigneesCountResponse">
+        <wsdl:part element="tns:searchConsigneesCountResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteProduct">
+        <wsdl:part element="tns:deleteProduct" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getTrackHistoryResponse">
+        <wsdl:part element="tns:getTrackHistoryResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getShipperResponse">
+        <wsdl:part element="tns:getShipperResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getVersions">
+        <wsdl:part element="tns:getVersions" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchOrders">
+        <wsdl:part element="tns:searchOrders" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchProducts">
+        <wsdl:part element="tns:searchProducts" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteShipper">
+        <wsdl:part element="tns:deleteShipper" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getTrackHistory">
+        <wsdl:part element="tns:getTrackHistory" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getCountriesResponse">
+        <wsdl:part element="tns:getCountriesResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getTrackings">
+        <wsdl:part element="tns:getTrackings" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchOrdersCountResponse">
+        <wsdl:part element="tns:searchOrdersCountResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getContractors">
+        <wsdl:part element="tns:getContractors" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createConsigneeResponse">
+        <wsdl:part element="tns:createConsigneeResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getMutualSettlementsResponse">
+        <wsdl:part element="tns:getMutualSettlementsResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchConsigneesResponse">
+        <wsdl:part element="tns:searchConsigneesResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="calculateDimensions">
+        <wsdl:part element="tns:calculateDimensions" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="generateMarkers">
+        <wsdl:part element="tns:generateMarkers" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createShipperResponse">
+        <wsdl:part element="tns:createShipperResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createProduct">
+        <wsdl:part element="tns:createProduct" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getProductRemnants">
+        <wsdl:part element="tns:getProductRemnants" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchShippers">
+        <wsdl:part element="tns:searchShippers" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchConsigneesCount">
+        <wsdl:part element="tns:searchConsigneesCount" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getPickupPoint">
+        <wsdl:part element="tns:getPickupPoint" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="searchMarkersCount">
+        <wsdl:part element="tns:searchMarkersCount" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="calculateShippingCostResponse">
+        <wsdl:part element="tns:calculateShippingCostResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteProductResponse">
+        <wsdl:part element="tns:deleteProductResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="DeliveryService">
+        <wsdl:operation name="createShipper">
+            <wsdl:input message="tns:createShipper" name="createShipper">
+            </wsdl:input>
+            <wsdl:output message="tns:createShipperResponse" name="createShipperResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchMarkers">
+            <wsdl:input message="tns:searchMarkers" name="searchMarkers">
+            </wsdl:input>
+            <wsdl:output message="tns:searchMarkersResponse" name="searchMarkersResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchConsignees">
+            <wsdl:input message="tns:searchConsignees" name="searchConsignees">
+            </wsdl:input>
+            <wsdl:output message="tns:searchConsigneesResponse" name="searchConsigneesResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getShipper">
+            <wsdl:input message="tns:getShipper" name="getShipper">
+            </wsdl:input>
+            <wsdl:output message="tns:getShipperResponse" name="getShipperResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConsignee">
+            <wsdl:input message="tns:getConsignee" name="getConsignee">
+            </wsdl:input>
+            <wsdl:output message="tns:getConsigneeResponse" name="getConsigneeResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createOrder">
+            <wsdl:input message="tns:createOrder" name="createOrder">
+            </wsdl:input>
+            <wsdl:output message="tns:createOrderResponse" name="createOrderResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteProduct">
+            <wsdl:input message="tns:deleteProduct" name="deleteProduct">
+            </wsdl:input>
+            <wsdl:output message="tns:deleteProductResponse" name="deleteProductResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrder">
+            <wsdl:input message="tns:deleteOrder" name="deleteOrder">
+            </wsdl:input>
+            <wsdl:output message="tns:deleteOrderResponse" name="deleteOrderResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVersions">
+            <wsdl:input message="tns:getVersions" name="getVersions">
+            </wsdl:input>
+            <wsdl:output message="tns:getVersionsResponse" name="getVersionsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchOrders">
+            <wsdl:input message="tns:searchOrders" name="searchOrders">
+            </wsdl:input>
+            <wsdl:output message="tns:searchOrdersResponse" name="searchOrdersResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchProducts">
+            <wsdl:input message="tns:searchProducts" name="searchProducts">
+            </wsdl:input>
+            <wsdl:output message="tns:searchProductsResponse" name="searchProductsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteShipper">
+            <wsdl:input message="tns:deleteShipper" name="deleteShipper">
+            </wsdl:input>
+            <wsdl:output message="tns:deleteShipperResponse" name="deleteShipperResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackHistory">
+            <wsdl:input message="tns:getTrackHistory" name="getTrackHistory">
+            </wsdl:input>
+            <wsdl:output message="tns:getTrackHistoryResponse" name="getTrackHistoryResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchShippersCount">
+            <wsdl:input message="tns:searchShippersCount" name="searchShippersCount">
+            </wsdl:input>
+            <wsdl:output message="tns:searchShippersCountResponse" name="searchShippersCountResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchProductsCount">
+            <wsdl:input message="tns:searchProductsCount" name="searchProductsCount">
+            </wsdl:input>
+            <wsdl:output message="tns:searchProductsCountResponse" name="searchProductsCountResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackings">
+            <wsdl:input message="tns:getTrackings" name="getTrackings">
+            </wsdl:input>
+            <wsdl:output message="tns:getTrackingsResponse" name="getTrackingsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getContractors">
+            <wsdl:input message="tns:getContractors" name="getContractors">
+            </wsdl:input>
+            <wsdl:output message="tns:getContractorsResponse" name="getContractorsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="calculateShippingCost">
+            <wsdl:input message="tns:calculateShippingCost" name="calculateShippingCost">
+            </wsdl:input>
+            <wsdl:output message="tns:calculateShippingCostResponse" name="calculateShippingCostResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteConsignee">
+            <wsdl:input message="tns:deleteConsignee" name="deleteConsignee">
+            </wsdl:input>
+            <wsdl:output message="tns:deleteConsigneeResponse" name="deleteConsigneeResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="calculateDimensions">
+            <wsdl:input message="tns:calculateDimensions" name="calculateDimensions">
+            </wsdl:input>
+            <wsdl:output message="tns:calculateDimensionsResponse" name="calculateDimensionsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createConsignee">
+            <wsdl:input message="tns:createConsignee" name="createConsignee">
+            </wsdl:input>
+            <wsdl:output message="tns:createConsigneeResponse" name="createConsigneeResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="generateMarkers">
+            <wsdl:input message="tns:generateMarkers" name="generateMarkers">
+            </wsdl:input>
+            <wsdl:output message="tns:generateMarkersResponse" name="generateMarkersResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createProduct">
+            <wsdl:input message="tns:createProduct" name="createProduct">
+            </wsdl:input>
+            <wsdl:output message="tns:createProductResponse" name="createProductResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMutualSettlements">
+            <wsdl:input message="tns:getMutualSettlements" name="getMutualSettlements">
+            </wsdl:input>
+            <wsdl:output message="tns:getMutualSettlementsResponse" name="getMutualSettlementsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductRemnants">
+            <wsdl:input message="tns:getProductRemnants" name="getProductRemnants">
+            </wsdl:input>
+            <wsdl:output message="tns:getProductRemnantsResponse" name="getProductRemnantsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProduct">
+            <wsdl:input message="tns:getProduct" name="getProduct">
+            </wsdl:input>
+            <wsdl:output message="tns:getProductResponse" name="getProductResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchShippers">
+            <wsdl:input message="tns:searchShippers" name="searchShippers">
+            </wsdl:input>
+            <wsdl:output message="tns:searchShippersResponse" name="searchShippersResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchOrdersCount">
+            <wsdl:input message="tns:searchOrdersCount" name="searchOrdersCount">
+            </wsdl:input>
+            <wsdl:output message="tns:searchOrdersCountResponse" name="searchOrdersCountResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchConsigneesCount">
+            <wsdl:input message="tns:searchConsigneesCount" name="searchConsigneesCount">
+            </wsdl:input>
+            <wsdl:output message="tns:searchConsigneesCountResponse" name="searchConsigneesCountResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPickupPoint">
+            <wsdl:input message="tns:getPickupPoint" name="getPickupPoint">
+            </wsdl:input>
+            <wsdl:output message="tns:getPickupPointResponse" name="getPickupPointResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchMarkersCount">
+            <wsdl:input message="tns:searchMarkersCount" name="searchMarkersCount">
+            </wsdl:input>
+            <wsdl:output message="tns:searchMarkersCountResponse" name="searchMarkersCountResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOrder">
+            <wsdl:input message="tns:getOrder" name="getOrder">
+            </wsdl:input>
+            <wsdl:output message="tns:getOrderResponse" name="getOrderResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCountries">
+            <wsdl:input message="tns:getCountries" name="getCountries">
+            </wsdl:input>
+            <wsdl:output message="tns:getCountriesResponse" name="getCountriesResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="DeliveryServiceSoapBinding" type="tns:DeliveryService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="createShipper">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="createShipper">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="createShipperResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchMarkers">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchMarkers">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchMarkersResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchConsignees">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchConsignees">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchConsigneesResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getShipper">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getShipper">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getShipperResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConsignee">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getConsignee">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getConsigneeResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createOrder">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="createOrder">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="createOrderResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteProduct">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="deleteProduct">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="deleteProductResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrder">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="deleteOrder">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="deleteOrderResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVersions">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getVersions">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getVersionsResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchOrders">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchOrders">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchOrdersResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchProducts">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchProducts">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchProductsResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteShipper">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="deleteShipper">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="deleteShipperResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackHistory">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getTrackHistory">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getTrackHistoryResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchShippersCount">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchShippersCount">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchShippersCountResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchProductsCount">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchProductsCount">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchProductsCountResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTrackings">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getTrackings">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getTrackingsResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getContractors">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getContractors">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getContractorsResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="calculateShippingCost">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="calculateShippingCost">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="calculateShippingCostResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteConsignee">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="deleteConsignee">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="deleteConsigneeResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="calculateDimensions">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="calculateDimensions">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="calculateDimensionsResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createConsignee">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="createConsignee">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="createConsigneeResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="generateMarkers">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="generateMarkers">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="generateMarkersResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createProduct">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="createProduct">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="createProductResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMutualSettlements">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getMutualSettlements">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getMutualSettlementsResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProductRemnants">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getProductRemnants">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getProductRemnantsResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getProduct">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getProduct">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getProductResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchShippers">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchShippers">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchShippersResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchOrdersCount">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchOrdersCount">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchOrdersCountResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchConsigneesCount">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchConsigneesCount">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchConsigneesCountResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPickupPoint">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getPickupPoint">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getPickupPointResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="searchMarkersCount">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="searchMarkersCount">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="searchMarkersCountResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOrder">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getOrder">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getOrderResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCountries">
+            <soap:operation soapAction="" style="document" />
+            <wsdl:input name="getCountries">
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output name="getCountriesResponse">
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="DeliveryService">
+        <wsdl:port binding="tns:DeliveryServiceSoapBinding" name="DeliveryServiceImplPort">
+            <soap:address location="http://client.aplix.ru/pa/services/soap/delivery" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

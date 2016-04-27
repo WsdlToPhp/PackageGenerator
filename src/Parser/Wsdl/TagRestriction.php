@@ -38,9 +38,13 @@ class TagRestriction extends AbstractTagParser
         if ($parent instanceof Tag) {
             $model = $this->getModel($parent);
             if ($model instanceof Struct) {
-                $this->getGenerator()->getStructs()->addVirtualStruct($this->getGenerator(), $parent->getAttributeName());
-                $this->parseRestrictionAttributes($parent, $model, $restriction);
-                $this->parseRestrictionChildren($parent, $restriction);
+                $this
+                    ->getGenerator()
+                        ->getStructs()
+                            ->addVirtualStruct($this->getGenerator(), $parent->getAttributeName());
+                $this
+                    ->parseRestrictionAttributes($parent, $model, $restriction)
+                    ->parseRestrictionChildren($parent, $restriction);
             }
         }
     }
@@ -48,6 +52,7 @@ class TagRestriction extends AbstractTagParser
      * @param Tag $parent
      * @param Struct $struct
      * @param Restriction $restriction
+     * @return TagRestriction
      */
     private function parseRestrictionAttributes(Tag $parent, Struct $struct, Restriction $restriction)
     {
@@ -56,11 +61,13 @@ class TagRestriction extends AbstractTagParser
                 $this->parseRestrictionAttribute($parent, $struct, $attribute);
             }
         }
+        return $this;
     }
     /**
      * @param Tag $parent
      * @param Struct $struct
      * @param AttributeHandler $attribute
+     * @return TagRestriction
      */
     private function parseRestrictionAttribute(Tag $parent, Struct $struct, AttributeHandler $attribute)
     {
@@ -69,10 +76,12 @@ class TagRestriction extends AbstractTagParser
         } else {
             $struct->addMeta($attribute->getName(), $attribute->getValue(true));
         }
+        return $this;
     }
     /**
      * @param Tag $parent
      * @param Restriction $restriction
+     * @return TagRestriction
      */
     private function parseRestrictionChildren(Tag $parent, Restriction $restriction)
     {
@@ -81,15 +90,35 @@ class TagRestriction extends AbstractTagParser
                 $this->parseRestrictionChild($parent, $child);
             }
         }
+        return $this;
     }
     /**
      * @param Tag $tag
      * @param Tag $child
+     * @return TagRestriction
      */
     private function parseRestrictionChild(Tag $tag, Tag $child)
     {
         if ($child->hasAttributeValue() && ($model = $this->getModel($tag)) instanceof Struct) {
             $model->addMeta($child->getName(), $child->getValueAttributeValue(true));
+        } else {
+            foreach ($child->getAttributes() as $attribute) {
+                $this->parseRestrictionChildAttribute($tag, $child, $attribute);
+            }
         }
+        return $this;
+    }
+    /**
+     * @param Tag $tag
+     * @param Tag $child
+     * @param AttributeHandler $attribute
+     * @return TagRestriction
+     */
+    private function parseRestrictionChildAttribute(Tag $tag, Tag $child, AttributeHandler $attribute)
+    {
+        if (strtolower($attribute->getName()) === 'arraytype' && ($model = $this->getModel($tag)) instanceof Struct) {
+            $model->setInheritance($attribute->getValue());
+        }
+        return $this;
     }
 }

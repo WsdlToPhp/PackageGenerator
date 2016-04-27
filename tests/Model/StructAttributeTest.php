@@ -20,4 +20,10 @@ class StructAttributeTest extends TestCase
         $this->assertEquals('name', $struct->getAttribute('name')->getUniqueName());
         $this->assertEquals('Name_1', $struct->getAttribute('Name')->getUniqueName());
     }
+    public function testGetReservedMethodsInstance()
+    {
+        $struct = StructTest::instance('Foo', true);
+        $struct->addAttribute('id', 'int');
+        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\StructReservedMethod', $struct->getAttribute('id')->getReservedMethodsInstance());
+    }
 }

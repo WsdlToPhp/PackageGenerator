@@ -1,8 +1,29 @@
 # CHANGELOG
 
+## 1.5.0
+- issue #50 - Support for Cyrillic alphabet
+    - From now, any unicode character should be handled and generated as it is as a PHP variable/parameter/method/class
+    - Read more at [regular expression for unicode](http://www.regular-expressions.info/unicode.html)
+- issue #48 - minOccurs=0 not works
+    - From now, any not required property that can be removed from request (minOccurs=0 and nillable=true) is unset on object instantiation
+- issue #49 - Use schema attribute's attributes to apply validation rule on generated properties
+    - From now, validation rules are automatically added to every setter so you're informed of an invalid value before sending the request which throws an [\InvalidArgumentException](http://php.net/manual/en/class.invalidargumentexception.php)
+    - If you do not want the validation rules to be added to the setters, set the option `validation` to `false` before generating the package
+- issue #52 - No autocomplete because of return type on a new line after @return in annotation
+    - Fixed thanks to [PhpGenerator issue 5](https://github.com/WsdlToPhp/PhpGenerator/issues/5)
+- issue #53 - Incorrect variable type
+    - This issue only affects struct properties that match "virtual" structs which are array
+    - **BC**: the array type attribute detection is now better (hopefully perfect) and can change attributes from simple type hiny to array type hint. This means that you now have to pass an array as parameter otherwise it will break
+- issue #54 - Naming. Class _Add and method _add_1/2/3... names. Need to minify reserved_keywords.yml
+	- **BC**: generated classes/methods may change after a new generation
+		- Classes are now not renamed if they don't use PHP reserved keywords (before, methods were used too to rename the class)
+		- Struct methods are now renamed only if they use Struct methods (one of [AbstractStructBase](https://github.com/WsdlToPhp/PackageBase/blob/develop/src/AbstractStructBase.php) methods)
+		- StructArray methods are now renamed only if they use Struct and StructArray methods (one of [AbstractStructArrayBase](https://github.com/WsdlToPhp/PackageBase/blob/develop/src/AbstractStructArrayBase.php) methods)
+		- Service methods are now renamed only if they use Service methods (one of [AbstractSoapClientBase](https://github.com/WsdlToPhp/PackageBase/blob/develop/src/AbstractSoapClientBase.php) methods)
+
 ## 1.4.3.1
 - issue #51 - Error while passing array parameter
-    - The main issue waht not an issue, the detected issue was an error on the SoapHeader type hint defined in the setSoapHeader* method's signature
+    - The main issue was not an issue, the detected issue was an error on the SoapHeader type hint defined in the setSoapHeader* method's signature
 
 ## 1.4.3
 - issue #45 - Reserved PHP-Keywords in Class Names

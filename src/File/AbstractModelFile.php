@@ -386,7 +386,7 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return StructModel|null
      */
-    protected function getModelFromStructAttribute(StructAttributeModel $attribute = null)
+    public function getModelFromStructAttribute(StructAttributeModel $attribute = null)
     {
         $model = null;
         $attribute = $this->getStructAttribute($attribute);
@@ -399,7 +399,7 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return StructModel|null
      */
-    protected function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null)
+    public function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null)
     {
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel && !$model->getIsRestriction()) {
@@ -412,7 +412,7 @@ abstract class AbstractModelFile extends AbstractFile
      * @param bool $namespaced
      * @return string
      */
-    protected function getStructAttributeType(StructAttributeModel $attribute = null, $namespaced = false)
+    public function getStructAttributeType(StructAttributeModel $attribute = null, $namespaced = false)
     {
         $attribute = $this->getStructAttribute($attribute);
         $inheritance = $attribute->getInheritance();
@@ -424,15 +424,17 @@ abstract class AbstractModelFile extends AbstractFile
         if (!empty($type) && ($struct = $this->getGenerator()->getStruct($type))) {
             $inheritance = $struct->getTopInheritance();
             if (!empty($inheritance)) {
-                $type = $inheritance;
+                $type = str_replace('[]', '', $inheritance);
             }
         }
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
-            if ($model->getIsRestriction() === true) {
+            if ($model->getIsRestriction()) {
                 $type = self::TYPE_STRING;
             } elseif ($model->getIsStruct()) {
                 $type = $model->getPackagedName($namespaced);
+            } elseif ($model->isArray() && ($inheritanceStruct = $model->getInheritanceStruct()) instanceof StructModel) {
+                $type = $inheritanceStruct->getPackagedName($namespaced);
             }
         }
         return $type;
@@ -480,7 +482,7 @@ abstract class AbstractModelFile extends AbstractFile
      * @param StructAttributeModel $attribute
      * @return string
      */
-    protected function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null)
+    public function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null)
     {
         $attribute = $this->getStructAttribute($attribute);
         $attributeType = $this->getStructAttributeType($attribute, true);

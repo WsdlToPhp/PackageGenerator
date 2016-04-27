@@ -47,6 +47,7 @@ class ApiAddRequest extends AbstractStructBase
     public function setAdGroups(array $adGroups = array())
     {
         foreach ($adGroups as $addRequestAdGroupsItem) {
+            // validation for constraint: itemType
             if (!$addRequestAdGroupsItem instanceof \Api\StructType\ApiAdGroupAddItem) {
                 throw new \InvalidArgumentException(sprintf('The AdGroups property can only contain items of \Api\StructType\ApiAdGroupAddItem, "%s" given', is_object($addRequestAdGroupsItem) ? get_class($addRequestAdGroupsItem) : gettype($addRequestAdGroupsItem)), __LINE__);
             }
@@ -62,6 +63,7 @@ class ApiAddRequest extends AbstractStructBase
      */
     public function addToAdGroups(\Api\StructType\ApiAdGroupAddItem $item)
     {
+        // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiAdGroupAddItem) {
             throw new \InvalidArgumentException(sprintf('The AdGroups property can only contain items of \Api\StructType\ApiAdGroupAddItem, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
         }

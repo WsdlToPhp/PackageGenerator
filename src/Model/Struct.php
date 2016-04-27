@@ -6,6 +6,8 @@ use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 
 /**
  * Class Struct stands for an available struct described in the WSDL
@@ -105,7 +107,7 @@ class Struct extends AbstractModel
      */
     public function isArray()
     {
-        return ($this->countOwnAttributes() === 1 && stripos($this->getName(), 'array') !== false);
+        return ((($this->getIsStruct() && $this->countOwnAttributes() === 1) || (!$this->getIsStruct() && $this->countOwnAttributes() <= 1)) && stripos($this->getName(), 'array') !== false);
     }
     /**
      * Returns the attributes of the struct and potentially from the parent class
@@ -333,7 +335,7 @@ class Struct extends AbstractModel
      */
     public function getInheritanceStruct()
     {
-        return $this->getGenerator()->getStruct($this->getInheritance());
+        return $this->getGenerator()->getStruct(str_replace('[]', '', $this->getInheritance()));
     }
     /**
      * @return Struct|null
@@ -361,5 +363,17 @@ class Struct extends AbstractModel
     {
         $inheritanceStruct = $this->getInheritanceStruct();
         return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->getIsStruct()) ? $inheritanceStruct->getMeta() : array());
+    }
+    /**
+     * @param $filename
+     * @return StructReservedMethod|StructArrayReservedMethod
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        $instance = StructReservedMethod::instance($filename);
+        if ($this->isArray()) {
+            $instance = StructArrayReservedMethod::instance($filename);
+        }
+        return $instance;
     }
 }

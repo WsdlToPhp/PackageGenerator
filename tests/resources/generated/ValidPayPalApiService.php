@@ -564,8 +564,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoMobileCheckoutPaymentReq
-     * $doMobileCheckoutPaymentRequest
+     * @param \Api\StructType\ApiDoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest
      * @return \Api\StructType\ApiDoMobileCheckoutPaymentResponseType|bool
      */
     public function DoMobileCheckoutPayment(\Api\StructType\ApiDoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest)
@@ -637,8 +636,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoExpressCheckoutPaymentReq
-     * $doExpressCheckoutPaymentRequest
+     * @param \Api\StructType\ApiDoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest
      * @return \Api\StructType\ApiDoExpressCheckoutPaymentResponseType|bool
      */
     public function DoExpressCheckoutPayment(\Api\StructType\ApiDoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest)
@@ -662,8 +660,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoUATPExpressCheckoutPaymentReq
-     * $doUATPExpressCheckoutPaymentRequest
+     * @param \Api\StructType\ApiDoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest
      * @return \Api\StructType\ApiDoUATPExpressCheckoutPaymentResponseType|bool
      */
     public function DoUATPExpressCheckoutPayment(\Api\StructType\ApiDoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest)
@@ -759,8 +756,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiUpdateAccessPermissionsReq
-     * $updateAccessPermissionsRequest
+     * @param \Api\StructType\ApiUpdateAccessPermissionsReq $updateAccessPermissionsRequest
      * @return \Api\StructType\ApiUpdateAccessPermissionsResponseType|bool
      */
     public function UpdateAccessPermissions(\Api\StructType\ApiUpdateAccessPermissionsReq $updateAccessPermissionsRequest)
@@ -784,8 +780,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiGetAccessPermissionDetailsReq
-     * $getAccessPermissionDetailsRequest
+     * @param \Api\StructType\ApiGetAccessPermissionDetailsReq $getAccessPermissionDetailsRequest
      * @return \Api\StructType\ApiGetAccessPermissionDetailsResponseType|bool
      */
     public function GetAccessPermissionDetails(\Api\StructType\ApiGetAccessPermissionDetailsReq $getAccessPermissionDetailsRequest)
@@ -809,8 +804,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiGetIncentiveEvaluationReq
-     * $getIncentiveEvaluationRequest
+     * @param \Api\StructType\ApiGetIncentiveEvaluationReq $getIncentiveEvaluationRequest
      * @return \Api\StructType\ApiGetIncentiveEvaluationResponseType|bool
      */
     public function GetIncentiveEvaluation(\Api\StructType\ApiGetIncentiveEvaluationReq $getIncentiveEvaluationRequest)
@@ -858,8 +852,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiExecuteCheckoutOperationsReq
-     * $executeCheckoutOperationsRequest
+     * @param \Api\StructType\ApiExecuteCheckoutOperationsReq $executeCheckoutOperationsRequest
      * @return \Api\StructType\ApiExecuteCheckoutOperationsResponseType|bool
      */
     public function ExecuteCheckoutOperations(\Api\StructType\ApiExecuteCheckoutOperationsReq $executeCheckoutOperationsRequest)
@@ -883,8 +876,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiGetExpressCheckoutDetailsReq
-     * $getExpressCheckoutDetailsRequest
+     * @param \Api\StructType\ApiGetExpressCheckoutDetailsReq $getExpressCheckoutDetailsRequest
      * @return \Api\StructType\ApiGetExpressCheckoutDetailsResponseType|bool
      */
     public function GetExpressCheckoutDetails(\Api\StructType\ApiGetExpressCheckoutDetailsReq $getExpressCheckoutDetailsRequest)
@@ -932,8 +924,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiManagePendingTransactionStatusReq
-     * $managePendingTransactionStatusRequest
+     * @param \Api\StructType\ApiManagePendingTransactionStatusReq $managePendingTransactionStatusRequest
      * @return \Api\StructType\ApiManagePendingTransactionStatusResponseType|bool
      */
     public function ManagePendingTransactionStatus(\Api\StructType\ApiManagePendingTransactionStatusReq $managePendingTransactionStatusRequest)
@@ -1125,8 +1116,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiSetCustomerBillingAgreementReq
-     * $setCustomerBillingAgreementRequest
+     * @param \Api\StructType\ApiSetCustomerBillingAgreementReq $setCustomerBillingAgreementRequest
      * @return \Api\StructType\ApiSetCustomerBillingAgreementResponseType|bool
      */
     public function SetCustomerBillingAgreement(\Api\StructType\ApiSetCustomerBillingAgreementReq $setCustomerBillingAgreementRequest)
@@ -1150,8 +1140,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiGetBillingAgreementCustomerDetailsReq
-     * $getBillingAgreementCustomerDetailsRequest
+     * @param \Api\StructType\ApiGetBillingAgreementCustomerDetailsReq $getBillingAgreementCustomerDetailsRequest
      * @return \Api\StructType\ApiGetBillingAgreementCustomerDetailsResponseType|bool
      */
     public function GetBillingAgreementCustomerDetails(\Api\StructType\ApiGetBillingAgreementCustomerDetailsReq $getBillingAgreementCustomerDetailsRequest)
@@ -1175,8 +1164,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiCreateBillingAgreementReq
-     * $createBillingAgreementRequest
+     * @param \Api\StructType\ApiCreateBillingAgreementReq $createBillingAgreementRequest
      * @return \Api\StructType\ApiCreateBillingAgreementResponseType|bool
      */
     public function CreateBillingAgreement(\Api\StructType\ApiCreateBillingAgreementReq $createBillingAgreementRequest)
@@ -1200,8 +1188,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoReferenceTransactionReq
-     * $doReferenceTransactionRequest
+     * @param \Api\StructType\ApiDoReferenceTransactionReq $doReferenceTransactionRequest
      * @return \Api\StructType\ApiDoReferenceTransactionResponseType|bool
      */
     public function DoReferenceTransaction(\Api\StructType\ApiDoReferenceTransactionReq $doReferenceTransactionRequest)
@@ -1225,8 +1212,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiCreateRecurringPaymentsProfileReq
-     * $createRecurringPaymentsProfileRequest
+     * @param \Api\StructType\ApiCreateRecurringPaymentsProfileReq $createRecurringPaymentsProfileRequest
      * @return \Api\StructType\ApiCreateRecurringPaymentsProfileResponseType|bool
      */
     public function CreateRecurringPaymentsProfile(\Api\StructType\ApiCreateRecurringPaymentsProfileReq $createRecurringPaymentsProfileRequest)
@@ -1250,8 +1236,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiGetRecurringPaymentsProfileDetailsReq
-     * $getRecurringPaymentsProfileDetailsRequest
+     * @param \Api\StructType\ApiGetRecurringPaymentsProfileDetailsReq $getRecurringPaymentsProfileDetailsRequest
      * @return \Api\StructType\ApiGetRecurringPaymentsProfileDetailsResponseType|bool
      */
     public function GetRecurringPaymentsProfileDetails(\Api\StructType\ApiGetRecurringPaymentsProfileDetailsReq $getRecurringPaymentsProfileDetailsRequest)
@@ -1276,8 +1261,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiManageRecurringPaymentsProfileStatusReq
-     * $manageRecurringPaymentsProfileStatusRequest
+     * @param \Api\StructType\ApiManageRecurringPaymentsProfileStatusReq $manageRecurringPaymentsProfileStatusRequest
      * @return \Api\StructType\ApiManageRecurringPaymentsProfileStatusResponseType|bool
      */
     public function ManageRecurringPaymentsProfileStatus(\Api\StructType\ApiManageRecurringPaymentsProfileStatusReq $manageRecurringPaymentsProfileStatusRequest)
@@ -1325,8 +1309,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiUpdateRecurringPaymentsProfileReq
-     * $updateRecurringPaymentsProfileRequest
+     * @param \Api\StructType\ApiUpdateRecurringPaymentsProfileReq $updateRecurringPaymentsProfileRequest
      * @return \Api\StructType\ApiUpdateRecurringPaymentsProfileResponseType|bool
      */
     public function UpdateRecurringPaymentsProfile(\Api\StructType\ApiUpdateRecurringPaymentsProfileReq $updateRecurringPaymentsProfileRequest)
@@ -1398,8 +1381,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiExternalRememberMeOptOutReq
-     * $externalRememberMeOptOutRequest
+     * @param \Api\StructType\ApiExternalRememberMeOptOutReq $externalRememberMeOptOutRequest
      * @return \Api\StructType\ApiExternalRememberMeOptOutResponseType|bool
      */
     public function ExternalRememberMeOptOut(\Api\StructType\ApiExternalRememberMeOptOutReq $externalRememberMeOptOutRequest)
@@ -1415,19 +1397,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return
-     * \Api\StructType\ApiAddressVerifyResponseType|\Api\StructType\ApiBAUpdateResponseType|\Api\StructType\ApiBillOutstandingAmountResponseType|\Api\StructType\ApiBillUserResponseType|\Api\StructType\ApiBMButtonSearchResponseType|\Api\StructType\ApiBMCreat
-     * eButtonResponseType|\Api\StructType\ApiBMGetButtonDetailsResponseType|\Api\StructType\ApiBMGetInventoryResponseType|\Api\StructType\ApiBMManageButtonStatusResponseType|\Api\StructType\ApiBMSetInventoryResponseType|\Api\StructType\ApiBMUpdateButtonRes
-     * ponseType|\Api\StructType\ApiCancelRecoupResponseType|\Api\StructType\ApiCompleteRecoupResponseType|\Api\StructType\ApiCreateBillingAgreementResponseType|\Api\StructType\ApiCreateMobilePaymentResponseType|\Api\StructType\ApiCreateRecurringPaymentsPro
-     * fileResponseType|\Api\StructType\ApiDoAuthorizationResponseType|\Api\StructType\ApiDoCancelResponseType|\Api\StructType\ApiDoCaptureResponseType|\Api\StructType\ApiDoDirectPaymentResponseType|\Api\StructType\ApiDoExpressCheckoutPaymentResponseType|\A
-     * pi\StructType\ApiDoMobileCheckoutPaymentResponseType|\Api\StructType\ApiDoNonReferencedCreditResponseType|\Api\StructType\ApiDoReauthorizationResponseType|\Api\StructType\ApiDoReferenceTransactionResponseType|\Api\StructType\ApiDoUATPAuthorizationRes
-     * ponseType|\Api\StructType\ApiDoUATPExpressCheckoutPaymentResponseType|\Api\StructType\ApiDoVoidResponseType|\Api\StructType\ApiEnterBoardingResponseType|\Api\StructType\ApiExecuteCheckoutOperationsResponseType|\Api\StructType\ApiExternalRememberMeOpt
-     * OutResponseType|\Api\StructType\ApiGetAccessPermissionDetailsResponseType|\Api\StructType\ApiGetAuthDetailsResponseType|\Api\StructType\ApiGetBalanceResponseType|\Api\StructType\ApiGetBillingAgreementCustomerDetailsResponseType|\Api\StructType\ApiGet
-     * BoardingDetailsResponseType|\Api\StructType\ApiGetExpressCheckoutDetailsResponseType|\Api\StructType\ApiGetIncentiveEvaluationResponseType|\Api\StructType\ApiGetMobileStatusResponseType|\Api\StructType\ApiGetPalDetailsResponseType|\Api\StructType\Api
-     * GetRecurringPaymentsProfileDetailsResponseType|\Api\StructType\ApiGetTransactionDetailsResponseType|\Api\StructType\ApiInitiateRecoupResponseType|\Api\StructType\ApiManagePendingTransactionStatusResponseType|\Api\StructType\ApiManageRecurringPayments
-     * ProfileStatusResponseType|\Api\StructType\ApiMassPayResponseType|\Api\StructType\ApiRefundTransactionResponseType|\Api\StructType\ApiReverseTransactionResponseType|\Api\StructType\ApiSetAccessPermissionsResponseType|\Api\StructType\ApiSetAuthFlowPara
-     * mResponseType|\Api\StructType\ApiSetCustomerBillingAgreementResponseType|\Api\StructType\ApiSetExpressCheckoutResponseType|\Api\StructType\ApiSetMobileCheckoutResponseType|\Api\StructType\ApiTransactionSearchResponseType|\Api\StructType\ApiUpdateAcce
-     * ssPermissionsResponseType|\Api\StructType\ApiUpdateAuthorizationResponseType|\Api\StructType\ApiUpdateRecurringPaymentsProfileResponseType
+     * @return \Api\StructType\ApiAddressVerifyResponseType|\Api\StructType\ApiBAUpdateResponseType|\Api\StructType\ApiBillOutstandingAmountResponseType|\Api\StructType\ApiBillUserResponseType|\Api\StructType\ApiBMButtonSearchResponseType|\Api\StructType\ApiBMCreateButtonResponseType|\Api\StructType\ApiBMGetButtonDetailsResponseType|\Api\StructType\ApiBMGetInventoryResponseType|\Api\StructType\ApiBMManageButtonStatusResponseType|\Api\StructType\ApiBMSetInventoryResponseType|\Api\StructType\ApiBMUpdateButtonResponseType|\Api\StructType\ApiCancelRecoupResponseType|\Api\StructType\ApiCompleteRecoupResponseType|\Api\StructType\ApiCreateBillingAgreementResponseType|\Api\StructType\ApiCreateMobilePaymentResponseType|\Api\StructType\ApiCreateRecurringPaymentsProfileResponseType|\Api\StructType\ApiDoAuthorizationResponseType|\Api\StructType\ApiDoCancelResponseType|\Api\StructType\ApiDoCaptureResponseType|\Api\StructType\ApiDoDirectPaymentResponseType|\Api\StructType\ApiDoExpressCheckoutPaymentResponseType|\Api\StructType\ApiDoMobileCheckoutPaymentResponseType|\Api\StructType\ApiDoNonReferencedCreditResponseType|\Api\StructType\ApiDoReauthorizationResponseType|\Api\StructType\ApiDoReferenceTransactionResponseType|\Api\StructType\ApiDoUATPAuthorizationResponseType|\Api\StructType\ApiDoUATPExpressCheckoutPaymentResponseType|\Api\StructType\ApiDoVoidResponseType|\Api\StructType\ApiEnterBoardingResponseType|\Api\StructType\ApiExecuteCheckoutOperationsResponseType|\Api\StructType\ApiExternalRememberMeOptOutResponseType|\Api\StructType\ApiGetAccessPermissionDetailsResponseType|\Api\StructType\ApiGetAuthDetailsResponseType|\Api\StructType\ApiGetBalanceResponseType|\Api\StructType\ApiGetBillingAgreementCustomerDetailsResponseType|\Api\StructType\ApiGetBoardingDetailsResponseType|\Api\StructType\ApiGetExpressCheckoutDetailsResponseType|\Api\StructType\ApiGetIncentiveEvaluationResponseType|\Api\StructType\ApiGetMobileStatusResponseType|\Api\StructType\ApiGetPalDetailsResponseType|\Api\StructType\ApiGetRecurringPaymentsProfileDetailsResponseType|\Api\StructType\ApiGetTransactionDetailsResponseType|\Api\StructType\ApiInitiateRecoupResponseType|\Api\StructType\ApiManagePendingTransactionStatusResponseType|\Api\StructType\ApiManageRecurringPaymentsProfileStatusResponseType|\Api\StructType\ApiMassPayResponseType|\Api\StructType\ApiRefundTransactionResponseType|\Api\StructType\ApiReverseTransactionResponseType|\Api\StructType\ApiSetAccessPermissionsResponseType|\Api\StructType\ApiSetAuthFlowParamResponseType|\Api\StructType\ApiSetCustomerBillingAgreementResponseType|\Api\StructType\ApiSetExpressCheckoutResponseType|\Api\StructType\ApiSetMobileCheckoutResponseType|\Api\StructType\ApiTransactionSearchResponseType|\Api\StructType\ApiUpdateAccessPermissionsResponseType|\Api\StructType\ApiUpdateAuthorizationResponseType|\Api\StructType\ApiUpdateRecurringPaymentsProfileResponseType
      */
     public function getResult()
     {

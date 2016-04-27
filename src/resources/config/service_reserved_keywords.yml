@@ -1,0 +1,32 @@
+# List of PHP reserved keywords that must not be used within generated classes.
+# If an element matched one of this reserved keywords, it is replaced by "_" + {reserved_keyword} + nb_used_times
+# It includes the pre defined functions by PackageBase classes too.
+
+reserved_keywords:
+    case_sensitive:
+        -
+    case_insensitive:
+        # methods from AbstractSoapClientBase
+        - "__construct"
+        - "getSoapClient"
+        - "setSoapClient"
+        - "initSoapClient"
+        - "getSoapClientClassName"
+        - "getDefaultWsdlOptions"
+        - "setLocation"
+        - "getLastRequest"
+        - "getLastResponse"
+        - "getLastXml"
+        - "getLastRequestHeaders"
+        - "getLastResponseHeaders"
+        - "getLastHeaders"
+        - "getFormatedXml"
+        - "convertStringHeadersToArray"
+        - "setSoapHeader"
+        - "setHttpHeader"
+        - "getLastError"
+        - "setLastError"
+        - "saveLastError"
+        - "getLastErrorForMethod"
+        - "getResult"
+        - "setResult"
