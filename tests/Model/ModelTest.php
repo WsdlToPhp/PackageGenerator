@@ -77,4 +77,11 @@ class ModelTest extends TestCase
             ),
         ), $instance->getMeta());
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetReservedMethodsInstance()
+    {
+        self::instance('foo')->getReservedMethodsInstance();
+    }
 }

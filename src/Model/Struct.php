@@ -6,6 +6,8 @@ use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 
 /**
  * Class Struct stands for an available struct described in the WSDL
@@ -361,5 +363,17 @@ class Struct extends AbstractModel
     {
         $inheritanceStruct = $this->getInheritanceStruct();
         return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->getIsStruct()) ? $inheritanceStruct->getMeta() : array());
+    }
+    /**
+     * @param $filename
+     * @return StructReservedMethod|StructArrayReservedMethod
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        $instance = StructReservedMethod::instance($filename);
+        if ($this->isArray()) {
+            $instance = StructArrayReservedMethod::instance($filename);
+        }
+        return $instance;
     }
 }

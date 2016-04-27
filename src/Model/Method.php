@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
 
 /**
  * Class Method stands for an available operation described in the WSDL
@@ -64,7 +65,7 @@ class Method extends AbstractModel
      * Returns the name of the method that is used to call the operation
      * It takes care of the fact that the method might not be the only one named as it is.
      * @uses Method::getCleanName()
-     * @uses AbstractModel::replaceReservedPhpKeyword()
+     * @uses AbstractModel::replacePhpReservedKeyword()
      * @uses AbstractModel::getOwner()
      * @uses AbstractModel::getPackagedName()
      * @uses AbstractModel::uniqueName()
@@ -84,7 +85,9 @@ class Method extends AbstractModel
                     $methodName .= '_' . md5(var_export($this->getParameterType(), true));
                 }
             }
-            $methodName = self::replaceReservedPhpKeyword($methodName, $this->getOwner()->getPackagedName());
+            $context = $this->getOwner()->getPackagedName();
+            $methodName = $this->replaceReservedMethod($methodName, $context);
+            $methodName = self::replacePhpReservedKeyword($methodName, $context);
             $this->methodName = self::uniqueName($methodName, $this->getOwner()->getPackagedName());
         }
         return $this->methodName;
@@ -152,5 +155,13 @@ class Method extends AbstractModel
     public function getOwner()
     {
         return parent::getOwner();
+    }
+    /**
+     * @param $filename
+     * @return ServiceReservedMethod
+     */
+    public function getReservedMethodsInstance($filename = null)
+    {
+        return ServiceReservedMethod::instance($filename);
     }
 }

@@ -138,7 +138,7 @@ abstract class AbstractFile extends TestCase
     public static function getInstance($wsdl, $reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
         AbstractModel::purgeUniqueNames();
-        AbstractModel::purgeReservedKeywords();
+        AbstractModel::purgePhpReservedKeywords();
         $g = parent::getInstance($wsdl, $reset);
         $g
             ->setOptionPrefix('Api')

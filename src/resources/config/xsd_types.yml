@@ -20,6 +20,7 @@ xsd_types:
     gYearMonth: "int"
     int: "int"
     integer: "int"
+    ID: "string"
     IDREF: "string"
     IDREFS: "string"
     language: "string"

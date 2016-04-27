@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class ReservedKeywords extends AbstractYamlReader
+class AbstractReservedWord extends AbstractYamlReader
 {
     /**
      * @var string
@@ -31,31 +31,28 @@ class ReservedKeywords extends AbstractYamlReader
     }
     /**
      * @param string $filename
-     * @return ReservedKeywords
+     * @return AbstractReservedWord
      */
     protected function parseReservedKeywords($filename)
     {
         $allKeywords = $this->parseSimpleArray($filename, self::MAIN_KEY);
         $caseSensitiveKeywords = $allKeywords[self::CASE_SENSITIVE_KEY];
-        $caseInsensitiveKeywords = $allKeywords[self::CASE_INSENSITIVE_KEY];
+        $caseInsensitiveKeywords = array_map('strtolower', $allKeywords[self::CASE_INSENSITIVE_KEY]);
 
-        foreach ($caseInsensitiveKeywords as $index => $keyword) {
-            $caseInsensitiveKeywords[$index] = strtolower($keyword);
-        }
-
-        $this->keywords = array(
+        $this->keywords = array_merge_recursive($this->keywords, array(
             self::CASE_SENSITIVE_KEY => $caseSensitiveKeywords,
             self::CASE_INSENSITIVE_KEY => $caseInsensitiveKeywords
-        );
+        ));
         return $this;
     }
     /**
+     * @throws \InvalidArgumentException
      * @param string options's file to parse
-     * @return ReservedKeywords
+     * @return AbstractReservedWord
      */
     public static function instance($filename = null)
     {
-        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../resources/config/reserved_keywords.yml' : $filename);
+        return parent::instance($filename);
     }
     /**
      * @param string $keyword

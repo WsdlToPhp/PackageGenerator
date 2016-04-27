@@ -106,6 +106,7 @@ class GeneratorOptions extends AbstractYamlReader
         return $this;
     }
     /**
+     * @throws \InvalidArgumentException
      * @param string options's file to parse
      * @return GeneratorOptions
      */
