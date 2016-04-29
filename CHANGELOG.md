@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.0.0
+- This major release forces the requirement of PHP >= 5.5.9. This allows to use the latest version of Symfony components. If you do not have a sufficient PHP version, you can still use the major 1.x.x version which only requires PHP >= 5.3.3. The 1.x.x version uses the Symfony components at version 2.8.x.
+
 ## 1.5.0
 - issue #50 - Support for Cyrillic alphabet
     - From now, any unicode character should be handled and generated as it is as a PHP variable/parameter/method/class
