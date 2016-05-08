@@ -15,7 +15,7 @@ Its purpose is to provide a full OOP approach to send SOAP requests using:
 - PHP Service classes that match the operation names provided by the Web Service
 
 The generated package does not need PEAR nor NuSOAP, at least :
-- PHP 5.3.3,
+- PHP 5.5.9,
 - SoapClient : natively installed with PHP,
 - DOM : natively installed with PHP,
 - [PackageBase](https://packagist.org/packages/wsdltophp/packagebase): automatically installed on standalone mode (default mode), it contains utility classes used by the generated classes. Full documentation about the classes is available at the project [homepage](https://github.com/WsdlToPhp/PackageBase). **If you're not using the standalone mode, you must add ```wsdltophp/packagebase: dev-master``` in your main composer.json file.**
