@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.5.1
+- issue #55 - xsd:long is "int" in validation rules - error with values that not fit
+
 ## 1.5.0
 - issue #50 - Support for Cyrillic alphabet
     - From now, any unicode character should be handled and generated as it is as a PHP variable/parameter/method/class
