@@ -16,8 +16,8 @@ class IntRule extends AbstractRule
         $this
             ->getMethod()
                 ->addChild('// validation for constraint: int')
-                ->addChild(sprintf('if (!is_null($%1$s) && !is_int($%1$s)) {', $parameterName))
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, please provide an int, "%%s" given\', gettype($%s)), __LINE__);', $parameterName), 1))
+                ->addChild(sprintf('if (!is_null($%1$s) && !is_numeric($%1$s)) {', $parameterName))
+                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, please provide a numeric value, "%%s" given\', gettype($%s)), __LINE__);', $parameterName), 1))
                 ->addChild('}');
         return $this;
     }

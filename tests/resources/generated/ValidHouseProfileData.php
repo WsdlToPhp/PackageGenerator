@@ -857,8 +857,8 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setStoreys_count($storeys_count = null)
     {
         // validation for constraint: int
-        if (!is_null($storeys_count) && !is_int($storeys_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($storeys_count)), __LINE__);
+        if (!is_null($storeys_count) && !is_numeric($storeys_count)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($storeys_count)), __LINE__);
         }
         $this->storeys_count = $storeys_count;
         return $this;
@@ -879,8 +879,8 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setEntrance_count($entrance_count = null)
     {
         // validation for constraint: int
-        if (!is_null($entrance_count) && !is_int($entrance_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($entrance_count)), __LINE__);
+        if (!is_null($entrance_count) && !is_numeric($entrance_count)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($entrance_count)), __LINE__);
         }
         $this->entrance_count = $entrance_count;
         return $this;
@@ -901,8 +901,8 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setElevators_count($elevators_count = null)
     {
         // validation for constraint: int
-        if (!is_null($elevators_count) && !is_int($elevators_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($elevators_count)), __LINE__);
+        if (!is_null($elevators_count) && !is_numeric($elevators_count)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($elevators_count)), __LINE__);
         }
         $this->elevators_count = $elevators_count;
         return $this;
@@ -1075,8 +1075,8 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setFlats_count($flats_count = null)
     {
         // validation for constraint: int
-        if (!is_null($flats_count) && !is_int($flats_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($flats_count)), __LINE__);
+        if (!is_null($flats_count) && !is_numeric($flats_count)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($flats_count)), __LINE__);
         }
         $this->flats_count = $flats_count;
         return $this;
@@ -1097,8 +1097,8 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setResidents_count($residents_count = null)
     {
         // validation for constraint: int
-        if (!is_null($residents_count) && !is_int($residents_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($residents_count)), __LINE__);
+        if (!is_null($residents_count) && !is_numeric($residents_count)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($residents_count)), __LINE__);
         }
         $this->residents_count = $residents_count;
         return $this;
@@ -1119,8 +1119,8 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setAccounts_count($accounts_count = null)
     {
         // validation for constraint: int
-        if (!is_null($accounts_count) && !is_int($accounts_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($accounts_count)), __LINE__);
+        if (!is_null($accounts_count) && !is_numeric($accounts_count)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($accounts_count)), __LINE__);
         }
         $this->accounts_count = $accounts_count;
         return $this;
