@@ -345,8 +345,8 @@ class ApiBannerInfo extends AbstractStructBase
     public function setBannerID($bannerID = null)
     {
         // validation for constraint: int
-        if (!is_null($bannerID) && !is_int($bannerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($bannerID)), __LINE__);
+        if (!is_null($bannerID) && !is_numeric($bannerID)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($bannerID)), __LINE__);
         }
         $this->BannerID = $bannerID;
         return $this;
@@ -367,8 +367,8 @@ class ApiBannerInfo extends AbstractStructBase
     public function setCampaignID($campaignID = null)
     {
         // validation for constraint: int
-        if (!is_null($campaignID) && !is_int($campaignID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($campaignID)), __LINE__);
+        if (!is_null($campaignID) && !is_numeric($campaignID)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($campaignID)), __LINE__);
         }
         $this->CampaignID = $campaignID;
         return $this;
@@ -937,8 +937,8 @@ class ApiBannerInfo extends AbstractStructBase
     public function setAdGroupID($adGroupID = null)
     {
         // validation for constraint: int
-        if (!is_null($adGroupID) && !is_int($adGroupID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($adGroupID)), __LINE__);
+        if (!is_null($adGroupID) && !is_numeric($adGroupID)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($adGroupID)), __LINE__);
         }
         $this->AdGroupID = $adGroupID;
         return $this;
@@ -1069,8 +1069,8 @@ class ApiBannerInfo extends AbstractStructBase
     public function setAdGroupMobileBidAdjustment($adGroupMobileBidAdjustment = null)
     {
         // validation for constraint: int
-        if (!is_null($adGroupMobileBidAdjustment) && !is_int($adGroupMobileBidAdjustment)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($adGroupMobileBidAdjustment)), __LINE__);
+        if (!is_null($adGroupMobileBidAdjustment) && !is_numeric($adGroupMobileBidAdjustment)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($adGroupMobileBidAdjustment)), __LINE__);
         }
         $this->AdGroupMobileBidAdjustment = $adGroupMobileBidAdjustment;
         return $this;
