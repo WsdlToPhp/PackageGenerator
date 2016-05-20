@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.1.0
+issue #56 - Problem with generated request XML
+
 ## 2.0.1
 issue #55 - xsd:long is "int" in validation rules - error with values that not fit
 
