@@ -4,7 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
-use WsdlToPhp\PackageGenerator\Tests\File\AbstractFile;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 class ClassMapTest extends AbstractFile
 {
@@ -52,6 +52,43 @@ class ClassMapTest extends AbstractFile
             ->write();
 
         $this->assertSameFileContent('ValidActonClassMap', $classMap);
+    }
+    /**
+     *
+     */
+    public function testActonWihthoutPrefix()
+    {
+        $instance = self::actonGeneratorInstance();
+        $instance
+            ->setOptionNamespacePrefix('')
+            ->setOptionPrefix('');
+
+        $model = new EmptyModel($instance, 'ClassMap');
+        $classMap = new ClassMapFile($instance, $model->getPackagedName());
+        $classMap
+            ->setModel($model)
+            ->write();
+
+        $this->assertSameFileContent('ValidActonClassMapWihoutNamespace', $classMap);
+    }
+    /**
+     *
+     */
+    public function testActonWihthoutPrefixAndCategory()
+    {
+        $instance = self::actonGeneratorInstance();
+        $instance
+            ->setOptionNamespacePrefix('')
+            ->setOptionPrefix('')
+            ->setOptionCategory(GeneratorOptions::VALUE_NONE);
+
+        $model = new EmptyModel($instance, 'ClassMap');
+        $classMap = new ClassMapFile($instance, $model->getPackagedName());
+        $classMap
+            ->setModel($model)
+            ->write();
+
+        $this->assertSameFileContent('ValidActonClassMapWihoutNamespaceAndCategory', $classMap);
     }
     /**
      *

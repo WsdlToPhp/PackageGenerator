@@ -119,6 +119,6 @@ class ClassMap extends AbstractModelFile
      */
     protected function getStructName(StructModel $struct)
     {
-        return substr($struct->getPackagedName(true), $struct->getNamespace() != '' ? 1 : 0);
+        return str_replace('\\', '\\\\', $struct->getPackagedName(true));
     }
 }
