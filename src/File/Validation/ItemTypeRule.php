@@ -39,9 +39,9 @@ class ItemTypeRule extends AbstractRule
         if ($model instanceof Struct && ($model->getIsStruct() || ($model->isArray() && $model->getInheritanceStruct() instanceof Struct))) {
             $sanityCheck = sprintf('$%s instanceof %s', $itemName, $this->getFile()->getStructAttributeType($attribute, true));
         } else {
-            switch (AbstractModelFile::getPhpType($attribute->getType())) {
+            switch (AbstractModelFile::getPhpType($this->getFile()->getStructAttributeType($attribute))) {
                 case 'int':
-                    $sanityCheck = 'is_int($%s)';
+                    $sanityCheck = 'is_numeric($%s)';
                     break;
                 case 'bool':
                     $sanityCheck = 'is_bool($%s)';
