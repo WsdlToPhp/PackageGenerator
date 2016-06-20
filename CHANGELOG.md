@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.7.0
+- issue #60 - Incorrect validation rule: is_string() on int[] values
+
 ## 1.6.0
 - issue #56 - Problem with generated request XML
 
