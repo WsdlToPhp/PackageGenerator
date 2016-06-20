@@ -114,7 +114,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         foreach ($campaignIds as $adGroupsSelectionCriteriaCampaignIdsItem) {
             // validation for constraint: itemType
-            if (!is_int($adGroupsSelectionCriteriaCampaignIdsItem)) {
+            if (!is_numeric($adGroupsSelectionCriteriaCampaignIdsItem)) {
                 throw new \InvalidArgumentException(sprintf('The CampaignIds property can only contain items of long, "%s" given', is_object($adGroupsSelectionCriteriaCampaignIdsItem) ? get_class($adGroupsSelectionCriteriaCampaignIdsItem) : gettype($adGroupsSelectionCriteriaCampaignIdsItem)), __LINE__);
             }
         }
@@ -130,7 +130,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function addToCampaignIds($item)
     {
         // validation for constraint: itemType
-        if (!is_int($item)) {
+        if (!is_numeric($item)) {
             throw new \InvalidArgumentException(sprintf('The CampaignIds property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
         }
         $this->CampaignIds[] = $item;
@@ -154,7 +154,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         foreach ($ids as $adGroupsSelectionCriteriaIdsItem) {
             // validation for constraint: itemType
-            if (!is_int($adGroupsSelectionCriteriaIdsItem)) {
+            if (!is_numeric($adGroupsSelectionCriteriaIdsItem)) {
                 throw new \InvalidArgumentException(sprintf('The Ids property can only contain items of long, "%s" given', is_object($adGroupsSelectionCriteriaIdsItem) ? get_class($adGroupsSelectionCriteriaIdsItem) : gettype($adGroupsSelectionCriteriaIdsItem)), __LINE__);
             }
         }
@@ -170,7 +170,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function addToIds($item)
     {
         // validation for constraint: itemType
-        if (!is_int($item)) {
+        if (!is_numeric($item)) {
             throw new \InvalidArgumentException(sprintf('The Ids property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
         }
         $this->Ids[] = $item;
@@ -288,7 +288,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         foreach ($tagIds as $adGroupsSelectionCriteriaTagIdsItem) {
             // validation for constraint: itemType
-            if (!is_int($adGroupsSelectionCriteriaTagIdsItem)) {
+            if (!is_numeric($adGroupsSelectionCriteriaTagIdsItem)) {
                 throw new \InvalidArgumentException(sprintf('The TagIds property can only contain items of long, "%s" given', is_object($adGroupsSelectionCriteriaTagIdsItem) ? get_class($adGroupsSelectionCriteriaTagIdsItem) : gettype($adGroupsSelectionCriteriaTagIdsItem)), __LINE__);
             }
         }
@@ -304,7 +304,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function addToTagIds($item)
     {
         // validation for constraint: itemType
-        if (!is_int($item)) {
+        if (!is_numeric($item)) {
             throw new \InvalidArgumentException(sprintf('The TagIds property can only contain items of long, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
         }
         $this->TagIds[] = $item;
