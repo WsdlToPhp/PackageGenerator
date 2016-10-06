@@ -50,7 +50,7 @@ The generated package does not need PEAR nor NuSOAP, at least:
     /vendor/: automatically created by composer on standalone mode (default: true)
     /composer.json: automatically created by composer on standalone mode (default: true)
     /composer.lock: automatically created by composer on standalone mode (default: true)
-    /tutorial.php: generated if ```--gentutorial``` option is enabled (default: true)
+    /tutorial.php: generated if --gentutorial option is enabled (default: true)
 ```
 
 ## Warning about the generated classes and their property usage
