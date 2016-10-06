@@ -15,7 +15,7 @@ Its purpose is to provide a full OOP approach to send SOAP requests using:
 - PHP classes for parameters that match the Web Service parameter names
 - PHP Service classes that match the operation names provided by the Web Service
 
-The generated package does not need PEAR nor NuSOAP, at least :
+The generated package does not need PEAR nor NuSOAP, at least:
 - PHP 5.3.3,
 - SoapClient: natively installed with PHP,
 - DOM: natively installed with PHP,
@@ -93,7 +93,7 @@ The generator comes with several options:
     - **\-\-gathermethods**:
         - **start** _(default)_: you'll have one **Get** class that contains the **getList**, **getUsers** and **getData** methods and another class **Set** that contains only the **setUser** method
         - **none**: you'll have only one class that contains all the methods **getList**, **getUsers**, **getData** and **setUser** methods
-        - **end**, you'll have 4 classes :
+        - **end**, you'll have 4 classes:
             - **List** that contains the **getList** method,
             - **User** that contains the **setUser** method,
             - **Users** that contains the **getUsers** method,
