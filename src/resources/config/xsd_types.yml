@@ -4,6 +4,7 @@ xsd_types:
     anonymous: "string"
     anyType: "mixed"
     anyURI: "string"
+    base64Binary: "string"
     bool: "bool"
     boolean: "bool"
     byte: "string"

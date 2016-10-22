@@ -70,4 +70,14 @@ class XsdTypesTest extends TestCase
     {
         $this->assertSame('string', self::instance()->phpType('anonymous159'));
     }
+
+    public function testBase64BinaryXsd()
+    {
+      $this->assertTrue(self::instance()->isXsd('base64Binary'));
+    }
+
+  public function testBase64BinaryPhpType()
+  {
+    $this->assertSame('string', self::instance()->phpType('base64Binary'));
+  }
 }
