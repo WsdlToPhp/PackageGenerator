@@ -3,8 +3,9 @@
 xsd_types:
     int: "int"
     UID: "string"
-    byte: "string"
+    base64Binary: "string"
     bool: "bool"
+    byte: "string"
     date: "string"
     time: "string"
     long: "int"
