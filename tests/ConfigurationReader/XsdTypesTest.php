@@ -47,7 +47,7 @@ class XsdTypesTest extends TestCase
      */
     public function testPhpXsd()
     {
-        $this->assertSame('int', self::instance()->phpType('duration'));
+        $this->assertSame('string', self::instance()->phpType('duration'));
     }
     /**
      *
