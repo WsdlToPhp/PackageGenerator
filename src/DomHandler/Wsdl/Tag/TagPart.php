@@ -6,7 +6,13 @@ use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class TagPart extends AbstractTag
 {
+    /**
+     * @var string
+     */
     const ATTRIBUTE_ELEMENT = 'element';
+    /**
+     * @var string
+     */
     const ATTRIBUTE_TYPE = 'type';
     /**
      * @param bool $returnValue
