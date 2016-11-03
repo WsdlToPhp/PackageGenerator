@@ -1,10 +1,14 @@
 # CHANGELOG
 
+## 2.3.0
+- issue #63 - base64Binary in Generated Classes
+- issue #64 - Integer type generated for XSD duration types
+
 ## 2.2.0
-issue #60 - Incorrect validation rule: is_string() on int[] values
+- issue #60 - Incorrect validation rule: is_string() on int[] values
 
 ## 2.1.0
-issue #56 - Problem with generated request XML
+- issue #56 - Problem with generated request XML
 
 ## 2.0.1
 issue #55 - xsd:long is "int" in validation rules - error with values that not fit
