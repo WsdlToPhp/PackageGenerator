@@ -16,8 +16,8 @@ Its purpose is to provide a full OOP approach to send SOAP requests using:
 
 The generated package does not need PEAR nor NuSOAP, at least :
 - PHP 5.5.9,
-- SoapClient : natively installed with PHP,
-- DOM : natively installed with PHP,
+- SoapClient: natively installed with PHP,
+- DOM: natively installed with PHP,
 - [PackageBase](https://packagist.org/packages/wsdltophp/packagebase): automatically installed on standalone mode (default mode), it contains utility classes used by the generated classes. Full documentation about the classes is available at the project [homepage](https://github.com/WsdlToPhp/PackageBase). **If you're not using the standalone mode, you must add ```wsdltophp/packagebase: dev-master``` in your main composer.json file.**
 
 # Summary
@@ -49,7 +49,7 @@ The generated package does not need PEAR nor NuSOAP, at least :
     /vendor/: automatically created by composer on standalone mode (default: true)
     /composer.json: automatically created by composer on standalone mode (default: true)
     /composer.lock: automatically created by composer on standalone mode (default: true)
-    /tutorial.php: generated if ```--gentutorial``` option is enabled (default: true)
+    /tutorial.php: generated if --gentutorial option is enabled (default: true)
 ```
 
 ## Warning about the generated classes and their property usage
@@ -92,7 +92,7 @@ The generator comes with several options:
     - **\-\-gathermethods**:
         - **start** _(default)_: you'll have one **Get** class that contains the **getList**, **getUsers** and **getData** methods and another class **Set** that contains only the **setUser** method
         - **none**: you'll have only one class that contains all the methods **getList**, **getUsers**, **getData** and **setUser** methods
-        - **end**, you'll have 4 classes :
+        - **end**, you'll have 4 classes:
             - **List** that contains the **getList** method,
             - **User** that contains the **setUser** method,
             - **Users** that contains the **getUsers** method,

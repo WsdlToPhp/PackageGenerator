@@ -1,5 +1,4 @@
 <?php
-
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
 use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
@@ -7,9 +6,14 @@ use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class TagPart extends AbstractTag
 {
-    const
-        ATTRIBUTE_ELEMENT = 'element',
-        ATTRIBUTE_TYPE    = 'type';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_ELEMENT = 'element';
+    /**
+     * @var string
+     */
+    const ATTRIBUTE_TYPE = 'type';
     /**
      * @param bool $returnValue
      * @return AttributeHandler|mixed
@@ -49,7 +53,7 @@ class TagPart extends AbstractTag
             $elementName = $this->getAttributeElement();
             if (!empty($elementName)) {
                 $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(
-                    'name' => $elementName,
+                    'name' => $elementName
                 ), true);
                 if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
                     $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
