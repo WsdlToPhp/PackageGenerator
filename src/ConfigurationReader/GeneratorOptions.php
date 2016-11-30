@@ -7,43 +7,44 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Common values used as option's value
      */
-    const VALUE_START = 'start';
-    const VALUE_END = 'end';
-    const VALUE_NONE = 'none';
     const VALUE_CAT = 'cat';
-    const VALUE_TRUE = true;
+    const VALUE_END = 'end';
     const VALUE_FALSE = false;
+    const VALUE_NONE = 'none';
+    const VALUE_START = 'start';
+    const VALUE_TRUE = true;
     /**
      * Possible option keys
      * @var string
      */
-    const SUFFIX = 'suffix';
-    const PREFIX = 'prefix';
-    const ORIGIN = 'origin';
-    const CATEGORY = 'category';
-    const VALIDATION = 'validation';
-    const STANDALONE = 'standalone';
-    const PROXY_HOST = 'proxy_host';
-    const PROXY_PORT = 'proxy_port';
-    const PROXY_LOGIN = 'proxy_login';
-    const BASIC_LOGIN = 'basic_login';
-    const DESTINATION = 'destination';
     const ADD_COMMENTS = 'add_comments';
-    const STRUCT_CLASS = 'struct_class';
-    const SOAP_OPTIONS = 'soap_options';
-    const ENUMS_FOLDER = 'enums_folder';
     const ARRAYS_FOLDER = 'arrays_folder';
-    const COMPOSER_NAME = 'composer_name';
-    const STRUCTS_FOLDER = 'structs_folder';
-    const PROXY_PASSWORD = 'proxy_password';
+    const BASIC_LOGIN = 'basic_login';
     const BASIC_PASSWORD = 'basic_password';
+    const CATEGORY = 'category';
+    const COMPOSER_NAME = 'composer_name';
+    const COMPOSER_SETTINGS = 'composer_settings';
+    const DESTINATION = 'destination';
+    const ENUMS_FOLDER = 'enums_folder';
     const GATHER_METHODS = 'gather_methods';
-    const SERVICES_FOLDER = 'services_folder';
-    const NAMESPACE_PREFIX = 'namespace_prefix';
-    const SOAP_CLIENT_CLASS = 'soap_client_class';
-    const STRUCT_ARRAY_CLASS = 'struct_array_class';
     const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
     const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
+    const NAMESPACE_PREFIX = 'namespace_prefix';
+    const ORIGIN = 'origin';
+    const PREFIX = 'prefix';
+    const PROXY_HOST = 'proxy_host';
+    const PROXY_LOGIN = 'proxy_login';
+    const PROXY_PASSWORD = 'proxy_password';
+    const PROXY_PORT = 'proxy_port';
+    const SERVICES_FOLDER = 'services_folder';
+    const SOAP_CLIENT_CLASS = 'soap_client_class';
+    const SOAP_OPTIONS = 'soap_options';
+    const STANDALONE = 'standalone';
+    const STRUCT_ARRAY_CLASS = 'struct_array_class';
+    const STRUCT_CLASS = 'struct_class';
+    const STRUCTS_FOLDER = 'structs_folder';
+    const SUFFIX = 'suffix';
+    const VALIDATION = 'validation';
     /**
      * Generator's options
      * @var array
@@ -546,6 +547,51 @@ class GeneratorOptions extends AbstractYamlReader
     public function setComposerName($composerName)
     {
         return $this->setOptionValue(self::COMPOSER_NAME, $composerName);
+    }
+    /**
+     * Get composer settings option value
+     * @return string
+     */
+    public function getComposerSettings()
+    {
+        return $this->getOptionValue(self::COMPOSER_SETTINGS);
+    }
+    /**
+     * Set current composer settings option value
+     * @throws \InvalidArgumentException
+     * @param string $composerSettings
+     * @return GeneratorOptions
+     */
+    public function setComposerSettings(array $composerSettings = array())
+    {
+        /**
+         * If array is type array("config.value:true","require:libray/src",)
+         */
+        $settings = array();
+        foreach ($composerSettings as $index=>$value) {
+            if (is_numeric($index) && strpos($value, ':') > 0) {
+                $path = implode('', array_slice(explode(':', $value), 0, 1));
+                $val = implode(':', array_slice(explode(':', $value), 1));
+                self::dotNotationToArray($path, $val, $settings);
+            } else {
+                $settings[$index] = $value;
+            }
+        }
+        return $this->setOptionValue(self::COMPOSER_SETTINGS, $settings);
+    }
+    /**
+     * turns my.key.path to array('my' => array('key' => array('path' => $value)))
+     * @param $path $string
+     * @param mixed $value
+     * @param array $array
+     */
+    protected static function dotNotationToArray($string, $value, array &$array)
+    {
+        $keys = explode('.', $string);
+        foreach($keys as $key) {
+            $array = &$array[$key];
+        }
+        $array = ($value === 'true' || $value === 'false') ? $value === 'true' : $value;
     }
     /**
      * Get structs folder option value
