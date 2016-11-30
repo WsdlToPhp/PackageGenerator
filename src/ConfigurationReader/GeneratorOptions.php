@@ -588,7 +588,7 @@ class GeneratorOptions extends AbstractYamlReader
     protected static function dotNotationToArray($string, $value, array &$array)
     {
         $keys = explode('.', $string);
-        foreach($keys as $key) {
+        foreach ($keys as $key) {
             $array = &$array[$key];
         }
         $array = ($value === 'true' || $value === 'false') ? $value === 'true' : $value;
