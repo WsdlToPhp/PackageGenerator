@@ -25,6 +25,26 @@ class ComposerTest extends AbstractFile
     /**
      *
      */
+    public function testBingWithSettings()
+    {
+        $instance = clone self::getBingGeneratorInstance();
+        $instance
+            ->setOptionPrefix('Api')
+            ->setOptionComposerName('wsdltophp/bing')
+            ->setOptionComposerSettings(array(
+                'config.disable-tls:true',
+                'require.wsdltophp/wssecurity:dev-master'
+            ));
+        $composerFile = new Composer($instance, 'composer');
+        $composerFile
+            ->setRunComposerUpdate(false)
+            ->write();
+
+        $this->assertSameFileContent('ValidBingComposerSettings' . (version_compare(PHP_VERSION, '5.4.0') === -1  ? '.php53' : ''), $composerFile, 'json');
+    }
+    /**
+     *
+     */
     public function testSetRunComposerUdpate()
     {
         $instance = clone self::getBingGeneratorInstance();

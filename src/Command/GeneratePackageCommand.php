@@ -84,6 +84,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('structarray', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package')
             ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package')
             ->addOption('composer-name', null, InputOption::VALUE_REQUIRED, 'Composer name of the generated package')
+            ->addOption('composer-settings', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Composer settings of the generated package')
             ->addOption('structs-folder', null, InputOption::VALUE_OPTIONAL, 'Structs folder name')
             ->addOption('arrays-folder', null, InputOption::VALUE_OPTIONAL, 'Arrays folder name')
             ->addOption('enums-folder', null, InputOption::VALUE_OPTIONAL, 'Enumerations folder name')
@@ -147,6 +148,7 @@ class GeneratePackageCommand extends AbstractCommand
             'proxy-password' => 'ProxyPassword',
             'services-folder' => 'ServicesFolder',
             'gentutorial' => 'GenerateTutorialFile',
+            'composer-settings' => 'ComposerSettings',
             'genericconstants' => 'GenericConstantsName',
         );
     }
@@ -191,7 +193,7 @@ class GeneratePackageCommand extends AbstractCommand
     private function formatArrayForConsole($array)
     {
         array_walk($array, function (&$value, $index) {
-            $value = sprintf("%s: %s", $index, !is_array($value) ? $value : implode(', ', $value));
+            $value = sprintf("%s: %s", $index, json_encode($value));
         });
         return $array;
     }
