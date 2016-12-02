@@ -461,6 +461,41 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetComposerSettings()
+    {
+        $this->assertSame(array(), self::optionsInstance()->getComposerSettings());
+    }
+    /**
+     *
+     */
+    public function testSetComposerSettings()
+    {
+        $instance = self::optionsInstance();
+        $instance->setComposerSettings(array(
+            'config.disable-tls:true',
+            'config.data-dir:/src/foor/bar',
+            'require.wsdltophp/packagebase:dev-master',
+            'autoload.psr-4.Acme\\:src/'
+        ));
+
+        $this->assertSame(array(
+            'config' => array(
+                'disable-tls' => true,
+                'data-dir' => '/src/foor/bar'
+            ),
+            'require' => array(
+                'wsdltophp/packagebase' => 'dev-master'
+            ),
+            'autoload' => array(
+                'psr-4' => array(
+                    'Acme\\' => 'src/'
+                )
+            )
+        ), $instance->getComposerSettings());
+    }
+    /**
+     *
+     */
     public function testGetStructsFolder()
     {
         $this->assertSame('StructType', self::optionsInstance()->getStructsFolder());
@@ -600,6 +635,7 @@ class GeneratorOptionsTest extends TestCase
             'proxy_password' => '',
             'soap_options' => array(),
             'composer_name' => '',
+            'composer_settings' => array(),
             'structs_folder' => 'StructType',
             'arrays_folder' => 'ArrayType',
             'enums_folder' => 'EnumType',

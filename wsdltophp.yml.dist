@@ -74,6 +74,9 @@ soap_options:
 composer_name:
     default: ''
     values: ''
+composer_settings:
+    default: []
+    values: ''
 structs_folder:
     default: 'StructType'
     values: ''

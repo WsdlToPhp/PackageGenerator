@@ -663,6 +663,24 @@ class Generator
         return $this;
     }
     /**
+     * Gets the optionComposerSettings value
+     * @return array
+     */
+    public function getOptionComposerSettings()
+    {
+        return $this->options->getComposerSettings();
+    }
+    /**
+     * Sets the optionComposerSettings value
+     * @param array $optionComposerSettings
+     * @return Generator
+     */
+    public function setOptionComposerSettings(array $optionComposerSettings = array())
+    {
+        $this->options->setComposerSettings($optionComposerSettings);
+        return $this;
+    }
+    /**
      * Gets the optionStructsFolder value
      * @return string
      */
