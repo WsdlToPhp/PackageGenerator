@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.8.1
+- pull request #69 - use stable versions
+
 ## 1.8.0
 - issue #63 - base64Binary in Generated Classes
 - issue #64 - Integer type generated for XSD duration types
