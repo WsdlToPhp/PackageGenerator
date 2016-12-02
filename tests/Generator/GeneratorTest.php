@@ -435,6 +435,34 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testSetOptionComposerSettings()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionComposerSettings(array(
+            'config.disable-tls:true',
+            'config.data-dir:/src/foor/bar',
+            'require.wsdltophp/packagebase:dev-master',
+            'autoload.psr-4.Acme\\:src/'
+        ));
+
+        $this->assertSame(array(
+            'config' => array(
+                'disable-tls' => true,
+                'data-dir' => '/src/foor/bar'
+            ),
+            'require' => array(
+                'wsdltophp/packagebase' => 'dev-master'
+            ),
+            'autoload' => array(
+                'psr-4' => array(
+                    'Acme\\' => 'src/'
+                )
+            )
+        ), $instance->getOptionComposerSettings());
+    }
+    /**
+     *
+     */
     public function testSetStructsFolder()
     {
         $instance = self::getBingGeneratorInstance();
@@ -554,6 +582,10 @@ class GeneratorTest extends TestCase
             ->setBasicPassword('')
             ->setCategory(GeneratorOptions::VALUE_CAT)
             ->setComposerName($standalone ? 'wsdltophp/' . $dir : '')
+            ->setComposerSettings($standalone ? array(
+                'require.wsdltophp/wssecurity:dev-master',
+                'config.disable-tls:true'
+            ) : array())
             ->setDestination($destination)
             ->setEnumsFolder('EnumType')
             ->setGatherMethods(GeneratorOptions::VALUE_START)
@@ -618,7 +650,16 @@ class GeneratorTest extends TestCase
     {
         $instance = self::getBingGeneratorInstance();
 
-        $this->assertSame(array(), $instance->getSoapClient()->getSoapClientStreamContextOptions());
+        if (PHP_VERSION_ID < 70013) {
+            $this->assertSame(array(), $instance->getSoapClient()->getSoapClientStreamContextOptions());
+        } else {
+            $this->assertSame(array(
+                'http' => array(
+                    'protocol_version' => 1.1000000000000001,
+                    'header' => "Connection: close\r\n",
+                )
+            ), $instance->getSoapClient()->getSoapClientStreamContextOptions());
+        }
     }
     /**
      *
