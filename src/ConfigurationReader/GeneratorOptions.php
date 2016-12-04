@@ -581,7 +581,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * turns my.key.path to array('my' => array('key' => array('path' => $value)))
-     * @param $path $string
+     * @param string $string
      * @param mixed $value
      * @param array $array
      */
