@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.4.0
+- issue #67 - Windows not able to run composer due to missing CA Certificate File
+
 ## 2.3.1
 - pull request #69 - use stable versions
 
