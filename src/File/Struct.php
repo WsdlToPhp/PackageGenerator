@@ -92,7 +92,7 @@ class Struct extends AbstractModelFile
     protected function addStructMethodConstructBody(PhpMethod $method)
     {
         $count = $this->getModelAttributes()->count();
-        foreach ($this->getModelAttributes() as $index=>$attribute) {
+        foreach ($this->getModelAttributes() as $index => $attribute) {
             if ($index === 0) {
                 $method->addChild('$this');
             }

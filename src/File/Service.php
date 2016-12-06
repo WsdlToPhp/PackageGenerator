@@ -110,7 +110,7 @@ class Service extends AbstractModelFile
         $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, array());
         $soapHeaderNamespaces = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, array());
         $soapHeaderTypes = $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, array());
-        foreach ($soapHeaderNames as $index=>$soapHeaderName) {
+        foreach ($soapHeaderNames as $index => $soapHeaderName) {
             $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
             if ($methods->get($methodName) === null) {
                 $soapHeaderNamespace = array_key_exists($index, $soapHeaderNamespaces) ? $soapHeaderNamespaces[$index] : null;

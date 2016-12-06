@@ -160,7 +160,7 @@ class GeneratorOptions extends AbstractYamlReader
          * If array is type array("author:john Doe","Release:1",)
          */
         $comments = array();
-        foreach ($addComments as $index=>$value) {
+        foreach ($addComments as $index => $value) {
             if (is_numeric($index) && strpos($value, ':') > 0) {
                 list($tag, $val) = explode(':', $value);
                 $comments[$tag] = $val;
@@ -568,7 +568,7 @@ class GeneratorOptions extends AbstractYamlReader
          * If array is type array("config.value:true","require:libray/src",)
          */
         $settings = array();
-        foreach ($composerSettings as $index=>$value) {
+        foreach ($composerSettings as $index => $value) {
             if (is_numeric($index) && strpos($value, ':') > 0) {
                 $path = implode('', array_slice(explode(':', $value), 0, 1));
                 $val = implode(':', array_slice(explode(':', $value), 1));

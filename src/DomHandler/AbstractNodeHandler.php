@@ -122,7 +122,7 @@ abstract class AbstractNodeHandler
     private function getHandlers(\Traversable $nodes)
     {
         $handlers = array();
-        foreach ($nodes as $index=>$node) {
+        foreach ($nodes as $index => $node) {
             $handlers[] = $this->getDomDocumentHandler()->getHandler($node, $index);
         }
         return $handlers;
