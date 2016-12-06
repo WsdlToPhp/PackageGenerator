@@ -8,7 +8,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
 {
     const ATTRIBUTE_MESSAGE = 'message';
     /**
-     * @return AbstractTag|null
+     * @return TagOperation|null
      */
     public function getParentOperation()
     {
@@ -36,7 +36,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
         return $this->hasAttribute(self::ATTRIBUTE_MESSAGE) ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValueNamespace() : '';
     }
     /**
-     * @return AbstractTag|null
+     * @return TagOperation|null
      */
     public function getMessage()
     {
@@ -50,7 +50,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
         return $message;
     }
     /**
-     * @return AbstractTag[]|null
+     * @return TagOperation[]|null
      */
     public function getParts()
     {
