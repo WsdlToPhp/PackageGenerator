@@ -134,7 +134,7 @@ class Tutorial extends AbstractFile
     }
     /**
      * @param string $serviceVariableName
-     * @param Service $service
+     * @param ServiceModel $service
      * @return Tutorial
      */
     protected function addContentFromService($serviceVariableName, ServiceModel $service)

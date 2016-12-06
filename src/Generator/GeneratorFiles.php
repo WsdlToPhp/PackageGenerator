@@ -33,7 +33,7 @@ class GeneratorFiles extends AbstractGeneratorAware
         return $this->classmapFile;
     }
     /**
-     * @return GeneratorFilesFiles
+     * @return GeneratorFiles
      */
     public function doGenerate()
     {

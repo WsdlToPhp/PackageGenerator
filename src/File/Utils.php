@@ -13,7 +13,6 @@ class Utils
      * @param PhpAnnotationBlock $block
      * @param AbstractModel $model
      * @param array $ignoreMeta
-     * @return AbstractModelFile
      */
     public static function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model, array $ignoreMeta = array())
     {

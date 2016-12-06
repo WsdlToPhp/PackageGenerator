@@ -23,7 +23,7 @@ class StructEnum extends Struct
      */
     const METHOD_GET_VALID_VALUES = 'getValidValues';
     /**
-     * @param ConstantContainer
+     * @param ConstantContainer $constants
      */
     protected function getClassConstants(ConstantContainer $constants)
     {
@@ -32,6 +32,7 @@ class StructEnum extends Struct
         }
     }
     /**
+     * @param PhpConstant $constant
      * @return PhpAnnotationBlock
      */
     protected function getConstantAnnotationBlock(PhpConstant $constant)
@@ -46,7 +47,7 @@ class StructEnum extends Struct
         return $block;
     }
     /**
-     * @param MethodContainer
+     * @param MethodContainer $methods
      */
     protected function getClassMethods(MethodContainer $methods)
     {
@@ -55,6 +56,7 @@ class StructEnum extends Struct
             ->add($this->getEnumMethodGetValidValues());
     }
     /**
+     * @param PhpMethod $method
      * @return PhpAnnotationBlock|null
      */
     protected function getMethodAnnotationBlock(PhpMethod $method)
@@ -136,7 +138,7 @@ class StructEnum extends Struct
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
-     * @throws \InvalidaArgumentException
+     * @throws \InvalidArgumentException
      * @param AbstractModel $model
      * @return StructArray
      */

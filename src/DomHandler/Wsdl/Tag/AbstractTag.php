@@ -41,6 +41,7 @@ abstract class AbstractTag extends ElementHandler
     }
     /**
      * Suitable tags as parent
+     * @param array $additionalTags
      * @return string[]
      */
     protected function getSuitableParentTags(array $additionalTags = array())

@@ -36,6 +36,7 @@ abstract class AbstractRule
     }
     /**
      * @param Rules $rules
+     * @return AbstractRule
      */
     public function setRules(Rules $rules)
     {

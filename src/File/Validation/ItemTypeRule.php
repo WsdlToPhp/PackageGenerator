@@ -28,7 +28,7 @@ class ItemTypeRule extends AbstractRule
     /**
      * The second case which used PHP native functions is volontary limited by the native functions provided by PHP,
      * and the possible types defined in xsd_types.yml
-     * @param StructAttributeModel $attribute
+     * @param StructAttribute $attribute
      * @param string $itemName
      * @return string
      */

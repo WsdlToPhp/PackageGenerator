@@ -17,6 +17,7 @@ class TagInput extends AbstractTagInputOutputParser
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractTagInputOutputParser::getKnownType()
+     * @param Method $method
      * @return array|string
      */
     protected function getKnownType(Method $method)
@@ -25,6 +26,8 @@ class TagInput extends AbstractTagInputOutputParser
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractTagInputOutputParser::setKnownType()
+     * @param Method $method
+     * @param string|string[] $knownType
      * @return TagInput
      */
     protected function setKnownType(Method $method, $knownType)

@@ -9,6 +9,8 @@ class GeneratorSoapClient extends AbstractGeneratorAware
      */
     protected $soapClient;
     /**
+     * GeneratorSoapClient constructor.
+     * @param Generator $generator
      * @see \WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware::__construct()
      */
     public function __construct(Generator $generator)

@@ -104,6 +104,7 @@ class Service extends AbstractModelFile
     /**
      * @param MethodContainer $methods
      * @param MethodModel $method
+     * @return Service
      */
     protected function addSoapHeaderFromMethod(MethodContainer $methods, MethodModel $method)
     {

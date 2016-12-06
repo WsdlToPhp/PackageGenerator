@@ -66,7 +66,11 @@ abstract class AbstractDocument extends DomDocumentHandler
         $this->currentTag = $currentTag;
         return $this;
     }
+
     /**
+     * @param \DOMElement $element
+     * @param AbstractDomDocumentHandler $domDocument
+     * @param int $index
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementHandler()
      * @return ElementHandler
      */
@@ -81,6 +85,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementByName()
+     * @param string $name
      * @return ElementHandler
      */
     public function getElementByName($name)
@@ -90,6 +95,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementByName()
+     * @param string $name
      * @return ElementHandler[]
      */
     public function getElementsByName($name)

@@ -60,6 +60,8 @@ abstract class AbstractTagParser extends AbstractParser
      * for now, knowing that we are in a schema is not a useful information,
      * so we can simply parse the tag with only the wsdl as parameter
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseSchema()
+     * @param Wsdl $wsdl
+     * @param Schema $schema
      */
     protected function parseSchema(Wsdl $wsdl, Schema $schema)
     {
