@@ -36,7 +36,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
         return $this->hasAttribute(self::ATTRIBUTE_MESSAGE) ? $this->getAttribute(self::ATTRIBUTE_MESSAGE)->getValueNamespace() : '';
     }
     /**
-     * @return TagOperation|null
+     * @return TagMessage|null
      */
     public function getMessage()
     {
@@ -50,7 +50,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
         return $message;
     }
     /**
-     * @return TagOperation[]|null
+     * @return TagPart[]|null
      */
     public function getParts()
     {
