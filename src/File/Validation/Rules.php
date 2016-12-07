@@ -38,7 +38,7 @@ class Rules
      */
     public function applyRules($parameterName, $itemType = false)
     {
-        foreach ($this->getAttribute()->getMeta() as $metaName=>$metaValue) {
+        foreach ($this->getAttribute()->getMeta() as $metaName => $metaValue) {
             $rule = $this->getRule($metaName);
             if ($rule instanceof AbstractRule) {
                 $rule->applyRule($parameterName, $metaValue, $itemType);

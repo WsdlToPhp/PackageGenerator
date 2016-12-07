@@ -34,7 +34,7 @@ class TagExtension extends AbstractTagParser
      */
     public function parseExtension(Extension $extension)
     {
-        $base   = $extension->getAttribute('base')->getValue();
+        $base = $extension->getAttribute('base')->getValue();
         $parent = $extension->getSuitableParent();
         if (!empty($base) && $parent instanceof AbstractTag && $this->getModel($parent) instanceof AbstractModel && $parent->getAttributeName() !== $base) {
             $this->getModel($parent)->setInheritance($base);

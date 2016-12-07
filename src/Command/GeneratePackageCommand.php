@@ -158,7 +158,7 @@ class GeneratePackageCommand extends AbstractCommand
     protected function initGeneratorOptions()
     {
         $generatorOptions = GeneratorOptions::instance($this->resolveGeneratorOptionsConfigPath());
-        foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
+        foreach ($this->getPackageGenerationCommandLineOptions() as $optionName => $optionMethod) {
             $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
             if ($optionValue !== null) {
                 call_user_func_array(array(

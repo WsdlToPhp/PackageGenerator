@@ -18,7 +18,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     const TAG_ATTRIBUTE_GROUP = 'attributeGroup';
     const TAG_BINDING = 'binding';
     const TAG_BODY = 'body';
-    const TAG_CHOICE  = 'choice';
+    const TAG_CHOICE = 'choice';
     const TAG_COMPLEX_CONTENT = 'complexContent';
     const TAG_COMPLEX_TYPE = 'complexType';
     const TAG_DEFINITIONS = 'definitions';
