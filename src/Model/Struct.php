@@ -338,7 +338,7 @@ class Struct extends AbstractModel
         return $this->getGenerator()->getStruct(str_replace('[]', '', $this->getInheritance()));
     }
     /**
-     * @return Struct|null
+     * @return string
      */
     public function getTopInheritance()
     {

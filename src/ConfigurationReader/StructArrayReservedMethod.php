@@ -14,7 +14,7 @@ class StructArrayReservedMethod extends StructReservedMethod
     }
     /**
      * @throws \InvalidArgumentException
-     * @param string options's file to parse
+     * @param string $filename options's file to parse
      * @return StructArrayReservedMethod
      */
     public static function instance($filename = null)
@@ -26,6 +26,6 @@ class StructArrayReservedMethod extends StructReservedMethod
      */
     public static function getDefaultArrayConfigurationPath()
     {
-        return dirname(__FILE__) . '/../resources/config/struct_array_reserved_keywords.yml';
+        return __DIR__ . '/../resources/config/struct_array_reserved_keywords.yml';
     }
 }

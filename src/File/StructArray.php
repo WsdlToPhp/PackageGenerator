@@ -266,7 +266,7 @@ class StructArray extends Struct
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
-     * @throws \InvalidaArgumentException
+     * @throws \InvalidArgumentException
      * @param AbstractModel $model
      * @return StructArray
      */

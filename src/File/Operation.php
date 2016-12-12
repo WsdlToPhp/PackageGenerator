@@ -8,7 +8,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 class Operation extends AbstractOperation
 {
     /**
-     * @return Operation
+     * @return PhpMethod
      */
     public function getMainMethod()
     {

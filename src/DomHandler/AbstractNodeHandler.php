@@ -17,7 +17,10 @@ abstract class AbstractNodeHandler
      */
     protected $domDocumentHandler;
     /**
+     * AbstractNodeHandler constructor.
      * @param \DOMNode $node
+     * @param AbstractDomDocumentHandler $domDocumentHandler
+     * @param int $index
      */
     public function __construct(\DOMNode $node, AbstractDomDocumentHandler $domDocumentHandler, $index = 0)
     {

@@ -38,15 +38,15 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
     public function parseInputOutput(AbstractTagOperationElement $tag)
     {
         if (!$tag->hasAttributeMessage()) {
-            return null;
+            return;
         }
         $operation = $tag->getParentOperation();
         if (!$operation instanceof TagOperation) {
-            return null;
+            return;
         }
         $method = $this->getModel($operation);
         if (!$method instanceof Method) {
-            return null;
+            return;
         }
         if ($this->isKnownTypeUnknown($method)) {
             $parts = $tag->getParts();

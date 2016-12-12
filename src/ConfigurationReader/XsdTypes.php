@@ -40,12 +40,12 @@ class XsdTypes extends AbstractYamlReader
         return $this;
     }
     /**
-     * @param string options's file to parse
+     * @param string $filename options's file to parse
      * @return XsdTypes
      */
     public static function instance($filename = null)
     {
-        return parent::instance(empty($filename) ? dirname(__FILE__) . '/../resources/config/xsd_types.yml' : $filename);
+        return parent::instance(empty($filename) ? __DIR__ . '/../resources/config/xsd_types.yml' : $filename);
     }
     /**
      * @param string $xsdType

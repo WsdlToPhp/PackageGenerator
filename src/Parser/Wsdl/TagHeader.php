@@ -29,6 +29,7 @@ class TagHeader extends AbstractTagParser
     const META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
+     * @param Wsdl $wsdl
      */
     protected function parseWsdl(Wsdl $wsdl)
     {

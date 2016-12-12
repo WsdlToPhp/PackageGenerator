@@ -41,7 +41,7 @@ class Struct extends AbstractModelFile
         return $this->getModel()->getAttributes($includeInheritanceAttributes, $requiredFirst);
     }
     /**
-     * @param PropertyContainer
+     * @param PropertyContainer $properties
      */
     protected function getClassProperties(PropertyContainer $properties)
     {
@@ -52,7 +52,7 @@ class Struct extends AbstractModelFile
         }
     }
     /**
-     * @return PhpAnnotationBlock
+     * @return PhpAnnotationBlock $property
      */
     protected function getPropertyAnnotationBlock(PhpProperty $property)
     {
@@ -65,7 +65,7 @@ class Struct extends AbstractModelFile
         return $annotationBlock;
     }
     /**
-     * @param MethodContainer
+     * @param MethodContainer $methods
      */
     protected function getClassMethods(MethodContainer $methods)
     {
@@ -627,7 +627,7 @@ class Struct extends AbstractModelFile
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
-     * @throws \InvalidaArgumentException
+     * @throws \InvalidArgumentException
      * @param AbstractModel $model
      * @return StructArray
      */

@@ -7,7 +7,7 @@ use WsdlToPhp\PackageGenerator\Model\StructValue as Model;
 class StructValue extends AbstractModel
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\Container\ModelContainer\Model::objectClass()
+     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
      * @return string
      */
     protected function objectClass()
@@ -24,6 +24,7 @@ class StructValue extends AbstractModel
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
+     * @param string $value
      * @return Model|null
      */
     public function get($value)

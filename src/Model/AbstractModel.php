@@ -100,7 +100,8 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Sets the name of the class the current class inherits from
-     * @param AbstractModel
+     * @param string $inheritance
+     * @return AbstractModel
      */
     public function setInheritance($inheritance = '')
     {

@@ -21,7 +21,7 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 abstract class AbstractModelFile extends AbstractFile
 {
     /**
-     * @var Long annotation string
+     * @var string Long annotation string
      */
     const ANNOTATION_LONG_LENGTH = '250';
     /**
@@ -344,6 +344,7 @@ abstract class AbstractModelFile extends AbstractFile
     abstract protected function getMethodAnnotationBlock(PhpMethod $method);
     /**
      * @param PhpClass $class
+     * @return AbstractModelFile
      */
     protected function defineStringMethod(PhpClass $class)
     {
@@ -461,7 +462,7 @@ abstract class AbstractModelFile extends AbstractFile
     }
     /**
      * @param StructAttributeModel $attribute
-     * @param string $returnArrayType
+     * @param bool $returnArrayType
      * @return bool
      */
     protected function useBrackets(StructAttributeModel $attribute, $returnArrayType = true)

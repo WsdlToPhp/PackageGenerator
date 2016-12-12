@@ -78,7 +78,12 @@ class Wsdl extends AbstractDocument
             $name,
         ), $includeExternals);
     }
+
     /**
+     * @param string $name
+     * @param array $attributes
+     * @param \DOMNode|null $node
+     * @param bool $includeExternals
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementsByNameAndAttributes()
      * @return AbstractTag[]
      */
@@ -143,6 +148,6 @@ class Wsdl extends AbstractDocument
     protected function initRootElement()
     {
         $this->setCurrentTag(parent::TAG_DEFINITIONS);
-        return parent::initRootElement();
+        parent::initRootElement();
     }
 }

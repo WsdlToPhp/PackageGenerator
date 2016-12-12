@@ -75,7 +75,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Returns the option value
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @param string $optionName
      * @return mixed
      */
@@ -88,7 +88,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Allows to add an option and set its value
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @param string $optionName
      * @return GeneratorOptions
      */
@@ -108,7 +108,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * @throws \InvalidArgumentException
-     * @param string options's file to parse
+     * @param string $filename options's file to parse
      * @return GeneratorOptions
      */
     public static function instance($filename = null)
@@ -120,7 +120,7 @@ class GeneratorOptions extends AbstractYamlReader
      */
     public static function getDefaultConfigurationPath()
     {
-        return dirname(__FILE__) . '/../resources/config/generator_options.yml';
+        return __DIR__ . '/../resources/config/generator_options.yml';
     }
     /**
      * Get category option value
@@ -550,7 +550,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get composer settings option value
-     * @return string
+     * @return array
      */
     public function getComposerSettings()
     {
@@ -559,7 +559,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current composer settings option value
      * @throws \InvalidArgumentException
-     * @param string $composerSettings
+     * @param array $composerSettings
      * @return GeneratorOptions
      */
     public function setComposerSettings(array $composerSettings = array())

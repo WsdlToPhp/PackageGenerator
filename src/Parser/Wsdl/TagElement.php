@@ -21,6 +21,9 @@ class TagElement extends AbstractAttributesParser
      * @uses AbstractTagParser::parseTagAttributes()
      * @uses StructAttribute::setContainsElements()
      * @uses AbstractElementHandler::canOccurSeveralTimes()
+     * @param Tag $tag
+     * @param AbstractModel|null $model
+     * @param StructAttribute|null $structAttribute
      */
     protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null)
     {

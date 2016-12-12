@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Parser\AbstractParser as Parser;
@@ -35,7 +36,7 @@ abstract class AbstractParser extends Parser
      */
     public function __construct(Generator $generator)
     {
-        $this->generator = $generator;
+        parent::__construct($generator);
         $this->parsedWsdls = array();
         $this->parsedSchemas = array();
     }
@@ -86,7 +87,7 @@ abstract class AbstractParser extends Parser
      */
     abstract protected function parsingTag();
     /**
-     * @param array $tags
+     * @param AbstractTag[] $tags
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser
      */
     private function setTags(array $tags)

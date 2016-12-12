@@ -13,6 +13,7 @@ class TagEnumeration extends AbstractTagParser
 {
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
+     * @param Wsdl $wsdl
      */
     protected function parseWsdl(Wsdl $wsdl)
     {
