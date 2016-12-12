@@ -17,7 +17,6 @@ class DomDocumentHandler extends AbstractDomDocumentHandler
     {
         return new NodeHandler($node, $domDocument, $index);
     }
-
     /**
      * @param \DOMElement $element
      * @param \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler $domDocument
@@ -29,7 +28,6 @@ class DomDocumentHandler extends AbstractDomDocumentHandler
     {
         return new ElementHandler($element, $domDocument, $index);
     }
-
     /**
      * @param \DOMAttr $attribute
      * @param \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler $domDocument

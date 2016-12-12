@@ -51,19 +51,14 @@ abstract class AbstractParser extends Parser
             $content = $wsdl->getContent();
             if ($content instanceof WsdlDocument) {
                 if ($this->isWsdlParsed($wsdl) === false) {
-                    $this
-                        ->setWsdlAsParsed($wsdl)
-                        ->setTags($content->getElementsByName($this->parsingTag()))
-                        ->parseWsdl($wsdl);
+                    $this->setWsdlAsParsed($wsdl)->setTags($content->getElementsByName($this->parsingTag()))->parseWsdl($wsdl);
                 }
                 foreach ($content->getExternalSchemas() as $schema) {
                     if ($this->isSchemaParsed($wsdl, $schema) === false) {
                         $this->setSchemaAsParsed($wsdl, $schema);
                         $schemaContent = $schema->getContent();
                         if ($schemaContent instanceof SchemaDocument) {
-                            $this
-                                ->setTags($schemaContent->getElementsByName($this->parsingTag()))
-                                ->parseSchema($wsdl, $schema);
+                            $this->setTags($schemaContent->getElementsByName($this->parsingTag()))->parseSchema($wsdl, $schema);
                         }
                     }
                 }
@@ -120,10 +115,7 @@ abstract class AbstractParser extends Parser
      */
     public function isWsdlParsed(Wsdl $wsdl)
     {
-        return
-            array_key_exists($wsdl->getName(), $this->parsedWsdls) &&
-            is_array($this->parsedWsdls[$wsdl->getName()]) &&
-            in_array($this->parsingTag(), $this->parsedWsdls[$wsdl->getName()]);
+        return array_key_exists($wsdl->getName(), $this->parsedWsdls) && is_array($this->parsedWsdls[$wsdl->getName()]) && in_array($this->parsingTag(), $this->parsedWsdls[$wsdl->getName()]);
     }
     /**
      * @param Wsdl $wsdl
@@ -147,9 +139,6 @@ abstract class AbstractParser extends Parser
     public function isSchemaParsed(Wsdl $wsdl, Schema $schema)
     {
         $key = $wsdl->getName() . $schema->getName();
-        return
-            array_key_exists($key, $this->parsedSchemas) &&
-            is_array($this->parsedSchemas[$key]) &&
-            in_array($this->parsingTag(), $this->parsedSchemas[$key]);
+        return array_key_exists($key, $this->parsedSchemas) && is_array($this->parsedSchemas[$key]) && in_array($this->parsingTag(), $this->parsedSchemas[$key]);
     }
 }

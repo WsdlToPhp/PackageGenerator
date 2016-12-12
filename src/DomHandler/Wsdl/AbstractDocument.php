@@ -66,7 +66,6 @@ abstract class AbstractDocument extends DomDocumentHandler
         $this->currentTag = $currentTag;
         return $this;
     }
-
     /**
      * @param \DOMElement $element
      * @param AbstractDomDocumentHandler $domDocument

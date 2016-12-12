@@ -59,8 +59,7 @@ class GeneratePackageCommand extends AbstractCommand
     protected function configure()
     {
         parent::configure();
-        $this
-            ->setName('generate:package')
+        $this->setName('generate:package')
             ->setDescription('Generate package based on options')
             ->addOption('urlorpath', null, InputOption::VALUE_REQUIRED, 'Url or path to WSDL')
             ->addOption('destination', null, InputOption::VALUE_REQUIRED, 'Path to destination directory, where the package will be generated')
@@ -99,21 +98,15 @@ class GeneratePackageCommand extends AbstractCommand
         parent::execute($input, $output);
         $start = new \DateTime();
         $this->writeLn(sprintf(" Start at %s", $start->format('Y-m-d H:i:s')));
-
         $this->initGeneratorOptions();
-
         if ($this->canExecute() === true) {
-            $this
-                ->initGenerator()
-                ->getGenerator()
-                    ->generatePackage();
+            $this->initGenerator()->getGenerator()->generatePackage();
         } elseif ($this->canExecute() === false) {
             $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
             $this->writeLn(sprintf("  Generator's option file used: %s", $this->resolveGeneratorOptionsConfigPath()));
             $this->writeLn("  Used generator's options:");
             $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
         }
-
         $end = new \DateTime();
         $this->writeLn(sprintf(" End at %s, duration: %s", $end->format('Y-m-d H:i:s'), $start->diff($end)->format('%H:%I:%S')));
     }
@@ -178,9 +171,9 @@ class GeneratePackageCommand extends AbstractCommand
      */
     protected function formatOptionValue($optionValue)
     {
-        if ($optionValue === 'true' || (is_numeric($optionValue) && (int)$optionValue === 1)) {
+        if ($optionValue === 'true' || (is_numeric($optionValue) && (int) $optionValue === 1)) {
             return true;
-        } elseif ($optionValue === 'false' || (is_numeric($optionValue) && (int)$optionValue === 0)) {
+        } elseif ($optionValue === 'false' || (is_numeric($optionValue) && (int) $optionValue === 0)) {
             return false;
         }
         return $optionValue;

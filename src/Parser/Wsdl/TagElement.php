@@ -29,9 +29,7 @@ class TagElement extends AbstractAttributesParser
     {
         parent::parseTagAttributes($tag, $model, $structAttribute);
         if ($structAttribute instanceof StructAttribute) {
-            $structAttribute
-                ->setContainsElements($tag->canOccurSeveralTimes())
-                ->setRemovableFromRequest($tag->isRemovable());
+            $structAttribute->setContainsElements($tag->canOccurSeveralTimes())->setRemovableFromRequest($tag->isRemovable());
         }
     }
 }

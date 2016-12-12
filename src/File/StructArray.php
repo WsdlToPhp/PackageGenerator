@@ -45,8 +45,7 @@ class StructArray extends Struct
     public function addStructMethodsSetAndGet(MethodContainer $methods)
     {
         parent::addStructMethodsSetAndGet($methods);
-        $this
-            ->addArrayMethodCurrent($methods)
+        $this->addArrayMethodCurrent($methods)
             ->addArrayMethodItem($methods)
             ->addArrayMethodFirst($methods)
             ->addArrayMethodLast($methods)
@@ -105,7 +104,10 @@ class StructArray extends Struct
      */
     protected function addArrayMethodGetAttributeName(MethodContainer $methods)
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_GET_ATTRIBUTE_NAME, sprintf('return \'%s\';', $this->getModel()->getAttributes()->offsetGet(0)->getName()));
+        return $this->addArrayMethodGenericMethod($methods, self::METHOD_GET_ATTRIBUTE_NAME, sprintf('return \'%s\';', $this->getModel()
+            ->getAttributes()
+            ->offsetGet(0)
+            ->getName()));
     }
     /**
      * @param MethodContainer $methods

@@ -1,4 +1,5 @@
 <?php
+
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
@@ -99,7 +100,10 @@ abstract class AbstractTagParser extends AbstractParser
     {
         $methodName = sprintf('parseTagAttribute%s', ucfirst($tagName));
         if (method_exists($this, $methodName)) {
-            return array($this, $methodName);
+            return array(
+                $this,
+                $methodName,
+            );
         }
         return null;
     }

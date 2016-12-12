@@ -26,8 +26,7 @@ class Structs extends AbstractParser
      */
     public function parse()
     {
-        $types = $this
-            ->getGenerator()
+        $types = $this->getGenerator()
             ->getSoapClient()
             ->getSoapClient()
             ->getSoapClient()

@@ -78,7 +78,6 @@ class Wsdl extends AbstractDocument
             $name,
         ), $includeExternals);
     }
-
     /**
      * @param string $name
      * @param array $attributes

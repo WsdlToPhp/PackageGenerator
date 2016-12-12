@@ -38,10 +38,9 @@ class AbstractReservedWord extends AbstractYamlReader
         $allKeywords = $this->parseSimpleArray($filename, self::MAIN_KEY);
         $caseSensitiveKeywords = $allKeywords[self::CASE_SENSITIVE_KEY];
         $caseInsensitiveKeywords = array_map('strtolower', $allKeywords[self::CASE_INSENSITIVE_KEY]);
-
         $this->keywords = array_merge_recursive($this->keywords, array(
             self::CASE_SENSITIVE_KEY => $caseSensitiveKeywords,
-            self::CASE_INSENSITIVE_KEY => $caseInsensitiveKeywords
+            self::CASE_INSENSITIVE_KEY => $caseInsensitiveKeywords,
         ));
         return $this;
     }
@@ -60,7 +59,6 @@ class AbstractReservedWord extends AbstractYamlReader
      */
     public function is($keyword)
     {
-        return in_array($keyword, $this->keywords[self::CASE_SENSITIVE_KEY], true)
-            || in_array(strtolower($keyword), $this->keywords[self::CASE_INSENSITIVE_KEY], true);
+        return in_array($keyword, $this->keywords[self::CASE_SENSITIVE_KEY], true) || in_array(strtolower($keyword), $this->keywords[self::CASE_INSENSITIVE_KEY], true);
     }
 }

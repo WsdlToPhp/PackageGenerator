@@ -51,9 +51,7 @@ class StructEnum extends Struct
      */
     protected function getClassMethods(MethodContainer $methods)
     {
-        $methods
-            ->add($this->getEnumMethodValueIsValid())
-            ->add($this->getEnumMethodGetValidValues());
+        $methods->add($this->getEnumMethodValueIsValid())->add($this->getEnumMethodGetValidValues());
     }
     /**
      * @param PhpMethod $method
@@ -116,10 +114,7 @@ class StructEnum extends Struct
         $annotationBlock = new PhpAnnotationBlock(array(
             'Return true if value is allowed',
         ));
-        $annotationBlock
-            ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('self::%s()', self::METHOD_GET_VALID_VALUES)))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value value'))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool true|false'));
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('self::%s()', self::METHOD_GET_VALID_VALUES)))->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value value'))->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool true|false'));
         return $annotationBlock;
     }
     /**

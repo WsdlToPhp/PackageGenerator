@@ -27,10 +27,7 @@ class Rules
      */
     public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute)
     {
-        $this
-            ->setFile($file)
-            ->setMethod($method)
-            ->setAttribute($attribute);
+        $this->setFile($file)->setMethod($method)->setAttribute($attribute);
     }
     /**
      * @param string $parameterName

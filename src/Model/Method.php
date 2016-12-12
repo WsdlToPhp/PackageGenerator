@@ -46,11 +46,7 @@ class Method extends AbstractModel
     public function __construct(Generator $generator, $name, $parameterType, $returnType, Service $service, $isUnique = true)
     {
         parent::__construct($generator, $name);
-        $this
-            ->setParameterType($parameterType)
-            ->setReturnType($returnType)
-            ->setIsUnique($isUnique)
-            ->setOwner($service);
+        $this->setParameterType($parameterType)->setReturnType($returnType)->setIsUnique($isUnique)->setOwner($service);
     }
     /**
      * Method name can't starts with numbers

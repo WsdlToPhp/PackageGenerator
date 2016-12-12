@@ -90,6 +90,6 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
                 $isKnown &= !empty($knownType) && strtolower($knownValue) !== self::UNKNOWN;
             }
         }
-        return (bool)!$isKnown;
+        return (bool) !$isKnown;
     }
 }

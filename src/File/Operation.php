@@ -13,9 +13,7 @@ class Operation extends AbstractOperation
     public function getMainMethod()
     {
         $phpMethod = new PhpMethod($this->getMethod()->getMethodName());
-        $this
-            ->defineParameters($phpMethod)
-            ->defineBody($phpMethod);
+        $this->defineParameters($phpMethod)->defineBody($phpMethod);
         return $phpMethod;
     }
     /**
@@ -24,10 +22,7 @@ class Operation extends AbstractOperation
      */
     protected function defineParameters(PhpMethod $method)
     {
-        return $this
-            ->defineParametersFromArray($method)
-            ->defineParametersFromModel($method)
-            ->defineParametersFromString($method);
+        return $this->defineParametersFromArray($method)->defineParametersFromModel($method)->defineParametersFromString($method);
     }
     /**
      * @param PhpMethod $method
@@ -53,7 +48,9 @@ class Operation extends AbstractOperation
         if ($this->isParameterTypeAModel()) {
             if ($this->getParameterTypeModel()->getAttributes(true, true)->count() > 0) {
                 $method->setParameters(array(
-                    $this->getMethodParameter($this->getParameterName($this->getParameterTypeModel()->getPackagedName()), $this->getParameterTypeModel()->getPackagedName(true))
+                    $this->getMethodParameter($this->getParameterName($this->getParameterTypeModel()
+                        ->getPackagedName()), $this->getParameterTypeModel()
+                        ->getPackagedName(true)),
                 ));
             }
         }
@@ -67,7 +64,8 @@ class Operation extends AbstractOperation
     {
         if ($this->isParameterTypeAString() && !$this->isParameterTypeAModel()) {
             $method->setParameters(array(
-                $this->getMethodParameter($this->getParameterName($this->getMethod()->getParameterType()))
+                $this->getMethodParameter($this->getParameterName($this->getMethod()
+                    ->getParameterType())),
             ));
         }
         return $this;
@@ -78,13 +76,12 @@ class Operation extends AbstractOperation
      */
     protected function defineBody(PhpMethod $method)
     {
-        $method
-            ->addChild('try {')
-                ->addChild($method->getIndentedString(sprintf('$this->setResult(self::getSoapClient()->%s%s));', $this->getSoapCallName(), $this->getOperationCallParameters($method)), 1))
-                ->addChild($method->getIndentedString('return $this->getResult();', 1))
+        $method->addChild('try {')
+            ->addChild($method->getIndentedString(sprintf('$this->setResult(self::getSoapClient()->%s%s));', $this->getSoapCallName(), $this->getOperationCallParameters($method)), 1))
+            ->addChild($method->getIndentedString('return $this->getResult();', 1))
             ->addChild('} catch (\SoapFault $soapFault) {')
-                ->addChild($method->getIndentedString('$this->saveLastError(__METHOD__, $soapFault);', 1))
-                ->addChild($method->getIndentedString('return false;', 1))
+            ->addChild($method->getIndentedString('$this->saveLastError(__METHOD__, $soapFault);', 1))
+            ->addChild($method->getIndentedString('return false;', 1))
             ->addChild('}');
         return $this;
     }

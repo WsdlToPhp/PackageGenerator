@@ -107,11 +107,7 @@ abstract class AbstractModelFile extends AbstractFile
             throw new \InvalidArgumentException('You MUST define the model before begin able to generate the file', __LINE__);
         }
         GeneratorUtils::createDirectory($this->getFileDestination($withSrc));
-        $this
-            ->defineNamespace()
-            ->defineUseStatement()
-            ->addAnnotationBlock()
-            ->addClassElement();
+        $this->defineNamespace()->defineUseStatement()->addAnnotationBlock()->addClassElement();
         return parent::writeFile();
     }
     /**
@@ -119,9 +115,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function addAnnotationBlock()
     {
-        $this
-            ->getFile()
-                ->addAnnotationBlockElement($this->getClassAnnotationBlock());
+        $this->getFile()->addAnnotationBlockElement($this->getClassAnnotationBlock());
         return $this;
     }
     /**
@@ -195,10 +189,7 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $block = new PhpAnnotationBlock();
         $block->addChild($this->getClassDeclarationLine());
-        $this
-            ->defineModelAnnotationsFromWsdl($block)
-            ->definePackageAnnotations($block)
-            ->defineGeneralAnnotations($block);
+        $this->defineModelAnnotationsFromWsdl($block)->definePackageAnnotations($block)->defineGeneralAnnotations($block);
         return $block;
     }
     /**
@@ -231,13 +222,12 @@ abstract class AbstractModelFile extends AbstractFile
     protected function addClassElement()
     {
         $class = new PhpClass($this->getModel()->getPackagedName(), $this->getModel()->getIsAbstract(), $this->getModel()->getExtendsClassName() === '' ? null : $this->getModel()->getExtendsClassName());
-        $this
-            ->defineConstants($class)
+        $this->defineConstants($class)
             ->defineProperties($class)
             ->defineMethods($class)
             ->defineStringMethod($class)
             ->getFile()
-                ->addClassComponent($class);
+            ->addClassComponent($class);
         return $this;
     }
     /**
@@ -246,9 +236,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function defineNamespace()
     {
         if ($this->getModel()->getNamespace() !== '') {
-            $this
-                ->getFile()
-                    ->setNamespace($this->getModel()->getNamespace());
+            $this->getFile()->setNamespace($this->getModel()->getNamespace());
         }
         return $this;
     }
@@ -258,9 +246,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function defineUseStatement()
     {
         if ($this->getModel()->getExtends() !== '') {
-            $this
-                ->getFile()
-                    ->addUse($this->getModel()->getExtends(), null, true);
+            $this->getFile()->addUse($this->getModel()->getExtends(), null, true);
         }
         return $this;
     }

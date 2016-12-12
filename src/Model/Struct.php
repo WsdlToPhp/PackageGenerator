@@ -58,11 +58,7 @@ class Struct extends AbstractModel
     public function __construct(Generator $generator, $name, $isStruct = true, $isRestriction = false)
     {
         parent::__construct($generator, $name);
-        $this
-            ->setIsStruct($isStruct)
-            ->setIsRestriction($isRestriction)
-            ->setAttributes(new StructAttributeContainer($generator))
-            ->setValues(new StructValueContainer($generator));
+        $this->setIsStruct($isStruct)->setIsRestriction($isRestriction)->setAttributes(new StructAttributeContainer($generator))->setValues(new StructValueContainer($generator));
     }
     /**
      * Returns the contextual part of the class name for the package
