@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.9.1
+- pull request #70 - phpdoc & composer fixes
+
 ## 1.9.0
 - issue #67 - Windows not able to run composer due to missing CA Certificate File
 
