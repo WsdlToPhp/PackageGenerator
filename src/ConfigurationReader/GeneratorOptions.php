@@ -75,7 +75,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Returns the option value
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @param string $optionName
      * @return mixed
      */
@@ -88,7 +88,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Allows to add an option and set its value
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @param string $optionName
      * @return GeneratorOptions
      */
@@ -108,7 +108,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * @throws \InvalidArgumentException
-     * @param string options's file to parse
+     * @param string $filename options's file to parse
      * @return GeneratorOptions
      */
     public static function instance($filename = null)
@@ -120,7 +120,7 @@ class GeneratorOptions extends AbstractYamlReader
      */
     public static function getDefaultConfigurationPath()
     {
-        return dirname(__FILE__) . '/../resources/config/generator_options.yml';
+        return __DIR__ . '/../resources/config/generator_options.yml';
     }
     /**
      * Get category option value
@@ -160,7 +160,7 @@ class GeneratorOptions extends AbstractYamlReader
          * If array is type array("author:john Doe","Release:1",)
          */
         $comments = array();
-        foreach ($addComments as $index=>$value) {
+        foreach ($addComments as $index => $value) {
             if (is_numeric($index) && strpos($value, ':') > 0) {
                 list($tag, $val) = explode(':', $value);
                 $comments[$tag] = $val;
@@ -550,7 +550,7 @@ class GeneratorOptions extends AbstractYamlReader
     }
     /**
      * Get composer settings option value
-     * @return string
+     * @return array
      */
     public function getComposerSettings()
     {
@@ -559,7 +559,7 @@ class GeneratorOptions extends AbstractYamlReader
     /**
      * Set current composer settings option value
      * @throws \InvalidArgumentException
-     * @param string $composerSettings
+     * @param array $composerSettings
      * @return GeneratorOptions
      */
     public function setComposerSettings(array $composerSettings = array())
@@ -568,7 +568,7 @@ class GeneratorOptions extends AbstractYamlReader
          * If array is type array("config.value:true","require:libray/src",)
          */
         $settings = array();
-        foreach ($composerSettings as $index=>$value) {
+        foreach ($composerSettings as $index => $value) {
             if (is_numeric($index) && strpos($value, ':') > 0) {
                 $path = implode('', array_slice(explode(':', $value), 0, 1));
                 $val = implode(':', array_slice(explode(':', $value), 1));

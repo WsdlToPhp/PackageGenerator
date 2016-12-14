@@ -1,4 +1,5 @@
 <?php
+
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
@@ -60,6 +61,8 @@ abstract class AbstractTagParser extends AbstractParser
      * for now, knowing that we are in a schema is not a useful information,
      * so we can simply parse the tag with only the wsdl as parameter
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseSchema()
+     * @param Wsdl $wsdl
+     * @param Schema $schema
      */
     protected function parseSchema(Wsdl $wsdl, Schema $schema)
     {
@@ -97,7 +100,10 @@ abstract class AbstractTagParser extends AbstractParser
     {
         $methodName = sprintf('parseTagAttribute%s', ucfirst($tagName));
         if (method_exists($this, $methodName)) {
-            return array($this, $methodName);
+            return array(
+                $this,
+                $methodName,
+            );
         }
         return null;
     }

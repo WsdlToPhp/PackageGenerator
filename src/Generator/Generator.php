@@ -51,17 +51,14 @@ class Generator
      */
     public function __construct(GeneratorOptions $options)
     {
-        $this
-            ->setOptions($options)
-            ->initialize();
+        $this->setOptions($options)->initialize();
     }
     /**
      * @return Generator
      */
     protected function initialize()
     {
-        return $this
-            ->initContainers()
+        return $this->initContainers()
             ->initParsers()
             ->initFiles()
             ->initSoapClient()
@@ -179,11 +176,7 @@ class Generator
      */
     public function generatePackage()
     {
-        return $this
-            ->doSanityChecks()
-            ->initDirectory()
-            ->doParse()
-            ->doGenerate();
+        return $this->doSanityChecks()->initDirectory()->doParse()->doGenerate();
     }
     /**
      * Gets the struct by its name

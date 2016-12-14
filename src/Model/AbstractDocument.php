@@ -15,6 +15,7 @@ abstract class AbstractDocument extends AbstractModel
     /**
      * @param Generator $generator
      * @param string $name
+     * @param string $content
      */
     public function __construct(Generator $generator, $name, $content)
     {
@@ -27,7 +28,7 @@ abstract class AbstractDocument extends AbstractModel
     abstract protected function contentClass();
     /**
      * @param string $content wsdl/schema content
-     * @return Wsdl
+     * @return AbstractDocument
      */
     protected function setContent($content)
     {

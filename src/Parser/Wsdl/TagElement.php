@@ -21,14 +21,15 @@ class TagElement extends AbstractAttributesParser
      * @uses AbstractTagParser::parseTagAttributes()
      * @uses StructAttribute::setContainsElements()
      * @uses AbstractElementHandler::canOccurSeveralTimes()
+     * @param Tag $tag
+     * @param AbstractModel|null $model
+     * @param StructAttribute|null $structAttribute
      */
     protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null)
     {
         parent::parseTagAttributes($tag, $model, $structAttribute);
         if ($structAttribute instanceof StructAttribute) {
-            $structAttribute
-                ->setContainsElements($tag->canOccurSeveralTimes())
-                ->setRemovableFromRequest($tag->isRemovable());
+            $structAttribute->setContainsElements($tag->canOccurSeveralTimes())->setRemovableFromRequest($tag->isRemovable());
         }
     }
 }

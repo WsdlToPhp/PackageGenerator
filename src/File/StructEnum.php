@@ -23,7 +23,7 @@ class StructEnum extends Struct
      */
     const METHOD_GET_VALID_VALUES = 'getValidValues';
     /**
-     * @param ConstantContainer
+     * @param ConstantContainer $constants
      */
     protected function getClassConstants(ConstantContainer $constants)
     {
@@ -32,6 +32,7 @@ class StructEnum extends Struct
         }
     }
     /**
+     * @param PhpConstant $constant
      * @return PhpAnnotationBlock
      */
     protected function getConstantAnnotationBlock(PhpConstant $constant)
@@ -46,15 +47,14 @@ class StructEnum extends Struct
         return $block;
     }
     /**
-     * @param MethodContainer
+     * @param MethodContainer $methods
      */
     protected function getClassMethods(MethodContainer $methods)
     {
-        $methods
-            ->add($this->getEnumMethodValueIsValid())
-            ->add($this->getEnumMethodGetValidValues());
+        $methods->add($this->getEnumMethodValueIsValid())->add($this->getEnumMethodGetValidValues());
     }
     /**
+     * @param PhpMethod $method
      * @return PhpAnnotationBlock|null
      */
     protected function getMethodAnnotationBlock(PhpMethod $method)
@@ -114,10 +114,7 @@ class StructEnum extends Struct
         $annotationBlock = new PhpAnnotationBlock(array(
             'Return true if value is allowed',
         ));
-        $annotationBlock
-            ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('self::%s()', self::METHOD_GET_VALID_VALUES)))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value value'))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool true|false'));
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('self::%s()', self::METHOD_GET_VALID_VALUES)))->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value value'))->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool true|false'));
         return $annotationBlock;
     }
     /**
@@ -136,7 +133,7 @@ class StructEnum extends Struct
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
-     * @throws \InvalidaArgumentException
+     * @throws \InvalidArgumentException
      * @param AbstractModel $model
      * @return StructArray
      */

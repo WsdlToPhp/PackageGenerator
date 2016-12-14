@@ -22,7 +22,6 @@ class Composer extends AbstractFile
     {
         $composer = new Application();
         $composer->setAutoExit(false);
-
         $composer->run(new ArrayInput(array(
             'command' => 'init',
             '--verbose' => true,
@@ -32,13 +31,11 @@ class Composer extends AbstractFile
             '--require' => array(
                 'php:>=5.3.3',
                 'ext-soap:*',
-                'wsdltophp/packagebase:dev-master',
+                'wsdltophp/packagebase:~1.0',
             ),
             '--working-dir' => $this->getGenerator()->getOptionDestination(),
         )));
-
         $this->completeComposerJson();
-
         if ($this->getRunComposerUpdate() === true) {
             return $composer->run(new ArrayInput(array(
                 'command' => 'update',
@@ -57,9 +54,7 @@ class Composer extends AbstractFile
     {
         $content = $this->getComposerFileContent();
         if (is_array($content) && !empty($content)) {
-            $this
-                ->addAutoloadToComposerJson($content)
-                ->addComposerSettings($content);
+            $this->addAutoloadToComposerJson($content)->addComposerSettings($content);
         }
         return $this->setComposerFileContent($content);
     }

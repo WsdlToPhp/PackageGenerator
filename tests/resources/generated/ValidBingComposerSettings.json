@@ -4,7 +4,7 @@
     "require": {
         "php": ">=5.3.3",
         "ext-soap": "*",
-        "wsdltophp/packagebase": "dev-master",
+        "wsdltophp/packagebase": "~1.0",
         "wsdltophp/wssecurity": "dev-master"
     },
     "autoload": {

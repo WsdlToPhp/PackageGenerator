@@ -165,7 +165,7 @@ abstract class AbstractDomDocumentHandler
     {
         $xpath = new \DOMXPath($this->domDocument);
         $xQuery = sprintf("%s//*[local-name() = '%s']", $node instanceof \DOMNode ? '.' : '', $name);
-        foreach ($attributes as $attributeName=>$attributeValue) {
+        foreach ($attributes as $attributeName => $attributeValue) {
             $xQuery .= sprintf("[@%s='%s']", $attributeName, $attributeValue);
         }
         return $xpath->query($xQuery, $node);

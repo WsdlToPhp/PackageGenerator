@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Parser\AbstractParser as Parser;
@@ -35,7 +36,7 @@ abstract class AbstractParser extends Parser
      */
     public function __construct(Generator $generator)
     {
-        $this->generator = $generator;
+        parent::__construct($generator);
         $this->parsedWsdls = array();
         $this->parsedSchemas = array();
     }
@@ -50,19 +51,14 @@ abstract class AbstractParser extends Parser
             $content = $wsdl->getContent();
             if ($content instanceof WsdlDocument) {
                 if ($this->isWsdlParsed($wsdl) === false) {
-                    $this
-                        ->setWsdlAsParsed($wsdl)
-                        ->setTags($content->getElementsByName($this->parsingTag()))
-                        ->parseWsdl($wsdl);
+                    $this->setWsdlAsParsed($wsdl)->setTags($content->getElementsByName($this->parsingTag()))->parseWsdl($wsdl);
                 }
                 foreach ($content->getExternalSchemas() as $schema) {
                     if ($this->isSchemaParsed($wsdl, $schema) === false) {
                         $this->setSchemaAsParsed($wsdl, $schema);
                         $schemaContent = $schema->getContent();
                         if ($schemaContent instanceof SchemaDocument) {
-                            $this
-                                ->setTags($schemaContent->getElementsByName($this->parsingTag()))
-                                ->parseSchema($wsdl, $schema);
+                            $this->setTags($schemaContent->getElementsByName($this->parsingTag()))->parseSchema($wsdl, $schema);
                         }
                     }
                 }
@@ -86,7 +82,7 @@ abstract class AbstractParser extends Parser
      */
     abstract protected function parsingTag();
     /**
-     * @param array $tags
+     * @param AbstractTag[] $tags
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser
      */
     private function setTags(array $tags)
@@ -119,10 +115,7 @@ abstract class AbstractParser extends Parser
      */
     public function isWsdlParsed(Wsdl $wsdl)
     {
-        return
-            array_key_exists($wsdl->getName(), $this->parsedWsdls) &&
-            is_array($this->parsedWsdls[$wsdl->getName()]) &&
-            in_array($this->parsingTag(), $this->parsedWsdls[$wsdl->getName()]);
+        return array_key_exists($wsdl->getName(), $this->parsedWsdls) && is_array($this->parsedWsdls[$wsdl->getName()]) && in_array($this->parsingTag(), $this->parsedWsdls[$wsdl->getName()]);
     }
     /**
      * @param Wsdl $wsdl
@@ -146,9 +139,6 @@ abstract class AbstractParser extends Parser
     public function isSchemaParsed(Wsdl $wsdl, Schema $schema)
     {
         $key = $wsdl->getName() . $schema->getName();
-        return
-            array_key_exists($key, $this->parsedSchemas) &&
-            is_array($this->parsedSchemas[$key]) &&
-            in_array($this->parsingTag(), $this->parsedSchemas[$key]);
+        return array_key_exists($key, $this->parsedSchemas) && is_array($this->parsedSchemas[$key]) && in_array($this->parsingTag(), $this->parsedSchemas[$key]);
     }
 }

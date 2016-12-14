@@ -47,6 +47,7 @@ class ClassMap extends AbstractModelFile
     }
     /**
      * @param MethodContainer $methods
+     * @return ClassMap
      */
     protected function getClassMethods(MethodContainer $methods)
     {

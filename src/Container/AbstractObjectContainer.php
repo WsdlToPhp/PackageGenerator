@@ -65,7 +65,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return array_shift($current);
     }
     /**
-     * @return mixed
+     * @return void
      */
     public function next()
     {

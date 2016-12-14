@@ -6,8 +6,7 @@ class Functions extends AbstractParser
 {
     public function parse()
     {
-        $methods = $this
-            ->getGenerator()
+        $methods = $this->getGenerator()
             ->getSoapClient()
             ->getSoapClient()
             ->getSoapClient()

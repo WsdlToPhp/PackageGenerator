@@ -32,9 +32,7 @@ abstract class AbstractOperation
      */
     public function __construct(MethodModel $method, Generator $generator)
     {
-        $this
-            ->setMethod($method)
-            ->setGenerator($generator);
+        $this->setMethod($method)->setGenerator($generator);
     }
     /**
      * @return StructModel|null
