@@ -12,6 +12,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     private static $instances = array();
     /**
+     * @param $local bool
      * @return string
      */
     public static function wsdlPartnerPath($local = true)
@@ -19,6 +20,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local' : '');
     }
     /**
+     * @param $local bool
      * @return string
      */
     public static function wsdlPartnerScdPath($local = true)
@@ -26,6 +28,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.scd' : '');
     }
     /**
+     * @param $local bool
      * @return string
      */
     public static function wsdlPartnerThirdPath($local = true)
@@ -312,6 +315,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     }
     /**
      * @param string $wsdlPath
+     * @param $reset bool
      * @return Generator
      */
     public static function getInstance($wsdlPath, $reset = false)

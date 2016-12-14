@@ -1,4 +1,5 @@
 <?php
+
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
 use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
@@ -53,7 +54,7 @@ class TagPart extends AbstractTag
             $elementName = $this->getAttributeElement();
             if (!empty($elementName)) {
                 $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(
-                    'name' => $elementName
+                    'name' => $elementName,
                 ), true);
                 if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
                     $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();

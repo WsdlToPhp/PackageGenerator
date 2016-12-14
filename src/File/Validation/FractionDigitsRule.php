@@ -13,12 +13,11 @@ class FractionDigitsRule extends AbstractRule
      */
     public function applyRule($parameterName, $value, $itemType = false)
     {
-        $this
-            ->getMethod()
-                ->addChild('// validation for constraint: fractionDigits')
-                ->addChild(sprintf('if (is_float($%1$s) && strlen(substr($%1$s, strpos($%1$s, \'.\'))) !== %2$d) {', $parameterName, $value))
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, the value must at most contain %1$d fraction digits, "%%d" given\', strlen(substr($%2$s, strpos($%2$s, \'.\')))), __LINE__);', $value, $parameterName), 1))
-                ->addChild('}');
+        $this->getMethod()
+            ->addChild('// validation for constraint: fractionDigits')
+            ->addChild(sprintf('if (is_float($%1$s) && strlen(substr($%1$s, strpos($%1$s, \'.\'))) !== %2$d) {', $parameterName, $value))
+            ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, the value must at most contain %1$d fraction digits, "%%d" given\', strlen(substr($%2$s, strpos($%2$s, \'.\')))), __LINE__);', $value, $parameterName), 1))
+            ->addChild('}');
         return $this;
     }
 }

@@ -13,6 +13,7 @@ class TagList extends AbstractTagParser
 {
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
+     * @param Wsdl $wsdl
      */
     protected function parseWsdl(Wsdl $wsdl)
     {
@@ -47,10 +48,7 @@ class TagList extends AbstractTagParser
             if ($model instanceof Struct) {
                 $type = $struct instanceof Struct ? $struct->getName() : $itemType;
                 if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
-                    $attribute
-                        ->setContainsElements(true)
-                        ->setType($type)
-                        ->setInheritance($type);
+                    $attribute->setContainsElements(true)->setType($type)->setInheritance($type);
                 } else {
                     $model->setInheritance(sprintf('%s[]', $type));
                 }

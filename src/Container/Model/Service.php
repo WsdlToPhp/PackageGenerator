@@ -9,7 +9,7 @@ use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 class Service extends AbstractModel
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\Container\ModelContainer\Model::objectClass()
+     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
      * @return string
      */
     protected function objectClass()
@@ -23,7 +23,7 @@ class Service extends AbstractModel
      * @param string $methodName the original function name
      * @param string|array $methodParameter the original parameter name
      * @param string|array $methodReturn the original return name
-     * @return Model
+     * @return Service
      */
     public function addService(Generator $generator, $serviceName, $methodName, $methodParameter, $methodReturn)
     {
@@ -43,6 +43,7 @@ class Service extends AbstractModel
             $serviceMethod->setIsUnique(false);
             $this->get($serviceName)->addMethod($methodName, $methodParameter, $methodReturn, false);
         }
+        return $this;
     }
     /**
      * @param string $name
@@ -54,6 +55,7 @@ class Service extends AbstractModel
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
+     * @param string $value
      * @return Model|null
      */
     public function get($value)

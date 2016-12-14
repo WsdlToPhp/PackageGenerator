@@ -33,18 +33,16 @@ class GeneratorFiles extends AbstractGeneratorAware
         return $this->classmapFile;
     }
     /**
-     * @return GeneratorFilesFiles
+     * @return GeneratorFiles
      */
     public function doGenerate()
     {
-        return $this
-            ->generateStructsClasses()
+        return $this->generateStructsClasses()
             ->generateServicesClasses()
             ->generateClassMap()
             ->generateTutorialFile()
             ->generateComposerFile();
     }
-
     /**
      * Generates structs classes based on structs collected
      * @return GeneratorFiles
@@ -55,10 +53,7 @@ class GeneratorFiles extends AbstractGeneratorAware
             if (!$struct->getIsStruct()) {
                 continue;
             }
-            $this
-                ->getStructFile($struct)
-                ->setModel($struct)
-                ->write();
+            $this->getStructFile($struct)->setModel($struct)->write();
         }
         return $this;
     }
@@ -88,9 +83,7 @@ class GeneratorFiles extends AbstractGeneratorAware
              * Generates file
              */
             $file = new ServiceFile($this->generator, $service->getPackagedName());
-            $file
-                ->setModel($service)
-                ->write();
+            $file->setModel($service)->write();
         }
         return $this;
     }
@@ -100,9 +93,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      */
     private function generateClassMap()
     {
-        $this
-            ->getClassmapFile()
-            ->write();
+        $this->getClassmapFile()->write();
         return $this;
     }
     /**

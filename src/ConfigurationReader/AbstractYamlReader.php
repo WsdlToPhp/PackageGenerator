@@ -31,7 +31,7 @@ abstract class AbstractYamlReader
     }
     /**
      * @throws \InvalidArgumentException
-     * @param string options's file to parse
+     * @param string $filename options's file to parse
      * @return AbstractYamlReader
      */
     public static function instance($filename = null)

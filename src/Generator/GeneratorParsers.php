@@ -41,8 +41,7 @@ class GeneratorParsers extends AbstractGeneratorAware
     {
         if (!isset($this->parsers)) {
             $this->parsers = new ParserContainer($this->generator);
-            $this->parsers
-                ->add(new FunctionsParser($this->generator))
+            $this->parsers->add(new FunctionsParser($this->generator))
                 ->add(new StructsParser($this->generator))
                 ->add(new TagIncludeParser($this->generator))
                 ->add(new TagImportParser($this->generator))

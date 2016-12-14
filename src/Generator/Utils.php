@@ -107,10 +107,7 @@ class Utils
         if (!empty($proxyHost)) {
             $proxyOptions = array(
                 $protocol => array(
-                    'proxy' => sprintf('tcp://%s%s',
-                        $proxyHost,
-                        empty($proxyPort) ? '' : sprintf(':%s', $proxyPort)
-                    ),
+                    'proxy' => sprintf('tcp://%s%s', $proxyHost, empty($proxyPort) ? '' : sprintf(':%s', $proxyPort)),
                     'header' => array(
                         sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf('%s:%s', $proxyLogin, $proxyPassword))),
                     ),
@@ -126,11 +123,27 @@ class Utils
      */
     public static function getValueWithinItsType($value, $knownType = null)
     {
-        if (is_int($value) || (!is_null($value) && in_array($knownType, array('time', 'positiveInteger', 'unsignedLong', 'unsignedInt', 'short', 'long', 'int', 'integer'), true))) {
+        if (is_int($value) || (!is_null($value) && in_array($knownType, array(
+            'time',
+            'positiveInteger',
+            'unsignedLong',
+            'unsignedInt',
+            'short',
+            'long',
+            'int',
+            'integer',
+        ), true))) {
             return intval($value);
-        } elseif (is_float($value) || (!is_null($value) && in_array($knownType, array('float', 'double', 'decimal'), true))) {
+        } elseif (is_float($value) || (!is_null($value) && in_array($knownType, array(
+            'float',
+            'double',
+            'decimal',
+        ), true))) {
             return floatval($value);
-        } elseif (is_bool($value) || (!is_null($value) && in_array($knownType, array('bool', 'boolean'), true))) {
+        } elseif (is_bool($value) || (!is_null($value) && in_array($knownType, array(
+            'bool',
+            'boolean',
+        ), true))) {
             return ($value === 'true' || $value === true || $value === 1 || $value === '1');
         }
         return $value;
@@ -148,7 +161,6 @@ class Utils
                 $destination = substr($destination, 2);
             }
             $destinationParts = explode('/', $destination);
-
             $fileParts = pathinfo($origin);
             $fileBasename = (is_array($fileParts) && array_key_exists('basename', $fileParts)) ? $fileParts['basename'] : '';
             $parts = parse_url(str_replace('/' . $fileBasename, '', $origin));
@@ -158,7 +170,6 @@ class Utils
             $path = str_replace('/' . $fileBasename, '', $path);
             $pathParts = explode('/', $path);
             $finalPath = implode('/', $pathParts);
-
             foreach ($destinationParts as $locationPart) {
                 if ($locationPart == '..') {
                     $finalPath = substr($finalPath, 0, strrpos($finalPath, '/', 0));
@@ -166,7 +177,6 @@ class Utils
                     $finalPath .= '/' . $locationPart;
                 }
             }
-
             $port = (is_array($parts) && array_key_exists('port', $parts)) ? $parts['port'] : '';
             /**
              * Remote file
@@ -223,7 +233,7 @@ class Utils
     public static function removeNamespace($namespacedClassName)
     {
         $elements = explode('\\', $namespacedClassName);
-        return (string)array_pop($elements);
+        return (string) array_pop($elements);
     }
     /**
      * @param string $directory
