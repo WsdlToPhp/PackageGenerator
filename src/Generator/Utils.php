@@ -93,11 +93,10 @@ class Utils
      */
     public static function getContentFromUrlContextOptions($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = array())
     {
-        $protocol = strpos($url, 'https://') !== false ? 'https' : 'http';
         $proxyOptions = $basicAuthOptions = array();
         if (!empty($basicAuthLogin) && !empty($basicAuthPassword)) {
             $basicAuthOptions = array(
-                $protocol => array(
+                'http' => array(
                     'header' => array(
                         sprintf('Authorization: Basic %s', base64_encode(sprintf('%s:%s', $basicAuthLogin, $basicAuthPassword))),
                     ),
@@ -106,7 +105,7 @@ class Utils
         }
         if (!empty($proxyHost)) {
             $proxyOptions = array(
-                $protocol => array(
+                'http' => array(
                     'proxy' => sprintf('tcp://%s%s', $proxyHost, empty($proxyPort) ? '' : sprintf(':%s', $proxyPort)),
                     'header' => array(
                         sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf('%s:%s', $proxyLogin, $proxyPassword))),
