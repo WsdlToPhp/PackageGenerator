@@ -73,7 +73,7 @@ class UtilsTest extends TestCase
                     sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
                 ),
             ),
-        ), Utils::getContentFromUrlContextOptions('http://www.foo.com', 'foo', 'bar'));
+        ), Utils::getStreamContextOptions('foo', 'bar'));
     }
     /**
      *
@@ -87,7 +87,7 @@ class UtilsTest extends TestCase
                     sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
                 ),
             ),
-        ), Utils::getContentFromUrlContextOptions('http://www.foo.com', null, null, 'dns.proxy.com', 4545, 'foo', 'bar'));
+        ), Utils::getStreamContextOptions(null, null, 'dns.proxy.com', 4545, 'foo', 'bar'));
     }
     /**
      *
@@ -102,7 +102,7 @@ class UtilsTest extends TestCase
                     sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
                 ),
             ),
-        ), Utils::getContentFromUrlContextOptions('http://www.foo.com', 'foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar'));
+        ), Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar'));
     }
     /**
      *
@@ -122,7 +122,7 @@ class UtilsTest extends TestCase
                     sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
                 ),
             ),
-        ), Utils::getContentFromUrlContextOptions('http://www.foo.com', 'foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar', array(
+        ), Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar', array(
             'ssl' => array(
                 'verify_peer' => true,
                 'ca_file' => basename(__FILE__),
