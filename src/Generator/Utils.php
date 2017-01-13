@@ -74,14 +74,13 @@ class Utils
     public static function getContentFromUrl($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = array())
     {
         $context = null;
-        $options = self::getContentFromUrlContextOptions($url, $basicAuthLogin, $basicAuthPassword, $proxyHost, $proxyPort, $proxyLogin, $proxyPassword, $contextOptions);
+        $options = self::getStreamContextOptions($basicAuthLogin, $basicAuthPassword, $proxyHost, $proxyPort, $proxyLogin, $proxyPassword, $contextOptions);
         if (!empty($options)) {
             $context = stream_context_create($options);
         }
         return file_get_contents($url, false, $context);
     }
     /**
-     * @param string $url
      * @param string $basicAuthLogin
      * @param string $basicAuthPassword
      * @param string $proxyHost
@@ -91,13 +90,12 @@ class Utils
      * @param array $contextOptions
      * @return string[]
      */
-    public static function getContentFromUrlContextOptions($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = array())
+    public static function getStreamContextOptions($basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = array())
     {
-        $protocol = strpos($url, 'https://') !== false ? 'https' : 'http';
         $proxyOptions = $basicAuthOptions = array();
         if (!empty($basicAuthLogin) && !empty($basicAuthPassword)) {
             $basicAuthOptions = array(
-                $protocol => array(
+                'http' => array(
                     'header' => array(
                         sprintf('Authorization: Basic %s', base64_encode(sprintf('%s:%s', $basicAuthLogin, $basicAuthPassword))),
                     ),
@@ -106,7 +104,7 @@ class Utils
         }
         if (!empty($proxyHost)) {
             $proxyOptions = array(
-                $protocol => array(
+                'http' => array(
                     'proxy' => sprintf('tcp://%s%s', $proxyHost, empty($proxyPort) ? '' : sprintf(':%s', $proxyPort)),
                     'header' => array(
                         sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf('%s:%s', $proxyLogin, $proxyPassword))),
@@ -119,6 +117,7 @@ class Utils
     /**
      * Returns the value with good type
      * @param mixed $value the value
+     * @param string $knownType the value
      * @return mixed
      */
     public static function getValueWithinItsType($value, $knownType = null)
