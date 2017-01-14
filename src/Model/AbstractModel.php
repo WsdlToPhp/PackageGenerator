@@ -192,7 +192,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns the value of the first meta value assigned to the name
-     * @param array $names the meta names to check
+     * @param string[] $names the meta names to check
      * @param mixed $fallback the fallback value if anyone is set
      * @return mixed the meta information value
      */
@@ -428,7 +428,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * Returns a usable method for a original method
      * @uses PhpReservedKeywords::instance()
      * @uses PhpReservedKeywords::is()
-     * @param string $keyword the keyword
+     * @param string $methodName the keyword
      * @param string $context the context
      * @return string
      */
