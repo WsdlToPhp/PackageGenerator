@@ -23,9 +23,7 @@ class GeneratorContainers extends AbstractGeneratorAware
     public function __construct(Generator $generator)
     {
         parent::__construct($generator);
-        $this
-            ->initStructs()
-            ->initServices();
+        $this->initStructs()->initServices();
     }
     /**
      * @return GeneratorContainers

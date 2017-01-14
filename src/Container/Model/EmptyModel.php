@@ -7,7 +7,7 @@ use WsdlToPhp\PackageGenerator\Model\EmptyModel as Model;
 class EmptyModel extends AbstractModel
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\ModelContainer\AbstractModelContainer::objectClass()
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModelContainer::objectClass()
      * @return string
      */
     protected function objectClass()
@@ -15,7 +15,8 @@ class EmptyModel extends AbstractModel
         return 'WsdlToPhp\\PackageGenerator\\Model\\EmptyModel';
     }
     /**
-     * @see \WsdlToPhp\PackageGenerator\ModelContainer\AbstractModelContainer::get()
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModelContainer::get()
+     * @param string $value
      * @return Model|null
      */
     public function get($value)

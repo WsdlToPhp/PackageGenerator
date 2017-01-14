@@ -51,17 +51,14 @@ class Generator
      */
     public function __construct(GeneratorOptions $options)
     {
-        $this
-            ->setOptions($options)
-            ->initialize();
+        $this->setOptions($options)->initialize();
     }
     /**
      * @return Generator
      */
     protected function initialize()
     {
-        return $this
-            ->initContainers()
+        return $this->initContainers()
             ->initParsers()
             ->initFiles()
             ->initSoapClient()
@@ -179,11 +176,7 @@ class Generator
      */
     public function generatePackage()
     {
-        return $this
-            ->doSanityChecks()
-            ->initDirectory()
-            ->doParse()
-            ->doGenerate();
+        return $this->doSanityChecks()->initDirectory()->doParse()->doGenerate();
     }
     /**
      * Gets the struct by its name
@@ -660,6 +653,24 @@ class Generator
         } else {
             throw new \InvalidArgumentException('Package\'s composer name can\'t be empty', __LINE__);
         }
+        return $this;
+    }
+    /**
+     * Gets the optionComposerSettings value
+     * @return array
+     */
+    public function getOptionComposerSettings()
+    {
+        return $this->options->getComposerSettings();
+    }
+    /**
+     * Sets the optionComposerSettings value
+     * @param array $optionComposerSettings
+     * @return Generator
+     */
+    public function setOptionComposerSettings(array $optionComposerSettings = array())
+    {
+        $this->options->setComposerSettings($optionComposerSettings);
         return $this;
     }
     /**

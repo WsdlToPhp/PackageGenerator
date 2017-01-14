@@ -100,7 +100,8 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Sets the name of the class the current class inherits from
-     * @param AbstractModel
+     * @param string $inheritance
+     * @return AbstractModel
      */
     public function setInheritance($inheritance = '')
     {
@@ -173,7 +174,9 @@ abstract class AbstractModel extends AbstractGeneratorAware
      */
     public function setDocumentation($documentation)
     {
-        return $this->addMeta(self::META_DOCUMENTATION, is_array($documentation) ? $documentation : array($documentation));
+        return $this->addMeta(self::META_DOCUMENTATION, is_array($documentation) ? $documentation : array(
+            $documentation,
+        ));
     }
     /**
      * Returns a meta value according to its name

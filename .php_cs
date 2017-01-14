@@ -1,10 +1,18 @@
 <?php
 
-$finder = Symfony\CS\Finder\DefaultFinder::create()
+$finder = PhpCsFixer\Finder::create()
     ->exclude('vendor')
     ->exclude('tests')
     ->in(__DIR__);
 
-return Symfony\CS\Config\Config::create()
-    ->level(Symfony\CS\FixerInterface::PSR2_LEVEL)
-    ->finder($finder);
+return PhpCsFixer\Config::create()
+	->setUsingCache(false)
+    ->setRules(array(
+        '@PSR2' => true,
+        'binary_operator_spaces' => true,
+        'no_whitespace_in_blank_line' => true,
+        'ternary_operator_spaces' => true,
+        'cast_spaces' => true,
+        'trailing_comma_in_multiline_array' => true
+	))
+    ->setFinder($finder);

@@ -18,7 +18,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     const TAG_ATTRIBUTE_GROUP = 'attributeGroup';
     const TAG_BINDING = 'binding';
     const TAG_BODY = 'body';
-    const TAG_CHOICE  = 'choice';
+    const TAG_CHOICE = 'choice';
     const TAG_COMPLEX_CONTENT = 'complexContent';
     const TAG_COMPLEX_TYPE = 'complexType';
     const TAG_DEFINITIONS = 'definitions';
@@ -67,6 +67,9 @@ abstract class AbstractDocument extends DomDocumentHandler
         return $this;
     }
     /**
+     * @param \DOMElement $element
+     * @param AbstractDomDocumentHandler $domDocument
+     * @param int $index
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementHandler()
      * @return ElementHandler
      */
@@ -81,6 +84,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementByName()
+     * @param string $name
      * @return ElementHandler
      */
     public function getElementByName($name)
@@ -90,6 +94,7 @@ abstract class AbstractDocument extends DomDocumentHandler
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementByName()
+     * @param string $name
      * @return ElementHandler[]
      */
     public function getElementsByName($name)

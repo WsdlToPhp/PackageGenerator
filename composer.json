@@ -39,14 +39,15 @@
     "require": {
         "php" : ">=5.5.9",
         "ext-soap": "*",
-        "symfony/console": "3.*",
-        "symfony/yaml": "3.*",
-        "composer/composer": "dev-master",
-        "wsdltophp/phpgenerator": "dev-master",
-        "wsdltophp/packagebase": "dev-master"
+        "symfony/console": "~3.0",
+        "symfony/yaml": "~3.0",
+        "composer/composer": "~1.0",
+        "wsdltophp/phpgenerator": "~1.0",
+        "wsdltophp/packagebase": "~1.0"
     },
     "require-dev": {
-        "fabpot/php-cs-fixer": "~1.11.1"
+        "phpunit/phpunit": "~4.8",
+        "friendsofphp/php-cs-fixer": "~2.0"
     },
     "autoload": {
         "psr-4": {

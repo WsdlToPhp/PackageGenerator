@@ -1,5 +1,4 @@
 <?php
-
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
@@ -47,7 +46,7 @@ class XsdTypesTest extends TestCase
      */
     public function testPhpXsd()
     {
-        $this->assertSame('int', self::instance()->phpType('duration'));
+        $this->assertSame('string', self::instance()->phpType('duration'));
     }
     /**
      *
@@ -69,5 +68,19 @@ class XsdTypesTest extends TestCase
     public function testAnonymousPhpType()
     {
         $this->assertSame('string', self::instance()->phpType('anonymous159'));
+    }
+    /**
+     *
+     */
+    public function testBase64BinaryXsd()
+    {
+        $this->assertTrue(self::instance()->isXsd('base64Binary'));
+    }
+    /**
+     *
+     */
+    public function testBase64BinaryPhpType()
+    {
+        $this->assertSame('string', self::instance()->phpType('base64Binary'));
     }
 }

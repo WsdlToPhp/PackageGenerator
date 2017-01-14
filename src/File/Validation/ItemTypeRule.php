@@ -17,18 +17,17 @@ class ItemTypeRule extends AbstractRule
      */
     public function applyRule($parameterName, $value, $itemType = false)
     {
-        $this
-            ->getMethod()
-                ->addChild($this->getMethod()->getIndentedString('// validation for constraint: itemType', $itemType ? 0 : 1))
-                ->addChild($this->getMethod()->getIndentedString(sprintf('if (!%s) {', $this->getItemSanityCheck($this->getAttribute(), $parameterName)), $itemType ? 0 : 1))
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %1$s property can only contain items of %2$s, "%%s" given\', is_object($%3$s) ? get_class($%3$s) : gettype($%3$s)), __LINE__);', $this->getAttribute()->getCleanName(), $this->getFile()->getStructAttributeType($this->getAttribute(), true), $parameterName), $itemType ? 1 : 2))
-                ->addChild($this->getMethod()->getIndentedString('}', $itemType ? 0 : 1));
+        $this->getMethod()
+            ->addChild($this->getMethod()->getIndentedString('// validation for constraint: itemType', $itemType ? 0 : 1))
+            ->addChild($this->getMethod()->getIndentedString(sprintf('if (!%s) {', $this->getItemSanityCheck($this->getAttribute(), $parameterName)), $itemType ? 0 : 1))
+            ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The %1$s property can only contain items of %2$s, "%%s" given\', is_object($%3$s) ? get_class($%3$s) : gettype($%3$s)), __LINE__);', $this->getAttribute()->getCleanName(), $this->getFile()->getStructAttributeType($this->getAttribute(), true), $parameterName), $itemType ? 1 : 2))
+            ->addChild($this->getMethod()->getIndentedString('}', $itemType ? 0 : 1));
         return $this;
     }
     /**
      * The second case which used PHP native functions is volontary limited by the native functions provided by PHP,
      * and the possible types defined in xsd_types.yml
-     * @param StructAttributeModel $attribute
+     * @param StructAttribute $attribute
      * @param string $itemName
      * @return string
      */
@@ -39,9 +38,9 @@ class ItemTypeRule extends AbstractRule
         if ($model instanceof Struct && ($model->getIsStruct() || ($model->isArray() && $model->getInheritanceStruct() instanceof Struct))) {
             $sanityCheck = sprintf('$%s instanceof %s', $itemName, $this->getFile()->getStructAttributeType($attribute, true));
         } else {
-            switch (AbstractModelFile::getPhpType($attribute->getType())) {
+            switch (AbstractModelFile::getPhpType($this->getFile()->getStructAttributeType($attribute))) {
                 case 'int':
-                    $sanityCheck = 'is_int($%s)';
+                    $sanityCheck = 'is_numeric($%s)';
                     break;
                 case 'bool':
                     $sanityCheck = 'is_bool($%s)';

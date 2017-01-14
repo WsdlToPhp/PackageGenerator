@@ -4,11 +4,15 @@
     "require": {
         "php": ">=5.3.3",
         "ext-soap": "*",
-        "wsdltophp/packagebase": "~1.0"
+        "wsdltophp/packagebase": "~1.0",
+        "wsdltophp/wssecurity": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "Api\\": "./src/"
         }
+    },
+    "config": {
+        "disable-tls": true
     }
 }

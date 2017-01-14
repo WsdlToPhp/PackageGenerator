@@ -59,8 +59,7 @@ class GeneratePackageCommand extends AbstractCommand
     protected function configure()
     {
         parent::configure();
-        $this
-            ->setName('generate:package')
+        $this->setName('generate:package')
             ->setDescription('Generate package based on options')
             ->addOption('urlorpath', null, InputOption::VALUE_REQUIRED, 'Url or path to WSDL')
             ->addOption('destination', null, InputOption::VALUE_REQUIRED, 'Path to destination directory, where the package will be generated')
@@ -84,6 +83,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('structarray', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package')
             ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package')
             ->addOption('composer-name', null, InputOption::VALUE_REQUIRED, 'Composer name of the generated package')
+            ->addOption('composer-settings', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Composer settings of the generated package')
             ->addOption('structs-folder', null, InputOption::VALUE_OPTIONAL, 'Structs folder name')
             ->addOption('arrays-folder', null, InputOption::VALUE_OPTIONAL, 'Arrays folder name')
             ->addOption('enums-folder', null, InputOption::VALUE_OPTIONAL, 'Enumerations folder name')
@@ -98,21 +98,15 @@ class GeneratePackageCommand extends AbstractCommand
         parent::execute($input, $output);
         $start = new \DateTime();
         $this->writeLn(sprintf(" Start at %s", $start->format('Y-m-d H:i:s')));
-
         $this->initGeneratorOptions();
-
         if ($this->canExecute() === true) {
-            $this
-                ->initGenerator()
-                ->getGenerator()
-                    ->generatePackage();
+            $this->initGenerator()->getGenerator()->generatePackage();
         } elseif ($this->canExecute() === false) {
             $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
             $this->writeLn(sprintf("  Generator's option file used: %s", $this->resolveGeneratorOptionsConfigPath()));
             $this->writeLn("  Used generator's options:");
             $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
         }
-
         $end = new \DateTime();
         $this->writeLn(sprintf(" End at %s, duration: %s", $end->format('Y-m-d H:i:s'), $start->diff($end)->format('%H:%I:%S')));
     }
@@ -147,6 +141,7 @@ class GeneratePackageCommand extends AbstractCommand
             'proxy-password' => 'ProxyPassword',
             'services-folder' => 'ServicesFolder',
             'gentutorial' => 'GenerateTutorialFile',
+            'composer-settings' => 'ComposerSettings',
             'genericconstants' => 'GenericConstantsName',
         );
     }
@@ -156,7 +151,7 @@ class GeneratePackageCommand extends AbstractCommand
     protected function initGeneratorOptions()
     {
         $generatorOptions = GeneratorOptions::instance($this->resolveGeneratorOptionsConfigPath());
-        foreach ($this->getPackageGenerationCommandLineOptions() as $optionName=>$optionMethod) {
+        foreach ($this->getPackageGenerationCommandLineOptions() as $optionName => $optionMethod) {
             $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
             if ($optionValue !== null) {
                 call_user_func_array(array(
@@ -176,9 +171,9 @@ class GeneratePackageCommand extends AbstractCommand
      */
     protected function formatOptionValue($optionValue)
     {
-        if ($optionValue === 'true' || (is_numeric($optionValue) && (int)$optionValue === 1)) {
+        if ($optionValue === 'true' || (is_numeric($optionValue) && (int) $optionValue === 1)) {
             return true;
-        } elseif ($optionValue === 'false' || (is_numeric($optionValue) && (int)$optionValue === 0)) {
+        } elseif ($optionValue === 'false' || (is_numeric($optionValue) && (int) $optionValue === 0)) {
             return false;
         }
         return $optionValue;
@@ -191,7 +186,7 @@ class GeneratePackageCommand extends AbstractCommand
     private function formatArrayForConsole($array)
     {
         array_walk($array, function (&$value, $index) {
-            $value = sprintf("%s: %s", $index, !is_array($value) ? $value : implode(', ', $value));
+            $value = sprintf("%s: %s", $index, json_encode($value));
         });
         return $array;
     }

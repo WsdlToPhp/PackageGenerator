@@ -27,10 +27,7 @@ class Rules
      */
     public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute)
     {
-        $this
-            ->setFile($file)
-            ->setMethod($method)
-            ->setAttribute($attribute);
+        $this->setFile($file)->setMethod($method)->setAttribute($attribute);
     }
     /**
      * @param string $parameterName
@@ -38,7 +35,7 @@ class Rules
      */
     public function applyRules($parameterName, $itemType = false)
     {
-        foreach ($this->getAttribute()->getMeta() as $metaName=>$metaValue) {
+        foreach ($this->getAttribute()->getMeta() as $metaName => $metaValue) {
             $rule = $this->getRule($metaName);
             if ($rule instanceof AbstractRule) {
                 $rule->applyRule($parameterName, $metaValue, $itemType);

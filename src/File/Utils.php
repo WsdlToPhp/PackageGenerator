@@ -13,7 +13,6 @@ class Utils
      * @param PhpAnnotationBlock $block
      * @param AbstractModel $model
      * @param array $ignoreMeta
-     * @return AbstractModelFile
      */
     public static function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model, array $ignoreMeta = array())
     {
@@ -39,7 +38,7 @@ class Utils
     {
         $meta = $model->getMeta();
         $validMeta = array();
-        foreach ($meta as $metaName=>$metaValue) {
+        foreach ($meta as $metaName => $metaValue) {
             if (!in_array($metaName, $ignoreMeta, true)) {
                 $finalMeta = self::getMetaValueAnnotation($metaName, $metaValue);
                 if (is_scalar($finalMeta)) {

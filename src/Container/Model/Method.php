@@ -8,7 +8,7 @@ class Method extends AbstractModel
 {
     const KEY_PARAMETER_TYPE = 'parameterType';
     /**
-     * @see \WsdlToPhp\PackageGenerator\Container\ModelContainer\Model::objectClass()
+     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
      * @return string
      */
     protected function objectClass()
@@ -32,6 +32,7 @@ class Method extends AbstractModel
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
+     * @param string $value
      * @return Model|null
      */
     public function get($value)

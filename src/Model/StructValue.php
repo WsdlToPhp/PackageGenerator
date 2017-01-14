@@ -41,9 +41,7 @@ class StructValue extends AbstractModel
     public function __construct(Generator $generator, $name, $index, Struct $struct)
     {
         parent::__construct($generator, $name);
-        $this
-            ->setIndex($index)
-            ->setOwner($struct);
+        $this->setIndex($index)->setOwner($struct);
     }
     /**
      * Returns the name of the value as constant

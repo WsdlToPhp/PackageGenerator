@@ -85,10 +85,7 @@ class Service extends AbstractModelFile
      */
     protected function getClassMethods(MethodContainer $methods)
     {
-        $this
-            ->addSoapHeaderMethods($methods)
-            ->addOperationsMethods($methods)
-            ->addGetResultMethod($methods);
+        $this->addSoapHeaderMethods($methods)->addOperationsMethods($methods)->addGetResultMethod($methods);
     }
     /**
      * @param MethodContainer $methods
@@ -104,13 +101,14 @@ class Service extends AbstractModelFile
     /**
      * @param MethodContainer $methods
      * @param MethodModel $method
+     * @return Service
      */
     protected function addSoapHeaderFromMethod(MethodContainer $methods, MethodModel $method)
     {
         $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, array());
         $soapHeaderNamespaces = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, array());
         $soapHeaderTypes = $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, array());
-        foreach ($soapHeaderNames as $index=>$soapHeaderName) {
+        foreach ($soapHeaderNames as $index => $soapHeaderName) {
             $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
             if ($methods->get($methodName) === null) {
                 $soapHeaderNamespace = array_key_exists($index, $soapHeaderNamespaces) ? $soapHeaderNamespaces[$index] : null;
@@ -136,13 +134,7 @@ class Service extends AbstractModelFile
                 new PhpFunctionParameter(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
                 new PhpFunctionParameter(self::PARAM_SET_HEADER_ACTOR, null),
             ));
-            $method->addChild(sprintf('return $this->%s($%s, \'%s\', $%s, $%s, $%s);',
-                self::METHOD_SET_HEADER_PREFIX,
-                self::PARAM_SET_HEADER_NAMESPACE,
-                $soapHeaderName,
-                lcfirst($soapHeaderName),
-                self::PARAM_SET_HEADER_MUSTUNDERSTAND,
-                self::PARAM_SET_HEADER_ACTOR));
+            $method->addChild(sprintf('return $this->%s($%s, \'%s\', $%s, $%s, $%s);', self::METHOD_SET_HEADER_PREFIX, self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderName, lcfirst($soapHeaderName), self::PARAM_SET_HEADER_MUSTUNDERSTAND, self::PARAM_SET_HEADER_ACTOR));
         } catch (\InvalidArgumentException $exception) {
             throw new \InvalidArgumentException(sprintf('Unable to create function parameter for service "%s" with type "%s"', $this->getModel()->getName(), var_export($this->getTypeFromName($soapHeaderName, true), true)), __LINE__, $exception);
         }
@@ -230,8 +222,7 @@ class Service extends AbstractModelFile
         $methodParameters = $method->getParameters();
         $firstParameter = array_shift($methodParameters);
         if ($firstParameter instanceof PhpFunctionParameter) {
-            $annotationBlock
-                ->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())))
+            $annotationBlock->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::setSoapHeader()', $this->getModel()->getExtends(true))))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $firstParameter->getType(), $firstParameter->getName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_NAMESPACE)))
@@ -260,10 +251,7 @@ class Service extends AbstractModelFile
      */
     protected function addAnnnotationBlockForgetResultMethod(PhpAnnotationBlock $annotationBlock)
     {
-        $annotationBlock
-            ->addChild('Returns the result')
-            ->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', $this->getModel()->getExtends(true))))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes()));
+        $annotationBlock->addChild('Returns the result')->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', $this->getModel()->getExtends(true))))->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes()));
         return $this;
     }
     /**

@@ -16,8 +16,8 @@ Its purpose is to provide a full OOP approach to send SOAP requests using:
 
 The generated package does not need PEAR nor NuSOAP, at least :
 - PHP 5.5.9,
-- SoapClient : natively installed with PHP,
-- DOM : natively installed with PHP,
+- SoapClient: natively installed with PHP,
+- DOM: natively installed with PHP,
 - [PackageBase](https://packagist.org/packages/wsdltophp/packagebase): automatically installed on standalone mode (default mode), it contains utility classes used by the generated classes. Full documentation about the classes is available at the project [homepage](https://github.com/WsdlToPhp/PackageBase). **If you're not using the standalone mode, you must add ```wsdltophp/packagebase: dev-master``` in your main composer.json file.**
 
 # Summary
@@ -49,7 +49,7 @@ The generated package does not need PEAR nor NuSOAP, at least :
     /vendor/: automatically created by composer on standalone mode (default: true)
     /composer.json: automatically created by composer on standalone mode (default: true)
     /composer.lock: automatically created by composer on standalone mode (default: true)
-    /tutorial.php: generated if ```--gentutorial``` option is enabled (default: true)
+    /tutorial.php: generated if --gentutorial option is enabled (default: true)
 ```
 
 ## Warning about the generated classes and their property usage
@@ -92,7 +92,7 @@ The generator comes with several options:
     - **\-\-gathermethods**:
         - **start** _(default)_: you'll have one **Get** class that contains the **getList**, **getUsers** and **getData** methods and another class **Set** that contains only the **setUser** method
         - **none**: you'll have only one class that contains all the methods **getList**, **getUsers**, **getData** and **setUser** methods
-        - **end**, you'll have 4 classes :
+        - **end**, you'll have 4 classes:
             - **List** that contains the **getList** method,
             - **User** that contains the **setUser** method,
             - **Users** that contains the **getUsers** method,
@@ -109,7 +109,8 @@ The generator comes with several options:
     - **\-\-genericconstants** _(default: ```false```)_: enables/disables the naming of the constants (_enumerations_) with the constant value or as a generic name:
         - **true**: ```const VALUE_DEFAULT = 'Default'```
         - **false**: ```const ENUM_VALUE_0 = 'Default'```
-    - **\-\-addcomments**: alow to add PHP comments to classes' PHP DocBlock _(mulitple values allowed)_
+    - **\-\-addcomments**: allow to add PHP comments to classes' PHP DocBlock _(mulitple values allowed)_
+    - **\-\-composer-settings**: allow to add settings to the generated composer.json file _(mulitple values allowed)_
 - _**Optional**_ configuration file to use. It loads it first, then take into account the option you pass in the command line. By default, it uses:
     - **\-\-config**: the path to any configuration file you want anywhere you want
     - the **wsdltophp.yml.dist** (provided with the source code) file located under the root folder OTHERWISE
@@ -173,6 +174,8 @@ $ ./wsdltophp.phar generate:package \
     --structarray="\Std\Opt\StructArrayClass" \
     --soapclient="\Std\Opt\SoapClientClass" \
     --composer-name="myproject/mypackage" \
+    --composer-settings="config.disable-tls:true" \
+    --composer-settings="require.wsdltophp/wssecurity:dev-master" \
     --structs-folder="Structs" \
     --arrays-folder="Arrays" \
     --enums-folder="Enums" \
@@ -185,38 +188,39 @@ $ ls -la => enjoy!
 #### Debug options before actually generating the package
 Remove ```--force``` option from the previous command line to get this result:
 ```
- Start at 2015-08-29 07:51:32
+ Start at 2016-11-30 01:15:12
   Generation not launched, use "--force" option to force generation
   Generator's option file used: /path/to/your/configuration/file.yml
   Used generator's options:
-    category: cat
-    gather_methods: start
-    generic_constants_names:
-    generate_tutorial_file: 1
-    add_comments: 2015-04-22, Me, 1.1.0, Dream
-    namespace_prefix: My\Project
-    standalone: 1
-    validation: 1
-    struct_class: \Std\Opt\StructClass
-    struct_array_class: \Std\Opt\StructArrayClass
-    soap_client_class: \Std\Opt\SoapClientClass
-    origin: http://developer.ebay.com/webservices/latest/ebaySvc.wsdl
-    destination: /var/www/Api/
-    prefix: Api
-    suffix: Project
-    basic_login: *******
-    basic_password: *******
-    proxy_host: ****************************
-    proxy_port: *******
-    proxy_login: *******
-    proxy_password: *******
-    soap_options:
-    composer_name: myproject/mypackage
-    structs_folder: Structs
-    arrays_folder: Arrays
-    enums_folder: Enums
-    services_folder: Services
- End at 2015-08-29 07:51:32, duration: 00:00:00
+    category: "cat"
+    gather_methods: "start"
+    generic_constants_names: false
+    generate_tutorial_file: true
+    add_comments: {"date":"2015-04-22","author":"Me","release":"1.1.0","team":"Dream"}
+    namespace_prefix: "My\\Project"
+    standalone: true
+    validation: true
+    struct_class: "\\Std\\Opt\\StructClass"
+    struct_array_class: "\\Std\\Opt\\StructArrayClass"
+    soap_client_class: "\\Std\\Opt\\SoapClientClass"
+    origin: "http:\/\/developer.ebay.com\/webservices\/latest\/ebaySvc.wsdl"
+    destination: "\/var\/www\/Api\/"
+    prefix: "Api"
+    suffix: "Project"
+    basic_login: "*******"
+    basic_password: "*******"
+    proxy_host: "****************************"
+    proxy_port: "*******"
+    proxy_login: "*******"
+    proxy_password: "*******"
+    soap_options: []
+    composer_name: "wsdltophp\/package"
+    composer_settings: {"config":{"disable-tls":true},"require":{"wsdltophp\/wssecurity":"dev-master"}}
+    structs_folder: "Structs"
+    arrays_folder: "Arrays"
+    enums_folder: "Enums"
+    services_folder: "Services"
+ End at 2016-11-30 01:15:12, duration: 00:00:00
 ```
 ### Programmatic
 Get the source code:
@@ -314,6 +318,10 @@ $options
     ->setProxyLogin($proxyLogin)
     ->setProxyPassword($proxyPassword)
     ->setComposerName('myproject/mypackage')
+    ->setComposerSettings(array(
+        'config.disable-tls:true',
+        'require.wsdltophp/wssecurity:dev-master',
+    ))
     ->setStructsFolder('Structs')
     ->setArraysFolder('Arrays')
     ->setEnumsFolder('Enums')

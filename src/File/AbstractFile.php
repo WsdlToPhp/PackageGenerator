@@ -25,9 +25,7 @@ abstract class AbstractFile implements FileInterface
      */
     public function __construct(Generator $generator, $name)
     {
-        $this
-            ->setFile(new PhpFile($name))
-            ->setGenerator($generator);
+        $this->setFile(new PhpFile($name))->setGenerator($generator);
     }
     /**
      * @param Generator $generator
