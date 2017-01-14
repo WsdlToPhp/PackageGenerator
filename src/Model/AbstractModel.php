@@ -428,7 +428,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * Returns a usable method for a original method
      * @uses PhpReservedKeywords::instance()
      * @uses PhpReservedKeywords::is()
-     * @param string $methodName the keyword
+     * @param string $methodName the method name
      * @param string $context the context
      * @return string
      */
