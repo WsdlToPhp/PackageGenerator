@@ -39,8 +39,8 @@
     "require": {
         "php" : ">=5.5.9",
         "ext-soap": "*",
-        "symfony/console": "~3.0",
-        "symfony/yaml": "~3.0",
+        "symfony/console": "^2.6",
+        "symfony/yaml": "^2.6",
         "composer/composer": "~1.0",
         "wsdltophp/phpgenerator": "~1.0",
         "wsdltophp/packagebase": "~1.0"
