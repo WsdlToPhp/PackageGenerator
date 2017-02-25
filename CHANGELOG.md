@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.5.1
+- issue #57 - Unable to determine SoapHeader name and type
+
 ## 2.5.0
 - pull request #73 - Fixed issue with HTTPS urls
     - **BC**: the `WsdlToPhp\PackageGenerator\Generator\Utils::getContentFromUrlContextOptions` has been renamed to `getStreamContextOptions`, in addition the first parameter named `url` has been removed due to its uselessness
@@ -24,7 +27,7 @@
 - issue #56 - Problem with generated request XML
 
 ## 2.0.1
-issue #55 - xsd:long is "int" in validation rules - error with values that not fit
+- issue #55 - xsd:long is "int" in validation rules - error with values that not fit
 
 ## 2.0.0
 - This major release forces the requirement of PHP >= 5.5.9. This allows to use the latest version of Symfony components. If you do not have a sufficient PHP version, you can still use the major 1.x.x version which only requires PHP >= 5.3.3. The 1.x.x version uses the Symfony components at version 2.8.x.
