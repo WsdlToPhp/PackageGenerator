@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.10.1
+- issue #75 - Unable to determine SoapHeader name and type
+
 ## 1.10.0
 - pull request #73 - Fixed issue with HTTPS urls
     - **BC**: the `WsdlToPhp\PackageGenerator\Generator\Utils::getContentFromUrlContextOptions` has been renamed to `getStreamContextOptions`, in addition the first parameter named `url` has been removed due to its uselessness
