@@ -45,7 +45,7 @@ abstract class AbstractTagOperationElement extends AbstractTag
         if (!empty($messageName)) {
             $message = $this->getDomDocumentHandler()->getElementByNameAndAttributes('message', array(
                 'name' => $messageName,
-            ));
+            ), true);
         }
         return $message;
     }
