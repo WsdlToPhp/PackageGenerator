@@ -14,10 +14,10 @@ before_install:
     - composer self-update
 
 install:
-    - composer install --no-dev
+    - composer install
 
 script:
-    - phpunit --coverage-text --coverage-clover=coverage.clover
+    - ./vendor/phpunit/phpunit/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
     - wget https://scrutinizer-ci.com/ocular.phar
