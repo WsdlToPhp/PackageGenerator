@@ -83,7 +83,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     {
         $extends = '';
         if (($model = $this->getInheritedModel()) instanceof Struct && $model->getIsStruct()) {
-            $extends = $model->getPackagedName();
+            $extends = $model->getPackagedName($model->getIsRestriction());
         }
         if (empty($extends)) {
             $extends = $this->getExtends(true);
