@@ -312,4 +312,21 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find BannerInfo struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWritePayPalApiStructSetExpressCheckoutRequestDetailsType()
+    {
+        $generator = self::payPalGeneratorInstance(true);
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('SetExpressCheckoutRequestDetailsType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidSetExpressCheckoutRequestDetailsType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find SetExpressCheckoutRequestDetailsType struct for file generation');
+        }
+    }
 }
