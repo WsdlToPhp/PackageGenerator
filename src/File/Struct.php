@@ -58,7 +58,11 @@ class Struct extends AbstractModelFile
     {
         $annotationBlock = new PhpAnnotationBlock();
         $annotationBlock->addChild(sprintf('The %s', $property->getName()));
-        if (($attribute = $this->getModel()->getAttribute($property->getName())) instanceof StructAttributeModel) {
+        $attribute = $this->getModel()->getAttribute($property->getName());
+        if (!$attribute instanceof StructAttributeModel) {
+            $attribute = $this->getModel()->getAttributeByCleanName($property->getName());
+        }
+        if ($attribute instanceof StructAttributeModel) {
             $this->defineModelAnnotationsFromWsdl($annotationBlock, $attribute);
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_VAR, $this->getStructAttributeTypeSetAnnotation($attribute, true)));
         }
@@ -434,8 +438,14 @@ class Struct extends AbstractModelFile
         }
         $attribute = $this->getModel()->getAttribute($parameterName);
         if (!$attribute instanceof StructAttributeModel) {
+            $attribute = $this->getModel()->getAttributeByCleanName($parameterName);
+        }
+        if (!$attribute instanceof StructAttributeModel) {
             $parameterName = lcfirst($parameterName);
             $attribute = $this->getModel()->getAttribute($parameterName);
+            if (!$attribute instanceof StructAttributeModel) {
+                $attribute = $this->getModel()->getAttributeByCleanName($parameterName);
+            }
         }
         $setValueAnnotation = '%s %s value';
         $annotationBlock = new PhpAnnotationBlock();
@@ -528,7 +538,8 @@ class Struct extends AbstractModelFile
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::hasChildNodes()'))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::saveXML()'))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMNode::item()'))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()->getPackagedName(true), $attribute->getSetterName())))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()
+                ->getPackagedName(true), $attribute->getSetterName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'bool $asString true: returns XML string, false: returns \DOMDocument'));
         }
         return $this;

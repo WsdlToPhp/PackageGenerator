@@ -23,6 +23,14 @@ class StructAttribute extends AbstractModel
         return $this->get($name);
     }
     /**
+     * @param string $cleanedName
+     * @return Model|null
+     */
+    public function getStructAttributeByCleanName($cleanedName)
+    {
+        return $this->getByCleanName($cleanedName);
+    }
+    /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
      * @param string $value
      * @return Model|null
@@ -30,5 +38,20 @@ class StructAttribute extends AbstractModel
     public function get($value)
     {
         return parent::get($value);
+    }
+    /**
+     * @param string $cleanedName
+     * @return Model
+     */
+    public function getByCleanName($cleanedName)
+    {
+        $attribute = null;
+        foreach ($this->objects as $object) {
+            if ($object instanceof Model && $cleanedName === $object->getCleanName()) {
+                $attribute = $object;
+                break;
+            }
+        }
+        return $attribute;
     }
 }

@@ -73,7 +73,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
         $this->setName($name);
     }
     /**
-     * @uses AbstractModel::getInheritedMoel()
+     * @uses AbstractModel::getInheritedModel()
      * @uses AbstractModel::getPackagedName()
      * @uses AbstractModel::getExtends()
      * @uses Struct::getIsStruct()
@@ -82,8 +82,8 @@ abstract class AbstractModel extends AbstractGeneratorAware
     public function getExtendsClassName()
     {
         $extends = '';
-        if (($model = $this->getInheritedMoel()) instanceof Struct && $model->getIsStruct()) {
-            $extends = $model->getPackagedName();
+        if (($model = $this->getInheritedModel()) instanceof Struct && $model->getIsStruct()) {
+            $extends = $model->getPackagedName($model->getIsRestriction());
         }
         if (empty($extends)) {
             $extends = $this->getExtends(true);
@@ -114,7 +114,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @uses AbstractModel::getInheritance()
      * @return Struct
      */
-    public function getInheritedMoel()
+    public function getInheritedModel()
     {
         return $this->getGenerator()->getStruct($this->getInheritance());
     }

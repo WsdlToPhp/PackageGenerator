@@ -47,3 +47,4 @@ xsd_types:
     unsignedLong: "int"
     unsignedShort: "int"
     UID: "string"
+    UNKNOWN: "string"
