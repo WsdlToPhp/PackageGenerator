@@ -231,6 +231,16 @@ class Struct extends AbstractModel
         return $this->attributes->getStructAttributeByName($attributeName);
     }
     /**
+     * Returns the attribute by its cleaned name, otherwise null
+     * @uses Struct::getAttributes()
+     * @param string $attributeCleanName the cleaned attribute name
+     * @return StructAttribute|null
+     */
+    public function getAttributeByCleanName($attributeCleanName)
+    {
+        return $this->attributes->getStructAttributeByCleanName($attributeCleanName);
+    }
+    /**
      * Returns the isRestriction value
      * @return bool
      */

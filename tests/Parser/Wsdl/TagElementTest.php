@@ -29,14 +29,19 @@ class TagElementTest extends WsdlParser
         return new TagElement(self::generatorInstance(self::wsdlActonPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement
+     */
+    public static function payPalInstance()
+    {
+        return new TagElement(self::generatorInstance(self::wsdlPayPalPath()));
+    }
+    /**
      *
      */
     public function testParseBing()
     {
         $tagElementParser = self::bingInstance();
-
         $tagElementParser->parse();
-
         $count = 0;
         $structs = $tagElementParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
@@ -44,7 +49,7 @@ class TagElementTest extends WsdlParser
                 $this->assertSame(array(
                     'default' => '2.2',
                     'maxOccurs' => '1',
-                    'minOccurs' => '0',
+                    'minOccurs' => '0'
                 ), $structs->getStructByName('SearchRequest')->getAttribute('Version')->getMeta());
                 $this->assertSame('string', $structs->getStructByName('SearchRequest')->getAttribute('Version')->getType());
                 $this->assertFalse($structs->getStructByName('SearchRequest')->getAttribute('Version')->getContainsElements());
@@ -54,7 +59,7 @@ class TagElementTest extends WsdlParser
             if ($structs->getStructByName('ArrayOfNewsRelatedSearch') instanceof Struct) {
                 $this->assertSame(array(
                     'maxOccurs' => 'unbounded',
-                    'minOccurs' => '0',
+                    'minOccurs' => '0'
                 ), $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getMeta());
                 $this->assertSame('NewsRelatedSearch', $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getType());
                 $this->assertTrue($structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getContainsElements());
@@ -70,9 +75,7 @@ class TagElementTest extends WsdlParser
     public function testParseYandexAdGroups()
     {
         $tagElementParser = self::yandexAdGroupsInstance();
-
         $tagElementParser->parse();
-
         $count = 0;
         $structs = $tagElementParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
@@ -80,7 +83,7 @@ class TagElementTest extends WsdlParser
                 $this->assertSame(array(
                     'maxOccurs' => '1',
                     'minOccurs' => '0',
-                    'nillable' => 'true',
+                    'nillable' => 'true'
                 ), $structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getMeta());
                 $this->assertSame('ArrayOfString', $structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getType());
                 $this->assertFalse($structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getContainsElements());
@@ -96,15 +99,13 @@ class TagElementTest extends WsdlParser
     public function testParseActon()
     {
         $tagElementParser = self::actonInstance();
-
         $tagElementParser->parse();
-
         $count = 0;
         $structs = $tagElementParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
             if ($structs->getStructByName('LoginResult') instanceof Struct) {
                 $this->assertSame(array(
-                    'nillable' => 'true',
+                    'nillable' => 'true'
                 ), $structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getMeta());
                 $this->assertSame('string', $structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getType());
                 $this->assertFalse($structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getContainsElements());
@@ -113,5 +114,32 @@ class TagElementTest extends WsdlParser
             }
         }
         $this->assertEquals(1, $count);
+    }
+    /**
+     *
+     */
+    public function testParsePayPal()
+    {
+        $tagElementParser = self::payPalInstance();
+        $tagElementParser->parse();
+        $okCount = 0;
+        $struct = $tagElementParser->getGenerator()->getStruct('SetExpressCheckoutRequestDetailsType');
+        $attributes = array(
+            'cpp-header-image' => 'string',
+            'cpp-header-border-color' => 'string',
+            'cpp-header-back-color' => 'string',
+            'cpp-payflow-color' => 'string',
+            'cpp-cart-border-color' => 'string',
+            'cpp-logo-image' => 'string'
+        );
+        if ($struct instanceof Struct) {
+            foreach ($attributes as $attribute => $value) {
+                $header = $struct->getAttribute($attribute);
+                if ($header) {
+                    $okCount += (int) ($value === $header->getType());
+                }
+            }
+        }
+        $this->assertSame(count($attributes), $okCount);
     }
 }
