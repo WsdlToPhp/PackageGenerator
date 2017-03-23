@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.6.0
+- issue #76 - "UNKNOWN" type hint is invalid
+- issue #77 - Properties without type
+- issue #79 - Inheritance between a Struct and an Enumeration
+
 ## 2.5.1
 - issue #57 - Unable to determine SoapHeader name and type
 
