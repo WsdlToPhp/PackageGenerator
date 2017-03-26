@@ -19,6 +19,7 @@ xsd_types:
     gMonthDay: "int"
     gYear: "string"
     gYearMonth: "int"
+    hexBinary: "string"
     int: "int"
     integer: "int"
     ID: "string"
