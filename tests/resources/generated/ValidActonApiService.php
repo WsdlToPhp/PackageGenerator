@@ -41,10 +41,10 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named login
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : ClusterHeader
-     * - SOAPHeaderNamespaces : urn:api.actonsoftware.com
-     * - SOAPHeaderTypes : \Api\StructType\ApiClusterHeader
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: ClusterHeader
+     * - SOAPHeaderNamespaces: urn:api.actonsoftware.com
+     * - SOAPHeaderTypes: \Api\StructType\ApiClusterHeader
+     * - SOAPHeaders: required
      * - documentation: Login to the service. This must be the first call to obtain the SessionID for all subsequent API calls
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -66,10 +66,10 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named sendEmail
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : SessionHeader, ClusterHeader
-     * - SOAPHeaderNamespaces : urn:api.actonsoftware.com, urn:api.actonsoftware.com
-     * - SOAPHeaderTypes : \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
-     * - SOAPHeaders : optional, optional
+     * - SOAPHeaderNames: SessionHeader, ClusterHeader
+     * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
+     * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
+     * - SOAPHeaders: optional, optional
      * - documentation: Schedule an email to be sent.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -91,10 +91,10 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named list
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : SessionHeader, ClusterHeader
-     * - SOAPHeaderNamespaces : urn:api.actonsoftware.com, urn:api.actonsoftware.com
-     * - SOAPHeaderTypes : \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
-     * - SOAPHeaders : optional, required
+     * - SOAPHeaderNames: SessionHeader, ClusterHeader
+     * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
+     * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
+     * - SOAPHeaders: optional, required
      * - documentation: Obtain a listing of different types of items in the system (e.g. CONTACT_LISTS)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -116,10 +116,10 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named uploadList
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : SessionHeader, ClusterHeader
-     * - SOAPHeaderNamespaces : urn:api.actonsoftware.com, urn:api.actonsoftware.com
-     * - SOAPHeaderTypes : \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
-     * - SOAPHeaders : optional, required
+     * - SOAPHeaderNames: SessionHeader, ClusterHeader
+     * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
+     * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
+     * - SOAPHeaders: optional, required
      * - documentation: Upload a new contact list or merge records into an existing list.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -141,10 +141,10 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named getUploadResult
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : SessionHeader, ClusterHeader
-     * - SOAPHeaderNamespaces : urn:api.actonsoftware.com, urn:api.actonsoftware.com
-     * - SOAPHeaderTypes : \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
-     * - SOAPHeaders : required, required
+     * - SOAPHeaderNames: SessionHeader, ClusterHeader
+     * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
+     * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
+     * - SOAPHeaders: required, required
      * - documentation: Poll for the results of an asynchronous running upload/merge request
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -166,10 +166,10 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named downloadList
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : SessionHeader, ClusterHeader
-     * - SOAPHeaderNamespaces : urn:api.actonsoftware.com, urn:api.actonsoftware.com
-     * - SOAPHeaderTypes : \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
-     * - SOAPHeaders : optional, required
+     * - SOAPHeaderNames: SessionHeader, ClusterHeader
+     * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
+     * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
+     * - SOAPHeaders: optional, required
      * - documentation: Download the records of a contact list
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -191,10 +191,10 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named messageReport
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : SessionHeader, ClusterHeader
-     * - SOAPHeaderNamespaces : urn:api.actonsoftware.com, urn:api.actonsoftware.com
-     * - SOAPHeaderTypes : \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
-     * - SOAPHeaders : optional, required
+     * - SOAPHeaderNames: SessionHeader, ClusterHeader
+     * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
+     * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
+     * - SOAPHeaders: optional, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
@@ -215,10 +215,10 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named deleteList
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : SessionHeader, ClusterHeader
-     * - SOAPHeaderNamespaces : urn:api.actonsoftware.com, urn:api.actonsoftware.com
-     * - SOAPHeaderTypes : \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
-     * - SOAPHeaders : optional, required
+     * - SOAPHeaderNames: SessionHeader, ClusterHeader
+     * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
+     * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
+     * - SOAPHeaders: optional, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
