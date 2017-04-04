@@ -416,7 +416,9 @@ abstract class AbstractModelFile extends AbstractFile
         }
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
-            if ($model->getIsRestriction()) {
+            // issue #84: union is considered as string as it would be difficult to have a method that accepts multiple object types.
+            // If the property has to be an object of multiple types => new issue...
+            if ($model->getIsRestriction() || $model->isUnion()) {
                 $type = self::TYPE_STRING;
             } elseif ($model->getIsStruct()) {
                 $type = $model->getPackagedName($namespaced);

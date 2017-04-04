@@ -5,6 +5,8 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
+use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
 class Rules
 {
@@ -35,12 +37,7 @@ class Rules
      */
     public function applyRules($parameterName, $itemType = false)
     {
-        foreach ($this->getAttribute()->getMeta() as $metaName => $metaValue) {
-            $rule = $this->getRule($metaName);
-            if ($rule instanceof AbstractRule) {
-                $rule->applyRule($parameterName, $metaValue, $itemType);
-            }
-        }
+        $this->applyRulesFromModel($this->attribute, $parameterName, $itemType);
         if ($this->getAttribute()->isArray() && !$itemType) {
             $this->getArrayRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->getAttribute())) {
@@ -49,6 +46,39 @@ class Rules
             $this->getItemTypeRule()->applyRule($parameterName, null, $itemType);
         } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute()))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
+        }
+    }
+    /**
+     * This method is called when an attribute has a union meta which means the attribute is of several types.
+     * In this case, the types are currently only of type string (normally) so we add the rules according to each type
+     * @param string $parameterName
+     * @param string $itemType
+     * @param string[] $unionTypes
+     */
+    protected function applyUnionRules($parameterName, $itemType, array $unionTypes)
+    {
+        foreach ($unionTypes as $type) {
+            $struct = $this->getAttribute()->getGenerator()->getStruct($type);
+            if ($struct instanceof Struct) {
+                $this->applyRulesFromModel($struct, $parameterName, $itemType);
+            }
+        }
+    }
+    /**
+     * Generic method to apply rules from current model
+     * @param AbstractModel $model
+     * @param string $parameterName
+     * @param string $itemType
+     */
+    protected function applyRulesFromModel(AbstractModel $model, $parameterName, $itemType = false)
+    {
+        foreach ($model->getMeta() as $metaName => $metaValue) {
+            $rule = $this->getRule($metaName);
+            if ($rule instanceof AbstractRule) {
+                $rule->applyRule($parameterName, $metaValue, $itemType);
+            } elseif ($metaName === 'union' && is_array($metaValue) && count($metaValue) > 0) {
+                $this->applyUnionRules($parameterName, $itemType, $metaValue);
+            }
         }
     }
     /**
