@@ -53,7 +53,7 @@ class Rules
      * In this case, the types are currently only of type string (normally) so we add the rules according to each type
      * @param string $parameterName
      * @param string $itemType
-     * @param array $unionTypes
+     * @param string[] $unionTypes
      */
     protected function applyUnionRules($parameterName, $itemType, array $unionTypes)
     {
@@ -76,7 +76,7 @@ class Rules
             $rule = $this->getRule($metaName);
             if ($rule instanceof AbstractRule) {
                 $rule->applyRule($parameterName, $metaValue, $itemType);
-            } elseif ($metaName === 'union' && count($metaValue) > 0) {
+            } elseif ($metaName === 'union' && is_array($metaValue) && count($metaValue) > 0) {
                 $this->applyUnionRules($parameterName, $itemType, $metaValue);
             }
         }

@@ -18,7 +18,6 @@ class Service extends AbstractModel
     }
     /**
      * Adds a service
-     * @param Generator $generator
      * @param string $serviceName the service name to which add the method
      * @param string $methodName the original function name
      * @param string|array $methodParameter the original parameter name
