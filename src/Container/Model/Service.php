@@ -18,17 +18,16 @@ class Service extends AbstractModel
     }
     /**
      * Adds a service
-     * @param Generator $generator
      * @param string $serviceName the service name to which add the method
      * @param string $methodName the original function name
      * @param string|array $methodParameter the original parameter name
      * @param string|array $methodReturn the original return name
      * @return Service
      */
-    public function addService(Generator $generator, $serviceName, $methodName, $methodParameter, $methodReturn)
+    public function addService($serviceName, $methodName, $methodParameter, $methodReturn)
     {
         if (!$this->get($serviceName) instanceof Model) {
-            $this->add(new Model($generator, $serviceName));
+            $this->add(new Model($this->generator, $serviceName));
         }
         $serviceMethod = $this->get($serviceName)->getMethod($methodName);
         /**

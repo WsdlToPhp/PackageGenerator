@@ -34,8 +34,8 @@ class ServiceContainerTest extends TestCase
     {
         $serviceContainer = self::instance();
 
-        $serviceContainer->addService(self::getBingGeneratorInstance(), 'Foo', 'bar', 'string', 'int');
-        $serviceContainer->addService(self::getBingGeneratorInstance(), 'Foo', 'bar', 'int', 'string');
+        $serviceContainer->addService('Foo', 'bar', 'string', 'int');
+        $serviceContainer->addService('Foo', 'bar', 'int', 'string');
 
         $fooService = $serviceContainer->getServiceByName('Foo');
 

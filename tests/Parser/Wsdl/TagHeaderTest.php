@@ -184,7 +184,7 @@ class TagHeaderTest extends WsdlParser
         $tagHeaderParser
             ->getGenerator()
                 ->getServices()
-                    ->addService($tagHeaderParser->getGenerator(), 'Update', 'UpdateItemInRecoverableItems', 'string', 'string');
+                    ->addService('Update', 'UpdateItemInRecoverableItems', 'string', 'string');
 
         $tagHeaderParser->parse();
 
