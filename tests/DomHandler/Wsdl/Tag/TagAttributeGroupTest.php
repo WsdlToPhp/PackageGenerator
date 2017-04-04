@@ -123,6 +123,20 @@ class TagAttributeGroupTest extends TestCase
             'HotelReferenceGroup',
             'OTA_PayloadStdAttributes'
         );
+        $indexRef = 0;
+        foreach ($attributeGroups as $attributeGroup) {
+            if ($attributeGroup->getAttributeRef() !== '') {
+                $this->assertSame($attributeRefs[$indexRef++], $attributeGroup->getAttributeRef());
+            }
+        }
+    }
+    /**
+     *
+     */
+    public function testGetAttributeName()
+    {
+        $schema = WsdlTest::whlInstance();
+        $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
         $attributeNames = array(
             'ErrorWarningAttributeGroup',
             'LanguageGroup',
@@ -164,12 +178,8 @@ class TagAttributeGroupTest extends TestCase
             'RatePlanGroup',
             'StatusApplicationGroup'
         );
-        $indexRef = 0;
         $indexName = 0;
         foreach ($attributeGroups as $attributeGroup) {
-            if ($attributeGroup->getAttributeRef() !== '') {
-                $this->assertSame($attributeRefs[$indexRef++], $attributeGroup->getAttributeRef());
-            }
             if ($attributeGroup->getAttributeName() !== '') {
                 $this->assertSame($attributeNames[$indexName++], $attributeGroup->getAttributeName());
             }
