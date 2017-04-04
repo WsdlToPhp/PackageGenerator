@@ -83,7 +83,6 @@ class FunctionsTest extends SoapClientParser
         $count = 0;
         foreach ($generator->getServices() as $service) {
             foreach ($service->getMethods() as $method) {
-
                 switch ($method->getName()) {
                     case 'portingQualification':
                         $expected = array(

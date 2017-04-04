@@ -442,22 +442,22 @@ class GeneratorTest extends TestCase
             'config.disable-tls:true',
             'config.data-dir:/src/foor/bar',
             'require.wsdltophp/packagebase:dev-master',
-            'autoload.psr-4.Acme\\:src/'
+            'autoload.psr-4.Acme\\:src/',
         ));
 
         $this->assertSame(array(
             'config' => array(
                 'disable-tls' => true,
-                'data-dir' => '/src/foor/bar'
+                'data-dir' => '/src/foor/bar',
             ),
             'require' => array(
-                'wsdltophp/packagebase' => 'dev-master'
+                'wsdltophp/packagebase' => 'dev-master',
             ),
             'autoload' => array(
                 'psr-4' => array(
-                    'Acme\\' => 'src/'
-                )
-            )
+                    'Acme\\' => 'src/',
+                ),
+            ),
         ), $instance->getOptionComposerSettings());
     }
     /**
@@ -584,7 +584,7 @@ class GeneratorTest extends TestCase
             ->setComposerName($standalone ? 'wsdltophp/' . $dir : '')
             ->setComposerSettings($standalone ? array(
                 'require.wsdltophp/wssecurity:dev-master',
-                'config.disable-tls:true'
+                'config.disable-tls:true',
             ) : array())
             ->setDestination($destination)
             ->setEnumsFolder('EnumType')
@@ -657,7 +657,7 @@ class GeneratorTest extends TestCase
                 'http' => array(
                     'protocol_version' => 1.1000000000000001,
                     'header' => "Connection: close\r\n",
-                )
+                ),
             ), $instance->getSoapClient()->getSoapClientStreamContextOptions());
         }
     }
@@ -679,8 +679,8 @@ class GeneratorTest extends TestCase
                         'ca_file' => basename(__FILE__),
                         'ca_path' => __DIR__,
                         'verify_peer' => true,
-                    )
-                ))
+                    ),
+                )),
             ));
         $instance = new Generator($options);
 
@@ -688,7 +688,7 @@ class GeneratorTest extends TestCase
         // this test is focused on the defined options and not those which are added after
         // so we remove those we are not interested in!
         $contextOptions = $instance->getSoapClient()->getSoapClientStreamContextOptions();
-        foreach(array_keys($contextOptions) as $index) {
+        foreach (array_keys($contextOptions) as $index) {
             if ($index !== 'https' && $index !== 'ssl') {
                 unset($contextOptions[$index]);
             }
@@ -702,7 +702,7 @@ class GeneratorTest extends TestCase
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
                 'verify_peer' => true,
-            )
+            ),
         ), $contextOptions);
     }
 }

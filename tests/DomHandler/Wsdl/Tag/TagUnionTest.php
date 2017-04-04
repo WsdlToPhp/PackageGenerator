@@ -38,6 +38,6 @@ class TagUnionTest extends TestCase
                     break;
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
 }

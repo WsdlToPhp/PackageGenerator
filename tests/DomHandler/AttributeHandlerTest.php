@@ -69,7 +69,7 @@ class AttributeHandlerTest extends TestCase
             'tns',
         );
 
-        foreach ($elements as $index=>$element) {
+        foreach ($elements as $index => $element) {
             $this->assertSame($namespaces[$index], $element->getAttribute('type')->getValueNamespace());
         }
     }

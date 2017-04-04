@@ -48,7 +48,7 @@ class StructsTest extends SoapClientParser
         $parser->parse();
 
         $count = 0;
-        foreach($generator->getStructs() as $struct) {
+        foreach ($generator->getStructs() as $struct) {
             $count += $struct->getIsStruct() ? 1 : 0;
         }
 

@@ -35,12 +35,12 @@ class TagAttributeTest extends WsdlParser
         if ($structs->count() > 0) {
             if ($structs->getStructByName('QuantityType') instanceof Struct) {
                 $this->assertSame('token', $structs->getStructByName('QuantityType')->getAttribute('unit')->getType());
-                $this->assertSame(array('use'=>'optional'), $structs->getStructByName('QuantityType')->getAttribute('unit')->getMeta());
+                $this->assertSame(array('use' => 'optional'), $structs->getStructByName('QuantityType')->getAttribute('unit')->getMeta());
                 $ok = true;
             }
             if ($structs->getStructByName('CharityIDType') instanceof Struct) {
                 $this->assertSame('CharityAffiliationTypeCodeType', $structs->getStructByName('CharityIDType')->getAttribute('type')->getType());
-                $this->assertSame(array('use'=>'required'), $structs->getStructByName('CharityIDType')->getAttribute('type')->getMeta());
+                $this->assertSame(array('use' => 'required'), $structs->getStructByName('CharityIDType')->getAttribute('type')->getMeta());
                 $ok = true;
             }
             if ($structs->getStructByName('CharityAffiliationType') instanceof Struct) {
@@ -49,7 +49,7 @@ class TagAttributeTest extends WsdlParser
                 $ok = true;
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -76,6 +76,6 @@ class TagAttributeTest extends WsdlParser
                 $ok = true;
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
 }

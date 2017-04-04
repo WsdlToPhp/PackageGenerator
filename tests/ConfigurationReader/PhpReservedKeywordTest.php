@@ -224,7 +224,8 @@ class PhpReservedKeywordTest extends TestCase
     {
         $this->assertTrue(self::instance()->is('Do'));
     }
-    public function testUppercaseIsoffsetGet() {
+    public function testUppercaseIsoffsetGet()
+    {
         $this->assertFalse(self::instance()->is('OffsetGet'));
     }
     /**

@@ -59,7 +59,7 @@ class TagIncludeTest extends WsdlParser
             $schemaContainer->add($schema);
         }
 
-        foreach($tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
+        foreach ($tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
             $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
         }
 

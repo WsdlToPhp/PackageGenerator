@@ -59,14 +59,14 @@ class TagImportTest extends WsdlParser
         $tagImportParser->parse();
 
         $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
-        for ($i=0; $i<19; $i++) {
+        for ($i = 0; $i < 19; $i++) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/partner/PartnerService.%d.xsd', $i));
             $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schema->getContent()->setCurrentTag('import');
             $schemaContainer->add($schema);
         }
 
-        foreach($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
+        foreach ($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
             $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
         }
 
@@ -83,14 +83,14 @@ class TagImportTest extends WsdlParser
         $tagImportParser->parse();
 
         $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
-        for ($i=0; $i<19; $i++) {
+        for ($i = 0; $i < 19; $i++) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/partner/PartnerService.%d.xsd', $i));
             $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schema->getContent()->setCurrentTag('import');
             $schemaContainer->add($schema);
         }
 
-        foreach($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
+        foreach ($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
             $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
         }
 
@@ -107,14 +107,14 @@ class TagImportTest extends WsdlParser
         $tagImportParser->parse();
 
         $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
-        for ($i=0; $i<19; $i++) {
+        for ($i = 0; $i < 19; $i++) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/partner/PartnerService.%d.xsd', $i));
             $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schema->getContent()->setCurrentTag('import');
             $schemaContainer->add($schema);
         }
 
-        foreach($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
+        foreach ($tagImportParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
             $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
         }
 

@@ -112,7 +112,7 @@ class DomDocumentHandlerTest extends TestCase
         $instance = self::bingInstance();
 
         $parts = $instance->getElementsByNameAndAttributes('part', array(
-            'name'    => 'parameters',
+            'name' => 'parameters',
             'element' => 'tns:SearchRequest',
         ));
         $this->assertNotEmpty($parts);
@@ -126,7 +126,7 @@ class DomDocumentHandlerTest extends TestCase
         $instance = self::bingInstance();
 
         $part = $instance->getElementByNameAndAttributes('part', array(
-            'name'    => 'parameters',
+            'name' => 'parameters',
             'element' => 'tns:SearchRequest',
         ));
         $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler', $part);

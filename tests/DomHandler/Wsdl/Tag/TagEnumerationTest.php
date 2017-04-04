@@ -17,8 +17,8 @@ class TagEnumerationTest extends TestCase
 
         $enumerations = $schema->getContent()->getElementsByName(Wsdl::TAG_ENUMERATION);
 
-        foreach ($enumerations as $index=>$enumeration) {
-            $this->assertSame(sprintf('0%s', $index+1), $enumeration->getValue());
+        foreach ($enumerations as $index => $enumeration) {
+            $this->assertSame(sprintf('0%s', $index + 1), $enumeration->getValue());
         }
     }
 }

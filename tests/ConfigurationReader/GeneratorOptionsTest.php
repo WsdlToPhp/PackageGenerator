@@ -475,22 +475,22 @@ class GeneratorOptionsTest extends TestCase
             'config.disable-tls:true',
             'config.data-dir:/src/foor/bar',
             'require.wsdltophp/packagebase:dev-master',
-            'autoload.psr-4.Acme\\:src/'
+            'autoload.psr-4.Acme\\:src/',
         ));
 
         $this->assertSame(array(
             'config' => array(
                 'disable-tls' => true,
-                'data-dir' => '/src/foor/bar'
+                'data-dir' => '/src/foor/bar',
             ),
             'require' => array(
-                'wsdltophp/packagebase' => 'dev-master'
+                'wsdltophp/packagebase' => 'dev-master',
             ),
             'autoload' => array(
                 'psr-4' => array(
-                    'Acme\\' => 'src/'
-                )
-            )
+                    'Acme\\' => 'src/',
+                ),
+            ),
         ), $instance->getComposerSettings());
     }
     /**
