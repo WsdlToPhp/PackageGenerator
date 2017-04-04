@@ -54,16 +54,14 @@ class TagUnion extends AbstractTagParser
     protected function findSuitableInheritance(array $values)
     {
         $validInheritance = '';
-        while (empty($validInheritance)) {
-            foreach ($values as $value) {
-                $model = $this->getStructByName($value);
-                while ($model instanceof AbstractModel && $model->getInheritance() !== '') {
-                    $model = $this->getStructByName($validInheritance = $model->getInheritance());
-                }
-                if ($model instanceof AbstractModel) {
-                    $validInheritance = $model->getName();
-                    break;
-                }
+        foreach ($values as $value) {
+            $model = $this->getStructByName($value);
+            while ($model instanceof AbstractModel && $model->getInheritance() !== '') {
+                $model = $this->getStructByName($validInheritance = $model->getInheritance());
+            }
+            if ($model instanceof AbstractModel) {
+                $validInheritance = $model->getName();
+                break;
             }
         }
         return $validInheritance;
