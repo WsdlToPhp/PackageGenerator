@@ -150,11 +150,11 @@ class Struct extends AbstractModel
     protected function addInheritanceAttributes(StructAttributeContainer $attributes)
     {
         if ($this->getInheritance() != '' && ($model = $this->getInheritanceStruct()) instanceof Struct) {
-            while ($model->getIsStruct()) {
+            while ($model instanceof Struct && $model->getIsStruct()) {
                 foreach ($model->getAttributes() as $attribute) {
                     $attributes->add($attribute);
                 }
-                $model = $this->getGenerator()->getStruct($model->getInheritance());
+                $model = $model->getInheritanceStruct();
             }
         }
     }
