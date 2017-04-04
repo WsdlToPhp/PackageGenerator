@@ -25,41 +25,52 @@ class Struct extends AbstractModel
     }
     /**
      * Adds a virtual struct
-     * @param Generator $generator
      * @param string $structName the original struct name
      * @return Struct
      */
-    public function addVirtualStruct(Generator $generator, $structName)
+    public function addVirtualStruct($structName)
     {
-        return $this->addStruct($generator, $structName, false);
+        return $this->addStruct($structName, false);
     }
     /**
      * Adds type to structs
-     * @param Generator $generator
      * @param string $structName the original struct name
      * @param bool $isStruct whether the Struct has to be generated or not
      * @return Struct
      */
-    public function addStruct(Generator $generator, $structName, $isStruct = true)
+    public function addStruct($structName, $isStruct = true)
     {
         if ($this->get($structName) === null) {
-            $this->add(new Model($generator, $structName, $isStruct));
+            $this->add(new Model($this->generator, $structName, $isStruct));
         }
         return $this;
     }
     /**
      * Adds type to structs and its attribute
-     * @param Generator $generator
      * @param string $structName the original struct name
      * @param string $attributeName the attribute name
      * @param string $attributeType the attribute type
      * @return Struct
      */
-    public function addStructWithAttribute(Generator $generator, $structName, $attributeName, $attributeType)
+    public function addStructWithAttribute($structName, $attributeName, $attributeType)
     {
-        $this->addStruct($generator, $structName);
+        $this->addStruct($structName);
         if (($struct = $this->getStructByName($structName)) instanceof Model) {
             $struct->addAttribute($attributeName, $attributeType);
+        }
+        return $this;
+    }
+    /**
+     * Adds a union struct
+     * @param string $structName
+     * @param string[] $types
+     * @return Struct
+     */
+    public function addUnionStruct($structName, $types)
+    {
+        $this->addVirtualStruct($structName);
+        if (($struct = $this->getStructByName($structName)) instanceof Model) {
+            $struct->setTypes($types);
         }
         return $this;
     }

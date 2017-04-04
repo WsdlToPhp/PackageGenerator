@@ -11,6 +11,10 @@ class Structs extends AbstractParser
     /**
      * @var string
      */
+    const UNION_DECLARATION = 'union';
+    /**
+     * @var string
+     */
     const ANY_XML_DECLARATION = '<anyXML>';
     /**
      * @var string
@@ -47,10 +51,12 @@ class Structs extends AbstractParser
             $typeDef = explode(' ', $cleanType);
             if (array_key_exists(1, $typeDef) && !empty($typeDef)) {
                 $structName = $typeDef[1];
-                if ($typeDef[0] !== self::STRUCT_DECLARATION) {
-                    $this->getGenerator()->getStructs()->addVirtualStruct($this->getGenerator(), $structName);
-                } else {
+                if ($typeDef[0] === self::UNION_DECLARATION) {
+                    $this->parseUnionStruct($typeDef);
+                } elseif ($typeDef[0] === self::STRUCT_DECLARATION) {
                     $this->parseComplexStruct($typeDef);
+                } else {
+                    $this->getGenerator()->getStructs()->addVirtualStruct($structName);
                 }
             }
             $this->structHasBeenDefined($type);
@@ -66,10 +72,26 @@ class Structs extends AbstractParser
             for ($i = 2; $i < $typeDefCount; $i += 2) {
                 $structParamType = str_replace(self::ANY_XML_DECLARATION, self::ANY_XML_TYPE, $typeDef[$i]);
                 $structParamName = $typeDef[$i + 1];
-                $this->getGenerator()->getStructs()->addStructWithAttribute($this->getGenerator(), $typeDef[1], $structParamName, $structParamType);
+                $this->getGenerator()->getStructs()->addStructWithAttribute($typeDef[1], $structParamName, $structParamType);
             }
         } else {
-            $this->getGenerator()->getStructs()->addStruct($this->getGenerator(), $typeDef[1]);
+            $this->getGenerator()->getStructs()->addStruct($typeDef[1]);
+        }
+    }
+    /**
+     * union types are passed such as ",dateTime,time" or ",PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2"
+     * @param array $typeDef
+     */
+    protected function parseUnionStruct($typeDef)
+    {
+        $typeDefCount = count($typeDef);
+        if ($typeDefCount === 3) {
+            $unionName = $typeDef[1];
+            $unionTypes = array_filter(explode(',', $typeDef[2]), function ($type) {
+                return !empty($type);
+            });
+            sort($unionTypes);
+            $this->getGenerator()->getStructs()->addUnionStruct($unionName, $unionTypes);
         }
     }
     /**

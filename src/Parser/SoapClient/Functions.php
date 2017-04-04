@@ -27,7 +27,7 @@ class Functions extends AbstractParser
                         list($methodName, $parameterType) = explode('(', $infos[1]);
                     }
                     if (!empty($returnType) && !empty($methodName)) {
-                        $services->addService($this->getGenerator(), $this->getGenerator()->getServiceName($methodName), $methodName, $parameterType, $returnType);
+                        $services->addService($this->getGenerator()->getServiceName($methodName), $methodName, $parameterType, $returnType);
                     }
                 } elseif (count($infos) >= 3) {
                     /**
@@ -69,7 +69,7 @@ class Functions extends AbstractParser
                                 ));
                             }
                         }
-                        $services->addService($this->getGenerator(), $this->getGenerator()->getServiceName($methodName), $methodName, $methodParameters, empty($returnType) ? 'unknown' : $returnType);
+                        $services->addService($this->getGenerator()->getServiceName($methodName), $methodName, $methodParameters, empty($returnType) ? 'unknown' : $returnType);
                     }
                 }
             }

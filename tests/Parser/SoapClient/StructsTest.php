@@ -54,4 +54,35 @@ class StructsTest extends SoapClientParser
 
         $this->assertEquals(0, $count);
     }
+    /**
+     *
+     */
+    public function testWhl()
+    {
+        $generator = self::getWhlInstance();
+
+        $parser = new Structs($generator);
+        $parser->parse();
+
+        $unionTypes = array(
+            explode(',', 'anonymous25,anonymous26'),
+            explode(',', 'dateTime,time'),
+            explode(',', 'date,dateTime,time'),
+            explode(',', 'NightDurationType,duration'),
+            explode(',', 'PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2'),
+            explode(',', 'PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2'),
+        );
+
+        $count = 0;
+        $index = 0;
+        /** @var Struct $struct */
+        foreach($generator->getStructs() as $struct) {
+            $count += $struct->isUnion() ? 1 : 0;
+            if ($struct->isUnion()) {
+                $this->assertSame($unionTypes[$index++], $struct->getTypes());
+            }
+        }
+
+        $this->assertEquals(5, $count);
+    }
 }
