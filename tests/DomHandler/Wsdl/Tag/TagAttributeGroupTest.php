@@ -121,7 +121,7 @@ class TagAttributeGroupTest extends TestCase
             'OTA_PayloadStdAttributes',
             'OTA_PayloadStdAttributes',
             'HotelReferenceGroup',
-            'OTA_PayloadStdAttributes'
+            'OTA_PayloadStdAttributes',
         );
         $indexRef = 0;
         foreach ($attributeGroups as $attributeGroup) {
@@ -176,7 +176,7 @@ class TagAttributeGroupTest extends TestCase
             'RestrictionStatusGroup',
             'InventoryGroup',
             'RatePlanGroup',
-            'StatusApplicationGroup'
+            'StatusApplicationGroup',
         );
         $indexName = 0;
         foreach ($attributeGroups as $attributeGroup) {
@@ -185,4 +185,21 @@ class TagAttributeGroupTest extends TestCase
             }
         }
     }
+    /**
+     *
+     */
+    public function testGetReferencingElements()
+    {
+        $schema = WsdlTest::whlInstance();
+        $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
+        foreach ($attributeGroups as $attributeGroup) {
+            if ($attributeGroup->getAttributeName() !== '') {
+                switch($attributeGroup->getAttributeName()) {
+                    case 'ErrorWarningAttributeGroup':
+                        $this->assertCount(2, $attributeGroup->getReferencingElements());
+                        break;
+            }
+        }
+    }
+}
 }
