@@ -4,13 +4,12 @@ namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
 class TagAttributeGroup extends AbstractTag
 {
-    const ATTRIBUTE_REF = 'ref';
-    /**
-     * {@inheritDoc}
-     * @see \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag::getAttributeRef()
-     */
-    public function getAttributeRef()
+    public function getReferencingElements()
     {
-        return $this->hasAttribute(self::ATTRIBUTE_REF) ? $this->getAttribute(self::ATTRIBUTE_REF)->getValue(false, true, 'string') : '';
+        $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', array(
+            'ref' => $this->getAttributeName()
+        ));
+
+        return $attributeGroups;
     }
 }
