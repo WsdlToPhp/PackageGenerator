@@ -164,7 +164,7 @@ abstract class AbstractDomDocumentHandler
     public function searchTagsByXpath($name, array $attributes, \DOMNode $node = null)
     {
         $xpath = new \DOMXPath($this->domDocument);
-        $xQuery = sprintf("%s//*[local-name() = '%s']", $node instanceof \DOMNode ? '.' : '', $name);
+        $xQuery = sprintf("%s//*[local-name()='%s']", $node instanceof \DOMNode ? '.' : '', $name);
         foreach ($attributes as $attributeName => $attributeValue) {
             $xQuery .= sprintf("[@%s='%s']", $attributeName, $attributeValue);
         }
