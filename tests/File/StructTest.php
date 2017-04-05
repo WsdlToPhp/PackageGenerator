@@ -334,7 +334,7 @@ class StructTest extends AbstractFile
      */
     public function testWriteWhlHotelReservationType()
     {
-        $generator = self::whlInstance();
+        $generator = self::whlInstance(true);
         $generator->setOptionValidation(true);
         if (($model = $generator->getStruct('HotelReservationType')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
