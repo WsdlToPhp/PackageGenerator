@@ -346,4 +346,21 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find HotelReservationType struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteWhlTaxType()
+    {
+        $generator = self::whlInstance();
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('TaxType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidTaxType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find TaxType struct for file generation');
+        }
+    }
 }
