@@ -7,7 +7,7 @@ class TagAttributeGroup extends AbstractTag
     public function getReferencingElements()
     {
         $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', array(
-            'ref' => $this->getAttributeName()
+            'ref' => sprintf('*%s', $this->getAttributeName())
         ));
 
         return $attributeGroups;
