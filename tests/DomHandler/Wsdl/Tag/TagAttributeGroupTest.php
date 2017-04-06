@@ -5,6 +5,7 @@ namespace WsdlToPhp\PackageGenerator\Tests\DomHandler\Wsdl\Tag;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Tests\Model\WsdlTest;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl;
+use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagAttributeGroup;
 
 class TagAttributeGroupTest extends TestCase
 {
@@ -192,6 +193,7 @@ class TagAttributeGroupTest extends TestCase
     {
         $schema = WsdlTest::whlInstance();
         $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
+        /** @var TagAttributeGroup $attributeGroup */
         foreach ($attributeGroups as $attributeGroup) {
             if ($attributeGroup->getAttributeName() !== '') {
                 switch($attributeGroup->getAttributeName()) {

@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Tests\DomHandler;
 
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler;
+use WsdlToPhp\PackageGenerator\DomHandler\AbstractElementHandler;
 
 class ElementHandlerTest extends TestCase
 {
@@ -163,6 +164,7 @@ class ElementHandlerTest extends TestCase
     {
         $domDocument = DomDocumentHandlerTest::yandeDirectApiAdGroupsInstance();
 
+        /** @var AbstractElementHandler $element */
         $element = $domDocument->getElementByNameAndAttributes('element', array(
             'name' => 'CampaignId',
         ));
