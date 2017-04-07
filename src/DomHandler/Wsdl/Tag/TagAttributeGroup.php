@@ -8,7 +8,7 @@ class TagAttributeGroup extends AbstractTag
     {
         $elements = array();
         $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', array(
-            'ref' => sprintf('*:%s', $this->getAttributeName())
+            'ref' => sprintf('*:%s', $this->getAttributeName()),
         ));
         /**
          * In case of a referencing element that use this attributeGroup that is not namespaced,
@@ -16,7 +16,7 @@ class TagAttributeGroup extends AbstractTag
          */
         if (empty($attributeGroups)) {
             $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', array(
-                'ref' => sprintf('*%s', $this->getAttributeName())
+                'ref' => sprintf('*%s', $this->getAttributeName()),
             ));
         }
         /**
