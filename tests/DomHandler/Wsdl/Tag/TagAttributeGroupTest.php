@@ -193,15 +193,57 @@ class TagAttributeGroupTest extends TestCase
     {
         $schema = WsdlTest::whlInstance();
         $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
+        $attributeGroupCounts = array(
+            'ErrorWarningAttributeGroup' => 2,
+            'LanguageGroup' => 1,
+            'PrimaryLangID_Group' => 1,
+            'OTA_PayloadStdAttributes' => 20,
+            'CompanyID_AttributesGroup' => 1,
+            'UniqueID_Group' => 1,
+            'ID_Group' => 3,
+            'PositionGroup' => 2,
+            'BookingChannelGroup' => 1,
+            'NameOptionalCodeGroup' => 0,
+            'CodeInfoGroup' => 5,
+            'DeadlineGroup' => 1,
+            'FeeTaxGroup' => 2,
+            'CurrencyAmountGroup' => 3,
+            'CurrencyCodeGroup' => 5,
+            'IssuerNameGroup' => 1,
+            'FormattedInd' => 2,
+            'PrivacyGroup' => 8,
+            'TelephoneAttributesGroup' => 1,
+            'TelephoneGroup' => 1,
+            'TelephoneInfoGroup' => 4,
+            'DefaultIndGroup' => 4,
+            'PaymentCardDateGroup' => 1,
+            'GenderGroup' => 2,
+            'MultimediaItemGroup' => 1,
+            'MultimediaDescriptionGroup' => 3,
+            'RoomGroup' => 2,
+            'ID_OptionalGroup' => 13,
+            'ChargeUnitGroup' => 1,
+            'DateTimeSpanGroup' => 2,
+            'GuestCountGroup' => 1,
+            'BirthDateGroup' => 1,
+            'ProfileTypeGroup' => 1,
+            'CitizenCountryNameGroup' => 1,
+            'HotelReferenceGroup' => 4,
+            'RestrictionStatusGroup' => 1,
+            'InventoryGroup' => 1,
+            'RatePlanGroup' => 1,
+            'StatusApplicationGroup' => 1,
+        );
+        $testedCount = 0;
         /** @var TagAttributeGroup $attributeGroup */
         foreach ($attributeGroups as $attributeGroup) {
             if ($attributeGroup->getAttributeName() !== '') {
-                switch($attributeGroup->getAttributeName()) {
-                    case 'ErrorWarningAttributeGroup':
-                        $this->assertCount(2, $attributeGroup->getReferencingElements());
-                        break;
+                $elements = $attributeGroup->getReferencingElements();
+                $this->assertCount($attributeGroupCounts[$attributeGroup->getAttributeName()], $elements, sprintf('Failed with attributeGroup is "%s"', $attributeGroup->getAttributeName()));
+                $this->assertContainsOnlyInstancesOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\Tag', $elements);
+                $testedCount++;
             }
         }
+        $this->assertCount($testedCount, $attributeGroupCounts);
     }
-}
 }
