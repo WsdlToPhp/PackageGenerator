@@ -475,7 +475,11 @@ class GeneratorOptionsTest extends TestCase
             'config.disable-tls:true',
             'config.data-dir:/src/foor/bar',
             'require.wsdltophp/packagebase:dev-master',
-            'autoload.psr-4.Acme\\:src/',
+            'autoload' => array(
+                'psr-4' => array(
+                    'Acme\\' => 'src/',
+                ),
+            ),
         ));
 
         $this->assertSame(array(
