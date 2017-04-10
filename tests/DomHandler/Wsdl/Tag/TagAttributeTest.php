@@ -23,7 +23,7 @@ class TagAttributeTest extends TestCase
         ));
         $this->assertInstanceOf('WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagAttribute', $attribute);
         $parent = $attribute->getSuitableParent();
-        $this->assertInstanceOf('WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\Tag', $parent);
+        $this->assertInstanceOf('WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagAttributeGroup', $parent);
         $this->assertSame(Wsdl::TAG_ATTRIBUTE_GROUP, $parent->getName());
     }
 }
