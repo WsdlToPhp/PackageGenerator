@@ -650,7 +650,7 @@ class GeneratorTest extends TestCase
     {
         $instance = self::getBingGeneratorInstance();
 
-        if (PHP_VERSION_ID < 70013) {
+        if (PHP_VERSION_ID < 70015) {
             $this->assertSame(array(), $instance->getSoapClient()->getSoapClientStreamContextOptions());
         } else {
             $this->assertSame(array(
