@@ -37,6 +37,7 @@ class TagDocumentation extends Tag
     {
         return parent::getSuitableParentTags(array_merge($additionalTags, array(
             WsdlDocument::TAG_OPERATION,
+            WsdlDocument::TAG_ATTRIBUTE_GROUP,
         )));
     }
 }
