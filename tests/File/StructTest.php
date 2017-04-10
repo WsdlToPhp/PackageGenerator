@@ -363,4 +363,21 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find TaxType struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteWhlPaymentCardType()
+    {
+        $generator = self::whlInstance();
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('PaymentCardType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidPaymentCardType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find PaymentCardType struct for file generation');
+        }
+    }
 }
