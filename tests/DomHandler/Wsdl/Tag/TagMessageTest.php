@@ -17,6 +17,6 @@ class TagMessageTest extends TestCase
 
         $messages = $wsdl->getContent()->getElementsByName(Wsdl::TAG_MESSAGE);
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagPart', $messages[0]->getPart('RequesterCredentials'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart', $messages[0]->getPart('RequesterCredentials'));
     }
 }

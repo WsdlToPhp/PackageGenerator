@@ -352,9 +352,9 @@ class GeneratorOptionsTest extends TestCase
     public function testSetNamespace()
     {
         $instance = self::optionsInstance();
-        $instance->setNamespace('\\My\\Project');
+        $instance->setNamespace('\My\Project');
 
-        $this->assertSame('\\My\\Project', $instance->getNamespace());
+        $this->assertSame('\My\Project', $instance->getNamespace());
     }
     /**
      *
@@ -395,7 +395,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetStructClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::optionsInstance()->getStructClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructBase', self::optionsInstance()->getStructClass());
     }
     /**
      *
@@ -403,16 +403,16 @@ class GeneratorOptionsTest extends TestCase
     public function testSetStructClass()
     {
         $instance = self::optionsInstance();
-        $instance->setStructClass('\\My\\Project\\StructClass');
+        $instance->setStructClass('\My\Project\StructClass');
 
-        $this->assertSame('\\My\\Project\\StructClass', $instance->getStructClass());
+        $this->assertSame('\My\Project\StructClass', $instance->getStructClass());
     }
     /**
      *
      */
     public function testGetStructArrayClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::optionsInstance()->getStructArrayClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructArrayBase', self::optionsInstance()->getStructArrayClass());
     }
     /**
      *
@@ -420,16 +420,16 @@ class GeneratorOptionsTest extends TestCase
     public function testSetStructArrayClass()
     {
         $instance = self::optionsInstance();
-        $instance->setStructArrayClass('\\My\\Project\\StructArrayClass');
+        $instance->setStructArrayClass('\My\Project\StructArrayClass');
 
-        $this->assertSame('\\My\\Project\\StructArrayClass', $instance->getStructArrayClass());
+        $this->assertSame('\My\Project\StructArrayClass', $instance->getStructArrayClass());
     }
     /**
      *
      */
     public function testGetSoapClientClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::optionsInstance()->getSoapClientClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractSoapClientBase', self::optionsInstance()->getSoapClientClass());
     }
     /**
      *
@@ -437,9 +437,9 @@ class GeneratorOptionsTest extends TestCase
     public function testSetSoapClientClass()
     {
         $instance = self::optionsInstance();
-        $instance->setSoapClientClass('\\My\\Project\\SoapClientClass');
+        $instance->setSoapClientClass('\My\Project\SoapClientClass');
 
-        $this->assertSame('\\My\\Project\\SoapClientClass', $instance->getSoapClientClass());
+        $this->assertSame('\My\Project\SoapClientClass', $instance->getSoapClientClass());
     }
     /**
      *

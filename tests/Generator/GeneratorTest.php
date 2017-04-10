@@ -302,16 +302,16 @@ class GeneratorTest extends TestCase
     public function testSetOptionNamespacePrefix()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionNamespacePrefix('My\\Project');
+        $instance->setOptionNamespacePrefix('My\Project');
 
-        $this->assertSame('My\\Project', $instance->getOptionNamespacePrefix());
+        $this->assertSame('My\Project', $instance->getOptionNamespacePrefix());
     }
     /**
      *
      */
     public function testGetOptionSoapClientClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::localInstance()->getOptionSoapClientClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractSoapClientBase', self::localInstance()->getOptionSoapClientClass());
     }
     /**
      *
@@ -319,16 +319,16 @@ class GeneratorTest extends TestCase
     public function testSetOptionSoapClientClass()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionSoapClientClass('My\\Project\\SoapClientClass');
+        $instance->setOptionSoapClientClass('My\Project\SoapClientClass');
 
-        $this->assertSame('My\\Project\\SoapClientClass', $instance->getOptionSoapClientClass());
+        $this->assertSame('My\Project\SoapClientClass', $instance->getOptionSoapClientClass());
     }
     /**
      *
      */
     public function testGetOptionStructClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::localInstance()->getOptionStructClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructBase', self::localInstance()->getOptionStructClass());
     }
     /**
      *
@@ -336,16 +336,16 @@ class GeneratorTest extends TestCase
     public function testSetOptionStructClass()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionStructClass('My\\Project\\StructClass');
+        $instance->setOptionStructClass('My\Project\StructClass');
 
-        $this->assertSame('My\\Project\\StructClass', $instance->getOptionStructClass());
+        $this->assertSame('My\Project\StructClass', $instance->getOptionStructClass());
     }
     /**
      *
      */
     public function testGetOptionStructArrayClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::localInstance()->getOptionStructArrayClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructArrayBase', self::localInstance()->getOptionStructArrayClass());
     }
     /**
      *
@@ -353,9 +353,9 @@ class GeneratorTest extends TestCase
     public function testSetOptionStructArrayClass()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionStructArrayClass('My\\Project\\StructArrayClass');
+        $instance->setOptionStructArrayClass('My\Project\StructArrayClass');
 
-        $this->assertSame('My\\Project\\StructArrayClass', $instance->getOptionStructArrayClass());
+        $this->assertSame('My\Project\StructArrayClass', $instance->getOptionStructArrayClass());
     }
     /**
      *

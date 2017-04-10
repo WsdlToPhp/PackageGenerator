@@ -66,7 +66,7 @@ class WsdlHandlerTest extends TestCase
     {
         $bing = self::bingInstance();
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagComplexType', $bing->getElementByName(Wsdl::TAG_COMPLEX_TYPE));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagComplexType', $bing->getElementByName(Wsdl::TAG_COMPLEX_TYPE));
     }
     /**
      *
@@ -76,7 +76,7 @@ class WsdlHandlerTest extends TestCase
         $bing = self::bingInstance();
 
         $this->assertSame('definitions', $bing->getRootElement()->getName());
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagDefinitions', $bing->getRootElement());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagDefinitions', $bing->getRootElement());
     }
     public function testGetNamespaceUri()
     {

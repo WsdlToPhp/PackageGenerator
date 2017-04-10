@@ -20,8 +20,8 @@ class TagHeaderTest extends TestCase
 
         foreach ($headers as $header) {
             if ($header->getParentInput() instanceof TagInput) {
-                $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagOperation', $header->getParentOperation());
-                $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagInput', $header->getParentInput());
+                $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagOperation', $header->getParentOperation());
+                $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagInput', $header->getParentInput());
                 $this->assertSame('RequesterCredentials', $header->getAttributePart());
                 $this->assertSame('RequesterCredentials', $header->getAttributeMessage());
                 $this->assertSame('', $header->getAttributeNamespace());
@@ -37,7 +37,7 @@ class TagHeaderTest extends TestCase
 
         $header = $wsdl->getContent()->getElementByName(Wsdl::TAG_HEADER);
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagMessage', $header->getMessage());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagMessage', $header->getMessage());
     }
     /**
      *
@@ -48,7 +48,7 @@ class TagHeaderTest extends TestCase
 
         $header = $wsdl->getContent()->getElementByName(Wsdl::TAG_HEADER);
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Tag\\TagPart', $header->getPartTag());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart', $header->getPartTag());
     }
     /**
      *

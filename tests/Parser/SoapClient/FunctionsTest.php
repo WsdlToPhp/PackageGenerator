@@ -36,8 +36,8 @@ class FunctionsTest extends SoapClientParser
         $parser = new Functions($generator);
         $parser->parse();
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $generator->getService('Events'));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $generator->getService('Export'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Service', $generator->getService('Events'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Service', $generator->getService('Export'));
     }
     /**
      *

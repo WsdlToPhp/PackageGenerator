@@ -38,9 +38,9 @@ class ElementHandlerTest extends TestCase
         // first schema tag
         $schema = $domDocument->getElementByName('schema');
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AttributeHandler', $schema->getAttribute('elementFormDefault'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler', $schema->getAttribute('elementFormDefault'));
         $this->assertEmpty($schema->getAttribute('targetnamespace'));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AttributeHandler', $element->getAttribute('name'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler', $element->getAttribute('name'));
         $this->assertEmpty($schema->getAttribute('foo'));
     }
     /**
@@ -56,7 +56,7 @@ class ElementHandlerTest extends TestCase
         $element = $domDocument->getElementByName('element');
 
         $this->assertNotEmpty($schema->getElementChildren());
-        $this->assertContainsOnlyInstancesOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AbstractElementHandler', $schema->getElementChildren());
+        $this->assertContainsOnlyInstancesOf('\WsdlToPhp\PackageGenerator\DomHandler\AbstractElementHandler', $schema->getElementChildren());
         $this->assertEmpty($element->getElementChildren());
     }
     /**
@@ -88,7 +88,7 @@ class ElementHandlerTest extends TestCase
             'element' => 'tns:SearchRequest',
         ));
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler', $part);
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler', $part);
         $this->assertSame('parameters', $part->getAttributeValue('name'));
         $this->assertSame('SearchRequest', $part->getAttributeValue('element'));
     }

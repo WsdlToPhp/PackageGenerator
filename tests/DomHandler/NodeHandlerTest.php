@@ -61,8 +61,8 @@ class NodeHandlerTest extends TestCase
         // first sequence tag
         $sequence = $domDocument->getNodeByName('sequence');
 
-        $this->assertContainsOnlyInstancesOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AbstractAttributeHandler', $schema->getAttributes());
-        $this->assertContainsOnlyInstancesOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AbstractAttributeHandler', $element->getAttributes());
+        $this->assertContainsOnlyInstancesOf('\WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler', $schema->getAttributes());
+        $this->assertContainsOnlyInstancesOf('\WsdlToPhp\PackageGenerator\DomHandler\AbstractAttributeHandler', $element->getAttributes());
         $this->assertEmpty($sequence->getAttributes());
     }
     /**
@@ -93,7 +93,7 @@ class NodeHandlerTest extends TestCase
         $element = $domDocument->getNodeByName('element');
 
         $this->assertNotEmpty($schema->getChildren());
-        $this->assertContainsOnlyInstancesOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AbstractNodeHandler', $schema->getChildren());
+        $this->assertContainsOnlyInstancesOf('\WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler', $schema->getChildren());
         $this->assertEmpty($element->getChildren());
     }
     /**
@@ -108,10 +108,10 @@ class NodeHandlerTest extends TestCase
         // first element tag
         $element = $domDocument->getNodeByName('element');
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AbstractNodeHandler', $schema->getParent());
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AbstractNodeHandler', $element->getParent());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler', $schema->getParent());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler', $element->getParent());
         $this->assertSame('sequence', $element->getParent()->getName());
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\AbstractNodeHandler', $domDocument->getRootElement()->getParent());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\AbstractNodeHandler', $domDocument->getRootElement()->getParent());
     }
     /**
      *

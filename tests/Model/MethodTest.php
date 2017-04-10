@@ -129,6 +129,6 @@ class MethodTest extends TestCase
     {
         $service = new Service(self::getBingGeneratorInstance(), 'Foo');
         $service->addMethod('getId', 'string', 'string');
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\ServiceReservedMethod', $service->getMethod('getId')->getReservedMethodsInstance());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod', $service->getMethod('getId')->getReservedMethodsInstance());
     }
 }
