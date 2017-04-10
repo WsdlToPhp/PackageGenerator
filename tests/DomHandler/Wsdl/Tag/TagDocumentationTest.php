@@ -42,20 +42,4 @@ class TagDocumentationTest extends TestCase
         $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagEnumeration', $documentation->getSuitableParent());
         $this->assertSame($enumeration->getValue(), $documentation->getSuitableParent()->getValue());
     }
-    /**
-     *
-     */
-    public function __testWhlGetSuitableParent()
-    {
-        $schema = WsdlTest::whlInstance();
-        $documentations = $schema->getContent()->getElementsByName(Wsdl::TAG_DOCUMENTATION);
-        $okCount = 0;
-        foreach ($documentations as $documentation) {
-            $parent = $documentation->getSuitableParent();
-            if ($parent instanceof AbstractTag && $parent->getName() === Wsdl::TAG_ATTRIBUTE_GROUP && $parent->hasAttributeName()) {
-                $okCount++;
-            }
-        }
-        $this->assertSame(49, $okCount);
-    }
 }
