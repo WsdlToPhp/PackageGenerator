@@ -76,8 +76,11 @@ abstract class AbstractDocument extends DomDocumentHandler
     protected function getElementHandler(\DOMElement $element, AbstractDomDocumentHandler $domDocument, $index = -1)
     {
         $handlerName = '\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler';
+        $elementNameClass = sprintf('%s\Tag\Tag%s', __NAMESPACE__, ucfirst(implode('', array_slice(explode(':', $element->nodeName), -1, 1))));
         $tagClass = sprintf('%s\Tag\Tag%s', __NAMESPACE__, ucfirst($this->currentTag));
-        if (class_exists($tagClass)) {
+        if (class_exists($elementNameClass)) {
+            $handlerName = $elementNameClass;
+        } elseif (class_exists($tagClass)) {
             $handlerName = $tagClass;
         }
         return new $handlerName($element, $domDocument, $index);
