@@ -4,7 +4,7 @@ namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
-class TagRestriction extends AbstractTag
+class TagRestriction extends Tag
 {
     /**
      * @return boolean

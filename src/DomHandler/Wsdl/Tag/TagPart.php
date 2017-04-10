@@ -5,7 +5,7 @@ namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 use WsdlToPhp\PackageGenerator\DomHandler\AttributeHandler;
 use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
-class TagPart extends AbstractTag
+class TagPart extends Tag
 {
     /**
      * @var string

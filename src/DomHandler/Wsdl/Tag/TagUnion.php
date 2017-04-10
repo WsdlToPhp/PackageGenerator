@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
-class TagUnion extends AbstractTag
+class TagUnion extends Tag
 {
     const ATTRIBUTE_MEMBER_TYPES = 'memberTypes';
     /**
