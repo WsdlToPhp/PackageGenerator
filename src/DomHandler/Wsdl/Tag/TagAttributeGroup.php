@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
-class TagAttributeGroup extends AbstractTag
+class TagAttributeGroup extends Tag
 {
     public function getReferencingElements()
     {
@@ -19,17 +19,15 @@ class TagAttributeGroup extends AbstractTag
                 'ref' => sprintf('*%s', $this->getAttributeName()),
             ));
         }
-        /**
-         * Reset current tag as using getElementsByNameAndAttributes method set currentTag to attributeGroup
-         * as soon as currentTag has been set, if a valid DOMElement is found
-         * then without taking care of the actual DOMElement tag name,
-         * a TagEnumeration is always returned.
-         * @todo If it's possible, find a cleaner way to solve this 'issue'
-         */
-        $this->getDomDocumentHandler()->setCurrentTag('');
         foreach ($attributeGroups as $attributeGroup) {
             $parent = $attributeGroup->getSuitableParent();
-            if ($parent instanceof AbstractTag) {
+            /**
+             * In this case, this means the attribute is included in another attribute group,
+             * this means we must climb to its parent recursively until we find the elements referencing the top attributeGroup tag
+             */
+            if ($parent instanceof TagAttributeGroup) {
+                $elements = array_merge($elements, $parent->getReferencingElements());
+            } elseif ($parent instanceof AbstractTag) {
                 $elements[] = $parent;
             }
         }
