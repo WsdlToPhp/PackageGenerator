@@ -13,7 +13,7 @@ class Method extends AbstractModel
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PackageGenerator\\Model\\Method';
+        return 'WsdlToPhp\PackageGenerator\Model\Method';
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Container\Model\AbstractModel::objectProperty()

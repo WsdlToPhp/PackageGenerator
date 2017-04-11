@@ -12,7 +12,7 @@ class Parser extends AbstractObjectContainer
      */
     protected function objectClass()
     {
-        return '\\WsdlToPhp\\PackageGenerator\\Parser\\AbstractParser';
+        return '\WsdlToPhp\PackageGenerator\Parser\AbstractParser';
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer::objectProperty()

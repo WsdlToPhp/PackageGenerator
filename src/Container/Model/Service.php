@@ -14,7 +14,7 @@ class Service extends AbstractModel
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PackageGenerator\\Model\\Service';
+        return 'WsdlToPhp\PackageGenerator\Model\Service';
     }
     /**
      * Adds a service

@@ -12,7 +12,7 @@ class StructValue extends AbstractModel
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PackageGenerator\\Model\\StructValue';
+        return 'WsdlToPhp\PackageGenerator\Model\StructValue';
     }
     /**
      * @param string $name

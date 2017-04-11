@@ -10,6 +10,6 @@ class Method extends AbstractPhpElement
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PhpGenerator\\Element\\PhpMethod';
+        return 'WsdlToPhp\PhpGenerator\Element\PhpMethod';
     }
 }
