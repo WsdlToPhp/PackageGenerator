@@ -3,7 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Method;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagInput extends AbstractTagInputOutputParser
 {

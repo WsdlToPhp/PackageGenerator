@@ -342,7 +342,7 @@ You have several ```testsuite```s available which run test in the proper order:
 - **command**: tests command class
 - **configuration**: tests configuration readers
 - **utils**: tests utils class
-- **domhandler**: tests dom handlers (Basic and Wsdl + Tag)
+- **wsdlhandler**: tests dom handlers (Wsdl + Tag)
 - **model**: tests models
 - **container**: tests containers (Model and PhpElement)
 - **parser**: tests parsers (SoapClient and Wsdl)

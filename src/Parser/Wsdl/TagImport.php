@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagImport extends AbstractTagImportParser
 {

@@ -9,10 +9,10 @@ class Schema extends AbstractDocument
      */
     protected function contentClass()
     {
-        return '\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Schema';
+        return '\WsdlToPhp\PackageGenerator\WsdlHandler\Schema';
     }
     /**
-     * @return \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl
+     * @return \WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl
      */
     public function getContent()
     {

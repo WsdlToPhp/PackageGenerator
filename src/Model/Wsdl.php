@@ -9,10 +9,10 @@ class Wsdl extends AbstractDocument
      */
     protected function contentClass()
     {
-        return '\\WsdlToPhp\\PackageGenerator\\DomHandler\\Wsdl\\Wsdl';
+        return '\WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl';
     }
     /**
-     * @return \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl
+     * @return \WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl
      */
     public function getContent()
     {
