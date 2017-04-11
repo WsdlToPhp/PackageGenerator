@@ -212,11 +212,11 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: maxInclusive
         if ($percent > 100) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must be inferior or equal to 100\, "%s" given', percent), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, the value must be inferior or equal to 100\, "%s" given', $percent), __LINE__);
         }
         // validation for constraint: minInclusive
         if ($percent < 0) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must be superior or equal to 0\, "%s" given', percent), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, the value must be superior or equal to 0\, "%s" given', $percent), __LINE__);
         }
         $this->Percent = $percent;
         return $this;
