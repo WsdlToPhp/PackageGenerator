@@ -18,7 +18,7 @@ class TagImportTest extends TestCase
         $imports = $wsdl->getContent()->getElementsByName(Wsdl::TAG_IMPORT);
 
         $count = 0;
-        foreach ($imports as $index=>$import) {
+        foreach ($imports as $index => $import) {
             $this->assertSame(sprintf('http://secapp.euroconsumers.org/partnerservice/PartnerService.svc?xsd=xsd%d', $index), $import->getLocationAttribute());
             $count++;
         }

@@ -20,7 +20,7 @@ class ComposerTest extends AbstractFile
             ->setRunComposerUpdate(false)
             ->write();
 
-        $this->assertSameFileContent('ValidBingComposer' . (version_compare(PHP_VERSION, '5.4.0') === -1  ? '.php53' : ''), $composerFile, 'json');
+        $this->assertSameFileContent('ValidBingComposer' . (version_compare(PHP_VERSION, '5.4.0') === -1 ? '.php53' : ''), $composerFile, 'json');
     }
     /**
      *
@@ -33,14 +33,14 @@ class ComposerTest extends AbstractFile
             ->setOptionComposerName('wsdltophp/bing')
             ->setOptionComposerSettings(array(
                 'config.disable-tls:true',
-                'require.wsdltophp/wssecurity:dev-master'
+                'require.wsdltophp/wssecurity:dev-master',
             ));
         $composerFile = new Composer($instance, 'composer');
         $composerFile
             ->setRunComposerUpdate(false)
             ->write();
 
-        $this->assertSameFileContent('ValidBingComposerSettings' . (version_compare(PHP_VERSION, '5.4.0') === -1  ? '.php53' : ''), $composerFile, 'json');
+        $this->assertSameFileContent('ValidBingComposerSettings' . (version_compare(PHP_VERSION, '5.4.0') === -1 ? '.php53' : ''), $composerFile, 'json');
     }
     /**
      *

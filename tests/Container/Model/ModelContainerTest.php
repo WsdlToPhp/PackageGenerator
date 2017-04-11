@@ -60,7 +60,7 @@ class ModelContainerTest extends TestCase
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Bar'));
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\EmptyModel', $modelContainer->get('Foo'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\EmptyModel', $modelContainer->get('Foo'));
     }
     /**
      *

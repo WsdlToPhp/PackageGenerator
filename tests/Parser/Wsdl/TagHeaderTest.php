@@ -66,7 +66,7 @@ class TagHeaderTest extends WsdlParser
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -140,7 +140,7 @@ class TagHeaderTest extends WsdlParser
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *

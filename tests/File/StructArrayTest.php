@@ -117,7 +117,6 @@ class StructArrayTest extends AbstractFile
      */
     public function testDestination()
     {
-
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStruct('ArrayOfError')) instanceof StructModel) {
             $generator

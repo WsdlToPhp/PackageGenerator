@@ -12,6 +12,6 @@ class ObjectContainerTest extends AbstractObjectContainer
     }
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PackageGenerator\\Tests\\Container\\ObjectTest';
+        return 'WsdlToPhp\PackageGenerator\Tests\Container\ObjectTest';
     }
 }

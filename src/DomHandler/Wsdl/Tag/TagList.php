@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
-class TagList extends AbstractTag
+class TagList extends Tag
 {
     const ATTRIBUTE_ITEM_TYPE = 'itemType';
     /**

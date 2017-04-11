@@ -79,8 +79,8 @@ class DomDocumentHandlerTest extends TestCase
     {
         $instance = self::bingInstance();
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\NodeHandler', $instance->getNodeByName('types'));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\NodeHandler', $instance->getNodeByName('definitions'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\NodeHandler', $instance->getNodeByName('types'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\NodeHandler', $instance->getNodeByName('definitions'));
         $this->assertNull($instance->getNodeByName('foo'));
     }
     /**
@@ -101,7 +101,7 @@ class DomDocumentHandlerTest extends TestCase
         $instance = self::bingInstance();
 
         $this->assertNotEmpty($instance->getElementsByName('element'));
-        $this->assertContainsOnlyInstancesOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler', $instance->getElementsByName('element'));
+        $this->assertContainsOnlyInstancesOf('\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler', $instance->getElementsByName('element'));
         $this->assertEmpty($instance->getElementsByName('foo'));
     }
     /**
@@ -112,11 +112,11 @@ class DomDocumentHandlerTest extends TestCase
         $instance = self::bingInstance();
 
         $parts = $instance->getElementsByNameAndAttributes('part', array(
-            'name'    => 'parameters',
+            'name' => 'parameters',
             'element' => 'tns:SearchRequest',
         ));
         $this->assertNotEmpty($parts);
-        $this->assertContainsOnlyInstancesOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler', $parts);
+        $this->assertContainsOnlyInstancesOf('\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler', $parts);
     }
     /**
      *
@@ -126,10 +126,10 @@ class DomDocumentHandlerTest extends TestCase
         $instance = self::bingInstance();
 
         $part = $instance->getElementByNameAndAttributes('part', array(
-            'name'    => 'parameters',
+            'name' => 'parameters',
             'element' => 'tns:SearchRequest',
         ));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler', $part);
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler', $part);
     }
     /**
      * @expectedException InvalidArgumentException

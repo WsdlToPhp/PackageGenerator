@@ -224,7 +224,8 @@ class StructArrayReservedMethodTest extends TestCase
     {
         $this->assertFalse(self::instance()->is('Do'));
     }
-    public function testUppercaseIsoffsetGet() {
+    public function testUppercaseIsoffsetGet()
+    {
         $this->assertTrue(self::instance()->is('OffsetGet'));
     }
 }

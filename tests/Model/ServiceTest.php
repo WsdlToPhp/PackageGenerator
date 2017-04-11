@@ -24,14 +24,14 @@ class ServiceTest extends TestCase
         $service->addMethod('getBar', 'string', 'int');
         $service->addMethod('getFoo', 'string', 'int');
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Method', $service->getMethod('getBar'));
-        $this->assertNotInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Method', $service->getMethod('getbar'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Method', $service->getMethod('getBar'));
+        $this->assertNotInstanceOf('\WsdlToPhp\PackageGenerator\Model\Method', $service->getMethod('getbar'));
 
         $service->getMethod('getBar')->setName('getbar');
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Method', $service->getMethod('getbar'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Method', $service->getMethod('getbar'));
     }
     public function testGetReservedMethodsInstance()
     {
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\ServiceReservedMethod', self::instance('foo')->getReservedMethodsInstance());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod', self::instance('foo')->getReservedMethodsInstance());
     }
 }

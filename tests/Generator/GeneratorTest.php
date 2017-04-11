@@ -302,16 +302,16 @@ class GeneratorTest extends TestCase
     public function testSetOptionNamespacePrefix()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionNamespacePrefix('My\\Project');
+        $instance->setOptionNamespacePrefix('My\Project');
 
-        $this->assertSame('My\\Project', $instance->getOptionNamespacePrefix());
+        $this->assertSame('My\Project', $instance->getOptionNamespacePrefix());
     }
     /**
      *
      */
     public function testGetOptionSoapClientClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::localInstance()->getOptionSoapClientClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractSoapClientBase', self::localInstance()->getOptionSoapClientClass());
     }
     /**
      *
@@ -319,16 +319,16 @@ class GeneratorTest extends TestCase
     public function testSetOptionSoapClientClass()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionSoapClientClass('My\\Project\\SoapClientClass');
+        $instance->setOptionSoapClientClass('My\Project\SoapClientClass');
 
-        $this->assertSame('My\\Project\\SoapClientClass', $instance->getOptionSoapClientClass());
+        $this->assertSame('My\Project\SoapClientClass', $instance->getOptionSoapClientClass());
     }
     /**
      *
      */
     public function testGetOptionStructClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::localInstance()->getOptionStructClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructBase', self::localInstance()->getOptionStructClass());
     }
     /**
      *
@@ -336,16 +336,16 @@ class GeneratorTest extends TestCase
     public function testSetOptionStructClass()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionStructClass('My\\Project\\StructClass');
+        $instance->setOptionStructClass('My\Project\StructClass');
 
-        $this->assertSame('My\\Project\\StructClass', $instance->getOptionStructClass());
+        $this->assertSame('My\Project\StructClass', $instance->getOptionStructClass());
     }
     /**
      *
      */
     public function testGetOptionStructArrayClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::localInstance()->getOptionStructArrayClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructArrayBase', self::localInstance()->getOptionStructArrayClass());
     }
     /**
      *
@@ -353,9 +353,9 @@ class GeneratorTest extends TestCase
     public function testSetOptionStructArrayClass()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionStructArrayClass('My\\Project\\StructArrayClass');
+        $instance->setOptionStructArrayClass('My\Project\StructArrayClass');
 
-        $this->assertSame('My\\Project\\StructArrayClass', $instance->getOptionStructArrayClass());
+        $this->assertSame('My\Project\StructArrayClass', $instance->getOptionStructArrayClass());
     }
     /**
      *
@@ -442,22 +442,22 @@ class GeneratorTest extends TestCase
             'config.disable-tls:true',
             'config.data-dir:/src/foor/bar',
             'require.wsdltophp/packagebase:dev-master',
-            'autoload.psr-4.Acme\\:src/'
+            'autoload.psr-4.Acme\\:src/',
         ));
 
         $this->assertSame(array(
             'config' => array(
                 'disable-tls' => true,
-                'data-dir' => '/src/foor/bar'
+                'data-dir' => '/src/foor/bar',
             ),
             'require' => array(
-                'wsdltophp/packagebase' => 'dev-master'
+                'wsdltophp/packagebase' => 'dev-master',
             ),
             'autoload' => array(
                 'psr-4' => array(
-                    'Acme\\' => 'src/'
-                )
-            )
+                    'Acme\\' => 'src/',
+                ),
+            ),
         ), $instance->getOptionComposerSettings());
     }
     /**
@@ -584,7 +584,7 @@ class GeneratorTest extends TestCase
             ->setComposerName($standalone ? 'wsdltophp/' . $dir : '')
             ->setComposerSettings($standalone ? array(
                 'require.wsdltophp/wssecurity:dev-master',
-                'config.disable-tls:true'
+                'config.disable-tls:true',
             ) : array())
             ->setDestination($destination)
             ->setEnumsFolder('EnumType')
@@ -650,14 +650,14 @@ class GeneratorTest extends TestCase
     {
         $instance = self::getBingGeneratorInstance();
 
-        if (PHP_VERSION_ID < 70013) {
+        if (PHP_VERSION_ID < 70015) {
             $this->assertSame(array(), $instance->getSoapClient()->getSoapClientStreamContextOptions());
         } else {
             $this->assertSame(array(
                 'http' => array(
                     'protocol_version' => 1.1000000000000001,
                     'header' => "Connection: close\r\n",
-                )
+                ),
             ), $instance->getSoapClient()->getSoapClientStreamContextOptions());
         }
     }
@@ -679,8 +679,8 @@ class GeneratorTest extends TestCase
                         'ca_file' => basename(__FILE__),
                         'ca_path' => __DIR__,
                         'verify_peer' => true,
-                    )
-                ))
+                    ),
+                )),
             ));
         $instance = new Generator($options);
 
@@ -688,7 +688,7 @@ class GeneratorTest extends TestCase
         // this test is focused on the defined options and not those which are added after
         // so we remove those we are not interested in!
         $contextOptions = $instance->getSoapClient()->getSoapClientStreamContextOptions();
-        foreach(array_keys($contextOptions) as $index) {
+        foreach (array_keys($contextOptions) as $index) {
             if ($index !== 'https' && $index !== 'ssl') {
                 unset($contextOptions[$index]);
             }
@@ -702,7 +702,7 @@ class GeneratorTest extends TestCase
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
                 'verify_peer' => true,
-            )
+            ),
         ), $contextOptions);
     }
 }

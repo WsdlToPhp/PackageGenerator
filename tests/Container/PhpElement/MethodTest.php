@@ -20,7 +20,7 @@ class MethodTest extends TestCase
 
         $this->assertCount(1, $method);
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PhpGenerator\\Element\\PhpMethod', $method->get('foo'));
+        $this->assertInstanceOf('\WsdlToPhp\PhpGenerator\Element\PhpMethod', $method->get('foo'));
     }
     /**
      * @expectedException \InvalidArgumentException

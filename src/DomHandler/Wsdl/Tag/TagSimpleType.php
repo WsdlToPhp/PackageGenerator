@@ -2,6 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
-class TagSimpleType extends AbstractTagType
+class TagSimpleType extends Tag
 {
 }

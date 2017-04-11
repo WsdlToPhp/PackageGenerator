@@ -55,37 +55,37 @@ class TagDocumentationTest extends WsdlParser
             if ($struct instanceof Struct && $struct->getIsRestriction() === false) {
                 if ($struct->getName() === 'imgRequest') {
                     $this->assertEquals(array(
-                        'PRO is deprecated; provided for backward compatibility'
+                        'PRO is deprecated; provided for backward compatibility',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 } elseif ($struct->getName() === 'ProType') {
                     $this->assertEquals(array(
-                        'PRO is 10 digits or 11 digits with dash.'
+                        'PRO is 10 digits or 11 digits with dash.',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 } elseif ($struct->getName() === 'SearchCriteriaType') {
                     $this->assertEquals(array(
-                        'Generic search criteria for image search'
+                        'Generic search criteria for image search',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 } elseif ($struct->getName() === 'SearchItemType') {
                     $this->assertEquals(array(
-                        'Image search item'
+                        'Image search item',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 } elseif ($struct->getName() === 'DocumentType') {
                     $this->assertEquals(array(
-                        'Document type code'
+                        'Document type code',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 } elseif ($struct->getName() === 'ImagesType') {
                     $this->assertEquals(array(
-                        'Image file name and Base64 encoded binary source data'
+                        'Image file name and Base64 encoded binary source data',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 } elseif ($struct->getName() === 'availRequest') {
                     $this->assertEquals(array(
-                        'PRO is deprecated; provided for backward compatibility'
+                        'PRO is deprecated; provided for backward compatibility',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 }
@@ -107,25 +107,25 @@ class TagDocumentationTest extends WsdlParser
             if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
                 if ($struct->getName() === 'PaymentCardCodeType') {
                     $this->assertSame(array(
-                        'American Express'
+                        'American Express',
                     ), $struct->getValue('AX')->getMetaValue(Struct::META_DOCUMENTATION));
                     $this->assertSame(array(
-                        'Bank Card'
+                        'Bank Card',
                     ), $struct->getValue('BC')->getMetaValue(Struct::META_DOCUMENTATION));
                     $this->assertSame(array(
-                        'Carte Bleu'
+                        'Carte Bleu',
                     ), $struct->getValue('BL')->getMetaValue(Struct::META_DOCUMENTATION));
                     $this->assertSame(array(
-                        'Carte Blanche'
+                        'Carte Blanche',
                     ), $struct->getValue('CB')->getMetaValue(Struct::META_DOCUMENTATION));
                     $this->assertSame(array(
-                        'Diners Club'
+                        'Diners Club',
                     ), $struct->getValue('DN')->getMetaValue(Struct::META_DOCUMENTATION));
                     $this->assertSame(array(
-                        'Discover Card'
+                        'Discover Card',
                     ), $struct->getValue('DS')->getMetaValue(Struct::META_DOCUMENTATION));
                     $this->assertSame(array(
-                        'Eurocard'
+                        'Eurocard',
                     ), $struct->getValue('EC')->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 }
@@ -147,7 +147,7 @@ class TagDocumentationTest extends WsdlParser
             if ($struct instanceof Struct && $struct->getIsStruct() === false) {
                 if ($struct->getName() === 'ID') {
                     $this->assertSame(array(
-                        'ID for an object'
+                        'ID for an object',
                     ), $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
                 }
@@ -172,7 +172,7 @@ class TagDocumentationTest extends WsdlParser
             'cpp-header-back-color' => 'Sets the background color for the header of the payment page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII',
             'cpp-payflow-color' => 'Sets the background color for the payment page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII',
             'cpp-cart-border-color' => 'Sets the cart gradient color for the Mini Cart on 1X flow. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII',
-            'cpp-logo-image' => 'A URL for the image you want to appear above the mini-cart. The image has a maximum size of 190 pixels wide by 60 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. Optional Character length and limitations: 127'
+            'cpp-logo-image' => 'A URL for the image you want to appear above the mini-cart. The image has a maximum size of 190 pixels wide by 60 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. Optional Character length and limitations: 127',
         );
         if ($struct instanceof Struct) {
             foreach ($attributes as $attribute => $value) {

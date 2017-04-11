@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag;
 
-class TagEnumeration extends AbstractTag
+class TagEnumeration extends Tag
 {
     /**
      * @return mixed

@@ -334,7 +334,7 @@ class StructTest extends AbstractFile
      */
     public function testWriteWhlHotelReservationType()
     {
-        $generator = self::whlInstance();
+        $generator = self::whlInstance(true);
         $generator->setOptionValidation(true);
         if (($model = $generator->getStruct('HotelReservationType')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
@@ -361,6 +361,23 @@ class StructTest extends AbstractFile
             $this->assertSameFileContent('ValidTaxType', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find TaxType struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteWhlPaymentCardType()
+    {
+        $generator = self::whlInstance();
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('PaymentCardType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidPaymentCardType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find PaymentCardType struct for file generation');
         }
     }
 }

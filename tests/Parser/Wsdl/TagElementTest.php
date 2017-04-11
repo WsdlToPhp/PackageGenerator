@@ -49,7 +49,7 @@ class TagElementTest extends WsdlParser
                 $this->assertSame(array(
                     'default' => '2.2',
                     'maxOccurs' => '1',
-                    'minOccurs' => '0'
+                    'minOccurs' => '0',
                 ), $structs->getStructByName('SearchRequest')->getAttribute('Version')->getMeta());
                 $this->assertSame('string', $structs->getStructByName('SearchRequest')->getAttribute('Version')->getType());
                 $this->assertFalse($structs->getStructByName('SearchRequest')->getAttribute('Version')->getContainsElements());
@@ -59,7 +59,7 @@ class TagElementTest extends WsdlParser
             if ($structs->getStructByName('ArrayOfNewsRelatedSearch') instanceof Struct) {
                 $this->assertSame(array(
                     'maxOccurs' => 'unbounded',
-                    'minOccurs' => '0'
+                    'minOccurs' => '0',
                 ), $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getMeta());
                 $this->assertSame('NewsRelatedSearch', $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getType());
                 $this->assertTrue($structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getContainsElements());
@@ -83,7 +83,7 @@ class TagElementTest extends WsdlParser
                 $this->assertSame(array(
                     'maxOccurs' => '1',
                     'minOccurs' => '0',
-                    'nillable' => 'true'
+                    'nillable' => 'true',
                 ), $structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getMeta());
                 $this->assertSame('ArrayOfString', $structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getType());
                 $this->assertFalse($structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getContainsElements());
@@ -105,7 +105,7 @@ class TagElementTest extends WsdlParser
         if ($structs->count() > 0) {
             if ($structs->getStructByName('LoginResult') instanceof Struct) {
                 $this->assertSame(array(
-                    'nillable' => 'true'
+                    'nillable' => 'true',
                 ), $structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getMeta());
                 $this->assertSame('string', $structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getType());
                 $this->assertFalse($structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getContainsElements());
@@ -130,7 +130,7 @@ class TagElementTest extends WsdlParser
             'cpp-header-back-color' => 'string',
             'cpp-payflow-color' => 'string',
             'cpp-cart-border-color' => 'string',
-            'cpp-logo-image' => 'string'
+            'cpp-logo-image' => 'string',
         );
         if ($struct instanceof Struct) {
             foreach ($attributes as $attribute => $value) {

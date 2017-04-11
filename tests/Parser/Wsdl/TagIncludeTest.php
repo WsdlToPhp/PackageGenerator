@@ -55,12 +55,7 @@ class TagIncludeTest extends WsdlParser
         foreach ($schemas as $schemaPath) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/image/%s', $schemaPath));
             $schema = new Schema($tagIncludeParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
-            $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
             $schemaContainer->add($schema);
-        }
-
-        foreach($tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas() as $schema) {
-            $schema->getContent()->setCurrentTag(WsdlDocument::TAG_IMPORT);
         }
 
         $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();
@@ -80,12 +75,10 @@ class TagIncludeTest extends WsdlParser
 
         $schema1Path = realpath(__DIR__ . '/../../resources/docdatapayments/1_3.1.xsd');
         $schema1 = new Schema($tagIncludeParser->getGenerator(), $schema1Path, file_get_contents($schema1Path));
-        $schema1->getContent()->setCurrentTag(WsdlDocument::TAG_INCLUDE);
         $schemaContainer->add($schema1);
 
         $schema2Path = realpath(__DIR__ . '/../../resources/docdatapayments/1_3.2.xsd');
         $schema2 = new Schema($tagIncludeParser->getGenerator(), $schema2Path, file_get_contents($schema2Path));
-        $schema2->getContent()->setCurrentTag(WsdlDocument::TAG_INCLUDE);
         $schemaContainer->add($schema2);
 
         $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas()->rewind();

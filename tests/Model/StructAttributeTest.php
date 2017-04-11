@@ -24,6 +24,6 @@ class StructAttributeTest extends TestCase
     {
         $struct = StructTest::instance('Foo', true);
         $struct->addAttribute('id', 'int');
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\StructReservedMethod', $struct->getAttribute('id')->getReservedMethodsInstance());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod', $struct->getAttribute('id')->getReservedMethodsInstance());
     }
 }

@@ -20,7 +20,7 @@ class ConstantTest extends TestCase
 
         $this->assertCount(1, $constant);
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PhpGenerator\\Element\\PhpConstant', $constant->get('foo'));
+        $this->assertInstanceOf('\WsdlToPhp\PhpGenerator\Element\PhpConstant', $constant->get('foo'));
     }
     /**
      * @expectedException \InvalidArgumentException

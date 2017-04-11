@@ -54,19 +54,6 @@ abstract class AbstractDocument extends DomDocumentHandler
     const TAG_UNION = 'union';
     const TAG_UNIQUE = 'unique';
     /**
-     * @var string
-     */
-    protected $currentTag;
-    /**
-     * @param string $currentTag
-     * @return AbstractDocument
-     */
-    public function setCurrentTag($currentTag)
-    {
-        $this->currentTag = $currentTag;
-        return $this;
-    }
-    /**
      * @param \DOMElement $element
      * @param AbstractDomDocumentHandler $domDocument
      * @param int $index
@@ -75,32 +62,15 @@ abstract class AbstractDocument extends DomDocumentHandler
      */
     protected function getElementHandler(\DOMElement $element, AbstractDomDocumentHandler $domDocument, $index = -1)
     {
-        $handlerName = '\\WsdlToPhp\\PackageGenerator\\DomHandler\\ElementHandler';
-        $tagClass = sprintf('%s\\Tag\\Tag%s', __NAMESPACE__, ucfirst($this->currentTag));
-        if (class_exists($tagClass)) {
+        $handlerName = '\WsdlToPhp\PackageGenerator\DomHandler\ElementHandler';
+        $elementNameClass = sprintf('%s\Tag\Tag%s', __NAMESPACE__, ucfirst(implode('', array_slice(explode(':', $element->nodeName), -1, 1))));
+        $tagClass = sprintf('%s\Tag\Tag', __NAMESPACE__);
+        if (class_exists($elementNameClass)) {
+            $handlerName = $elementNameClass;
+        } elseif (class_exists($tagClass)) {
             $handlerName = $tagClass;
         }
         return new $handlerName($element, $domDocument, $index);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementByName()
-     * @param string $name
-     * @return ElementHandler
-     */
-    public function getElementByName($name)
-    {
-        $this->currentTag = $name;
-        return parent::getElementByName($name);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\DomHandler\AbstractDomDocumentHandler::getElementByName()
-     * @param string $name
-     * @return ElementHandler[]
-     */
-    public function getElementsByName($name)
-    {
-        $this->currentTag = $name;
-        return parent::getElementsByName($name);
     }
     /**
      * @param string $namespace
