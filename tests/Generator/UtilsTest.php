@@ -60,6 +60,13 @@ class UtilsTest extends TestCase
     /**
      *
      */
+    public function testGetPartUndefined()
+    {
+        $this->assertSame('', Utils::getPart(null, 'eventsGet'));
+    }
+    /**
+     *
+     */
     public function testCleanComment()
     {
         $this->assertEmpty(Utils::cleanComment(null));
