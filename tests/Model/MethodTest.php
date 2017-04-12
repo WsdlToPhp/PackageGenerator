@@ -142,4 +142,15 @@ class MethodTest extends TestCase
         $service->addMethod('getId', 'string', 'string');
         $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod', $service->getMethod('getId')->getReservedMethodsInstance());
     }
+    /**
+     *
+     */
+    public function testReplaceReservedMethod()
+    {
+        $service = new Service(self::getBingGeneratorInstance(), 'Foo');
+        $method = $service->addMethod('__construct', 'string', 'string', true);
+
+        $this->assertSame('___construct', $method->getMethodName());
+        $this->assertSame('___construct', $method->replaceReservedMethod('__construct'));
+    }
 }
