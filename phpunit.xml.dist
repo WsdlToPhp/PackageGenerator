@@ -13,13 +13,8 @@
             <directory>./tests/Command/</directory>
             <directory>./tests/ConfigurationReader/</directory>
             <directory>./tests/Generator</directory>
-            <file>./tests/DomHandler/DomDocumentHandlerTest.php</file>
-            <file>./tests/DomHandler/NodeHandlerTest.php</file>
-            <file>./tests/DomHandler/ElementHandlerTest.php</file>
-            <file>./tests/DomHandler/AttributeHandlerTest.php</file>
-            <file>./tests/DomHandler/NameSpaceHandlerTest.php</file>
-            <file>./tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
-            <directory>./tests/DomHandler/Wsdl/Tag/</directory>
+            <file>./tests/WsdlHandler/WsdlHandlerTest.php</file>
+            <directory>./tests/WsdlHandler/Tag/</directory>
             <directory>./tests/File</directory>
             <directory>./tests/Model/</directory>
             <directory>./tests/Container/</directory>
@@ -46,14 +41,9 @@
             <directory>./tests/File/</directory>
         </testsuite>
 
-        <testsuite name="domhandler">
-            <file>./tests/DomHandler/DomDocumentHandlerTest.php</file>
-            <file>./tests/DomHandler/NodeHandlerTest.php</file>
-            <file>./tests/DomHandler/ElementHandlerTest.php</file>
-            <file>./tests/DomHandler/AttributeHandlerTest.php</file>
-            <file>./tests/DomHandler/NameSpaceHandlerTest.php</file>
-            <file>./tests/DomHandler/Wsdl/WsdlHandlerTest.php</file>
-            <directory>./tests/DomHandler/Wsdl/Tag/</directory>
+        <testsuite name="wsdlhandler">
+            <file>./tests/WsdlHandler/WsdlHandlerTest.php</file>
+            <directory>./tests/WsdlHandler/Tag/</directory>
         </testsuite>
 
         <testsuite name="model">

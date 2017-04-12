@@ -488,12 +488,4 @@ abstract class AbstractModel extends AbstractGeneratorAware
     {
         self::$replacedPhpReservedKeywords = array();
     }
-    /**
-     * Gives the availability for test purpose and multiple package generation to purge reserved methods usage
-     * @todo see if it can be removed by reviewing how reserved methods are generated
-     */
-    public static function purgeReservedMethods()
-    {
-        self::$replacedReservedMethods = array();
-    }
 }

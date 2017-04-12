@@ -13,7 +13,7 @@ class Struct extends AbstractModel
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PackageGenerator\\Model\\Struct';
+        return 'WsdlToPhp\PackageGenerator\Model\Struct';
     }
     /**
      * @param string $name

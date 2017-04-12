@@ -12,7 +12,7 @@ class StructAttribute extends AbstractModel
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PackageGenerator\\Model\\StructAttribute';
+        return 'WsdlToPhp\PackageGenerator\Model\StructAttribute';
     }
     /**
      * @param string $name

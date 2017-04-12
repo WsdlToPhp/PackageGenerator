@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag as Tag;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;

@@ -2,10 +2,10 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagHeader as Header;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagOperation as Operation;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagInput as Input;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagHeader as Header;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagOperation as Operation;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagInput as Input;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Method;
 

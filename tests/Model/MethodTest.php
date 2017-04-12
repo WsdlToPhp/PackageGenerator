@@ -58,9 +58,17 @@ class MethodTest extends TestCase
         $service3 = new Service(self::getBingGeneratorInstance(), 'login');
         $service3->addMethod('Login', 'int', 'id');
 
+        $service4 = new Service(self::getBingGeneratorInstance(), 'login');
+        $service4->addMethod('Login', 'int', 'id', false);
+
+        $service5 = new Service(self::getBingGeneratorInstance(), 'login');
+        $service5->addMethod('Login', array('int',' string'), 'id', false);
+
         $this->assertSame('Login', $service1->getMethod('Login')->getMethodName());
         $this->assertSame('login_1', $service2->getMethod('login')->getMethodName());
         $this->assertSame('Login', $service3->getMethod('Login')->getMethodName());
+        $this->assertSame('LoginInt', $service4->getMethod('Login')->getMethodName());
+        $this->assertSame(sprintf('Login_%s', md5(var_export(array('int',' string'), true))), $service5->getMethod('Login')->getMethodName());
     }
     /**
      *
@@ -125,10 +133,24 @@ class MethodTest extends TestCase
 
         $this->assertFalse($service1->getMethod('0123456789MyOperation')->nameIsClean());
     }
+    /**
+     *
+     */
     public function testGetReservedMethodsInstance()
     {
         $service = new Service(self::getBingGeneratorInstance(), 'Foo');
         $service->addMethod('getId', 'string', 'string');
         $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod', $service->getMethod('getId')->getReservedMethodsInstance());
+    }
+    /**
+     *
+     */
+    public function testReplaceReservedMethod()
+    {
+        $service = new Service(self::getBingGeneratorInstance(), 'Foo');
+        $method = $service->addMethod('__construct', 'string', 'string', true);
+
+        $this->assertSame('___construct', $method->getMethodName());
+        $this->assertSame('___construct', $method->replaceReservedMethod('__construct'));
     }
 }

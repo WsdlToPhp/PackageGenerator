@@ -2,13 +2,13 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Parser\AbstractParser as Parser;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Schema as SchemaDocument;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Schema as SchemaDocument;
 
 abstract class AbstractParser extends Parser
 {

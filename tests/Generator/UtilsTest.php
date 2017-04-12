@@ -36,6 +36,9 @@ class UtilsTest extends TestCase
     {
         $this->assertSame('020', Utils::getValueWithinItsType('020', 'string'));
         $this->assertSame('01', Utils::getValueWithinItsType('01', 'string'));
+        $this->assertSame(2.568, Utils::getValueWithinItsType('2.568', 'float'));
+        $this->assertSame(true, Utils::getValueWithinItsType('true', 'bool'));
+        $this->assertSame(false, Utils::getValueWithinItsType('false', 'bool'));
     }
     /**
      *
@@ -53,6 +56,13 @@ class UtilsTest extends TestCase
         $this->assertSame('Get', Utils::getPart(GeneratorOptions::VALUE_END, 'eventsGet'));
         $this->assertSame('Partition', Utils::getPart(GeneratorOptions::VALUE_END, 'eventsGetPartition'));
         $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_END, '_events'));
+    }
+    /**
+     *
+     */
+    public function testGetPartUndefined()
+    {
+        $this->assertSame('', Utils::getPart(null, 'eventsGet'));
     }
     /**
      *

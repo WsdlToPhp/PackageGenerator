@@ -6,7 +6,6 @@ use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
 
 class TagIncludeTest extends WsdlParser
 {

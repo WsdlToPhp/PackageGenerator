@@ -10,6 +10,6 @@ class Constant extends AbstractPhpElement
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PhpGenerator\\Element\\PhpConstant';
+        return 'WsdlToPhp\PhpGenerator\Element\PhpConstant';
     }
 }

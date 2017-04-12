@@ -2,9 +2,9 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagUnion as Union;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTag;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagUnion as Union;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 

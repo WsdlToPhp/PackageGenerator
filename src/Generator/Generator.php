@@ -12,7 +12,7 @@ use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 
 class Generator
 {

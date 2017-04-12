@@ -12,7 +12,7 @@ class EmptyModel extends AbstractModel
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PackageGenerator\\Model\\EmptyModel';
+        return 'WsdlToPhp\PackageGenerator\Model\EmptyModel';
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModelContainer::get()
