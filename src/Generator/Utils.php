@@ -22,9 +22,7 @@ class Utils
                 case GeneratorOptions::VALUE_END:
                     $parts = preg_split('/[A-Z]/', ucfirst($string));
                     $partsCount = count($parts);
-                    if ($partsCount == 0) {
-                        $elementType = $string;
-                    } elseif (!empty($parts[$partsCount - 1])) {
+                    if (!empty($parts[$partsCount - 1])) {
                         $elementType = substr($string, strrpos($string, implode('', array_slice($parts, -1))) - 1);
                     } else {
                         for ($i = $partsCount - 1; $i >= 0; $i--) {
@@ -39,9 +37,7 @@ class Utils
                 case GeneratorOptions::VALUE_START:
                     $parts = preg_split('/[A-Z]/', ucfirst($string));
                     $partsCount = count($parts);
-                    if ($partsCount == 0) {
-                        $elementType = $string;
-                    } elseif (empty($parts[0]) && !empty($parts[1])) {
+                    if (empty($parts[0]) && !empty($parts[1])) {
                         $elementType = substr($string, 0, strlen($parts[1]) + 1);
                     } else {
                         for ($i = 0; $i < $partsCount; $i++) {
