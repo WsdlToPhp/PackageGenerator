@@ -39,6 +39,7 @@ class GeneratorOptions extends AbstractYamlReader
     const SERVICES_FOLDER = 'services_folder';
     const SOAP_CLIENT_CLASS = 'soap_client_class';
     const SOAP_OPTIONS = 'soap_options';
+    const SRC_DIRNAME = 'src_dirname';
     const STANDALONE = 'standalone';
     const STRUCT_ARRAY_CLASS = 'struct_array_class';
     const STRUCT_CLASS = 'struct_class';
@@ -367,6 +368,24 @@ class GeneratorOptions extends AbstractYamlReader
     public function setDestination($destination)
     {
         return $this->setOptionValue(self::DESTINATION, $destination);
+    }
+    /**
+     * Get src dirname option value
+     * @return string
+     */
+    public function getSrcDirname()
+    {
+        return $this->getOptionValue(self::SRC_DIRNAME);
+    }
+    /**
+     * Set current src dirname option value
+     * @throws \InvalidArgumentException
+     * @param string $srcDirname
+     * @return GeneratorOptions
+     */
+    public function setSrcDirname($srcDirname)
+    {
+        return $this->setOptionValue(self::SRC_DIRNAME, $srcDirname);
     }
     /**
      * Get prefix option value

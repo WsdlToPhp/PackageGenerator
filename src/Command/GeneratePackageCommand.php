@@ -84,10 +84,11 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package')
             ->addOption('composer-name', null, InputOption::VALUE_REQUIRED, 'Composer name of the generated package')
             ->addOption('composer-settings', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Composer settings of the generated package')
-            ->addOption('structs-folder', null, InputOption::VALUE_OPTIONAL, 'Structs folder name')
-            ->addOption('arrays-folder', null, InputOption::VALUE_OPTIONAL, 'Arrays folder name')
-            ->addOption('enums-folder', null, InputOption::VALUE_OPTIONAL, 'Enumerations folder name')
-            ->addOption('services-folder', null, InputOption::VALUE_OPTIONAL, 'Services class folder name')
+            ->addOption('structs-folder', null, InputOption::VALUE_OPTIONAL, 'Structs folder name (default: SructType)')
+            ->addOption('arrays-folder', null, InputOption::VALUE_OPTIONAL, 'Arrays folder name (default: ArrayType)')
+            ->addOption('enums-folder', null, InputOption::VALUE_OPTIONAL, 'Enumerations folder name (default: EnumType)')
+            ->addOption('services-folder', null, InputOption::VALUE_OPTIONAL, 'Services class folder name (default: ServiceType)')
+            ->addOption('src-dirname', null, InputOption::VALUE_OPTIONAL, 'Source directory subfolder oof destination directory (default: src)')
             ->addOption(self::GENERATOR_OPTIONS_CONFIG_OPTION, null, InputOption::VALUE_OPTIONAL, 'Path to the generator\'s configuration file to load');
     }
     /**
@@ -116,33 +117,34 @@ class GeneratePackageCommand extends AbstractCommand
     protected function getPackageGenerationCommandLineOptions()
     {
         return array(
+            'addcomments' => 'AddComments',
+            'arrays-folder' => 'ArraysFolder',
+            'composer-name' => 'ComposerName',
+            'composer-settings' => 'ComposerSettings',
+            'category' => 'Category',
+            'destination' => 'Destination',
+            'enums-folder' => 'EnumsFolder',
+            'gathermethods' => 'GatherMethods',
+            'genericconstants' => 'GenericConstantsName',
+            'gentutorial' => 'GenerateTutorialFile',
+            'login' => 'BasicLogin',
+            'namespace' => 'Namespace',
+            'password' => 'BasicPassword',
             'prefix' => 'Prefix',
+            'proxy-host' => 'ProxyHost',
+            'proxy-login' => 'ProxyLogin',
+            'proxy-password' => 'ProxyPassword',
+            'proxy-port' => 'ProxyPort',
+            'services-folder' => 'ServicesFolder',
+            'src-dirname' => 'SrcDirname',
+            'structarray' => 'StructArrayClass',
+            'structs-folder' => 'StructsFolder',
+            'soapclient' => 'SoapClientClass',
+            'struct' => 'StructClass',
+            'standalone' => 'Standalone',
             'suffix' => 'Suffix',
             'urlorpath' => 'Origin',
-            'login' => 'BasicLogin',
-            'category' => 'Category',
-            'struct' => 'StructClass',
-            'namespace' => 'Namespace',
-            'proxy-host' => 'ProxyHost',
-            'proxy-port' => 'ProxyPort',
-            'standalone' => 'Standalone',
             'validation' => 'Validation',
-            'proxy-login' => 'ProxyLogin',
-            'password' => 'BasicPassword',
-            'destination' => 'Destination',
-            'addcomments' => 'AddComments',
-            'enums-folder' => 'EnumsFolder',
-            'composer-name' => 'ComposerName',
-            'soapclient' => 'SoapClientClass',
-            'arrays-folder' => 'ArraysFolder',
-            'gathermethods' => 'GatherMethods',
-            'structs-folder' => 'StructsFolder',
-            'structarray' => 'StructArrayClass',
-            'proxy-password' => 'ProxyPassword',
-            'services-folder' => 'ServicesFolder',
-            'gentutorial' => 'GenerateTutorialFile',
-            'composer-settings' => 'ComposerSettings',
-            'genericconstants' => 'GenericConstantsName',
         );
     }
     /**

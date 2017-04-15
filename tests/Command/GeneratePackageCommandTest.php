@@ -86,6 +86,29 @@ class GeneratePackageCommandTest extends TestCase
     /**
      *
      */
+    public function testSetSrcDirname()
+    {
+        AbstractYamlReader::resetInstances();
+        $command = new GeneratePackageCommand('WsdlToPhp');
+
+        $input = new ArrayInput(array(
+            '--urlorpath' => self::wsdlBingPath(),
+            '--destination' => self::getTestDirectory() . '/src/',
+            '--composer-name' => 'wsdltophp/package',
+            '--src-dirname' => '',
+            '--gentutorial' => 'true',
+            '--genericconstants' => 'false',
+            '--force' => 'true',
+        ));
+        $output = new ConsoleOutput(OutputInterface::VERBOSITY_QUIET);
+
+        $command->run($input, $output);
+
+        $this->assertSame('', $command->getGenerator()->getOptionSrcDirname());
+    }
+    /**
+     *
+     */
     public function testGetOptionValue()
     {
         $command = new GeneratePackageCommand('WsdlToPhp');
