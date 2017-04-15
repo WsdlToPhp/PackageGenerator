@@ -11,7 +11,7 @@ class ComposerTest extends AbstractFile
      */
     public function testBing()
     {
-        $instance = clone self::getBingGeneratorInstance();
+        $instance = self::getBingGeneratorInstance(true);
         $instance
             ->setOptionPrefix('Api')
             ->setOptionComposerName('wsdltophp/bing');
@@ -27,7 +27,7 @@ class ComposerTest extends AbstractFile
      */
     public function testBingWithSettings()
     {
-        $instance = clone self::getBingGeneratorInstance();
+        $instance = self::getBingGeneratorInstance(true);
         $instance
             ->setOptionPrefix('Api')
             ->setOptionComposerName('wsdltophp/bing')
@@ -45,9 +45,43 @@ class ComposerTest extends AbstractFile
     /**
      *
      */
+    public function testBingWithEmptySrcDirname()
+    {
+        $instance = self::getBingGeneratorInstance(true);
+        $instance
+            ->setOptionPrefix('Api')
+            ->setOptionComposerName('wsdltophp/bing')
+            ->setOptionSrcDirname('');
+        $composerFile = new Composer($instance, 'composer');
+        $composerFile
+            ->setRunComposerUpdate(false)
+            ->write();
+
+        $this->assertSameFileContent('ValidBingComposerEmptySrcDirname' . (version_compare(PHP_VERSION, '5.4.0') === -1 ? '.php53' : ''), $composerFile, 'json');
+    }
+    /**
+     *
+     */
+    public function testBingWithSlashSrcDirname()
+    {
+        $instance = self::getBingGeneratorInstance(true);
+        $instance
+            ->setOptionPrefix('Api')
+            ->setOptionComposerName('wsdltophp/bing')
+            ->setOptionSrcDirname('/');
+        $composerFile = new Composer($instance, 'composer');
+        $composerFile
+            ->setRunComposerUpdate(false)
+            ->write();
+
+        $this->assertSameFileContent('ValidBingComposerSlashSrcDirname' . (version_compare(PHP_VERSION, '5.4.0') === -1 ? '.php53' : ''), $composerFile, 'json');
+    }
+    /**
+     *
+     */
     public function testSetRunComposerUdpate()
     {
-        $instance = clone self::getBingGeneratorInstance();
+        $instance = self::getBingGeneratorInstance(true);
         $instance
             ->setOptionPrefix('Api');
         $composerFile = new Composer($instance, 'composer');
@@ -60,7 +94,7 @@ class ComposerTest extends AbstractFile
      */
     public function testGetFileName()
     {
-        $instance = clone self::getBingGeneratorInstance();
+        $instance = self::getBingGeneratorInstance(true);
         $instance->setOptionPrefix('Api');
         $composerFile = new Composer($instance, 'composer');
 

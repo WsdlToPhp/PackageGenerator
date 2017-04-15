@@ -73,10 +73,6 @@ abstract class AbstractModelFile extends AbstractFile
      */
     const TYPE_ARRAY = 'array';
     /**
-     * @var string
-     */
-    const SRC_FOLDER = 'src/';
-    /**
      * @var AbstractModel
      */
     protected $model;
@@ -94,7 +90,8 @@ abstract class AbstractModelFile extends AbstractFile
      */
     public function getDestinationFolder($withSrc = true)
     {
-        return sprintf('%s%s', $this->getGenerator()->getOptionDestination(), $withSrc === true ? self::SRC_FOLDER : '');
+        $src = rtrim($this->generator->getOptionSrcDirname(), DIRECTORY_SEPARATOR);
+        return sprintf('%s%s', $this->getGenerator()->getOptionDestination(), (bool) $withSrc && !empty($src) ? $src . DIRECTORY_SEPARATOR : '');
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()

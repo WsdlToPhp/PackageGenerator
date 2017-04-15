@@ -297,7 +297,7 @@ class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service->setModel($model);
 
-            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), ServiceFile::SRC_FOLDER, $model->getContextualPart()), $service->getFileDestination());
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $service->getFileDestination());
         } else {
             $this->assertFalse(true, 'Unable to find Search service for file generation');
         }

@@ -239,9 +239,9 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return Generator
      */
-    public static function getBingGeneratorInstance()
+    public static function getBingGeneratorInstance($reset = false)
     {
-        return self::getInstance(self::wsdlBingPath());
+        return self::getInstance(self::wsdlBingPath(), $reset);
     }
     /**
      * @return Generator

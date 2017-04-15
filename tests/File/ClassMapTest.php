@@ -101,6 +101,6 @@ class ClassMapTest extends AbstractFile
         $classMap = new ClassMapFile($instance, $model->getPackagedName());
         $classMap->setModel($model);
 
-        $this->assertSame(sprintf('%s%s', self::getTestDirectory(), ClassMapFile::SRC_FOLDER), $classMap->getFileDestination());
+        $this->assertSame(sprintf('%s%s', self::getTestDirectory(), $instance->getOptionSrcDirname() . DIRECTORY_SEPARATOR), $classMap->getFileDestination());
     }
 }
