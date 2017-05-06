@@ -78,6 +78,10 @@ The generator comes with several options:
     - **\-\-proxy-login**: your proxy login
     - **\-\-proxy-password**: your proxy password
 - _**Optional**_ directories structure:
+    - **\-\-src-dirname** _(default: `src`)_: by default,  classes directories are generated under the `destination`/src directory. If you wish your classes directories to be generated at the root folder, then you **MUST** pass:
+        - `'/'` as option value to the command line
+        - `''` to the `Generator::setOptionSrcDirname` method
+        - `''` to the `GeneratorOptions::setSrcDirname` method
     - **\-\-category**:
         - **cat** _(default)_, each class is put in a directory that matches its type such as:
             - **ArrayType**: any array type class
@@ -158,6 +162,7 @@ $ ./wsdltophp.phar generate:package \
     --proxy-login="*******" \
     --proxy-password="*******" \
     --destination='/var/www/Api/' \
+    --src-dirname='SoapClient' \
     --prefix="Api" \
     --suffix="Project" \
     --category="cat" \
@@ -206,6 +211,7 @@ Remove ```--force``` option from the previous command line to get this result:
     soap_client_class: "\\Std\\Opt\\SoapClientClass"
     origin: "http:\/\/developer.ebay.com\/webservices\/latest\/ebaySvc.wsdl"
     destination: "\/var\/www\/Api\/"
+    src_dirname: "SoapClient"
     prefix: "Api"
     suffix: "Project"
     basic_login: "*******"
@@ -310,6 +316,7 @@ $options
     ->setSoapClientClass('\Std\Opt\SoapClientClass')
     ->setOrigin('http://developer.ebay.com/webservices/latest/ebaySvc.wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
+    ->setSrcDirname('SoapClient')
     ->setPrefix('Api')
     ->setSuffix('Project')
     ->setBasicLogin($login)

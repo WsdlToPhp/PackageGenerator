@@ -83,6 +83,23 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testGetOptionSrcDirname()
+    {
+        $this->assertSame('src', self::localInstance()->getOptionSrcDirname());
+    }
+    /**
+     *
+     */
+    public function testSetOptionSrcDirname()
+    {
+        $instance = self::localInstance();
+        $instance->setOptionSrcDirname('');
+
+        $this->assertSame('', $instance->getOptionSrcDirname());
+    }
+    /**
+     *
+     */
     public function testGetOptionOrigin()
     {
         $this->assertSame(self::wsdlBingPath(), self::localInstance()->getOptionOrigin());

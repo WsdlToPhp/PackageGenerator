@@ -125,7 +125,7 @@ class StructArrayTest extends AbstractFile
             $struct = new ArrayFile($generator, $model->getName());
             $struct->setModel($model);
 
-            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), ArrayFile::SRC_FOLDER, $model->getContextualPart()), $struct->getFileDestination());
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
         } else {
             $this->assertFalse(true, 'Unable to find ArrayOfError struct for file generation');
         }

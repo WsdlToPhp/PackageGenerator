@@ -87,8 +87,9 @@ class Composer extends AbstractFile
         } else {
             $namespaceKey = '';
         }
+        $src = rtrim($this->generator->getOptionSrcDirname(), DIRECTORY_SEPARATOR);
         return array(
-            $namespaceKey => sprintf('./%s', AbstractModelFile::SRC_FOLDER),
+            $namespaceKey => sprintf('./%s', empty($src) ? '' : $src . DIRECTORY_SEPARATOR),
         );
     }
     /**

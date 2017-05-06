@@ -40,6 +40,9 @@ origin:
 destination:
     default: ''
     values: ''
+src_dirname:
+    default: 'src'
+    values: ''
 prefix:
     default: ''
     values: ''

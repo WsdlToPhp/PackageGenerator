@@ -613,6 +613,24 @@ class Generator
         return $this;
     }
     /**
+     * Gets the optionSrcDiname value
+     * @return string
+     */
+    public function getOptionSrcDirname()
+    {
+        return $this->options->getSrcDirname();
+    }
+    /**
+     * Sets the optionSrcDirname value
+     * @param string $optionSrcDirname
+     * @return Generator
+     */
+    public function setOptionSrcDirname($optionSrcDirname)
+    {
+        $this->options->setSrcDirname($optionSrcDirname);
+        return $this;
+    }
+    /**
      * Gets the optionSoapOptions value
      * @return string
      */

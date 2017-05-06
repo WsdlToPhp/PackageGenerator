@@ -76,6 +76,23 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetSrcDirname()
+    {
+        $this->assertSame('src', self::optionsInstance()->getSrcDirname());
+    }
+    /**
+     *
+     */
+    public function testSetSrcDirname()
+    {
+        $instance = self::optionsInstance();
+        $instance->setSrcDirName('');
+
+        $this->assertSame('', $instance->getSrcDirname());
+    }
+    /**
+     *
+     */
     public function testGetOrigin()
     {
         $this->assertEmpty(self::optionsInstance()->getOrigin());
@@ -629,6 +646,7 @@ class GeneratorOptionsTest extends TestCase
             'soap_client_class' => '\WsdlToPhp\PackageBase\AbstractSoapClientBase',
             'origin' => '',
             'destination' => '',
+            'src_dirname' => 'src',
             'prefix' => '',
             'suffix' => '',
             'basic_login' => '',
