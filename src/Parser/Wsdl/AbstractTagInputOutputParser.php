@@ -4,9 +4,9 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagPart;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\AbstractTagOperationElement;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Tag\TagOperation;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagPart;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTagOperationElement;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagOperation;
 
 abstract class AbstractTagInputOutputParser extends AbstractTagParser
 {

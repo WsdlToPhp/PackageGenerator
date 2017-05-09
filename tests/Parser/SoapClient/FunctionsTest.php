@@ -36,8 +36,8 @@ class FunctionsTest extends SoapClientParser
         $parser = new Functions($generator);
         $parser->parse();
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $generator->getService('Events'));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Service', $generator->getService('Export'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Service', $generator->getService('Events'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Service', $generator->getService('Export'));
     }
     /**
      *
@@ -83,7 +83,6 @@ class FunctionsTest extends SoapClientParser
         $count = 0;
         foreach ($generator->getServices() as $service) {
             foreach ($service->getMethods() as $method) {
-
                 switch ($method->getName()) {
                     case 'portingQualification':
                         $expected = array(

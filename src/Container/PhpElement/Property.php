@@ -10,6 +10,6 @@ class Property extends AbstractPhpElement
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PhpGenerator\\Element\\PhpProperty';
+        return 'WsdlToPhp\PhpGenerator\Element\PhpProperty';
     }
 }

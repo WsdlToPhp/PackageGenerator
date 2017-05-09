@@ -3,7 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlContent;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlContent;
 
 abstract class AbstractDocument extends AbstractModel
 {
@@ -44,7 +44,7 @@ abstract class AbstractDocument extends AbstractModel
     }
     /**
      *
-     * @return \WsdlToPhp\PackageGenerator\DomHandler\Wsdl\AbstractDocument
+     * @return \WsdlToPhp\PackageGenerator\WsdlHandler\AbstractDocument
      */
     public function getContent()
     {

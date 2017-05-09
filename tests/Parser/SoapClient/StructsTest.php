@@ -20,8 +20,8 @@ class StructsTest extends SoapClientParser
         $offer = $generator->getStruct('offer');
 
         if ($offer instanceof Struct) {
-            $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructAttribute', $offer->getAttribute('offerClassMember'));
-            $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructAttribute', $offer->getAttribute('offer'));
+            $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $offer->getAttribute('offerClassMember'));
+            $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $offer->getAttribute('offer'));
             $this->assertSame('offer', $offer->getAttribute('offer')->getType());
         } else {
             $this->assertFalse(true, 'Unable to get offer struct');
@@ -30,8 +30,8 @@ class StructsTest extends SoapClientParser
         $order = $generator->getStruct('order');
 
         if ($offer instanceof Struct) {
-            $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructAttribute', $order->getAttribute('orderClassMember'));
-            $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructAttribute', $order->getAttribute('order'));
+            $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $order->getAttribute('orderClassMember'));
+            $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $order->getAttribute('order'));
             $this->assertSame('order', $order->getAttribute('order')->getType());
         } else {
             $this->assertFalse(true, 'Unable to get order struct');
@@ -48,10 +48,41 @@ class StructsTest extends SoapClientParser
         $parser->parse();
 
         $count = 0;
-        foreach($generator->getStructs() as $struct) {
+        foreach ($generator->getStructs() as $struct) {
             $count += $struct->getIsStruct() ? 1 : 0;
         }
 
         $this->assertEquals(0, $count);
+    }
+    /**
+     *
+     */
+    public function testWhl()
+    {
+        $generator = self::getWhlInstance();
+
+        $parser = new Structs($generator);
+        $parser->parse();
+
+        $unionTypes = array(
+            explode(',', 'anonymous25,anonymous26'),
+            explode(',', 'dateTime,time'),
+            explode(',', 'date,dateTime,time'),
+            explode(',', 'NightDurationType,duration'),
+            explode(',', 'PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2'),
+            explode(',', 'PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2'),
+        );
+
+        $count = 0;
+        $index = 0;
+        /** @var Struct $struct */
+        foreach ($generator->getStructs() as $struct) {
+            $count += $struct->isUnion() ? 1 : 0;
+            if ($struct->isUnion()) {
+                $this->assertSame($unionTypes[$index++], $struct->getTypes());
+            }
+        }
+
+        $this->assertEquals(5, $count);
     }
 }

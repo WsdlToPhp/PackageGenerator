@@ -76,6 +76,23 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetSrcDirname()
+    {
+        $this->assertSame('src', self::optionsInstance()->getSrcDirname());
+    }
+    /**
+     *
+     */
+    public function testSetSrcDirname()
+    {
+        $instance = self::optionsInstance();
+        $instance->setSrcDirName('');
+
+        $this->assertSame('', $instance->getSrcDirname());
+    }
+    /**
+     *
+     */
     public function testGetOrigin()
     {
         $this->assertEmpty(self::optionsInstance()->getOrigin());
@@ -352,9 +369,9 @@ class GeneratorOptionsTest extends TestCase
     public function testSetNamespace()
     {
         $instance = self::optionsInstance();
-        $instance->setNamespace('\\My\\Project');
+        $instance->setNamespace('\My\Project');
 
-        $this->assertSame('\\My\\Project', $instance->getNamespace());
+        $this->assertSame('\My\Project', $instance->getNamespace());
     }
     /**
      *
@@ -395,7 +412,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetStructClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructBase', self::optionsInstance()->getStructClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructBase', self::optionsInstance()->getStructClass());
     }
     /**
      *
@@ -403,16 +420,16 @@ class GeneratorOptionsTest extends TestCase
     public function testSetStructClass()
     {
         $instance = self::optionsInstance();
-        $instance->setStructClass('\\My\\Project\\StructClass');
+        $instance->setStructClass('\My\Project\StructClass');
 
-        $this->assertSame('\\My\\Project\\StructClass', $instance->getStructClass());
+        $this->assertSame('\My\Project\StructClass', $instance->getStructClass());
     }
     /**
      *
      */
     public function testGetStructArrayClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase', self::optionsInstance()->getStructArrayClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructArrayBase', self::optionsInstance()->getStructArrayClass());
     }
     /**
      *
@@ -420,16 +437,16 @@ class GeneratorOptionsTest extends TestCase
     public function testSetStructArrayClass()
     {
         $instance = self::optionsInstance();
-        $instance->setStructArrayClass('\\My\\Project\\StructArrayClass');
+        $instance->setStructArrayClass('\My\Project\StructArrayClass');
 
-        $this->assertSame('\\My\\Project\\StructArrayClass', $instance->getStructArrayClass());
+        $this->assertSame('\My\Project\StructArrayClass', $instance->getStructArrayClass());
     }
     /**
      *
      */
     public function testGetSoapClientClass()
     {
-        $this->assertSame('\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase', self::optionsInstance()->getSoapClientClass());
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractSoapClientBase', self::optionsInstance()->getSoapClientClass());
     }
     /**
      *
@@ -437,9 +454,9 @@ class GeneratorOptionsTest extends TestCase
     public function testSetSoapClientClass()
     {
         $instance = self::optionsInstance();
-        $instance->setSoapClientClass('\\My\\Project\\SoapClientClass');
+        $instance->setSoapClientClass('\My\Project\SoapClientClass');
 
-        $this->assertSame('\\My\\Project\\SoapClientClass', $instance->getSoapClientClass());
+        $this->assertSame('\My\Project\SoapClientClass', $instance->getSoapClientClass());
     }
     /**
      *
@@ -475,22 +492,26 @@ class GeneratorOptionsTest extends TestCase
             'config.disable-tls:true',
             'config.data-dir:/src/foor/bar',
             'require.wsdltophp/packagebase:dev-master',
-            'autoload.psr-4.Acme\\:src/'
+            'autoload' => array(
+                'psr-4' => array(
+                    'Acme\\' => 'src/',
+                ),
+            ),
         ));
 
         $this->assertSame(array(
             'config' => array(
                 'disable-tls' => true,
-                'data-dir' => '/src/foor/bar'
+                'data-dir' => '/src/foor/bar',
             ),
             'require' => array(
-                'wsdltophp/packagebase' => 'dev-master'
+                'wsdltophp/packagebase' => 'dev-master',
             ),
             'autoload' => array(
                 'psr-4' => array(
-                    'Acme\\' => 'src/'
-                )
-            )
+                    'Acme\\' => 'src/',
+                ),
+            ),
         ), $instance->getComposerSettings());
     }
     /**
@@ -625,6 +646,7 @@ class GeneratorOptionsTest extends TestCase
             'soap_client_class' => '\WsdlToPhp\PackageBase\AbstractSoapClientBase',
             'origin' => '',
             'destination' => '',
+            'src_dirname' => 'src',
             'prefix' => '',
             'suffix' => '',
             'basic_login' => '',

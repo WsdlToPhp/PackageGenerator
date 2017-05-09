@@ -18,7 +18,7 @@ The generated package does not need PEAR nor NuSOAP, at least :
 - PHP 5.5.9,
 - SoapClient: natively installed with PHP,
 - DOM: natively installed with PHP,
-- [PackageBase](https://packagist.org/packages/wsdltophp/packagebase): automatically installed on standalone mode (default mode), it contains utility classes used by the generated classes. Full documentation about the classes is available at the project [homepage](https://github.com/WsdlToPhp/PackageBase). **If you're not using the standalone mode, you must add ```wsdltophp/packagebase: dev-master``` in your main composer.json file.**
+- [PackageBase](https://packagist.org/packages/wsdltophp/packagebase): automatically installed on standalone mode (default mode), it contains utility classes used by the generated classes. Full documentation about the classes is available at the project [homepage](https://github.com/WsdlToPhp/PackageBase). **If you're not using the standalone mode, you must add ```wsdltophp/packagebase:~1.0``` in your main composer.json file.**
 
 # Summary
 - [Generated package hierarchy](#generated-package-hierarchy)
@@ -77,6 +77,10 @@ The generator comes with several options:
     - **\-\-proxy-login**: your proxy login
     - **\-\-proxy-password**: your proxy password
 - _**Optional**_ directories structure:
+    - **\-\-src-dirname** _(default: `src`)_: by default,  classes directories are generated under the `destination`/src directory. If you wish your classes directories to be generated at the root folder, then you **MUST** pass:
+        - `'/'` as option value to the command line
+        - `''` to the `Generator::setOptionSrcDirname` method
+        - `''` to the `GeneratorOptions::setSrcDirname` method
     - **\-\-category**:
         - **cat** _(default)_, each class is put in a directory that matches its type such as:
             - **ArrayType**: any array type class
@@ -157,6 +161,7 @@ $ ./wsdltophp.phar generate:package \
     --proxy-login="*******" \
     --proxy-password="*******" \
     --destination='/var/www/Api/' \
+    --src-dirname='SoapClient' \
     --prefix="Api" \
     --suffix="Project" \
     --category="cat" \
@@ -205,6 +210,7 @@ Remove ```--force``` option from the previous command line to get this result:
     soap_client_class: "\\Std\\Opt\\SoapClientClass"
     origin: "http:\/\/developer.ebay.com\/webservices\/latest\/ebaySvc.wsdl"
     destination: "\/var\/www\/Api\/"
+    src_dirname: "SoapClient"
     prefix: "Api"
     suffix: "Project"
     basic_login: "*******"
@@ -309,6 +315,7 @@ $options
     ->setSoapClientClass('\Std\Opt\SoapClientClass')
     ->setOrigin('http://developer.ebay.com/webservices/latest/ebaySvc.wsdl')
     ->setDestination('/path/to/where/the/package/must/be/generated/')
+    ->setSrcDirname('SoapClient')
     ->setPrefix('Api')
     ->setSuffix('Project')
     ->setBasicLogin($login)
@@ -341,7 +348,7 @@ You have several ```testsuite```s available which run test in the proper order:
 - **command**: tests command class
 - **configuration**: tests configuration readers
 - **utils**: tests utils class
-- **domhandler**: tests dom handlers (Basic and Wsdl + Tag)
+- **wsdlhandler**: tests dom handlers (Wsdl + Tag)
 - **model**: tests models
 - **container**: tests containers (Model and PhpElement)
 - **parser**: tests parsers (SoapClient and Wsdl)

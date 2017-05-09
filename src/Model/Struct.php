@@ -42,6 +42,11 @@ class Struct extends AbstractModel
      */
     private $values;
     /**
+     * If the struct is a union with types, then store types
+     * @var string[]
+     */
+    private $types;
+    /**
      * Define if the urrent struct is a concrete struct or just a virtual struct to store meta informations
      * @var bool
      */
@@ -150,11 +155,11 @@ class Struct extends AbstractModel
     protected function addInheritanceAttributes(StructAttributeContainer $attributes)
     {
         if ($this->getInheritance() != '' && ($model = $this->getInheritanceStruct()) instanceof Struct) {
-            while ($model->getIsStruct()) {
+            while ($model instanceof Struct && $model->getIsStruct()) {
                 foreach ($model->getAttributes() as $attribute) {
                     $attributes->add($attribute);
                 }
-                $model = $this->getGenerator()->getStruct($model->getInheritance());
+                $model = $model->getInheritanceStruct();
             }
         }
     }
@@ -229,6 +234,16 @@ class Struct extends AbstractModel
     public function getAttribute($attributeName)
     {
         return $this->attributes->getStructAttributeByName($attributeName);
+    }
+    /**
+     * Returns the attribute by its cleaned name, otherwise null
+     * @uses Struct::getAttributes()
+     * @param string $attributeCleanName the cleaned attribute name
+     * @return StructAttribute|null
+     */
+    public function getAttributeByCleanName($attributeCleanName)
+    {
+        return $this->attributes->getStructAttributeByCleanName($attributeCleanName);
     }
     /**
      * Returns the isRestriction value
@@ -371,5 +386,28 @@ class Struct extends AbstractModel
             $instance = StructArrayReservedMethod::instance($filename);
         }
         return $instance;
+    }
+    /**
+     * @return string[]
+     */
+    public function getTypes()
+    {
+        return $this->types;
+    }
+    /**
+     * @return boolean
+     */
+    public function isUnion()
+    {
+        return count($this->types) > 0;
+    }
+    /**
+     * @param string[] $types
+     * @return Struct
+     */
+    public function setTypes($types)
+    {
+        $this->types = $types;
+        return $this;
     }
 }

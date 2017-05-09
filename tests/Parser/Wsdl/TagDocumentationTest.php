@@ -32,6 +32,13 @@ class TagDocumentationTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
      */
+    public static function payPalInstance()
+    {
+        return new TagDocumentation(self::generatorInstance(self::wsdlPayPalPath(), true));
+    }
+    /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
+     */
     public static function queueInstance()
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlQueuePath()));
@@ -42,9 +49,7 @@ class TagDocumentationTest extends WsdlParser
     public function testParseImageViewService()
     {
         $tagDocumentationParser = self::imageViewInstance();
-
         $tagDocumentationParser->parse();
-
         $ok = false;
         foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
             if ($struct instanceof Struct && $struct->getIsRestriction() === false) {
@@ -86,7 +91,7 @@ class TagDocumentationTest extends WsdlParser
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -94,12 +99,9 @@ class TagDocumentationTest extends WsdlParser
     public function testParseWhl()
     {
         $tagDocumentationParser = self::whlInstance();
-
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
         $tagEnumerationParser->parse();
-
         $tagDocumentationParser->parse();
-
         $ok = false;
         foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
             if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
@@ -129,7 +131,7 @@ class TagDocumentationTest extends WsdlParser
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -137,12 +139,9 @@ class TagDocumentationTest extends WsdlParser
     public function testParseActon()
     {
         $tagDocumentationParser = self::actonInstance();
-
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
         $tagEnumerationParser->parse();
-
         $tagDocumentationParser->parse();
-
         $ok = false;
         foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
             if ($struct instanceof Struct && $struct->getIsStruct() === false) {
@@ -154,6 +153,36 @@ class TagDocumentationTest extends WsdlParser
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
+    }
+    /**
+     *
+     */
+    public function testParsePayPal()
+    {
+        $tagDocumentationParser = self::payPalInstance();
+        $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
+        $tagEnumerationParser->parse();
+        $tagDocumentationParser->parse();
+        $okCount = 0;
+        $struct = $tagDocumentationParser->getGenerator()->getStruct('SetExpressCheckoutRequestDetailsType');
+        $attributes = array(
+            'cpp-header-image' => 'A URL for the image you want to appear at the top left of the payment page. The image has a maximum size of 750 pixels wide by 90 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. Optional Character length and limitations: 127',
+            'cpp-header-border-color' => 'Sets the border color around the header of the payment page. The border is a 2-pixel perimeter around the header space, which is 750 pixels wide by 90 pixels high. Optional Character length and limitations: Six character HTML hexadecimal color code in ASCII',
+            'cpp-header-back-color' => 'Sets the background color for the header of the payment page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII',
+            'cpp-payflow-color' => 'Sets the background color for the payment page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII',
+            'cpp-cart-border-color' => 'Sets the cart gradient color for the Mini Cart on 1X flow. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII',
+            'cpp-logo-image' => 'A URL for the image you want to appear above the mini-cart. The image has a maximum size of 190 pixels wide by 60 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. Optional Character length and limitations: 127',
+        );
+        if ($struct instanceof Struct) {
+            foreach ($attributes as $attribute => $value) {
+                $header = $struct->getAttribute($attribute);
+                if ($header) {
+                    $doc = $header->getMetaValue('documentation');
+                    $okCount += (int) ($value === $doc[0]);
+                }
+            }
+        }
+        $this->assertSame(count($attributes), $okCount);
     }
 }

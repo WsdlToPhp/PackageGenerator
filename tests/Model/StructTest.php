@@ -109,8 +109,8 @@ class StructTest extends TestCase
         $struct->addValue('id');
         $struct->addValue('name');
         $struct->addValue('_key');
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructValue', $struct->getValue('id'));
-        $this->assertNotInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructValue', $struct->getValue('_id'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructValue', $struct->getValue('id'));
+        $this->assertNotInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructValue', $struct->getValue('_id'));
     }
     /**
      *
@@ -121,8 +121,8 @@ class StructTest extends TestCase
         $struct->addAttribute('id', 'int');
         $struct->addAttribute('name', 'string');
         $struct->addAttribute('_key', 'string');
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructAttribute', $struct->getAttribute('id'));
-        $this->assertNotInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\StructAttribute', $struct->getAttribute('_id'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $struct->getAttribute('id'));
+        $this->assertNotInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $struct->getAttribute('_id'));
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -142,12 +142,12 @@ class StructTest extends TestCase
     }
     public function testGetReservedMethodsInstance()
     {
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\StructReservedMethod', self::instance('foo', true)->getReservedMethodsInstance());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod', self::instance('foo', true)->getReservedMethodsInstance());
     }
     public function testGetReservedMethodsInstanceForArray()
     {
         $instance = self::instance('array', true);
         $instance->addAttribute('bar', 'string');
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\ConfigurationReader\\StructArrayReservedMethod', $instance->getReservedMethodsInstance());
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod', $instance->getReservedMethodsInstance());
     }
 }

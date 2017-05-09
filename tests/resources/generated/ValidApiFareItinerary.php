@@ -202,6 +202,10 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setResident($resident = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($resident) && !is_bool($resident)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($resident)), __LINE__);
+        }
         $this->resident = $resident;
         return $this;
     }

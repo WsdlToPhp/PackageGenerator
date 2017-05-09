@@ -45,7 +45,7 @@ class TagComplexTypeTest extends WsdlParser
             $this->assertTrue($structs->getStructByName('AbstractResponseType')->getIsAbstract());
             $ok = true;
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -63,7 +63,7 @@ class TagComplexTypeTest extends WsdlParser
             $this->assertSame('tns:MemberNumber', $structs->getStructByName('MemberNumber')->getMetaValue('type'));
             $ok = true;
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *

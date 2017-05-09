@@ -73,7 +73,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
         $this->setName($name);
     }
     /**
-     * @uses AbstractModel::getInheritedMoel()
+     * @uses AbstractModel::getInheritedModel()
      * @uses AbstractModel::getPackagedName()
      * @uses AbstractModel::getExtends()
      * @uses Struct::getIsStruct()
@@ -82,8 +82,8 @@ abstract class AbstractModel extends AbstractGeneratorAware
     public function getExtendsClassName()
     {
         $extends = '';
-        if (($model = $this->getInheritedMoel()) instanceof Struct && $model->getIsStruct()) {
-            $extends = $model->getPackagedName();
+        if (($model = $this->getInheritedModel()) instanceof Struct && $model->getIsStruct()) {
+            $extends = $model->getPackagedName($model->getIsRestriction());
         }
         if (empty($extends)) {
             $extends = $this->getExtends(true);
@@ -114,7 +114,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @uses AbstractModel::getInheritance()
      * @return Struct
      */
-    public function getInheritedMoel()
+    public function getInheritedModel()
     {
         return $this->getGenerator()->getStruct($this->getInheritance());
     }
@@ -192,7 +192,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Returns the value of the first meta value assigned to the name
-     * @param array $names the meta names to check
+     * @param string[] $names the meta names to check
      * @param mixed $fallback the fallback value if anyone is set
      * @return mixed the meta information value
      */
@@ -428,7 +428,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * Returns a usable method for a original method
      * @uses PhpReservedKeywords::instance()
      * @uses PhpReservedKeywords::is()
-     * @param string $keyword the keyword
+     * @param string $methodName the method name
      * @param string $context the context
      * @return string
      */
@@ -487,13 +487,5 @@ abstract class AbstractModel extends AbstractGeneratorAware
     public static function purgePhpReservedKeywords()
     {
         self::$replacedPhpReservedKeywords = array();
-    }
-    /**
-     * Gives the availability for test purpose and multiple package generation to purge reserved methods usage
-     * @todo see if it can be removed by reviewing how reserved methods are generated
-     */
-    public static function purgeReservedMethods()
-    {
-        self::$replacedReservedMethods = array();
     }
 }

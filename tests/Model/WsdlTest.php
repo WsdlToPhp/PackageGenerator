@@ -102,6 +102,13 @@ class WsdlTest extends TestCase
         return self::getWsdl(self::wsdlOrderContractPath());
     }
     /**
+     * @return Wsdl
+     */
+    public static function whlInstance()
+    {
+        return self::getWsdl(self::wsdlWhlPath());
+    }
+    /**
      * @expectedException \InvalidArgumentException
      */
     public function testException()

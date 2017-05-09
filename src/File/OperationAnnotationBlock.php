@@ -48,10 +48,10 @@ class OperationAnnotationBlock extends AbstractOperation
         $soapHeaders = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADERS, array());
         if (!empty($soapHeaderNames) && !empty($soapHeaderTypes) && !empty($soapHeaderNamespaces)) {
             $annotationBlock->addChild('Meta informations extracted from the WSDL')
-                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNames : %s', implode(', ', $soapHeaderNames)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
-                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNamespaces : %s', implode(', ', $soapHeaderNamespaces)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
-                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes : %s', implode(', ', $this->getSoapHeaderTypesTypes($soapHeaderTypes))), AbstractModelFile::ANNOTATION_LONG_LENGTH))
-                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaders : %s', implode(', ', $soapHeaders)), AbstractModelFile::ANNOTATION_LONG_LENGTH));
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNames: %s', implode(', ', $soapHeaderNames)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNamespaces: %s', implode(', ', $soapHeaderNamespaces)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes: %s', implode(', ', $this->getSoapHeaderTypesTypes($soapHeaderTypes))), AbstractModelFile::ANNOTATION_LONG_LENGTH))
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaders: %s', implode(', ', $soapHeaders)), AbstractModelFile::ANNOTATION_LONG_LENGTH));
         }
         FileUtils::defineModelAnnotationsFromWsdl($annotationBlock, $this->getMethod(), array(
             TagHeader::META_SOAP_HEADER_NAMES,

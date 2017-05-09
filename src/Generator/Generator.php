@@ -12,7 +12,7 @@ use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\DomHandler\Wsdl\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 
 class Generator
 {
@@ -610,6 +610,24 @@ class Generator
         } else {
             throw new \InvalidArgumentException('Package\'s destination can\'t be empty', __LINE__);
         }
+        return $this;
+    }
+    /**
+     * Gets the optionSrcDiname value
+     * @return string
+     */
+    public function getOptionSrcDirname()
+    {
+        return $this->options->getSrcDirname();
+    }
+    /**
+     * Sets the optionSrcDirname value
+     * @param string $optionSrcDirname
+     * @return Generator
+     */
+    public function setOptionSrcDirname($optionSrcDirname)
+    {
+        $this->options->setSrcDirname($optionSrcDirname);
         return $this;
     }
     /**

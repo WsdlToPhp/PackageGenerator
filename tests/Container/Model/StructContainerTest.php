@@ -25,8 +25,8 @@ class StructContainerTest extends TestCase
     {
         $structContainer = self::instance();
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getStructByName('Foo'));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Struct', $structContainer->getStructByName('Bar'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Struct', $structContainer->getStructByName('Foo'));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Struct', $structContainer->getStructByName('Bar'));
         $this->assertNull($structContainer->getStructByName('bar'));
     }
     /**
@@ -36,8 +36,8 @@ class StructContainerTest extends TestCase
     {
         $structContainer = self::instance();
 
-        $structContainer->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'string');
-        $structContainer->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'int');
+        $structContainer->addStructWithAttribute('Foo', 'bar', 'string');
+        $structContainer->addStructWithAttribute('Foo', 'bar', 'int');
 
         $this->assertCount(1, $structContainer->getStructByName('Foo')->getAttributes());
     }
@@ -48,8 +48,8 @@ class StructContainerTest extends TestCase
      {
          $instance = self::instance();
 
-         $instance->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'string');
-         $instance->addStructWithAttribute(self::getBingGeneratorInstance(), 'Foo', 'bar', 'int');
+         $instance->addStructWithAttribute('Foo', 'bar', 'string');
+         $instance->addStructWithAttribute('Foo', 'bar', 'int');
 
          $instance->offsetUnset(1);
 

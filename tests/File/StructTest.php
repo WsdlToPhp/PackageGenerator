@@ -35,7 +35,7 @@ class StructTest extends AbstractFile
         $file = new StructFile(self::bingGeneratorInstance(), 'foo');
         $file->setModel($model);
 
-        $this->assertSame(sprintf('%s%s%s/%s.php', self::getTestDirectory(), StructFile::SRC_FOLDER, $model->getContextualPart(), $model->getPackagedName(false)), $file->getFileName());
+        $this->assertSame(sprintf('%s%s%s/%s.php', self::getTestDirectory(), $model->getGenerator()->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart(), $model->getPackagedName(false)), $file->getFileName());
     }
     /**
      *
@@ -273,7 +273,7 @@ class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct->setModel($model);
 
-            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), StructFile::SRC_FOLDER, $model->getContextualPart()), $struct->getFileDestination());
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
         } else {
             $this->assertFalse(true, 'Unable to find NewsArticle struct for file generation');
         }
@@ -310,6 +310,74 @@ class StructTest extends AbstractFile
             $this->assertSameFileContent('ValidBannerInfo', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find BannerInfo struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWritePayPalApiStructSetExpressCheckoutRequestDetailsType()
+    {
+        $generator = self::payPalGeneratorInstance(true);
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('SetExpressCheckoutRequestDetailsType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidSetExpressCheckoutRequestDetailsType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find SetExpressCheckoutRequestDetailsType struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteWhlHotelReservationType()
+    {
+        $generator = self::whlInstance(true);
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('HotelReservationType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidHotelReservationType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find HotelReservationType struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteWhlTaxType()
+    {
+        $generator = self::whlInstance();
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('TaxType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidTaxType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find TaxType struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteWhlPaymentCardType()
+    {
+        $generator = self::whlInstance();
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStruct('PaymentCardType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidPaymentCardType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find PaymentCardType struct for file generation');
         }
     }
 }

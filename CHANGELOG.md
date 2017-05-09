@@ -1,29 +1,52 @@
 # CHANGELOG
 
-## 2.4.1
+## 2.7.0
+From now on there is only one release as the composer.json has been updated in order to match multiple versions thats makes the project working either on 5.3.3 >= PHP >= 5.5.9. Two Phar files will be created using PHP 5 and PHP 7.
+
+Issues fixed:
+    - issue #91 - Add option to customize final destination src
+    - issue #89 - Use wsdltophp/domhandler project as dependency
+    - issue #86 - Review restrictions
+    - issue #85 - Bool validation rule
+    - issue #84 - Improve/Fix typehint determination for unions
+    - issue #83 - better debug support
+    - issue #82 - Annotations from an attributeGroup
+    - issue #81 - SoapHeader definitions per operation/method should not contain a space before the colon punctuation
+    - issue #80 - Invalid typehint
+
+## 1.11.0/2.6.0
+- issue #76 - "UNKNOWN" type hint is invalid
+- issue #77 - Properties without type
+- issue #79 - Inheritance between a Struct and an Enumeration
+
+## 1.10.1/2.5.1
+- issue #57 - Unable to determine SoapHeader name and type
+
+## 1.10.0/2.5.0
+- pull request #73 - Fixed issue with HTTPS urls
+    - **BC**: the `WsdlToPhp\PackageGenerator\Generator\Utils::getContentFromUrlContextOptions` has been renamed to `getStreamContextOptions`, in addition the first parameter named `url` has been removed due to its uselessness
+
+## 1.9.1/2.4.1
 - pull request #70 - phpdoc & composer fixes
 
-## 2.4.0
+## 1.9.0/2.4.0
 - issue #67 - Windows not able to run composer due to missing CA Certificate File
 
-## 2.3.1
+## 1.8.1/2.3.1
 - pull request #69 - use stable versions
 
-## 2.3.0
+## 1.8.0/2.3.0
 - issue #63 - base64Binary in Generated Classes
 - issue #64 - Integer type generated for XSD duration types
 
-## 2.2.0
+## 1.7.0/2.2.0
 - issue #60 - Incorrect validation rule: is_string() on int[] values
 
-## 2.1.0
+## 1.6.0/2.1.0
 - issue #56 - Problem with generated request XML
 
-## 2.0.1
-issue #55 - xsd:long is "int" in validation rules - error with values that not fit
-
-## 2.0.0
-- This major release forces the requirement of PHP >= 5.5.9. This allows to use the latest version of Symfony components. If you do not have a sufficient PHP version, you can still use the major 1.x.x version which only requires PHP >= 5.3.3. The 1.x.x version uses the Symfony components at version 2.8.x.
+## 1.5.1/2.0.1
+- issue #55 - xsd:long is "int" in validation rules - error with values that not fit
 
 ## 1.5.0
 - issue #50 - Support for Cyrillic alphabet

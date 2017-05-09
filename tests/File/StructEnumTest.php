@@ -147,7 +147,7 @@ class StructEnumTest extends AbstractFile
             $struct = new EnumFile($generator, $model->getName());
             $struct->setModel($model);
 
-            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), EnumFile::SRC_FOLDER, $model->getContextualPart()), $struct->getFileDestination());
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
         } else {
             $this->assertFalse(true, 'Unable to find PhonebookSortOption enumeration for file generation');
         }

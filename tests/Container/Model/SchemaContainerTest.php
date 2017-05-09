@@ -28,8 +28,8 @@ class SchemaContainerTest extends TestCase
     {
         $schemaContainer = self::instance();
 
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Schema', $schemaContainer->getSchemaByName(self::SCHEMA_BING));
-        $this->assertInstanceOf('\\WsdlToPhp\\PackageGenerator\\Model\\Schema', $schemaContainer->getSchemaByName(self::SCHEMA_EBAY));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Schema', $schemaContainer->getSchemaByName(self::SCHEMA_BING));
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Schema', $schemaContainer->getSchemaByName(self::SCHEMA_EBAY));
         $this->assertNull($schemaContainer->getSchemaByName('Bar'));
     }
 }

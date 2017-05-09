@@ -122,7 +122,7 @@ abstract class AbstractFile extends TestCase
      */
     public static function deliveryServiceInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlDeliveryService(), $reset, $gatherMethods);
+        return self::getInstance(self::wsdlDeliveryServicePath(), $reset, $gatherMethods);
     }
     /**
      * @return Generator
@@ -130,6 +130,13 @@ abstract class AbstractFile extends TestCase
     public static function orderContractInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
     {
         return self::getInstance(self::wsdlOrderContractPath(), $reset, $gatherMethods);
+    }
+    /**
+     * @return Generator
+     */
+    public static function whlInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlWhlPath(), $reset, $gatherMethods);
     }
     /**
      * @param string $wsdl

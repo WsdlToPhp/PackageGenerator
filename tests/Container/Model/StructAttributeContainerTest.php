@@ -29,9 +29,9 @@ class StructAttributeContainerTest extends TestCase
     {
         $structAttributeContainer = self::instance();
 
-        $this->assertInstanceOf('\\WsdlTophp\\PackageGenerator\\Model\\StructAttribute', $structAttributeContainer->getStructAttributeByName('foo'));
-        $this->assertInstanceOf('\\WsdlTophp\\PackageGenerator\\Model\\StructAttribute', $structAttributeContainer->getStructAttributeByName('bar'));
-        $this->assertInstanceOf('\\WsdlTophp\\PackageGenerator\\Model\\StructAttribute', $structAttributeContainer->getStructAttributeByName('fooBar'));
+        $this->assertInstanceOf('\WsdlTophp\PackageGenerator\Model\StructAttribute', $structAttributeContainer->getStructAttributeByName('foo'));
+        $this->assertInstanceOf('\WsdlTophp\PackageGenerator\Model\StructAttribute', $structAttributeContainer->getStructAttributeByName('bar'));
+        $this->assertInstanceOf('\WsdlTophp\PackageGenerator\Model\StructAttribute', $structAttributeContainer->getStructAttributeByName('fooBar'));
         $this->assertNull($structAttributeContainer->getStructAttributeByName('foobar'));
     }
 }

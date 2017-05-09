@@ -15,8 +15,8 @@ class MaxExclusiveRule extends AbstractRule
     {
         $this->getMethod()
             ->addChild('// validation for constraint: maxExclusive')
-            ->addChild(sprintf('if (%s > %d) {', $parameterName, $value))
-            ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, the value must be inferior to %d\, "%%s" given\', %s), __LINE__);', $value, $parameterName), 1))
+            ->addChild(sprintf('if ($%s >= %d) {', $parameterName, $value))
+            ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, the value must be striclty inferior to %d\, "%%s" given\', $%s), __LINE__);', $value, $parameterName), 1))
             ->addChild('}');
         return $this;
     }

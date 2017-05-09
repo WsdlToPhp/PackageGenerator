@@ -66,7 +66,7 @@ class TagHeaderTest extends WsdlParser
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -140,7 +140,7 @@ class TagHeaderTest extends WsdlParser
                 }
             }
         }
-        $this->assertTrue((bool)$ok);
+        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -184,7 +184,7 @@ class TagHeaderTest extends WsdlParser
         $tagHeaderParser
             ->getGenerator()
                 ->getServices()
-                    ->addService($tagHeaderParser->getGenerator(), 'Update', 'UpdateItemInRecoverableItems', 'string', 'string');
+                    ->addService('Update', 'UpdateItemInRecoverableItems', 'string', 'string');
 
         $tagHeaderParser->parse();
 

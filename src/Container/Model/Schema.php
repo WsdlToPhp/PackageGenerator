@@ -12,7 +12,7 @@ class Schema extends AbstractModel
      */
     protected function objectClass()
     {
-        return 'WsdlToPhp\\PackageGenerator\\Model\\Schema';
+        return 'WsdlToPhp\PackageGenerator\Model\Schema';
     }
     /**
      * @param string $name
