@@ -120,9 +120,9 @@ abstract class AbstractTagParser extends AbstractParser
                 $typeModel = $this->generator->getStruct($type);
                 $modelAttributeType = $structAttribute->getType();
                 if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
-                    if ($typeModel->getIsRestriction()) {
+                    if ($typeModel->isRestriction()) {
                         $structAttribute->setType($typeModel->getName());
-                    } elseif (!$typeModel->getIsStruct() && $typeModel->getInheritance()) {
+                    } elseif (!$typeModel->isStruct() && $typeModel->getInheritance()) {
                         $structAttribute->setType($typeModel->getInheritance());
                     }
                 }
@@ -143,7 +143,7 @@ abstract class AbstractTagParser extends AbstractParser
      */
     protected function parseTagAttributeAbstract(AttributeHandler $tagAttribute, AbstractModel $model)
     {
-        $model->setIsAbstract($tagAttribute->getValue(false, true, 'bool'));
+        $model->setAbstract($tagAttribute->getValue(false, true, 'bool'));
     }
     /**
      * Enumeration does not need its own value as meta information, it's like the name for struct attribute

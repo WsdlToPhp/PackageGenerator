@@ -22,11 +22,11 @@ class StructTest extends TestCase
     public function testGetContextualPartEnum()
     {
         $struct = self::instance('Foo', false);
-        $struct->setIsRestriction(true);
+        $struct->setRestriction(true);
         $this->assertEquals('EnumType', $struct->getContextualPart());
-        $struct->setIsStruct(false);
+        $struct->setStruct(false);
         $this->assertEquals('EnumType', $struct->getContextualPart());
-        $struct->setIsStruct(true);
+        $struct->setStruct(true);
         $this->assertEquals('EnumType', $struct->getContextualPart());
     }
     /**
@@ -35,11 +35,11 @@ class StructTest extends TestCase
     public function testGetDocSubPackagesEnum()
     {
         $struct = self::instance('Foo', false);
-        $struct->setIsRestriction(true);
+        $struct->setRestriction(true);
         $this->assertContains(Struct::DOC_SUB_PACKAGE_ENUMERATIONS, $struct->getDocSubPackages());
-        $struct->setIsStruct(false);
+        $struct->setStruct(false);
         $this->assertContains(Struct::DOC_SUB_PACKAGE_ENUMERATIONS, $struct->getDocSubPackages());
-        $struct->setIsStruct(true);
+        $struct->setStruct(true);
         $this->assertContains(Struct::DOC_SUB_PACKAGE_ENUMERATIONS, $struct->getDocSubPackages());
     }
     /**
@@ -49,9 +49,9 @@ class StructTest extends TestCase
     {
         $struct = self::instance('Foo', false);
         $this->assertEquals('StructType', $struct->getContextualPart());
-        $struct->setIsRestriction(false);
+        $struct->setRestriction(false);
         $this->assertEquals('StructType', $struct->getContextualPart());
-        $struct->setIsStruct(true);
+        $struct->setStruct(true);
         $this->assertEquals('StructType', $struct->getContextualPart());
     }
     /**
@@ -61,7 +61,7 @@ class StructTest extends TestCase
     {
         $struct = self::instance('Foo', false);
         $this->assertContains(Struct::DOC_SUB_PACKAGE_STRUCTS, $struct->getDocSubPackages());
-        $struct->setIsRestriction(false);
+        $struct->setRestriction(false);
         $this->assertContains(Struct::DOC_SUB_PACKAGE_STRUCTS, $struct->getDocSubPackages());
     }
     public function testGetCountAttributes()

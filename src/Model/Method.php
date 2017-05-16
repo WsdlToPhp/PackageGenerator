@@ -46,7 +46,7 @@ class Method extends AbstractModel
     public function __construct(Generator $generator, $name, $parameterType, $returnType, Service $service, $isUnique = true)
     {
         parent::__construct($generator, $name);
-        $this->setParameterType($parameterType)->setReturnType($returnType)->setIsUnique($isUnique)->setOwner($service);
+        $this->setParameterType($parameterType)->setReturnType($returnType)->setUnique($isUnique)->setOwner($service);
     }
     /**
      * Method name can't starts with numbers
@@ -67,14 +67,14 @@ class Method extends AbstractModel
      * @uses AbstractModel::uniqueName()
      * @uses Method::getOwner()
      * @uses Method::getParameterType()
-     * @uses Method::getIsUnique()
+     * @uses Method::isUnique()
      * @return string
      */
     public function getMethodName()
     {
         if (empty($this->methodName)) {
             $methodName = $this->getCleanName();
-            if (!$this->getIsUnique()) {
+            if (!$this->isUnique()) {
                 if (is_string($this->getParameterType())) {
                     $methodName .= ucfirst($this->getParameterType());
                 } else {
@@ -128,7 +128,7 @@ class Method extends AbstractModel
      * Returns the isUnique property
      * @return bool
      */
-    public function getIsUnique()
+    public function isUnique()
     {
         return $this->isUnique;
     }
@@ -137,7 +137,7 @@ class Method extends AbstractModel
      * @param bool
      * @return Method
      */
-    public function setIsUnique($isUnique)
+    public function setUnique($isUnique)
     {
         $this->isUnique = $isUnique;
         return $this;

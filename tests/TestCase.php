@@ -4,8 +4,9 @@ namespace WsdlToPhp\PackageGenerator\Tests;
 
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
+use PHPUnit\Framework\TestCase as PHPUnitFrameworkTestCase;
 
-abstract class TestCase extends \PHPUnit_Framework_TestCase
+abstract class TestCase extends PHPUnitFrameworkTestCase
 {
     /**
      * @var Generator[]
