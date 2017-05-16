@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.7.1
+- issue #92 - FractionDigitsRule counts . to the fraction digits
+
 ## 2.7.0
 From now on there is only one release as the composer.json has been updated in order to match multiple versions thats makes the project working either on 5.3.3 >= PHP >= 5.5.9. Two Phar files will be created using PHP 5 and PHP 7.
 
