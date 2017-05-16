@@ -47,7 +47,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      * Generates structs classes based on structs collected
      * @return GeneratorFiles
      */
-    private function generateStructsClasses()
+    protected function generateStructsClasses()
     {
         foreach ($this->getGenerator()->getStructs() as $struct) {
             if (!$struct->getIsStruct()) {
@@ -61,7 +61,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      * @param StructModel $struct
      * @return StructEnumFile|StructArrayFile|StructFile
      */
-    private function getStructFile(StructModel $struct)
+    protected function getStructFile(StructModel $struct)
     {
         if ($struct->getisRestriction()) {
             $file = new StructEnumFile($this->generator, $struct->getPackagedName());
@@ -76,7 +76,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      * Generates methods by class
      * @return GeneratorFiles
      */
-    private function generateServicesClasses()
+    protected function generateServicesClasses()
     {
         foreach ($this->getGenerator()->getServices() as $service) {
             /**
@@ -91,7 +91,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      * Generates classMap class
      * @return GeneratorFiles
      */
-    private function generateClassMap()
+    protected function generateClassMap()
     {
         $this->getClassmapFile()->write();
         return $this;
@@ -100,7 +100,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      * Generates tutorial file
      * @return GeneratorFiles
      */
-    private function generateTutorialFile()
+    protected function generateTutorialFile()
     {
         if ($this->generator->getOptionGenerateTutorialFile() === true && $this->getClassmapFile() instanceof ClassMapFile) {
             $tutorialFile = new TutorialFile($this->generator, 'tutorial');
@@ -112,7 +112,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      * @throws \InvalidArgumentException
      * @return GeneratorFiles
      */
-    private function generateComposerFile()
+    protected function generateComposerFile()
     {
         if ($this->generator->getOptionStandalone() === true) {
             $composerFile = new ComposerFile($this->generator, 'composer');

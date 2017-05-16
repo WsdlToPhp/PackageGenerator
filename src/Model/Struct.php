@@ -294,7 +294,7 @@ class Struct extends AbstractModel
      * @param StructValueContainer $structValueContainer
      * @return Struct
      */
-    private function setValues(StructValueContainer $structValueContainer)
+    protected function setValues(StructValueContainer $structValueContainer)
     {
         $this->values = $structValueContainer;
         return $this;
