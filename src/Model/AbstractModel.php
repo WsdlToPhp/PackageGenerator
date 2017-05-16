@@ -474,7 +474,6 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Gives the availability for test purpose and multiple package generation to purge unique names
-     * @todo see if it can be removed by reviewing how unique names are generated
      */
     public static function purgeUniqueNames()
     {
@@ -482,7 +481,6 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Gives the availability for test purpose and multiple package generation to purge reserved keywords usage
-     * @todo see if it can be removed by reviewing how reserved keywords are generated
      */
     public static function purgePhpReservedKeywords()
     {
