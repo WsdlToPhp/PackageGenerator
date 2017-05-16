@@ -139,7 +139,7 @@ class StructEnum extends Struct
      */
     public function setModel(AbstractModel $model)
     {
-        if ($model instanceof StructModel && !$model->getIsRestriction()) {
+        if ($model instanceof StructModel && !$model->isRestriction()) {
             throw new \InvalidArgumentException('Model must be a restriction containing values', __LINE__);
         }
         return parent::setModel($model);

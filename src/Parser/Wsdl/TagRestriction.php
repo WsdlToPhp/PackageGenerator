@@ -50,7 +50,7 @@ class TagRestriction extends AbstractTagParser
      * @param Restriction $restriction
      * @return TagRestriction
      */
-    private function parseRestrictionAttributes(Tag $parent, Struct $struct, Restriction $restriction)
+    protected function parseRestrictionAttributes(Tag $parent, Struct $struct, Restriction $restriction)
     {
         if ($restriction->hasAttributes()) {
             foreach ($restriction->getAttributes() as $attribute) {
@@ -65,7 +65,7 @@ class TagRestriction extends AbstractTagParser
      * @param AttributeHandler $attribute
      * @return TagRestriction
      */
-    private function parseRestrictionAttribute(Tag $parent, Struct $struct, AttributeHandler $attribute)
+    protected function parseRestrictionAttribute(Tag $parent, Struct $struct, AttributeHandler $attribute)
     {
         if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
             $struct->setInheritance($attribute->getValue());
@@ -79,7 +79,7 @@ class TagRestriction extends AbstractTagParser
      * @param Restriction $restriction
      * @return TagRestriction
      */
-    private function parseRestrictionChildren(Tag $parent, Restriction $restriction)
+    protected function parseRestrictionChildren(Tag $parent, Restriction $restriction)
     {
         foreach ($restriction->getElementChildren() as $child) {
             if ($child instanceof Tag) {
@@ -93,7 +93,7 @@ class TagRestriction extends AbstractTagParser
      * @param Tag $child
      * @return TagRestriction
      */
-    private function parseRestrictionChild(Tag $tag, Tag $child)
+    protected function parseRestrictionChild(Tag $tag, Tag $child)
     {
         if ($child->hasAttributeValue() && ($model = $this->getModel($tag)) instanceof Struct) {
             $model->addMeta($child->getName(), $child->getValueAttributeValue(true));
@@ -110,7 +110,7 @@ class TagRestriction extends AbstractTagParser
      * @param AttributeHandler $attribute
      * @return TagRestriction
      */
-    private function parseRestrictionChildAttribute(Tag $tag, Tag $child, AttributeHandler $attribute)
+    protected function parseRestrictionChildAttribute(Tag $tag, Tag $child, AttributeHandler $attribute)
     {
         if (strtolower($attribute->getName()) === 'arraytype' && ($model = $this->getModel($tag)) instanceof Struct) {
             $model->setInheritance($attribute->getValue());

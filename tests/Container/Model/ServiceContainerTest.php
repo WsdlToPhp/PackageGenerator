@@ -43,7 +43,7 @@ class ServiceContainerTest extends TestCase
 
         $count = 0;
         foreach ($fooService->getMethods() as $method) {
-            $this->assertFalse($method->getIsUnique());
+            $this->assertFalse($method->isUnique());
             $count++;
         }
         $this->assertSame(2, $count);

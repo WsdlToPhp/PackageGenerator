@@ -31,7 +31,7 @@ class OperationAnnotationBlock extends AbstractOperation
     protected function addOperationMethodDeclaration(PhpAnnotationBlock $annotationBlock)
     {
         $annotationBlock->addChild(sprintf('Method to call the operation originally named %s', $this->getMethod()->getName()));
-        if (!$this->getMethod()->getIsUnique()) {
+        if (!$this->getMethod()->isUnique()) {
             $annotationBlock->addChild('This method has been renamed because it is defined several times but with different signature');
         }
         return $this;

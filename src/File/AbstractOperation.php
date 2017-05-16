@@ -67,7 +67,7 @@ abstract class AbstractOperation
         if (is_array($parameterTypes)) {
             foreach ($parameterTypes as $parameterName => $parameterType) {
                 $type = $methodUsage ? null : self::DEFAULT_TYPE;
-                if (($model = $this->getGenerator()->getStruct($parameterType)) instanceof StructModel && $model->getIsStruct() && !$model->getIsRestriction()) {
+                if (($model = $this->getGenerator()->getStruct($parameterType)) instanceof StructModel && $model->isStruct() && !$model->isRestriction()) {
                     $type = $model->getPackagedName(true);
                 }
                 $types[$parameterName] = $type;

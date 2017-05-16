@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\Service as Model;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 
@@ -39,7 +38,7 @@ class Service extends AbstractModel
             /**
              * Service method exists with a different signature, register it too by identifying the service functions as non unique functions
              */
-            $serviceMethod->setIsUnique(false);
+            $serviceMethod->setUnique(false);
             $this->get($serviceName)->addMethod($methodName, $methodParameter, $methodReturn, false);
         }
         return $this;

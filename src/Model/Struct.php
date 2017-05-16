@@ -54,7 +54,7 @@ class Struct extends AbstractModel
     /**
      * Main constructor
      * @see AbstractModel::__construct()
-     * @uses Struct::setIsStruct()
+     * @uses Struct::setStruct()
      * @param Generator $generator
      * @param string $name the original name
      * @param bool $isStruct defines if it's a real sruct or not
@@ -63,18 +63,18 @@ class Struct extends AbstractModel
     public function __construct(Generator $generator, $name, $isStruct = true, $isRestriction = false)
     {
         parent::__construct($generator, $name);
-        $this->setIsStruct($isStruct)->setIsRestriction($isRestriction)->setAttributes(new StructAttributeContainer($generator))->setValues(new StructValueContainer($generator));
+        $this->setStruct($isStruct)->setRestriction($isRestriction)->setAttributes(new StructAttributeContainer($generator))->setValues(new StructValueContainer($generator));
     }
     /**
      * Returns the contextual part of the class name for the package
      * @see AbstractModel::getContextualPart()
-     * @uses Struct::getIsRestriction()
+     * @uses Struct::isRestriction()
      * @return string
      */
     public function getContextualPart()
     {
         $part = $this->getGenerator()->getOptionStructsFolder();
-        if ($this->getIsRestriction()) {
+        if ($this->isRestriction()) {
             $part = $this->getGenerator()->getOptionEnumsFolder();
         } elseif ($this->isArray()) {
             $part = $this->getGenerator()->getOptionArraysFolder();
@@ -85,13 +85,13 @@ class Struct extends AbstractModel
      * Returns the sub package name which the model belongs to
      * Must be overridden by sub classes
      * @see AbstractModel::getDocSubPackages()
-     * @uses Struct::getIsRestriction()
+     * @uses Struct::isRestriction()
      * @return array
      */
     public function getDocSubPackages()
     {
         $package = self::DOC_SUB_PACKAGE_STRUCTS;
-        if ($this->getIsRestriction()) {
+        if ($this->isRestriction()) {
             $package = self::DOC_SUB_PACKAGE_ENUMERATIONS;
         } elseif ($this->isArray()) {
             $package = self::DOC_SUB_PACKAGE_ARRAYS;
@@ -108,12 +108,12 @@ class Struct extends AbstractModel
      */
     public function isArray()
     {
-        return ((($this->getIsStruct() && $this->countOwnAttributes() === 1) || (!$this->getIsStruct() && $this->countOwnAttributes() <= 1)) && stripos($this->getName(), 'array') !== false);
+        return ((($this->isStruct() && $this->countOwnAttributes() === 1) || (!$this->isStruct() && $this->countOwnAttributes() <= 1)) && stripos($this->getName(), 'array') !== false);
     }
     /**
      * Returns the attributes of the struct and potentially from the parent class
      * @uses AbstractModel::getInheritance()
-     * @uses Struct::getIsStruct()
+     * @uses Struct::isStruct()
      * @uses Struct::getAttributes()
      * @param bool $includeInheritanceAttributes include the attributes of parent class, default parent attributes are not included. If true, then the array is an associative array containing and index "attribute" for the StructAttribute object and an index "model" for the Struct object.
      * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _contrust method with the required attribute at first
@@ -155,7 +155,7 @@ class Struct extends AbstractModel
     protected function addInheritanceAttributes(StructAttributeContainer $attributes)
     {
         if ($this->getInheritance() != '' && ($model = $this->getInheritanceStruct()) instanceof Struct) {
-            while ($model instanceof Struct && $model->getIsStruct()) {
+            while ($model instanceof Struct && $model->isStruct()) {
                 foreach ($model->getAttributes() as $attribute) {
                     $attributes->add($attribute);
                 }
@@ -249,7 +249,7 @@ class Struct extends AbstractModel
      * Returns the isRestriction value
      * @return bool
      */
-    public function getIsRestriction()
+    public function isRestriction()
     {
         return $this->isRestriction;
     }
@@ -258,7 +258,7 @@ class Struct extends AbstractModel
      * @param bool $isRestriction
      * @return Struct
      */
-    public function setIsRestriction($isRestriction = true)
+    public function setRestriction($isRestriction = true)
     {
         $this->isRestriction = $isRestriction;
         return $this;
@@ -267,7 +267,7 @@ class Struct extends AbstractModel
      * Returns the isStruct value
      * @return bool
      */
-    public function getIsStruct()
+    public function isStruct()
     {
         return $this->isStruct;
     }
@@ -276,7 +276,7 @@ class Struct extends AbstractModel
      * @param bool $isStruct
      * @return Struct
      */
-    public function setIsStruct($isStruct = true)
+    public function setStruct($isStruct = true)
     {
         $this->isStruct = $isStruct;
         return $this;
@@ -294,7 +294,7 @@ class Struct extends AbstractModel
      * @param StructValueContainer $structValueContainer
      * @return Struct
      */
-    private function setValues(StructValueContainer $structValueContainer)
+    protected function setValues(StructValueContainer $structValueContainer)
     {
         $this->values = $structValueContainer;
         return $this;
@@ -310,8 +310,8 @@ class Struct extends AbstractModel
     {
         if ($this->getValue($value) === null) {
             $this->values->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
-            $this->setIsRestriction(true);
-            $this->setIsStruct(true);
+            $this->setRestriction(true);
+            $this->setStruct(true);
         }
         return $this;
     }
@@ -336,7 +336,7 @@ class Struct extends AbstractModel
         $extends = '';
         if ($this->isArray()) {
             $extends = $this->getGenerator()->getOptionStructArrayClass();
-        } elseif (!$this->getIsRestriction()) {
+        } elseif (!$this->isRestriction()) {
             $extends = $this->getGenerator()->getOptionStructClass();
         }
         return $short ? Utils::removeNamespace($extends) : $extends;
@@ -373,7 +373,7 @@ class Struct extends AbstractModel
     public function getMeta()
     {
         $inheritanceStruct = $this->getInheritanceStruct();
-        return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->getIsStruct()) ? $inheritanceStruct->getMeta() : array());
+        return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : array());
     }
     /**
      * @param $filename

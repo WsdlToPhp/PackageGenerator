@@ -74,7 +74,7 @@ class Service extends AbstractModel
     }
     /**
      * Adds a method to the service
-     * @uses Method::setIsUnique()
+     * @uses Method::setUnique()
      * @param string $methodName original method name
      * @param string|array $methodParameterType original parameter type/name
      * @param string|array $methodReturnType original return type/name

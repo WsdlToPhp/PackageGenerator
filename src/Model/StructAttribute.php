@@ -204,7 +204,7 @@ class StructAttribute extends AbstractModel
     public function getTypeStructMeta()
     {
         $typeStruct = $this->getTypeStruct();
-        return ($typeStruct && !$typeStruct->getIsStruct()) ? $typeStruct->getMeta() : array();
+        return ($typeStruct && !$typeStruct->isStruct()) ? $typeStruct->getMeta() : array();
     }
     /**
      * @return bool
@@ -212,7 +212,7 @@ class StructAttribute extends AbstractModel
     public function isTypeStructArray()
     {
         $typeStruct = $this->getTypeStruct();
-        return $typeStruct && $typeStruct->isArray() && !$typeStruct->getIsStruct();
+        return $typeStruct && $typeStruct->isArray() && !$typeStruct->isStruct();
     }
     /**
      * @return Struct|null
@@ -227,7 +227,7 @@ class StructAttribute extends AbstractModel
     public function getInheritanceStructMeta()
     {
         $inheritanceStruct = $this->getInheritanceStruct();
-        return ($inheritanceStruct && !$inheritanceStruct->getIsStruct()) ? $inheritanceStruct->getMeta() : array();
+        return ($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : array();
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getMeta()

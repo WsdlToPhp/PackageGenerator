@@ -52,7 +52,7 @@ class TagDocumentationTest extends WsdlParser
         $tagDocumentationParser->parse();
         $ok = false;
         foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->getIsRestriction() === false) {
+            if ($struct instanceof Struct && $struct->isRestriction() === false) {
                 if ($struct->getName() === 'imgRequest') {
                     $this->assertEquals(array(
                         'PRO is deprecated; provided for backward compatibility',
@@ -104,7 +104,7 @@ class TagDocumentationTest extends WsdlParser
         $tagDocumentationParser->parse();
         $ok = false;
         foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
+            if ($struct instanceof Struct && $struct->isRestriction() === true) {
                 if ($struct->getName() === 'PaymentCardCodeType') {
                     $this->assertSame(array(
                         'American Express',
@@ -144,7 +144,7 @@ class TagDocumentationTest extends WsdlParser
         $tagDocumentationParser->parse();
         $ok = false;
         foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->getIsStruct() === false) {
+            if ($struct instanceof Struct && $struct->isStruct() === false) {
                 if ($struct->getName() === 'ID') {
                     $this->assertSame(array(
                         'ID for an object',

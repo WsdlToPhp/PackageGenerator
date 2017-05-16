@@ -76,14 +76,14 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @uses AbstractModel::getInheritedModel()
      * @uses AbstractModel::getPackagedName()
      * @uses AbstractModel::getExtends()
-     * @uses Struct::getIsStruct()
+     * @uses Struct::isStruct()
      * @return string
      */
     public function getExtendsClassName()
     {
         $extends = '';
-        if (($model = $this->getInheritedModel()) instanceof Struct && $model->getIsStruct()) {
-            $extends = $model->getPackagedName($model->getIsRestriction());
+        if (($model = $this->getInheritedModel()) instanceof Struct && $model->isStruct()) {
+            $extends = $model->getPackagedName($model->isRestriction());
         }
         if (empty($extends)) {
             $extends = $this->getExtends(true);
@@ -256,7 +256,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
     /**
      * @return bool
      */
-    public function getIsAbstract()
+    public function isAbstract()
     {
         return $this->isAbstract;
     }
@@ -264,7 +264,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @param bool $isAbstract
      * @return AbstractModel
      */
-    public function setIsAbstract($isAbstract)
+    public function setAbstract($isAbstract)
     {
         $this->isAbstract = $isAbstract;
         return $this;
@@ -474,7 +474,6 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Gives the availability for test purpose and multiple package generation to purge unique names
-     * @todo see if it can be removed by reviewing how unique names are generated
      */
     public static function purgeUniqueNames()
     {
@@ -482,7 +481,6 @@ abstract class AbstractModel extends AbstractGeneratorAware
     }
     /**
      * Gives the availability for test purpose and multiple package generation to purge reserved keywords usage
-     * @todo see if it can be removed by reviewing how reserved keywords are generated
      */
     public static function purgePhpReservedKeywords()
     {

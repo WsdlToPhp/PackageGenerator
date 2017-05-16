@@ -218,7 +218,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function addClassElement()
     {
-        $class = new PhpClass($this->getModel()->getPackagedName(), $this->getModel()->getIsAbstract(), $this->getModel()->getExtendsClassName() === '' ? null : $this->getModel()->getExtendsClassName());
+        $class = new PhpClass($this->getModel()->getPackagedName(), $this->getModel()->isAbstract(), $this->getModel()->getExtendsClassName() === '' ? null : $this->getModel()->getExtendsClassName());
         $this->defineConstants($class)
             ->defineProperties($class)
             ->defineMethods($class)
@@ -386,7 +386,7 @@ abstract class AbstractModelFile extends AbstractFile
     public function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null)
     {
         $model = $this->getModelFromStructAttribute($attribute);
-        if ($model instanceof StructModel && !$model->getIsRestriction()) {
+        if ($model instanceof StructModel && !$model->isRestriction()) {
             $model = null;
         }
         return $model;
@@ -415,9 +415,9 @@ abstract class AbstractModelFile extends AbstractFile
         if ($model instanceof StructModel) {
             // issue #84: union is considered as string as it would be difficult to have a method that accepts multiple object types.
             // If the property has to be an object of multiple types => new issue...
-            if ($model->getIsRestriction() || $model->isUnion()) {
+            if ($model->isRestriction() || $model->isUnion()) {
                 $type = self::TYPE_STRING;
-            } elseif ($model->getIsStruct()) {
+            } elseif ($model->isStruct()) {
                 $type = $model->getPackagedName($namespaced);
             } elseif ($model->isArray() && ($inheritanceStruct = $model->getInheritanceStruct()) instanceof StructModel) {
                 $type = $inheritanceStruct->getPackagedName($namespaced);

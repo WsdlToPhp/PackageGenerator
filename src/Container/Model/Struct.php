@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\Struct as Model;
 
 class Struct extends AbstractModel
