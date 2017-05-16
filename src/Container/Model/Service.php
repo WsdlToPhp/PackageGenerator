@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\Service as Model;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 
