@@ -34,7 +34,7 @@ class TagEnumerationTest extends WsdlParser
 
         $count = 0;
         foreach ($tagEnumerationParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
+            if ($struct instanceof Struct && $struct->isRestriction() === true) {
                 if ($struct->getName() === 'AdultOption') {
                     $values = new StructValueContainer($tagEnumerationParser->getGenerator());
                     $values->add(new StructValue($tagEnumerationParser->getGenerator(), 'Off', 0, $struct));
@@ -68,7 +68,7 @@ class TagEnumerationTest extends WsdlParser
 
         $count = 0;
         foreach ($tagEnumerationParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->getIsRestriction() === true) {
+            if ($struct instanceof Struct && $struct->isRestriction() === true) {
                 if ($struct->getName() === 'HouseStateEnum') {
                     $values = new StructValueContainer($tagEnumerationParser->getGenerator());
                     $one = new StructValue($tagEnumerationParser->getGenerator(), '1', 0, $struct);

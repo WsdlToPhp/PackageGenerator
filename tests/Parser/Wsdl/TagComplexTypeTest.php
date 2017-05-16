@@ -41,8 +41,8 @@ class TagComplexTypeTest extends WsdlParser
         $ok = false;
         $structs = $tagComplexTypeParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
-            $this->assertTrue($structs->getStructByName('AbstractRequestType')->getIsAbstract());
-            $this->assertTrue($structs->getStructByName('AbstractResponseType')->getIsAbstract());
+            $this->assertTrue($structs->getStructByName('AbstractRequestType')->isAbstract());
+            $this->assertTrue($structs->getStructByName('AbstractResponseType')->isAbstract());
             $ok = true;
         }
         $this->assertTrue((bool) $ok);

@@ -39,7 +39,7 @@ class TagRestrictionTest extends WsdlParser
 
         $count = 0;
         foreach ($tagRestrictionParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->getIsRestriction() === false) {
+            if ($struct instanceof Struct && $struct->isRestriction() === false) {
                 if ($struct->getName() === 'EchoRequestType') {
                     $this->assertSame('string', $struct->getInheritance());
                     $this->assertEquals(array('maxLength' => '100'), $struct->getMeta());
@@ -66,7 +66,7 @@ class TagRestrictionTest extends WsdlParser
         foreach ($tagRestrictionParser->getGenerator()->getStructs() as $struct) {
             if ($struct instanceof Struct) {
                 if ($struct->getName() === 'ID') {
-                    $this->assertFalse($struct->getIsStruct());
+                    $this->assertFalse($struct->isStruct());
                     $ok = true;
                 }
             }
@@ -87,7 +87,7 @@ class TagRestrictionTest extends WsdlParser
             if ($struct instanceof Struct) {
                 switch ($struct->getName()) {
                     case 'plainDateTime':
-                        if (!$struct->getIsStruct()) {
+                        if (!$struct->isStruct()) {
                             $this->assertSame('19', $struct->getMetaValue('minLength'));
                             $this->assertSame('19', $struct->getMetaValue('maxLength'));
                             $this->assertSame('normalizedString', $struct->getInheritance());
@@ -95,7 +95,7 @@ class TagRestrictionTest extends WsdlParser
                         }
                         break;
                     case 'emailAddress':
-                        if (!$struct->getIsStruct()) {
+                        if (!$struct->isStruct()) {
                             $this->assertSame('[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)', $struct->getMetaValue('pattern'));
                             $this->assertSame('string100', $struct->getInheritance());
                             $count++;

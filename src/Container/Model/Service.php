@@ -38,7 +38,7 @@ class Service extends AbstractModel
             /**
              * Service method exists with a different signature, register it too by identifying the service functions as non unique functions
              */
-            $serviceMethod->setIsUnique(false);
+            $serviceMethod->setUnique(false);
             $this->get($serviceName)->addMethod($methodName, $methodParameter, $methodReturn, false);
         }
         return $this;

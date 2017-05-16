@@ -223,7 +223,7 @@ class Tutorial extends AbstractFile
     {
         $parameter = sprintf('%1$s%2$s', (empty($parameterType) && empty($parameterName)) ? '' : '$', empty($parameterName) ? $parameterType : $parameterName);
         $model = $parameterType !== null ? $this->getGenerator()->getStruct($parameterType) : null;
-        if ($model instanceof StructModel && $model->getIsStruct() && !$model->getIsRestriction()) {
+        if ($model instanceof StructModel && $model->isStruct() && !$model->isRestriction()) {
             $parameter = sprintf('new %s()', $model->getPackagedName(true));
         }
         return $parameter;

@@ -13,7 +13,7 @@ class StructValueTest extends TestCase
     public function testGetValue()
     {
         $struct = StructTest::instance('Foot', true);
-        $struct->setIsRestriction(true);
+        $struct->setRestriction(true);
         $struct->addValue(1);
         $struct->addValue('Bar');
         $struct->addValue('5.3');
@@ -47,7 +47,7 @@ class StructValueTest extends TestCase
     public function testGetCleanName()
     {
         $struct = StructTest::instance('Foo', true);
-        $struct->setIsRestriction(true);
+        $struct->setRestriction(true);
         $struct->addValue(1);
         $struct->addValue('Bar');
         $struct->addValue('5.3');

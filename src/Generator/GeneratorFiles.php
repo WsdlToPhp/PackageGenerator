@@ -50,7 +50,7 @@ class GeneratorFiles extends AbstractGeneratorAware
     protected function generateStructsClasses()
     {
         foreach ($this->getGenerator()->getStructs() as $struct) {
-            if (!$struct->getIsStruct()) {
+            if (!$struct->isStruct()) {
                 continue;
             }
             $this->getStructFile($struct)->setModel($struct)->write();
@@ -63,7 +63,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      */
     protected function getStructFile(StructModel $struct)
     {
-        if ($struct->getisRestriction()) {
+        if ($struct->isRestriction()) {
             $file = new StructEnumFile($this->generator, $struct->getPackagedName());
         } elseif ($struct->isArray()) {
             $file = new StructArrayFile($this->generator, $struct->getPackagedName());
