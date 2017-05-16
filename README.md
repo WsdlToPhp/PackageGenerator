@@ -1,12 +1,21 @@
 # WsdlToPhp Package Generator
 [![License](https://poser.pugx.org/wsdltophp/packagegenerator/license)](https://packagist.org/packages/wsdltophp/packagegenerator)
+
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/packagegenerator/version.png)](https://packagist.org/packages/wsdltophp/packagegenerator)
+
 [![Build Status](https://api.travis-ci.org/WsdlToPhp/PackageGenerator.svg)](https://travis-ci.org/WsdlToPhp/PackageGenerator)
+
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/quality-score.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
+
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
+
 [![Total Downloads](https://poser.pugx.org/wsdltophp/packagegenerator/downloads)](https://packagist.org/packages/wsdltophp/packagegenerator)
+
 [![Dependency Status](https://www.versioneye.com/user/projects/5723acf3ba37ce00350af896/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5723acf3ba37ce00350af896)
+
 [![StyleCI](https://styleci.io/repos/35660532/shield)](https://styleci.io/repos/35660532)
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/3e01dc26-8132-4bf8-987b-c9d6c8791b2f/mini.png)](https://insight.sensiolabs.com/projects/3e01dc26-8132-4bf8-987b-c9d6c8791b2f)
 
 Package Generator eases the creation of a PHP package in order to call any SOAP oriented Web Service.
 
