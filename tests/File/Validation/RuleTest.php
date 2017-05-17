@@ -11,7 +11,7 @@ use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 abstract class RuleTest extends TestCase
 {
-    protected function createRuleFunction($ruleClassName, $value, $itemType = false)
+    protected function createRuleFunction($ruleClassName, $value, $itemType = false, $structAttributeType = 'string')
     {
         $generator = self::getBingGeneratorInstance();
         $methodName = '_any_' . md5(rand(0, time()));
@@ -20,7 +20,7 @@ abstract class RuleTest extends TestCase
         ));
         $structFile = new StructFile($generator, 'any');
         $structModel = new StructModel($generator, 'any');
-        $structAttribute = new StructAttribute($generator, 'any', 'string', $structModel);
+        $structAttribute = new StructAttribute($generator, 'any', $structAttributeType, $structModel);
         $rule = new $ruleClassName(new Rules($structFile, $method, $structAttribute));
         $rule->applyRule('any', $value, $itemType);
         $method->addChild('return true;');
