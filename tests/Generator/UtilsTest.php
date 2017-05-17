@@ -164,6 +164,13 @@ class UtilsTest extends TestCase
     /**
      *
      */
+    public function testGetEndPartStringBeginingWithMultipleIntAndOnlyCaps()
+    {
+        $this->assertSame('MO', Utils::getPart(GeneratorOptions::VALUE_END, '1234567890MO'));
+    }
+    /**
+     *
+     */
     public function testGetEndPartStringEndingWithInt()
     {
         $this->assertSame('Operation', Utils::getPart(GeneratorOptions::VALUE_END, 'MyOperation0'));
