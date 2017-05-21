@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.7.2
+- Improve unit tests for file validation rules, add SensioLabs Insight badge, improve generated validation rule exception message
+
 ## 2.7.1
 - issue #92 - FractionDigitsRule counts . to the fraction digits
 

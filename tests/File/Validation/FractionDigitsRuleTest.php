@@ -44,4 +44,12 @@ class FractionDigitsRuleTest extends RuleTest
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
         $this->assertTrue(call_user_func($funtionName, 2.5152));
     }
+    /**
+     *
+     */
+    public function testApplyRuleForNull()
+    {
+        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
+        $this->assertTrue(call_user_func($funtionName, null));
+    }
 }
