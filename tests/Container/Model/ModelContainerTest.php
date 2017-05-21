@@ -23,6 +23,7 @@ class ModelContainerTest extends TestCase
     {
         $modelContainer = self::instance();
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
+        $this->assertInstanceOf('WsdlToPhp\PackageGenerator\Model\EmptyModel', $modelContainer->get('Foo'));
     }
     /**
      * @expectedException InvalidArgumentException
