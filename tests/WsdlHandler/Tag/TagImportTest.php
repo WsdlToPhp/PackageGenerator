@@ -13,13 +13,13 @@ class TagImportTest extends TestCase
      */
     public function testGetLocationAttribute()
     {
-        $wsdl = WsdlTest::partnerInstance(false);
+        $wsdl = WsdlTest::partnerInstance(true);
 
         $imports = $wsdl->getContent()->getElementsByName(Wsdl::TAG_IMPORT);
 
         $count = 0;
         foreach ($imports as $index => $import) {
-            $this->assertSame(sprintf('http://secapp.euroconsumers.org/partnerservice/PartnerService.svc?xsd=xsd%d', $index), $import->getLocationAttribute());
+            $this->assertSame(sprintf('PartnerService.%d.xsd', $index), $import->getLocationAttribute());
             $count++;
         }
         $this->assertSame(19, $count);
