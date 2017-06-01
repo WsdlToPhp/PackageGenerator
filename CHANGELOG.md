@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.7.3
+- issue #93 - Improve ArrayType::set* method annotations
+
 ## 2.7.2
 - Improve unit tests for file validation rules, add SensioLabs Insight badge, improve generated validation rule exception message
 
