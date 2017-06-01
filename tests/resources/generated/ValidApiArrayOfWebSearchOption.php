@@ -40,6 +40,8 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     }
     /**
      * Set WebSearchOption value
+     * @uses \Api\EnumType\ApiWebSearchOption::valueIsValid()
+     * @uses \Api\EnumType\ApiWebSearchOption::getValidValues()
      * @throws \InvalidArgumentException
      * @param string[] $webSearchOption
      * @return \Api\ArrayType\ApiArrayOfWebSearchOption

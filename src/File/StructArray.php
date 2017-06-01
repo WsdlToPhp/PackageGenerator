@@ -224,12 +224,6 @@ class StructArray extends Struct
     protected function getStructMethodAnnotationBlock(PhpMethod $method)
     {
         switch ($method->getName()) {
-            case self::METHOD_CONSTRUCT:
-                $annotationBlock = $this->getStructMethodConstructAnnotationBlock();
-                break;
-            case self::METHOD_SET_STATE:
-                $annotationBlock = $this->getStructMethodSetStateAnnotationBlock();
-                break;
             case self::METHOD_GET_ATTRIBUTE_NAME:
                 $annotationBlock = $this->getArrayMethodGetAttributeNameAnnotationBlock();
                 break;
