@@ -46,6 +46,11 @@
         "wsdltophp/packagebase": "^1.0",
         "wsdltophp/domhandler": "^1.0"
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "lint": "vendor/bin/php-cs-fixer fix",
+        "build": "box build --verbose"
+    },
     "require-dev": {
         "phpunit/phpunit": "^4.8 || ^6.0",
         "friendsofphp/php-cs-fixer": "^2.0"
