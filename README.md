@@ -19,12 +19,13 @@ Package Generator provides many options even if a few are required to generate y
 
 # Installation
 
-In a project:
+#### In a project:
+
 ```bash
 composer require wsdltophp/packagegenerator
 ```
 
-With command line:
+#### With command line:
 
 __For PHP5__
 ```bash
@@ -41,6 +42,27 @@ $ mv wsdltophp-php7.phar /usr/local/bin/wsdltophp
 ```
 
 # Usage
+
+There is two ways to generate your package (apart from being in a project and generating it through the command line):
+
+- **standalone** (*default behaviour*): this means the package is generated as an independent project with its own `composer.json` file. At the end of the generation, the root directory where the package has been generated will contain the `composer.json`, the `composer.lock` file and the `vendor` directory.
+- **not standalone**: this means the package is generated as a part of an existing project using its own `composer.json` file. In this case
+
+#### In a project:
+```php
+// Options definition: the configuration file parameter is optional
+$options = GeneratorOptions::instance(/* '/path/file.yml' */);
+$options
+    ->setOrigin('http://developer.ebay.com/webservices/latest/ebaySvc.wsdl')
+    ->setDestination('./MySdk')
+    ->setComposerName('myproject/mysdk');
+// Generator instanciation
+$generator = new Generator($options);
+// Package generation
+$generator->generatePackage();
+```
+
+#### With command line:
 The command line is:
 ```bash
 $ wsdltophp generate:package \
@@ -64,9 +86,12 @@ $ phpunit --testsuite=model
 # Contributing
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
+# Credits
+Developers who helped on this project are listed in the [composer.json](https://github.com/WsdlToPhp/PackageGenerator/blob/develop/composer.json#L8) file as `Contributor` and are:
+- [Gemorroj](https://github.com/Gemorroj)
+- [ceeram](https://github.com/ceeram)
+- [GroxExMachine](https://github.com/GroxExMachine)
+- [Jan Zaeske](https://github.com/jzaeske)
 
-## Warning about the generated classes and their property usage
-Every generated classes which represent a Struct element that has to be sent or received have their property defined as public. Nevertheless you **SHOULD** always use the generated setters and getters in order to ensure the good behavior of the objects you create.
-Following the fixed issue [#48](https://github.com/WsdlToPhp/PackageGenerator/issues/48), it has been decided to unset `nillable` and non required (`minOccurs`=0) properties from the object as soon as the value assigned to the property is null. To handle this particularities:
-- the setter takes care of unsetting the property if the value passed as parameter to this method is `null`,
-- the getter ensure that no PHP notice (`Undefined property`) is fired when we try to access the property, `null` is then returned.
+# License
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
