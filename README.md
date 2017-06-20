@@ -97,7 +97,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 Developers who helped on this project are listed in the [composer.json](https://github.com/WsdlToPhp/PackageGenerator/blob/develop/composer.json#L8) file as `Contributor` and are:
 - [Gemorroj](https://github.com/Gemorroj)
 - [ceeram](https://github.com/ceeram)
-- [GroxExMachine](https://github.com/GroxExMachine)
+- [Georgiy Oganisyan](https://github.com/GroxExMachine)
 - [Jan Zaeske](https://github.com/jzaeske)
 
 ## FAQ
