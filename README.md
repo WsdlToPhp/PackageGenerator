@@ -13,9 +13,9 @@
 [![StyleCI](https://styleci.io/repos/35660532/shield)](https://styleci.io/repos/35660532)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/661a53c4-3f4a-4a17-a4b2-051282019c87/mini.png)](https://insight.sensiolabs.com/projects/661a53c4-3f4a-4a17-a4b2-051282019c87)
 
-Package Generator generates a PHP SDK from any WSDL so you can easily consume any SOAP Web Service wihtout wondering that SOAP is used under the hood.
+Package Generator generates a PHP SDK from any WSDL so you can easily consume any SOAP Web Service without wondering that SOAP is used under the hood.
 
-Package Generator provides many options even if a few are required to generate your package. This project has been tested with many WSDL and is currently used on the platform [Providr.IO](https://providr.io).
+Package Generator provides many options to generate your package even if a few are required. This project has been tested with many WSDL and is currently used on the platform [Providr.IO](https://providr.io).
 
 # Installation
 
@@ -46,7 +46,7 @@ $ mv wsdltophp-php7.phar /usr/local/bin/wsdltophp
 There is two ways to generate your package (apart from being in a project and generating it through the command line):
 
 - **standalone** (*default behaviour*): this means the package is generated as an independent project with its own `composer.json` file. At the end of the generation, the root directory where the package has been generated will contain the `composer.json`, the `composer.lock` file and the `vendor` directory.
-- **not standalone**: this means the package is generated as a part of an existing project using its own `composer.json` file. In this case
+- **not standalone**: this means the package is generated as part of an existing project using its own `composer.json` file.
 
 #### In a project:
 ```php
@@ -92,6 +92,11 @@ Developers who helped on this project are listed in the [composer.json](https://
 - [ceeram](https://github.com/ceeram)
 - [GroxExMachine](https://github.com/GroxExMachine)
 - [Jan Zaeske](https://github.com/jzaeske)
+
+# FAQ
+If you have any question, please read the [FAQ](https://github.com/WsdlToPhp/PackageGenerator/wiki/FAQ) first.
+
+Then if you still have a question, please [create an issue](https://github.com/WsdlToPhp/PackageGenerator/issues/new).
 
 # License
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
