@@ -13,11 +13,11 @@
 [![StyleCI](https://styleci.io/repos/35660532/shield)](https://styleci.io/repos/35660532)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/661a53c4-3f4a-4a17-a4b2-051282019c87/mini.png)](https://insight.sensiolabs.com/projects/661a53c4-3f4a-4a17-a4b2-051282019c87)
 
-Package Generator generates a PHP SDK from any WSDL so you can easily consume any SOAP Web Service without wondering that SOAP is used under the hood.
+Package Generator generates a PHP SDK from any WSDL so you can easily consume any SOAP Web Service without wondering how SOAP is used under the hood.
 
 Package Generator provides many options to generate your package even if a few are required. This project has been tested with many WSDL and is currently used on the platform [Providr.IO](https://providr.io).
 
-# Installation
+## Installation
 
 #### In a project:
 
@@ -27,21 +27,23 @@ composer require wsdltophp/packagegenerator
 
 #### With command line:
 
-__For PHP5__
+##### For PHP5
+
 ```bash
 $ wget https://phar.wsdltophp.com/wsdltophp-php5.phar
 $ chmod +x wsdltophp-php5.phar
 $ mv wsdltophp-php5.phar /usr/local/bin/wsdltophp
 ```
 
-__For PHP7__
+##### For PHP7
+
 ```bash
 $ wget https://phar.wsdltophp.com/wsdltophp-php7.phar
 $ chmod +x wsdltophp-php7.phar
 $ mv wsdltophp-php7.phar /usr/local/bin/wsdltophp
 ```
 
-# Usage
+## Usage
 
 There is two ways to generate your package (apart from being in a project and generating it through the command line):
 
@@ -49,6 +51,7 @@ There is two ways to generate your package (apart from being in a project and ge
 - **not standalone**: this means the package is generated as part of an existing project using its own `composer.json` file.
 
 #### In a project:
+
 ```php
 // Options definition: the configuration file parameter is optional
 $options = GeneratorOptions::instance(/* '/path/file.yml' */);
@@ -63,6 +66,7 @@ $generator->generatePackage();
 ```
 
 #### With command line:
+
 The command line is:
 ```bash
 $ wsdltophp generate:package \
@@ -74,29 +78,34 @@ $ wsdltophp generate:package \
 
 _In order to see all the used options, just remove the `--force` argument._
 
-# Testing
+## Testing
+
 ```bash
-# launch all tests
+## launch all tests
 $ phpunit
 
 # launch a testsuite: command, configuration, utils, wsdlhandler, model, container, parser, file, packagegenerator
 $ phpunit --testsuite=model
 ```
 
-# Contributing
+## Contributing
+
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-# Credits
+## Credits
+
 Developers who helped on this project are listed in the [composer.json](https://github.com/WsdlToPhp/PackageGenerator/blob/develop/composer.json#L8) file as `Contributor` and are:
 - [Gemorroj](https://github.com/Gemorroj)
 - [ceeram](https://github.com/ceeram)
 - [GroxExMachine](https://github.com/GroxExMachine)
 - [Jan Zaeske](https://github.com/jzaeske)
 
-# FAQ
+## FAQ
+
 If you have any question, please read the [FAQ](https://github.com/WsdlToPhp/PackageGenerator/wiki/FAQ) first.
 
 Then if you still have a question, please [create an issue](https://github.com/WsdlToPhp/PackageGenerator/issues/new).
 
-# License
+## License
+
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
