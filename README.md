@@ -85,7 +85,7 @@ _In order to see all the used options, just remove the `--force` argument._
 ## Testing
 
 ```bash
-## launch all tests
+# launch all tests
 $ phpunit
 
 # launch a testsuite: command, configuration, utils, wsdlhandler, model, container, parser, file, packagegenerator
