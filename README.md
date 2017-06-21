@@ -106,9 +106,11 @@ Developers who helped on this project are listed in the [composer.json](/WsdlToP
 
 ## FAQ
 
-If you have any question, please read the [FAQ](/WsdlToPhp/PackageGenerator/wiki/FAQ) first.
+If you have any question, please read the [Options page](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options) about the avaiable options to generate the package.
 
-Then if you still have a question, please [create an issue](/WsdlToPhp/PackageGenerator/issues/new).
+There is also a [FAQ](https://github.com/WsdlToPhp/PackageGenerator/wiki/FAQ) that contains miscellaneous questions about the package generation and its usage.
+
+Then if you still have a question, feel free to [create an issue](https://github.com/WsdlToPhp/PackageGenerator/issues/new).
 
 ## License
 
