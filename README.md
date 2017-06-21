@@ -106,7 +106,7 @@ Developers who helped on this project are listed in the [composer.json](/WsdlToP
 
 ## FAQ
 
-If you have any question, please read the [Options page](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options) about the avaiable options to generate the package.
+If you have any question, please read the [Options page](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options) about the available options to generate the package.
 
 There is also a [FAQ](https://github.com/WsdlToPhp/PackageGenerator/wiki/FAQ) that contains miscellaneous questions about the package generation and its usage.
 
