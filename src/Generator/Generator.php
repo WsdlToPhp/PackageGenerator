@@ -594,7 +594,7 @@ class Generator
     {
         $destination = $this->options->getDestination();
         if (!empty($destination)) {
-            $destination = realpath($this->options->getDestination()) . DIRECTORY_SEPARATOR;
+            $destination = rtrim($destination, DIRECTORY_SEPARATOR). DIRECTORY_SEPARATOR;
         }
         return $destination;
     }
@@ -606,7 +606,7 @@ class Generator
     public function setOptionDestination($optionDestination)
     {
         if (!empty($optionDestination)) {
-            $this->options->setDestination(realpath($optionDestination) . DIRECTORY_SEPARATOR);
+            $this->options->setDestination(rtrim($optionDestination, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR);
         } else {
             throw new \InvalidArgumentException('Package\'s destination can\'t be empty', __LINE__);
         }
