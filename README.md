@@ -50,6 +50,10 @@ There is two ways to generate your package (apart from being in a project and ge
 - **standalone** (*default behaviour*): this means the package is generated as an independent project with its own `composer.json` file. At the end of the generation, the root directory where the package has been generated will contain the `composer.json`, the `composer.lock` file and the `vendor` directory.
 - **not standalone**: this means the package is generated as part of an existing project using its own `composer.json` file.
 
+The `standalone` option is fully detailed in the [Standalone section](/WsdlToPhp/PackageGenerator/wiki/Options#standalone).
+
+All the options are fully detailed in the [Options page](/WsdlToPhp/PackageGenerator/wiki/Options).
+
 #### In a project:
 
 ```php
@@ -94,17 +98,17 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-Developers who helped on this project are listed in the [composer.json](https://github.com/WsdlToPhp/PackageGenerator/blob/develop/composer.json#L8) file as `Contributor` and are:
-- [Gemorroj](https://github.com/Gemorroj)
-- [ceeram](https://github.com/ceeram)
-- [Georgiy Oganisyan](https://github.com/GroxExMachine)
-- [Jan Zaeske](https://github.com/jzaeske)
+Developers who helped on this project are listed in the [composer.json](/WsdlToPhp/PackageGenerator/blob/develop/composer.json#L8) file as `Contributor` and are:
+- [Gemorroj](/Gemorroj)
+- [ceeram](/ceeram)
+- [Georgiy Oganisyan](/GroxExMachine)
+- [Jan Zaeske](/jzaeske)
 
 ## FAQ
 
-If you have any question, please read the [FAQ](https://github.com/WsdlToPhp/PackageGenerator/wiki/FAQ) first.
+If you have any question, please read the [FAQ](/WsdlToPhp/PackageGenerator/wiki/FAQ) first.
 
-Then if you still have a question, please [create an issue](https://github.com/WsdlToPhp/PackageGenerator/issues/new).
+Then if you still have a question, please [create an issue](/WsdlToPhp/PackageGenerator/issues/new).
 
 ## License
 
