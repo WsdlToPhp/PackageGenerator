@@ -264,6 +264,15 @@ class Struct extends AbstractModel
         return $this;
     }
     /**
+     * Alias to setRestriction
+     * @param bool $isRestriction
+     * @return Struct
+     */
+    public function setIsRestriction($isRestriction = true)
+    {
+        return $this->setRestriction($isRestriction);
+    }
+    /**
      * Returns the isStruct value
      * @return bool
      */
@@ -280,6 +289,15 @@ class Struct extends AbstractModel
     {
         $this->isStruct = $isStruct;
         return $this;
+    }
+    /**
+     * Alias to setStruct
+     * @param bool $isStruct
+     * @return Struct
+     */
+    public function setIsStruct($isStruct = true)
+    {
+        return $this->setStruct($isStruct);
     }
     /**
      * Returns the values for an enumeration
@@ -409,5 +427,37 @@ class Struct extends AbstractModel
     {
         $this->types = $types;
         return $this;
+    }
+    /**
+     * {@inheritDoc}
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
+     */
+    protected function toJsonSerialize()
+    {
+        return array(
+            'attributes' => $this->attributes,
+            'isRestriction' => $this->isRestriction,
+            'isStruct' => $this->isStruct,
+            'types' => $this->types,
+            'values' => $this->values,
+        );
+    }
+    /**
+     * @param array $attributes
+     */
+    public function setAttributesFromSerializedJson(array $attributes)
+    {
+        foreach ($attributes as $attribute) {
+            $this->attributes->add(self::instanceFromSerializedJson($this->generator, $attribute)->setOwner($this));
+        }
+    }
+    /**
+     * @param array $values
+     */
+    public function setValuesFromSerializedJson(array $values)
+    {
+        foreach ($values as $value) {
+            $this->values->add(self::instanceFromSerializedJson($this->generator, $value)->setOwner($this));
+        }
     }
 }
