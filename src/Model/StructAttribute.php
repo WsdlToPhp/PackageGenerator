@@ -51,11 +51,12 @@ class StructAttribute extends AbstractModel
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
      * @uses StructAttribute::getOwner()
+     * @param string $additionnalContext
      * @return string
      */
-    public function getUniqueName()
+    public function getUniqueName($additionnalContext = '')
     {
-        return self::uniqueName($this->getCleanName(), $this->getOwner()->getName());
+        return self::uniqueName($this->getCleanName(), $this->getOwner()->getName() . $additionnalContext);
     }
     /**
      * Returns the getter name for this attribute
@@ -64,7 +65,7 @@ class StructAttribute extends AbstractModel
      */
     public function getGetterName()
     {
-        return $this->replaceReservedMethod(sprintf('get%s', ucfirst(self::getUniqueName())), $this->getOwner()->getPackagedName());
+        return $this->replaceReservedMethod(sprintf('get%s', ucfirst(self::getUniqueName('get'))), $this->getOwner()->getPackagedName());
     }
     /**
      * Returns the getter name for this attribute
@@ -73,7 +74,7 @@ class StructAttribute extends AbstractModel
      */
     public function getSetterName()
     {
-        return $this->replaceReservedMethod(sprintf('set%s', ucfirst(self::getUniqueName())), $this->getOwner()->getPackagedName());
+        return $this->replaceReservedMethod(sprintf('set%s', ucfirst(self::getUniqueName('set'))), $this->getOwner()->getPackagedName());
     }
     /**
      * Returns the type value
