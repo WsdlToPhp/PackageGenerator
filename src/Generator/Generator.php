@@ -176,7 +176,15 @@ class Generator implements \JsonSerializable
      */
     public function generatePackage()
     {
-        return $this->doSanityChecks()->initDirectory()->doParse()->doGenerate();
+        return $this->parse()->doGenerate();
+    }
+    /**
+     * Only parses what has to be parsed, called before actually generating the package
+     * @return Generator
+     */
+    public function parse()
+    {
+        return $this->doSanityChecks()->initDirectory()->doParse();
     }
     /**
      * Gets the struct by its name
