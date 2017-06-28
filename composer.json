@@ -37,7 +37,7 @@
         "email" : "contact@wsdltophp.com"
     },
     "require": {
-        "php" : ">=5.3.3 || >=5.5.9",
+        "php" : ">=5.4.0 || >=5.5.9",
         "ext-soap": "*",
         "symfony/console": "^2.8 || ^3.0",
         "symfony/yaml": "^2.8 || ^3.0",
