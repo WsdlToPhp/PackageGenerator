@@ -6,6 +6,6 @@ class ObjectTest
 {
     public function getName()
     {
-        return array();
+        return 'me';
     }
 }

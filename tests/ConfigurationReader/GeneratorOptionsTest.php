@@ -664,4 +664,41 @@ class GeneratorOptionsTest extends TestCase
             'services_folder' => 'ServiceType',
         ), self::optionsInstance()->toArray());
     }
+    /**
+     *
+     */
+    public function testJsonSerialize()
+    {
+        $this->assertSame(array(
+            'category' => 'cat',
+            'gather_methods' => 'start',
+            'generic_constants_names' => false,
+            'generate_tutorial_file' => true,
+            'add_comments' => array(),
+            'namespace_prefix' => '',
+            'standalone' => true,
+            'validation' => true,
+            'struct_class' => '\WsdlToPhp\PackageBase\AbstractStructBase',
+            'struct_array_class' => '\WsdlToPhp\PackageBase\AbstractStructArrayBase',
+            'soap_client_class' => '\WsdlToPhp\PackageBase\AbstractSoapClientBase',
+            'origin' => '',
+            'destination' => '',
+            'src_dirname' => 'src',
+            'prefix' => '',
+            'suffix' => '',
+            'basic_login' => '',
+            'basic_password' => '',
+            'proxy_host' => '',
+            'proxy_port' => '',
+            'proxy_login' => '',
+            'proxy_password' => '',
+            'soap_options' => array(),
+            'composer_name' => '',
+            'composer_settings' => array(),
+            'structs_folder' => 'StructType',
+            'arrays_folder' => 'ArrayType',
+            'enums_folder' => 'EnumType',
+            'services_folder' => 'ServiceType',
+        ), self::optionsInstance()->jsonSerialize());
+    }
 }

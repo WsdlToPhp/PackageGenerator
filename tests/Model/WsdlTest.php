@@ -122,4 +122,17 @@ class WsdlTest extends TestCase
     {
         return self::getSchema(__DIR__ . '/../resources/numeric_enumeration.xml');
     }
+    /**
+     *
+     */
+    public function testJsonSerialize()
+    {
+        $this->assertSame(array(
+            'inheritance' => '',
+            'isAbstract' => false,
+            'meta' => array(),
+            'name' => self::wsdlBingPath(),
+            '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\Wsdl',
+        ), self::getWsdl(self::wsdlBingPath())->jsonSerialize());
+    }
 }
