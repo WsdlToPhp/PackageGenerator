@@ -270,15 +270,6 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
         return $this;
     }
     /**
-     * Alias to setAbstract
-     * @param bool $isAbstract
-     * @return AbstractModel
-     */
-    public function setIsAbstract($isAbstract)
-    {
-        return $this->setAbstract($isAbstract);
-    }
-    /**
      * Returns true if the original name is safe to use as a PHP property, variable name or class name
      * @uses AbstractModel::getName()
      * @uses AbstractModel::getCleanName()
@@ -508,7 +499,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
     {
         return array_merge($this->toJsonSerialize(), array(
             'inheritance' => $this->inheritance,
-            'isAbstract' => $this->isAbstract,
+            'abstract' => $this->isAbstract,
             'meta' => $this->meta,
             'name' => $this->name,
             '__CLASS__' => get_called_class(),

@@ -11,7 +11,7 @@
                         },
                         "returnType": "GetQueueUrlResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The GetQueueUrl action takes the name of a queue and returns its URL."
@@ -28,7 +28,7 @@
                         },
                         "returnType": "GetQueueAttributesResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Gets one or all attributes of a queue. Available attributes are [ApproximateNumberOfMessages, ApproximateNumberOfMessagesNotVisible, VisibilityTimeout, CreatedTimestamp, LastModifiedTimestamp, Policy, MaximumMessageSize, MessageRetentionPeriod, QueueArn, DelaySeconds, ApproximateNumberOfMessagesDelayed, ReceiveMessageWaitTimeSeconds, RedrivePolicy]."
@@ -39,7 +39,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Get",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -54,7 +54,7 @@
                         },
                         "returnType": "CreateQueueResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The CreateQueue action creates a new queue, or returns the URL of an existing one. When you request CreateQueue, you provide a name for the queue. To successfully create a new queue, you must provide a name that is unique within the scope of your own queues. If you provide the name of an existing queue, a new queue isn't created and an error isn't returned. Instead, the request succeeds and the queue URL for the existing queue is returned. A CreateQueue call may include attributes to set on a newly created queue. The effect is the same as the CreateQueue call followed by a SetQueueAttributes call (with the same attributes). However, when the queue already exists CreateQueue will not update any attributes. It simply compares the attribute values provided with the current settings on the existing queue, and returns the queue URL if the values match. Otherwise, it responds with an error otherwise. SetQueueAttributes should be used to change the values of attributes for an existing queue."
@@ -65,7 +65,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Create",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -80,7 +80,7 @@
                         },
                         "returnType": "ListQueuesResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ListQueues action returns a list of your queues."
@@ -97,7 +97,7 @@
                         },
                         "returnType": "ListDeadLetterSourceQueuesResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Given a queue list the queues that are configured to use that queue as a Dead Letter Queue."
@@ -108,7 +108,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "List",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -123,7 +123,7 @@
                         },
                         "returnType": "AddPermissionResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Adds the specified permission(s) to a queue for the specified principal(s). This allows for sharing access to the queue."
@@ -134,7 +134,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Add",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -149,7 +149,7 @@
                         },
                         "returnType": "ChangeMessageVisibilityResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ChangeMessageVisibility action resets the visibility timeout for the specified receipt handle to the specified value. The message identified by ReceiptHandle should become visible approximately VisibilityTimeout seconds after successful completion of this action, unless DeleteMessage or ChangeMessageVisibility is called first."
@@ -166,7 +166,7 @@
                         },
                         "returnType": "ChangeMessageVisibilityBatchResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "A batch version of ChangeMessageVisibility. Each batch request contains one or more entries. Each entry is identified by its Id (referred to as entry id) and represents a receipt handle for which the visibility timeout has to be changed. For each entry in the batch, the response will contain one of ChangeMessageVisibilityBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
@@ -177,7 +177,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Change",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -192,7 +192,7 @@
                         },
                         "returnType": "DeleteMessageResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The DeleteMessage action unconditionally removes the specified message from the specified queue. Even if the message is locked by another reader due to the visibility timeout setting, it is still deleted from the queue."
@@ -209,7 +209,7 @@
                         },
                         "returnType": "DeleteQueueResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "This action unconditionally deletes the queue specified by the queue URL. Use this operation WITH CARE! The queue is deleted even if it is NOT empty."
@@ -226,7 +226,7 @@
                         },
                         "returnType": "DeleteMessageBatchResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The batch version of DeleteMessage. Each batch request contains one or more entries. Each entry is identified by its Id (referred to as entry id) and represents the receipt handle for a message that has to be deleted. For each entry in the batch, the response will contain one of DeleteMessageBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
@@ -237,7 +237,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Delete",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -252,7 +252,7 @@
                         },
                         "returnType": "RemovePermissionResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Removes the permission with the specified statement id from the queue."
@@ -263,7 +263,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Remove",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -278,7 +278,7 @@
                         },
                         "returnType": "ReceiveMessageResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Retrieves one or more messages from the specified queue, including the message body, message ID, and message attributes of each message. Messages returned by this action stay in the queue until you delete them. However, once a message is returned to a ReceiveMessage request, it is not returned on subsequent ReceiveMessage requests for the duration of the VisibilityTimeout. If you do not specify a VisibilityTimeout in the request, the overall visibility timeout for the queue is used for the returned messages. If a message is available in the queue, the call will return immediately. Otherwise, it will wait up to WaitTimeSeconds for a message to arrive. If you do not specify WaitTimeSeconds in the request, the queue attribute ReceiveMessageWaitTimeSeconds is used to determine how long to wait. You could ask for additional system information about the message through through the attributes, which are seperate from message attributes. Possible attributes that can be requested with messages include [SenderId, ApproximateFirstReceiveTimestamp, ApproximateReceiveCount, SentTimestamp]."
@@ -289,7 +289,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Receive",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -304,7 +304,7 @@
                         },
                         "returnType": "SendMessageResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The SendMessage action adds a message with or without message attributes to the specified queue. If DelaySeconds is specified, the message won't be delivered until the specified number of seconds has elapsed. Otherwise, the message may be delivered immediately."
@@ -321,7 +321,7 @@
                         },
                         "returnType": "SendMessageBatchResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "A batch version of SendMessage. Each batch request has one or more entries in it. Each entry is identified by its Id (referred to as entry id) and represents a message with or without message attributes to be enqueued. If DelaySeconds is not specified for an entry, the default for the queue is used. For each entry in the batch, the response will contain one of SendMessageBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
@@ -332,7 +332,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Send",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -347,7 +347,7 @@
                         },
                         "returnType": "SetQueueAttributesResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Sets the value of one or more queue attributes. Valid attributes that can be set are [VisibilityTimeout, Policy, MaximumMessageSize, MessageRetentionPeriod, ReceiveMessageWaitTimeSeconds, RedrivePolicy]."
@@ -358,7 +358,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Set",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -372,7 +372,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "QueueName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -382,7 +382,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -392,12 +392,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "CreateQueue",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -409,7 +409,7 @@
                         "removableFromRequest": false,
                         "type": "CreateQueueResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:CreateQueueResult"
                         },
@@ -421,7 +421,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -429,12 +429,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "CreateQueueResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -446,7 +446,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "QueueName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -456,7 +456,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -464,12 +464,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "GetQueueUrl",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -481,7 +481,7 @@
                         "removableFromRequest": false,
                         "type": "GetQueueUrlResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:GetQueueUrlResult"
                         },
@@ -493,7 +493,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -501,12 +501,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "GetQueueUrlResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -518,7 +518,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -530,7 +530,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -540,12 +540,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ListQueues",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -557,7 +557,7 @@
                         "removableFromRequest": false,
                         "type": "ListQueuesResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ListQueuesResult"
                         },
@@ -569,7 +569,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -577,12 +577,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ListQueuesResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -594,7 +594,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ReceiptHandle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -604,7 +604,7 @@
                         "removableFromRequest": false,
                         "type": "integer",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VisibilityTimeout",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -614,7 +614,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -624,12 +624,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ChangeMessageVisibility",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -641,7 +641,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -649,12 +649,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ChangeMessageVisibilityResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -666,7 +666,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ReceiptHandle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -676,7 +676,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -686,12 +686,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteMessage",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -703,7 +703,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -711,12 +711,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteMessageResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -728,7 +728,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -738,12 +738,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteQueue",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -755,7 +755,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -763,12 +763,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteQueueResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -780,7 +780,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -793,7 +793,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -801,12 +801,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "GetQueueAttributes",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -818,7 +818,7 @@
                         "removableFromRequest": false,
                         "type": "GetQueueAttributesResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:GetQueueAttributesResult"
                         },
@@ -830,7 +830,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -838,12 +838,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "GetQueueAttributesResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -855,7 +855,7 @@
                         "removableFromRequest": false,
                         "type": "integer",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -867,7 +867,7 @@
                         "removableFromRequest": false,
                         "type": "integer",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -879,7 +879,7 @@
                         "removableFromRequest": false,
                         "type": "integer",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -891,7 +891,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -904,7 +904,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -917,7 +917,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -925,12 +925,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ReceiveMessage",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -942,7 +942,7 @@
                         "removableFromRequest": false,
                         "type": "ReceiveMessageResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ReceiveMessageResult"
                         },
@@ -954,7 +954,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -962,12 +962,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ReceiveMessageResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -979,7 +979,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MessageBody",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -989,7 +989,7 @@
                         "removableFromRequest": false,
                         "type": "integer",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -1001,7 +1001,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -1015,7 +1015,7 @@
                         "removableFromRequest": false,
                         "type": "MessageAttribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -1025,12 +1025,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SendMessage",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1042,7 +1042,7 @@
                         "removableFromRequest": false,
                         "type": "SendMessageResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:SendMessageResult"
                         },
@@ -1054,7 +1054,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -1062,12 +1062,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SendMessageResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1079,7 +1079,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:Attribute"
@@ -1088,12 +1088,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SetQueueAttributes",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1105,7 +1105,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -1113,12 +1113,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SetQueueAttributesResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1130,7 +1130,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Id",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1140,7 +1140,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Code",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1150,7 +1150,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Message",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1160,18 +1160,18 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SenderFault",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "BatchResultErrorEntry",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1183,7 +1183,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Id",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1193,7 +1193,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ReceiptHandle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1203,7 +1203,7 @@
                         "removableFromRequest": false,
                         "type": "integer",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -1211,12 +1211,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ChangeMessageVisibilityBatchRequestEntry",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1228,7 +1228,7 @@
                         "removableFromRequest": false,
                         "type": "ChangeMessageVisibilityBatchRequestEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:ChangeMessageVisibilityBatchRequestEntry"
@@ -1237,12 +1237,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ChangeMessageVisibilityBatch",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1254,18 +1254,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Id",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ChangeMessageVisibilityBatchResultEntry",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1277,7 +1277,7 @@
                         "removableFromRequest": false,
                         "type": "ChangeMessageVisibilityBatchResultEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:ChangeMessageVisibilityBatchResultEntry"
@@ -1290,7 +1290,7 @@
                         "removableFromRequest": false,
                         "type": "BatchResultErrorEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:BatchResultErrorEntry"
@@ -1299,12 +1299,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ChangeMessageVisibilityBatchResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1316,7 +1316,7 @@
                         "removableFromRequest": false,
                         "type": "ChangeMessageVisibilityBatchResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ChangeMessageVisibilityBatchResult"
                         },
@@ -1328,7 +1328,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -1336,12 +1336,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ChangeMessageVisibilityBatchResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1353,7 +1353,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Id",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1363,18 +1363,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ReceiptHandle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteMessageBatchRequestEntry",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1386,7 +1386,7 @@
                         "removableFromRequest": false,
                         "type": "DeleteMessageBatchRequestEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:DeleteMessageBatchRequestEntry"
@@ -1395,12 +1395,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteMessageBatch",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1412,18 +1412,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Id",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteMessageBatchResultEntry",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1435,7 +1435,7 @@
                         "removableFromRequest": false,
                         "type": "DeleteMessageBatchResultEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:DeleteMessageBatchResultEntry"
@@ -1448,7 +1448,7 @@
                         "removableFromRequest": false,
                         "type": "BatchResultErrorEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:BatchResultErrorEntry"
@@ -1457,12 +1457,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteMessageBatchResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1474,7 +1474,7 @@
                         "removableFromRequest": false,
                         "type": "DeleteMessageBatchResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:DeleteMessageBatchResult"
                         },
@@ -1486,7 +1486,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -1494,12 +1494,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "DeleteMessageBatchResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1511,7 +1511,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Id",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1521,7 +1521,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MessageBody",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1531,7 +1531,7 @@
                         "removableFromRequest": false,
                         "type": "integer",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -1543,7 +1543,7 @@
                         "removableFromRequest": false,
                         "type": "MessageAttribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -1553,12 +1553,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SendMessageBatchRequestEntry",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1570,7 +1570,7 @@
                         "removableFromRequest": false,
                         "type": "SendMessageBatchRequestEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:SendMessageBatchRequestEntry"
@@ -1579,12 +1579,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SendMessageBatch",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1596,7 +1596,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Id",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1606,7 +1606,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MessageId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1616,7 +1616,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MD5OfMessageBody",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1626,18 +1626,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MD5OfMessageAttributes",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SendMessageBatchResultEntry",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1649,7 +1649,7 @@
                         "removableFromRequest": false,
                         "type": "SendMessageBatchResultEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:SendMessageBatchResultEntry"
@@ -1662,7 +1662,7 @@
                         "removableFromRequest": false,
                         "type": "BatchResultErrorEntry",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:BatchResultErrorEntry"
@@ -1671,12 +1671,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SendMessageBatchResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1688,7 +1688,7 @@
                         "removableFromRequest": false,
                         "type": "SendMessageBatchResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:SendMessageBatchResult"
                         },
@@ -1700,7 +1700,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -1708,12 +1708,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SendMessageBatchResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1725,7 +1725,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Label",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1735,7 +1735,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -1747,7 +1747,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -1755,12 +1755,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "AddPermission",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1772,7 +1772,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -1780,12 +1780,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "AddPermissionResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1797,18 +1797,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Label",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "RemovePermission",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1820,7 +1820,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -1828,24 +1828,24 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "RemovePermissionResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ListDeadLetterSourceQueues",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1857,7 +1857,7 @@
                         "removableFromRequest": false,
                         "type": "ListDeadLetterSourceQueuesResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ListDeadLetterSourceQueuesResult"
                         },
@@ -1869,7 +1869,7 @@
                         "removableFromRequest": false,
                         "type": "ResponseMetadata",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "tns:ResponseMetadata"
                         },
@@ -1877,12 +1877,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ListDeadLetterSourceQueuesResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1894,18 +1894,18 @@
                         "removableFromRequest": false,
                         "type": "anyURI",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "QueueUrl",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "CreateQueueResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1917,18 +1917,18 @@
                         "removableFromRequest": false,
                         "type": "anyURI",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "QueueUrl",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "GetQueueUrlResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1940,7 +1940,7 @@
                         "removableFromRequest": false,
                         "type": "anyURI",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -1949,12 +1949,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ListQueuesResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1966,7 +1966,7 @@
                         "removableFromRequest": false,
                         "type": "anyURI",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -1975,12 +1975,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ListDeadLetterSourceQueuesResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1992,7 +1992,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Name",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2002,18 +2002,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Value",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Attribute",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2025,7 +2025,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "StringValue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2035,7 +2035,7 @@
                         "removableFromRequest": false,
                         "type": "base64Binary",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BinaryValue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2045,18 +2045,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DataType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "MessageAttributeValue",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2068,7 +2068,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Name",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2078,18 +2078,18 @@
                         "removableFromRequest": false,
                         "type": "MessageAttributeValue",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Value",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "MessageAttribute",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2101,7 +2101,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:Attribute"
@@ -2110,12 +2110,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "GetQueueAttributesResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2127,7 +2127,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MessageId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2137,7 +2137,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ReceiptHandle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2147,7 +2147,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MD5OfBody",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2157,7 +2157,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MD5OfMessageAttributes",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2167,7 +2167,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Body",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2177,7 +2177,7 @@
                         "removableFromRequest": false,
                         "type": "Attribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -2191,7 +2191,7 @@
                         "removableFromRequest": false,
                         "type": "MessageAttribute",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -2201,12 +2201,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Message",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2218,7 +2218,7 @@
                         "removableFromRequest": false,
                         "type": "Message",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -2228,12 +2228,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ReceiveMessageResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2245,7 +2245,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MessageId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2255,7 +2255,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MD5OfMessageBody",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2265,18 +2265,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MD5OfMessageAttributes",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "SendMessageResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2288,18 +2288,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "RequestId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ResponseMetadata",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2311,7 +2311,7 @@
                         "removableFromRequest": false,
                         "type": "Error",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "ref": "tns:Error"
@@ -2324,18 +2324,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "RequestId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ErrorResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2347,7 +2347,7 @@
                         "removableFromRequest": false,
                         "type": "Type",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Type",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2357,7 +2357,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Code",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2367,7 +2367,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Message",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2377,32 +2377,32 @@
                         "removableFromRequest": false,
                         "type": "Detail",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Detail",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Error",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Receiver",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2410,14 +2410,14 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "Sender",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Type",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2429,18 +2429,18 @@
                         "removableFromRequest": false,
                         "type": "\\DOMDocument",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "any",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Detail",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"

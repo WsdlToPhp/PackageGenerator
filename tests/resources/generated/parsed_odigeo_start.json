@@ -11,14 +11,14 @@
                         },
                         "returnType": "searchResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "search",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Search",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -32,7 +32,7 @@
                         "removableFromRequest": false,
                         "type": "preferencesRequest",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "1"
@@ -45,7 +45,7 @@
                         "removableFromRequest": false,
                         "type": "searchRequest",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "1"
@@ -58,7 +58,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "1"
@@ -67,12 +67,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "type": "tns:search"
                 },
@@ -86,7 +86,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -98,7 +98,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -110,7 +110,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -122,7 +122,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -130,12 +130,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "preferencesRequest",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -147,7 +147,7 @@
                         "removableFromRequest": false,
                         "type": "itinerarySearchRequest",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "1"
@@ -160,7 +160,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -168,12 +168,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "searchRequest",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -185,7 +185,7 @@
                         "removableFromRequest": false,
                         "type": "itinerarySegmentRequest",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "3",
                             "minOccurs": "1"
@@ -198,7 +198,7 @@
                         "removableFromRequest": false,
                         "type": "cabinClass",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -210,7 +210,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -222,7 +222,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -234,7 +234,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -246,7 +246,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "resident",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -256,7 +256,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "directFlightsOnly",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -266,18 +266,18 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "mainAirportsOnly",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "itinerarySearchRequest",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -289,7 +289,7 @@
                         "removableFromRequest": false,
                         "type": "itineraryLocationRequest",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "1"
@@ -302,7 +302,7 @@
                         "removableFromRequest": false,
                         "type": "itineraryLocationRequest",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "1"
@@ -315,7 +315,7 @@
                         "removableFromRequest": false,
                         "type": "date",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -327,7 +327,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "time",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -337,18 +337,18 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "timeWindow",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "itinerarySegmentRequest",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -360,7 +360,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -372,7 +372,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "name",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -382,18 +382,18 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "geoNodeId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "itineraryLocationRequest",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -405,7 +405,7 @@
                         "removableFromRequest": false,
                         "type": "searchStatusResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -413,12 +413,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "type": "tns:searchResponse"
                 },
@@ -432,7 +432,7 @@
                         "removableFromRequest": false,
                         "type": "searchResultsPage",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -445,7 +445,7 @@
                         "removableFromRequest": false,
                         "type": "itinerariesLegend",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "0"
@@ -454,12 +454,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "preferencesAwareResponse",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "type": "tns:searchStatusResponse"
                 },
@@ -473,18 +473,18 @@
                         "removableFromRequest": false,
                         "type": "preferences",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "preferences",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "baseResponse",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "preferencesAwareResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -496,7 +496,7 @@
                         "removableFromRequest": false,
                         "type": "messageResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -505,12 +505,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "baseResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -522,7 +522,7 @@
                         "removableFromRequest": false,
                         "type": "messageResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -535,7 +535,7 @@
                         "removableFromRequest": false,
                         "type": "fareItinerary",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -548,7 +548,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "0"
@@ -561,7 +561,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -569,12 +569,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "searchResultsPage",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -586,7 +586,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -598,18 +598,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "description",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "messageResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -621,7 +621,7 @@
                         "removableFromRequest": false,
                         "type": "fareItineraryPrice",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "1"
@@ -634,7 +634,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
                             "minOccurs": "0"
@@ -647,7 +647,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -659,7 +659,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "resident",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -669,7 +669,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "int",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -681,7 +681,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "int",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "secondSegmentsIds",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -691,54 +691,54 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "int",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "thirdSegmentsIds",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "fareItinerary",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "anonymous13",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "anonymous14",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "anonymous15",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -750,7 +750,7 @@
                         "removableFromRequest": false,
                         "type": "decimal",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -758,12 +758,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "fareItineraryPrice",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -775,7 +775,7 @@
                         "removableFromRequest": true,
                         "type": "carrier",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -789,7 +789,7 @@
                         "removableFromRequest": true,
                         "type": "location",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -803,7 +803,7 @@
                         "removableFromRequest": true,
                         "type": "sectionResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -817,7 +817,7 @@
                         "removableFromRequest": true,
                         "type": "segmentResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -827,12 +827,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "itinerariesLegend",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -844,7 +844,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -856,18 +856,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "name",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "carrier",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -879,7 +879,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -891,7 +891,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "cityName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -901,7 +901,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "name",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -911,7 +911,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "type",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -921,7 +921,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -933,7 +933,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "cityIataCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -943,7 +943,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "countryCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -953,18 +953,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "countryName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "location",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -976,7 +976,7 @@
                         "removableFromRequest": false,
                         "type": "section",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "section",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -986,7 +986,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -994,12 +994,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "sectionResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1011,7 +1011,7 @@
                         "removableFromRequest": true,
                         "type": "technicalStop",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0",
@@ -1025,7 +1025,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1037,7 +1037,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1049,7 +1049,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "departureDate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1059,7 +1059,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "departureTerminal",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1069,7 +1069,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1081,7 +1081,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "arrivalDate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1091,7 +1091,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "arrivalTerminal",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1101,7 +1101,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "carrierCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1111,7 +1111,7 @@
                         "removableFromRequest": false,
                         "type": "cabinClass",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "cabinClass",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1121,7 +1121,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "operatingCarrierCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1131,7 +1131,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "aircraft",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1141,18 +1141,18 @@
                         "removableFromRequest": false,
                         "type": "long",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "duration",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "section",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1164,7 +1164,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1176,7 +1176,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "arrivalDate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1186,7 +1186,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "departureDate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1196,18 +1196,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "equipmentType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "technicalStop",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1219,7 +1219,7 @@
                         "removableFromRequest": false,
                         "type": "segment",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "segment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1229,7 +1229,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1237,12 +1237,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "segmentResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1254,7 +1254,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "int",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1266,7 +1266,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1278,7 +1278,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "carrierCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1288,7 +1288,7 @@
                         "removableFromRequest": false,
                         "type": "long",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "duration",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1298,30 +1298,30 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "seats",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "segment",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "anonymous25",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1333,7 +1333,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1345,7 +1345,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "use": "required"
                         },
@@ -1353,26 +1353,26 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "preferences",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BUSINESS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1380,7 +1380,7 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "FIRST",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1388,7 +1388,7 @@
                     {
                         "index": 2,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "TOURIST",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1396,7 +1396,7 @@
                     {
                         "index": 3,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "PREMIUM_ECONOMY",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1404,14 +1404,14 @@
                     {
                         "index": 4,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ECONOMIC_DISCOUNTED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "cabinClass",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"

@@ -264,15 +264,6 @@ class Struct extends AbstractModel
         return $this;
     }
     /**
-     * Alias to setRestriction
-     * @param bool $isRestriction
-     * @return Struct
-     */
-    public function setIsRestriction($isRestriction = true)
-    {
-        return $this->setRestriction($isRestriction);
-    }
-    /**
      * Returns the isStruct value
      * @return bool
      */
@@ -289,15 +280,6 @@ class Struct extends AbstractModel
     {
         $this->isStruct = $isStruct;
         return $this;
-    }
-    /**
-     * Alias to setStruct
-     * @param bool $isStruct
-     * @return Struct
-     */
-    public function setIsStruct($isStruct = true)
-    {
-        return $this->setStruct($isStruct);
     }
     /**
      * Returns the values for an enumeration
@@ -436,8 +418,8 @@ class Struct extends AbstractModel
     {
         return array(
             'attributes' => $this->attributes,
-            'isRestriction' => $this->isRestriction,
-            'isStruct' => $this->isStruct,
+            'restriction' => $this->isRestriction,
+            'struct' => $this->isStruct,
             'types' => $this->types,
             'values' => $this->values,
         );

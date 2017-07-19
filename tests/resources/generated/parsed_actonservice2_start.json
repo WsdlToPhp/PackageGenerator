@@ -11,7 +11,7 @@
                         },
                         "returnType": "loginResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "SOAPHeaderNames": [
                                 "ClusterHeader"
@@ -34,7 +34,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Login",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -49,7 +49,7 @@
                         },
                         "returnType": "sendEmailResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "SOAPHeaderNames": [
                                 "SessionHeader",
@@ -76,7 +76,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Send",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -91,7 +91,7 @@
                         },
                         "returnType": "listResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "SOAPHeaderNames": [
                                 "SessionHeader",
@@ -118,7 +118,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "List",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -133,7 +133,7 @@
                         },
                         "returnType": "uploadListResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "SOAPHeaderNames": [
                                 "SessionHeader",
@@ -160,7 +160,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Upload",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -175,7 +175,7 @@
                         },
                         "returnType": "getUploadResultResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "SOAPHeaderNames": [
                                 "SessionHeader",
@@ -202,7 +202,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Get",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -217,7 +217,7 @@
                         },
                         "returnType": "AttachmentType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "SOAPHeaderNames": [
                                 "SessionHeader",
@@ -244,7 +244,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Download",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -259,7 +259,7 @@
                         },
                         "returnType": "messageReportResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "SOAPHeaderNames": [
                                 "SessionHeader",
@@ -283,7 +283,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Message",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -298,7 +298,7 @@
                         },
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "SOAPHeaderNames": [
                                 "SessionHeader",
@@ -322,7 +322,7 @@
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Delete",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -331,12 +331,12 @@
         "structs": [
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "anonymous0",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -348,7 +348,7 @@
                         "removableFromRequest": false,
                         "type": "base64Binary",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "_",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -358,7 +358,7 @@
                         "removableFromRequest": false,
                         "type": "anonymous0",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "xmime:contentType"
                         },
@@ -366,12 +366,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "base64Binary",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -383,7 +383,7 @@
                         "removableFromRequest": false,
                         "type": "hexBinary",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "_",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -393,7 +393,7 @@
                         "removableFromRequest": false,
                         "type": "anonymous0",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "ref": "xmime:contentType"
                         },
@@ -401,24 +401,24 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "hexBinary",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "string",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "ID for an object"
@@ -429,14 +429,14 @@
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CONTACT_LIST",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -444,7 +444,7 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "TEMPLATE_MESSAGE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -452,7 +452,7 @@
                     {
                         "index": 2,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SENT_MESSAGE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -460,7 +460,7 @@
                     {
                         "index": 3,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SCHEDULED_MESSAGE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -468,7 +468,7 @@
                     {
                         "index": 4,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "FAILED_MESSAGE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -476,7 +476,7 @@
                     {
                         "index": 5,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "TEST_MESSAGE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -484,7 +484,7 @@
                     {
                         "index": 6,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DRAFT_MESSAGE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -492,7 +492,7 @@
                     {
                         "index": 7,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "TRIGGERED_MESSAGE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -500,7 +500,7 @@
                     {
                         "index": 8,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "LANDING_PAGE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -508,7 +508,7 @@
                     {
                         "index": 9,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "FORM",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -516,7 +516,7 @@
                     {
                         "index": 10,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "STATIONERY",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -524,7 +524,7 @@
                     {
                         "index": 11,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "LOGO",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -532,7 +532,7 @@
                     {
                         "index": 12,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DOCUMENT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -540,7 +540,7 @@
                     {
                         "index": 13,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SENDER",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -548,7 +548,7 @@
                     {
                         "index": 14,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HEADER",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -556,14 +556,14 @@
                     {
                         "index": 15,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "FOOTER",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Enumerated type for objects"
@@ -574,14 +574,14 @@
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "EMAIL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -589,7 +589,7 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "FIRSTNAME",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -597,7 +597,7 @@
                     {
                         "index": 2,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "LASTNAME",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -605,7 +605,7 @@
                     {
                         "index": 3,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MIDDLENAME",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -613,7 +613,7 @@
                     {
                         "index": 4,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "COMPANY",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -621,7 +621,7 @@
                     {
                         "index": 5,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "JOBTITLE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -629,7 +629,7 @@
                     {
                         "index": 6,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DEPT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -637,7 +637,7 @@
                     {
                         "index": 7,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BIZ_STREET",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -645,7 +645,7 @@
                     {
                         "index": 8,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BIZ_CITY",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -653,7 +653,7 @@
                     {
                         "index": 9,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BIZ_STATE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -661,7 +661,7 @@
                     {
                         "index": 10,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BIZ_ZIP",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -669,7 +669,7 @@
                     {
                         "index": 11,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BIZ_COUNTRY",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -677,7 +677,7 @@
                     {
                         "index": 12,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HOME_STREET",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -685,7 +685,7 @@
                     {
                         "index": 13,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HOME_CITY",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -693,7 +693,7 @@
                     {
                         "index": 14,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HOME_STATE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -701,7 +701,7 @@
                     {
                         "index": 15,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HOME_ZIP",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -709,7 +709,7 @@
                     {
                         "index": 16,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HOME_COUNTRY",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -717,7 +717,7 @@
                     {
                         "index": 17,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BIZ_PHONE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -725,7 +725,7 @@
                     {
                         "index": 18,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BIZ_FAX",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -733,7 +733,7 @@
                     {
                         "index": 19,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HOME_PHONE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -741,7 +741,7 @@
                     {
                         "index": 20,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HOME_FAX",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -749,7 +749,7 @@
                     {
                         "index": 21,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CELL_PHONE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -757,7 +757,7 @@
                     {
                         "index": 22,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "BIZ_WEB",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -765,14 +765,14 @@
                     {
                         "index": 23,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HOME_WEB",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Field types for list columns"
@@ -788,7 +788,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -800,7 +800,7 @@
                         "removableFromRequest": false,
                         "type": "base64Binary",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -808,12 +808,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "AttachmentType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -825,18 +825,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "sessionId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Session Header Required for All API Calls Except Login"
@@ -852,18 +852,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "clusterId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Cluster Header (Cluster Id is provided to API enabled accounts)"
@@ -879,18 +879,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "partnerKey",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Partner Header (Partner key provided to Act-On Partners) to enable partner API functions"
@@ -901,12 +901,12 @@
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "string",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "FaultCode",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -918,7 +918,7 @@
                         "removableFromRequest": false,
                         "type": "FaultCode",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "faultCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -928,18 +928,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "faultMessage",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "ActonFaultType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -951,7 +951,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "passwordExpired",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -961,7 +961,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "nillable": "true"
                         },
@@ -973,7 +973,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "nillable": "true"
                         },
@@ -985,7 +985,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "nillable": "true"
                         },
@@ -993,12 +993,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "LoginResult",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1010,7 +1010,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "username",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1020,18 +1020,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "password",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "login",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1043,18 +1043,18 @@
                         "removableFromRequest": false,
                         "type": "LoginResult",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "result",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "loginResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1066,18 +1066,18 @@
                         "removableFromRequest": false,
                         "type": "ItemType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "listingType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "list",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1089,7 +1089,7 @@
                         "removableFromRequest": false,
                         "type": "Item",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -1097,12 +1097,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "listResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1114,7 +1114,7 @@
                         "removableFromRequest": false,
                         "type": "ItemType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "itemType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1124,7 +1124,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "id",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1134,7 +1134,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "displayName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1144,18 +1144,18 @@
                         "removableFromRequest": false,
                         "type": "\\DOMDocument",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "any",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Item",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1167,7 +1167,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ID of the message template to use as the content of the message to send. You may also use an ID of a previously sent message to copy the message content to the new message. Delivery and response reports will be tracked for the message."
@@ -1182,7 +1182,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ID of a previously sent message or triggered message to send. The delivery and response reports for the re-send will get merged with the existing reports for this message"
@@ -1197,7 +1197,7 @@
                         "removableFromRequest": false,
                         "type": "CustomEmail",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -1209,18 +1209,18 @@
                         "removableFromRequest": false,
                         "type": "launchParameters",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "launchParameters",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Send Custom Message Content OR send a pre-configured template message OR re-send a previously sent message."
@@ -1236,7 +1236,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The message subject"
@@ -1250,7 +1250,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The rich-text HTML body part of the message. May only include fully qualified links and image references."
@@ -1264,7 +1264,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The plain-text TEXT body part of the message."
@@ -1278,7 +1278,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Optional header ID to use in the message body. The default header will be used if missing. To suppress the header, use -1 for the ID."
@@ -1293,7 +1293,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Optional footer ID to use in the message body (with opt-out link). The default footer will be used if missing. To suppress the footer, use -1 for the ID."
@@ -1304,12 +1304,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Specify the content and format of the new message to be sent."
@@ -1325,7 +1325,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "One or more contact list (or segment) IDs with email addresses to send-to."
@@ -1340,7 +1340,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Optional: Selection set of one or more contacts to send to. If specified, only these contacts will be sent the email."
@@ -1355,7 +1355,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Optional: one or more contact list (or segment) IDs with email addresses to exclude from the launch."
@@ -1371,7 +1371,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "If true, duplicate email addresses will be suppressed during launch."
@@ -1386,7 +1386,7 @@
                         "removableFromRequest": false,
                         "type": "senderFrom",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -1398,7 +1398,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "If specified and true, then send as plain-text only. Otherwise, send multipart-mime with both HTML and TEXT parts."
@@ -1413,7 +1413,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The date and time to schedule the launch. Default: immediate launch if not specified."
@@ -1424,12 +1424,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "The parameters that specify the from, to, format, and launch time of the message to send."
@@ -1445,7 +1445,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "nillable": "false"
                         },
@@ -1457,7 +1457,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "nillable": "false"
                         },
@@ -1465,12 +1465,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "The \"from\" email address and name. The email must be a verified sender for the account. Uses the default for the user if not specified."
@@ -1486,7 +1486,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ID of the sent message."
@@ -1496,12 +1496,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "sendEmailResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1513,7 +1513,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The unique contact ID for this contact record."
@@ -1528,7 +1528,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The email for this contact record."
@@ -1543,7 +1543,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The value of the merge-key used for this contact record."
@@ -1553,12 +1553,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "UploadContactRecordType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1570,7 +1570,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Unique displayname of the new list, or a segment name to create of records merged into an existing list."
@@ -1585,7 +1585,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Optional name of the folder for the list after upload"
@@ -1600,7 +1600,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "default": "true",
                             "documentation": [
@@ -1616,7 +1616,7 @@
                         "removableFromRequest": false,
                         "type": "fieldSeparator",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -1628,7 +1628,7 @@
                         "removableFromRequest": false,
                         "type": "quoteCharacter",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -1640,7 +1640,7 @@
                         "removableFromRequest": false,
                         "type": "AttachmentType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The Uploaded List (attachment) - may be either comma (or tab) separated text file, or may be Excel spreadsheet."
@@ -1654,7 +1654,7 @@
                         "removableFromRequest": false,
                         "type": "columnDef",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -1667,7 +1667,7 @@
                         "removableFromRequest": false,
                         "type": "mergeOptions",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -1675,26 +1675,26 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "uploadList",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "TAB",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1702,7 +1702,7 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "COMMA",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1710,7 +1710,7 @@
                     {
                         "index": 2,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SEMICOLON",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1718,28 +1718,28 @@
                     {
                         "index": 3,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SPACE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "fieldSeparator",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "NONE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1747,7 +1747,7 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SINGLE_QUOTE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1755,14 +1755,14 @@
                     {
                         "index": 2,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DOUBLE_QUOTE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "quoteCharacter",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -1774,7 +1774,7 @@
                         "removableFromRequest": false,
                         "type": "ListColumnType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Optional list column type (e.g. EMAIL, FIRSTNAME, LASTNAME, etc)"
@@ -1789,7 +1789,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Column Heading Displayname. If not specified or empty, then the column heading extracted from the first row of data is used (if available). A Fault will be generated if no unique heading is found."
@@ -1804,7 +1804,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Column index in the uploaded binaryData (zero-based)"
@@ -1818,7 +1818,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "default": "false",
                             "documentation": [
@@ -1830,12 +1830,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Definition of columns in uploaded the source list. If this is an upload only (not a merge), then all source data columns that do not have a corresponding columnDef will be ignored. On a merge, if no source columnDef entries are specified then the first row of the source data must contain header names that exactly match the headers in the destination and all source columns will be merged."
@@ -1851,7 +1851,7 @@
                         "removableFromRequest": false,
                         "type": "mergeMode",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "mergeMode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1861,7 +1861,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ID for the destination list into which records will be merged."
@@ -1875,7 +1875,7 @@
                         "removableFromRequest": false,
                         "type": "columnMap",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -1888,7 +1888,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "default": "false",
                             "documentation": [
@@ -1904,7 +1904,7 @@
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "default": "false",
                             "documentation": [
@@ -1920,7 +1920,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Optional heading name in the source data used to merge data into the destination list. (Default if missing is to use the identified EMAIL column in both source and destination list.) The merge column must exist in the source data and destination list or have a columnMap entry specified."
@@ -1931,12 +1931,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Optional options if merging uploaded list into an existing list"
@@ -1947,14 +1947,14 @@
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "APPEND",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1962,7 +1962,7 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "APPEND_NO_DUPLICATES",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1970,7 +1970,7 @@
                     {
                         "index": 2,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "UPSERT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -1978,14 +1978,14 @@
                     {
                         "index": 3,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "UPDATE_ONLY",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Mode of merge. UPSERT updates existing records and inserts new records. APPEND and APPEND_NO_DUPLICATES only append to the list. UPDATE only updates existing records."
@@ -2001,7 +2001,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Column heading of uploaded list"
@@ -2015,7 +2015,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Mapped column heading in target list"
@@ -2025,12 +2025,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Optional override for merge column mappings. Default behavior is to match based on specified columnType, then on case-insensitive column heading match."
@@ -2046,7 +2046,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The jobID of the upload\/merge job. This jobID can be used to poll with the getUloadResults method to obtain the results of the upload when it completes."
@@ -2057,12 +2057,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "uploadListResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2074,7 +2074,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The jobID of an asynchronous upload"
@@ -2084,12 +2084,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Request the results of an uploadList job."
@@ -2105,7 +2105,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The jobID returned in the uploadListResponse from the asynchrounous uploadList method call. This is the ID of the job for which you want to poll for the upload results."
@@ -2119,7 +2119,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The job status (pending or running) if the job has not yet completed. This will be the only reported result if the job has not yet completed."
@@ -2133,7 +2133,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The uploaded list Id."
@@ -2147,7 +2147,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ID of the segment created with merged records (if requested)"
@@ -2162,7 +2162,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Number of appended records after an upload or merge"
@@ -2176,7 +2176,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Number of updated records after a merge."
@@ -2190,7 +2190,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Number of rejected records after an upload or merge. (see also rejectedRecords attachment)"
@@ -2204,7 +2204,7 @@
                         "removableFromRequest": false,
                         "type": "AttachmentType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "Attachment list of records that were rejected on upload or merge. Missing if there were no rejected records after upload or merge."
@@ -2219,7 +2219,7 @@
                         "removableFromRequest": false,
                         "type": "appendedRecords",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2231,7 +2231,7 @@
                         "removableFromRequest": false,
                         "type": "updatedRecords",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2243,7 +2243,7 @@
                         "removableFromRequest": false,
                         "type": "unchangedRecords",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2251,12 +2251,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "getUploadResultResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2268,7 +2268,7 @@
                         "removableFromRequest": false,
                         "type": "UploadContactRecordType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -2276,12 +2276,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "List of records appended after a merge to an existing list. Only specified if the optional mergeReport option is true in the uploadList request."
@@ -2297,7 +2297,7 @@
                         "removableFromRequest": false,
                         "type": "UploadContactRecordType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -2305,12 +2305,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "List of records updated after a merge to an existing list. Only specified if the optional mergeReport option is true in the uploadList request."
@@ -2326,7 +2326,7 @@
                         "removableFromRequest": false,
                         "type": "UploadContactRecordType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -2334,12 +2334,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "List of records in the uploaded list that were unchanged from the matched records in the existing list. Only specified if the optional mergeReport option is true in the uploadList request."
@@ -2355,7 +2355,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ID of the list or segment to download"
@@ -2369,7 +2369,7 @@
                         "removableFromRequest": false,
                         "type": "format",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2381,7 +2381,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2393,7 +2393,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2405,7 +2405,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2417,7 +2417,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2425,26 +2425,26 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "downloadList",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CSV",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2452,14 +2452,14 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "EXCEL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Specify the download format -- Excel spreadsheet or CSV"
@@ -2475,18 +2475,18 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "listId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Delete a list or segment"
@@ -2502,7 +2502,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "One or more messageIDs to report. The summary section of the report will roll-up the total and unique counts when more than one messageID is provided."
@@ -2517,7 +2517,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2529,7 +2529,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2541,7 +2541,7 @@
                         "removableFromRequest": false,
                         "type": "fullDetail",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2549,12 +2549,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Report the results of a sent message"
@@ -2570,7 +2570,7 @@
                         "removableFromRequest": false,
                         "type": "action",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -2582,7 +2582,7 @@
                         "removableFromRequest": false,
                         "type": "contactFields",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2590,12 +2590,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "When specified, also reports detailed activity records for the specified types of action."
@@ -2606,14 +2606,14 @@
             },
             {
                 "attributes": [],
-                "isRestriction": true,
-                "isStruct": true,
+                "restriction": true,
+                "struct": true,
                 "types": null,
                 "values": [
                     {
                         "index": 0,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ALL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2621,7 +2621,7 @@
                     {
                         "index": 1,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SENT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2629,7 +2629,7 @@
                     {
                         "index": 2,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DELIVERED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2637,7 +2637,7 @@
                     {
                         "index": 3,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "FAILED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2645,7 +2645,7 @@
                     {
                         "index": 4,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SUPPRESSED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2653,7 +2653,7 @@
                     {
                         "index": 5,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "OPENED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2661,7 +2661,7 @@
                     {
                         "index": 6,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CLICKED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2669,7 +2669,7 @@
                     {
                         "index": 7,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "HARD-BOUNCED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2677,7 +2677,7 @@
                     {
                         "index": 8,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SOFT-BOUNCED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2685,7 +2685,7 @@
                     {
                         "index": 9,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "OPT-OUT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2693,7 +2693,7 @@
                     {
                         "index": 10,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SPAM-COMPLAINT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2701,7 +2701,7 @@
                     {
                         "index": 11,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "REBROADCASTED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
@@ -2709,14 +2709,14 @@
                     {
                         "index": 12,
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "REBROADCAST-CLICKED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "The types of activity you want reported in the detail section (e.g. ALL, SENT, CLICKED, etc.)"
@@ -2732,7 +2732,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The field heading name to include in the detailed action record report."
@@ -2743,12 +2743,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "documentation": [
                         "Optionally include the specified contact fields from the corresponding contact in the detailed action record, if available."
@@ -2764,7 +2764,7 @@
                         "removableFromRequest": false,
                         "type": "summary",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "summary",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2774,7 +2774,7 @@
                         "removableFromRequest": false,
                         "type": "messageInfo",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -2782,12 +2782,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "messageReportResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2799,7 +2799,7 @@
                         "removableFromRequest": false,
                         "type": "uniqueCounts",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "uniqueCounts",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2809,7 +2809,7 @@
                         "removableFromRequest": false,
                         "type": "totalCounts",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "totalCounts",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2819,7 +2819,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2831,7 +2831,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -2839,12 +2839,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "summary",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2856,7 +2856,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "notSentSuppressed",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2866,7 +2866,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "opened",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2876,7 +2876,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "implicitOpened",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2886,7 +2886,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "clicked",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2896,7 +2896,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "optOuts",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2906,7 +2906,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "bounced",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2916,7 +2916,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "spamComplaints",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2926,18 +2926,18 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "rebroadcasted",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "uniqueCounts",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2949,7 +2949,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "sent",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2959,7 +2959,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "successfulDeliveries",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2969,7 +2969,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "notSentSuppressed",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2979,7 +2979,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "opened",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2989,7 +2989,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "implicitOpened",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2999,7 +2999,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "clicked",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3009,7 +3009,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "rebroadcasted",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3019,7 +3019,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "rebroadcastClicked",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3029,7 +3029,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "bounced",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3039,7 +3039,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "spamComplaints",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3049,18 +3049,18 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "optOuts",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "totalCounts",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -3072,7 +3072,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "messageID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3082,7 +3082,7 @@
                         "removableFromRequest": false,
                         "type": "detail",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3094,18 +3094,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "subject",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "messageInfo",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -3117,7 +3117,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3129,7 +3129,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3141,7 +3141,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3153,7 +3153,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3165,7 +3165,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3177,7 +3177,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3189,7 +3189,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3201,7 +3201,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3213,7 +3213,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3225,7 +3225,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3237,7 +3237,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3249,7 +3249,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecordDetailType",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -3257,12 +3257,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "detail",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -3274,7 +3274,7 @@
                         "removableFromRequest": false,
                         "type": "actionRecord",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded"
                         },
@@ -3282,12 +3282,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "actionRecordDetailType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -3299,7 +3299,7 @@
                         "removableFromRequest": false,
                         "type": "ID",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The ID of the contact that performed the action, if available. May be blank for anonymous activity."
@@ -3313,7 +3313,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The email address of the contact that performed the action, if available. May be blank for anonymous activity."
@@ -3327,7 +3327,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The name of the contact that performed the action, if available (blank for anonymous activity)."
@@ -3341,7 +3341,7 @@
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The time the action was recorded."
@@ -3355,7 +3355,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The action detail has action specific detail. For example, the link clicked, the reason for suppression etc."
@@ -3370,7 +3370,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The IP address of the client computer from the HTTP session when the action was recorded. Note that this may be the IP address of a proxy or firewall or ISP protecting the actual client system from the Internet."
@@ -3385,7 +3385,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The client browser reported by the HTTP session header when the action was recorded."
@@ -3400,7 +3400,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "documentation": [
                                 "The client platform and operating system reported by the HTTP session header when the action was recorded."
@@ -3415,7 +3415,7 @@
                         "removableFromRequest": false,
                         "type": "contactField",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
@@ -3424,12 +3424,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "actionRecord",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -3441,7 +3441,7 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "name",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3451,18 +3451,18 @@
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "value",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "contactField",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"

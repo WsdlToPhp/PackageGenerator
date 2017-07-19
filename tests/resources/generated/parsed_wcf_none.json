@@ -11,7 +11,7 @@
                         },
                         "returnType": "orderResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "order",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -24,14 +24,14 @@
                         },
                         "returnType": "offerResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "offer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Service",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -45,7 +45,7 @@
                         "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0",
                             "nillable": "true"
@@ -58,7 +58,7 @@
                         "removableFromRequest": true,
                         "type": "order",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0",
                             "nillable": "true"
@@ -67,12 +67,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "nillable": "true",
                     "type": "tns:order"
@@ -87,7 +87,7 @@
                         "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0",
                             "nillable": "true"
@@ -100,7 +100,7 @@
                         "removableFromRequest": true,
                         "type": "offer",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0",
                             "nillable": "true"
@@ -109,12 +109,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "order",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "nillable": "true",
                     "type": "tns:offer"
@@ -129,7 +129,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -137,12 +137,12 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "orderResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -154,7 +154,7 @@
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": {
                             "minOccurs": "0"
                         },
@@ -162,24 +162,24 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "isRestriction": false,
-                "isStruct": true,
+                "restriction": false,
+                "struct": true,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "offerResponse",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "int",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "nillable": "true",
                     "type": "tns:char"
@@ -189,12 +189,12 @@
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "base": "xs:duration",
                     "maxInclusive": "P10675199DT2H48M5.4775807S",
@@ -208,12 +208,12 @@
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "string",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "nillable": "true",
                     "pattern": "[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}",

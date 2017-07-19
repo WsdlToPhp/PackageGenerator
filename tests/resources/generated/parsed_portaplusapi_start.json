@@ -9,7 +9,7 @@
                         "parameterType": "AuthenticateAccount",
                         "returnType": "AuthenticateAccountResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AuthenticateAccount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -20,7 +20,7 @@
                         "parameterType": "AuthenticateAdmin",
                         "returnType": "AuthenticateAdminResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AuthenticateAdmin",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -31,7 +31,7 @@
                         "parameterType": "AuthenticateReseller",
                         "returnType": "AuthenticateResellerResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AuthenticateReseller",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -42,14 +42,14 @@
                         "parameterType": "AuthenticateCustomer",
                         "returnType": "AuthenticateCustomerResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AuthenticateCustomer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Authenticate",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -62,7 +62,7 @@
                         "parameterType": "AddTenatFeatures",
                         "returnType": "AddTenatFeaturesResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AddTenatFeatures",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -73,7 +73,7 @@
                         "parameterType": "AddUpdatePaymentInformation",
                         "returnType": "AddUpdatePaymentInformationResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AddUpdatePaymentInformation",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -84,14 +84,14 @@
                         "parameterType": "AddLocalNumber",
                         "returnType": "AddLocalNumberResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AddLocalNumber",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Add",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -104,14 +104,14 @@
                         "parameterType": "SubscribedTenants",
                         "returnType": "SubscribedTenantsResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SubscribedTenants",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Subscribed",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -124,14 +124,14 @@
                         "parameterType": "MonitorExecutionTime",
                         "returnType": "MonitorExecutionTimeResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MonitorExecutionTime",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Monitor",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -144,7 +144,7 @@
                         "parameterType": "CustomerAutoPayment",
                         "returnType": "CustomerAutoPaymentResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CustomerAutoPayment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -155,7 +155,7 @@
                         "parameterType": "CustomerHuntGroup",
                         "returnType": "CustomerHuntGroupResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CustomerHuntGroup",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -166,7 +166,7 @@
                         "parameterType": "CustomerAccountSubscription",
                         "returnType": "CustomerAccountSubscriptionResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CustomerAccountSubscription",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -177,7 +177,7 @@
                         "parameterType": "CustomerAbbreviatedDialingRequestList",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CustomerAbbreviatedDialingRequestList",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -188,14 +188,14 @@
                         "parameterType": "CustomerAccountNotepadReq",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CustomerAccountNotepadReq",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Customer",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -208,14 +208,14 @@
                         "parameterType": "FavouriteNumbers",
                         "returnType": "FavouriteNumbersResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "FavouriteNumbers",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Favourite",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -228,7 +228,7 @@
                         "parameterType": "UMVoiceMailSettings",
                         "returnType": "UMVoiceMailSettingsResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "UMVoiceMailSettings",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -239,14 +239,14 @@
                         "parameterType": "UMVoiceMailGreetings",
                         "returnType": "UMVoiceMailGreetingsResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "UMVoiceMailGreetings",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "UMV",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -259,14 +259,14 @@
                         "parameterType": "EmailClient",
                         "returnType": "EmailClientResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "EmailClient",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Email",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -279,14 +279,14 @@
                         "parameterType": "SipStatus",
                         "returnType": "SipStatusResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SipStatus",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Sip",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -299,7 +299,7 @@
                         "parameterType": "DeleteAccount",
                         "returnType": "DeleteAccountResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DeleteAccount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -310,7 +310,7 @@
                         "parameterType": "DeleteCustomer",
                         "returnType": "DeleteCustomerResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DeleteCustomer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -321,14 +321,14 @@
                         "parameterType": "DeleteLocalNumber",
                         "returnType": "DeleteLocalNumberResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "DeleteLocalNumber",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Delete",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -341,14 +341,14 @@
                         "parameterType": "ActiveCalls",
                         "returnType": "ActiveCallsResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ActiveCalls",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Active",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -361,7 +361,7 @@
                         "parameterType": "GetIpAddresses",
                         "returnType": "GetIpAddressesResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "GetIpAddresses",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -372,14 +372,14 @@
                         "parameterType": "GetAccount",
                         "returnType": "GetAccountResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "GetAccount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Get",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -392,14 +392,14 @@
                         "parameterType": "ValidatePlatformOwner",
                         "returnType": "ValidatePlatformOwnerResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ValidatePlatformOwner",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Validate",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -412,7 +412,7 @@
                         "parameterType": "CreateTenant",
                         "returnType": "CreateTenantResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CreateTenant",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -423,7 +423,7 @@
                         "parameterType": "CreateAccount",
                         "returnType": "CreateAccountResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CreateAccount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -434,7 +434,7 @@
                         "parameterType": "CreateCustomer",
                         "returnType": "CreateCustomerResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CreateCustomer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -445,14 +445,14 @@
                         "parameterType": "CreatePartnerAccount",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CreatePartnerAccount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Create",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -465,14 +465,14 @@
                         "parameterType": "AllocateIP",
                         "returnType": "AllocateIPResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AllocateIP",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Allocate",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -485,7 +485,7 @@
                         "parameterType": "UpdateAccount",
                         "returnType": "UpdateAccountResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "UpdateAccount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -496,7 +496,7 @@
                         "parameterType": "UpdateCustomerStatus",
                         "returnType": "UpdateCustomerStatusResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "UpdateCustomerStatus",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -507,14 +507,14 @@
                         "parameterType": "UpdateCustomer",
                         "returnType": "UpdateCustomerResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "UpdateCustomer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Update",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -527,7 +527,7 @@
                         "parameterType": "PortaFollowMe",
                         "returnType": "PortaFollowMeResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "PortaFollowMe",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -538,7 +538,7 @@
                         "parameterType": "PortaPayment",
                         "returnType": "PortaPaymentResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "PortaPayment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -549,7 +549,7 @@
                         "parameterType": "PortaCustomerInvoiceRequest",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "PortaCustomerInvoiceRequest",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -560,14 +560,14 @@
                         "parameterType": "PortaAccountFollowMeInfo",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "PortaAccountFollowMeInfo",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Porta",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -580,14 +580,14 @@
                         "parameterType": "AccountAlias",
                         "returnType": "AccountAliasResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AccountAlias",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Account",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -600,14 +600,14 @@
                         "parameterType": "SmsMessage",
                         "returnType": "SmsMessageResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "SmsMessage",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Sms",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -620,14 +620,14 @@
                         "parameterType": "ApiSettings",
                         "returnType": "ApiSettingsResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "ApiSettings",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Api",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -640,7 +640,7 @@
                         "parameterType": "VNAssignDIDTenant",
                         "returnType": "VNAssignDIDTenantResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNAssignDIDTenant",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -651,7 +651,7 @@
                         "parameterType": "VNAddDIDAgreement",
                         "returnType": "VNAddDIDAgreementResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNAddDIDAgreement",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -662,7 +662,7 @@
                         "parameterType": "VNAddDIDTenantPrice",
                         "returnType": "VNAddDIDTenantPriceResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNAddDIDTenantPrice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -673,7 +673,7 @@
                         "parameterType": "VNAvailableCityDIDS",
                         "returnType": "VNAvailableCityDIDSResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNAvailableCityDIDS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -684,7 +684,7 @@
                         "parameterType": "VNAddDIDS",
                         "returnType": "VNAddDIDSResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNAddDIDS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -695,14 +695,14 @@
                         "parameterType": "VNAvailableCountryDIDS",
                         "returnType": "VNAvailableCountryDIDSResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNAvailableCountryDIDS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "VNA",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -715,14 +715,14 @@
                         "parameterType": "VNGetDIDSPorta",
                         "returnType": "VNGetDIDSPortaResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNGetDIDSPorta",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "VNG",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -735,7 +735,7 @@
                         "parameterType": "VNUpdateDIDAgreement",
                         "returnType": "VNUpdateDIDAgreementResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNUpdateDIDAgreement",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -746,14 +746,14 @@
                         "parameterType": "VNUpdateDIDS",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNUpdateDIDS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "VNU",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -766,14 +766,14 @@
                         "parameterType": "VNDIDUpdateTenantPrice",
                         "returnType": "VNDIDUpdateTenantPriceResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNDIDUpdateTenantPrice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "VNDIDU",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -786,14 +786,14 @@
                         "parameterType": "VNTenantDIDS",
                         "returnType": "VNTenantDIDSResponse",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNTenantDIDS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "VNT",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -806,14 +806,14 @@
                         "parameterType": "MobileTopUpRequest",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "MobileTopUpRequest",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Mobile",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -826,7 +826,7 @@
                         "parameterType": "CallProcessingRequest",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CallProcessingRequest",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -837,14 +837,14 @@
                         "parameterType": "CallQueueSettingsRequest",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "CallQueueSettingsRequest",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Call",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -857,14 +857,14 @@
                         "parameterType": "NumberPortingReq",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "NumberPortingReq",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Number",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -877,7 +877,7 @@
                         "parameterType": "StemProCallPatternReq",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "StemProCallPatternReq",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
@@ -888,14 +888,14 @@
                         "parameterType": "StemProVendorBalanceReq",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "StemProVendorBalanceReq",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Stem",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -908,14 +908,14 @@
                         "parameterType": "AutoAttendantSettingsRequest",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "AutoAttendantSettingsRequest",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "Auto",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -928,14 +928,14 @@
                         "parameterType": "IVRLocalNumberRequest",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "IVRLocalNumberRequest",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "IVRL",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -948,14 +948,14 @@
                         "parameterType": "APIAdminLogin",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "APIAdminLogin",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "APIA",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -968,14 +968,14 @@
                         "parameterType": "VNReserveNumberReq",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNReserveNumberReq",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "VNR",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -988,14 +988,14 @@
                         "parameterType": "VNDIDDeleteTenantPrice",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNDIDDeleteTenantPrice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "VNDIDD",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -1008,14 +1008,14 @@
                         "parameterType": "VNBuyDIDTenant",
                         "returnType": "void",
                         "inheritance": "",
-                        "isAbstract": false,
+                        "abstract": false,
                         "meta": [],
                         "name": "VNBuyDIDTenant",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": [],
                 "name": "VNB",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
@@ -1024,12 +1024,12 @@
         "structs": [
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "int",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "nillable": "true",
                     "type": "tns:char"
@@ -1039,12 +1039,12 @@
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "base": "xs:duration",
                     "maxInclusive": "P10675199DT2H48M5.4775807S",
@@ -1058,12 +1058,12 @@
             },
             {
                 "attributes": [],
-                "isRestriction": false,
-                "isStruct": false,
+                "restriction": false,
+                "struct": false,
                 "types": null,
                 "values": [],
                 "inheritance": "string",
-                "isAbstract": false,
+                "abstract": false,
                 "meta": {
                     "nillable": "true",
                     "pattern": "[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}",

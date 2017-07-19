@@ -129,7 +129,7 @@ class WsdlTest extends TestCase
     {
         $this->assertSame(array(
             'inheritance' => '',
-            'isAbstract' => false,
+            'abstract' => false,
             'meta' => array(),
             'name' => self::wsdlBingPath(),
             '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\Wsdl',
