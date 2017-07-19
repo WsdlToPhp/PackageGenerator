@@ -141,9 +141,9 @@ abstract class AbstractFile extends TestCase
     /**
      * @return Generator
      */
-    public static function ewsInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    public static function ewsInstance()
     {
-        return self::getInstance(self::wsdlEwsPath(), $reset, $gatherMethods);
+        return self::getInstanceFromSerializedJson('parsed_ews');
     }
     /**
      * @param string $wsdl
@@ -153,8 +153,7 @@ abstract class AbstractFile extends TestCase
     {
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgePhpReservedKeywords();
-        $g = parent::getInstance($wsdl, $reset);
-        $g
+        $g = parent::getInstance($wsdl, $reset)
             ->setOptionPrefix('Api')
             ->setOptionAddComments(array(
                 'release' => '1.1.0',
@@ -163,6 +162,14 @@ abstract class AbstractFile extends TestCase
             ->setOptionGatherMethods($gatherMethods);
         self::applyParsers($g, $wsdl);
         return $g;
+    }
+    /**
+     * @param string $id
+     * @return Generator
+     */
+    public static function getInstanceFromSerializedJson($id)
+    {
+        return Generator::instanceFromSerializedJson(file_get_contents(self::getTestDirectory() . $id . '.json'));;
     }
     /**
      * @param Generator $generator
