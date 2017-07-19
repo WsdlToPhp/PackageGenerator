@@ -1420,7 +1420,7 @@
     },
     "options": {
         "category": "cat",
-        "gather_methods": "start",
+        "gather_methods": "none",
         "generic_constants_names": false,
         "generate_tutorial_file": true,
         "add_comments": {

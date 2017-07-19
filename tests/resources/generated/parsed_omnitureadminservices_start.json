@@ -4,7 +4,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CodeManager_DeleteCodeArchive",
                         "parameterType": {
                             "archive_id": "int"
@@ -21,7 +21,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CodeManager_GenerateCode",
                         "parameterType": {
                             "char_set": "string",
@@ -43,7 +43,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CodeManager_GetCodeArchives",
                         "parameterType": {
                             "archive_id_list": "int_array",
@@ -62,7 +62,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CodeManager_SaveCodeArchive",
                         "parameterType": {
                             "archive_description": "string",
@@ -91,7 +91,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_CancelQueueItem",
                         "parameterType": {
                             "qid": "int"
@@ -108,7 +108,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_DownloadProduct",
                         "parameterType": {
                             "productType": "productType"
@@ -125,7 +125,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetEndpoint",
                         "parameterType": {
                             "company": "string"
@@ -142,7 +142,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetQueue",
                         "parameterType": null,
                         "returnType": "queue_items",
@@ -157,7 +157,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetReportSuites",
                         "parameterType": {
                             "rs_types": "string_array",
@@ -175,7 +175,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetTokenCount",
                         "parameterType": null,
                         "returnType": "int",
@@ -190,7 +190,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetTokenUsage",
                         "parameterType": null,
                         "returnType": "token_usage_container",
@@ -205,7 +205,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetTrackingServer",
                         "parameterType": {
                             "rsid": "string"
@@ -222,7 +222,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetVersionAccess",
                         "parameterType": null,
                         "returnType": "string_array",
@@ -237,7 +237,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_ResetTokenCount",
                         "parameterType": {
                             "auth_key": "string"
@@ -263,7 +263,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Dashboards_GetDashboardAPI",
                         "parameterType": {
                             "dashboard_id": "int",
@@ -281,7 +281,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Dashboards_GetReportletDataAPI",
                         "parameterType": {
                             "reportlet_id": "int"
@@ -307,7 +307,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_AppendDataBlock",
                         "parameterType": {
                             "blockID": "int",
@@ -328,7 +328,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_BeginDataBlock",
                         "parameterType": {
                             "blockName": "string",
@@ -350,7 +350,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_Deactivate",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -368,7 +368,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetFileIDs",
                         "parameterType": {
                             "dataSourceID": "string",
@@ -387,7 +387,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetFileInfo",
                         "parameterType": {
                             "dataSourceID": "string",
@@ -406,7 +406,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetFileStatus",
                         "parameterType": {
                             "dataSourceFileID": "string",
@@ -424,7 +424,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetIDs",
                         "parameterType": {
                             "reportSuiteID": "string"
@@ -441,7 +441,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetInfo",
                         "parameterType": {
                             "filter": "string",
@@ -459,7 +459,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_ProcessIncompleteVisits",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -477,7 +477,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_Restart",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -495,7 +495,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_SetupFull",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -514,7 +514,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_SetupGeneric",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -534,7 +534,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_SetupTraffic",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -553,7 +553,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_SetupWebLog",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -572,7 +572,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_CancelRequest",
                         "parameterType": {
                             "Request_Id": "int"
@@ -589,7 +589,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_CheckRequest",
                         "parameterType": {
                             "Request_Id": "int"
@@ -606,7 +606,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_CreateSegment",
                         "parameterType": {
                             "hidden": "boolean",
@@ -625,7 +625,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_GetReportData",
                         "parameterType": {
                             "Request_Id": "int",
@@ -644,7 +644,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_GetSegment",
                         "parameterType": {
                             "rsid": "string",
@@ -662,7 +662,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_GetSegments",
                         "parameterType": {
                             "rsid": "string"
@@ -679,7 +679,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_ReplaceSegment",
                         "parameterType": {
                             "id": "int",
@@ -698,7 +698,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_Request",
                         "parameterType": {
                             "Breakdown_List": "string_array",
@@ -735,7 +735,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_VerifySegment",
                         "parameterType": {
                             "segment": "data_warehouse_segment"
@@ -761,7 +761,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DeliveryList_Delete",
                         "parameterType": {
                             "dist_list_id": "int"
@@ -778,7 +778,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DeliveryList_Get",
                         "parameterType": {
                             "search_name": "string"
@@ -795,7 +795,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DeliveryList_Save",
                         "parameterType": {
                             "delivery_list_name": "string",
@@ -822,7 +822,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Discover_GetSegments",
                         "parameterType": {
                             "end_date": "date",
@@ -841,7 +841,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Discover_QueueDiscoverOvertime",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -858,7 +858,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Discover_QueueDiscoverRanked",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -875,7 +875,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Discover_QueueDiscoverTrended",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -901,7 +901,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Logs_GetAdminConsoleCompanyLog",
                         "parameterType": {
                             "company": "string",
@@ -923,7 +923,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Logs_GetAdminConsoleLog",
                         "parameterType": {
                             "company": "string",
@@ -945,7 +945,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Logs_GetUsageLog",
                         "parameterType": {
                             "date_from": "string",
@@ -977,7 +977,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_AddLogin",
                         "parameterType": {
                             "admin": "int",
@@ -1008,7 +1008,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_Authenticate",
                         "parameterType": {
                             "login": "string",
@@ -1026,7 +1026,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_DeleteGroup",
                         "parameterType": {
                             "groupid": "string"
@@ -1043,7 +1043,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_DeleteLogin",
                         "parameterType": {
                             "login": "string"
@@ -1060,7 +1060,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetCRMInfo",
                         "parameterType": {
                             "company": "string",
@@ -1078,7 +1078,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetCategories",
                         "parameterType": {
                             "categoryid": "int",
@@ -1096,7 +1096,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetGroup",
                         "parameterType": {
                             "group_type": "int",
@@ -1114,7 +1114,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetGroups",
                         "parameterType": {
                             "field": "string",
@@ -1132,7 +1132,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetLogin",
                         "parameterType": {
                             "login": "string"
@@ -1149,7 +1149,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetLogins",
                         "parameterType": {
                             "login_search_field": "string",
@@ -1167,7 +1167,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetReportBuilderLogin",
                         "parameterType": {
                             "locale": "reportDefinitionLocale"
@@ -1184,7 +1184,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetReportSuiteGroupCount",
                         "parameterType": {
                             "search_field": "string",
@@ -1202,7 +1202,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetReportSuiteGroups",
                         "parameterType": {
                             "rsid": "string"
@@ -1219,7 +1219,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_HasPrivilege",
                         "parameterType": {
                             "privilegeToken": "string"
@@ -1236,7 +1236,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_SaveGroup",
                         "parameterType": {
                             "group_description": "string",
@@ -1261,7 +1261,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_SaveLogin",
                         "parameterType": {
                             "admin": "int",
@@ -1291,7 +1291,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_SaveReportSuiteGroups",
                         "parameterType": {
                             "rsid": "string",
@@ -1318,7 +1318,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_CancelReport",
                         "parameterType": {
                             "reportID": "int"
@@ -1335,7 +1335,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetElementNames",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1352,7 +1352,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetOvertimeReport",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1369,7 +1369,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetRankedReport",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1386,7 +1386,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetReport",
                         "parameterType": {
                             "reportID": "int"
@@ -1403,7 +1403,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetReportQueue",
                         "parameterType": null,
                         "returnType": "report_queue",
@@ -1418,7 +1418,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetStatus",
                         "parameterType": {
                             "reportID": "int"
@@ -1435,7 +1435,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetTrendedReport",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1452,7 +1452,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_QueueOvertime",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1469,7 +1469,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_QueueRanked",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1486,7 +1486,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_QueueSCMRanked",
                         "parameterType": {
                             "reportDescription": "SCM_reportDescription"
@@ -1503,7 +1503,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_QueueTrended",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1520,7 +1520,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_AddCorrelations",
                         "parameterType": {
                             "rel_ids": "int_array",
@@ -1539,7 +1539,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_AddInternalURLFilters",
                         "parameterType": {
                             "filters": "string_array",
@@ -1557,7 +1557,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_AddKeyVisitors",
                         "parameterType": {
                             "key_visitors": "string_array",
@@ -1575,7 +1575,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_AddSavedFilters",
                         "parameterType": {
                             "savedFilters": "saved_filters_array"
@@ -1592,7 +1592,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_Create",
                         "parameterType": {
                             "base_currency": "string",
@@ -1618,7 +1618,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteBaseURL",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1635,7 +1635,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteCalculatedMetrics",
                         "parameterType": {
                             "calculated_metrics": "calculated_metrics",
@@ -1653,7 +1653,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteClassifications",
                         "parameterType": {
                             "c_view": "classification_view",
@@ -1673,7 +1673,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteCorrelations",
                         "parameterType": {
                             "rel_ids": "int_array",
@@ -1692,7 +1692,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteDefaultPage",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1709,7 +1709,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteIPAddressExclusions",
                         "parameterType": {
                             "ip_list": "string_array",
@@ -1727,7 +1727,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteInternalURLFilters",
                         "parameterType": {
                             "filters": "string_array",
@@ -1745,7 +1745,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteKeyVisitors",
                         "parameterType": {
                             "key_visitors": "string_array",
@@ -1763,7 +1763,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteMarketingChannelCost",
                         "parameterType": {
                             "channel_type": "string",
@@ -1783,7 +1783,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteMarketingChannels",
                         "parameterType": {
                             "channel_ids": "mchannel_id_list",
@@ -1801,7 +1801,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeletePages",
                         "parameterType": {
                             "page_id_list": "int_array",
@@ -1819,7 +1819,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeletePaidSearch",
                         "parameterType": {
                             "filter": "string",
@@ -1839,7 +1839,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteSavedFilter",
                         "parameterType": {
                             "savedFilterIds": "int_array"
@@ -1856,7 +1856,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetActivation",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1873,7 +1873,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetAvailableElements",
                         "parameterType": {
                             "return_datawarehouse_elements": "int",
@@ -1891,7 +1891,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetAvailableMetrics",
                         "parameterType": {
                             "return_datawarehouse_metrics": "int",
@@ -1909,7 +1909,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetAxleStartDate",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1926,7 +1926,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetBaseCurrency",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1943,7 +1943,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetBaseURL",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1960,7 +1960,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetCalculatedMetrics",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1977,7 +1977,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetClassificationHierarchies",
                         "parameterType": {
                             "c_view": "string",
@@ -1996,7 +1996,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetClassifications",
                         "parameterType": {
                             "c_view": "string",
@@ -2016,7 +2016,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetCorrelations",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2033,7 +2033,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetCustomCalendar",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2050,7 +2050,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetDefaultPage",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2067,7 +2067,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetEVars",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2084,7 +2084,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetEcommerce",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2101,7 +2101,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetFindingMethods",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2118,7 +2118,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetIPAddressExclusions",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2135,7 +2135,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetIPObfuscation",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2152,7 +2152,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetInternalURLFilters",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2169,7 +2169,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetKeyVisitors",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2186,7 +2186,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetLocalization",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2203,7 +2203,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannelCost",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2220,7 +2220,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannelExpiration",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2237,7 +2237,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannelRules",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2254,7 +2254,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannels",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2271,7 +2271,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannelsCustomSubRelations",
                         "parameterType": {
                             "rel_id": "int",
@@ -2289,7 +2289,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMobileAppReporting",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2306,7 +2306,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetPages",
                         "parameterType": {
                             "limit": "int",
@@ -2327,7 +2327,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetPaidSearch",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2344,7 +2344,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetPermanentTraffic",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2361,7 +2361,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetProcessingStatus",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2378,7 +2378,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetRollupDates",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2395,7 +2395,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetRollups",
                         "parameterType": null,
                         "returnType": "rollup_array",
@@ -2410,7 +2410,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSavedFilters",
                         "parameterType": null,
                         "returnType": "saved_filters_array",
@@ -2425,7 +2425,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetScheduledSpike",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2442,7 +2442,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSegments",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2459,7 +2459,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSettings",
                         "parameterType": {
                             "locale": "reportDefinitionLocale",
@@ -2477,7 +2477,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSiteTitle",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2494,7 +2494,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSuccessEvents",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2511,7 +2511,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetTemplate",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2528,7 +2528,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetTimeZone",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2545,7 +2545,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetTrafficVars",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2562,7 +2562,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetUIVisibility",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2579,7 +2579,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetUniqueVisitorVariable",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2596,7 +2596,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetVideoReporting",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2613,7 +2613,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetVideoTracking",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2630,7 +2630,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveBaseCurrency",
                         "parameterType": {
                             "base_currency": "string",
@@ -2648,7 +2648,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveBaseURL",
                         "parameterType": {
                             "base_url": "string",
@@ -2666,7 +2666,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveCalculatedMetrics",
                         "parameterType": {
                             "calculated_metrics": "calculated_metrics",
@@ -2684,7 +2684,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveClassificationHierarchies",
                         "parameterType": {
                             "c_options": "string_array",
@@ -2709,7 +2709,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveClassifications",
                         "parameterType": {
                             "c_options": "string_array",
@@ -2734,7 +2734,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveCustomCalendar",
                         "parameterType": {
                             "anchor_date": "date",
@@ -2753,7 +2753,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveDefaultPage",
                         "parameterType": {
                             "default_page": "string",
@@ -2771,7 +2771,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveEVars",
                         "parameterType": {
                             "evars": "evars",
@@ -2789,7 +2789,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveEcommerce",
                         "parameterType": {
                             "ecommerce": "int",
@@ -2807,7 +2807,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveFindingMethods",
                         "parameterType": {
                             "reports": "finding_methods",
@@ -2825,7 +2825,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveIPAddressExclusions",
                         "parameterType": {
                             "ip_list": "save_ip_exclusions",
@@ -2843,7 +2843,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveIPObfuscation",
                         "parameterType": {
                             "ip_obfuscation": "int",
@@ -2861,7 +2861,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMarketingChannelCost",
                         "parameterType": {
                             "cost_item": "cost_item",
@@ -2879,7 +2879,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMarketingChannelExpiration",
                         "parameterType": {
                             "days": "int",
@@ -2897,7 +2897,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMarketingChannelRules",
                         "parameterType": {
                             "mchannel_rules": "mchannel_rulesets",
@@ -2915,7 +2915,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMarketingChannels",
                         "parameterType": {
                             "channels": "mchannel_list",
@@ -2933,7 +2933,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMobileAppReporting",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2946,7 +2946,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SavePaidSearch",
                         "parameterType": {
                             "filter": "string",
@@ -2966,7 +2966,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SavePermanentTraffic",
                         "parameterType": {
                             "new_hits_per_day": "int",
@@ -2985,7 +2985,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveRollup",
                         "parameterType": {
                             "go_live_date": "date",
@@ -3005,7 +3005,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveSavedFilters",
                         "parameterType": {
                             "savedFilters": "saved_filters_array"
@@ -3022,7 +3022,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveScheduledSpike",
                         "parameterType": {
                             "end_date": "date",
@@ -3042,7 +3042,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveSiteTitle",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3060,7 +3060,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveSuccessEvents",
                         "parameterType": {
                             "events": "events",
@@ -3078,7 +3078,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveSurveySettings",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3094,7 +3094,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveTimeZone",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3112,7 +3112,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveTrafficVars",
                         "parameterType": {
                             "property": "traffic_vars",
@@ -3130,7 +3130,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveUIVisibility",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3149,7 +3149,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveUniqueVisitorVariable",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3167,7 +3167,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveVideoReporting",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -3189,7 +3189,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_CheckJobStatus",
                         "parameterType": {
                             "job_id": "int"
@@ -3206,7 +3206,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_CreateFTP",
                         "parameterType": {
                             "description": "string",
@@ -3228,7 +3228,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ExportCreateJob",
                         "parameterType": {
                             "campaign_filter_begin_range": "string",
@@ -3258,7 +3258,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ExportGetFileSegment",
                         "parameterType": {
                             "file_id": "int",
@@ -3276,7 +3276,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_GetCompatabiltyMetrics",
                         "parameterType": {
                             "report_suite_array": "string_array"
@@ -3293,7 +3293,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_GetFilters",
                         "parameterType": {
                             "relation_id": "int",
@@ -3311,7 +3311,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_GetTemplate",
                         "parameterType": {
                             "encoding": "string",
@@ -3332,7 +3332,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ImportCommitJob",
                         "parameterType": {
                             "job_id": "int"
@@ -3349,7 +3349,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ImportCreateJob",
                         "parameterType": {
                             "check_divisions": "int",
@@ -3373,7 +3373,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ImportPopulateJob",
                         "parameterType": {
                             "job_id": "int",
@@ -3392,7 +3392,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ListFTP",
                         "parameterType": null,
                         "returnType": "saint_ftp_list",
@@ -3416,7 +3416,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_CreatePublishedReport",
                         "parameterType": {
                             "location": "workbookLocation",
@@ -3436,7 +3436,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_DeletePublishedReport",
                         "parameterType": {
                             "product": "productType",
@@ -3454,7 +3454,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_DeleteWorkbook",
                         "parameterType": {
                             "location": "workbookLocation",
@@ -3474,7 +3474,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_DownloadWorkbook",
                         "parameterType": {
                             "location": "workbookLocation",
@@ -3494,7 +3494,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_GetPublishedReports",
                         "parameterType": {
                             "product": "productType",
@@ -3512,7 +3512,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_GetReportsRunHistory",
                         "parameterType": {
                             "limit": "int",
@@ -3532,7 +3532,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_GetWorkbookList",
                         "parameterType": {
                             "location": "workbookLocation",
@@ -3550,7 +3550,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_ReRunReport",
                         "parameterType": {
                             "id": "int"
@@ -3567,7 +3567,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_UpdatePublishedReport",
                         "parameterType": {
                             "product": "productType",
@@ -3586,7 +3586,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_UploadWorkbook",
                         "parameterType": {
                             "description": "string",
@@ -3616,7 +3616,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Survey_GetSummaryList",
                         "parameterType": {
                             "rsid": "string",
@@ -3643,7 +3643,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "User_GetBookmarkFolders",
                         "parameterType": {
                             "limit": "int"
@@ -3660,7 +3660,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "User_GetDashboardsAPI",
                         "parameterType": {
                             "limit": "int"
@@ -3677,7 +3677,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "User_GetLastUsedReportSuite",
                         "parameterType": null,
                         "returnType": "report_suite_id",
@@ -3692,7 +3692,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "User_LoginEmailExists",
                         "parameterType": {
                             "emailAddress": "string"
@@ -22050,7 +22050,7 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": ".\/tests\/resources\/OmnitureAdminServices.wsdl",
+        "origin": __ORIGIN__,
         "destination": __DESTINATION__,
         "src_dirname": "src",
         "prefix": "Api",
