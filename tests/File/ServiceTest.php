@@ -228,7 +228,7 @@ class ServiceTest extends AbstractFile
         $generator = self::omnitureGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
         $model = new ServiceModel($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
         $serviceFile = new ServiceFile($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
-        foreach($generator->getServices() as $service) {
+        foreach ($generator->getServices() as $service) {
             foreach ($service->getMethods() as $method) {
                 $model->getMethods()->add($method);
             }
@@ -246,7 +246,7 @@ class ServiceTest extends AbstractFile
         $generator = self::payPalGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
         $model = new ServiceModel($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
         $serviceFile = new ServiceFile($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
-        foreach($generator->getServices() as $service) {
+        foreach ($generator->getServices() as $service) {
             foreach ($service->getMethods() as $method) {
                 $model->getMethods()->add($method);
             }
@@ -264,7 +264,7 @@ class ServiceTest extends AbstractFile
         $generator = self::actonGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
         $model = new ServiceModel($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
         $serviceFile = new ServiceFile($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
-        foreach($generator->getServices() as $service) {
+        foreach ($generator->getServices() as $service) {
             foreach ($service->getMethods() as $method) {
                 $model->getMethods()->add($method);
             }

@@ -316,9 +316,9 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     /**
      * @return Generator
      */
-    public static function getWhlInstance()
+    public static function getWhlInstance($reset = false)
     {
-        return self::getInstance(self::wsdlWhlPath());
+        return self::getInstance(self::wsdlWhlPath(), $reset);
     }
     /**
      * @param string $wsdlPath

@@ -4,6 +4,7 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+
 /**
  * This file is here to help generate the serialized Generator instances as JSON files.
  * This can be executed as php generate_serialized_jsons.php which generates the files under the resources/generated directory
@@ -157,5 +158,4 @@ foreach ($jsons as $id => $settings) {
         $json = str_replace(json_encode(TestCase::getTestDirectory()), '__DESTINATION__', $json);
         file_put_contents(sprintf('%sparsed_%s_%s.json', TestCase::getTestDirectory(), $id, $gatherMethod), $json);
     }
-
 }
