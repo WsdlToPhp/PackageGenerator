@@ -179,7 +179,7 @@ abstract class AbstractFile extends TestCase
         if (!array_key_exists($id, self::$ids) || $reset) {
             $json = file_get_contents(self::getTestDirectory() . $id . '.json');
             $json = str_replace(array(
-                '__DESTINATION__'
+                '__DESTINATION__',
             ), array(
                 json_encode(self::getTestDirectory()),
             ), $json);
