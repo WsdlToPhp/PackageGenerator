@@ -1,1 +1,0 @@
-{"name":"wsdltophp/bing","description":"Package generated from __WSDL_URL__ using wsdltophp/packagegenerator","require":{"php":">=5.3.3","ext-soap":"*","wsdltophp/packagebase":"~1.0"},"autoload":{"psr-4":{"Api\\":"./"}}}

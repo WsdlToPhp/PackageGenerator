@@ -302,4 +302,20 @@ class ServiceTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Search service for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteEwsFindService()
+    {
+        $generator = self::ewsInstance();
+        if (($model = $generator->getService('Find')) instanceof ServiceModel) {
+            $service = new ServiceFile($generator, $model->getName());
+            $service
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiFind', $service);
+        } else {
+            $this->assertFalse(true, 'Unable to find Find service for file generation');
+        }
+    }
 }

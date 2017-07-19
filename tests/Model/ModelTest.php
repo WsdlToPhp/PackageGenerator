@@ -84,4 +84,17 @@ class ModelTest extends TestCase
     {
         self::instance('foo')->getReservedMethodsInstance();
     }
+    /**
+     *
+     */
+    public function testToJsonSerialize()
+    {
+        $this->assertSame(array(
+            'inheritance' => '',
+            'abstract' => false,
+            'meta' => array(),
+            'name' => 'foo_',
+            '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyModel',
+        ), self::instance('foo_')->jsonSerialize());
+    }
 }

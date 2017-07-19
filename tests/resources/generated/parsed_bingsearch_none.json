@@ -20,7 +20,7 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Search",
+                "name": "Service",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             }
         ],
@@ -3282,20 +3282,22 @@
     },
     "options": {
         "category": "cat",
-        "gather_methods": "start",
+        "gather_methods": "none",
         "generic_constants_names": false,
         "generate_tutorial_file": true,
-        "add_comments": [],
+        "add_comments": {
+            "release": "1.1.0"
+        },
         "namespace_prefix": "",
-        "standalone": false,
+        "standalone": true,
         "validation": true,
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": __ORIGIN__,
+        "origin": ".\/tests\/resources\/bingsearch.wsdl",
         "destination": __DESTINATION__,
         "src_dirname": "src",
-        "prefix": "",
+        "prefix": "Api",
         "suffix": "",
         "basic_login": "",
         "basic_password": "",
