@@ -14,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 
-class Generator
+class Generator implements \JsonSerializable
 {
     /**
      * Wsdl
@@ -176,7 +176,19 @@ class Generator
      */
     public function generatePackage()
     {
-        return $this->doSanityChecks()->initDirectory()->doParse()->doGenerate();
+        return $this
+            ->doSanityChecks()
+            ->parse()
+            ->initDirectory()
+            ->doGenerate();
+    }
+    /**
+     * Only parses what has to be parsed, called before actually generating the package
+     * @return Generator
+     */
+    public function parse()
+    {
+        return $this->doParse();
     }
     /**
      * Gets the struct by its name
@@ -594,7 +606,7 @@ class Generator
     {
         $destination = $this->options->getDestination();
         if (!empty($destination)) {
-            $destination = rtrim($destination, DIRECTORY_SEPARATOR). DIRECTORY_SEPARATOR;
+            $destination = rtrim($destination, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
         }
         return $destination;
     }
@@ -848,5 +860,60 @@ class Generator
             return file_get_contents($url);
         }
         return null;
+    }
+    /**
+     * @return GeneratorContainers
+     */
+    public function getContainers()
+    {
+        return $this->containers;
+    }
+    /**
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return array(
+            'containers' => $this->containers,
+            'options' => $this->options,
+        );
+    }
+    /**
+     * @param string $json
+     * @throws \InvalidArgumentException
+     * @return Generator
+     */
+    public static function instanceFromSerializedJson($json)
+    {
+        $decodedJson = json_decode($json, true);
+        if (json_last_error() === JSON_ERROR_NONE) {
+            // load options first
+            $options = GeneratorOptions::instance();
+            foreach ($decodedJson['options']as $name => $value) {
+                $options->setOptionValue($name, $value);
+            }
+            // create generator instance with options
+            $instance = new static($options);
+            // load services
+            foreach ($decodedJson['containers']['services'] as $service) {
+                $instance->getContainers()->getServices()->add(self::getModelInstanceFromJsonArrayEntry($instance, $service));
+            }
+            // load sructs
+            foreach ($decodedJson['containers']['structs'] as $struct) {
+                $instance->getContainers()->getStructs()->add(self::getModelInstanceFromJsonArrayEntry($instance, $struct));
+            }
+        } else {
+            throw new \InvalidArgumentException(sprintf('Json is invalid, please check error %s', json_last_error()));
+        }
+        return $instance;
+    }
+    /**
+     * @param Generator $generator
+     * @param array $jsonArrayEntry
+     * @return AbstractModel
+     */
+    private static function getModelInstanceFromJsonArrayEntry(Generator $generator, array $jsonArrayEntry)
+    {
+        return AbstractModel::instanceFromSerializedJson($generator, $jsonArrayEntry);
     }
 }

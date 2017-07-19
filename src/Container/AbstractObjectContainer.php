@@ -4,7 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Container;
 
 use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
 
-abstract class AbstractObjectContainer extends AbstractGeneratorAware implements \ArrayAccess, \Iterator, \Countable
+abstract class AbstractObjectContainer extends AbstractGeneratorAware implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
 {
     /**
      * @var string
@@ -163,5 +163,9 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
             throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', var_export($value, true), get_class($this)), __LINE__);
         }
         return array_key_exists($value, $this->objects) ? $this->objects[$value] : null;
+    }
+    public function jsonSerialize()
+    {
+        return array_values($this->objects);
     }
 }

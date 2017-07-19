@@ -40,7 +40,7 @@ class StructAttribute extends AbstractModel
      * @param string $type the type
      * @param Struct $struct defines the struct which owns this value
      */
-    public function __construct(Generator $generator, $name, $type, Struct $struct)
+    public function __construct(Generator $generator, $name, $type = '', Struct $struct = null)
     {
         parent::__construct($generator, $name);
         $this->setType($type)->setOwner($struct);
@@ -245,5 +245,17 @@ class StructAttribute extends AbstractModel
     public function getReservedMethodsInstance($filename = null)
     {
         return $this->getOwner()->getReservedMethodsInstance($filename);
+    }
+    /**
+     * {@inheritDoc}
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
+     */
+    protected function toJsonSerialize()
+    {
+        return array(
+            'containsElements' => $this->containsElements,
+            'removableFromRequest' => $this->removableFromRequest,
+            'type' => $this->type,
+        );
     }
 }

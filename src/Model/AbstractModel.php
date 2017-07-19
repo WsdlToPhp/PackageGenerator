@@ -12,7 +12,7 @@ use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
 /**
  * Class AbstractModel defines the basic properties and methods to operations and structs extracted from the WSDL
  */
-abstract class AbstractModel extends AbstractGeneratorAware
+abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSerializable
 {
     /**
      * Constant used to define the key to store documentation value in meta
@@ -248,7 +248,7 @@ abstract class AbstractModel extends AbstractGeneratorAware
      * @param AbstractModel $owner object the owner of the current model
      * @return AbstractModel
      */
-    public function setOwner(AbstractModel $owner)
+    public function setOwner(AbstractModel $owner = null)
     {
         $this->owner = $owner;
         return $this;
@@ -268,6 +268,15 @@ abstract class AbstractModel extends AbstractGeneratorAware
     {
         $this->isAbstract = $isAbstract;
         return $this;
+    }
+    /**
+     * Alias to setAbstract
+     * @param bool $isAbstract
+     * @return AbstractModel
+     */
+    public function setIsAbstract($isAbstract)
+    {
+        return $this->setAbstract($isAbstract);
     }
     /**
      * Returns true if the original name is safe to use as a PHP property, variable name or class name
@@ -485,5 +494,62 @@ abstract class AbstractModel extends AbstractGeneratorAware
     public static function purgePhpReservedKeywords()
     {
         self::$replacedPhpReservedKeywords = array();
+    }
+    /**
+     * Should return the properties of the inherited class
+     * @return array
+     */
+    abstract protected function toJsonSerialize();
+    /**
+     * {@inheritDoc}
+     * @see JsonSerializable::jsonSerialize()
+     */
+    public function jsonSerialize()
+    {
+        return array_merge($this->toJsonSerialize(), array(
+            'inheritance' => $this->inheritance,
+            'isAbstract' => $this->isAbstract,
+            'meta' => $this->meta,
+            'name' => $this->name,
+            '__CLASS__' => get_called_class(),
+        ));
+    }
+    /**
+     * @param Generator $generator
+     * @param array $args
+     * @return AbstractModel
+     */
+    public static function instanceFromSerializedJson(Generator $generator, array $args)
+    {
+        self::checkSerializedJson($args);
+        $class = $args['__CLASS__'];
+        $instance = new $class($generator, $args['name']);
+        unset($args['name'], $args['__CLASS__']);
+        foreach ($args as $arg => $value) {
+            $setFromSerializedJson = sprintf('set%sFromSerializedJson', ucfirst($arg));
+            $set = sprintf('set%s', ucfirst($arg));
+            if (method_exists($instance, $setFromSerializedJson)) {
+                $instance->$setFromSerializedJson($value);
+            } elseif (method_exists($instance, $set)) {
+                $instance->$set($value);
+            }
+        }
+        return $instance;
+    }
+    /**
+     * @param array $args
+     * @throws \InvalidArgumentException
+     */
+    private static function checkSerializedJson(array $args)
+    {
+        if (!array_key_exists('__CLASS__', $args)) {
+            throw new \InvalidArgumentException(sprintf('__CLASS__ key is missing from', var_export($args, true)));
+        }
+        if (!class_exists($args['__CLASS__'])) {
+            throw new \InvalidArgumentException(sprintf('Class %s is unknown', $args['__CLASS__']));
+        }
+        if (!array_key_exists('name', $args)) {
+            throw new \InvalidArgumentException(sprintf('name key is missing from', var_export($args, true)));
+        }
     }
 }

@@ -5,7 +5,7 @@ namespace WsdlToPhp\PackageGenerator\Generator;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
 
-class GeneratorContainers extends AbstractGeneratorAware
+class GeneratorContainers extends AbstractGeneratorAware implements \JsonSerializable
 {
     /**
      * Structs
@@ -58,5 +58,12 @@ class GeneratorContainers extends AbstractGeneratorAware
     public function getStructs()
     {
         return $this->structs;
+    }
+    public function jsonSerialize()
+    {
+        return array(
+            'services' => $this->services,
+            'structs' => $this->structs,
+        );
     }
 }
