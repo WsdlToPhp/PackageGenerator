@@ -139,6 +139,13 @@ abstract class AbstractFile extends TestCase
         return self::getInstance(self::wsdlWhlPath(), $reset, $gatherMethods);
     }
     /**
+     * @return Generator
+     */
+    public static function ewsInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstance(self::wsdlEwsPath(), $reset, $gatherMethods);
+    }
+    /**
      * @param string $wsdl
      * @return Generator
      */
