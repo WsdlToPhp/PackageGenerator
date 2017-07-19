@@ -25,7 +25,7 @@ class Utils
                 $block->addChild('Meta informations extracted from the WSDL');
             }
             foreach ($validMeta as $meta) {
-                $block->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, $meta, AbstractModelFile::ANNOTATION_LONG_LENGTH));
+                $block->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, $meta, AbstractModelFile::ANNOTATION_META_LENGTH));
             }
         }
     }
