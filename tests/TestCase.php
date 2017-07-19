@@ -231,8 +231,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      */
     private static function getGeneratorInstance($wsdlPath)
     {
-        $options = GeneratorOptionsTest::optionsInstance();
-        $options
+        $options = GeneratorOptionsTest::optionsInstance()
             ->setOrigin($wsdlPath)
             ->setDestination(self::getTestDirectory());
         return new Generator($options);
@@ -328,7 +327,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      */
     public static function getInstance($wsdlPath, $reset = false)
     {
-        if (!isset(self::$instances[$wsdlPath]) || $reset === true) {
+        if (!isset(self::$instances[$wsdlPath]) || $reset) {
             self::$instances[$wsdlPath] = self::getGeneratorInstance($wsdlPath);
         }
         return self::$instances[$wsdlPath];
