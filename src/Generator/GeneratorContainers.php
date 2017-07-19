@@ -59,6 +59,11 @@ class GeneratorContainers extends AbstractGeneratorAware implements \JsonSeriali
     {
         return $this->structs;
     }
+    /**
+     * {@inheritDoc}
+     * @see JsonSerializable::jsonSerialize()
+     * @return StructContainer[]|ServiceContainer[]
+     */
     public function jsonSerialize()
     {
         return array(
