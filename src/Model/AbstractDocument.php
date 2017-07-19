@@ -50,4 +50,12 @@ abstract class AbstractDocument extends AbstractModel
     {
         return $this->content;
     }
+    /**
+     * {@inheritDoc}
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
+     */
+    protected function toJsonSerialize()
+    {
+        return array();
+    }
 }

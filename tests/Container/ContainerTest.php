@@ -12,7 +12,7 @@ class ContainerTest extends TestCase
     public function testAddWithException()
     {
         $container = new ObjectContainerTest(self::getBingGeneratorInstance());
-        $container->add(new ObjectTest());
+        $container->add(new FalseObjectTest());
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -20,7 +20,7 @@ class ContainerTest extends TestCase
     public function testOffsetSetWithException()
     {
         $container = new ObjectContainerTest(self::getBingGeneratorInstance());
-        $container->offsetSet(1, new ObjectTest());
+        $container->offsetSet(1, new FalseObjectTest());
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -29,5 +29,17 @@ class ContainerTest extends TestCase
     {
         $container = new FalseObjectContainerTest(self::getBingGeneratorInstance());
         $container->add(new FalseObjectTest());
+    }
+    /**
+     *
+     */
+    public function testJsonSerialize()
+    {
+        $object = new ObjectTest();
+        $container = new ObjectContainerTest(self::getBingGeneratorInstance());
+        $container->add($object);
+        $this->assertSame(array(
+            $object,
+        ), $container->jsonSerialize());
     }
 }

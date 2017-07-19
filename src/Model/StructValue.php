@@ -38,7 +38,7 @@ class StructValue extends AbstractModel
      * @param string $index the index of the value in the enumeration struct
      * @param Struct $struct defines the struct which owns this value
      */
-    public function __construct(Generator $generator, $name, $index, Struct $struct)
+    public function __construct(Generator $generator, $name, $index = 0, Struct $struct = null)
     {
         parent::__construct($generator, $name);
         $this->setIndex($index)->setOwner($struct);
@@ -137,5 +137,15 @@ class StructValue extends AbstractModel
     public function getOwner()
     {
         return parent::getOwner();
+    }
+    /**
+     * {@inheritDoc}
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
+     */
+    protected function toJsonSerialize()
+    {
+        return array(
+            'index' => $this->index,
+        );
     }
 }

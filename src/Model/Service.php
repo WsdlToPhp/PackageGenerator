@@ -116,4 +116,23 @@ class Service extends AbstractModel
     {
         return ServiceReservedMethod::instance($filename);
     }
+    /**
+     * {@inheritDoc}
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
+     */
+    protected function toJsonSerialize()
+    {
+        return array(
+            'methods' => $this->methods,
+        );
+    }
+    /**
+     * @param array $methods
+     */
+    public function setMethodsFromSerializedJson(array $methods)
+    {
+        foreach ($methods as $method) {
+            $this->methods->add(self::instanceFromSerializedJson($this->generator, $method)->setOwner($this));
+        }
+    }
 }
