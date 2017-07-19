@@ -42,8 +42,6 @@ class StructAttributeTest extends TestCase
         $struct = StructTest::instance('query', true);
         $struct->addAttribute('query', 'string');
         $structAttribute = $struct->getAttribute('query');
-        $this->assertSame(0, $structAttribute->getUniqueName());
-        $this->assertSame(0, $structAttribute->getUniqueName());
         $this->assertSame('query', $structAttribute->getUniqueName('foo'));
         $this->assertSame('query', $structAttribute->getUniqueName('foo'));
         $this->assertSame('getQuery', $structAttribute->getGetterName());

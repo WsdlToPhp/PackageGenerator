@@ -8,8 +8,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for PaymentCardType StructType
  * Meta informations extracted from the WSDL
  * - documentation: Identification about a specific credit card. | Allows for control of the sharing of payment card data between parties. | Date the card becomes valid for use (optional) and the date the card expires (required) in ISO 8601 prescribed
- * format. | Identification about a specific credit card. | Allows for control of the sharing of payment card data between parties. | Date the card becomes valid for use (optional) and the date the card expires (required) in ISO 8601 prescribed format.
- * | Identification about a specific credit card. | Allows for control of the sharing of payment card data between parties. | Date the card becomes valid for use (optional) and the date the card expires (required) in ISO 8601 prescribed format.
+ * format.
  * @package Api
  * @subpackage Structs
  * @release 1.1.0
@@ -19,7 +18,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The CardHolderName
      * Meta informations extracted from the WSDL
-     * - documentation: Name of the card holder. | Name of the card holder. | Name of the card holder. | Used for Character Strings, length 1 to 64. | Used for Character Strings, length 1 to 64. | Used for Character Strings, length 1 to 64.
+     * - documentation: Name of the card holder. | Used for Character Strings, length 1 to 64.
      * - minOccurs: 0
      * - maxLength: 64
      * - minLength: 1
@@ -36,7 +35,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The Address
      * Meta informations extracted from the WSDL
-     * - documentation: Card holder's address used for additional authorization checks. | Card holder's address used for additional authorization checks. | Card holder's address used for additional authorization checks.
+     * - documentation: Card holder's address used for additional authorization checks.
      * - minOccurs: 0
      * @var \Api\StructType\ApiAddressType
      */
@@ -52,7 +51,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The Email
      * Meta informations extracted from the WSDL
-     * - documentation: Card holder's email address(es) used for additional authorization checks. | Card holder's email address(es) used for additional authorization checks. | Card holder's email address(es) used for additional authorization checks.
+     * - documentation: Card holder's email address(es) used for additional authorization checks.
      * - maxOccurs: 3
      * - minOccurs: 0
      * @var \Api\StructType\ApiEmailType[]
@@ -61,9 +60,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The CardType
      * Meta informations extracted from the WSDL
-     * - documentation: Indicates the type of magnetic striped card. Refer to OpenTravel Code List Card Type (CDT). | Indicates the type of magnetic striped card. Refer to OpenTravel Code List Card Type (CDT). | Indicates the type of magnetic striped card.
-     * Refer to OpenTravel Code List Card Type (CDT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X. | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1,
-     * 101, 101.EQP, or 101.EQP.X. | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
+     * - documentation: Indicates the type of magnetic striped card. Refer to OpenTravel Code List Card Type (CDT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
      * - use: optional
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
      * @var string
@@ -72,7 +69,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The CardCode
      * Meta informations extracted from the WSDL
-     * - documentation: The 2 character code of the credit card issuer. | The 2 character code of the credit card issuer. | The 2 character code of the credit card issuer.
+     * - documentation: The 2 character code of the credit card issuer.
      * - use: optional
      * @var string
      */
@@ -80,7 +77,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The CardName
      * Meta informations extracted from the WSDL
-     * - documentation: The name of card. | The name of card. | The name of card.
+     * - documentation: The name of card.
      * - use: optional
      * @var string
      */
@@ -88,8 +85,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The CardNumber
      * Meta informations extracted from the WSDL
-     * - documentation: Credit card number embossed on the card. | Credit card number embossed on the card. | Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19. | Used for Numeric Strings, length 1 to 19. | Used for Numeric
-     * Strings, length 1 to 19.
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - pattern: [0-9]{1,19}
      * @var string
@@ -99,9 +95,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * The SeriesCode
      * Meta informations extracted from the WSDL
      * - documentation: Verification digits printed on the card following the embossed number. This may also accommodate the customer identification/batch number (CID), card verification value (CVV2 ), card validation code number (CVC2) on credit card. |
-     * Verification digits printed on the card following the embossed number. This may also accommodate the customer identification/batch number (CID), card verification value (CVV2 ), card validation code number (CVC2) on credit card. | Verification digits
-     * printed on the card following the embossed number. This may also accommodate the customer identification/batch number (CID), card verification value (CVV2 ), card validation code number (CVC2) on credit card. | Used for Numeric Strings, length 1 to
-     * 8. | Used for Numeric Strings, length 1 to 8. | Used for Numeric Strings, length 1 to 8.
+     * Used for Numeric Strings, length 1 to 8.
      * - use: optional
      * - pattern: [0-9]{1,8}
      * @var string
@@ -110,8 +104,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The MaskedCardNumber
      * Meta informations extracted from the WSDL
-     * - documentation: May be used to send a concealed credit card number (e.g., xxxxxxxxxxxx9922). | May be used to send a concealed credit card number (e.g., xxxxxxxxxxxx9922). | May be used to send a concealed credit card number (e.g.,
-     * xxxxxxxxxxxx9922). | Used forAlpha-Numeric Strings, length 1 to 19. | Used forAlpha-Numeric Strings, length 1 to 19. | Used forAlpha-Numeric Strings, length 1 to 19.
+     * - documentation: May be used to send a concealed credit card number (e.g., xxxxxxxxxxxx9922). | Used forAlpha-Numeric Strings, length 1 to 19.
      * - use: optional
      * - pattern: [0-9a-zA-Z]{1,19}
      * @var string
@@ -120,10 +113,8 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The CardHolderRPH
      * Meta informations extracted from the WSDL
-     * - documentation: Provides a reference pointer that links the payment card to the payment card holder. | Provides a reference pointer that links the payment card to the payment card holder. | Provides a reference pointer that links the payment card to
-     * the payment card holder. | The Reference Place Holder (RPH) is an index code used to identify an instance in a collection of like items (e.g. used to assign individual passengers or clients to particular itinerary items). | The Reference Place Holder
-     * (RPH) is an index code used to identify an instance in a collection of like items (e.g. used to assign individual passengers or clients to particular itinerary items). | The Reference Place Holder (RPH) is an index code used to identify an instance
-     * in a collection of like items (e.g. used to assign individual passengers or clients to particular itinerary items).
+     * - documentation: Provides a reference pointer that links the payment card to the payment card holder. | The Reference Place Holder (RPH) is an index code used to identify an instance in a collection of like items (e.g. used to assign individual
+     * passengers or clients to particular itinerary items).
      * - use: optional
      * - pattern: [0-9]{1,8}
      * @var string
@@ -132,8 +123,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The CountryOfIssue
      * Meta informations extracted from the WSDL
-     * - documentation: Code for the country where the credit card was issued. | Code for the country where the credit card was issued. | Code for the country where the credit card was issued. | Specifies a 2 character country code as defined in ISO3166. |
-     * Specifies a 2 character country code as defined in ISO3166. | Specifies a 2 character country code as defined in ISO3166.
+     * - documentation: Code for the country where the credit card was issued. | Specifies a 2 character country code as defined in ISO3166.
      * - use: optional
      * - pattern: [a-zA-Z]{2}
      * @var string
@@ -142,8 +132,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The Remark
      * Meta informations extracted from the WSDL
-     * - documentation: A remark associated with this payment card. | A remark associated with this payment card. | A remark associated with this payment card. | Used for Character Strings, length 1 to 128. | Used for Character Strings, length 1 to 128. |
-     * Used for Character Strings, length 1 to 128.
+     * - documentation: A remark associated with this payment card. | Used for Character Strings, length 1 to 128.
      * - use: optional
      * - maxLength: 128
      * - minLength: 1
@@ -163,7 +152,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The EffectiveDate
      * Meta informations extracted from the WSDL
-     * - documentation: Indicates the starting date. | Indicates the starting date. | Indicates the starting date. | Month and year information. | Month and year information. | Month and year information.
+     * - documentation: Indicates the starting date. | Month and year information.
      * - pattern: (0[1-9]|1[0-2])[0-9][0-9]
      * @var string
      */
@@ -171,7 +160,7 @@ class ApiPaymentCardType extends AbstractStructBase
     /**
      * The ExpireDate
      * Meta informations extracted from the WSDL
-     * - documentation: Indicates the ending date. | Indicates the ending date. | Indicates the ending date. | Month and year information. | Month and year information. | Month and year information.
+     * - documentation: Indicates the ending date. | Month and year information.
      * - pattern: (0[1-9]|1[0-2])[0-9][0-9]
      * @var string
      */

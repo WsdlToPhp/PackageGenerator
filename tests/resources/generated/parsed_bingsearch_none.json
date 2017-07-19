@@ -1,0 +1,3316 @@
+{
+    "containers": {
+        "services": [
+            {
+                "methods": [
+                    {
+                        "isUnique": true,
+                        "methodName": "Search",
+                        "parameterType": {
+                            "parameters": "SearchRequest"
+                        },
+                        "returnType": "SearchResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Search",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "Service",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            }
+        ],
+        "structs": [
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "default": "2.2",
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Version",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Market",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "UILanguage",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Query",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "AppId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "AdultOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Adult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "double",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Latitude",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "double",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Longitude",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "double",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Radius",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfSearchOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Options",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfSourceType",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Sources",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "WebRequest",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Web",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ImageRequest",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Image",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "PhonebookRequest",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Phonebook",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "VideoRequest",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Video",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "NewsRequest",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "News",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "MobileWebRequest",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "MobileWeb",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "TranslationRequest",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Translation",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "SearchRequest",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "parameters",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "SearchRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": true,
+                "isStruct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Off",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Moderate",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Strict",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "AdultOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "SearchOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "SearchOption",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfSearchOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": true,
+                "isStruct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "DisableLocationDetection",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "EnableHighlighting",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "SearchOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "SourceType",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "SourceType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfSourceType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": true,
+                "isStruct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Spell",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Web",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Image",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "RelatedSearch",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Phonebook",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 5,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Showtimes",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 6,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Weather",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 7,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Video",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 8,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Ad",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 9,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "XRank",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 10,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "InstantAnswer",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 11,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "News",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 12,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "QueryLocation",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 13,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "MobileWeb",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 14,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Translation",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "SourceType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Count",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "FileType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfWebSearchOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Options",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfString",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SearchTags",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "WebRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "WebSearchOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "WebSearchOption",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfWebSearchOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": true,
+                "isStruct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "DisableHostCollapsing",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "DisableQueryAlterations",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "WebSearchOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "string",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfString",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Count",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfString",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Filters",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ImageRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Count",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "FileType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "PhonebookSortOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SortBy",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "LocId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Category",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "PhonebookRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": true,
+                "isStruct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Default",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Relevance",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Distance",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "PhonebookSortOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Count",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfString",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Filters",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "VideoSortOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SortBy",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "VideoRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": true,
+                "isStruct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Relevance",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Date",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "VideoSortOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "default": "10",
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Count",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "LocationOverride",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Category",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "NewsSortOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SortBy",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "NewsRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": true,
+                "isStruct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Relevance",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "Date",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "NewsSortOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Count",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfMobileWebSearchOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Options",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "MobileWebRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "MobileWebSearchOption",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "MobileWebSearchOption",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfMobileWebSearchOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": true,
+                "isStruct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "DisableHostCollapsing",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "DisableQueryAlterations",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "MobileWebSearchOption",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "SourceLanguage",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "TargetLanguage",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "TranslationRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Version",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "Query",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Query",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "SpellResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Spell",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "WebResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Web",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ImageResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Image",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "RelatedSearchResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "RelatedSearch",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "VideoResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Video",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "InstantAnswerResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "InstantAnswer",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "NewsResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "News",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "MobileWebResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "MobileWeb",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfError",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Errors",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "SearchResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "parameters",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "SearchResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SearchTerms",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "AlteredQuery",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "AlterationOverrideQuery",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "Query",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Total",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfSpellResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Results",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "SpellResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "SpellResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "SpellResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfSpellResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Value",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "SpellResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Total",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfWebResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Results",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "WebResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "WebResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "WebResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfWebResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Description",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "CacheUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DisplayUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DateTime",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfWebSearchTag",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SearchTags",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfDeepLink",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DeepLinks",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "WebResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "WebSearchTag",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "WebSearchTag",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfWebSearchTag",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Value",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "WebSearchTag",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "DeepLink",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "DeepLink",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfDeepLink",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "DeepLink",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Total",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfImageResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Results",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ImageResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "ImageResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "ImageResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfImageResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "MediaUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DisplayUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Width",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Height",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "FileSize",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "ContentType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "Thumbnail",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Thumbnail",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ImageResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "ContentType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Width",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Height",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "FileSize",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "RunTime",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "Thumbnail",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfRelatedSearchResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Results",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "RelatedSearchResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "RelatedSearchResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "RelatedSearchResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfRelatedSearchResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "RelatedSearchResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Total",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfVideoResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Results",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "VideoResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "VideoResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "VideoResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfVideoResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "PlayUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SourceTitle",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "RunTime",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "ClickThroughPageUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "Thumbnail",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "StaticThumbnail",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "VideoResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfInstantAnswerResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Results",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "InstantAnswerResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "InstantAnswerResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "InstantAnswerResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfInstantAnswerResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "ContentType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "ClickThroughUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Attribution",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "InstantAnswerSpecificData",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "InstantAnswerResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Total",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfNewsRelatedSearch",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "RelatedSearches",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfNewsResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Results",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "NewsResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "NewsRelatedSearch",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "NewsRelatedSearch",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfNewsRelatedSearch",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "NewsRelatedSearch",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "NewsResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "NewsResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfNewsResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Source",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Snippet",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Date",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "BreakingNews",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfNewsCollection",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "NewsCollections",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "NewsResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "NewsCollection",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "NewsCollection",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfNewsCollection",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfNewsArticle",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "NewsArticles",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "NewsCollection",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "NewsArticle",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "NewsArticle",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfNewsArticle",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Source",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Snippet",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Date",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "NewsArticle",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Total",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfMobileWebResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Results",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "MobileWebResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "MobileWebResult",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "MobileWebResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfMobileWebResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Title",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Description",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Url",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DisplayUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DateTime",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "MobileWebResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "Error",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "Error",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "ArrayOfError",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Code",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Message",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Parameter",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Value",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "HelpUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SourceType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "unsignedInt",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "SourceTypeErrorCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "Error",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            }
+        ]
+    },
+    "options": {
+        "category": "cat",
+        "gather_methods": "none",
+        "generic_constants_names": false,
+        "generate_tutorial_file": true,
+        "add_comments": {
+            "release": "1.1.0"
+        },
+        "namespace_prefix": "",
+        "standalone": true,
+        "validation": true,
+        "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
+        "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
+        "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
+        "origin": ".\/tests\/resources\/bingsearch.wsdl",
+        "destination": __DESTINATION__,
+        "src_dirname": "src",
+        "prefix": "Api",
+        "suffix": "",
+        "basic_login": "",
+        "basic_password": "",
+        "proxy_host": "",
+        "proxy_port": "",
+        "proxy_login": "",
+        "proxy_password": "",
+        "soap_options": [],
+        "composer_name": "",
+        "composer_settings": [],
+        "structs_folder": "StructType",
+        "arrays_folder": "ArrayType",
+        "enums_folder": "EnumType",
+        "services_folder": "ServiceType"
+    }
+}

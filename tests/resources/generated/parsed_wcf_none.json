@@ -1,0 +1,260 @@
+{
+    "containers": {
+        "services": [
+            {
+                "methods": [
+                    {
+                        "isUnique": true,
+                        "methodName": "order",
+                        "parameterType": {
+                            "parameters": "order"
+                        },
+                        "returnType": "orderResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "order",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    },
+                    {
+                        "isUnique": true,
+                        "methodName": "offer",
+                        "parameterType": {
+                            "parameters": "offer"
+                        },
+                        "returnType": "offerResponse",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": [],
+                        "name": "offer",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "Service",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            }
+        ],
+        "structs": [
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": true,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "orderClassMember",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": true,
+                        "type": "order",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "order",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": {
+                    "nillable": "true",
+                    "type": "tns:order"
+                },
+                "name": "order",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": true,
+                        "type": "string",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "offerClassMember",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": true,
+                        "type": "offer",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "offer",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "order",
+                "isAbstract": false,
+                "meta": {
+                    "nillable": "true",
+                    "type": "tns:offer"
+                },
+                "name": "offer",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "minOccurs": "0"
+                        },
+                        "name": "orderResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "orderResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "isAbstract": false,
+                        "meta": {
+                            "minOccurs": "0"
+                        },
+                        "name": "offerResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "isRestriction": false,
+                "isStruct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": [],
+                "name": "offerResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": false,
+                "isStruct": false,
+                "types": null,
+                "values": [],
+                "inheritance": "int",
+                "isAbstract": false,
+                "meta": {
+                    "nillable": "true",
+                    "type": "tns:char"
+                },
+                "name": "char",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": false,
+                "isStruct": false,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "isAbstract": false,
+                "meta": {
+                    "base": "xs:duration",
+                    "maxInclusive": "P10675199DT2H48M5.4775807S",
+                    "minInclusive": "-P10675199DT2H48M5.4775808S",
+                    "nillable": "true",
+                    "pattern": "\\-?P(\\d*D)?(T(\\d*H)?(\\d*M)?(\\d*(\\.\\d*)?S)?)?",
+                    "type": "tns:duration"
+                },
+                "name": "duration",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "isRestriction": false,
+                "isStruct": false,
+                "types": null,
+                "values": [],
+                "inheritance": "string",
+                "isAbstract": false,
+                "meta": {
+                    "nillable": "true",
+                    "pattern": "[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}",
+                    "type": "tns:guid"
+                },
+                "name": "guid",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            }
+        ]
+    },
+    "options": {
+        "category": "cat",
+        "gather_methods": "none",
+        "generic_constants_names": false,
+        "generate_tutorial_file": true,
+        "add_comments": {
+            "release": "1.1.0"
+        },
+        "namespace_prefix": "",
+        "standalone": true,
+        "validation": true,
+        "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
+        "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
+        "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
+        "origin": ".\/tests\/resources\/wcf\/Service1.wsdl",
+        "destination": __DESTINATION__,
+        "src_dirname": "src",
+        "prefix": "Api",
+        "suffix": "",
+        "basic_login": "",
+        "basic_password": "",
+        "proxy_host": "",
+        "proxy_port": "",
+        "proxy_login": "",
+        "proxy_password": "",
+        "soap_options": [],
+        "composer_name": "",
+        "composer_settings": [],
+        "structs_folder": "StructType",
+        "arrays_folder": "ArrayType",
+        "enums_folder": "EnumType",
+        "services_folder": "ServiceType"
+    }
+}
