@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
@@ -12,12 +11,16 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter as PhpFunctionParameterBase;
+use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 
 class Service extends AbstractModelFile
 {
@@ -129,28 +132,37 @@ class Service extends AbstractModelFile
     {
         try {
             $method = new PhpMethod($methodName, array(
-                new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameter::NO_VALUE, $this->getTypeFromName($soapHeaderType, true)),
-                new PhpFunctionParameter(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),
-                new PhpFunctionParameter(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
-                new PhpFunctionParameter(self::PARAM_SET_HEADER_ACTOR, null),
+                $firstParameter = new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameterBase::NO_VALUE, $this->getTypeFromName($soapHeaderType)),
+                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),
+                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
+                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_ACTOR, null),
             ));
+            $model = $this->getModelByName($soapHeaderType);
+            if ($model instanceof StructModel) {
+                $rules = new Rules($this, $method, new StructAttributeModel($model->getGenerator(), $soapHeaderType, $model->getName(), $model));
+                $rules->applyRules(lcfirst($soapHeaderName));
+                $firstParameter->setModel($model);
+            }
             $method->addChild(sprintf('return $this->%s($%s, \'%s\', $%s, $%s, $%s);', self::METHOD_SET_HEADER_PREFIX, self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderName, lcfirst($soapHeaderName), self::PARAM_SET_HEADER_MUSTUNDERSTAND, self::PARAM_SET_HEADER_ACTOR));
         } catch (\InvalidArgumentException $exception) {
-            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for service "%s" with type "%s"', $this->getModel()->getName(), var_export($this->getTypeFromName($soapHeaderName, true), true)), __LINE__, $exception);
+            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for service "%s" with type "%s"', $this->getModel()->getName(), var_export($this->getTypeFromName($soapHeaderName), true)), __LINE__, $exception);
         }
         return $method;
     }
     /**
      * @param string $name
-     * @param bool $namespaced
      * @return string
      */
-    protected function getTypeFromName($name, $namespaced = false)
+    protected function getTypeFromName($name)
     {
         $type = $name;
         $model = $this->getModelByName($name);
-        if ($model instanceof AbstractModel) {
-            $type = $model->getPackagedName($namespaced);
+        if ($model instanceof StructModel) {
+            if ($model->isRestriction() || $model->isUnion()) {
+                $type = self::TYPE_STRING;
+            } else {
+                $type = $model->getPackagedName(true);
+            }
         }
         return self::getValidType($type);
     }
@@ -222,9 +234,20 @@ class Service extends AbstractModelFile
         $methodParameters = $method->getParameters();
         $firstParameter = array_shift($methodParameters);
         if ($firstParameter instanceof PhpFunctionParameter) {
-            $annotationBlock->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())))
+            $annotationBlock->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())));
+            $firstParameterType = $firstParameter->getType();
+            if ($firstParameter->getModel() instanceof StructModel) {
+                $firstParameterType = $this->getStructAttributeTypeAsPhpType(new StructAttributeModel($firstParameter->getModel()->getGenerator(), $firstParameter->getName(), $firstParameter->getModel()->getName(), $firstParameter->getModel()));
+                if ($firstParameter->getModel()->isRestriction()) {
+                    $annotationBlock
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES)))
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
+                }
+            }
+            $annotationBlock
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::setSoapHeader()', $this->getModel()->getExtends(true))))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $firstParameter->getType(), $firstParameter->getName())))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $firstParameterType, $firstParameter->getName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_NAMESPACE)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('bool $%s', self::PARAM_SET_HEADER_MUSTUNDERSTAND)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_ACTOR)))
@@ -251,7 +274,9 @@ class Service extends AbstractModelFile
      */
     protected function addAnnnotationBlockForgetResultMethod(PhpAnnotationBlock $annotationBlock)
     {
-        $annotationBlock->addChild('Returns the result')->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', $this->getModel()->getExtends(true))))->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes()));
+        $annotationBlock
+            ->addChild('Returns the result')->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', $this->getModel()->getExtends(true))))
+            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes()));
         return $this;
     }
     /**
