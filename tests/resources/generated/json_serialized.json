@@ -4,7 +4,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Search",
                         "parameterType": {
                             "parameters": "SearchRequest"

@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Generator;
 
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
@@ -11,6 +12,8 @@ use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
 use WsdlToPhp\PackageGenerator\File\Composer as ComposerFile;
+use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 class GeneratorFiles extends AbstractGeneratorAware
 {
@@ -78,10 +81,19 @@ class GeneratorFiles extends AbstractGeneratorAware
      */
     protected function generateServicesClasses()
     {
-        foreach ($this->getGenerator()->getServices() as $service) {
-            /**
-             * Generates file
-             */
+        $services = $this->getGenerator()->getServices();
+        if ($this->generator->getOptionGatherMethods() === GeneratorOptions::VALUE_NONE) {
+            $services = new ServiceContainer($this->generator);
+            $service = new ServiceModel($this->generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
+            /** @var ServiceMOdel $service */
+            foreach ($this->getGenerator()->getServices() as $service) {
+                foreach ($service->getMethods() as $method) {
+                    $service->getMethods()->add($method);
+                }
+            }
+            $services->add($service);
+        }
+        foreach ($services as $service) {
             $file = new ServiceFile($this->generator, $service->getPackagedName());
             $file->setModel($service)->write();
         }

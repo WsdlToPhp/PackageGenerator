@@ -19,29 +19,12 @@
                         },
                         "name": "GetQueueUrl",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetQueueAttributes",
-                        "parameterType": {
-                            "body": "GetQueueAttributes"
-                        },
-                        "returnType": "GetQueueAttributesResponse",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "Gets one or all attributes of a queue. Available attributes are [ApproximateNumberOfMessages, ApproximateNumberOfMessagesNotVisible, VisibilityTimeout, CreatedTimestamp, LastModifiedTimestamp, Policy, MaximumMessageSize, MessageRetentionPeriod, QueueArn, DelaySeconds, ApproximateNumberOfMessagesDelayed, ReceiveMessageWaitTimeSeconds, RedrivePolicy]."
-                            ]
-                        },
-                        "name": "GetQueueAttributes",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Get",
+                "name": "GetQueueUrl",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -67,7 +50,7 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Create",
+                "name": "CreateQueue",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -88,29 +71,12 @@
                         },
                         "name": "ListQueues",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "ListDeadLetterSourceQueues",
-                        "parameterType": {
-                            "body": "ListDeadLetterSourceQueues"
-                        },
-                        "returnType": "ListDeadLetterSourceQueuesResponse",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "Given a queue list the queues that are configured to use that queue as a Dead Letter Queue."
-                            ]
-                        },
-                        "name": "ListDeadLetterSourceQueues",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "List",
+                "name": "ListQueues",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -136,7 +102,7 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Add",
+                "name": "AddPermission",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -157,29 +123,12 @@
                         },
                         "name": "ChangeMessageVisibility",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "ChangeMessageVisibilityBatch",
-                        "parameterType": {
-                            "body": "ChangeMessageVisibilityBatch"
-                        },
-                        "returnType": "ChangeMessageVisibilityBatchResponse",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "A batch version of ChangeMessageVisibility. Each batch request contains one or more entries. Each entry is identified by its Id (referred to as entry id) and represents a receipt handle for which the visibility timeout has to be changed. For each entry in the batch, the response will contain one of ChangeMessageVisibilityBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
-                            ]
-                        },
-                        "name": "ChangeMessageVisibilityBatch",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Change",
+                "name": "ChangeMessageVisibility",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -200,7 +149,16 @@
                         },
                         "name": "DeleteMessage",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DeleteMessage",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "DeleteQueue",
@@ -217,29 +175,38 @@
                         },
                         "name": "DeleteQueue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DeleteQueue",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
-                        "methodName": "DeleteMessageBatch",
+                        "methodName": "GetQueueAttributes",
                         "parameterType": {
-                            "body": "DeleteMessageBatch"
+                            "body": "GetQueueAttributes"
                         },
-                        "returnType": "DeleteMessageBatchResponse",
+                        "returnType": "GetQueueAttributesResponse",
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
                             "documentation": [
-                                "The batch version of DeleteMessage. Each batch request contains one or more entries. Each entry is identified by its Id (referred to as entry id) and represents the receipt handle for a message that has to be deleted. For each entry in the batch, the response will contain one of DeleteMessageBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
+                                "Gets one or all attributes of a queue. Available attributes are [ApproximateNumberOfMessages, ApproximateNumberOfMessagesNotVisible, VisibilityTimeout, CreatedTimestamp, LastModifiedTimestamp, Policy, MaximumMessageSize, MessageRetentionPeriod, QueueArn, DelaySeconds, ApproximateNumberOfMessagesDelayed, ReceiveMessageWaitTimeSeconds, RedrivePolicy]."
                             ]
                         },
-                        "name": "DeleteMessageBatch",
+                        "name": "GetQueueAttributes",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Delete",
+                "name": "GetQueueAttributes",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -265,7 +232,7 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Remove",
+                "name": "RemovePermission",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -291,7 +258,7 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Receive",
+                "name": "ReceiveMessage",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -312,29 +279,12 @@
                         },
                         "name": "SendMessage",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "SendMessageBatch",
-                        "parameterType": {
-                            "body": "SendMessageBatch"
-                        },
-                        "returnType": "SendMessageBatchResponse",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "A batch version of SendMessage. Each batch request has one or more entries in it. Each entry is identified by its Id (referred to as entry id) and represents a message with or without message attributes to be enqueued. If DelaySeconds is not specified for an entry, the default for the queue is used. For each entry in the batch, the response will contain one of SendMessageBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
-                            ]
-                        },
-                        "name": "SendMessageBatch",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Send",
+                "name": "SendMessage",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
@@ -360,7 +310,111 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Set",
+                "name": "SetQueueAttributes",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "ChangeMessageVisibilityBatch",
+                        "parameterType": {
+                            "body": "ChangeMessageVisibilityBatch"
+                        },
+                        "returnType": "ChangeMessageVisibilityBatchResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "A batch version of ChangeMessageVisibility. Each batch request contains one or more entries. Each entry is identified by its Id (referred to as entry id) and represents a receipt handle for which the visibility timeout has to be changed. For each entry in the batch, the response will contain one of ChangeMessageVisibilityBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
+                            ]
+                        },
+                        "name": "ChangeMessageVisibilityBatch",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ChangeMessageVisibilityBatch",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "DeleteMessageBatch",
+                        "parameterType": {
+                            "body": "DeleteMessageBatch"
+                        },
+                        "returnType": "DeleteMessageBatchResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "The batch version of DeleteMessage. Each batch request contains one or more entries. Each entry is identified by its Id (referred to as entry id) and represents the receipt handle for a message that has to be deleted. For each entry in the batch, the response will contain one of DeleteMessageBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
+                            ]
+                        },
+                        "name": "DeleteMessageBatch",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DeleteMessageBatch",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "SendMessageBatch",
+                        "parameterType": {
+                            "body": "SendMessageBatch"
+                        },
+                        "returnType": "SendMessageBatchResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "A batch version of SendMessage. Each batch request has one or more entries in it. Each entry is identified by its Id (referred to as entry id) and represents a message with or without message attributes to be enqueued. If DelaySeconds is not specified for an entry, the default for the queue is used. For each entry in the batch, the response will contain one of SendMessageBatchResultEntry (success) or BatchResultErrorEntry (failed) signifying the result."
+                            ]
+                        },
+                        "name": "SendMessageBatch",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SendMessageBatch",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "ListDeadLetterSourceQueues",
+                        "parameterType": {
+                            "body": "ListDeadLetterSourceQueues"
+                        },
+                        "returnType": "ListDeadLetterSourceQueuesResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "Given a queue list the queues that are configured to use that queue as a Dead Letter Queue."
+                            ]
+                        },
+                        "name": "ListDeadLetterSourceQueues",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ListDeadLetterSourceQueues",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             }
         ],
@@ -2449,7 +2503,7 @@
     },
     "options": {
         "category": "cat",
-        "gather_methods": "start",
+        "gather_methods": "none",
         "generic_constants_names": false,
         "generate_tutorial_file": true,
         "add_comments": {

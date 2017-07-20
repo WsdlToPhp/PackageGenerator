@@ -167,7 +167,7 @@ class Method extends AbstractModel
     protected function toJsonSerialize()
     {
         return array(
-            'isUnique' => $this->isUnique,
+            'unique' => $this->isUnique,
             'methodName' => $this->methodName,
             'parameterType' => $this->parameterType,
             'returnType' => $this->returnType,

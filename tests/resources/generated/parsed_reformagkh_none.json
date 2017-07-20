@@ -68,7 +68,42 @@
                         },
                         "name": "GetRequestList",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetRequestList",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "SetRequestForSubmit",
+                        "parameterType": {
+                            "inns": "ArrayOfString"
+                        },
+                        "returnType": "ArrayOfSetRequestForSubmitInnStatus",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "SetRequestForSubmit"
+                            ]
+                        },
+                        "name": "SetRequestForSubmit",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SetRequestForSubmit",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "GetHouseInfo",
@@ -85,7 +120,16 @@
                         },
                         "name": "GetHouseInfo",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetHouseInfo",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "GetHouseProfile",
@@ -121,194 +165,16 @@
                         },
                         "name": "GetHouseProfile988",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetHouseProfileSF",
-                        "parameterType": {
-                            "region_id": "string",
-                            "page_number": "int",
-                            "reporting_period_id": "int"
-                        },
-                        "returnType": "GetHouseProfileSFResponse",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u043e \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0435 \u0442\u0435\u043a\u0443\u0449\u0438\u0445\/\u0430\u0440\u0445\u0438\u0432\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442 \u0434\u043e\u043c\u0430 \u0434\u043b\u044f \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u0440\u0435\u0433\u0438\u043e\u043d\u0430"
-                            ]
-                        },
-                        "name": "GetHouseProfileSF",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetHouseProfileSF988",
-                        "parameterType": {
-                            "region_id": "string",
-                            "page_number": "int",
-                            "reporting_period_id": "int"
-                        },
-                        "returnType": "GetHouseProfileSF988Response",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u043e \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0435 \u0442\u0435\u043a\u0443\u0449\u0438\u0445\/\u0430\u0440\u0445\u0438\u0432\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442 \u0434\u043e\u043c\u0430 \u0434\u043b\u044f \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u0440\u0435\u0433\u0438\u043e\u043d\u0430"
-                            ]
-                        },
-                        "name": "GetHouseProfileSF988",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetHouseList",
-                        "parameterType": {
-                            "inn": "string"
-                        },
-                        "returnType": "ArrayOfHouseData",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u043f\u0438\u0441\u043a\u0430 \u0434\u043e\u043c\u043e\u0432, \u043d\u0430\u0445\u043e\u0434\u044f\u0449\u0438\u0445\u0441\u044f \u0432 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0438 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d"
-                            ]
-                        },
-                        "name": "GetHouseList",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetCompanyProfile",
-                        "parameterType": {
-                            "inn": "string",
-                            "reporting_period_id": "int"
-                        },
-                        "returnType": "GetCompanyProfileResponse",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d \u0437\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434."
-                            ]
-                        },
-                        "name": "GetCompanyProfile",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetCompanyProfile988",
-                        "parameterType": {
-                            "inn": "string",
-                            "reporting_period_id": "int"
-                        },
-                        "returnType": "GetCompanyProfile988Response",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d \u0437\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434."
-                            ]
-                        },
-                        "name": "GetCompanyProfile988",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetCompanyProfileSF",
-                        "parameterType": {
-                            "region_id": "string",
-                            "page_number": "int",
-                            "reporting_period_id": "int"
-                        },
-                        "returnType": "GetCompanyProfileSFResponse",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d \u0437\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434."
-                            ]
-                        },
-                        "name": "GetCompanyProfileSF",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetCompanyProfileSF988",
-                        "parameterType": {
-                            "region_id": "string",
-                            "page_number": "int",
-                            "reporting_period_id": "int"
-                        },
-                        "returnType": "GetCompanyProfileSF988Response",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d \u0437\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434."
-                            ]
-                        },
-                        "name": "GetCompanyProfileSF988",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetReportingPeriodList",
-                        "parameterType": null,
-                        "returnType": "ArrayOfReportingPeriod",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "GetReportingPeriodList"
-                            ]
-                        },
-                        "name": "GetReportingPeriodList",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
-                    {
-                        "unique": true,
-                        "methodName": "GetFileByID",
-                        "parameterType": {
-                            "file_id": "int"
-                        },
-                        "returnType": "FileObject",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0444\u0430\u0439\u043b\u0430 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c ID."
-                            ]
-                        },
-                        "name": "GetFileByID",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
                 ],
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Get",
+                "name": "GetHouseProfile",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             },
             {
                 "methods": [
-                    {
-                        "unique": true,
-                        "methodName": "SetRequestForSubmit",
-                        "parameterType": {
-                            "inns": "ArrayOfString"
-                        },
-                        "returnType": "ArrayOfSetRequestForSubmitInnStatus",
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": {
-                            "documentation": [
-                                "SetRequestForSubmit"
-                            ]
-                        },
-                        "name": "SetRequestForSubmit",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
                     {
                         "unique": true,
                         "methodName": "SetHouseProfile",
@@ -346,7 +212,89 @@
                         },
                         "name": "SetHouseProfile988",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SetHouseProfile",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "GetHouseProfileSF",
+                        "parameterType": {
+                            "region_id": "string",
+                            "page_number": "int",
+                            "reporting_period_id": "int"
+                        },
+                        "returnType": "GetHouseProfileSFResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u043e \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0435 \u0442\u0435\u043a\u0443\u0449\u0438\u0445\/\u0430\u0440\u0445\u0438\u0432\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442 \u0434\u043e\u043c\u0430 \u0434\u043b\u044f \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u0440\u0435\u0433\u0438\u043e\u043d\u0430"
+                            ]
+                        },
+                        "name": "GetHouseProfileSF",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
+                    {
+                        "unique": true,
+                        "methodName": "GetHouseProfileSF988",
+                        "parameterType": {
+                            "region_id": "string",
+                            "page_number": "int",
+                            "reporting_period_id": "int"
+                        },
+                        "returnType": "GetHouseProfileSF988Response",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u043e \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0435 \u0442\u0435\u043a\u0443\u0449\u0438\u0445\/\u0430\u0440\u0445\u0438\u0432\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442 \u0434\u043e\u043c\u0430 \u0434\u043b\u044f \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u0440\u0435\u0433\u0438\u043e\u043d\u0430"
+                            ]
+                        },
+                        "name": "GetHouseProfileSF988",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetHouseProfileSF",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "GetHouseList",
+                        "parameterType": {
+                            "inn": "string"
+                        },
+                        "returnType": "ArrayOfHouseData",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u043f\u0438\u0441\u043a\u0430 \u0434\u043e\u043c\u043e\u0432, \u043d\u0430\u0445\u043e\u0434\u044f\u0449\u0438\u0445\u0441\u044f \u0432 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0438 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d"
+                            ]
+                        },
+                        "name": "GetHouseList",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetHouseList",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "SetHouseLinkToOrganization",
@@ -366,7 +314,16 @@
                         },
                         "name": "SetHouseLinkToOrganization",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SetHouseLinkToOrganization",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "SetNewHouse",
@@ -383,7 +340,16 @@
                         },
                         "name": "SetNewHouse",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SetNewHouse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "SetUnlinkFromOrganization",
@@ -403,7 +369,16 @@
                         },
                         "name": "SetUnlinkFromOrganization",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SetUnlinkFromOrganization",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "SetNewCompany",
@@ -421,7 +396,108 @@
                         },
                         "name": "SetNewCompany",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SetNewCompany",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "GetCompanyProfile",
+                        "parameterType": {
+                            "inn": "string",
+                            "reporting_period_id": "int"
+                        },
+                        "returnType": "GetCompanyProfileResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d \u0437\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434."
+                            ]
+                        },
+                        "name": "GetCompanyProfile",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
+                    {
+                        "unique": true,
+                        "methodName": "GetCompanyProfile988",
+                        "parameterType": {
+                            "inn": "string",
+                            "reporting_period_id": "int"
+                        },
+                        "returnType": "GetCompanyProfile988Response",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d \u0437\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434."
+                            ]
+                        },
+                        "name": "GetCompanyProfile988",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetCompanyProfile",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "GetCompanyProfileSF",
+                        "parameterType": {
+                            "region_id": "string",
+                            "page_number": "int",
+                            "reporting_period_id": "int"
+                        },
+                        "returnType": "GetCompanyProfileSFResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d \u0437\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434."
+                            ]
+                        },
+                        "name": "GetCompanyProfileSF",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    },
+                    {
+                        "unique": true,
+                        "methodName": "GetCompanyProfileSF988",
+                        "parameterType": {
+                            "region_id": "string",
+                            "page_number": "int",
+                            "reporting_period_id": "int"
+                        },
+                        "returnType": "GetCompanyProfileSF988Response",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u0430\u043d\u043a\u0435\u0442\u044b \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0435\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0418\u041d\u041d \u0437\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434."
+                            ]
+                        },
+                        "name": "GetCompanyProfileSF988",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetCompanyProfileSF",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "SetCompanyProfile",
@@ -459,7 +535,40 @@
                         },
                         "name": "SetCompanyProfile988",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SetCompanyProfile",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "GetReportingPeriodList",
+                        "parameterType": null,
+                        "returnType": "ArrayOfReportingPeriod",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "GetReportingPeriodList"
+                            ]
+                        },
+                        "name": "GetReportingPeriodList",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetReportingPeriodList",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
                         "unique": true,
                         "methodName": "SetUploadFile",
@@ -481,7 +590,33 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Set",
+                "name": "SetUploadFile",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "GetFileByID",
+                        "parameterType": {
+                            "file_id": "int"
+                        },
+                        "returnType": "FileObject",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "documentation": [
+                                "\u041c\u0435\u0442\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0444\u0430\u0439\u043b\u0430 \u0441 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c ID."
+                            ]
+                        },
+                        "name": "GetFileByID",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetFileByID",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             }
         ],
@@ -15656,7 +15791,7 @@
     },
     "options": {
         "category": "cat",
-        "gather_methods": "start",
+        "gather_methods": "none",
         "generic_constants_names": false,
         "generate_tutorial_file": true,
         "add_comments": {

@@ -59,7 +59,7 @@ class StructsTest extends SoapClientParser
      */
     public function testWhl()
     {
-        $generator = self::getWhlInstance();
+        $generator = self::getWhlInstance(true);
 
         $parser = new Structs($generator);
         $parser->parse();

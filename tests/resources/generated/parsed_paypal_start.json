@@ -4,7 +4,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "RefundTransaction",
                         "parameterType": {
                             "RefundTransactionRequest": "RefundTransactionReq"
@@ -39,7 +39,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "InitiateRecoup",
                         "parameterType": {
                             "InitiateRecoupRequest": "InitiateRecoupReq"
@@ -74,7 +74,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CompleteRecoup",
                         "parameterType": {
                             "CompleteRecoupRequest": "CompleteRecoupReq"
@@ -109,7 +109,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CancelRecoup",
                         "parameterType": {
                             "CancelRecoupRequest": "CancelRecoupReq"
@@ -144,7 +144,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetTransactionDetails",
                         "parameterType": {
                             "GetTransactionDetailsRequest": "GetTransactionDetailsReq"
@@ -170,7 +170,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetBoardingDetails",
                         "parameterType": {
                             "GetBoardingDetailsRequest": "GetBoardingDetailsReq"
@@ -196,7 +196,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetMobileStatus",
                         "parameterType": {
                             "GetMobileStatusRequest": "GetMobileStatusReq"
@@ -222,7 +222,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetBalance",
                         "parameterType": {
                             "GetBalanceRequest": "GetBalanceReq"
@@ -248,7 +248,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetPalDetails",
                         "parameterType": {
                             "GetPalDetailsRequest": "GetPalDetailsReq"
@@ -274,7 +274,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetAuthDetails",
                         "parameterType": {
                             "GetAuthDetailsRequest": "GetAuthDetailsReq"
@@ -300,7 +300,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetAccessPermissionDetails",
                         "parameterType": {
                             "GetAccessPermissionDetailsRequest": "GetAccessPermissionDetailsReq"
@@ -326,7 +326,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetIncentiveEvaluation",
                         "parameterType": {
                             "GetIncentiveEvaluationRequest": "GetIncentiveEvaluationReq"
@@ -352,7 +352,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetExpressCheckoutDetails",
                         "parameterType": {
                             "GetExpressCheckoutDetailsRequest": "GetExpressCheckoutDetailsReq"
@@ -378,7 +378,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetBillingAgreementCustomerDetails",
                         "parameterType": {
                             "GetBillingAgreementCustomerDetailsRequest": "GetBillingAgreementCustomerDetailsReq"
@@ -404,7 +404,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "GetRecurringPaymentsProfileDetails",
                         "parameterType": {
                             "GetRecurringPaymentsProfileDetailsRequest": "GetRecurringPaymentsProfileDetailsReq"
@@ -439,7 +439,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BMCreateButton",
                         "parameterType": {
                             "BMCreateButtonRequest": "BMCreateButtonReq"
@@ -474,7 +474,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BMUpdateButton",
                         "parameterType": {
                             "BMUpdateButtonRequest": "BMUpdateButtonReq"
@@ -509,7 +509,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BMSetInventory",
                         "parameterType": {
                             "BMSetInventoryRequest": "BMSetInventoryReq"
@@ -544,7 +544,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BMGetButtonDetails",
                         "parameterType": {
                             "BMGetButtonDetailsRequest": "BMGetButtonDetailsReq"
@@ -570,7 +570,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BMGetInventory",
                         "parameterType": {
                             "BMGetInventoryRequest": "BMGetInventoryReq"
@@ -605,7 +605,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BMManageButtonStatus",
                         "parameterType": {
                             "BMManageButtonStatusRequest": "BMManageButtonStatusReq"
@@ -640,7 +640,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BMButtonSearch",
                         "parameterType": {
                             "BMButtonSearchRequest": "BMButtonSearchReq"
@@ -675,7 +675,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BillUser",
                         "parameterType": {
                             "BillUserRequest": "BillUserReq"
@@ -701,7 +701,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BillAgreementUpdate",
                         "parameterType": {
                             "BillAgreementUpdateRequest": "BillAgreementUpdateReq"
@@ -727,7 +727,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "BillOutstandingAmount",
                         "parameterType": {
                             "BillOutstandingAmountRequest": "BillOutstandingAmountReq"
@@ -762,7 +762,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "TransactionSearch",
                         "parameterType": {
                             "TransactionSearchRequest": "TransactionSearchReq"
@@ -797,7 +797,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "MassPay",
                         "parameterType": {
                             "MassPayRequest": "MassPayReq"
@@ -832,7 +832,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "AddressVerify",
                         "parameterType": {
                             "AddressVerifyRequest": "AddressVerifyReq"
@@ -867,7 +867,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "EnterBoarding",
                         "parameterType": {
                             "EnterBoardingRequest": "EnterBoardingReq"
@@ -902,7 +902,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CreateMobilePayment",
                         "parameterType": {
                             "CreateMobilePaymentRequest": "CreateMobilePaymentReq"
@@ -928,7 +928,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CreateBillingAgreement",
                         "parameterType": {
                             "CreateBillingAgreementRequest": "CreateBillingAgreementReq"
@@ -954,7 +954,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CreateRecurringPaymentsProfile",
                         "parameterType": {
                             "CreateRecurringPaymentsProfileRequest": "CreateRecurringPaymentsProfileReq"
@@ -989,7 +989,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "SetMobileCheckout",
                         "parameterType": {
                             "SetMobileCheckoutRequest": "SetMobileCheckoutReq"
@@ -1015,7 +1015,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "SetAuthFlowParam",
                         "parameterType": {
                             "SetAuthFlowParamRequest": "SetAuthFlowParamReq"
@@ -1041,7 +1041,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "SetAccessPermissions",
                         "parameterType": {
                             "SetAccessPermissionsRequest": "SetAccessPermissionsReq"
@@ -1067,7 +1067,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "SetExpressCheckout",
                         "parameterType": {
                             "SetExpressCheckoutRequest": "SetExpressCheckoutReq"
@@ -1093,7 +1093,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "SetCustomerBillingAgreement",
                         "parameterType": {
                             "SetCustomerBillingAgreementRequest": "SetCustomerBillingAgreementReq"
@@ -1128,7 +1128,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoMobileCheckoutPayment",
                         "parameterType": {
                             "DoMobileCheckoutPaymentRequest": "DoMobileCheckoutPaymentReq"
@@ -1154,7 +1154,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoExpressCheckoutPayment",
                         "parameterType": {
                             "DoExpressCheckoutPaymentRequest": "DoExpressCheckoutPaymentReq"
@@ -1180,7 +1180,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoUATPExpressCheckoutPayment",
                         "parameterType": {
                             "DoUATPExpressCheckoutPaymentRequest": "DoUATPExpressCheckoutPaymentReq"
@@ -1206,7 +1206,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoDirectPayment",
                         "parameterType": {
                             "DoDirectPaymentRequest": "DoDirectPaymentReq"
@@ -1232,7 +1232,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoCancel",
                         "parameterType": {
                             "DoCancelRequest": "DoCancelReq"
@@ -1258,7 +1258,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoCapture",
                         "parameterType": {
                             "DoCaptureRequest": "DoCaptureReq"
@@ -1284,7 +1284,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoReauthorization",
                         "parameterType": {
                             "DoReauthorizationRequest": "DoReauthorizationReq"
@@ -1310,7 +1310,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoVoid",
                         "parameterType": {
                             "DoVoidRequest": "DoVoidReq"
@@ -1336,7 +1336,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoAuthorization",
                         "parameterType": {
                             "DoAuthorizationRequest": "DoAuthorizationReq"
@@ -1362,7 +1362,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoUATPAuthorization",
                         "parameterType": {
                             "DoUATPAuthorizationRequest": "DoUATPAuthorizationReq"
@@ -1388,7 +1388,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoReferenceTransaction",
                         "parameterType": {
                             "DoReferenceTransactionRequest": "DoReferenceTransactionReq"
@@ -1414,7 +1414,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DoNonReferencedCredit",
                         "parameterType": {
                             "DoNonReferencedCreditRequest": "DoNonReferencedCreditReq"
@@ -1449,7 +1449,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "UpdateAccessPermissions",
                         "parameterType": {
                             "UpdateAccessPermissionsRequest": "UpdateAccessPermissionsReq"
@@ -1475,7 +1475,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "UpdateAuthorization",
                         "parameterType": {
                             "UpdateAuthorizationRequest": "UpdateAuthorizationReq"
@@ -1501,7 +1501,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "UpdateRecurringPaymentsProfile",
                         "parameterType": {
                             "UpdateRecurringPaymentsProfileRequest": "UpdateRecurringPaymentsProfileReq"
@@ -1536,7 +1536,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ExecuteCheckoutOperations",
                         "parameterType": {
                             "ExecuteCheckoutOperationsRequest": "ExecuteCheckoutOperationsReq"
@@ -1571,7 +1571,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ManagePendingTransactionStatus",
                         "parameterType": {
                             "ManagePendingTransactionStatusRequest": "ManagePendingTransactionStatusReq"
@@ -1597,7 +1597,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     },
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ManageRecurringPaymentsProfileStatus",
                         "parameterType": {
                             "ManageRecurringPaymentsProfileStatusRequest": "ManageRecurringPaymentsProfileStatusReq"
@@ -1632,7 +1632,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReverseTransaction",
                         "parameterType": {
                             "ReverseTransactionRequest": "ReverseTransactionReq"
@@ -1667,7 +1667,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ExternalRememberMeOptOut",
                         "parameterType": {
                             "ExternalRememberMeOptOutRequest": "ExternalRememberMeOptOutReq"
@@ -43453,7 +43453,7 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": ".\/tests\/resources\/paypal\/PayPalSvc.wsdl",
+        "origin": __ORIGIN__,
         "destination": __DESTINATION__,
         "src_dirname": "src",
         "prefix": "Api",

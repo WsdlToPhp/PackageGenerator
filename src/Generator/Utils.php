@@ -49,6 +49,9 @@ class Utils
                         $elementType = substr($string, 0, $i);
                     }
                     break;
+                case GeneratorOptions::VALUE_NONE:
+                    $elementType = $string;
+                    break;
                 default:
                     break;
             }

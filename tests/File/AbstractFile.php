@@ -36,119 +36,119 @@ abstract class AbstractFile extends TestCase
      */
     public static function bingGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstanceFromSerializedJson(sprintf('parsed_bingsearch_%s', $gatherMethods), $reset);
+        return self::getInstanceFromSerializedJson('bingsearch', $gatherMethods, self::wsdlBingPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function actonGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstanceFromSerializedJson(sprintf('parsed_actonservice2_%s', $gatherMethods), $reset);
+        return self::getInstanceFromSerializedJson('actonservice2', $gatherMethods, self::wsdlActonPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function portalGeneratorInstance($reset = true)
     {
-        return self::getInstanceFromSerializedJson('parsed_portaplusapi_start', $reset);
+        return self::getInstanceFromSerializedJson('portaplusapi', 'start', self::wsdlPortalPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function reformaGeneratorInstance($reset = true)
     {
-        return self::getInstanceFromSerializedJson('parsed_reformagkh_start', $reset);
+        return self::getInstanceFromSerializedJson('reformagkh', 'start', self::wsdlReformaPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function queueGeneratorInstance($reset = true)
     {
-        return self::getInstanceFromSerializedJson('parsed_queueservice_start', $reset);
+        return self::getInstanceFromSerializedJson('queueservice', 'start', self::wsdlQueuePath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function omnitureGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstanceFromSerializedJson(sprintf('parsed_omnitureadminservices_%s', $gatherMethods), $reset);
+        return self::getInstanceFromSerializedJson('omnitureadminservices', $gatherMethods, self::wsdlOmniturePath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function odigeoGeneratorInstance($reset = true)
     {
-        return self::getInstanceFromSerializedJson('parsed_odigeo_start', $reset);
+        return self::getInstanceFromSerializedJson('odigeo', 'start', self::wsdlOdigeoPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function payPalGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstanceFromSerializedJson(sprintf('parsed_paypal_%s', $gatherMethods), $reset);
+        return self::getInstanceFromSerializedJson('paypal', $gatherMethods, self::wsdlPayPalPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function wcfGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstanceFromSerializedJson(sprintf('parsed_wcf_%s', $gatherMethods), $reset);
+        return self::getInstanceFromSerializedJson('wcf', $gatherMethods, self::wsdlWcfPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function yandexDirectApiAdGroupsGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlYandexDirectApiAdGroupsPath(), $reset, $gatherMethods);
+        return self::getInstanceFromSerializedJson('yandex_groups', $gatherMethods, self::wsdlYandexDirectApiAdGroupsPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function yandexDirectApiCampaignsGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlYandexDirectApiCampaignsPath(), $reset, $gatherMethods);
+        return self::getInstanceFromSerializedJson('yandex_campaigns', $gatherMethods, self::wsdlYandexDirectApiCampaignsPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function yandexDirectApiLiveGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlYandexDirectApiLivePath(), $reset, $gatherMethods);
+        return self::getInstanceFromSerializedJson('yandex_live', $gatherMethods, self::wsdlYandexDirectApiLivePath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function docDataPaymentsGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlDocDataPaymentsPath(), $reset, $gatherMethods);
+        return self::getInstanceFromSerializedJson('docdatapayments', $gatherMethods, self::wsdlDocDataPaymentsPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function deliveryServiceInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlDeliveryServicePath(), $reset, $gatherMethods);
+        return self::getInstanceFromSerializedJson('deliveryservice', $gatherMethods, self::wsdlDeliveryServicePath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function orderContractInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlOrderContractPath(), $reset, $gatherMethods);
+        return self::getInstanceFromSerializedJson('ordercontract', $gatherMethods, self::wsdlOrderContractPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function whlInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
     {
-        return self::getInstance(self::wsdlWhlPath(), $reset, $gatherMethods);
+        return self::getInstanceFromSerializedJson('whl', $gatherMethods, self::wsdlWhlPath(), $reset);
     }
     /**
      * @return Generator
      */
     public static function ewsInstance()
     {
-        return self::getInstanceFromSerializedJson('parsed_ews');
+        return self::getInstanceFromSerializedJson('ews', 'start', self::wsdlEwsPath());
     }
     /**
      * @param string $wsdl
@@ -172,20 +172,22 @@ abstract class AbstractFile extends TestCase
      * @param string $id
      * @return Generator
      */
-    public static function getInstanceFromSerializedJson($id, $reset = true)
+    public static function getInstanceFromSerializedJson($id, $gatherMethods, $origin, $reset = true)
     {
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgePhpReservedKeywords();
-        if (!array_key_exists($id, self::$ids) || $reset) {
-            $json = file_get_contents(self::getTestDirectory() . $id . '.json');
+        if (!array_key_exists($id . $gatherMethods, self::$ids) || $reset) {
+            $json = file_get_contents(sprintf('%sparsed_%s_%s.json', self::getTestDirectory(), $id, $gatherMethods));
             $json = str_replace(array(
                 '__DESTINATION__',
+                '__ORIGIN__',
             ), array(
                 json_encode(self::getTestDirectory()),
+                json_encode($origin),
             ), $json);
-            self::$ids[$id] = Generator::instanceFromSerializedJson($json);
+            self::$ids[$id . $gatherMethods] = Generator::instanceFromSerializedJson($json);
         }
-        return self::$ids[$id];
+        return self::$ids[$id . $gatherMethods];
     }
     /**
      * @param Generator $generator

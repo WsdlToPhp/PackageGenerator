@@ -4,7 +4,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CodeManager_DeleteCodeArchive",
                         "parameterType": {
                             "archive_id": "int"
@@ -19,9 +19,18 @@
                         },
                         "name": "CodeManager.DeleteCodeArchive",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CodeManagerDeleteCodeArchive",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CodeManager_GenerateCode",
                         "parameterType": {
                             "char_set": "string",
@@ -41,9 +50,18 @@
                         },
                         "name": "CodeManager.GenerateCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CodeManagerGenerateCode",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CodeManager_GetCodeArchives",
                         "parameterType": {
                             "archive_id_list": "int_array",
@@ -60,9 +78,18 @@
                         },
                         "name": "CodeManager.GetCodeArchives",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CodeManagerGetCodeArchives",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "CodeManager_SaveCodeArchive",
                         "parameterType": {
                             "archive_description": "string",
@@ -80,9 +107,18 @@
                         },
                         "name": "CodeManager.SaveCodeArchive",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CodeManagerSaveCodeArchive",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_CancelQueueItem",
                         "parameterType": {
                             "qid": "int"
@@ -97,9 +133,18 @@
                         },
                         "name": "Company.CancelQueueItem",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyCancelQueueItem",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_DownloadProduct",
                         "parameterType": {
                             "productType": "productType"
@@ -114,9 +159,18 @@
                         },
                         "name": "Company.DownloadProduct",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyDownloadProduct",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetEndpoint",
                         "parameterType": {
                             "company": "string"
@@ -131,9 +185,18 @@
                         },
                         "name": "Company.GetEndpoint",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyGetEndpoint",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetQueue",
                         "parameterType": null,
                         "returnType": "queue_items",
@@ -146,9 +209,18 @@
                         },
                         "name": "Company.GetQueue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyGetQueue",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetReportSuites",
                         "parameterType": {
                             "rs_types": "string_array",
@@ -164,9 +236,18 @@
                         },
                         "name": "Company.GetReportSuites",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyGetReportSuites",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetTokenCount",
                         "parameterType": null,
                         "returnType": "int",
@@ -179,9 +260,18 @@
                         },
                         "name": "Company.GetTokenCount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyGetTokenCount",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetTokenUsage",
                         "parameterType": null,
                         "returnType": "token_usage_container",
@@ -194,9 +284,18 @@
                         },
                         "name": "Company.GetTokenUsage",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyGetTokenUsage",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetTrackingServer",
                         "parameterType": {
                             "rsid": "string"
@@ -211,9 +310,18 @@
                         },
                         "name": "Company.GetTrackingServer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyGetTrackingServer",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_GetVersionAccess",
                         "parameterType": null,
                         "returnType": "string_array",
@@ -226,9 +334,18 @@
                         },
                         "name": "Company.GetVersionAccess",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyGetVersionAccess",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Company_ResetTokenCount",
                         "parameterType": {
                             "auth_key": "string"
@@ -243,9 +360,18 @@
                         },
                         "name": "Company.ResetTokenCount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CompanyResetTokenCount",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Dashboards_GetDashboardAPI",
                         "parameterType": {
                             "dashboard_id": "int",
@@ -261,9 +387,18 @@
                         },
                         "name": "Dashboards.GetDashboardAPI",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DashboardsGetDashboardAPI",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Dashboards_GetReportletDataAPI",
                         "parameterType": {
                             "reportlet_id": "int"
@@ -278,9 +413,18 @@
                         },
                         "name": "Dashboards.GetReportletDataAPI",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DashboardsGetReportletDataAPI",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_AppendDataBlock",
                         "parameterType": {
                             "blockID": "int",
@@ -299,9 +443,18 @@
                         },
                         "name": "DataSource.AppendDataBlock",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceAppendDataBlock",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_BeginDataBlock",
                         "parameterType": {
                             "blockName": "string",
@@ -321,9 +474,18 @@
                         },
                         "name": "DataSource.BeginDataBlock",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceBeginDataBlock",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_Deactivate",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -339,9 +501,18 @@
                         },
                         "name": "DataSource.Deactivate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceDeactivate",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetFileIDs",
                         "parameterType": {
                             "dataSourceID": "string",
@@ -358,9 +529,18 @@
                         },
                         "name": "DataSource.GetFileIDs",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceGetFileIDs",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetFileInfo",
                         "parameterType": {
                             "dataSourceID": "string",
@@ -377,9 +557,18 @@
                         },
                         "name": "DataSource.GetFileInfo",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceGetFileInfo",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetFileStatus",
                         "parameterType": {
                             "dataSourceFileID": "string",
@@ -395,9 +584,18 @@
                         },
                         "name": "DataSource.GetFileStatus",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceGetFileStatus",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetIDs",
                         "parameterType": {
                             "reportSuiteID": "string"
@@ -412,9 +610,18 @@
                         },
                         "name": "DataSource.GetIDs",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceGetIDs",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_GetInfo",
                         "parameterType": {
                             "filter": "string",
@@ -430,9 +637,18 @@
                         },
                         "name": "DataSource.GetInfo",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceGetInfo",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_ProcessIncompleteVisits",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -448,9 +664,18 @@
                         },
                         "name": "DataSource.ProcessIncompleteVisits",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceProcessIncompleteVisits",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_Restart",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -466,9 +691,18 @@
                         },
                         "name": "DataSource.Restart",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceRestart",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_SetupFull",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -485,9 +719,18 @@
                         },
                         "name": "DataSource.SetupFull",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceSetupFull",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_SetupGeneric",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -505,9 +748,18 @@
                         },
                         "name": "DataSource.SetupGeneric",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceSetupGeneric",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_SetupTraffic",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -524,9 +776,18 @@
                         },
                         "name": "DataSource.SetupTraffic",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceSetupTraffic",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataSource_SetupWebLog",
                         "parameterType": {
                             "dataSourceID": "int",
@@ -543,9 +804,18 @@
                         },
                         "name": "DataSource.SetupWebLog",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataSourceSetupWebLog",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_CancelRequest",
                         "parameterType": {
                             "Request_Id": "int"
@@ -560,9 +830,18 @@
                         },
                         "name": "DataWarehouse.CancelRequest",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseCancelRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_CheckRequest",
                         "parameterType": {
                             "Request_Id": "int"
@@ -577,9 +856,18 @@
                         },
                         "name": "DataWarehouse.CheckRequest",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseCheckRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_CreateSegment",
                         "parameterType": {
                             "hidden": "boolean",
@@ -596,9 +884,18 @@
                         },
                         "name": "DataWarehouse.CreateSegment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseCreateSegment",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_GetReportData",
                         "parameterType": {
                             "Request_Id": "int",
@@ -615,9 +912,18 @@
                         },
                         "name": "DataWarehouse.GetReportData",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseGetReportData",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_GetSegment",
                         "parameterType": {
                             "rsid": "string",
@@ -633,9 +939,18 @@
                         },
                         "name": "DataWarehouse.GetSegment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseGetSegment",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_GetSegments",
                         "parameterType": {
                             "rsid": "string"
@@ -650,9 +965,18 @@
                         },
                         "name": "DataWarehouse.GetSegments",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseGetSegments",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_ReplaceSegment",
                         "parameterType": {
                             "id": "int",
@@ -669,9 +993,18 @@
                         },
                         "name": "DataWarehouse.ReplaceSegment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseReplaceSegment",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_Request",
                         "parameterType": {
                             "Breakdown_List": "string_array",
@@ -706,9 +1039,18 @@
                         },
                         "name": "DataWarehouse.Request",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DataWarehouse_VerifySegment",
                         "parameterType": {
                             "segment": "data_warehouse_segment"
@@ -723,9 +1065,18 @@
                         },
                         "name": "DataWarehouse.VerifySegment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DataWarehouseVerifySegment",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DeliveryList_Delete",
                         "parameterType": {
                             "dist_list_id": "int"
@@ -740,9 +1091,18 @@
                         },
                         "name": "DeliveryList.Delete",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DeliveryListDelete",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DeliveryList_Get",
                         "parameterType": {
                             "search_name": "string"
@@ -757,9 +1117,18 @@
                         },
                         "name": "DeliveryList.Get",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DeliveryListGet",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "DeliveryList_Save",
                         "parameterType": {
                             "delivery_list_name": "string",
@@ -775,9 +1144,18 @@
                         },
                         "name": "DeliveryList.Save",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DeliveryListSave",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Discover_GetSegments",
                         "parameterType": {
                             "end_date": "date",
@@ -794,9 +1172,18 @@
                         },
                         "name": "Discover.GetSegments",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DiscoverGetSegments",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Discover_QueueDiscoverOvertime",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -811,9 +1198,18 @@
                         },
                         "name": "Discover.QueueDiscoverOvertime",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DiscoverQueueDiscoverOvertime",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Discover_QueueDiscoverRanked",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -828,9 +1224,18 @@
                         },
                         "name": "Discover.QueueDiscoverRanked",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DiscoverQueueDiscoverRanked",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Discover_QueueDiscoverTrended",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -845,9 +1250,18 @@
                         },
                         "name": "Discover.QueueDiscoverTrended",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DiscoverQueueDiscoverTrended",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Logs_GetAdminConsoleCompanyLog",
                         "parameterType": {
                             "company": "string",
@@ -867,9 +1281,18 @@
                         },
                         "name": "Logs.GetAdminConsoleCompanyLog",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "LogsGetAdminConsoleCompanyLog",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Logs_GetAdminConsoleLog",
                         "parameterType": {
                             "company": "string",
@@ -889,9 +1312,18 @@
                         },
                         "name": "Logs.GetAdminConsoleLog",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "LogsGetAdminConsoleLog",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Logs_GetUsageLog",
                         "parameterType": {
                             "date_from": "string",
@@ -912,9 +1344,18 @@
                         },
                         "name": "Logs.GetUsageLog",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "LogsGetUsageLog",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_AddLogin",
                         "parameterType": {
                             "admin": "int",
@@ -943,9 +1384,18 @@
                         },
                         "name": "Permissions.AddLogin",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsAddLogin",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_Authenticate",
                         "parameterType": {
                             "login": "string",
@@ -961,9 +1411,18 @@
                         },
                         "name": "Permissions.Authenticate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsAuthenticate",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_DeleteGroup",
                         "parameterType": {
                             "groupid": "string"
@@ -978,9 +1437,18 @@
                         },
                         "name": "Permissions.DeleteGroup",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsDeleteGroup",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_DeleteLogin",
                         "parameterType": {
                             "login": "string"
@@ -995,9 +1463,18 @@
                         },
                         "name": "Permissions.DeleteLogin",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsDeleteLogin",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetCRMInfo",
                         "parameterType": {
                             "company": "string",
@@ -1013,9 +1490,18 @@
                         },
                         "name": "Permissions.GetCRMInfo",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetCRMInfo",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetCategories",
                         "parameterType": {
                             "categoryid": "int",
@@ -1031,9 +1517,18 @@
                         },
                         "name": "Permissions.GetCategories",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetCategories",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetGroup",
                         "parameterType": {
                             "group_type": "int",
@@ -1049,9 +1544,18 @@
                         },
                         "name": "Permissions.GetGroup",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetGroup",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetGroups",
                         "parameterType": {
                             "field": "string",
@@ -1067,9 +1571,18 @@
                         },
                         "name": "Permissions.GetGroups",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetGroups",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetLogin",
                         "parameterType": {
                             "login": "string"
@@ -1084,9 +1597,18 @@
                         },
                         "name": "Permissions.GetLogin",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetLogin",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetLogins",
                         "parameterType": {
                             "login_search_field": "string",
@@ -1102,9 +1624,18 @@
                         },
                         "name": "Permissions.GetLogins",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetLogins",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetReportBuilderLogin",
                         "parameterType": {
                             "locale": "reportDefinitionLocale"
@@ -1119,9 +1650,18 @@
                         },
                         "name": "Permissions.GetReportBuilderLogin",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetReportBuilderLogin",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetReportSuiteGroupCount",
                         "parameterType": {
                             "search_field": "string",
@@ -1137,9 +1677,18 @@
                         },
                         "name": "Permissions.GetReportSuiteGroupCount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetReportSuiteGroupCount",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_GetReportSuiteGroups",
                         "parameterType": {
                             "rsid": "string"
@@ -1154,9 +1703,18 @@
                         },
                         "name": "Permissions.GetReportSuiteGroups",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsGetReportSuiteGroups",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_HasPrivilege",
                         "parameterType": {
                             "privilegeToken": "string"
@@ -1171,9 +1729,18 @@
                         },
                         "name": "Permissions.HasPrivilege",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsHasPrivilege",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_SaveGroup",
                         "parameterType": {
                             "group_description": "string",
@@ -1196,9 +1763,18 @@
                         },
                         "name": "Permissions.SaveGroup",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsSaveGroup",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_SaveLogin",
                         "parameterType": {
                             "admin": "int",
@@ -1226,9 +1802,18 @@
                         },
                         "name": "Permissions.SaveLogin",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsSaveLogin",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Permissions_SaveReportSuiteGroups",
                         "parameterType": {
                             "rsid": "string",
@@ -1244,9 +1829,18 @@
                         },
                         "name": "Permissions.SaveReportSuiteGroups",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PermissionsSaveReportSuiteGroups",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_CancelReport",
                         "parameterType": {
                             "reportID": "int"
@@ -1261,9 +1855,18 @@
                         },
                         "name": "Report.CancelReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportCancelReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetElementNames",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1278,9 +1881,18 @@
                         },
                         "name": "Report.GetElementNames",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportGetElementNames",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetOvertimeReport",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1295,9 +1907,18 @@
                         },
                         "name": "Report.GetOvertimeReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportGetOvertimeReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetRankedReport",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1312,9 +1933,18 @@
                         },
                         "name": "Report.GetRankedReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportGetRankedReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetReport",
                         "parameterType": {
                             "reportID": "int"
@@ -1329,9 +1959,18 @@
                         },
                         "name": "Report.GetReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportGetReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetReportQueue",
                         "parameterType": null,
                         "returnType": "report_queue",
@@ -1344,9 +1983,18 @@
                         },
                         "name": "Report.GetReportQueue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportGetReportQueue",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetStatus",
                         "parameterType": {
                             "reportID": "int"
@@ -1361,9 +2009,18 @@
                         },
                         "name": "Report.GetStatus",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportGetStatus",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_GetTrendedReport",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1378,9 +2035,18 @@
                         },
                         "name": "Report.GetTrendedReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportGetTrendedReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_QueueOvertime",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1395,9 +2061,18 @@
                         },
                         "name": "Report.QueueOvertime",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportQueueOvertime",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_QueueRanked",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1412,9 +2087,18 @@
                         },
                         "name": "Report.QueueRanked",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportQueueRanked",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_QueueSCMRanked",
                         "parameterType": {
                             "reportDescription": "SCM_reportDescription"
@@ -1429,9 +2113,18 @@
                         },
                         "name": "Report.QueueSCMRanked",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportQueueSCMRanked",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Report_QueueTrended",
                         "parameterType": {
                             "reportDescription": "reportDescription"
@@ -1446,9 +2139,18 @@
                         },
                         "name": "Report.QueueTrended",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportQueueTrended",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_AddCorrelations",
                         "parameterType": {
                             "rel_ids": "int_array",
@@ -1465,9 +2167,18 @@
                         },
                         "name": "ReportSuite.AddCorrelations",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteAddCorrelations",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_AddInternalURLFilters",
                         "parameterType": {
                             "filters": "string_array",
@@ -1483,9 +2194,18 @@
                         },
                         "name": "ReportSuite.AddInternalURLFilters",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteAddInternalURLFilters",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_AddKeyVisitors",
                         "parameterType": {
                             "key_visitors": "string_array",
@@ -1501,9 +2221,18 @@
                         },
                         "name": "ReportSuite.AddKeyVisitors",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteAddKeyVisitors",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_AddSavedFilters",
                         "parameterType": {
                             "savedFilters": "saved_filters_array"
@@ -1518,9 +2247,18 @@
                         },
                         "name": "ReportSuite.AddSavedFilters",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteAddSavedFilters",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_Create",
                         "parameterType": {
                             "base_currency": "string",
@@ -1544,9 +2282,18 @@
                         },
                         "name": "ReportSuite.Create",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteCreate",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteBaseURL",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1561,9 +2308,18 @@
                         },
                         "name": "ReportSuite.DeleteBaseURL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteBaseURL",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteCalculatedMetrics",
                         "parameterType": {
                             "calculated_metrics": "calculated_metrics",
@@ -1579,9 +2335,18 @@
                         },
                         "name": "ReportSuite.DeleteCalculatedMetrics",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteCalculatedMetrics",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteClassifications",
                         "parameterType": {
                             "c_view": "classification_view",
@@ -1599,9 +2364,18 @@
                         },
                         "name": "ReportSuite.DeleteClassifications",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteClassifications",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteCorrelations",
                         "parameterType": {
                             "rel_ids": "int_array",
@@ -1618,9 +2392,18 @@
                         },
                         "name": "ReportSuite.DeleteCorrelations",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteCorrelations",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteDefaultPage",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1635,9 +2418,18 @@
                         },
                         "name": "ReportSuite.DeleteDefaultPage",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteDefaultPage",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteIPAddressExclusions",
                         "parameterType": {
                             "ip_list": "string_array",
@@ -1653,9 +2445,18 @@
                         },
                         "name": "ReportSuite.DeleteIPAddressExclusions",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteIPAddressExclusions",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteInternalURLFilters",
                         "parameterType": {
                             "filters": "string_array",
@@ -1671,9 +2472,18 @@
                         },
                         "name": "ReportSuite.DeleteInternalURLFilters",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteInternalURLFilters",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteKeyVisitors",
                         "parameterType": {
                             "key_visitors": "string_array",
@@ -1689,9 +2499,18 @@
                         },
                         "name": "ReportSuite.DeleteKeyVisitors",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteKeyVisitors",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteMarketingChannelCost",
                         "parameterType": {
                             "channel_type": "string",
@@ -1709,9 +2528,18 @@
                         },
                         "name": "ReportSuite.DeleteMarketingChannelCost",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteMarketingChannelCost",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteMarketingChannels",
                         "parameterType": {
                             "channel_ids": "mchannel_id_list",
@@ -1727,9 +2555,18 @@
                         },
                         "name": "ReportSuite.DeleteMarketingChannels",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteMarketingChannels",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeletePages",
                         "parameterType": {
                             "page_id_list": "int_array",
@@ -1745,9 +2582,18 @@
                         },
                         "name": "ReportSuite.DeletePages",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeletePages",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeletePaidSearch",
                         "parameterType": {
                             "filter": "string",
@@ -1765,9 +2611,18 @@
                         },
                         "name": "ReportSuite.DeletePaidSearch",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeletePaidSearch",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_DeleteSavedFilter",
                         "parameterType": {
                             "savedFilterIds": "int_array"
@@ -1782,9 +2637,18 @@
                         },
                         "name": "ReportSuite.DeleteSavedFilter",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteDeleteSavedFilter",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetActivation",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1799,9 +2663,18 @@
                         },
                         "name": "ReportSuite.GetActivation",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetActivation",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetAvailableElements",
                         "parameterType": {
                             "return_datawarehouse_elements": "int",
@@ -1817,9 +2690,18 @@
                         },
                         "name": "ReportSuite.GetAvailableElements",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetAvailableElements",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetAvailableMetrics",
                         "parameterType": {
                             "return_datawarehouse_metrics": "int",
@@ -1835,9 +2717,18 @@
                         },
                         "name": "ReportSuite.GetAvailableMetrics",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetAvailableMetrics",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetAxleStartDate",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1852,9 +2743,18 @@
                         },
                         "name": "ReportSuite.GetAxleStartDate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetAxleStartDate",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetBaseCurrency",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1869,9 +2769,18 @@
                         },
                         "name": "ReportSuite.GetBaseCurrency",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetBaseCurrency",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetBaseURL",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1886,9 +2795,18 @@
                         },
                         "name": "ReportSuite.GetBaseURL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetBaseURL",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetCalculatedMetrics",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1903,9 +2821,18 @@
                         },
                         "name": "ReportSuite.GetCalculatedMetrics",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetCalculatedMetrics",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetClassificationHierarchies",
                         "parameterType": {
                             "c_view": "string",
@@ -1922,9 +2849,18 @@
                         },
                         "name": "ReportSuite.GetClassificationHierarchies",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetClassificationHierarchies",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetClassifications",
                         "parameterType": {
                             "c_view": "string",
@@ -1942,9 +2878,18 @@
                         },
                         "name": "ReportSuite.GetClassifications",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetClassifications",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetCorrelations",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1959,9 +2904,18 @@
                         },
                         "name": "ReportSuite.GetCorrelations",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetCorrelations",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetCustomCalendar",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1976,9 +2930,18 @@
                         },
                         "name": "ReportSuite.GetCustomCalendar",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetCustomCalendar",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetDefaultPage",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -1993,9 +2956,18 @@
                         },
                         "name": "ReportSuite.GetDefaultPage",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetDefaultPage",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetEVars",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2010,9 +2982,18 @@
                         },
                         "name": "ReportSuite.GetEVars",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetEVars",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetEcommerce",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2027,9 +3008,18 @@
                         },
                         "name": "ReportSuite.GetEcommerce",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetEcommerce",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetFindingMethods",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2044,9 +3034,18 @@
                         },
                         "name": "ReportSuite.GetFindingMethods",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetFindingMethods",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetIPAddressExclusions",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2061,9 +3060,18 @@
                         },
                         "name": "ReportSuite.GetIPAddressExclusions",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetIPAddressExclusions",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetIPObfuscation",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2078,9 +3086,18 @@
                         },
                         "name": "ReportSuite.GetIPObfuscation",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetIPObfuscation",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetInternalURLFilters",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2095,9 +3112,18 @@
                         },
                         "name": "ReportSuite.GetInternalURLFilters",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetInternalURLFilters",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetKeyVisitors",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2112,9 +3138,18 @@
                         },
                         "name": "ReportSuite.GetKeyVisitors",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetKeyVisitors",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetLocalization",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2129,9 +3164,18 @@
                         },
                         "name": "ReportSuite.GetLocalization",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetLocalization",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannelCost",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2146,9 +3190,18 @@
                         },
                         "name": "ReportSuite.GetMarketingChannelCost",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetMarketingChannelCost",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannelExpiration",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2163,9 +3216,18 @@
                         },
                         "name": "ReportSuite.GetMarketingChannelExpiration",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetMarketingChannelExpiration",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannelRules",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2180,9 +3242,18 @@
                         },
                         "name": "ReportSuite.GetMarketingChannelRules",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetMarketingChannelRules",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannels",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2197,9 +3268,18 @@
                         },
                         "name": "ReportSuite.GetMarketingChannels",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetMarketingChannels",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMarketingChannelsCustomSubRelations",
                         "parameterType": {
                             "rel_id": "int",
@@ -2215,9 +3295,18 @@
                         },
                         "name": "ReportSuite.GetMarketingChannelsCustomSubRelations",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetMarketingChannelsCustomSubRelations",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetMobileAppReporting",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2232,9 +3321,18 @@
                         },
                         "name": "ReportSuite.GetMobileAppReporting",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetMobileAppReporting",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetPages",
                         "parameterType": {
                             "limit": "int",
@@ -2253,9 +3351,18 @@
                         },
                         "name": "ReportSuite.GetPages",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetPages",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetPaidSearch",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2270,9 +3377,18 @@
                         },
                         "name": "ReportSuite.GetPaidSearch",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetPaidSearch",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetPermanentTraffic",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2287,9 +3403,18 @@
                         },
                         "name": "ReportSuite.GetPermanentTraffic",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetPermanentTraffic",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetProcessingStatus",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2304,9 +3429,18 @@
                         },
                         "name": "ReportSuite.GetProcessingStatus",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetProcessingStatus",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetRollupDates",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2321,9 +3455,18 @@
                         },
                         "name": "ReportSuite.GetRollupDates",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetRollupDates",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetRollups",
                         "parameterType": null,
                         "returnType": "rollup_array",
@@ -2336,9 +3479,18 @@
                         },
                         "name": "ReportSuite.GetRollups",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetRollups",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSavedFilters",
                         "parameterType": null,
                         "returnType": "saved_filters_array",
@@ -2351,9 +3503,18 @@
                         },
                         "name": "ReportSuite.GetSavedFilters",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetSavedFilters",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetScheduledSpike",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2368,9 +3529,18 @@
                         },
                         "name": "ReportSuite.GetScheduledSpike",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetScheduledSpike",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSegments",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2385,9 +3555,18 @@
                         },
                         "name": "ReportSuite.GetSegments",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetSegments",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSettings",
                         "parameterType": {
                             "locale": "reportDefinitionLocale",
@@ -2403,9 +3582,18 @@
                         },
                         "name": "ReportSuite.GetSettings",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetSettings",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSiteTitle",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2420,9 +3608,18 @@
                         },
                         "name": "ReportSuite.GetSiteTitle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetSiteTitle",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetSuccessEvents",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2437,9 +3634,18 @@
                         },
                         "name": "ReportSuite.GetSuccessEvents",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetSuccessEvents",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetTemplate",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2454,9 +3660,18 @@
                         },
                         "name": "ReportSuite.GetTemplate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetTemplate",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetTimeZone",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2471,9 +3686,18 @@
                         },
                         "name": "ReportSuite.GetTimeZone",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetTimeZone",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetTrafficVars",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2488,9 +3712,18 @@
                         },
                         "name": "ReportSuite.GetTrafficVars",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetTrafficVars",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetUIVisibility",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2505,9 +3738,18 @@
                         },
                         "name": "ReportSuite.GetUIVisibility",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetUIVisibility",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetUniqueVisitorVariable",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2522,9 +3764,18 @@
                         },
                         "name": "ReportSuite.GetUniqueVisitorVariable",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetUniqueVisitorVariable",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetVideoReporting",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2539,9 +3790,18 @@
                         },
                         "name": "ReportSuite.GetVideoReporting",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetVideoReporting",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_GetVideoTracking",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2556,9 +3816,18 @@
                         },
                         "name": "ReportSuite.GetVideoTracking",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteGetVideoTracking",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveBaseCurrency",
                         "parameterType": {
                             "base_currency": "string",
@@ -2574,9 +3843,18 @@
                         },
                         "name": "ReportSuite.SaveBaseCurrency",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveBaseCurrency",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveBaseURL",
                         "parameterType": {
                             "base_url": "string",
@@ -2592,9 +3870,18 @@
                         },
                         "name": "ReportSuite.SaveBaseURL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveBaseURL",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveCalculatedMetrics",
                         "parameterType": {
                             "calculated_metrics": "calculated_metrics",
@@ -2610,9 +3897,18 @@
                         },
                         "name": "ReportSuite.SaveCalculatedMetrics",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveCalculatedMetrics",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveClassificationHierarchies",
                         "parameterType": {
                             "c_options": "string_array",
@@ -2635,9 +3931,18 @@
                         },
                         "name": "ReportSuite.SaveClassificationHierarchies",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveClassificationHierarchies",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveClassifications",
                         "parameterType": {
                             "c_options": "string_array",
@@ -2660,9 +3965,18 @@
                         },
                         "name": "ReportSuite.SaveClassifications",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveClassifications",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveCustomCalendar",
                         "parameterType": {
                             "anchor_date": "date",
@@ -2679,9 +3993,18 @@
                         },
                         "name": "ReportSuite.SaveCustomCalendar",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveCustomCalendar",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveDefaultPage",
                         "parameterType": {
                             "default_page": "string",
@@ -2697,9 +4020,18 @@
                         },
                         "name": "ReportSuite.SaveDefaultPage",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveDefaultPage",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveEVars",
                         "parameterType": {
                             "evars": "evars",
@@ -2715,9 +4047,18 @@
                         },
                         "name": "ReportSuite.SaveEVars",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveEVars",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveEcommerce",
                         "parameterType": {
                             "ecommerce": "int",
@@ -2733,9 +4074,18 @@
                         },
                         "name": "ReportSuite.SaveEcommerce",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveEcommerce",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveFindingMethods",
                         "parameterType": {
                             "reports": "finding_methods",
@@ -2751,9 +4101,18 @@
                         },
                         "name": "ReportSuite.SaveFindingMethods",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveFindingMethods",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveIPAddressExclusions",
                         "parameterType": {
                             "ip_list": "save_ip_exclusions",
@@ -2769,9 +4128,18 @@
                         },
                         "name": "ReportSuite.SaveIPAddressExclusions",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveIPAddressExclusions",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveIPObfuscation",
                         "parameterType": {
                             "ip_obfuscation": "int",
@@ -2787,9 +4155,18 @@
                         },
                         "name": "ReportSuite.SaveIPObfuscation",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveIPObfuscation",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMarketingChannelCost",
                         "parameterType": {
                             "cost_item": "cost_item",
@@ -2805,9 +4182,18 @@
                         },
                         "name": "ReportSuite.SaveMarketingChannelCost",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveMarketingChannelCost",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMarketingChannelExpiration",
                         "parameterType": {
                             "days": "int",
@@ -2823,9 +4209,18 @@
                         },
                         "name": "ReportSuite.SaveMarketingChannelExpiration",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveMarketingChannelExpiration",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMarketingChannelRules",
                         "parameterType": {
                             "mchannel_rules": "mchannel_rulesets",
@@ -2841,9 +4236,18 @@
                         },
                         "name": "ReportSuite.SaveMarketingChannelRules",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveMarketingChannelRules",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMarketingChannels",
                         "parameterType": {
                             "channels": "mchannel_list",
@@ -2859,9 +4263,18 @@
                         },
                         "name": "ReportSuite.SaveMarketingChannels",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveMarketingChannels",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveMobileAppReporting",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -2872,9 +4285,18 @@
                         "meta": [],
                         "name": "ReportSuite.SaveMobileAppReporting",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveMobileAppReporting",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SavePaidSearch",
                         "parameterType": {
                             "filter": "string",
@@ -2892,9 +4314,18 @@
                         },
                         "name": "ReportSuite.SavePaidSearch",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSavePaidSearch",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SavePermanentTraffic",
                         "parameterType": {
                             "new_hits_per_day": "int",
@@ -2911,9 +4342,18 @@
                         },
                         "name": "ReportSuite.SavePermanentTraffic",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSavePermanentTraffic",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveRollup",
                         "parameterType": {
                             "go_live_date": "date",
@@ -2931,9 +4371,18 @@
                         },
                         "name": "ReportSuite.SaveRollup",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveRollup",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveSavedFilters",
                         "parameterType": {
                             "savedFilters": "saved_filters_array"
@@ -2948,9 +4397,18 @@
                         },
                         "name": "ReportSuite.SaveSavedFilters",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveSavedFilters",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveScheduledSpike",
                         "parameterType": {
                             "end_date": "date",
@@ -2968,9 +4426,18 @@
                         },
                         "name": "ReportSuite.SaveScheduledSpike",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveScheduledSpike",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveSiteTitle",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -2986,9 +4453,18 @@
                         },
                         "name": "ReportSuite.SaveSiteTitle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveSiteTitle",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveSuccessEvents",
                         "parameterType": {
                             "events": "events",
@@ -3004,9 +4480,18 @@
                         },
                         "name": "ReportSuite.SaveSuccessEvents",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveSuccessEvents",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveSurveySettings",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3020,9 +4505,18 @@
                         "meta": [],
                         "name": "ReportSuite.SaveSurveySettings",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveSurveySettings",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveTimeZone",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3038,9 +4532,18 @@
                         },
                         "name": "ReportSuite.SaveTimeZone",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveTimeZone",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveTrafficVars",
                         "parameterType": {
                             "property": "traffic_vars",
@@ -3056,9 +4559,18 @@
                         },
                         "name": "ReportSuite.SaveTrafficVars",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveTrafficVars",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveUIVisibility",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3075,9 +4587,18 @@
                         },
                         "name": "ReportSuite.SaveUIVisibility",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveUIVisibility",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveUniqueVisitorVariable",
                         "parameterType": {
                             "rsid_list": "string_array",
@@ -3093,9 +4614,18 @@
                         },
                         "name": "ReportSuite.SaveUniqueVisitorVariable",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveUniqueVisitorVariable",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "ReportSuite_SaveVideoReporting",
                         "parameterType": {
                             "rsid_list": "string_array"
@@ -3106,9 +4636,18 @@
                         "meta": [],
                         "name": "ReportSuite.SaveVideoReporting",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ReportSuiteSaveVideoReporting",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_CheckJobStatus",
                         "parameterType": {
                             "job_id": "int"
@@ -3123,9 +4662,18 @@
                         },
                         "name": "Saint.CheckJobStatus",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintCheckJobStatus",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_CreateFTP",
                         "parameterType": {
                             "description": "string",
@@ -3145,9 +4693,18 @@
                         },
                         "name": "Saint.CreateFTP",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintCreateFTP",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ExportCreateJob",
                         "parameterType": {
                             "campaign_filter_begin_range": "string",
@@ -3175,9 +4732,18 @@
                         },
                         "name": "Saint.ExportCreateJob",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintExportCreateJob",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ExportGetFileSegment",
                         "parameterType": {
                             "file_id": "int",
@@ -3193,9 +4759,18 @@
                         },
                         "name": "Saint.ExportGetFileSegment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintExportGetFileSegment",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_GetCompatabiltyMetrics",
                         "parameterType": {
                             "report_suite_array": "string_array"
@@ -3210,9 +4785,18 @@
                         },
                         "name": "Saint.GetCompatabiltyMetrics",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintGetCompatabiltyMetrics",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_GetFilters",
                         "parameterType": {
                             "relation_id": "int",
@@ -3228,9 +4812,18 @@
                         },
                         "name": "Saint.GetFilters",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintGetFilters",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_GetTemplate",
                         "parameterType": {
                             "encoding": "string",
@@ -3249,9 +4842,18 @@
                         },
                         "name": "Saint.GetTemplate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintGetTemplate",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ImportCommitJob",
                         "parameterType": {
                             "job_id": "int"
@@ -3266,9 +4868,18 @@
                         },
                         "name": "Saint.ImportCommitJob",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintImportCommitJob",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ImportCreateJob",
                         "parameterType": {
                             "check_divisions": "int",
@@ -3290,9 +4901,18 @@
                         },
                         "name": "Saint.ImportCreateJob",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintImportCreateJob",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ImportPopulateJob",
                         "parameterType": {
                             "job_id": "int",
@@ -3309,9 +4929,18 @@
                         },
                         "name": "Saint.ImportPopulateJob",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintImportPopulateJob",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Saint_ListFTP",
                         "parameterType": null,
                         "returnType": "saint_ftp_list",
@@ -3324,9 +4953,18 @@
                         },
                         "name": "Saint.ListFTP",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SaintListFTP",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_CreatePublishedReport",
                         "parameterType": {
                             "location": "workbookLocation",
@@ -3344,9 +4982,18 @@
                         },
                         "name": "Scheduling.CreatePublishedReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingCreatePublishedReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_DeletePublishedReport",
                         "parameterType": {
                             "product": "productType",
@@ -3362,9 +5009,18 @@
                         },
                         "name": "Scheduling.DeletePublishedReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingDeletePublishedReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_DeleteWorkbook",
                         "parameterType": {
                             "location": "workbookLocation",
@@ -3382,9 +5038,18 @@
                         },
                         "name": "Scheduling.DeleteWorkbook",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingDeleteWorkbook",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_DownloadWorkbook",
                         "parameterType": {
                             "location": "workbookLocation",
@@ -3402,9 +5067,18 @@
                         },
                         "name": "Scheduling.DownloadWorkbook",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingDownloadWorkbook",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_GetPublishedReports",
                         "parameterType": {
                             "product": "productType",
@@ -3420,9 +5094,18 @@
                         },
                         "name": "Scheduling.GetPublishedReports",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingGetPublishedReports",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_GetReportsRunHistory",
                         "parameterType": {
                             "limit": "int",
@@ -3440,9 +5123,18 @@
                         },
                         "name": "Scheduling.GetReportsRunHistory",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingGetReportsRunHistory",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_GetWorkbookList",
                         "parameterType": {
                             "location": "workbookLocation",
@@ -3458,9 +5150,18 @@
                         },
                         "name": "Scheduling.GetWorkbookList",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingGetWorkbookList",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_ReRunReport",
                         "parameterType": {
                             "id": "int"
@@ -3475,9 +5176,18 @@
                         },
                         "name": "Scheduling.ReRunReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingReRunReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_UpdatePublishedReport",
                         "parameterType": {
                             "product": "productType",
@@ -3494,9 +5204,18 @@
                         },
                         "name": "Scheduling.UpdatePublishedReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingUpdatePublishedReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Scheduling_UploadWorkbook",
                         "parameterType": {
                             "description": "string",
@@ -3515,9 +5234,18 @@
                         },
                         "name": "Scheduling.UploadWorkbook",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SchedulingUploadWorkbook",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "Survey_GetSummaryList",
                         "parameterType": {
                             "rsid": "string",
@@ -3533,9 +5261,18 @@
                         },
                         "name": "Survey.GetSummaryList",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SurveyGetSummaryList",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "User_GetBookmarkFolders",
                         "parameterType": {
                             "limit": "int"
@@ -3550,9 +5287,18 @@
                         },
                         "name": "User.GetBookmarkFolders",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "UserGetBookmarkFolders",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "User_GetDashboardsAPI",
                         "parameterType": {
                             "limit": "int"
@@ -3567,9 +5313,18 @@
                         },
                         "name": "User.GetDashboardsAPI",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "UserGetDashboardsAPI",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "User_GetLastUsedReportSuite",
                         "parameterType": null,
                         "returnType": "report_suite_id",
@@ -3582,9 +5337,18 @@
                         },
                         "name": "User.GetLastUsedReportSuite",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "UserGetLastUsedReportSuite",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "User_LoginEmailExists",
                         "parameterType": {
                             "emailAddress": "string"
@@ -3604,7 +5368,7 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Service",
+                "name": "UserLoginEmailExists",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             }
         ],
@@ -21942,7 +23706,7 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": ".\/tests\/resources\/OmnitureAdminServices.wsdl",
+        "origin": __ORIGIN__,
         "destination": __DESTINATION__,
         "src_dirname": "src",
         "prefix": "Api",

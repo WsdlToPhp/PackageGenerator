@@ -4,7 +4,7 @@
             {
                 "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "login",
                         "parameterType": {
                             "parameter": "login"
@@ -31,9 +31,18 @@
                         },
                         "name": "login",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Login",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "sendEmail",
                         "parameterType": {
                             "parameter": "sendEmail"
@@ -64,9 +73,18 @@
                         },
                         "name": "sendEmail",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "SendEmail",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "_list",
                         "parameterType": {
                             "parameter": "list"
@@ -97,9 +115,18 @@
                         },
                         "name": "list",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "List",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "uploadList",
                         "parameterType": {
                             "parameter": "uploadList"
@@ -130,9 +157,18 @@
                         },
                         "name": "uploadList",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "UploadList",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "getUploadResult",
                         "parameterType": {
                             "parameter": "getUploadResultRequest"
@@ -163,9 +199,18 @@
                         },
                         "name": "getUploadResult",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetUploadResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "downloadList",
                         "parameterType": {
                             "parameter": "downloadList"
@@ -196,9 +241,18 @@
                         },
                         "name": "downloadList",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DownloadList",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "messageReport",
                         "parameterType": {
                             "parameter": "messageReport"
@@ -226,9 +280,18 @@
                         },
                         "name": "messageReport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
-                    },
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "MessageReport",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
                     {
-                        "isUnique": true,
+                        "unique": true,
                         "methodName": "deleteList",
                         "parameterType": {
                             "parameter": "deleteList"
@@ -261,7 +324,7 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
-                "name": "Service",
+                "name": "DeleteList",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
             }
         ],
@@ -3420,7 +3483,7 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": ".\/tests\/resources\/ActonService2.local.wsdl",
+        "origin": __ORIGIN__,
         "destination": __DESTINATION__,
         "src_dirname": "src",
         "prefix": "Api",
