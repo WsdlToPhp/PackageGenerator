@@ -85,7 +85,6 @@ class GeneratorFiles extends AbstractGeneratorAware
         if ($this->generator->getOptionGatherMethods() === GeneratorOptions::VALUE_NONE) {
             $services = new ServiceContainer($this->generator);
             $service = new ServiceModel($this->generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
-            /** @var ServiceMOdel $service */
             foreach ($this->getGenerator()->getServices() as $service) {
                 foreach ($service->getMethods() as $method) {
                     $service->getMethods()->add($method);
