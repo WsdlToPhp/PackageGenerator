@@ -94,7 +94,7 @@ $ phpunit --testsuite=model
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details. In addition, code documentation is at [doc.wsdltophp.com](http://doc.wsdltophp.com).
 
 ## Credits
 
