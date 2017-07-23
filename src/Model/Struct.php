@@ -108,7 +108,7 @@ class Struct extends AbstractModel
      */
     public function isArray()
     {
-        return ((($this->isStruct() && $this->countOwnAttributes() === 1) || (!$this->isStruct() && $this->countOwnAttributes() <= 1)) && stripos($this->getName(), 'array') !== false);
+        return ((($this->isStruct() && $this->countOwnAttributes() === 1) || (!$this->isStruct() && $this->countOwnAttributes() <= 1)) && (stripos($this->getName(), 'array') !== false) || (!$this->isStruct() && $this->getMetaValueFirstSet(array('arraytype', 'arrayType'), false) !== false));
     }
     /**
      * Returns the attributes of the struct and potentially from the parent class
