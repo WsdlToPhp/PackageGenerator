@@ -9,7 +9,7 @@ class TagUnionTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion
      */
-    public static function orderContractInstance()
+    public static function orderContractInstanceParser()
     {
         return new TagUnion(self::generatorInstance(self::wsdlOrderContractPath()));
     }
@@ -18,7 +18,7 @@ class TagUnionTest extends WsdlParser
      */
     public function testParseOrderContract()
     {
-        $tagUnionParser = self::orderContractInstance();
+        $tagUnionParser = self::orderContractInstanceParser();
 
         $tagUnionParser->parse();
 

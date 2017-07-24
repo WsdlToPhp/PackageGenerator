@@ -41,35 +41,35 @@ class WsdlTest extends TestCase
     /**
      * @return Wsdl
      */
-    public static function bingInstance()
+    public static function wsdlBingInstance()
     {
         return self::getWsdl(self::wsdlBingPath());
     }
     /**
      * @return Wsdl
      */
-    public static function ebayInstance()
+    public static function wsdlEbayInstance()
     {
         return self::getWsdl(self::wsdlEbayPath());
     }
     /**
      * @return Wsdl
      */
-    public static function partnerInstance($local = true)
+    public static function wsdlPartnerInstance($local = true)
     {
         return self::getWsdl(self::wsdlPartnerPath($local));
     }
     /**
      * @return Wsdl
      */
-    public static function imageServiceViewInstance()
+    public static function wsdlImageServiceViewInstance()
     {
         return self::getWsdl(self::wsdlImageViewServicePath());
     }
     /**
      * @return $schema
      */
-    public static function imageServiceViewAvailRequestInstance()
+    public static function wsdlImageServiceViewAvailRequestInstance()
     {
         return self::getSchema(self::schemaImageViewServiceAvailableImagesRequestPath());
     }
@@ -78,7 +78,7 @@ class WsdlTest extends TestCase
      */
     public function testGetName()
     {
-        $this->assertSame(self::wsdlBingPath(), self::bingInstance()->getName());
+        $this->assertSame(self::wsdlBingPath(), self::wsdlBingInstance()->getName());
     }
     /**
      * @return Wsdl
@@ -90,21 +90,21 @@ class WsdlTest extends TestCase
     /**
      * @return Wsdl
      */
-    public static function odigeoInstance()
+    public static function wsdlOdigeoInstance()
     {
         return self::getWsdl(self::wsdlOdigeoPath());
     }
     /**
      * @return Wsdl
      */
-    public static function orderContractInstance()
+    public static function wsdlOrderContractInstance()
     {
         return self::getWsdl(self::wsdlOrderContractPath());
     }
     /**
      * @return Wsdl
      */
-    public static function whlInstance()
+    public static function wsdlWhlInstance()
     {
         return self::getWsdl(self::wsdlWhlPath());
     }
