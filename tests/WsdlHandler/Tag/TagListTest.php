@@ -13,7 +13,7 @@ class TagListTest extends TestCase
      */
     public function testGetSuitableParent()
     {
-        $wsdl = WsdlTest::odigeoInstance();
+        $wsdl = WsdlTest::wsdlOdigeoInstance();
 
         $lists = $wsdl->getContent()->getElementsByName(Wsdl::TAG_LIST);
 

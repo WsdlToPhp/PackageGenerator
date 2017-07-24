@@ -13,7 +13,7 @@ class TagEnumerationTest extends TestCase
      */
     public function testGetValue()
     {
-        $schema = WsdlTest::numericEnumerationInstance();
+        $schema = WsdlTest::wsdlNumericEnumerationInstance();
 
         $enumerations = $schema->getContent()->getElementsByName(Wsdl::TAG_ENUMERATION);
 

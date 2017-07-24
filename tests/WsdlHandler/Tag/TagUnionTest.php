@@ -13,7 +13,7 @@ class TagUnionTest extends TestCase
      */
     public function testGetAttributeMemberTypes()
     {
-        $wsdl = WsdlTest::orderContractInstance();
+        $wsdl = WsdlTest::wsdlOrderContractInstance();
 
         $unions = $wsdl->getContent()->getElementsByName(Wsdl::TAG_UNION);
 

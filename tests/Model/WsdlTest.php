@@ -83,7 +83,7 @@ class WsdlTest extends TestCase
     /**
      * @return Wsdl
      */
-    public static function actonInstance()
+    public static function wsdlActonInstance()
     {
         return self::getWsdl(self::wsdlActonPath());
     }
@@ -118,7 +118,7 @@ class WsdlTest extends TestCase
     /**
      * @return Schema
      */
-    public static function numericEnumerationInstance()
+    public static function wsdlNumericEnumerationInstance()
     {
         return self::getSchema(__DIR__ . '/../resources/numeric_enumeration.xml');
     }
