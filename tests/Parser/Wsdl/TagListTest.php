@@ -10,14 +10,14 @@ class TagListTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
      */
-    public static function odigeoInstance()
+    public static function odigeoInstanceParser()
     {
         return new TagList(self::generatorInstance(self::wsdlOdigeoPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
      */
-    public static function myBaordInstance()
+    public static function myBaordInstanceParser()
     {
         return new TagList(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
@@ -26,7 +26,7 @@ class TagListTest extends WsdlParser
      */
     public function testParseOdigeo()
     {
-        $tagListParser = self::odigeoInstance();
+        $tagListParser = self::odigeoInstanceParser();
 
         $tagListParser->parse();
 
@@ -63,7 +63,7 @@ class TagListTest extends WsdlParser
      */
     public function testParseMyBoard()
     {
-        $tagListParser = self::myBaordInstance();
+        $tagListParser = self::myBaordInstanceParser();
 
         $tagListParser->parse();
 

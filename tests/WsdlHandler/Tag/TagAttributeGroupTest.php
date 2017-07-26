@@ -14,7 +14,7 @@ class TagAttributeGroupTest extends TestCase
      */
     public function testGetAttributeRef()
     {
-        $schema = WsdlTest::whlInstance();
+        $schema = WsdlTest::wsdlWhlInstance();
         $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
         $attributeRefs = array(
             'PrimaryLangID_Group',
@@ -136,7 +136,7 @@ class TagAttributeGroupTest extends TestCase
      */
     public function testGetAttributeName()
     {
-        $schema = WsdlTest::whlInstance();
+        $schema = WsdlTest::wsdlWhlInstance();
         $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
         $attributeNames = array(
             'ErrorWarningAttributeGroup',
@@ -191,7 +191,7 @@ class TagAttributeGroupTest extends TestCase
      */
     public function testGetReferencingElements()
     {
-        $schema = WsdlTest::whlInstance();
+        $schema = WsdlTest::wsdlWhlInstance();
         $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
         $attributeGroupCounts = array(
             'ErrorWarningAttributeGroup' => 2,

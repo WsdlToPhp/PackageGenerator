@@ -10,28 +10,28 @@ class TagElementTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement
      */
-    public static function bingInstance()
+    public static function bingInstanceParser()
     {
         return new TagElement(self::generatorInstance(self::wsdlBingPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement
      */
-    public static function yandexAdGroupsInstance()
+    public static function yandexAdGroupsInstanceParser()
     {
         return new TagElement(self::generatorInstance(self::wsdlYandexDirectApiAdGroupsPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement
      */
-    public static function actonInstance()
+    public static function actonInstanceParser()
     {
         return new TagElement(self::generatorInstance(self::wsdlActonPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement
      */
-    public static function payPalInstance()
+    public static function payPalInstanceParser()
     {
         return new TagElement(self::generatorInstance(self::wsdlPayPalPath()));
     }
@@ -40,7 +40,7 @@ class TagElementTest extends WsdlParser
      */
     public function testParseBing()
     {
-        $tagElementParser = self::bingInstance();
+        $tagElementParser = self::bingInstanceParser();
         $tagElementParser->parse();
         $count = 0;
         $structs = $tagElementParser->getGenerator()->getStructs();
@@ -74,7 +74,7 @@ class TagElementTest extends WsdlParser
      */
     public function testParseYandexAdGroups()
     {
-        $tagElementParser = self::yandexAdGroupsInstance();
+        $tagElementParser = self::yandexAdGroupsInstanceParser();
         $tagElementParser->parse();
         $count = 0;
         $structs = $tagElementParser->getGenerator()->getStructs();
@@ -98,7 +98,7 @@ class TagElementTest extends WsdlParser
      */
     public function testParseActon()
     {
-        $tagElementParser = self::actonInstance();
+        $tagElementParser = self::actonInstanceParser();
         $tagElementParser->parse();
         $count = 0;
         $structs = $tagElementParser->getGenerator()->getStructs();
@@ -120,7 +120,7 @@ class TagElementTest extends WsdlParser
      */
     public function testParsePayPal()
     {
-        $tagElementParser = self::payPalInstance();
+        $tagElementParser = self::payPalInstanceParser();
         $tagElementParser->parse();
         $okCount = 0;
         $struct = $tagElementParser->getGenerator()->getStruct('SetExpressCheckoutRequestDetailsType');

@@ -11,21 +11,21 @@ class TagComplexTypeTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
      */
-    public static function ebayInstance()
+    public static function ebayInstanceParser()
     {
         return new TagComplexType(self::generatorInstance(self::wsdlEbayPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
      */
-    public static function partnerInstance()
+    public static function partnerInstanceParser()
     {
         return new TagComplexType(self::generatorInstance(self::wsdlPartnerPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
      */
-    public static function docDataPaymentsInstance()
+    public static function docDataPaymentsInstanceParser()
     {
         return new TagComplexType(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
@@ -34,7 +34,7 @@ class TagComplexTypeTest extends WsdlParser
      */
     public function testParseEbay()
     {
-        $tagComplexTypeParser = self::ebayInstance();
+        $tagComplexTypeParser = self::ebayInstanceParser();
 
         $tagComplexTypeParser->parse();
 
@@ -52,7 +52,7 @@ class TagComplexTypeTest extends WsdlParser
      */
     public function testParseOrderContract()
     {
-        $tagComplexTypeParser = self::partnerInstance();
+        $tagComplexTypeParser = self::partnerInstanceParser();
 
         $tagComplexTypeParser->parse();
 
@@ -70,7 +70,7 @@ class TagComplexTypeTest extends WsdlParser
      */
     public function testParseDocDataPaymnts()
     {
-        $tagComplexTypeParser = self::docDataPaymentsInstance();
+        $tagComplexTypeParser = self::docDataPaymentsInstanceParser();
         $tagRestriction = new TagRestriction($tagComplexTypeParser->getGenerator());
         $tagElement = new TagElement($tagComplexTypeParser->getGenerator());
 

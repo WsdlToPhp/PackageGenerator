@@ -14,7 +14,7 @@ class TagAttributeTest extends TestCase
      */
     public function testGetSuitableParentAsAttributeGroup()
     {
-        $schema = WsdlTest::whlInstance();
+        $schema = WsdlTest::wsdlWhlInstance();
         /** @var TagAttribute $attribute */
         $attribute = $schema->getContent()->getElementByNameAndAttributes(Wsdl::TAG_ATTRIBUTE, array(
             'name' => 'ShortText',

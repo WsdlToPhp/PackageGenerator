@@ -13,7 +13,7 @@ class TagMessageTest extends TestCase
      */
     public function testGetPart()
     {
-        $wsdl = WsdlTest::ebayInstance();
+        $wsdl = WsdlTest::wsdlEbayInstance();
 
         $messages = $wsdl->getContent()->getElementsByName(Wsdl::TAG_MESSAGE);
 

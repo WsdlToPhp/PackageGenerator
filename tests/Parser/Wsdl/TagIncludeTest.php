@@ -12,14 +12,14 @@ class TagIncludeTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude
      */
-    public static function instance()
+    public static function partnerInstanceParser()
     {
         return new TagInclude(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude
      */
-    public static function instanceScd()
+    public static function partnerInstanceParserScd()
     {
         return new TagInclude(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
@@ -28,7 +28,7 @@ class TagIncludeTest extends WsdlParser
      */
     public function testIsWsdlParsed()
     {
-        $tagIncludeParser = self::instance();
+        $tagIncludeParser = self::partnerInstanceParser();
 
         $tagIncludeParser->parse();
 
@@ -39,7 +39,7 @@ class TagIncludeTest extends WsdlParser
      */
     public function testGetExternalSchemas()
     {
-        $tagIncludeParser = self::instance();
+        $tagIncludeParser = self::partnerInstanceParser();
 
         $tagIncludeParser->parse();
 
@@ -66,7 +66,7 @@ class TagIncludeTest extends WsdlParser
     public function testGetExternalSchemasScd()
     {
         // import tag must be parsed first
-        $tagIncludeParser = self::instanceScd();
+        $tagIncludeParser = self::partnerInstanceParserScd();
 
         $tagIncludeParser->parse();
 

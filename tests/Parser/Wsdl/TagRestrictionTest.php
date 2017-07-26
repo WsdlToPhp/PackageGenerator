@@ -10,21 +10,21 @@ class TagRestrictionTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
      */
-    public static function actonInstance()
+    public static function actonInstanceParser()
     {
         return new TagRestriction(self::generatorInstance(self::wsdlActonPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
      */
-    public static function imageViewInstance()
+    public static function imageViewInstanceParser()
     {
         return new TagRestriction(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
      */
-    public static function docDataPaymentsViewInstance()
+    public static function docDataPaymentsViewInstanceParser()
     {
         return new TagRestriction(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
@@ -33,7 +33,7 @@ class TagRestrictionTest extends WsdlParser
      */
     public function testParseImageViewService()
     {
-        $tagRestrictionParser = self::imageViewInstance();
+        $tagRestrictionParser = self::imageViewInstanceParser();
 
         $tagRestrictionParser->parse();
 
@@ -58,7 +58,7 @@ class TagRestrictionTest extends WsdlParser
      */
     public function testParseActonService()
     {
-        $tagRestrictionParser = self::actonInstance();
+        $tagRestrictionParser = self::actonInstanceParser();
 
         $tagRestrictionParser->parse();
 
@@ -78,7 +78,7 @@ class TagRestrictionTest extends WsdlParser
      */
     public function testParseDocDataPayments()
     {
-        $tagRestrictionParser = self::docDataPaymentsViewInstance();
+        $tagRestrictionParser = self::docDataPaymentsViewInstanceParser();
 
         $tagRestrictionParser->parse();
 

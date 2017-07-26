@@ -9,7 +9,7 @@ class TagOutputTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput
      */
-    public static function myBoardPackInstance()
+    public static function myBoardPackInstanceParser()
     {
         return new TagOutput(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
@@ -25,7 +25,7 @@ class TagOutputTest extends WsdlParser
      */
     public function testParseMyBoardpack()
     {
-        $tagOutputParser = self::myBoardPackInstance();
+        $tagOutputParser = self::myBoardPackInstanceParser();
         $soapClient = self::myBoardPackSoapClient();
 
         $tagOutputParser->parse();

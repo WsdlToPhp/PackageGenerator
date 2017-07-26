@@ -13,7 +13,7 @@ class TagRestrictionTest extends TestCase
      */
     public function testIsEnumeration()
     {
-        $wsdl = WsdlTest::bingInstance();
+        $wsdl = WsdlTest::wsdlBingInstance();
 
         $restrictions = $wsdl->getContent()->getElementsByName(Wsdl::TAG_RESTRICTION);
 

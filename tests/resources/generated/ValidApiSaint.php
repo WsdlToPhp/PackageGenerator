@@ -21,7 +21,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $job_id
-     * @return saintresults|bool
+     * @return \Api\StructType\ApiSaintresult[]|bool
      */
     public function Saint_CheckJobStatus($job_id)
     {
@@ -127,7 +127,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $file_id
      * @param string $segment_id
-     * @return pagedetails|bool
+     * @return \Api\StructType\ApiPagedetail[]|bool
      */
     public function Saint_ExportGetFileSegment($file_id, $segment_id)
     {
@@ -151,7 +151,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $report_suite_array
-     * @return compatabilitys|bool
+     * @return \Api\StructType\ApiCompatability[]|bool
      */
     public function Saint_GetCompatabiltyMetrics($report_suite_array)
     {
@@ -175,7 +175,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $relation_id
      * @param string $report_suite_array
-     * @return export_filters|bool
+     * @return \Api\StructType\ApiExport_filter[]|bool
      */
     public function Saint_GetFilters($relation_id, $report_suite_array)
     {
@@ -316,7 +316,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return saint_ftp_list|bool
+     * @return \Api\StructType\ApiSaint_ftp[]|bool
      */
     public function Saint_ListFTP()
     {
@@ -331,7 +331,7 @@ class ApiSaint extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return compatabilitys|export_filters|int|pagedetails|saintresults|saint_ftp_list|string|\Api\StructType\ApiSaint_ftp_info
+     * @return int|string|\Api\StructType\ApiCompatability[]|\Api\StructType\ApiExport_filter[]|\Api\StructType\ApiPagedetail[]|\Api\StructType\ApiSaintresult[]|\Api\StructType\ApiSaint_ftp[]|\Api\StructType\ApiSaint_ftp_info
      */
     public function getResult()
     {
