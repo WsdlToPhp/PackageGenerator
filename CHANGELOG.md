@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2.8.0
+- issue #95 - Dependency composer
+- issue #96 - Improve the Readme
+- issue #98 - Setter/Getter wrongly named
+- issue #99 - Export/Import generator options and parsed data
+- issue #101 - setSoapHeader parameter incorrect
+- issue #102 - Gather methods option should only be taken into account on class generation
+- issue #103 - Invalid typehint
+
 ## 2.7.3
 - issue #93 - Improve ArrayType::set* method annotations
 
