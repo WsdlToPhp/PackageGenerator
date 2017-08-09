@@ -21,9 +21,13 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 abstract class AbstractModelFile extends AbstractFile
 {
     /**
+     * @var string Meta annotation length
+     */
+    const ANNOTATION_META_LENGTH = '250';
+    /**
      * @var string Long annotation string
      */
-    const ANNOTATION_LONG_LENGTH = '250';
+    const ANNOTATION_LONG_LENGTH = '1000';
     /**
      * @var string
      */

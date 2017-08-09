@@ -14,7 +14,7 @@ class TagDocumentationTest extends TestCase
      */
     public function testGetSuitableParent()
     {
-        $schema = WsdlTest::imageServiceViewAvailRequestInstance();
+        $schema = WsdlTest::wsdlImageServiceViewAvailRequestInstance();
         $documentations = $schema->getContent()->getElementsByName(Wsdl::TAG_DOCUMENTATION);
         $ok = false;
         foreach ($documentations as $documentation) {
@@ -31,7 +31,7 @@ class TagDocumentationTest extends TestCase
      */
     public function testGetSuitableParentAsEnumeration()
     {
-        $wsdl = WsdlTest::ebayInstance();
+        $wsdl = WsdlTest::wsdlEbayInstance();
         $enumeration = $wsdl->getContent()->getElementByNameAndAttributes(Wsdl::TAG_ENUMERATION, array(
             'value' => 'Success',
         ));

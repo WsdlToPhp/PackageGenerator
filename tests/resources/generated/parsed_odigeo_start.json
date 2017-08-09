@@ -1,0 +1,1454 @@
+{
+    "containers": {
+        "services": [
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "search",
+                        "parameterType": {
+                            "search": "search"
+                        },
+                        "returnType": "searchResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "search",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Search",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            }
+        ],
+        "structs": [
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "preferencesRequest",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "preferences",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "searchRequest",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "searchRequest",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "metasearchEngineCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": {
+                    "type": "tns:search"
+                },
+                "name": "search",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "locale",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "userAgent",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "domainCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "realUserIP",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "preferencesRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "itinerarySearchRequest",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "itinerarySearchRequest",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "maxSize",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "searchRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "itinerarySegmentRequest",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "3",
+                            "minOccurs": "1"
+                        },
+                        "name": "segmentRequests",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "cabinClass",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "cabinClass",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "numAdults",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "numChildren",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "numInfants",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "boolean",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "resident",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "boolean",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "directFlightsOnly",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "boolean",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "mainAirportsOnly",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "itinerarySearchRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "itineraryLocationRequest",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "departure",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "itineraryLocationRequest",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "destination",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "date",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "date",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "time",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "timeWindow",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "itinerarySegmentRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "iataCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "geoNodeId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "itineraryLocationRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "searchStatusResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "minOccurs": "0"
+                        },
+                        "name": "searchStatus",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": {
+                    "type": "tns:searchResponse"
+                },
+                "name": "searchResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "searchResultsPage",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "itineraryResultsPages",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "itinerariesLegend",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "legend",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "preferencesAwareResponse",
+                "abstract": false,
+                "meta": {
+                    "type": "tns:searchStatusResponse"
+                },
+                "name": "searchStatusResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "preferences",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "preferences",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "baseResponse",
+                "abstract": false,
+                "meta": [],
+                "name": "preferencesAwareResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "messageResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "messages",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "baseResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "messageResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "messages",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "fareItinerary",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "itineraryResults",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "clickoutURL",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "brand",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "searchResultsPage",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "code",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "description",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "messageResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "fareItineraryPrice",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "price",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "clickoutURLParams",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "key",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "boolean",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "resident",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "int",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "firstSegmentsIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "int",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "secondSegmentsIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "int",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "thirdSegmentsIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "fareItinerary",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "anonymous13",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "anonymous14",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "anonymous15",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "decimal",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "totalPrice",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "fareItineraryPrice",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": true,
+                        "type": "carrier",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "carriers",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": true,
+                        "type": "location",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "locations",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": true,
+                        "type": "sectionResult",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "sectionResults",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": true,
+                        "type": "segmentResult",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "segmentResults",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "itinerariesLegend",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "code",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "carrier",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "geoNodeId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "cityName",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "type",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "iataCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "cityIataCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "countryCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "countryName",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "location",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "section",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "section",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "id",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "sectionResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": true,
+                        "type": "technicalStop",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "technicalStops",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "id",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "fromGeoNodeId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "dateTime",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "departureDate",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "departureTerminal",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "toGeoNodeId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "dateTime",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "arrivalDate",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "arrivalTerminal",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "carrierCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "cabinClass",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "cabinClass",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "operatingCarrierCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "aircraft",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "duration",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "section",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "locationGeoNodeId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "dateTime",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "arrivalDate",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "dateTime",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "departureDate",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "equipmentType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "technicalStop",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "segment",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "segment",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "id",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "segmentResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "int",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "sectionIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "key",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "carrierCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "duration",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "seats",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "segment",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "anonymous25",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "currency",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "use": "required"
+                        },
+                        "name": "locale",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "preferences",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "BUSINESS",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "FIRST",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "TOURIST",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "PREMIUM_ECONOMY",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "ECONOMIC_DISCOUNTED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "cabinClass",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            }
+        ]
+    },
+    "options": {
+        "category": "cat",
+        "gather_methods": "start",
+        "generic_constants_names": false,
+        "generate_tutorial_file": true,
+        "add_comments": {
+            "release": "1.1.0"
+        },
+        "namespace_prefix": "",
+        "standalone": true,
+        "validation": true,
+        "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
+        "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
+        "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
+        "origin": __ORIGIN__,
+        "destination": __DESTINATION__,
+        "src_dirname": "src",
+        "prefix": "Api",
+        "suffix": "",
+        "basic_login": "",
+        "basic_password": "",
+        "proxy_host": "",
+        "proxy_port": "",
+        "proxy_login": "",
+        "proxy_password": "",
+        "soap_options": [],
+        "composer_name": "",
+        "composer_settings": [],
+        "structs_folder": "StructType",
+        "arrays_folder": "ArrayType",
+        "enums_folder": "EnumType",
+        "services_folder": "ServiceType"
+    }
+}

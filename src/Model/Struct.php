@@ -108,7 +108,7 @@ class Struct extends AbstractModel
      */
     public function isArray()
     {
-        return ((($this->isStruct() && $this->countOwnAttributes() === 1) || (!$this->isStruct() && $this->countOwnAttributes() <= 1)) && stripos($this->getName(), 'array') !== false);
+        return ((($this->isStruct() && $this->countOwnAttributes() === 1) || (!$this->isStruct() && $this->countOwnAttributes() <= 1)) && (stripos($this->getName(), 'array') !== false) || (!$this->isStruct() && $this->getMetaValueFirstSet(array('arraytype', 'arrayType'), false) !== false));
     }
     /**
      * Returns the attributes of the struct and potentially from the parent class
@@ -409,5 +409,37 @@ class Struct extends AbstractModel
     {
         $this->types = $types;
         return $this;
+    }
+    /**
+     * {@inheritDoc}
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
+     */
+    protected function toJsonSerialize()
+    {
+        return array(
+            'attributes' => $this->attributes,
+            'restriction' => $this->isRestriction,
+            'struct' => $this->isStruct,
+            'types' => $this->types,
+            'values' => $this->values,
+        );
+    }
+    /**
+     * @param array $attributes
+     */
+    public function setAttributesFromSerializedJson(array $attributes)
+    {
+        foreach ($attributes as $attribute) {
+            $this->attributes->add(self::instanceFromSerializedJson($this->generator, $attribute)->setOwner($this));
+        }
+    }
+    /**
+     * @param array $values
+     */
+    public function setValuesFromSerializedJson(array $values)
+    {
+        foreach ($values as $value) {
+            $this->values->add(self::instanceFromSerializedJson($this->generator, $value)->setOwner($this));
+        }
     }
 }

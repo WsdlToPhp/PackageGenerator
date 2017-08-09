@@ -27,118 +27,6 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 abstract class AbstractFile extends TestCase
 {
     /**
-     * @return Generator
-     */
-    public static function bingGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlBingPath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function actonGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlActonPath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function portalGeneratorInstance($reset = true)
-    {
-        return self::getInstance(self::wsdlPortalPath(), $reset);
-    }
-    /**
-     * @return Generator
-     */
-    public static function reformaGeneratorInstance($reset = true)
-    {
-        return self::getInstance(self::wsdlReformaPath(), $reset);
-    }
-    /**
-     * @return Generator
-     */
-    public static function queueGeneratorInstance($reset = true)
-    {
-        return self::getInstance(self::wsdlQueuePath(), $reset);
-    }
-    /**
-     * @return Generator
-     */
-    public static function omnitureGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlOmniturePath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function odigeoGeneratorInstance($reset = true)
-    {
-        return self::getInstance(self::wsdlOdigeoPath(), $reset);
-    }
-    /**
-     * @return Generator
-     */
-    public static function payPalGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlPayPalPath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function wcfGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlWcfPath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function yandexDirectApiAdGroupsGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlYandexDirectApiAdGroupsPath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function yandexDirectApiCampaignsGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlYandexDirectApiCampaignsPath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function yandexDirectApiLiveGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlYandexDirectApiLivePath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function docDataPaymentsGeneratorInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlDocDataPaymentsPath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function deliveryServiceInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlDeliveryServicePath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function orderContractInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlOrderContractPath(), $reset, $gatherMethods);
-    }
-    /**
-     * @return Generator
-     */
-    public static function whlInstance($reset = false, $gatherMethods = GeneratorOptions::VALUE_START)
-    {
-        return self::getInstance(self::wsdlWhlPath(), $reset, $gatherMethods);
-    }
-    /**
      * @param string $wsdl
      * @return Generator
      */
@@ -146,8 +34,7 @@ abstract class AbstractFile extends TestCase
     {
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgePhpReservedKeywords();
-        $g = parent::getInstance($wsdl, $reset);
-        $g
+        $g = parent::getInstance($wsdl, $reset)
             ->setOptionPrefix('Api')
             ->setOptionAddComments(array(
                 'release' => '1.1.0',

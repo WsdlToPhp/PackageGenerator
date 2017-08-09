@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2.8.0
+- issue #95 - Dependency composer
+- issue #96 - Improve the Readme
+- issue #98 - Setter/Getter wrongly named
+- issue #99 - Export/Import generator options and parsed data
+- issue #101 - setSoapHeader parameter incorrect
+- issue #102 - Gather methods option should only be taken into account on class generation
+- issue #103 - Invalid typehint
+
 ## 2.7.3
 - issue #93 - Improve ArrayType::set* method annotations
 
@@ -10,18 +19,19 @@
 - issue #92 - FractionDigitsRule counts . to the fraction digits
 
 ## 2.7.0
-From now on there is only one release as the composer.json has been updated in order to match multiple versions thats makes the project working either on 5.3.3 >= PHP >= 5.5.9. Two Phar files will be created using PHP 5 and PHP 7.
+From now on there is only one release as the composer.json has been updated in order to match multiple versions that makes the project working either on 5.3.3 >= PHP >= 5.5.9. Two Phar files will be created using PHP 5 and PHP 7.
 
 Issues fixed:
-    - issue #91 - Add option to customize final destination src
-    - issue #89 - Use wsdltophp/domhandler project as dependency
-    - issue #86 - Review restrictions
-    - issue #85 - Bool validation rule
-    - issue #84 - Improve/Fix typehint determination for unions
-    - issue #83 - better debug support
-    - issue #82 - Annotations from an attributeGroup
-    - issue #81 - SoapHeader definitions per operation/method should not contain a space before the colon punctuation
-    - issue #80 - Invalid typehint
+
+- issue #91 - Add option to customize final destination src
+- issue #89 - Use wsdltophp/domhandler project as dependency
+- issue #86 - Review restrictions
+- issue #85 - Bool validation rule
+- issue #84 - Improve/Fix typehint determination for unions
+- issue #83 - better debug support
+- issue #82 - Annotations from an attributeGroup
+- issue #81 - SoapHeader definitions per operation/method should not contain a space before the colon punctuation
+- issue #80 - Invalid typehint
 
 ## 1.11.0/2.6.0
 - issue #76 - "UNKNOWN" type hint is invalid

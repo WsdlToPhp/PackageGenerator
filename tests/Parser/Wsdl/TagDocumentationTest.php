@@ -11,44 +11,37 @@ class TagDocumentationTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
      */
-    public static function imageViewInstance()
+    public static function imageViewInstanceParser()
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
      */
-    public static function whlInstance()
+    public static function whlInstanceParser()
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlWhlPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
      */
-    public static function actonInstance()
+    public static function actonInstanceParser()
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlActonPath(), true));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
      */
-    public static function payPalInstance()
+    public static function payPalInstanceParser()
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlPayPalPath(), true));
-    }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
-     */
-    public static function queueInstance()
-    {
-        return new TagDocumentation(self::generatorInstance(self::wsdlQueuePath()));
     }
     /**
      *
      */
     public function testParseImageViewService()
     {
-        $tagDocumentationParser = self::imageViewInstance();
+        $tagDocumentationParser = self::imageViewInstanceParser();
         $tagDocumentationParser->parse();
         $ok = false;
         foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
@@ -98,7 +91,7 @@ class TagDocumentationTest extends WsdlParser
      */
     public function testParseWhl()
     {
-        $tagDocumentationParser = self::whlInstance();
+        $tagDocumentationParser = self::whlInstanceParser();
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
         $tagEnumerationParser->parse();
         $tagDocumentationParser->parse();
@@ -138,7 +131,7 @@ class TagDocumentationTest extends WsdlParser
      */
     public function testParseActon()
     {
-        $tagDocumentationParser = self::actonInstance();
+        $tagDocumentationParser = self::actonInstanceParser();
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
         $tagEnumerationParser->parse();
         $tagDocumentationParser->parse();
@@ -160,7 +153,7 @@ class TagDocumentationTest extends WsdlParser
      */
     public function testParsePayPal()
     {
-        $tagDocumentationParser = self::payPalInstance();
+        $tagDocumentationParser = self::payPalInstanceParser();
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
         $tagEnumerationParser->parse();
         $tagDocumentationParser->parse();

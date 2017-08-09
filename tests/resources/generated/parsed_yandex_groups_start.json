@@ -1,0 +1,2576 @@
+{
+    "containers": {
+        "services": [
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "get",
+                        "parameterType": {
+                            "parameters": "GetRequest"
+                        },
+                        "returnType": "GetResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "get",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Get",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "add",
+                        "parameterType": {
+                            "parameters": "AddRequest"
+                        },
+                        "returnType": "AddResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "add",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Add",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "update",
+                        "parameterType": {
+                            "parameters": "UpdateRequest"
+                        },
+                        "returnType": "UpdateResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "update",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Update",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            },
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "delete",
+                        "parameterType": {
+                            "parameters": "DeleteRequest"
+                        },
+                        "returnType": "DeleteResponse",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "delete",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Delete",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            }
+        ],
+        "structs": [
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "Items",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ArrayOfString",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "Items",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ArrayOfInteger",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "DOWNLOAD",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "MobileAppAdActionEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Code",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Message",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Details",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ExceptionNotification",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Limit",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Offset",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "LimitOffset",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "YES",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "NO",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "YesNoEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "YES",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "NO",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "UNKNOWN",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "YesNoUnknownEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "YND_FIXED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "RUB",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "CHF",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "EUR",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "KZT",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 5,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "TRY",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 6,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "UAH",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 7,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "USD",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CurrencyEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "OFF",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "ON",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "SUSPENDED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "OFF_BY_MONITORING",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "ARCHIVED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 5,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "UNKNOWN",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "StateEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "LOW",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "NORMAL",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "HIGH",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PriorityEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "PREMIUMFIRST",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "PREMIUMBLOCK",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "FOOTERFIRST",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "FOOTERBLOCK",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "P11",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 5,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "P12",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 6,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "P13",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 7,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "P21",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 8,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "P22",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 9,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "P23",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 10,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "P24",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "PositionEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "RU",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "TR",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "UA",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "KZ",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "BY",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 5,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "US",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "CountryCodeEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "ACCEPTED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "DRAFT",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "MODERATION",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "PREACCEPTED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "REJECTED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 5,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "UNKNOWN",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "StatusEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "ACCEPTED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "DRAFT",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "MODERATION",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "PREACCEPTED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "REJECTED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "StatusSelectionEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "SEARCH",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "NETWORK",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ScopeEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AGE_0_17",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AGE_18_24",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AGE_25_34",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AGE_35_44",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AGE_45",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AgeRangeEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "GENDER_MALE",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "GENDER_FEMALE",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GenderEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "IOS",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "ANDROID",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "OS_TYPE_OTHER",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "OS_TYPE_UNKNOWN",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "MobileOperatingSystemTypeEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Clicks",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Impressions",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Statistics",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "Ids",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "IdsCriteria",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "LimitOffset",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Page",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetRequestGeneral",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "LimitedBy",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetResponseGeneral",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1",
+                            "nillable": "false"
+                        },
+                        "name": "requestId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1",
+                            "nillable": "false"
+                        },
+                        "name": "errorCode",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0",
+                            "nillable": "false"
+                        },
+                        "name": "errorDetail",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ApiExceptionMessage",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "ExceptionNotification",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "Warnings",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "ExceptionNotification",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "Errors",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ActionResultBase",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Id",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "ActionResultBase",
+                "abstract": false,
+                "meta": [],
+                "name": "ActionResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "Ids",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "ActionResultBase",
+                "abstract": false,
+                "meta": [],
+                "name": "MultiIdsActionResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "StatusEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Status",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "StatusClarification",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ExtensionModeration",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "Id",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "CampaignId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "Status",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "Name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "RegionIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 5,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "NegativeKeywords",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 6,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "Type",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 7,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "TrackingParams",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AdGroupFieldEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "StoreUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "TargetDeviceType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "TargetCarrier",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 3,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "TargetOperatingSystemVersion",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 4,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AppIconModeration",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 5,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AppAvailabilityStatus",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 6,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AppOperatingSystemType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "MobileAppAdGroupFieldEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "DomainUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "DomainUrlProcessingStatus",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DynamicTextAdGroupFieldEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "TEXT_AD_GROUP",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "MOBILE_APP_AD_GROUP",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "DYNAMIC_TEXT_AD_GROUP",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AdGroupTypesEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "UNPROCESSED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "PROCESSED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "EMPTY_RESULT",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DomainUrlProcessingStatusEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "CampaignIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "Ids",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "AdGroupTypesEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "Types",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "StatusSelectionEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "Statuses",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "TagIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "Tags",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "StatusSelectionEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "AppIconStatuses",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AdGroupsSelectionCriteria",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "RegionIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": true,
+                        "type": "ArrayOfString",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "NegativeKeywords",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "TrackingParams",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AdGroupBase",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "CampaignId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "RegionIds",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "ArrayOfString",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "NegativeKeywords",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "TrackingParams",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "MobileAppAdGroupAdd",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "MobileAppAdGroup",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "DynamicTextAdGroup",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DynamicTextAdGroup",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AdGroupAddItem",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Id",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "CampaignId",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "StatusEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Status",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "AdGroupTypesEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Type",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "MobileAppAdGroupGet",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "MobileAppAdGroup",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "DynamicTextAdGroupGet",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DynamicTextAdGroup",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "AdGroupBase",
+                "abstract": false,
+                "meta": [],
+                "name": "AdGroupGetItem",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "DEVICE_TYPE_MOBILE",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "DEVICE_TYPE_TABLET",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "TargetDeviceTypeEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "WI_FI_ONLY",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "WI_FI_AND_CELLULAR",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "TargetCarrierEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": true,
+                "struct": true,
+                "types": null,
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "UNPROCESSED",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "AVAILABLE",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "NOT_AVAILABLE",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AppAvailabilityStatusEnum",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "StoreUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "TargetDeviceTypeEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "TargetDeviceType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "TargetCarrierEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "TargetCarrier",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "TargetOperatingSystemVersion",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": true,
+                        "type": "ExtensionModeration",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0",
+                            "nillable": "true"
+                        },
+                        "name": "AppIconModeration",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "MobileOperatingSystemTypeEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "AppOperatingSystemType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "AppAvailabilityStatusEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "AppAvailabilityStatus",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "MobileAppAdGroupGet",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "TargetDeviceTypeEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "TargetDeviceType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "TargetCarrierEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "TargetCarrier",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "TargetOperatingSystemVersion",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "MobileAppAdGroupUpdate",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "StoreUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "TargetDeviceTypeEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "TargetDeviceType",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "TargetCarrierEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "TargetCarrier",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "TargetOperatingSystemVersion",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "MobileAppAdGroupAdd",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "DomainUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DynamicTextAdGroup",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DomainUrl",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "DomainUrlProcessingStatusEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DomainUrlProcessingStatus",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DynamicTextAdGroupGet",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "long",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "Id",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Name",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "MobileAppAdGroupUpdate",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "MobileAppAdGroup",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "DynamicTextAdGroup",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "DynamicTextAdGroup",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "AdGroupBase",
+                "abstract": false,
+                "meta": [],
+                "name": "AdGroupUpdateItem",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "AdGroupsSelectionCriteria",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "SelectionCriteria",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "AdGroupFieldEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "FieldNames",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "MobileAppAdGroupFieldEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "MobileAppAdGroupFieldNames",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "DynamicTextAdGroupFieldEnum",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "DynamicTextAdGroupFieldNames",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "GetRequestGeneral",
+                "abstract": false,
+                "meta": [],
+                "name": "GetRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "AdGroupGetItem",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "AdGroups",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "GetResponseGeneral",
+                "abstract": false,
+                "meta": [],
+                "name": "GetResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "AdGroupAddItem",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "AdGroups",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AddRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "ActionResult",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "AddResults",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AddResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "AdGroupUpdateItem",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "AdGroups",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "UpdateRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "ActionResult",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "UpdateResults",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "UpdateResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "IdsCriteria",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "1"
+                        },
+                        "name": "SelectionCriteria",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DeleteRequest",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "ActionResult",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1"
+                        },
+                        "name": "DeleteResults",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": null,
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "DeleteResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            }
+        ]
+    },
+    "options": {
+        "category": "cat",
+        "gather_methods": "start",
+        "generic_constants_names": false,
+        "generate_tutorial_file": true,
+        "add_comments": {
+            "release": "1.1.0"
+        },
+        "namespace_prefix": "",
+        "standalone": true,
+        "validation": true,
+        "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
+        "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
+        "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
+        "origin": __ORIGIN__,
+        "destination": __DESTINATION__,
+        "src_dirname": "src",
+        "prefix": "Api",
+        "suffix": "",
+        "basic_login": "",
+        "basic_password": "",
+        "proxy_host": "",
+        "proxy_port": "",
+        "proxy_login": "",
+        "proxy_password": "",
+        "soap_options": [],
+        "composer_name": "",
+        "composer_settings": [],
+        "structs_folder": "StructType",
+        "arrays_folder": "ArrayType",
+        "enums_folder": "EnumType",
+        "services_folder": "ServiceType"
+    }
+}

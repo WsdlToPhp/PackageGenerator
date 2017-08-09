@@ -10,14 +10,14 @@ class TagExtensionTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagExtension
      */
-    public static function ebayInstance()
+    public static function ebayInstanceParser()
     {
         return new TagExtension(self::generatorInstance(self::wsdlEbayPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagExtension
      */
-    public static function wcfInstance()
+    public static function wcfInstanceParser()
     {
         return new TagExtension(self::generatorInstance(self::wsdlWcfPath()));
     }
@@ -26,7 +26,7 @@ class TagExtensionTest extends WsdlParser
      */
     public function testParseEbay()
     {
-        $tagEnumerationParser = self::ebayInstance();
+        $tagEnumerationParser = self::ebayInstanceParser();
 
         $tagEnumerationParser->parse();
 
@@ -49,7 +49,7 @@ class TagExtensionTest extends WsdlParser
      */
     public function testParseWcf()
     {
-        $tagEnumerationParser = self::wcfInstance();
+        $tagEnumerationParser = self::wcfInstanceParser();
 
         $tagEnumerationParser->parse();
 

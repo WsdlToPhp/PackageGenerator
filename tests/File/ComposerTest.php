@@ -20,7 +20,7 @@ class ComposerTest extends AbstractFile
             ->setRunComposerUpdate(false)
             ->write();
 
-        $this->assertSameFileContent('ValidBingComposer' . (version_compare(PHP_VERSION, '5.4.0') === -1 ? '.php53' : ''), $composerFile, 'json');
+        $this->assertSameFileContent('ValidBingComposer', $composerFile, 'json');
     }
     /**
      *
@@ -40,7 +40,7 @@ class ComposerTest extends AbstractFile
             ->setRunComposerUpdate(false)
             ->write();
 
-        $this->assertSameFileContent('ValidBingComposerSettings' . (version_compare(PHP_VERSION, '5.4.0') === -1 ? '.php53' : ''), $composerFile, 'json');
+        $this->assertSameFileContent('ValidBingComposerSettings', $composerFile, 'json');
     }
     /**
      *
@@ -57,7 +57,7 @@ class ComposerTest extends AbstractFile
             ->setRunComposerUpdate(false)
             ->write();
 
-        $this->assertSameFileContent('ValidBingComposerEmptySrcDirname' . (version_compare(PHP_VERSION, '5.4.0') === -1 ? '.php53' : ''), $composerFile, 'json');
+        $this->assertSameFileContent('ValidBingComposerEmptySrcDirname', $composerFile, 'json');
     }
     /**
      *
@@ -74,7 +74,7 @@ class ComposerTest extends AbstractFile
             ->setRunComposerUpdate(false)
             ->write();
 
-        $this->assertSameFileContent('ValidBingComposerSlashSrcDirname' . (version_compare(PHP_VERSION, '5.4.0') === -1 ? '.php53' : ''), $composerFile, 'json');
+        $this->assertSameFileContent('ValidBingComposerSlashSrcDirname', $composerFile, 'json');
     }
     /**
      *

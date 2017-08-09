@@ -12,14 +12,14 @@ class TagEnumerationTest extends WsdlParser
     /**
      * @return TagEnumeration
      */
-    public static function bingInstance()
+    public static function bingInstanceParser()
     {
         return new TagEnumeration(self::generatorInstance(self::wsdlBingPath()));
     }
     /**
      * @return TagEnumeration
      */
-    public static function reformaInstance()
+    public static function reformaInstanceParser()
     {
         return new TagEnumeration(self::generatorInstance(self::wsdlReformaPath()));
     }
@@ -28,7 +28,7 @@ class TagEnumerationTest extends WsdlParser
      */
     public function testBing()
     {
-        $tagEnumerationParser = self::bingInstance();
+        $tagEnumerationParser = self::bingInstanceParser();
 
         $tagEnumerationParser->parse();
 
@@ -62,7 +62,7 @@ class TagEnumerationTest extends WsdlParser
      */
     public function testReforma()
     {
-        $tagEnumerationParser = self::reformaInstance();
+        $tagEnumerationParser = self::reformaInstanceParser();
 
         $tagEnumerationParser->parse();
 

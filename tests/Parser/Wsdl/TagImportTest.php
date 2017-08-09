@@ -13,28 +13,28 @@ class TagImportTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport
      */
-    public static function instance()
+    public static function partnerInstanceParser()
     {
         return new TagImport(self::generatorInstance(self::wsdlPartnerPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport
      */
-    public static function instanceScd()
+    public static function partnerInstanceParserScd()
     {
         return new TagImport(self::generatorInstance(self::wsdlPartnerScdPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport
      */
-    public static function instanceThird()
+    public static function partnerInstanceParserThird()
     {
         return new TagImport(self::generatorInstance(self::wsdlPartnerThirdPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport
      */
-    public static function instanceFourth()
+    public static function partnerInstanceParserFourth()
     {
         return new TagImport(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
@@ -43,7 +43,7 @@ class TagImportTest extends WsdlParser
      */
     public function testIsWsdlParsed()
     {
-        $tagImportParser = self::instance();
+        $tagImportParser = self::partnerInstanceParser();
 
         $tagImportParser->parse();
 
@@ -54,7 +54,7 @@ class TagImportTest extends WsdlParser
      */
     public function testGetExternalSchemas()
     {
-        $tagImportParser = self::instance();
+        $tagImportParser = self::partnerInstanceParser();
 
         $tagImportParser->parse();
 
@@ -73,7 +73,7 @@ class TagImportTest extends WsdlParser
      */
     public function testGetExternalSchemasScd()
     {
-        $tagImportParser = self::instanceScd();
+        $tagImportParser = self::partnerInstanceParserScd();
 
         $tagImportParser->parse();
 
@@ -92,7 +92,7 @@ class TagImportTest extends WsdlParser
      */
     public function testGetExternalSchemasThird()
     {
-        $tagImportParser = self::instanceThird();
+        $tagImportParser = self::partnerInstanceParserThird();
 
         $tagImportParser->parse();
 
@@ -111,7 +111,7 @@ class TagImportTest extends WsdlParser
      */
     public function testGetExternalSchemasFourth()
     {
-        $tagImportParser = self::instanceFourth();
+        $tagImportParser = self::partnerInstanceParserFourth();
 
         $tagImportParser->parse();
 
@@ -133,7 +133,7 @@ class TagImportTest extends WsdlParser
      */
     public function testGetRestrictionFromExternalSchemas()
     {
-        $tagImportParser = self::instance();
+        $tagImportParser = self::partnerInstanceParser();
 
         $tagImportParser->parse();
 
@@ -144,7 +144,7 @@ class TagImportTest extends WsdlParser
      */
     public function testGetEnumerationByAttributesFromExternalSchemas()
     {
-        $tagImportParser = self::instance();
+        $tagImportParser = self::partnerInstanceParser();
 
         $tagImportParser->parse();
 
@@ -157,7 +157,7 @@ class TagImportTest extends WsdlParser
      */
     public function testGetElementsFromExternalSchemas()
     {
-        $tagImportParser = self::instance();
+        $tagImportParser = self::partnerInstanceParser();
 
         $tagImportParser->parse();
         $restrictions = $tagImportParser->getGenerator()->getWsdl()->getContent()->getElementsByName(WsdlDocument::TAG_RESTRICTION, true);
@@ -170,7 +170,7 @@ class TagImportTest extends WsdlParser
      */
     public function testGetElementsByAttributeFromExternalSchemas()
     {
-        $tagImportParser = self::instance();
+        $tagImportParser = self::partnerInstanceParser();
 
         $tagImportParser->parse();
         $elements = $tagImportParser->getGenerator()->getWsdl()->getContent()->getElementsByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(

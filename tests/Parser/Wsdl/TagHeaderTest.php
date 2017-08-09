@@ -9,14 +9,14 @@ class TagHeaderTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
      */
-    public static function imageViewServiceInstance()
+    public static function imageViewServiceInstanceParser()
     {
         return new TagHeader(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
      */
-    public static function actonInstance()
+    public static function paypalInstanceParserParser()
     {
         return new TagHeader(self::generatorInstance(self::wsdlActonPath()));
     }
@@ -30,7 +30,7 @@ class TagHeaderTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
      */
-    public static function ewsInstance()
+    public static function ewsInstanceParser()
     {
         return new TagHeader(self::generatorInstance(self::wsdlEwsPath(), false, false, false));
     }
@@ -39,7 +39,7 @@ class TagHeaderTest extends WsdlParser
      */
     public function testParseImageViewService()
     {
-        $tagHeaderParser = self::imageViewServiceInstance();
+        $tagHeaderParser = self::imageViewServiceInstanceParser();
 
         $tagHeaderParser->parse();
 
@@ -73,7 +73,7 @@ class TagHeaderTest extends WsdlParser
      */
     public function testParseActon()
     {
-        $tagHeaderParser = self::actonInstance();
+        $tagHeaderParser = self::paypalInstanceParserParser();
 
         $tagHeaderParser->parse();
 
@@ -179,7 +179,7 @@ class TagHeaderTest extends WsdlParser
      */
     public function testParseEws()
     {
-        $tagHeaderParser = self::ewsInstance();
+        $tagHeaderParser = self::ewsInstanceParser();
         // parsing the whole structs/functions is too long for only tests purpose!
         $tagHeaderParser
             ->getGenerator()

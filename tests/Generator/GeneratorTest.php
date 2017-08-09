@@ -722,4 +722,22 @@ class GeneratorTest extends TestCase
             ),
         ), $contextOptions);
     }
+    /**
+     *
+     */
+    public function testJsonSerialize()
+    {
+        $generator = self::getBingGeneratorInstance(true);
+        $generator->setOptionStandalone(false);
+        $generator->parse();
+        $jsonContent = file_get_contents(sprintf('%sjson_serialized.json', self::getTestDirectory()));
+        $jsonContent = str_replace(array(
+            '__ORIGIN__',
+            '__DESTINATION__',
+        ), array(
+            json_encode(self::wsdlBingPath()),
+            json_encode($generator->getOptionDestination()),
+        ), $jsonContent);
+        $this->assertSame($jsonContent, json_encode($generator, JSON_PRETTY_PRINT));
+    }
 }

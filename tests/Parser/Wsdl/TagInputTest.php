@@ -9,14 +9,14 @@ class TagInputTest extends WsdlParser
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput
      */
-    public static function myBoardPackInstance()
+    public static function myBoardPackInstanceParser()
     {
         return new TagInput(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
     /**
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput
      */
-    public static function lnpInstance()
+    public static function lnpInstanceParser()
     {
         return new TagInput(self::generatorInstance(self::wsdlLnpPath()));
     }
@@ -39,7 +39,7 @@ class TagInputTest extends WsdlParser
      */
     public function testParseMyBoardpack()
     {
-        $tagInputParser = self::myBoardPackInstance();
+        $tagInputParser = self::myBoardPackInstanceParser();
         $soapClient = self::myBoardPackSoapClient();
 
         $tagInputParser->parse();
@@ -61,7 +61,7 @@ class TagInputTest extends WsdlParser
      */
     public function testParseLnp()
     {
-        $tagInputParser = self::lnpInstance();
+        $tagInputParser = self::lnpInstanceParser();
         $soapClient = self::lnpSoapClient();
 
         $tagInputParser->parse();

@@ -40,7 +40,7 @@ class StructAttribute extends AbstractModel
      * @param string $type the type
      * @param Struct $struct defines the struct which owns this value
      */
-    public function __construct(Generator $generator, $name, $type, Struct $struct)
+    public function __construct(Generator $generator, $name, $type = '', Struct $struct = null)
     {
         parent::__construct($generator, $name);
         $this->setType($type)->setOwner($struct);
@@ -51,11 +51,12 @@ class StructAttribute extends AbstractModel
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
      * @uses StructAttribute::getOwner()
+     * @param string $additionnalContext
      * @return string
      */
-    public function getUniqueName()
+    public function getUniqueName($additionnalContext = '')
     {
-        return self::uniqueName($this->getCleanName(), $this->getOwner()->getName());
+        return self::uniqueName($this->getCleanName(), $this->getOwner()->getName() . $additionnalContext);
     }
     /**
      * Returns the getter name for this attribute
@@ -64,7 +65,7 @@ class StructAttribute extends AbstractModel
      */
     public function getGetterName()
     {
-        return $this->replaceReservedMethod(sprintf('get%s', ucfirst(self::getUniqueName())), $this->getOwner()->getPackagedName());
+        return $this->replaceReservedMethod(sprintf('get%s', ucfirst(self::getUniqueName('get'))), $this->getOwner()->getPackagedName());
     }
     /**
      * Returns the getter name for this attribute
@@ -73,7 +74,7 @@ class StructAttribute extends AbstractModel
      */
     public function getSetterName()
     {
-        return $this->replaceReservedMethod(sprintf('set%s', ucfirst(self::getUniqueName())), $this->getOwner()->getPackagedName());
+        return $this->replaceReservedMethod(sprintf('set%s', ucfirst(self::getUniqueName('set'))), $this->getOwner()->getPackagedName());
     }
     /**
      * Returns the type value
@@ -244,5 +245,17 @@ class StructAttribute extends AbstractModel
     public function getReservedMethodsInstance($filename = null)
     {
         return $this->getOwner()->getReservedMethodsInstance($filename);
+    }
+    /**
+     * {@inheritDoc}
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
+     */
+    protected function toJsonSerialize()
+    {
+        return array(
+            'containsElements' => $this->containsElements,
+            'removableFromRequest' => $this->removableFromRequest,
+            'type' => $this->type,
+        );
     }
 }

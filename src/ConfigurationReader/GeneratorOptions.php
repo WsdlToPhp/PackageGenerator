@@ -2,7 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class GeneratorOptions extends AbstractYamlReader
+class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
 {
     /**
      * Common values used as option's value
@@ -694,5 +694,9 @@ class GeneratorOptions extends AbstractYamlReader
             $options[$name] = $this->getOptionValue($name);
         }
         return $options;
+    }
+    public function jsonSerialize()
+    {
+        return $this->toArray();
     }
 }

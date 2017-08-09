@@ -43,7 +43,7 @@ class Method extends AbstractModel
      * @param Service $service defines the struct which owns this value
      * @param bool $isUnique defines if the method is unique or not
      */
-    public function __construct(Generator $generator, $name, $parameterType, $returnType, Service $service, $isUnique = true)
+    public function __construct(Generator $generator, $name, $parameterType = '', $returnType = '', Service $service = null, $isUnique = true)
     {
         parent::__construct($generator, $name);
         $this->setParameterType($parameterType)->setReturnType($returnType)->setUnique($isUnique)->setOwner($service);
@@ -159,5 +159,18 @@ class Method extends AbstractModel
     public function getReservedMethodsInstance($filename = null)
     {
         return ServiceReservedMethod::instance($filename);
+    }
+    /**
+     * {@inheritDoc}
+     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
+     */
+    protected function toJsonSerialize()
+    {
+        return array(
+            'unique' => $this->isUnique,
+            'methodName' => $this->methodName,
+            'parameterType' => $this->parameterType,
+            'returnType' => $this->returnType,
+        );
     }
 }

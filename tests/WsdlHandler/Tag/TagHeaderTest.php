@@ -14,7 +14,7 @@ class TagHeaderTest extends TestCase
      */
     public function testHeaders()
     {
-        $wsdl = WsdlTest::ebayInstance();
+        $wsdl = WsdlTest::wsdlEbayInstance();
 
         $headers = $wsdl->getContent()->getElementsByName(Wsdl::TAG_HEADER);
 
@@ -33,7 +33,7 @@ class TagHeaderTest extends TestCase
      */
     public function testGetMessage()
     {
-        $wsdl = WsdlTest::ebayInstance();
+        $wsdl = WsdlTest::wsdlEbayInstance();
 
         $header = $wsdl->getContent()->getElementByName(Wsdl::TAG_HEADER);
 
@@ -44,7 +44,7 @@ class TagHeaderTest extends TestCase
      */
     public function testGetPart()
     {
-        $wsdl = WsdlTest::ebayInstance();
+        $wsdl = WsdlTest::wsdlEbayInstance();
 
         $header = $wsdl->getContent()->getElementByName(Wsdl::TAG_HEADER);
 
@@ -55,7 +55,7 @@ class TagHeaderTest extends TestCase
      */
     public function testGetPartFinalType()
     {
-        $wsdl = WsdlTest::ebayInstance();
+        $wsdl = WsdlTest::wsdlEbayInstance();
 
         $header = $wsdl->getContent()->getElementByName(Wsdl::TAG_HEADER);
 
@@ -66,7 +66,7 @@ class TagHeaderTest extends TestCase
      */
     public function testGetPartFinalNamespace()
     {
-        $wsdl = WsdlTest::ebayInstance();
+        $wsdl = WsdlTest::wsdlEbayInstance();
 
         $header = $wsdl->getContent()->getElementByName(Wsdl::TAG_HEADER);
 
@@ -77,7 +77,7 @@ class TagHeaderTest extends TestCase
      */
     public function testGetHeaderNamespace()
     {
-        $wsdl = WsdlTest::ebayInstance();
+        $wsdl = WsdlTest::wsdlEbayInstance();
 
         $header = $wsdl->getContent()->getElementByName(Wsdl::TAG_HEADER);
 
@@ -88,7 +88,7 @@ class TagHeaderTest extends TestCase
      */
     public function testGetAttributeRequired()
     {
-        $wsdl = WsdlTest::actonInstance();
+        $wsdl = WsdlTest::wsdlActonInstance();
 
         $binding = $wsdl->getContent()->getElementByNameAndAttributes(Wsdl::TAG_BINDING, array(
             'name' => 'SoapBinding',
