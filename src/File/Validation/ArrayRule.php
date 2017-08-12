@@ -24,7 +24,7 @@ class ArrayRule extends AbstractRule
                     ->addChild('$invalidValues = array();')
                     ->addChild(sprintf('foreach ($%s as $%s) {', $parameterName, $itemName))
                     ->addChild($this->getMethod()->getIndentedString(sprintf('if (!%s::%s($%s)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID, $itemName), 1))
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('$invalidValues[] = var_export($%s);', $itemName), 2))
+                    ->addChild($this->getMethod()->getIndentedString(sprintf('$invalidValues[] = var_export($%s, true);', $itemName), 2))
                     ->addChild($this->getMethod()->getIndentedString('}', 1))
                     ->addChild('}')
                     ->addChild('if (!empty($invalidValues)) {')
