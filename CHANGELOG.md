@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.8.1
+- invalid values assigned to an array should be stored and not displayed when they are detected
+
 ## 2.8.0
 - issue #95 - Dependency composer
 - issue #96 - Improve the Readme
