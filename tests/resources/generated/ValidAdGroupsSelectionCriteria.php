@@ -197,7 +197,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         $invalidValues = array();
         foreach ($types as $adGroupsSelectionCriteriaTypesItem) {
             if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($adGroupsSelectionCriteriaTypesItem)) {
-                $invalidValues[] = var_export($adGroupsSelectionCriteriaTypesItem);
+                $invalidValues[] = var_export($adGroupsSelectionCriteriaTypesItem, true);
             }
         }
         if (!empty($invalidValues)) {
@@ -244,7 +244,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         $invalidValues = array();
         foreach ($statuses as $adGroupsSelectionCriteriaStatusesItem) {
             if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaStatusesItem)) {
-                $invalidValues[] = var_export($adGroupsSelectionCriteriaStatusesItem);
+                $invalidValues[] = var_export($adGroupsSelectionCriteriaStatusesItem, true);
             }
         }
         if (!empty($invalidValues)) {
@@ -371,7 +371,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         $invalidValues = array();
         foreach ($appIconStatuses as $adGroupsSelectionCriteriaAppIconStatusesItem) {
             if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaAppIconStatusesItem)) {
-                $invalidValues[] = var_export($adGroupsSelectionCriteriaAppIconStatusesItem);
+                $invalidValues[] = var_export($adGroupsSelectionCriteriaAppIconStatusesItem, true);
             }
         }
         if (!empty($invalidValues)) {
