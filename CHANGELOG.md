@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.8.2
+- update unit test resources :)
+
 ## 2.8.1
 - invalid values assigned to an array should be stored and not displayed when they are detected
 
