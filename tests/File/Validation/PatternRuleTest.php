@@ -9,39 +9,55 @@ class PatternRuleTest extends RuleTest
      */
     public function testApplyRuleWithBool()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
-        $this->assertTrue(call_user_func($funtionName, true));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
+        $this->assertTrue(call_user_func($functionName, true));
     }
     /**
      * @expectedException \InvalidArgumentException
      */
     public function testApplyRuleWithString()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
-        $this->assertTrue(call_user_func($funtionName, 'foo'));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
+        $this->assertTrue(call_user_func($functionName, 'foo'));
     }
     /**
      *
      */
     public function testApplyRuleWithInteger()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
-        $this->assertTrue(call_user_func($funtionName, 1));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
+        $this->assertTrue(call_user_func($functionName, 1));
     }
     /**
      * @expectedException \InvalidArgumentException
      */
     public function testApplyRuleWithInvalidDate()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}');
-        $this->assertTrue(call_user_func($funtionName, '2017-04-04T01:00:00'));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}');
+        $this->assertTrue(call_user_func($functionName, '2017-04-04T01:00:00'));
     }
     /**
      *
      */
     public function testApplyRuleWithValidDate()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}');
-        $this->assertTrue(call_user_func($funtionName, '2017-04-04 01:00:00'));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}');
+        $this->assertTrue(call_user_func($functionName, '2017-04-04 01:00:00'));
+    }
+    /**
+     *
+     */
+    public function testApplyRuleWithQuote()
+    {
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\'');
+        $this->assertTrue(call_user_func($functionName, '\''));
+    }
+    /**
+     *
+     */
+    public function testApplyRuleWithBackslash()
+    {
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\\\\');
+        $this->assertTrue(call_user_func($functionName, '\\'));
     }
 }
