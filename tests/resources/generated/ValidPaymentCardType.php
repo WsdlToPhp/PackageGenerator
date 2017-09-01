@@ -388,7 +388,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setCardType($cardType = null)
     {
         // validation for constraint: pattern
-        if (is_scalar($cardType) && !preg_match('/[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}/', $cardType)) {
+        if (is_scalar($cardType) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $cardType)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}", "%s" given', var_export($cardType, true)), __LINE__);
         }
         // validation for constraint: string
