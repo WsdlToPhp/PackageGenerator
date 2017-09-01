@@ -31,6 +31,11 @@
             "name": "Jan Zaeske",
             "email": "mail@jzaeske.de",
             "role": "Contributor"
+        },
+        {
+            "name": "Tom Mottram",
+            "email": "tom@pay4later.com",
+            "role": "Contributor"
         }
     ],
     "support" : {

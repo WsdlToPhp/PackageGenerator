@@ -103,6 +103,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [ceeram](https://github.com/ceeram)
 - [Georgiy Oganisyan](https://github.com/GroxExMachine)
 - [Jan Zaeske](https://github.com/jzaeske)
+- [Tom Mottram](https://github.com/tomp4l)
 
 ## FAQ
 
