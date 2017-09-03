@@ -180,7 +180,7 @@ class ApiTaxType extends AbstractStructBase
     public function setCode($code = null)
     {
         // validation for constraint: pattern
-        if (is_scalar($code) && !preg_match('/[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}/', $code)) {
+        if (is_scalar($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $code)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}", "%s" given', var_export($code, true)), __LINE__);
         }
         // validation for constraint: string

@@ -76,9 +76,9 @@ class TagDocumentation extends AbstractTagParser
              * Is it an element ?
              * Finds parent node of this documentation node
              */
-             elseif ($this->getModel($parent) instanceof AbstractModel) {
-                 $this->getModel($parent)->setDocumentation($content);
-             }
+            elseif ($this->getModel($parent) instanceof AbstractModel) {
+                $this->getModel($parent)->setDocumentation($content);
+            }
         }
     }
 }
