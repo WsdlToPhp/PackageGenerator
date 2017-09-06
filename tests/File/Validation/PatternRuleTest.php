@@ -60,4 +60,12 @@ class PatternRuleTest extends RuleTest
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\\\\');
         $this->assertTrue(call_user_func($functionName, '\\'));
     }
+    /**
+     *
+     */
+    public function testApplyRuleWithForwardSlash()
+    {
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '/');
+        $this->assertTrue(call_user_func($functionName, '/'));
+    }
 }
