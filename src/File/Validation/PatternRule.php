@@ -13,7 +13,7 @@ class PatternRule extends AbstractRule
      */
     public function applyRule($parameterName, $value, $itemType = false)
     {
-        $escapedPattern = addcslashes($value, '\'\\');
+        $escapedPattern = addcslashes($value, '\'\\/');
 
         $this->getMethod()
             ->addChild('// validation for constraint: pattern')

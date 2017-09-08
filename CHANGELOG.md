@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.8.4
+- issue #111 - '/' not escaped in pattern rule
+
 ## 2.8.3
 - issue #109 - Single quotes and backslashes not escaped in pattern rule
 

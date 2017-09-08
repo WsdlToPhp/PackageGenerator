@@ -12,6 +12,7 @@ Please make all pull requests to the `develop` branch, not the `master` branch.
 
 ## Pull Requests
 
+- **Create an issue** - Explain as detailed as possible the issue you encountered so we can understand the context of your pull request
 - **[Symfony Coding Standard]** - The easiest way to apply the conventions is to run `composer lint`
 - **Add tests!** - Your patch won't be accepted if it doesn't have tests.
 - **Document any change in behaviour** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
