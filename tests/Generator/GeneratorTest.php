@@ -740,4 +740,22 @@ class GeneratorTest extends TestCase
         ), $jsonContent);
         $this->assertSame($jsonContent, json_encode($generator, JSON_PRETTY_PRINT));
     }
+    /**
+     *
+     */
+    public function testGetServices()
+    {
+        $generator = self::actonGeneratorInstance();
+        $this->assertCount(8, $generator->getServices());
+        $this->assertCount(8, $generator->getServices()->getMethods());
+    }
+    /**
+     *
+     */
+    public function testGetServicesGathered()
+    {
+        $generator = self::actonGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
+        $this->assertCount(1, $generator->getServices(true));
+        $this->assertCount(8, $generator->getServices()->getMethods());
+    }
 }

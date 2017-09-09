@@ -222,11 +222,24 @@ class Generator implements \JsonSerializable
         return $this->getService($this->getServiceName($methodName)) instanceof Service ? $this->getService($this->getServiceName($methodName))->getMethod($methodName) : null;
     }
     /**
+     * @param bool $usingGatherMethods allows to gather methods within a single service if gather_methods options is set to true
      * @return ServiceContainer
      */
-    public function getServices()
+    public function getServices($usingGatherMethods = false)
     {
-        return $this->containers->getServices();
+        $services = $this->containers->getServices();
+        if ($usingGatherMethods && GeneratorOptions::VALUE_NONE === $this->getOptionGatherMethods()) {
+            $serviceContainer = new ServiceContainer($this);
+            $serviceModel = new Service($this, Service::DEFAULT_SERVICE_CLASS_NAME);
+            foreach($services as $service) {
+                foreach($service->getMethods() as $method) {
+                    $serviceModel->getMethods()->add($method);
+                }
+            }
+            $serviceContainer->add($serviceModel);
+            $services = $serviceContainer;
+        }
+        return $services;
     }
     /**
      * @return StructContainer
