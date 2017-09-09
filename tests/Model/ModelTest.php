@@ -65,17 +65,17 @@ class ModelTest extends TestCase
     {
         $instance = self::instance('foo');
 
-        $instance->addMeta('foo', array(
+        $instance->addMeta('foo', [
             'bar' => 1,
-        ));
+        ]);
         $instance->addMeta('foo', 'bar');
 
-        $this->assertSame(array(
-            'foo' => array(
+        $this->assertSame([
+            'foo' => [
                 'bar' => 1,
                 'bar',
-            ),
-        ), $instance->getMeta());
+            ],
+        ], $instance->getMeta());
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -89,12 +89,12 @@ class ModelTest extends TestCase
      */
     public function testToJsonSerialize()
     {
-        $this->assertSame(array(
+        $this->assertSame([
             'inheritance' => '',
             'abstract' => false,
-            'meta' => array(),
+            'meta' => [],
             'name' => 'foo_',
             '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyModel',
-        ), self::instance('foo_')->jsonSerialize());
+        ], self::instance('foo_')->jsonSerialize());
     }
 }

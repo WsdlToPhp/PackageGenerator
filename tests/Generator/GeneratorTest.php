@@ -228,11 +228,11 @@ class GeneratorTest extends TestCase
      */
     public function testSetOptionSoapOptions()
     {
-        $soapOptions = array(
+        $soapOptions = [
             'trace' => true,
             'encoding' => 'utf8',
             'cache_wsdl' => WSDL_CACHE_BOTH,
-        );
+        ];
         $instance = self::localInstance();
         $instance->setOptionSoapOptions($soapOptions);
 
@@ -420,10 +420,10 @@ class GeneratorTest extends TestCase
      */
     public function testSetOptionAddComments()
     {
-        $comments = array(
+        $comments = [
             'date' => '2015-09-07',
             'release' => '1.3.0',
-        );
+        ];
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionAddComments($comments);
 
@@ -455,27 +455,27 @@ class GeneratorTest extends TestCase
     public function testSetOptionComposerSettings()
     {
         $instance = self::getBingGeneratorInstance();
-        $instance->setOptionComposerSettings(array(
+        $instance->setOptionComposerSettings([
             'config.disable-tls:true',
             'config.data-dir:/src/foor/bar',
             'require.wsdltophp/packagebase:dev-master',
             'autoload.psr-4.Acme\\:src/',
-        ));
+        ]);
 
-        $this->assertSame(array(
-            'config' => array(
+        $this->assertSame([
+            'config' => [
                 'disable-tls' => true,
                 'data-dir' => '/src/foor/bar',
-            ),
-            'require' => array(
+            ],
+            'require' => [
                 'wsdltophp/packagebase' => 'dev-master',
-            ),
-            'autoload' => array(
-                'psr-4' => array(
+            ],
+            'autoload' => [
+                'psr-4' => [
                     'Acme\\' => 'src/',
-                ),
-            ),
-        ), $instance->getOptionComposerSettings());
+                ],
+            ],
+        ], $instance->getOptionComposerSettings());
     }
     /**
      *
@@ -593,16 +593,16 @@ class GeneratorTest extends TestCase
         $options = GeneratorOptions::instance();
         $options
             ->setGenerateTutorialFile(false)
-            ->setAddComments(array())
+            ->setAddComments([])
             ->setArraysFolder('ArrayType')
             ->setBasicLogin('')
             ->setBasicPassword('')
             ->setCategory(GeneratorOptions::VALUE_CAT)
             ->setComposerName($standalone ? 'wsdltophp/' . $dir : '')
-            ->setComposerSettings($standalone ? array(
+            ->setComposerSettings($standalone ? [
                 'require.wsdltophp/wssecurity:dev-master',
                 'config.disable-tls:true',
-            ) : array())
+            ] : [])
             ->setDestination($destination)
             ->setEnumsFolder('EnumType')
             ->setGatherMethods(GeneratorOptions::VALUE_START)
@@ -617,7 +617,7 @@ class GeneratorTest extends TestCase
             ->setProxyPort('')
             ->setServicesFolder('ServiceType')
             ->setSoapClientClass('\WsdlToPhp\PackageBase\AbstractSoapClientBase')
-            ->setSoapOptions(array())
+            ->setSoapOptions([])
             ->setStandalone($standalone)
             ->setStructArrayClass('\WsdlToPhp\PackageBase\AbstractStructArrayBase')
             ->setStructClass('\WsdlToPhp\PackageBase\AbstractStructBase')
@@ -668,14 +668,14 @@ class GeneratorTest extends TestCase
         $instance = self::getBingGeneratorInstance();
 
         if (PHP_VERSION_ID < 70015) {
-            $this->assertSame(array(), $instance->getSoapClient()->getSoapClientStreamContextOptions());
+            $this->assertSame([], $instance->getSoapClient()->getSoapClientStreamContextOptions());
         } else {
-            $this->assertSame(array(
-                'http' => array(
+            $this->assertSame([
+                'http' => [
                     'protocol_version' => 1.1000000000000001,
                     'header' => "Connection: close\r\n",
-                ),
-            ), $instance->getSoapClient()->getSoapClientStreamContextOptions());
+                ],
+            ], $instance->getSoapClient()->getSoapClientStreamContextOptions());
         }
     }
     /**
@@ -687,18 +687,18 @@ class GeneratorTest extends TestCase
         $options
             ->setOrigin(self::onlineWsdlBingPath())
             ->setDestination(self::getTestDirectory())
-            ->setSoapOptions(array(
-                AbstractSoapClientBase::WSDL_STREAM_CONTEXT => stream_context_create(array(
-                    'https' => array(
+            ->setSoapOptions([
+                AbstractSoapClientBase::WSDL_STREAM_CONTEXT => stream_context_create([
+                    'https' => [
                         'X-Header' => 'X-Value',
-                    ),
-                    'ssl' => array(
+                    ],
+                    'ssl' => [
                         'ca_file' => basename(__FILE__),
                         'ca_path' => __DIR__,
                         'verify_peer' => true,
-                    ),
-                )),
-            ));
+                    ],
+                ]),
+            ]);
         $instance = new Generator($options);
 
         // HTTP headers are added to the context options with certain PHP version on certain platform
@@ -711,16 +711,16 @@ class GeneratorTest extends TestCase
             }
         }
 
-        $this->assertSame(array(
-            'https' => array(
+        $this->assertSame([
+            'https' => [
                 'X-Header' => 'X-Value',
-            ),
-            'ssl' => array(
+            ],
+            'ssl' => [
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
                 'verify_peer' => true,
-            ),
-        ), $contextOptions);
+            ],
+        ], $contextOptions);
     }
     /**
      *
@@ -731,13 +731,13 @@ class GeneratorTest extends TestCase
         $generator->setOptionStandalone(false);
         $generator->parse();
         $jsonContent = file_get_contents(sprintf('%sjson_serialized.json', self::getTestDirectory()));
-        $jsonContent = str_replace(array(
+        $jsonContent = str_replace([
             '__ORIGIN__',
             '__DESTINATION__',
-        ), array(
+        ], [
             json_encode(self::wsdlBingPath()),
             json_encode($generator->getOptionDestination()),
-        ), $jsonContent);
+        ], $jsonContent);
         $this->assertSame($jsonContent, json_encode($generator, JSON_PRETTY_PRINT));
     }
     /**

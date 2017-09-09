@@ -53,20 +53,20 @@ class Functions extends AbstractParser
                         list($methodName, $firstParameterType) = explode('(', $infos[1]);
                     }
                     if (!empty($methodName)) {
-                        $methodParameters = array();
+                        $methodParameters = [];
                         $infosCount = count($infos);
                         for ($i = $start; $i < $infosCount; $i += 2) {
-                            $info = str_replace(array(
+                            $info = str_replace([
                                 ', ',
                                 ',',
                                 '(',
                                 ')',
                                 '$',
-                            ), '', trim($infos[$i]));
+                            ], '', trim($infos[$i]));
                             if (!empty($info)) {
-                                $methodParameters = array_merge($methodParameters, array(
+                                $methodParameters = array_merge($methodParameters, [
                                     $info => $i == $start ? $firstParameterType : $infos[$i - 1],
-                                ));
+                                ]);
                             }
                         }
                         $services->addService($this->getGenerator()->getServiceName($methodName), $methodName, $methodParameters, empty($returnType) ? 'unknown' : $returnType);

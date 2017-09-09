@@ -18,7 +18,7 @@ class IntRuleTest extends RuleTest
     public function testApplyRuleWithArray()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule', null);
-        call_user_func($funtionName, array(6));
+        call_user_func($funtionName, [6]);
     }
     /**
      *

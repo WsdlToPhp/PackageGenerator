@@ -56,7 +56,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
      */
     protected function __construct($filename)
     {
-        $this->options = array();
+        $this->options = [];
         $this->parseOptions($filename);
     }
     /**
@@ -93,13 +93,13 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
      * @param string $optionName
      * @return GeneratorOptions
      */
-    public function setOptionValue($optionName, $optionValue, array $values = array())
+    public function setOptionValue($optionName, $optionValue, array $values = [])
     {
         if (!isset($this->options[$optionName])) {
-            $this->options[$optionName] = array(
+            $this->options[$optionName] = [
                 'value' => $optionValue,
                 'values' => $values,
-            );
+            ];
         } elseif (!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
             throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])), __LINE__);
         } else {
@@ -155,12 +155,12 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
      * @param array $addComments
      * @return GeneratorOptions
      */
-    public function setAddComments(array $addComments = array())
+    public function setAddComments(array $addComments = [])
     {
         /**
          * If array is type array("author:john Doe","Release:1",)
          */
-        $comments = array();
+        $comments = [];
         foreach ($addComments as $index => $value) {
             if (is_numeric($index) && strpos($value, ':') > 0) {
                 list($tag, $val) = explode(':', $value);
@@ -581,12 +581,12 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
      * @param array $composerSettings
      * @return GeneratorOptions
      */
-    public function setComposerSettings(array $composerSettings = array())
+    public function setComposerSettings(array $composerSettings = [])
     {
         /**
          * If array is type array("config.value:true","require:libray/src",)
          */
-        $settings = array();
+        $settings = [];
         foreach ($composerSettings as $index => $value) {
             if (is_numeric($index) && strpos($value, ':') > 0) {
                 $path = implode('', array_slice(explode(':', $value), 0, 1));
@@ -689,7 +689,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
      */
     public function toArray()
     {
-        $options = array();
+        $options = [];
         foreach (array_keys($this->options) as $name) {
             $options[$name] = $this->getOptionValue($name);
         }

@@ -56,6 +56,6 @@ abstract class AbstractDocument extends AbstractModel
      */
     protected function toJsonSerialize()
     {
-        return array();
+        return [];
     }
 }

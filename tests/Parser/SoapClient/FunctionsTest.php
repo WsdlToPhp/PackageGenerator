@@ -18,10 +18,10 @@ class FunctionsTest extends SoapClientParser
         $parser->parse();
 
         if (($login = $generator->getServiceMethod('Login')) instanceof Method) {
-            $this->assertSame(array(
+            $this->assertSame([
                 'login' => 'string',
                 'password' => 'string',
-            ), $login->getParameterType());
+            ], $login->getParameterType());
         } else {
             $this->assertFalse(true, 'Unable to find parsed Login operation');
         }
@@ -50,22 +50,22 @@ class FunctionsTest extends SoapClientParser
         $parser->parse();
 
         if (($saint = $generator->getServiceMethod('Saint.CreateFTP')) instanceof Method) {
-            $this->assertSame(array(
+            $this->assertSame([
                 'description' => 'string',
                 'email' => 'string',
                 'export' => 'boolean',
                 'overwrite' => 'boolean',
                 'relation_id' => 'int',
                 'rsid_list' => 'string_array',
-            ), $saint->getParameterType());
+            ], $saint->getParameterType());
         } else {
             $this->assertTrue(false, 'Unable to find Saint.CreateFTP method');
         }
 
         if (($saint = $generator->getServiceMethod('Saint.CheckJobStatus')) instanceof Method) {
-            $this->assertSame(array(
+            $this->assertSame([
                 'job_id' => 'int',
-            ), $saint->getParameterType());
+            ], $saint->getParameterType());
         } else {
             $this->assertTrue(false, 'Unable to find Saint.CheckJobStatus method');
         }
@@ -85,42 +85,42 @@ class FunctionsTest extends SoapClientParser
             foreach ($service->getMethods() as $method) {
                 switch ($method->getName()) {
                     case 'portingQualification':
-                        $expected = array(
+                        $expected = [
                             'baseNumber' => 'string',
                             'groupSize' => 'int',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'createPortingOrderCatA':
-                        $expected = array(
+                        $expected = [
                             'portingOrderCatACreationParameters' => 'UNKNOWN',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'createPortingOrderCatC':
-                        $expected = array(
+                        $expected = [
                             'portingOrderCatCCreationParameters' => 'UNKNOWN',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'uploadPaf':
-                        $expected = array(
+                        $expected = [
                             'orderId' => 'long',
                             'fileName' => 'string',
                             'fileContent' => 'base64Binary',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'getPortingOrderStatus':
-                        $expected = array(
+                        $expected = [
                             'orderId' => 'long',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'cancelPortingOrder':
-                        $expected = array(
+                        $expected = [
                             'orderId' => 'long',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'listActorPortingOrders':
@@ -128,35 +128,35 @@ class FunctionsTest extends SoapClientParser
                         $count++;
                         break;
                     case 'listAvailablePublicNumberGroups':
-                        $expected = array(
+                        $expected = [
                             'publicNumberGroupSearchParams' => 'UNKNOWN',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'importPublicNumberGroup':
-                        $expected = array(
+                        $expected = [
                             'importPublicNumberGroupParams' => 'UNKNOWN',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'leasePublicNumberGroup':
-                        $expected = array(
+                        $expected = [
                             'params' => 'UNKNOWN',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'unleasePublicNumberGroup':
-                        $expected = array(
+                        $expected = [
                             'actorId' => 'long',
                             'baseNumber' => 'string',
-                        );
+                        ];
                         $count++;
                         break;
                     case 'mapIpndDetailsToNumber':
-                        $expected = array(
+                        $expected = [
                             'number' => 'string',
                             'ipndInformation' => 'UNKNOWN',
-                        );
+                        ];
                         $count++;
                         break;
                 }

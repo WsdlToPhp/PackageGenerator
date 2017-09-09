@@ -64,6 +64,6 @@ abstract class AbstractYamlReader
      */
     public static function resetInstances()
     {
-        self::$instances = array();
+        self::$instances = [];
     }
 }

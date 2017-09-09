@@ -10,143 +10,143 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
  * This can be executed as php generate_serialized_jsons.php which generates the files under the resources/generated directory
  * The array associated to the WSDL is the gather methods options value(s) for which the JSON file has to be generated
  */
-$jsons = array(
-    'bingsearch' => array(
+$jsons = [
+    'bingsearch' => [
         'origin' => __DIR__ . '/resources/bingsearch.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'actonservice2' => array(
+        ],
+    ],
+    'actonservice2' => [
         'origin' => __DIR__ . '/resources/ActonService2.local.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'portaplusapi' => array(
+        ],
+    ],
+    'portaplusapi' => [
         'origin' => __DIR__ . '/resources/portaplusapi.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'reformagkh' => array(
+        ],
+    ],
+    'reformagkh' => [
         'origin' => __DIR__ . '/resources/reformagkh.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'queueservice' => array(
+        ],
+    ],
+    'queueservice' => [
         'origin' => __DIR__ . '/resources/QueueService.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'omnitureadminservices' => array(
+        ],
+    ],
+    'omnitureadminservices' => [
         'origin' => __DIR__ . '/resources/OmnitureAdminServices.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'odigeo' => array(
+        ],
+    ],
+    'odigeo' => [
         'origin' => __DIR__ . '/resources/odigeo.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'paypal' => array(
+        ],
+    ],
+    'paypal' => [
         'origin' => __DIR__ . '/resources/paypal/PayPalSvc.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'wcf' => array(
+        ],
+    ],
+    'wcf' => [
         'origin' => __DIR__ . '/resources/wcf/Service1.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'ews' => array(
+        ],
+    ],
+    'ews' => [
         'origin' => __DIR__ . '/resources/ews/services.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'yandex_groups' => array(
+        ],
+    ],
+    'yandex_groups' => [
         'origin' => __DIR__ . '/resources/directapi/adgroups.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'yandex_campaigns' => array(
+        ],
+    ],
+    'yandex_campaigns' => [
         'origin' => __DIR__ . '/resources/directapi/campaigns.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'yandex_live' => array(
+        ],
+    ],
+    'yandex_live' => [
         'origin' => __DIR__ . '/resources/directapi/live.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'docdatapayments' => array(
+        ],
+    ],
+    'docdatapayments' => [
         'origin' => __DIR__ . '/resources/docdatapayments/1_3.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'deliveryservice' => array(
+        ],
+    ],
+    'deliveryservice' => [
         'origin' => __DIR__ . '/resources/DeliveryService.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'deliveryservice' => array(
+        ],
+    ],
+    'deliveryservice' => [
         'origin' => __DIR__ . '/resources/DeliveryService.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'ordercontract' => array(
+        ],
+    ],
+    'ordercontract' => [
         'origin' => __DIR__ . '/resources/OrderContract.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-    'whl' => array(
+        ],
+    ],
+    'whl' => [
         'origin' => __DIR__ . '/resources/whl.wsdl',
-        'methods' => array(
+        'methods' => [
             'none',
             'start',
-        ),
-    ),
-);
+        ],
+    ],
+];
 
 foreach ($jsons as $id => $settings) {
     foreach ($settings['methods'] as $gatherMethod) {
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgePhpReservedKeywords();
         $options = GeneratorOptions::instance()
-            ->setAddComments(array(
+            ->setAddComments([
                 'release' => '1.1.0',
-            ))
+            ])
             ->setOrigin($settings['origin'])
             ->setGatherMethods($gatherMethod)
             ->setPrefix('Api')

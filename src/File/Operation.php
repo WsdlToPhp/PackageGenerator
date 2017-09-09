@@ -31,7 +31,7 @@ class Operation extends AbstractOperation
     protected function defineParametersFromArray(PhpMethod $method)
     {
         if ($this->isParameterTypeAnArray()) {
-            $parameters = array();
+            $parameters = [];
             foreach ($this->getParameterTypeArrayTypes(true) as $parameterName => $parameterType) {
                 $parameters[] = $this->getMethodParameter($this->getParameterName($parameterName), $parameterType);
             }
@@ -47,11 +47,11 @@ class Operation extends AbstractOperation
     {
         if ($this->isParameterTypeAModel()) {
             if ($this->getParameterTypeModel()->getAttributes(true, true)->count() > 0) {
-                $method->setParameters(array(
+                $method->setParameters([
                     $this->getMethodParameter($this->getParameterName($this->getParameterTypeModel()
                         ->getPackagedName()), $this->getParameterTypeModel()
                         ->getPackagedName(true)),
-                ));
+                ]);
             }
         }
         return $this;
@@ -63,10 +63,10 @@ class Operation extends AbstractOperation
     protected function defineParametersFromString(PhpMethod $method)
     {
         if ($this->isParameterTypeAString() && !$this->isParameterTypeAModel()) {
-            $method->setParameters(array(
+            $method->setParameters([
                 $this->getMethodParameter($this->getParameterName($this->getMethod()
                     ->getParameterType())),
-            ));
+            ]);
         }
         return $this;
     }
@@ -102,7 +102,7 @@ class Operation extends AbstractOperation
      */
     protected function getOperationCallParameters(PhpMethod $method)
     {
-        $parameters = array();
+        $parameters = [];
         foreach ($method->getParameters() as $parameter) {
             if ($parameter instanceof PhpFunctionParameter) {
                 $parameters[] = $this->getOperationCallParameterName($parameter, $method);

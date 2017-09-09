@@ -87,10 +87,10 @@ class TagComplexTypeTest extends WsdlParser
                 $this->assertSame('plainDateTime', $exchangeRateDate->getType());
                 $this->assertSame('normalizedString', $exchangeRateDate->getTypeStruct()->getInheritance());
                 $this->assertSame('plainDateTime', $exchangeRateDate->getTypeStruct()->getName());
-                $this->assertSame(array(
+                $this->assertSame([
                     'maxLength' => '19',
                     'minLength' => '19',
-                ), $exchangeRateDate->getMeta());
+                ], $exchangeRateDate->getMeta());
                 $count++;
             }
         }
@@ -102,13 +102,13 @@ class TagComplexTypeTest extends WsdlParser
                 $this->assertSame('emailAddress', $email->getTypeStruct()->getName());
                 $this->assertSame('string100', $email->getTypeStruct()->getInheritance());
                 $this->assertSame('normalizedString', $email->getTypeStruct()->getTopInheritance());
-                $this->assertSame(array(
+                $this->assertSame([
                     'maxOccurs' => '1',
                     'minOccurs' => '1',
                     'pattern' => '[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)',
                     'maxLength' => '100',
                     'minLength' => '1',
-                ), $email->getMeta());
+                ], $email->getMeta());
                 $count++;
             }
         }

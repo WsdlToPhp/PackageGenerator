@@ -116,7 +116,7 @@ class GeneratePackageCommand extends AbstractCommand
      */
     protected function getPackageGenerationCommandLineOptions()
     {
-        return array(
+        return [
             'addcomments' => 'AddComments',
             'arrays-folder' => 'ArraysFolder',
             'composer-name' => 'ComposerName',
@@ -145,7 +145,7 @@ class GeneratePackageCommand extends AbstractCommand
             'suffix' => 'Suffix',
             'urlorpath' => 'Origin',
             'validation' => 'Validation',
-        );
+        ];
     }
     /**
      * @return GeneratePackageCommand
@@ -156,12 +156,12 @@ class GeneratePackageCommand extends AbstractCommand
         foreach ($this->getPackageGenerationCommandLineOptions() as $optionName => $optionMethod) {
             $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
             if ($optionValue !== null) {
-                call_user_func_array(array(
+                call_user_func_array([
                     $generatorOptions,
                     sprintf('set%s', $optionMethod),
-                ), array(
+                ], [
                     $optionValue,
-                ));
+                ]);
             }
         }
         $this->generatorOptions = $generatorOptions;
@@ -219,11 +219,11 @@ class GeneratePackageCommand extends AbstractCommand
      */
     public function getGeneratorOptionsPossibilities()
     {
-        return array(
+        return [
             $this->getGeneratorOptionsConfigOption(),
             sprintf('%s/%s', getcwd(), self::PROPER_USER_CONFIGURATION),
             sprintf('%s/%s', getcwd(), self::DEFAULT_CONFIGURATION_FILE),
             GeneratorOptions::getDefaultConfigurationPath(),
-        );
+        ];
     }
 }

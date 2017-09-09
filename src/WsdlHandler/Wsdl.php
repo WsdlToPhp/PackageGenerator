@@ -53,9 +53,9 @@ class Wsdl extends AbstractDocument
      */
     public function getElementByName($name, $includeExternals = false)
     {
-        return $this->useParentMethodAndExternals(__FUNCTION__, array(
+        return $this->useParentMethodAndExternals(__FUNCTION__, [
             $name,
-        ), $includeExternals, true);
+        ], $includeExternals, true);
     }
     /**
      * @see \WsdlToPhp\DomHandler\AbstractDomDocumentHandler::getElementByNameAndAttributes()
@@ -63,10 +63,10 @@ class Wsdl extends AbstractDocument
      */
     public function getElementByNameAndAttributes($name, array $attributes, $includeExternals = false)
     {
-        return $this->useParentMethodAndExternals(__FUNCTION__, array(
+        return $this->useParentMethodAndExternals(__FUNCTION__, [
             $name,
             $attributes,
-        ), $includeExternals, true);
+        ], $includeExternals, true);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\WsdlHandler\AbstractDocument::getElementsByName()
@@ -74,9 +74,9 @@ class Wsdl extends AbstractDocument
      */
     public function getElementsByName($name, $includeExternals = false)
     {
-        return $this->useParentMethodAndExternals(__FUNCTION__, array(
+        return $this->useParentMethodAndExternals(__FUNCTION__, [
             $name,
-        ), $includeExternals);
+        ], $includeExternals);
     }
     /**
      * @param string $name
@@ -88,11 +88,11 @@ class Wsdl extends AbstractDocument
      */
     public function getElementsByNameAndAttributes($name, array $attributes, \DOMNode $node = null, $includeExternals = false)
     {
-        return $this->useParentMethodAndExternals(__FUNCTION__, array(
+        return $this->useParentMethodAndExternals(__FUNCTION__, [
             $name,
             $attributes,
             $node,
-        ), $includeExternals);
+        ], $includeExternals);
     }
     /**
      * Handler any method that exist within the parant class,
@@ -105,10 +105,10 @@ class Wsdl extends AbstractDocument
      */
     private function useParentMethodAndExternals($method, $parameters, $includeExternals = false, $returnOne = false)
     {
-        $result = call_user_func_array(array(
+        $result = call_user_func_array([
             $this,
             sprintf('parent::%s', $method),
-        ), $parameters);
+        ], $parameters);
         if ($includeExternals === true && (($returnOne === true && $result === null) || $returnOne === false)) {
             $result = $this->useExternalSchemas($method, $parameters, $result, $returnOne);
         }
@@ -126,10 +126,10 @@ class Wsdl extends AbstractDocument
         if ($this->getExternalSchemas()->count() > 0) {
             foreach ($this->getExternalSchemas() as $externalSchema) {
                 if ($externalSchema->getContent() instanceof AbstractDocument) {
-                    $externalResult = call_user_func_array(array(
+                    $externalResult = call_user_func_array([
                         $externalSchema->getContent(),
                         $method,
-                    ), $parameters);
+                    ], $parameters);
                     if ($returnOne === true && $externalResult !== null) {
                         $result = $externalResult;
                         break;

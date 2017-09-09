@@ -16,7 +16,7 @@ class TagAttributeGroupTest extends TestCase
     {
         $schema = WsdlTest::wsdlWhlInstance();
         $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
-        $attributeRefs = array(
+        $attributeRefs = [
             'PrimaryLangID_Group',
             'ID_Group',
             'CurrencyAmountGroup',
@@ -123,7 +123,7 @@ class TagAttributeGroupTest extends TestCase
             'OTA_PayloadStdAttributes',
             'HotelReferenceGroup',
             'OTA_PayloadStdAttributes',
-        );
+        ];
         $indexRef = 0;
         foreach ($attributeGroups as $attributeGroup) {
             if ($attributeGroup->getAttributeRef() !== '') {
@@ -138,7 +138,7 @@ class TagAttributeGroupTest extends TestCase
     {
         $schema = WsdlTest::wsdlWhlInstance();
         $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
-        $attributeNames = array(
+        $attributeNames = [
             'ErrorWarningAttributeGroup',
             'LanguageGroup',
             'PrimaryLangID_Group',
@@ -178,7 +178,7 @@ class TagAttributeGroupTest extends TestCase
             'InventoryGroup',
             'RatePlanGroup',
             'StatusApplicationGroup',
-        );
+        ];
         $indexName = 0;
         foreach ($attributeGroups as $attributeGroup) {
             if ($attributeGroup->getAttributeName() !== '') {
@@ -193,7 +193,7 @@ class TagAttributeGroupTest extends TestCase
     {
         $schema = WsdlTest::wsdlWhlInstance();
         $attributeGroups = $schema->getContent()->getElementsByName(Wsdl::TAG_ATTRIBUTE_GROUP);
-        $attributeGroupCounts = array(
+        $attributeGroupCounts = [
             'ErrorWarningAttributeGroup' => 2,
             'LanguageGroup' => 1,
             'PrimaryLangID_Group' => 20,
@@ -233,7 +233,7 @@ class TagAttributeGroupTest extends TestCase
             'InventoryGroup' => 1,
             'RatePlanGroup' => 1,
             'StatusApplicationGroup' => 1,
-        );
+        ];
         $testedCount = 0;
         /** @var TagAttributeGroup $attributeGroup */
         foreach ($attributeGroups as $attributeGroup) {

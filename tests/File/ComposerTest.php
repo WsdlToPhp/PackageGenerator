@@ -31,10 +31,10 @@ class ComposerTest extends AbstractFile
         $instance
             ->setOptionPrefix('Api')
             ->setOptionComposerName('wsdltophp/bing')
-            ->setOptionComposerSettings(array(
+            ->setOptionComposerSettings([
                 'config.disable-tls:true',
                 'require.wsdltophp/wssecurity:dev-master',
-            ));
+            ]);
         $composerFile = new Composer($instance, 'composer');
         $composerFile
             ->setRunComposerUpdate(false)

@@ -38,8 +38,8 @@ class ContainerTest extends TestCase
         $object = new ObjectTest();
         $container = new ObjectContainerTest(self::getBingGeneratorInstance());
         $container->add($object);
-        $this->assertSame(array(
+        $this->assertSame([
             $object,
-        ), $container->jsonSerialize());
+        ], $container->jsonSerialize());
     }
 }

@@ -91,9 +91,9 @@ class Tutorial extends AbstractFile
      */
     protected function addOptionsAnnotationBlock()
     {
-        $this->addAnnotationBlock(array(
+        $this->addAnnotationBlock([
             'Minimal options',
-        ));
+        ]);
         return $this;
     }
     /**
@@ -115,9 +115,9 @@ class Tutorial extends AbstractFile
      */
     protected function addAnnotationBlockFromService(ServiceModel $service)
     {
-        return $this->addAnnotationBlock(array(
+        return $this->addAnnotationBlock([
             sprintf('Samples for %s ServiceType', $service->getName()),
-        ));
+        ]);
     }
     /**
      * @param string $serviceVariableName
@@ -148,7 +148,7 @@ class Tutorial extends AbstractFile
      */
     protected function addServiceSoapHeadersDefinitions($serviceVariableName, ServiceModel $service)
     {
-        $added = array();
+        $added = [];
         foreach ($service->getMethods() as $method) {
             $added = array_merge($added, $this->addServiceSoapHeadersDefinition($serviceVariableName, $method, $added));
         }
@@ -162,8 +162,8 @@ class Tutorial extends AbstractFile
      */
     protected function addServiceSoapHeadersDefinition($serviceVariableName, MethodModel $method, array $added)
     {
-        $addedNames = array();
-        $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, array());
+        $addedNames = [];
+        $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, []);
         foreach ($soapHeaderNames as $soapHeaderName) {
             if (!in_array($soapHeaderName, $added, true)) {
                 $addedNames[] = $soapHeaderName;
@@ -178,9 +178,9 @@ class Tutorial extends AbstractFile
      */
     protected function addAnnotationBlockFromMethod(MethodModel $method)
     {
-        return $this->addAnnotationBlock(array(
+        return $this->addAnnotationBlock([
             sprintf('Sample call for %s operation/method', $method->getMethodName()),
-        ));
+        ]);
     }
     /**
      * @param string $serviceVariableName
@@ -204,7 +204,7 @@ class Tutorial extends AbstractFile
      */
     protected function getMethodParameters(MethodModel $method)
     {
-        $parameters = array();
+        $parameters = [];
         if (is_array($method->getParameterType())) {
             foreach ($method->getParameterType() as $parameterName => $parameterType) {
                 $parameters[] = $this->getMethodParameter($parameterType, $parameterName);

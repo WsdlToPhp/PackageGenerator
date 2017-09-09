@@ -9,10 +9,10 @@ class TagAttribute extends Tag
     /**
      * @see \WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag::getSuitableParentTags()
      */
-    public function getSuitableParentTags(array $additionalTags = array())
+    public function getSuitableParentTags(array $additionalTags = [])
     {
-        return parent::getSuitableParentTags(array_merge($additionalTags, array(
+        return parent::getSuitableParentTags(array_merge($additionalTags, [
             WsdlDocument::TAG_ATTRIBUTE_GROUP,
-        )));
+        ]));
     }
 }

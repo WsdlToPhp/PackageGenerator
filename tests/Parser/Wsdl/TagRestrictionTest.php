@@ -42,11 +42,11 @@ class TagRestrictionTest extends WsdlParser
             if ($struct instanceof Struct && $struct->isRestriction() === false) {
                 if ($struct->getName() === 'EchoRequestType') {
                     $this->assertSame('string', $struct->getInheritance());
-                    $this->assertEquals(array('maxLength' => '100'), $struct->getMeta());
+                    $this->assertEquals(['maxLength' => '100'], $struct->getMeta());
                     $count++;
                 } elseif ($struct->getName() === 'PasswordType') {
                     $this->assertSame('string', $struct->getInheritance());
-                    $this->assertEquals(array('minLength' => '5', 'maxLength' => '10'), $struct->getMeta());
+                    $this->assertEquals(['minLength' => '5', 'maxLength' => '10'], $struct->getMeta());
                     $count++;
                 }
             }

@@ -26,13 +26,13 @@ class MaxLengthRuleTest extends RuleTest
     public function testApplyRuleWithLowerLengthArray()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxLengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, array(
+        $this->assertTrue(call_user_func($funtionName, [
             1,
             2,
             3,
             4,
             5,
-        )));
+        ]));
     }
     /**
      *
@@ -64,14 +64,14 @@ class MaxLengthRuleTest extends RuleTest
     public function testApplyRuleWithSameLengthArray()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxLengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, array(
+        $this->assertTrue(call_user_func($funtionName, [
             1,
             2,
             3,
             4,
             5,
             6,
-        )));
+        ]));
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -95,7 +95,7 @@ class MaxLengthRuleTest extends RuleTest
     public function testApplyRuleWithGreaterLengthArray()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxLengthRule', 6);
-        call_user_func($funtionName, array(
+        call_user_func($funtionName, [
             1,
             2,
             3,
@@ -103,6 +103,6 @@ class MaxLengthRuleTest extends RuleTest
             5,
             6,
             7,
-        ));
+        ]);
     }
 }

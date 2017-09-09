@@ -50,9 +50,9 @@ class Service extends AbstractModel
      */
     public function getDocSubPackages()
     {
-        return array(
+        return [
             'Services',
-        );
+        ];
     }
     /**
      * Returns the methods of the service
@@ -122,9 +122,9 @@ class Service extends AbstractModel
      */
     protected function toJsonSerialize()
     {
-        return array(
+        return [
             'methods' => $this->methods,
-        );
+        ];
     }
     /**
      * @param array $methods

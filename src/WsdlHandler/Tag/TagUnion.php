@@ -17,7 +17,7 @@ class TagUnion extends Tag
      */
     protected function parseMemberTypes()
     {
-        $memberTypes = array();
+        $memberTypes = [];
         $value = $this->hasAttribute(self::ATTRIBUTE_MEMBER_TYPES) ? $this->getAttribute(self::ATTRIBUTE_MEMBER_TYPES)->getValue(true) : '';
         if (!empty($value)) {
             $values = explode(' ', $value);

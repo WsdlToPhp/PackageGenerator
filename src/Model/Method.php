@@ -166,11 +166,11 @@ class Method extends AbstractModel
      */
     protected function toJsonSerialize()
     {
-        return array(
+        return [
             'unique' => $this->isUnique,
             'methodName' => $this->methodName,
             'parameterType' => $this->parameterType,
             'returnType' => $this->returnType,
-        );
+        ];
     }
 }

@@ -37,8 +37,8 @@ abstract class AbstractParser extends Parser
     public function __construct(Generator $generator)
     {
         parent::__construct($generator);
-        $this->parsedWsdls = array();
-        $this->parsedSchemas = array();
+        $this->parsedWsdls = [];
+        $this->parsedSchemas = [];
     }
     /**
      * The method takes care of looping among WSDLS as much time as it is needed
@@ -104,7 +104,7 @@ abstract class AbstractParser extends Parser
     private function setWsdlAsParsed(Wsdl $wsdl)
     {
         if (!array_key_exists($wsdl->getName(), $this->parsedWsdls)) {
-            $this->parsedWsdls[$wsdl->getName()] = array();
+            $this->parsedWsdls[$wsdl->getName()] = [];
         }
         $this->parsedWsdls[$wsdl->getName()][] = $this->parsingTag();
         return $this;
@@ -126,7 +126,7 @@ abstract class AbstractParser extends Parser
     {
         $key = $wsdl->getName() . $schema->getName();
         if (!array_key_exists($key, $this->parsedSchemas)) {
-            $this->parsedSchemas[$key] = array();
+            $this->parsedSchemas[$key] = [];
         }
         $this->parsedSchemas[$key][] = $this->parsingTag();
         return $this;

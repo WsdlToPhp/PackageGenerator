@@ -52,7 +52,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
             $parts = $tag->getParts();
             $multipleParts = count($parts);
             if (is_array($parts) && $multipleParts > 1) {
-                $types = array();
+                $types = [];
                 foreach ($parts as $part) {
                     if (($type = $this->getTypeFromPart($part)) !== '') {
                         $types[$part->getAttributeName()] = $type;

@@ -15,9 +15,9 @@ abstract class RuleTest extends TestCase
     {
         $generator = self::getBingGeneratorInstance();
         $methodName = '_any_' . md5(rand(0, time()));
-        $method = new PhpMethod($methodName, array(
+        $method = new PhpMethod($methodName, [
             'any',
-        ));
+        ]);
         $structFile = new StructFile($generator, 'any');
         $structModel = new StructModel($generator, 'any');
         $structAttribute = new StructAttribute($generator, 'any', $structAttributeType, $structModel);

@@ -53,11 +53,11 @@ class TagOutputTest extends WsdlParser
         } else {
             $returnType = '([a-zA-Z_]*)';
         }
-        $matches = array();
+        $matches = [];
         preg_match(sprintf('/%s\s([a-zA-Z_]*)\(.*/i', $returnType), $soapFunction, $matches);
-        return array(
+        return [
             'name' => $matches[2],
             'return' => $matches[1],
-        );
+        ];
     }
 }

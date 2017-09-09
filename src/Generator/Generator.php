@@ -231,8 +231,8 @@ class Generator implements \JsonSerializable
         if ($usingGatherMethods && GeneratorOptions::VALUE_NONE === $this->getOptionGatherMethods()) {
             $serviceContainer = new ServiceContainer($this);
             $serviceModel = new Service($this, Service::DEFAULT_SERVICE_CLASS_NAME);
-            foreach($services as $service) {
-                foreach($service->getMethods() as $method) {
+            foreach ($services as $service) {
+                foreach ($service->getMethods() as $method) {
                     $serviceModel->getMethods()->add($method);
                 }
             }
@@ -711,7 +711,7 @@ class Generator implements \JsonSerializable
      * @param array $optionComposerSettings
      * @return Generator
      */
-    public function setOptionComposerSettings(array $optionComposerSettings = array())
+    public function setOptionComposerSettings(array $optionComposerSettings = [])
     {
         $this->options->setComposerSettings($optionComposerSettings);
         return $this;
@@ -885,10 +885,10 @@ class Generator implements \JsonSerializable
      */
     public function jsonSerialize()
     {
-        return array(
+        return [
             'containers' => $this->containers,
             'options' => $this->options,
-        );
+        ];
     }
     /**
      * @param string $json

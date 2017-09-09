@@ -22,7 +22,7 @@ class StructValue extends AbstractModel
      * Store the constants generated per structName
      * @var array
      */
-    private static $uniqueConstants = array();
+    private static $uniqueConstants = [];
     /**
      * The index of the value in the enumeration struct
      * @var int
@@ -144,8 +144,8 @@ class StructValue extends AbstractModel
      */
     protected function toJsonSerialize()
     {
-        return array(
+        return [
             'index' => $this->index,
-        );
+        ];
     }
 }

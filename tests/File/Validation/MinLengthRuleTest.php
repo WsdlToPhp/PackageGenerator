@@ -26,13 +26,13 @@ class MinLengthRuleTest extends RuleTest
     public function testApplyRuleWithLowerLengthArray()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinLengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, array(
+        $this->assertTrue(call_user_func($funtionName, [
             1,
             2,
             3,
             4,
             5,
-        )));
+        ]));
     }
     /**
      *
@@ -64,14 +64,14 @@ class MinLengthRuleTest extends RuleTest
     public function testApplyRuleWithSameLengthArray()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinLengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, array(
+        $this->assertTrue(call_user_func($funtionName, [
             1,
             2,
             3,
             4,
             5,
             6,
-        )));
+        ]));
     }
     /**
      *
@@ -95,7 +95,7 @@ class MinLengthRuleTest extends RuleTest
     public function testApplyRuleWithGreaterLengthArray()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinLengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, array(
+        $this->assertTrue(call_user_func($funtionName, [
             1,
             2,
             3,
@@ -103,6 +103,6 @@ class MinLengthRuleTest extends RuleTest
             5,
             6,
             7,
-        )));
+        ]));
     }
 }

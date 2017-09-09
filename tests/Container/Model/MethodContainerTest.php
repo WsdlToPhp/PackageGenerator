@@ -18,11 +18,11 @@ class MethodContainerTest extends TestCase
         $methodContainer = new MethodContainer(self::getBingGeneratorInstance());
         $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'Foo', 'string', 'int', $service));
         $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'Bar', 'string', 'int', $service));
-        $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'FooBar', array(
+        $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'FooBar', [
             'string',
             'int',
             'int',
-        ), 'int', $service));
+        ], 'int', $service));
         return $methodContainer;
     }
     /**

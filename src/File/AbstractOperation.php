@@ -62,7 +62,7 @@ abstract class AbstractOperation
      */
     protected function getParameterTypeArrayTypes($methodUsage = false)
     {
-        $types = array();
+        $types = [];
         $parameterTypes = $this->getMethod()->getParameterType();
         if (is_array($parameterTypes)) {
             foreach ($parameterTypes as $parameterName => $parameterType) {

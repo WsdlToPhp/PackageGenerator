@@ -43,13 +43,13 @@ class TagIncludeTest extends WsdlParser
 
         $tagIncludeParser->parse();
 
-        $schemas = array(
+        $schemas = [
             'availableImagesRequest.xsd',
             'availableImagesResponse.xsd',
             'imagesRequest.xsd',
             'imagesResponse.xsd',
             'imageViewCommon.xsd',
-        );
+        ];
         $schemaContainer = new SchemaContainer($tagIncludeParser->getGenerator());
         foreach ($schemas as $schemaPath) {
             $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/image/%s', $schemaPath));

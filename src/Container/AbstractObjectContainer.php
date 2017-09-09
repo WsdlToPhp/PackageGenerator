@@ -13,7 +13,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     /**
      * @var array
      */
-    protected $objects = array();
+    protected $objects = [];
     /**
      * @var int
      */

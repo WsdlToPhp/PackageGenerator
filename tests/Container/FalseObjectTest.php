@@ -6,6 +6,6 @@ class FalseObjectTest
 {
     public function getName()
     {
-        return array();
+        return [];
     }
 }
