@@ -80,7 +80,7 @@ class Tutorial extends AbstractFile
      */
     public function addContent()
     {
-        foreach ($this->getGenerator()->getServices() as $service) {
+        foreach ($this->getGenerator()->getServices(true) as $service) {
             $serviceVariableName = lcfirst($service->getName());
             $this->addAnnotationBlockFromService($service)->addServiceDeclaration($serviceVariableName, $service)->addServiceSoapHeadersDefinitions($serviceVariableName, $service)->addContentFromService($serviceVariableName, $service);
         }
