@@ -13,7 +13,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     /**
      * @var Generator[]
      */
-    private static $instances = array();
+    private static $instances = [];
     /**
      * @param $local bool
      * @return string
@@ -344,13 +344,13 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
         AbstractModel::purgePhpReservedKeywords();
         if (!array_key_exists($id . $gatherMethods, self::$ids) || $reset) {
             $json = file_get_contents(sprintf('%sparsed_%s_%s.json', self::getTestDirectory(), $id, $gatherMethods));
-            $json = str_replace(array(
+            $json = str_replace([
                 '__DESTINATION__',
                 '__ORIGIN__',
-            ), array(
+            ], [
                 json_encode(self::getTestDirectory()),
                 json_encode($origin),
-            ), $json);
+            ], $json);
             self::$ids[$id . $gatherMethods] = Generator::instanceFromSerializedJson($json);
         }
         return self::$ids[$id . $gatherMethods];
@@ -359,7 +359,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      * Instances
      * @var Generator[]
      */
-    private static $ids = array();
+    private static $ids = [];
     /**
      * @return Generator
      */

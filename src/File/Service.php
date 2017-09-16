@@ -51,7 +51,7 @@ class Service extends AbstractModelFile
      * So we store the generated name associated to the original method object
      * @var array
      */
-    protected $methods = array();
+    protected $methods = [];
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassConstants()
      */
@@ -108,9 +108,9 @@ class Service extends AbstractModelFile
      */
     protected function addSoapHeaderFromMethod(MethodContainer $methods, MethodModel $method)
     {
-        $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, array());
-        $soapHeaderNamespaces = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, array());
-        $soapHeaderTypes = $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, array());
+        $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, []);
+        $soapHeaderNamespaces = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, []);
+        $soapHeaderTypes = $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, []);
         foreach ($soapHeaderNames as $index => $soapHeaderName) {
             $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
             if ($methods->get($methodName) === null) {
@@ -131,12 +131,12 @@ class Service extends AbstractModelFile
     protected function getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace, $soapHeaderType)
     {
         try {
-            $method = new PhpMethod($methodName, array(
+            $method = new PhpMethod($methodName, [
                 $firstParameter = new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameterBase::NO_VALUE, $this->getTypeFromName($soapHeaderType)),
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_ACTOR, null),
-            ));
+            ]);
             $model = $this->getModelByName($soapHeaderType);
             if ($model instanceof StructModel) {
                 $rules = new Rules($this, $method, new StructAttributeModel($model->getGenerator(), $soapHeaderType, $model->getName(), $model));
@@ -284,7 +284,7 @@ class Service extends AbstractModelFile
      */
     protected function getServiceReturnTypes()
     {
-        $returnTypes = array();
+        $returnTypes = [];
         foreach ($this->getModel()->getMethods() as $method) {
             $returnTypes[] = self::getOperationMethodReturnType($method, $this->getGenerator());
         }

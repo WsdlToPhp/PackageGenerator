@@ -22,28 +22,28 @@ class Composer extends AbstractFile
     {
         $composer = new Application();
         $composer->setAutoExit(false);
-        $composer->run(new ArrayInput(array(
+        $composer->run(new ArrayInput([
             'command' => 'init',
             '--verbose' => true,
             '--no-interaction' => true,
             '--name' => $this->getGenerator()->getOptionComposerName(),
             '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getGenerator()->getWsdl()->getName()),
-            '--require' => array(
+            '--require' => [
                 'php:>=5.3.3',
                 'ext-soap:*',
                 'wsdltophp/packagebase:~1.0',
-            ),
+            ],
             '--working-dir' => $this->getGenerator()->getOptionDestination(),
-        )));
+        ]));
         $this->completeComposerJson();
         if ($this->getRunComposerUpdate() === true) {
-            return $composer->run(new ArrayInput(array(
+            return $composer->run(new ArrayInput([
                 'command' => 'update',
                 '--verbose' => true,
                 '--optimize-autoloader' => true,
                 '--no-dev' => true,
                 '--working-dir' => $this->getGenerator()->getOptionDestination(),
-            )));
+            ]));
         }
         return 1;
     }
@@ -63,9 +63,9 @@ class Composer extends AbstractFile
      */
     protected function addAutoloadToComposerJson(array &$content)
     {
-        $content['autoload'] = array(
+        $content['autoload'] = [
             'psr-4' => $this->getPsr4Autoload(),
-        );
+        ];
         return $this;
     }
     /**
@@ -88,16 +88,16 @@ class Composer extends AbstractFile
             $namespaceKey = '';
         }
         $src = rtrim($this->generator->getOptionSrcDirname(), DIRECTORY_SEPARATOR);
-        return array(
+        return [
             $namespaceKey => sprintf('./%s', empty($src) ? '' : $src . DIRECTORY_SEPARATOR),
-        );
+        ];
     }
     /**
      * @return array
      */
     protected function getComposerFileContent()
     {
-        $content = array();
+        $content = [];
         $composerFilePath = $this->getComposerFilePath();
         if (!empty($composerFilePath)) {
             $content = json_decode(file_get_contents($composerFilePath), true);

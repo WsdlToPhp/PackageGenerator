@@ -6,18 +6,18 @@ class TagAttributeGroup extends Tag
 {
     public function getReferencingElements()
     {
-        $elements = array();
-        $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', array(
+        $elements = [];
+        $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', [
             'ref' => sprintf('*:%s', $this->getAttributeName()),
-        ));
+        ]);
         /**
          * In case of a referencing element that use this attributeGroup that is not namespaced,
          * use the non namespaced value
          */
         if (empty($attributeGroups)) {
-            $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', array(
+            $attributeGroups = $this->getDomDocumentHandler()->getElementsByNameAndAttributes('attributeGroup', [
                 'ref' => sprintf('*%s', $this->getAttributeName()),
-            ));
+            ]);
         }
         foreach ($attributeGroups as $attributeGroup) {
             $parent = $attributeGroup->getSuitableParent();

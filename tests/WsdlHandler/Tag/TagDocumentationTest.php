@@ -32,11 +32,11 @@ class TagDocumentationTest extends TestCase
     public function testGetSuitableParentAsEnumeration()
     {
         $wsdl = WsdlTest::wsdlEbayInstance();
-        $enumeration = $wsdl->getContent()->getElementByNameAndAttributes(Wsdl::TAG_ENUMERATION, array(
+        $enumeration = $wsdl->getContent()->getElementByNameAndAttributes(Wsdl::TAG_ENUMERATION, [
             'value' => 'Success',
-        ));
+        ]);
         $this->assertSame('Success', $enumeration->getValue());
-        $documentation = $enumeration->getChildByNameAndAttributes(Wsdl::TAG_DOCUMENTATION, array());
+        $documentation = $enumeration->getChildByNameAndAttributes(Wsdl::TAG_DOCUMENTATION, []);
         $this->assertSame('(out) Request processing succeeded', $documentation->getValue());
         $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagDocumentation', $documentation);
         $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagEnumeration', $documentation->getSuitableParent());

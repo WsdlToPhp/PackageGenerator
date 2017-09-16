@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
 class TutorialTest extends AbstractFile
 {
@@ -80,5 +81,17 @@ class TutorialTest extends AbstractFile
         $tutorial->write();
 
         $this->assertSameFileContent('ValidOmnitureTutorial', $tutorial);
+    }
+    /**
+     *
+     */
+    public function testActonNone()
+    {
+        $instance = self::actonGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
+
+        $tutorial = new TutorialFile($instance, self::FILE_NAME);
+        $tutorial->write();
+
+        $this->assertSameFileContent('ValidActonNoneTutorial', $tutorial);
     }
 }

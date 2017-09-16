@@ -62,13 +62,13 @@ class MethodTest extends TestCase
         $service4->addMethod('Login', 'int', 'id', false);
 
         $service5 = new Service(self::getBingGeneratorInstance(), 'login');
-        $service5->addMethod('Login', array('int',' string'), 'id', false);
+        $service5->addMethod('Login', ['int',' string'], 'id', false);
 
         $this->assertSame('Login', $service1->getMethod('Login')->getMethodName());
         $this->assertSame('login_1', $service2->getMethod('login')->getMethodName());
         $this->assertSame('Login', $service3->getMethod('Login')->getMethodName());
         $this->assertSame('LoginInt', $service4->getMethod('Login')->getMethodName());
-        $this->assertSame(sprintf('Login_%s', md5(var_export(array('int',' string'), true))), $service5->getMethod('Login')->getMethodName());
+        $this->assertSame(sprintf('Login_%s', md5(var_export(['int',' string'], true))), $service5->getMethod('Login')->getMethodName());
     }
     /**
      *

@@ -10,6 +10,6 @@ class EmptyModel extends AbstractModel
      */
     protected function toJsonSerialize()
     {
-        return array();
+        return [];
     }
 }

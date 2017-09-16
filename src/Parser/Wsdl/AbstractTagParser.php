@@ -80,11 +80,11 @@ abstract class AbstractTagParser extends AbstractParser
             foreach ($tag->getAttributes() as $attribute) {
                 $methodToCall = $this->getParseTagAttributeMethod($attribute->getName());
                 if (is_array($methodToCall)) {
-                    call_user_func_array($methodToCall, array(
+                    call_user_func_array($methodToCall, [
                         $attribute,
                         $model,
                         $structAttribute,
-                    ));
+                    ]);
                 } else {
                     $currentModel = $structAttribute instanceof StructAttribute ? $structAttribute : $model;
                     $currentModel->addMeta($attribute->getName(), $attribute->getValue(true));
@@ -100,10 +100,10 @@ abstract class AbstractTagParser extends AbstractParser
     {
         $methodName = sprintf('parseTagAttribute%s', ucfirst($tagName));
         if (method_exists($this, $methodName)) {
-            return array(
+            return [
                 $this,
                 $methodName,
-            );
+            ];
         }
         return null;
     }

@@ -64,14 +64,14 @@ class StructsTest extends SoapClientParser
         $parser = new Structs($generator);
         $parser->parse();
 
-        $unionTypes = array(
+        $unionTypes = [
             explode(',', 'anonymous25,anonymous26'),
             explode(',', 'dateTime,time'),
             explode(',', 'date,dateTime,time'),
             explode(',', 'NightDurationType,duration'),
             explode(',', 'PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2'),
             explode(',', 'PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2'),
-        );
+        ];
 
         $count = 0;
         $index = 0;

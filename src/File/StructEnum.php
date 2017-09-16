@@ -37,9 +37,9 @@ class StructEnum extends Struct
      */
     protected function getConstantAnnotationBlock(PhpConstant $constant)
     {
-        $block = new PhpAnnotationBlock(array(
+        $block = new PhpAnnotationBlock([
             sprintf('Constant for value \'%s\'', $constant->getValue()),
-        ));
+        ]);
         if (($value = $this->getModel()->getValue($constant->getValue())) instanceof StructValueModel) {
             $this->defineModelAnnotationsFromWsdl($block, $value);
         }
@@ -75,9 +75,9 @@ class StructEnum extends Struct
      */
     protected function getEnumMethodValueIsValid()
     {
-        $method = new PhpMethod(self::METHOD_VALUE_IS_VALID, array(
+        $method = new PhpMethod(self::METHOD_VALUE_IS_VALID, [
             'value',
-        ), PhpMethod::ACCESS_PUBLIC, false, true);
+        ], PhpMethod::ACCESS_PUBLIC, false, true);
         $method->addChild(sprintf('return ($value === null) || in_array($value, self::%s(), true);', self::METHOD_GET_VALID_VALUES));
         return $method;
     }
@@ -86,7 +86,7 @@ class StructEnum extends Struct
      */
     protected function getEnumMethodGetValidValues()
     {
-        $method = new PhpMethod(self::METHOD_GET_VALID_VALUES, array(), PhpMethod::ACCESS_PUBLIC, false, true);
+        $method = new PhpMethod(self::METHOD_GET_VALID_VALUES, [], PhpMethod::ACCESS_PUBLIC, false, true);
         $validValues = $this->getEnumMethodValues();
         $method->addChild('return array(');
         foreach ($validValues as $validValue) {
@@ -100,7 +100,7 @@ class StructEnum extends Struct
      */
     protected function getEnumMethodValues()
     {
-        $values = array();
+        $values = [];
         foreach ($this->getModel()->getValues() as $value) {
             $values[] = sprintf('self::%s', $value->getCleanName());
         }
@@ -111,9 +111,9 @@ class StructEnum extends Struct
      */
     protected function getEnumValueIsValidAnnotationBlock()
     {
-        $annotationBlock = new PhpAnnotationBlock(array(
+        $annotationBlock = new PhpAnnotationBlock([
             'Return true if value is allowed',
-        ));
+        ]);
         $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('self::%s()', self::METHOD_GET_VALID_VALUES)))->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value value'))->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool true|false'));
         return $annotationBlock;
     }
@@ -122,9 +122,9 @@ class StructEnum extends Struct
      */
     protected function getEnumGetValidValuesAnnotationBlock()
     {
-        $annotationBlock = new PhpAnnotationBlock(array(
+        $annotationBlock = new PhpAnnotationBlock([
             'Return allowed values',
-        ));
+        ]);
         foreach ($this->getEnumMethodValues() as $value) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, $value));
         }

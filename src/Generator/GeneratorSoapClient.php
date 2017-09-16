@@ -41,7 +41,7 @@ class GeneratorSoapClient extends AbstractGeneratorAware
      */
     public function getSoapClientOptions($soapVersion)
     {
-        return array_merge(array(
+        return array_merge([
             SoapClient::WSDL_SOAP_VERSION => $soapVersion,
             SoapClient::WSDL_URL => $this->getGenerator()->getOptionOrigin(),
             SoapClient::WSDL_LOGIN => $this->getGenerator()->getOptionBasicLogin(),
@@ -50,7 +50,7 @@ class GeneratorSoapClient extends AbstractGeneratorAware
             SoapClient::WSDL_PASSWORD => $this->getGenerator()->getOptionBasicPassword(),
             SoapClient::WSDL_PROXY_LOGIN => $this->getGenerator()->getOptionProxyLogin(),
             SoapClient::WSDL_PROXY_PASSWORD => $this->getGenerator()->getOptionProxyPassword(),
-        ), $this->getGenerator()->getOptionSoapOptions());
+        ], $this->getGenerator()->getOptionSoapOptions());
     }
     /**
      * @param SoapClient $soapClient
@@ -73,7 +73,7 @@ class GeneratorSoapClient extends AbstractGeneratorAware
      */
     public function getSoapClientStreamContextOptions()
     {
-        $options = array();
+        $options = [];
         $soapClient = $this->getSoapClient();
         if ($soapClient instanceof SoapClient) {
             $options = $soapClient->getStreamContextOptions();

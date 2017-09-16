@@ -36,9 +36,9 @@ abstract class AbstractFile extends TestCase
         AbstractModel::purgePhpReservedKeywords();
         $g = parent::getInstance($wsdl, $reset)
             ->setOptionPrefix('Api')
-            ->setOptionAddComments(array(
+            ->setOptionAddComments([
                 'release' => '1.1.0',
-            ))
+            ])
             ->setOptionCategory(GeneratorOptions::VALUE_CAT)
             ->setOptionGatherMethods($gatherMethods);
         self::applyParsers($g, $wsdl);
@@ -50,7 +50,7 @@ abstract class AbstractFile extends TestCase
      */
     private static function applyParsers(Generator $generator, $wsdlPath)
     {
-        $parsers = array(
+        $parsers = [
             new FunctionsParser($generator),
             new StructsParser($generator),
             new TagIncludeParser($generator),
@@ -67,7 +67,7 @@ abstract class AbstractFile extends TestCase
             new TagRestrictionParser($generator),
             new TagUnionParser($generator),
             new TagListParser($generator),
-        );
+        ];
         foreach ($parsers as $parser) {
             $parser->parse();
         }

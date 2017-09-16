@@ -18,7 +18,7 @@ class StringRuleTest extends RuleTest
     public function testApplyRuleWithArray()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\StringRule', null);
-        call_user_func($funtionName, array(6));
+        call_user_func($funtionName, [6]);
     }
     /**
      * @expectedException \InvalidArgumentException

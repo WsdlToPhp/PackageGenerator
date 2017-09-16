@@ -22,7 +22,7 @@ abstract class AbstractTag extends ElementHandler
      * @param bool $strict used by overridden methods to avoid infinite loop
      * @return null|\WsdlToPhp\DomHandler\AbstractNodeHandler|\WsdlToPhp\DomHandler\AbstractElementHandler|\WsdlToPhp\DomHandler\AbstractAttributeHandler|\WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag
      */
-    public function getSuitableParent($checkName = true, array $additionalTags = array(), $maxDeep = self::MAX_DEEP, $strict = false)
+    public function getSuitableParent($checkName = true, array $additionalTags = [], $maxDeep = self::MAX_DEEP, $strict = false)
     {
         $parentNode = null;
         if ($this->getParent() instanceof AbstractNodeHandler) {
@@ -44,14 +44,14 @@ abstract class AbstractTag extends ElementHandler
      * @param array $additionalTags
      * @return string[]
      */
-    protected function getSuitableParentTags(array $additionalTags = array())
+    protected function getSuitableParentTags(array $additionalTags = [])
     {
-        return array_merge(array(
+        return array_merge([
             WsdlDocument::TAG_ELEMENT,
             WsdlDocument::TAG_ATTRIBUTE,
             WsdlDocument::TAG_SIMPLE_TYPE,
             WsdlDocument::TAG_COMPLEX_TYPE,
-        ), $additionalTags);
+        ], $additionalTags);
     }
     /**
      * @param string $name
@@ -60,9 +60,9 @@ abstract class AbstractTag extends ElementHandler
      */
     protected function getStrictParent($name, $checkName = false)
     {
-        $parent = $this->getSuitableParent($checkName, array(
+        $parent = $this->getSuitableParent($checkName, [
             $name,
-        ), self::MAX_DEEP, true);
+        ], self::MAX_DEEP, true);
         if ($parent instanceof AbstractNodeHandler && $parent->getName() === $name) {
             return $parent;
         }

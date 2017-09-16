@@ -77,68 +77,68 @@ class UtilsTest extends TestCase
      */
     public function testGetContentFromUrlContextOptionsBasicAuth()
     {
-        $this->assertSame(array(
-            'http' => array(
-                'header' => array(
+        $this->assertSame([
+            'http' => [
+                'header' => [
                     sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
-                ),
-            ),
-        ), Utils::getStreamContextOptions('foo', 'bar'));
+                ],
+            ],
+        ], Utils::getStreamContextOptions('foo', 'bar'));
     }
     /**
      *
      */
     public function testGetContentFromUrlContextOptionsProxy()
     {
-        $this->assertSame(array(
-            'http' => array(
+        $this->assertSame([
+            'http' => [
                 'proxy' => 'tcp://dns.proxy.com:4545',
-                'header' => array(
+                'header' => [
                     sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
-                ),
-            ),
-        ), Utils::getStreamContextOptions(null, null, 'dns.proxy.com', 4545, 'foo', 'bar'));
+                ],
+            ],
+        ], Utils::getStreamContextOptions(null, null, 'dns.proxy.com', 4545, 'foo', 'bar'));
     }
     /**
      *
      */
     public function testGetContentFromUrlContextOptionsBasicAuthProxy()
     {
-        $this->assertSame(array(
-            'http' => array(
+        $this->assertSame([
+            'http' => [
                 'proxy' => 'tcp://dns.proxy.com:4545',
-                'header' => array(
+                'header' => [
                     sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
                     sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
-                ),
-            ),
-        ), Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar'));
+                ],
+            ],
+        ], Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar'));
     }
     /**
      *
      */
     public function testGetContentFromUrlContextOptions()
     {
-        $this->assertSame(array(
-            'ssl' => array(
+        $this->assertSame([
+            'ssl' => [
                 'verify_peer' => true,
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
-            ),
-            'http' => array(
+            ],
+            'http' => [
                 'proxy' => 'tcp://dns.proxy.com:4545',
-                'header' => array(
+                'header' => [
                     sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
                     sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
-                ),
-            ),
-        ), Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar', array(
-            'ssl' => array(
+                ],
+            ],
+        ], Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar', [
+            'ssl' => [
                 'verify_peer' => true,
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
-            ),
-        )));
+            ],
+        ]));
     }
     /**
      *

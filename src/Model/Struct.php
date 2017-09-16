@@ -96,9 +96,9 @@ class Struct extends AbstractModel
         } elseif ($this->isArray()) {
             $package = self::DOC_SUB_PACKAGE_ARRAYS;
         }
-        return array(
+        return [
             $package,
-        );
+        ];
     }
     /**
      * Returns true if the current struct is a collection of values (like an array)
@@ -108,7 +108,7 @@ class Struct extends AbstractModel
      */
     public function isArray()
     {
-        return ((($this->isStruct() && $this->countOwnAttributes() === 1) || (!$this->isStruct() && $this->countOwnAttributes() <= 1)) && (stripos($this->getName(), 'array') !== false) || (!$this->isStruct() && $this->getMetaValueFirstSet(array('arraytype', 'arrayType'), false) !== false));
+        return ((($this->isStruct() && $this->countOwnAttributes() === 1) || (!$this->isStruct() && $this->countOwnAttributes() <= 1)) && (stripos($this->getName(), 'array') !== false) || (!$this->isStruct() && $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false) !== false));
     }
     /**
      * Returns the attributes of the struct and potentially from the parent class
@@ -373,7 +373,7 @@ class Struct extends AbstractModel
     public function getMeta()
     {
         $inheritanceStruct = $this->getInheritanceStruct();
-        return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : array());
+        return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : []);
     }
     /**
      * @param $filename
@@ -416,13 +416,13 @@ class Struct extends AbstractModel
      */
     protected function toJsonSerialize()
     {
-        return array(
+        return [
             'attributes' => $this->attributes,
             'restriction' => $this->isRestriction,
             'struct' => $this->isStruct,
             'types' => $this->types,
             'values' => $this->values,
-        );
+        ];
     }
     /**
      * @param array $attributes

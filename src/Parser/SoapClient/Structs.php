@@ -23,7 +23,7 @@ class Structs extends AbstractParser
     /**
      * @var string[]
      */
-    private $definedStructs = array();
+    private $definedStructs = [];
     /**
      * Parses the SoapClient types
      * @see \WsdlToPhp\PackageGenerator\Parser\ParserInterface::parse()
@@ -105,7 +105,7 @@ class Structs extends AbstractParser
      */
     protected static function cleanType($type)
     {
-        $type = str_replace(array(
+        $type = str_replace([
             "\r",
             "\n",
             "\t",
@@ -114,7 +114,7 @@ class Structs extends AbstractParser
             '[',
             ']',
             ';',
-        ), '', $type);
+        ], '', $type);
         $type = preg_replace('/[\s]+/', ' ', $type);
         return trim($type);
     }

@@ -21,10 +21,10 @@ abstract class WsdlParser extends TestCase
     public static function generatorInstance($wsdlPath, $reset = true, $parseSoapStructs = true, $parseSoapFunctions = true)
     {
         $generator = self::getInstance($wsdlPath, $reset);
-        $parsers = array(
+        $parsers = [
             new TagImport($generator),
             new TagInclude($generator),
-        );
+        ];
         if ($parseSoapStructs === true) {
             $parsers[] = new Structs($generator);
         }

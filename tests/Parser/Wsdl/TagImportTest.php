@@ -148,9 +148,9 @@ class TagImportTest extends WsdlParser
 
         $tagImportParser->parse();
 
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagEnumeration', $tagImportParser->getGenerator()->getWsdl()->getContent()->getElementByNameAndAttributes(WsdlDocument::TAG_ENUMERATION, array(
+        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagEnumeration', $tagImportParser->getGenerator()->getWsdl()->getContent()->getElementByNameAndAttributes(WsdlDocument::TAG_ENUMERATION, [
             'value' => 'InternalServerError',
-        ), true));
+        ], true));
     }
     /**
      *
@@ -173,9 +173,9 @@ class TagImportTest extends WsdlParser
         $tagImportParser = self::partnerInstanceParser();
 
         $tagImportParser->parse();
-        $elements = $tagImportParser->getGenerator()->getWsdl()->getContent()->getElementsByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(
+        $elements = $tagImportParser->getGenerator()->getWsdl()->getContent()->getElementsByNameAndAttributes(WsdlDocument::TAG_ELEMENT, [
             'name' => 'PartnerCredentials',
-        ), null, true);
+        ], null, true);
 
         $this->assertNotEmpty($elements);
         $this->assertContainsOnlyInstancesOf('\WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagElement', $elements);
