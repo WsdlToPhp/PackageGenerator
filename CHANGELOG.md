@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.8.5
+- issue #112 - Gather method "none" generates only a single service file with one single method
+
 ## 2.8.4
 - issue #111 - '/' not escaped in pattern rule
 

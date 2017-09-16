@@ -90,21 +90,21 @@ class TagHeaderTest extends TestCase
     {
         $wsdl = WsdlTest::wsdlActonInstance();
 
-        $binding = $wsdl->getContent()->getElementByNameAndAttributes(Wsdl::TAG_BINDING, array(
+        $binding = $wsdl->getContent()->getElementByNameAndAttributes(Wsdl::TAG_BINDING, [
             'name' => 'SoapBinding',
             'type' => 'tns:SOAP',
-        ));
+        ]);
 
-        $operation = $binding->getChildByNameAndAttributes(Wsdl::TAG_OPERATION, array(
+        $operation = $binding->getChildByNameAndAttributes(Wsdl::TAG_OPERATION, [
             'name' => 'list',
-        ));
+        ]);
 
-        $sessionHeader = $operation->getChildByNameAndAttributes(Wsdl::TAG_HEADER, array(
+        $sessionHeader = $operation->getChildByNameAndAttributes(Wsdl::TAG_HEADER, [
             'part' => 'SessionHeader',
-        ));
-        $clusterHeader = $operation->getChildByNameAndAttributes(Wsdl::TAG_HEADER, array(
+        ]);
+        $clusterHeader = $operation->getChildByNameAndAttributes(Wsdl::TAG_HEADER, [
             'part' => 'ClusterHeader',
-        ));
+        ]);
 
         $this->assertFalse($sessionHeader->getAttributeRequired());
         $this->assertTrue($clusterHeader->getAttributeRequired());

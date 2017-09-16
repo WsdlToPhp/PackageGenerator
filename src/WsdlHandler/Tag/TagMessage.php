@@ -9,8 +9,8 @@ class TagMessage extends Tag
      */
     public function getPart($name)
     {
-        return $this->getChildByNameAndAttributes('part', array(
+        return $this->getChildByNameAndAttributes('part', [
             'name' => $name,
-        ));
+        ]);
     }
 }

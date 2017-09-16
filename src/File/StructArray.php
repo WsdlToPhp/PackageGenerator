@@ -68,9 +68,9 @@ class StructArray extends Struct
      */
     protected function addArrayMethodItem(MethodContainer $methods)
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_ITEM, $this->getArrayMethodBody(self::METHOD_ITEM, '$index'), array(
+        return $this->addArrayMethodGenericMethod($methods, self::METHOD_ITEM, $this->getArrayMethodBody(self::METHOD_ITEM, '$index'), [
             'index',
-        ));
+        ]);
     }
     /**
      * @param MethodContainer $methods
@@ -94,9 +94,9 @@ class StructArray extends Struct
      */
     protected function addArrayMethodOffsetGet(MethodContainer $methods)
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_OFFSET_GET, $this->getArrayMethodBody(self::METHOD_OFFSET_GET, '$offset'), array(
+        return $this->addArrayMethodGenericMethod($methods, self::METHOD_OFFSET_GET, $this->getArrayMethodBody(self::METHOD_OFFSET_GET, '$offset'), [
             'offset',
-        ));
+        ]);
     }
     /**
      * @param MethodContainer $methods
@@ -116,9 +116,9 @@ class StructArray extends Struct
     protected function addArrayMethodAdd(MethodContainer $methods)
     {
         if ($this->getRestrictionFromStructAttribute() instanceof StructModel) {
-            $method = new PhpMethod(self::METHOD_ADD, array(
+            $method = new PhpMethod(self::METHOD_ADD, [
                 'item',
-            ));
+            ]);
             $this->addStructMethodSetBodyForRestriction($method, $this->getModel()->getAttributes()->offsetGet(0), 'item');
             $method->addChild('return parent::add($item);');
             $methods->add($method);
@@ -132,7 +132,7 @@ class StructArray extends Struct
      * @param string[] $methodParameters
      * @return StructArray
      */
-    protected function addArrayMethodGenericMethod(MethodContainer $methods, $name, $body, array $methodParameters = array())
+    protected function addArrayMethodGenericMethod(MethodContainer $methods, $name, $body, array $methodParameters = [])
     {
         $method = new PhpMethod($name, $methodParameters);
         $method->addChild($body);
@@ -144,11 +144,11 @@ class StructArray extends Struct
      */
     protected function getArrayMethodGetAttributeNameAnnotationBlock()
     {
-        return new PhpAnnotationBlock(array(
+        return new PhpAnnotationBlock([
             'Returns the attribute name',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $this->getModel()->getExtends(true), self::METHOD_GET_ATTRIBUTE_NAME)),
             new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string %s', $this->getModel()->getAttributes()->offsetGet(0)->getName())),
-        ));
+        ]);
     }
     /**
      * @return PhpAnnotationBlock
@@ -190,14 +190,14 @@ class StructArray extends Struct
      */
     protected function getArrayMethodAddAnnotationBlock()
     {
-        return new PhpAnnotationBlock(array(
+        return new PhpAnnotationBlock([
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
             new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'),
             new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName(true))),
             new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType())),
             new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s', $this->getModel()->getPackagedName(true))),
-        ));
+        ]);
     }
     /**
      * @param string $name
@@ -207,10 +207,10 @@ class StructArray extends Struct
      */
     protected function getArrayMethodGenericAnnotationBlock($name, $description, $param = null)
     {
-        $annotationBlock = new PhpAnnotationBlock(array(
+        $annotationBlock = new PhpAnnotationBlock([
             $description,
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $this->getModel()->getExtends(true), $name)),
-        ));
+        ]);
         if (!empty($param)) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, $param));
         }

@@ -23,17 +23,17 @@ class TagUnionTest extends TestCase
         foreach ($unions as $union) {
             switch ($union->getSuitableParent()->getAttributeName()) {
                 case 'RelationshipTypeOpenEnum':
-                    $this->assertSame(array(
+                    $this->assertSame([
                         'RelationshipType',
                         'anyURI',
-                    ), $union->getAttributeMemberTypes());
+                    ], $union->getAttributeMemberTypes());
                     $ok |= true;
                     break;
                 case 'FaultCodesOpenEnumType':
-                    $this->assertSame(array(
+                    $this->assertSame([
                             'FaultCodesType',
                             'QName',
-                    ), $union->getAttributeMemberTypes());
+                    ], $union->getAttributeMemberTypes());
                     $ok |= true;
                     break;
             }

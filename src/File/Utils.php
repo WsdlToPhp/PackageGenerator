@@ -14,7 +14,7 @@ class Utils
      * @param AbstractModel $model
      * @param array $ignoreMeta
      */
-    public static function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model, array $ignoreMeta = array())
+    public static function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model, array $ignoreMeta = [])
     {
         $validMeta = self::getValidMetaValues($model, $ignoreMeta);
         if (!empty($validMeta)) {
@@ -34,10 +34,10 @@ class Utils
      * @param array $ignoreMeta
      * @return string[]
      */
-    public static function getValidMetaValues(AbstractModel $model, array $ignoreMeta = array())
+    public static function getValidMetaValues(AbstractModel $model, array $ignoreMeta = [])
     {
         $meta = $model->getMeta();
-        $validMeta = array();
+        $validMeta = [];
         foreach ($meta as $metaName => $metaValue) {
             if (!in_array($metaName, $ignoreMeta, true)) {
                 $finalMeta = self::getMetaValueAnnotation($metaName, $metaValue);

@@ -70,7 +70,7 @@ class Utils
      * @param array $contextOptions
      * @return string
      */
-    public static function getContentFromUrl($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = array())
+    public static function getContentFromUrl($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = [])
     {
         $context = null;
         $options = self::getStreamContextOptions($basicAuthLogin, $basicAuthPassword, $proxyHost, $proxyPort, $proxyLogin, $proxyPassword, $contextOptions);
@@ -89,27 +89,27 @@ class Utils
      * @param array $contextOptions
      * @return string[]
      */
-    public static function getStreamContextOptions($basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = array())
+    public static function getStreamContextOptions($basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = [])
     {
-        $proxyOptions = $basicAuthOptions = array();
+        $proxyOptions = $basicAuthOptions = [];
         if (!empty($basicAuthLogin) && !empty($basicAuthPassword)) {
-            $basicAuthOptions = array(
-                'http' => array(
-                    'header' => array(
+            $basicAuthOptions = [
+                'http' => [
+                    'header' => [
                         sprintf('Authorization: Basic %s', base64_encode(sprintf('%s:%s', $basicAuthLogin, $basicAuthPassword))),
-                    ),
-                ),
-            );
+                    ],
+                ],
+            ];
         }
         if (!empty($proxyHost)) {
-            $proxyOptions = array(
-                'http' => array(
+            $proxyOptions = [
+                'http' => [
                     'proxy' => sprintf('tcp://%s%s', $proxyHost, empty($proxyPort) ? '' : sprintf(':%s', $proxyPort)),
-                    'header' => array(
+                    'header' => [
                         sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf('%s:%s', $proxyLogin, $proxyPassword))),
-                    ),
-                ),
-            );
+                    ],
+                ],
+            ];
         }
         return array_merge_recursive($contextOptions, $proxyOptions, $basicAuthOptions);
     }
@@ -121,7 +121,7 @@ class Utils
      */
     public static function getValueWithinItsType($value, $knownType = null)
     {
-        if (is_int($value) || (!is_null($value) && in_array($knownType, array(
+        if (is_int($value) || (!is_null($value) && in_array($knownType, [
             'time',
             'positiveInteger',
             'unsignedLong',
@@ -130,18 +130,18 @@ class Utils
             'long',
             'int',
             'integer',
-        ), true))) {
+        ], true))) {
             return intval($value);
-        } elseif (is_float($value) || (!is_null($value) && in_array($knownType, array(
+        } elseif (is_float($value) || (!is_null($value) && in_array($knownType, [
             'float',
             'double',
             'decimal',
-        ), true))) {
+        ], true))) {
             return floatval($value);
-        } elseif (is_bool($value) || (!is_null($value) && in_array($knownType, array(
+        } elseif (is_bool($value) || (!is_null($value) && in_array($knownType, [
             'bool',
             'boolean',
-        ), true))) {
+        ], true))) {
             return ($value === 'true' || $value === true || $value === 1 || $value === '1');
         }
         return $value;

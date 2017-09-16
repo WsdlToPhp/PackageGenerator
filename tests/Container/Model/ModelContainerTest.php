@@ -31,7 +31,7 @@ class ModelContainerTest extends TestCase
     public function testExceptionOnObject()
     {
         $modelContainer = self::instance();
-        $modelContainer->add(array());
+        $modelContainer->add([]);
     }
     /**
      * @expectedException InvalidArgumentException
@@ -41,7 +41,7 @@ class ModelContainerTest extends TestCase
         $modelContainer = self::instance();
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
 
-        $modelContainer->get(array());
+        $modelContainer->get([]);
         $modelContainer->get(null);
     }
     /**

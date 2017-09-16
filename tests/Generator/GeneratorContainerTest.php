@@ -10,9 +10,9 @@ class GeneratorContainerTest extends TestCase
     public function testJsonSerialize()
     {
         $container = new GeneratorContainers(self::getBingGeneratorInstance());
-        $this->assertSame(array(
+        $this->assertSame([
             'services' => $container->getServices(),
             'structs' => $container->getStructs(),
-        ), $container->jsonSerialize());
+        ], $container->jsonSerialize());
     }
 }

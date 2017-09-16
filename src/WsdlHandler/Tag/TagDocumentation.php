@@ -20,7 +20,7 @@ class TagDocumentation extends Tag
      * Indeed, depending on the node, it may contain or not the attribute named "name" so we have to split each case.
      * @see \WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag::getSuitableParent()
      */
-    public function getSuitableParent($checkName = true, array $additionalTags = array(), $maxDeep = self::MAX_DEEP, $strict = false)
+    public function getSuitableParent($checkName = true, array $additionalTags = [], $maxDeep = self::MAX_DEEP, $strict = false)
     {
         if ($strict === false) {
             $enumerationTag = $this->getStrictParent(WsdlDocument::TAG_ENUMERATION);
@@ -33,11 +33,11 @@ class TagDocumentation extends Tag
     /**
      * @see \WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag::getSuitableParentTags()
      */
-    public function getSuitableParentTags(array $additionalTags = array())
+    public function getSuitableParentTags(array $additionalTags = [])
     {
-        return parent::getSuitableParentTags(array_merge($additionalTags, array(
+        return parent::getSuitableParentTags(array_merge($additionalTags, [
             WsdlDocument::TAG_OPERATION,
             WsdlDocument::TAG_ATTRIBUTE_GROUP,
-        )));
+        ]));
     }
 }

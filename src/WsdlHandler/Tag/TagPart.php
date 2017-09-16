@@ -53,9 +53,9 @@ class TagPart extends Tag
         if (empty($type)) {
             $elementName = $this->getAttributeElement();
             if (!empty($elementName)) {
-                $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(WsdlDocument::TAG_ELEMENT, array(
+                $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(WsdlDocument::TAG_ELEMENT, [
                     'name' => $elementName,
-                ), true);
+                ], true);
                 if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
                     $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
                 } else {

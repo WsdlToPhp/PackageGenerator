@@ -66,9 +66,9 @@ class GeneratorContainers extends AbstractGeneratorAware implements \JsonSeriali
      */
     public function jsonSerialize()
     {
-        return array(
+        return [
             'services' => $this->services,
             'structs' => $this->structs,
-        );
+        ];
     }
 }

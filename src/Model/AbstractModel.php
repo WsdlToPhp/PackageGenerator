@@ -28,7 +28,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      * Values associated to the operation
      * @var string[]
      */
-    private $meta = array();
+    private $meta = [];
     /**
      * Define the inheritance of a struct by the name of the parent struct or type
      * @var string
@@ -50,17 +50,17 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      * Replaced keywords time in order to generate unique new keyword
      * @var array
      */
-    private static $replacedPhpReservedKeywords = array();
+    private static $replacedPhpReservedKeywords = [];
     /**
      * Replaced methods time in order to generate unique new method
      * @var array
      */
-    private $replacedReservedMethods = array();
+    private $replacedReservedMethods = [];
     /**
      * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name whith same value)
      * @var array
      */
-    private static $uniqueNames = array();
+    private static $uniqueNames = [];
     /**
      * Main constructor
      * @uses AbstractModel::setName()
@@ -131,7 +131,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      * @param string[] $meta
      * @return AbstractModel
      */
-    public function setMeta(array $meta = array())
+    public function setMeta(array $meta = [])
     {
         $this->meta = $meta;
         return $this;
@@ -174,9 +174,9 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     public function setDocumentation($documentation)
     {
-        return $this->addMeta(self::META_DOCUMENTATION, is_array($documentation) ? $documentation : array(
+        return $this->addMeta(self::META_DOCUMENTATION, is_array($documentation) ? $documentation : [
             $documentation,
-        ));
+        ]);
     }
     /**
      * Returns a meta value according to its name
@@ -294,7 +294,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     public function getPackagedName($namespaced = false)
     {
-        $nameParts = array();
+        $nameParts = [];
         if ($namespaced && $this->getNamespace() !== '') {
             $nameParts[] = sprintf('\%s\\', $this->getNamespace());
         }
@@ -337,7 +337,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     public function getNamespace()
     {
-        $namespaces = array();
+        $namespaces = [];
         $namespace = $this->getGenerator()->getOptionNamespacePrefix();
         if (empty($namespace)) {
             if ($this->getGenerator()->getOptionPrefix() !== '') {
@@ -376,7 +376,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     public function getDocSubPackages()
     {
-        return array();
+        return [];
     }
     /**
      * Clean a string to make it valid as PHP variable
@@ -477,14 +477,14 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     public static function purgeUniqueNames()
     {
-        self::$uniqueNames = array();
+        self::$uniqueNames = [];
     }
     /**
      * Gives the availability for test purpose and multiple package generation to purge reserved keywords usage
      */
     public static function purgePhpReservedKeywords()
     {
-        self::$replacedPhpReservedKeywords = array();
+        self::$replacedPhpReservedKeywords = [];
     }
     /**
      * Should return the properties of the inherited class
@@ -497,13 +497,13 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     public function jsonSerialize()
     {
-        return array_merge($this->toJsonSerialize(), array(
+        return array_merge($this->toJsonSerialize(), [
             'inheritance' => $this->inheritance,
             'abstract' => $this->isAbstract,
             'meta' => $this->meta,
             'name' => $this->name,
             '__CLASS__' => get_called_class(),
-        ));
+        ]);
     }
     /**
      * @param Generator $generator

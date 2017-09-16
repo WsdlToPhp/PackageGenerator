@@ -56,18 +56,18 @@ class TagHeader extends AbstractTagParser
         if ($operation instanceof Operation && $input instanceof Input) {
             $serviceMethod = $this->getModel($operation);
             if ($serviceMethod instanceof Method && !$this->isSoapHeaderAlreadyDefined($serviceMethod, $header->getHeaderName())) {
-                $serviceMethod->addMeta(self::META_SOAP_HEADERS, array(
+                $serviceMethod->addMeta(self::META_SOAP_HEADERS, [
                     $header->getHeaderRequired(),
-                ))
-                    ->addMeta(self::META_SOAP_HEADER_NAMES, array(
+                ])
+                    ->addMeta(self::META_SOAP_HEADER_NAMES, [
                     $header->getHeaderName(),
-                ))
-                    ->addMeta(self::META_SOAP_HEADER_TYPES, array(
+                ])
+                    ->addMeta(self::META_SOAP_HEADER_TYPES, [
                     $header->getHeaderType(),
-                ))
-                    ->addMeta(self::META_SOAP_HEADER_NAMESPACES, array(
+                ])
+                    ->addMeta(self::META_SOAP_HEADER_NAMESPACES, [
                     $header->getHeaderNamespace(),
-                ));
+                ]);
             }
         }
     }
@@ -78,7 +78,7 @@ class TagHeader extends AbstractTagParser
      */
     protected function isSoapHeaderAlreadyDefined(Method $method, $soapHeaderName)
     {
-        $methodSoapHeaders = $method->getMetaValue(self::META_SOAP_HEADER_NAMES, array());
+        $methodSoapHeaders = $method->getMetaValue(self::META_SOAP_HEADER_NAMES, []);
         return in_array($soapHeaderName, $methodSoapHeaders, true);
     }
 }

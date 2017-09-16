@@ -42,10 +42,10 @@ class OperationAnnotationBlock extends AbstractOperation
      */
     protected function addOperationMethodMetaInformations(PhpAnnotationBlock $annotationBlock)
     {
-        $soapHeaderNames = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, array());
-        $soapHeaderTypes = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, array());
-        $soapHeaderNamespaces = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, array());
-        $soapHeaders = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADERS, array());
+        $soapHeaderNames = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, []);
+        $soapHeaderTypes = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, []);
+        $soapHeaderNamespaces = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, []);
+        $soapHeaders = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADERS, []);
         if (!empty($soapHeaderNames) && !empty($soapHeaderTypes) && !empty($soapHeaderNamespaces)) {
             $annotationBlock->addChild('Meta informations extracted from the WSDL')
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNames: %s', implode(', ', $soapHeaderNames)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
@@ -53,12 +53,12 @@ class OperationAnnotationBlock extends AbstractOperation
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes: %s', implode(', ', $this->getSoapHeaderTypesTypes($soapHeaderTypes))), AbstractModelFile::ANNOTATION_LONG_LENGTH))
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaders: %s', implode(', ', $soapHeaders)), AbstractModelFile::ANNOTATION_LONG_LENGTH));
         }
-        FileUtils::defineModelAnnotationsFromWsdl($annotationBlock, $this->getMethod(), array(
+        FileUtils::defineModelAnnotationsFromWsdl($annotationBlock, $this->getMethod(), [
             TagHeader::META_SOAP_HEADER_NAMES,
             TagHeader::META_SOAP_HEADER_NAMESPACES,
             TagHeader::META_SOAP_HEADER_TYPES,
             TagHeader::META_SOAP_HEADERS,
-        ));
+        ]);
         return $this;
     }
     /**
@@ -67,7 +67,7 @@ class OperationAnnotationBlock extends AbstractOperation
      */
     protected function getSoapHeaderTypesTypes(array $soapHeaderTypes)
     {
-        $soapHeaderTypesTypes = array();
+        $soapHeaderTypesTypes = [];
         foreach ($soapHeaderTypes as $soapHeaderType) {
             $soapHeaderTypesTypes[] = $this->getSoapHeaderTypeType($soapHeaderType, true);
         }

@@ -28,7 +28,7 @@ class XsdTypes extends AbstractYamlReader
      */
     protected function __construct($filename)
     {
-        $this->types = array();
+        $this->types = [];
         $this->parseXsdTypes($filename);
     }
     /**

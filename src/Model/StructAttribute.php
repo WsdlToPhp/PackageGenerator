@@ -149,15 +149,15 @@ class StructAttribute extends AbstractModel
     public function getDefaultValue()
     {
         if ($this->isArray()) {
-            return array();
+            return [];
         }
-        return Utils::getValueWithinItsType($this->getMetaValueFirstSet(array(
+        return Utils::getValueWithinItsType($this->getMetaValueFirstSet([
             'default',
             'Default',
             'DefaultValue',
             'defaultValue',
             'defaultvalue',
-        )), $this->getType());
+        ]), $this->getType());
     }
     /**
      * Returns true or false depending on minOccurs information associated to the attribute
@@ -167,12 +167,12 @@ class StructAttribute extends AbstractModel
      */
     public function isRequired()
     {
-        return ($this->getMetaValue('use', '') === 'required' || $this->getMetaValueFirstSet(array(
+        return ($this->getMetaValue('use', '') === 'required' || $this->getMetaValueFirstSet([
             'minOccurs',
             'minoccurs',
             'MinOccurs',
             'Minoccurs',
-        ), false));
+        ], false));
     }
     /**
      * Returns the owner model object, meaning a Struct object
@@ -205,7 +205,7 @@ class StructAttribute extends AbstractModel
     public function getTypeStructMeta()
     {
         $typeStruct = $this->getTypeStruct();
-        return ($typeStruct && !$typeStruct->isStruct()) ? $typeStruct->getMeta() : array();
+        return ($typeStruct && !$typeStruct->isStruct()) ? $typeStruct->getMeta() : [];
     }
     /**
      * @return bool
@@ -228,7 +228,7 @@ class StructAttribute extends AbstractModel
     public function getInheritanceStructMeta()
     {
         $inheritanceStruct = $this->getInheritanceStruct();
-        return ($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : array();
+        return ($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : [];
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getMeta()
@@ -252,10 +252,10 @@ class StructAttribute extends AbstractModel
      */
     protected function toJsonSerialize()
     {
-        return array(
+        return [
             'containsElements' => $this->containsElements,
             'removableFromRequest' => $this->removableFromRequest,
             'type' => $this->type,
-        );
+        ];
     }
 }

@@ -117,7 +117,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodParametersValues()
     {
-        $parametersValues = array();
+        $parametersValues = [];
         foreach ($this->getModelAttributes() as $attribute) {
             $parametersValues[] = $this->getStructMethodParameter($attribute, true);
         }
@@ -165,9 +165,9 @@ class Struct extends AbstractModelFile
     protected function addStructMethodAddTo(MethodContainer $methods, StructAttributeModel $attribute)
     {
         if ($attribute->isArray()) {
-            $method = new PhpMethod(sprintf('addTo%s', ucfirst($attribute->getCleanName())), array(
+            $method = new PhpMethod(sprintf('addTo%s', ucfirst($attribute->getCleanName())), [
                 new PhpFunctionParameter('item', PhpFunctionParameter::NO_VALUE, $this->getStructMethodParameterType($attribute, false)),
-            ));
+            ]);
             $this->addStructMethodAddToBody($method, $attribute);
             $methods->add($method);
         }
@@ -194,9 +194,9 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSet(MethodContainer $methods, StructAttributeModel $attribute)
     {
-        $method = new PhpMethod($attribute->getSetterName(), array(
+        $method = new PhpMethod($attribute->getSetterName(), [
             $this->getStructMethodParameter($attribute, true, null),
-        ));
+        ]);
         $this->addStructMethodSetBody($method, $attribute);
         $methods->add($method);
         return $this;
@@ -344,7 +344,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodGetParameters(StructAttributeModel $attribute)
     {
-        $parameters = array();
+        $parameters = [];
         if ($attribute->isXml()) {
             $parameters[] = new PhpFunctionParameter('asString', true);
         }
@@ -356,9 +356,9 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSetState(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_SET_STATE, array(
+        $method = new PhpMethod(self::METHOD_SET_STATE, [
             new PhpFunctionParameter('array', PhpFunctionParameter::NO_VALUE, 'array'),
-        ), PhpMethod::ACCESS_PUBLIC, false, true);
+        ], PhpMethod::ACCESS_PUBLIC, false, true);
         $method->addChild(sprintf('return parent::__set_state($array);'));
         $methods->add($method);
         return $this;
@@ -399,9 +399,9 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodConstructAnnotationBlock()
     {
-        $annotationBlock = new PhpAnnotationBlock(array(
+        $annotationBlock = new PhpAnnotationBlock([
             sprintf('Constructor method for %s', $this->getModel()->getName()),
-        ));
+        ]);
         $this->addStructPropertiesToAnnotationBlock($annotationBlock);
         return $annotationBlock;
     }
@@ -410,14 +410,14 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodSetStateAnnotationBlock()
     {
-        return new PhpAnnotationBlock(array(
+        return new PhpAnnotationBlock([
             'Method called when an object has been exported with var_export() functions',
             'It allows to return an object instantiated with the values',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::__set_state()', $this->getModel()->getExtends(true))),
             new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::__set_state()', $this->getModel()->getExtends(true))),
             new PhpAnnotation(self::ANNOTATION_PARAM, 'array $array the exported values'),
             new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName(true)),
-        ));
+        ]);
     }
     /**
      * @param PhpMethod $method

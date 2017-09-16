@@ -344,10 +344,10 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function getToStringMethodAnnotationBlock()
     {
-        return new PhpAnnotationBlock(array(
+        return new PhpAnnotationBlock([
             'Method returning the class name',
             new PhpAnnotation(self::ANNOTATION_RETURN, 'string __CLASS__'),
-        ));
+        ]);
     }
     /**
      * @return PhpMethod

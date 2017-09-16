@@ -11,11 +11,11 @@ class WsdlTest extends TestCase
     /**
      * @var Wsdl[]
      */
-    private static $wsdls = array();
+    private static $wsdls = [];
     /**
      * @var Schema[]
      */
-    private static $schemas = array();
+    private static $schemas = [];
     /**
      * @param string $wsdlPath
      * @return Wsdl
@@ -127,12 +127,12 @@ class WsdlTest extends TestCase
      */
     public function testJsonSerialize()
     {
-        $this->assertSame(array(
+        $this->assertSame([
             'inheritance' => '',
             'abstract' => false,
-            'meta' => array(),
+            'meta' => [],
             'name' => self::wsdlBingPath(),
             '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\Wsdl',
-        ), self::getWsdl(self::wsdlBingPath())->jsonSerialize());
+        ], self::getWsdl(self::wsdlBingPath())->jsonSerialize());
     }
 }

@@ -51,7 +51,7 @@ class ClassMap extends AbstractModelFile
      */
     protected function getClassMethods(MethodContainer $methods)
     {
-        $method = new PhpMethod(self::METHOD_NAME, array(), PhpMethod::ACCESS_PUBLIC, false, true, true);
+        $method = new PhpMethod(self::METHOD_NAME, [], PhpMethod::ACCESS_PUBLIC, false, true, true);
         $this->addMethodBody($method);
         $methods->add($method);
         return $this;
@@ -62,11 +62,11 @@ class ClassMap extends AbstractModelFile
      */
     protected function getMethodAnnotationBlock(PhpMethod $method)
     {
-        return new PhpAnnotationBlock(array(
+        return new PhpAnnotationBlock([
             'Returns the mapping between the WSDL Structs and generated Structs\' classes',
             'This array is sent to the \SoapClient when calling the WS',
             new PhpAnnotation(AbstractModelFile::ANNOTATION_RETURN, 'string[]'),
-        ));
+        ]);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassAnnotationBlock()
@@ -74,10 +74,10 @@ class ClassMap extends AbstractModelFile
      */
     protected function getClassAnnotationBlock()
     {
-        return new PhpAnnotationBlock(array(
+        return new PhpAnnotationBlock([
             'Class which returns the class map definition',
             new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionPrefix()),
-        ));
+        ]);
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::defineStringMethod()

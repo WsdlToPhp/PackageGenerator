@@ -95,13 +95,13 @@ class TagInputTest extends WsdlParser
         } else {
             $parameterType = '[a-zA-Z_]*';
         }
-        $matches = array();
+        $matches = [];
         preg_match(sprintf('/[a-zA-Z_]*\s([a-zA-Z_]*)\(.*(%s)\s/i', $parameterType), $soapFunction, $matches);
         $name = isset($matches[1]) ? $matches[1] : '';
         $parameter = isset($matches[2]) ? $matches[2] : '';
-        return array(
+        return [
             'name' => $name,
             'parameter' => $parameter,
-        );
+        ];
     }
 }

@@ -221,10 +221,10 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testSetSoapOptions()
     {
-        $soapOptions = array(
+        $soapOptions = [
             'trace' => true,
             'soap_version' => SOAP_1_2,
-        );
+        ];
         $instance = self::optionsInstance();
         $instance->setSoapOptions($soapOptions);
 
@@ -313,10 +313,10 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetAddComments()
     {
-        $comments = array(
+        $comments = [
             'release' => '1.0.2',
             'date' => '2015-09-08',
-        );
+        ];
 
         $instance = self::optionsInstance();
         $instance->setAddComments($comments);
@@ -328,16 +328,16 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testSetAddCommentsSimple()
     {
-        $comments = array(
+        $comments = [
             'release' => '1.0.2',
             'date' => '2015-09-08',
-        );
+        ];
 
         $instance = self::optionsInstance();
-        $instance->setAddComments(array(
+        $instance->setAddComments([
             'release:1.0.2',
             'date:2015-09-08',
-        ));
+        ]);
 
         $this->assertSame($comments, $instance->getAddComments());
     }
@@ -346,10 +346,10 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testSetAddComments()
     {
-        $comments = array(
+        $comments = [
             'release' => '1.0.2',
             'date' => '2015-09-08',
-        );
+        ];
 
         $instance = self::optionsInstance();
         $instance->setAddComments($comments);
@@ -480,7 +480,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetComposerSettings()
     {
-        $this->assertSame(array(), self::optionsInstance()->getComposerSettings());
+        $this->assertSame([], self::optionsInstance()->getComposerSettings());
     }
     /**
      *
@@ -488,31 +488,31 @@ class GeneratorOptionsTest extends TestCase
     public function testSetComposerSettings()
     {
         $instance = self::optionsInstance();
-        $instance->setComposerSettings(array(
+        $instance->setComposerSettings([
             'config.disable-tls:true',
             'config.data-dir:/src/foor/bar',
             'require.wsdltophp/packagebase:dev-master',
-            'autoload' => array(
-                'psr-4' => array(
+            'autoload' => [
+                'psr-4' => [
                     'Acme\\' => 'src/',
-                ),
-            ),
-        ));
+                ],
+            ],
+        ]);
 
-        $this->assertSame(array(
-            'config' => array(
+        $this->assertSame([
+            'config' => [
                 'disable-tls' => true,
                 'data-dir' => '/src/foor/bar',
-            ),
-            'require' => array(
+            ],
+            'require' => [
                 'wsdltophp/packagebase' => 'dev-master',
-            ),
-            'autoload' => array(
-                'psr-4' => array(
+            ],
+            'autoload' => [
+                'psr-4' => [
                     'Acme\\' => 'src/',
-                ),
-            ),
-        ), $instance->getComposerSettings());
+                ],
+            ],
+        ], $instance->getComposerSettings());
     }
     /**
      *
@@ -609,7 +609,7 @@ class GeneratorOptionsTest extends TestCase
         $newOptionKey = 'new_option';
         $instance = self::optionsInstance();
 
-        $instance->setOptionValue($newOptionKey, '1', array(0, 1, 2));
+        $instance->setOptionValue($newOptionKey, '1', [0, 1, 2]);
 
         $this->assertEquals(1, $instance->getOptionValue($newOptionKey));
     }
@@ -632,12 +632,12 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testToArray()
     {
-        $this->assertSame(array(
+        $this->assertSame([
             'category' => 'cat',
             'gather_methods' => 'start',
             'generic_constants_names' => false,
             'generate_tutorial_file' => true,
-            'add_comments' => array(),
+            'add_comments' => [],
             'namespace_prefix' => '',
             'standalone' => true,
             'validation' => true,
@@ -655,26 +655,26 @@ class GeneratorOptionsTest extends TestCase
             'proxy_port' => '',
             'proxy_login' => '',
             'proxy_password' => '',
-            'soap_options' => array(),
+            'soap_options' => [],
             'composer_name' => '',
-            'composer_settings' => array(),
+            'composer_settings' => [],
             'structs_folder' => 'StructType',
             'arrays_folder' => 'ArrayType',
             'enums_folder' => 'EnumType',
             'services_folder' => 'ServiceType',
-        ), self::optionsInstance()->toArray());
+        ], self::optionsInstance()->toArray());
     }
     /**
      *
      */
     public function testJsonSerialize()
     {
-        $this->assertSame(array(
+        $this->assertSame([
             'category' => 'cat',
             'gather_methods' => 'start',
             'generic_constants_names' => false,
             'generate_tutorial_file' => true,
-            'add_comments' => array(),
+            'add_comments' => [],
             'namespace_prefix' => '',
             'standalone' => true,
             'validation' => true,
@@ -692,13 +692,13 @@ class GeneratorOptionsTest extends TestCase
             'proxy_port' => '',
             'proxy_login' => '',
             'proxy_password' => '',
-            'soap_options' => array(),
+            'soap_options' => [],
             'composer_name' => '',
-            'composer_settings' => array(),
+            'composer_settings' => [],
             'structs_folder' => 'StructType',
             'arrays_folder' => 'ArrayType',
             'enums_folder' => 'EnumType',
             'services_folder' => 'ServiceType',
-        ), self::optionsInstance()->jsonSerialize());
+        ], self::optionsInstance()->jsonSerialize());
     }
 }
