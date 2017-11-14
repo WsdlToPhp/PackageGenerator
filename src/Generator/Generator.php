@@ -789,6 +789,42 @@ class Generator implements \JsonSerializable
         return $this;
     }
     /**
+     * Gets the optionSchemasSave value
+     * @return bool
+     */
+    public function getOptionSchemasSave()
+    {
+        return $this->options->getSchemasSave();
+    }
+    /**
+     * Sets the optionSchemasSave value
+     * @param bool $optionSchemasSave
+     * @return Generator
+     */
+    public function setOptionSchemasSave($optionSchemasSave)
+    {
+        $this->options->setSchemasSave($optionSchemasSave);
+        return $this;
+    }
+    /**
+     * Gets the optionSchemasFolder value
+     * @return string
+     */
+    public function getOptionSchemasFolder()
+    {
+        return $this->options->getSchemasFolder();
+    }
+    /**
+     * Sets the optionSchemasFolder value
+     * @param bool $optionSchemasFolder
+     * @return Generator
+     */
+    public function setOptionSchemasFolder($optionSchemasFolder)
+    {
+        $this->options->setSchemasFolder($optionSchemasFolder);
+        return $this;
+    }
+    /**
      * Gets the WSDL
      * @return Wsdl|null
      */

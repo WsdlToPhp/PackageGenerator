@@ -520,6 +520,26 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testSetSchemasSave()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionSchemasSave(false);
+
+        $this->assertSame(false, $instance->getOptionSchemasSave());
+    }
+    /**
+     *
+     */
+    public function testSetSchemasFolder()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionSchemasFolder('wsdl');
+
+        $this->assertSame('wsdl', $instance->getOptionSchemasFolder());
+    }
+    /**
+     *
+     */
     public function testSetPackageNameUcFirst()
     {
         $instance = self::getBingGeneratorInstance();
@@ -616,6 +636,8 @@ class GeneratorTest extends TestCase
             ->setProxyPassword('')
             ->setProxyPort('')
             ->setServicesFolder('ServiceType')
+            ->setSchemasSave(false)
+            ->setSchemasFolder('wsdl')
             ->setSoapClientClass('\WsdlToPhp\PackageBase\AbstractSoapClientBase')
             ->setSoapOptions([])
             ->setStandalone($standalone)
@@ -667,7 +689,7 @@ class GeneratorTest extends TestCase
     {
         $instance = self::getBingGeneratorInstance();
 
-        if (PHP_VERSION_ID < 70015) {
+        if (PHP_VERSION_ID < 70107) {
             $this->assertSame([], $instance->getSoapClient()->getSoapClientStreamContextOptions());
         } else {
             $this->assertSame([
