@@ -46,6 +46,8 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     const STRUCTS_FOLDER = 'structs_folder';
     const SUFFIX = 'suffix';
     const VALIDATION = 'validation';
+    const SCHEMAS_SAVE = 'schemas_save';
+    const SCHEMAS_FOLDER = 'schemas_folder';
     /**
      * Generator's options
      * @var array
@@ -683,6 +685,46 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     public function setServicesFolder($servicesFolder)
     {
         return $this->setOptionValue(self::SERVICES_FOLDER, $servicesFolder);
+    }
+    /**
+     * Get schemas save option value
+     * @return bool
+     */
+    public function getSchemasSave()
+    {
+        return $this->getOptionValue(self::SCHEMAS_SAVE);
+    }
+    /**
+     * Set schemas save option value
+     * @throws \InvalidArgumentException
+     *
+     * @param bool $saveSchemas
+     *
+     * @return GeneratorOptions
+     */
+    public function setSchemasSave($saveSchemas)
+    {
+        return $this->setOptionValue(self::SCHEMAS_SAVE, $saveSchemas);
+    }
+    /**
+     * Get schemas folder option value
+     * @return bool
+     */
+    public function getSchemasFolder()
+    {
+        return $this->getOptionValue(self::SCHEMAS_FOLDER);
+    }
+    /**
+     * Set schemas folder option value
+     * @throws \InvalidArgumentException
+     *
+     * @param string $schemasFolder
+     *
+     * @return GeneratorOptions
+     */
+    public function setSchemasFolder($schemasFolder)
+    {
+        return $this->setOptionValue(self::SCHEMAS_FOLDER, $schemasFolder);
     }
     /**
      * @return string[]
