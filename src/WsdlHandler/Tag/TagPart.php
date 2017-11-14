@@ -36,7 +36,7 @@ class TagPart extends Tag
      * @param bool $returnValue
      * @return AttributeHandler|mixed
      */
-    private function getAttributeMixedValue($attributeName, $returnValue = true)
+    protected function getAttributeMixedValue($attributeName, $returnValue = true)
     {
         $value = $this->getAttribute($attributeName);
         if ($returnValue === true && $value instanceof AttributeHandler) {

@@ -79,7 +79,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
      * @param Method $method
      * @return boolean
      */
-    private function isKnownTypeUnknown(Method $method)
+    protected function isKnownTypeUnknown(Method $method)
     {
         $isKnown = true;
         $knownType = $this->getKnownType($method);

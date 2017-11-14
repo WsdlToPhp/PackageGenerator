@@ -30,27 +30,27 @@ class Struct extends AbstractModel
      * Attributes of the struct
      * @var StructAttributeContainer
      */
-    private $attributes;
+    protected $attributes;
     /**
      * Is the struct a restriction with defined values  ?
      * @var bool
      */
-    private $isRestriction = false;
+    protected $isRestriction = false;
     /**
      * If the struct is a restriction with values, then store values
      * @var StructValueContainer
      */
-    private $values;
+    protected $values;
     /**
      * If the struct is a union with types, then store types
      * @var string[]
      */
-    private $types;
+    protected $types;
     /**
-     * Define if the urrent struct is a concrete struct or just a virtual struct to store meta informations
+     * Define if the current struct is a concrete struct or just a virtual struct to store meta informations
      * @var bool
      */
-    private $isStruct = false;
+    protected $isStruct = false;
     /**
      * Main constructor
      * @see AbstractModel::__construct()

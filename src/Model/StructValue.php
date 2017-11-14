@@ -22,12 +22,12 @@ class StructValue extends AbstractModel
      * Store the constants generated per structName
      * @var array
      */
-    private static $uniqueConstants = [];
+    protected static $uniqueConstants = [];
     /**
      * The index of the value in the enumeration struct
      * @var int
      */
-    private $index = 0;
+    protected $index = 0;
     /**
      * Main constructor
      * @see AbstractModel::__construct()
@@ -114,7 +114,7 @@ class StructValue extends AbstractModel
      * @param int $index the position of the value
      * @return int
      */
-    private static function constantSuffix($structName, $value, $index)
+    protected static function constantSuffix($structName, $value, $index)
     {
         $key = strtoupper($structName . '_' . $value);
         $indexedKey = $key . '_' . $index;

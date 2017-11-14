@@ -16,20 +16,20 @@ class StructAttribute extends AbstractModel
      * Type of the struct attribute
      * @var string
      */
-    private $type = '';
+    protected $type = '';
     /**
      * Defines that this property is not a simple value but an array of values
      * Infos at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
      * @var bool
      */
-    private $containsElements = false;
+    protected $containsElements = false;
     /**
      * Defines that this property can be removed from request or not.
      * The property cna be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
      * Infos at {@link http://www.w3schools.com/xml/el_element.asp}
      * @var bool
      */
-    private $removableFromRequest = false;
+    protected $removableFromRequest = false;
     /**
      * Main constructor
      * @see AbstractModel::__construct()

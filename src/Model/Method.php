@@ -14,22 +14,22 @@ class Method extends AbstractModel
      * Type of the parameter for the operation
      * @var string
      */
-    private $parameterType = '';
+    protected $parameterType = '';
     /**
      * Type of the return value for the operation
      * @var string
      */
-    private $returnType = '';
+    protected $returnType = '';
     /**
      * Indicates function is not alone with this name, then its name is contextualized based on its parameter(s)
      * @var bool
      */
-    private $isUnique = true;
+    protected $isUnique = true;
     /**
      * Generated method name stored as soon as it has been defined once
      * @var string
      */
-    private $methodName = null;
+    protected $methodName = null;
     /**
      * Main constructor
      * @see AbstractModel::__construct()

@@ -185,7 +185,7 @@ class GeneratePackageCommand extends AbstractCommand
      * @param array $array
      * @return array
      */
-    private function formatArrayForConsole($array)
+    protected function formatArrayForConsole($array)
     {
         array_walk($array, function (&$value, $index) {
             $value = sprintf("%s: %s", $index, json_encode($value));

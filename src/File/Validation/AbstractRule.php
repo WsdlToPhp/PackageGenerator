@@ -11,7 +11,7 @@ abstract class AbstractRule
     /**
      * @var Rules
      */
-    private $rules;
+    protected $rules;
     /**
      * @param Rules $rules
      */

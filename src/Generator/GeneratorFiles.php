@@ -18,7 +18,7 @@ class GeneratorFiles extends AbstractGeneratorAware
      * Use classmap file object
      * @var ClassMapFile
      */
-    private $classmapFile;
+    protected $classmapFile;
     /**
      * @return ClassMapFile
      */

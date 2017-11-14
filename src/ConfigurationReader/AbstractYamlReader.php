@@ -9,7 +9,7 @@ abstract class AbstractYamlReader
     /**
      * @var AbstractYamlReader[]
      */
-    private static $instances;
+    protected static $instances;
     /**
      * Path to file to parse
      * @var string

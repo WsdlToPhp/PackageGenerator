@@ -20,31 +20,31 @@ class Generator implements \JsonSerializable
      * Wsdl
      * @var Wsdl
      */
-    private $wsdl;
+    protected $wsdl;
     /**
      * @var GeneratorOptions
      */
-    private $options;
+    protected $options;
     /**
      * Used parsers
      * @var GeneratorParsers
      */
-    private $parsers;
+    protected $parsers;
     /**
      * Used files
      * @var GeneratorFiles
      */
-    private $files;
+    protected $files;
     /**
      * Used containers
      * @var GeneratorContainers
      */
-    private $containers;
+    protected $containers;
     /**
      * Used SoapClient
      * @var GeneratorSoapClient
      */
-    private $soapClient;
+    protected $soapClient;
     /**
      * Constructor
      * @param GeneratorOptions $options
@@ -860,7 +860,7 @@ class Generator implements \JsonSerializable
      * @param AbstractModel $model the model for which we generate the folder
      * @return string
      */
-    private function getGather(AbstractModel $model)
+    protected function getGather(AbstractModel $model)
     {
         return Utils::getPart($this->getOptionGatherMethods(), $model->getCleanName());
     }
@@ -991,7 +991,7 @@ class Generator implements \JsonSerializable
      * @param array $jsonArrayEntry
      * @return AbstractModel
      */
-    private static function getModelInstanceFromJsonArrayEntry(Generator $generator, array $jsonArrayEntry)
+    protected static function getModelInstanceFromJsonArrayEntry(Generator $generator, array $jsonArrayEntry)
     {
         return AbstractModel::instanceFromSerializedJson($generator, $jsonArrayEntry);
     }
