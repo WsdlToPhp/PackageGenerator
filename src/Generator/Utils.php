@@ -245,4 +245,28 @@ class Utils
         }
         return true;
     }
+    /**
+     * Save schemas to schemasFolder
+     * Filename will be extracted from schemasUrl or default schema.wsdl will be used
+     * @param string $destinationFolder
+     * @param string $schemasFolder
+     * @param string $schemasUrl
+     * @param string $content
+     */
+    public static function saveSchemas($destinationFolder, $schemasFolder, $schemasUrl, $content)
+    {
+        if (($schemasFolder == null) || empty($schemasFolder)) {
+            $schemasFolder = 'wsdl';
+        }
+        $schemasPath = rtrim($destinationFolder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . rtrim($schemasFolder, DIRECTORY_SEPARATOR);
+        // @todo Cover all possible variants
+        if ((strpos(strtolower($schemasUrl), '.wsdl') !== false) || (strpos(strtolower($schemasUrl), '.xsd') !== false) || (strpos(strtolower($schemasUrl), '.xml') !== false)) {
+            $filename = basename($schemasUrl);
+        } else {
+            // if $url is like http://example.com/index.php?WSDL default filename will be schema.wsdl
+            $filename = 'schema.wsdl';
+        }
+        self::createDirectory($schemasFolder);
+        file_put_contents($schemasPath . DIRECTORY_SEPARATOR . $filename, $content);
+    }
 }
