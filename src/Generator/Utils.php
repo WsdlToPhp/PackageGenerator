@@ -266,7 +266,7 @@ class Utils
             // if $url is like http://example.com/index.php?WSDL default filename will be schema.wsdl
             $filename = 'schema.wsdl';
         }
-        self::createDirectory($schemasFolder);
+        self::createDirectory($schemasPath);
         file_put_contents($schemasPath . DIRECTORY_SEPARATOR . $filename, $content);
     }
 }
