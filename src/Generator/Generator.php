@@ -903,36 +903,9 @@ class Generator implements \JsonSerializable
     public function getUrlContent($url)
     {
         if (strpos($url, '://') !== false) {
-            $content = Utils::getContentFromUrl(
-                $url, 
-                $this->getOptionBasicLogin(), 
-                $this->getOptionBasicPassword(), 
-                $this->getOptionProxyHost(), 
-                $this->getOptionProxyPort(), 
-                $this->getOptionProxyLogin(), 
-                $this->getOptionProxyPassword(), 
-                $this->getSoapClient()->getSoapClientStreamContextOptions()
-            );
-            if($this->getOptions()->getSchemasSave() === true) {
-                $schemasFolder = $this->getOptions()->getSchemasFolder();
-                if(($schemasFolder == null) || empty($schemasFolder)) {
-                  $schemasFolder = 'wsdl';
-                }
-                $directory = rtrim($this->getOptions()->getDestination(), DIRECTORY_SEPARATOR)
-                    . DIRECTORY_SEPARATOR
-                    . rtrim($schemasFolder, DIRECTORY_SEPARATOR);
-                // @todo Cover all possible variants
-                if(
-                    (strpos(strtolower($url),'.wsdl') !== false) 
-                    || (strpos(strtolower($url),'.xsd') !== false) 
-                    || (strpos(strtolower($url),'.xml') !== false)
-                ) {
-                    $filename = basename($url);
-                } else {
-                    $filename = 'schema.wsdl';
-                }
-                Utils::createDirectory($directory);
-                file_put_contents($directory . DIRECTORY_SEPARATOR . $filename, $content);
+            $content = Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword(), $this->getSoapClient()->getSoapClientStreamContextOptions());
+            if ($this->getOptions()->getSchemasSave() === true) {
+                Utils::saveSchemas($this->getOptions()->getDestination(), $this->getOptions()->getSchemasFolder(), $url, $content);
             }
             return $content;
         } elseif (is_file($url)) {
