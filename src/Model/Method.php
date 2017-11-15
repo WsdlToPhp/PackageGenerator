@@ -51,6 +51,7 @@ class Method extends AbstractModel
     /**
      * Method name can't starts with numbers
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getCleanName()
+     * @param bool $keepMultipleUnderscores
      * @return string
      */
     public function getCleanName($keepMultipleUnderscores = true)
@@ -107,7 +108,7 @@ class Method extends AbstractModel
         return $this;
     }
     /**
-     * Returns the retrun type
+     * Returns the return type
      * @return string
      */
     public function getReturnType()
@@ -115,7 +116,7 @@ class Method extends AbstractModel
         return $this->returnType;
     }
     /**
-     * Set the retrun type
+     * Set the return type
      * @param string|string[]
      * @return Method
      */

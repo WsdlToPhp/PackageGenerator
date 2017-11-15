@@ -93,6 +93,8 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
      * Allows to add an option and set its value
      * @throws \InvalidArgumentException
      * @param string $optionName
+     * @param mixed $optionValue
+     * @param array $values
      * @return GeneratorOptions
      */
     public function setOptionValue($optionName, $optionValue, array $values = [])
@@ -586,7 +588,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     public function setComposerSettings(array $composerSettings = [])
     {
         /**
-         * If array is type array("config.value:true","require:libray/src",)
+         * If array is type array("config.value:true","require:library/src",)
          */
         $settings = [];
         foreach ($composerSettings as $index => $value) {
@@ -697,9 +699,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     /**
      * Set schemas save option value
      * @throws \InvalidArgumentException
-     *
      * @param bool $saveSchemas
-     *
      * @return GeneratorOptions
      */
     public function setSchemasSave($saveSchemas)
@@ -717,9 +717,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     /**
      * Set schemas folder option value
      * @throws \InvalidArgumentException
-     *
      * @param string $schemasFolder
-     *
      * @return GeneratorOptions
      */
     public function setSchemasFolder($schemasFolder)

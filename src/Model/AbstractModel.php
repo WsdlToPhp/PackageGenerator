@@ -40,7 +40,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     protected $owner = null;
     /**
-     * Indicates that the current elemen is an abstract element.
+     * Indicates that the current element is an abstract element.
      * It allows to generated an abstract class.
      * This will happen for element/complexType that are defined with abstract="true"
      * @var bool
@@ -57,7 +57,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     protected $replacedReservedMethods = [];
     /**
-     * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name whith same value)
+     * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name with same value)
      * @var array
      */
     protected static $uniqueNames = [];
@@ -290,6 +290,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      * @uses Generator::getOptionPrefix()
      * @uses Generator::getOptionSuffix()
      * @uses AbstractModel::uniqueName() to ensure unique naming of struct case sensitively
+     * @param bool $namespaced
      * @return string
      */
     public function getPackagedName($namespaced = false)
@@ -319,7 +320,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
         return '';
     }
     /**
-     * Allows to define from which class the curent model extends
+     * Allows to define from which class the current model extends
      * @param bool $short
      * @return string|null
      */
@@ -451,7 +452,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
         }
     }
     /**
-     * Static method wich returns a unique name case sensitively
+     * Static method which returns a unique name case sensitively
      * Useful to name methods case sensitively distinct, see http://the-echoplex.net/log/php-case-sensitivity
      * @param string $name the original name
      * @param string $context the context where the name is needed unique

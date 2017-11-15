@@ -181,7 +181,7 @@ class GeneratePackageCommand extends AbstractCommand
         return $optionValue;
     }
     /**
-     * Utility method to return readeable array based on "key: value"
+     * Utility method to return readable array based on "key: value"
      * @param array $array
      * @return array
      */

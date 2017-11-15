@@ -46,17 +46,17 @@ class StructAttribute extends AbstractModel
         $this->setType($type)->setOwner($struct);
     }
     /**
-     * Returns the unique name in the current struct (for setters/getters and struct contrusctor array)
+     * Returns the unique name in the current struct (for setters/getters and struct constructor array)
      * @uses AbstractModel::getCleanName()
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
      * @uses StructAttribute::getOwner()
-     * @param string $additionnalContext
+     * @param string $additionalContext
      * @return string
      */
-    public function getUniqueName($additionnalContext = '')
+    public function getUniqueName($additionalContext = '')
     {
-        return self::uniqueName($this->getCleanName(), $this->getOwner()->getName() . $additionnalContext);
+        return self::uniqueName($this->getCleanName(), $this->getOwner()->getName() . $additionalContext);
     }
     /**
      * Returns the getter name for this attribute

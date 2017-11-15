@@ -99,7 +99,7 @@ class Service extends AbstractModel
         return $this->methods->getMethodByName($methodName);
     }
     /**
-     * Allows to define from which class the curent model extends
+     * Allows to define from which class the current model extends
      * @param bool $short
      * @return string
      */

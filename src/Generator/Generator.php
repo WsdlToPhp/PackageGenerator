@@ -657,7 +657,7 @@ class Generator implements \JsonSerializable
     }
     /**
      * Gets the optionSoapOptions value
-     * @return string
+     * @return array
      */
     public function getOptionSoapOptions()
     {
@@ -950,7 +950,7 @@ class Generator implements \JsonSerializable
             foreach ($decodedJson['containers']['services'] as $service) {
                 $instance->getContainers()->getServices()->add(self::getModelInstanceFromJsonArrayEntry($instance, $service));
             }
-            // load sructs
+            // load structs
             foreach ($decodedJson['containers']['structs'] as $struct) {
                 $instance->getContainers()->getStructs()->add(self::getModelInstanceFromJsonArrayEntry($instance, $struct));
             }

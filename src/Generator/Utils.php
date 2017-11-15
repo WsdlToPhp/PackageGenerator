@@ -7,7 +7,7 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 class Utils
 {
     /**
-     * Gets upper case word admong a string from the end or from the beginning part
+     * Gets upper case word among a string from the end or from the beginning part
      * @param string $optionValue
      * @param string $string the string from which we can extract the part
      * @return string
@@ -211,7 +211,7 @@ class Utils
      * See more about the used regular expression at {@link http://www.regular-expressions.info/unicode.html}:
      * - \p{L} for any valid letter
      * - \p{N} for any valid number
-     * - /u for suporting unicode
+     * - /u for supporting unicode
      * @param string $string the string to clean
      * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      * @return string

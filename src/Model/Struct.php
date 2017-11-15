@@ -57,7 +57,7 @@ class Struct extends AbstractModel
      * @uses Struct::setStruct()
      * @param Generator $generator
      * @param string $name the original name
-     * @param bool $isStruct defines if it's a real sruct or not
+     * @param bool $isStruct defines if it's a real struct or not
      * @param bool $isRestriction defines if it's an enumeration or not
      */
     public function __construct(Generator $generator, $name, $isStruct = true, $isRestriction = false)
@@ -116,7 +116,7 @@ class Struct extends AbstractModel
      * @uses Struct::isStruct()
      * @uses Struct::getAttributes()
      * @param bool $includeInheritanceAttributes include the attributes of parent class, default parent attributes are not included. If true, then the array is an associative array containing and index "attribute" for the StructAttribute object and an index "model" for the Struct object.
-     * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _contrust method with the required attribute at first
+     * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _construct method with the required attribute at first
      * @return StructAttributeContainer
      */
     public function getAttributes($includeInheritanceAttributes = false, $requiredFirst = false)
@@ -327,7 +327,7 @@ class Struct extends AbstractModel
         return $this->values->getStructValueByName($value);
     }
     /**
-     * Allows to define from which class the curent model extends
+     * Allows to define from which class the current model extends
      * @param bool $short
      * @return string
      */
