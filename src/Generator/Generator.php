@@ -816,7 +816,7 @@ class Generator implements \JsonSerializable
     }
     /**
      * Sets the optionSchemasFolder value
-     * @param bool $optionSchemasFolder
+     * @param string $optionSchemasFolder
      * @return Generator
      */
     public function setOptionSchemasFolder($optionSchemasFolder)

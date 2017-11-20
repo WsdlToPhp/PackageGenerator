@@ -186,4 +186,16 @@ class UtilsTest extends TestCase
         $this->assertSame('äöüß', Utils::cleanString('äöüß'));
         $this->assertSame('θωερτψυιοπασδφγηςκλζχξωβνμάέήίϊΐόύϋΰώ', 'θωερτψυιοπασδφγηςκλζχξωβνμάέήίϊΐόύϋΰώ');
     }
+    /**
+     * 
+     */
+    public function testSaveSchemas()
+    {
+        $path = __DIR__ . '/../resources/generated';
+        $wsdlFolder = 'schema_save_folder';
+        $this->assertSame($path . '/' . $wsdlFolder . '/webservice.wsdl', Utils::saveSchemas($path, $wsdlFolder, 'http://www.foo.com/webservice.wsdl', '<Text>Save schema to folder</Text>'));
+        $this->assertSame($path . '/' . $wsdlFolder . '/schema.wsdl', Utils::saveSchemas($path, $wsdlFolder, 'http://www.foo.com/index.php?WSDL', '<Text>Save schema to folder</Text>'));
+        $this->assertSame('<Text>Save schema to folder</Text>', file_get_contents($path . '/' . $wsdlFolder . '/webservice.wsdl'));
+        $this->assertSame('<Text>Save schema to folder</Text>', file_get_contents($path . '/' . $wsdlFolder . '/schema.wsdl'));
+    }
 }

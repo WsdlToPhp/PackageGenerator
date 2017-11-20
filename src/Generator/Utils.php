@@ -252,6 +252,7 @@ class Utils
      * @param string $schemasFolder
      * @param string $schemasUrl
      * @param string $content
+     * @return string
      */
     public static function saveSchemas($destinationFolder, $schemasFolder, $schemasUrl, $content)
     {
@@ -268,5 +269,6 @@ class Utils
         }
         self::createDirectory($schemasPath);
         file_put_contents($schemasPath . DIRECTORY_SEPARATOR . $filename, $content);
+        return $schemasPath . DIRECTORY_SEPARATOR . $filename;
     }
 }
