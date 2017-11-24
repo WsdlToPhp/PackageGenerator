@@ -663,10 +663,13 @@ class GeneratorTest extends TestCase
     public function testGetUrlContent()
     {
         $generator = self::getBingGeneratorInstance();
+        $content = $generator->getUrlContent('http://api.search.live.net/search.wsdl');
+        $this->assertNotNull($content);
 
-        $phar = $generator->getUrlContent('https://phar.wsdltophp.com/wsdltophp.phar');
-
-        $this->assertNotNull($phar);
+        $generator->setOptionSchemasSave(true);
+        $generator->setOptionSchemasFolder('wsdl');
+        $content = $generator->getUrlContent('http://api.search.live.net/search.wsdl');
+        $this->assertNotNull($content);
     }
     /**
      * @expectedException \InvalidArgumentException
