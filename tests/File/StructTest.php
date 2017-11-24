@@ -380,4 +380,21 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find PaymentCardType struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testStructWithIdenticalPropertiesDifferentByCase()
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getStruct('Query')) instanceof StructModel) {
+            $model->addAttribute('searchTerms', 'string');
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiQueryWithIdenticalPropertiesDifferentByCase', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find Query struct for file generation');
+        }
+    }
 }
