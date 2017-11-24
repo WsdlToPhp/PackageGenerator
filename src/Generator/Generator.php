@@ -638,7 +638,7 @@ class Generator implements \JsonSerializable
         return $this;
     }
     /**
-     * Gets the optionSrcDiname value
+     * Gets the optionSrcDirname value
      * @return string
      */
     public function getOptionSrcDirname()
@@ -904,8 +904,8 @@ class Generator implements \JsonSerializable
     {
         if (strpos($url, '://') !== false) {
             $content = Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword(), $this->getSoapClient()->getSoapClientStreamContextOptions());
-            if ($this->getOptions()->getSchemasSave() === true) {
-                Utils::saveSchemas($this->getOptions()->getDestination(), $this->getOptions()->getSchemasFolder(), $url, $content);
+            if ($this->getOptionSchemasSave() === true) {
+                Utils::saveSchemas($this->getOptionDestination(), $this->getOptionSchemasFolder(), $url, $content);
             }
             return $content;
         } elseif (is_file($url)) {
