@@ -44,15 +44,15 @@ class StructContainerTest extends TestCase
     /**
      *
      */
-     public function testOffsetUnset()
-     {
-         $instance = self::instance();
+    public function testOffsetUnset()
+    {
+        $instance = self::instance();
 
-         $instance->addStructWithAttribute('Foo', 'bar', 'string');
-         $instance->addStructWithAttribute('Foo', 'bar', 'int');
+        $instance->addStructWithAttribute('Foo', 'bar', 'string');
+        $instance->addStructWithAttribute('Foo', 'bar', 'int');
 
-         $instance->offsetUnset(1);
+        $instance->offsetUnset(1);
 
-         $this->assertNull($instance->offsetGet(1));
-     }
+        $this->assertNull($instance->offsetGet(1));
+    }
 }
