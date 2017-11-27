@@ -256,11 +256,13 @@ class Utils
      */
     public static function saveSchemas($destinationFolder, $schemasFolder, $schemasUrl, $content)
     {
-        if (($schemasFolder == null) || empty($schemasFolder)) {
+        if (($schemasFolder === null) || empty($schemasFolder)) {
+            // if null or empty schemas folder was provided
+            // default schemas folder will be wsdl
             $schemasFolder = 'wsdl';
         }
         $schemasPath = rtrim($destinationFolder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . rtrim($schemasFolder, DIRECTORY_SEPARATOR);
-        // @todo Cover all possible variants
+        // Here we must cover all possible variants
         if ((strpos(strtolower($schemasUrl), '.wsdl') !== false) || (strpos(strtolower($schemasUrl), '.xsd') !== false) || (strpos(strtolower($schemasUrl), '.xml') !== false)) {
             $filename = basename($schemasUrl);
         } else {
