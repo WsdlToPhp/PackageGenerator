@@ -708,7 +708,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Get schemas folder option value
-     * @return bool
+     * @return string
      */
     public function getSchemasFolder()
     {
