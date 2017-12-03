@@ -53,12 +53,12 @@ class StructAttribute extends AbstractModel
      * @uses StructAttribute::getOwner()
      * @param string $additionalContext
      * @param string $string
-     * @param string $additionnalContext
+     * @param string $additionalContext
      * @return string
      */
-    public function getUniqueString($string, $additionnalContext = '')
+    public function getUniqueString($string, $additionalContext= '')
     {
-        return self::uniqueName($string, $this->getOwner()->getName() . $additionnalContext);
+        return self::uniqueName($string, $this->getOwner()->getName() . $additionalContext);
     }
     /**
      * Returns the unique name in the current struct (for setters/getters and struct contrusctor array)
@@ -66,7 +66,7 @@ class StructAttribute extends AbstractModel
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
      * @uses StructAttribute::getOwner()
-     * @param string $additionnalContext
+     * @param string $additionalContext
      * @return string
      */
     public function getUniqueName($additionalContext = '')
