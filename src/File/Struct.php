@@ -109,7 +109,8 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodConstructBodyForAttribute(PhpMethod $method, StructAttributeModel $attribute, $isLast)
     {
-        $method->addChild($method->getIndentedString(sprintf('->%s($%s)%s', $attribute->getSetterName(), lcfirst($attribute->getCleanName()), $isLast ? ';' : ''), 1));
+        $uniqueString = $attribute->getUniqueString($attribute->getCleanName(), 'method');
+        $method->addChild($method->getIndentedString(sprintf('->%s($%s)%s', $attribute->getSetterName(), lcfirst($uniqueString), $isLast ? ';' : ''), 1));
         return $this;
     }
     /**
@@ -132,7 +133,8 @@ class Struct extends AbstractModelFile
     protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
     {
         try {
-            return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($attribute->getCleanName()) : $attribute->getCleanName(), isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue(), $this->getStructMethodParameterType($attribute));
+            $uniqueString = $attribute->getUniqueString($attribute->getCleanName(), 'method');
+            return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($uniqueString) : $uniqueString, isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue(), $this->getStructMethodParameterType($attribute));
         } catch (\InvalidArgumentException $exception) {
             throw new \InvalidArgumentException(sprintf('Unable to create function parameter for struct "%s" with type "%s" for attribute "%s"', $this->getModel()->getName(), var_export($this->getStructMethodParameterType($attribute), true), $attribute->getName()), __LINE__, $exception);
         }
@@ -209,8 +211,9 @@ class Struct extends AbstractModelFile
     protected function addStructMethodSetBody(PhpMethod $method, StructAttributeModel $attribute)
     {
         if ($this->getGenerator()->getOptionValidation()) {
+            $uniqueString = $attribute->getUniqueString($attribute->getCleanName());
             $rules = new Rules($this, $method, $attribute);
-            $rules->applyRules(lcfirst($attribute->getCleanName()));
+            $rules->applyRules(lcfirst($uniqueString));
         }
         return $this->addStructMethodSetBodyAssignment($method, $attribute)->addStructMethodSetBodyReturn($method);
     }
@@ -221,7 +224,8 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSetBodyAssignment(PhpMethod $method, StructAttributeModel $attribute)
     {
-        $parameterName = lcfirst($attribute->getCleanName());
+        $uniqueString = $attribute->getUniqueString($attribute->getCleanName());
+        $parameterName = lcfirst($uniqueString);
         if ($attribute->getRemovableFromRequest()) {
             $method->addChild(sprintf('if (is_null($%1$s) || (is_array($%1$s) && empty($%1$s))) {', $parameterName))
                 ->addChild($method->getIndentedString(sprintf('unset($this->%1$s%2$s);', $attribute->getCleanName(), $attribute->nameIsClean() ? '' : sprintf(', $this->{\'%s\'}', addslashes($attribute->getName()))), 1))
@@ -436,6 +440,10 @@ class Struct extends AbstractModelFile
         } else {
             $parameterName = substr($method->getName(), 3);
         }
+        /**
+         * Since properties can be duplicated with different case, we assume that _\d+ is replaceable by an empty string as methods are "duplicated" with this suffix
+         */
+        $parameterName = preg_replace('/(_\d+)/', '', $parameterName);
         $attribute = $this->getModel()->getAttribute($parameterName);
         if (!$attribute instanceof StructAttributeModel) {
             $attribute = $this->getModel()->getAttributeByCleanName($parameterName);
