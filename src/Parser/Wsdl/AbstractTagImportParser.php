@@ -55,7 +55,7 @@ abstract class AbstractTagImportParser extends AbstractTagParser
     /**
      * @return AbstractTagImportParser
      */
-    private function getTagParser()
+    protected function getTagParser()
     {
         $tagName = null;
         switch ($this->parsingTag()) {

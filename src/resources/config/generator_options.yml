@@ -89,3 +89,9 @@ enums_folder:
 services_folder:
     default: 'ServiceType'
     values: ''
+schemas_save:
+    default: false
+    values: [ true, false ]
+schemas_folder:
+    default: 'wsdl'
+    values: ''

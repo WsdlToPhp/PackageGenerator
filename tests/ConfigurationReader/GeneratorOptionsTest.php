@@ -585,6 +585,26 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testSetSchemasSave()
+    {
+        $instance = self::optionsInstance();
+        $instance->setSchemasSave(false);
+
+        $this->assertSame(false, $instance->getSchemasSave());
+    }
+    /**
+     *
+     */
+    public function testSetSchemasFolder()
+    {
+        $instance = self::optionsInstance();
+        $instance->setSchemasFolder('wsdl');
+
+        $this->assertSame('wsdl', $instance->getSchemasFolder());
+    }
+    /**
+     *
+     */
     public function testSetExistingOptionValue()
     {
         $instance = self::optionsInstance();
@@ -662,6 +682,8 @@ class GeneratorOptionsTest extends TestCase
             'arrays_folder' => 'ArrayType',
             'enums_folder' => 'EnumType',
             'services_folder' => 'ServiceType',
+            'schemas_save' => false,
+            'schemas_folder' => 'wsdl',
         ], self::optionsInstance()->toArray());
     }
     /**
@@ -699,6 +721,8 @@ class GeneratorOptionsTest extends TestCase
             'arrays_folder' => 'ArrayType',
             'enums_folder' => 'EnumType',
             'services_folder' => 'ServiceType',
+            'schemas_save' => false,
+            'schemas_folder' => 'wsdl',
         ], self::optionsInstance()->jsonSerialize());
     }
 }

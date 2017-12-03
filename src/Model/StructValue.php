@@ -22,12 +22,12 @@ class StructValue extends AbstractModel
      * Store the constants generated per structName
      * @var array
      */
-    private static $uniqueConstants = [];
+    protected static $uniqueConstants = [];
     /**
      * The index of the value in the enumeration struct
      * @var int
      */
-    private $index = 0;
+    protected $index = 0;
     /**
      * Main constructor
      * @see AbstractModel::__construct()
@@ -35,7 +35,7 @@ class StructValue extends AbstractModel
      * @uses StructValue::setIndex()
      * @param Generator $generator
      * @param string $name the original name
-     * @param string $index the index of the value in the enumeration struct
+     * @param int|string $index the index of the value in the enumeration struct
      * @param Struct $struct defines the struct which owns this value
      */
     public function __construct(Generator $generator, $name, $index = 0, Struct $struct = null)
@@ -108,13 +108,13 @@ class StructValue extends AbstractModel
     }
     /**
      * Returns the index which has to be added at the end of natural constant name defined with the value cleaned
-     * Allows to avoid multiple constant name to be indentic
+     * Allows to avoid multiple constant name to be identical
      * @param string $structName the struct name
      * @param string $value the value
      * @param int $index the position of the value
      * @return int
      */
-    private static function constantSuffix($structName, $value, $index)
+    protected static function constantSuffix($structName, $value, $index)
     {
         $key = strtoupper($structName . '_' . $value);
         $indexedKey = $key . '_' . $index;

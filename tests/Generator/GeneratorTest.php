@@ -520,6 +520,26 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testSetSchemasSave()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionSchemasSave(false);
+
+        $this->assertSame(false, $instance->getOptionSchemasSave());
+    }
+    /**
+     *
+     */
+    public function testSetSchemasFolder()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionSchemasFolder('wsdl');
+
+        $this->assertSame('wsdl', $instance->getOptionSchemasFolder());
+    }
+    /**
+     *
+     */
     public function testSetPackageNameUcFirst()
     {
         $instance = self::getBingGeneratorInstance();
@@ -616,6 +636,8 @@ class GeneratorTest extends TestCase
             ->setProxyPassword('')
             ->setProxyPort('')
             ->setServicesFolder('ServiceType')
+            ->setSchemasSave(false)
+            ->setSchemasFolder('wsdl')
             ->setSoapClientClass('\WsdlToPhp\PackageBase\AbstractSoapClientBase')
             ->setSoapOptions([])
             ->setStandalone($standalone)
@@ -641,10 +663,13 @@ class GeneratorTest extends TestCase
     public function testGetUrlContent()
     {
         $generator = self::getBingGeneratorInstance();
+        $content = $generator->getUrlContent('http://api.search.live.net/search.wsdl');
+        $this->assertNotNull($content);
 
-        $phar = $generator->getUrlContent('https://phar.wsdltophp.com/wsdltophp.phar');
-
-        $this->assertNotNull($phar);
+        $generator->setOptionSchemasSave(true);
+        $generator->setOptionSchemasFolder('wsdl');
+        $content = $generator->getUrlContent('http://api.search.live.net/search.wsdl');
+        $this->assertNotNull($content);
     }
     /**
      * @expectedException \InvalidArgumentException

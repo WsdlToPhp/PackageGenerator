@@ -9,7 +9,7 @@ class XsdTypes extends AbstractYamlReader
      */
     const MAIN_KEY = 'xsd_types';
     /**
-     * This type is returned by the \SaoapClient class when
+     * This type is returned by the \SoapClient class when
      * it does not succeed to define the type of a struct or an attribute
      * @var string
      */

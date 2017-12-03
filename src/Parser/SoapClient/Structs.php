@@ -23,7 +23,7 @@ class Structs extends AbstractParser
     /**
      * @var string[]
      */
-    private $definedStructs = [];
+    protected $definedStructs = [];
     /**
      * Parses the SoapClient types
      * @see \WsdlToPhp\PackageGenerator\Parser\ParserInterface::parse()
@@ -122,7 +122,7 @@ class Structs extends AbstractParser
      * @param string $type
      * @return boolean
      */
-    private function isStructDefined($type)
+    protected function isStructDefined($type)
     {
         return in_array(self::typeSignature($type), $this->definedStructs);
     }
@@ -130,7 +130,7 @@ class Structs extends AbstractParser
      * @param string $type
      * @return Structs
      */
-    private function structHasBeenDefined($type)
+    protected function structHasBeenDefined($type)
     {
         $this->definedStructs[] = self::typeSignature($type);
         return $this;
@@ -139,7 +139,7 @@ class Structs extends AbstractParser
      * @param string $type
      * @return string
      */
-    private static function typeSignature($type)
+    protected static function typeSignature($type)
     {
         return md5($type);
     }

@@ -94,7 +94,7 @@ abstract class AbstractTagParser extends AbstractParser
     }
     /**
      * @param string $tagName
-     * @return string
+     * @return array|null
      */
     protected function getParseTagAttributeMethod($tagName)
     {

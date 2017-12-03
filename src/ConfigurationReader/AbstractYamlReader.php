@@ -9,7 +9,7 @@ abstract class AbstractYamlReader
     /**
      * @var AbstractYamlReader[]
      */
-    private static $instances;
+    protected static $instances;
     /**
      * Path to file to parse
      * @var string
@@ -17,7 +17,7 @@ abstract class AbstractYamlReader
     protected $filename;
     /**
      * Use singleton, instead of calling new Options(), use Options::instance()
-     * @param string options's file to parse
+     * @param string $filename options's file to parse
      */
     abstract protected function __construct($filename);
     /**

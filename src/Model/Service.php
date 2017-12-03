@@ -20,7 +20,7 @@ class Service extends AbstractModel
      * Store the methods of the service
      * @var MethodContainer
      */
-    private $methods;
+    protected $methods;
     /**
      * Main constructor
      * @see AbstractModel::__construct()
@@ -67,7 +67,7 @@ class Service extends AbstractModel
      * @param MethodContainer $methodContainer
      * @return Service
      */
-    private function setMethods(MethodContainer $methodContainer)
+    protected function setMethods(MethodContainer $methodContainer)
     {
         $this->methods = $methodContainer;
         return $this;
@@ -99,7 +99,7 @@ class Service extends AbstractModel
         return $this->methods->getMethodByName($methodName);
     }
     /**
-     * Allows to define from which class the curent model extends
+     * Allows to define from which class the current model extends
      * @param bool $short
      * @return string
      */

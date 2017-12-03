@@ -11,12 +11,12 @@ class GeneratorContainers extends AbstractGeneratorAware implements \JsonSeriali
      * Structs
      * @var StructContainer
      */
-    private $structs;
+    protected $structs;
     /**
      * Services
      * @var ServiceContainer
      */
-    private $services;
+    protected $services;
     /**
      * @param Generator $generator
      */

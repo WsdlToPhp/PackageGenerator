@@ -23,44 +23,44 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      * Original name od the element
      * @var string
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Values associated to the operation
      * @var string[]
      */
-    private $meta = [];
+    protected $meta = [];
     /**
      * Define the inheritance of a struct by the name of the parent struct or type
      * @var string
      */
-    private $inheritance = '';
+    protected $inheritance = '';
     /**
      * Store the object which owns the current model
      * @var AbstractModel
      */
-    private $owner = null;
+    protected $owner = null;
     /**
-     * Indicates that the current elemen is an abstract element.
+     * Indicates that the current element is an abstract element.
      * It allows to generated an abstract class.
      * This will happen for element/complexType that are defined with abstract="true"
      * @var bool
      */
-    private $isAbstract = false;
+    protected $isAbstract = false;
     /**
      * Replaced keywords time in order to generate unique new keyword
      * @var array
      */
-    private static $replacedPhpReservedKeywords = [];
+    protected static $replacedPhpReservedKeywords = [];
     /**
      * Replaced methods time in order to generate unique new method
      * @var array
      */
-    private $replacedReservedMethods = [];
+    protected $replacedReservedMethods = [];
     /**
-     * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name whith same value)
+     * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name with same value)
      * @var array
      */
-    private static $uniqueNames = [];
+    protected static $uniqueNames = [];
     /**
      * Main constructor
      * @uses AbstractModel::setName()
@@ -290,6 +290,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      * @uses Generator::getOptionPrefix()
      * @uses Generator::getOptionSuffix()
      * @uses AbstractModel::uniqueName() to ensure unique naming of struct case sensitively
+     * @param bool $namespaced
      * @return string
      */
     public function getPackagedName($namespaced = false)
@@ -319,7 +320,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
         return '';
     }
     /**
-     * Allows to define from which class the curent model extends
+     * Allows to define from which class the current model extends
      * @param bool $short
      * @return string|null
      */
@@ -451,7 +452,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
         }
     }
     /**
-     * Static method wich returns a unique name case sensitively
+     * Static method which returns a unique name case sensitively
      * Useful to name methods case sensitively distinct, see http://the-echoplex.net/log/php-case-sensitivity
      * @param string $name the original name
      * @param string $context the context where the name is needed unique
@@ -531,7 +532,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      * @param array $args
      * @throws \InvalidArgumentException
      */
-    private static function checkSerializedJson(array $args)
+    protected static function checkSerializedJson(array $args)
     {
         if (!array_key_exists('__CLASS__', $args)) {
             throw new \InvalidArgumentException(sprintf('__CLASS__ key is missing from', var_export($args, true)));

@@ -20,31 +20,31 @@ class Generator implements \JsonSerializable
      * Wsdl
      * @var Wsdl
      */
-    private $wsdl;
+    protected $wsdl;
     /**
      * @var GeneratorOptions
      */
-    private $options;
+    protected $options;
     /**
      * Used parsers
      * @var GeneratorParsers
      */
-    private $parsers;
+    protected $parsers;
     /**
      * Used files
      * @var GeneratorFiles
      */
-    private $files;
+    protected $files;
     /**
      * Used containers
      * @var GeneratorContainers
      */
-    private $containers;
+    protected $containers;
     /**
      * Used SoapClient
      * @var GeneratorSoapClient
      */
-    private $soapClient;
+    protected $soapClient;
     /**
      * Constructor
      * @param GeneratorOptions $options
@@ -638,7 +638,7 @@ class Generator implements \JsonSerializable
         return $this;
     }
     /**
-     * Gets the optionSrcDiname value
+     * Gets the optionSrcDirname value
      * @return string
      */
     public function getOptionSrcDirname()
@@ -657,7 +657,7 @@ class Generator implements \JsonSerializable
     }
     /**
      * Gets the optionSoapOptions value
-     * @return string
+     * @return array
      */
     public function getOptionSoapOptions()
     {
@@ -789,6 +789,42 @@ class Generator implements \JsonSerializable
         return $this;
     }
     /**
+     * Gets the optionSchemasSave value
+     * @return bool
+     */
+    public function getOptionSchemasSave()
+    {
+        return $this->options->getSchemasSave();
+    }
+    /**
+     * Sets the optionSchemasSave value
+     * @param bool $optionSchemasSave
+     * @return Generator
+     */
+    public function setOptionSchemasSave($optionSchemasSave)
+    {
+        $this->options->setSchemasSave($optionSchemasSave);
+        return $this;
+    }
+    /**
+     * Gets the optionSchemasFolder value
+     * @return string
+     */
+    public function getOptionSchemasFolder()
+    {
+        return $this->options->getSchemasFolder();
+    }
+    /**
+     * Sets the optionSchemasFolder value
+     * @param string $optionSchemasFolder
+     * @return Generator
+     */
+    public function setOptionSchemasFolder($optionSchemasFolder)
+    {
+        $this->options->setSchemasFolder($optionSchemasFolder);
+        return $this;
+    }
+    /**
      * Gets the WSDL
      * @return Wsdl|null
      */
@@ -824,7 +860,7 @@ class Generator implements \JsonSerializable
      * @param AbstractModel $model the model for which we generate the folder
      * @return string
      */
-    private function getGather(AbstractModel $model)
+    protected function getGather(AbstractModel $model)
     {
         return Utils::getPart($this->getOptionGatherMethods(), $model->getCleanName());
     }
@@ -867,7 +903,11 @@ class Generator implements \JsonSerializable
     public function getUrlContent($url)
     {
         if (strpos($url, '://') !== false) {
-            return Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword(), $this->getSoapClient()->getSoapClientStreamContextOptions());
+            $content = Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword(), $this->getSoapClient()->getSoapClientStreamContextOptions());
+            if ($this->getOptionSchemasSave() === true) {
+                Utils::saveSchemas($this->getOptionDestination(), $this->getOptionSchemasFolder(), $url, $content);
+            }
+            return $content;
         } elseif (is_file($url)) {
             return file_get_contents($url);
         }
@@ -910,7 +950,7 @@ class Generator implements \JsonSerializable
             foreach ($decodedJson['containers']['services'] as $service) {
                 $instance->getContainers()->getServices()->add(self::getModelInstanceFromJsonArrayEntry($instance, $service));
             }
-            // load sructs
+            // load structs
             foreach ($decodedJson['containers']['structs'] as $struct) {
                 $instance->getContainers()->getStructs()->add(self::getModelInstanceFromJsonArrayEntry($instance, $struct));
             }
@@ -924,7 +964,7 @@ class Generator implements \JsonSerializable
      * @param array $jsonArrayEntry
      * @return AbstractModel
      */
-    private static function getModelInstanceFromJsonArrayEntry(Generator $generator, array $jsonArrayEntry)
+    protected static function getModelInstanceFromJsonArrayEntry(Generator $generator, array $jsonArrayEntry)
     {
         return AbstractModel::instanceFromSerializedJson($generator, $jsonArrayEntry);
     }

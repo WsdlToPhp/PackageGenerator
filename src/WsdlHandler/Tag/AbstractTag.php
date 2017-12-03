@@ -104,6 +104,9 @@ abstract class AbstractTag extends ElementHandler
         return $this->hasAttribute(Attribute::ATTRIBUTE_VALUE);
     }
     /**
+     * @param bool $withNamespace
+     * @param bool $withinItsType
+     * @param string $asType
      * @return mixed
      */
     public function getValueAttributeValue($withNamespace = false, $withinItsType = true, $asType = null)
@@ -119,6 +122,7 @@ abstract class AbstractTag extends ElementHandler
     }
     /**
      * @see \WsdlToPhp\DomHandler\AbstractElementHandler::getChildrenByName()
+     * @param string $name
      * @return AbstractTag[]
      */
     public function getChildrenByName($name)

@@ -14,22 +14,22 @@ class Method extends AbstractModel
      * Type of the parameter for the operation
      * @var string
      */
-    private $parameterType = '';
+    protected $parameterType = '';
     /**
      * Type of the return value for the operation
      * @var string
      */
-    private $returnType = '';
+    protected $returnType = '';
     /**
      * Indicates function is not alone with this name, then its name is contextualized based on its parameter(s)
      * @var bool
      */
-    private $isUnique = true;
+    protected $isUnique = true;
     /**
      * Generated method name stored as soon as it has been defined once
      * @var string
      */
-    private $methodName = null;
+    protected $methodName = null;
     /**
      * Main constructor
      * @see AbstractModel::__construct()
@@ -51,6 +51,7 @@ class Method extends AbstractModel
     /**
      * Method name can't starts with numbers
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getCleanName()
+     * @param bool $keepMultipleUnderscores
      * @return string
      */
     public function getCleanName($keepMultipleUnderscores = true)
@@ -107,7 +108,7 @@ class Method extends AbstractModel
         return $this;
     }
     /**
-     * Returns the retrun type
+     * Returns the return type
      * @return string
      */
     public function getReturnType()
@@ -115,7 +116,7 @@ class Method extends AbstractModel
         return $this->returnType;
     }
     /**
-     * Set the retrun type
+     * Set the return type
      * @param string|string[]
      * @return Method
      */

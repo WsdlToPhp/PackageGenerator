@@ -23,6 +23,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
     abstract protected function setKnownType(Method $method, $knownType);
     /**
      * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
+     * @param Wsdl $wsdl
      */
     protected function parseWsdl(Wsdl $wsdl)
     {
@@ -79,7 +80,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
      * @param Method $method
      * @return boolean
      */
-    private function isKnownTypeUnknown(Method $method)
+    protected function isKnownTypeUnknown(Method $method)
     {
         $isKnown = true;
         $knownType = $this->getKnownType($method);

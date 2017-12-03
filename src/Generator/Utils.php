@@ -7,7 +7,7 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 class Utils
 {
     /**
-     * Gets upper case word admong a string from the end or from the beginning part
+     * Gets upper case word among a string from the end or from the beginning part
      * @param string $optionValue
      * @param string $string the string from which we can extract the part
      * @return string
@@ -211,7 +211,7 @@ class Utils
      * See more about the used regular expression at {@link http://www.regular-expressions.info/unicode.html}:
      * - \p{L} for any valid letter
      * - \p{N} for any valid number
-     * - /u for suporting unicode
+     * - /u for supporting unicode
      * @param string $string the string to clean
      * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      * @return string
@@ -244,5 +244,33 @@ class Utils
             mkdir($directory, $permissions, true);
         }
         return true;
+    }
+    /**
+     * Save schemas to schemasFolder
+     * Filename will be extracted from schemasUrl or default schema.wsdl will be used
+     * @param string $destinationFolder
+     * @param string $schemasFolder
+     * @param string $schemasUrl
+     * @param string $content
+     * @return string
+     */
+    public static function saveSchemas($destinationFolder, $schemasFolder, $schemasUrl, $content)
+    {
+        if (($schemasFolder === null) || empty($schemasFolder)) {
+            // if null or empty schemas folder was provided
+            // default schemas folder will be wsdl
+            $schemasFolder = 'wsdl';
+        }
+        $schemasPath = rtrim($destinationFolder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . rtrim($schemasFolder, DIRECTORY_SEPARATOR);
+        // Here we must cover all possible variants
+        if ((strpos(strtolower($schemasUrl), '.wsdl') !== false) || (strpos(strtolower($schemasUrl), '.xsd') !== false) || (strpos(strtolower($schemasUrl), '.xml') !== false)) {
+            $filename = basename($schemasUrl);
+        } else {
+            // if $url is like http://example.com/index.php?WSDL default filename will be schema.wsdl
+            $filename = 'schema.wsdl';
+        }
+        self::createDirectory($schemasPath);
+        file_put_contents($schemasPath . DIRECTORY_SEPARATOR . $filename, $content);
+        return $schemasPath . DIRECTORY_SEPARATOR . $filename;
     }
 }

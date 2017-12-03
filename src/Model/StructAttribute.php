@@ -16,20 +16,20 @@ class StructAttribute extends AbstractModel
      * Type of the struct attribute
      * @var string
      */
-    private $type = '';
+    protected $type = '';
     /**
      * Defines that this property is not a simple value but an array of values
      * Infos at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
      * @var bool
      */
-    private $containsElements = false;
+    protected $containsElements = false;
     /**
      * Defines that this property can be removed from request or not.
      * The property cna be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
      * Infos at {@link http://www.w3schools.com/xml/el_element.asp}
      * @var bool
      */
-    private $removableFromRequest = false;
+    protected $removableFromRequest = false;
     /**
      * Main constructor
      * @see AbstractModel::__construct()
@@ -46,17 +46,17 @@ class StructAttribute extends AbstractModel
         $this->setType($type)->setOwner($struct);
     }
     /**
-     * Returns the unique name in the current struct (for setters/getters and struct contrusctor array)
+     * Returns the unique name in the current struct (for setters/getters and struct constructor array)
      * @uses AbstractModel::getCleanName()
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
      * @uses StructAttribute::getOwner()
-     * @param string $additionnalContext
+     * @param string $additionalContext
      * @return string
      */
-    public function getUniqueName($additionnalContext = '')
+    public function getUniqueName($additionalContext = '')
     {
-        return self::uniqueName($this->getCleanName(), $this->getOwner()->getName() . $additionnalContext);
+        return self::uniqueName($this->getCleanName(), $this->getOwner()->getName() . $additionalContext);
     }
     /**
      * Returns the getter name for this attribute

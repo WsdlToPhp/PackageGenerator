@@ -13,15 +13,15 @@ class Rules
     /**
      * @var StructAttribute
      */
-    private $attribute;
+    protected $attribute;
     /**
      * @var AbstractModelFile
      */
-    private $file;
+    protected $file;
     /**
      * @var PhpMethod
      */
-    private $method;
+    protected $method;
     /**
      * @param AbstractModelFile $file
      * @param PhpMethod $method
