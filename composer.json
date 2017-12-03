@@ -51,7 +51,7 @@
         "ext-soap": "*",
         "symfony/console": "^2.8 || ^3.0",
         "symfony/yaml": "^2.8 || ^3.0",
-        "composer/composer": "^1.0 ",
+        "composer/composer": "^1.0",
         "wsdltophp/phpgenerator": "^1.0",
         "wsdltophp/packagebase": "^1.0",
         "wsdltophp/domhandler": "^1.0"
