@@ -12190,6 +12190,8 @@
         "structs_folder": "StructType",
         "arrays_folder": "ArrayType",
         "enums_folder": "EnumType",
-        "services_folder": "ServiceType"
+        "services_folder": "ServiceType",
+        "schemas_save": false,
+        "schemas_folder": "wsdl"
     }
 }

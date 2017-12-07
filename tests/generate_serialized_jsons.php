@@ -150,7 +150,9 @@ foreach ($jsons as $id => $settings) {
             ->setOrigin($settings['origin'])
             ->setGatherMethods($gatherMethod)
             ->setPrefix('Api')
-            ->setDestination(TestCase::getTestDirectory());
+            ->setDestination(TestCase::getTestDirectory())
+            ->setSchemasSave(false)
+            ->setSchemasFolder('wsdl');
         $generator = new Generator($options);
         $generator->parse();
         $json = json_encode($generator, JSON_PRETTY_PRINT);

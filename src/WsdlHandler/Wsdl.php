@@ -103,7 +103,7 @@ class Wsdl extends AbstractDocument
      * @param bool $returnOne
      * @return mixed
      */
-    private function useParentMethodAndExternals($method, $parameters, $includeExternals = false, $returnOne = false)
+    protected function useParentMethodAndExternals($method, $parameters, $includeExternals = false, $returnOne = false)
     {
         $result = call_user_func_array([
             $this,
@@ -120,7 +120,7 @@ class Wsdl extends AbstractDocument
      * @param bool $returnOne
      * @return mixed
      */
-    private function useExternalSchemas($method, $parameters, $parentResult, $returnOne = false)
+    protected function useExternalSchemas($method, $parameters, $parentResult, $returnOne = false)
     {
         $result = $parentResult;
         if ($this->getExternalSchemas()->count() > 0) {

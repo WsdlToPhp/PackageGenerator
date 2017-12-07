@@ -181,11 +181,11 @@ class GeneratePackageCommand extends AbstractCommand
         return $optionValue;
     }
     /**
-     * Utility method to return readeable array based on "key: value"
+     * Utility method to return readable array based on "key: value"
      * @param array $array
      * @return array
      */
-    private function formatArrayForConsole($array)
+    protected function formatArrayForConsole($array)
     {
         array_walk($array, function (&$value, $index) {
             $value = sprintf("%s: %s", $index, json_encode($value));

@@ -130,7 +130,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
      * @throws \InvalidArgumentException
      * @return string
      */
-    private function getObjectKey($object)
+    protected function getObjectKey($object)
     {
         $get = sprintf('get%s', ucfirst($this->objectProperty()));
         if (!method_exists($object, $get)) {

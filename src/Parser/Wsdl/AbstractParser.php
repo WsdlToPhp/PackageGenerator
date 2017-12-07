@@ -24,12 +24,12 @@ abstract class AbstractParser extends Parser
      * List of Wsdl parsed for the current tag
      * @var array
      */
-    private $parsedWsdls;
+    protected $parsedWsdls;
     /**
      * List of Schema parsed for the current tag
      * @var array
      */
-    private $parsedSchemas;
+    protected $parsedSchemas;
     /**
      *
      * @param Generator $generator
@@ -85,7 +85,7 @@ abstract class AbstractParser extends Parser
      * @param AbstractTag[] $tags
      * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser
      */
-    private function setTags(array $tags)
+    protected function setTags(array $tags)
     {
         $this->tags = $tags;
         return $this;
@@ -101,7 +101,7 @@ abstract class AbstractParser extends Parser
      * @param Wsdl $wsdl
      * @return AbstractParser
      */
-    private function setWsdlAsParsed(Wsdl $wsdl)
+    protected function setWsdlAsParsed(Wsdl $wsdl)
     {
         if (!array_key_exists($wsdl->getName(), $this->parsedWsdls)) {
             $this->parsedWsdls[$wsdl->getName()] = [];
@@ -122,7 +122,7 @@ abstract class AbstractParser extends Parser
      * @param Schema $schema
      * @return AbstractParser
      */
-    private function setSchemaAsParsed(Wsdl $wsdl, Schema $schema)
+    protected function setSchemaAsParsed(Wsdl $wsdl, Schema $schema)
     {
         $key = $wsdl->getName() . $schema->getName();
         if (!array_key_exists($key, $this->parsedSchemas)) {
