@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.9.0
+- issue #120 - Add option to save wsdl locally
+- issue #123 - Class with same attributes in different registers, breaks constructor and setters
+
 ## 2.8.5
 - issue #112 - Gather method "none" generates only a single service file with one single method
 
