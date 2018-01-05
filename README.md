@@ -105,6 +105,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Jan Zaeske](https://github.com/jzaeske)
 - [Tom Mottram](https://github.com/tomp4l)
 - [Catirau Mihail](https://github.com/ustmaestro)
+- [Alexander M. Turek](https://github.com/derrabus)
 
 ## FAQ
 
