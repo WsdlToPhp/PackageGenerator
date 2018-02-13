@@ -3,6 +3,7 @@
 ## 2.9.1
 - issue #125 - Under PHP 7.2: count(): Parameter must be an array or an object that implements Countable
 - pull request #127 - Moved tests directory to the dev autoloader
+- pull request #126 - Allow Symfony 4
 
 ## 2.9.0
 - issue #120 - Add option to save wsdl locally
