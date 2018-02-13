@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.9.1
+- issue #125 - Under PHP 7.2: count(): Parameter must be an array or an object that implements Countable
+- pull request #127 - Moved tests directory to the dev autoloader
+
 ## 2.9.0
 - issue #120 - Add option to save wsdl locally
 - issue #123 - Class with same attributes in different registers, breaks constructor and setters

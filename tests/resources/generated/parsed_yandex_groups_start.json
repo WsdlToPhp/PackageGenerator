@@ -109,7 +109,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -135,7 +135,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -147,7 +147,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -208,7 +208,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -247,7 +247,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -259,7 +259,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -288,7 +288,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -325,7 +325,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -402,7 +402,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -463,7 +463,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -500,7 +500,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -601,7 +601,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -662,7 +662,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -723,7 +723,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -776,7 +776,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -805,7 +805,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -858,7 +858,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -887,7 +887,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -959,7 +959,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -985,7 +985,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1011,7 +1011,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1037,7 +1037,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1092,7 +1092,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1131,7 +1131,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1157,7 +1157,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "ActionResultBase",
                 "abstract": false,
@@ -1183,7 +1183,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "ActionResultBase",
                 "abstract": false,
@@ -1222,7 +1222,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1234,7 +1234,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -1311,7 +1311,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -1380,7 +1380,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -1409,7 +1409,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -1446,7 +1446,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -1575,7 +1575,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1628,7 +1628,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1732,7 +1732,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -1836,7 +1836,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "AdGroupBase",
                 "abstract": false,
@@ -1848,7 +1848,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -1877,7 +1877,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -1906,7 +1906,7 @@
                 "attributes": [],
                 "restriction": true,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [
                     {
                         "index": 0,
@@ -2036,7 +2036,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2088,7 +2088,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2153,7 +2153,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2179,7 +2179,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2218,7 +2218,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2283,7 +2283,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "AdGroupBase",
                 "abstract": false,
@@ -2348,7 +2348,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "GetRequestGeneral",
                 "abstract": false,
@@ -2374,7 +2374,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "GetResponseGeneral",
                 "abstract": false,
@@ -2400,7 +2400,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2426,7 +2426,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2452,7 +2452,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2478,7 +2478,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2504,7 +2504,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
@@ -2530,7 +2530,7 @@
                 ],
                 "restriction": false,
                 "struct": true,
-                "types": null,
+                "types": [],
                 "values": [],
                 "inheritance": "",
                 "abstract": false,
