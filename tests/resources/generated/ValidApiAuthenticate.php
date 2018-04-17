@@ -24,7 +24,7 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateAccount($authenticateAccount)
     {
         try {
-            $this->setResult(self::getSoapClient()->AuthenticateAccount($authenticateAccount));
+            $this->setResult($this->getSoapClient()->AuthenticateAccount($authenticateAccount));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -43,7 +43,7 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateAdmin($authenticateAdmin)
     {
         try {
-            $this->setResult(self::getSoapClient()->AuthenticateAdmin($authenticateAdmin));
+            $this->setResult($this->getSoapClient()->AuthenticateAdmin($authenticateAdmin));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -62,7 +62,7 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateReseller($authenticateReseller)
     {
         try {
-            $this->setResult(self::getSoapClient()->AuthenticateReseller($authenticateReseller));
+            $this->setResult($this->getSoapClient()->AuthenticateReseller($authenticateReseller));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -81,7 +81,7 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateCustomer($authenticateCustomer)
     {
         try {
-            $this->setResult(self::getSoapClient()->AuthenticateCustomer($authenticateCustomer));
+            $this->setResult($this->getSoapClient()->AuthenticateCustomer($authenticateCustomer));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
