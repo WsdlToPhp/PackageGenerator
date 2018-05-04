@@ -1,0 +1,184 @@
+{
+    "containers": {
+        "services": [
+            {
+                "methods": [
+                    {
+                        "unique": true,
+                        "methodName": "_GetResult",
+                        "parameterType": {
+                            "result": "Result"
+                        },
+                        "returnType": "Result",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "GetResult",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
+                    }
+                ],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "GetResult",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Service"
+            }
+        ],
+        "structs": [
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "Success",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "default": "false",
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Success",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "Errors",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Errors",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "Warnings",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "1",
+                            "minOccurs": "0"
+                        },
+                        "name": "Warnings",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": [],
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Result",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "boolean",
+                "abstract": false,
+                "meta": [],
+                "name": "Success",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "anyType",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1",
+                            "ref": "wsdl:Error"
+                        },
+                        "name": "Error",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": [],
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Errors",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "anyType",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "1",
+                            "ref": "wsdl:Warning"
+                        },
+                        "name": "Warning",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": [],
+                "values": [],
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "Warnings",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            }
+        ]
+    },
+    "options": {
+        "category": "cat",
+        "gather_methods": "none",
+        "generic_constants_names": false,
+        "generate_tutorial_file": true,
+        "add_comments": {
+            "release": "1.1.0"
+        },
+        "namespace_prefix": "",
+        "standalone": true,
+        "validation": true,
+        "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
+        "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
+        "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
+        "origin": __ORIGIN__,
+        "destination": __DESTINATION__,
+        "src_dirname": "src",
+        "prefix": "Api",
+        "suffix": "",
+        "basic_login": "",
+        "basic_password": "",
+        "proxy_host": "",
+        "proxy_port": "",
+        "proxy_login": "",
+        "proxy_password": "",
+        "soap_options": [],
+        "composer_name": "",
+        "composer_settings": [],
+        "structs_folder": "StructType",
+        "arrays_folder": "ArrayType",
+        "enums_folder": "EnumType",
+        "services_folder": "ServiceType",
+        "schemas_save": false,
+        "schemas_folder": "wsdl"
+    }
+}
