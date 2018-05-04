@@ -1,4 +1,4 @@
-# UPGRADE FROM 2.* to 3.0
+# UPGRADE FROM 2.* to 3.*
 
 The main change is that the property `$soapClient` in the abstract class `AbstractSoapClientBase` is no more static.
 

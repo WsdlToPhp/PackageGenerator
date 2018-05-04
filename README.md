@@ -80,6 +80,17 @@ $ wsdltophp generate:package \
 
 _In order to see all the used options, just remove the `--force` argument._
 
+## Versions
+
+### 3.0
+First released on 04 May 2018, maintained until version 5.0 is released. Please read the [UPGRADE-3.0](UPGRADE-3.0.md) note in order to aknowledge the main changes.
+
+### 2.0
+First released on 29 Apr 2016, maintained until version 4.0 is released.
+
+### 1.0
+Not maintened anymore
+
 ## Testing
 
 ```bash
