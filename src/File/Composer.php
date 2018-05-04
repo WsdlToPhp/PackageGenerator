@@ -31,7 +31,7 @@ class Composer extends AbstractFile
             '--require' => [
                 'php:>=5.3.3',
                 'ext-soap:*',
-                'wsdltophp/packagebase:~1.0',
+                'wsdltophp/packagebase:~2.0',
             ],
             '--working-dir' => $this->getGenerator()->getOptionDestination(),
         ]));

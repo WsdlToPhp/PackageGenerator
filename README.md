@@ -5,11 +5,9 @@
 [![License](https://poser.pugx.org/wsdltophp/packagegenerator/license)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/packagegenerator/version.png)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![Build Status](https://api.travis-ci.org/WsdlToPhp/PackageGenerator.svg)](https://travis-ci.org/WsdlToPhp/PackageGenerator)
-[![PHP 7 ready](http://php7ready.timesplinter.ch/WsdlToPhp/PackageGenerator/badge.svg)](https://travis-ci.org/WsdlToPhp/PackageGenerator)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/quality-score.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/packagegenerator/downloads)](https://packagist.org/packages/wsdltophp/packagegenerator)
-[![Dependency Status](https://www.versioneye.com/user/projects/5571b3136634650018000001/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5571b3136634650018000001)
 [![StyleCI](https://styleci.io/repos/35660532/shield)](https://styleci.io/repos/35660532)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/661a53c4-3f4a-4a17-a4b2-051282019c87/mini.png)](https://insight.sensiolabs.com/projects/661a53c4-3f4a-4a17-a4b2-051282019c87)
 
@@ -81,6 +79,17 @@ $ wsdltophp generate:package \
 ```
 
 _In order to see all the used options, just remove the `--force` argument._
+
+## Versions
+
+### 3.0
+First released on 04 May 2018, maintained until version 5.0 is released. Please read the [UPGRADE-3.0](UPGRADE-3.0.md) note in order to acknowledge the main changes.
+
+### 2.0
+First released on 29 Apr 2016, maintained until version 4.0 is released.
+
+### 1.0
+Not maintained anymore
 
 ## Testing
 

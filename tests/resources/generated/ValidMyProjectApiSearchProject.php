@@ -24,7 +24,7 @@ class ApiSearchProject extends AbstractSoapClientBase
     public function Search(\My\Project\StructType\ApiSearchRequestProject $parameters)
     {
         try {
-            $this->setResult(self::getSoapClient()->Search($parameters));
+            $this->setResult($this->getSoapClient()->Search($parameters));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
