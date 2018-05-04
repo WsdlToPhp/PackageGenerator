@@ -26,7 +26,7 @@ class ApiService extends AbstractSoapClientBase
     public function CodeManager_DeleteCodeArchive($archive_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('CodeManager.DeleteCodeArchive', array(
+            $this->setResult($this->getSoapClient()->__call('CodeManager.DeleteCodeArchive', array(
                 $archive_id,
             )));
             return $this->getResult();
@@ -54,7 +54,7 @@ class ApiService extends AbstractSoapClientBase
     public function CodeManager_GenerateCode($char_set, $code_type, $cookie_domain_periods, $currency_code, $rsid, $secure)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('CodeManager.GenerateCode', array(
+            $this->setResult($this->getSoapClient()->__call('CodeManager.GenerateCode', array(
                 $char_set,
                 $code_type,
                 $cookie_domain_periods,
@@ -84,7 +84,7 @@ class ApiService extends AbstractSoapClientBase
     public function CodeManager_GetCodeArchives($archive_id_list, $binary_encoding, $populate_code_items)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('CodeManager.GetCodeArchives', array(
+            $this->setResult($this->getSoapClient()->__call('CodeManager.GetCodeArchives', array(
                 $archive_id_list,
                 $binary_encoding,
                 $populate_code_items,
@@ -112,7 +112,7 @@ class ApiService extends AbstractSoapClientBase
     public function CodeManager_SaveCodeArchive($archive_description, $archive_id, $archive_name, $code)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('CodeManager.SaveCodeArchive', array(
+            $this->setResult($this->getSoapClient()->__call('CodeManager.SaveCodeArchive', array(
                 $archive_description,
                 $archive_id,
                 $archive_name,
@@ -138,7 +138,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_CancelQueueItem($qid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.CancelQueueItem', array(
+            $this->setResult($this->getSoapClient()->__call('Company.CancelQueueItem', array(
                 $qid,
             )));
             return $this->getResult();
@@ -161,7 +161,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_DownloadProduct($productType)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.DownloadProduct', array(
+            $this->setResult($this->getSoapClient()->__call('Company.DownloadProduct', array(
                 $productType,
             )));
             return $this->getResult();
@@ -184,7 +184,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetEndpoint($company)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.GetEndpoint', array(
+            $this->setResult($this->getSoapClient()->__call('Company.GetEndpoint', array(
                 $company,
             )));
             return $this->getResult();
@@ -206,7 +206,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetQueue()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.GetQueue'));
+            $this->setResult($this->getSoapClient()->__call('Company.GetQueue'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -228,7 +228,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetReportSuites($rs_types, $sp)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.GetReportSuites', array(
+            $this->setResult($this->getSoapClient()->__call('Company.GetReportSuites', array(
                 $rs_types,
                 $sp,
             )));
@@ -251,7 +251,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetTokenCount()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.GetTokenCount'));
+            $this->setResult($this->getSoapClient()->__call('Company.GetTokenCount'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -271,7 +271,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetTokenUsage()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.GetTokenUsage'));
+            $this->setResult($this->getSoapClient()->__call('Company.GetTokenUsage'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -292,7 +292,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetTrackingServer($rsid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.GetTrackingServer', array(
+            $this->setResult($this->getSoapClient()->__call('Company.GetTrackingServer', array(
                 $rsid,
             )));
             return $this->getResult();
@@ -314,7 +314,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetVersionAccess()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.GetVersionAccess'));
+            $this->setResult($this->getSoapClient()->__call('Company.GetVersionAccess'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -335,7 +335,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_ResetTokenCount($auth_key)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Company.ResetTokenCount', array(
+            $this->setResult($this->getSoapClient()->__call('Company.ResetTokenCount', array(
                 $auth_key,
             )));
             return $this->getResult();
@@ -359,7 +359,7 @@ class ApiService extends AbstractSoapClientBase
     public function Dashboards_GetDashboardAPI($dashboard_id, $dashboard_type)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Dashboards.GetDashboardAPI', array(
+            $this->setResult($this->getSoapClient()->__call('Dashboards.GetDashboardAPI', array(
                 $dashboard_id,
                 $dashboard_type,
             )));
@@ -383,7 +383,7 @@ class ApiService extends AbstractSoapClientBase
     public function Dashboards_GetReportletDataAPI($reportlet_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Dashboards.GetReportletDataAPI', array(
+            $this->setResult($this->getSoapClient()->__call('Dashboards.GetReportletDataAPI', array(
                 $reportlet_id,
             )));
             return $this->getResult();
@@ -410,7 +410,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_AppendDataBlock($blockID, $dataSourceID, $endOfBlock, $reportSuiteID, $rows)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.AppendDataBlock', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.AppendDataBlock', array(
                 $blockID,
                 $dataSourceID,
                 $endOfBlock,
@@ -442,7 +442,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_BeginDataBlock($blockName, $columnNames, $dataSourceID, $endOfBlock, $reportSuiteID, $rows)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.BeginDataBlock', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.BeginDataBlock', array(
                 $blockName,
                 $columnNames,
                 $dataSourceID,
@@ -471,7 +471,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_Deactivate($dataSourceID, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.Deactivate', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.Deactivate', array(
                 $dataSourceID,
                 $reportSuiteID,
             )));
@@ -497,7 +497,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_GetFileIDs($dataSourceID, $filter, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.GetFileIDs', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.GetFileIDs', array(
                 $dataSourceID,
                 $filter,
                 $reportSuiteID,
@@ -524,7 +524,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_GetFileInfo($dataSourceID, $filter, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.GetFileInfo', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.GetFileInfo', array(
                 $dataSourceID,
                 $filter,
                 $reportSuiteID,
@@ -550,7 +550,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_GetFileStatus($dataSourceFileID, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.GetFileStatus', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.GetFileStatus', array(
                 $dataSourceFileID,
                 $reportSuiteID,
             )));
@@ -574,7 +574,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_GetIDs($reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.GetIDs', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.GetIDs', array(
                 $reportSuiteID,
             )));
             return $this->getResult();
@@ -598,7 +598,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_GetInfo($filter, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.GetInfo', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.GetInfo', array(
                 $filter,
                 $reportSuiteID,
             )));
@@ -623,7 +623,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_ProcessIncompleteVisits($dataSourceID, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.ProcessIncompleteVisits', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.ProcessIncompleteVisits', array(
                 $dataSourceID,
                 $reportSuiteID,
             )));
@@ -648,7 +648,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_Restart($dataSourceID, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.Restart', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.Restart', array(
                 $dataSourceID,
                 $reportSuiteID,
             )));
@@ -674,7 +674,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_SetupFull($dataSourceID, \Api\StructType\ApiDs_full_settings $dataSourceSettings, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.SetupFull', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.SetupFull', array(
                 $dataSourceID,
                 $dataSourceSettings,
                 $reportSuiteID,
@@ -702,7 +702,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_SetupGeneric($dataSourceID, \Api\StructType\ApiDs_generic_settings $dataSourceSettings, $dataSourceType, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.SetupGeneric', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.SetupGeneric', array(
                 $dataSourceID,
                 $dataSourceSettings,
                 $dataSourceType,
@@ -730,7 +730,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_SetupTraffic($dataSourceID, \Api\StructType\ApiDs_traffic_settings $dataSourceSettings, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.SetupTraffic', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.SetupTraffic', array(
                 $dataSourceID,
                 $dataSourceSettings,
                 $reportSuiteID,
@@ -757,7 +757,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataSource_SetupWebLog($dataSourceID, \Api\StructType\ApiDs_weblog_settings $dataSourceSettings, $reportSuiteID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataSource.SetupWebLog', array(
+            $this->setResult($this->getSoapClient()->__call('DataSource.SetupWebLog', array(
                 $dataSourceID,
                 $dataSourceSettings,
                 $reportSuiteID,
@@ -782,7 +782,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_CancelRequest($request_Id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.CancelRequest', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.CancelRequest', array(
                 $request_Id,
             )));
             return $this->getResult();
@@ -805,7 +805,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_CheckRequest($request_Id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.CheckRequest', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.CheckRequest', array(
                 $request_Id,
             )));
             return $this->getResult();
@@ -830,7 +830,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_CreateSegment($hidden, $rsid, \Api\StructType\ApiData_warehouse_segment $segment)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.CreateSegment', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.CreateSegment', array(
                 $hidden,
                 $rsid,
                 $segment,
@@ -857,7 +857,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_GetReportData($request_Id, $rsid, $start_row)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.GetReportData', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.GetReportData', array(
                 $request_Id,
                 $rsid,
                 $start_row,
@@ -883,7 +883,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_GetSegment($rsid, $segment)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.GetSegment', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.GetSegment', array(
                 $rsid,
                 $segment,
             )));
@@ -907,7 +907,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_GetSegments($rsid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.GetSegments', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.GetSegments', array(
                 $rsid,
             )));
             return $this->getResult();
@@ -932,7 +932,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_ReplaceSegment($id, $rsid, \Api\StructType\ApiData_warehouse_segment $segment)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.ReplaceSegment', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.ReplaceSegment', array(
                 $id,
                 $rsid,
                 $segment,
@@ -977,7 +977,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_Request($breakdown_List, $contact_Name, $contact_Phone, $date_From, $date_Granularity, $date_Preset, $date_To, $date_Type, $email_Subject, $email_To, $fTP_Dir, $fTP_Host, $fTP_Password, $fTP_Port, $fTP_UserName, $file_Name, $metric_List, $report_Description, $report_Name, $segment_Id, $rsid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.Request', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.Request', array(
                 $breakdown_List,
                 $contact_Name,
                 $contact_Phone,
@@ -1020,7 +1020,7 @@ class ApiService extends AbstractSoapClientBase
     public function DataWarehouse_VerifySegment(\Api\StructType\ApiData_warehouse_segment $segment)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DataWarehouse.VerifySegment', array(
+            $this->setResult($this->getSoapClient()->__call('DataWarehouse.VerifySegment', array(
                 $segment,
             )));
             return $this->getResult();
@@ -1043,7 +1043,7 @@ class ApiService extends AbstractSoapClientBase
     public function DeliveryList_Delete($dist_list_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DeliveryList.Delete', array(
+            $this->setResult($this->getSoapClient()->__call('DeliveryList.Delete', array(
                 $dist_list_id,
             )));
             return $this->getResult();
@@ -1066,7 +1066,7 @@ class ApiService extends AbstractSoapClientBase
     public function DeliveryList_Get($search_name)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DeliveryList.Get', array(
+            $this->setResult($this->getSoapClient()->__call('DeliveryList.Get', array(
                 $search_name,
             )));
             return $this->getResult();
@@ -1090,7 +1090,7 @@ class ApiService extends AbstractSoapClientBase
     public function DeliveryList_Save($delivery_list_name, $dist_list_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('DeliveryList.Save', array(
+            $this->setResult($this->getSoapClient()->__call('DeliveryList.Save', array(
                 $delivery_list_name,
                 $dist_list_id,
             )));
@@ -1116,7 +1116,7 @@ class ApiService extends AbstractSoapClientBase
     public function Discover_GetSegments($end_date, $rsid, $start_date)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Discover.GetSegments', array(
+            $this->setResult($this->getSoapClient()->__call('Discover.GetSegments', array(
                 $end_date,
                 $rsid,
                 $start_date,
@@ -1141,7 +1141,7 @@ class ApiService extends AbstractSoapClientBase
     public function Discover_QueueDiscoverOvertime(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Discover.QueueDiscoverOvertime', array(
+            $this->setResult($this->getSoapClient()->__call('Discover.QueueDiscoverOvertime', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -1164,7 +1164,7 @@ class ApiService extends AbstractSoapClientBase
     public function Discover_QueueDiscoverRanked(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Discover.QueueDiscoverRanked', array(
+            $this->setResult($this->getSoapClient()->__call('Discover.QueueDiscoverRanked', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -1187,7 +1187,7 @@ class ApiService extends AbstractSoapClientBase
     public function Discover_QueueDiscoverTrended(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Discover.QueueDiscoverTrended', array(
+            $this->setResult($this->getSoapClient()->__call('Discover.QueueDiscoverTrended', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -1215,7 +1215,7 @@ class ApiService extends AbstractSoapClientBase
     public function Logs_GetAdminConsoleCompanyLog($company, $end_date, $filter_rule, $filters, $rsid_list, $start_date)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Logs.GetAdminConsoleCompanyLog', array(
+            $this->setResult($this->getSoapClient()->__call('Logs.GetAdminConsoleCompanyLog', array(
                 $company,
                 $end_date,
                 $filter_rule,
@@ -1248,7 +1248,7 @@ class ApiService extends AbstractSoapClientBase
     public function Logs_GetAdminConsoleLog($company, $end_date, $filter_rule, $filters, $rsid_list, $start_date)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Logs.GetAdminConsoleLog', array(
+            $this->setResult($this->getSoapClient()->__call('Logs.GetAdminConsoleLog', array(
                 $company,
                 $end_date,
                 $filter_rule,
@@ -1282,7 +1282,7 @@ class ApiService extends AbstractSoapClientBase
     public function Logs_GetUsageLog($date_from, $date_to, $event_details, $event_type, $ip, $login, $report_suite)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Logs.GetUsageLog', array(
+            $this->setResult($this->getSoapClient()->__call('Logs.GetUsageLog', array(
                 $date_from,
                 $date_to,
                 $event_details,
@@ -1325,7 +1325,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_AddLogin($admin, $change_password, $create_dashboards, $dashboard_rsid, $email, $first_name, $last_name, $login, $password, $phone_number, $selected_group_list, $temp_login, $temp_login_end, $temp_login_start, $title)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.AddLogin', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.AddLogin', array(
                 $admin,
                 $change_password,
                 $create_dashboards,
@@ -1363,7 +1363,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_Authenticate($login, $password)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.Authenticate', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.Authenticate', array(
                 $login,
                 $password,
             )));
@@ -1387,7 +1387,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_DeleteGroup($groupid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.DeleteGroup', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.DeleteGroup', array(
                 $groupid,
             )));
             return $this->getResult();
@@ -1410,7 +1410,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_DeleteLogin($login)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.DeleteLogin', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.DeleteLogin', array(
                 $login,
             )));
             return $this->getResult();
@@ -1434,7 +1434,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetCRMInfo($company, $login)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetCRMInfo', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetCRMInfo', array(
                 $company,
                 $login,
             )));
@@ -1459,7 +1459,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetCategories($categoryid, $groupid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetCategories', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetCategories', array(
                 $categoryid,
                 $groupid,
             )));
@@ -1484,7 +1484,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetGroup($group_type, $groupid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetGroup', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetGroup', array(
                 $group_type,
                 $groupid,
             )));
@@ -1509,7 +1509,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetGroups($field, $search)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetGroups', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetGroups', array(
                 $field,
                 $search,
             )));
@@ -1533,7 +1533,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetLogin($login)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetLogin', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetLogin', array(
                 $login,
             )));
             return $this->getResult();
@@ -1557,7 +1557,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetLogins($login_search_field, $login_search_value)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetLogins', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetLogins', array(
                 $login_search_field,
                 $login_search_value,
             )));
@@ -1581,7 +1581,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetReportBuilderLogin($locale)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetReportBuilderLogin', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetReportBuilderLogin', array(
                 $locale,
             )));
             return $this->getResult();
@@ -1606,7 +1606,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetReportSuiteGroupCount($search_field, $search_val)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetReportSuiteGroupCount', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetReportSuiteGroupCount', array(
                 $search_field,
                 $search_val,
             )));
@@ -1630,7 +1630,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_GetReportSuiteGroups($rsid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.GetReportSuiteGroups', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.GetReportSuiteGroups', array(
                 $rsid,
             )));
             return $this->getResult();
@@ -1653,7 +1653,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_HasPrivilege($privilegeToken)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.HasPrivilege', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.HasPrivilege', array(
                 $privilegeToken,
             )));
             return $this->getResult();
@@ -1684,7 +1684,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_SaveGroup($group_description, $group_name, $group_type, $groupid, $perm_info, \Api\StructType\ApiReport_categories $report_access_list, $report_id_list, $rsid_list, $user_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.SaveGroup', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.SaveGroup', array(
                 $group_description,
                 $group_name,
                 $group_type,
@@ -1728,7 +1728,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_SaveLogin($admin, $change_password, $email, $first_name, $last_name, $login, $password, $phone_number, $selected_group_list, $send_welcome_email, $temp_end_date, $temp_login, $temp_start_date, $title)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.SaveLogin', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.SaveLogin', array(
                 $admin,
                 $change_password,
                 $email,
@@ -1765,7 +1765,7 @@ class ApiService extends AbstractSoapClientBase
     public function Permissions_SaveReportSuiteGroups($rsid, $selected_groups)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Permissions.SaveReportSuiteGroups', array(
+            $this->setResult($this->getSoapClient()->__call('Permissions.SaveReportSuiteGroups', array(
                 $rsid,
                 $selected_groups,
             )));
@@ -1789,7 +1789,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_CancelReport($reportID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.CancelReport', array(
+            $this->setResult($this->getSoapClient()->__call('Report.CancelReport', array(
                 $reportID,
             )));
             return $this->getResult();
@@ -1812,7 +1812,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_GetElementNames(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.GetElementNames', array(
+            $this->setResult($this->getSoapClient()->__call('Report.GetElementNames', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -1835,7 +1835,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_GetOvertimeReport(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.GetOvertimeReport', array(
+            $this->setResult($this->getSoapClient()->__call('Report.GetOvertimeReport', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -1858,7 +1858,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_GetRankedReport(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.GetRankedReport', array(
+            $this->setResult($this->getSoapClient()->__call('Report.GetRankedReport', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -1881,7 +1881,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_GetReport($reportID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.GetReport', array(
+            $this->setResult($this->getSoapClient()->__call('Report.GetReport', array(
                 $reportID,
             )));
             return $this->getResult();
@@ -1903,7 +1903,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_GetReportQueue()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.GetReportQueue'));
+            $this->setResult($this->getSoapClient()->__call('Report.GetReportQueue'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1924,7 +1924,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_GetStatus($reportID)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.GetStatus', array(
+            $this->setResult($this->getSoapClient()->__call('Report.GetStatus', array(
                 $reportID,
             )));
             return $this->getResult();
@@ -1947,7 +1947,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_GetTrendedReport(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.GetTrendedReport', array(
+            $this->setResult($this->getSoapClient()->__call('Report.GetTrendedReport', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -1970,7 +1970,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_QueueOvertime(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.QueueOvertime', array(
+            $this->setResult($this->getSoapClient()->__call('Report.QueueOvertime', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -1993,7 +1993,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_QueueRanked(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.QueueRanked', array(
+            $this->setResult($this->getSoapClient()->__call('Report.QueueRanked', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -2016,7 +2016,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_QueueSCMRanked(\Api\StructType\ApiSCM_reportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.QueueSCMRanked', array(
+            $this->setResult($this->getSoapClient()->__call('Report.QueueSCMRanked', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -2039,7 +2039,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_QueueTrended(\Api\StructType\ApiReportDescription $reportDescription)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Report.QueueTrended', array(
+            $this->setResult($this->getSoapClient()->__call('Report.QueueTrended', array(
                 $reportDescription,
             )));
             return $this->getResult();
@@ -2064,7 +2064,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_AddCorrelations($rel_ids, $rsid_list, $size)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.AddCorrelations', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.AddCorrelations', array(
                 $rel_ids,
                 $rsid_list,
                 $size,
@@ -2090,7 +2090,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_AddInternalURLFilters($filters, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.AddInternalURLFilters', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.AddInternalURLFilters', array(
                 $filters,
                 $rsid_list,
             )));
@@ -2115,7 +2115,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_AddKeyVisitors($key_visitors, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.AddKeyVisitors', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.AddKeyVisitors', array(
                 $key_visitors,
                 $rsid_list,
             )));
@@ -2139,7 +2139,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_AddSavedFilters($savedFilters)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.AddSavedFilters', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.AddSavedFilters', array(
                 $savedFilters,
             )));
             return $this->getResult();
@@ -2171,7 +2171,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_Create($base_currency, $base_url, $default_page, $duplicate_rsid, $go_live_date, $hits_per_day, $latin1, $rsid, $site_title, $time_zone)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.Create', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.Create', array(
                 $base_currency,
                 $base_url,
                 $default_page,
@@ -2203,7 +2203,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteBaseURL($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteBaseURL', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteBaseURL', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2228,7 +2228,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteCalculatedMetrics($calculated_metrics, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteCalculatedMetrics', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteCalculatedMetrics', array(
                 $calculated_metrics,
                 $rsid_list,
             )));
@@ -2255,7 +2255,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteClassifications($c_view, $div_num, $parent_div_num, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteClassifications', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteClassifications', array(
                 $c_view,
                 $div_num,
                 $parent_div_num,
@@ -2283,7 +2283,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteCorrelations($rel_ids, $rsid_list, $size)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteCorrelations', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteCorrelations', array(
                 $rel_ids,
                 $rsid_list,
                 $size,
@@ -2308,7 +2308,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteDefaultPage($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteDefaultPage', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteDefaultPage', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2333,7 +2333,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteIPAddressExclusions($ip_list, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteIPAddressExclusions', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteIPAddressExclusions', array(
                 $ip_list,
                 $rsid_list,
             )));
@@ -2359,7 +2359,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteInternalURLFilters($filters, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteInternalURLFilters', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteInternalURLFilters', array(
                 $filters,
                 $rsid_list,
             )));
@@ -2384,7 +2384,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteKeyVisitors($key_visitors, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteKeyVisitors', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteKeyVisitors', array(
                 $key_visitors,
                 $rsid_list,
             )));
@@ -2412,7 +2412,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteMarketingChannelCost($channel_type, $cost_group, $id, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteMarketingChannelCost', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteMarketingChannelCost', array(
                 $channel_type,
                 $cost_group,
                 $id,
@@ -2440,7 +2440,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteMarketingChannels($channel_ids, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteMarketingChannels', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteMarketingChannels', array(
                 $channel_ids,
                 $rsid_list,
             )));
@@ -2465,7 +2465,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeletePages($page_id_list, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeletePages', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeletePages', array(
                 $page_id_list,
                 $rsid_list,
             )));
@@ -2492,7 +2492,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeletePaidSearch($filter, $rsid_list, $rule, $search_engine)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeletePaidSearch', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeletePaidSearch', array(
                 $filter,
                 $rsid_list,
                 $rule,
@@ -2518,7 +2518,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_DeleteSavedFilter($savedFilterIds)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.DeleteSavedFilter', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteSavedFilter', array(
                 $savedFilterIds,
             )));
             return $this->getResult();
@@ -2541,7 +2541,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetActivation($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetActivation', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetActivation', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2565,7 +2565,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetAvailableElements($return_datawarehouse_elements, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetAvailableElements', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetAvailableElements', array(
                 $return_datawarehouse_elements,
                 $rsid_list,
             )));
@@ -2590,7 +2590,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetAvailableMetrics($return_datawarehouse_metrics, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetAvailableMetrics', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetAvailableMetrics', array(
                 $return_datawarehouse_metrics,
                 $rsid_list,
             )));
@@ -2614,7 +2614,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetAxleStartDate($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetAxleStartDate', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetAxleStartDate', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2637,7 +2637,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetBaseCurrency($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetBaseCurrency', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetBaseCurrency', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2660,7 +2660,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetBaseURL($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetBaseURL', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetBaseURL', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2683,7 +2683,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetCalculatedMetrics($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetCalculatedMetrics', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetCalculatedMetrics', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2709,7 +2709,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetClassificationHierarchies($c_view, $rel_id, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetClassificationHierarchies', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetClassificationHierarchies', array(
                 $c_view,
                 $rel_id,
                 $rsid_list,
@@ -2737,7 +2737,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetClassifications($c_view, $rel_id, $rsid_list, $type)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetClassifications', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetClassifications', array(
                 $c_view,
                 $rel_id,
                 $rsid_list,
@@ -2763,7 +2763,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetCorrelations($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetCorrelations', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetCorrelations', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2786,7 +2786,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetCustomCalendar($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetCustomCalendar', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetCustomCalendar', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2809,7 +2809,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetDefaultPage($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetDefaultPage', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetDefaultPage', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2832,7 +2832,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetEVars($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetEVars', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetEVars', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2855,7 +2855,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetEcommerce($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetEcommerce', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetEcommerce', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2878,7 +2878,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetFindingMethods($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetFindingMethods', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetFindingMethods', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2901,7 +2901,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetIPAddressExclusions($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetIPAddressExclusions', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetIPAddressExclusions', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2924,7 +2924,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetIPObfuscation($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetIPObfuscation', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetIPObfuscation', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2947,7 +2947,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetInternalURLFilters($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetInternalURLFilters', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetInternalURLFilters', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2970,7 +2970,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetKeyVisitors($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetKeyVisitors', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetKeyVisitors', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -2993,7 +2993,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetLocalization($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetLocalization', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetLocalization', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3017,7 +3017,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetMarketingChannelCost($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetMarketingChannelCost', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannelCost', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3041,7 +3041,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetMarketingChannelExpiration($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetMarketingChannelExpiration', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannelExpiration', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3065,7 +3065,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetMarketingChannelRules($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetMarketingChannelRules', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannelRules', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3088,7 +3088,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetMarketingChannels($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetMarketingChannels', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannels', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3113,7 +3113,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetMarketingChannelsCustomSubRelations($rel_id, $rsid)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetMarketingChannelsCustomSubRelations', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannelsCustomSubRelations', array(
                 $rel_id,
                 $rsid,
             )));
@@ -3137,7 +3137,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetMobileAppReporting($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetMobileAppReporting', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMobileAppReporting', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3164,7 +3164,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetPages($limit, $page_search, $rsid_list, $sc_period, $start_point)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetPages', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetPages', array(
                 $limit,
                 $page_search,
                 $rsid_list,
@@ -3191,7 +3191,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetPaidSearch($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetPaidSearch', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetPaidSearch', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3214,7 +3214,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetPermanentTraffic($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetPermanentTraffic', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetPermanentTraffic', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3237,7 +3237,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetProcessingStatus($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetProcessingStatus', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetProcessingStatus', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3260,7 +3260,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetRollupDates($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetRollupDates', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetRollupDates', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3282,7 +3282,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetRollups()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetRollups'));
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetRollups'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -3302,7 +3302,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetSavedFilters()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetSavedFilters'));
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSavedFilters'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -3323,7 +3323,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetScheduledSpike($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetScheduledSpike', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetScheduledSpike', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3346,7 +3346,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetSegments($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetSegments', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSegments', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3370,7 +3370,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetSettings($locale, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetSettings', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSettings', array(
                 $locale,
                 $rsid_list,
             )));
@@ -3394,7 +3394,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetSiteTitle($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetSiteTitle', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSiteTitle', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3417,7 +3417,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetSuccessEvents($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetSuccessEvents', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSuccessEvents', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3440,7 +3440,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetTemplate($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetTemplate', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetTemplate', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3463,7 +3463,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetTimeZone($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetTimeZone', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetTimeZone', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3486,7 +3486,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetTrafficVars($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetTrafficVars', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetTrafficVars', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3509,7 +3509,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetUIVisibility($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetUIVisibility', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetUIVisibility', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3533,7 +3533,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetUniqueVisitorVariable($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetUniqueVisitorVariable', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetUniqueVisitorVariable', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3556,7 +3556,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetVideoReporting($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetVideoReporting', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetVideoReporting', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3579,7 +3579,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetVideoTracking($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.GetVideoTracking', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.GetVideoTracking', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -3603,7 +3603,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveBaseCurrency($base_currency, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveBaseCurrency', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveBaseCurrency', array(
                 $base_currency,
                 $rsid_list,
             )));
@@ -3628,7 +3628,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveBaseURL($base_url, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveBaseURL', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveBaseURL', array(
                 $base_url,
                 $rsid_list,
             )));
@@ -3653,7 +3653,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveCalculatedMetrics($calculated_metrics, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveCalculatedMetrics', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveCalculatedMetrics', array(
                 $calculated_metrics,
                 $rsid_list,
             )));
@@ -3686,7 +3686,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveClassificationHierarchies($c_options, $c_view, $camp_view, $div_num, $name, $parent_div_num, $rsid_list, $type, $update)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveClassificationHierarchies', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveClassificationHierarchies', array(
                 $c_options,
                 $c_view,
                 $camp_view,
@@ -3725,7 +3725,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveClassifications($c_options, $c_view, $camp_view, $div_num, $name, $parent_div_num, $rsid_list, $type, $update)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveClassifications', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveClassifications', array(
                 $c_options,
                 $c_view,
                 $camp_view,
@@ -3758,7 +3758,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveCustomCalendar($anchor_date, $cal_type, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveCustomCalendar', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveCustomCalendar', array(
                 $anchor_date,
                 $cal_type,
                 $rsid_list,
@@ -3784,7 +3784,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveDefaultPage($default_page, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveDefaultPage', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveDefaultPage', array(
                 $default_page,
                 $rsid_list,
             )));
@@ -3809,7 +3809,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveEVars($evars, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveEVars', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveEVars', array(
                 $evars,
                 $rsid_list,
             )));
@@ -3834,7 +3834,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveEcommerce($ecommerce, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveEcommerce', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveEcommerce', array(
                 $ecommerce,
                 $rsid_list,
             )));
@@ -3859,7 +3859,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveFindingMethods($reports, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveFindingMethods', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveFindingMethods', array(
                 $reports,
                 $rsid_list,
             )));
@@ -3885,7 +3885,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveIPAddressExclusions($ip_list, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveIPAddressExclusions', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveIPAddressExclusions', array(
                 $ip_list,
                 $rsid_list,
             )));
@@ -3910,7 +3910,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveIPObfuscation($ip_obfuscation, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveIPObfuscation', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveIPObfuscation', array(
                 $ip_obfuscation,
                 $rsid_list,
             )));
@@ -3936,7 +3936,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveMarketingChannelCost(\Api\StructType\ApiCost_item $cost_item, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveMarketingChannelCost', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMarketingChannelCost', array(
                 $cost_item,
                 $rsid_list,
             )));
@@ -3962,7 +3962,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveMarketingChannelExpiration($days, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveMarketingChannelExpiration', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMarketingChannelExpiration', array(
                 $days,
                 $rsid_list,
             )));
@@ -3988,7 +3988,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveMarketingChannelRules($mchannel_rules, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveMarketingChannelRules', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMarketingChannelRules', array(
                 $mchannel_rules,
                 $rsid_list,
             )));
@@ -4013,7 +4013,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveMarketingChannels($channels, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveMarketingChannels', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMarketingChannels', array(
                 $channels,
                 $rsid_list,
             )));
@@ -4035,7 +4035,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveMobileAppReporting($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveMobileAppReporting', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMobileAppReporting', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -4061,7 +4061,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SavePaidSearch($filter, $rsid_list, $rule, $search_engine)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SavePaidSearch', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SavePaidSearch', array(
                 $filter,
                 $rsid_list,
                 $rule,
@@ -4089,7 +4089,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SavePermanentTraffic($new_hits_per_day, $rsid_list, $start_date)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SavePermanentTraffic', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SavePermanentTraffic', array(
                 $new_hits_per_day,
                 $rsid_list,
                 $start_date,
@@ -4117,7 +4117,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveRollup($go_live_date, $rollup_rsids, $rsid, $time_zone)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveRollup', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveRollup', array(
                 $go_live_date,
                 $rollup_rsids,
                 $rsid,
@@ -4143,7 +4143,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveSavedFilters($savedFilters)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveSavedFilters', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveSavedFilters', array(
                 $savedFilters,
             )));
             return $this->getResult();
@@ -4169,7 +4169,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveScheduledSpike($end_date, $rsid_list, $spike_hits_per_day, $start_date)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveScheduledSpike', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveScheduledSpike', array(
                 $end_date,
                 $rsid_list,
                 $spike_hits_per_day,
@@ -4196,7 +4196,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveSiteTitle($rsid_list, $site_title)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveSiteTitle', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveSiteTitle', array(
                 $rsid_list,
                 $site_title,
             )));
@@ -4221,7 +4221,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveSuccessEvents($events, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveSuccessEvents', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveSuccessEvents', array(
                 $events,
                 $rsid_list,
             )));
@@ -4246,7 +4246,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveSurveySettings($rsid_list, $survey_display_event_num, $survey_evar_num, $survey_submit_event_num)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveSurveySettings', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveSurveySettings', array(
                 $rsid_list,
                 $survey_display_event_num,
                 $survey_evar_num,
@@ -4273,7 +4273,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveTimeZone($rsid_list, $time_zone)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveTimeZone', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveTimeZone', array(
                 $rsid_list,
                 $time_zone,
             )));
@@ -4298,7 +4298,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveTrafficVars($property, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveTrafficVars', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveTrafficVars', array(
                 $property,
                 $rsid_list,
             )));
@@ -4324,7 +4324,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveUIVisibility($rsid_list, $state, $ui_element)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveUIVisibility', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveUIVisibility', array(
                 $rsid_list,
                 $state,
                 $ui_element,
@@ -4351,7 +4351,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveUniqueVisitorVariable($rsid_list, $unique_visitor_variable)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveUniqueVisitorVariable', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveUniqueVisitorVariable', array(
                 $rsid_list,
                 $unique_visitor_variable,
             )));
@@ -4373,7 +4373,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_SaveVideoReporting($rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('ReportSuite.SaveVideoReporting', array(
+            $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveVideoReporting', array(
                 $rsid_list,
             )));
             return $this->getResult();
@@ -4396,7 +4396,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_CheckJobStatus($job_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.CheckJobStatus', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.CheckJobStatus', array(
                 $job_id,
             )));
             return $this->getResult();
@@ -4424,7 +4424,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_CreateFTP($description, $email, $export, $overwrite, $relation_id, $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.CreateFTP', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.CreateFTP', array(
                 $description,
                 $email,
                 $export,
@@ -4465,7 +4465,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_ExportCreateJob($campaign_filter_begin_range, $campaign_filter_end_range, $campaign_filter_option, $date_filter_row_end_date, $date_filter_row_start_date, $email_address, $encoding, $relation_id, $report_suite_array, $row_match_filter_empty_column_name, $row_match_filter_match_column_name, $row_match_filter_match_column_value, $select_all_rows, $select_number_of_rows)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ExportCreateJob', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.ExportCreateJob', array(
                 $campaign_filter_begin_range,
                 $campaign_filter_end_range,
                 $campaign_filter_option,
@@ -4502,7 +4502,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_ExportGetFileSegment($file_id, $segment_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ExportGetFileSegment', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.ExportGetFileSegment', array(
                 $file_id,
                 $segment_id,
             )));
@@ -4526,7 +4526,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_GetCompatabiltyMetrics($report_suite_array)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.GetCompatabiltyMetrics', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.GetCompatabiltyMetrics', array(
                 $report_suite_array,
             )));
             return $this->getResult();
@@ -4550,7 +4550,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_GetFilters($relation_id, $report_suite_array)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.GetFilters', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.GetFilters', array(
                 $relation_id,
                 $report_suite_array,
             )));
@@ -4578,7 +4578,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_GetTemplate($encoding, $numeric_div_nums, $relation_id, $report_suite, $text_div_nums)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.GetTemplate', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.GetTemplate', array(
                 $encoding,
                 $numeric_div_nums,
                 $relation_id,
@@ -4605,7 +4605,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_ImportCommitJob($job_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ImportCommitJob', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.ImportCommitJob', array(
                 $job_id,
             )));
             return $this->getResult();
@@ -4635,7 +4635,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_ImportCreateJob($check_divisions, $description, $email_address, $export_results, $header, $overwrite_conflicts, $relation_id, $report_suite_array)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ImportCreateJob', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.ImportCreateJob', array(
                 $check_divisions,
                 $description,
                 $email_address,
@@ -4667,7 +4667,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_ImportPopulateJob($job_id, $page, $rows)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ImportPopulateJob', array(
+            $this->setResult($this->getSoapClient()->__call('Saint.ImportPopulateJob', array(
                 $job_id,
                 $page,
                 $rows,
@@ -4691,7 +4691,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_ListFTP()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ListFTP'));
+            $this->setResult($this->getSoapClient()->__call('Saint.ListFTP'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -4715,7 +4715,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_CreatePublishedReport($location, $product, \Api\StructType\ApiScheduledReport $scheduledReport, $workbook)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.CreatePublishedReport', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.CreatePublishedReport', array(
                 $location,
                 $product,
                 $scheduledReport,
@@ -4742,7 +4742,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_DeletePublishedReport($product, $scheduledReportIds)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.DeletePublishedReport', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.DeletePublishedReport', array(
                 $product,
                 $scheduledReportIds,
             )));
@@ -4769,7 +4769,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_DeleteWorkbook($location, $product, $username, $workbookNames)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.DeleteWorkbook', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.DeleteWorkbook', array(
                 $location,
                 $product,
                 $username,
@@ -4798,7 +4798,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_DownloadWorkbook($location, $productType, $username, $workbookName)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.DownloadWorkbook', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.DownloadWorkbook', array(
                 $location,
                 $productType,
                 $username,
@@ -4825,7 +4825,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_GetPublishedReports($product, $username)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.GetPublishedReports', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.GetPublishedReports', array(
                 $product,
                 $username,
             )));
@@ -4852,7 +4852,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_GetReportsRunHistory($limit, $offset, $product, $username)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.GetReportsRunHistory', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.GetReportsRunHistory', array(
                 $limit,
                 $offset,
                 $product,
@@ -4879,7 +4879,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_GetWorkbookList($location, $product)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.GetWorkbookList', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.GetWorkbookList', array(
                 $location,
                 $product,
             )));
@@ -4903,7 +4903,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_ReRunReport($id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.ReRunReport', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.ReRunReport', array(
                 $id,
             )));
             return $this->getResult();
@@ -4928,7 +4928,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_UpdatePublishedReport($product, \Api\StructType\ApiScheduledReport $scheduledReport, $workbook)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.UpdatePublishedReport', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.UpdatePublishedReport', array(
                 $product,
                 $scheduledReport,
                 $workbook,
@@ -4957,7 +4957,7 @@ class ApiService extends AbstractSoapClientBase
     public function Scheduling_UploadWorkbook($description, $filename, $location, $product, $workbook)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Scheduling.UploadWorkbook', array(
+            $this->setResult($this->getSoapClient()->__call('Scheduling.UploadWorkbook', array(
                 $description,
                 $filename,
                 $location,
@@ -4985,7 +4985,7 @@ class ApiService extends AbstractSoapClientBase
     public function Survey_GetSummaryList($rsid, $status_filter)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Survey.GetSummaryList', array(
+            $this->setResult($this->getSoapClient()->__call('Survey.GetSummaryList', array(
                 $rsid,
                 $status_filter,
             )));
@@ -5009,7 +5009,7 @@ class ApiService extends AbstractSoapClientBase
     public function User_GetBookmarkFolders($limit)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('User.GetBookmarkFolders', array(
+            $this->setResult($this->getSoapClient()->__call('User.GetBookmarkFolders', array(
                 $limit,
             )));
             return $this->getResult();
@@ -5032,7 +5032,7 @@ class ApiService extends AbstractSoapClientBase
     public function User_GetDashboardsAPI($limit)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('User.GetDashboardsAPI', array(
+            $this->setResult($this->getSoapClient()->__call('User.GetDashboardsAPI', array(
                 $limit,
             )));
             return $this->getResult();
@@ -5054,7 +5054,7 @@ class ApiService extends AbstractSoapClientBase
     public function User_GetLastUsedReportSuite()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('User.GetLastUsedReportSuite'));
+            $this->setResult($this->getSoapClient()->__call('User.GetLastUsedReportSuite'));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -5075,7 +5075,7 @@ class ApiService extends AbstractSoapClientBase
     public function User_LoginEmailExists($emailAddress)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('User.LoginEmailExists', array(
+            $this->setResult($this->getSoapClient()->__call('User.LoginEmailExists', array(
                 $emailAddress,
             )));
             return $this->getResult();

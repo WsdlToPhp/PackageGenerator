@@ -41,7 +41,7 @@ class _Do extends AbstractSoapClientBase
     public function DoMobileCheckoutPayment(\StructType\DoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoMobileCheckoutPayment($doMobileCheckoutPaymentRequest));
+            $this->setResult($this->getSoapClient()->DoMobileCheckoutPayment($doMobileCheckoutPaymentRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -65,7 +65,7 @@ class _Do extends AbstractSoapClientBase
     public function DoExpressCheckoutPayment(\StructType\DoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoExpressCheckoutPayment($doExpressCheckoutPaymentRequest));
+            $this->setResult($this->getSoapClient()->DoExpressCheckoutPayment($doExpressCheckoutPaymentRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -89,7 +89,7 @@ class _Do extends AbstractSoapClientBase
     public function DoUATPExpressCheckoutPayment(\StructType\DoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentRequest));
+            $this->setResult($this->getSoapClient()->DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -113,7 +113,7 @@ class _Do extends AbstractSoapClientBase
     public function DoDirectPayment(\StructType\DoDirectPaymentReq $doDirectPaymentRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoDirectPayment($doDirectPaymentRequest));
+            $this->setResult($this->getSoapClient()->DoDirectPayment($doDirectPaymentRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -137,7 +137,7 @@ class _Do extends AbstractSoapClientBase
     public function DoCancel(\StructType\DoCancelReq $doCancelRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoCancel($doCancelRequest));
+            $this->setResult($this->getSoapClient()->DoCancel($doCancelRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -161,7 +161,7 @@ class _Do extends AbstractSoapClientBase
     public function DoCapture(\StructType\DoCaptureReq $doCaptureRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoCapture($doCaptureRequest));
+            $this->setResult($this->getSoapClient()->DoCapture($doCaptureRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -185,7 +185,7 @@ class _Do extends AbstractSoapClientBase
     public function DoReauthorization(\StructType\DoReauthorizationReq $doReauthorizationRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoReauthorization($doReauthorizationRequest));
+            $this->setResult($this->getSoapClient()->DoReauthorization($doReauthorizationRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -209,7 +209,7 @@ class _Do extends AbstractSoapClientBase
     public function DoVoid(\StructType\DoVoidReq $doVoidRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoVoid($doVoidRequest));
+            $this->setResult($this->getSoapClient()->DoVoid($doVoidRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -233,7 +233,7 @@ class _Do extends AbstractSoapClientBase
     public function DoAuthorization(\StructType\DoAuthorizationReq $doAuthorizationRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoAuthorization($doAuthorizationRequest));
+            $this->setResult($this->getSoapClient()->DoAuthorization($doAuthorizationRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -257,7 +257,7 @@ class _Do extends AbstractSoapClientBase
     public function DoUATPAuthorization(\StructType\DoUATPAuthorizationReq $doUATPAuthorizationRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoUATPAuthorization($doUATPAuthorizationRequest));
+            $this->setResult($this->getSoapClient()->DoUATPAuthorization($doUATPAuthorizationRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -281,7 +281,7 @@ class _Do extends AbstractSoapClientBase
     public function DoReferenceTransaction(\StructType\DoReferenceTransactionReq $doReferenceTransactionRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoReferenceTransaction($doReferenceTransactionRequest));
+            $this->setResult($this->getSoapClient()->DoReferenceTransaction($doReferenceTransactionRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -305,7 +305,7 @@ class _Do extends AbstractSoapClientBase
     public function DoNonReferencedCredit(\StructType\DoNonReferencedCreditReq $doNonReferencedCreditRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->DoNonReferencedCredit($doNonReferencedCreditRequest));
+            $this->setResult($this->getSoapClient()->DoNonReferencedCredit($doNonReferencedCreditRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

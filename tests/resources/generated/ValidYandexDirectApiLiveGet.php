@@ -22,7 +22,7 @@ class Get extends AbstractSoapClientBase
     public function GetVersion()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetVersion());
+            $this->setResult($this->getSoapClient()->GetVersion());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -41,7 +41,7 @@ class Get extends AbstractSoapClientBase
     public function GetClientsList(\StructType\ClientInfoRequest $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetClientsList($params));
+            $this->setResult($this->getSoapClient()->GetClientsList($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -60,7 +60,7 @@ class Get extends AbstractSoapClientBase
     public function GetSubClients(\StructType\GetSubClientsRequest $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetSubClients($params));
+            $this->setResult($this->getSoapClient()->GetSubClients($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -79,7 +79,7 @@ class Get extends AbstractSoapClientBase
     public function GetSummaryStat(\StructType\GetSummaryStatRequest $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetSummaryStat($params));
+            $this->setResult($this->getSoapClient()->GetSummaryStat($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -98,7 +98,7 @@ class Get extends AbstractSoapClientBase
     public function GetCampaignParams(\StructType\CampaignIDInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetCampaignParams($params));
+            $this->setResult($this->getSoapClient()->GetCampaignParams($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -117,7 +117,7 @@ class Get extends AbstractSoapClientBase
     public function GetCampaignsParams(\StructType\CampaignIDSInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetCampaignsParams($params));
+            $this->setResult($this->getSoapClient()->GetCampaignsParams($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -135,7 +135,7 @@ class Get extends AbstractSoapClientBase
     public function GetReportList()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetReportList());
+            $this->setResult($this->getSoapClient()->GetReportList());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -154,7 +154,7 @@ class Get extends AbstractSoapClientBase
     public function GetClientsUnits($params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetClientsUnits($params));
+            $this->setResult($this->getSoapClient()->GetClientsUnits($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -173,7 +173,7 @@ class Get extends AbstractSoapClientBase
     public function GetClientInfo($params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetClientInfo($params));
+            $this->setResult($this->getSoapClient()->GetClientInfo($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -192,7 +192,7 @@ class Get extends AbstractSoapClientBase
     public function GetBanners(\StructType\GetBannersInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBanners($params));
+            $this->setResult($this->getSoapClient()->GetBanners($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -211,7 +211,7 @@ class Get extends AbstractSoapClientBase
     public function GetCampaignsList($params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetCampaignsList($params));
+            $this->setResult($this->getSoapClient()->GetCampaignsList($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -230,7 +230,7 @@ class Get extends AbstractSoapClientBase
     public function GetCampaignsListFilter(\StructType\GetCampaignsInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetCampaignsListFilter($params));
+            $this->setResult($this->getSoapClient()->GetCampaignsListFilter($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -249,7 +249,7 @@ class Get extends AbstractSoapClientBase
     public function GetBalance($params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBalance($params));
+            $this->setResult($this->getSoapClient()->GetBalance($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -268,7 +268,7 @@ class Get extends AbstractSoapClientBase
     public function GetBannerPhrases($params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBannerPhrases($params));
+            $this->setResult($this->getSoapClient()->GetBannerPhrases($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -287,7 +287,7 @@ class Get extends AbstractSoapClientBase
     public function GetBannerPhrasesFilter(\StructType\BannerPhrasesFilterRequestInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBannerPhrasesFilter($params));
+            $this->setResult($this->getSoapClient()->GetBannerPhrasesFilter($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -305,7 +305,7 @@ class Get extends AbstractSoapClientBase
     public function GetRegions()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetRegions());
+            $this->setResult($this->getSoapClient()->GetRegions());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -324,7 +324,7 @@ class Get extends AbstractSoapClientBase
     public function GetBannersStat(\StructType\NewReportInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBannersStat($params));
+            $this->setResult($this->getSoapClient()->GetBannersStat($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -343,7 +343,7 @@ class Get extends AbstractSoapClientBase
     public function GetForecast($params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetForecast($params));
+            $this->setResult($this->getSoapClient()->GetForecast($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -361,7 +361,7 @@ class Get extends AbstractSoapClientBase
     public function GetRubrics()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetRubrics());
+            $this->setResult($this->getSoapClient()->GetRubrics());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -379,7 +379,7 @@ class Get extends AbstractSoapClientBase
     public function GetTimeZones()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetTimeZones());
+            $this->setResult($this->getSoapClient()->GetTimeZones());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -397,7 +397,7 @@ class Get extends AbstractSoapClientBase
     public function GetForecastList()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetForecastList());
+            $this->setResult($this->getSoapClient()->GetForecastList());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -415,7 +415,7 @@ class Get extends AbstractSoapClientBase
     public function GetAvailableVersions()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetAvailableVersions());
+            $this->setResult($this->getSoapClient()->GetAvailableVersions());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -434,7 +434,7 @@ class Get extends AbstractSoapClientBase
     public function GetKeywordsSuggestion(\StructType\KeywordsSuggestionInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetKeywordsSuggestion($params));
+            $this->setResult($this->getSoapClient()->GetKeywordsSuggestion($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -452,7 +452,7 @@ class Get extends AbstractSoapClientBase
     public function GetWordstatReportList()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetWordstatReportList());
+            $this->setResult($this->getSoapClient()->GetWordstatReportList());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -471,7 +471,7 @@ class Get extends AbstractSoapClientBase
     public function GetWordstatReport($params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetWordstatReport($params));
+            $this->setResult($this->getSoapClient()->GetWordstatReport($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -490,7 +490,7 @@ class Get extends AbstractSoapClientBase
     public function GetStatGoals(\StructType\StatGoalsCampaignIDInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetStatGoals($params));
+            $this->setResult($this->getSoapClient()->GetStatGoals($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -509,7 +509,7 @@ class Get extends AbstractSoapClientBase
     public function GetChanges(\StructType\GetChangesRequest $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetChanges($params));
+            $this->setResult($this->getSoapClient()->GetChanges($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -528,7 +528,7 @@ class Get extends AbstractSoapClientBase
     public function GetEventsLog(\StructType\GetEventsLogRequest $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetEventsLog($params));
+            $this->setResult($this->getSoapClient()->GetEventsLog($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -547,7 +547,7 @@ class Get extends AbstractSoapClientBase
     public function GetCampaignsTags(\StructType\CampaignIDSInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetCampaignsTags($params));
+            $this->setResult($this->getSoapClient()->GetCampaignsTags($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -566,7 +566,7 @@ class Get extends AbstractSoapClientBase
     public function GetBannersTags(\StructType\BannersRequestInfo $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBannersTags($params));
+            $this->setResult($this->getSoapClient()->GetBannersTags($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -584,7 +584,7 @@ class Get extends AbstractSoapClientBase
     public function GetCreditLimits()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetCreditLimits());
+            $this->setResult($this->getSoapClient()->GetCreditLimits());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -603,7 +603,7 @@ class Get extends AbstractSoapClientBase
     public function GetRetargetingGoals(\StructType\GetRetargetingGoalsRequest $params)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetRetargetingGoals($params));
+            $this->setResult($this->getSoapClient()->GetRetargetingGoals($params));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -621,7 +621,7 @@ class Get extends AbstractSoapClientBase
     public function GetOfflineReportList()
     {
         try {
-            $this->setResult(self::getSoapClient()->GetOfflineReportList());
+            $this->setResult($this->getSoapClient()->GetOfflineReportList());
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
