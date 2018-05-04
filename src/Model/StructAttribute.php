@@ -95,8 +95,15 @@ class StructAttribute extends AbstractModel
      * Returns the type value
      * @return string
      */
-    public function getType()
+    public function getType($useTypeStruct = false)
     {
+        if ($useTypeStruct) {
+            $typeStruct = $this->getTypeStruct();
+            if ($typeStruct instanceof Struct) {
+                $type = $typeStruct->getTopInheritance();
+                return $type ? $type : $this->type;
+            }
+        }
         return $this->type;
     }
     /**
@@ -172,7 +179,7 @@ class StructAttribute extends AbstractModel
             'DefaultValue',
             'defaultValue',
             'defaultvalue',
-        ]), $this->getType());
+        ]), $this->getType(true));
     }
     /**
      * Returns true or false depending on minOccurs information associated to the attribute
