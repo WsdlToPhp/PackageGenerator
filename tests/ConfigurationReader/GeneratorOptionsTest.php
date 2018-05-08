@@ -112,7 +112,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetBasicLogin()
     {
-        $this->assertEmpty(self::optionsInstance()->getBasicLogin());
+        $this->assertNull(self::optionsInstance()->getBasicLogin());
     }
     /**
      *
@@ -129,7 +129,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetBasicPassword()
     {
-        $this->assertEmpty(self::optionsInstance()->getBasicPassword());
+        $this->assertNull(self::optionsInstance()->getBasicPassword());
     }
     /**
      *
@@ -146,7 +146,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetProxyHost()
     {
-        $this->assertEmpty(self::optionsInstance()->getProxyHost());
+        $this->assertNull(self::optionsInstance()->getProxyHost());
     }
     /**
      *
@@ -163,7 +163,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetProxyPort()
     {
-        $this->assertEmpty(self::optionsInstance()->getProxyPort());
+        $this->assertNull(self::optionsInstance()->getProxyPort());
     }
     /**
      *
@@ -180,7 +180,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetProxyLogin()
     {
-        $this->assertEmpty(self::optionsInstance()->getProxyLogin());
+        $this->assertNull(self::optionsInstance()->getProxyLogin());
     }
     /**
      *
@@ -197,7 +197,7 @@ class GeneratorOptionsTest extends TestCase
      */
     public function testGetProxyPassword()
     {
-        $this->assertEmpty(self::optionsInstance()->getProxyPassword());
+        $this->assertNull(self::optionsInstance()->getProxyPassword());
     }
     /**
      *
@@ -669,12 +669,12 @@ class GeneratorOptionsTest extends TestCase
             'src_dirname' => 'src',
             'prefix' => '',
             'suffix' => '',
-            'basic_login' => '',
-            'basic_password' => '',
-            'proxy_host' => '',
-            'proxy_port' => '',
-            'proxy_login' => '',
-            'proxy_password' => '',
+            'basic_login' => null,
+            'basic_password' => null,
+            'proxy_host' => null,
+            'proxy_port' => null,
+            'proxy_login' => null,
+            'proxy_password' => null,
             'soap_options' => [],
             'composer_name' => '',
             'composer_settings' => [],
@@ -708,12 +708,12 @@ class GeneratorOptionsTest extends TestCase
             'src_dirname' => 'src',
             'prefix' => '',
             'suffix' => '',
-            'basic_login' => '',
-            'basic_password' => '',
-            'proxy_host' => '',
-            'proxy_port' => '',
-            'proxy_login' => '',
-            'proxy_password' => '',
+            'basic_login' => null,
+            'basic_password' => null,
+            'proxy_host' => null,
+            'proxy_port' => null,
+            'proxy_login' => null,
+            'proxy_password' => null,
             'soap_options' => [],
             'composer_name' => '',
             'composer_settings' => [],
