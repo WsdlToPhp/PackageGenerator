@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 3.0.1 - 2018-05-09
+- issue #135 - Impact of pull request #20 on PackageBase
+
+## 3.0.0 - 2018-05-04
+- issue #132 - Impact of "AbstractSoapClientBase should not define static SoapClient instance"
+
 ## 2.9.1
 - issue #125 - Under PHP 7.2: count(): Parameter must be an array or an object that implements Countable
 - pull request #127 - Moved tests directory to the dev autoloader

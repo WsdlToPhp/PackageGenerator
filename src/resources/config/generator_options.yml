@@ -51,22 +51,22 @@ suffix:
     default: ''
     values: ''
 basic_login:
-    default: ''
+    default: null
     values: ''
 basic_password:
-    default: ''
+    default: null
     values: ''
 proxy_host:
-    default: ''
+    default: null
     values: ''
 proxy_port:
-    default: ''
+    default: null
     values: ''
 proxy_login:
-    default: ''
+    default: null
     values: ''
 proxy_password:
-    default: ''
+    default: null
     values: ''
 soap_options:
     default: []
