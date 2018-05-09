@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.9.2
+- issue #135 - Impact of pull request #20 on PackageBase
+
 ## 2.9.1
 - issue #125 - Under PHP 7.2: count(): Parameter must be an array or an object that implements Countable
 - pull request #127 - Moved tests directory to the dev autoloader
