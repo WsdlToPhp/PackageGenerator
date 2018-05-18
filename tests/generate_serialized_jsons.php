@@ -11,6 +11,13 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
  * The array associated to the WSDL is the gather methods options value(s) for which the JSON file has to be generated
  */
 $jsons = [
+    'unit_tests' => [
+        'origin' => __DIR__ . '/resources/unit_tests.wsdl',
+        'methods' => [
+            'none',
+            'start',
+        ],
+    ],
     'bingsearch' => [
         'origin' => __DIR__ . '/resources/bingsearch.wsdl',
         'methods' => [
