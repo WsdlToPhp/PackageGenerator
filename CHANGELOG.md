@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.0.2 - 2018-05-18
+- issue #134 - Default value of boolean type is a string
+
 ## 3.0.1 - 2018-05-09
 - issue #135 - Impact of pull request #20 on PackageBase
 
