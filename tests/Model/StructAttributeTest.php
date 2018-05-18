@@ -47,4 +47,15 @@ class StructAttributeTest extends TestCase
         $this->assertSame('getQuery', $structAttribute->getGetterName());
         $this->assertSame('setQuery', $structAttribute->getSetterName());
     }
+    /**
+     *
+     */
+    public function testStructAttributeTypeMustBeBool()
+    {
+        $structAttribute = self::unitTestsInstance()->getStruct('Result')->getAttribute('Success');
+
+        $this->assertSame('boolean', $structAttribute->getType(true));
+        $this->assertSame('Success', $structAttribute->getType());
+        $this->assertFalse($structAttribute->getDefaultValue());
+    }
 }
