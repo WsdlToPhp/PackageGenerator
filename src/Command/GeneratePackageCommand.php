@@ -89,6 +89,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('enums-folder', null, InputOption::VALUE_OPTIONAL, 'Enumerations folder name (default: EnumType)')
             ->addOption('services-folder', null, InputOption::VALUE_OPTIONAL, 'Services class folder name (default: ServiceType)')
             ->addOption('src-dirname', null, InputOption::VALUE_OPTIONAL, 'Source directory subfolder oof destination directory (default: src)')
+            ->addOption('xsd-types-path', null, InputOption::VALUE_OPTIONAL, 'Path to the xsd types configuration file to load')
             ->addOption(self::GENERATOR_OPTIONS_CONFIG_OPTION, null, InputOption::VALUE_OPTIONAL, 'Path to the generator\'s configuration file to load');
     }
     /**
@@ -145,6 +146,7 @@ class GeneratePackageCommand extends AbstractCommand
             'suffix' => 'Suffix',
             'urlorpath' => 'Origin',
             'validation' => 'Validation',
+            'xsd-types-path' => 'XsdTypePath'
         ];
     }
     /**
