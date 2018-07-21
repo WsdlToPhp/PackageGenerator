@@ -146,7 +146,7 @@ class GeneratePackageCommand extends AbstractCommand
             'suffix' => 'Suffix',
             'urlorpath' => 'Origin',
             'validation' => 'Validation',
-            'xsd-types-path' => 'XsdTypePath'
+            'xsd-types-path' => 'XsdTypesPath'
         ];
     }
     /**

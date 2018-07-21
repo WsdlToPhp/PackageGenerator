@@ -726,7 +726,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
         return $this->setOptionValue(self::SCHEMAS_FOLDER, $schemasFolder);
     }
     /**
-     * Get xsd type path option value
+     * Get xsd types path option value
      * @return string
      */
     public function getXsdTypesPath()
@@ -734,14 +734,14 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
         return $this->getOptionValue(self::XSD_TYPES_PATH);
     }
     /**
-     * Set xsd type path option value
+     * Set xsd types path option value
      * @throws \InvalidArgumentException
-     * @param string $xsdTypePath
+     * @param string $xsdTypesPath
      * @return GeneratorOptions
      */
-    public function setXsdTypePath($xsdTypePath)
+    public function setXsdTypesPath($xsdTypesPath)
     {
-        return $this->setOptionValue(self::XSD_TYPES_PATH, $xsdTypePath);
+        return $this->setOptionValue(self::XSD_TYPES_PATH, $xsdTypesPath);
     }
     /**
      * @return string[]
