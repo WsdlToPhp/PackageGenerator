@@ -825,6 +825,24 @@ class Generator implements \JsonSerializable
         return $this;
     }
     /**
+     * Gets the optionXsdTypesPath value
+     * @return string
+     */
+    public function getOptionXsdTypesPath()
+    {
+        return $this->options->getXsdTypesPath();
+    }
+    /**
+     * Sets the optionXsdTypesPath value
+     * @param string $xsdTypesPath
+     * @return Generator
+     */
+    public function setOptionXsdTypesPath($xsdTypesPath)
+    {
+        $this->options->setXsdTypesPath($xsdTypesPath);
+        return $this;
+    }
+    /**
      * Gets the WSDL
      * @return Wsdl|null
      */
