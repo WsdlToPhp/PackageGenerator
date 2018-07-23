@@ -187,7 +187,7 @@ class UtilsTest extends TestCase
         $this->assertSame('θωερτψυιοπασδφγηςκλζχξωβνμάέήίϊΐόύϋΰώ', 'θωερτψυιοπασδφγηςκλζχξωβνμάέήίϊΐόύϋΰώ');
     }
     /**
-     * 
+     *
      */
     public function testSaveSchemas()
     {
@@ -195,7 +195,7 @@ class UtilsTest extends TestCase
         $wsdlFolder = 'schema_save_folder';
         // test file name extracted from url
         $this->assertSame($path . '/' . $wsdlFolder . '/webservice.wsdl', Utils::saveSchemas($path, $wsdlFolder, 'http://www.foo.com/webservice.wsdl', '<Text>Save schema to folder</Text>'));
-        // test file name not set in url 
+        // test file name not set in url
         $this->assertSame($path . '/' . $wsdlFolder . '/schema.wsdl', Utils::saveSchemas($path, $wsdlFolder, 'http://www.foo.com/index.php?WSDL', '<Text>Save schema to folder</Text>'));
         // test save folder is empty
         $this->assertSame($path . '/wsdl/schema.wsdl', Utils::saveSchemas($path, '', 'http://www.foo.com/index.php?WSDL', '<Text>Save schema to folder</Text>'));

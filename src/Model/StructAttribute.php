@@ -56,7 +56,7 @@ class StructAttribute extends AbstractModel
      * @param string $additionalContext
      * @return string
      */
-    public function getUniqueString($string, $additionalContext= '')
+    public function getUniqueString($string, $additionalContext = '')
     {
         return self::uniqueName($string, $this->getOwner()->getName() . $additionalContext);
     }
