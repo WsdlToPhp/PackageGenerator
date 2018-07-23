@@ -537,6 +537,19 @@ class GeneratorTest extends TestCase
 
         $this->assertSame('wsdl', $instance->getOptionSchemasFolder());
     }
+        /**
+     *
+     */
+    public function testOptionXsdTypesPath()
+    {
+        $instance = self::localInstance();
+
+        $this->assertEmpty($instance->getOptionXsdTypesPath());
+        
+        $instance->setOptionXsdTypesPath('/some/path/file.yml');
+
+        $this->assertSame('/some/path/file.yml', $instance->getOptionXsdTypesPath());
+    }
     /**
      *
      */

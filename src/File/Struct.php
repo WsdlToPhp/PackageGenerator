@@ -146,7 +146,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodParameterType(StructAttributeModel $attribute, $returnArrayType = true)
     {
-        return self::getValidType($this->getStructAttributeTypeHint($attribute, $returnArrayType), null);
+        return self::getValidType($this->getStructAttributeTypeHint($attribute, $returnArrayType), $this->getGenerator()->getOptionXsdTypesPath(), null);
     }
     /**
      * @param MethodContainer $methods

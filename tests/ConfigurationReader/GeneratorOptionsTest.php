@@ -684,6 +684,7 @@ class GeneratorOptionsTest extends TestCase
             'services_folder' => 'ServiceType',
             'schemas_save' => false,
             'schemas_folder' => 'wsdl',
+            'xsd_types_path' => '',
         ], self::optionsInstance()->toArray());
     }
     /**
@@ -723,6 +724,7 @@ class GeneratorOptionsTest extends TestCase
             'services_folder' => 'ServiceType',
             'schemas_save' => false,
             'schemas_folder' => 'wsdl',
+            'xsd_types_path' => '',
         ], self::optionsInstance()->jsonSerialize());
     }
 }
