@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.9.4
+- issue #139 / Pull request #140 - How to use another xsd_types.yml
+
+## 2.9.3
+- issue #134 - Default value of boolean type is a string
+
 ## 2.9.2
 - issue #135 - Impact of pull request #20 on PackageBase
 
