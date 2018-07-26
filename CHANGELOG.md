@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.0.3 - 2018-07-26
+- issue #139 / Pull request #140 - How to use another xsd_types.yml
+
 ## 3.0.2 - 2018-05-18
 - issue #134 - Default value of boolean type is a string
 
