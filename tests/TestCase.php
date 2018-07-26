@@ -85,7 +85,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      */
     public static function onlineWsdlBingPath()
     {
-        return 'http://api.search.live.net/search.wsdl';
+        return 'https://phar.wsdltophp.com/bingsearch.wsdl';
     }
     /**
      * @return string
