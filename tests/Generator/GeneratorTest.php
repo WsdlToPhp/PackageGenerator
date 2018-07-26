@@ -540,6 +540,19 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testOptionXsdTypesPath()
+    {
+        $instance = self::localInstance();
+
+        $this->assertEmpty($instance->getOptionXsdTypesPath());
+
+        $instance->setOptionXsdTypesPath('/some/path/file.yml');
+
+        $this->assertSame('/some/path/file.yml', $instance->getOptionXsdTypesPath());
+    }
+    /**
+     *
+     */
     public function testSetPackageNameUcFirst()
     {
         $instance = self::getBingGeneratorInstance();

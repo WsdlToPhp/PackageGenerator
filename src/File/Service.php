@@ -164,7 +164,7 @@ class Service extends AbstractModelFile
                 $type = $model->getPackagedName(true);
             }
         }
-        return self::getValidType($type);
+        return self::getValidType($type, $this->getGenerator()->getOptionXsdTypesPath());
     }
     /**
      * @param string $soapHeaderName
