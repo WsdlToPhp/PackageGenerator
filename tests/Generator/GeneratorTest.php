@@ -733,7 +733,6 @@ class GeneratorTest extends TestCase
                     'ssl' => [
                         'ca_file' => basename(__FILE__),
                         'ca_path' => __DIR__,
-                        'verify_peer' => true,
                     ],
                 ]),
             ]);
@@ -756,7 +755,6 @@ class GeneratorTest extends TestCase
             'ssl' => [
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
-                'verify_peer' => true,
             ],
         ], $contextOptions);
     }
