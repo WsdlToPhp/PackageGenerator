@@ -5,8 +5,10 @@ $finder = PhpCsFixer\Finder::create()
     ->exclude('tests/resources/generated')
     ->in(__DIR__);
 
+$cacheDir = \getenv('TRAVIS') ? \getenv('HOME') . '/.php-cs-fixer' : __DIR__;
+
 return PhpCsFixer\Config::create()
-    ->setUsingCache(false)
+    ->setCacheFile($cacheDir . '/.php_cs.cache')
     ->setRules(array(
         '@PSR2' => true,
         'array_syntax' => [
