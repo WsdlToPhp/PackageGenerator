@@ -2,27 +2,77 @@ language: php
 
 sudo: false
 
-php:
-    - 5.4
-    - 5.5
-    - 5.6
-    - 7.0
-    - 7.1
-    - 7.2
-
 cache:
-  directories:
-    - $HOME/.composer/cache
+    directories:
+        - $HOME/.composer/cache
+        - $HOME/.php-cs-fixer
 
-install:
-    - composer install
+stages:
+    - style
+    - test
 
-script:
-    - ./vendor/phpunit/phpunit/phpunit --coverage-text --coverage-clover=coverage.clover
+jobs:
+    include:
+        -
+            stage: Style
 
-after_script:
-    - wget https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+            php: 5.4
 
-after_success:
-    - bash <(curl -s https://codecov.io/bash)
+            install:
+                - composer install
+
+            before_script:
+                - mkdir -p $HOME/.php-cs-fixer
+
+            script:
+                - vendor/bin/php-cs-fixer fix --config=.php_cs --diff --dry-run --verbose
+
+        -
+
+            &TEST
+
+            php: 5.4
+
+            install:
+                - composer install
+
+            script:
+                - ./vendor/phpunit/phpunit/phpunit --coverage-text --coverage-clover=coverage.clover
+
+            after_script:
+                - wget https://scrutinizer-ci.com/ocular.phar
+                - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+
+            after_success:
+                - bash <(curl -s https://codecov.io/bash)
+
+        -
+
+            <<: *TEST
+
+            php: 5.5
+
+        -
+
+            <<: *TEST
+
+            php: 5.6
+
+        -
+
+            <<: *TEST
+
+            php: 7.0
+
+        -
+
+            <<: *TEST
+
+            php: 7.1
+
+        -
+
+            <<: *TEST
+
+            php: 7.2
+

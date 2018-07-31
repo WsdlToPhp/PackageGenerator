@@ -5,3 +5,4 @@ phpunit.xml
 wsdltophp.yml
 bin/
 tests/resources/generated
+.php_cs.cache
