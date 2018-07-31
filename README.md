@@ -108,6 +108,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Alexander M. Turek](https://github.com/derrabus)
 - [Valérian Girard](https://github.com/waldo2188)
 - [hordijk](https://github.com/hordijk)
+- [Andreas Möller](https://github.com/localheinz)
 
 ## FAQ
 
