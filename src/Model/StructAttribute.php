@@ -51,7 +51,6 @@ class StructAttribute extends AbstractModel
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
      * @uses StructAttribute::getOwner()
-     * @param string $additionalContext
      * @param string $string
      * @param string $additionalContext
      * @return string
