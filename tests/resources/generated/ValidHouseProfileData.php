@@ -594,7 +594,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_total($area_total = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($area_total) && strlen(substr($area_total, strpos($area_total, '.') + 1)) !== 2) {
+        if (is_float($area_total) && strlen(substr($area_total, strpos($area_total, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_total, strpos($area_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -620,7 +620,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_residential($area_residential = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($area_residential) && strlen(substr($area_residential, strpos($area_residential, '.') + 1)) !== 2) {
+        if (is_float($area_residential) && strlen(substr($area_residential, strpos($area_residential, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_residential, strpos($area_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -646,7 +646,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_non_residential($area_non_residential = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($area_non_residential) && strlen(substr($area_non_residential, strpos($area_non_residential, '.') + 1)) !== 2) {
+        if (is_float($area_non_residential) && strlen(substr($area_non_residential, strpos($area_non_residential, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_non_residential, strpos($area_non_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -923,7 +923,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_private($area_private = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($area_private) && strlen(substr($area_private, strpos($area_private, '.') + 1)) !== 2) {
+        if (is_float($area_private) && strlen(substr($area_private, strpos($area_private, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_private, strpos($area_private, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -949,7 +949,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_municipal($area_municipal = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($area_municipal) && strlen(substr($area_municipal, strpos($area_municipal, '.') + 1)) !== 2) {
+        if (is_float($area_municipal) && strlen(substr($area_municipal, strpos($area_municipal, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_municipal, strpos($area_municipal, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -975,7 +975,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_national($area_national = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($area_national) && strlen(substr($area_national, strpos($area_national, '.') + 1)) !== 2) {
+        if (is_float($area_national) && strlen(substr($area_national, strpos($area_national, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_national, strpos($area_national, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -1001,7 +1001,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_land($area_land = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($area_land) && strlen(substr($area_land, strpos($area_land, '.') + 1)) !== 2) {
+        if (is_float($area_land) && strlen(substr($area_land, strpos($area_land, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_land, strpos($area_land, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -1027,7 +1027,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_territory($area_territory = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($area_territory) && strlen(substr($area_territory, strpos($area_territory, '.') + 1)) !== 2) {
+        if (is_float($area_territory) && strlen(substr($area_territory, strpos($area_territory, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_territory, strpos($area_territory, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -1163,7 +1163,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setThermal_actual_expense($thermal_actual_expense = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($thermal_actual_expense) && strlen(substr($thermal_actual_expense, strpos($thermal_actual_expense, '.') + 1)) !== 2) {
+        if (is_float($thermal_actual_expense) && strlen(substr($thermal_actual_expense, strpos($thermal_actual_expense, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($thermal_actual_expense, strpos($thermal_actual_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -1189,7 +1189,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setThermal_normative_expense($thermal_normative_expense = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($thermal_normative_expense) && strlen(substr($thermal_normative_expense, strpos($thermal_normative_expense, '.') + 1)) !== 2) {
+        if (is_float($thermal_normative_expense) && strlen(substr($thermal_normative_expense, strpos($thermal_normative_expense, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($thermal_normative_expense, strpos($thermal_normative_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -1284,7 +1284,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDeterioration_total($deterioration_total = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($deterioration_total) && strlen(substr($deterioration_total, strpos($deterioration_total, '.') + 1)) !== 2) {
+        if (is_float($deterioration_total) && strlen(substr($deterioration_total, strpos($deterioration_total, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($deterioration_total, strpos($deterioration_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -1310,7 +1310,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDeterioration_foundation($deterioration_foundation = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($deterioration_foundation) && strlen(substr($deterioration_foundation, strpos($deterioration_foundation, '.') + 1)) !== 2) {
+        if (is_float($deterioration_foundation) && strlen(substr($deterioration_foundation, strpos($deterioration_foundation, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($deterioration_foundation, strpos($deterioration_foundation, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -1336,7 +1336,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDeterioration_bearing_walls($deterioration_bearing_walls = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($deterioration_bearing_walls) && strlen(substr($deterioration_bearing_walls, strpos($deterioration_bearing_walls, '.') + 1)) !== 2) {
+        if (is_float($deterioration_bearing_walls) && strlen(substr($deterioration_bearing_walls, strpos($deterioration_bearing_walls, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($deterioration_bearing_walls, strpos($deterioration_bearing_walls, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
@@ -1362,7 +1362,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDeterioration_floor($deterioration_floor = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($deterioration_floor) && strlen(substr($deterioration_floor, strpos($deterioration_floor, '.') + 1)) !== 2) {
+        if (is_float($deterioration_floor) && strlen(substr($deterioration_floor, strpos($deterioration_floor, '.') + 1)) > 2) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($deterioration_floor, strpos($deterioration_floor, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
