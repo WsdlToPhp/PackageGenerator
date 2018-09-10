@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    volumes:
+      - .:/var/www/html:rw
+    container_name: package_generator
