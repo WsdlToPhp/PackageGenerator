@@ -232,7 +232,7 @@ class ApiTaxType extends AbstractStructBase
     public function setAmount($amount = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) !== 3) {
+        if (is_float($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) > 3) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 3 fraction digits, "%d" given', strlen(substr($amount, strpos($amount, '.') + 1))), __LINE__);
         }
         $this->Amount = $amount;
