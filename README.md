@@ -109,6 +109,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Valérian Girard](https://github.com/waldo2188)
 - [hordijk](https://github.com/hordijk)
 - [Andreas Möller](https://github.com/localheinz)
+- [Andreas Kintzinger](https://github.com/Phobetor)
 
 ## FAQ
 
