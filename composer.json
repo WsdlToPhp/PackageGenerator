@@ -60,6 +60,10 @@
             "name": "Andreas Möller",
             "email": "am@localheinz.com",
             "role": "Contributor"
+        },
+        {
+            "name": "Andreas Kintzinger",
+            "role": "Contributor"
         }
     ],
     "support" : {
