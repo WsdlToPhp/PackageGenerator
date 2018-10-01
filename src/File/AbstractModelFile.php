@@ -476,8 +476,8 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $attribute = $this->getStructAttribute($attribute);
         $attributeType = $this->getStructAttributeType($attribute, true);
-        if (XsdTypes::instance()->isXsd($attributeType)) {
-            $attributeType = self::getPhpType($attributeType);
+        if (XsdTypes::instance($this->getGenerator()->getOptionXsdTypesPath())->isXsd($attributeType)) {
+            $attributeType = self::getPhpType($attributeType, $this->getGenerator()->getOptionXsdTypesPath());
         }
         return $attributeType;
     }
@@ -488,9 +488,9 @@ abstract class AbstractModelFile extends AbstractFile
      * @param mixed $fallback
      * @return mixed
      */
-    public static function getValidType($type, $fallback = null)
+    public static function getValidType($type, $xsdTypesPath = null, $fallback = null)
     {
-        return XsdTypes::instance()->isXsd(str_replace('[]', '', $type)) ? $fallback : $type;
+        return XsdTypes::instance($xsdTypesPath)->isXsd(str_replace('[]', '', $type)) ? $fallback : $type;
     }
     /**
      * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
@@ -499,8 +499,8 @@ abstract class AbstractModelFile extends AbstractFile
      * @param mixed $fallback
      * @return mixed
      */
-    public static function getPhpType($type, $fallback = self::TYPE_STRING)
+    public static function getPhpType($type, $xsdTypesPath = null, $fallback = self::TYPE_STRING)
     {
-        return XsdTypes::instance()->isXsd(str_replace('[]', '', $type)) ? XsdTypes::instance()->phpType($type) : $fallback;
+        return XsdTypes::instance($xsdTypesPath)->isXsd(str_replace('[]', '', $type)) ? XsdTypes::instance($xsdTypesPath)->phpType($type) : $fallback;
     }
 }

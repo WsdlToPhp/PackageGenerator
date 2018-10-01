@@ -48,6 +48,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     const VALIDATION = 'validation';
     const SCHEMAS_SAVE = 'schemas_save';
     const SCHEMAS_FOLDER = 'schemas_folder';
+    const XSD_TYPES_PATH = 'xsd_types_path';
     /**
      * Generator's options
      * @var array
@@ -723,6 +724,24 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     public function setSchemasFolder($schemasFolder)
     {
         return $this->setOptionValue(self::SCHEMAS_FOLDER, $schemasFolder);
+    }
+    /**
+     * Get xsd types path option value
+     * @return string
+     */
+    public function getXsdTypesPath()
+    {
+        return $this->getOptionValue(self::XSD_TYPES_PATH);
+    }
+    /**
+     * Set xsd types path option value
+     * @throws \InvalidArgumentException
+     * @param string $xsdTypesPath
+     * @return GeneratorOptions
+     */
+    public function setXsdTypesPath($xsdTypesPath)
+    {
+        return $this->setOptionValue(self::XSD_TYPES_PATH, $xsdTypesPath);
     }
     /**
      * @return string[]

@@ -25,7 +25,7 @@ class StructAttribute extends AbstractModel
     protected $containsElements = false;
     /**
      * Defines that this property can be removed from request or not.
-     * The property cna be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
+     * The property can be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
      * Infos at {@link http://www.w3schools.com/xml/el_element.asp}
      * @var bool
      */
@@ -51,12 +51,11 @@ class StructAttribute extends AbstractModel
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
      * @uses StructAttribute::getOwner()
-     * @param string $additionalContext
      * @param string $string
      * @param string $additionalContext
      * @return string
      */
-    public function getUniqueString($string, $additionalContext= '')
+    public function getUniqueString($string, $additionalContext = '')
     {
         return self::uniqueName($string, $this->getOwner()->getName() . $additionalContext);
     }
@@ -95,8 +94,15 @@ class StructAttribute extends AbstractModel
      * Returns the type value
      * @return string
      */
-    public function getType()
+    public function getType($useTypeStruct = false)
     {
+        if ($useTypeStruct) {
+            $typeStruct = $this->getTypeStruct();
+            if ($typeStruct instanceof Struct) {
+                $type = $typeStruct->getTopInheritance();
+                return $type ? $type : $this->type;
+            }
+        }
         return $this->type;
     }
     /**
@@ -172,7 +178,7 @@ class StructAttribute extends AbstractModel
             'DefaultValue',
             'defaultValue',
             'defaultvalue',
-        ]), $this->getType());
+        ]), $this->getType(true));
     }
     /**
      * Returns true or false depending on minOccurs information associated to the attribute

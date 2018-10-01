@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:tns="http://schemas.com/GetResult" targetNamespace="http://schemas.com/GetResult">
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.com/GetResult">
+			<xsd:element name="Result">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:choice minOccurs="1" maxOccurs="1">
+                            <xsd:element minOccurs="0" maxOccurs="1" default="false" name="Success">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:boolean"/>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" maxOccurs="1" name="Errors">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element minOccurs="1" maxOccurs="unbounded" ref="wsdl:Error"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:choice>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="Warnings">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element minOccurs="1" maxOccurs="unbounded" ref="wsdl:Warning"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+		</xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.xmlsoap.org/wsdl/">
+            <xsd:element name="Error"></xsd:element>
+            <xsd:element name="Warning"></xsd:element>
+        </xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetResultMessage">
+		<wsdl:part name="result" element="tns:Result" />
+	</wsdl:message>
+	<wsdl:message name="GetResultResponseMessage">
+		<wsdl:part name="result" element="tns:Result" />
+	</wsdl:message>
+	<wsdl:portType name="UnitTestsPortType">
+		<wsdl:operation name="GetResult">
+			<wsdl:input message="tns:GetResultMessage" wsa:Action="http://schemas.com/GetResultRequest" />
+			<wsdl:output message="tns:GetResultResponseMessage" wsa:Action="http://schemas.com/GetResultResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="UnitTestsPortBinding" type="tns:UnitTestsPortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<wsdl:operation name="GetResult">
+			<soap:operation soapAction="http://schemas.com/GetResult" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="UnitTestsService">
+		<wsdl:port name="UnitTestsPort" binding="tns:UnitTestsPortBinding">
+			<soap:address location="http://unit.tests.net:80/soap.asmx" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

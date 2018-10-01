@@ -95,3 +95,6 @@ schemas_save:
 schemas_folder:
     default: 'wsdl'
     values: ''
+xsd_types_path:
+    default: ''
+    values: ''

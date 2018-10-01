@@ -15,6 +15,13 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      */
     private static $instances = [];
     /**
+     * @return string
+     */
+    public static function wsdlUnitTestsPath()
+    {
+        return __DIR__ . '/resources/unit_tests.wsdl';
+    }
+    /**
      * @param $local bool
      * @return string
      */
@@ -78,7 +85,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      */
     public static function onlineWsdlBingPath()
     {
-        return 'http://api.search.live.net/search.wsdl';
+        return 'https://phar.wsdltophp.com/bingsearch.wsdl';
     }
     /**
      * @return string
@@ -323,6 +330,13 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
         return self::getInstance(self::wsdlWhlPath(), $reset);
     }
     /**
+     * @return Generator
+     */
+    public static function getUnitTestsInstance($reset = false)
+    {
+        return self::getInstance(self::wsdlUnitTestsPath(), $reset);
+    }
+    /**
      * @param string $wsdlPath
      * @param $reset bool
      * @return Generator
@@ -478,6 +492,13 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     public static function ewsInstance()
     {
         return self::getInstanceFromSerializedJson('ews', 'start', self::wsdlEwsPath());
+    }
+    /**
+     * @return Generator
+     */
+    public static function unitTestsInstance()
+    {
+        return self::getInstanceFromSerializedJson('unit_tests', 'start', self::wsdlUnitTestsPath());
     }
     /**
      * @return string

@@ -397,4 +397,20 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find Query struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testStructResultFromUnitTestsWithBooleanAttribute()
+    {
+        $generator = self::unitTestsInstance();
+        if (($model = $generator->getStruct('Result')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidUnitTestsStructResult', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find Result struct for file generation');
+        }
+    }
 }

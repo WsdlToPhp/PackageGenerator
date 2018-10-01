@@ -540,6 +540,19 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testOptionXsdTypesPath()
+    {
+        $instance = self::localInstance();
+
+        $this->assertEmpty($instance->getOptionXsdTypesPath());
+
+        $instance->setOptionXsdTypesPath('/some/path/file.yml');
+
+        $this->assertSame('/some/path/file.yml', $instance->getOptionXsdTypesPath());
+    }
+    /**
+     *
+     */
     public function testSetPackageNameUcFirst()
     {
         $instance = self::getBingGeneratorInstance();
@@ -663,12 +676,12 @@ class GeneratorTest extends TestCase
     public function testGetUrlContent()
     {
         $generator = self::getBingGeneratorInstance();
-        $content = $generator->getUrlContent('http://api.search.live.net/search.wsdl');
+        $content = $generator->getUrlContent('https://phar.wsdltophp.com/bingsearch.wsdl');
         $this->assertNotNull($content);
 
         $generator->setOptionSchemasSave(true);
         $generator->setOptionSchemasFolder('wsdl');
-        $content = $generator->getUrlContent('http://api.search.live.net/search.wsdl');
+        $content = $generator->getUrlContent('https://phar.wsdltophp.com/bingsearch.wsdl');
         $this->assertNotNull($content);
     }
     /**
@@ -720,7 +733,6 @@ class GeneratorTest extends TestCase
                     'ssl' => [
                         'ca_file' => basename(__FILE__),
                         'ca_path' => __DIR__,
-                        'verify_peer' => true,
                     ],
                 ]),
             ]);
@@ -743,7 +755,6 @@ class GeneratorTest extends TestCase
             'ssl' => [
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
-                'verify_peer' => true,
             ],
         ], $contextOptions);
     }

@@ -115,6 +115,9 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Tom Mottram](https://github.com/tomp4l)
 - [Catirau Mihail](https://github.com/ustmaestro)
 - [Alexander M. Turek](https://github.com/derrabus)
+- [Valérian Girard](https://github.com/waldo2188)
+- [hordijk](https://github.com/hordijk)
+- [Andreas Möller](https://github.com/localheinz)
 
 ## FAQ
 
