@@ -242,4 +242,56 @@ class PhpReservedKeywordTest extends TestCase
     {
         PhpReservedKeyword::instance(__DIR__ . '/../resources/bad_php_reserved_keywords');
     }
+    public function testIntMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('int'));
+    }
+    public function testFloatMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('float'));
+    }
+    public function testBoolMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('bool'));
+    }
+    public function testStringMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('string'));
+    }
+    public function testTrueMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('true'));
+    }
+    public function testFalseMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('false'));
+    }
+    public function testNullMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('null'));
+    }
+    public function testVoidMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('void'));
+    }
+    public function testIterableMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('iterable'));
+    }
+    public function testObjectMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('object'));
+    }
+    public function testResourceMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('resource'));
+    }
+    public function testMixedMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('mixed'));
+    }
+    public function testNumericMustBeReserved()
+    {
+        $this->assertTrue(self::instance()->is('numeric'));
+    }
 }
