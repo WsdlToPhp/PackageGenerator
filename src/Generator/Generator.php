@@ -201,6 +201,17 @@ class Generator implements \JsonSerializable
         return $this->getStructs()->getStructByName($structName);
     }
     /**
+     * Gets the struct by its name and type
+     * @uses Generator::getStructs()
+     * @param string $structName the original struct name
+     * @param string $type the original struct type
+     * @return Struct|null
+     */
+    public function getStructByNameAndType($structName, $type)
+    {
+        return $this->getStructs()->getStructByNameAndType($structName, $type);
+    }
+    /**
      * Gets a service by its name
      * @param string $serviceName the service name
      * @return Service|null

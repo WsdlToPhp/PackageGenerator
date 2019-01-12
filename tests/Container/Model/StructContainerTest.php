@@ -55,4 +55,32 @@ class StructContainerTest extends TestCase
 
         $this->assertNull($instance->offsetGet(1));
     }
+    /**
+     *
+     */
+    public function testGetStructByNameAndTypeMustFailAsTypeIsUnknown()
+    {
+        $structContainer = self::instance();
+
+        $this->assertNull($structContainer->getStructByNameAndType('bar', 'string'));
+    }
+    /**
+     *
+     */
+    public function testGetStructByNameAndTypeMustReturnTheStruct()
+    {
+        $structContainer = self::instance();
+        $structContainer->add($fooStringFirst = StructTest::instance('FooString', true)->setInheritance('string')->setMeta($fooStringFirstMeta = [
+            'meta1' => 'value1',
+        ]));
+        $structContainer->add($fooStringSecond = StructTest::instance('FooString', true)->setInheritance('int')->setMeta($fooStringSecondMeta = [
+            'meta2' => 'value2',
+        ]));
+
+        $this->assertSame($fooStringSecond, $structContainer->getStructByName('FooString'));
+        $this->assertSame($fooStringSecond, $structContainer->getStructByNameAndType('FooString', 'int'));
+        $this->assertSame($fooStringFirst, $structContainer->getStructByNameAndType('FooString', 'string'));
+        $this->assertSame($fooStringFirstMeta, $structContainer->getStructByNameAndType('FooString', 'string')->getMeta());
+        $this->assertSame($fooStringSecondMeta, $structContainer->getStructByNameAndType('FooString', 'int')->getMeta());
+    }
 }
