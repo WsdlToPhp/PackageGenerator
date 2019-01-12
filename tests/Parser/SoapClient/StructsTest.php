@@ -17,7 +17,7 @@ class StructsTest extends SoapClientParser
         $parser = new Structs($generator);
         $parser->parse();
 
-        $offer = $generator->getStruct('offer');
+        $offer = $generator->getStructByName('offer');
 
         if ($offer instanceof Struct) {
             $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $offer->getAttribute('offerClassMember'));
@@ -27,7 +27,7 @@ class StructsTest extends SoapClientParser
             $this->assertFalse(true, 'Unable to get offer struct');
         }
 
-        $order = $generator->getStruct('order');
+        $order = $generator->getStructByName('order');
 
         if ($offer instanceof Struct) {
             $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $order->getAttribute('orderClassMember'));

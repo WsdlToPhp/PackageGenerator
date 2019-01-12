@@ -142,7 +142,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function getModelByName($name)
     {
-        return $this->getGenerator()->getStruct($name);
+        return $this->getGenerator()->getStructByName($name);
     }
     /**
      * @param PhpAnnotationBlock $block
@@ -409,7 +409,7 @@ abstract class AbstractModelFile extends AbstractFile
         } else {
             $type = $inheritance;
         }
-        if (!empty($type) && ($struct = $this->getGenerator()->getStruct($type))) {
+        if (!empty($type) && ($struct = $this->getGenerator()->getStructByName($type))) {
             $inheritance = $struct->getTopInheritance();
             if (!empty($inheritance)) {
                 $type = str_replace('[]', '', $inheritance);

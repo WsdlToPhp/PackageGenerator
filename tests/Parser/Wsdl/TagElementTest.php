@@ -123,7 +123,7 @@ class TagElementTest extends WsdlParser
         $tagElementParser = self::payPalInstanceParser();
         $tagElementParser->parse();
         $okCount = 0;
-        $struct = $tagElementParser->getGenerator()->getStruct('SetExpressCheckoutRequestDetailsType');
+        $struct = $tagElementParser->getGenerator()->getStructByName('SetExpressCheckoutRequestDetailsType');
         $attributes = [
             'cpp-header-image' => 'string',
             'cpp-header-border-color' => 'string',

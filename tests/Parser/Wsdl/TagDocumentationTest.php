@@ -158,7 +158,7 @@ class TagDocumentationTest extends WsdlParser
         $tagEnumerationParser->parse();
         $tagDocumentationParser->parse();
         $okCount = 0;
-        $struct = $tagDocumentationParser->getGenerator()->getStruct('SetExpressCheckoutRequestDetailsType');
+        $struct = $tagDocumentationParser->getGenerator()->getStructByName('SetExpressCheckoutRequestDetailsType');
         $attributes = [
             'cpp-header-image' => 'A URL for the image you want to appear at the top left of the payment page. The image has a maximum size of 750 pixels wide by 90 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. Optional Character length and limitations: 127',
             'cpp-header-border-color' => 'Sets the border color around the header of the payment page. The border is a 2-pixel perimeter around the header space, which is 750 pixels wide by 90 pixels high. Optional Character length and limitations: Six character HTML hexadecimal color code in ASCII',

@@ -58,7 +58,7 @@ class Rules
     protected function applyUnionRules($parameterName, $itemType, array $unionTypes)
     {
         foreach ($unionTypes as $type) {
-            $struct = $this->getAttribute()->getGenerator()->getStruct($type);
+            $struct = $this->getAttribute()->getGenerator()->getStructByName($type);
             if ($struct instanceof Struct) {
                 $this->applyRulesFromModel($struct, $parameterName, $itemType);
             }

@@ -46,7 +46,7 @@ abstract class AbstractTagParser extends AbstractParser
      */
     protected function getStructByName($name)
     {
-        return $this->generator->getStruct($name);
+        return $this->generator->getStructByName($name);
     }
     /**
      * @param string $name
@@ -117,7 +117,7 @@ abstract class AbstractTagParser extends AbstractParser
         if ($structAttribute instanceof StructAttribute) {
             $type = $tagAttribute->getValue();
             if ($type !== null) {
-                $typeModel = $this->generator->getStruct($type);
+                $typeModel = $this->generator->getStructByName($type);
                 $modelAttributeType = $structAttribute->getType();
                 if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
                     if ($typeModel->isRestriction()) {
