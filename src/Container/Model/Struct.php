@@ -101,6 +101,7 @@ class Struct extends AbstractModel
     }
     /**
      * @see parent::get()
+     * @throws \InvalidArgumentException
      * @param string $value
      * @return mixed
      */
@@ -114,6 +115,7 @@ class Struct extends AbstractModel
     }
     /**
      * @see parent::get()
+     * @throws \InvalidArgumentException
      * @param string $value
      * @param string $type
      * @return mixed
@@ -124,7 +126,7 @@ class Struct extends AbstractModel
             throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', var_export($value, true), get_class($this)), __LINE__);
         }
         if (!is_scalar($type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object', var_export($type, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Type "%s" can\'t be used to get an object', var_export($type, true)), __LINE__);
         }
         $key = $this->getTypeKey($value, $type);
         return array_key_exists($key, $this->objects) ? $this->objects[$key] : null;

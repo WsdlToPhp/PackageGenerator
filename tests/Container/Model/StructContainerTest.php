@@ -83,4 +83,23 @@ class StructContainerTest extends TestCase
         $this->assertSame($fooStringFirstMeta, $structContainer->getStructByNameAndType('FooString', 'string')->getMeta());
         $this->assertSame($fooStringSecondMeta, $structContainer->getStructByNameAndType('FooString', 'int')->getMeta());
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Value "true" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
+     */
+    public function testGetByTypeMustThrowAnExceptionForInvalidValue()
+    {
+        $structContainer = self::instance();
+        $structContainer->getByType(true, '_');
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Type "array (
+     * )" can't be used to get an object
+     */
+    public function testGetByTypeMustThrowAnExceptionForInvalidType()
+    {
+        $structContainer = self::instance();
+        $structContainer->getByType(1, []);
+    }
 }
