@@ -39,7 +39,6 @@ class TagUnion extends AbstractTagParser
         if ($parent instanceof AbstractTag) {
             $model = $this->getModel($parent);
             if ($model instanceof AbstractModel) {
-                $modelInheritance = $model->getInheritance();
                 $memberTypes = $union->getAttributeMemberTypes();
                 if (empty($memberTypes) && $union->hasMemberTypesAsChildren()) {
                     $memberTypes = $this->getUnionMemberTypesFromChildren($union);

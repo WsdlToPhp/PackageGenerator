@@ -53,7 +53,8 @@ class TagRestriction extends AbstractTagParser
             } else {
                 // if restriction is contained by an union tag, don't create the virtual struct as "union"s
                 // are wrongly parsed by SoapClient::__getTypes and this creates a duplicated element then
-                if (!$restriction->hasUnionParent() && !$model = $this->getModel($parent, $restriction->getAttributeBase())) {
+                $model = $this->getModel($parent, $restriction->getAttributeBase());
+                if (!$restriction->hasUnionParent() && !$model) {
                     $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName(), $restriction->getAttributeBase());
                     $model = $this->getModel($parent, $restriction->getAttributeBase());
                 }
@@ -66,8 +67,7 @@ class TagRestriction extends AbstractTagParser
         }
     }
     /**
-     * @param Tag $parent
-     * @param AbstractModel $struct
+     * @param AbstractModel $model
      * @param Restriction $restriction
      * @return TagRestriction
      */
@@ -83,8 +83,7 @@ class TagRestriction extends AbstractTagParser
         return $this;
     }
     /**
-     * @param Tag $parent
-     * @param AbstractModel $struct
+     * @param AbstractModel $model
      * @param Restriction $restriction
      * @return TagRestriction
      */
