@@ -192,13 +192,15 @@ class Generator implements \JsonSerializable
     }
     /**
      * Gets the struct by its name
+     * Starting from issue #157, we know call getVirtual secondly as structs are now betterly parsed and so is their inheritance/type is detected
      * @uses Generator::getStructs()
      * @param string $structName the original struct name
      * @return Struct|null
      */
     public function getStructByName($structName)
     {
-        return $this->getStructs()->getStructByName($structName);
+        $struct = $this->getStructs()->getStructByName($structName);
+        return $struct ? $struct : $this->getStructs()->getVirtual($structName);
     }
     /**
      * Gets the struct by its name and type
