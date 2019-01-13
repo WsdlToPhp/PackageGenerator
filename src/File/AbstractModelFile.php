@@ -413,6 +413,8 @@ abstract class AbstractModelFile extends AbstractFile
             $inheritance = $struct->getTopInheritance();
             if (!empty($inheritance)) {
                 $type = str_replace('[]', '', $inheritance);
+            } else {
+                $type = $struct->getPackagedName($namespaced);
             }
         }
         $model = $this->getModelFromStructAttribute($attribute);
