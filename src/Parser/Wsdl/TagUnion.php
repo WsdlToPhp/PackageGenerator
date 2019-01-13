@@ -51,7 +51,7 @@ class TagUnion extends AbstractTagParser
         }
     }
     /**
-     * @param array $values
+     * @param string[] $values
      * @return string
      */
     protected function findSuitableInheritance(array $values)

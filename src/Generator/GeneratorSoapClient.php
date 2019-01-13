@@ -25,10 +25,10 @@ class GeneratorSoapClient extends AbstractGeneratorAware
     public function initSoapClient()
     {
         try {
-            $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_1), true);
+            $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_1));
         } catch (\SoapFault $fault) {
             try {
-                $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_2), true);
+                $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_2));
             } catch (\SoapFault $fault) {
                 throw new \InvalidArgumentException(sprintf('Unable to load WSDL at "%s"!', $this->getGenerator()->getOptionOrigin()), __LINE__, $fault);
             }

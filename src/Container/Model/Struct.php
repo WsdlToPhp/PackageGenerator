@@ -140,7 +140,6 @@ class Struct extends AbstractModel
     }
     /**
      * @param $object
-     * @param $type
      * @return string
      */
     public function getObjectKeyWithVirtual($object)
@@ -175,7 +174,7 @@ class Struct extends AbstractModel
     {
         $inheritance = $object->getInheritance();
         if (!empty($inheritance)) {
-            $this->virtualObjects[$this->getObjectKeyWithVirtual($object, $object->getInheritance())] = $this->objects[$this->getObjectKeyWithType($object, $object->getInheritance())] = $object;
+            $this->virtualObjects[$this->getObjectKeyWithVirtual($object)] = $this->objects[$this->getObjectKeyWithType($object, $object->getInheritance())] = $object;
         } else {
             parent::add($object);
         }
