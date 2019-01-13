@@ -102,4 +102,13 @@ class StructContainerTest extends TestCase
         $structContainer = self::instance();
         $structContainer->getByType(1, []);
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Value "true" can't be used to get an object
+     */
+    public function testGetVirtualMustThrowAnExceptionForInvalidValue()
+    {
+        $structContainer = self::instance();
+        $structContainer->getVirtual(true);
+    }
 }
