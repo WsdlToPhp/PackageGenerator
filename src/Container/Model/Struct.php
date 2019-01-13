@@ -7,6 +7,11 @@ use WsdlToPhp\PackageGenerator\Model\Struct as Model;
 class Struct extends AbstractModel
 {
     /**
+     * Only for virtually-considered objects (in order to avoid duplucations in objects property)
+     * @var array $virtualObjects
+     */
+    protected $virtualObjects = [];
+    /**
      * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
      * @return string
      */
@@ -34,22 +39,25 @@ class Struct extends AbstractModel
     /**
      * Adds a virtual struct
      * @param string $structName the original struct name
+     * @param string $structType the original struct type
      * @return Struct
      */
-    public function addVirtualStruct($structName)
+    public function addVirtualStruct($structName, $structType = '')
     {
-        return $this->addStruct($structName, false);
+        return $this->addStruct($structName, false, $structType);
     }
     /**
      * Adds type to structs
      * @param string $structName the original struct name
      * @param bool $isStruct whether the Struct has to be generated or not
+     * @param string $structType the original struct type
      * @return Struct
      */
-    public function addStruct($structName, $isStruct = true)
+    public function addStruct($structName, $isStruct = true, $structType = '')
     {
-        if ($this->get($structName) === null) {
-            $this->add(new Model($this->generator, $structName, $isStruct));
+        if (null === (empty($structType) ? $this->get($structName) : $this->getByType($structName, $structType))) {
+            $model = new Model($this->generator, $structName, $isStruct);
+            $this->add($model->setInheritance($structType));
         }
         return $this;
     }
@@ -94,6 +102,19 @@ class Struct extends AbstractModel
     /**
      * @see parent::get()
      * @param string $value
+     * @return mixed
+     */
+    public function getVirtual($value)
+    {
+        if (!is_string($value) && !is_int($value)) {
+            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object', var_export($value, true), get_class($this)), __LINE__);
+        }
+        $key = $this->getVirtualKey($value);
+        return array_key_exists($key, $this->virtualObjects) ? $this->virtualObjects[$key] : null;
+    }
+    /**
+     * @see parent::get()
+     * @param string $value
      * @param string $type
      * @return mixed
      */
@@ -113,9 +134,18 @@ class Struct extends AbstractModel
      * @param $type
      * @return string
      */
-    public function getObjectWithTypeKey($object, $type)
+    public function getObjectKeyWithType($object, $type)
     {
         return $this->getTypeKey($this->getObjectKey($object), $type);
+    }
+    /**
+     * @param $object
+     * @param $type
+     * @return string
+     */
+    public function getObjectKeyWithVirtual($object)
+    {
+        return $this->getVirtualKey($this->getObjectKey($object));
     }
     /**
      * The key must not conflict with possible key values
@@ -128,17 +158,26 @@ class Struct extends AbstractModel
         return sprintf('struct_name_%s-type_%s', $name, $type);
     }
     /**
-     * By overriding this method, we ensure that each time a new object is stored as usual, it is also stored with our new key.
-     * Nonetheless, it is stored only if its type is known.
+     * The key must not conflict with possible key values
+     * @param $type
+     * @return string
+     */
+    public function getVirtualKey($name)
+    {
+        return sprintf('virtual_struct_name_%s', $name);
+    }
+    /**
+     * By overriding this method, we ensure that each time a new object is stored, it is stored with our new key if the inheritance is defined.
      * @param Model $object
      * @return Struct
      */
     public function add($object)
     {
-        parent::add($object);
         $inheritance = $object->getInheritance();
         if (!empty($inheritance)) {
-            $this->objects[$this->getObjectWithTypeKey($object, $object->getInheritance())] = $object;
+            $this->virtualObjects[$this->getObjectKeyWithVirtual($object, $object->getInheritance())] = $this->objects[$this->getObjectKeyWithType($object, $object->getInheritance())] = $object;
+        } else {
+            parent::add($object);
         }
         return $this;
     }
