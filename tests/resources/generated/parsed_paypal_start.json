@@ -1848,7 +1848,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1921,7 +1921,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1962,7 +1962,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -2051,7 +2051,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -2084,7 +2084,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -2229,7 +2229,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -2286,7 +2286,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -2343,7 +2343,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -4384,7 +4384,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -5801,7 +5801,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -5850,7 +5850,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -5891,7 +5891,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -5932,7 +5932,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -5965,7 +5965,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -5984,6 +5984,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Represents the unique identifier for an item. To be used to specify the elements that represents an ItemID."
                     ]
@@ -6022,7 +6023,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -9546,6 +9547,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "maxLength": "127"
                 },
                 "name": "UserIDType",
@@ -10918,7 +10920,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11031,7 +11033,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11072,7 +11074,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11137,7 +11139,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11186,7 +11188,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11243,7 +11245,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11300,7 +11302,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11405,7 +11407,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11470,7 +11472,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11559,7 +11561,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11600,7 +11602,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11641,7 +11643,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11698,7 +11700,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11739,7 +11741,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11780,7 +11782,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11821,7 +11823,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11870,7 +11872,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11959,7 +11961,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12032,7 +12034,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12113,7 +12115,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12162,7 +12164,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12219,7 +12221,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12308,7 +12310,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12349,7 +12351,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12446,7 +12448,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12591,7 +12593,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12632,7 +12634,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12793,7 +12795,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12826,7 +12828,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -12899,7 +12901,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13060,7 +13062,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13109,7 +13111,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13182,7 +13184,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13201,6 +13203,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "maxLength": "25"
                 },
                 "name": "NameType",
@@ -13215,6 +13218,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "maxLength": "20"
                 },
                 "name": "SalutationType",
@@ -13229,6 +13233,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "maxLength": "12"
                 },
                 "name": "SuffixType",
@@ -13316,6 +13321,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "TransactionId - Type for a PayPal Transaction ID."
                     ]
@@ -13332,6 +13338,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "AuthorizationId - Type for a PayPal Authorization ID."
                     ]
@@ -13347,7 +13354,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "MerchantPullIDType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -13359,7 +13368,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "EmailAddressType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -13371,7 +13382,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "ExpressCheckoutTokenType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -13383,7 +13396,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "AuthFlowTokenType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -13395,7 +13410,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "LanguageCodeType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -13414,7 +13431,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13432,7 +13449,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "OrderID",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -13475,7 +13494,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13494,6 +13513,7 @@
                 "inheritance": "integer",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:integer",
                     "documentation": [
                         "PaymentStatus The payment statuses supported for China postbacks. 0 - None 1 - Success 2 - Pending or Suspicious 3 - Failure"
                     ],
@@ -13542,7 +13562,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13752,7 +13772,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13801,7 +13821,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "RedeemedOfferType",
@@ -13838,7 +13858,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13872,7 +13892,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13905,7 +13925,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -13970,7 +13990,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -15692,7 +15712,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -23820,7 +23840,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -23973,7 +23993,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24014,7 +24034,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24063,7 +24083,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24112,7 +24132,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24145,7 +24165,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24178,7 +24198,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24211,7 +24231,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24244,7 +24264,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24293,7 +24313,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24334,7 +24354,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24391,7 +24411,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "BillingCodeType",
@@ -24420,7 +24440,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "ApprovalTypeType",
@@ -24465,7 +24485,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "ApprovalSubTypeType",
@@ -24582,7 +24602,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24623,7 +24643,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24688,7 +24708,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24721,7 +24741,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24762,7 +24782,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24811,7 +24831,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24844,7 +24864,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24885,7 +24905,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24918,7 +24938,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -24975,7 +24995,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -25168,7 +25188,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -25209,7 +25229,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -25242,7 +25262,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -25299,7 +25319,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -25332,7 +25352,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -25381,7 +25401,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -26561,7 +26581,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -26861,7 +26881,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -27126,7 +27146,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -29279,7 +29299,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -29384,7 +29404,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -29457,7 +29477,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -29514,7 +29534,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -29571,7 +29591,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -29754,7 +29774,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -29772,7 +29792,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "EnterBoardingTokenType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -30037,7 +30059,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -30078,7 +30100,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -30208,7 +30230,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -30559,7 +30581,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "EbayCheckoutType",
@@ -30596,7 +30618,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "DyneticClientType",
@@ -30886,7 +30908,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "RecurringPaymentsProfileStatusType",
@@ -30915,7 +30937,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "FailedPaymentActionType",
@@ -30944,7 +30966,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "AutoBillType",
@@ -30981,7 +31003,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "StatusChangeActionType",
@@ -31185,7 +31207,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "BillingPeriodType",
@@ -32831,7 +32853,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "ProductCategoryType",
@@ -33389,7 +33411,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -33486,7 +33508,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -33519,7 +33541,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -33560,7 +33582,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -33593,7 +33615,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -33626,7 +33648,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -33651,7 +33673,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -33967,7 +33989,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "OptionTypeListType",
@@ -34103,7 +34125,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -34136,7 +34158,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "ItemCategoryType",
@@ -34165,7 +34187,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "RecurringFlagType",
@@ -35289,7 +35311,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -35338,7 +35360,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -35379,7 +35401,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -35621,7 +35643,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "token",
                 "abstract": false,
                 "meta": [],
                 "name": "WalletItemType",
@@ -35893,6 +35915,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Specifies a universally unique identifier. The UUID can only contain digits from 0-9 and letters from A-F. The UUID must be 32 characters long. For example, 1FB02B2-9D27-3acb-ABA2-9D539C374228"
                     ],
@@ -43472,6 +43495,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

@@ -28,11 +28,11 @@ class TagUnionTest extends WsdlParser
             foreach ($structs as $struct) {
                 switch ($struct->getName()) {
                     case 'RelationshipTypeOpenEnum':
-                        $this->assertSame('RelationshipType', $struct->getInheritance());
+                        $this->assertSame('anyURI', $struct->getInheritance());
                         $count++;
                         break;
                     case 'FaultCodesOpenEnumType':
-                        $this->assertSame('FaultCodesType', $struct->getInheritance());
+                        $this->assertSame('QName', $struct->getInheritance());
                         $count++;
                         break;
                 }

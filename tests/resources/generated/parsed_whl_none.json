@@ -232,6 +232,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X."
                     ],
@@ -249,6 +250,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 1 to 64."
                     ],
@@ -267,6 +269,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 0 to 128."
                     ],
@@ -285,6 +288,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 1 to 128."
                     ],
@@ -303,6 +307,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 1 to 32."
                     ],
@@ -321,6 +326,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 0 to 32."
                     ],
@@ -339,6 +345,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 1 to 16."
                     ],
@@ -357,6 +364,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 0 to 64."
                     ],
@@ -375,6 +383,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Specifies a 2 character country code as defined in ISO3166."
                     ],
@@ -392,6 +401,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for an Alpha String, length exactly 3."
                     ],
@@ -409,6 +419,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for an Upper Alpha String and Numeric, length 2 to 3."
                     ],
@@ -426,6 +437,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for an Upper Alpha String and Numeric, length 3 to 5."
                     ],
@@ -443,6 +455,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Strings, length exactly 3."
                     ],
@@ -461,6 +474,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 1 to 8."
                     ],
@@ -479,6 +493,7 @@
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:decimal",
                     "documentation": [
                         "Specifies an amount, max 3 decimals."
                     ],
@@ -558,7 +573,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "StringLength1to16",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -577,6 +592,7 @@
                 "inheritance": "integer",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:integer",
                     "documentation": [
                         "Used for Numeric values, from 0 to 999 inclusive."
                     ],
@@ -617,7 +633,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -636,6 +652,7 @@
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:decimal",
                     "documentation": [
                         "Used for percentage values."
                     ],
@@ -654,6 +671,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "The Reference Place Holder (RPH) is an index code used to identify an instance in a collection of like items (e.g. used to assign individual passengers or clients to particular itinerary items)."
                     ],
@@ -671,6 +689,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Character Strings, length 1 to 255."
                     ],
@@ -689,6 +708,7 @@
                 "inheritance": "StringLength1to8",
                 "abstract": false,
                 "meta": {
+                    "base": "whlsoap:StringLength1to8",
                     "documentation": [
                         "The standard code or abbreviation for the state, province, or region."
                     ],
@@ -706,6 +726,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Numeric Strings length 1 to 3."
                     ],
@@ -723,6 +744,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Numeric Strings, length 1 to 5."
                     ],
@@ -837,12 +859,15 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "UpperCaseAlphaLength1to2",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
                         "The 2 digit code that identifies the credit card.",
                         "This is intended to be used when the above enumeration list does not meet your needs."
+                    ],
+                    "union": [
+                        "UpperCaseAlphaLength1to2"
                     ]
                 },
                 "name": "PaymentCardCodeType",
@@ -854,7 +879,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "UpperCaseAlphaLength1to2",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous25",
@@ -866,7 +891,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "UpperCaseAlphaLength1to2",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous26",
@@ -881,6 +906,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for an Alpha String, length 1 to 2 (for letter codes)."
                     ],
@@ -898,6 +924,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Numeric Strings, length 1 to 19."
                     ],
@@ -915,6 +942,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Month and year information."
                     ],
@@ -932,6 +960,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used for Numeric Strings, length 1 to 8."
                     ],
@@ -949,6 +978,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Used forAlpha-Numeric Strings, length 1 to 19."
                     ],
@@ -966,6 +996,7 @@
                 "inheritance": "integer",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:integer",
                     "documentation": [
                         "Used for Numeric values, from 1 to 999 inclusive."
                     ],
@@ -1055,6 +1086,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "Provides the ability to define a duration in terms of nights rather than days."
                     ],
@@ -1110,7 +1142,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "StringLength1to32",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1247,7 +1279,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "StringLength1to32",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1312,7 +1344,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "NMTOKENS",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1417,7 +1449,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1498,7 +1530,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "StringLength1to16",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1518,7 +1550,7 @@
                     "UpperCaseAlphaLength1to2"
                 ],
                 "values": [],
-                "inheritance": "PMS_ResStatusType",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1652,7 +1684,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -1668,7 +1700,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous44",
@@ -1680,7 +1712,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous45",
@@ -1692,7 +1724,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous46",
@@ -1704,7 +1736,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous47",
@@ -1716,7 +1748,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous48",
@@ -2703,7 +2735,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous67",
@@ -7556,7 +7588,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKENS",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous137",
@@ -8816,7 +8848,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "StringLength1to32",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous158",
@@ -9040,7 +9072,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous164",
@@ -9192,7 +9224,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous169",
@@ -12116,7 +12148,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous230",
@@ -15605,6 +15637,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

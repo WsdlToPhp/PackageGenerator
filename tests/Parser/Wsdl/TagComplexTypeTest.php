@@ -88,6 +88,7 @@ class TagComplexTypeTest extends WsdlParser
                 $this->assertSame('normalizedString', $exchangeRateDate->getTypeStruct()->getInheritance());
                 $this->assertSame('plainDateTime', $exchangeRateDate->getTypeStruct()->getName());
                 $this->assertSame([
+                    'base' => 'normalizedString',
                     'maxLength' => '19',
                     'minLength' => '19',
                 ], $exchangeRateDate->getMeta());
@@ -105,6 +106,10 @@ class TagComplexTypeTest extends WsdlParser
                 $this->assertSame([
                     'maxOccurs' => '1',
                     'minOccurs' => '1',
+                    'base' => [
+                        'ddp:string100',
+                        'normalizedString',
+                    ],
                     'pattern' => '[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)',
                     'maxLength' => '100',
                     'minLength' => '1',

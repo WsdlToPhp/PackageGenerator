@@ -31,9 +31,10 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "Success",
-                        "inheritance": "",
+                        "inheritance": "boolean",
                         "abstract": false,
                         "meta": {
+                            "base": "xsd:boolean",
                             "default": "false",
                             "maxOccurs": "1",
                             "minOccurs": "0"
@@ -165,12 +166,12 @@
         "src_dirname": "src",
         "prefix": "Api",
         "suffix": "",
-        "basic_login": "",
-        "basic_password": "",
-        "proxy_host": "",
-        "proxy_port": "",
-        "proxy_login": "",
-        "proxy_password": "",
+        "basic_login": null,
+        "basic_password": null,
+        "proxy_host": null,
+        "proxy_port": null,
+        "proxy_login": null,
+        "proxy_password": null,
         "soap_options": [],
         "composer_name": "",
         "composer_settings": [],
@@ -179,6 +180,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

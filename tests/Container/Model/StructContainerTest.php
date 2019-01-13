@@ -77,7 +77,7 @@ class StructContainerTest extends TestCase
             'meta2' => 'value2',
         ]));
 
-        $this->assertSame($fooStringSecond, $structContainer->getStructByName('FooString'));
+        $this->assertSame($fooStringSecond, $structContainer->getVirtual('FooString'));
         $this->assertSame($fooStringSecond, $structContainer->getStructByNameAndType('FooString', 'int'));
         $this->assertSame($fooStringFirst, $structContainer->getStructByNameAndType('FooString', 'string'));
         $this->assertSame($fooStringFirstMeta, $structContainer->getStructByNameAndType('FooString', 'string')->getMeta());

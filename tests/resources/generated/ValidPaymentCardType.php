@@ -20,6 +20,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: Name of the card holder. | Used for Character Strings, length 1 to 64.
      * - minOccurs: 0
+     * - base: xs:string
      * - maxLength: 64
      * - minLength: 1
      * @var string
@@ -62,6 +63,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: Indicates the type of magnetic striped card. Refer to OpenTravel Code List Card Type (CDT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
      * - use: optional
+     * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
      * @var string
      */
@@ -87,6 +89,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
+     * - base: xs:string
      * - pattern: [0-9]{1,19}
      * @var string
      */
@@ -97,6 +100,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - documentation: Verification digits printed on the card following the embossed number. This may also accommodate the customer identification/batch number (CID), card verification value (CVV2 ), card validation code number (CVC2) on credit card. |
      * Used for Numeric Strings, length 1 to 8.
      * - use: optional
+     * - base: xs:string
      * - pattern: [0-9]{1,8}
      * @var string
      */
@@ -106,6 +110,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: May be used to send a concealed credit card number (e.g., xxxxxxxxxxxx9922). | Used forAlpha-Numeric Strings, length 1 to 19.
      * - use: optional
+     * - base: xs:string
      * - pattern: [0-9a-zA-Z]{1,19}
      * @var string
      */
@@ -116,6 +121,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - documentation: Provides a reference pointer that links the payment card to the payment card holder. | The Reference Place Holder (RPH) is an index code used to identify an instance in a collection of like items (e.g. used to assign individual
      * passengers or clients to particular itinerary items).
      * - use: optional
+     * - base: xs:string
      * - pattern: [0-9]{1,8}
      * @var string
      */
@@ -125,6 +131,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: Code for the country where the credit card was issued. | Specifies a 2 character country code as defined in ISO3166.
      * - use: optional
+     * - base: xs:string
      * - pattern: [a-zA-Z]{2}
      * @var string
      */
@@ -134,6 +141,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: A remark associated with this payment card. | Used for Character Strings, length 1 to 128.
      * - use: optional
+     * - base: xs:string
      * - maxLength: 128
      * - minLength: 1
      * @var string
@@ -153,6 +161,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * The EffectiveDate
      * Meta informations extracted from the WSDL
      * - documentation: Indicates the starting date. | Month and year information.
+     * - base: xs:string
      * - pattern: (0[1-9]|1[0-2])[0-9][0-9]
      * @var string
      */
@@ -161,6 +170,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * The ExpireDate
      * Meta informations extracted from the WSDL
      * - documentation: Indicates the ending date. | Month and year information.
+     * - base: xs:string
      * - pattern: (0[1-9]|1[0-2])[0-9][0-9]
      * @var string
      */
