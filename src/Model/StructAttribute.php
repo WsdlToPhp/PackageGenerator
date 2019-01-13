@@ -218,7 +218,8 @@ class StructAttribute extends AbstractModel
      */
     public function getTypeStruct()
     {
-        return $this->getGenerator()->getStructByName($this->getType());
+        $struct = $this->getGenerator()->getStructByNameAndType($this->getType(), $this->getInheritance());
+        return $struct ? $struct : $this->getGenerator()->getStructByName($this->getType());
     }
     /**
      * @return string[]
