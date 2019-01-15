@@ -97,4 +97,58 @@ class ModelTest extends TestCase
             '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyModel',
         ], self::instance('foo_')->jsonSerialize());
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage __CLASS__ key is missing from "array (
+    'inheritance' => '',
+    'abstract' => false,
+    'meta' =>
+    array (
+    ),
+    'name' => 'foo_',
+    )"
+     */
+    public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingClass()
+    {
+        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(),[
+            'inheritance' => '',
+            'abstract' => false,
+            'meta' => [],
+            'name' => 'foo_',
+        ]);
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Class WsdlToPhp\PackageGenerator\Model\EmptyFakeModel is unknown
+     */
+    public function testInstanceFromSerializedJsonMustThrowAnAxceptionForInexistingClass()
+    {
+        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(),[
+            'inheritance' => '',
+            'abstract' => false,
+            'meta' => [],
+            'name' => 'foo_',
+            '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyFakeModel',
+        ]);
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage name key is missing from array (
+    'inheritance' => '',
+    'abstract' => false,
+    'meta' =>
+    array (
+    ),
+    '__CLASS__' => 'WsdlToPhp\\PackageGenerator\\Model\\EmptyModel',
+    )
+     */
+    public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingName()
+    {
+        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(),[
+            'inheritance' => '',
+            'abstract' => false,
+            'meta' => [],
+            '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyModel',
+        ]);
+    }
 }

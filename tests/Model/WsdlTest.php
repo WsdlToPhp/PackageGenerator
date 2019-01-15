@@ -109,6 +109,20 @@ class WsdlTest extends TestCase
         return self::getWsdl(self::wsdlWhlPath());
     }
     /**
+     * @return Wsdl
+     */
+    public static function wsdlEwsInstance()
+    {
+        return self::getWsdl(self::wsdlEwsPath());
+    }
+    /**
+     * @return Wsdl
+     */
+    public static function schemaEwsTypesInstance()
+    {
+        return self::getSchema(self::schemaEwsTypesPath());
+    }
+    /**
      * @expectedException \InvalidArgumentException
      */
     public function testException()

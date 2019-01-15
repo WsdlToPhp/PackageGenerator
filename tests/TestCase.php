@@ -195,6 +195,13 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     /**
      * @return string
      */
+    public static function schemaEwsTypesPath()
+    {
+        return __DIR__ . '/resources/ews/types.xsd';
+    }
+    /**
+     * @return string
+     */
     public static function wsdlYandexDirectApiCampaignsPath()
     {
         return __DIR__ . '/resources/directapi/campaigns.wsdl';
