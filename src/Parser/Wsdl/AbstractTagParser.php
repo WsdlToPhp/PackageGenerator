@@ -90,7 +90,7 @@ abstract class AbstractTagParser extends AbstractParser
     protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null)
     {
         $model = $model instanceof AbstractModel ? $model : $this->getModel($tag);
-        if ($model instanceof AbstractModel) {
+        if ($model) {
             foreach ($tag->getAttributes() as $attribute) {
                 $methodToCall = $this->getParseTagAttributeMethod($attribute->getName());
                 if (is_array($methodToCall)) {

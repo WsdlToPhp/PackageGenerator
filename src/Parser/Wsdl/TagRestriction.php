@@ -38,9 +38,9 @@ class TagRestriction extends AbstractTagParser
     public function parseRestriction(Restriction $restriction)
     {
         $parent = $restriction->getSuitableParent();
-        if ($parent instanceof Tag) {
+        if ($parent) {
             $parentParent = $parent->getSuitableParent();
-            if ($parentParent instanceof Tag) {
+            if ($parentParent) {
                 $parentModel = $this->getModel($parentParent);
                 if ($parentModel instanceof Struct) {
                     $parentAttribute = $parentModel->getAttribute($parent->getAttributeName());

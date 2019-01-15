@@ -85,12 +85,13 @@ class StructContainerTest extends TestCase
     }
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Value "true" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
+     * @expectedExceptionMessage Value "stdClass::__set_state(array(
+    ))" can't be used to get an object
      */
     public function testGetByTypeMustThrowAnExceptionForInvalidValue()
     {
         $structContainer = self::instance();
-        $structContainer->getByType(true, '_');
+        $structContainer->getByType(new \stdClass(), '_');
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -104,11 +105,12 @@ class StructContainerTest extends TestCase
     }
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Value "true" can't be used to get an object
+     * @expectedExceptionMessage Value "stdClass::__set_state(array(
+    ))" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
      */
     public function testGetVirtualMustThrowAnExceptionForInvalidValue()
     {
         $structContainer = self::instance();
-        $structContainer->getVirtual(true);
+        $structContainer->getVirtual(new \stdClass());
     }
 }

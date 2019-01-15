@@ -36,9 +36,9 @@ class TagUnion extends AbstractTagParser
     public function parseUnion(Union $union)
     {
         $parent = $union->getSuitableParent();
-        if ($parent instanceof AbstractTag) {
+        if ($parent) {
             $model = $this->getModel($parent);
-            if ($model instanceof AbstractModel) {
+            if ($model) {
                 $memberTypes = $union->getAttributeMemberTypes();
                 if (empty($memberTypes) && $union->hasMemberTypesAsChildren()) {
                     $memberTypes = $this->getUnionMemberTypesFromChildren($union);
