@@ -86,7 +86,7 @@ class StructTest extends TestCase
      */
     public function testIsArrayForArrayTypeWihoutArrayInNameAsTrue()
     {
-        $struct = self::omnitureGeneratorInstance()->getStruct('rscollection_calculated_metric');
+        $struct = self::omnitureGeneratorInstance()->getStructByName('rscollection_calculated_metric');
         $this->assertTrue($struct->isArray());
     }
     /**

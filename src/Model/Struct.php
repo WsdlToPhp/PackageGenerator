@@ -113,7 +113,17 @@ class Struct extends AbstractModel
      */
     public function isArray()
     {
-        return ((($this->isStruct() && $this->countOwnAttributes() === 1) || (!$this->isStruct() && $this->countOwnAttributes() <= 1)) && (stripos($this->getName(), 'array') !== false) || (!$this->isStruct() && $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false) !== false));
+        return
+        (
+            (
+                (
+                    ($this->isStruct() && $this->countOwnAttributes() === 1) ||
+                    (!$this->isStruct() && $this->countOwnAttributes() <= 1)
+                ) &&
+                stripos($this->getName(), 'array') !== false
+            ) ||
+            (!$this->isStruct() && $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false) !== false)
+        );
     }
     /**
      * Returns the attributes of the struct and potentially from the parent class
@@ -315,8 +325,9 @@ class Struct extends AbstractModel
     {
         if ($this->getValue($value) === null) {
             $this->values->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
-            $this->setRestriction(true);
-            $this->setStruct(true);
+            $this
+                ->setRestriction(true)
+                ->setStruct(true);
         }
         return $this;
     }
@@ -351,7 +362,7 @@ class Struct extends AbstractModel
      */
     public function getInheritanceStruct()
     {
-        return $this->getGenerator()->getStruct(str_replace('[]', '', $this->getInheritance()));
+        return $this->getGenerator()->getStructByName(str_replace('[]', '', $this->getInheritance()));
     }
     /**
      * @return string

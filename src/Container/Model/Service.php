@@ -66,6 +66,7 @@ class Service extends AbstractModel
     public function getMethods()
     {
         $methods = new Method($this->generator);
+        /** @var Model $service */
         foreach ($this->objects as $service) {
             foreach ($service->getMethods() as $method) {
                 $methods->add($method);

@@ -526,7 +526,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "RequestStatus",
@@ -603,7 +603,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "RequestState[]",
+                "inheritance": "RequestState",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:RequestState[]",
@@ -618,7 +618,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "string[]",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
@@ -678,7 +678,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "SetRequestForSubmitInnStatusEnum",
@@ -723,7 +723,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "SetRequestForSubmitInnStatus[]",
+                "inheritance": "SetRequestForSubmitInnStatus",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:SetRequestForSubmitInnStatus[]",
@@ -878,7 +878,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseStateEnum",
@@ -924,7 +924,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseStageEnum",
@@ -1376,7 +1376,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseInfo[]",
+                "inheritance": "HouseInfo",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseInfo[]",
@@ -1394,6 +1394,7 @@
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
+                    "base": "xsd:decimal",
                     "fractionDigits": "2",
                     "totalDigits": "15"
                 },
@@ -1447,7 +1448,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseTypeEnum",
@@ -1540,7 +1541,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseWallMaterialEnum",
@@ -1593,7 +1594,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseFloorTypeEnum",
@@ -1696,7 +1697,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseEnergyEfficiencyClassEnum",
@@ -2063,7 +2064,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "BasementStageEnum",
@@ -2259,7 +2260,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HeatingSystemNameEnum",
@@ -2302,7 +2303,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "ProvisioningEnum",
@@ -2484,7 +2485,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HotWaterSystemNameEnum",
@@ -2634,7 +2635,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "ColdWaterSystemNameEnum",
@@ -2772,7 +2773,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "SewerageSystemNameEnum",
@@ -2874,7 +2875,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "ElectricitySystemNameEnum",
@@ -3002,7 +3003,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "GasSystemNameEnum",
@@ -3220,7 +3221,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "Lift[]",
+                "inheritance": "Lift",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:Lift[]",
@@ -3306,7 +3307,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "ContractTypeEnum",
@@ -3318,7 +3319,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "int[]",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:int[]",
@@ -4840,7 +4841,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "FileInfo[]",
+                "inheritance": "FileInfo",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:FileInfo[]",
@@ -5031,7 +5032,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "FormingOverhaulFundEnum",
@@ -5074,7 +5075,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseType988Enum",
@@ -5167,7 +5168,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseEnergyEfficiencyClass988Enum",
@@ -5220,7 +5221,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseFoundationTypeEnum",
@@ -5273,7 +5274,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseFloorType988Enum",
@@ -5356,7 +5357,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseWallMaterial988Enum",
@@ -5399,7 +5400,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseChuteTypeEnum",
@@ -5442,7 +5443,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseElectricalTypeEnum",
@@ -5505,7 +5506,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseHeatingTypeEnum",
@@ -5578,7 +5579,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseHotWaterTypeEnum",
@@ -5621,7 +5622,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseColdWaterTypeEnum",
@@ -5664,7 +5665,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseSewerageTypeEnum",
@@ -5707,7 +5708,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseGasTypeEnum",
@@ -5760,7 +5761,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseVentilationTypeEnum",
@@ -5813,7 +5814,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseFirefightingTypeEnum",
@@ -5856,7 +5857,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseDrainageTypeEnum",
@@ -5905,7 +5906,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseCadastralNumber[]",
+                "inheritance": "HouseCadastralNumber",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCadastralNumber[]",
@@ -5991,7 +5992,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseFacadeTypeEnum",
@@ -6040,7 +6041,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseFacade[]",
+                "inheritance": "HouseFacade",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseFacade[]",
@@ -6076,7 +6077,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseRoofTypeEnum",
@@ -6159,7 +6160,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseRoofingTypeEnum",
@@ -6220,7 +6221,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseRoof[]",
+                "inheritance": "HouseRoof",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseRoof[]",
@@ -6284,7 +6285,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseAdditionalEquipment[]",
+                "inheritance": "HouseAdditionalEquipment",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseAdditionalEquipment[]",
@@ -6390,7 +6391,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseCommunalServiceTypeEnum",
@@ -6433,7 +6434,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "MeteringDeviceAvailabilityEnum",
@@ -6466,7 +6467,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseMeterTypeEnum",
@@ -6939,7 +6940,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "UnitOfMeasureEnum",
@@ -7060,7 +7061,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseMeteringDevice[]",
+                "inheritance": "HouseMeteringDevice",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseMeteringDevice[]",
@@ -7106,7 +7107,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseLiftTypeEnum",
@@ -7179,7 +7180,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseLift[]",
+                "inheritance": "HouseLift",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseLift[]",
@@ -7430,7 +7431,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseServiceNameEnum",
@@ -7465,7 +7466,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "ServiceStopReasonTypeEnum",
@@ -7768,7 +7769,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "HouseReportServicesVolumesPeriodicityEnum",
@@ -7853,7 +7854,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseServiceReportVolume[]",
+                "inheritance": "HouseServiceReportVolume",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseServiceReportVolume[]",
@@ -8014,7 +8015,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseService[]",
+                "inheritance": "HouseService",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseService[]",
@@ -8060,7 +8061,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "CommunalServiceFillingFactEnum",
@@ -8103,7 +8104,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "CommunalServiceMethodEnum",
@@ -8118,6 +8119,7 @@
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
+                    "base": "xsd:decimal",
                     "fractionDigits": "3",
                     "totalDigits": "15"
                 },
@@ -8191,7 +8193,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseCommunalServiceCost[]",
+                "inheritance": "HouseCommunalServiceCost",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommunalServiceCost[]",
@@ -8209,6 +8211,7 @@
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
+                    "base": "xsd:decimal",
                     "fractionDigits": "5",
                     "totalDigits": "17"
                 },
@@ -8282,7 +8285,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseCommunalServiceNormativeAct[]",
+                "inheritance": "HouseCommunalServiceNormativeAct",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommunalServiceNormativeAct[]",
@@ -8755,7 +8758,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseCommunalService[]",
+                "inheritance": "HouseCommunalService",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommunalService[]",
@@ -8916,7 +8919,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseCommonMeeting[]",
+                "inheritance": "HouseCommonMeeting",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommonMeeting[]",
@@ -9113,7 +9116,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseCommonProperty[]",
+                "inheritance": "HouseCommonProperty",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommonProperty[]",
@@ -9710,7 +9713,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "AlarmReasonEnum",
@@ -9753,7 +9756,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "AlarmFailureReasonEnum",
@@ -10669,7 +10672,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "GetHouseProfileResponse[]",
+                "inheritance": "GetHouseProfileResponse",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:GetHouseProfileResponse[]",
@@ -10727,7 +10730,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "GetHouseProfile988Response[]",
+                "inheritance": "GetHouseProfile988Response",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:GetHouseProfile988Response[]",
@@ -10818,7 +10821,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "HouseData[]",
+                "inheritance": "HouseData",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseData[]",
@@ -10884,7 +10887,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "ContractStopReasonEnum",
@@ -11385,7 +11388,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "Okopf",
@@ -14447,7 +14450,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "PersonType",
@@ -14640,7 +14643,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "Disturbance[]",
+                "inheritance": "Disturbance",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:Disturbance[]",
@@ -14728,7 +14731,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "License[]",
+                "inheritance": "License",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:License[]",
@@ -15335,7 +15338,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "GetCompanyProfileResponse[]",
+                "inheritance": "GetCompanyProfileResponse",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:GetCompanyProfileResponse[]",
@@ -15393,7 +15396,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "GetCompanyProfile988Response[]",
+                "inheritance": "GetCompanyProfile988Response",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:GetCompanyProfile988Response[]",
@@ -15474,7 +15477,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "ReportingPeriodStateEnum",
@@ -15559,7 +15562,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "ReportingPeriod[]",
+                "inheritance": "ReportingPeriod",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:ReportingPeriod[]",
@@ -15651,6 +15654,454 @@
                 "meta": [],
                 "name": "ErrorDetails",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "RequestState[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:RequestState[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfRequestState",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "string[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "xsd:string[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfString",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "SetRequestForSubmitInnStatus[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:SetRequestForSubmitInnStatus[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfSetRequestForSubmitInnStatus",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseInfo[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseInfo[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseInfo",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "Lift[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:Lift[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfLift",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "int[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "xsd:int[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfInt",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "FileInfo[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:FileInfo[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfFileInfo",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseCadastralNumber[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseCadastralNumber[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseCadastralNumber",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseFacade[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseFacade[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseFacade",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseRoof[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseRoof[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseRoof",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseAdditionalEquipment[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseAdditionalEquipment[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseAdditionalEquipment",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseMeteringDevice[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseMeteringDevice[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseMeteringDevice",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseLift[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseLift[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseLift",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseServiceReportVolume[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseServiceReportVolume[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseServiceReportVolume",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseService[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseService[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseService",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseCommunalServiceCost[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseCommunalServiceCost[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseCommunalServiceCost",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseCommunalServiceNormativeAct[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseCommunalServiceNormativeAct[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseCommunalServiceNormativeAct",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseCommunalService[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseCommunalService[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseCommunalService",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseCommonMeeting[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseCommonMeeting[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseCommonMeeting",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseCommonProperty[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseCommonProperty[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseCommonProperty",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "GetHouseProfileResponse[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:GetHouseProfileResponse[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfGetHouseProfileResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "GetHouseProfile988Response[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:GetHouseProfile988Response[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfGetHouseProfile988Response",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "HouseData[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:HouseData[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfHouseData",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "Disturbance[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:Disturbance[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfDisturbance",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "License[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:License[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfLicense",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "GetCompanyProfileResponse[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:GetCompanyProfileResponse[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfGetCompanyProfileResponse",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "GetCompanyProfile988Response[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:GetCompanyProfile988Response[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfGetCompanyProfile988Response",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "ReportingPeriod[]",
+                "abstract": false,
+                "meta": {
+                    "arrayType": "tns:ReportingPeriod[]",
+                    "base": "soap-enc:Array",
+                    "ref": "soap-enc:arrayType"
+                },
+                "name": "ArrayOfReportingPeriod",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             }
         ]
     },
@@ -15687,6 +16138,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

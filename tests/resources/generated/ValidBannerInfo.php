@@ -73,6 +73,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - nillable: true
      * - arrayType: namesp1:BannerPhraseInfo[]
+     * - base: soapenc:Array
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiBannerPhraseInfo[]
      */
@@ -82,6 +83,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - nillable: true
      * - arrayType: xsd:string[]
+     * - base: soapenc:Array
      * - ref: soapenc:arrayType
      * @var string[]
      */
@@ -147,6 +149,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - nillable: true
      * - arrayType: namesp1:Sitelink[]
+     * - base: soapenc:Array
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiSitelink[]
      */
@@ -156,6 +159,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - nillable: true
      * - arrayType: xsd:string[]
+     * - base: soapenc:Array
      * - ref: soapenc:arrayType
      * @var string[]
      */
@@ -172,6 +176,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - nillable: true
      * - arrayType: namesp1:RejectReason[]
+     * - base: soapenc:Array
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiRejectReason[]
      */

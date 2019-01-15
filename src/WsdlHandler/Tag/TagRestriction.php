@@ -2,10 +2,12 @@
 
 namespace WsdlToPhp\PackageGenerator\WsdlHandler\Tag;
 
+use WsdlToPhp\PackageGenerator\WsdlHandler\AbstractDocument;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagRestriction extends Tag
 {
+    const ATTRIBUTE_BASE = 'base';
     /**
      * @return boolean
      */
@@ -19,5 +21,22 @@ class TagRestriction extends Tag
     public function getEnumerations()
     {
         return $this->getChildrenByName(WsdlDocument::TAG_ENUMERATION);
+    }
+    /**
+     * @return string
+     */
+    public function getAttributeBase()
+    {
+        return $this->hasAttribute(self::ATTRIBUTE_BASE) ? $this->getAttribute(self::ATTRIBUTE_BASE)->getValue() : '';
+    }
+    /**
+     * Checks wether this element is contained by an union parent or not
+     * @return bool
+     */
+    public function hasUnionParent()
+    {
+        return $this->getSuitableParent(false, [
+            AbstractDocument::TAG_UNION,
+        ], self::MAX_DEEP, true) instanceof TagUnion;
     }
 }

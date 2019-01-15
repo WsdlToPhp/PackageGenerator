@@ -4648,7 +4648,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -4788,7 +4788,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ExchangeVersionType",
@@ -4947,7 +4947,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -4966,6 +4966,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "minLength": "1"
                 },
                 "name": "NonEmptyStringType",
@@ -5054,7 +5055,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MailboxTypeType",
@@ -5336,7 +5337,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ActivityDomainType",
@@ -5861,7 +5862,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ReminderGroupType",
@@ -9829,7 +9830,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnindexedFieldURIType",
@@ -9922,7 +9923,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "DictionaryURIType",
@@ -10015,7 +10016,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ExceptionPropertyURIType",
@@ -10030,6 +10031,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "The regular expression captures the standard representation of a GUID"
                     ],
@@ -10125,7 +10127,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -10358,7 +10360,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -10476,13 +10478,15 @@
                     "unsignedShort"
                 ],
                 "values": [],
-                "inheritance": "string",
+                "inheritance": "",
                 "abstract": false,
                 "meta": {
                     "documentation": [
                         "This type represents the property tag (MINUS the type part). There are two options for representation: 1. Hex ==> 0x3fa4 2. Decimal ==> 0-65535"
                     ],
-                    "pattern": "(0x|0X)[0-9A-Fa-f]{1,4}"
+                    "union": [
+                        "unsignedShort"
+                    ]
                 },
                 "name": "PropertyTagType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -10493,7 +10497,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous62",
@@ -10741,7 +10745,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -10782,7 +10786,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -10815,7 +10819,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -10856,7 +10860,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -10889,7 +10893,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -10930,7 +10934,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "DefaultShapeNamesType",
@@ -10967,7 +10971,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "BodyTypeResponseType",
@@ -11332,7 +11336,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "DisposalType",
@@ -11369,7 +11373,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -11410,7 +11414,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ClientAccessTokenTypeType",
@@ -11572,7 +11576,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ResponseClassType",
@@ -13195,7 +13199,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SensitivityChoicesType",
@@ -13232,7 +13236,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ImportanceChoicesType",
@@ -13269,7 +13273,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "XrmGraphRelationshipType",
@@ -13306,7 +13310,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "XrmGraphRelationshipEntityType",
@@ -13478,7 +13482,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "BodyTypeType",
@@ -13649,7 +13653,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "FolderClassType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -14028,7 +14034,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -14403,7 +14409,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "CreateActionType",
@@ -14432,7 +14438,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "CompleteActionType",
@@ -14525,7 +14531,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -15014,7 +15020,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ReminderActionType",
@@ -15346,7 +15352,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "DerivedItemIdType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -15527,7 +15535,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xs:string"
+                },
                 "name": "ItemClassType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -15978,7 +15988,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
-                "inheritance": "ResponseObjectType",
+                "inheritance": "",
                 "abstract": false,
                 "meta": [],
                 "name": "WellKnownResponseObjectType",
@@ -16111,7 +16121,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
-                "inheritance": "ResponseObjectType",
+                "inheritance": "",
                 "abstract": false,
                 "meta": [],
                 "name": "SmartResponseBaseType",
@@ -16221,7 +16231,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
-                "inheritance": "ResponseObjectType",
+                "inheritance": "",
                 "abstract": false,
                 "meta": [],
                 "name": "ReferenceItemResponseType",
@@ -17184,7 +17194,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "FlagStatusType",
@@ -17333,7 +17343,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PredictedActionReasonType",
@@ -18022,7 +18032,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "EmailPositionType",
@@ -19148,7 +19158,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ConversationActionTypeType",
@@ -20157,7 +20167,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ConversationNodeSortOrder",
@@ -23038,7 +23048,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "TokenSourceType",
@@ -24777,7 +24787,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous287",
@@ -24842,7 +24852,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous289",
@@ -24955,7 +24965,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous291",
@@ -25181,7 +25191,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous296",
@@ -25238,7 +25248,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous298",
@@ -25275,7 +25285,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "GroupMemberIdentifierType",
@@ -25320,7 +25330,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ModernGroupTypeType",
@@ -25972,7 +25982,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
-                "inheritance": "ResponseObjectType",
+                "inheritance": "",
                 "abstract": false,
                 "meta": [],
                 "name": "PostReplyItemBaseType",
@@ -26104,7 +26114,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MessageDispositionType",
@@ -26141,7 +26151,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "CalendarItemCreateOrDeleteOperationType",
@@ -26194,7 +26204,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "CalendarItemUpdateOperationType",
@@ -26223,7 +26233,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "AffectedTaskOccurrencesType",
@@ -26517,7 +26527,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "TaskStatusType",
@@ -26578,7 +26588,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "TaskDelegateStateType",
@@ -27018,7 +27028,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "IndexBasePointType",
@@ -27248,7 +27258,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ResolveNamesSearchScopeType",
@@ -27552,7 +27562,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MeetingRequestTypeType",
@@ -27567,11 +27577,12 @@
                     "anonymous340"
                 ],
                 "values": [],
-                "inheritance": "int",
+                "inheritance": "",
                 "abstract": false,
                 "meta": {
-                    "maxInclusive": "1525252321",
-                    "minInclusive": "1525252321"
+                    "union": [
+                        "int"
+                    ]
                 },
                 "name": "ReminderMinutesBeforeStartType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -27582,7 +27593,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous339",
@@ -27594,7 +27605,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous340",
@@ -27655,7 +27666,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "AvailabilityStatusType",
@@ -27716,7 +27727,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "LegacyFreeBusyType",
@@ -27761,7 +27772,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "CalendarItemTypeType",
@@ -27822,7 +27833,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ResponseTypeType",
@@ -27894,7 +27905,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "LobbyBypassType",
@@ -27939,7 +27950,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "OnlineMeetingAccessLevelType",
@@ -27976,7 +27987,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PresentersType",
@@ -28362,7 +28373,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "DayOfWeekType",
@@ -28427,7 +28438,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "DayOfWeekIndexType",
@@ -28536,7 +28547,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MonthNamesType",
@@ -28871,7 +28882,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "LocationSourceType",
@@ -29096,7 +29107,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "TransitionTargetKindType",
@@ -31680,7 +31691,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "RoleMemberTypeType",
@@ -31717,7 +31728,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ImAddressKeyType",
@@ -31754,7 +31765,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "EmailAddressKeyType",
@@ -31799,7 +31810,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "AbchEmailAddressTypeType",
@@ -31892,7 +31903,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ContactUrlKeyType",
@@ -32089,7 +32100,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PhoneNumberKeyType",
@@ -32134,7 +32145,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PhysicalAddressIndexType",
@@ -32171,7 +32182,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PhysicalAddressKeyType",
@@ -32328,7 +32339,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "FileAsMappingType",
@@ -32357,7 +32368,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ContactSourceType",
@@ -33013,7 +33024,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MemberStatusType",
@@ -35064,7 +35075,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -35230,7 +35241,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -35430,6 +35441,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "pattern": "((0x|0X)[0-9A-Fa-f]*)|([0-9]*)"
                 },
                 "name": "ExcludesAttributeType",
@@ -35614,7 +35626,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ContainmentModeType",
@@ -35691,7 +35703,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ContainmentComparisonType",
@@ -35880,7 +35892,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SortDirectionType",
@@ -35981,7 +35993,9 @@
                 "values": [],
                 "inheritance": "NonEmptyStringType",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "t:NonEmptyStringType"
+                },
                 "name": "WatermarkType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -35993,7 +36007,9 @@
                 "values": [],
                 "inheritance": "NonEmptyStringType",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "t:NonEmptyStringType"
+                },
                 "name": "SubscriptionIdType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -36334,7 +36350,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "NotificationEventTypeType",
@@ -36372,6 +36388,7 @@
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:int",
                     "maxInclusive": "1440",
                     "minInclusive": "1"
                 },
@@ -36387,6 +36404,7 @@
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:int",
                     "maxInclusive": "1440",
                     "minInclusive": "1"
                 },
@@ -36591,7 +36609,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SubscriptionStatusType",
@@ -36658,6 +36676,7 @@
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:int",
                     "maxInclusive": "30",
                     "minInclusive": "1"
                 },
@@ -36687,7 +36706,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ConnectionStatusType",
@@ -36861,6 +36880,7 @@
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:int",
                     "maxInclusive": "120",
                     "minInclusive": "1"
                 },
@@ -37168,7 +37188,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupAccessType",
@@ -37738,6 +37758,7 @@
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:int",
                     "maxInclusive": "512",
                     "minInclusive": "1"
                 },
@@ -37767,7 +37788,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SyncFolderItemsScopeType",
@@ -37796,7 +37817,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "AvailabilityProxyRequestType",
@@ -37875,7 +37896,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MeetingAttendeeType",
@@ -38247,7 +38268,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous536",
@@ -38748,7 +38769,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SuggestionQuality",
@@ -39267,7 +39288,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "OofState",
@@ -39304,7 +39325,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ExternalAudience",
@@ -39461,7 +39482,6 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
-                    "minLength": "1",
                     "type": "t:Value"
                 },
                 "name": "Value",
@@ -39632,7 +39652,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SendPromptType",
@@ -39793,7 +39813,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -40091,7 +40111,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "DistinguishedUserType",
@@ -40189,7 +40209,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PermissionReadAccessType",
@@ -40234,7 +40254,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "CalendarPermissionReadAccessType",
@@ -40474,7 +40494,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PermissionActionType",
@@ -40567,7 +40587,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PermissionLevelType",
@@ -40676,7 +40696,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "CalendarPermissionLevelType",
@@ -40937,7 +40957,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "DeliverMeetingRequestsType",
@@ -41146,7 +41166,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "DelegateFolderPermissionLevelType",
@@ -41282,7 +41302,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous599",
@@ -41610,7 +41630,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous605",
@@ -42037,7 +42057,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -42082,7 +42102,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SharingDataType",
@@ -42249,7 +42269,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PhoneCallStateType",
@@ -42302,7 +42322,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ConnectionFailureCauseType",
@@ -42420,7 +42440,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UserConfigurationDictionaryObjectTypesType",
@@ -42668,7 +42688,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous630",
@@ -42706,9 +42726,11 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "anonymous632",
-                        "inheritance": "",
+                        "inheritance": "int",
                         "abstract": false,
                         "meta": {
+                            "base": "xs:int",
+                            "minInclusive": "1",
                             "use": "required"
                         },
                         "name": "RefreshInterval",
@@ -42731,7 +42753,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous632",
@@ -42795,9 +42817,11 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "anonymous635",
-                        "inheritance": "",
+                        "inheritance": "string",
                         "abstract": false,
                         "meta": {
+                            "base": "xs:string",
+                            "minLength": "1",
                             "use": "required"
                         },
                         "name": "Name",
@@ -42819,9 +42843,11 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "anonymous636",
-                        "inheritance": "",
+                        "inheritance": "int",
                         "abstract": false,
                         "meta": {
+                            "base": "xs:int",
+                            "minInclusive": "1",
                             "use": "required"
                         },
                         "name": "Priority",
@@ -42844,7 +42870,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous635",
@@ -42856,7 +42882,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "int",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous636",
@@ -43049,6 +43075,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "length": "0"
                 },
                 "name": "ProtectionRuleTrueType",
@@ -43063,6 +43090,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "length": "0"
                 },
                 "name": "ProtectionRuleAllInternalType",
@@ -43077,6 +43105,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "minLength": "1"
                 },
                 "name": "ProtectionRuleValueType",
@@ -43097,7 +43126,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ProtectionRuleActionKindType",
@@ -43147,9 +43176,11 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "anonymous647",
-                        "inheritance": "",
+                        "inheritance": "string",
                         "abstract": false,
                         "meta": {
+                            "base": "xs:string",
+                            "minLength": "1",
                             "use": "required"
                         },
                         "name": "Value",
@@ -43172,7 +43203,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous647",
@@ -43263,7 +43294,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "TeamMailboxLifecycleStateType",
@@ -43426,7 +43457,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MessageTrackingReportTemplateType",
@@ -43961,7 +43992,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -45507,7 +45538,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -45716,7 +45747,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -46134,7 +46165,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SearchItemKindType",
@@ -46613,7 +46644,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MailboxSearchLocationType",
@@ -46845,7 +46876,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SearchResultType",
@@ -46874,7 +46905,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SearchPageDirectionType",
@@ -46903,7 +46934,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PreviewItemBaseShapeType",
@@ -48131,7 +48162,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "HoldActionType",
@@ -48184,7 +48215,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "HoldStatusType",
@@ -48508,7 +48539,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ItemIndexErrorType",
@@ -48958,7 +48989,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UserPhotoSizeType",
@@ -49123,7 +49154,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ElcFolderType",
@@ -49192,7 +49223,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "RetentionActionType",
@@ -49385,7 +49416,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "RetentionType",
@@ -49414,7 +49445,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ClientExtensionProvidedToType",
@@ -49451,7 +49482,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ClientExtensionTypeType",
@@ -49496,7 +49527,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ClientExtensionScopeType",
@@ -49781,7 +49812,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SetClientExtensionActionIdType",
@@ -49894,7 +49925,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ConsentStateType",
@@ -50933,7 +50964,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UMCDRGroupByType",
@@ -50962,7 +50993,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UMCDRFilterByType",
@@ -51137,7 +51168,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -51445,7 +51476,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ClientIntentMeetingInquiryActionType",
@@ -51482,7 +51513,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UMMailboxTranscriptionEnabledSetting",
@@ -51783,7 +51814,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "IconIndexType",
@@ -51820,7 +51851,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupIdentityType",
@@ -51992,7 +52023,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UserSocialActivityActionTypeEnum",
@@ -52021,7 +52052,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MeetingSpaceTypeEnum",
@@ -52201,7 +52232,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ParticipantActivityRole",
@@ -52278,7 +52309,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ParticipantActivityMediaType",
@@ -52606,7 +52637,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ContentActivityType",
@@ -52675,7 +52706,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ContentActivityMediaType",
@@ -52712,7 +52743,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ContentActivityAcl",
@@ -53054,7 +53085,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SharingInvitationPermissionLevel",
@@ -53221,7 +53252,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous796",
@@ -53282,7 +53313,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SearchApplicationIdType",
@@ -53363,7 +53394,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous799",
@@ -53444,7 +53475,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous801",
@@ -53505,7 +53536,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "RefinerTypeType",
@@ -53542,7 +53573,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SearchResultsPropertySetNameType",
@@ -53575,7 +53606,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous805",
@@ -53624,7 +53655,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous807",
@@ -53653,7 +53684,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ExecuteSearchSortOrderType",
@@ -54237,7 +54268,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PeopleSuggestionPersonType",
@@ -54969,7 +55000,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupsSortType",
@@ -55006,7 +55037,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupsFilterType",
@@ -55371,7 +55402,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupDetailsResponseShapeType",
@@ -55400,7 +55431,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupMembersResponseShapeType",
@@ -55437,7 +55468,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupMembersSortType",
@@ -55474,7 +55505,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupCreationErrorType",
@@ -55519,7 +55550,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupMembershipActionType",
@@ -55556,7 +55587,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "UnifiedGroupActionResultType",
@@ -55593,7 +55624,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "GroupMembershipType",
@@ -56219,7 +56250,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SenderRestrictionActionType",
@@ -56248,7 +56279,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SenderRestrictionType",
@@ -56654,7 +56685,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "ClientIdType",
@@ -56723,7 +56754,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "EntityFeedbackEntityAddSourceType",
@@ -56856,7 +56887,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "BookingServiceTypeEnum",
@@ -57432,7 +57463,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SystemDayOfWeek",
@@ -58062,7 +58093,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "EmailReminderChangeType",
@@ -58115,7 +58146,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "EmailReminderSendOption",
@@ -58160,7 +58191,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "InsightStatusType",
@@ -58683,7 +58714,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "XrmActivityStreamFlagsType",
@@ -63149,7 +63180,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -70729,10 +70760,13 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "MaxItems",
-                        "inheritance": "",
+                        "inheritance": "int",
                         "abstract": false,
                         "meta": {
+                            "base": "xs:int",
+                            "maxInclusive": "200",
                             "maxOccurs": "1",
+                            "minInclusive": "0",
                             "minOccurs": "0"
                         },
                         "name": "MaxItems",
@@ -70770,11 +70804,20 @@
                 "values": [],
                 "inheritance": "int",
                 "abstract": false,
-                "meta": {
-                    "maxInclusive": "200",
-                    "minInclusive": "0"
-                },
+                "meta": [],
                 "name": "MaxItems",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "string",
+                "abstract": false,
+                "meta": [],
+                "name": "ReminderType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
@@ -80180,6 +80223,74 @@
                 "meta": [],
                 "name": "GetStaffAvailabilityResponseMessageType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "ResponseObjectType",
+                "abstract": false,
+                "meta": {
+                    "base": "t:ResponseObjectType",
+                    "name": "ObjectName",
+                    "type": "xs:string",
+                    "use": "prohibited"
+                },
+                "name": "WellKnownResponseObjectType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "ResponseObjectType",
+                "abstract": false,
+                "meta": {
+                    "base": "t:ResponseObjectType",
+                    "name": "ObjectName",
+                    "type": "xs:string",
+                    "use": "prohibited"
+                },
+                "name": "SmartResponseBaseType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "ResponseObjectType",
+                "abstract": false,
+                "meta": {
+                    "base": "t:ResponseObjectType",
+                    "name": "ObjectName",
+                    "type": "xs:string",
+                    "use": "prohibited"
+                },
+                "name": "ReferenceItemResponseType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "ResponseObjectType",
+                "abstract": false,
+                "meta": {
+                    "base": "t:ResponseObjectType",
+                    "name": "ObjectName",
+                    "type": "xs:string",
+                    "use": "prohibited"
+                },
+                "name": "PostReplyItemBaseType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             }
         ]
     },
@@ -80216,6 +80327,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

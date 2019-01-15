@@ -7,7 +7,9 @@ use WsdlToPhp\DomHandler\AttributeHandler;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagRestriction as Restriction;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class TagRestriction extends AbstractTagParser
 {
@@ -37,84 +39,90 @@ class TagRestriction extends AbstractTagParser
     {
         $parent = $restriction->getSuitableParent();
         if ($parent instanceof Tag) {
-            $model = $this->getModel($parent);
-            if ($model instanceof Struct) {
-                $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName());
-                $this->parseRestrictionAttributes($parent, $model, $restriction)->parseRestrictionChildren($parent, $restriction);
+            $parentParent = $parent->getSuitableParent();
+            if ($parentParent instanceof Tag) {
+                $parentModel = $this->getModel($parentParent);
+                if ($parentModel instanceof Struct) {
+                    $parentAttribute = $parentModel->getAttribute($parent->getAttributeName());
+                    if ($parentAttribute instanceof StructAttribute) {
+                        $this
+                            ->parseRestrictionAttributes($parentAttribute, $restriction)
+                            ->parseRestrictionChildren($parentAttribute, $restriction);
+                    }
+                }
+            } else {
+                // if restriction is contained by an union tag, don't create the virtual struct as "union"s
+                // are wrongly parsed by SoapClient::__getTypes and this creates a duplicated element then
+                $model = $this->getModel($parent, $restriction->getAttributeBase());
+                if (!$restriction->hasUnionParent() && !$model) {
+                    $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName(), $restriction->getAttributeBase());
+                    $model = $this->getModel($parent, $restriction->getAttributeBase());
+                }
+                if ($model instanceof Struct) {
+                    $this
+                        ->parseRestrictionAttributes($model, $restriction)
+                        ->parseRestrictionChildren($model, $restriction);
+                }
             }
         }
     }
     /**
-     * @param Tag $parent
-     * @param Struct $struct
+     * @param AbstractModel $model
      * @param Restriction $restriction
      * @return TagRestriction
      */
-    protected function parseRestrictionAttributes(Tag $parent, Struct $struct, Restriction $restriction)
+    protected function parseRestrictionAttributes(AbstractModel $model, Restriction $restriction)
     {
         if ($restriction->hasAttributes()) {
+            // ensure inheritance of model is well defined, SoapClient parser is based on SoapClient::__getTypes which can be false in some case
+            $model->setInheritance($restriction->getAttributeBase());
             foreach ($restriction->getAttributes() as $attribute) {
-                $this->parseRestrictionAttribute($parent, $struct, $attribute);
+                $model->addMeta($attribute->getName(), $attribute->getValue(true));
             }
         }
         return $this;
     }
     /**
-     * @param Tag $parent
-     * @param Struct $struct
-     * @param AttributeHandler $attribute
-     * @return TagRestriction
-     */
-    protected function parseRestrictionAttribute(Tag $parent, Struct $struct, AttributeHandler $attribute)
-    {
-        if ($attribute->getName() === 'base' && $attribute->getValue() !== $parent->getAttributeName()) {
-            $struct->setInheritance($attribute->getValue());
-        } else {
-            $struct->addMeta($attribute->getName(), $attribute->getValue(true));
-        }
-        return $this;
-    }
-    /**
-     * @param Tag $parent
+     * @param AbstractModel $model
      * @param Restriction $restriction
      * @return TagRestriction
      */
-    protected function parseRestrictionChildren(Tag $parent, Restriction $restriction)
+    protected function parseRestrictionChildren(AbstractModel $model, Restriction $restriction)
     {
         foreach ($restriction->getElementChildren() as $child) {
             if ($child instanceof Tag) {
-                $this->parseRestrictionChild($parent, $child);
+                $this->parseRestrictionChild($model, $child);
             }
         }
         return $this;
     }
     /**
-     * @param Tag $tag
+     * @param AbstractModel $model
      * @param Tag $child
      * @return TagRestriction
      */
-    protected function parseRestrictionChild(Tag $tag, Tag $child)
+    protected function parseRestrictionChild(AbstractModel $model, Tag $child)
     {
-        if ($child->hasAttributeValue() && ($model = $this->getModel($tag)) instanceof Struct) {
+        if ($child->hasAttributeValue()) {
             $model->addMeta($child->getName(), $child->getValueAttributeValue(true));
         } else {
             foreach ($child->getAttributes() as $attribute) {
-                $this->parseRestrictionChildAttribute($tag, $child, $attribute);
+                $this->parseRestrictionChildAttribute($model, $attribute);
             }
         }
         return $this;
     }
     /**
-     * @param Tag $tag
-     * @param Tag $child
+     * @param AbstractModel $model
      * @param AttributeHandler $attribute
      * @return TagRestriction
      */
-    protected function parseRestrictionChildAttribute(Tag $tag, Tag $child, AttributeHandler $attribute)
+    protected function parseRestrictionChildAttribute(AbstractModel $model, AttributeHandler $attribute)
     {
-        if (strtolower($attribute->getName()) === 'arraytype' && ($model = $this->getModel($tag)) instanceof Struct) {
+        if (strtolower($attribute->getName()) === 'arraytype') {
             $model->setInheritance($attribute->getValue());
         }
+        $model->addMeta($attribute->getName(), $attribute->getValue(true));
         return $this;
     }
 }

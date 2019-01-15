@@ -55,4 +55,60 @@ class StructContainerTest extends TestCase
 
         $this->assertNull($instance->offsetGet(1));
     }
+    /**
+     *
+     */
+    public function testGetStructByNameAndTypeMustFailAsTypeIsUnknown()
+    {
+        $structContainer = self::instance();
+
+        $this->assertNull($structContainer->getStructByNameAndType('bar', 'string'));
+    }
+    /**
+     *
+     */
+    public function testGetStructByNameAndTypeMustReturnTheStruct()
+    {
+        $structContainer = self::instance();
+        $structContainer->add($fooStringFirst = StructTest::instance('FooString', true)->setInheritance('string')->setMeta($fooStringFirstMeta = [
+            'meta1' => 'value1',
+        ]));
+        $structContainer->add($fooStringSecond = StructTest::instance('FooString', true)->setInheritance('int')->setMeta($fooStringSecondMeta = [
+            'meta2' => 'value2',
+        ]));
+
+        $this->assertSame($fooStringSecond, $structContainer->getVirtual('FooString'));
+        $this->assertSame($fooStringSecond, $structContainer->getStructByNameAndType('FooString', 'int'));
+        $this->assertSame($fooStringFirst, $structContainer->getStructByNameAndType('FooString', 'string'));
+        $this->assertSame($fooStringFirstMeta, $structContainer->getStructByNameAndType('FooString', 'string')->getMeta());
+        $this->assertSame($fooStringSecondMeta, $structContainer->getStructByNameAndType('FooString', 'int')->getMeta());
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Value "true" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
+     */
+    public function testGetByTypeMustThrowAnExceptionForInvalidValue()
+    {
+        $structContainer = self::instance();
+        $structContainer->getByType(true, '_');
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Type "array (
+     * )" can't be used to get an object
+     */
+    public function testGetByTypeMustThrowAnExceptionForInvalidType()
+    {
+        $structContainer = self::instance();
+        $structContainer->getByType(1, []);
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Value "true" can't be used to get an object
+     */
+    public function testGetVirtualMustThrowAnExceptionForInvalidValue()
+    {
+        $structContainer = self::instance();
+        $structContainer->getVirtual(true);
+    }
 }

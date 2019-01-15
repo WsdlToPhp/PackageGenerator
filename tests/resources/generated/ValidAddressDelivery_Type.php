@@ -17,6 +17,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * The Street1
      * Meta informations extracted from the WSDL
+     * - base: string
      * - documentation: First line on delivery address
      * @var string
      */
@@ -24,6 +25,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * The Street2
      * Meta informations extracted from the WSDL
+     * - base: string
      * - documentation: Second line on delivery address
      * @var string
      */
@@ -31,6 +33,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * The Street3
      * Meta informations extracted from the WSDL
+     * - base: string
      * - documentation: Third line on delivery address
      * @var string
      */
@@ -38,6 +41,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * The City
      * Meta informations extracted from the WSDL
+     * - base: string
      * - documentation: The delivery city
      * @var string
      */
@@ -45,8 +49,9 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * The PostalCode
      * Meta informations extracted from the WSDL
-     * - documentation: Postal code for the city
+     * - base: string
      * - length: 4
+     * - documentation: Postal code for the city
      * @var string
      */
     public $PostalCode;

@@ -56,7 +56,7 @@ class Structs extends AbstractParser
                 } elseif ($typeDef[0] === self::STRUCT_DECLARATION) {
                     $this->parseComplexStruct($typeDef);
                 } else {
-                    $this->getGenerator()->getStructs()->addVirtualStruct($structName);
+                    $this->getGenerator()->getStructs()->addVirtualStruct($structName, $typeDef[0]);
                 }
             }
             $this->structHasBeenDefined($type);

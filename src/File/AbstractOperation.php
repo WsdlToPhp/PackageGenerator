@@ -39,7 +39,7 @@ abstract class AbstractOperation
      */
     protected function getParameterTypeModel()
     {
-        return $this->isParameterTypeAString() ? $this->getGenerator()->getStruct($this->getMethod()->getParameterType()) : null;
+        return $this->isParameterTypeAString() ? $this->getGenerator()->getStructByName($this->getMethod()->getParameterType()) : null;
     }
     /**
      * @return bool
@@ -67,7 +67,7 @@ abstract class AbstractOperation
         if (is_array($parameterTypes)) {
             foreach ($parameterTypes as $parameterName => $parameterType) {
                 $type = $methodUsage ? null : self::DEFAULT_TYPE;
-                if (($model = $this->getGenerator()->getStruct($parameterType)) instanceof StructModel && $model->isStruct() && !$model->isRestriction()) {
+                if (($model = $this->getGenerator()->getStructByName($parameterType)) instanceof StructModel && $model->isStruct() && !$model->isRestriction()) {
                     $type = $model->getPackagedName(true);
                 }
                 $types[$parameterName] = $type;
@@ -148,6 +148,6 @@ abstract class AbstractOperation
      */
     protected function getModelByName($name)
     {
-        return $this->getGenerator()->getStruct($name);
+        return $this->getGenerator()->getStructByName($name);
     }
 }

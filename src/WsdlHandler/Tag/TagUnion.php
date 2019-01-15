@@ -2,6 +2,8 @@
 
 namespace WsdlToPhp\PackageGenerator\WsdlHandler\Tag;
 
+use WsdlToPhp\PackageGenerator\WsdlHandler\AbstractDocument;
+
 class TagUnion extends Tag
 {
     const ATTRIBUTE_MEMBER_TYPES = 'memberTypes';
@@ -11,6 +13,20 @@ class TagUnion extends Tag
     public function getAttributeMemberTypes()
     {
         return $this->parseMemberTypes();
+    }
+    /**
+     * @return bool
+     */
+    public function hasMemberTypesAsChildren()
+    {
+        return 0 < count($this->getMemberTypesChildren());
+    }
+    /**
+     * @return AbstractTag[]
+     */
+    public function getMemberTypesChildren()
+    {
+        return $this->getChildrenByName(AbstractDocument::TAG_SIMPLE_TYPE);
     }
     /**
      * @return string[]

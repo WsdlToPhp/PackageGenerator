@@ -19,7 +19,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
      */
     protected $offset = 0;
     /**
-     * @param string $offset
+     * @param int $offset
      * @return bool
      */
     public function offsetExists($offset)
@@ -37,7 +37,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return $this->offsetExists($offset) ? array_shift($element) : null;
     }
     /**
-     * @param string $offset
+     * @param int $offset
      * @param mixed $value
      * @return AbstractObjectContainer
      */
@@ -46,7 +46,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         throw new \InvalidArgumentException('This method can\'t be used as object are stored with a string as array index', __LINE__);
     }
     /**
-     * @param string $offset
+     * @param int $offset
      * @return AbstractObjectContainer
      */
     public function offsetUnset($offset)

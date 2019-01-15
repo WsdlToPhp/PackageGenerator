@@ -93,7 +93,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption(self::GENERATOR_OPTIONS_CONFIG_OPTION, null, InputOption::VALUE_OPTIONAL, 'Path to the generator\'s configuration file to load');
     }
     /**
-     * @see \Sdc\AppBundle\Command\Command::execute()
+     * @see Symfony\Component\Console\Command\Command::execute()
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
