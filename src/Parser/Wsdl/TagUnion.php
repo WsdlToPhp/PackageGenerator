@@ -40,8 +40,8 @@ class TagUnion extends AbstractTagParser
             $model = $this->getModel($parent);
             if ($model) {
                 $memberTypes = $union->getAttributeMemberTypes();
-                if (empty($memberTypes) && $union->hasMemberTypesAsChildren()) {
-                    $memberTypes = $this->getUnionMemberTypesFromChildren($union);
+                if ($union->hasMemberTypesAsChildren()) {
+                    $memberTypes = array_unique(array_merge($memberTypes, $this->getUnionMemberTypesFromChildren($union)));
                 }
                 if (!empty($memberTypes)) {
                     $model->addMeta('union', $memberTypes);
