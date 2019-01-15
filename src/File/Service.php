@@ -111,12 +111,14 @@ class Service extends AbstractModelFile
         $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, []);
         $soapHeaderNamespaces = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, []);
         $soapHeaderTypes = $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, []);
-        foreach ($soapHeaderNames as $index => $soapHeaderName) {
-            $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
-            if ($methods->get($methodName) === null) {
-                $soapHeaderNamespace = array_key_exists($index, $soapHeaderNamespaces) ? $soapHeaderNamespaces[$index] : null;
-                $soapHeaderType = array_key_exists($index, $soapHeaderTypes) ? $soapHeaderTypes[$index] : null;
-                $methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace, $soapHeaderType));
+        if (is_array($soapHeaderNames) && is_array($soapHeaderNamespaces) && is_array($soapHeaderTypes)) {
+            foreach ($soapHeaderNames as $index => $soapHeaderName) {
+                $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
+                if ($methods->get($methodName) === null) {
+                    $soapHeaderNamespace = array_key_exists($index, $soapHeaderNamespaces) ? $soapHeaderNamespaces[$index] : null;
+                    $soapHeaderType = array_key_exists($index, $soapHeaderTypes) ? $soapHeaderTypes[$index] : null;
+                    $methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace, $soapHeaderType));
+                }
             }
         }
         return $this;
@@ -236,7 +238,7 @@ class Service extends AbstractModelFile
         if ($firstParameter instanceof PhpFunctionParameter) {
             $annotationBlock->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())));
             $firstParameterType = $firstParameter->getType();
-            if ($firstParameter->getModel() instanceof StructModel) {
+            if ($firstParameter->getModel()) {
                 $firstParameterType = $this->getStructAttributeTypeAsPhpType(new StructAttributeModel($firstParameter->getModel()->getGenerator(), $firstParameter->getName(), $firstParameter->getModel()->getName(), $firstParameter->getModel()));
                 if ($firstParameter->getModel()->isRestriction()) {
                     $annotationBlock

@@ -35,10 +35,8 @@ class Structs extends AbstractParser
             ->getSoapClient()
             ->getSoapClient()
             ->__getTypes();
-        if (is_array($types)) {
-            foreach ($types as $type) {
-                $this->parseType($type);
-            }
+        foreach ($types as $type) {
+            $this->parseType($type);
         }
     }
     /**

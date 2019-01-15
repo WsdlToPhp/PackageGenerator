@@ -21,13 +21,13 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 abstract class AbstractModelFile extends AbstractFile
 {
     /**
-     * @var string Meta annotation length
+     * @var int Meta annotation length
      */
-    const ANNOTATION_META_LENGTH = '250';
+    const ANNOTATION_META_LENGTH = 250;
     /**
-     * @var string Long annotation string
+     * @var int Long annotation string
      */
-    const ANNOTATION_LONG_LENGTH = '1000';
+    const ANNOTATION_LONG_LENGTH = 1000;
     /**
      * @var string
      */
@@ -79,7 +79,7 @@ abstract class AbstractModelFile extends AbstractFile
     /**
      * @var AbstractModel
      */
-    protected $model;
+    private $model;
     /**
      * @param bool $withSrc
      * @return string
@@ -104,8 +104,8 @@ abstract class AbstractModelFile extends AbstractFile
      */
     public function writeFile($withSrc = true)
     {
-        if (!$this->getModel() instanceof AbstractModel) {
-            throw new \InvalidArgumentException('You MUST define the model before begin able to generate the file', __LINE__);
+        if (!$this->getModel()) {
+            throw new \InvalidArgumentException('You MUST define the model before being able to generate the file', __LINE__);
         }
         GeneratorUtils::createDirectory($this->getFileDestination($withSrc));
         $this->defineNamespace()->defineUseStatement()->addAnnotationBlock()->addClassElement();
@@ -376,12 +376,7 @@ abstract class AbstractModelFile extends AbstractFile
      */
     public function getModelFromStructAttribute(StructAttributeModel $attribute = null)
     {
-        $model = null;
-        $attribute = $this->getStructAttribute($attribute);
-        if ($attribute instanceof StructAttributeModel) {
-            $model = $attribute->getTypeStruct();
-        }
-        return $model;
+        return $this->getStructAttribute($attribute)->getTypeStruct();
     }
     /**
      * @param StructAttributeModel $attribute
