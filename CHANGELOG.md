@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 2.9.5
+- issue #149 - FractionDigitsRule does not allow less digits than the specified maximum
+- issue #151 - Provide Docker settings
+- issue #154 - PHP reserved keywords list is incomplete for PHP > 7.0
+- issue #157 - Missing entry from ClassMap
+- pull request #142 - Fix: No need to update composer itself twice
+- pull request #143 - Enhancement: Cache dependencies between builds
+- pull request #144 - Fix typo in PHPDoc
+- pull request #145 - Remove duplicate PHPDoc argument
+- pull request #147 - Enhancement: Improve output from running php-cs-fixer
+- pull request #146 - Enhancement: Keep packages sorted in composer.json
+- pull request #150 - Change FractionDigitsRule to accept less fraction digits than the defined maximum
+
 ## 2.9.4
 - issue #139 / Pull request #140 - How to use another xsd_types.yml
 
