@@ -22,7 +22,7 @@ class StructEnumTest extends AbstractFile
     public function testWriteBingSearchEnumAdultOption()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('AdultOption')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('AdultOption')) instanceof StructModel) {
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -38,7 +38,7 @@ class StructEnumTest extends AbstractFile
     public function testWriteBingSearchEnumSourceType()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('SourceType')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('SourceType')) instanceof StructModel) {
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -54,7 +54,7 @@ class StructEnumTest extends AbstractFile
     public function testWriteReformaHouseStageEnum()
     {
         $generator = self::reformaGeneratorInstance();
-        if (($model = $generator->getStruct('HouseStageEnum')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('HouseStageEnum')) instanceof StructModel) {
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -70,7 +70,7 @@ class StructEnumTest extends AbstractFile
     public function testWriteOmnitureDsWeblogFormats()
     {
         $generator = self::omnitureGeneratorInstance();
-        if (($model = $generator->getStruct('ds_weblog_formats')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('ds_weblog_formats')) instanceof StructModel) {
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -86,7 +86,7 @@ class StructEnumTest extends AbstractFile
     public function testWriteBingSearchEnumWebSearchOption()
     {
         $generator = self::bingGeneratorInstance(true);
-        if (($model = $generator->getStruct('WebSearchOption')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('WebSearchOption')) instanceof StructModel) {
             $generator->setOptionGenericConstantsNames(true);
             $struct = new EnumFile($generator, $model->getName());
             $struct
@@ -103,7 +103,7 @@ class StructEnumTest extends AbstractFile
     public function testWriteBingSearchEnumPhonebookSortOption()
     {
         $generator = self::bingGeneratorInstance(true);
-        if (($model = $generator->getStruct('PhonebookSortOption')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
             $generator
                 ->setOptionNamespacePrefix('Std\Opt');
             $struct = new EnumFile($generator, $model->getName());
@@ -121,7 +121,7 @@ class StructEnumTest extends AbstractFile
     public function testWriteBingSearchEnumPhonebookSortOptionSuffixed()
     {
         $generator = self::bingGeneratorInstance(true);
-        if (($model = $generator->getStruct('PhonebookSortOption')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
             $generator
                 ->setOptionPrefix('')
                 ->setOptionSuffix('Api');
@@ -140,7 +140,7 @@ class StructEnumTest extends AbstractFile
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance(true);
-        if (($model = $generator->getStruct('PhonebookSortOption')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
             $generator
                 ->setOptionPrefix('')
                 ->setOptionSuffix('Api');

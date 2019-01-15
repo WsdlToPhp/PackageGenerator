@@ -64,8 +64,7 @@ class Operation extends AbstractOperation
     {
         if ($this->isParameterTypeAString() && !$this->isParameterTypeAModel()) {
             $method->setParameters([
-                $this->getMethodParameter($this->getParameterName($this->getMethod()
-                    ->getParameterType())),
+                $this->getMethodParameter($this->getParameterName($this->getMethod()->getParameterType())),
             ]);
         }
         return $this;

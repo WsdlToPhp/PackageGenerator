@@ -298,7 +298,7 @@ class Service extends AbstractModelFile
     public static function getOperationMethodReturnType(MethodModel $method, Generator $generator)
     {
         $returnType = $method->getReturnType();
-        if ((($struct = $generator->getStruct($returnType)) instanceof StructModel) && !$struct->isRestriction()) {
+        if ((($struct = $generator->getStructByName($returnType)) instanceof StructModel) && !$struct->isRestriction()) {
             if ($struct->isStruct()) {
                 $returnType = $struct->getPackagedName(true);
             } elseif ($struct->isArray()) {
@@ -343,7 +343,7 @@ class Service extends AbstractModelFile
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
-     * @throws \InvalidaArgumentException
+     * @throws \InvalidArgumentException
      * @param AbstractModel $model
      * @return Service
      */

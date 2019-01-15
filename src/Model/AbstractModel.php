@@ -110,13 +110,13 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
     }
     /**
      * @uses AbstractGeneratorAware::getGenerator()
-     * @uses Generator::getStruct()
+     * @uses Generator::getStructByName()
      * @uses AbstractModel::getInheritance()
      * @return Struct
      */
     public function getInheritedModel()
     {
-        return $this->getGenerator()->getStruct($this->getInheritance());
+        return $this->getGenerator()->getStructByName($this->getInheritance());
     }
     /**
      * Returns the meta

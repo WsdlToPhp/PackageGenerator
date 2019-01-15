@@ -43,7 +43,7 @@ class StructTest extends AbstractFile
     public function testWriteBingSearchStructQuery()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('Query')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('Query')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -59,7 +59,7 @@ class StructTest extends AbstractFile
     public function testWriteBingSearchStructVideoRequest()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('VideoRequest')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('VideoRequest')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -75,7 +75,7 @@ class StructTest extends AbstractFile
     public function testWriteBingSearchStructSearchRequest()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('SearchRequest')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('SearchRequest')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -91,7 +91,7 @@ class StructTest extends AbstractFile
     public function testWriteActonStructItem()
     {
         $generator = self::actonGeneratorInstance();
-        if (($model = $generator->getStruct('Item')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('Item')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -107,7 +107,7 @@ class StructTest extends AbstractFile
     public function testWriteOdigeoStructFareItinerary()
     {
         $generator = self::odigeoGeneratorInstance();
-        if (($model = $generator->getStruct('fareItinerary')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('fareItinerary')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -123,7 +123,7 @@ class StructTest extends AbstractFile
     public function testWriteBingStructNewsArticle()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('NewsArticle')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('NewsArticle')) instanceof StructModel) {
             $generator->setOptionStructClass('\Std\Opt\StructClass');
             $struct = new StructFile($generator, $model->getName());
             $struct
@@ -140,7 +140,7 @@ class StructTest extends AbstractFile
     public function testWriteWcfStructOffer()
     {
         $generator = self::wcfGeneratorInstance();
-        if (($model = $generator->getStruct('offer')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('offer')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -156,7 +156,7 @@ class StructTest extends AbstractFile
     public function testWriteYandexDirectApiStructAddRequest()
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
-        if (($model = $generator->getStruct('AddRequest')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('AddRequest')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -172,7 +172,7 @@ class StructTest extends AbstractFile
     public function testWriteYandexDirectApiStructAdGroupsSelectionCriteria()
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
-        if (($model = $generator->getStruct('AdGroupsSelectionCriteria')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('AdGroupsSelectionCriteria')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -188,7 +188,7 @@ class StructTest extends AbstractFile
     public function testWriteDocDataPaymentsStructShopper()
     {
         $generator = self::docDataPaymentsGeneratorInstance(true);
-        if (($model = $generator->getStruct('shopper')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('shopper')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -204,7 +204,7 @@ class StructTest extends AbstractFile
     public function testWriteDocDataPaymentsStructExpiryDate()
     {
         $generator = self::docDataPaymentsGeneratorInstance(true);
-        if (($model = $generator->getStruct('expiryDate')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('expiryDate')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -220,7 +220,7 @@ class StructTest extends AbstractFile
     public function testWriteDeliveryServiceStructExpiryDate()
     {
         $generator = self::deliveryServiceInstance();
-        if (($model = $generator->getStruct('АдресРФ')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('АдресРФ')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -236,7 +236,7 @@ class StructTest extends AbstractFile
     public function testWriteReformaStructHouseProfileData()
     {
         $generator = self::reformaGeneratorInstance(true);
-        if (($model = $generator->getStruct('HouseProfileData')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('HouseProfileData')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -252,7 +252,7 @@ class StructTest extends AbstractFile
     public function testOrderContractStructAddressDelivery_Type()
     {
         $generator = self::orderContractInstance(true);
-        if (($model = $generator->getStruct('AddressDelivery_Type')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('AddressDelivery_Type')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -268,7 +268,7 @@ class StructTest extends AbstractFile
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('NewsArticle')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('NewsArticle')) instanceof StructModel) {
             $generator->setOptionStructClass('\Std\Opt\StructClass');
             $struct = new StructFile($generator, $model->getName());
             $struct->setModel($model);
@@ -285,7 +285,7 @@ class StructTest extends AbstractFile
     {
         $generator = self::yandexDirectApiCampaignsGeneratorInstance(true);
         $generator->setOptionValidation(false);
-        if (($model = $generator->getStruct('CampaignGetItem')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('CampaignGetItem')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -302,7 +302,7 @@ class StructTest extends AbstractFile
     {
         $generator = self::yandexDirectApiLiveGeneratorInstance(true);
         $generator->setOptionValidation(true);
-        if (($model = $generator->getStruct('BannerInfo')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('BannerInfo')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -319,7 +319,7 @@ class StructTest extends AbstractFile
     {
         $generator = self::payPalGeneratorInstance(true);
         $generator->setOptionValidation(true);
-        if (($model = $generator->getStruct('SetExpressCheckoutRequestDetailsType')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('SetExpressCheckoutRequestDetailsType')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -336,7 +336,7 @@ class StructTest extends AbstractFile
     {
         $generator = self::whlInstance(true);
         $generator->setOptionValidation(true);
-        if (($model = $generator->getStruct('HotelReservationType')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('HotelReservationType')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -353,7 +353,7 @@ class StructTest extends AbstractFile
     {
         $generator = self::whlInstance();
         $generator->setOptionValidation(true);
-        if (($model = $generator->getStruct('TaxType')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('TaxType')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -370,7 +370,7 @@ class StructTest extends AbstractFile
     {
         $generator = self::whlInstance();
         $generator->setOptionValidation(true);
-        if (($model = $generator->getStruct('PaymentCardType')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('PaymentCardType')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -386,7 +386,7 @@ class StructTest extends AbstractFile
     public function testStructWithIdenticalPropertiesDifferentByCase()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('Query')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('Query')) instanceof StructModel) {
             $model->addAttribute('searchTerms', 'string');
             $struct = new StructFile($generator, $model->getName());
             $struct
@@ -403,7 +403,7 @@ class StructTest extends AbstractFile
     public function testStructResultFromUnitTestsWithBooleanAttribute()
     {
         $generator = self::unitTestsInstance();
-        if (($model = $generator->getStruct('Result')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('Result')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)

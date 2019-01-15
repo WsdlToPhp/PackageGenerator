@@ -35,7 +35,7 @@ class StructArrayTest extends AbstractFile
     public function testWriteBingSearchArrayOfNewsRelatedSearch()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('ArrayOfNewsRelatedSearch')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('ArrayOfNewsRelatedSearch')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -51,7 +51,7 @@ class StructArrayTest extends AbstractFile
     public function testWriteBingSearchArrayOfWebSearchOption()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('ArrayOfWebSearchOption')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('ArrayOfWebSearchOption')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -67,7 +67,7 @@ class StructArrayTest extends AbstractFile
     public function testWriteBingSearchArrayOfString()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('ArrayOfString')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('ArrayOfString')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -83,7 +83,7 @@ class StructArrayTest extends AbstractFile
     public function testWriteBingSearchArrayOfError()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('ArrayOfError')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('ArrayOfError')) instanceof StructModel) {
             $struct = new ArrayFile($generator, $model->getName());
             $struct
                 ->setModel($model)
@@ -99,7 +99,7 @@ class StructArrayTest extends AbstractFile
     public function testWriteBingSearchApiArrayOfErrorProject()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('ArrayOfError')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('ArrayOfError')) instanceof StructModel) {
             $generator
                 ->setOptionPrefix('Api')
                 ->setOptionSuffix('Project');
@@ -118,7 +118,7 @@ class StructArrayTest extends AbstractFile
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();
-        if (($model = $generator->getStruct('ArrayOfError')) instanceof StructModel) {
+        if (($model = $generator->getStructByName('ArrayOfError')) instanceof StructModel) {
             $generator
                 ->setOptionPrefix('Api')
                 ->setOptionSuffix('Project');

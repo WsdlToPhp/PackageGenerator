@@ -10870,7 +10870,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "sealType",
@@ -10915,7 +10915,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "paymentMethod",
@@ -10952,7 +10952,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "productType",
@@ -10997,7 +10997,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "vatRate",
@@ -11402,7 +11402,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "status",
@@ -11447,7 +11447,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "productFilter",
@@ -11476,7 +11476,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "entityType",
@@ -11513,7 +11513,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "carrierConstraintsType",
@@ -11702,7 +11702,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "postType",
@@ -11731,7 +11731,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "cashFlowType",
@@ -11768,7 +11768,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "smsMessageType",
@@ -11809,6 +11809,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

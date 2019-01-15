@@ -26,16 +26,21 @@ abstract class AbstractTagParser extends AbstractParser
     /**
      * Return the model on which the method will be called
      * @param Tag $tag
+     * @param string $type can be passed to specify the Struct type (inheritance)
      * @return Struct|Method
      */
-    protected function getModel(Tag $tag)
+    protected function getModel(Tag $tag, $type = '')
     {
         switch ($tag->getName()) {
             case WsdlDocument::TAG_OPERATION:
                 $model = $this->getMethodByName($tag->getAttributeName());
                 break;
             default:
-                $model = $this->getStructByName($tag->getAttributeName());
+                if (empty($type)) {
+                    $model = $this->getStructByName($tag->getAttributeName());
+                } else {
+                    $model = $this->getStructByNameAndType($tag->getAttributeName(), $type);
+                }
                 break;
         }
         return $model;
@@ -46,7 +51,16 @@ abstract class AbstractTagParser extends AbstractParser
      */
     protected function getStructByName($name)
     {
-        return $this->generator->getStruct($name);
+        return $this->generator->getStructByName($name);
+    }
+    /**
+     * @param string $name
+     * @param string $type
+     * @return null|\WsdlToPhp\PackageGenerator\Model\Struct
+     */
+    protected function getStructByNameAndType($name, $type)
+    {
+        return $this->generator->getStructByNameAndType($name, $type);
     }
     /**
      * @param string $name
@@ -117,7 +131,7 @@ abstract class AbstractTagParser extends AbstractParser
         if ($structAttribute instanceof StructAttribute) {
             $type = $tagAttribute->getValue();
             if ($type !== null) {
-                $typeModel = $this->generator->getStruct($type);
+                $typeModel = $this->generator->getStructByName($type);
                 $modelAttributeType = $structAttribute->getType();
                 if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
                     if ($typeModel->isRestriction()) {

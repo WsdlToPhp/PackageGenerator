@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
@@ -793,5 +794,31 @@ class GeneratorTest extends TestCase
         $generator = self::actonGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
         $this->assertCount(1, $generator->getServices(true));
         $this->assertCount(8, $generator->getServices()->getMethods());
+    }
+    /**
+     *
+     */
+    public function testGetStructByNameAndTypeMustReturnAStruct()
+    {
+        $generator = self::getBingGeneratorInstance();
+
+        $this->assertInstanceOf('\WSdlToPhp\PackageGenerator\Model\Struct', $generator->getStructByNameAndType('AdultOption', 'string'));
+    }
+    /**
+     *
+     */
+    public function testGetUrlContentMustReturnNull()
+    {
+        $generator = self::getBingGeneratorInstance();
+
+        $this->assertNull($generator->getUrlContent('my-file.txt'));
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Json is invalid, please check error 4
+     */
+    public function testinstanceFromSerializedJsonMustThrowAnError()
+    {
+        Generator::instanceFromSerializedJson('{"the":\'key\'}');
     }
 }

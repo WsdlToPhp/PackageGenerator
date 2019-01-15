@@ -15,6 +15,7 @@ class ApiResult extends AbstractStructBase
     /**
      * The Success
      * Meta informations extracted from the WSDL
+     * - base: xsd:boolean
      * - default: false
      * - maxOccurs: 1
      * - minOccurs: 0

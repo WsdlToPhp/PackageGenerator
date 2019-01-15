@@ -335,7 +335,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous0",
@@ -420,6 +420,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xsd:string",
                     "documentation": [
                         "ID for an object"
                     ]
@@ -562,7 +563,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -771,7 +772,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -907,7 +908,9 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "xsd:string"
+                },
                 "name": "FaultCode",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -1724,7 +1727,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "fieldSeparator",
@@ -1761,7 +1764,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "quoteCharacter",
@@ -1984,7 +1987,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -2458,7 +2461,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -2715,7 +2718,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -3466,6 +3469,21 @@
                 "meta": [],
                 "name": "contactField",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "inheritance": "string",
+                "abstract": false,
+                "meta": {
+                    "base": "xs:string",
+                    "minLength": "3"
+                },
+                "name": "contentType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             }
         ]
     },
@@ -3502,6 +3520,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

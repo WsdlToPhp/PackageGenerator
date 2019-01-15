@@ -2470,7 +2470,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "Type",
@@ -2534,6 +2534,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

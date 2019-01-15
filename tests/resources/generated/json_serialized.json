@@ -317,7 +317,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "AdultOption",
@@ -372,7 +372,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SearchOption",
@@ -531,7 +531,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "SourceType",
@@ -664,7 +664,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "WebSearchOption",
@@ -870,7 +870,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "PhonebookSortOption",
@@ -964,7 +964,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "VideoSortOption",
@@ -1072,7 +1072,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "NewsSortOption",
@@ -1179,7 +1179,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "MobileWebSearchOption",
