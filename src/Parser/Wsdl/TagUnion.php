@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagUnion as Union;
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagSimpleType as SimpleType;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
@@ -35,12 +36,14 @@ class TagUnion extends AbstractTagParser
     public function parseUnion(Union $union)
     {
         $parent = $union->getSuitableParent();
-        if ($parent instanceof AbstractTag) {
+        if ($parent) {
             $model = $this->getModel($parent);
-            if ($model instanceof AbstractModel) {
-                $modelInheritance = $model->getInheritance();
+            if ($model) {
                 $memberTypes = $union->getAttributeMemberTypes();
-                if (empty($modelInheritance) && !empty($memberTypes)) {
+                if ($union->hasMemberTypesAsChildren()) {
+                    $memberTypes = array_unique(array_merge($memberTypes, $this->getUnionMemberTypesFromChildren($union)));
+                }
+                if (!empty($memberTypes)) {
                     $model->addMeta('union', $memberTypes);
                     $model->setInheritance($this->findSuitableInheritance($memberTypes));
                 }
@@ -48,7 +51,7 @@ class TagUnion extends AbstractTagParser
         }
     }
     /**
-     * @param array $values
+     * @param string[] $values
      * @return string
      */
     protected function findSuitableInheritance(array $values)
@@ -65,5 +68,19 @@ class TagUnion extends AbstractTagParser
             }
         }
         return $validInheritance;
+    }
+    /**
+     * @param Union $union
+     * @return string[]
+     */
+    protected function getUnionMemberTypesFromChildren(Union $union)
+    {
+        $memberTypes = [];
+        foreach ($union->getMemberTypesChildren() as $child) {
+            if ($child instanceof SimpleType && $child->hasRestrictionChild() && '' !== $child->getFirstRestrictionChild()->getAttributeBase()) {
+                $memberTypes[] = $child->getFirstRestrictionChild()->getAttributeBase();
+            }
+        }
+        return array_unique($memberTypes);
     }
 }

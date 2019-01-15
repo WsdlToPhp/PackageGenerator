@@ -15,6 +15,8 @@ class ApiExpiryDate extends AbstractStructBase
     /**
      * The month
      * Meta informations extracted from the WSDL
+     * - base: NMTOKEN
+     * - pattern: (0[1-9]|1[012])
      * - use: required
      * @var string
      */
@@ -22,6 +24,8 @@ class ApiExpiryDate extends AbstractStructBase
     /**
      * The year
      * Meta informations extracted from the WSDL
+     * - base: NMTOKEN
+     * - pattern: [0-9][0-9]
      * - use: required
      * @var string
      */
@@ -54,6 +58,10 @@ class ApiExpiryDate extends AbstractStructBase
      */
     public function setMonth($month = null)
     {
+        // validation for constraint: pattern
+        if (is_scalar($month) && !preg_match('/(0[1-9]|1[012])/', $month)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "(0[1-9]|1[012])", "%s" given', var_export($month, true)), __LINE__);
+        }
         // validation for constraint: string
         if (!is_null($month) && !is_string($month)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($month)), __LINE__);
@@ -76,6 +84,10 @@ class ApiExpiryDate extends AbstractStructBase
      */
     public function setYear($year = null)
     {
+        // validation for constraint: pattern
+        if (is_scalar($year) && !preg_match('/[0-9][0-9]/', $year)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9][0-9]", "%s" given', var_export($year, true)), __LINE__);
+        }
         // validation for constraint: string
         if (!is_null($year) && !is_string($year)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($year)), __LINE__);

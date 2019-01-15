@@ -51,29 +51,45 @@
             "name": "Valérian Girard",
             "email": "waldo2188@gmail.com",
             "role": "Contributor"
+        },
+        {
+            "name": "hordijk",
+            "role": "Contributor"
+        },
+        {
+            "name": "Andreas Möller",
+            "email": "am@localheinz.com",
+            "role": "Contributor"
+        },
+        {
+            "name": "Andreas Kintzinger",
+            "role": "Contributor"
         }
     ],
     "support" : {
         "email" : "contact@wsdltophp.com"
     },
     "require": {
-        "php" : ">=5.4.0 || >=5.5.9",
+        "php": ">=5.4.0 || >=5.5.9",
         "ext-soap": "*",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "ext-json": "*",
+        "composer/composer": "^1.0",
         "symfony/console": "^2.8 || ^3.0 || ^4.0",
         "symfony/yaml": "^2.8 || ^3.0 || ^4.0",
-        "composer/composer": "^1.0",
-        "wsdltophp/phpgenerator": "^1.0",
+        "wsdltophp/domhandler": "^1.0",
         "wsdltophp/packagebase": "^2.0",
-        "wsdltophp/domhandler": "^1.0"
+        "wsdltophp/phpgenerator": "^1.0"
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "lint": "vendor/bin/php-cs-fixer fix",
+        "lint": "vendor/bin/php-cs-fixer fix --ansi --diff --verbose",
         "build": "box build --verbose"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8 || ^6.0",
-        "friendsofphp/php-cs-fixer": "^2.0"
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "phpunit/phpunit": "^4.8 || ^6.0"
     },
     "autoload": {
         "psr-4": {
@@ -84,5 +100,8 @@
         "psr-4": {
             "WsdlToPhp\\PackageGenerator\\Tests\\": "tests"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }

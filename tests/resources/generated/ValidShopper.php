@@ -27,6 +27,7 @@ class ApiShopper extends AbstractStructBase
      * - documentation: Shopper's e-mail address. | Email address.
      * - maxOccurs: 1
      * - minOccurs: 1
+     * - base: ddp:string100 | normalizedString
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * - maxLength: 100
      * - minLength: 1
@@ -55,6 +56,7 @@ class ApiShopper extends AbstractStructBase
      * The id
      * Meta informations extracted from the WSDL
      * - use: required
+     * - base: normalizedString
      * - maxLength: 35
      * - minLength: 1
      * @var string
@@ -66,6 +68,7 @@ class ApiShopper extends AbstractStructBase
      * - documentation: Shopper's date of birth. | A date formatted as yyyy-MM-dd, for example February 25th, 2014 would become "2012-02-25".
      * - maxOccurs: 1
      * - minOccurs: 0
+     * - base: normalizedString
      * - maxLength: 10
      * - minLength: 10
      * @var string
@@ -77,6 +80,7 @@ class ApiShopper extends AbstractStructBase
      * - documentation: Shopper's phone number. | Phone number, international numbers start with a +.
      * - maxOccurs: 1
      * - minOccurs: 0
+     * - base: ddp:string50 | normalizedString
      * - maxLength: 50
      * - minLength: 1
      * @var string
@@ -88,6 +92,7 @@ class ApiShopper extends AbstractStructBase
      * - documentation: Shopper's mobile phone number. | Phone number, international numbers start with a +.
      * - maxOccurs: 1
      * - minOccurs: 0
+     * - base: ddp:string50 | normalizedString
      * - maxLength: 50
      * - minLength: 1
      * @var string
@@ -99,6 +104,7 @@ class ApiShopper extends AbstractStructBase
      * - documentation: Ip address of the shopper. Will be used in the future for riskchecks. Can be ipv4 or ipv6.
      * - maxOccurs: 1
      * - minOccurs: 0
+     * - base: normalizedString
      * - maxLength: 35
      * - minLength: 1
      * @var string

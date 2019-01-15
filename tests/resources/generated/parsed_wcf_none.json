@@ -190,6 +190,7 @@
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:int",
                     "nillable": "true",
                     "type": "tns:char"
                 },
@@ -202,7 +203,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "duration",
                 "abstract": false,
                 "meta": {
                     "base": "xs:duration",
@@ -224,6 +225,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "nillable": "true",
                     "pattern": "[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}",
                     "type": "tns:guid"
@@ -266,6 +268,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

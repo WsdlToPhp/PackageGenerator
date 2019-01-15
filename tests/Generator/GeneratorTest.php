@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Tests\TestCase;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
@@ -676,12 +677,12 @@ class GeneratorTest extends TestCase
     public function testGetUrlContent()
     {
         $generator = self::getBingGeneratorInstance();
-        $content = $generator->getUrlContent('http://api.search.live.net/search.wsdl');
+        $content = $generator->getUrlContent('https://phar.wsdltophp.com/bingsearch.wsdl');
         $this->assertNotNull($content);
 
         $generator->setOptionSchemasSave(true);
         $generator->setOptionSchemasFolder('wsdl');
-        $content = $generator->getUrlContent('http://api.search.live.net/search.wsdl');
+        $content = $generator->getUrlContent('https://phar.wsdltophp.com/bingsearch.wsdl');
         $this->assertNotNull($content);
     }
     /**
@@ -733,7 +734,6 @@ class GeneratorTest extends TestCase
                     'ssl' => [
                         'ca_file' => basename(__FILE__),
                         'ca_path' => __DIR__,
-                        'verify_peer' => true,
                     ],
                 ]),
             ]);
@@ -756,7 +756,6 @@ class GeneratorTest extends TestCase
             'ssl' => [
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
-                'verify_peer' => true,
             ],
         ], $contextOptions);
     }
@@ -795,5 +794,31 @@ class GeneratorTest extends TestCase
         $generator = self::actonGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
         $this->assertCount(1, $generator->getServices(true));
         $this->assertCount(8, $generator->getServices()->getMethods());
+    }
+    /**
+     *
+     */
+    public function testGetStructByNameAndTypeMustReturnAStruct()
+    {
+        $generator = self::getBingGeneratorInstance();
+
+        $this->assertInstanceOf('\WSdlToPhp\PackageGenerator\Model\Struct', $generator->getStructByNameAndType('AdultOption', 'string'));
+    }
+    /**
+     *
+     */
+    public function testGetUrlContentMustReturnNull()
+    {
+        $generator = self::getBingGeneratorInstance();
+
+        $this->assertNull($generator->getUrlContent('my-file.txt'));
+    }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Json is invalid, please check error 4
+     */
+    public function testinstanceFromSerializedJsonMustThrowAnError()
+    {
+        Generator::instanceFromSerializedJson('{"the":\'key\'}');
     }
 }

@@ -85,7 +85,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      */
     public static function onlineWsdlBingPath()
     {
-        return 'http://api.search.live.net/search.wsdl';
+        return 'https://phar.wsdltophp.com/bingsearch.wsdl';
     }
     /**
      * @return string
@@ -191,6 +191,13 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     public static function wsdlEwsPath()
     {
         return __DIR__ . '/resources/ews/services.wsdl';
+    }
+    /**
+     * @return string
+     */
+    public static function schemaEwsTypesPath()
+    {
+        return __DIR__ . '/resources/ews/types.xsd';
     }
     /**
      * @return string

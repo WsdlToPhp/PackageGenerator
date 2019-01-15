@@ -52,13 +52,13 @@ class Rules
      * This method is called when an attribute has a union meta which means the attribute is of several types.
      * In this case, the types are currently only of type string (normally) so we add the rules according to each type
      * @param string $parameterName
-     * @param string $itemType
+     * @param bool $itemType
      * @param string[] $unionTypes
      */
     protected function applyUnionRules($parameterName, $itemType, array $unionTypes)
     {
         foreach ($unionTypes as $type) {
-            $struct = $this->getAttribute()->getGenerator()->getStruct($type);
+            $struct = $this->getAttribute()->getGenerator()->getStructByName($type);
             if ($struct instanceof Struct) {
                 $this->applyRulesFromModel($struct, $parameterName, $itemType);
             }
@@ -68,7 +68,7 @@ class Rules
      * Generic method to apply rules from current model
      * @param AbstractModel $model
      * @param string $parameterName
-     * @param string $itemType
+     * @param bool $itemType
      */
     protected function applyRulesFromModel(AbstractModel $model, $parameterName, $itemType = false)
     {
@@ -83,7 +83,7 @@ class Rules
     }
     /**
      * @param string $metaName
-     * @return AbstractRule
+     * @return AbstractRule|null
      */
     protected function getRule($metaName)
     {

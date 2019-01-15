@@ -110,13 +110,13 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
     }
     /**
      * @uses AbstractGeneratorAware::getGenerator()
-     * @uses Generator::getStruct()
+     * @uses Generator::getStructByName()
      * @uses AbstractModel::getInheritance()
      * @return Struct
      */
     public function getInheritedModel()
     {
-        return $this->getGenerator()->getStruct($this->getInheritance());
+        return $this->getGenerator()->getStructByName($this->getInheritance());
     }
     /**
      * Returns the meta
@@ -535,13 +535,13 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
     protected static function checkSerializedJson(array $args)
     {
         if (!array_key_exists('__CLASS__', $args)) {
-            throw new \InvalidArgumentException(sprintf('__CLASS__ key is missing from', var_export($args, true)));
+            throw new \InvalidArgumentException(sprintf('__CLASS__ key is missing from "%s"', var_export($args, true)));
         }
         if (!class_exists($args['__CLASS__'])) {
             throw new \InvalidArgumentException(sprintf('Class %s is unknown', $args['__CLASS__']));
         }
         if (!array_key_exists('name', $args)) {
-            throw new \InvalidArgumentException(sprintf('name key is missing from', var_export($args, true)));
+            throw new \InvalidArgumentException(sprintf('name key is missing from %s', var_export($args, true)));
         }
     }
 }

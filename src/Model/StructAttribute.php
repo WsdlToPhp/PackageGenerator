@@ -25,7 +25,7 @@ class StructAttribute extends AbstractModel
     protected $containsElements = false;
     /**
      * Defines that this property can be removed from request or not.
-     * The property cna be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
+     * The property can be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
      * Infos at {@link http://www.w3schools.com/xml/el_element.asp}
      * @var bool
      */
@@ -51,7 +51,6 @@ class StructAttribute extends AbstractModel
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
      * @uses StructAttribute::getOwner()
-     * @param string $additionalContext
      * @param string $string
      * @param string $additionalContext
      * @return string
@@ -219,7 +218,8 @@ class StructAttribute extends AbstractModel
      */
     public function getTypeStruct()
     {
-        return $this->getGenerator()->getStruct($this->getType());
+        $struct = $this->getGenerator()->getStructByNameAndType($this->getType(), $this->getInheritance());
+        return $struct ? $struct : $this->getGenerator()->getStructByName($this->getType());
     }
     /**
      * @return string[]
@@ -242,7 +242,7 @@ class StructAttribute extends AbstractModel
      */
     public function getInheritanceStruct()
     {
-        return $this->getGenerator()->getStruct($this->getInheritance());
+        return $this->getGenerator()->getStructByName($this->getInheritance());
     }
     /**
      * @return string[]

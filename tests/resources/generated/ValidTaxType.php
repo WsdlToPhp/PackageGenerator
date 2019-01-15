@@ -34,6 +34,7 @@ class ApiTaxType extends AbstractStructBase
      * The Code
      * Meta informations extracted from the WSDL
      * - documentation: Code identifying the fee (e.g.,agency fee, municipality fee). Refer to OpenTravel Code List Fee Tax Type (FTT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
+     * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
      * @var string
      */
@@ -42,6 +43,7 @@ class ApiTaxType extends AbstractStructBase
      * The Percent
      * Meta informations extracted from the WSDL
      * - documentation: Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value). | Used for percentage values.
+     * - base: xs:decimal
      * - maxInclusive: 100.00
      * - minInclusive: 0.00
      * @var float
@@ -51,6 +53,7 @@ class ApiTaxType extends AbstractStructBase
      * The Amount
      * Meta informations extracted from the WSDL
      * - documentation: A monetary amount. | Specifies an amount, max 3 decimals.
+     * - base: xs:decimal
      * - fractionDigits: 3
      * @var float
      */
@@ -59,6 +62,7 @@ class ApiTaxType extends AbstractStructBase
      * The CurrencyCode
      * Meta informations extracted from the WSDL
      * - documentation: The code specifying a monetary unit. Use ISO 4217, three alpha code. | Used for an Alpha String, length exactly 3.
+     * - base: xs:string
      * - pattern: [a-zA-Z]{3}
      * @var string
      */
@@ -232,7 +236,7 @@ class ApiTaxType extends AbstractStructBase
     public function setAmount($amount = null)
     {
         // validation for constraint: fractionDigits
-        if (is_float($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) !== 3) {
+        if (is_float($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) > 3) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 3 fraction digits, "%d" given', strlen(substr($amount, strpos($amount, '.') + 1))), __LINE__);
         }
         $this->Amount = $amount;

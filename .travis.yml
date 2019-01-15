@@ -10,8 +10,9 @@ php:
     - 7.1
     - 7.2
 
-before_install:
-    - composer self-update
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 install:
     - composer install

@@ -19,7 +19,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
      */
     protected $offset = 0;
     /**
-     * @param string $offset
+     * @param int $offset
      * @return bool
      */
     public function offsetExists($offset)
@@ -37,7 +37,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return $this->offsetExists($offset) ? array_shift($element) : null;
     }
     /**
-     * @param string $offset
+     * @param int $offset
      * @param mixed $value
      * @return AbstractObjectContainer
      */
@@ -46,15 +46,14 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         throw new \InvalidArgumentException('This method can\'t be used as object are stored with a string as array index', __LINE__);
     }
     /**
-     * @param string $offset
-     * @return AbstractObjectContainer
+     * @param int $offset
+     * @return void
      */
     public function offsetUnset($offset)
     {
         if ($this->offsetExists($offset)) {
             unset($this->objects[$this->getObjectKey($this->offsetGet($offset))]);
         }
-        return $this;
     }
     /**
      * @return mixed
@@ -86,12 +85,11 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return count(array_slice($this->objects, $this->offset, 1)) > 0;
     }
     /**
-     * @return AbstractObjectContainer
+     * @return void
      */
     public function rewind()
     {
         $this->offset = 0;
-        return $this;
     }
     /**
      * @return int
@@ -159,11 +157,14 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
      */
     public function get($value)
     {
-        if (!is_string($value) && !is_int($value)) {
+        if (!is_scalar($value)) {
             throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', var_export($value, true), get_class($this)), __LINE__);
         }
         return array_key_exists($value, $this->objects) ? $this->objects[$value] : null;
     }
+    /**
+     * @return array
+     */
     public function jsonSerialize()
     {
         return array_values($this->objects);

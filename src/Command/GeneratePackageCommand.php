@@ -93,7 +93,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption(self::GENERATOR_OPTIONS_CONFIG_OPTION, null, InputOption::VALUE_OPTIONAL, 'Path to the generator\'s configuration file to load');
     }
     /**
-     * @see \Sdc\AppBundle\Command\Command::execute()
+     * @see Symfony\Component\Console\Command\Command::execute()
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -101,9 +101,9 @@ class GeneratePackageCommand extends AbstractCommand
         $start = new \DateTime();
         $this->writeLn(sprintf(" Start at %s", $start->format('Y-m-d H:i:s')));
         $this->initGeneratorOptions();
-        if ($this->canExecute() === true) {
+        if ($this->canExecute()) {
             $this->initGenerator()->getGenerator()->generatePackage();
-        } elseif ($this->canExecute() === false) {
+        } else {
             $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
             $this->writeLn(sprintf("  Generator's option file used: %s", $this->resolveGeneratorOptionsConfigPath()));
             $this->writeLn("  Used generator's options:");
@@ -195,7 +195,7 @@ class GeneratePackageCommand extends AbstractCommand
         return $array;
     }
     /**
-     *
+     * @return string
      */
     public function getGeneratorOptionsConfigOption()
     {

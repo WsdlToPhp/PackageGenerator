@@ -222,7 +222,7 @@ class Tutorial extends AbstractFile
     protected function getMethodParameter($parameterType, $parameterName = null)
     {
         $parameter = sprintf('%1$s%2$s', (empty($parameterType) && empty($parameterName)) ? '' : '$', empty($parameterName) ? $parameterType : $parameterName);
-        $model = $parameterType !== null ? $this->getGenerator()->getStruct($parameterType) : null;
+        $model = $parameterType !== null ? $this->getGenerator()->getStructByName($parameterType) : null;
         if ($model instanceof StructModel && $model->isStruct() && !$model->isRestriction()) {
             $parameter = sprintf('new %s()', $model->getPackagedName(true));
         }

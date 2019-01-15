@@ -304,6 +304,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "string",
                     "documentation": [
                         "ISO 639-1:2002 Part 1: Alpha-2 Language Codes (lowercase)"
                     ],
@@ -321,6 +322,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "string",
                     "documentation": [
                         "ISO 3166-1:2006"
                     ],
@@ -338,6 +340,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "string",
                     "documentation": [
                         "ISO 4217:2008"
                     ],
@@ -355,6 +358,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "documentation": [
                         "A date formatted as yyyy-MM-dd, for example February 25th, 2014 would become \"2012-02-25\"."
                     ],
@@ -373,6 +377,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "documentation": [
                         "A date formatted as yyyy-MM-dd HH:mm:ss, for example February 25th, 2014, 3 past twelve and 4 seconds, would become \"2012-02-25 12:03:04\"."
                     ],
@@ -391,6 +396,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "maxLength": "35",
                     "minLength": "1"
                 },
@@ -406,6 +412,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "maxLength": "50",
                     "minLength": "1"
                 },
@@ -421,6 +428,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "maxLength": "100",
                     "minLength": "1"
                 },
@@ -436,6 +444,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "maxLength": "250",
                     "minLength": "1"
                 },
@@ -451,6 +460,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "maxLength": "255",
                     "minLength": "1"
                 },
@@ -466,6 +476,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "maxLength": "512",
                     "minLength": "1"
                 },
@@ -481,6 +492,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "maxLength": "2048",
                     "minLength": "1"
                 },
@@ -496,6 +508,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "documentation": [
                         "Debit- or credit card number."
                     ],
@@ -513,6 +526,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "documentation": [
                         "3 or 4 digit security code (cvc2, cid, cvv2)."
                     ],
@@ -527,9 +541,11 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "anonymous17",
-                        "inheritance": "",
+                        "inheritance": "NMTOKEN",
                         "abstract": false,
                         "meta": {
+                            "base": "NMTOKEN",
+                            "pattern": "(0[1-9]|1[012])",
                             "use": "required"
                         },
                         "name": "month",
@@ -539,9 +555,11 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "anonymous18",
-                        "inheritance": "",
+                        "inheritance": "NMTOKEN",
                         "abstract": false,
                         "meta": {
+                            "base": "NMTOKEN",
+                            "pattern": "[0-9][0-9]",
                             "use": "required"
                         },
                         "name": "year",
@@ -564,7 +582,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous17",
@@ -576,7 +594,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous18",
@@ -591,6 +609,7 @@
                 "inheritance": "string50",
                 "abstract": false,
                 "meta": {
+                    "base": "ddp:string50",
                     "documentation": [
                         "Phone number, international numbers start with a +."
                     ]
@@ -607,6 +626,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "maxLength": "50",
                     "minLength": "1"
                 },
@@ -622,6 +642,7 @@
                 "inheritance": "string100",
                 "abstract": false,
                 "meta": {
+                    "base": "ddp:string100",
                     "documentation": [
                         "Email address."
                     ],
@@ -661,7 +682,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "gender",
@@ -714,6 +735,7 @@
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
+                    "base": "decimal",
                     "minInclusive": "0",
                     "whiteSpace": "collapse"
                 },
@@ -778,7 +800,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
-                "inheritance": "",
+                "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
                     "documentation": [
@@ -838,6 +860,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "documentation": [
                         "The error code of the error. The reason of error is unknown. Request data is missing. Request data is incorrect. Error related to security violations such as login failure or not allowed IP. Payment system error."
                     ]
@@ -909,6 +932,7 @@
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
+                    "base": "normalizedString",
                     "maxLength": "32",
                     "minLength": "32",
                     "pattern": "[A-Z,0-9]{32}"
@@ -925,6 +949,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "maxLength": "11",
                     "minLength": "8"
                 },
@@ -940,6 +965,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "maxLength": "34",
                     "minLength": "15"
                 },
@@ -955,6 +981,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "string",
                     "documentation": [
                         "HTTP method"
                     ],
@@ -1033,6 +1060,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "documentation": [
                         "The iDEAL issuer id, for example RABO, ABNAMRO, ING, SNS. See the documentation for possible issuing banks."
                     ]
@@ -1887,11 +1915,13 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "linkId",
-                        "inheritance": "",
+                        "inheritance": "string",
                         "abstract": false,
                         "meta": {
+                            "base": "string",
                             "maxOccurs": "1",
-                            "minOccurs": "1"
+                            "minOccurs": "1",
+                            "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}"
                         },
                         "name": "linkId",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1948,8 +1978,7 @@
                 "meta": {
                     "documentation": [
                         "A linkID token, which is a UUID type 4 (see RFC-4122 and ITU-T Rec. X.667)."
-                    ],
-                    "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}"
+                    ]
                 },
                 "name": "linkId",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
@@ -2191,6 +2220,7 @@
                 "inheritance": "positiveInteger",
                 "abstract": false,
                 "meta": {
+                    "base": "positiveInteger",
                     "documentation": [
                         "The payment ID with check digit as generated by the payment system."
                     ]
@@ -2352,6 +2382,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "documentation": [
                         "The state of the authorization. Current known values: This is a new payment without any actions performed on it yet. For this payment the risk check was okay. The risk check for this payment triggered. The user has provided details and is authenticated. The payment system could not start the payment due to a technical error. The shopper is authenticated by the acquirer. The shopper is redirected to the acquirer web-site for authentication. The shopper is not authenticated by the acquirer. Unable to do the authentication of the shopper by the acquirer. This payment is authorized. The shopper is redirected to the acquirer web-site for authorization. Requested authorization for this payment, waiting for a notification from acquirer. The payment was not authorized due to a functional error. Unable to do the payment authorization due to a technical error. The payment is canceled. Payment is not canceled, due to functional error. Payment is not canceled, due to technical error. A cancel request sent to acquirer."
                     ]
@@ -2654,10 +2685,13 @@
                         "containsElements": false,
                         "removableFromRequest": false,
                         "type": "anonymous61",
-                        "inheritance": "",
+                        "inheritance": "decimal",
                         "abstract": false,
                         "meta": {
-                            "use": "required"
+                            "base": "decimal",
+                            "minInclusive": "0",
+                            "use": "required",
+                            "whiteSpace": "collapse"
                         },
                         "name": "rate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2683,7 +2717,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "decimal",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous61",
@@ -3057,7 +3091,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
-                "inheritance": "",
+                "inheritance": "string",
                 "abstract": false,
                 "meta": [],
                 "name": "anonymous67",
@@ -5323,6 +5357,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "documentation": [
                         "The receipt type. A shopper receipt. A merchant receipt."
                     ]
@@ -5336,11 +5371,13 @@
                         "containsElements": true,
                         "removableFromRequest": false,
                         "type": "line",
-                        "inheritance": "",
+                        "inheritance": "string",
                         "abstract": false,
                         "meta": {
+                            "base": "string",
                             "maxOccurs": "unbounded",
-                            "minOccurs": "1"
+                            "minOccurs": "1",
+                            "whiteSpace": "preserve"
                         },
                         "name": "line",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5368,9 +5405,7 @@
                 "values": [],
                 "inheritance": "string",
                 "abstract": false,
-                "meta": {
-                    "whiteSpace": "preserve"
-                },
+                "meta": [],
                 "name": "line",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -5996,6 +6031,7 @@
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
+                    "base": "NMTOKEN",
                     "documentation": [
                         "The results of the cancel operation. No payments found for this order. All payments in this order were already canceled. All payments in this order are canceled successfully. At least one payment in this order was not canceled successfully. Use the status operation to get more details. A request for cancelation has been sent to the acquirer, but no response received for at least one payment in this order. Use the status operation to get more details."
                     ]
@@ -8934,6 +8970,7 @@
         "enums_folder": "EnumType",
         "services_folder": "ServiceType",
         "schemas_save": false,
-        "schemas_folder": "wsdl"
+        "schemas_folder": "wsdl",
+        "xsd_types_path": ""
     }
 }

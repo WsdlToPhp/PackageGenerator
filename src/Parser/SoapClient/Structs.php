@@ -35,10 +35,8 @@ class Structs extends AbstractParser
             ->getSoapClient()
             ->getSoapClient()
             ->__getTypes();
-        if (is_array($types)) {
-            foreach ($types as $type) {
-                $this->parseType($type);
-            }
+        foreach ($types as $type) {
+            $this->parseType($type);
         }
     }
     /**
@@ -56,7 +54,7 @@ class Structs extends AbstractParser
                 } elseif ($typeDef[0] === self::STRUCT_DECLARATION) {
                     $this->parseComplexStruct($typeDef);
                 } else {
-                    $this->getGenerator()->getStructs()->addVirtualStruct($structName);
+                    $this->getGenerator()->getStructs()->addVirtualStruct($structName, $typeDef[0]);
                 }
             }
             $this->structHasBeenDefined($type);

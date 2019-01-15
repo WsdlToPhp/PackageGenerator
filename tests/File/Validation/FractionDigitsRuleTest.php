@@ -7,49 +7,49 @@ class FractionDigitsRuleTest extends RuleTest
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testApplyRuleWithExceptionFor2Digits()
+    public function testApplyRuleWithExceptionForOneMoreDigitThanExpected2Digits()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 2);
-        call_user_func($funtionName, 2.555);
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 2);
+        call_user_func($functionName, 2.555);
     }
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testApplyRuleWithExceptionFor3Digits()
+    public function testApplyRuleWithExceptionForOneMoreDigitThanExpected3Digits()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 3);
-        call_user_func($funtionName, 2.5556);
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testApplyRuleWithExceptionFor4Digits()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
-        call_user_func($funtionName, 2.55);
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 3);
+        call_user_func($functionName, 2.5556);
     }
     /**
      *
      */
-    public function testApplyRuleFor2Digits()
+    public function testApplyRuleForTwoLessDigitsThanExpected4Digits()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 2);
-        $this->assertTrue(call_user_func($funtionName, 2.55));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
+        $this->assertTrue(call_user_func($functionName, 2.55));
     }
     /**
      *
      */
-    public function testApplyRuleFor4Digits()
+    public function testApplyRuleForAsManyDigitsAsExpected2Digits()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
-        $this->assertTrue(call_user_func($funtionName, 2.5152));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 2);
+        $this->assertTrue(call_user_func($functionName, 2.55));
+    }
+    /**
+     *
+     */
+    public function testApplyRuleForAsManyDigitsAsExpected4Digits()
+    {
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
+        $this->assertTrue(call_user_func($functionName, 2.5152));
     }
     /**
      *
      */
     public function testApplyRuleForNull()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
-        $this->assertTrue(call_user_func($funtionName, null));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
+        $this->assertTrue(call_user_func($functionName, null));
     }
 }
