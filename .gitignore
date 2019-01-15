@@ -5,4 +5,3 @@ phpunit.xml
 wsdltophp.yml
 bin/
 tests/resources/generated
-.idea
