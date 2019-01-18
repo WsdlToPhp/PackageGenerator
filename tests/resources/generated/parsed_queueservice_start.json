@@ -2026,7 +2026,14 @@
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "StringValue",
+                                "BinaryValue"
+                            ]
+                        },
                         "name": "StringValue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -2036,7 +2043,14 @@
                         "type": "base64Binary",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "StringValue",
+                                "BinaryValue"
+                            ]
+                        },
                         "name": "BinaryValue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },

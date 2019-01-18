@@ -16,6 +16,9 @@ class ApiResult extends AbstractStructBase
      * The Success
      * Meta informations extracted from the WSDL
      * - base: xsd:boolean
+     * - choiceMaxOccurs: 1
+     * - choiceMinOccurs: 1
+     * - choiceNames: Success | Errors
      * - default: false
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -25,6 +28,9 @@ class ApiResult extends AbstractStructBase
     /**
      * The Errors
      * Meta informations extracted from the WSDL
+     * - choiceMaxOccurs: 1
+     * - choiceMinOccurs: 1
+     * - choiceNames: Success | Errors
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiErrors
@@ -64,11 +70,17 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Set Success value
+     * This property belongs to a choice that allows only one property to exist
+     * @throws \InvalidArgumentException
      * @param bool $success
      * @return \Api\StructType\ApiResult
      */
     public function setSuccess($success = false)
     {
+        // validation(s) for constraint: choice
+        if (isset($this->Errors)) {
+            throw new \InvalidArgumentException('The property Success can\'t be set as the property Errors is already set. Only one property must be set among these properties: Success, Errors.');
+        }
         // validation for constraint: boolean
         if (!is_null($success) && !is_bool($success)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($success)), __LINE__);
@@ -86,11 +98,17 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Set Errors value
+     * This property belongs to a choice that allows only one property to exist
+     * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiErrors $errors
      * @return \Api\StructType\ApiResult
      */
     public function setErrors(\Api\StructType\ApiErrors $errors = null)
     {
+        // validation(s) for constraint: choice
+        if (isset($this->Success)) {
+            throw new \InvalidArgumentException('The property Errors can\'t be set as the property Success is already set. Only one property must be set among these properties: Success, Errors.');
+        }
         $this->Errors = $errors;
         return $this;
     }

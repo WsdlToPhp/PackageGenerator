@@ -264,4 +264,49 @@ class TagChoiceTest extends TestCase
         $this->assertSame('RoomStays', $children[2]->getAttributeName());
         $this->assertSame('Errors', $children[3]->getAttributeName());
     }
+
+    /**
+     * <xs:element form="qualified" minOccurs="0" name="details">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:choice maxOccurs="unbounded" minOccurs="0">
+                        <xs:element ref="tns:mutualSettlementDetailCalcCostShipping" />
+                        <xs:element ref="tns:mutualSettlementDetailCashFlow" />
+                        <xs:element ref="tns:mutualSettlementDetailClientPayment" />
+                        <xs:element ref="tns:mutualSettlementDetailPostReturnRegistry" />
+                        <xs:element ref="tns:mutualSettlementDetailRouteList" />
+                        <xs:element ref="tns:mutualSettlementDetailTrackNumberPayment" />
+                        <xs:element ref="tns:mutualSettlementDetailServiceRegistration" />
+                        <xs:element ref="tns:mutualSettlementDetailAcceptanceRegistry" />
+                        <xs:element ref="tns:mutualSettlementDetailAdditionalChargeFare" />
+                        <xs:element ref="tns:mutualSettlementDetailOutgoingRequestToCarrier" />
+                        <xs:element ref="tns:mutualSettlementDetailSMSInformation" />
+                        <xs:element ref="tns:mutualSettlementDetailBuyerGoodsReturn" />
+                        <xs:element ref="tns:mutualSettlementDetailProductsPackaging" />
+                        <xs:element ref="tns:mutualSettlementDetailAdjustmentWriteRegisters" />
+                        <xs:element ref="tns:mutualSettlementDetailSafeCustody" />
+                        <xs:element ref="tns:mutualSettlementDetailSafeCustodyCalculation" />
+                        <xs:element ref="tns:mutualSettlementDetailRegisterStorage" />
+                    </xs:choice>
+                </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+     */
+    public function testGetChildrenElementsMustReturnFirstLevelNestedChildrenTagsOfDetails()
+    {
+        $schema = WsdlTest::wsdlDeliveryInstance();
+
+        /** @var TagChoice $choice */
+        $choice = $schema->getContent()->getElementByNameAndAttributes(Wsdl::TAG_ELEMENT, [
+            'name' => 'details',
+            'form' => 'qualified',
+            'minOccurs' => 0,
+        ])->getChildByNameAndAttributes(Wsdl::TAG_CHOICE, []);
+
+        $children = $choice->getChildrenElements();
+
+        $this->assertCount(17, $children);
+        $this->assertSame('mutualSettlementDetailCalcCostShipping', $children[0]->getAttributeRef());
+        $this->assertSame('mutualSettlementDetailRegisterStorage', $children[16]->getAttributeRef());
+    }
 }

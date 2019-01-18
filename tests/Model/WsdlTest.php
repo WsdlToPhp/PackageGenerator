@@ -111,6 +111,13 @@ class WsdlTest extends TestCase
     /**
      * @return Wsdl
      */
+    public static function wsdlDeliveryInstance()
+    {
+        return self::getWsdl(self::wsdlDeliveryServicePath());
+    }
+    /**
+     * @return Wsdl
+     */
     public static function wsdlEwsInstance()
     {
         return self::getWsdl(self::wsdlEwsPath());
