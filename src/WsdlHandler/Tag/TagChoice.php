@@ -12,7 +12,7 @@ class TagChoice extends Tag
     public function getChildrenElements()
     {
         $children = [];
-        foreach(self::getChildrenElementsTags() as $tagName) {
+        foreach (self::getChildrenElementsTags() as $tagName) {
             $children = array_merge($children, $this->getFilteredChildrenByName($tagName));
         }
         return $children;
@@ -40,7 +40,7 @@ class TagChoice extends Tag
     {
         $forbiddenParentTags = self::getForbiddenParentTags();
         $valid = true;
-        while($child && $child->getParent() && !$this->getNode()->isSameNode($child->getParent()->getNode())) {
+        while ($child && $child->getParent() && !$this->getNode()->isSameNode($child->getParent()->getNode())) {
             $valid &= !in_array($child->getParent()->getName(), $forbiddenParentTags);
             $child = $child->getParent();
         }
