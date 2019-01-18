@@ -267,10 +267,15 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodSetBodyAssignment(StructAttributeModel $attribute, $parameterName)
     {
+        $prefix = '$';
+        if ($attribute->isXml()) {
+            $parameterName = sprintf('($%1$s instanceof \DOMDocument) && $%1$s->hasChildNodes() ? $%1$s->saveXML($%1$s->childNodes->item(0)) : $%1$s', $parameterName);
+            $prefix = '';
+        }
         if ($attribute->nameIsClean()) {
-            $assignment = sprintf('$this->%s = $%s;', $attribute->getName(), $parameterName);
+            $assignment = sprintf('$this->%s = %s%s;', $attribute->getName(), $prefix, $parameterName);
         } else {
-            $assignment = sprintf('$this->%s = $this->{\'%s\'} = $%s;', $attribute->getCleanName(), addslashes($attribute->getName()), $parameterName);
+            $assignment = sprintf('$this->%s = $this->{\'%s\'} = %s%s;', $attribute->getCleanName(), addslashes($attribute->getName()), $prefix, $parameterName);
         }
         return $assignment;
     }
@@ -282,27 +287,7 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodGetBody(PhpMethod $method, StructAttributeModel $attribute, $thisAccess)
     {
-        return $this->addStructMethodGetBodyForXml($method, $attribute, $thisAccess)->addStructMethodGetBodyReturn($method, $attribute, $thisAccess);
-    }
-    /**
-     * @param PhpMethod $method
-     * @param StructAttributeModel $attribute
-     * @param string $thisAccess
-     * @return Struct
-     */
-    protected function addStructMethodGetBodyForXml(PhpMethod $method, StructAttributeModel $attribute, $thisAccess)
-    {
-        if ($attribute->isXml()) {
-            $method->addChild(sprintf('if (!empty($this->%1$s) && !($this->%1$s instanceof \DOMDocument)) {', $thisAccess))
-                ->addChild($method->getIndentedString('$dom = new \DOMDocument(\'1.0\', \'UTF-8\');', 1))
-                ->addChild($method->getIndentedString('$dom->formatOutput = true;', 1))
-                ->addChild($method->getIndentedString(sprintf('if ($dom->loadXML($this->%s)) {', $thisAccess), 1))
-                ->addChild($method->getIndentedString(sprintf('$this->%s($dom);', $attribute->getSetterName()), 2))
-                ->addChild($method->getIndentedString('}', 1))
-                ->addChild($method->getIndentedString('unset($dom);', 1))
-                ->addChild('}');
-        }
-        return $this;
+        return $this->addStructMethodGetBodyReturn($method, $attribute, $thisAccess);
     }
     /**
      * @param PhpMethod $method
@@ -314,10 +299,16 @@ class Struct extends AbstractModelFile
     {
         $return = sprintf('return $this->%s;', $thisAccess);
         if ($attribute->isXml()) {
+            $method
+                ->addChild('$domDocument = null;')
+                ->addChild(sprintf('if (!empty($this->%1$s) && !$asString) {', $thisAccess))
+                ->addChild($method->getIndentedString('$domDocument = new \DOMDocument(\'1.0\', \'UTF-8\');', 1))
+                ->addChild($method->getIndentedString(sprintf('$domDocument->loadXML($this->%s);', $thisAccess), 1))
+                ->addChild('}');
             if ($attribute->getRemovableFromRequest()) {
-                $return = sprintf('return ($asString && isset($this->%1$s) && ($this->%1$s instanceof \DOMDocument) && $this->%1$s->hasChildNodes()) ? $this->%1$s->saveXML($this->%1$s->childNodes->item(0)) : (isset($this->%1$s) ? $this->%1$s : null);', $thisAccess);
+                $return = sprintf('return $asString ? (isset($this->%1$s) ? $this->%1$s : null) : $domDocument;', $thisAccess);
             } else {
-                $return = sprintf('return ($asString && ($this->%1$s instanceof \DOMDocument) && $this->%1$s->hasChildNodes()) ? $this->%1$s->saveXML($this->%1$s->childNodes->item(0)) : $this->%1$s;', $thisAccess);
+                $return = sprintf('return $asString ? $this->%1$s : $domDocument;', $thisAccess);
             }
         } elseif ($attribute->getRemovableFromRequest()) {
             $return = sprintf('return isset($this->%1$s) ? $this->%1$s : null;', $thisAccess);
@@ -479,6 +470,12 @@ class Struct extends AbstractModelFile
                 if ($attribute->getRemovableFromRequest()) {
                     $annotationBlock->addChild('This property is removable from request (nillable=true+minOccurs=0), therefore if the value assigned to this property is null, it is removed from this object');
                 }
+                if ($attribute->isXml()) {
+                    $annotationBlock
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::hasChildNodes()'))
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::saveXML()'))
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMNode::item()'));
+                }
                 if (($model = $this->getRestrictionFromStructAttribute($attribute)) instanceof StructModel) {
                     $annotationBlock
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
@@ -545,12 +542,9 @@ class Struct extends AbstractModelFile
     protected function addStructMethodsGetAnnotationBlockFromXmlAttribute(PhpAnnotationBlock $annotationBlock, StructAttributeModel $attribute)
     {
         if ($attribute->isXml()) {
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::loadXML()'))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::hasChildNodes()'))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::saveXML()'))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMNode::item()'))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()
-                ->getPackagedName(true), $attribute->getSetterName())))
+            $annotationBlock
+                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::loadXML()'))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()->getPackagedName(true), $attribute->getSetterName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'bool $asString true: returns XML string, false: returns \DOMDocument'));
         }
         return $this;
