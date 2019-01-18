@@ -479,6 +479,11 @@ class Struct extends AbstractModelFile
                 if ($attribute->getRemovableFromRequest()) {
                     $annotationBlock->addChild('This property is removable from request (nillable=true+minOccurs=0), therefore if the value assigned to this property is null, it is removed from this object');
                 }
+                if ($this->getGenerator()->getOptionValidation() && is_array($attribute->getMetaValue('choiceNames'))) {
+                    $annotationBlock
+                        ->addChild('This property belongs to a choice that allows only one property to exist')
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
+                }
                 if (($model = $this->getRestrictionFromStructAttribute($attribute)) instanceof StructModel) {
                     $annotationBlock
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
