@@ -44,7 +44,7 @@ class TagChoice extends Tag
             $valid &= !in_array($child->getParent()->getName(), $forbiddenParentTags);
             $child = $child->getParent();
         }
-        return $valid;
+        return (bool) $valid;
     }
 
     /**
