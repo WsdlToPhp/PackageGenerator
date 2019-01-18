@@ -44,7 +44,7 @@ class TagChoice extends AbstractTagParser
         if ($parent && count($children) && ($struct = $this->getModel($parent)) instanceof Struct) {
             $unionNames = [];
             foreach ($children as $child) {
-                $unionNames[] = $child->getAttributeName();
+                $unionNames[] = $child->getAttributeName() ? $child->getAttributeName() : $child->getAttributeRef();
             }
             foreach ($children as $child) {
                 $this->parseChoiceChild($choice, $unionNames, $child, $struct);
@@ -61,7 +61,11 @@ class TagChoice extends AbstractTagParser
      */
     protected function parseChoiceChild(Choice $choice, array $unionNames, AbstractTag $child, Struct $struct)
     {
-        if (($structAttribute = $struct->getAttribute($child->getAttributeName())) instanceof StructAttribute) {
+        $attributeName = $child->getAttributeName();
+        if (empty($attributeName) && ($attributeRef = $child->getAttributeRef())) {
+            $attributeName = $attributeRef;
+        }
+        if (($structAttribute = $struct->getAttribute($attributeName)) instanceof StructAttribute) {
             $structAttribute
                 ->addMeta('choiceNames', $unionNames)
                 ->addMeta('choiceMaxOccurs', $choice->getMaxOccurs())
