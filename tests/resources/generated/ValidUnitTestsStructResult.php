@@ -79,7 +79,7 @@ class ApiResult extends AbstractStructBase
     {
         // validation(s) for constraint: choice
         if (isset($this->Errors)) {
-            throw new \InvalidArgumentException('The property Success can\'t be set as the property Errors is already set. Only one property must be set among these properties: Success, Errors.');
+            throw new \InvalidArgumentException('The property Success can\'t be set as the property Errors is already set. Only one property must be set among these properties: Success, Errors.', __LINE__);
         }
         // validation for constraint: boolean
         if (!is_null($success) && !is_bool($success)) {
@@ -107,7 +107,7 @@ class ApiResult extends AbstractStructBase
     {
         // validation(s) for constraint: choice
         if (isset($this->Success)) {
-            throw new \InvalidArgumentException('The property Errors can\'t be set as the property Success is already set. Only one property must be set among these properties: Success, Errors.');
+            throw new \InvalidArgumentException('The property Errors can\'t be set as the property Success is already set. Only one property must be set among these properties: Success, Errors.', __LINE__);
         }
         $this->Errors = $errors;
         return $this;
