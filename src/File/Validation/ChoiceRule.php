@@ -25,7 +25,7 @@ class ChoiceRule extends AbstractRule
                 if ($choiceName !== $attribute->getName() && $choiceAttribute = $struct->getAttribute($choiceName)) {
                     $this->getMethod()
                         ->addChild(sprintf('if (isset($this->%s)) {', $choiceAttribute->getCleanName()))
-                        ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(\'The property %s can\\\'t be set as the property %s is already set. Only one property must be set among these properties: %s.\');', $attribute->getName(), $choiceAttribute->getName(), implode(', ', $value)), 1))
+                        ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(\'The property %s can\\\'t be set as the property %s is already set. Only one property must be set among these properties: %s.\', __LINE__);', $attribute->getName(), $choiceAttribute->getName(), implode(', ', $value)), 1))
                         ->addChild(sprintf('}'));
                 }
             }
