@@ -37,7 +37,6 @@ class Rules
      */
     public function applyRules($parameterName, $itemType = false)
     {
-        $this->applyRulesFromModel($this->attribute, $parameterName, $itemType);
         if ($this->getAttribute()->isArray() && !$itemType) {
             $this->getArrayRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->getAttribute())) {
@@ -47,6 +46,7 @@ class Rules
         } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute()))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
+        $this->applyRulesFromModel($this->attribute, $parameterName, $itemType);
     }
     /**
      * This method is called when an attribute has a union meta which means the attribute is of several types.

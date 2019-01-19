@@ -169,6 +169,10 @@ class ApiHotelReservationType extends AbstractStructBase
      */
     public function setResStatus($resStatus = null)
     {
+        // validation for constraint: string
+        if (!is_null($resStatus) && !is_string($resStatus)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($resStatus)), __LINE__);
+        }
         // validation for constraint: maxLength
         if ((is_scalar($resStatus) && strlen($resStatus) > 16) || (is_array($resStatus) && count($resStatus) > 16)) {
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 16 element(s) or a scalar of 16 character(s) at most, "%d" length given', is_scalar($resStatus) ? strlen($resStatus) : count($resStatus)), __LINE__);
@@ -180,10 +184,6 @@ class ApiHotelReservationType extends AbstractStructBase
         // validation for constraint: pattern
         if (is_scalar($resStatus) && !preg_match('/[A-Z]{1,2}/', $resStatus)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[A-Z]{1,2}", "%s" given', var_export($resStatus, true)), __LINE__);
-        }
-        // validation for constraint: string
-        if (!is_null($resStatus) && !is_string($resStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($resStatus)), __LINE__);
         }
         $this->ResStatus = $resStatus;
         return $this;

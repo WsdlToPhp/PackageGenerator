@@ -251,6 +251,10 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setCardHolderName($cardHolderName = null)
     {
+        // validation for constraint: string
+        if (!is_null($cardHolderName) && !is_string($cardHolderName)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cardHolderName)), __LINE__);
+        }
         // validation for constraint: maxLength
         if ((is_scalar($cardHolderName) && strlen($cardHolderName) > 64) || (is_array($cardHolderName) && count($cardHolderName) > 64)) {
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 64 element(s) or a scalar of 64 character(s) at most, "%d" length given', is_scalar($cardHolderName) ? strlen($cardHolderName) : count($cardHolderName)), __LINE__);
@@ -258,10 +262,6 @@ class ApiPaymentCardType extends AbstractStructBase
         // validation for constraint: minLength
         if ((is_scalar($cardHolderName) && strlen($cardHolderName) < 1) || (is_array($cardHolderName) && count($cardHolderName) < 1)) {
             throw new \InvalidArgumentException('Invalid length, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', __LINE__);
-        }
-        // validation for constraint: string
-        if (!is_null($cardHolderName) && !is_string($cardHolderName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cardHolderName)), __LINE__);
         }
         $this->CardHolderName = $cardHolderName;
         return $this;
@@ -397,13 +397,13 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setCardType($cardType = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($cardType) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $cardType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}", "%s" given', var_export($cardType, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($cardType) && !is_string($cardType)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cardType)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($cardType) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $cardType)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}", "%s" given', var_export($cardType, true)), __LINE__);
         }
         $this->CardType = $cardType;
         return $this;
@@ -470,13 +470,13 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setCardNumber($cardNumber = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($cardNumber) && !preg_match('/[0-9]{1,19}/', $cardNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9]{1,19}", "%s" given', var_export($cardNumber, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($cardNumber) && !is_string($cardNumber)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cardNumber)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($cardNumber) && !preg_match('/[0-9]{1,19}/', $cardNumber)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9]{1,19}", "%s" given', var_export($cardNumber, true)), __LINE__);
         }
         $this->CardNumber = $cardNumber;
         return $this;
@@ -496,13 +496,13 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setSeriesCode($seriesCode = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($seriesCode) && !preg_match('/[0-9]{1,8}/', $seriesCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9]{1,8}", "%s" given', var_export($seriesCode, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($seriesCode) && !is_string($seriesCode)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($seriesCode)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($seriesCode) && !preg_match('/[0-9]{1,8}/', $seriesCode)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9]{1,8}", "%s" given', var_export($seriesCode, true)), __LINE__);
         }
         $this->SeriesCode = $seriesCode;
         return $this;
@@ -522,13 +522,13 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setMaskedCardNumber($maskedCardNumber = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($maskedCardNumber) && !preg_match('/[0-9a-zA-Z]{1,19}/', $maskedCardNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9a-zA-Z]{1,19}", "%s" given', var_export($maskedCardNumber, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($maskedCardNumber) && !is_string($maskedCardNumber)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($maskedCardNumber)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($maskedCardNumber) && !preg_match('/[0-9a-zA-Z]{1,19}/', $maskedCardNumber)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9a-zA-Z]{1,19}", "%s" given', var_export($maskedCardNumber, true)), __LINE__);
         }
         $this->MaskedCardNumber = $maskedCardNumber;
         return $this;
@@ -548,13 +548,13 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setCardHolderRPH($cardHolderRPH = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($cardHolderRPH) && !preg_match('/[0-9]{1,8}/', $cardHolderRPH)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9]{1,8}", "%s" given', var_export($cardHolderRPH, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($cardHolderRPH) && !is_string($cardHolderRPH)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cardHolderRPH)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($cardHolderRPH) && !preg_match('/[0-9]{1,8}/', $cardHolderRPH)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9]{1,8}", "%s" given', var_export($cardHolderRPH, true)), __LINE__);
         }
         $this->CardHolderRPH = $cardHolderRPH;
         return $this;
@@ -574,13 +574,13 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setCountryOfIssue($countryOfIssue = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($countryOfIssue) && !preg_match('/[a-zA-Z]{2}/', $countryOfIssue)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[a-zA-Z]{2}", "%s" given', var_export($countryOfIssue, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($countryOfIssue) && !is_string($countryOfIssue)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($countryOfIssue)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($countryOfIssue) && !preg_match('/[a-zA-Z]{2}/', $countryOfIssue)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[a-zA-Z]{2}", "%s" given', var_export($countryOfIssue, true)), __LINE__);
         }
         $this->CountryOfIssue = $countryOfIssue;
         return $this;
@@ -600,6 +600,10 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setRemark($remark = null)
     {
+        // validation for constraint: string
+        if (!is_null($remark) && !is_string($remark)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($remark)), __LINE__);
+        }
         // validation for constraint: maxLength
         if ((is_scalar($remark) && strlen($remark) > 128) || (is_array($remark) && count($remark) > 128)) {
             throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 128 element(s) or a scalar of 128 character(s) at most, "%d" length given', is_scalar($remark) ? strlen($remark) : count($remark)), __LINE__);
@@ -607,10 +611,6 @@ class ApiPaymentCardType extends AbstractStructBase
         // validation for constraint: minLength
         if ((is_scalar($remark) && strlen($remark) < 1) || (is_array($remark) && count($remark) < 1)) {
             throw new \InvalidArgumentException('Invalid length, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', __LINE__);
-        }
-        // validation for constraint: string
-        if (!is_null($remark) && !is_string($remark)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($remark)), __LINE__);
         }
         $this->Remark = $remark;
         return $this;
@@ -674,13 +674,13 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setEffectiveDate($effectiveDate = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($effectiveDate) && !preg_match('/(0[1-9]|1[0-2])[0-9][0-9]/', $effectiveDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "(0[1-9]|1[0-2])[0-9][0-9]", "%s" given', var_export($effectiveDate, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($effectiveDate) && !is_string($effectiveDate)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($effectiveDate)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($effectiveDate) && !preg_match('/(0[1-9]|1[0-2])[0-9][0-9]/', $effectiveDate)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "(0[1-9]|1[0-2])[0-9][0-9]", "%s" given', var_export($effectiveDate, true)), __LINE__);
         }
         $this->EffectiveDate = $effectiveDate;
         return $this;
@@ -700,13 +700,13 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setExpireDate($expireDate = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($expireDate) && !preg_match('/(0[1-9]|1[0-2])[0-9][0-9]/', $expireDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "(0[1-9]|1[0-2])[0-9][0-9]", "%s" given', var_export($expireDate, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($expireDate) && !is_string($expireDate)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($expireDate)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($expireDate) && !preg_match('/(0[1-9]|1[0-2])[0-9][0-9]/', $expireDate)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "(0[1-9]|1[0-2])[0-9][0-9]", "%s" given', var_export($expireDate, true)), __LINE__);
         }
         $this->ExpireDate = $expireDate;
         return $this;

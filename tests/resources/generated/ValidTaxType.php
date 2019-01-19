@@ -183,13 +183,13 @@ class ApiTaxType extends AbstractStructBase
      */
     public function setCode($code = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $code)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}", "%s" given', var_export($code, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($code) && !is_string($code)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($code)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $code)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}", "%s" given', var_export($code, true)), __LINE__);
         }
         $this->Code = $code;
         return $this;
@@ -257,13 +257,13 @@ class ApiTaxType extends AbstractStructBase
      */
     public function setCurrencyCode($currencyCode = null)
     {
-        // validation for constraint: pattern
-        if (is_scalar($currencyCode) && !preg_match('/[a-zA-Z]{3}/', $currencyCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[a-zA-Z]{3}", "%s" given', var_export($currencyCode, true)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($currencyCode) && !is_string($currencyCode)) {
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($currencyCode)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($currencyCode) && !preg_match('/[a-zA-Z]{3}/', $currencyCode)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[a-zA-Z]{3}", "%s" given', var_export($currencyCode, true)), __LINE__);
         }
         $this->CurrencyCode = $currencyCode;
         return $this;
