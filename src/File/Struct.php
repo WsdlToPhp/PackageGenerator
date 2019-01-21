@@ -186,7 +186,9 @@ class Struct extends AbstractModelFile
             $rules = new Rules($this, $method, $attribute);
             $rules->applyRules('item', true);
         }
-        $method->addChild(sprintf('$this->%s[] = $item;', $attribute->getCleanName()))->addChild('return $this;');
+        $method
+            ->addChild(sprintf('$this->%s[] = $item;', $attribute->getCleanName()))
+            ->addChild('return $this;');
         return $this;
     }
     /**
@@ -247,30 +249,22 @@ class Struct extends AbstractModelFile
         return $this;
     }
     /**
-     * @param PhpMethod $method
-     * @param StructAttributeModel $attribute
-     * @param string $parameterName
-     * @return Struct
-     */
-    protected function addStructMethodSetBodyForRestriction(PhpMethod $method, StructAttributeModel $attribute, $parameterName = null)
-    {
-        if (($model = $this->getRestrictionFromStructAttribute($attribute)) instanceof StructModel) {
-            $parameterName = empty($parameterName) ? lcfirst($attribute->getCleanName()) : $parameterName;
-            $method->addChild(sprintf('if (!%s::%s($%s)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID, $parameterName))->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Value "%%s" is invalid, please use one of: %%s\', $%s, implode(\', \', %s::%s())), __LINE__);', $parameterName, $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES), 1))->addChild('}');
-        }
-        return $this;
-    }
-    /**
      * @param StructAttributeModel $attribute
      * @param string $parameterName
      * @return string
      */
     protected function getStructMethodSetBodyAssignment(StructAttributeModel $attribute, $parameterName)
     {
+        $isList = $this->isAttributeAList($attribute);
+        $prefix = '$';
+        if ($isList) {
+            $prefix = '';
+            $parameterName = sprintf('is_array($%1$s) ? implode(\' \', $%1$s) : null', $parameterName);
+        }
         if ($attribute->nameIsClean()) {
-            $assignment = sprintf('$this->%s = $%s;', $attribute->getName(), $parameterName);
+            $assignment = sprintf('$this->%s = %s%s;', $attribute->getName(), $prefix, $parameterName);
         } else {
-            $assignment = sprintf('$this->%s = $this->{\'%s\'} = $%s;', $attribute->getCleanName(), addslashes($attribute->getName()), $parameterName);
+            $assignment = sprintf('$this->%s = $this->{\'%s\'} = %s%s;', $attribute->getCleanName(), addslashes($attribute->getName()), $prefix, $parameterName);
         }
         return $assignment;
     }
@@ -479,13 +473,15 @@ class Struct extends AbstractModelFile
                 if ($attribute->getRemovableFromRequest()) {
                     $annotationBlock->addChild('This property is removable from request (nillable=true+minOccurs=0), therefore if the value assigned to this property is null, it is removed from this object');
                 }
-                if (($model = $this->getRestrictionFromStructAttribute($attribute)) instanceof StructModel) {
-                    $annotationBlock
-                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
-                        ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES)))
-                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
-                } elseif ($attribute->isArray()) {
-                    $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
+                if ($this->getGenerator()->getOptionValidation()) {
+                    if (($model = $this->getRestrictionFromStructAttribute($attribute)) instanceof StructModel) {
+                        $annotationBlock
+                            ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
+                            ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES)))
+                            ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
+                    } elseif ($attribute->isArray()) {
+                        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
+                    }
                 }
                 $this->addStructMethodsSetAnnotationBlock($annotationBlock, $this->getStructAttributeTypeSetAnnotation($attribute), lcfirst($attribute->getCleanName()));
                 break;
