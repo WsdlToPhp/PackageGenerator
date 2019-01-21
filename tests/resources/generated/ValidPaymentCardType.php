@@ -318,6 +318,7 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setTelephone(array $telephone = array())
     {
+        // validation for constraint: array
         foreach ($telephone as $paymentCardTypeTelephoneItem) {
             // validation for constraint: itemType
             if (!$paymentCardTypeTelephoneItem instanceof \Api\StructType\ApiTelephone) {
@@ -358,6 +359,7 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     public function setEmail(array $email = array())
     {
+        // validation for constraint: array
         foreach ($email as $paymentCardTypeEmailItem) {
             // validation for constraint: itemType
             if (!$paymentCardTypeEmailItem instanceof \Api\StructType\ApiEmailType) {

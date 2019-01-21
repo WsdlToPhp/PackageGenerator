@@ -158,4 +158,9 @@ class StructTest extends TestCase
         $instance->addAttribute('bar', 'string');
         $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod', $instance->getReservedMethodsInstance());
     }
+    public function testSetListMustSetTheListProperty()
+    {
+        $instance = self::instance('Foo', true)->setList($list = 'string');
+        $this->assertSame($list, $instance->getList());
+    }
 }

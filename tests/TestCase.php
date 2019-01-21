@@ -369,8 +369,8 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
                 '__DESTINATION__',
                 '__ORIGIN__',
             ], [
-                json_encode(self::getTestDirectory()),
-                json_encode($origin),
+                self::getTestDirectory(),
+                $origin,
             ], $json);
             self::$ids[$id . $gatherMethods] = Generator::instanceFromSerializedJson($json);
         }

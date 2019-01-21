@@ -1497,6 +1497,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public function setBillingAgreementDetails(array $billingAgreementDetails = array())
     {
+        // validation for constraint: array
         foreach ($billingAgreementDetails as $setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem instanceof \Api\StructType\ApiBillingAgreementDetailsType) {
@@ -1537,6 +1538,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public function setPromoCodes(array $promoCodes = array())
     {
+        // validation for constraint: array
         foreach ($promoCodes as $setExpressCheckoutRequestDetailsTypePromoCodesItem) {
             // validation for constraint: itemType
             if (!is_string($setExpressCheckoutRequestDetailsTypePromoCodesItem)) {
@@ -1773,6 +1775,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public function setOtherPaymentMethods(array $otherPaymentMethods = array())
     {
+        // validation for constraint: array
         foreach ($otherPaymentMethods as $setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem instanceof \Api\StructType\ApiOtherPaymentMethodDetailsType) {
@@ -1831,6 +1834,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public function setPaymentDetails(array $paymentDetails = array())
     {
+        // validation for constraint: array
         foreach ($paymentDetails as $setExpressCheckoutRequestDetailsTypePaymentDetailsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypePaymentDetailsItem instanceof \Api\StructType\ApiPaymentDetailsType) {
@@ -1871,6 +1875,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public function setFlatRateShippingOptions(array $flatRateShippingOptions = array())
     {
+        // validation for constraint: array
         foreach ($flatRateShippingOptions as $setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem instanceof \Api\StructType\ApiShippingOptionType) {
@@ -2149,6 +2154,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public function setSurveyChoice(array $surveyChoice = array())
     {
+        // validation for constraint: array
         foreach ($surveyChoice as $setExpressCheckoutRequestDetailsTypeSurveyChoiceItem) {
             // validation for constraint: itemType
             if (!is_string($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem)) {
@@ -2236,6 +2242,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public function setIncentives(array $incentives = array())
     {
+        // validation for constraint: array
         foreach ($incentives as $setExpressCheckoutRequestDetailsTypeIncentivesItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeIncentivesItem instanceof \Api\StructType\ApiIncentiveInfoType) {
@@ -2370,6 +2377,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public function setCoupledBuckets(array $coupledBuckets = array())
     {
+        // validation for constraint: array
         foreach ($coupledBuckets as $setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeCoupledBucketsItem instanceof \Api\StructType\ApiCoupledBucketsType) {

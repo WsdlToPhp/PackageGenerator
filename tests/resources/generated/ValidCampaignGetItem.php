@@ -320,9 +320,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set Type value
-     * @uses \Api\EnumType\ApiCampaignTypeGetEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiCampaignTypeGetEnum::getValidValues()
-     * @throws \InvalidArgumentException
      * @param string $type
      * @return \Api\StructType\ApiCampaignGetItem
      */
@@ -341,9 +338,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set Status value
-     * @uses \Api\EnumType\ApiCampaignStatusGetEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiCampaignStatusGetEnum::getValidValues()
-     * @throws \InvalidArgumentException
      * @param string $status
      * @return \Api\StructType\ApiCampaignGetItem
      */
@@ -362,9 +356,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set State value
-     * @uses \Api\EnumType\ApiCampaignStateGetEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiCampaignStateGetEnum::getValidValues()
-     * @throws \InvalidArgumentException
      * @param string $state
      * @return \Api\StructType\ApiCampaignGetItem
      */
@@ -383,9 +374,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set StatusPayment value
-     * @uses \Api\EnumType\ApiCampaignStatusPaymentEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiCampaignStatusPaymentEnum::getValidValues()
-     * @throws \InvalidArgumentException
      * @param string $statusPayment
      * @return \Api\StructType\ApiCampaignGetItem
      */
@@ -467,9 +455,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set Currency value
-     * @uses \Api\EnumType\ApiCurrencyEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiCurrencyEnum::getValidValues()
-     * @throws \InvalidArgumentException
      * @param string $currency
      * @return \Api\StructType\ApiCampaignGetItem
      */
