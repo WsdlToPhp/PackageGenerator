@@ -77,7 +77,7 @@ class Rules
             if ($rule instanceof AbstractRule) {
                 $rule->applyRule($parameterName, $metaValue, $itemType);
             } elseif ($metaName === 'union' && is_array($metaValue) && count($metaValue) > 0) {
-                $this->applyUnionRules($parameterName, $itemType, $metaValue);
+                $this->getUnionTypeRule()->applyRule($parameterName, $metaValue, $itemType);
             }
         }
     }
@@ -115,6 +115,13 @@ class Rules
     public function getItemTypeRule()
     {
         return $this->getRule('itemType');
+    }
+    /**
+     * @return UnionRule
+     */
+    public function getUnionTypeRule()
+    {
+        return $this->getRule('union');
     }
     /**
      * @return StructAttribute
