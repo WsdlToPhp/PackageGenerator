@@ -27,7 +27,14 @@ class TagRestriction extends Tag
      */
     public function getAttributeBase()
     {
-        return $this->hasAttribute(self::ATTRIBUTE_BASE) ? $this->getAttribute(self::ATTRIBUTE_BASE)->getValue() : '';
+        return $this->hasAttributeBase() ? $this->getAttribute(self::ATTRIBUTE_BASE)->getValue() : '';
+    }
+    /**
+     * @return bool
+     */
+    public function hasAttributeBase()
+    {
+        return $this->hasAttribute(self::ATTRIBUTE_BASE);
     }
     /**
      * Checks wether this element is contained by an union parent or not
