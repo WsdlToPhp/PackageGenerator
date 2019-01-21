@@ -769,8 +769,8 @@ class GeneratorTest extends TestCase
         $generator->parse();
         $jsonContent = file_get_contents(sprintf('%sjson_serialized.json', self::getTestDirectory()));
         $jsonContent = str_replace([
-            '__ORIGIN__',
-            '__DESTINATION__',
+            '"__ORIGIN__"',
+            '"__DESTINATION__"',
         ], [
             json_encode(self::wsdlBingPath()),
             json_encode($generator->getOptionDestination()),

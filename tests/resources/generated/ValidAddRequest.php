@@ -46,6 +46,7 @@ class ApiAddRequest extends AbstractStructBase
      */
     public function setAdGroups(array $adGroups = array())
     {
+        // validation for constraint: array
         foreach ($adGroups as $addRequestAdGroupsItem) {
             // validation for constraint: itemType
             if (!$addRequestAdGroupsItem instanceof \Api\StructType\ApiAdGroupAddItem) {

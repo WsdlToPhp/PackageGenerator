@@ -37,13 +37,15 @@ class Rules
      */
     public function applyRules($parameterName, $itemType = false)
     {
-        if ($this->getAttribute()->isArray() && !$itemType) {
+        if ($this->attribute->isArray() && !$itemType) {
             $this->getArrayRule()->applyRule($parameterName, null, $itemType);
-        } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->getAttribute())) {
+        } elseif ($this->attribute->isList() && !$itemType) {
+            $this->getListRule()->applyRule($parameterName, null, $itemType);
+        } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->attribute)) {
             $this->getEnumerationRule()->applyRule($parameterName, null, $itemType);
         } elseif ($itemType) {
             $this->getItemTypeRule()->applyRule($parameterName, null, $itemType);
-        } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute()))) instanceof AbstractRule) {
+        } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->attribute))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
         $this->applyRulesFromModel($this->attribute, $parameterName, $itemType);
@@ -122,6 +124,13 @@ class Rules
     public function getUnionTypeRule()
     {
         return $this->getRule('union');
+    }
+    /**
+     * @return ListRule
+     */
+    public function getListRule()
+    {
+        return $this->getRule('list');
     }
     /**
      * @return StructAttribute

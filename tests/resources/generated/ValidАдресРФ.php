@@ -234,6 +234,7 @@ class ApiАдресРФ extends ApiСостав
      */
     public function setДопАдрЭл(array $ДопАдрЭл = array())
     {
+        // validation for constraint: array
         foreach ($ДопАдрЭл as $АдресРФДопАдрЭлItem) {
             // validation for constraint: itemType
             if (!$АдресРФДопАдрЭлItem instanceof \Api\StructType\ApiДопАдрЭл) {

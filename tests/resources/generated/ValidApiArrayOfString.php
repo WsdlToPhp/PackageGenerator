@@ -46,6 +46,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      */
     public function setString(array $string = array())
     {
+        // validation for constraint: array
         foreach ($string as $arrayOfStringStringItem) {
             // validation for constraint: itemType
             if (!is_string($arrayOfStringStringItem)) {
