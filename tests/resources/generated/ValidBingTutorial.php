@@ -6,7 +6,7 @@
  * - the key must be a constant beginning with WSDL_ from AbstractSoapClientbase class each generated ServiceType class extends this class
  * - the value must be the corresponding key value (each option matches a {@link http://www.php.net/manual/en/soapclient.soapclient.php} option)
  * $options = array(
- * \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
+ * \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '/var/www/html/tests/resources/bingsearch.wsdl',
  * \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_TRACE => true,
  * \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_LOGIN => 'you_secret_login',
  * \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD => 'you_secret_password',
@@ -18,7 +18,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  * Minimal options
  */
 $options = array(
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
+    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '/var/www/html/tests/resources/bingsearch.wsdl',
     \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Api\ApiClassMap::get(),
 );
 /**

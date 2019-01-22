@@ -688,7 +688,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cadastral_number) && !is_string($cadastral_number)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cadastral_number)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($cadastral_number)), __LINE__);
         }
         $this->cadastral_number = $cadastral_number;
         return $this;
@@ -710,7 +710,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($project_type) && !is_string($project_type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($project_type)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($project_type)), __LINE__);
         }
         $this->project_type = $project_type;
         return $this;
@@ -732,7 +732,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($location_description) && !is_string($location_description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($location_description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($location_description)), __LINE__);
         }
         $this->location_description = $location_description;
         return $this;
@@ -754,7 +754,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($individual_name) && !is_string($individual_name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($individual_name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($individual_name)), __LINE__);
         }
         $this->individual_name = $individual_name;
         return $this;
@@ -779,7 +779,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseTypeEnum::valueIsValid($house_type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $house_type, implode(', ', \Api\EnumType\ApiHouseTypeEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseTypeEnum', is_array($house_type) ? implode(', ', $house_type) : $house_type, implode(', ', \Api\EnumType\ApiHouseTypeEnum::getValidValues())), __LINE__);
         }
         $this->house_type = $house_type;
         return $this;
@@ -801,7 +801,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($exploitation_start_year) && !is_string($exploitation_start_year)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($exploitation_start_year)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($exploitation_start_year)), __LINE__);
         }
         $this->exploitation_start_year = $exploitation_start_year;
         return $this;
@@ -826,7 +826,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseWallMaterialEnum::valueIsValid($wall_material)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $wall_material, implode(', ', \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseWallMaterialEnum', is_array($wall_material) ? implode(', ', $wall_material) : $wall_material, implode(', ', \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues())), __LINE__);
         }
         $this->wall_material = $wall_material;
         return $this;
@@ -851,7 +851,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseFloorTypeEnum::valueIsValid($floor_type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $floor_type, implode(', ', \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseFloorTypeEnum', is_array($floor_type) ? implode(', ', $floor_type) : $floor_type, implode(', ', \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues())), __LINE__);
         }
         $this->floor_type = $floor_type;
         return $this;
@@ -873,7 +873,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($storeys_count) && !is_numeric($storeys_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($storeys_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($storeys_count)), __LINE__);
         }
         $this->storeys_count = $storeys_count;
         return $this;
@@ -895,7 +895,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($entrance_count) && !is_numeric($entrance_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($entrance_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($entrance_count)), __LINE__);
         }
         $this->entrance_count = $entrance_count;
         return $this;
@@ -917,7 +917,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($elevators_count) && !is_numeric($elevators_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($elevators_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($elevators_count)), __LINE__);
         }
         $this->elevators_count = $elevators_count;
         return $this;
@@ -1069,7 +1069,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($inventory_number) && !is_string($inventory_number)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($inventory_number)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($inventory_number)), __LINE__);
         }
         $this->inventory_number = $inventory_number;
         return $this;
@@ -1091,7 +1091,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($flats_count) && !is_numeric($flats_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($flats_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($flats_count)), __LINE__);
         }
         $this->flats_count = $flats_count;
         return $this;
@@ -1113,7 +1113,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($residents_count) && !is_numeric($residents_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($residents_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($residents_count)), __LINE__);
         }
         $this->residents_count = $residents_count;
         return $this;
@@ -1135,7 +1135,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($accounts_count) && !is_numeric($accounts_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($accounts_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($accounts_count)), __LINE__);
         }
         $this->accounts_count = $accounts_count;
         return $this;
@@ -1157,7 +1157,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($construction_features) && !is_string($construction_features)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($construction_features)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($construction_features)), __LINE__);
         }
         $this->construction_features = $construction_features;
         return $this;
@@ -1234,7 +1234,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::valueIsValid($energy_efficiency)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $energy_efficiency, implode(', ', \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum', is_array($energy_efficiency) ? implode(', ', $energy_efficiency) : $energy_efficiency, implode(', ', \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues())), __LINE__);
         }
         $this->energy_efficiency = $energy_efficiency;
         return $this;
@@ -1256,7 +1256,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($energy_audit_date) && !is_string($energy_audit_date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($energy_audit_date)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($energy_audit_date)), __LINE__);
         }
         $this->energy_audit_date = $energy_audit_date;
         return $this;
@@ -1278,7 +1278,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($privatization_start_date) && !is_string($privatization_start_date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($privatization_start_date)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($privatization_start_date)), __LINE__);
         }
         $this->privatization_start_date = $privatization_start_date;
         return $this;
@@ -1594,6 +1594,28 @@ class ApiHouseProfileData extends AbstractStructBase
         return $this->lifts;
     }
     /**
+     * This method is responsible for validating the values passed to the method setLifts
+     * This method is willingly generated in order to preserve the one-line inline validation within the setLifts method
+     * @param array $values
+     * @return string
+     */
+    public static function validateLiftsValuesFromSetLifts(array $values = array())
+    {
+        $message = '';
+        $invalidValues = array();
+        foreach ($values as $houseProfileDataLiftsItem) {
+            // validation for constraint: itemType
+            if (!$houseProfileDataLiftsItem instanceof \Api\StructType\ApiLift) {
+                $invalidValues[] = is_object($houseProfileDataLiftsItem) ? get_class($houseProfileDataLiftsItem) : var_export($houseProfileDataLiftsItem, true);
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set lifts value
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiLift[] $lifts
@@ -1602,11 +1624,8 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setLifts(array $lifts = array())
     {
         // validation for constraint: array
-        foreach ($lifts as $houseProfileDataLiftsItem) {
-            // validation for constraint: itemType
-            if (!$houseProfileDataLiftsItem instanceof \Api\StructType\ApiLift) {
-                throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, "%s" given', is_object($houseProfileDataLiftsItem) ? get_class($houseProfileDataLiftsItem) : gettype($houseProfileDataLiftsItem)), __LINE__);
-            }
+        if ('' !== ($message = self::validateLiftsValuesFromSetLifts($lifts))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->lifts = $lifts;
         return $this;
@@ -1621,7 +1640,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiLift) {
-            throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->lifts[] = $item;
         return $this;

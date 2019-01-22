@@ -5,19 +5,32 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 class BooleanRule extends AbstractRule
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\Validation\AbstractValidation::addRule()
+     * @return string
+     */
+    public function name()
+    {
+        return 'boolean';
+    }
+
+    /**
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return BooleanRule
+     * @return string
      */
-    public function applyRule($parameterName, $value, $itemType = false)
+    public function testConditions($parameterName, $value, $itemType = false)
     {
-        $this->getMethod()
-            ->addChild('// validation for constraint: boolean')
-            ->addChild(sprintf('if (!is_null($%1$s) && !is_bool($%1$s)) {', $parameterName))
-            ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, please provide a bool, "%%s" given\', gettype($%s)), __LINE__);', $parameterName), 1))
-            ->addChild('}');
-        return $this;
+        return sprintf('!is_null($%1$s) && !is_bool($%1$s)', $parameterName);
+    }
+
+    /**
+     * @param string $parameterName
+     * @param mixed $value
+     * @param bool $itemType
+     * @return string
+     */
+    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    {
+        return sprintf('sprintf(\'Invalid value, please provide a bool, %%s given\', gettype($%s))', $parameterName);
     }
 }

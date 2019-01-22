@@ -9,6 +9,7 @@ use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
@@ -68,22 +69,21 @@ class Struct extends AbstractModelFile
         }
         return $annotationBlock;
     }
-    /**
-     * @param MethodContainer $methods
-     */
-    protected function getClassMethods(MethodContainer $methods)
+    protected function fillClassMethods()
     {
-        $this->addStructMethodConstruct($methods)->addStructMethodsSetAndGet($methods)->addStructMethodSetState($methods);
+        $this
+            ->addStructMethodConstruct()
+            ->addStructMethodsSetAndGet()
+            ->addStructMethodSetState();
     }
     /**
-     * @param MethodContainer $methods
      * @return Struct
      */
-    protected function addStructMethodConstruct(MethodContainer $methods)
+    protected function addStructMethodConstruct()
     {
         $method = new PhpMethod(self::METHOD_CONSTRUCT, $this->getStructMethodParametersValues());
         $this->addStructMethodConstructBody($method);
-        $methods->add($method);
+        $this->methods->add($method);
         return $this;
     }
     /**
@@ -149,29 +149,30 @@ class Struct extends AbstractModelFile
         return self::getValidType($this->getStructAttributeTypeHint($attribute, $returnArrayType), $this->getGenerator()->getOptionXsdTypesPath(), null);
     }
     /**
-     * @param MethodContainer $methods
      * @return Struct
      */
-    protected function addStructMethodsSetAndGet(MethodContainer $methods)
+    protected function addStructMethodsSetAndGet()
     {
         foreach ($this->getModelAttributes() as $attribute) {
-            $this->addStructMethodGet($methods, $attribute)->addStructMethodSet($methods, $attribute)->addStructMethodAddTo($methods, $attribute);
+            $this
+                ->addStructMethodGet($attribute)
+                ->addStructMethodSet($attribute)
+                ->addStructMethodAddTo($attribute);
         }
         return $this;
     }
     /**
-     * @param MethodContainer $methods
      * @param StructAttributeModel $attribute
      * @return Struct
      */
-    protected function addStructMethodAddTo(MethodContainer $methods, StructAttributeModel $attribute)
+    protected function addStructMethodAddTo(StructAttributeModel $attribute)
     {
         if ($attribute->isArray()) {
             $method = new PhpMethod(sprintf('addTo%s', ucfirst($attribute->getCleanName())), [
                 new PhpFunctionParameter('item', PhpFunctionParameter::NO_VALUE, $this->getStructMethodParameterType($attribute, false)),
             ]);
             $this->addStructMethodAddToBody($method, $attribute);
-            $methods->add($method);
+            $this->methods->add($method);
         }
         return $this;
     }
@@ -183,8 +184,7 @@ class Struct extends AbstractModelFile
     protected function addStructMethodAddToBody(PhpMethod $method, StructAttributeModel $attribute)
     {
         if ($this->getGenerator()->getOptionValidation()) {
-            $rules = new Rules($this, $method, $attribute);
-            $rules->applyRules('item', true);
+            $this->applyRules($method, $attribute, 'item', true);
         }
         $method
             ->addChild(sprintf('$this->%s[] = $item;', $attribute->getCleanName()))
@@ -192,17 +192,16 @@ class Struct extends AbstractModelFile
         return $this;
     }
     /**
-     * @param MethodContainer $methods
      * @param StructAttributeModel $attribute
      * @return Struct
      */
-    protected function addStructMethodSet(MethodContainer $methods, StructAttributeModel $attribute)
+    protected function addStructMethodSet(StructAttributeModel $attribute)
     {
         $method = new PhpMethod($attribute->getSetterName(), [
             $this->getStructMethodParameter($attribute, true, null),
         ]);
         $this->addStructMethodSetBody($method, $attribute);
-        $methods->add($method);
+        $this->methods->add($method);
         return $this;
     }
     /**
@@ -214,8 +213,7 @@ class Struct extends AbstractModelFile
     {
         if ($this->getGenerator()->getOptionValidation()) {
             $uniqueString = $attribute->getUniqueString($attribute->getCleanName());
-            $rules = new Rules($this, $method, $attribute);
-            $rules->applyRules(lcfirst($uniqueString));
+            $this->applyRules($method, $attribute, lcfirst($uniqueString));
         }
         return $this->addStructMethodSetBodyAssignment($method, $attribute)->addStructMethodSetBodyReturn($method);
     }
@@ -229,7 +227,8 @@ class Struct extends AbstractModelFile
         $uniqueString = $attribute->getUniqueString($attribute->getCleanName());
         $parameterName = lcfirst($uniqueString);
         if ($attribute->getRemovableFromRequest()) {
-            $method->addChild(sprintf('if (is_null($%1$s) || (is_array($%1$s) && empty($%1$s))) {', $parameterName))
+            $method
+                ->addChild(sprintf('if (is_null($%1$s) || (is_array($%1$s) && empty($%1$s))) {', $parameterName))
                 ->addChild($method->getIndentedString(sprintf('unset($this->%1$s%2$s);', $attribute->getCleanName(), $attribute->nameIsClean() ? '' : sprintf(', $this->{\'%s\'}', addslashes($attribute->getName()))), 1))
                 ->addChild('} else {')
                 ->addChild($method->getIndentedString($this->getStructMethodSetBodyAssignment($attribute, $parameterName), 1))
@@ -287,7 +286,8 @@ class Struct extends AbstractModelFile
     protected function addStructMethodGetBodyForXml(PhpMethod $method, StructAttributeModel $attribute, $thisAccess)
     {
         if ($attribute->isXml()) {
-            $method->addChild(sprintf('if (!empty($this->%1$s) && !($this->%1$s instanceof \DOMDocument)) {', $thisAccess))
+            $method
+                ->addChild(sprintf('if (!empty($this->%1$s) && !($this->%1$s instanceof \DOMDocument)) {', $thisAccess))
                 ->addChild($method->getIndentedString('$dom = new \DOMDocument(\'1.0\', \'UTF-8\');', 1))
                 ->addChild($method->getIndentedString('$dom->formatOutput = true;', 1))
                 ->addChild($method->getIndentedString(sprintf('if ($dom->loadXML($this->%s)) {', $thisAccess), 1))
@@ -320,11 +320,10 @@ class Struct extends AbstractModelFile
         return $this;
     }
     /**
-     * @param MethodContainer $methods
      * @param StructAttributeModel $attribute
      * @return Struct
      */
-    protected function addStructMethodGet(MethodContainer $methods, StructAttributeModel $attribute)
+    protected function addStructMethodGet(StructAttributeModel $attribute)
     {
         $method = new PhpMethod($attribute->getGetterName(), $this->getStructMethodGetParameters($attribute));
         if ($attribute->nameIsClean()) {
@@ -333,7 +332,7 @@ class Struct extends AbstractModelFile
             $thisAccess = sprintf('{\'%s\'}', addslashes($attribute->getName()));
         }
         $this->addStructMethodGetBody($method, $attribute, $thisAccess);
-        $methods->add($method);
+        $this->methods->add($method);
         return $this;
     }
     /**
@@ -349,16 +348,15 @@ class Struct extends AbstractModelFile
         return $parameters;
     }
     /**
-     * @param MethodContainer $methods
      * @return Struct
      */
-    protected function addStructMethodSetState(MethodContainer $methods)
+    protected function addStructMethodSetState()
     {
         $method = new PhpMethod(self::METHOD_SET_STATE, [
             new PhpFunctionParameter('array', PhpFunctionParameter::NO_VALUE, 'array'),
         ], PhpMethod::ACCESS_PUBLIC, false, true);
         $method->addChild(sprintf('return parent::__set_state($array);'));
-        $methods->add($method);
+        $this->methods->add($method);
         return $this;
     }
     /**
@@ -388,6 +386,9 @@ class Struct extends AbstractModelFile
                 break;
             case strpos($method->getName(), 'addTo') === 0:
                 $annotationBlock = $this->getStructMethodsAddToAnnotationBlock($method);
+                break;
+            case strpos($method->getName(), 'validate') === 0:
+                $annotationBlock = $this->getStructMethodsValidateAnnotationBlock($method);
                 break;
         }
         return $annotationBlock;
@@ -541,7 +542,8 @@ class Struct extends AbstractModelFile
     protected function addStructMethodsGetAnnotationBlockFromXmlAttribute(PhpAnnotationBlock $annotationBlock, StructAttributeModel $attribute)
     {
         if ($attribute->isXml()) {
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::loadXML()'))
+            $annotationBlock
+                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::loadXML()'))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::hasChildNodes()'))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::saveXML()'))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMNode::item()'))
@@ -604,6 +606,20 @@ class Struct extends AbstractModelFile
         return $annotationBlock;
     }
     /**
+     * @param PhpMethod $method
+     * @return PhpAnnotationBlock
+     */
+    protected function getStructMethodsValidateAnnotationBlock(PhpMethod $method)
+    {
+        $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), 'ValuesFrom') + strlen('ValuesFrom')));
+        return new PhpAnnotationBlock([
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the values passed to the method %s', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(self::ANNOTATION_PARAM, 'array $values'),
+            new PhpAnnotation(self::ANNOTATION_RETURN, 'string'),
+        ]);
+    }
+    /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getModel()
      * @return StructModel
      */
@@ -623,5 +639,18 @@ class Struct extends AbstractModelFile
             throw new \InvalidArgumentException('Model must be an instance of a Struct', __LINE__);
         }
         return parent::setModel($model);
+    }
+    /**
+     * @param PhpMethod $method
+     * @param StructAttribute $attribute
+     * @param $parameterName
+     * @param bool $itemType
+     */
+    protected function applyRules(PhpMethod $method, StructAttribute $attribute, $parameterName, $itemType = false)
+    {
+        if ($this->getGenerator()->getOptionValidation()) {
+            $rules = new Rules($this, $method, $attribute, $this->methods);
+            $rules->applyRules($parameterName, $itemType);
+        }
     }
 }

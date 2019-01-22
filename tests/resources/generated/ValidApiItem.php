@@ -74,7 +74,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $itemType, implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiItemType', is_array($itemType) ? implode(', ', $itemType) : $itemType, implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
         }
         $this->itemType = $itemType;
         return $this;
@@ -96,7 +96,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($id)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($id)), __LINE__);
         }
         $this->id = $id;
         return $this;
@@ -118,7 +118,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($displayName) && !is_string($displayName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($displayName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($displayName)), __LINE__);
         }
         $this->displayName = $displayName;
         return $this;

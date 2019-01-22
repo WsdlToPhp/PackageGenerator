@@ -179,11 +179,11 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($email) && !is_string($email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($email)), __LINE__);
         }
         // validation for constraint: pattern
         if (is_scalar($email) && !preg_match('/[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', $email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)", "%s" given', var_export($email, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)", %s given', var_export($email, true)), __LINE__);
         }
         // validation for constraint: maxLength
         if ((is_scalar($email) && strlen($email) > 100) || (is_array($email) && count($email) > 100)) {
@@ -234,7 +234,7 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiGender::valueIsValid($gender)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $gender, implode(', ', \Api\EnumType\ApiGender::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiGender', is_array($gender) ? implode(', ', $gender) : $gender, implode(', ', \Api\EnumType\ApiGender::getValidValues())), __LINE__);
         }
         $this->gender = $gender;
         return $this;
@@ -256,7 +256,7 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($id)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($id)), __LINE__);
         }
         // validation for constraint: maxLength
         if ((is_scalar($id) && strlen($id) > 35) || (is_array($id) && count($id) > 35)) {
@@ -286,7 +286,7 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($dateOfBirth) && !is_string($dateOfBirth)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($dateOfBirth)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($dateOfBirth)), __LINE__);
         }
         // validation for constraint: maxLength
         if ((is_scalar($dateOfBirth) && strlen($dateOfBirth) > 10) || (is_array($dateOfBirth) && count($dateOfBirth) > 10)) {
@@ -316,7 +316,7 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($phoneNumber) && !is_string($phoneNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($phoneNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($phoneNumber)), __LINE__);
         }
         // validation for constraint: maxLength
         if ((is_scalar($phoneNumber) && strlen($phoneNumber) > 50) || (is_array($phoneNumber) && count($phoneNumber) > 50)) {
@@ -346,7 +346,7 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($mobilePhoneNumber) && !is_string($mobilePhoneNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($mobilePhoneNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($mobilePhoneNumber)), __LINE__);
         }
         // validation for constraint: maxLength
         if ((is_scalar($mobilePhoneNumber) && strlen($mobilePhoneNumber) > 50) || (is_array($mobilePhoneNumber) && count($mobilePhoneNumber) > 50)) {
@@ -376,7 +376,7 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($ipAddress) && !is_string($ipAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($ipAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($ipAddress)), __LINE__);
         }
         // validation for constraint: maxLength
         if ((is_scalar($ipAddress) && strlen($ipAddress) > 35) || (is_array($ipAddress) && count($ipAddress) > 35)) {

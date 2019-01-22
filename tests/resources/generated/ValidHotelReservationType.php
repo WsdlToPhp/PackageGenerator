@@ -149,7 +149,7 @@ class ApiHotelReservationType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($roomStayReservation) && !is_bool($roomStayReservation)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($roomStayReservation)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, %s given', gettype($roomStayReservation)), __LINE__);
         }
         $this->RoomStayReservation = $roomStayReservation;
         return $this;
@@ -171,19 +171,7 @@ class ApiHotelReservationType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($resStatus) && !is_string($resStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($resStatus)), __LINE__);
-        }
-        // validation for constraint: maxLength
-        if ((is_scalar($resStatus) && strlen($resStatus) > 16) || (is_array($resStatus) && count($resStatus) > 16)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 16 element(s) or a scalar of 16 character(s) at most, "%d" length given', is_scalar($resStatus) ? strlen($resStatus) : count($resStatus)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if ((is_scalar($resStatus) && strlen($resStatus) < 1) || (is_array($resStatus) && count($resStatus) < 1)) {
-            throw new \InvalidArgumentException('Invalid length, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', __LINE__);
-        }
-        // validation for constraint: pattern
-        if (is_scalar($resStatus) && !preg_match('/[A-Z]{1,2}/', $resStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[A-Z]{1,2}", "%s" given', var_export($resStatus, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($resStatus)), __LINE__);
         }
         $this->ResStatus = $resStatus;
         return $this;

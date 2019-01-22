@@ -93,7 +93,7 @@ class ApiFind extends AbstractSoapClientBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiDateTimePrecisionType::valueIsValid($dateTimePrecision)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $dateTimePrecision, implode(', ', \Api\EnumType\ApiDateTimePrecisionType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiDateTimePrecisionType', is_array($dateTimePrecision) ? implode(', ', $dateTimePrecision) : $dateTimePrecision, implode(', ', \Api\EnumType\ApiDateTimePrecisionType::getValidValues())), __LINE__);
         }
         return $this->setSoapHeader($nameSpace, 'DateTimePrecision', $dateTimePrecision, $mustUnderstand, $actor);
     }

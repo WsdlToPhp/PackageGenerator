@@ -46,14 +46,13 @@ class ClassMap extends AbstractModelFile
     {
     }
     /**
-     * @param MethodContainer $methods
      * @return ClassMap
      */
-    protected function getClassMethods(MethodContainer $methods)
+    protected function fillClassMethods()
     {
         $method = new PhpMethod(self::METHOD_NAME, [], PhpMethod::ACCESS_PUBLIC, false, true, true);
         $this->addMethodBody($method);
-        $methods->add($method);
+        $this->methods->add($method);
         return $this;
     }
     /**

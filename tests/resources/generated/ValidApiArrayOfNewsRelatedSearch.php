@@ -39,6 +39,28 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
         return $this->NewsRelatedSearch;
     }
     /**
+     * This method is responsible for validating the values passed to the method setNewsRelatedSearch
+     * This method is willingly generated in order to preserve the one-line inline validation within the setNewsRelatedSearch method
+     * @param array $values
+     * @return string
+     */
+    public static function validateNewsRelatedSearchValuesFromSetNewsRelatedSearch(array $values = array())
+    {
+        $message = '';
+        $invalidValues = array();
+        foreach ($values as $arrayOfNewsRelatedSearchNewsRelatedSearchItem) {
+            // validation for constraint: itemType
+            if (!$arrayOfNewsRelatedSearchNewsRelatedSearchItem instanceof \Api\StructType\ApiNewsRelatedSearch) {
+                $invalidValues[] = is_object($arrayOfNewsRelatedSearchNewsRelatedSearchItem) ? get_class($arrayOfNewsRelatedSearchNewsRelatedSearchItem) : var_export($arrayOfNewsRelatedSearchNewsRelatedSearchItem, true);
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The NewsRelatedSearch property can only contain items of \Api\StructType\ApiNewsRelatedSearch, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set NewsRelatedSearch value
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
@@ -47,11 +69,8 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
         // validation for constraint: array
-        foreach ($newsRelatedSearch as $arrayOfNewsRelatedSearchNewsRelatedSearchItem) {
-            // validation for constraint: itemType
-            if (!$arrayOfNewsRelatedSearchNewsRelatedSearchItem instanceof \Api\StructType\ApiNewsRelatedSearch) {
-                throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of \Api\StructType\ApiNewsRelatedSearch, "%s" given', is_object($arrayOfNewsRelatedSearchNewsRelatedSearchItem) ? get_class($arrayOfNewsRelatedSearchNewsRelatedSearchItem) : gettype($arrayOfNewsRelatedSearchNewsRelatedSearchItem)), __LINE__);
-            }
+        if ('' !== ($message = self::validateNewsRelatedSearchValuesFromSetNewsRelatedSearch($newsRelatedSearch))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->NewsRelatedSearch = $newsRelatedSearch;
         return $this;
@@ -66,7 +85,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiNewsRelatedSearch) {
-            throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of \Api\StructType\ApiNewsRelatedSearch, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of \Api\StructType\ApiNewsRelatedSearch, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->NewsRelatedSearch[] = $item;
         return $this;

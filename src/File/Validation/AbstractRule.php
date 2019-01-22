@@ -5,6 +5,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 
 abstract class AbstractRule
 {
@@ -17,7 +18,7 @@ abstract class AbstractRule
      */
     public function __construct(Rules $rules)
     {
-        $this->setRules($rules);
+        $this->rules = $rules;
     }
     /**
      * This method has to add the validation rule to the method's body
@@ -26,7 +27,41 @@ abstract class AbstractRule
      * @param bool $itemType
      * @return AbstractRule
      */
-    abstract public function applyRule($parameterName, $value, $itemType = false);
+    final public function applyRule($parameterName, $value, $itemType = false)
+    {
+        $test = $this->testConditions($parameterName, $value, $itemType);
+        if (!empty($test)) {
+            $message = $this->exceptionMessageOnTestFailure($parameterName, $value, $itemType);
+            $this->getMethod()
+                ->addChild($this->getMethod()->getIndentedString(sprintf('// validation for constraint: %s', $this->name()), $itemType ? 1 : 0))
+                ->addChild($this->getMethod()->getIndentedString(sprintf('if (%s) {', $test), $itemType ? 1 : 0))
+                ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(%s, __LINE__);', $message), $itemType ? 2 : 1))
+                ->addChild($this->getMethod()->getIndentedString('}', $itemType ? 1 : 0));
+            unset($message);
+        }
+        unset($test);
+    }
+    /**
+     * Name of the validation rule
+     * @return string
+     */
+    abstract public function name();
+    /**
+     * Inline tests of the validation rule
+     * @param string $parameterName
+     * @param mixed $value
+     * @param bool $itemType
+     * @return string
+     */
+    abstract public function testConditions($parameterName, $value, $itemType = false);
+    /**
+     * Message when test fails in order to throw the exception
+     * @param string $parameterName
+     * @param mixed $value
+     * @param bool $itemType
+     * @return string
+     */
+    abstract public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false);
     /**
      * @return Rules
      */
@@ -35,33 +70,31 @@ abstract class AbstractRule
         return $this->rules;
     }
     /**
-     * @param Rules $rules
-     * @return AbstractRule
-     */
-    public function setRules(Rules $rules)
-    {
-        $this->rules = $rules;
-        return $this;
-    }
-    /**
      * @return PhpMethod
      */
     public function getMethod()
     {
-        return $this->getRules()->getMethod();
+        return $this->rules->getMethod();
+    }
+    /**
+     * @return MethodContainer
+     */
+    public function getMethods()
+    {
+        return $this->rules->getMethods();
     }
     /**
      * @return AbstractModelFile
      */
     public function getFile()
     {
-        return $this->getRules()->getFile();
+        return $this->rules->getFile();
     }
     /**
      * @return StructAttributeModel
      */
     public function getAttribute()
     {
-        return $this->getRules()->getAttribute();
+        return $this->rules->getAttribute();
     }
 }

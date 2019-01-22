@@ -7,7 +7,7 @@ class ArrayRule extends AbstractSetOfValuesRule
     /**
      * @return string
      */
-    protected function name()
+    public function name()
     {
         return 'array';
     }

@@ -8,22 +8,54 @@ use WsdlToPhp\PackageGenerator\Model\Struct;
 class EnumerationRule extends AbstractRule
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\Validation\AbstractValidation::addRule()
+     * @var Struct
+     */
+    protected $model;
+
+    /**
+     * @return string
+     */
+    public function name()
+    {
+        return 'enumeration';
+    }
+
+    /**
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return EnumerationRule
+     * @return string
      */
-    public function applyRule($parameterName, $value, $itemType = false)
+    public function testConditions($parameterName, $value, $itemType = false)
     {
-        $attribute = $this->getAttribute();
-        if (($model = $this->getFile()->getRestrictionFromStructAttribute($attribute)) instanceof Struct) {
-            $this->getMethod()
-                ->addChild('// validation for constraint: enumeration')
-                ->addChild(sprintf('if (!%s::%s($%s)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID, $parameterName))
-                ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Value "%%s" is invalid, please use one of: %%s\', $%s, implode(\', \', %s::%s())), __LINE__);', $parameterName, $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES), 1))
-                ->addChild('}');
+        $test = '';
+        if ($this->getRestrictionModel()) {
+            $test = sprintf('!%s::%s($%s)', $this->getRestrictionModel()->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID, $parameterName);
         }
-        return $this;
+        return $test;
+    }
+
+    /**
+     * @param string $parameterName
+     * @param mixed $value
+     * @param bool $itemType
+     * @return string
+     */
+    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    {
+        if ($this->getRestrictionModel()) {
+            return sprintf('sprintf(\'Invalid value(s) %%s, please use one of: %%s from enumeration class %2$s\', is_array($%1$s) ? implode(\', \', $%1$s) : $%1$s, implode(\', \', %2$s::%3$s()))', $parameterName, $this->getRestrictionModel()->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES);
+        }
+    }
+
+    /**
+     * @return Struct|null
+     */
+    protected function getRestrictionModel()
+    {
+        if (!$this->model) {
+            $this->model = $this->getFile()->getRestrictionFromStructAttribute($this->getAttribute());
+        }
+        return $this->model;
     }
 }

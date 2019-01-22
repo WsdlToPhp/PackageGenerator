@@ -71,7 +71,7 @@ class ApiResult extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($success) && !is_bool($success)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($success)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, %s given', gettype($success)), __LINE__);
         }
         $this->Success = $success;
         return $this;

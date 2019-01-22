@@ -5,19 +5,32 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 class StringRule extends AbstractRule
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\Validation\AbstractValidation::addRule()
+     * @return string
+     */
+    public function name()
+    {
+        return 'string';
+    }
+
+    /**
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return StringRule
+     * @return string
      */
-    public function applyRule($parameterName, $value, $itemType = false)
+    public function testConditions($parameterName, $value, $itemType = false)
     {
-        $this->getMethod()
-            ->addChild('// validation for constraint: string')
-            ->addChild(sprintf('if (!is_null($%1$s) && !is_string($%1$s)) {', $parameterName))
-            ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, please provide a string, "%%s" given\', gettype($%s)), __LINE__);', $parameterName), 1))
-            ->addChild('}');
-        return $this;
+        return sprintf('!is_null($%1$s) && !is_string($%1$s)', $parameterName);
+    }
+
+    /**
+     * @param string $parameterName
+     * @param mixed $value
+     * @param bool $itemType
+     * @return string
+     */
+    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    {
+        return sprintf('sprintf(\'Invalid value, please provide a string, %%s given\', gettype($%s))', $parameterName);
     }
 }

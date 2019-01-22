@@ -39,6 +39,28 @@ class ApiArrayOfError extends AbstractStructArrayBase
         return $this->Error;
     }
     /**
+     * This method is responsible for validating the values passed to the method setError
+     * This method is willingly generated in order to preserve the one-line inline validation within the setError method
+     * @param array $values
+     * @return string
+     */
+    public static function validateErrorValuesFromSetError(array $values = array())
+    {
+        $message = '';
+        $invalidValues = array();
+        foreach ($values as $arrayOfErrorErrorItem) {
+            // validation for constraint: itemType
+            if (!$arrayOfErrorErrorItem instanceof \Api\StructType\ApiError) {
+                $invalidValues[] = is_object($arrayOfErrorErrorItem) ? get_class($arrayOfErrorErrorItem) : var_export($arrayOfErrorErrorItem, true);
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The Error property can only contain items of \Api\StructType\ApiError, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set Error value
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiError[] $error
@@ -47,11 +69,8 @@ class ApiArrayOfError extends AbstractStructArrayBase
     public function setError(array $error = array())
     {
         // validation for constraint: array
-        foreach ($error as $arrayOfErrorErrorItem) {
-            // validation for constraint: itemType
-            if (!$arrayOfErrorErrorItem instanceof \Api\StructType\ApiError) {
-                throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiError, "%s" given', is_object($arrayOfErrorErrorItem) ? get_class($arrayOfErrorErrorItem) : gettype($arrayOfErrorErrorItem)), __LINE__);
-            }
+        if ('' !== ($message = self::validateErrorValuesFromSetError($error))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->Error = $error;
         return $this;
@@ -66,7 +85,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiError) {
-            throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiError, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The Error property can only contain items of \Api\StructType\ApiError, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Error[] = $item;
         return $this;

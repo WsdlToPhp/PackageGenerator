@@ -10,15 +10,11 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 use WsdlToPhp\PackageGenerator\File\StructEnum;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 abstract class AbstractSetOfValuesRule extends AbstractRule
 {
-    /**
-     * Name of the validation rule
-     * @return string
-     */
-    abstract protected function name();
-
     /**
      * Must check the attribute validity according to the current rule
      * @return bool
@@ -26,35 +22,73 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
     abstract protected function mustApplyRuleOnAttribute();
 
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\Validation\AbstractValidation::applyRule()
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return ListRule
+     * @return string
      */
-    public function applyRule($parameterName, $value, $itemType = false)
+    public function testConditions($parameterName, $value, $itemType = false)
     {
+        $test = '';
         if ($this->mustApplyRuleOnAttribute()) {
-            $model = $this->getFile()->getRestrictionFromStructAttribute($this->getAttribute());
-            $itemName = sprintf('%s%sItem', lcfirst($this->getFile()->getModel()->getCleanName(false)), ucfirst($this->getAttribute()->getCleanName()));
-            $this->getMethod()->addChild(sprintf('// validation for constraint: %s', $this->name()));
-            if ($model instanceof Struct) {
-                $this->getMethod()
-                    ->addChild('$invalidValues = array();')
-                    ->addChild(sprintf('foreach ($%s as $%s) {', $parameterName, $itemName))
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('if (!%s::%s($%s)) {', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID, $itemName), 1))
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('$invalidValues[] = var_export($%s, true);', $itemName), 2))
-                    ->addChild($this->getMethod()->getIndentedString('}', 1))
-                    ->addChild('}')
-                    ->addChild('if (!empty($invalidValues)) {')
-                    ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Value(s) "%%s" is/are invalid, please use one of: %%s\', implode(\', \', $invalidValues), implode(\', \', %s::%s())), __LINE__);', $model->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES), 1))
-                    ->addChild('}');
-            } else {
-                $this->getMethod()->addChild(sprintf('foreach ($%s as $%s) {', $parameterName, $itemName));
-                $this->getRules()->getItemTypeRule()->applyRule($itemName, true);
-                $this->getMethod()->addChild('}');
-            }
+            $this->addValidationMethod($parameterName);
+            $test = sprintf('\'\' !== ($message = self::%s($%s))', $this->getValidationMethodName($parameterName), $parameterName);
         }
-        return $this;
+        return $test;
+    }
+
+    /**
+     * @param string $parameterName
+     * @param mixed $value
+     * @param bool $itemType
+     * @return string
+     */
+    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    {
+        return '$message';
+    }
+
+    /**
+     * @param $parameterName
+     */
+    protected function addValidationMethod($parameterName)
+    {
+        $method = new PhpMethod($this->getValidationMethodName($parameterName), [
+            new PhpFunctionParameter('values', [], 'array'),
+        ], PhpMethod::ACCESS_PUBLIC, false, true);
+        $model = $this->getFile()->getRestrictionFromStructAttribute($this->getAttribute());
+        $itemName = sprintf('%s%sItem', lcfirst($this->getFile()->getModel()->getCleanName(false)), ucfirst($this->getAttribute()->getCleanName()));
+        $rules = clone $this->getRules();
+
+        if ($model instanceof Struct) {
+            $rule = $rules->getEnumerationRule();
+        } else {
+            $rule = $rules->setMethod($method)->getItemTypeRule();
+        }
+
+        $method
+            ->addChild('$message = \'\';')
+            ->addChild('$invalidValues = array();')
+            ->addChild(sprintf('foreach ($values as $%s) {', $itemName))
+            ->addChild($method->getIndentedString(sprintf('// validation for constraint: %s', $rule->name()), 1))
+            ->addChild($method->getIndentedString(sprintf('if (%s) {', $rule->testConditions($itemName, null)), 1))
+            ->addChild($method->getIndentedString(sprintf('$invalidValues[] = %s;', sprintf('is_object($%1$s) ? get_class($%1$s) : var_export($%1$s, true)', $itemName)), 2))
+            ->addChild($method->getIndentedString('}', 1))
+            ->addChild('}')
+            ->addChild('if (!empty($invalidValues)) {')
+            ->addChild($method->getIndentedString(sprintf('$message = %s;', $rule->exceptionMessageOnTestFailure('invalidValues', null)), 1))
+            ->addChild('}')
+            ->addChild('unset($invalidValues);')
+            ->addChild('return $message;');
+        $this->getMethods()->add($method);
+    }
+
+    /**
+     * @param string $parameterName
+     * @return string
+     */
+    protected function getValidationMethodName($parameterName)
+    {
+        return sprintf('validate%sValuesFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
     }
 }

@@ -39,6 +39,28 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
         return $this->WebSearchOption;
     }
     /**
+     * This method is responsible for validating the values passed to the method setWebSearchOption
+     * This method is willingly generated in order to preserve the one-line inline validation within the setWebSearchOption method
+     * @param array $values
+     * @return string
+     */
+    public static function validateWebSearchOptionValuesFromSetWebSearchOption(array $values = array())
+    {
+        $message = '';
+        $invalidValues = array();
+        foreach ($values as $arrayOfWebSearchOptionWebSearchOptionItem) {
+            // validation for constraint: enumeration
+            if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($arrayOfWebSearchOptionWebSearchOptionItem)) {
+                $invalidValues[] = is_object($arrayOfWebSearchOptionWebSearchOptionItem) ? get_class($arrayOfWebSearchOptionWebSearchOptionItem) : var_export($arrayOfWebSearchOptionWebSearchOptionItem, true);
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiWebSearchOption', is_array($invalidValues) ? implode(', ', $invalidValues) : $invalidValues, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues()));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set WebSearchOption value
      * @uses \Api\EnumType\ApiWebSearchOption::valueIsValid()
      * @uses \Api\EnumType\ApiWebSearchOption::getValidValues()
@@ -49,14 +71,8 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     public function setWebSearchOption(array $webSearchOption = array())
     {
         // validation for constraint: array
-        $invalidValues = array();
-        foreach ($webSearchOption as $arrayOfWebSearchOptionWebSearchOptionItem) {
-            if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($arrayOfWebSearchOptionWebSearchOptionItem)) {
-                $invalidValues[] = var_export($arrayOfWebSearchOptionWebSearchOptionItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
+        if ('' !== ($message = self::validateWebSearchOptionValuesFromSetWebSearchOption($webSearchOption))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->WebSearchOption = $webSearchOption;
         return $this;
@@ -73,7 +89,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiWebSearchOption', is_array($item) ? implode(', ', $item) : $item, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
         }
         $this->WebSearchOption[] = $item;
         return $this;
@@ -137,7 +153,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiWebSearchOption', is_array($item) ? implode(', ', $item) : $item, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
         }
         return parent::add($item);
     }

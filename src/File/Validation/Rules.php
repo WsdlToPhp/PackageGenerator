@@ -2,11 +2,13 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
+use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class Rules
 {
@@ -23,13 +25,20 @@ class Rules
      */
     protected $method;
     /**
+     * @var MethodContainer
+     */
+    protected $methods;
+    /**
      * @param AbstractModelFile $file
      * @param PhpMethod $method
      * @param StructAttribute $attribute
      */
-    public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute)
+    public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute, MethodContainer $methods)
     {
-        $this->setFile($file)->setMethod($method)->setAttribute($attribute);
+        $this->file = $file;
+        $this->method = $method;
+        $this->attribute = $attribute;
+        $this->methods = $methods;
     }
     /**
      * @param string $parameterName
@@ -42,9 +51,9 @@ class Rules
         } elseif ($this->attribute->isList() && !$itemType) {
             $this->getListRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->attribute)) {
-            $this->getEnumerationRule()->applyRule($parameterName, null, $itemType);
+            $this->getEnumerationRule()->applyRule($parameterName, null);
         } elseif ($itemType) {
-            $this->getItemTypeRule()->applyRule($parameterName, null, $itemType);
+            $this->getItemTypeRule()->applyRule($parameterName, $itemType);
         } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->attribute))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
@@ -179,5 +188,12 @@ class Rules
     {
         $this->method = $method;
         return $this;
+    }
+    /**
+     * @return MethodContainer
+     */
+    public function getMethods()
+    {
+        return $this->methods;
     }
 }
