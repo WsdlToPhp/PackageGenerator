@@ -1,6 +1,6 @@
 {
     "name": "wsdltophp/bing",
-    "description": "Package generated from /var/www/html/tests/resources/bingsearch.wsdl using wsdltophp/packagegenerator",
+    "description": "Package generated from __WSDL_URL__ using wsdltophp/packagegenerator",
     "require": {
         "php": ">=5.3.3",
         "ext-soap": "*",
