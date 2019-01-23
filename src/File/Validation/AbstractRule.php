@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
@@ -96,5 +97,12 @@ abstract class AbstractRule
     public function getAttribute()
     {
         return $this->rules->getAttribute();
+    }
+    /**
+     * @return Generator
+     */
+    public function getGenerator()
+    {
+        return $this->rules->getGenerator();
     }
 }

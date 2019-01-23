@@ -31,6 +31,6 @@ class MaxInclusiveRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value, the value must be inferior or equal to %d, %%s given\', $%s)', $value, $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, the value must be inferior or equal to %d, %%s given\', var_export($%2$s, true), $%2$s)', $value, $parameterName);
     }
 }

@@ -107,7 +107,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($СубъектРФ) && !is_string($СубъектРФ)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($СубъектРФ)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($СубъектРФ, true), gettype($СубъектРФ)), __LINE__);
         }
         $this->СубъектРФ = $СубъектРФ;
         return $this;
@@ -147,7 +147,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($Город) && !is_string($Город)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($Город)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Город, true), gettype($Город)), __LINE__);
         }
         $this->Город = $Город;
         return $this;
@@ -169,7 +169,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($ВнутригРайон) && !is_string($ВнутригРайон)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($ВнутригРайон)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ВнутригРайон, true), gettype($ВнутригРайон)), __LINE__);
         }
         $this->ВнутригРайон = $ВнутригРайон;
         return $this;
@@ -191,7 +191,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($НаселПункт) && !is_string($НаселПункт)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($НаселПункт)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($НаселПункт, true), gettype($НаселПункт)), __LINE__);
         }
         $this->НаселПункт = $НаселПункт;
         return $this;
@@ -213,7 +213,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($Улица) && !is_string($Улица)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($Улица)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Улица, true), gettype($Улица)), __LINE__);
         }
         $this->Улица = $Улица;
         return $this;
@@ -227,15 +227,15 @@ class ApiАдресРФ extends ApiСостав
         return $this->ДопАдрЭл;
     }
     /**
-     * This method is responsible for validating the values passed to the method setДопАдрЭл
+     * This method is responsible for validating the values passed to the setДопАдрЭл method
      * This method is willingly generated in order to preserve the one-line inline validation within the setДопАдрЭл method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateДопАдрЭлValuesFromSetДопАдрЭл(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $АдресРФДопАдрЭлItem) {
             // validation for constraint: itemType
             if (!$АдресРФДопАдрЭлItem instanceof \Api\StructType\ApiДопАдрЭл) {

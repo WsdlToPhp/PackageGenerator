@@ -838,7 +838,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($returnURL) && !is_string($returnURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($returnURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->ReturnURL = $returnURL;
         return $this;
@@ -860,7 +860,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cancelURL) && !is_string($cancelURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($cancelURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
         }
         $this->CancelURL = $cancelURL;
         return $this;
@@ -882,7 +882,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($trackingImageURL) && !is_string($trackingImageURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($trackingImageURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trackingImageURL, true), gettype($trackingImageURL)), __LINE__);
         }
         $this->TrackingImageURL = $trackingImageURL;
         return $this;
@@ -904,7 +904,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giropaySuccessURL) && !is_string($giropaySuccessURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($giropaySuccessURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giropaySuccessURL, true), gettype($giropaySuccessURL)), __LINE__);
         }
         $this->giropaySuccessURL = $giropaySuccessURL;
         return $this;
@@ -926,7 +926,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giropayCancelURL) && !is_string($giropayCancelURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($giropayCancelURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giropayCancelURL, true), gettype($giropayCancelURL)), __LINE__);
         }
         $this->giropayCancelURL = $giropayCancelURL;
         return $this;
@@ -948,7 +948,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($banktxnPendingURL) && !is_string($banktxnPendingURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($banktxnPendingURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($banktxnPendingURL, true), gettype($banktxnPendingURL)), __LINE__);
         }
         $this->BanktxnPendingURL = $banktxnPendingURL;
         return $this;
@@ -970,7 +970,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($token) && !is_string($token)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($token)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->Token = $token;
         return $this;
@@ -1010,7 +1010,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($orderDescription) && !is_string($orderDescription)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($orderDescription)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderDescription, true), gettype($orderDescription)), __LINE__);
         }
         $this->OrderDescription = $orderDescription;
         return $this;
@@ -1032,7 +1032,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;
@@ -1054,7 +1054,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -1076,7 +1076,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reqConfirmShipping) && !is_string($reqConfirmShipping)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($reqConfirmShipping)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqConfirmShipping, true), gettype($reqConfirmShipping)), __LINE__);
         }
         $this->ReqConfirmShipping = $reqConfirmShipping;
         return $this;
@@ -1098,7 +1098,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reqBillingAddress) && !is_string($reqBillingAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($reqBillingAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqBillingAddress, true), gettype($reqBillingAddress)), __LINE__);
         }
         $this->ReqBillingAddress = $reqBillingAddress;
         return $this;
@@ -1138,7 +1138,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($noShipping) && !is_string($noShipping)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($noShipping)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($noShipping, true), gettype($noShipping)), __LINE__);
         }
         $this->NoShipping = $noShipping;
         return $this;
@@ -1160,7 +1160,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($addressOverride) && !is_string($addressOverride)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($addressOverride)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($addressOverride, true), gettype($addressOverride)), __LINE__);
         }
         $this->AddressOverride = $addressOverride;
         return $this;
@@ -1182,7 +1182,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($localeCode) && !is_string($localeCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($localeCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($localeCode, true), gettype($localeCode)), __LINE__);
         }
         $this->LocaleCode = $localeCode;
         return $this;
@@ -1204,7 +1204,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($pageStyle) && !is_string($pageStyle)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($pageStyle)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pageStyle, true), gettype($pageStyle)), __LINE__);
         }
         $this->PageStyle = $pageStyle;
         return $this;
@@ -1226,7 +1226,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_image) && !is_string($cpp_header_image)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($cpp_header_image)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_image, true), gettype($cpp_header_image)), __LINE__);
         }
         $this->cpp_header_image = $this->{'cpp-header-image'} = $cpp_header_image;
         return $this;
@@ -1248,7 +1248,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_border_color) && !is_string($cpp_header_border_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($cpp_header_border_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_border_color, true), gettype($cpp_header_border_color)), __LINE__);
         }
         $this->cpp_header_border_color = $this->{'cpp-header-border-color'} = $cpp_header_border_color;
         return $this;
@@ -1270,7 +1270,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_back_color) && !is_string($cpp_header_back_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($cpp_header_back_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_back_color, true), gettype($cpp_header_back_color)), __LINE__);
         }
         $this->cpp_header_back_color = $this->{'cpp-header-back-color'} = $cpp_header_back_color;
         return $this;
@@ -1292,7 +1292,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_payflow_color) && !is_string($cpp_payflow_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($cpp_payflow_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_payflow_color, true), gettype($cpp_payflow_color)), __LINE__);
         }
         $this->cpp_payflow_color = $this->{'cpp-payflow-color'} = $cpp_payflow_color;
         return $this;
@@ -1314,7 +1314,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_cart_border_color) && !is_string($cpp_cart_border_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($cpp_cart_border_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_cart_border_color, true), gettype($cpp_cart_border_color)), __LINE__);
         }
         $this->cpp_cart_border_color = $this->{'cpp-cart-border-color'} = $cpp_cart_border_color;
         return $this;
@@ -1336,7 +1336,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_logo_image) && !is_string($cpp_logo_image)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($cpp_logo_image)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_logo_image, true), gettype($cpp_logo_image)), __LINE__);
         }
         $this->cpp_logo_image = $this->{'cpp-logo-image'} = $cpp_logo_image;
         return $this;
@@ -1379,7 +1379,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiPaymentActionCodeType::valueIsValid($paymentAction)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiPaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : $paymentAction, implode(', ', \Api\EnumType\ApiPaymentActionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiPaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : var_export($paymentAction, true), implode(', ', \Api\EnumType\ApiPaymentActionCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentAction = $paymentAction;
         return $this;
@@ -1404,7 +1404,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiSolutionTypeType::valueIsValid($solutionType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiSolutionTypeType', is_array($solutionType) ? implode(', ', $solutionType) : $solutionType, implode(', ', \Api\EnumType\ApiSolutionTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiSolutionTypeType', is_array($solutionType) ? implode(', ', $solutionType) : var_export($solutionType, true), implode(', ', \Api\EnumType\ApiSolutionTypeType::getValidValues())), __LINE__);
         }
         $this->SolutionType = $solutionType;
         return $this;
@@ -1429,7 +1429,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiLandingPageType::valueIsValid($landingPage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiLandingPageType', is_array($landingPage) ? implode(', ', $landingPage) : $landingPage, implode(', ', \Api\EnumType\ApiLandingPageType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiLandingPageType', is_array($landingPage) ? implode(', ', $landingPage) : var_export($landingPage, true), implode(', ', \Api\EnumType\ApiLandingPageType::getValidValues())), __LINE__);
         }
         $this->LandingPage = $landingPage;
         return $this;
@@ -1451,7 +1451,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerEmail) && !is_string($buyerEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($buyerEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmail, true), gettype($buyerEmail)), __LINE__);
         }
         $this->BuyerEmail = $buyerEmail;
         return $this;
@@ -1476,7 +1476,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiChannelType::valueIsValid($channelType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiChannelType', is_array($channelType) ? implode(', ', $channelType) : $channelType, implode(', ', \Api\EnumType\ApiChannelType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiChannelType', is_array($channelType) ? implode(', ', $channelType) : var_export($channelType, true), implode(', ', \Api\EnumType\ApiChannelType::getValidValues())), __LINE__);
         }
         $this->ChannelType = $channelType;
         return $this;
@@ -1490,15 +1490,15 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->BillingAgreementDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the method setBillingAgreementDetails
+     * This method is responsible for validating the values passed to the setBillingAgreementDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBillingAgreementDetails method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateBillingAgreementDetailsValuesFromSetBillingAgreementDetails(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem instanceof \Api\StructType\ApiBillingAgreementDetailsType) {
@@ -1550,15 +1550,15 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->PromoCodes;
     }
     /**
-     * This method is responsible for validating the values passed to the method setPromoCodes
+     * This method is responsible for validating the values passed to the setPromoCodes method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPromoCodes method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validatePromoCodesValuesFromSetPromoCodes(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypePromoCodesItem) {
             // validation for constraint: itemType
             if (!is_string($setExpressCheckoutRequestDetailsTypePromoCodesItem)) {
@@ -1618,7 +1618,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($payPalCheckOutBtnType) && !is_string($payPalCheckOutBtnType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($payPalCheckOutBtnType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payPalCheckOutBtnType, true), gettype($payPalCheckOutBtnType)), __LINE__);
         }
         $this->PayPalCheckOutBtnType = $payPalCheckOutBtnType;
         return $this;
@@ -1643,7 +1643,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiProductCategoryType::valueIsValid($productCategory)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiProductCategoryType', is_array($productCategory) ? implode(', ', $productCategory) : $productCategory, implode(', ', \Api\EnumType\ApiProductCategoryType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiProductCategoryType', is_array($productCategory) ? implode(', ', $productCategory) : var_export($productCategory, true), implode(', ', \Api\EnumType\ApiProductCategoryType::getValidValues())), __LINE__);
         }
         $this->ProductCategory = $productCategory;
         return $this;
@@ -1668,7 +1668,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiShippingServiceCodeType::valueIsValid($shippingMethod)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiShippingServiceCodeType', is_array($shippingMethod) ? implode(', ', $shippingMethod) : $shippingMethod, implode(', ', \Api\EnumType\ApiShippingServiceCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiShippingServiceCodeType', is_array($shippingMethod) ? implode(', ', $shippingMethod) : var_export($shippingMethod, true), implode(', ', \Api\EnumType\ApiShippingServiceCodeType::getValidValues())), __LINE__);
         }
         $this->ShippingMethod = $shippingMethod;
         return $this;
@@ -1690,7 +1690,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($profileAddressChangeDate) && !is_string($profileAddressChangeDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($profileAddressChangeDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileAddressChangeDate, true), gettype($profileAddressChangeDate)), __LINE__);
         }
         $this->ProfileAddressChangeDate = $profileAddressChangeDate;
         return $this;
@@ -1712,7 +1712,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($allowNote) && !is_string($allowNote)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($allowNote)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($allowNote, true), gettype($allowNote)), __LINE__);
         }
         $this->AllowNote = $allowNote;
         return $this;
@@ -1752,7 +1752,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($brandName) && !is_string($brandName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($brandName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($brandName, true), gettype($brandName)), __LINE__);
         }
         $this->BrandName = $brandName;
         return $this;
@@ -1774,7 +1774,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($callbackURL) && !is_string($callbackURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($callbackURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackURL, true), gettype($callbackURL)), __LINE__);
         }
         $this->CallbackURL = $callbackURL;
         return $this;
@@ -1806,15 +1806,15 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->OtherPaymentMethods;
     }
     /**
-     * This method is responsible for validating the values passed to the method setOtherPaymentMethods
+     * This method is responsible for validating the values passed to the setOtherPaymentMethods method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOtherPaymentMethods method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateOtherPaymentMethodsValuesFromSetOtherPaymentMethods(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem instanceof \Api\StructType\ApiOtherPaymentMethodDetailsType) {
@@ -1884,15 +1884,15 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->PaymentDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the method setPaymentDetails
+     * This method is responsible for validating the values passed to the setPaymentDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentDetails method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validatePaymentDetailsValuesFromSetPaymentDetails(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypePaymentDetailsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypePaymentDetailsItem instanceof \Api\StructType\ApiPaymentDetailsType) {
@@ -1944,15 +1944,15 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->FlatRateShippingOptions;
     }
     /**
-     * This method is responsible for validating the values passed to the method setFlatRateShippingOptions
+     * This method is responsible for validating the values passed to the setFlatRateShippingOptions method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlatRateShippingOptions method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateFlatRateShippingOptionsValuesFromSetFlatRateShippingOptions(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem instanceof \Api\StructType\ApiShippingOptionType) {
@@ -2012,7 +2012,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($callbackTimeout) && !is_string($callbackTimeout)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($callbackTimeout)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackTimeout, true), gettype($callbackTimeout)), __LINE__);
         }
         $this->CallbackTimeout = $callbackTimeout;
         return $this;
@@ -2034,7 +2034,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($callbackVersion) && !is_string($callbackVersion)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($callbackVersion)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackVersion, true), gettype($callbackVersion)), __LINE__);
         }
         $this->CallbackVersion = $callbackVersion;
         return $this;
@@ -2056,7 +2056,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($customerServiceNumber) && !is_string($customerServiceNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($customerServiceNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerServiceNumber, true), gettype($customerServiceNumber)), __LINE__);
         }
         $this->CustomerServiceNumber = $customerServiceNumber;
         return $this;
@@ -2078,7 +2078,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftMessageEnable) && !is_string($giftMessageEnable)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($giftMessageEnable)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftMessageEnable, true), gettype($giftMessageEnable)), __LINE__);
         }
         $this->GiftMessageEnable = $giftMessageEnable;
         return $this;
@@ -2100,7 +2100,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftReceiptEnable) && !is_string($giftReceiptEnable)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($giftReceiptEnable)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftReceiptEnable, true), gettype($giftReceiptEnable)), __LINE__);
         }
         $this->GiftReceiptEnable = $giftReceiptEnable;
         return $this;
@@ -2122,7 +2122,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftWrapEnable) && !is_string($giftWrapEnable)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($giftWrapEnable)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftWrapEnable, true), gettype($giftWrapEnable)), __LINE__);
         }
         $this->GiftWrapEnable = $giftWrapEnable;
         return $this;
@@ -2144,7 +2144,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftWrapName) && !is_string($giftWrapName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($giftWrapName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftWrapName, true), gettype($giftWrapName)), __LINE__);
         }
         $this->GiftWrapName = $giftWrapName;
         return $this;
@@ -2184,7 +2184,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerEmailOptInEnable) && !is_string($buyerEmailOptInEnable)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($buyerEmailOptInEnable)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmailOptInEnable, true), gettype($buyerEmailOptInEnable)), __LINE__);
         }
         $this->BuyerEmailOptInEnable = $buyerEmailOptInEnable;
         return $this;
@@ -2206,7 +2206,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($surveyEnable) && !is_string($surveyEnable)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($surveyEnable)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surveyEnable, true), gettype($surveyEnable)), __LINE__);
         }
         $this->SurveyEnable = $surveyEnable;
         return $this;
@@ -2228,7 +2228,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($surveyQuestion) && !is_string($surveyQuestion)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($surveyQuestion)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surveyQuestion, true), gettype($surveyQuestion)), __LINE__);
         }
         $this->SurveyQuestion = $surveyQuestion;
         return $this;
@@ -2242,15 +2242,15 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->SurveyChoice;
     }
     /**
-     * This method is responsible for validating the values passed to the method setSurveyChoice
+     * This method is responsible for validating the values passed to the setSurveyChoice method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSurveyChoice method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateSurveyChoiceValuesFromSetSurveyChoice(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeSurveyChoiceItem) {
             // validation for constraint: itemType
             if (!is_string($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem)) {
@@ -2313,7 +2313,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiTotalType::valueIsValid($totalType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiTotalType', is_array($totalType) ? implode(', ', $totalType) : $totalType, implode(', ', \Api\EnumType\ApiTotalType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiTotalType', is_array($totalType) ? implode(', ', $totalType) : var_export($totalType, true), implode(', ', \Api\EnumType\ApiTotalType::getValidValues())), __LINE__);
         }
         $this->TotalType = $totalType;
         return $this;
@@ -2335,7 +2335,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($noteToBuyer) && !is_string($noteToBuyer)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($noteToBuyer)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($noteToBuyer, true), gettype($noteToBuyer)), __LINE__);
         }
         $this->NoteToBuyer = $noteToBuyer;
         return $this;
@@ -2349,15 +2349,15 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->Incentives;
     }
     /**
-     * This method is responsible for validating the values passed to the method setIncentives
+     * This method is responsible for validating the values passed to the setIncentives method
      * This method is willingly generated in order to preserve the one-line inline validation within the setIncentives method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateIncentivesValuesFromSetIncentives(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeIncentivesItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeIncentivesItem instanceof \Api\StructType\ApiIncentiveInfoType) {
@@ -2417,7 +2417,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reqInstrumentDetails) && !is_string($reqInstrumentDetails)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($reqInstrumentDetails)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqInstrumentDetails, true), gettype($reqInstrumentDetails)), __LINE__);
         }
         $this->ReqInstrumentDetails = $reqInstrumentDetails;
         return $this;
@@ -2503,15 +2503,15 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->CoupledBuckets;
     }
     /**
-     * This method is responsible for validating the values passed to the method setCoupledBuckets
+     * This method is responsible for validating the values passed to the setCoupledBuckets method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCoupledBuckets method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateCoupledBucketsValuesFromSetCoupledBuckets(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeCoupledBucketsItem instanceof \Api\StructType\ApiCoupledBucketsType) {

@@ -39,15 +39,15 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
         return $this->NewsRelatedSearch;
     }
     /**
-     * This method is responsible for validating the values passed to the method setNewsRelatedSearch
+     * This method is responsible for validating the values passed to the setNewsRelatedSearch method
      * This method is willingly generated in order to preserve the one-line inline validation within the setNewsRelatedSearch method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateNewsRelatedSearchValuesFromSetNewsRelatedSearch(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $arrayOfNewsRelatedSearchNewsRelatedSearchItem) {
             // validation for constraint: itemType
             if (!$arrayOfNewsRelatedSearchNewsRelatedSearchItem instanceof \Api\StructType\ApiNewsRelatedSearch) {

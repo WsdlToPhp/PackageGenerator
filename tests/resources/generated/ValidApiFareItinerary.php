@@ -120,7 +120,7 @@ class ApiFareItinerary extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($key) && !is_string($key)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($key)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->key = $key;
         return $this;
@@ -134,15 +134,15 @@ class ApiFareItinerary extends AbstractStructBase
         return $this->firstSegmentsIds;
     }
     /**
-     * This method is responsible for validating the values passed to the method setFirstSegmentsIds
+     * This method is responsible for validating the values passed to the setFirstSegmentsIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFirstSegmentsIds method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateFirstSegmentsIdsValuesFromSetFirstSegmentsIds(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $fareItineraryFirstSegmentsIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($fareItineraryFirstSegmentsIdsItem)) {
@@ -202,7 +202,7 @@ class ApiFareItinerary extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($clickoutURLParams) && !is_string($clickoutURLParams)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($clickoutURLParams)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clickoutURLParams, true), gettype($clickoutURLParams)), __LINE__);
         }
         $this->clickoutURLParams = $clickoutURLParams;
         return $this;
@@ -224,7 +224,7 @@ class ApiFareItinerary extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($resident) && !is_bool($resident)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, %s given', gettype($resident)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($resident, true), gettype($resident)), __LINE__);
         }
         $this->resident = $resident;
         return $this;
@@ -238,15 +238,15 @@ class ApiFareItinerary extends AbstractStructBase
         return $this->secondSegmentsIds;
     }
     /**
-     * This method is responsible for validating the values passed to the method setSecondSegmentsIds
+     * This method is responsible for validating the values passed to the setSecondSegmentsIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSecondSegmentsIds method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateSecondSegmentsIdsValuesFromSetSecondSegmentsIds(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $fareItinerarySecondSegmentsIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($fareItinerarySecondSegmentsIdsItem)) {
@@ -298,15 +298,15 @@ class ApiFareItinerary extends AbstractStructBase
         return $this->thirdSegmentsIds;
     }
     /**
-     * This method is responsible for validating the values passed to the method setThirdSegmentsIds
+     * This method is responsible for validating the values passed to the setThirdSegmentsIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdSegmentsIds method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateThirdSegmentsIdsValuesFromSetThirdSegmentsIds(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $fareItineraryThirdSegmentsIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($fareItineraryThirdSegmentsIdsItem)) {

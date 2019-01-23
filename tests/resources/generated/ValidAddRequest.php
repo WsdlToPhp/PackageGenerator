@@ -39,15 +39,15 @@ class ApiAddRequest extends AbstractStructBase
         return $this->AdGroups;
     }
     /**
-     * This method is responsible for validating the values passed to the method setAdGroups
+     * This method is responsible for validating the values passed to the setAdGroups method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdGroups method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateAdGroupsValuesFromSetAdGroups(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $addRequestAdGroupsItem) {
             // validation for constraint: itemType
             if (!$addRequestAdGroupsItem instanceof \Api\StructType\ApiAdGroupAddItem) {

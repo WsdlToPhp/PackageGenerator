@@ -61,15 +61,15 @@ class ApiWorkingPeriod extends AbstractStructBase
         return $this->DayOfWeek;
     }
     /**
-     * This method is responsible for validating the values passed to the method setDayOfWeek
+     * This method is responsible for validating the values passed to the setDayOfWeek method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDayOfWeek method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateDayOfWeekValuesFromSetDayOfWeek(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $workingPeriodDayOfWeekItem) {
             // validation for constraint: enumeration
             if (!\Api\EnumType\ApiDayOfWeekType::valueIsValid($workingPeriodDayOfWeekItem)) {
@@ -77,7 +77,7 @@ class ApiWorkingPeriod extends AbstractStructBase
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiDayOfWeekType', is_array($invalidValues) ? implode(', ', $invalidValues) : $invalidValues, implode(', ', \Api\EnumType\ApiDayOfWeekType::getValidValues()));
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiDayOfWeekType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiDayOfWeekType::getValidValues()));
         }
         unset($invalidValues);
         return $message;
@@ -116,7 +116,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($startTimeInMinutes) && !is_numeric($startTimeInMinutes)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($startTimeInMinutes)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($startTimeInMinutes, true), gettype($startTimeInMinutes)), __LINE__);
         }
         $this->StartTimeInMinutes = $startTimeInMinutes;
         return $this;
@@ -138,7 +138,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($endTimeInMinutes) && !is_numeric($endTimeInMinutes)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($endTimeInMinutes)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($endTimeInMinutes, true), gettype($endTimeInMinutes)), __LINE__);
         }
         $this->EndTimeInMinutes = $endTimeInMinutes;
         return $this;

@@ -380,14 +380,17 @@ class Struct extends AbstractModelFile
             case self::METHOD_SET_STATE:
                 $annotationBlock = $this->getStructMethodSetStateAnnotationBlock();
                 break;
-            case strpos($method->getName(), 'get') === 0:
-            case strpos($method->getName(), 'set') === 0:
+            case 0 === strpos($method->getName(), 'get'):
+            case 0 === strpos($method->getName(), 'set'):
                 $annotationBlock = $this->getStructMethodsSetAndGetAnnotationBlock($method);
                 break;
-            case strpos($method->getName(), 'addTo') === 0:
+            case 0 === strpos($method->getName(), 'addTo'):
                 $annotationBlock = $this->getStructMethodsAddToAnnotationBlock($method);
                 break;
-            case strpos($method->getName(), 'validate') === 0:
+            case false !== strpos($method->getName(), 'ForUnionConstraintsFrom'):
+                $annotationBlock = $this->getStructMethodsValidateUnionAnnotationBlock($method);
+                break;
+            case 0 === strpos($method->getName(), 'validate'):
                 $annotationBlock = $this->getStructMethodsValidateAnnotationBlock($method);
                 break;
         }
@@ -613,10 +616,25 @@ class Struct extends AbstractModelFile
     {
         $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), 'ValuesFrom') + strlen('ValuesFrom')));
         return new PhpAnnotationBlock([
-            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the values passed to the method %s', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the values passed to the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(self::ANNOTATION_PARAM, 'array $values'),
-            new PhpAnnotation(self::ANNOTATION_RETURN, 'string'),
+            new PhpAnnotation(self::ANNOTATION_RETURN, 'string A non-empty message if the values does not match the validation rules'),
+        ]);
+    }
+    /**
+     * @param PhpMethod $method
+     * @return PhpAnnotationBlock
+     */
+    protected function getStructMethodsValidateUnionAnnotationBlock(PhpMethod $method)
+    {
+        $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), 'ForUnionConstraintsFrom') + strlen('ForUnionConstraintsFrom')));
+        return new PhpAnnotationBlock([
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the value passed to the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This is a set of validation rules based on the union types associated to the property being set by the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value'),
+            new PhpAnnotation(self::ANNOTATION_RETURN, 'string A non-empty message if the values does not match the validation rules'),
         ]);
     }
     /**

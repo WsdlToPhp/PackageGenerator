@@ -149,7 +149,7 @@ class ApiHotelReservationType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($roomStayReservation) && !is_bool($roomStayReservation)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, %s given', gettype($roomStayReservation)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($roomStayReservation, true), gettype($roomStayReservation)), __LINE__);
         }
         $this->RoomStayReservation = $roomStayReservation;
         return $this;
@@ -163,6 +163,38 @@ class ApiHotelReservationType extends AbstractStructBase
         return $this->ResStatus;
     }
     /**
+     * This method is responsible for validating the value passed to the setResStatus method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setResStatus method
+     * This is a set of validation rules based on the union types associated to the property being set by the setResStatus method
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateResStatusForUnionConstraintsFromSetResStatus($value)
+    {
+        $message = '';
+        // validation for constraint: enumeration
+        if (!\Api\EnumType\ApiPMS_ResStatusType::valueIsValid($value)) {
+            $exception0 = new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiPMS_ResStatusType', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Api\EnumType\ApiPMS_ResStatusType::getValidValues())), __LINE__);
+        }
+        // validation for constraint: enumeration
+        if (!\Api\EnumType\ApiTransactionActionType::valueIsValid($value)) {
+            $exception1 = new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiTransactionActionType', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Api\EnumType\ApiTransactionActionType::getValidValues())), __LINE__);
+        }
+        // validation for constraint: string
+        if (!is_null($value) && !is_string($value)) {
+            $exception2 = new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
+        }
+        // validation for constraint: pattern
+        if (is_scalar($value) && !preg_match('/[A-Z]{1,2}/', $value)) {
+            $exception3 = new \InvalidArgumentException(sprintf('Invalid value %s, please provide a scalar value that matches "[A-Z]{1,2}"', var_export($value, true)), __LINE__);
+        }
+        if (isset($exception0) && isset($exception1) && isset($exception2) && isset($exception3)) {
+            $message = sprintf("The value %s does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:\n%s", var_export($value, true), implode("\n", array_map(function(\InvalidArgumentException $e) { return sprintf(' - %s', $e->getMessage()); }, [$exception0, $exception1, $exception2, $exception3])));
+        }
+        unset($exception0, $exception1, $exception2, $exception3);
+        return $message;
+    }
+    /**
      * Set ResStatus value
      * @param string $resStatus
      * @return \Api\StructType\ApiHotelReservationType
@@ -171,7 +203,11 @@ class ApiHotelReservationType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($resStatus) && !is_string($resStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($resStatus)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($resStatus, true), gettype($resStatus)), __LINE__);
+        }
+        // validation for constraint: union
+        if ('' !== ($message = self::validateResStatusForUnionConstraintsFromSetResStatus($resStatus))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->ResStatus = $resStatus;
         return $this;

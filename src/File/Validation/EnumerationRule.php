@@ -44,7 +44,7 @@ class EnumerationRule extends AbstractRule
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
         if ($this->getRestrictionModel()) {
-            return sprintf('sprintf(\'Invalid value(s) %%s, please use one of: %%s from enumeration class %2$s\', is_array($%1$s) ? implode(\', \', $%1$s) : $%1$s, implode(\', \', %2$s::%3$s()))', $parameterName, $this->getRestrictionModel()->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES);
+            return sprintf('sprintf(\'Invalid value(s) %%s, please use one of: %%s from enumeration class %2$s\', is_array($%1$s) ? implode(\', \', $%1$s) : var_export($%1$s, true), implode(\', \', %2$s::%3$s()))', $parameterName, $this->getRestrictionModel()->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES);
         }
     }
 

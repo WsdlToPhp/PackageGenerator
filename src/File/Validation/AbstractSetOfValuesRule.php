@@ -8,7 +8,6 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use WsdlToPhp\PackageGenerator\File\StructEnum;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
@@ -68,7 +67,7 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
 
         $method
             ->addChild('$message = \'\';')
-            ->addChild('$invalidValues = array();')
+            ->addChild('$invalidValues = [];')
             ->addChild(sprintf('foreach ($values as $%s) {', $itemName))
             ->addChild($method->getIndentedString(sprintf('// validation for constraint: %s', $rule->name()), 1))
             ->addChild($method->getIndentedString(sprintf('if (%s) {', $rule->testConditions($itemName, null)), 1))

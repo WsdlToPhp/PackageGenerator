@@ -39,15 +39,15 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
         return $this->Error;
     }
     /**
-     * This method is responsible for validating the values passed to the method setError
+     * This method is responsible for validating the values passed to the setError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setError method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateErrorValuesFromSetError(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $arrayOfErrorErrorItem) {
             // validation for constraint: itemType
             if (!$arrayOfErrorErrorItem instanceof \Api\StructType\ApiErrorProject) {

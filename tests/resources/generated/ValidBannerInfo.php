@@ -351,7 +351,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($bannerID) && !is_numeric($bannerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($bannerID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($bannerID, true), gettype($bannerID)), __LINE__);
         }
         $this->BannerID = $bannerID;
         return $this;
@@ -373,7 +373,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($campaignID) && !is_numeric($campaignID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($campaignID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($campaignID, true), gettype($campaignID)), __LINE__);
         }
         $this->CampaignID = $campaignID;
         return $this;
@@ -395,7 +395,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($title)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->Title = $title;
         return $this;
@@ -417,7 +417,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($text) && !is_string($text)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($text)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
         }
         $this->Text = $text;
         return $this;
@@ -439,7 +439,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($href) && !is_string($href)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($href)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($href, true), gettype($href)), __LINE__);
         }
         $this->Href = $href;
         return $this;
@@ -461,7 +461,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($domain) && !is_string($domain)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($domain)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($domain, true), gettype($domain)), __LINE__);
         }
         $this->Domain = $domain;
         return $this;
@@ -501,7 +501,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($geo) && !is_string($geo)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($geo)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($geo, true), gettype($geo)), __LINE__);
         }
         $this->Geo = $geo;
         return $this;
@@ -515,15 +515,15 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->Phrases;
     }
     /**
-     * This method is responsible for validating the values passed to the method setPhrases
+     * This method is responsible for validating the values passed to the setPhrases method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPhrases method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validatePhrasesValuesFromSetPhrases(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $bannerInfoPhrasesItem) {
             // validation for constraint: itemType
             if (!$bannerInfoPhrasesItem instanceof \Api\StructType\ApiBannerPhraseInfo) {
@@ -575,15 +575,15 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->MinusKeywords;
     }
     /**
-     * This method is responsible for validating the values passed to the method setMinusKeywords
+     * This method is responsible for validating the values passed to the setMinusKeywords method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMinusKeywords method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateMinusKeywordsValuesFromSetMinusKeywords(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $bannerInfoMinusKeywordsItem) {
             // validation for constraint: itemType
             if (!is_string($bannerInfoMinusKeywordsItem)) {
@@ -643,7 +643,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusActivating) && !is_string($statusActivating)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($statusActivating)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusActivating, true), gettype($statusActivating)), __LINE__);
         }
         $this->StatusActivating = $statusActivating;
         return $this;
@@ -665,7 +665,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusArchive) && !is_string($statusArchive)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($statusArchive)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusArchive, true), gettype($statusArchive)), __LINE__);
         }
         $this->StatusArchive = $statusArchive;
         return $this;
@@ -687,7 +687,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusBannerModerate) && !is_string($statusBannerModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($statusBannerModerate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusBannerModerate, true), gettype($statusBannerModerate)), __LINE__);
         }
         $this->StatusBannerModerate = $statusBannerModerate;
         return $this;
@@ -709,7 +709,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusPhrasesModerate) && !is_string($statusPhrasesModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($statusPhrasesModerate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusPhrasesModerate, true), gettype($statusPhrasesModerate)), __LINE__);
         }
         $this->StatusPhrasesModerate = $statusPhrasesModerate;
         return $this;
@@ -731,7 +731,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusPhoneModerate) && !is_string($statusPhoneModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($statusPhoneModerate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusPhoneModerate, true), gettype($statusPhoneModerate)), __LINE__);
         }
         $this->StatusPhoneModerate = $statusPhoneModerate;
         return $this;
@@ -753,7 +753,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusShow) && !is_string($statusShow)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($statusShow)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusShow, true), gettype($statusShow)), __LINE__);
         }
         $this->StatusShow = $statusShow;
         return $this;
@@ -775,7 +775,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($isActive) && !is_string($isActive)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($isActive)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isActive, true), gettype($isActive)), __LINE__);
         }
         $this->IsActive = $isActive;
         return $this;
@@ -797,7 +797,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusSitelinksModerate) && !is_string($statusSitelinksModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($statusSitelinksModerate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusSitelinksModerate, true), gettype($statusSitelinksModerate)), __LINE__);
         }
         $this->StatusSitelinksModerate = $statusSitelinksModerate;
         return $this;
@@ -811,15 +811,15 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->Sitelinks;
     }
     /**
-     * This method is responsible for validating the values passed to the method setSitelinks
+     * This method is responsible for validating the values passed to the setSitelinks method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSitelinks method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateSitelinksValuesFromSetSitelinks(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $bannerInfoSitelinksItem) {
             // validation for constraint: itemType
             if (!$bannerInfoSitelinksItem instanceof \Api\StructType\ApiSitelink) {
@@ -871,15 +871,15 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->AdWarnings;
     }
     /**
-     * This method is responsible for validating the values passed to the method setAdWarnings
+     * This method is responsible for validating the values passed to the setAdWarnings method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdWarnings method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateAdWarningsValuesFromSetAdWarnings(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $bannerInfoAdWarningsItem) {
             // validation for constraint: itemType
             if (!is_string($bannerInfoAdWarningsItem)) {
@@ -939,7 +939,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($fixedOnModeration) && !is_string($fixedOnModeration)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($fixedOnModeration)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fixedOnModeration, true), gettype($fixedOnModeration)), __LINE__);
         }
         $this->FixedOnModeration = $fixedOnModeration;
         return $this;
@@ -953,15 +953,15 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->ModerateRejectionReasons;
     }
     /**
-     * This method is responsible for validating the values passed to the method setModerateRejectionReasons
+     * This method is responsible for validating the values passed to the setModerateRejectionReasons method
      * This method is willingly generated in order to preserve the one-line inline validation within the setModerateRejectionReasons method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateModerateRejectionReasonsValuesFromSetModerateRejectionReasons(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $bannerInfoModerateRejectionReasonsItem) {
             // validation for constraint: itemType
             if (!$bannerInfoModerateRejectionReasonsItem instanceof \Api\StructType\ApiRejectReason) {
@@ -1021,7 +1021,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($type)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -1043,7 +1043,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($adGroupID) && !is_numeric($adGroupID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($adGroupID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($adGroupID, true), gettype($adGroupID)), __LINE__);
         }
         $this->AdGroupID = $adGroupID;
         return $this;
@@ -1065,7 +1065,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($adGroupName) && !is_string($adGroupName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($adGroupName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adGroupName, true), gettype($adGroupName)), __LINE__);
         }
         $this->AdGroupName = $adGroupName;
         return $this;
@@ -1087,7 +1087,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($autoMinusWords) && !is_string($autoMinusWords)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($autoMinusWords)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($autoMinusWords, true), gettype($autoMinusWords)), __LINE__);
         }
         $this->AutoMinusWords = $autoMinusWords;
         return $this;
@@ -1109,7 +1109,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($ageLabel) && !is_string($ageLabel)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($ageLabel)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ageLabel, true), gettype($ageLabel)), __LINE__);
         }
         $this->AgeLabel = $ageLabel;
         return $this;
@@ -1131,7 +1131,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($adImageHash) && !is_string($adImageHash)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($adImageHash)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adImageHash, true), gettype($adImageHash)), __LINE__);
         }
         $this->AdImageHash = $adImageHash;
         return $this;
@@ -1153,7 +1153,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusAdImageModerate) && !is_string($statusAdImageModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($statusAdImageModerate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusAdImageModerate, true), gettype($statusAdImageModerate)), __LINE__);
         }
         $this->StatusAdImageModerate = $statusAdImageModerate;
         return $this;
@@ -1175,7 +1175,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($adGroupMobileBidAdjustment) && !is_numeric($adGroupMobileBidAdjustment)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, %s given', gettype($adGroupMobileBidAdjustment)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($adGroupMobileBidAdjustment, true), gettype($adGroupMobileBidAdjustment)), __LINE__);
         }
         $this->AdGroupMobileBidAdjustment = $adGroupMobileBidAdjustment;
         return $this;

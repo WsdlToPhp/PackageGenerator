@@ -69,7 +69,7 @@ class ApiQuery extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($searchTerms) && !is_string($searchTerms)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($searchTerms)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms, true), gettype($searchTerms)), __LINE__);
         }
         $this->SearchTerms = $searchTerms;
         return $this;
@@ -91,7 +91,7 @@ class ApiQuery extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($alteredQuery) && !is_string($alteredQuery)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($alteredQuery)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alteredQuery, true), gettype($alteredQuery)), __LINE__);
         }
         $this->AlteredQuery = $alteredQuery;
         return $this;
@@ -113,7 +113,7 @@ class ApiQuery extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($alterationOverrideQuery) && !is_string($alterationOverrideQuery)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, %s given', gettype($alterationOverrideQuery)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alterationOverrideQuery, true), gettype($alterationOverrideQuery)), __LINE__);
         }
         $this->AlterationOverrideQuery = $alterationOverrideQuery;
         return $this;

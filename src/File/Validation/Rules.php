@@ -3,11 +3,9 @@
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
-use WsdlToPhp\PackageGenerator\Model\Method;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
-use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class Rules
@@ -57,49 +55,30 @@ class Rules
         } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->attribute))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
-        $this->applyRulesFromModel($this->attribute, $parameterName, $itemType);
-    }
-    /**
-     * This method is called when an attribute has a union meta which means the attribute is of several types.
-     * In this case, the types are currently only of type string (normally) so we add the rules according to each type
-     * @param string $parameterName
-     * @param bool $itemType
-     * @param string[] $unionTypes
-     */
-    protected function applyUnionRules($parameterName, $itemType, array $unionTypes)
-    {
-        foreach ($unionTypes as $type) {
-            $struct = $this->getAttribute()->getGenerator()->getStructByName($type);
-            if ($struct instanceof Struct) {
-                $this->applyRulesFromModel($struct, $parameterName, $itemType);
-            }
-        }
+        $this->applyRulesFromAttribute($parameterName, $itemType);
     }
     /**
      * Generic method to apply rules from current model
-     * @param AbstractModel $model
      * @param string $parameterName
      * @param bool $itemType
      */
-    protected function applyRulesFromModel(AbstractModel $model, $parameterName, $itemType = false)
+    protected function applyRulesFromAttribute($parameterName, $itemType = false)
     {
-        foreach ($model->getMeta() as $metaName => $metaValue) {
+        foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
             $rule = $this->getRule($metaName);
             if ($rule instanceof AbstractRule) {
                 $rule->applyRule($parameterName, $metaValue, $itemType);
-            } elseif ($metaName === 'union' && is_array($metaValue) && count($metaValue) > 0) {
-                $this->getUnionTypeRule()->applyRule($parameterName, $metaValue, $itemType);
             }
         }
     }
     /**
-     * @param string $metaName
+     * @param string $name
      * @return AbstractRule|null
      */
-    protected function getRule($metaName)
+    protected function getRule($name)
     {
-        if (is_string($metaName)) {
-            $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($metaName));
+        if (is_string($name)) {
+            $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($name));
             if (class_exists($className)) {
                 return new $className($this);
             }
@@ -126,13 +105,6 @@ class Rules
     public function getItemTypeRule()
     {
         return $this->getRule('itemType');
-    }
-    /**
-     * @return UnionRule
-     */
-    public function getUnionTypeRule()
-    {
-        return $this->getRule('union');
     }
     /**
      * @return ListRule
@@ -195,5 +167,12 @@ class Rules
     public function getMethods()
     {
         return $this->methods;
+    }
+    /**
+     * @return Generator
+     */
+    public function getGenerator()
+    {
+        return $this->file->getGenerator();
     }
 }

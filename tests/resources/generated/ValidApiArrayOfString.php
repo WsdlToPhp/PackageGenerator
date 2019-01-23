@@ -39,15 +39,15 @@ class ApiArrayOfString extends AbstractStructArrayBase
         return $this->string;
     }
     /**
-     * This method is responsible for validating the values passed to the method setString
+     * This method is responsible for validating the values passed to the setString method
      * This method is willingly generated in order to preserve the one-line inline validation within the setString method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateStringValuesFromSetString(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $arrayOfStringStringItem) {
             // validation for constraint: itemType
             if (!is_string($arrayOfStringStringItem)) {

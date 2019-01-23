@@ -31,6 +31,6 @@ class PatternRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value, please provide a scalar value that matches "%s", %%s given\', var_export($%s, true))', str_replace("'", "\'", $value), $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, please provide a scalar value that matches "%s"\', var_export($%s, true))', str_replace("'", "\'", $value), $parameterName);
     }
 }

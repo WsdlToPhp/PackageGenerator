@@ -31,6 +31,6 @@ class MaxLengthRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid length, please provide an array with %1$d element(s) or a scalar of %1$d character(s) at most, "%%d" length given\', is_scalar($%2$s) ? strlen($%2$s) : count($%2$s))', $value, $parameterName);
+        return sprintf('sprintf(\'Invalid length for %%s, please provide an array with %1$d element(s) or a scalar of %1$d character(s) at most\', var_export($%2$s, true), is_scalar($%2$s) ? strlen($%2$s) : count($%2$s))', $value, $parameterName);
     }
 }

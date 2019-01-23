@@ -105,15 +105,15 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->CampaignIds;
     }
     /**
-     * This method is responsible for validating the values passed to the method setCampaignIds
+     * This method is responsible for validating the values passed to the setCampaignIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCampaignIds method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateCampaignIdsValuesFromSetCampaignIds(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaCampaignIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($adGroupsSelectionCriteriaCampaignIdsItem)) {
@@ -165,15 +165,15 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->Ids;
     }
     /**
-     * This method is responsible for validating the values passed to the method setIds
+     * This method is responsible for validating the values passed to the setIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setIds method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateIdsValuesFromSetIds(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($adGroupsSelectionCriteriaIdsItem)) {
@@ -225,15 +225,15 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->Types;
     }
     /**
-     * This method is responsible for validating the values passed to the method setTypes
+     * This method is responsible for validating the values passed to the setTypes method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTypes method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateTypesValuesFromSetTypes(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaTypesItem) {
             // validation for constraint: enumeration
             if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($adGroupsSelectionCriteriaTypesItem)) {
@@ -241,7 +241,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdGroupTypesEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : $invalidValues, implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues()));
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdGroupTypesEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues()));
         }
         unset($invalidValues);
         return $message;
@@ -275,7 +275,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdGroupTypesEnum', is_array($item) ? implode(', ', $item) : $item, implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdGroupTypesEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues())), __LINE__);
         }
         $this->Types[] = $item;
         return $this;
@@ -289,15 +289,15 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->Statuses;
     }
     /**
-     * This method is responsible for validating the values passed to the method setStatuses
+     * This method is responsible for validating the values passed to the setStatuses method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStatuses method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateStatusesValuesFromSetStatuses(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaStatusesItem) {
             // validation for constraint: enumeration
             if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaStatusesItem)) {
@@ -305,7 +305,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : $invalidValues, implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues()));
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues()));
         }
         unset($invalidValues);
         return $message;
@@ -339,7 +339,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : $item, implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
         }
         $this->Statuses[] = $item;
         return $this;
@@ -353,15 +353,15 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->TagIds;
     }
     /**
-     * This method is responsible for validating the values passed to the method setTagIds
+     * This method is responsible for validating the values passed to the setTagIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTagIds method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateTagIdsValuesFromSetTagIds(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaTagIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($adGroupsSelectionCriteriaTagIdsItem)) {
@@ -413,15 +413,15 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->Tags;
     }
     /**
-     * This method is responsible for validating the values passed to the method setTags
+     * This method is responsible for validating the values passed to the setTags method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTags method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateTagsValuesFromSetTags(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaTagsItem) {
             // validation for constraint: itemType
             if (!is_string($adGroupsSelectionCriteriaTagsItem)) {
@@ -473,15 +473,15 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->AppIconStatuses;
     }
     /**
-     * This method is responsible for validating the values passed to the method setAppIconStatuses
+     * This method is responsible for validating the values passed to the setAppIconStatuses method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAppIconStatuses method
      * @param array $values
-     * @return string
+     * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateAppIconStatusesValuesFromSetAppIconStatuses(array $values = array())
     {
         $message = '';
-        $invalidValues = array();
+        $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaAppIconStatusesItem) {
             // validation for constraint: enumeration
             if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaAppIconStatusesItem)) {
@@ -489,7 +489,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : $invalidValues, implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues()));
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues()));
         }
         unset($invalidValues);
         return $message;
@@ -523,7 +523,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : $item, implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
         }
         $this->AppIconStatuses[] = $item;
         return $this;

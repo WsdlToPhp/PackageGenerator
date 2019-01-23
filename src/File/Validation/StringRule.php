@@ -31,6 +31,6 @@ class StringRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value, please provide a string, %%s given\', gettype($%s))', $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, please provide a string, %%s given\', var_export($%1$s, true), gettype($%1$s))', $parameterName);
     }
 }

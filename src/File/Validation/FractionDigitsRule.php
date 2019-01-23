@@ -31,6 +31,6 @@ class FractionDigitsRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value, the value must at most contain %1$d fraction digits, "%%d" given\', strlen(substr($%2$s, strpos($%2$s, \'.\') + 1)))', $value, $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, the value must at most contain %1$d fraction digits, %%d given\', var_export($%2$s, true), strlen(substr($%2$s, strpos($%2$s, \'.\') + 1)))', $value, $parameterName);
     }
 }
