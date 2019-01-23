@@ -137,15 +137,6 @@ class Rules
         return $this->file;
     }
     /**
-     * @param AbstractModelFile $file
-     * @return Rules
-     */
-    public function setFile(AbstractModelFile $file)
-    {
-        $this->file = $file;
-        return $this;
-    }
-    /**
      * @return PhpMethod
      */
     public function getMethod()
