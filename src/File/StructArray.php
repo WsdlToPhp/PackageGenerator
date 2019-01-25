@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 
 class StructArray extends Struct
 {
@@ -40,107 +39,98 @@ class StructArray extends Struct
      * @var string
      */
     const METHOD_ADD = 'add';
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\Struct::addStructMethodsSetAndGet()
-     */
-    public function addStructMethodsSetAndGet(MethodContainer $methods)
+
+    public function addStructMethodsSetAndGet()
     {
-        parent::addStructMethodsSetAndGet($methods);
-        $this->addArrayMethodCurrent($methods)
-            ->addArrayMethodItem($methods)
-            ->addArrayMethodFirst($methods)
-            ->addArrayMethodLast($methods)
-            ->addArrayMethodOffsetGet($methods)
-            ->addArrayMethodAdd($methods)
-            ->addArrayMethodGetAttributeName($methods);
+        parent::addStructMethodsSetAndGet();
+        $this
+            ->addArrayMethodCurrent()
+            ->addArrayMethodItem()
+            ->addArrayMethodFirst()
+            ->addArrayMethodLast()
+            ->addArrayMethodOffsetGet()
+            ->addArrayMethodAdd()
+            ->addArrayMethodGetAttributeName();
         return $this;
     }
     /**
-     * @param MethodContainer $methods
      * @return StructArray
      */
-    protected function addArrayMethodCurrent(MethodContainer $methods)
+    protected function addArrayMethodCurrent()
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_CURRENT, $this->getArrayMethodBody(self::METHOD_CURRENT));
+        return $this->addArrayMethodGenericMethod(self::METHOD_CURRENT, $this->getArrayMethodBody(self::METHOD_CURRENT));
     }
     /**
-     * @param MethodContainer $methods
      * @return StructArray
      */
-    protected function addArrayMethodItem(MethodContainer $methods)
+    protected function addArrayMethodItem()
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_ITEM, $this->getArrayMethodBody(self::METHOD_ITEM, '$index'), [
+        return $this->addArrayMethodGenericMethod(self::METHOD_ITEM, $this->getArrayMethodBody(self::METHOD_ITEM, '$index'), [
             'index',
         ]);
     }
     /**
-     * @param MethodContainer $methods
      * @return StructArray
      */
-    protected function addArrayMethodFirst(MethodContainer $methods)
+    protected function addArrayMethodFirst()
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_FIRST, $this->getArrayMethodBody(self::METHOD_FIRST));
+        return $this->addArrayMethodGenericMethod(self::METHOD_FIRST, $this->getArrayMethodBody(self::METHOD_FIRST));
     }
     /**
-     * @param MethodContainer $methods
      * @return StructArray
      */
-    protected function addArrayMethodLast(MethodContainer $methods)
+    protected function addArrayMethodLast()
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_LAST, $this->getArrayMethodBody(self::METHOD_LAST));
+        return $this->addArrayMethodGenericMethod(self::METHOD_LAST, $this->getArrayMethodBody(self::METHOD_LAST));
     }
     /**
-     * @param MethodContainer $methods
      * @return StructArray
      */
-    protected function addArrayMethodOffsetGet(MethodContainer $methods)
+    protected function addArrayMethodOffsetGet()
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_OFFSET_GET, $this->getArrayMethodBody(self::METHOD_OFFSET_GET, '$offset'), [
+        return $this->addArrayMethodGenericMethod(self::METHOD_OFFSET_GET, $this->getArrayMethodBody(self::METHOD_OFFSET_GET, '$offset'), [
             'offset',
         ]);
     }
     /**
-     * @param MethodContainer $methods
      * @return StructArray
      */
-    protected function addArrayMethodGetAttributeName(MethodContainer $methods)
+    protected function addArrayMethodGetAttributeName()
     {
-        return $this->addArrayMethodGenericMethod($methods, self::METHOD_GET_ATTRIBUTE_NAME, sprintf('return \'%s\';', $this->getModel()
+        return $this->addArrayMethodGenericMethod(self::METHOD_GET_ATTRIBUTE_NAME, sprintf('return \'%s\';', $this->getModel()
             ->getAttributes()
             ->offsetGet(0)
             ->getName()));
     }
     /**
-     * @param MethodContainer $methods
      * @return StructArray
      */
-    protected function addArrayMethodAdd(MethodContainer $methods)
+    protected function addArrayMethodAdd()
     {
         if ($this->getRestrictionFromStructAttribute() instanceof StructModel) {
             $method = new PhpMethod(self::METHOD_ADD, [
                 'item',
             ]);
             if ($this->getGenerator()->getOptionValidation()) {
-                $rules = new Rules($this, $method, $this->getStructAttribute());
+                $rules = new Rules($this, $method, $this->getStructAttribute(), $this->methods);
                 $rules->getEnumerationRule()->applyRule('item', null);
             }
             $method->addChild('return parent::add($item);');
-            $methods->add($method);
+            $this->methods->add($method);
         }
         return $this;
     }
     /**
-     * @param MethodContainer $methods
      * @param string $name
      * @param string $body
      * @param string[] $methodParameters
      * @return StructArray
      */
-    protected function addArrayMethodGenericMethod(MethodContainer $methods, $name, $body, array $methodParameters = [])
+    protected function addArrayMethodGenericMethod($name, $body, array $methodParameters = [])
     {
         $method = new PhpMethod($name, $methodParameters);
         $method->addChild($body);
-        $methods->add($method);
+        $this->methods->add($method);
         return $this;
     }
     /**

@@ -51,7 +51,7 @@ class Service extends AbstractModelFile
      * So we store the generated name associated to the original method object
      * @var array
      */
-    protected $methods = [];
+    protected $methodNames = [];
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassConstants()
      */
@@ -84,29 +84,30 @@ class Service extends AbstractModelFile
         return $this->getGenerator()->getOptionGatherMethods() === GeneratorOptions::VALUE_NONE ? 'This class stands for all operations' : parent::getClassDeclarationLineText();
     }
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassMethods()
+     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::fillClassMethods()
      */
-    protected function getClassMethods(MethodContainer $methods)
+    protected function fillClassMethods()
     {
-        $this->addSoapHeaderMethods($methods)->addOperationsMethods($methods)->addGetResultMethod($methods);
+        $this
+            ->addSoapHeaderMethods()
+            ->addOperationsMethods()
+            ->addGetResultMethod();
     }
     /**
-     * @param MethodContainer $methods
      * @return Service
      */
-    protected function addSoapHeaderMethods(MethodContainer $methods)
+    protected function addSoapHeaderMethods()
     {
         foreach ($this->getModel()->getMethods() as $method) {
-            $this->addSoapHeaderFromMethod($methods, $method);
+            $this->addSoapHeaderFromMethod($method);
         }
         return $this;
     }
     /**
-     * @param MethodContainer $methods
      * @param MethodModel $method
      * @return Service
      */
-    protected function addSoapHeaderFromMethod(MethodContainer $methods, MethodModel $method)
+    protected function addSoapHeaderFromMethod(MethodModel $method)
     {
         $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, []);
         $soapHeaderNamespaces = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, []);
@@ -114,10 +115,10 @@ class Service extends AbstractModelFile
         if (is_array($soapHeaderNames) && is_array($soapHeaderNamespaces) && is_array($soapHeaderTypes)) {
             foreach ($soapHeaderNames as $index => $soapHeaderName) {
                 $methodName = $this->getSoapHeaderMethodName($soapHeaderName);
-                if ($methods->get($methodName) === null) {
+                if ($this->methods->get($methodName) === null) {
                     $soapHeaderNamespace = array_key_exists($index, $soapHeaderNamespaces) ? $soapHeaderNamespaces[$index] : null;
                     $soapHeaderType = array_key_exists($index, $soapHeaderTypes) ? $soapHeaderTypes[$index] : null;
-                    $methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace, $soapHeaderType));
+                    $this->methods->add($this->getSoapHeaderMethod($methodName, $soapHeaderName, $soapHeaderNamespace, $soapHeaderType));
                 }
             }
         }
@@ -141,7 +142,7 @@ class Service extends AbstractModelFile
             ]);
             $model = $this->getModelByName($soapHeaderType);
             if ($model instanceof StructModel) {
-                $rules = new Rules($this, $method, new StructAttributeModel($model->getGenerator(), $soapHeaderType, $model->getName(), $model));
+                $rules = new Rules($this, $method, new StructAttributeModel($model->getGenerator(), $soapHeaderType, $model->getName(), $model), $this->methods);
                 $rules->applyRules(lcfirst($soapHeaderName));
                 $firstParameter->setModel($model);
             }
@@ -177,37 +178,34 @@ class Service extends AbstractModelFile
         return sprintf('%s%s', self::METHOD_SET_HEADER_PREFIX, ucfirst($soapHeaderName));
     }
     /**
-     * @param MethodContainer $methods
      * @return Service
      */
-    protected function addOperationsMethods(MethodContainer $methods)
+    protected function addOperationsMethods()
     {
         foreach ($this->getModel()->getMethods() as $method) {
-            $this->addMainMethod($methods, $method);
+            $this->addMainMethod($method);
         }
         return $this;
     }
     /**
-     * @param MethodContainer $methods
      * @return Service
      */
-    protected function addGetResultMethod(MethodContainer $methods)
+    protected function addGetResultMethod()
     {
         $method = new PhpMethod(self::METHOD_GET_RESULT);
         $method->addChild('return parent::getResult();');
-        $methods->add($method);
+        $this->methods->add($method);
         return $this;
     }
     /**
-     * @param MethodContainer $methods
      * @param MethodModel $method
      * @return Service
      */
-    protected function addMainMethod(MethodContainer $methods, MethodModel $method)
+    protected function addMainMethod(MethodModel $method)
     {
         $methodFile = new Operation($method, $this->getGenerator());
         $mainMethod = $methodFile->getMainMethod();
-        $methods->add($mainMethod);
+        $this->methods->add($mainMethod);
         $this->setModelFromMethod($mainMethod, $method);
         return $this;
     }
@@ -321,7 +319,7 @@ class Service extends AbstractModelFile
     {
         $model = $this->getGenerator()->getServiceMethod($method->getName());
         if (!$model instanceof MethodModel) {
-            $model = array_key_exists($method->getName(), $this->methods) ? $this->methods[$method->getName()] : null;
+            $model = array_key_exists($method->getName(), $this->methodNames) ? $this->methodNames[$method->getName()] : null;
         }
         return $model;
     }
@@ -332,7 +330,7 @@ class Service extends AbstractModelFile
      */
     protected function setModelFromMethod(PhpMethod $phpMethod, MethodModel $methodModel)
     {
-        $this->methods[$phpMethod->getName()] = $methodModel;
+        $this->methodNames[$phpMethod->getName()] = $methodModel;
         return $this;
     }
     /**

@@ -46,12 +46,9 @@ class StructEnum extends Struct
         $block->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string \'%s\'', $constant->getValue())));
         return $block;
     }
-    /**
-     * @param MethodContainer $methods
-     */
-    protected function getClassMethods(MethodContainer $methods)
+    protected function fillClassMethods()
     {
-        $methods->add($this->getEnumMethodValueIsValid())->add($this->getEnumMethodGetValidValues());
+        $this->methods->add($this->getEnumMethodValueIsValid())->add($this->getEnumMethodGetValidValues());
     }
     /**
      * @param PhpMethod $method

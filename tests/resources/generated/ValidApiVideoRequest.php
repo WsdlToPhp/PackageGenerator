@@ -80,7 +80,7 @@ class ApiVideoRequest extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($offset) && !is_numeric($offset)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($offset)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($offset, true), gettype($offset)), __LINE__);
         }
         $this->Offset = $offset;
         return $this;
@@ -102,7 +102,7 @@ class ApiVideoRequest extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($count) && !is_numeric($count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($count, true), gettype($count)), __LINE__);
         }
         $this->Count = $count;
         return $this;
@@ -145,7 +145,7 @@ class ApiVideoRequest extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $sortBy, implode(', ', \Api\EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiVideoSortOption', is_array($sortBy) ? implode(', ', $sortBy) : var_export($sortBy, true), implode(', ', \Api\EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
         }
         $this->SortBy = $sortBy;
         return $this;

@@ -7,7 +7,7 @@ class ListRule extends AbstractSetOfValuesRule
     /**
      * @return string
      */
-    protected function name()
+    public function name()
     {
         return 'list';
     }

@@ -5,21 +5,32 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 class PatternRule extends AbstractRule
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\Validation\AbstractValidation::addRule()
+     * @return string
+     */
+    public function name()
+    {
+        return 'pattern';
+    }
+
+    /**
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return PatternRule
+     * @return string
      */
-    public function applyRule($parameterName, $value, $itemType = false)
+    public function testConditions($parameterName, $value, $itemType = false)
     {
-        $escapedPattern = addcslashes($value, '\'\\/');
+        return sprintf('is_scalar($%1$s) && !preg_match(\'/%2$s/\', $%1$s)', $parameterName, addcslashes($value, '\'\\/'));
+    }
 
-        $this->getMethod()
-            ->addChild('// validation for constraint: pattern')
-            ->addChild(sprintf('if (is_scalar($%1$s) && !preg_match(\'/%2$s/\', $%1$s)) {', $parameterName, $escapedPattern))
-            ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'Invalid value, please provide a scalar value that matches "%s", "%%s" given\', var_export($%s, true)), __LINE__);', str_replace("'", "\'", $value), $parameterName), 1))
-            ->addChild('}');
-        return $this;
+    /**
+     * @param string $parameterName
+     * @param mixed $value
+     * @param bool $itemType
+     * @return string
+     */
+    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    {
+        return sprintf('sprintf(\'Invalid value %%s, please provide a scalar value that matches "%s"\', var_export($%s, true))', str_replace("'", "\'", $value), $parameterName);
     }
 }

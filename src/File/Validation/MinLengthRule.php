@@ -5,19 +5,32 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 class MinLengthRule extends AbstractRule
 {
     /**
-     * @see \WsdlToPhp\PackageGenerator\File\Validation\AbstractValidation::addRule()
+     * @return string
+     */
+    public function name()
+    {
+        return 'minLength';
+    }
+
+    /**
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
-     * @return MinLengthRule
+     * @return string
      */
-    public function applyRule($parameterName, $value, $itemType = false)
+    public function testConditions($parameterName, $value, $itemType = false)
     {
-        $this->getMethod()
-            ->addChild('// validation for constraint: minLength')
-            ->addChild(sprintf('if ((is_scalar($%1$s) && strlen($%1$s) < %2$d) || (is_array($%1$s) && count($%1$s) < %2$d)) {', $parameterName, $value))
-            ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(\'Invalid length, please provide an array with %1$d element(s) or a scalar of %1$d character(s) at least\', __LINE__);', $value), 1))
-            ->addChild('}');
-        return $this;
+        return sprintf('(is_scalar($%1$s) && strlen($%1$s) < %2$d) || (is_array($%1$s) && count($%1$s) < %2$d)', $parameterName, $value);
+    }
+
+    /**
+     * @param string $parameterName
+     * @param mixed $value
+     * @param bool $itemType
+     * @return string
+     */
+    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    {
+        return sprintf('sprintf(\'Invalid length for %%s, please provide an array with %1$d element(s) or a scalar of %1$d character(s) at least\', var_export($%2$s, true), is_scalar($%2$s) ? strlen($%2$s) : count($%2$s))', $value, $parameterName);
     }
 }
