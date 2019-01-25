@@ -526,6 +526,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -591,6 +592,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -603,6 +605,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "RequestState",
                 "abstract": false,
                 "meta": {
@@ -618,6 +621,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -678,6 +682,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -711,6 +716,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -723,6 +729,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "SetRequestForSubmitInnStatus",
                 "abstract": false,
                 "meta": {
@@ -821,6 +828,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -878,6 +886,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -924,6 +933,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -1287,6 +1297,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1364,6 +1375,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1376,6 +1388,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseInfo",
                 "abstract": false,
                 "meta": {
@@ -1391,6 +1404,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
@@ -1448,6 +1462,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -1541,6 +1556,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -1594,6 +1610,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -1697,6 +1714,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -1926,6 +1944,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2011,6 +2030,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2064,6 +2084,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -2113,6 +2134,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2150,6 +2172,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2187,6 +2210,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2260,6 +2284,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -2303,6 +2328,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -2412,6 +2438,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2485,6 +2512,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -2582,6 +2610,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2635,6 +2664,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -2720,6 +2750,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2773,6 +2804,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -2822,6 +2854,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2875,6 +2908,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -2960,6 +2994,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3003,6 +3038,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -3100,6 +3136,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3209,6 +3246,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3221,6 +3259,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "Lift",
                 "abstract": false,
                 "meta": {
@@ -3307,6 +3346,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -3319,6 +3359,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
@@ -3503,6 +3544,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3576,6 +3618,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4117,6 +4160,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4764,6 +4808,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4829,6 +4874,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4841,6 +4887,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "FileInfo",
                 "abstract": false,
                 "meta": {
@@ -4979,6 +5026,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5032,6 +5080,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5075,6 +5124,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5168,6 +5218,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5221,6 +5272,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5274,6 +5326,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5357,6 +5410,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5400,6 +5454,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5443,6 +5498,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5506,6 +5562,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5579,6 +5636,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5622,6 +5680,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5665,6 +5724,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5708,6 +5768,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5761,6 +5822,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5814,6 +5876,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5857,6 +5920,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -5894,6 +5958,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5906,6 +5971,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCadastralNumber",
                 "abstract": false,
                 "meta": {
@@ -5992,6 +6058,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -6029,6 +6096,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6041,6 +6109,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseFacade",
                 "abstract": false,
                 "meta": {
@@ -6077,6 +6146,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -6160,6 +6230,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -6209,6 +6280,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6221,6 +6293,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseRoof",
                 "abstract": false,
                 "meta": {
@@ -6273,6 +6346,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6285,6 +6359,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseAdditionalEquipment",
                 "abstract": false,
                 "meta": {
@@ -6391,6 +6466,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -6434,6 +6510,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -6467,6 +6544,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -6940,6 +7018,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -7049,6 +7128,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7061,6 +7141,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseMeteringDevice",
                 "abstract": false,
                 "meta": {
@@ -7107,6 +7188,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -7168,6 +7250,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7180,6 +7263,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseLift",
                 "abstract": false,
                 "meta": {
@@ -7278,6 +7362,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7431,6 +7516,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -7466,6 +7552,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -7769,6 +7856,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -7842,6 +7930,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7854,6 +7943,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseServiceReportVolume",
                 "abstract": false,
                 "meta": {
@@ -7894,6 +7984,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8003,6 +8094,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8015,6 +8107,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseService",
                 "abstract": false,
                 "meta": {
@@ -8061,6 +8154,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -8104,6 +8198,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -8116,6 +8211,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
@@ -8181,6 +8277,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8193,6 +8290,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommunalServiceCost",
                 "abstract": false,
                 "meta": {
@@ -8208,6 +8306,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
@@ -8273,6 +8372,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8285,6 +8385,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommunalServiceNormativeAct",
                 "abstract": false,
                 "meta": {
@@ -8409,6 +8510,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8746,6 +8848,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8758,6 +8861,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommunalService",
                 "abstract": false,
                 "meta": {
@@ -8846,6 +8950,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8907,6 +9012,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8919,6 +9025,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommonMeeting",
                 "abstract": false,
                 "meta": {
@@ -9031,6 +9138,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9104,6 +9212,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9116,6 +9225,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommonProperty",
                 "abstract": false,
                 "meta": {
@@ -9336,6 +9446,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9469,6 +9580,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9518,6 +9630,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9579,6 +9692,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9640,6 +9754,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9713,6 +9828,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -9756,6 +9872,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -9829,6 +9946,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9902,6 +10020,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -10571,6 +10690,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -10660,6 +10780,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -10672,6 +10793,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetHouseProfileResponse",
                 "abstract": false,
                 "meta": {
@@ -10718,6 +10840,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -10730,6 +10853,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetHouseProfile988Response",
                 "abstract": false,
                 "meta": {
@@ -10776,6 +10900,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -10809,6 +10934,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -10821,6 +10947,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseData",
                 "abstract": false,
                 "meta": {
@@ -10887,6 +11014,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -11388,6 +11516,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11567,6 +11696,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -11628,6 +11758,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -11701,6 +11832,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -11774,6 +11906,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -11859,6 +11992,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -11908,6 +12042,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -11993,6 +12128,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12078,6 +12214,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12163,6 +12300,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12260,6 +12398,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12345,6 +12484,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12406,6 +12546,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12503,6 +12644,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12588,6 +12730,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12685,6 +12828,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12782,6 +12926,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12867,6 +13012,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12964,6 +13110,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -13049,6 +13196,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -13134,6 +13282,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -13231,6 +13380,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -13316,6 +13466,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -13401,6 +13552,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -14352,6 +14504,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -14417,6 +14570,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -14450,6 +14604,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -14631,6 +14786,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -14643,6 +14799,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "Disturbance",
                 "abstract": false,
                 "meta": {
@@ -14719,6 +14876,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -14731,6 +14889,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "License",
                 "abstract": false,
                 "meta": {
@@ -15229,6 +15388,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -15326,6 +15486,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -15338,6 +15499,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetCompanyProfileResponse",
                 "abstract": false,
                 "meta": {
@@ -15384,6 +15546,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -15396,6 +15559,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetCompanyProfile988Response",
                 "abstract": false,
                 "meta": {
@@ -15442,6 +15606,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -15477,6 +15642,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": [],
@@ -15550,6 +15716,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -15562,6 +15729,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ReportingPeriod",
                 "abstract": false,
                 "meta": {
@@ -15602,6 +15770,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -15649,6 +15818,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -15661,6 +15831,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "RequestState[]",
                 "abstract": false,
                 "meta": {
@@ -15677,6 +15848,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
@@ -15693,6 +15865,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "SetRequestForSubmitInnStatus[]",
                 "abstract": false,
                 "meta": {
@@ -15709,6 +15882,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseInfo[]",
                 "abstract": false,
                 "meta": {
@@ -15725,6 +15899,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "Lift[]",
                 "abstract": false,
                 "meta": {
@@ -15741,6 +15916,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "int[]",
                 "abstract": false,
                 "meta": {
@@ -15757,6 +15933,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "FileInfo[]",
                 "abstract": false,
                 "meta": {
@@ -15773,6 +15950,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCadastralNumber[]",
                 "abstract": false,
                 "meta": {
@@ -15789,6 +15967,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseFacade[]",
                 "abstract": false,
                 "meta": {
@@ -15805,6 +15984,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseRoof[]",
                 "abstract": false,
                 "meta": {
@@ -15821,6 +16001,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseAdditionalEquipment[]",
                 "abstract": false,
                 "meta": {
@@ -15837,6 +16018,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseMeteringDevice[]",
                 "abstract": false,
                 "meta": {
@@ -15853,6 +16035,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseLift[]",
                 "abstract": false,
                 "meta": {
@@ -15869,6 +16052,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseServiceReportVolume[]",
                 "abstract": false,
                 "meta": {
@@ -15885,6 +16069,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseService[]",
                 "abstract": false,
                 "meta": {
@@ -15901,6 +16086,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommunalServiceCost[]",
                 "abstract": false,
                 "meta": {
@@ -15917,6 +16103,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommunalServiceNormativeAct[]",
                 "abstract": false,
                 "meta": {
@@ -15933,6 +16120,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommunalService[]",
                 "abstract": false,
                 "meta": {
@@ -15949,6 +16137,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommonMeeting[]",
                 "abstract": false,
                 "meta": {
@@ -15965,6 +16154,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseCommonProperty[]",
                 "abstract": false,
                 "meta": {
@@ -15981,6 +16171,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetHouseProfileResponse[]",
                 "abstract": false,
                 "meta": {
@@ -15997,6 +16188,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetHouseProfile988Response[]",
                 "abstract": false,
                 "meta": {
@@ -16013,6 +16205,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HouseData[]",
                 "abstract": false,
                 "meta": {
@@ -16029,6 +16222,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "Disturbance[]",
                 "abstract": false,
                 "meta": {
@@ -16045,6 +16239,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "License[]",
                 "abstract": false,
                 "meta": {
@@ -16061,6 +16256,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetCompanyProfileResponse[]",
                 "abstract": false,
                 "meta": {
@@ -16077,6 +16273,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetCompanyProfile988Response[]",
                 "abstract": false,
                 "meta": {
@@ -16093,6 +16290,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ReportingPeriod[]",
                 "abstract": false,
                 "meta": {
@@ -16119,8 +16317,8 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": __ORIGIN__,
-        "destination": __DESTINATION__,
+        "origin": "__ORIGIN__",
+        "destination": "__DESTINATION__",
         "src_dirname": "src",
         "prefix": "Api",
         "suffix": "",

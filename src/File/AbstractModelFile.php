@@ -359,7 +359,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $method;
     }
     /**
-     * @param StructAttributeModel $attribute
+     * @param StructAttributeModel|null $attribute
      * @return StructAttributeModel
      */
     protected function getStructAttribute(StructAttributeModel $attribute = null)
@@ -371,7 +371,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $attribute;
     }
     /**
-     * @param StructAttributeModel $attribute
+     * @param StructAttributeModel|null $attribute
      * @return StructModel|null
      */
     public function getModelFromStructAttribute(StructAttributeModel $attribute = null)
@@ -379,19 +379,37 @@ abstract class AbstractModelFile extends AbstractFile
         return $this->getStructAttribute($attribute)->getTypeStruct();
     }
     /**
-     * @param StructAttributeModel $attribute
+     * @param StructAttributeModel|null $attribute
      * @return StructModel|null
      */
     public function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null)
     {
         $model = $this->getModelFromStructAttribute($attribute);
-        if ($model instanceof StructModel && !$model->isRestriction()) {
-            $model = null;
+        if ($model instanceof StructModel) {
+            // list are mainly scalar values of basic types (string, int, etc.) or of Restriction values
+            if ($model->isList()) {
+                $subModel = $this->getModelByName($model->getList());
+                if ($subModel && $subModel->isRestriction()) {
+                    $model = $subModel;
+                } elseif (!$model->isRestriction()) {
+                    $model = null;
+                }
+            } elseif (!$model->isRestriction()) {
+                $model = null;
+            }
         }
         return $model;
     }
     /**
-     * @param StructAttributeModel $attribute
+     * @param StructAttributeModel|null $attribute
+     * @return bool
+     */
+    public function isAttributeAList(StructAttributeModel $attribute = null)
+    {
+        return $this->getStructAttribute($attribute)->isList();
+    }
+    /**
+     * @param StructAttributeModel|null $attribute
      * @param bool $namespaced
      * @return string
      */
@@ -425,7 +443,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $type;
     }
     /**
-     * @param StructAttributeModel $attribute
+     * @param StructAttributeModel|null $attribute
      * @param bool $returnArrayType
      * @return string
      */
@@ -435,7 +453,7 @@ abstract class AbstractModelFile extends AbstractFile
         return sprintf('%s%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '' : '|null');
     }
     /**
-     * @param StructAttributeModel $attribute
+     * @param StructAttributeModel|null $attribute
      * @param bool $returnArrayType
      * @return string
      */
@@ -451,20 +469,20 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function useBrackets(StructAttributeModel $attribute, $returnArrayType = true)
     {
-        return $returnArrayType && $attribute->isArray();
+        return $returnArrayType && ($attribute->isArray() || $this->isAttributeAList($attribute));
     }
     /**
-     * @param StructAttributeModel $attribute
+     * @param StructAttributeModel|null $attribute
      * @param bool $returnArrayType
      * @return string
      */
     protected function getStructAttributeTypeHint(StructAttributeModel $attribute = null, $returnArrayType = true)
     {
         $attribute = $this->getStructAttribute($attribute);
-        return ($returnArrayType && $attribute->isArray()) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
+        return ($returnArrayType && ($attribute->isArray() || $this->isAttributeAList($attribute))) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
     }
     /**
-     * @param StructAttributeModel $attribute
+     * @param StructAttributeModel|null $attribute
      * @return string
      */
     public function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null)

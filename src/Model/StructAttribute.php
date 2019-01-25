@@ -160,6 +160,16 @@ class StructAttribute extends AbstractModel
         return $this->containsElements || $this->isTypeStructArray();
     }
     /**
+     * If this attribute is based on a struct that is a list,
+     * then it is list of basic sclar values that are sent space-separated
+     * @return bool
+     */
+    public function isList()
+    {
+        $typeStruct = $this->getTypeStruct();
+        return $typeStruct && $typeStruct->isList();
+    }
+    /**
      * Returns potential default value
      * @uses AbstractModel::getMetaValueFirstSet()
      * @uses Utils::getValueWithinItsType()

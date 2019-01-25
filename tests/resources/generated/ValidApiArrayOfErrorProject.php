@@ -46,6 +46,7 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      */
     public function setError(array $error = array())
     {
+        // validation for constraint: array
         foreach ($error as $arrayOfErrorErrorItem) {
             // validation for constraint: itemType
             if (!$arrayOfErrorErrorItem instanceof \Api\StructType\ApiErrorProject) {

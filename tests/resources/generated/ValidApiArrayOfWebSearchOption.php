@@ -48,6 +48,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      */
     public function setWebSearchOption(array $webSearchOption = array())
     {
+        // validation for constraint: array
         $invalidValues = array();
         foreach ($webSearchOption as $arrayOfWebSearchOptionWebSearchOptionItem) {
             if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($arrayOfWebSearchOptionWebSearchOptionItem)) {
@@ -134,6 +135,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      */
     public function add($item)
     {
+        // validation for constraint: enumeration
         if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
             throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
         }

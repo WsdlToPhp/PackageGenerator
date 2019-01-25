@@ -522,6 +522,7 @@ class ApiBannerInfo extends AbstractStructBase
      */
     public function setPhrases(array $phrases = array())
     {
+        // validation for constraint: array
         foreach ($phrases as $bannerInfoPhrasesItem) {
             // validation for constraint: itemType
             if (!$bannerInfoPhrasesItem instanceof \Api\StructType\ApiBannerPhraseInfo) {
@@ -562,6 +563,7 @@ class ApiBannerInfo extends AbstractStructBase
      */
     public function setMinusKeywords(array $minusKeywords = array())
     {
+        // validation for constraint: array
         foreach ($minusKeywords as $bannerInfoMinusKeywordsItem) {
             // validation for constraint: itemType
             if (!is_string($bannerInfoMinusKeywordsItem)) {
@@ -778,6 +780,7 @@ class ApiBannerInfo extends AbstractStructBase
      */
     public function setSitelinks(array $sitelinks = array())
     {
+        // validation for constraint: array
         foreach ($sitelinks as $bannerInfoSitelinksItem) {
             // validation for constraint: itemType
             if (!$bannerInfoSitelinksItem instanceof \Api\StructType\ApiSitelink) {
@@ -818,6 +821,7 @@ class ApiBannerInfo extends AbstractStructBase
      */
     public function setAdWarnings(array $adWarnings = array())
     {
+        // validation for constraint: array
         foreach ($adWarnings as $bannerInfoAdWarningsItem) {
             // validation for constraint: itemType
             if (!is_string($bannerInfoAdWarningsItem)) {
@@ -880,6 +884,7 @@ class ApiBannerInfo extends AbstractStructBase
      */
     public function setModerateRejectionReasons(array $moderateRejectionReasons = array())
     {
+        // validation for constraint: array
         foreach ($moderateRejectionReasons as $bannerInfoModerateRejectionReasonsItem) {
             // validation for constraint: itemType
             if (!$bannerInfoModerateRejectionReasonsItem instanceof \Api\StructType\ApiRejectReason) {

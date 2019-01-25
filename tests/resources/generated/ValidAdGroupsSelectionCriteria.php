@@ -112,6 +112,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setCampaignIds(array $campaignIds = array())
     {
+        // validation for constraint: array
         foreach ($campaignIds as $adGroupsSelectionCriteriaCampaignIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($adGroupsSelectionCriteriaCampaignIdsItem)) {
@@ -152,6 +153,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setIds(array $ids = array())
     {
+        // validation for constraint: array
         foreach ($ids as $adGroupsSelectionCriteriaIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($adGroupsSelectionCriteriaIdsItem)) {
@@ -194,6 +196,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setTypes(array $types = array())
     {
+        // validation for constraint: array
         $invalidValues = array();
         foreach ($types as $adGroupsSelectionCriteriaTypesItem) {
             if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($adGroupsSelectionCriteriaTypesItem)) {
@@ -241,6 +244,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setStatuses(array $statuses = array())
     {
+        // validation for constraint: array
         $invalidValues = array();
         foreach ($statuses as $adGroupsSelectionCriteriaStatusesItem) {
             if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaStatusesItem)) {
@@ -286,6 +290,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setTagIds(array $tagIds = array())
     {
+        // validation for constraint: array
         foreach ($tagIds as $adGroupsSelectionCriteriaTagIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($adGroupsSelectionCriteriaTagIdsItem)) {
@@ -326,6 +331,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setTags(array $tags = array())
     {
+        // validation for constraint: array
         foreach ($tags as $adGroupsSelectionCriteriaTagsItem) {
             // validation for constraint: itemType
             if (!is_string($adGroupsSelectionCriteriaTagsItem)) {
@@ -368,6 +374,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      */
     public function setAppIconStatuses(array $appIconStatuses = array())
     {
+        // validation for constraint: array
         $invalidValues = array();
         foreach ($appIconStatuses as $adGroupsSelectionCriteriaAppIconStatusesItem) {
             if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaAppIconStatusesItem)) {

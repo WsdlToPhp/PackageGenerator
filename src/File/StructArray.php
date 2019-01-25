@@ -2,6 +2,7 @@
 
 namespace WsdlToPhp\PackageGenerator\File;
 
+use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
@@ -119,7 +120,10 @@ class StructArray extends Struct
             $method = new PhpMethod(self::METHOD_ADD, [
                 'item',
             ]);
-            $this->addStructMethodSetBodyForRestriction($method, $this->getModel()->getAttributes()->offsetGet(0), 'item');
+            if ($this->getGenerator()->getOptionValidation()) {
+                $rules = new Rules($this, $method, $this->getStructAttribute());
+                $rules->getEnumerationRule()->applyRule('item', null);
+            }
             $method->addChild('return parent::add($item);');
             $methods->add($method);
         }

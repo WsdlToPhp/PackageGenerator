@@ -119,6 +119,7 @@ class ApiTaxType extends AbstractStructBase
      */
     public function setTaxDescription(array $taxDescription = array())
     {
+        // validation for constraint: array
         foreach ($taxDescription as $taxTypeTaxDescriptionItem) {
             // validation for constraint: itemType
             if (!$taxTypeTaxDescriptionItem instanceof \Api\StructType\ApiParagraphType) {
