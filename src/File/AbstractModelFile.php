@@ -81,6 +81,10 @@ abstract class AbstractModelFile extends AbstractFile
      */
     private $model;
     /**
+     * @var Method
+     */
+    protected $methods;
+    /**
      * @param bool $withSrc
      * @return string
      */
@@ -291,9 +295,9 @@ abstract class AbstractModelFile extends AbstractFile
      */
     protected function defineMethods(PhpClass $class)
     {
-        $methods = new Method($this->getGenerator());
-        $this->getClassMethods($methods);
-        foreach ($methods as $method) {
+        $this->methods = new Method($this->getGenerator());
+        $this->fillClassMethods();
+        foreach ($this->methods as $method) {
             $annotationBlock = $this->getMethodAnnotationBlock($method);
             if (!empty($annotationBlock)) {
                 $class->addAnnotationBlockElement($annotationBlock);
@@ -321,9 +325,10 @@ abstract class AbstractModelFile extends AbstractFile
      */
     abstract protected function getPropertyAnnotationBlock(PhpProperty $property);
     /**
-     * @param Method $methods
+     * This method is responsible for filling in the $methods property with appropriate methods for the current model
+     * @return void
      */
-    abstract protected function getClassMethods(Method $methods);
+    abstract protected function fillClassMethods();
     /**
      * @param PhpMethod $method
      * @return PhpAnnotationBlock|null

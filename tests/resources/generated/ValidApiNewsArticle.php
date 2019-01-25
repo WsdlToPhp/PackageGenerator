@@ -91,7 +91,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($title)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->Title = $title;
         return $this;
@@ -113,7 +113,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($url) && !is_string($url)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($url)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($url, true), gettype($url)), __LINE__);
         }
         $this->Url = $url;
         return $this;
@@ -135,7 +135,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($source) && !is_string($source)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($source)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
         }
         $this->Source = $source;
         return $this;
@@ -157,7 +157,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($snippet) && !is_string($snippet)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($snippet)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($snippet, true), gettype($snippet)), __LINE__);
         }
         $this->Snippet = $snippet;
         return $this;
@@ -179,7 +179,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($date) && !is_string($date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($date)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->Date = $date;
         return $this;

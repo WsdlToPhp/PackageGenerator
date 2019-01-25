@@ -112,6 +112,28 @@ class ApiTaxType extends AbstractStructBase
         return $this->TaxDescription;
     }
     /**
+     * This method is responsible for validating the values passed to the setTaxDescription method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setTaxDescription method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateTaxDescriptionValuesFromSetTaxDescription(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $taxTypeTaxDescriptionItem) {
+            // validation for constraint: itemType
+            if (!$taxTypeTaxDescriptionItem instanceof \Api\StructType\ApiParagraphType) {
+                $invalidValues[] = is_object($taxTypeTaxDescriptionItem) ? get_class($taxTypeTaxDescriptionItem) : var_export($taxTypeTaxDescriptionItem, true);
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The TaxDescription property can only contain items of \Api\StructType\ApiParagraphType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set TaxDescription value
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiParagraphType[] $taxDescription
@@ -120,11 +142,8 @@ class ApiTaxType extends AbstractStructBase
     public function setTaxDescription(array $taxDescription = array())
     {
         // validation for constraint: array
-        foreach ($taxDescription as $taxTypeTaxDescriptionItem) {
-            // validation for constraint: itemType
-            if (!$taxTypeTaxDescriptionItem instanceof \Api\StructType\ApiParagraphType) {
-                throw new \InvalidArgumentException(sprintf('The TaxDescription property can only contain items of \Api\StructType\ApiParagraphType, "%s" given', is_object($taxTypeTaxDescriptionItem) ? get_class($taxTypeTaxDescriptionItem) : gettype($taxTypeTaxDescriptionItem)), __LINE__);
-            }
+        if ('' !== ($message = self::validateTaxDescriptionValuesFromSetTaxDescription($taxDescription))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->TaxDescription = $taxDescription;
         return $this;
@@ -139,7 +158,7 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiParagraphType) {
-            throw new \InvalidArgumentException(sprintf('The TaxDescription property can only contain items of \Api\StructType\ApiParagraphType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The TaxDescription property can only contain items of \Api\StructType\ApiParagraphType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->TaxDescription[] = $item;
         return $this;
@@ -164,7 +183,7 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAmountDeterminationType::valueIsValid($type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $type, implode(', ', \Api\EnumType\ApiAmountDeterminationType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAmountDeterminationType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Api\EnumType\ApiAmountDeterminationType::getValidValues())), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -186,11 +205,11 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($code) && !is_string($code)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($code)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
         }
         // validation for constraint: pattern
         if (is_scalar($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $code)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}", "%s" given', var_export($code, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}"', var_export($code, true)), __LINE__);
         }
         $this->Code = $code;
         return $this;
@@ -212,11 +231,11 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: maxInclusive
         if ($percent > 100) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must be inferior or equal to 100, "%s" given', $percent), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be inferior or equal to 100, %s given', var_export($percent, true), $percent), __LINE__);
         }
         // validation for constraint: minInclusive
         if ($percent < 0) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must be superior or equal to 0, "%s" given', $percent), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be superior or equal to 0, %s given', var_export($percent, true), $percent), __LINE__);
         }
         $this->Percent = $percent;
         return $this;
@@ -238,7 +257,7 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) > 3) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 3 fraction digits, "%d" given', strlen(substr($amount, strpos($amount, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 3 fraction digits, %d given', var_export($amount, true), strlen(substr($amount, strpos($amount, '.') + 1))), __LINE__);
         }
         $this->Amount = $amount;
         return $this;
@@ -260,11 +279,11 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($currencyCode) && !is_string($currencyCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($currencyCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
         }
         // validation for constraint: pattern
         if (is_scalar($currencyCode) && !preg_match('/[a-zA-Z]{3}/', $currencyCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a scalar value that matches "[a-zA-Z]{3}", "%s" given', var_export($currencyCode, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a scalar value that matches "[a-zA-Z]{3}"', var_export($currencyCode, true)), __LINE__);
         }
         $this->CurrencyCode = $currencyCode;
         return $this;
@@ -286,7 +305,7 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($decimalPlaces) && !is_numeric($decimalPlaces)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($decimalPlaces)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($decimalPlaces, true), gettype($decimalPlaces)), __LINE__);
         }
         $this->DecimalPlaces = $decimalPlaces;
         return $this;

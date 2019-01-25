@@ -39,6 +39,28 @@ class ApiArrayOfString extends AbstractStructArrayBase
         return $this->string;
     }
     /**
+     * This method is responsible for validating the values passed to the setString method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setString method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateStringValuesFromSetString(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $arrayOfStringStringItem) {
+            // validation for constraint: itemType
+            if (!is_string($arrayOfStringStringItem)) {
+                $invalidValues[] = is_object($arrayOfStringStringItem) ? get_class($arrayOfStringStringItem) : var_export($arrayOfStringStringItem, true);
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The string property can only contain items of string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set string value
      * @throws \InvalidArgumentException
      * @param string[] $string
@@ -47,11 +69,8 @@ class ApiArrayOfString extends AbstractStructArrayBase
     public function setString(array $string = array())
     {
         // validation for constraint: array
-        foreach ($string as $arrayOfStringStringItem) {
-            // validation for constraint: itemType
-            if (!is_string($arrayOfStringStringItem)) {
-                throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, "%s" given', is_object($arrayOfStringStringItem) ? get_class($arrayOfStringStringItem) : gettype($arrayOfStringStringItem)), __LINE__);
-            }
+        if ('' !== ($message = self::validateStringValuesFromSetString($string))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->string = $string;
         return $this;
@@ -66,7 +85,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The string property can only contain items of string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->string[] = $item;
         return $this;
