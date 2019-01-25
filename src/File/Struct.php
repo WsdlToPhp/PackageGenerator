@@ -476,6 +476,11 @@ class Struct extends AbstractModelFile
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::saveXML()'))
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMNode::item()'));
                 }
+                if ($this->getGenerator()->getOptionValidation() && is_array($attribute->getMetaValue('choiceNames'))) {
+                    $annotationBlock
+                        ->addChild('This property belongs to a choice that allows only one property to exist')
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
+                }
                 if (($model = $this->getRestrictionFromStructAttribute($attribute)) instanceof StructModel) {
                     $annotationBlock
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $model->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))

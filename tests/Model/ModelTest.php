@@ -110,7 +110,7 @@ class ModelTest extends TestCase
      */
     public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingClass()
     {
-        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(),[
+        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), [
             'inheritance' => '',
             'abstract' => false,
             'meta' => [],
@@ -123,7 +123,7 @@ class ModelTest extends TestCase
      */
     public function testInstanceFromSerializedJsonMustThrowAnAxceptionForInexistingClass()
     {
-        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(),[
+        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), [
             'inheritance' => '',
             'abstract' => false,
             'meta' => [],
@@ -144,7 +144,7 @@ class ModelTest extends TestCase
      */
     public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingName()
     {
-        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(),[
+        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), [
             'inheritance' => '',
             'abstract' => false,
             'meta' => [],

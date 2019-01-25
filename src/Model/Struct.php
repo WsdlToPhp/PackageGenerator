@@ -421,7 +421,7 @@ class Struct extends AbstractModel
      * @param string[] $types
      * @return Struct
      */
-    public function setTypes($types)
+    public function setTypes(array $types)
     {
         $this->types = $types;
         return $this;

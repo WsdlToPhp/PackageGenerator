@@ -35,6 +35,12 @@
                         "abstract": false,
                         "meta": {
                             "base": "xsd:boolean",
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Errors"
+                            ],
                             "default": "false",
                             "maxOccurs": "1",
                             "minOccurs": "0"
@@ -49,6 +55,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Errors"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },

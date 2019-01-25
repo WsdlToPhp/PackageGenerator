@@ -111,6 +111,13 @@ class WsdlTest extends TestCase
     /**
      * @return Wsdl
      */
+    public static function wsdlDeliveryInstance()
+    {
+        return self::getWsdl(self::wsdlDeliveryServicePath());
+    }
+    /**
+     * @return Wsdl
+     */
     public static function wsdlEwsInstance()
     {
         return self::getWsdl(self::wsdlEwsPath());
@@ -121,6 +128,13 @@ class WsdlTest extends TestCase
     public static function schemaEwsTypesInstance()
     {
         return self::getSchema(self::schemaEwsTypesPath());
+    }
+    /**
+     * @return Wsdl
+     */
+    public static function schemaEwsMessagesInstance()
+    {
+        return self::getSchema(self::schemaEwsMessagesPath());
     }
     /**
      * @expectedException \InvalidArgumentException

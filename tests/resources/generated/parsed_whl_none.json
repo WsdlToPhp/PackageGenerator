@@ -2171,6 +2171,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Returning an empty element of this type indicates the successful processing of an OpenTravel message. This is used in conjunction with Warnings to report any warnings or business errors."
                             ]
@@ -2185,6 +2192,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used when a message has been successfully processed to report any warnings or business errors that occurred."
                             ],
@@ -2200,6 +2214,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Indicates an error occurred during the processing of an OpenTravel message. If the message successfully processes, but there are business errors, those errors should be passed in the warning element."
                             ]
@@ -2750,6 +2771,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "Text",
+                                "Image",
+                                "URL",
+                                "ListItem"
+                            ],
                             "documentation": [
                                 "Formatted text content."
                             ]
@@ -2764,6 +2793,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "Text",
+                                "Image",
+                                "URL",
+                                "ListItem"
+                            ],
                             "documentation": [
                                 "An image for this paragraph."
                             ]
@@ -2778,6 +2815,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "Text",
+                                "Image",
+                                "URL",
+                                "ListItem"
+                            ],
                             "documentation": [
                                 "A URL for this paragraph."
                             ]
@@ -2791,7 +2836,16 @@
                         "type": "ListItem",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "Text",
+                                "Image",
+                                "URL",
+                                "ListItem"
+                            ]
+                        },
                         "name": "ListItem",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
@@ -3059,6 +3113,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "PaymentCard",
+                                "BankAcct",
+                                "DirectBill",
+                                "Cash"
+                            ],
                             "documentation": [
                                 "Details of a debit or credit card."
                             ]
@@ -3073,6 +3135,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "PaymentCard",
+                                "BankAcct",
+                                "DirectBill",
+                                "Cash"
+                            ],
                             "documentation": [
                                 "Details of a bank account."
                             ]
@@ -3087,6 +3157,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "PaymentCard",
+                                "BankAcct",
+                                "DirectBill",
+                                "Cash"
+                            ],
                             "documentation": [
                                 "Details of a direct billing arrangement."
                             ]
@@ -3100,7 +3178,16 @@
                         "type": "Cash",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "PaymentCard",
+                                "BankAcct",
+                                "DirectBill",
+                                "Cash"
+                            ]
+                        },
                         "name": "Cash",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -4998,6 +5085,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "VideoItems",
+                                "ImageItems",
+                                "TextItems"
+                            ],
                             "documentation": [
                                 "A collection of video items."
                             ],
@@ -5013,6 +5107,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "VideoItems",
+                                "ImageItems",
+                                "TextItems"
+                            ],
                             "documentation": [
                                 "A collection of image items."
                             ],
@@ -5028,6 +5129,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "VideoItems",
+                                "ImageItems",
+                                "TextItems"
+                            ],
                             "documentation": [
                                 "A collection of text items."
                             ],
@@ -5877,6 +5985,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "URL",
+                                "Description"
+                            ],
                             "documentation": [
                                 "The URL for a specific text item."
                             ],
@@ -5892,6 +6006,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "URL",
+                                "Description"
+                            ],
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
                         },
@@ -6913,7 +7033,13 @@
                         "type": "RoomType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "Room"
+                            ]
+                        },
                         "name": "Room",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
@@ -12399,7 +12525,16 @@
                         "type": "SuccessType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "HotelReservations",
+                                "Errors"
+                            ]
+                        },
                         "name": "Success",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -12410,6 +12545,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "HotelReservations",
+                                "Errors"
+                            ],
                             "minOccurs": "0"
                         },
                         "name": "Warnings",
@@ -12422,6 +12565,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "HotelReservations",
+                                "Errors"
+                            ],
                             "minOccurs": "0"
                         },
                         "name": "HotelReservations",
@@ -12433,7 +12584,16 @@
                         "type": "ErrorsType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "HotelReservations",
+                                "Errors"
+                            ]
+                        },
                         "name": "Errors",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -13327,6 +13487,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -13341,6 +13509,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -13356,6 +13532,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "List of standard countries."
                             ],
@@ -13371,6 +13555,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -13568,6 +13760,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -13582,6 +13782,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -13597,6 +13805,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "List of WHl countries."
                             ],
@@ -13612,6 +13828,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -13823,6 +14047,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -13837,6 +14068,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -13852,6 +14090,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -14058,6 +14303,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "GetBookingsResponse",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -14072,6 +14325,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "GetBookingsResponse",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -14086,7 +14347,16 @@
                         "type": "GetBookingsResponseType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "GetBookingsResponse",
+                                "Errors"
+                            ]
+                        },
                         "name": "GetBookingsResponse",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -14097,6 +14367,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "GetBookingsResponse",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -14310,6 +14588,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Destinations",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -14324,6 +14610,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Destinations",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -14339,6 +14633,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Destinations",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "List of WHl Destintions."
                             ],
@@ -14354,6 +14656,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Destinations",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -14564,6 +14874,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Hotels",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -14578,6 +14896,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Hotels",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -14593,6 +14919,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Hotels",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "List of Hotels."
                             ],
@@ -14608,6 +14942,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "Hotels",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -14859,6 +15201,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "HotelDescriptiveContents",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the OpenTravel message succeeded."
                             ]
@@ -14873,6 +15223,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "HotelDescriptiveContents",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -14888,6 +15246,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "HotelDescriptiveContents",
+                                "Errors"
+                            ],
                             "minOccurs": "0"
                         },
                         "name": "HotelDescriptiveContents",
@@ -14900,6 +15266,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "HotelDescriptiveContents",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -15197,6 +15571,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "RoomStays",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -15211,6 +15593,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "RoomStays",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -15226,6 +15616,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "RoomStays",
+                                "Errors"
+                            ],
                             "minOccurs": "0"
                         },
                         "name": "RoomStays",
@@ -15238,6 +15636,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "Success",
+                                "Warnings",
+                                "RoomStays",
+                                "Errors"
+                            ],
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
