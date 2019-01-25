@@ -2074,12 +2074,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "StringValue",
                                 "BinaryValue"
-                            ]
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1
                         },
                         "name": "StringValue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2091,12 +2091,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "StringValue",
                                 "BinaryValue"
-                            ]
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1
                         },
                         "name": "BinaryValue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"

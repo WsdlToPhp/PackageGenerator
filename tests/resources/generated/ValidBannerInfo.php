@@ -520,7 +520,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePhrasesValuesFromSetPhrases(array $values = array())
+    public static function validatePhrasesForArrayContraintsFromSetPhrases(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -545,7 +545,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setPhrases(array $phrases = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validatePhrasesValuesFromSetPhrases($phrases))) {
+        if ('' !== ($message = self::validatePhrasesForArrayContraintsFromSetPhrases($phrases))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->Phrases = $phrases;
@@ -580,7 +580,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMinusKeywordsValuesFromSetMinusKeywords(array $values = array())
+    public static function validateMinusKeywordsForArrayContraintsFromSetMinusKeywords(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -605,7 +605,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setMinusKeywords(array $minusKeywords = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateMinusKeywordsValuesFromSetMinusKeywords($minusKeywords))) {
+        if ('' !== ($message = self::validateMinusKeywordsForArrayContraintsFromSetMinusKeywords($minusKeywords))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->MinusKeywords = $minusKeywords;
@@ -816,7 +816,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSitelinksValuesFromSetSitelinks(array $values = array())
+    public static function validateSitelinksForArrayContraintsFromSetSitelinks(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -841,7 +841,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setSitelinks(array $sitelinks = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateSitelinksValuesFromSetSitelinks($sitelinks))) {
+        if ('' !== ($message = self::validateSitelinksForArrayContraintsFromSetSitelinks($sitelinks))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->Sitelinks = $sitelinks;
@@ -876,7 +876,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdWarningsValuesFromSetAdWarnings(array $values = array())
+    public static function validateAdWarningsForArrayContraintsFromSetAdWarnings(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -901,7 +901,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setAdWarnings(array $adWarnings = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateAdWarningsValuesFromSetAdWarnings($adWarnings))) {
+        if ('' !== ($message = self::validateAdWarningsForArrayContraintsFromSetAdWarnings($adWarnings))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->AdWarnings = $adWarnings;
@@ -958,7 +958,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateModerateRejectionReasonsValuesFromSetModerateRejectionReasons(array $values = array())
+    public static function validateModerateRejectionReasonsForArrayContraintsFromSetModerateRejectionReasons(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -983,7 +983,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setModerateRejectionReasons(array $moderateRejectionReasons = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateModerateRejectionReasonsValuesFromSetModerateRejectionReasons($moderateRejectionReasons))) {
+        if ('' !== ($message = self::validateModerateRejectionReasonsForArrayContraintsFromSetModerateRejectionReasons($moderateRejectionReasons))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->ModerateRejectionReasons = $moderateRejectionReasons;

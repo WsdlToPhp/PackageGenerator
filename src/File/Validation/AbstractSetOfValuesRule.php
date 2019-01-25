@@ -82,6 +82,6 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
      */
     protected function getValidationMethodName($parameterName)
     {
-        return sprintf('validate%sValuesFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
+        return sprintf('validate%sForArrayContraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
     }
 }

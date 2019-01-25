@@ -139,7 +139,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFirstSegmentsIdsValuesFromSetFirstSegmentsIds(array $values = array())
+    public static function validateFirstSegmentsIdsForArrayContraintsFromSetFirstSegmentsIds(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -164,7 +164,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function setFirstSegmentsIds(array $firstSegmentsIds = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateFirstSegmentsIdsValuesFromSetFirstSegmentsIds($firstSegmentsIds))) {
+        if ('' !== ($message = self::validateFirstSegmentsIdsForArrayContraintsFromSetFirstSegmentsIds($firstSegmentsIds))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->firstSegmentsIds = $firstSegmentsIds;
@@ -243,7 +243,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSecondSegmentsIdsValuesFromSetSecondSegmentsIds(array $values = array())
+    public static function validateSecondSegmentsIdsForArrayContraintsFromSetSecondSegmentsIds(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -268,7 +268,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function setSecondSegmentsIds(array $secondSegmentsIds = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateSecondSegmentsIdsValuesFromSetSecondSegmentsIds($secondSegmentsIds))) {
+        if ('' !== ($message = self::validateSecondSegmentsIdsForArrayContraintsFromSetSecondSegmentsIds($secondSegmentsIds))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->secondSegmentsIds = $secondSegmentsIds;
@@ -303,7 +303,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdSegmentsIdsValuesFromSetThirdSegmentsIds(array $values = array())
+    public static function validateThirdSegmentsIdsForArrayContraintsFromSetThirdSegmentsIds(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -328,7 +328,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function setThirdSegmentsIds(array $thirdSegmentsIds = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateThirdSegmentsIdsValuesFromSetThirdSegmentsIds($thirdSegmentsIds))) {
+        if ('' !== ($message = self::validateThirdSegmentsIdsForArrayContraintsFromSetThirdSegmentsIds($thirdSegmentsIds))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->thirdSegmentsIds = $thirdSegmentsIds;

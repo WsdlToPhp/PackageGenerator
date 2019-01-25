@@ -132,7 +132,7 @@ class TagChoiceTest extends WsdlParser
                             'BankAcct',
                             'DirectBill',
                             'Cash',
-                        ], $struct->getAttribute('PaymentCard')->getMetaValue('choiceNames'));
+                        ], $struct->getAttribute('PaymentCard')->getMetaValue('choice'));
                         $count++;
                         break;
                     case 'MessageAcknowledgementType':
@@ -142,7 +142,7 @@ class TagChoiceTest extends WsdlParser
                             'Success',
                             'Warnings',
                             'Errors',
-                        ], $struct->getAttribute('Errors')->getMetaValue('choiceNames'));
+                        ], $struct->getAttribute('Errors')->getMetaValue('choice'));
                         $count++;
                         break;
                 }
@@ -213,7 +213,7 @@ class TagChoiceTest extends WsdlParser
                         $this->assertSame([
                             'IndexedPageFolderView',
                             'FractionalPageFolderView',
-                        ], $struct->getAttribute('IndexedPageFolderView')->getMetaValue('choiceNames'));
+                        ], $struct->getAttribute('IndexedPageFolderView')->getMetaValue('choice'));
                         $count++;
                         break;
                     case 'FindItemType':
@@ -225,7 +225,7 @@ class TagChoiceTest extends WsdlParser
                             'SeekToConditionPageItemView',
                             'CalendarView',
                             'ContactsView',
-                        ], $struct->getAttribute('SeekToConditionPageItemView')->getMetaValue('choiceNames'));
+                        ], $struct->getAttribute('SeekToConditionPageItemView')->getMetaValue('choice'));
                         $count++;
                         break;
                 }
@@ -294,7 +294,7 @@ class TagChoiceTest extends WsdlParser
                             'mutualSettlementDetailSafeCustody',
                             'mutualSettlementDetailSafeCustodyCalculation',
                             'mutualSettlementDetailRegisterStorage',
-                        ], $struct->getAttribute('mutualSettlementDetailCalcCostShipping')->getMetaValue('choiceNames'));
+                        ], $struct->getAttribute('mutualSettlementDetailCalcCostShipping')->getMetaValue('choice'));
                         $count++;
                         break;
                 }

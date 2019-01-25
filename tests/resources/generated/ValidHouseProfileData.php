@@ -1599,7 +1599,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLiftsValuesFromSetLifts(array $values = array())
+    public static function validateLiftsForArrayContraintsFromSetLifts(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -1624,7 +1624,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setLifts(array $lifts = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateLiftsValuesFromSetLifts($lifts))) {
+        if ('' !== ($message = self::validateLiftsForArrayContraintsFromSetLifts($lifts))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->lifts = $lifts;

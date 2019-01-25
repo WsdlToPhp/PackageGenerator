@@ -44,7 +44,7 @@ class ApiAddRequest extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdGroupsValuesFromSetAdGroups(array $values = array())
+    public static function validateAdGroupsForArrayContraintsFromSetAdGroups(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -69,7 +69,7 @@ class ApiAddRequest extends AbstractStructBase
     public function setAdGroups(array $adGroups = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateAdGroupsValuesFromSetAdGroups($adGroups))) {
+        if ('' !== ($message = self::validateAdGroupsForArrayContraintsFromSetAdGroups($adGroups))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->AdGroups = $adGroups;

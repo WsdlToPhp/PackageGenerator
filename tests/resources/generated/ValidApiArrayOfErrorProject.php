@@ -44,7 +44,7 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateErrorValuesFromSetError(array $values = array())
+    public static function validateErrorForArrayContraintsFromSetError(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -69,7 +69,7 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
     public function setError(array $error = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateErrorValuesFromSetError($error))) {
+        if ('' !== ($message = self::validateErrorForArrayContraintsFromSetError($error))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->Error = $error;

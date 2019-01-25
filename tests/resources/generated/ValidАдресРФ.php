@@ -232,7 +232,7 @@ class ApiАдресРФ extends ApiСостав
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateДопАдрЭлValuesFromSetДопАдрЭл(array $values = array())
+    public static function validateДопАдрЭлForArrayContraintsFromSetДопАдрЭл(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -257,7 +257,7 @@ class ApiАдресРФ extends ApiСостав
     public function setДопАдрЭл(array $ДопАдрЭл = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateДопАдрЭлValuesFromSetДопАдрЭл($ДопАдрЭл))) {
+        if ('' !== ($message = self::validateДопАдрЭлForArrayContraintsFromSetДопАдрЭл($ДопАдрЭл))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->ДопАдрЭл = $ДопАдрЭл;
