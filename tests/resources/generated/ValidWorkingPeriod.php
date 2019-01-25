@@ -93,8 +93,8 @@ class ApiWorkingPeriod extends AbstractStructBase
     public function setDayOfWeek(array $dayOfWeek = null)
     {
         // validation for constraint: list
-        if ('' !== ($message = self::validateDayOfWeekForArrayContraintsFromSetDayOfWeek($dayOfWeek))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($dayOfWeekArrayErrorMessage = self::validateDayOfWeekForArrayContraintsFromSetDayOfWeek($dayOfWeek))) {
+            throw new \InvalidArgumentException($dayOfWeekArrayErrorMessage, __LINE__);
         }
         $this->DayOfWeek = is_array($dayOfWeek) ? implode(' ', $dayOfWeek) : null;
         return $this;

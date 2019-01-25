@@ -341,8 +341,8 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setTelephone(array $telephone = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateTelephoneForArrayContraintsFromSetTelephone($telephone))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($telephoneArrayErrorMessage = self::validateTelephoneForArrayContraintsFromSetTelephone($telephone))) {
+            throw new \InvalidArgumentException($telephoneArrayErrorMessage, __LINE__);
         }
         $this->Telephone = $telephone;
         return $this;
@@ -401,8 +401,8 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setEmail(array $email = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateEmailForArrayContraintsFromSetEmail($email))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayContraintsFromSetEmail($email))) {
+            throw new \InvalidArgumentException($emailArrayErrorMessage, __LINE__);
         }
         $this->Email = $email;
         return $this;

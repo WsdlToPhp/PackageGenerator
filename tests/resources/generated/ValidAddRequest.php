@@ -69,8 +69,8 @@ class ApiAddRequest extends AbstractStructBase
     public function setAdGroups(array $adGroups = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateAdGroupsForArrayContraintsFromSetAdGroups($adGroups))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($adGroupsArrayErrorMessage = self::validateAdGroupsForArrayContraintsFromSetAdGroups($adGroups))) {
+            throw new \InvalidArgumentException($adGroupsArrayErrorMessage, __LINE__);
         }
         $this->AdGroups = $adGroups;
         return $this;

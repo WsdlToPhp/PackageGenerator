@@ -66,7 +66,7 @@ class ApiResult extends AbstractStructBase
      */
     public function getSuccess()
     {
-        return $this->Success;
+        return isset($this->Success) ? $this->Success : null;
     }
     /**
      * This method is responsible for validating the value passed to the setSuccess method
@@ -111,8 +111,8 @@ class ApiResult extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($success, true), gettype($success)), __LINE__);
         }
         // validation for constraint: choice
-        if ('' !== ($message = self::validateSuccessForChoiceConstraintsFromSetSuccess($success))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($successChoiceErrorMessage = self::validateSuccessForChoiceConstraintsFromSetSuccess($success))) {
+            throw new \InvalidArgumentException($successChoiceErrorMessage, __LINE__);
         }
         if (is_null($success) || (is_array($success) && empty($success))) {
             unset($this->Success);
@@ -127,7 +127,7 @@ class ApiResult extends AbstractStructBase
      */
     public function getErrors()
     {
-        return $this->Errors;
+        return isset($this->Errors) ? $this->Errors : null;
     }
     /**
      * This method is responsible for validating the value passed to the setErrors method
@@ -168,8 +168,8 @@ class ApiResult extends AbstractStructBase
     public function setErrors(\Api\StructType\ApiErrors $errors = null)
     {
         // validation for constraint: choice
-        if ('' !== ($message = self::validateErrorsForChoiceConstraintsFromSetErrors($errors))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($errorsChoiceErrorMessage = self::validateErrorsForChoiceConstraintsFromSetErrors($errors))) {
+            throw new \InvalidArgumentException($errorsChoiceErrorMessage, __LINE__);
         }
         if (is_null($errors) || (is_array($errors) && empty($errors))) {
             unset($this->Errors);

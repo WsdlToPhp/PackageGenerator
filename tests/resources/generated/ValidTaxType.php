@@ -142,8 +142,8 @@ class ApiTaxType extends AbstractStructBase
     public function setTaxDescription(array $taxDescription = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateTaxDescriptionForArrayContraintsFromSetTaxDescription($taxDescription))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($taxDescriptionArrayErrorMessage = self::validateTaxDescriptionForArrayContraintsFromSetTaxDescription($taxDescription))) {
+            throw new \InvalidArgumentException($taxDescriptionArrayErrorMessage, __LINE__);
         }
         $this->TaxDescription = $taxDescription;
         return $this;

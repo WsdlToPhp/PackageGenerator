@@ -1624,8 +1624,8 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setLifts(array $lifts = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateLiftsForArrayContraintsFromSetLifts($lifts))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($liftsArrayErrorMessage = self::validateLiftsForArrayContraintsFromSetLifts($lifts))) {
+            throw new \InvalidArgumentException($liftsArrayErrorMessage, __LINE__);
         }
         $this->lifts = $lifts;
         return $this;

@@ -164,8 +164,8 @@ class ApiFareItinerary extends AbstractStructBase
     public function setFirstSegmentsIds(array $firstSegmentsIds = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateFirstSegmentsIdsForArrayContraintsFromSetFirstSegmentsIds($firstSegmentsIds))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($firstSegmentsIdsArrayErrorMessage = self::validateFirstSegmentsIdsForArrayContraintsFromSetFirstSegmentsIds($firstSegmentsIds))) {
+            throw new \InvalidArgumentException($firstSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->firstSegmentsIds = $firstSegmentsIds;
         return $this;
@@ -268,8 +268,8 @@ class ApiFareItinerary extends AbstractStructBase
     public function setSecondSegmentsIds(array $secondSegmentsIds = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateSecondSegmentsIdsForArrayContraintsFromSetSecondSegmentsIds($secondSegmentsIds))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($secondSegmentsIdsArrayErrorMessage = self::validateSecondSegmentsIdsForArrayContraintsFromSetSecondSegmentsIds($secondSegmentsIds))) {
+            throw new \InvalidArgumentException($secondSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->secondSegmentsIds = $secondSegmentsIds;
         return $this;
@@ -328,8 +328,8 @@ class ApiFareItinerary extends AbstractStructBase
     public function setThirdSegmentsIds(array $thirdSegmentsIds = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateThirdSegmentsIdsForArrayContraintsFromSetThirdSegmentsIds($thirdSegmentsIds))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($thirdSegmentsIdsArrayErrorMessage = self::validateThirdSegmentsIdsForArrayContraintsFromSetThirdSegmentsIds($thirdSegmentsIds))) {
+            throw new \InvalidArgumentException($thirdSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->thirdSegmentsIds = $thirdSegmentsIds;
         return $this;

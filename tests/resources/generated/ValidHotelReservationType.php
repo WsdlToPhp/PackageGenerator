@@ -206,8 +206,8 @@ class ApiHotelReservationType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($resStatus, true), gettype($resStatus)), __LINE__);
         }
         // validation for constraint: union
-        if ('' !== ($message = self::validateResStatusForUnionConstraintsFromSetResStatus($resStatus))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($resStatusUnionErrorMessage = self::validateResStatusForUnionConstraintsFromSetResStatus($resStatus))) {
+            throw new \InvalidArgumentException($resStatusUnionErrorMessage, __LINE__);
         }
         $this->ResStatus = $resStatus;
         return $this;

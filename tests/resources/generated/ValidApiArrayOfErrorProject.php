@@ -69,8 +69,8 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
     public function setError(array $error = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateErrorForArrayContraintsFromSetError($error))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($errorArrayErrorMessage = self::validateErrorForArrayContraintsFromSetError($error))) {
+            throw new \InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->Error = $error;
         return $this;

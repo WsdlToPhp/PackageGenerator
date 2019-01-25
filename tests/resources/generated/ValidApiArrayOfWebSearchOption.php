@@ -71,8 +71,8 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     public function setWebSearchOption(array $webSearchOption = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateWebSearchOptionForArrayContraintsFromSetWebSearchOption($webSearchOption))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($webSearchOptionArrayErrorMessage = self::validateWebSearchOptionForArrayContraintsFromSetWebSearchOption($webSearchOption))) {
+            throw new \InvalidArgumentException($webSearchOptionArrayErrorMessage, __LINE__);
         }
         $this->WebSearchOption = $webSearchOption;
         return $this;

@@ -141,6 +141,13 @@ class StructAttribute extends AbstractModel
         return $this->removableFromRequest;
     }
     /**
+     * @return bool
+     */
+    public function isAChoice()
+    {
+        return is_array($this->getMetaValue('choice'));
+    }
+    /**
      * @param bool $removableFromRequest
      * @return StructAttribute
      */
