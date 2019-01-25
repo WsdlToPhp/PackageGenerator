@@ -69,8 +69,8 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateNewsRelatedSearchForArrayContraintsFromSetNewsRelatedSearch($newsRelatedSearch))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($newsRelatedSearchArrayErrorMessage = self::validateNewsRelatedSearchForArrayContraintsFromSetNewsRelatedSearch($newsRelatedSearch))) {
+            throw new \InvalidArgumentException($newsRelatedSearchArrayErrorMessage, __LINE__);
         }
         $this->NewsRelatedSearch = $newsRelatedSearch;
         return $this;

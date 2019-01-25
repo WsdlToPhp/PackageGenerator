@@ -25,7 +25,7 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
         $test = '';
         if ($this->mustApplyRuleOnAttribute()) {
             $this->addValidationMethod($parameterName);
-            $test = sprintf('\'\' !== ($message = self::%s($%s))', $this->getValidationMethodName($parameterName), $parameterName);
+            $test = sprintf('\'\' !== (%s = self::%s($%s))', self::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
         }
         return $test;
     }
@@ -38,11 +38,11 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return '$message';
+        return self::getErrorMessageVariableName($parameterName);
     }
 
     /**
-     * @param $parameterName
+     * @param string $parameterName
      */
     protected function addValidationMethod($parameterName)
     {
@@ -83,5 +83,14 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
     protected function getValidationMethodName($parameterName)
     {
         return sprintf('validate%sForArrayContraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
+    }
+
+    /**
+     * @param string $parameterName
+     * @return string
+     */
+    public static function getErrorMessageVariableName($parameterName)
+    {
+        return sprintf('$%sArrayErrorMessage', $parameterName);
     }
 }

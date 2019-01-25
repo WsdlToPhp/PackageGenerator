@@ -224,7 +224,7 @@ class Struct extends AbstractModelFile
     {
         $uniqueString = $attribute->getUniqueString($attribute->getCleanName());
         $parameterName = lcfirst($uniqueString);
-        if ($attribute->getRemovableFromRequest() || is_array($attribute->getMetaValue('choice'))) {
+        if ($attribute->getRemovableFromRequest() || $attribute->isAChoice()) {
             $method
                 ->addChild(sprintf('if (is_null($%1$s) || (is_array($%1$s) && empty($%1$s))) {', $parameterName))
                 ->addChild($method->getIndentedString(sprintf('unset($this->%1$s%2$s);', $attribute->getCleanName(), $attribute->nameIsClean() ? '' : sprintf(', $this->{\'%s\'}', addslashes($attribute->getName()))), 1))
@@ -293,12 +293,12 @@ class Struct extends AbstractModelFile
                 ->addChild($method->getIndentedString('$domDocument = new \DOMDocument(\'1.0\', \'UTF-8\');', 1))
                 ->addChild($method->getIndentedString(sprintf('$domDocument->loadXML($this->%s);', $thisAccess), 1))
                 ->addChild('}');
-            if ($attribute->getRemovableFromRequest()) {
+            if ($attribute->getRemovableFromRequest() || $attribute->isAChoice()) {
                 $return = sprintf('return $asString ? (isset($this->%1$s) ? $this->%1$s : null) : $domDocument;', $thisAccess);
             } else {
                 $return = sprintf('return $asString ? $this->%1$s : $domDocument;', $thisAccess);
             }
-        } elseif ($attribute->getRemovableFromRequest()) {
+        } elseif ($attribute->getRemovableFromRequest() || $attribute->isAChoice()) {
             $return = sprintf('return isset($this->%1$s) ? $this->%1$s : null;', $thisAccess);
         }
         $method->addChild($return);
@@ -465,7 +465,7 @@ class Struct extends AbstractModelFile
                 if ($attribute->getRemovableFromRequest()) {
                     $annotationBlock->addChild('This property is removable from request (nillable=true+minOccurs=0), therefore if the value assigned to this property is null, it is removed from this object');
                 }
-                if (is_array($attribute->getMetaValue('choice'))) {
+                if ($attribute->isAChoice()) {
                     $annotationBlock->addChild('This property belongs to a choice that allows only one property to exist. It is therefore removable from the request, consequently if the value assigned to this property is null, the property is removed from this object');
                 }
                 if ($attribute->isXml()) {
@@ -475,7 +475,7 @@ class Struct extends AbstractModelFile
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMNode::item()'));
                 }
                 if ($this->getGenerator()->getOptionValidation()) {
-                    if (is_array($attribute->getMetaValue('choice'))) {
+                    if ($attribute->isAChoice()) {
                         $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
                     }
                     if (($model = $this->getRestrictionFromStructAttribute($attribute)) instanceof StructModel) {

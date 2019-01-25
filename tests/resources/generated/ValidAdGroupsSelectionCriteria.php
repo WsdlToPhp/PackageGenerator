@@ -135,8 +135,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setCampaignIds(array $campaignIds = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateCampaignIdsForArrayContraintsFromSetCampaignIds($campaignIds))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($campaignIdsArrayErrorMessage = self::validateCampaignIdsForArrayContraintsFromSetCampaignIds($campaignIds))) {
+            throw new \InvalidArgumentException($campaignIdsArrayErrorMessage, __LINE__);
         }
         $this->CampaignIds = $campaignIds;
         return $this;
@@ -195,8 +195,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setIds(array $ids = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateIdsForArrayContraintsFromSetIds($ids))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($idsArrayErrorMessage = self::validateIdsForArrayContraintsFromSetIds($ids))) {
+            throw new \InvalidArgumentException($idsArrayErrorMessage, __LINE__);
         }
         $this->Ids = $ids;
         return $this;
@@ -257,8 +257,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTypes(array $types = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateTypesForArrayContraintsFromSetTypes($types))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($typesArrayErrorMessage = self::validateTypesForArrayContraintsFromSetTypes($types))) {
+            throw new \InvalidArgumentException($typesArrayErrorMessage, __LINE__);
         }
         $this->Types = $types;
         return $this;
@@ -321,8 +321,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setStatuses(array $statuses = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateStatusesForArrayContraintsFromSetStatuses($statuses))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($statusesArrayErrorMessage = self::validateStatusesForArrayContraintsFromSetStatuses($statuses))) {
+            throw new \InvalidArgumentException($statusesArrayErrorMessage, __LINE__);
         }
         $this->Statuses = $statuses;
         return $this;
@@ -383,8 +383,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTagIds(array $tagIds = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateTagIdsForArrayContraintsFromSetTagIds($tagIds))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($tagIdsArrayErrorMessage = self::validateTagIdsForArrayContraintsFromSetTagIds($tagIds))) {
+            throw new \InvalidArgumentException($tagIdsArrayErrorMessage, __LINE__);
         }
         $this->TagIds = $tagIds;
         return $this;
@@ -443,8 +443,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTags(array $tags = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateTagsForArrayContraintsFromSetTags($tags))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($tagsArrayErrorMessage = self::validateTagsForArrayContraintsFromSetTags($tags))) {
+            throw new \InvalidArgumentException($tagsArrayErrorMessage, __LINE__);
         }
         $this->Tags = $tags;
         return $this;
@@ -505,8 +505,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setAppIconStatuses(array $appIconStatuses = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateAppIconStatusesForArrayContraintsFromSetAppIconStatuses($appIconStatuses))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($appIconStatusesArrayErrorMessage = self::validateAppIconStatusesForArrayContraintsFromSetAppIconStatuses($appIconStatuses))) {
+            throw new \InvalidArgumentException($appIconStatusesArrayErrorMessage, __LINE__);
         }
         $this->AppIconStatuses = $appIconStatuses;
         return $this;

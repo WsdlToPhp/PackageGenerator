@@ -69,8 +69,8 @@ class ApiArrayOfString extends AbstractStructArrayBase
     public function setString(array $string = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateStringForArrayContraintsFromSetString($string))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($stringArrayErrorMessage = self::validateStringForArrayContraintsFromSetString($string))) {
+            throw new \InvalidArgumentException($stringArrayErrorMessage, __LINE__);
         }
         $this->string = $string;
         return $this;

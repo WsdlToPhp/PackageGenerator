@@ -257,8 +257,8 @@ class ApiАдресРФ extends ApiСостав
     public function setДопАдрЭл(array $ДопАдрЭл = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateДопАдрЭлForArrayContraintsFromSetДопАдрЭл($ДопАдрЭл))) {
-            throw new \InvalidArgumentException($message, __LINE__);
+        if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayContraintsFromSetДопАдрЭл($ДопАдрЭл))) {
+            throw new \InvalidArgumentException($ДопАдрЭлArrayErrorMessage, __LINE__);
         }
         $this->ДопАдрЭл = $ДопАдрЭл;
         return $this;

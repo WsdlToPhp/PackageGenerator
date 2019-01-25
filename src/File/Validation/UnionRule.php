@@ -28,7 +28,7 @@ class UnionRule extends AbstractRule
         $test = '';
         if (is_array($value) && 0 < count($value)) {
             $this->addValidationMethod($parameterName, $value);
-            $test = sprintf('\'\' !== ($message = self::%s($%s))', $this->getValidationMethodName($parameterName), $parameterName);
+            $test = sprintf('\'\' !== (%s = self::%s($%s))', self::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
         }
         return $test;
     }
@@ -41,11 +41,11 @@ class UnionRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return '$message';
+        return self::getErrorMessageVariableName($parameterName);
     }
 
     /**
-     * @param $parameterName
+     * @param string $parameterName
      * @param string[] $unionValues
      */
     protected function addValidationMethod($parameterName, array $unionValues)
@@ -110,5 +110,14 @@ class UnionRule extends AbstractRule
     protected function getValidationMethodName($parameterName)
     {
         return sprintf('validate%sForUnionConstraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
+    }
+
+    /**
+     * @param string $parameterName
+     * @return string
+     */
+    public static function getErrorMessageVariableName($parameterName)
+    {
+        return sprintf('$%sUnionErrorMessage', $parameterName);
     }
 }

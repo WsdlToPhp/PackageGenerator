@@ -28,7 +28,7 @@ class ChoiceRule extends AbstractRule
         $test = '';
         if (is_array($value) && 0 < count($value)) {
             $this->addValidationMethod($parameterName, $value);
-            $test = sprintf('\'\' !== ($message = self::%s($%s))', $this->getValidationMethodName($parameterName), $parameterName);
+            $test = sprintf('\'\' !== (%s = self::%s($%s))', self::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
         }
         return $test;
     }
@@ -41,11 +41,11 @@ class ChoiceRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return '$message';
+        return self::getErrorMessageVariableName($parameterName);
     }
 
     /**
-     * @param $parameterName
+     * @param string $parameterName
      * @param string[] $choiceNames
      */
     protected function addValidationMethod($parameterName, array $choiceNames)
@@ -97,5 +97,14 @@ class ChoiceRule extends AbstractRule
     protected function getValidationMethodName($parameterName)
     {
         return sprintf('validate%sForChoiceConstraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
+    }
+
+    /**
+     * @param string $parameterName
+     * @return string
+     */
+    public static function getErrorMessageVariableName($parameterName)
+    {
+        return sprintf('$%sChoiceErrorMessage', $parameterName);
     }
 }
