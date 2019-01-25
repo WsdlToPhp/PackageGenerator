@@ -2,14 +2,14 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-class ArrayRule extends AbstractSetOfValuesRule
+class ListRule extends AbstractSetOfValuesRule
 {
     /**
      * @return string
      */
     protected function name()
     {
-        return 'array';
+        return 'list';
     }
 
     /**
@@ -17,6 +17,6 @@ class ArrayRule extends AbstractSetOfValuesRule
      */
     protected function mustApplyRuleOnAttribute()
     {
-        return $this->getAttribute()->isArray();
+        return $this->getAttribute()->isList();
     }
 }

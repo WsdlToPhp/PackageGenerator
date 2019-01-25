@@ -111,6 +111,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -137,6 +138,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -158,6 +160,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -210,6 +213,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -249,6 +253,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -278,6 +283,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -315,6 +321,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -392,6 +399,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -453,6 +461,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -490,6 +499,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -591,6 +601,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -652,6 +663,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -713,6 +725,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -766,6 +779,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -795,6 +809,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -848,6 +863,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -877,6 +893,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -922,6 +939,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -961,6 +979,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -987,6 +1006,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1013,6 +1033,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1039,6 +1060,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1094,6 +1116,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1133,6 +1156,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1159,6 +1183,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ActionResultBase",
                 "abstract": false,
                 "meta": [],
@@ -1185,6 +1210,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ActionResultBase",
                 "abstract": false,
                 "meta": [],
@@ -1224,6 +1250,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1301,6 +1328,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -1370,6 +1398,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -1399,6 +1428,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -1436,6 +1466,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -1473,6 +1504,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -1577,6 +1609,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1630,6 +1663,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1734,6 +1768,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1838,6 +1873,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "AdGroupBase",
                 "abstract": false,
                 "meta": [],
@@ -1867,6 +1903,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -1896,6 +1933,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -1933,6 +1971,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -2038,6 +2077,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2090,6 +2130,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2155,6 +2196,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2181,6 +2223,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2220,6 +2263,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2285,6 +2329,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "AdGroupBase",
                 "abstract": false,
                 "meta": [],
@@ -2350,6 +2395,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetRequestGeneral",
                 "abstract": false,
                 "meta": [],
@@ -2376,6 +2422,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "GetResponseGeneral",
                 "abstract": false,
                 "meta": [],
@@ -2402,6 +2449,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2428,6 +2476,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2454,6 +2503,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2480,6 +2530,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2506,6 +2557,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2532,6 +2584,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2554,8 +2607,8 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": __ORIGIN__,
-        "destination": __DESTINATION__,
+        "origin": "__ORIGIN__",
+        "destination": "__DESTINATION__",
         "src_dirname": "src",
         "prefix": "Api",
         "suffix": "",

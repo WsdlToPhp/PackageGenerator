@@ -42,15 +42,19 @@ class TagList extends AbstractTagParser
             if ($model === null && $parentParent instanceof AbstractTag) {
                 $model = $this->getModel($parentParent);
             }
-            $itemType = $tag->getAttributeItemType();
-            $itemType = empty($itemType) ? 'string' : $itemType;
+            $itemType = $tag->getItemType();
             $struct = $this->getStructByName($itemType);
             if ($model instanceof Struct) {
                 $type = $struct instanceof Struct ? $struct->getName() : $itemType;
                 if ($parentParent instanceof AbstractTag && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
-                    $attribute->setContainsElements(true)->setType($type)->setInheritance($type);
+                    $attribute
+                        ->setContainsElements(true)
+                        ->setType($type)
+                        ->setInheritance($type);
                 } else {
-                    $model->setInheritance(sprintf('%s[]', $type));
+                    $model
+                        ->setList($type)
+                        ->setInheritance(sprintf('%s[]', $type));
                 }
             }
         }

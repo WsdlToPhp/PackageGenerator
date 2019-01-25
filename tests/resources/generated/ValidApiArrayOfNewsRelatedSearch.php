@@ -46,6 +46,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      */
     public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
+        // validation for constraint: array
         foreach ($newsRelatedSearch as $arrayOfNewsRelatedSearchNewsRelatedSearchItem) {
             // validation for constraint: itemType
             if (!$arrayOfNewsRelatedSearchNewsRelatedSearchItem instanceof \Api\StructType\ApiNewsRelatedSearch) {

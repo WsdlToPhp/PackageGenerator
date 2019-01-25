@@ -430,4 +430,20 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find details struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteEwsStructWorkingPeriod()
+    {
+        $generator = self::ewsInstance();
+        if (($model = $generator->getStructByName('WorkingPeriod')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidWorkingPeriod', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find WorkingPeriod struct for file generation');
+        }
+    }
 }

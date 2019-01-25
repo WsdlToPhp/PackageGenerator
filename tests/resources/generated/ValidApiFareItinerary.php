@@ -141,6 +141,7 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setFirstSegmentsIds(array $firstSegmentsIds = array())
     {
+        // validation for constraint: array
         foreach ($firstSegmentsIds as $fareItineraryFirstSegmentsIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($fareItineraryFirstSegmentsIdsItem)) {
@@ -225,6 +226,7 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setSecondSegmentsIds(array $secondSegmentsIds = array())
     {
+        // validation for constraint: array
         foreach ($secondSegmentsIds as $fareItinerarySecondSegmentsIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($fareItinerarySecondSegmentsIdsItem)) {
@@ -265,6 +267,7 @@ class ApiFareItinerary extends AbstractStructBase
      */
     public function setThirdSegmentsIds(array $thirdSegmentsIds = array())
     {
+        // validation for constraint: array
         foreach ($thirdSegmentsIds as $fareItineraryThirdSegmentsIdsItem) {
             // validation for constraint: itemType
             if (!is_numeric($fareItineraryThirdSegmentsIdsItem)) {

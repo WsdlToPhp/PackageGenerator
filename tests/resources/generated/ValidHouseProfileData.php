@@ -1601,6 +1601,7 @@ class ApiHouseProfileData extends AbstractStructBase
      */
     public function setLifts(array $lifts = array())
     {
+        // validation for constraint: array
         foreach ($lifts as $houseProfileDataLiftsItem) {
             // validation for constraint: itemType
             if (!$houseProfileDataLiftsItem instanceof \Api\StructType\ApiLift) {

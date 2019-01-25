@@ -247,6 +247,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -276,6 +277,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -292,6 +294,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -310,6 +313,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -328,6 +332,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -346,6 +351,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -365,6 +371,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -384,6 +391,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -400,6 +408,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -416,6 +425,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -432,6 +442,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -448,6 +459,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -464,6 +476,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -480,6 +493,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -496,6 +510,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -514,6 +529,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -561,6 +577,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -573,6 +590,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -585,6 +603,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -597,6 +616,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string50",
                 "abstract": false,
                 "meta": {
@@ -614,6 +634,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -630,6 +651,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string100",
                 "abstract": false,
                 "meta": {
@@ -673,6 +695,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -711,6 +734,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -723,6 +747,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
@@ -762,6 +787,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
@@ -791,6 +817,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -848,6 +875,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -879,6 +907,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -904,6 +933,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -920,6 +950,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -937,6 +968,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -953,6 +985,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -969,6 +1002,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -1001,6 +1035,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1036,6 +1071,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string2048",
                 "abstract": false,
                 "meta": [],
@@ -1048,6 +1084,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -1092,6 +1129,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1201,6 +1239,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1246,6 +1285,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1371,6 +1411,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1555,6 +1596,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1708,6 +1750,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1751,6 +1794,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1825,6 +1869,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1864,6 +1909,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1890,6 +1936,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1969,6 +2016,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1985,6 +2033,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -2044,6 +2093,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2060,6 +2110,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2106,6 +2157,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2170,6 +2222,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2213,6 +2266,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2229,6 +2283,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "positiveInteger",
                 "abstract": false,
                 "meta": {
@@ -2391,6 +2446,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -2458,6 +2514,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2511,6 +2568,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2577,6 +2635,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2671,6 +2730,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2713,6 +2773,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "amount",
                 "abstract": false,
                 "meta": {
@@ -2729,6 +2790,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": [],
@@ -2772,6 +2834,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2807,6 +2870,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -2846,6 +2910,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -3048,6 +3113,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3087,6 +3153,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
@@ -3103,6 +3170,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -3440,6 +3508,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3567,6 +3636,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3623,6 +3693,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3653,6 +3724,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3669,6 +3741,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3712,6 +3785,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3755,6 +3829,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3785,6 +3860,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3854,6 +3930,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4035,6 +4112,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4113,6 +4191,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4836,6 +4915,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4889,6 +4969,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4928,6 +5009,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -5016,6 +5098,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5108,6 +5191,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5200,6 +5284,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5279,6 +5364,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5358,6 +5444,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5424,6 +5511,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5477,6 +5565,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5624,6 +5713,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5677,6 +5767,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5730,6 +5821,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5809,6 +5901,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5875,6 +5968,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5915,6 +6009,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5980,6 +6075,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6013,6 +6109,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -6046,6 +6143,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6062,6 +6160,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -6088,6 +6187,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6127,6 +6227,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -6163,6 +6264,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6216,6 +6318,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6347,6 +6450,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6422,6 +6526,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6497,6 +6602,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6585,6 +6691,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6634,6 +6741,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6687,6 +6795,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -6950,6 +7059,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7023,6 +7133,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7092,6 +7203,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7128,6 +7240,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7328,6 +7441,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7402,6 +7516,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7442,6 +7557,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7478,6 +7594,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7565,6 +7682,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7635,6 +7753,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7688,6 +7807,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7724,6 +7844,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7958,6 +8079,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8025,6 +8147,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8065,6 +8188,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8127,6 +8251,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8258,6 +8383,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8325,6 +8451,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8365,6 +8492,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8414,6 +8542,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8613,6 +8742,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8680,6 +8810,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8720,6 +8851,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8756,6 +8888,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8837,6 +8970,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8904,6 +9038,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8989,6 +9124,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9056,6 +9192,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9096,6 +9233,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9145,6 +9283,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9184,6 +9323,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9251,6 +9391,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9291,6 +9432,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9327,6 +9469,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9405,6 +9548,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9434,6 +9578,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9483,6 +9628,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9532,6 +9678,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9624,6 +9771,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9675,6 +9823,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9741,6 +9890,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9797,6 +9947,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9823,8 +9974,8 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": __ORIGIN__,
-        "destination": __DESTINATION__,
+        "origin": "__ORIGIN__",
+        "destination": "__DESTINATION__",
         "src_dirname": "src",
         "prefix": "Api",
         "suffix": "",
