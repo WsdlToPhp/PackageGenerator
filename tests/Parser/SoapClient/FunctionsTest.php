@@ -23,7 +23,7 @@ class FunctionsTest extends SoapClientParser
                 'password' => 'string',
             ], $login->getParameterType());
         } else {
-            $this->assertFalse(true, 'Unable to find parsed Login operation');
+            $this->fail('Unable to find parsed Login operation');
         }
     }
     /**
@@ -59,7 +59,7 @@ class FunctionsTest extends SoapClientParser
                 'rsid_list' => 'string_array',
             ], $saint->getParameterType());
         } else {
-            $this->assertTrue(false, 'Unable to find Saint.CreateFTP method');
+            $this->fail('Unable to find Saint.CreateFTP method');
         }
 
         if (($saint = $generator->getServiceMethod('Saint.CheckJobStatus')) instanceof Method) {
@@ -67,7 +67,7 @@ class FunctionsTest extends SoapClientParser
                 'job_id' => 'int',
             ], $saint->getParameterType());
         } else {
-            $this->assertTrue(false, 'Unable to find Saint.CheckJobStatus method');
+            $this->fail('Unable to find Saint.CheckJobStatus method');
         }
     }
     /**

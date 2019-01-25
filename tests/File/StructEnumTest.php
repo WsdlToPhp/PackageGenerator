@@ -29,7 +29,7 @@ class StructEnumTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiAdultOption', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find AdultOption enumeration for file generation');
+            $this->fail('Unable to find AdultOption enumeration for file generation');
         }
     }
     /**
@@ -45,7 +45,7 @@ class StructEnumTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiSourceType', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find SourceType enumeration for file generation');
+            $this->fail('Unable to find SourceType enumeration for file generation');
         }
     }
     /**
@@ -61,7 +61,7 @@ class StructEnumTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiHouseStageEnum', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find HouseStageEnum enumeration for file generation');
+            $this->fail('Unable to find HouseStageEnum enumeration for file generation');
         }
     }
     /**
@@ -77,7 +77,7 @@ class StructEnumTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiDs_weblog_formats', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find ds_weblog_formats enumeration for file generation');
+            $this->fail('Unable to find ds_weblog_formats enumeration for file generation');
         }
     }
     /**
@@ -94,7 +94,7 @@ class StructEnumTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiWebSearchOption', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find WebSearchOption enumeration for file generation');
+            $this->fail('Unable to find WebSearchOption enumeration for file generation');
         }
     }
     /**
@@ -112,7 +112,7 @@ class StructEnumTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiPhonebookSortOption', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find PhonebookSortOption enumeration for file generation');
+            $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
     /**
@@ -131,7 +131,7 @@ class StructEnumTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiPhonebookSortOptionApi', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find PhonebookSortOption enumeration for file generation');
+            $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
     /**
@@ -149,7 +149,7 @@ class StructEnumTest extends AbstractFile
 
             $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
         } else {
-            $this->assertFalse(true, 'Unable to find PhonebookSortOption enumeration for file generation');
+            $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
 }

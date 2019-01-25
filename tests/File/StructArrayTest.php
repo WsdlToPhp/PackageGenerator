@@ -42,7 +42,7 @@ class StructArrayTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiArrayOfNewsRelatedSearch', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find ArrayOfNewsRelatedSearch struct for file generation');
+            $this->fail('Unable to find ArrayOfNewsRelatedSearch struct for file generation');
         }
     }
     /**
@@ -58,7 +58,7 @@ class StructArrayTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiArrayOfWebSearchOption', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find ArrayOfWebSearchOption struct for file generation');
+            $this->fail('Unable to find ArrayOfWebSearchOption struct for file generation');
         }
     }
     /**
@@ -74,7 +74,7 @@ class StructArrayTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiArrayOfString', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find ArrayOfString struct for file generation');
+            $this->fail('Unable to find ArrayOfString struct for file generation');
         }
     }
     /**
@@ -90,7 +90,7 @@ class StructArrayTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiArrayOfError', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find ArrayOfError struct for file generation');
+            $this->fail('Unable to find ArrayOfError struct for file generation');
         }
     }
     /**
@@ -109,7 +109,7 @@ class StructArrayTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiArrayOfErrorProject', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find ArrayOfError struct for file generation');
+            $this->fail('Unable to find ArrayOfError struct for file generation');
         }
     }
     /**
@@ -127,7 +127,7 @@ class StructArrayTest extends AbstractFile
 
             $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
         } else {
-            $this->assertFalse(true, 'Unable to find ArrayOfError struct for file generation');
+            $this->fail('Unable to find ArrayOfError struct for file generation');
         }
     }
 }

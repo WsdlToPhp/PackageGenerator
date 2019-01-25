@@ -2,26 +2,30 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
-use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class Rules
 {
+
     /**
      * @var StructAttribute
      */
     protected $attribute;
+
     /**
      * @var AbstractModelFile
      */
     protected $file;
+
     /**
      * @var PhpMethod
      */
     protected $method;
+
     /**
      * @param AbstractModelFile $file
      * @param PhpMethod $method
@@ -29,8 +33,12 @@ class Rules
      */
     public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute)
     {
-        $this->setFile($file)->setMethod($method)->setAttribute($attribute);
+        $this
+            ->setFile($file)
+            ->setMethod($method)
+            ->setAttribute($attribute);
     }
+
     /**
      * @param string $parameterName
      * @param bool $itemType
@@ -48,6 +56,7 @@ class Rules
         }
         $this->applyRulesFromModel($this->attribute, $parameterName, $itemType);
     }
+
     /**
      * This method is called when an attribute has a union meta which means the attribute is of several types.
      * In this case, the types are currently only of type string (normally) so we add the rules according to each type
@@ -64,6 +73,7 @@ class Rules
             }
         }
     }
+
     /**
      * Generic method to apply rules from current model
      * @param AbstractModel $model
@@ -78,9 +88,12 @@ class Rules
                 $rule->applyRule($parameterName, $metaValue, $itemType);
             } elseif ($metaName === 'union' && is_array($metaValue) && count($metaValue) > 0) {
                 $this->applyUnionRules($parameterName, $itemType, $metaValue);
+            } elseif ($metaName === 'choiceNames' && is_array($metaValue) && count($metaValue) > 0) {
+                $this->getChoiceRule()->applyRule($parameterName, $metaValue, $itemType);
             }
         }
     }
+
     /**
      * @param string $metaName
      * @return AbstractRule|null
@@ -95,6 +108,7 @@ class Rules
         }
         return null;
     }
+
     /**
      * @return ArrayRule
      */
@@ -102,6 +116,7 @@ class Rules
     {
         return $this->getRule('array');
     }
+
     /**
      * @return EnumerationRule
      */
@@ -109,6 +124,7 @@ class Rules
     {
         return $this->getRule('enumeration');
     }
+
     /**
      * @return ItemTypeRule
      */
@@ -116,6 +132,15 @@ class Rules
     {
         return $this->getRule('itemType');
     }
+
+    /**
+     * @return ChoiceRule
+     */
+    public function getChoiceRule()
+    {
+        return $this->getRule('choice');
+    }
+
     /**
      * @return StructAttribute
      */
@@ -123,6 +148,7 @@ class Rules
     {
         return $this->attribute;
     }
+
     /**
      * @param StructAttribute $attribute
      * @return Rules
@@ -132,6 +158,7 @@ class Rules
         $this->attribute = $attribute;
         return $this;
     }
+
     /**
      * @return AbstractModelFile
      */
@@ -139,6 +166,7 @@ class Rules
     {
         return $this->file;
     }
+
     /**
      * @param AbstractModelFile $file
      * @return Rules
@@ -148,6 +176,7 @@ class Rules
         $this->file = $file;
         return $this;
     }
+
     /**
      * @return PhpMethod
      */
@@ -155,6 +184,7 @@ class Rules
     {
         return $this->method;
     }
+
     /**
      * @param PhpMethod $method
      * @return Rules

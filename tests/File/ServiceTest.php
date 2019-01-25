@@ -31,7 +31,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiDelete', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Delete service for file generation');
+            $this->fail('Unable to find Delete service for file generation');
         }
     }
     /**
@@ -47,7 +47,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiSearch', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Search service for file generation');
+            $this->fail('Unable to find Search service for file generation');
         }
     }
     /**
@@ -67,7 +67,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidMyProjectApiSearchProject', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Search service for file generation');
+            $this->fail('Unable to find Search service for file generation');
         }
     }
     /**
@@ -86,7 +86,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiSearchBingApi', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Search service for file generation');
+            $this->fail('Unable to find Search service for file generation');
         }
     }
     /**
@@ -102,7 +102,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiAuthenticate', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Authenticate service for file generation');
+            $this->fail('Unable to find Authenticate service for file generation');
         }
     }
     /**
@@ -118,7 +118,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiLogin', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Login service for file generation');
+            $this->fail('Unable to find Login service for file generation');
         }
     }
     /**
@@ -134,7 +134,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiCreate', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Create service for file generation');
+            $this->fail('Unable to find Create service for file generation');
         }
     }
     /**
@@ -150,7 +150,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiSaint', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Saint service for file generation');
+            $this->fail('Unable to find Saint service for file generation');
         }
     }
     /**
@@ -166,7 +166,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiDo', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Do service for file generation');
+            $this->fail('Unable to find Do service for file generation');
         }
     }
     /**
@@ -183,7 +183,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidDoWithoutPrefix', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Do service for file generation');
+            $this->fail('Unable to find Do service for file generation');
         }
     }
     /**
@@ -200,7 +200,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidListWithoutPrefix', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find List service for file generation');
+            $this->fail('Unable to find List service for file generation');
         }
     }
     /**
@@ -217,7 +217,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidBingApiService', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Service model for file generation');
+            $this->fail('Unable to find Service model for file generation');
         }
     }
     /**
@@ -288,7 +288,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidYandexDirectApiLiveGet', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Get service for file generation');
+            $this->fail('Unable to find Get service for file generation');
         }
     }
     /**
@@ -303,7 +303,7 @@ class ServiceTest extends AbstractFile
 
             $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $service->getFileDestination());
         } else {
-            $this->assertFalse(true, 'Unable to find Search service for file generation');
+            $this->fail('Unable to find Search service for file generation');
         }
     }
     /**
@@ -319,7 +319,7 @@ class ServiceTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiFind', $service);
         } else {
-            $this->assertFalse(true, 'Unable to find Find service for file generation');
+            $this->fail('Unable to find Find service for file generation');
         }
     }
 }

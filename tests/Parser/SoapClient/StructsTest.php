@@ -24,7 +24,7 @@ class StructsTest extends SoapClientParser
             $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $offer->getAttribute('offer'));
             $this->assertSame('offer', $offer->getAttribute('offer')->getType());
         } else {
-            $this->assertFalse(true, 'Unable to get offer struct');
+            $this->fail('Unable to get offer struct');
         }
 
         $order = $generator->getStructByName('order');
@@ -34,7 +34,7 @@ class StructsTest extends SoapClientParser
             $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $order->getAttribute('order'));
             $this->assertSame('order', $order->getAttribute('order')->getType());
         } else {
-            $this->assertFalse(true, 'Unable to get order struct');
+            $this->fail('Unable to get order struct');
         }
     }
     /**

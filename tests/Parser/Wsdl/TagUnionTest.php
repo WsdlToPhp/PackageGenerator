@@ -69,7 +69,7 @@ class TagUnionTest extends WsdlParser
                             'union' => [
                                 'unsignedShort',
                                 'string',
-                            ]
+                            ],
                         ], $struct->getAttribute('PropertyTag')->getMeta());
                         $count++;
                         break;
@@ -77,7 +77,7 @@ class TagUnionTest extends WsdlParser
                         $this->assertSame([
                             'union' => [
                                 'int',
-                            ]
+                            ],
                         ], $struct->getAttribute('ReminderMinutesBeforeStart')->getMeta());
                         $count++;
                         break;

@@ -1919,6 +1919,13 @@
                         "abstract": false,
                         "meta": {
                             "base": "string",
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "linkId",
+                                "paymentId",
+                                "merchantReference"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1",
                             "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}"
@@ -1933,6 +1940,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "linkId",
+                                "paymentId",
+                                "merchantReference"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -1946,6 +1960,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "linkId",
+                                "paymentId",
+                                "merchantReference"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3122,6 +3143,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3135,6 +3171,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3148,6 +3199,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3161,6 +3227,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3174,6 +3255,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3187,6 +3283,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3200,6 +3311,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3213,6 +3339,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3226,6 +3367,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3239,6 +3395,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3252,6 +3423,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3282,6 +3468,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3295,6 +3490,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3308,6 +3512,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3321,6 +3534,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },
@@ -3334,6 +3556,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3922,6 +4153,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3935,6 +4189,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3948,6 +4225,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3961,6 +4261,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3974,6 +4297,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3987,6 +4333,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4000,6 +4369,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4013,6 +4405,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4026,6 +4441,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4039,6 +4477,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4052,6 +4513,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4065,6 +4549,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4078,6 +4585,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4091,6 +4621,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4104,6 +4657,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4117,6 +4693,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4130,6 +4729,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4143,6 +4765,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4156,6 +4801,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
+                            "choiceNames": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -6310,6 +6978,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "createErrors",
+                                "createSuccess"
+                            ],
                             "documentation": [
                                 "An error occurred. No payment order was created."
                             ],
@@ -6326,6 +7000,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "createErrors",
+                                "createSuccess"
+                            ],
                             "documentation": [
                                 "A payment order was successfully created. This does not mean that the whole request was processed successfully! The paymentResponse (see child elements) can still contain errors."
                             ],
@@ -6550,6 +7230,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "refundItems",
+                                "simpleRefundGroup"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -6671,6 +7357,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "refundErrors",
+                                "refundSuccess"
+                            ],
                             "documentation": [
                                 "An error occurred. No refund request was created."
                             ],
@@ -6687,6 +7379,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "refundErrors",
+                                "refundSuccess"
+                            ],
                             "documentation": [
                                 "A request for refund was successfully accepted. This does not mean that the whole request will be or has been processed successfully!"
                             ],
@@ -6895,6 +7593,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "cancelErrors",
+                                "cancelSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -6908,6 +7612,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "cancelErrors",
+                                "cancelSuccess"
+                            ],
                             "documentation": [
                                 "Returns summarized information about cancelation of the payments of this order. Use \"status\" to retrieve more information."
                             ],
@@ -7086,6 +7796,16 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                ""
+                            ],
                             "documentation": [
                                 "Specifies a request for a recurring payment. It should target an existing previous payment that will be used to start a new payment with directly. Reservations are also made as the starting point for upcoming repeated payments if needed. Must be specified if not giving direct payment request input."
                             ],
@@ -7102,6 +7822,18 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                "",
+                                "payment",
+                                "token"
+                            ],
                             "documentation": [
                                 "Specifies the details needed for starting a payment for a shopper without showing the hosted payment pages. Must be specified if not a subsequent recurring payment."
                             ],
@@ -7118,6 +7850,18 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                "",
+                                "payment",
+                                "token"
+                            ],
                             "documentation": [
                                 "Pay with a token."
                             ],
@@ -7134,6 +7878,16 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                ""
+                            ],
                             "documentation": [
                                 "Optional return url to be used. If left empty, no return url will be used. (Limit is set by Internet Explorer of 2083 characters)"
                             ],
@@ -7150,6 +7904,16 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                ""
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },
@@ -7222,6 +7986,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "startErrors",
+                                "startSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7235,6 +8005,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "startErrors",
+                                "startSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7407,6 +8183,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "threeDomainSecureAuthenticationResult",
+                                "iDealAuthorizationResult"
+                            ],
                             "documentation": [
                                 "3DS Authentication result data. (tag name cannot start with a number)"
                             ],
@@ -7423,6 +8205,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "threeDomainSecureAuthenticationResult",
+                                "iDealAuthorizationResult"
+                            ],
                             "documentation": [
                                 "iDEAL authorization result data. No additional data is required."
                             ],
@@ -7498,6 +8286,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "proceedErrors",
+                                "proceedSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7511,6 +8305,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "proceedErrors",
+                                "proceedSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7841,6 +8641,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "captureErrors",
+                                "captureSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7854,6 +8660,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "captureErrors",
+                                "captureSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8053,6 +8865,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "statusErrors",
+                                "statusSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8066,6 +8884,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "statusErrors",
+                                "statusSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8193,6 +9017,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "statusErrors",
+                                "statusSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8206,6 +9036,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "statusErrors",
+                                "statusSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8376,6 +9212,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "listPaymentMethodsErrors",
+                                "listPaymentMethodsSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8389,6 +9231,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "listPaymentMethodsErrors",
+                                "listPaymentMethodsSuccess"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8712,6 +9560,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexTokenInput",
+                                "masterCardTokenInput",
+                                "visaTokenInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8725,6 +9580,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexTokenInput",
+                                "masterCardTokenInput",
+                                "visaTokenInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8738,6 +9600,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "amexTokenInput",
+                                "masterCardTokenInput",
+                                "visaTokenInput"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8779,6 +9648,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "securityCode",
+                                "encryptedData"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8792,6 +9667,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "choiceNames": [
+                                "securityCode",
+                                "encryptedData"
+                            ],
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
