@@ -399,11 +399,8 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $attribute = $this->getStructAttribute($attribute);
         $inheritance = $attribute->getInheritance();
-        if (empty($inheritance)) {
-            $type = $attribute->getType();
-        } else {
-            $type = $inheritance;
-        }
+        $type = empty($inheritance) ? $attribute->getType() : $inheritance;
+
         if (!empty($type) && ($struct = $this->getGenerator()->getStructByName($type))) {
             $inheritance = $struct->getTopInheritance();
             if (!empty($inheritance)) {
@@ -412,6 +409,7 @@ abstract class AbstractModelFile extends AbstractFile
                 $type = $struct->getPackagedName($namespaced);
             }
         }
+
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
             // issue #84: union is considered as string as it would be difficult to have a method that accepts multiple object types.
