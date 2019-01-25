@@ -15,12 +15,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailCalcCostShipping
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailCalcCostShipping
      * @var \Api\StructType\ApiMutualSettlementDetailCalcCostShipping
      */
@@ -28,12 +28,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailCashFlow
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailCashFlow
      * @var \Api\StructType\ApiMutualSettlementDetailCashFlow
      */
@@ -41,12 +41,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailClientPayment
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailClientPayment
      * @var \Api\StructType\ApiMutualSettlementDetailClientPayment
      */
@@ -54,12 +54,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailPostReturnRegistry
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailPostReturnRegistry
      * @var \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry
      */
@@ -67,12 +67,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailRouteList
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailRouteList
      * @var \Api\StructType\ApiMutualSettlementDetailRouteList
      */
@@ -80,12 +80,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailTrackNumberPayment
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailTrackNumberPayment
      * @var \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment
      */
@@ -93,12 +93,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailServiceRegistration
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailServiceRegistration
      * @var \Api\StructType\ApiMutualSettlementDetailServiceRegistration
      */
@@ -106,12 +106,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailAcceptanceRegistry
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailAcceptanceRegistry
      * @var \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry
      */
@@ -119,12 +119,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailAdditionalChargeFare
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailAdditionalChargeFare
      * @var \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare
      */
@@ -132,12 +132,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailOutgoingRequestToCarrier
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailOutgoingRequestToCarrier
      * @var \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier
      */
@@ -145,12 +145,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailSMSInformation
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailSMSInformation
      * @var \Api\StructType\ApiMutualSettlementDetailSMSInformation
      */
@@ -158,12 +158,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailBuyerGoodsReturn
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailBuyerGoodsReturn
      * @var \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn
      */
@@ -171,12 +171,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailProductsPackaging
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailProductsPackaging
      * @var \Api\StructType\ApiMutualSettlementDetailProductsPackaging
      */
@@ -184,12 +184,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailAdjustmentWriteRegisters
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailAdjustmentWriteRegisters
      * @var \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters
      */
@@ -197,12 +197,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailSafeCustody
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailSafeCustody
      * @var \Api\StructType\ApiMutualSettlementDetailSafeCustody
      */
@@ -210,12 +210,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailSafeCustodyCalculation
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailSafeCustodyCalculation
      * @var \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation
      */
@@ -223,12 +223,12 @@ class ApiDetails extends AbstractStructBase
     /**
      * The mutualSettlementDetailRegisterStorage
      * Meta informations extracted from the WSDL
-     * - choiceMaxOccurs: unbounded
-     * - choiceMinOccurs: 0
-     * - choiceNames: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
+     * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
      * mutualSettlementDetailRegisterStorage
+     * - choiceMaxOccurs: unbounded
+     * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailRegisterStorage
      * @var \Api\StructType\ApiMutualSettlementDetailRegisterStorage
      */
@@ -300,64 +300,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailCalcCostShipping;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailCalcCostShipping method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailCalcCostShipping method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailCalcCostShippingForChoiceConstraintsFromSetMutualSettlementDetailCalcCostShipping($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailCalcCostShipping value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailCalcCostShipping(\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailCalcCostShippingForChoiceConstraintsFromSetMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailCalcCostShipping) || (is_array($mutualSettlementDetailCalcCostShipping) && empty($mutualSettlementDetailCalcCostShipping))) {
+            unset($this->mutualSettlementDetailCalcCostShipping);
+        } else {
+            $this->mutualSettlementDetailCalcCostShipping = $mutualSettlementDetailCalcCostShipping;
         }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailCalcCostShipping = $mutualSettlementDetailCalcCostShipping;
         return $this;
     }
     /**
@@ -369,64 +372,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailCashFlow;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailCashFlow method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailCashFlow method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailCashFlowForChoiceConstraintsFromSetMutualSettlementDetailCashFlow($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailCashFlow can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailCashFlow, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailCashFlow value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailCashFlow(\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailCashFlowForChoiceConstraintsFromSetMutualSettlementDetailCashFlow($mutualSettlementDetailCashFlow))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailCashFlow) || (is_array($mutualSettlementDetailCashFlow) && empty($mutualSettlementDetailCashFlow))) {
+            unset($this->mutualSettlementDetailCashFlow);
+        } else {
+            $this->mutualSettlementDetailCashFlow = $mutualSettlementDetailCashFlow;
         }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailCashFlow can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailCashFlow = $mutualSettlementDetailCashFlow;
         return $this;
     }
     /**
@@ -438,64 +444,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailClientPayment;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailClientPayment method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailClientPayment method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailClientPaymentForChoiceConstraintsFromSetMutualSettlementDetailClientPayment($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailClientPayment can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailClientPayment, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailClientPayment value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailClientPayment(\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailClientPaymentForChoiceConstraintsFromSetMutualSettlementDetailClientPayment($mutualSettlementDetailClientPayment))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailClientPayment) || (is_array($mutualSettlementDetailClientPayment) && empty($mutualSettlementDetailClientPayment))) {
+            unset($this->mutualSettlementDetailClientPayment);
+        } else {
+            $this->mutualSettlementDetailClientPayment = $mutualSettlementDetailClientPayment;
         }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailClientPayment can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailClientPayment = $mutualSettlementDetailClientPayment;
         return $this;
     }
     /**
@@ -507,64 +516,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailPostReturnRegistry;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailPostReturnRegistry method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailPostReturnRegistry method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintsFromSetMutualSettlementDetailPostReturnRegistry($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailPostReturnRegistry, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailPostReturnRegistry value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailPostReturnRegistry(\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintsFromSetMutualSettlementDetailPostReturnRegistry($mutualSettlementDetailPostReturnRegistry))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailPostReturnRegistry) || (is_array($mutualSettlementDetailPostReturnRegistry) && empty($mutualSettlementDetailPostReturnRegistry))) {
+            unset($this->mutualSettlementDetailPostReturnRegistry);
+        } else {
+            $this->mutualSettlementDetailPostReturnRegistry = $mutualSettlementDetailPostReturnRegistry;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailPostReturnRegistry = $mutualSettlementDetailPostReturnRegistry;
         return $this;
     }
     /**
@@ -576,64 +588,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailRouteList;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailRouteList method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailRouteList method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailRouteListForChoiceConstraintsFromSetMutualSettlementDetailRouteList($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailRouteList can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailRouteList, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailRouteList value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailRouteList(\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailRouteListForChoiceConstraintsFromSetMutualSettlementDetailRouteList($mutualSettlementDetailRouteList))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailRouteList) || (is_array($mutualSettlementDetailRouteList) && empty($mutualSettlementDetailRouteList))) {
+            unset($this->mutualSettlementDetailRouteList);
+        } else {
+            $this->mutualSettlementDetailRouteList = $mutualSettlementDetailRouteList;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRouteList can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailRouteList = $mutualSettlementDetailRouteList;
         return $this;
     }
     /**
@@ -645,64 +660,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailTrackNumberPayment;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailTrackNumberPayment method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailTrackNumberPayment method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintsFromSetMutualSettlementDetailTrackNumberPayment($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailTrackNumberPayment, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailTrackNumberPayment value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailTrackNumberPayment(\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintsFromSetMutualSettlementDetailTrackNumberPayment($mutualSettlementDetailTrackNumberPayment))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailTrackNumberPayment) || (is_array($mutualSettlementDetailTrackNumberPayment) && empty($mutualSettlementDetailTrackNumberPayment))) {
+            unset($this->mutualSettlementDetailTrackNumberPayment);
+        } else {
+            $this->mutualSettlementDetailTrackNumberPayment = $mutualSettlementDetailTrackNumberPayment;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailTrackNumberPayment = $mutualSettlementDetailTrackNumberPayment;
         return $this;
     }
     /**
@@ -714,64 +732,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailServiceRegistration;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailServiceRegistration method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailServiceRegistration method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailServiceRegistrationForChoiceConstraintsFromSetMutualSettlementDetailServiceRegistration($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailServiceRegistration can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailServiceRegistration, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailServiceRegistration value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailServiceRegistration(\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailServiceRegistrationForChoiceConstraintsFromSetMutualSettlementDetailServiceRegistration($mutualSettlementDetailServiceRegistration))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailServiceRegistration) || (is_array($mutualSettlementDetailServiceRegistration) && empty($mutualSettlementDetailServiceRegistration))) {
+            unset($this->mutualSettlementDetailServiceRegistration);
+        } else {
+            $this->mutualSettlementDetailServiceRegistration = $mutualSettlementDetailServiceRegistration;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailServiceRegistration can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailServiceRegistration = $mutualSettlementDetailServiceRegistration;
         return $this;
     }
     /**
@@ -783,64 +804,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailAcceptanceRegistry;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailAcceptanceRegistry method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAcceptanceRegistry method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAcceptanceRegistry, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailAcceptanceRegistry value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailAcceptanceRegistry(\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($mutualSettlementDetailAcceptanceRegistry))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailAcceptanceRegistry) || (is_array($mutualSettlementDetailAcceptanceRegistry) && empty($mutualSettlementDetailAcceptanceRegistry))) {
+            unset($this->mutualSettlementDetailAcceptanceRegistry);
+        } else {
+            $this->mutualSettlementDetailAcceptanceRegistry = $mutualSettlementDetailAcceptanceRegistry;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailAcceptanceRegistry = $mutualSettlementDetailAcceptanceRegistry;
         return $this;
     }
     /**
@@ -852,64 +876,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailAdditionalChargeFare;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailAdditionalChargeFare method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAdditionalChargeFare method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAdditionalChargeFare, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailAdditionalChargeFare value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailAdditionalChargeFare(\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($mutualSettlementDetailAdditionalChargeFare))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailAdditionalChargeFare) || (is_array($mutualSettlementDetailAdditionalChargeFare) && empty($mutualSettlementDetailAdditionalChargeFare))) {
+            unset($this->mutualSettlementDetailAdditionalChargeFare);
+        } else {
+            $this->mutualSettlementDetailAdditionalChargeFare = $mutualSettlementDetailAdditionalChargeFare;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailAdditionalChargeFare = $mutualSettlementDetailAdditionalChargeFare;
         return $this;
     }
     /**
@@ -921,64 +948,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailOutgoingRequestToCarrier;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailOutgoingRequestToCarrier method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailOutgoingRequestToCarrier method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailOutgoingRequestToCarrier, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailOutgoingRequestToCarrier value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailOutgoingRequestToCarrier(\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($mutualSettlementDetailOutgoingRequestToCarrier))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailOutgoingRequestToCarrier) || (is_array($mutualSettlementDetailOutgoingRequestToCarrier) && empty($mutualSettlementDetailOutgoingRequestToCarrier))) {
+            unset($this->mutualSettlementDetailOutgoingRequestToCarrier);
+        } else {
+            $this->mutualSettlementDetailOutgoingRequestToCarrier = $mutualSettlementDetailOutgoingRequestToCarrier;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailOutgoingRequestToCarrier = $mutualSettlementDetailOutgoingRequestToCarrier;
         return $this;
     }
     /**
@@ -990,64 +1020,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailSMSInformation;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailSMSInformation method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSMSInformation method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailSMSInformationForChoiceConstraintsFromSetMutualSettlementDetailSMSInformation($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailSMSInformation can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSMSInformation, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailSMSInformation value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailSMSInformation(\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailSMSInformationForChoiceConstraintsFromSetMutualSettlementDetailSMSInformation($mutualSettlementDetailSMSInformation))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailSMSInformation) || (is_array($mutualSettlementDetailSMSInformation) && empty($mutualSettlementDetailSMSInformation))) {
+            unset($this->mutualSettlementDetailSMSInformation);
+        } else {
+            $this->mutualSettlementDetailSMSInformation = $mutualSettlementDetailSMSInformation;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSMSInformation can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailSMSInformation = $mutualSettlementDetailSMSInformation;
         return $this;
     }
     /**
@@ -1059,64 +1092,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailBuyerGoodsReturn;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailBuyerGoodsReturn method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailBuyerGoodsReturn method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailBuyerGoodsReturn, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailBuyerGoodsReturn value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailBuyerGoodsReturn(\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($mutualSettlementDetailBuyerGoodsReturn))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailBuyerGoodsReturn) || (is_array($mutualSettlementDetailBuyerGoodsReturn) && empty($mutualSettlementDetailBuyerGoodsReturn))) {
+            unset($this->mutualSettlementDetailBuyerGoodsReturn);
+        } else {
+            $this->mutualSettlementDetailBuyerGoodsReturn = $mutualSettlementDetailBuyerGoodsReturn;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailBuyerGoodsReturn = $mutualSettlementDetailBuyerGoodsReturn;
         return $this;
     }
     /**
@@ -1128,64 +1164,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailProductsPackaging;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailProductsPackaging method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailProductsPackaging method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailProductsPackagingForChoiceConstraintsFromSetMutualSettlementDetailProductsPackaging($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailProductsPackaging can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailProductsPackaging, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailProductsPackaging value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailProductsPackaging(\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailProductsPackagingForChoiceConstraintsFromSetMutualSettlementDetailProductsPackaging($mutualSettlementDetailProductsPackaging))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailProductsPackaging) || (is_array($mutualSettlementDetailProductsPackaging) && empty($mutualSettlementDetailProductsPackaging))) {
+            unset($this->mutualSettlementDetailProductsPackaging);
+        } else {
+            $this->mutualSettlementDetailProductsPackaging = $mutualSettlementDetailProductsPackaging;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailProductsPackaging can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailProductsPackaging = $mutualSettlementDetailProductsPackaging;
         return $this;
     }
     /**
@@ -1197,64 +1236,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailAdjustmentWriteRegisters;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailAdjustmentWriteRegisters method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAdjustmentWriteRegisters method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAdjustmentWriteRegisters, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailAdjustmentWriteRegisters value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailAdjustmentWriteRegisters(\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($mutualSettlementDetailAdjustmentWriteRegisters))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailAdjustmentWriteRegisters) || (is_array($mutualSettlementDetailAdjustmentWriteRegisters) && empty($mutualSettlementDetailAdjustmentWriteRegisters))) {
+            unset($this->mutualSettlementDetailAdjustmentWriteRegisters);
+        } else {
+            $this->mutualSettlementDetailAdjustmentWriteRegisters = $mutualSettlementDetailAdjustmentWriteRegisters;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailAdjustmentWriteRegisters = $mutualSettlementDetailAdjustmentWriteRegisters;
         return $this;
     }
     /**
@@ -1266,64 +1308,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailSafeCustody;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailSafeCustody method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSafeCustody method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailSafeCustodyForChoiceConstraintsFromSetMutualSettlementDetailSafeCustody($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustodyCalculation',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailSafeCustody can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSafeCustody, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailSafeCustody value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailSafeCustody(\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailSafeCustodyForChoiceConstraintsFromSetMutualSettlementDetailSafeCustody($mutualSettlementDetailSafeCustody))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailSafeCustody) || (is_array($mutualSettlementDetailSafeCustody) && empty($mutualSettlementDetailSafeCustody))) {
+            unset($this->mutualSettlementDetailSafeCustody);
+        } else {
+            $this->mutualSettlementDetailSafeCustody = $mutualSettlementDetailSafeCustody;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustody can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailSafeCustody = $mutualSettlementDetailSafeCustody;
         return $this;
     }
     /**
@@ -1335,64 +1380,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailSafeCustodyCalculation;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailSafeCustodyCalculation method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSafeCustodyCalculation method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailRegisterStorage',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSafeCustodyCalculation, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailSafeCustodyCalculation value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailSafeCustodyCalculation(\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($mutualSettlementDetailSafeCustodyCalculation))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailSafeCustodyCalculation) || (is_array($mutualSettlementDetailSafeCustodyCalculation) && empty($mutualSettlementDetailSafeCustodyCalculation))) {
+            unset($this->mutualSettlementDetailSafeCustodyCalculation);
+        } else {
+            $this->mutualSettlementDetailSafeCustodyCalculation = $mutualSettlementDetailSafeCustodyCalculation;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRegisterStorage)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property mutualSettlementDetailRegisterStorage is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailSafeCustodyCalculation = $mutualSettlementDetailSafeCustodyCalculation;
         return $this;
     }
     /**
@@ -1404,64 +1452,67 @@ class ApiDetails extends AbstractStructBase
         return $this->mutualSettlementDetailRegisterStorage;
     }
     /**
+     * This method is responsible for validating the value passed to the setMutualSettlementDetailRegisterStorage method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailRegisterStorage method
+     * This has to validate that the property which is being set is the only one among the given choices
+     * @param mixed $value
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public function validateMutualSettlementDetailRegisterStorageForChoiceConstraintsFromSetMutualSettlementDetailRegisterStorage($value)
+    {
+        $message = '';
+        if (is_null($value)) {
+            return $message;
+        }
+        $properties = [
+            'mutualSettlementDetailCalcCostShipping',
+            'mutualSettlementDetailCashFlow',
+            'mutualSettlementDetailClientPayment',
+            'mutualSettlementDetailPostReturnRegistry',
+            'mutualSettlementDetailRouteList',
+            'mutualSettlementDetailTrackNumberPayment',
+            'mutualSettlementDetailServiceRegistration',
+            'mutualSettlementDetailAcceptanceRegistry',
+            'mutualSettlementDetailAdditionalChargeFare',
+            'mutualSettlementDetailOutgoingRequestToCarrier',
+            'mutualSettlementDetailSMSInformation',
+            'mutualSettlementDetailBuyerGoodsReturn',
+            'mutualSettlementDetailProductsPackaging',
+            'mutualSettlementDetailAdjustmentWriteRegisters',
+            'mutualSettlementDetailSafeCustody',
+            'mutualSettlementDetailSafeCustodyCalculation',
+        ];
+        try {
+            foreach ($properties as $property) {
+                if (isset($this->{$property})) {
+                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailRegisterStorage can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailRegisterStorage, %s.', $property, implode(', ', $properties)), __LINE__);
+                }
+            }
+        } catch (\InvalidArgumentException $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+    /**
      * Set mutualSettlementDetailRegisterStorage value
-     * This property belongs to a choice that allows only one property to exist
+     * This property belongs to a choice that allows only one property to exist. It is
+     * therefore removable from the request, consequently if the value assigned to this
+     * property is null, the property is removed from this object
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage
      * @return \Api\StructType\ApiDetails
      */
     public function setMutualSettlementDetailRegisterStorage(\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null)
     {
-        // validation(s) for constraint: choice
-        if (isset($this->mutualSettlementDetailCalcCostShipping)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailCalcCostShipping is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        // validation for constraint: choice
+        if ('' !== ($message = self::validateMutualSettlementDetailRegisterStorageForChoiceConstraintsFromSetMutualSettlementDetailRegisterStorage($mutualSettlementDetailRegisterStorage))) {
+            throw new \InvalidArgumentException($message, __LINE__);
         }
-        if (isset($this->mutualSettlementDetailCashFlow)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailCashFlow is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
+        if (is_null($mutualSettlementDetailRegisterStorage) || (is_array($mutualSettlementDetailRegisterStorage) && empty($mutualSettlementDetailRegisterStorage))) {
+            unset($this->mutualSettlementDetailRegisterStorage);
+        } else {
+            $this->mutualSettlementDetailRegisterStorage = $mutualSettlementDetailRegisterStorage;
         }
-        if (isset($this->mutualSettlementDetailClientPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailClientPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailPostReturnRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailPostReturnRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailRouteList)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailRouteList is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailTrackNumberPayment)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailTrackNumberPayment is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailServiceRegistration)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailServiceRegistration is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAcceptanceRegistry)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailAcceptanceRegistry is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdditionalChargeFare)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailAdditionalChargeFare is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailOutgoingRequestToCarrier)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailOutgoingRequestToCarrier is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSMSInformation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailSMSInformation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailBuyerGoodsReturn)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailBuyerGoodsReturn is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailProductsPackaging)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailProductsPackaging is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailAdjustmentWriteRegisters)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailAdjustmentWriteRegisters is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustody)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailSafeCustody is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        if (isset($this->mutualSettlementDetailSafeCustodyCalculation)) {
-            throw new \InvalidArgumentException('The property mutualSettlementDetailRegisterStorage can\'t be set as the property mutualSettlementDetailSafeCustodyCalculation is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage.', __LINE__);
-        }
-        $this->mutualSettlementDetailRegisterStorage = $mutualSettlementDetailRegisterStorage;
         return $this;
     }
     /**

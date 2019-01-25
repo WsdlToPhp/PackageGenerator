@@ -119,14 +119,6 @@ class Rules
     }
 
     /**
-     * @return ChoiceRule
-     */
-    public function getChoiceRule()
-    {
-        return $this->getRule('choice');
-    }
-
-    /**
      * @return ListRule
      */
     public function getListRule()

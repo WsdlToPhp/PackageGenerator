@@ -44,7 +44,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateWebSearchOptionValuesFromSetWebSearchOption(array $values = array())
+    public static function validateWebSearchOptionForArrayContraintsFromSetWebSearchOption(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -71,7 +71,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     public function setWebSearchOption(array $webSearchOption = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateWebSearchOptionValuesFromSetWebSearchOption($webSearchOption))) {
+        if ('' !== ($message = self::validateWebSearchOptionForArrayContraintsFromSetWebSearchOption($webSearchOption))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->WebSearchOption = $webSearchOption;

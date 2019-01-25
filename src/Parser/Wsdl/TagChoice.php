@@ -55,11 +55,11 @@ class TagChoice extends AbstractTagParser
 
     /**
      * @param Choice $choice
-     * @param array $unionNames
+     * @param string[] $choiceNames
      * @param AbstractTag $child
      * @param Struct $struct
      */
-    protected function parseChoiceChild(Choice $choice, array $unionNames, AbstractTag $child, Struct $struct)
+    protected function parseChoiceChild(Choice $choice, array $choiceNames, AbstractTag $child, Struct $struct)
     {
         $attributeName = $child->getAttributeName();
         if (empty($attributeName) && ($attributeRef = $child->getAttributeRef())) {
@@ -67,7 +67,7 @@ class TagChoice extends AbstractTagParser
         }
         if (($structAttribute = $struct->getAttribute($attributeName)) instanceof StructAttribute) {
             $structAttribute
-                ->addMeta('choiceNames', $unionNames)
+                ->addMeta('choice', $choiceNames)
                 ->addMeta('choiceMaxOccurs', $choice->getMaxOccurs())
                 ->addMeta('choiceMinOccurs', $choice->getMinOccurs());
         }

@@ -6592,9 +6592,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6613,6 +6611,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailCalcCostShipping"
                         },
                         "name": "mutualSettlementDetailCalcCostShipping",
@@ -6625,9 +6625,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6646,6 +6644,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailCashFlow"
                         },
                         "name": "mutualSettlementDetailCashFlow",
@@ -6658,9 +6658,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6679,6 +6677,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailClientPayment"
                         },
                         "name": "mutualSettlementDetailClientPayment",
@@ -6691,9 +6691,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6712,6 +6710,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailPostReturnRegistry"
                         },
                         "name": "mutualSettlementDetailPostReturnRegistry",
@@ -6724,9 +6724,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6745,6 +6743,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailRouteList"
                         },
                         "name": "mutualSettlementDetailRouteList",
@@ -6757,9 +6757,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6778,6 +6776,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailTrackNumberPayment"
                         },
                         "name": "mutualSettlementDetailTrackNumberPayment",
@@ -6790,9 +6790,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6811,6 +6809,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailServiceRegistration"
                         },
                         "name": "mutualSettlementDetailServiceRegistration",
@@ -6823,9 +6823,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6844,6 +6842,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailAcceptanceRegistry"
                         },
                         "name": "mutualSettlementDetailAcceptanceRegistry",
@@ -6856,9 +6856,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6877,6 +6875,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailAdditionalChargeFare"
                         },
                         "name": "mutualSettlementDetailAdditionalChargeFare",
@@ -6889,9 +6889,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6910,6 +6908,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailOutgoingRequestToCarrier"
                         },
                         "name": "mutualSettlementDetailOutgoingRequestToCarrier",
@@ -6922,9 +6922,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6943,6 +6941,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailSMSInformation"
                         },
                         "name": "mutualSettlementDetailSMSInformation",
@@ -6955,9 +6955,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -6976,6 +6974,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailBuyerGoodsReturn"
                         },
                         "name": "mutualSettlementDetailBuyerGoodsReturn",
@@ -6988,9 +6988,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -7009,6 +7007,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailProductsPackaging"
                         },
                         "name": "mutualSettlementDetailProductsPackaging",
@@ -7021,9 +7021,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -7042,6 +7040,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailAdjustmentWriteRegisters"
                         },
                         "name": "mutualSettlementDetailAdjustmentWriteRegisters",
@@ -7054,9 +7054,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -7075,6 +7073,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailSafeCustody"
                         },
                         "name": "mutualSettlementDetailSafeCustody",
@@ -7087,9 +7087,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -7108,6 +7106,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailSafeCustodyCalculation"
                         },
                         "name": "mutualSettlementDetailSafeCustodyCalculation",
@@ -7120,9 +7120,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailCalcCostShipping",
                                 "mutualSettlementDetailCashFlow",
                                 "mutualSettlementDetailClientPayment",
@@ -7141,6 +7139,8 @@
                                 "mutualSettlementDetailSafeCustodyCalculation",
                                 "mutualSettlementDetailRegisterStorage"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailRegisterStorage"
                         },
                         "name": "mutualSettlementDetailRegisterStorage",
@@ -8068,12 +8068,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailRouteListOrder",
                                 "mutualSettlementDetailRouteListPickupRequest"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailRouteListOrder"
                         },
                         "name": "mutualSettlementDetailRouteListOrder",
@@ -8086,12 +8086,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "mutualSettlementDetailRouteListOrder",
                                 "mutualSettlementDetailRouteListPickupRequest"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailRouteListPickupRequest"
                         },
                         "name": "mutualSettlementDetailRouteListPickupRequest",

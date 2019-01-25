@@ -117,7 +117,7 @@ class ApiTaxType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxDescriptionValuesFromSetTaxDescription(array $values = array())
+    public static function validateTaxDescriptionForArrayContraintsFromSetTaxDescription(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -142,7 +142,7 @@ class ApiTaxType extends AbstractStructBase
     public function setTaxDescription(array $taxDescription = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateTaxDescriptionValuesFromSetTaxDescription($taxDescription))) {
+        if ('' !== ($message = self::validateTaxDescriptionForArrayContraintsFromSetTaxDescription($taxDescription))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->TaxDescription = $taxDescription;

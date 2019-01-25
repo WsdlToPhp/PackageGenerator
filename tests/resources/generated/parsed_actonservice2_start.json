@@ -1190,13 +1190,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "messageTemplateId",
                                 "resendSentMessageId",
                                 "CustomEmail"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The ID of the message template to use as the content of the message to send. You may also use an ID of a previously sent message to copy the message content to the new message. Delivery and response reports will be tracked for the message."
                             ],
@@ -1212,13 +1212,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "messageTemplateId",
                                 "resendSentMessageId",
                                 "CustomEmail"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The ID of a previously sent message or triggered message to send. The delivery and response reports for the re-send will get merged with the existing reports for this message"
                             ],
@@ -1234,13 +1234,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "messageTemplateId",
                                 "resendSentMessageId",
                                 "CustomEmail"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "minOccurs": "0"
                         },
                         "name": "CustomEmail",
@@ -1371,12 +1371,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "sendToListId",
                                 "contactId"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "One or more contact list (or segment) IDs with email addresses to send-to."
                             ],
@@ -1392,12 +1392,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "sendToListId",
                                 "contactId"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Optional: Selection set of one or more contacts to send to. If specified, only these contacts will be sent the email."
                             ],
@@ -2176,9 +2176,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2191,6 +2189,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The jobID returned in the uploadListResponse from the asynchrounous uploadList method call. This is the ID of the job for which you want to poll for the upload results."
                             ]
@@ -2205,9 +2205,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2220,6 +2218,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The job status (pending or running) if the job has not yet completed. This will be the only reported result if the job has not yet completed."
                             ]
@@ -2234,9 +2234,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2249,6 +2247,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The uploaded list Id."
                             ]
@@ -2263,9 +2263,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2278,6 +2276,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The ID of the segment created with merged records (if requested)"
                             ],
@@ -2293,9 +2293,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2308,6 +2306,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Number of appended records after an upload or merge"
                             ]
@@ -2322,9 +2322,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2337,6 +2335,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Number of updated records after a merge."
                             ]
@@ -2351,9 +2351,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2366,6 +2364,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Number of rejected records after an upload or merge. (see also rejectedRecords attachment)"
                             ]
@@ -2380,9 +2380,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2395,6 +2393,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Attachment list of records that were rejected on upload or merge. Missing if there were no rejected records after upload or merge."
                             ],
@@ -2410,9 +2410,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2425,6 +2423,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "minOccurs": "0"
                         },
                         "name": "appendedRecords",
@@ -2437,9 +2437,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2452,6 +2450,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "minOccurs": "0"
                         },
                         "name": "updatedRecords",
@@ -2464,9 +2464,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "jobID",
                                 "jobStatus",
                                 "contactListId",
@@ -2479,6 +2477,8 @@
                                 "updatedRecords",
                                 "unchangedRecords"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "minOccurs": "0"
                         },
                         "name": "unchangedRecords",

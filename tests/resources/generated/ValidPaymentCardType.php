@@ -316,7 +316,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTelephoneValuesFromSetTelephone(array $values = array())
+    public static function validateTelephoneForArrayContraintsFromSetTelephone(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -341,7 +341,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setTelephone(array $telephone = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateTelephoneValuesFromSetTelephone($telephone))) {
+        if ('' !== ($message = self::validateTelephoneForArrayContraintsFromSetTelephone($telephone))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->Telephone = $telephone;
@@ -376,7 +376,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmailValuesFromSetEmail(array $values = array())
+    public static function validateEmailForArrayContraintsFromSetEmail(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -401,7 +401,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setEmail(array $email = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateEmailValuesFromSetEmail($email))) {
+        if ('' !== ($message = self::validateEmailForArrayContraintsFromSetEmail($email))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->Email = $email;

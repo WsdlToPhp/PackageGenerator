@@ -1957,13 +1957,13 @@
                         "abstract": false,
                         "meta": {
                             "base": "string",
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "linkId",
                                 "paymentId",
                                 "merchantReference"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1",
                             "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}"
@@ -1978,13 +1978,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "linkId",
                                 "paymentId",
                                 "merchantReference"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -1998,13 +1998,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "linkId",
                                 "paymentId",
                                 "merchantReference"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3202,9 +3202,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3217,6 +3215,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3230,9 +3230,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3245,6 +3243,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3258,9 +3258,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3273,6 +3271,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3286,9 +3286,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3301,6 +3299,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3314,9 +3314,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3329,6 +3327,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3342,9 +3342,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3357,6 +3355,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3370,9 +3370,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3385,6 +3383,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3398,9 +3398,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3413,6 +3411,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3426,9 +3426,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3441,6 +3439,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3454,9 +3454,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3469,6 +3467,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3482,9 +3482,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInput",
                                 "masterCardPaymentInput",
                                 "misterCashPaymentInput",
@@ -3497,6 +3495,8 @@
                                 "elvPaymentInput",
                                 "iDealPaymentInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3528,15 +3528,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "cardHolderName",
                                 "cardNumber",
                                 "expiryDate",
                                 "securityCode",
                                 "encryptedData"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3550,15 +3550,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "cardHolderName",
                                 "cardNumber",
                                 "expiryDate",
                                 "securityCode",
                                 "encryptedData"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3572,15 +3572,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "cardHolderName",
                                 "cardNumber",
                                 "expiryDate",
                                 "securityCode",
                                 "encryptedData"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3594,15 +3594,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "cardHolderName",
                                 "cardNumber",
                                 "expiryDate",
                                 "securityCode",
                                 "encryptedData"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },
@@ -3616,15 +3616,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "cardHolderName",
                                 "cardNumber",
                                 "expiryDate",
                                 "securityCode",
                                 "encryptedData"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4223,9 +4223,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4246,6 +4244,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4259,9 +4259,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4282,6 +4280,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4295,9 +4295,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4318,6 +4316,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4331,9 +4331,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4354,6 +4352,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4367,9 +4367,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4390,6 +4388,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4403,9 +4403,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4426,6 +4424,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4439,9 +4439,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4462,6 +4460,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4475,9 +4475,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4498,6 +4496,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4511,9 +4511,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4534,6 +4532,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4547,9 +4547,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4570,6 +4568,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4583,9 +4583,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4606,6 +4604,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4619,9 +4619,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4642,6 +4640,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4655,9 +4655,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4678,6 +4676,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4691,9 +4691,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4714,6 +4712,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4727,9 +4727,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4750,6 +4748,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4763,9 +4763,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4786,6 +4784,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4799,9 +4799,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4822,6 +4820,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4835,9 +4835,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4858,6 +4856,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4871,9 +4871,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "amexPaymentInfo",
                                 "masterCardPaymentInfo",
                                 "visaPaymentInfo",
@@ -4894,6 +4892,8 @@
                                 "eBankingPaymentInfo",
                                 "systemPaymentInfo"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7079,12 +7079,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "createErrors",
                                 "createSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "An error occurred. No payment order was created."
                             ],
@@ -7101,12 +7101,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "createErrors",
                                 "createSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "A payment order was successfully created. This does not mean that the whole request was processed successfully! The paymentResponse (see child elements) can still contain errors."
                             ],
@@ -7334,12 +7334,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "refundItems",
                                 "simpleRefundGroup"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7462,12 +7462,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "refundErrors",
                                 "refundSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "An error occurred. No refund request was created."
                             ],
@@ -7484,12 +7484,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "refundErrors",
                                 "refundSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "A request for refund was successfully accepted. This does not mean that the whole request will be or has been processed successfully!"
                             ],
@@ -7702,12 +7702,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "cancelErrors",
                                 "cancelSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7721,12 +7721,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "cancelErrors",
                                 "cancelSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Returns summarized information about cancelation of the payments of this order. Use \"status\" to retrieve more information."
                             ],
@@ -7908,9 +7908,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "recurringPaymentRequest",
                                 "payment",
                                 "token",
@@ -7918,6 +7916,8 @@
                                 "shopperInfo",
                                 ""
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Specifies a request for a recurring payment. It should target an existing previous payment that will be used to start a new payment with directly. Reservations are also made as the starting point for upcoming repeated payments if needed. Must be specified if not giving direct payment request input."
                             ],
@@ -7934,9 +7934,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "recurringPaymentRequest",
                                 "payment",
                                 "token",
@@ -7946,6 +7944,8 @@
                                 "payment",
                                 "token"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Specifies the details needed for starting a payment for a shopper without showing the hosted payment pages. Must be specified if not a subsequent recurring payment."
                             ],
@@ -7962,9 +7962,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "recurringPaymentRequest",
                                 "payment",
                                 "token",
@@ -7974,6 +7972,8 @@
                                 "payment",
                                 "token"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Pay with a token."
                             ],
@@ -7990,9 +7990,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "recurringPaymentRequest",
                                 "payment",
                                 "token",
@@ -8000,6 +7998,8 @@
                                 "shopperInfo",
                                 ""
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Optional return url to be used. If left empty, no return url will be used. (Limit is set by Internet Explorer of 2083 characters)"
                             ],
@@ -8016,9 +8016,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "recurringPaymentRequest",
                                 "payment",
                                 "token",
@@ -8026,6 +8024,8 @@
                                 "shopperInfo",
                                 ""
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },
@@ -8099,12 +8099,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "startErrors",
                                 "startSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8118,12 +8118,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "startErrors",
                                 "startSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8299,12 +8299,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "threeDomainSecureAuthenticationResult",
                                 "iDealAuthorizationResult"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "3DS Authentication result data. (tag name cannot start with a number)"
                             ],
@@ -8321,12 +8321,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "threeDomainSecureAuthenticationResult",
                                 "iDealAuthorizationResult"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "iDEAL authorization result data. No additional data is required."
                             ],
@@ -8403,12 +8403,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "proceedErrors",
                                 "proceedSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8422,12 +8422,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "proceedErrors",
                                 "proceedSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8762,12 +8762,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "captureErrors",
                                 "captureSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8781,12 +8781,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "captureErrors",
                                 "captureSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8990,12 +8990,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "statusErrors",
                                 "statusSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9009,12 +9009,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "statusErrors",
                                 "statusSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9144,12 +9144,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "statusErrors",
                                 "statusSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9163,12 +9163,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "statusErrors",
                                 "statusSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9343,12 +9343,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "listPaymentMethodsErrors",
                                 "listPaymentMethodsSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9362,12 +9362,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "listPaymentMethodsErrors",
                                 "listPaymentMethodsSuccess"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9698,13 +9698,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexTokenInput",
                                 "masterCardTokenInput",
                                 "visaTokenInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9718,13 +9718,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexTokenInput",
                                 "masterCardTokenInput",
                                 "visaTokenInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9738,13 +9738,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "amexTokenInput",
                                 "masterCardTokenInput",
                                 "visaTokenInput"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9787,12 +9787,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "securityCode",
                                 "encryptedData"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -9806,12 +9806,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "securityCode",
                                 "encryptedData"
                             ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },

@@ -1495,7 +1495,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBillingAgreementDetailsValuesFromSetBillingAgreementDetails(array $values = array())
+    public static function validateBillingAgreementDetailsForArrayContraintsFromSetBillingAgreementDetails(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -1520,7 +1520,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setBillingAgreementDetails(array $billingAgreementDetails = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateBillingAgreementDetailsValuesFromSetBillingAgreementDetails($billingAgreementDetails))) {
+        if ('' !== ($message = self::validateBillingAgreementDetailsForArrayContraintsFromSetBillingAgreementDetails($billingAgreementDetails))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->BillingAgreementDetails = $billingAgreementDetails;
@@ -1555,7 +1555,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePromoCodesValuesFromSetPromoCodes(array $values = array())
+    public static function validatePromoCodesForArrayContraintsFromSetPromoCodes(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -1580,7 +1580,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setPromoCodes(array $promoCodes = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validatePromoCodesValuesFromSetPromoCodes($promoCodes))) {
+        if ('' !== ($message = self::validatePromoCodesForArrayContraintsFromSetPromoCodes($promoCodes))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->PromoCodes = $promoCodes;
@@ -1811,7 +1811,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOtherPaymentMethodsValuesFromSetOtherPaymentMethods(array $values = array())
+    public static function validateOtherPaymentMethodsForArrayContraintsFromSetOtherPaymentMethods(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -1836,7 +1836,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setOtherPaymentMethods(array $otherPaymentMethods = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateOtherPaymentMethodsValuesFromSetOtherPaymentMethods($otherPaymentMethods))) {
+        if ('' !== ($message = self::validateOtherPaymentMethodsForArrayContraintsFromSetOtherPaymentMethods($otherPaymentMethods))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->OtherPaymentMethods = $otherPaymentMethods;
@@ -1889,7 +1889,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentDetailsValuesFromSetPaymentDetails(array $values = array())
+    public static function validatePaymentDetailsForArrayContraintsFromSetPaymentDetails(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -1914,7 +1914,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setPaymentDetails(array $paymentDetails = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validatePaymentDetailsValuesFromSetPaymentDetails($paymentDetails))) {
+        if ('' !== ($message = self::validatePaymentDetailsForArrayContraintsFromSetPaymentDetails($paymentDetails))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->PaymentDetails = $paymentDetails;
@@ -1949,7 +1949,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlatRateShippingOptionsValuesFromSetFlatRateShippingOptions(array $values = array())
+    public static function validateFlatRateShippingOptionsForArrayContraintsFromSetFlatRateShippingOptions(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -1974,7 +1974,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setFlatRateShippingOptions(array $flatRateShippingOptions = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateFlatRateShippingOptionsValuesFromSetFlatRateShippingOptions($flatRateShippingOptions))) {
+        if ('' !== ($message = self::validateFlatRateShippingOptionsForArrayContraintsFromSetFlatRateShippingOptions($flatRateShippingOptions))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->FlatRateShippingOptions = $flatRateShippingOptions;
@@ -2247,7 +2247,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSurveyChoiceValuesFromSetSurveyChoice(array $values = array())
+    public static function validateSurveyChoiceForArrayContraintsFromSetSurveyChoice(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -2272,7 +2272,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setSurveyChoice(array $surveyChoice = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateSurveyChoiceValuesFromSetSurveyChoice($surveyChoice))) {
+        if ('' !== ($message = self::validateSurveyChoiceForArrayContraintsFromSetSurveyChoice($surveyChoice))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->SurveyChoice = $surveyChoice;
@@ -2354,7 +2354,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIncentivesValuesFromSetIncentives(array $values = array())
+    public static function validateIncentivesForArrayContraintsFromSetIncentives(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -2379,7 +2379,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setIncentives(array $incentives = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateIncentivesValuesFromSetIncentives($incentives))) {
+        if ('' !== ($message = self::validateIncentivesForArrayContraintsFromSetIncentives($incentives))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->Incentives = $incentives;
@@ -2508,7 +2508,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCoupledBucketsValuesFromSetCoupledBuckets(array $values = array())
+    public static function validateCoupledBucketsForArrayContraintsFromSetCoupledBuckets(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -2533,7 +2533,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setCoupledBuckets(array $coupledBuckets = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateCoupledBucketsValuesFromSetCoupledBuckets($coupledBuckets))) {
+        if ('' !== ($message = self::validateCoupledBucketsForArrayContraintsFromSetCoupledBuckets($coupledBuckets))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->CoupledBuckets = $coupledBuckets;

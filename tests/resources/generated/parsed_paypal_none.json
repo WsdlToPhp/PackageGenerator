@@ -6795,9 +6795,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -6816,6 +6814,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "minOccurs": "0"
                         },
                         "name": "AccountState",
@@ -6828,9 +6828,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -6849,6 +6847,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
                         },
@@ -6862,9 +6862,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -6883,6 +6881,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Number of additional accounts."
                             ]
@@ -6897,9 +6897,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -6918,6 +6916,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "minOccurs": "0",
                             "ref": "ns:AmountPastDue"
                         },
@@ -6931,9 +6931,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -6952,6 +6950,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "First four digits (with remainder Xed-out). This may be an empty string depending upon the value of the payment type for the user account (e.g, if no debit-card specified)."
                             ]
@@ -6966,9 +6966,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -6987,6 +6985,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Last time\/day BankAccountInfo and\/or BankRoutingInfo was modified, in GMT. This may be an empty string depending upon the value of the payment type for the user account (e.g, if no debit-card specified)."
                             ]
@@ -7001,9 +7001,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7022,6 +7020,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Indicates the billing cycle in which eBay sends a billing invoice to the specified user. Possible values: 0 = On the last day of the month. 15 = On the 15th day of the month."
                             ]
@@ -7036,9 +7036,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7057,6 +7055,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Expiration date for the credit card selected as payment method, in GMT. Empty string if no credit card is on file or if account is inactive -- even if there is a credit card on file."
                             ]
@@ -7071,9 +7071,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7092,6 +7090,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Last four digits of user's credit card selected as payment type. Empty string if no credit is on file. This may be an empty string depending upon the value of the payment type for the user account (e.g, if no debit-card specified)."
                             ]
@@ -7106,9 +7106,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7127,6 +7125,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Last date credit card or credit card expiration date was modified, in GMT. This may be an empty string depending upon the value of the payment type for the user account (e.g, Empty string if no credit card is on file."
                             ]
@@ -7141,9 +7141,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7162,6 +7160,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "ns:CurrentBalance"
                         },
                         "name": "CurrentBalance",
@@ -7174,9 +7174,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7195,6 +7193,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Amount of last payment posted, 0.00 if no payments posted."
                             ]
@@ -7209,9 +7209,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7230,6 +7228,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Amount of last invoice. 0.00 if account not yet invoiced."
                             ]
@@ -7244,9 +7244,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7265,6 +7263,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Date of last invoice sent by eBay to the user, in GMT. Empty string if this account has not been invoiced yet."
                             ]
@@ -7279,9 +7279,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7300,6 +7298,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Date of last payment by specified user to eBay, in GMT. Empty string if no payments posted."
                             ]
@@ -7314,9 +7314,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7335,6 +7333,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Indicates whether the account has past due amounts outstanding. Possible values: true = Account is past due. false = Account is current."
                             ]
@@ -7349,9 +7349,7 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": "unbounded",
-                            "choiceMinOccurs": 0,
-                            "choiceNames": [
+                            "choice": [
                                 "AccountState",
                                 "AdditionalAccount",
                                 "AdditionalAccountsCount",
@@ -7370,6 +7368,8 @@
                                 "PastDue",
                                 "PaymentMethod"
                             ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Indicates the method the specified user selected for paying eBay. The values for PaymentType vary for each SiteID."
                             ]

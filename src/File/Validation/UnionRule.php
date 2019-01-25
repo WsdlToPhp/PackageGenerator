@@ -46,7 +46,7 @@ class UnionRule extends AbstractRule
 
     /**
      * @param $parameterName
-     * @param mixed $unionValues
+     * @param string[] $unionValues
      */
     protected function addValidationMethod($parameterName, array $unionValues)
     {

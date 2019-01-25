@@ -66,7 +66,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDayOfWeekValuesFromSetDayOfWeek(array $values = array())
+    public static function validateDayOfWeekForArrayContraintsFromSetDayOfWeek(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -93,7 +93,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     public function setDayOfWeek(array $dayOfWeek = null)
     {
         // validation for constraint: list
-        if ('' !== ($message = self::validateDayOfWeekValuesFromSetDayOfWeek($dayOfWeek))) {
+        if ('' !== ($message = self::validateDayOfWeekForArrayContraintsFromSetDayOfWeek($dayOfWeek))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->DayOfWeek = is_array($dayOfWeek) ? implode(' ', $dayOfWeek) : null;

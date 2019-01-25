@@ -44,7 +44,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateNewsRelatedSearchValuesFromSetNewsRelatedSearch(array $values = array())
+    public static function validateNewsRelatedSearchForArrayContraintsFromSetNewsRelatedSearch(array $values = array())
     {
         $message = '';
         $invalidValues = [];
@@ -69,7 +69,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
         // validation for constraint: array
-        if ('' !== ($message = self::validateNewsRelatedSearchValuesFromSetNewsRelatedSearch($newsRelatedSearch))) {
+        if ('' !== ($message = self::validateNewsRelatedSearchForArrayContraintsFromSetNewsRelatedSearch($newsRelatedSearch))) {
             throw new \InvalidArgumentException($message, __LINE__);
         }
         $this->NewsRelatedSearch = $newsRelatedSearch;

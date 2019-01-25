@@ -747,12 +747,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "Request",
                                 "Response"
-                            ]
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1
                         },
                         "name": "Request",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -764,12 +764,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
-                            "choiceNames": [
+                            "choice": [
                                 "Request",
                                 "Response"
-                            ]
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1
                         },
                         "name": "Response",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
