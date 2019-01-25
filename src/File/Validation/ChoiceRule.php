@@ -25,6 +25,7 @@ class ChoiceRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
+        $test = '';
         if (is_array($value) && 0 < count($value)) {
             $this->addValidationMethod($parameterName, $value);
             $test = sprintf('\'\' !== ($message = self::%s($%s))', $this->getValidationMethodName($parameterName), $parameterName);
