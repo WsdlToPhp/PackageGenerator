@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2.10.0
+- issue #128 - Using the DOMDocument $any value
+- issue #133 - Choice type
+- issue #153 - Choice type
+- issue #158 - Support of xs:list
+- issue #165 - Improve/Fix validation rules for unions
+- issue #167 - Infinite loop while figuring out the inheritance
+
 ## 2.9.5
 - issue #149 - FractionDigitsRule does not allow less digits than the specified maximum
 - issue #151 - Provide Docker settings
