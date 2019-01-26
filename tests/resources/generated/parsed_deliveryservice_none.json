@@ -768,6 +768,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -782,6 +783,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": true,
                 "meta": [],
@@ -815,6 +817,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "\u0421\u043e\u0441\u0442\u0430\u0432",
                 "abstract": false,
                 "meta": [],
@@ -913,6 +916,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "\u0421\u043e\u0441\u0442\u0430\u0432",
                 "abstract": false,
                 "meta": [],
@@ -938,6 +942,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -983,6 +988,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1020,6 +1026,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1106,6 +1113,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "\u0421\u043e\u0441\u0442\u0430\u0432",
                 "abstract": false,
                 "meta": [],
@@ -1129,6 +1137,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1166,6 +1175,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1335,6 +1345,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1506,6 +1517,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1599,6 +1611,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1626,6 +1639,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1653,6 +1667,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1680,6 +1695,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1707,6 +1723,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1796,6 +1813,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1824,6 +1842,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1852,6 +1871,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1892,6 +1912,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1979,6 +2000,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2007,6 +2029,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2036,6 +2059,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2181,6 +2205,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2216,6 +2241,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2244,6 +2270,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2279,6 +2306,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2307,6 +2335,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2332,6 +2361,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2381,6 +2411,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2743,6 +2774,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2810,6 +2842,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2864,6 +2897,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3099,6 +3133,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3225,6 +3260,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3431,6 +3467,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3459,6 +3496,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3522,6 +3560,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3561,6 +3600,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3599,6 +3639,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3663,6 +3704,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3688,6 +3730,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3723,6 +3766,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3750,6 +3794,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3785,6 +3830,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3812,6 +3858,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3826,6 +3873,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3853,6 +3901,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3979,6 +4028,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4007,6 +4057,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4036,6 +4087,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4160,6 +4212,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4188,6 +4241,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4217,6 +4271,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4252,6 +4307,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4279,6 +4335,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4328,6 +4385,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4356,6 +4414,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4395,6 +4454,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4422,6 +4482,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4448,6 +4509,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4497,6 +4559,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4570,6 +4633,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4603,6 +4667,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -4648,6 +4713,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4675,6 +4741,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4757,6 +4824,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4784,6 +4852,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4843,6 +4912,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4871,6 +4941,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4900,6 +4971,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4945,6 +5017,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4973,6 +5046,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5002,6 +5076,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5161,6 +5236,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5196,6 +5272,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5427,6 +5504,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5453,6 +5531,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5481,6 +5560,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5521,6 +5601,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5619,6 +5700,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5656,6 +5738,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5705,6 +5788,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5935,6 +6019,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5947,6 +6032,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "arrayList",
                 "abstract": false,
                 "meta": [],
@@ -5959,6 +6045,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "abstractList",
                 "abstract": false,
                 "meta": [],
@@ -5971,6 +6058,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "abstractCollection",
                 "abstract": true,
                 "meta": [],
@@ -5983,6 +6071,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": true,
                 "meta": [],
@@ -6016,6 +6105,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6043,6 +6133,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6078,6 +6169,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6115,6 +6207,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6190,6 +6283,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6216,6 +6310,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6279,6 +6374,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6304,6 +6400,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6341,6 +6438,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6368,6 +6466,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6413,6 +6512,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6440,6 +6540,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6465,6 +6566,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6502,6 +6604,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6529,6 +6632,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6604,6 +6708,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6631,6 +6736,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6711,6 +6817,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6728,6 +6835,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailCalcCostShipping"
                         },
                         "name": "mutualSettlementDetailCalcCostShipping",
@@ -6740,6 +6868,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailCashFlow"
                         },
                         "name": "mutualSettlementDetailCashFlow",
@@ -6752,6 +6901,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailClientPayment"
                         },
                         "name": "mutualSettlementDetailClientPayment",
@@ -6764,6 +6934,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailPostReturnRegistry"
                         },
                         "name": "mutualSettlementDetailPostReturnRegistry",
@@ -6776,6 +6967,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailRouteList"
                         },
                         "name": "mutualSettlementDetailRouteList",
@@ -6788,6 +7000,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailTrackNumberPayment"
                         },
                         "name": "mutualSettlementDetailTrackNumberPayment",
@@ -6800,6 +7033,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailServiceRegistration"
                         },
                         "name": "mutualSettlementDetailServiceRegistration",
@@ -6812,6 +7066,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailAcceptanceRegistry"
                         },
                         "name": "mutualSettlementDetailAcceptanceRegistry",
@@ -6824,6 +7099,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailAdditionalChargeFare"
                         },
                         "name": "mutualSettlementDetailAdditionalChargeFare",
@@ -6836,6 +7132,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailOutgoingRequestToCarrier"
                         },
                         "name": "mutualSettlementDetailOutgoingRequestToCarrier",
@@ -6848,6 +7165,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailSMSInformation"
                         },
                         "name": "mutualSettlementDetailSMSInformation",
@@ -6860,6 +7198,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailBuyerGoodsReturn"
                         },
                         "name": "mutualSettlementDetailBuyerGoodsReturn",
@@ -6872,6 +7231,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailProductsPackaging"
                         },
                         "name": "mutualSettlementDetailProductsPackaging",
@@ -6884,6 +7264,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailAdjustmentWriteRegisters"
                         },
                         "name": "mutualSettlementDetailAdjustmentWriteRegisters",
@@ -6896,6 +7297,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailSafeCustody"
                         },
                         "name": "mutualSettlementDetailSafeCustody",
@@ -6908,6 +7330,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailSafeCustodyCalculation"
                         },
                         "name": "mutualSettlementDetailSafeCustodyCalculation",
@@ -6920,6 +7363,27 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailCalcCostShipping",
+                                "mutualSettlementDetailCashFlow",
+                                "mutualSettlementDetailClientPayment",
+                                "mutualSettlementDetailPostReturnRegistry",
+                                "mutualSettlementDetailRouteList",
+                                "mutualSettlementDetailTrackNumberPayment",
+                                "mutualSettlementDetailServiceRegistration",
+                                "mutualSettlementDetailAcceptanceRegistry",
+                                "mutualSettlementDetailAdditionalChargeFare",
+                                "mutualSettlementDetailOutgoingRequestToCarrier",
+                                "mutualSettlementDetailSMSInformation",
+                                "mutualSettlementDetailBuyerGoodsReturn",
+                                "mutualSettlementDetailProductsPackaging",
+                                "mutualSettlementDetailAdjustmentWriteRegisters",
+                                "mutualSettlementDetailSafeCustody",
+                                "mutualSettlementDetailSafeCustodyCalculation",
+                                "mutualSettlementDetailRegisterStorage"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailRegisterStorage"
                         },
                         "name": "mutualSettlementDetailRegisterStorage",
@@ -6930,6 +7394,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6969,6 +7434,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -6998,6 +7464,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7037,6 +7504,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7260,6 +7728,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7299,6 +7768,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7325,6 +7795,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -7392,6 +7863,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7431,6 +7903,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -7472,6 +7945,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7550,6 +8024,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7589,6 +8064,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -7618,6 +8094,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7657,6 +8134,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7722,6 +8200,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7774,6 +8253,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7813,6 +8293,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -7830,6 +8311,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailRouteListOrder",
+                                "mutualSettlementDetailRouteListPickupRequest"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailRouteListOrder"
                         },
                         "name": "mutualSettlementDetailRouteListOrder",
@@ -7842,6 +8329,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "mutualSettlementDetailRouteListOrder",
+                                "mutualSettlementDetailRouteListPickupRequest"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "ref": "tns:mutualSettlementDetailRouteListPickupRequest"
                         },
                         "name": "mutualSettlementDetailRouteListPickupRequest",
@@ -7852,6 +8345,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7891,6 +8385,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7943,6 +8438,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetailRouteListDocument",
                 "abstract": false,
                 "meta": {
@@ -7971,6 +8467,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": true,
                 "meta": [],
@@ -8023,6 +8520,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8062,6 +8560,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetailRouteListDocument",
                 "abstract": false,
                 "meta": {
@@ -8103,6 +8602,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -8144,6 +8644,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8209,6 +8710,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8274,6 +8776,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8300,6 +8803,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -8367,6 +8871,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8406,6 +8911,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -8435,6 +8941,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8474,6 +8981,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8539,6 +9047,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8591,6 +9100,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8630,6 +9140,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -8671,6 +9182,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8736,6 +9248,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8788,6 +9301,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8827,6 +9341,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -8868,6 +9383,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8933,6 +9449,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8985,6 +9502,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9011,6 +9529,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -9091,6 +9610,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9130,6 +9650,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -9210,6 +9731,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9249,6 +9771,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9288,6 +9811,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -9381,6 +9905,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9420,6 +9945,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9446,6 +9972,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -9487,6 +10014,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9513,6 +10041,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -9554,6 +10083,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9593,6 +10123,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -9686,6 +10217,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9713,6 +10245,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9778,6 +10311,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9817,6 +10351,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9843,6 +10378,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "mutualSettlementDetail",
                 "abstract": false,
                 "meta": {
@@ -9884,6 +10420,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9917,6 +10454,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9944,6 +10482,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9972,6 +10511,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10024,6 +10564,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -10147,6 +10688,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -10180,6 +10722,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10208,6 +10751,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10297,6 +10841,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10325,6 +10870,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10354,6 +10900,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10438,6 +10985,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10465,6 +11013,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10512,6 +11061,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10539,6 +11089,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10584,6 +11135,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10612,6 +11164,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10659,6 +11212,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10686,6 +11240,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10721,6 +11276,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10749,6 +11305,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10774,6 +11331,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10802,6 +11360,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10831,6 +11390,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10870,6 +11430,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -10915,6 +11476,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -10952,6 +11514,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -10997,6 +11560,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11402,6 +11966,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11447,6 +12012,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11476,6 +12042,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11513,6 +12080,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11702,6 +12270,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11731,6 +12300,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11768,6 +12338,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -11790,8 +12361,8 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": __ORIGIN__,
-        "destination": __DESTINATION__,
+        "origin": "__ORIGIN__",
+        "destination": "__DESTINATION__",
         "src_dirname": "src",
         "prefix": "Api",
         "suffix": "",

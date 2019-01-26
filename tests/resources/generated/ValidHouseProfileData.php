@@ -610,11 +610,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($area_total) && strlen(substr($area_total, strpos($area_total, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_total, strpos($area_total, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_total, true), strlen(substr($area_total, strpos($area_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($area_total) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $area_total)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($area_total, strpos($area_total, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($area_total, true), strlen(substr($area_total, strpos($area_total, '.')))), __LINE__);
         }
         $this->area_total = $area_total;
         return $this;
@@ -636,11 +636,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($area_residential) && strlen(substr($area_residential, strpos($area_residential, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_residential, strpos($area_residential, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_residential, true), strlen(substr($area_residential, strpos($area_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($area_residential) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $area_residential)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($area_residential, strpos($area_residential, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($area_residential, true), strlen(substr($area_residential, strpos($area_residential, '.')))), __LINE__);
         }
         $this->area_residential = $area_residential;
         return $this;
@@ -662,11 +662,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($area_non_residential) && strlen(substr($area_non_residential, strpos($area_non_residential, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_non_residential, strpos($area_non_residential, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_non_residential, true), strlen(substr($area_non_residential, strpos($area_non_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($area_non_residential) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $area_non_residential)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($area_non_residential, strpos($area_non_residential, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($area_non_residential, true), strlen(substr($area_non_residential, strpos($area_non_residential, '.')))), __LINE__);
         }
         $this->area_non_residential = $area_non_residential;
         return $this;
@@ -688,7 +688,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cadastral_number) && !is_string($cadastral_number)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cadastral_number)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cadastral_number, true), gettype($cadastral_number)), __LINE__);
         }
         $this->cadastral_number = $cadastral_number;
         return $this;
@@ -710,7 +710,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($project_type) && !is_string($project_type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($project_type)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($project_type, true), gettype($project_type)), __LINE__);
         }
         $this->project_type = $project_type;
         return $this;
@@ -732,7 +732,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($location_description) && !is_string($location_description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($location_description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location_description, true), gettype($location_description)), __LINE__);
         }
         $this->location_description = $location_description;
         return $this;
@@ -754,7 +754,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($individual_name) && !is_string($individual_name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($individual_name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($individual_name, true), gettype($individual_name)), __LINE__);
         }
         $this->individual_name = $individual_name;
         return $this;
@@ -779,7 +779,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseTypeEnum::valueIsValid($house_type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $house_type, implode(', ', \Api\EnumType\ApiHouseTypeEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseTypeEnum', is_array($house_type) ? implode(', ', $house_type) : var_export($house_type, true), implode(', ', \Api\EnumType\ApiHouseTypeEnum::getValidValues())), __LINE__);
         }
         $this->house_type = $house_type;
         return $this;
@@ -801,7 +801,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($exploitation_start_year) && !is_string($exploitation_start_year)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($exploitation_start_year)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($exploitation_start_year, true), gettype($exploitation_start_year)), __LINE__);
         }
         $this->exploitation_start_year = $exploitation_start_year;
         return $this;
@@ -826,7 +826,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseWallMaterialEnum::valueIsValid($wall_material)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $wall_material, implode(', ', \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseWallMaterialEnum', is_array($wall_material) ? implode(', ', $wall_material) : var_export($wall_material, true), implode(', ', \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues())), __LINE__);
         }
         $this->wall_material = $wall_material;
         return $this;
@@ -851,7 +851,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseFloorTypeEnum::valueIsValid($floor_type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $floor_type, implode(', ', \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseFloorTypeEnum', is_array($floor_type) ? implode(', ', $floor_type) : var_export($floor_type, true), implode(', ', \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues())), __LINE__);
         }
         $this->floor_type = $floor_type;
         return $this;
@@ -873,7 +873,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($storeys_count) && !is_numeric($storeys_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($storeys_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($storeys_count, true), gettype($storeys_count)), __LINE__);
         }
         $this->storeys_count = $storeys_count;
         return $this;
@@ -895,7 +895,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($entrance_count) && !is_numeric($entrance_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($entrance_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($entrance_count, true), gettype($entrance_count)), __LINE__);
         }
         $this->entrance_count = $entrance_count;
         return $this;
@@ -917,7 +917,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($elevators_count) && !is_numeric($elevators_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($elevators_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($elevators_count, true), gettype($elevators_count)), __LINE__);
         }
         $this->elevators_count = $elevators_count;
         return $this;
@@ -939,11 +939,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($area_private) && strlen(substr($area_private, strpos($area_private, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_private, strpos($area_private, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_private, true), strlen(substr($area_private, strpos($area_private, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($area_private) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $area_private)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($area_private, strpos($area_private, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($area_private, true), strlen(substr($area_private, strpos($area_private, '.')))), __LINE__);
         }
         $this->area_private = $area_private;
         return $this;
@@ -965,11 +965,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($area_municipal) && strlen(substr($area_municipal, strpos($area_municipal, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_municipal, strpos($area_municipal, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_municipal, true), strlen(substr($area_municipal, strpos($area_municipal, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($area_municipal) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $area_municipal)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($area_municipal, strpos($area_municipal, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($area_municipal, true), strlen(substr($area_municipal, strpos($area_municipal, '.')))), __LINE__);
         }
         $this->area_municipal = $area_municipal;
         return $this;
@@ -991,11 +991,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($area_national) && strlen(substr($area_national, strpos($area_national, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_national, strpos($area_national, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_national, true), strlen(substr($area_national, strpos($area_national, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($area_national) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $area_national)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($area_national, strpos($area_national, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($area_national, true), strlen(substr($area_national, strpos($area_national, '.')))), __LINE__);
         }
         $this->area_national = $area_national;
         return $this;
@@ -1017,11 +1017,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($area_land) && strlen(substr($area_land, strpos($area_land, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_land, strpos($area_land, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_land, true), strlen(substr($area_land, strpos($area_land, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($area_land) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $area_land)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($area_land, strpos($area_land, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($area_land, true), strlen(substr($area_land, strpos($area_land, '.')))), __LINE__);
         }
         $this->area_land = $area_land;
         return $this;
@@ -1043,11 +1043,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($area_territory) && strlen(substr($area_territory, strpos($area_territory, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($area_territory, strpos($area_territory, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_territory, true), strlen(substr($area_territory, strpos($area_territory, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($area_territory) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $area_territory)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($area_territory, strpos($area_territory, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($area_territory, true), strlen(substr($area_territory, strpos($area_territory, '.')))), __LINE__);
         }
         $this->area_territory = $area_territory;
         return $this;
@@ -1069,7 +1069,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($inventory_number) && !is_string($inventory_number)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($inventory_number)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($inventory_number, true), gettype($inventory_number)), __LINE__);
         }
         $this->inventory_number = $inventory_number;
         return $this;
@@ -1091,7 +1091,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($flats_count) && !is_numeric($flats_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($flats_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($flats_count, true), gettype($flats_count)), __LINE__);
         }
         $this->flats_count = $flats_count;
         return $this;
@@ -1113,7 +1113,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($residents_count) && !is_numeric($residents_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($residents_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($residents_count, true), gettype($residents_count)), __LINE__);
         }
         $this->residents_count = $residents_count;
         return $this;
@@ -1135,7 +1135,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($accounts_count) && !is_numeric($accounts_count)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($accounts_count)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($accounts_count, true), gettype($accounts_count)), __LINE__);
         }
         $this->accounts_count = $accounts_count;
         return $this;
@@ -1157,7 +1157,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($construction_features) && !is_string($construction_features)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($construction_features)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($construction_features, true), gettype($construction_features)), __LINE__);
         }
         $this->construction_features = $construction_features;
         return $this;
@@ -1179,11 +1179,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($thermal_actual_expense) && strlen(substr($thermal_actual_expense, strpos($thermal_actual_expense, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($thermal_actual_expense, strpos($thermal_actual_expense, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_actual_expense, true), strlen(substr($thermal_actual_expense, strpos($thermal_actual_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($thermal_actual_expense) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $thermal_actual_expense)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($thermal_actual_expense, strpos($thermal_actual_expense, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($thermal_actual_expense, true), strlen(substr($thermal_actual_expense, strpos($thermal_actual_expense, '.')))), __LINE__);
         }
         $this->thermal_actual_expense = $thermal_actual_expense;
         return $this;
@@ -1205,11 +1205,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($thermal_normative_expense) && strlen(substr($thermal_normative_expense, strpos($thermal_normative_expense, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($thermal_normative_expense, strpos($thermal_normative_expense, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_normative_expense, true), strlen(substr($thermal_normative_expense, strpos($thermal_normative_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($thermal_normative_expense) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $thermal_normative_expense)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($thermal_normative_expense, strpos($thermal_normative_expense, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($thermal_normative_expense, true), strlen(substr($thermal_normative_expense, strpos($thermal_normative_expense, '.')))), __LINE__);
         }
         $this->thermal_normative_expense = $thermal_normative_expense;
         return $this;
@@ -1234,7 +1234,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::valueIsValid($energy_efficiency)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $energy_efficiency, implode(', ', \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum', is_array($energy_efficiency) ? implode(', ', $energy_efficiency) : var_export($energy_efficiency, true), implode(', ', \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues())), __LINE__);
         }
         $this->energy_efficiency = $energy_efficiency;
         return $this;
@@ -1256,7 +1256,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($energy_audit_date) && !is_string($energy_audit_date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($energy_audit_date)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($energy_audit_date, true), gettype($energy_audit_date)), __LINE__);
         }
         $this->energy_audit_date = $energy_audit_date;
         return $this;
@@ -1278,7 +1278,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($privatization_start_date) && !is_string($privatization_start_date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($privatization_start_date)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($privatization_start_date, true), gettype($privatization_start_date)), __LINE__);
         }
         $this->privatization_start_date = $privatization_start_date;
         return $this;
@@ -1300,11 +1300,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($deterioration_total) && strlen(substr($deterioration_total, strpos($deterioration_total, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($deterioration_total, strpos($deterioration_total, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_total, true), strlen(substr($deterioration_total, strpos($deterioration_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($deterioration_total) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $deterioration_total)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($deterioration_total, strpos($deterioration_total, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($deterioration_total, true), strlen(substr($deterioration_total, strpos($deterioration_total, '.')))), __LINE__);
         }
         $this->deterioration_total = $deterioration_total;
         return $this;
@@ -1326,11 +1326,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($deterioration_foundation) && strlen(substr($deterioration_foundation, strpos($deterioration_foundation, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($deterioration_foundation, strpos($deterioration_foundation, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_foundation, true), strlen(substr($deterioration_foundation, strpos($deterioration_foundation, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($deterioration_foundation) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $deterioration_foundation)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($deterioration_foundation, strpos($deterioration_foundation, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($deterioration_foundation, true), strlen(substr($deterioration_foundation, strpos($deterioration_foundation, '.')))), __LINE__);
         }
         $this->deterioration_foundation = $deterioration_foundation;
         return $this;
@@ -1352,11 +1352,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($deterioration_bearing_walls) && strlen(substr($deterioration_bearing_walls, strpos($deterioration_bearing_walls, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($deterioration_bearing_walls, strpos($deterioration_bearing_walls, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_bearing_walls, true), strlen(substr($deterioration_bearing_walls, strpos($deterioration_bearing_walls, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($deterioration_bearing_walls) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $deterioration_bearing_walls)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($deterioration_bearing_walls, strpos($deterioration_bearing_walls, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($deterioration_bearing_walls, true), strlen(substr($deterioration_bearing_walls, strpos($deterioration_bearing_walls, '.')))), __LINE__);
         }
         $this->deterioration_bearing_walls = $deterioration_bearing_walls;
         return $this;
@@ -1378,11 +1378,11 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: fractionDigits
         if (is_float($deterioration_floor) && strlen(substr($deterioration_floor, strpos($deterioration_floor, '.') + 1)) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 2 fraction digits, "%d" given', strlen(substr($deterioration_floor, strpos($deterioration_floor, '.') + 1))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_floor, true), strlen(substr($deterioration_floor, strpos($deterioration_floor, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits
         if (is_float($deterioration_floor) && strlen(str_replace(array(' ', '.', ',', '-', '+'), '', $deterioration_floor)) !== 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, the value must at most contain 15 digits, "%d" given', strlen(substr($deterioration_floor, strpos($deterioration_floor, '.')))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 15 digits, "%d" given', var_export($deterioration_floor, true), strlen(substr($deterioration_floor, strpos($deterioration_floor, '.')))), __LINE__);
         }
         $this->deterioration_floor = $deterioration_floor;
         return $this;
@@ -1594,6 +1594,28 @@ class ApiHouseProfileData extends AbstractStructBase
         return $this->lifts;
     }
     /**
+     * This method is responsible for validating the values passed to the setLifts method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setLifts method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateLiftsForArrayContraintsFromSetLifts(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $houseProfileDataLiftsItem) {
+            // validation for constraint: itemType
+            if (!$houseProfileDataLiftsItem instanceof \Api\StructType\ApiLift) {
+                $invalidValues[] = is_object($houseProfileDataLiftsItem) ? get_class($houseProfileDataLiftsItem) : var_export($houseProfileDataLiftsItem, true);
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set lifts value
      * @throws \InvalidArgumentException
      * @param \Api\StructType\ApiLift[] $lifts
@@ -1601,11 +1623,9 @@ class ApiHouseProfileData extends AbstractStructBase
      */
     public function setLifts(array $lifts = array())
     {
-        foreach ($lifts as $houseProfileDataLiftsItem) {
-            // validation for constraint: itemType
-            if (!$houseProfileDataLiftsItem instanceof \Api\StructType\ApiLift) {
-                throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, "%s" given', is_object($houseProfileDataLiftsItem) ? get_class($houseProfileDataLiftsItem) : gettype($houseProfileDataLiftsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($liftsArrayErrorMessage = self::validateLiftsForArrayContraintsFromSetLifts($lifts))) {
+            throw new \InvalidArgumentException($liftsArrayErrorMessage, __LINE__);
         }
         $this->lifts = $lifts;
         return $this;
@@ -1620,7 +1640,7 @@ class ApiHouseProfileData extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiLift) {
-            throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of \Api\StructType\ApiLift, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->lifts[] = $item;
         return $this;

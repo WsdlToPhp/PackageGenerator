@@ -2,99 +2,97 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
-use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
 class Rules
 {
+
     /**
      * @var StructAttribute
      */
     protected $attribute;
+
     /**
      * @var AbstractModelFile
      */
     protected $file;
+
     /**
      * @var PhpMethod
      */
     protected $method;
+
+    /**
+     * @var MethodContainer
+     */
+    protected $methods;
     /**
      * @param AbstractModelFile $file
      * @param PhpMethod $method
      * @param StructAttribute $attribute
      */
-    public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute)
+    public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute, MethodContainer $methods)
     {
-        $this->setFile($file)->setMethod($method)->setAttribute($attribute);
+        $this->file = $file;
+        $this->method = $method;
+        $this->attribute = $attribute;
+        $this->methods = $methods;
     }
+
     /**
      * @param string $parameterName
      * @param bool $itemType
      */
     public function applyRules($parameterName, $itemType = false)
     {
-        $this->applyRulesFromModel($this->attribute, $parameterName, $itemType);
-        if ($this->getAttribute()->isArray() && !$itemType) {
+        if ($this->attribute->isArray() && !$itemType) {
             $this->getArrayRule()->applyRule($parameterName, null, $itemType);
-        } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->getAttribute())) {
-            $this->getEnumerationRule()->applyRule($parameterName, null, $itemType);
+        } elseif ($this->attribute->isList() && !$itemType) {
+            $this->getListRule()->applyRule($parameterName, null, $itemType);
+        } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->attribute)) {
+            $this->getEnumerationRule()->applyRule($parameterName, null);
         } elseif ($itemType) {
-            $this->getItemTypeRule()->applyRule($parameterName, null, $itemType);
-        } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute()))) instanceof AbstractRule) {
+            $this->getItemTypeRule()->applyRule($parameterName, $itemType);
+        } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->attribute))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
+        $this->applyRulesFromAttribute($parameterName, $itemType);
     }
-    /**
-     * This method is called when an attribute has a union meta which means the attribute is of several types.
-     * In this case, the types are currently only of type string (normally) so we add the rules according to each type
-     * @param string $parameterName
-     * @param bool $itemType
-     * @param string[] $unionTypes
-     */
-    protected function applyUnionRules($parameterName, $itemType, array $unionTypes)
-    {
-        foreach ($unionTypes as $type) {
-            $struct = $this->getAttribute()->getGenerator()->getStructByName($type);
-            if ($struct instanceof Struct) {
-                $this->applyRulesFromModel($struct, $parameterName, $itemType);
-            }
-        }
-    }
+
     /**
      * Generic method to apply rules from current model
-     * @param AbstractModel $model
      * @param string $parameterName
      * @param bool $itemType
      */
-    protected function applyRulesFromModel(AbstractModel $model, $parameterName, $itemType = false)
+    protected function applyRulesFromAttribute($parameterName, $itemType = false)
     {
-        foreach ($model->getMeta() as $metaName => $metaValue) {
+        foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
             $rule = $this->getRule($metaName);
             if ($rule instanceof AbstractRule) {
                 $rule->applyRule($parameterName, $metaValue, $itemType);
-            } elseif ($metaName === 'union' && is_array($metaValue) && count($metaValue) > 0) {
-                $this->applyUnionRules($parameterName, $itemType, $metaValue);
             }
         }
     }
+
     /**
-     * @param string $metaName
+     * @param string $name
      * @return AbstractRule|null
      */
-    protected function getRule($metaName)
+    protected function getRule($name)
     {
-        if (is_string($metaName)) {
-            $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($metaName));
+        if (is_string($name)) {
+            $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($name));
             if (class_exists($className)) {
                 return new $className($this);
             }
         }
         return null;
     }
+
     /**
      * @return ArrayRule
      */
@@ -102,6 +100,7 @@ class Rules
     {
         return $this->getRule('array');
     }
+
     /**
      * @return EnumerationRule
      */
@@ -109,12 +108,21 @@ class Rules
     {
         return $this->getRule('enumeration');
     }
+
     /**
      * @return ItemTypeRule
      */
     public function getItemTypeRule()
     {
         return $this->getRule('itemType');
+    }
+
+    /**
+     * @return ListRule
+     */
+    public function getListRule()
+    {
+        return $this->getRule('list');
     }
     /**
      * @return StructAttribute
@@ -123,6 +131,7 @@ class Rules
     {
         return $this->attribute;
     }
+
     /**
      * @param StructAttribute $attribute
      * @return Rules
@@ -132,6 +141,7 @@ class Rules
         $this->attribute = $attribute;
         return $this;
     }
+
     /**
      * @return AbstractModelFile
      */
@@ -139,15 +149,7 @@ class Rules
     {
         return $this->file;
     }
-    /**
-     * @param AbstractModelFile $file
-     * @return Rules
-     */
-    public function setFile(AbstractModelFile $file)
-    {
-        $this->file = $file;
-        return $this;
-    }
+
     /**
      * @return PhpMethod
      */
@@ -155,6 +157,7 @@ class Rules
     {
         return $this->method;
     }
+
     /**
      * @param PhpMethod $method
      * @return Rules
@@ -163,5 +166,19 @@ class Rules
     {
         $this->method = $method;
         return $this;
+    }
+    /**
+     * @return MethodContainer
+     */
+    public function getMethods()
+    {
+        return $this->methods;
+    }
+    /**
+     * @return Generator
+     */
+    public function getGenerator()
+    {
+        return $this->file->getGenerator();
     }
 }

@@ -246,7 +246,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($query) && !is_string($query)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($query)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($query, true), gettype($query)), __LINE__);
         }
         $this->Query = $query;
         return $this;
@@ -268,7 +268,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($appId) && !is_string($appId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($appId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($appId, true), gettype($appId)), __LINE__);
         }
         $this->AppId = $appId;
         return $this;
@@ -326,7 +326,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($version) && !is_string($version)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($version)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->Version = $version;
         return $this;
@@ -348,7 +348,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($market) && !is_string($market)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($market)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($market, true), gettype($market)), __LINE__);
         }
         $this->Market = $market;
         return $this;
@@ -370,7 +370,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($uILanguage) && !is_string($uILanguage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($uILanguage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uILanguage, true), gettype($uILanguage)), __LINE__);
         }
         $this->UILanguage = $uILanguage;
         return $this;
@@ -395,7 +395,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAdultOption::valueIsValid($adult)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $adult, implode(', ', \Api\EnumType\ApiAdultOption::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdultOption', is_array($adult) ? implode(', ', $adult) : var_export($adult, true), implode(', ', \Api\EnumType\ApiAdultOption::getValidValues())), __LINE__);
         }
         $this->Adult = $adult;
         return $this;

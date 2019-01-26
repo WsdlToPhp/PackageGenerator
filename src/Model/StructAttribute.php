@@ -141,6 +141,13 @@ class StructAttribute extends AbstractModel
         return $this->removableFromRequest;
     }
     /**
+     * @return bool
+     */
+    public function isAChoice()
+    {
+        return is_array($this->getMetaValue('choice'));
+    }
+    /**
      * @param bool $removableFromRequest
      * @return StructAttribute
      */
@@ -158,6 +165,16 @@ class StructAttribute extends AbstractModel
     public function isArray()
     {
         return $this->containsElements || $this->isTypeStructArray();
+    }
+    /**
+     * If this attribute is based on a struct that is a list,
+     * then it is list of basic sclar values that are sent space-separated
+     * @return bool
+     */
+    public function isList()
+    {
+        $typeStruct = $this->getTypeStruct();
+        return $typeStruct && $typeStruct->isList();
     }
     /**
      * Returns potential default value

@@ -19,6 +19,7 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList as TagListParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput as TagOutputParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagChoice as TagChoiceParser;
 
 class GeneratorParsers extends AbstractGeneratorAware
 {
@@ -41,7 +42,8 @@ class GeneratorParsers extends AbstractGeneratorAware
     {
         if (!isset($this->parsers)) {
             $this->parsers = new ParserContainer($this->generator);
-            $this->parsers->add(new FunctionsParser($this->generator))
+            $this->parsers
+                ->add(new FunctionsParser($this->generator))
                 ->add(new StructsParser($this->generator))
                 ->add(new TagIncludeParser($this->generator))
                 ->add(new TagImportParser($this->generator))
@@ -56,7 +58,8 @@ class GeneratorParsers extends AbstractGeneratorAware
                 ->add(new TagOutputParser($this->generator))
                 ->add(new TagRestrictionParser($this->generator))
                 ->add(new TagUnionParser($this->generator))
-                ->add(new TagListParser($this->generator));
+                ->add(new TagListParser($this->generator))
+                ->add(new TagChoiceParser($this->generator));
         }
         return $this;
     }

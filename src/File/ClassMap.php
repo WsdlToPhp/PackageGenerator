@@ -45,16 +45,11 @@ class ClassMap extends AbstractModelFile
     protected function getPropertyAnnotationBlock(PhpProperty $property)
     {
     }
-    /**
-     * @param MethodContainer $methods
-     * @return ClassMap
-     */
-    protected function getClassMethods(MethodContainer $methods)
+    protected function fillClassMethods()
     {
         $method = new PhpMethod(self::METHOD_NAME, [], PhpMethod::ACCESS_PUBLIC, false, true, true);
         $this->addMethodBody($method);
-        $methods->add($method);
-        return $this;
+        $this->methods->add($method);
     }
     /**
      * @param PhpMethod $method

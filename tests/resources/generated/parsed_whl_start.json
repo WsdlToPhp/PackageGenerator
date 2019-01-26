@@ -193,6 +193,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -211,6 +212,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -230,6 +232,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -249,6 +252,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -268,6 +272,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -287,6 +292,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -306,6 +312,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -325,6 +332,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -344,6 +352,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -362,6 +371,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -380,6 +390,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -398,6 +409,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -416,6 +428,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -435,6 +448,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -454,6 +468,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
@@ -537,6 +552,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "StringLength1to16",
                 "abstract": false,
                 "meta": {
@@ -553,6 +569,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "integer",
                 "abstract": false,
                 "meta": {
@@ -597,6 +614,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -613,6 +631,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
@@ -632,6 +651,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -650,6 +670,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -669,6 +690,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StringLength1to8",
                 "abstract": false,
                 "meta": {
@@ -687,6 +709,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -705,6 +728,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -823,6 +847,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -843,6 +868,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "UpperCaseAlphaLength1to2",
                 "abstract": false,
                 "meta": [],
@@ -855,6 +881,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "UpperCaseAlphaLength1to2",
                 "abstract": false,
                 "meta": [],
@@ -867,6 +894,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -885,6 +913,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -903,6 +932,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -921,6 +951,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -939,6 +970,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -957,6 +989,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "integer",
                 "abstract": false,
                 "meta": {
@@ -979,6 +1012,7 @@
                     "time"
                 ],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1003,6 +1037,7 @@
                     "time"
                 ],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1027,6 +1062,7 @@
                     "duration"
                 ],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -1047,6 +1083,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -1106,6 +1143,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "StringLength1to32",
                 "abstract": false,
                 "meta": {
@@ -1243,6 +1281,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "StringLength1to32",
                 "abstract": false,
                 "meta": {
@@ -1308,6 +1347,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKENS",
                 "abstract": false,
                 "meta": {
@@ -1413,6 +1453,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -1494,6 +1535,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "StringLength1to16",
                 "abstract": false,
                 "meta": {
@@ -1514,6 +1556,7 @@
                     "UpperCaseAlphaLength1to2"
                 ],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -1648,6 +1691,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -1664,6 +1708,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -1676,6 +1721,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -1688,6 +1734,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -1700,6 +1747,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -1712,6 +1760,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -1749,6 +1798,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -1820,6 +1870,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "FreeTextType",
                 "abstract": false,
                 "meta": {
@@ -1853,6 +1904,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1923,6 +1975,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "FreeTextType",
                 "abstract": false,
                 "meta": {
@@ -1956,6 +2009,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1972,6 +2026,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2027,6 +2082,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StringLength0to128",
                 "abstract": false,
                 "meta": {
@@ -2116,6 +2172,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2135,6 +2192,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Returning an empty element of this type indicates the successful processing of an OpenTravel message. This is used in conjunction with Warnings to report any warnings or business errors."
                             ]
@@ -2149,6 +2213,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used when a message has been successfully processed to report any warnings or business errors that occurred."
                             ],
@@ -2164,6 +2235,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Indicates an error occurred during the processing of an OpenTravel message. If the message successfully processes, but there are business errors, those errors should be passed in the warning element."
                             ]
@@ -2257,6 +2335,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2290,6 +2369,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2346,6 +2426,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2378,6 +2459,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "UniqueID_Type",
                 "abstract": false,
                 "meta": {
@@ -2438,6 +2520,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2495,6 +2578,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StringLength0to64",
                 "abstract": false,
                 "meta": {
@@ -2528,6 +2612,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2583,6 +2668,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -2615,6 +2701,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2683,6 +2770,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -2699,6 +2787,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -2714,6 +2803,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Text",
+                                "Image",
+                                "URL",
+                                "ListItem"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Formatted text content."
                             ]
@@ -2728,6 +2825,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Text",
+                                "Image",
+                                "URL",
+                                "ListItem"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "An image for this paragraph."
                             ]
@@ -2742,6 +2847,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Text",
+                                "Image",
+                                "URL",
+                                "ListItem"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "A URL for this paragraph."
                             ]
@@ -2755,7 +2868,16 @@
                         "type": "ListItem",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choice": [
+                                "Text",
+                                "Image",
+                                "URL",
+                                "ListItem"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0
+                        },
                         "name": "ListItem",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
@@ -2764,6 +2886,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2806,6 +2929,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "FormattedTextTextType",
                 "abstract": false,
                 "meta": {
@@ -2853,6 +2977,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2971,6 +3096,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3004,6 +3130,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3023,6 +3150,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "PaymentCard",
+                                "BankAcct",
+                                "DirectBill",
+                                "Cash"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Details of a debit or credit card."
                             ]
@@ -3037,6 +3172,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "PaymentCard",
+                                "BankAcct",
+                                "DirectBill",
+                                "Cash"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Details of a bank account."
                             ]
@@ -3051,6 +3194,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "PaymentCard",
+                                "BankAcct",
+                                "DirectBill",
+                                "Cash"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "Details of a direct billing arrangement."
                             ]
@@ -3064,7 +3215,16 @@
                         "type": "Cash",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choice": [
+                                "PaymentCard",
+                                "BankAcct",
+                                "DirectBill",
+                                "Cash"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0
+                        },
                         "name": "Cash",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -3088,6 +3248,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3121,6 +3282,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3392,6 +3554,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3425,6 +3588,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3623,6 +3787,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3812,6 +3977,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3886,6 +4052,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StreetNmbrType",
                 "abstract": false,
                 "meta": {
@@ -3927,6 +4094,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StringLength0to64",
                 "abstract": false,
                 "meta": {
@@ -4018,6 +4186,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StringLength1to128",
                 "abstract": false,
                 "meta": {
@@ -4147,6 +4316,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4269,6 +4439,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4326,6 +4497,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "CompanyNameType",
                 "abstract": false,
                 "meta": {
@@ -4389,6 +4561,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "AddressType",
                 "abstract": false,
                 "meta": {
@@ -4637,6 +4810,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4671,6 +4845,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4832,6 +5007,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4909,6 +5085,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "anyURI",
                 "abstract": false,
                 "meta": {
@@ -4943,6 +5120,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4962,6 +5140,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "VideoItems",
+                                "ImageItems",
+                                "TextItems"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "A collection of video items."
                             ],
@@ -4977,6 +5162,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "VideoItems",
+                                "ImageItems",
+                                "TextItems"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "A collection of image items."
                             ],
@@ -4992,6 +5184,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "VideoItems",
+                                "ImageItems",
+                                "TextItems"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "documentation": [
                                 "A collection of text items."
                             ],
@@ -5047,6 +5246,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5076,6 +5276,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5123,6 +5324,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "VideoDescriptionType",
                 "abstract": false,
                 "meta": {
@@ -5153,6 +5355,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5254,6 +5457,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "VideoItemType",
                 "abstract": false,
                 "meta": {
@@ -5419,6 +5623,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5449,6 +5654,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5480,6 +5686,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ImageDescriptionType",
                 "abstract": false,
                 "meta": {
@@ -5524,6 +5731,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5686,6 +5894,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ImageItemType",
                 "abstract": false,
                 "meta": {
@@ -5744,6 +5953,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "FormattedTextTextType",
                 "abstract": false,
                 "meta": {
@@ -5822,6 +6032,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5841,6 +6052,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "URL",
+                                "Description"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The URL for a specific text item."
                             ],
@@ -5856,6 +6073,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "URL",
+                                "Description"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "unbounded",
                             "minOccurs": "0"
                         },
@@ -5937,6 +6160,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5980,6 +6204,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StringLength0to64",
                 "abstract": false,
                 "meta": {
@@ -6009,6 +6234,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6025,6 +6251,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "TextDescriptionType",
                 "abstract": false,
                 "meta": {
@@ -6084,6 +6311,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6205,6 +6433,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6272,6 +6501,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -6308,6 +6538,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6331,6 +6562,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6394,6 +6626,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6420,6 +6653,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6446,6 +6680,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6529,6 +6764,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6595,6 +6831,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6621,6 +6858,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6647,6 +6885,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6760,6 +6999,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6863,6 +7103,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6877,7 +7118,13 @@
                         "type": "RoomType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choice": [
+                                "Room"
+                            ],
+                            "choiceMaxOccurs": "unbounded",
+                            "choiceMinOccurs": 0
+                        },
                         "name": "Room",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
@@ -6886,6 +7133,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6909,6 +7157,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7022,6 +7271,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7168,6 +7418,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7212,6 +7463,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "EmailType",
                 "abstract": false,
                 "meta": {
@@ -7275,6 +7527,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "AddressInfoType",
                 "abstract": false,
                 "meta": {
@@ -7317,6 +7570,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "URL_Type",
                 "abstract": false,
                 "meta": {
@@ -7366,6 +7620,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7396,6 +7651,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7412,6 +7668,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ParagraphType",
                 "abstract": false,
                 "meta": {
@@ -7441,6 +7698,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7472,6 +7730,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7533,6 +7792,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7552,6 +7812,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKENS",
                 "abstract": false,
                 "meta": [],
@@ -7580,6 +7841,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7636,6 +7898,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -7679,6 +7942,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -7711,6 +7975,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7754,6 +8019,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7800,6 +8066,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7847,6 +8114,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8068,6 +8336,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8110,6 +8379,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -8279,6 +8549,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8366,6 +8637,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8395,6 +8667,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8442,6 +8715,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8517,6 +8791,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8562,6 +8837,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8617,6 +8893,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8694,6 +8971,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8724,6 +9002,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8780,6 +9059,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8796,6 +9076,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "AmountPercentType",
                 "abstract": false,
                 "meta": {
@@ -8812,6 +9093,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StringLength1to32",
                 "abstract": false,
                 "meta": [],
@@ -8837,6 +9119,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8941,6 +9224,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8957,6 +9241,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "RequiredPaymentsType",
                 "abstract": false,
                 "meta": {
@@ -8986,6 +9271,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9024,6 +9310,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9036,6 +9323,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -9094,6 +9382,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9120,6 +9409,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -9147,6 +9437,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "TaxType",
                 "abstract": false,
                 "meta": [],
@@ -9172,6 +9463,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "FeeType",
                 "abstract": false,
                 "meta": {
@@ -9188,6 +9480,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -9216,6 +9509,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9363,6 +9657,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9379,6 +9674,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "PoliciesType",
                 "abstract": false,
                 "meta": {
@@ -9412,6 +9708,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9474,6 +9771,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ContactInfoType",
                 "abstract": false,
                 "meta": {
@@ -9593,6 +9891,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9622,6 +9921,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9705,6 +10005,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "PersonNameType",
                 "abstract": false,
                 "meta": {
@@ -9751,6 +10052,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "StringLength1to64",
                 "abstract": false,
                 "meta": [],
@@ -9776,6 +10078,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9805,6 +10108,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -9996,6 +10300,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10026,6 +10331,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10055,6 +10361,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10096,6 +10403,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10125,6 +10433,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10285,6 +10594,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10316,6 +10626,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10359,6 +10670,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10389,6 +10701,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10419,6 +10732,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10546,6 +10860,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10651,6 +10966,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10681,6 +10997,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10726,6 +11043,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10776,6 +11094,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10805,6 +11124,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10836,6 +11156,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10865,6 +11186,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10894,6 +11216,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10953,6 +11276,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -10982,6 +11306,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11038,6 +11363,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11067,6 +11393,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11083,6 +11410,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "RoomStayCandidateType",
                 "abstract": false,
                 "meta": {
@@ -11099,6 +11427,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HotelSearchCriteriaType",
                 "abstract": false,
                 "meta": {
@@ -11128,6 +11457,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11144,6 +11474,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HotelSearchCriterionType",
                 "abstract": false,
                 "meta": {
@@ -11160,6 +11491,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ItemSearchCriterionType",
                 "abstract": false,
                 "meta": {
@@ -11190,6 +11522,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11249,6 +11582,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11352,6 +11686,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11381,6 +11716,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11411,6 +11747,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11428,6 +11765,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "RoomRateType",
                 "abstract": false,
                 "meta": [],
@@ -11547,6 +11885,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11576,6 +11915,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11608,6 +11948,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "AmountType",
                 "abstract": false,
                 "meta": {
@@ -11743,6 +12084,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11759,6 +12101,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "DiscountType",
                 "abstract": false,
                 "meta": {
@@ -11828,6 +12171,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "TotalType",
                 "abstract": false,
                 "meta": {
@@ -11915,6 +12259,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11947,6 +12292,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -11992,6 +12338,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12037,6 +12384,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12096,6 +12444,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12112,6 +12461,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -12223,6 +12573,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12312,6 +12663,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -12345,6 +12697,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12363,7 +12716,16 @@
                         "type": "SuccessType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "HotelReservations",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1
+                        },
                         "name": "Success",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -12374,6 +12736,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "HotelReservations",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "minOccurs": "0"
                         },
                         "name": "Warnings",
@@ -12386,6 +12756,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "HotelReservations",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "minOccurs": "0"
                         },
                         "name": "HotelReservations",
@@ -12397,7 +12775,16 @@
                         "type": "ErrorsType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "HotelReservations",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1
+                        },
                         "name": "Errors",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -12484,6 +12871,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12513,6 +12901,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12590,6 +12979,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12637,6 +13027,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12666,6 +13057,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "ResCommonDetailType",
                 "abstract": false,
                 "meta": {
@@ -12710,6 +13102,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12742,6 +13135,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12828,6 +13222,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12858,6 +13253,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -12905,6 +13301,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "RoomStayType",
                 "abstract": false,
                 "meta": {
@@ -13000,6 +13397,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -13032,6 +13430,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -13173,6 +13572,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -13271,6 +13671,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -13291,6 +13692,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -13305,6 +13714,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -13320,6 +13737,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "List of standard countries."
                             ],
@@ -13335,6 +13760,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -13413,6 +13846,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -13512,6 +13946,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -13532,6 +13967,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -13546,6 +13989,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -13561,6 +14012,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "List of WHl countries."
                             ],
@@ -13576,6 +14035,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Countries",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -13654,6 +14121,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -13768,6 +14236,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -13787,6 +14256,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -13801,6 +14277,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -13816,6 +14299,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -13894,6 +14384,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14003,6 +14494,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14022,6 +14514,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "GetBookingsResponse",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -14036,6 +14536,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "GetBookingsResponse",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -14050,7 +14558,16 @@
                         "type": "GetBookingsResponseType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "GetBookingsResponse",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1
+                        },
                         "name": "GetBookingsResponse",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -14061,6 +14578,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "GetBookingsResponse",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -14139,6 +14664,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14254,6 +14780,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14274,6 +14801,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Destinations",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -14288,6 +14823,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Destinations",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -14303,6 +14846,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Destinations",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "List of WHl Destintions."
                             ],
@@ -14318,6 +14869,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Destinations",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -14396,6 +14955,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14508,6 +15068,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14528,6 +15089,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Hotels",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -14542,6 +15111,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Hotels",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -14557,6 +15134,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Hotels",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "List of Hotels."
                             ],
@@ -14572,6 +15157,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "Hotels",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -14650,6 +15243,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14759,6 +15353,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14788,6 +15383,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14804,6 +15400,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HotelDescriptiveInfoRequestType",
                 "abstract": false,
                 "meta": {
@@ -14823,6 +15420,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "HotelDescriptiveContents",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the OpenTravel message succeeded."
                             ]
@@ -14837,6 +15442,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "HotelDescriptiveContents",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -14852,6 +15465,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "HotelDescriptiveContents",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "minOccurs": "0"
                         },
                         "name": "HotelDescriptiveContents",
@@ -14864,6 +15485,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "HotelDescriptiveContents",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -14942,6 +15571,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -14972,6 +15602,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -15017,6 +15648,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HotelDescriptiveContentType",
                 "abstract": false,
                 "meta": {
@@ -15126,6 +15758,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -15142,6 +15775,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "AvailRequestSegmentsType",
                 "abstract": false,
                 "meta": {
@@ -15161,6 +15795,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "RoomStays",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "The presence of the empty Success element explicitly indicates that the request message was successful."
                             ]
@@ -15175,6 +15817,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "RoomStays",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Used in conjunction with the Success element to define one or more business errors."
                             ],
@@ -15190,6 +15840,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "RoomStays",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "minOccurs": "0"
                         },
                         "name": "RoomStays",
@@ -15202,6 +15860,14 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Warnings",
+                                "RoomStays",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Errors are returned if the request was unable to be processed."
                             ]
@@ -15280,6 +15946,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -15310,6 +15977,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -15450,6 +16118,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -15513,6 +16182,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -15529,6 +16199,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "HotelResRequestType",
                 "abstract": false,
                 "meta": {
@@ -15556,6 +16227,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -15582,8 +16254,8 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": __ORIGIN__,
-        "destination": __DESTINATION__,
+        "origin": "__ORIGIN__",
+        "destination": "__DESTINATION__",
         "src_dirname": "src",
         "prefix": "Api",
         "suffix": "",

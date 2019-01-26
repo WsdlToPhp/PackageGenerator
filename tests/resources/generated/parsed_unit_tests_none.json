@@ -35,6 +35,12 @@
                         "abstract": false,
                         "meta": {
                             "base": "xsd:boolean",
+                            "choice": [
+                                "Success",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "default": "false",
                             "maxOccurs": "1",
                             "minOccurs": "0"
@@ -49,6 +55,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "Success",
+                                "Errors"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },
@@ -73,6 +85,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -85,6 +98,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "boolean",
                 "abstract": false,
                 "meta": [],
@@ -112,6 +126,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -139,6 +154,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -161,8 +177,8 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": __ORIGIN__,
-        "destination": __DESTINATION__,
+        "origin": "__ORIGIN__",
+        "destination": "__DESTINATION__",
         "src_dirname": "src",
         "prefix": "Api",
         "suffix": "",

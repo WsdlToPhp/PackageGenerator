@@ -32,7 +32,7 @@ class TagHeaderTest extends WsdlParser
      */
     public static function ewsInstanceParser()
     {
-        return new TagHeader(self::generatorInstance(self::wsdlEwsPath(), false, false, false));
+        return new TagHeader(self::generatorInstance(self::wsdlEwsPath(), true, false, false));
     }
     /**
      *

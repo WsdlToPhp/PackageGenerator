@@ -47,10 +47,16 @@ class Struct extends AbstractModel
      */
     protected $types;
     /**
-     * Define if the current struct is a concrete struct or just a virtual struct to store meta informations
+     * Defines if the current struct is a concrete struct or just a virtual struct to store meta informations
      * @var bool
      */
     protected $isStruct = false;
+    /**
+     * Defines if the current struct is a list of a type or not.
+     * If it is a list of a type, then the list property value is the type
+     * @var string
+     */
+    protected $list = '';
     /**
      * Main constructor
      * @see AbstractModel::__construct()
@@ -106,7 +112,7 @@ class Struct extends AbstractModel
         ];
     }
     /**
-     * Returns true if the current struct is a collection of values (like an array)
+     * Returns true if the current struct is a collection of values (like an array or a list of values)
      * @uses AbstractModel::getName()
      * @uses Struct::countOwnAttributes()
      * @return bool
@@ -297,6 +303,33 @@ class Struct extends AbstractModel
         return $this;
     }
     /**
+     * Returns the list value
+     * @return string
+     */
+    public function getList()
+    {
+        return $this->list;
+    }
+    /**
+     * Returns if the current struct is a list
+     * List are a set of basic-type values
+     * @return bool
+     */
+    public function isList()
+    {
+        return !empty($this->list);
+    }
+    /**
+     * Sets the list value
+     * @param string $list
+     * @return Struct
+     */
+    public function setList($list = '')
+    {
+        $this->list = $list;
+        return $this;
+    }
+    /**
      * Returns the values for an enumeration
      * @return StructValueContainer
      */
@@ -362,7 +395,7 @@ class Struct extends AbstractModel
      */
     public function getInheritanceStruct()
     {
-        return $this->getGenerator()->getStructByName(str_replace('[]', '', $this->getInheritance()));
+        return $this->getName() === $this->getInheritance() ? null : $this->getGenerator()->getStructByName(str_replace('[]', '', $this->getInheritance()));
     }
     /**
      * @return string
@@ -421,7 +454,7 @@ class Struct extends AbstractModel
      * @param string[] $types
      * @return Struct
      */
-    public function setTypes($types)
+    public function setTypes(array $types)
     {
         $this->types = $types;
         return $this;
@@ -438,6 +471,7 @@ class Struct extends AbstractModel
             'struct' => $this->isStruct,
             'types' => $this->types,
             'values' => $this->values,
+            'list' => $this->list,
         ];
     }
     /**

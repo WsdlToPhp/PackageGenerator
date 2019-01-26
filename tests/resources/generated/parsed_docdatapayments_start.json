@@ -247,6 +247,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -276,6 +277,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -292,6 +294,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -310,6 +313,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -328,6 +332,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -346,6 +351,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -365,6 +371,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -384,6 +391,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -400,6 +408,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -416,6 +425,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -432,6 +442,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -448,6 +459,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -464,6 +476,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -480,6 +493,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -496,6 +510,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -514,6 +529,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -561,6 +577,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -573,6 +590,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -585,6 +603,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": [],
@@ -597,6 +616,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string50",
                 "abstract": false,
                 "meta": {
@@ -614,6 +634,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -630,6 +651,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string100",
                 "abstract": false,
                 "meta": {
@@ -673,6 +695,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -711,6 +734,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -723,6 +747,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": {
@@ -762,6 +787,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
@@ -791,6 +817,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -848,6 +875,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -879,6 +907,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -904,6 +933,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -920,6 +950,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "normalizedString",
                 "abstract": false,
                 "meta": {
@@ -937,6 +968,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -953,6 +985,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -969,6 +1002,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -1001,6 +1035,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1036,6 +1071,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string2048",
                 "abstract": false,
                 "meta": [],
@@ -1048,6 +1084,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -1092,6 +1129,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1201,6 +1239,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1246,6 +1285,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1371,6 +1411,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1555,6 +1596,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1708,6 +1750,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1751,6 +1794,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1825,6 +1869,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1864,6 +1909,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -1890,6 +1936,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1910,6 +1957,13 @@
                         "abstract": false,
                         "meta": {
                             "base": "string",
+                            "choice": [
+                                "linkId",
+                                "paymentId",
+                                "merchantReference"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1",
                             "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}"
@@ -1924,6 +1978,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "linkId",
+                                "paymentId",
+                                "merchantReference"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -1937,6 +1998,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "linkId",
+                                "paymentId",
+                                "merchantReference"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -1948,6 +2016,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -1964,6 +2033,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -2023,6 +2093,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2039,6 +2110,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2085,6 +2157,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2149,6 +2222,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2192,6 +2266,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2208,6 +2283,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "positiveInteger",
                 "abstract": false,
                 "meta": {
@@ -2370,6 +2446,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -2437,6 +2514,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2490,6 +2568,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2556,6 +2635,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2650,6 +2730,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -2692,6 +2773,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "amount",
                 "abstract": false,
                 "meta": {
@@ -2708,6 +2790,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "decimal",
                 "abstract": false,
                 "meta": [],
@@ -2751,6 +2834,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -2786,6 +2870,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -2825,6 +2910,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
@@ -3027,6 +3113,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3066,6 +3153,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "int",
                 "abstract": false,
                 "meta": {
@@ -3082,6 +3170,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -3113,6 +3202,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3126,6 +3230,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3139,6 +3258,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3152,6 +3286,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3165,6 +3314,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3178,6 +3342,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3191,6 +3370,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3204,6 +3398,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3217,6 +3426,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3230,6 +3454,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3243,6 +3482,21 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInput",
+                                "masterCardPaymentInput",
+                                "misterCashPaymentInput",
+                                "maestroPaymentInput",
+                                "visaPaymentInput",
+                                "directDebitPaymentInput",
+                                "bankTransferPaymentInput",
+                                "pointOfSalePaymentInput",
+                                "offlinePaymentInput",
+                                "elvPaymentInput",
+                                "iDealPaymentInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3254,6 +3508,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3273,6 +3528,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3286,6 +3550,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3299,6 +3572,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3312,6 +3594,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },
@@ -3325,6 +3616,15 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "cardHolderName",
+                                "cardNumber",
+                                "expiryDate",
+                                "securityCode",
+                                "encryptedData"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3336,6 +3636,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3392,6 +3693,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3422,6 +3724,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3438,6 +3741,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3481,6 +3785,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3524,6 +3829,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3554,6 +3860,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -3623,6 +3930,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3804,6 +4112,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3882,6 +4191,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -3913,6 +4223,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3926,6 +4259,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3939,6 +4295,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3952,6 +4331,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3965,6 +4367,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3978,6 +4403,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3991,6 +4439,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4004,6 +4475,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4017,6 +4511,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4030,6 +4547,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4043,6 +4583,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4056,6 +4619,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4069,6 +4655,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4082,6 +4691,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4095,6 +4727,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4108,6 +4763,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4121,6 +4799,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4134,6 +4835,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4147,6 +4871,29 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexPaymentInfo",
+                                "masterCardPaymentInfo",
+                                "visaPaymentInfo",
+                                "bankTransferPaymentInfo",
+                                "maestroPaymentInfo",
+                                "misterCashPaymentInfo",
+                                "giftCardPaymentInfo",
+                                "iDealPaymentInfo",
+                                "afterpayOpenInvoicePaymentInfo",
+                                "afterpayDirectDebitPaymentInfo",
+                                "klarnaInvoicePaymentInfo",
+                                "klarnaAccountPaymentInfo",
+                                "elvPaymentInfo",
+                                "sepaDirectDebitPaymentInfo",
+                                "pointOfSalePaymentInfo",
+                                "offlinePaymentInfo",
+                                "sofortUeberweisungPaymentInfo",
+                                "eBankingPaymentInfo",
+                                "systemPaymentInfo"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 0,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -4168,6 +4915,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4221,6 +4969,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4260,6 +5009,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -4348,6 +5098,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4440,6 +5191,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4532,6 +5284,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4611,6 +5364,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4690,6 +5444,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4756,6 +5511,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4809,6 +5565,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -4956,6 +5713,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5009,6 +5767,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5062,6 +5821,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5141,6 +5901,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5207,6 +5968,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5247,6 +6009,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5312,6 +6075,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5345,6 +6109,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -5378,6 +6143,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5394,6 +6160,7 @@
                 "struct": false,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -5420,6 +6187,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5459,6 +6227,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "string",
                 "abstract": false,
                 "meta": [],
@@ -5495,6 +6264,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5548,6 +6318,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -5679,6 +6450,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5754,6 +6526,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5829,6 +6602,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5917,6 +6691,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -5966,6 +6741,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6019,6 +6795,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
                 ],
+                "list": "",
                 "inheritance": "NMTOKEN",
                 "abstract": false,
                 "meta": {
@@ -6282,6 +7059,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6301,6 +7079,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "createErrors",
+                                "createSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "An error occurred. No payment order was created."
                             ],
@@ -6317,6 +7101,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "createErrors",
+                                "createSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "A payment order was successfully created. This does not mean that the whole request was processed successfully! The paymentResponse (see child elements) can still contain errors."
                             ],
@@ -6343,6 +7133,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6412,6 +7203,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6448,6 +7240,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6541,6 +7334,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "refundItems",
+                                "simpleRefundGroup"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -6642,6 +7441,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6662,6 +7462,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "refundErrors",
+                                "refundSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "An error occurred. No refund request was created."
                             ],
@@ -6678,6 +7484,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "refundErrors",
+                                "refundSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "A request for refund was successfully accepted. This does not mean that the whole request will be or has been processed successfully!"
                             ],
@@ -6704,6 +7516,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6744,6 +7557,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6780,6 +7594,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -6867,6 +7682,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6886,6 +7702,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "cancelErrors",
+                                "cancelSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -6899,6 +7721,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "cancelErrors",
+                                "cancelSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Returns summarized information about cancelation of the payments of this order. Use \"status\" to retrieve more information."
                             ],
@@ -6925,6 +7753,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -6978,6 +7807,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7014,6 +7844,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7077,6 +7908,16 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                ""
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Specifies a request for a recurring payment. It should target an existing previous payment that will be used to start a new payment with directly. Reservations are also made as the starting point for upcoming repeated payments if needed. Must be specified if not giving direct payment request input."
                             ],
@@ -7093,6 +7934,18 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                "",
+                                "payment",
+                                "token"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Specifies the details needed for starting a payment for a shopper without showing the hosted payment pages. Must be specified if not a subsequent recurring payment."
                             ],
@@ -7109,6 +7962,18 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                "",
+                                "payment",
+                                "token"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Pay with a token."
                             ],
@@ -7125,6 +7990,16 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                ""
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Optional return url to be used. If left empty, no return url will be used. (Limit is set by Internet Explorer of 2083 characters)"
                             ],
@@ -7141,6 +8016,16 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "recurringPaymentRequest",
+                                "payment",
+                                "token",
+                                "returnUrl",
+                                "shopperInfo",
+                                ""
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },
@@ -7194,6 +8079,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7213,6 +8099,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "startErrors",
+                                "startSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7226,6 +8118,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "startErrors",
+                                "startSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7249,6 +8147,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7289,6 +8188,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7351,6 +8251,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7398,6 +8299,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "threeDomainSecureAuthenticationResult",
+                                "iDealAuthorizationResult"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "3DS Authentication result data. (tag name cannot start with a number)"
                             ],
@@ -7414,6 +8321,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "threeDomainSecureAuthenticationResult",
+                                "iDealAuthorizationResult"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "iDEAL authorization result data. No additional data is required."
                             ],
@@ -7470,6 +8383,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7489,6 +8403,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "proceedErrors",
+                                "proceedSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7502,6 +8422,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "proceedErrors",
+                                "proceedSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7525,6 +8451,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7565,6 +8492,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7614,6 +8542,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7813,6 +8742,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7832,6 +8762,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "captureErrors",
+                                "captureSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7845,6 +8781,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "captureErrors",
+                                "captureSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -7868,6 +8810,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -7908,6 +8851,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -7944,6 +8888,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8025,6 +8970,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8044,6 +8990,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "statusErrors",
+                                "statusSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8057,6 +9009,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "statusErrors",
+                                "statusSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8080,6 +9038,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8165,6 +9124,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8184,6 +9144,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "statusErrors",
+                                "statusSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8197,6 +9163,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "statusErrors",
+                                "statusSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8220,6 +9192,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8260,6 +9233,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8309,6 +9283,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8348,6 +9323,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8367,6 +9343,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "listPaymentMethodsErrors",
+                                "listPaymentMethodsSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8380,6 +9362,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "listPaymentMethodsErrors",
+                                "listPaymentMethodsSuccess"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8403,6 +9391,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8443,6 +9432,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8479,6 +9469,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8557,6 +9548,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8586,6 +9578,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8635,6 +9628,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8684,6 +9678,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8703,6 +9698,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexTokenInput",
+                                "masterCardTokenInput",
+                                "visaTokenInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8716,6 +9718,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexTokenInput",
+                                "masterCardTokenInput",
+                                "visaTokenInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8729,6 +9738,13 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "amexTokenInput",
+                                "masterCardTokenInput",
+                                "visaTokenInput"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8755,6 +9771,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": [],
@@ -8770,6 +9787,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "securityCode",
+                                "encryptedData"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8783,6 +9806,12 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
+                            "choice": [
+                                "securityCode",
+                                "encryptedData"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -8794,6 +9823,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8860,6 +9890,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8916,6 +9947,7 @@
                 "struct": true,
                 "types": [],
                 "values": [],
+                "list": "",
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
@@ -8942,8 +9974,8 @@
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
-        "origin": __ORIGIN__,
-        "destination": __DESTINATION__,
+        "origin": "__ORIGIN__",
+        "destination": "__DESTINATION__",
         "src_dirname": "src",
         "prefix": "Api",
         "suffix": "",

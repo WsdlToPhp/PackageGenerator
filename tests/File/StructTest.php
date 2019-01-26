@@ -50,7 +50,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiQuery', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find Query struct for file generation');
+            $this->fail('Unable to find Query struct for file generation');
         }
     }
     /**
@@ -66,7 +66,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiVideoRequest', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find VideoRequest struct for file generation');
+            $this->fail('Unable to find VideoRequest struct for file generation');
         }
     }
     /**
@@ -82,7 +82,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiSearchRequest', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find SearchRequest struct for file generation');
+            $this->fail('Unable to find SearchRequest struct for file generation');
         }
     }
     /**
@@ -98,7 +98,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiItem', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find Item struct for file generation');
+            $this->fail('Unable to find Item struct for file generation');
         }
     }
     /**
@@ -114,7 +114,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiFareItinerary', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find fareItinerary struct for file generation');
+            $this->fail('Unable to find fareItinerary struct for file generation');
         }
     }
     /**
@@ -131,7 +131,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiNewsArticle', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find NewsArticle struct for file generation');
+            $this->fail('Unable to find NewsArticle struct for file generation');
         }
     }
     /**
@@ -147,7 +147,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiOffer', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find offer struct for file generation');
+            $this->fail('Unable to find offer struct for file generation');
         }
     }
     /**
@@ -163,7 +163,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidAddRequest', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find AddRequest struct for file generation');
+            $this->fail('Unable to find AddRequest struct for file generation');
         }
     }
     /**
@@ -179,7 +179,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidAdGroupsSelectionCriteria', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find AdGroupsSelectionCriteria struct for file generation');
+            $this->fail('Unable to find AdGroupsSelectionCriteria struct for file generation');
         }
     }
     /**
@@ -195,7 +195,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidShopper', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find shopper struct for file generation');
+            $this->fail('Unable to find shopper struct for file generation');
         }
     }
     /**
@@ -211,7 +211,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidExpiryDate', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find expiryDate struct for file generation');
+            $this->fail('Unable to find expiryDate struct for file generation');
         }
     }
     /**
@@ -227,7 +227,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidАдресРФ', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find АдресРФ struct for file generation');
+            $this->fail('Unable to find АдресРФ struct for file generation');
         }
     }
     /**
@@ -243,7 +243,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidHouseProfileData', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find HouseProfileData struct for file generation');
+            $this->fail('Unable to find HouseProfileData struct for file generation');
         }
     }
     /**
@@ -259,7 +259,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidAddressDelivery_Type', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find AddressDelivery_Type struct for file generation');
+            $this->fail('Unable to find AddressDelivery_Type struct for file generation');
         }
     }
     /**
@@ -275,7 +275,7 @@ class StructTest extends AbstractFile
 
             $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
         } else {
-            $this->assertFalse(true, 'Unable to find NewsArticle struct for file generation');
+            $this->fail('Unable to find NewsArticle struct for file generation');
         }
     }
     /**
@@ -292,7 +292,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidCampaignGetItem', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find CampaignGetItem struct for file generation');
+            $this->fail('Unable to find CampaignGetItem struct for file generation');
         }
     }
     /**
@@ -309,7 +309,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidBannerInfo', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find BannerInfo struct for file generation');
+            $this->fail('Unable to find BannerInfo struct for file generation');
         }
     }
     /**
@@ -326,7 +326,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidSetExpressCheckoutRequestDetailsType', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find SetExpressCheckoutRequestDetailsType struct for file generation');
+            $this->fail('Unable to find SetExpressCheckoutRequestDetailsType struct for file generation');
         }
     }
     /**
@@ -343,7 +343,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidHotelReservationType', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find HotelReservationType struct for file generation');
+            $this->fail('Unable to find HotelReservationType struct for file generation');
         }
     }
     /**
@@ -360,7 +360,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidTaxType', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find TaxType struct for file generation');
+            $this->fail('Unable to find TaxType struct for file generation');
         }
     }
     /**
@@ -377,7 +377,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidPaymentCardType', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find PaymentCardType struct for file generation');
+            $this->fail('Unable to find PaymentCardType struct for file generation');
         }
     }
     /**
@@ -394,7 +394,7 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidApiQueryWithIdenticalPropertiesDifferentByCase', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find Query struct for file generation');
+            $this->fail('Unable to find Query struct for file generation');
         }
     }
     /**
@@ -410,7 +410,40 @@ class StructTest extends AbstractFile
                 ->write();
             $this->assertSameFileContent('ValidUnitTestsStructResult', $struct);
         } else {
-            $this->assertFalse(true, 'Unable to find Result struct for file generation');
+            $this->fail('Unable to find Result struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteDeliveryDetails()
+    {
+        $generator = self::deliveryServiceInstance();
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStructByName('details')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidDetails', $struct);
+        } else {
+            $this->fail('Unable to find details struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteEwsStructWorkingPeriod()
+    {
+        $generator = self::ewsInstance();
+        if (($model = $generator->getStructByName('WorkingPeriod')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidWorkingPeriod', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find WorkingPeriod struct for file generation');
         }
     }
 }

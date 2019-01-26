@@ -74,7 +74,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $itemType, implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiItemType', is_array($itemType) ? implode(', ', $itemType) : var_export($itemType, true), implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
         }
         $this->itemType = $itemType;
         return $this;
@@ -96,7 +96,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($id)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
         return $this;
@@ -118,7 +118,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($displayName) && !is_string($displayName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($displayName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($displayName, true), gettype($displayName)), __LINE__);
         }
         $this->displayName = $displayName;
         return $this;
@@ -126,33 +126,29 @@ class ApiItem extends AbstractStructBase
     /**
      * Get any value
      * @uses \DOMDocument::loadXML()
-     * @uses \DOMDocument::hasChildNodes()
-     * @uses \DOMDocument::saveXML()
-     * @uses \DOMNode::item()
-     * @uses \Api\StructType\ApiItem::setAny()
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
      * @return \DOMDocument|null
      */
     public function getAny($asString = true)
     {
-        if (!empty($this->any) && !($this->any instanceof \DOMDocument)) {
-            $dom = new \DOMDocument('1.0', 'UTF-8');
-            $dom->formatOutput = true;
-            if ($dom->loadXML($this->any)) {
-                $this->setAny($dom);
-            }
-            unset($dom);
+        $domDocument = null;
+        if (!empty($this->any) && !$asString) {
+            $domDocument = new \DOMDocument('1.0', 'UTF-8');
+            $domDocument->loadXML($this->any);
         }
-        return ($asString && ($this->any instanceof \DOMDocument) && $this->any->hasChildNodes()) ? $this->any->saveXML($this->any->childNodes->item(0)) : $this->any;
+        return $asString ? $this->any : $domDocument;
     }
     /**
      * Set any value
+     * @uses \DOMDocument::hasChildNodes()
+     * @uses \DOMDocument::saveXML()
+     * @uses \DOMNode::item()
      * @param \DOMDocument $any
      * @return \Api\StructType\ApiItem
      */
     public function setAny(\DOMDocument $any = null)
     {
-        $this->any = $any;
+        $this->any = ($any instanceof \DOMDocument) && $any->hasChildNodes() ? $any->saveXML($any->childNodes->item(0)) : $any;
         return $this;
     }
     /**
