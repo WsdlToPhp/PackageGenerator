@@ -49,7 +49,6 @@ class Rules
      */
     public function applyRules($parameterName, $itemType = false)
     {
-        $this->applyRulesFromModel($this->attribute, $parameterName, $itemType);
         if ($this->attribute->isArray() && !$itemType) {
             $this->getArrayRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->attribute->isList() && !$itemType) {
