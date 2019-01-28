@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class StringRule extends AbstractRule
 {
+
     /**
      * @return string
      */

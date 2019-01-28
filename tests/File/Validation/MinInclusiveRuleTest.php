@@ -36,4 +36,29 @@ class MinInclusiveRuleTest extends RuleTest
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', 2);
         $this->assertTrue(call_user_func($funtionName, null));
     }
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value 'P10675199DT2H49M4.4775807S', the value must be chronologically greater than or equal to P10675199DT2H49M5.4775807S
+     */
+    public function testApplyRuleWithDateIntervalMustBeFalseWithLowerInterval()
+    {
+        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', 'P10675199DT2H49M5.4775807S');
+        $this->assertTrue(call_user_func($funtionName, 'P10675199DT2H49M4.4775807S'));
+    }
+    /**
+     *
+     */
+    public function testApplyRuleWithDateIntervalMustBeTrueWithSameInterval()
+    {
+        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', $interval = 'P10675199DT2H49M5.4775807S');
+        $this->assertTrue(call_user_func($funtionName, $interval));
+    }
+    /**
+     *
+     */
+    public function testApplyRuleWithDateIntervalMustBeTrueWthHigherInterval()
+    {
+        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', 'P10675199DT2H49M5.4775807S');
+        $this->assertTrue(call_user_func($funtionName, 'P10675199DT2H49M6.4775807S'));
+    }
 }

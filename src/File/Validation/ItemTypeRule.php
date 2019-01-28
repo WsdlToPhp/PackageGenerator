@@ -8,6 +8,7 @@ use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 
 class ItemTypeRule extends AbstractRule
 {
+
     /**
      * @return string
      */

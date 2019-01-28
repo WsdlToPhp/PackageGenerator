@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class ListRule extends AbstractSetOfValuesRule
 {
+
     /**
      * @return string
      */

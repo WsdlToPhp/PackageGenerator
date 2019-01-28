@@ -182,16 +182,16 @@ class ApiShopper extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         // validation for constraint: pattern
-        if (is_scalar($email) && !preg_match('/[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', $email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a scalar value that matches "[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)"', var_export($email, true)), __LINE__);
+        if (!is_null($email) && !preg_match('/[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', $email)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)', var_export($email, true)), __LINE__);
         }
         // validation for constraint: maxLength
         if ((is_scalar($email) && strlen($email) > 100) || (is_array($email) && count($email) > 100)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 100 element(s) or a scalar of 100 character(s) at most', var_export($email, true), is_scalar($email) ? strlen($email) : count($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be less than or equal to 100', var_export($email, true), is_scalar($email) ? strlen($email) : count($email)), __LINE__);
         }
         // validation for constraint: minLength
         if ((is_scalar($email) && strlen($email) < 1) || (is_array($email) && count($email) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($email, true), is_scalar($email) ? strlen($email) : count($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be greater than or equal to 1', var_export($email, true), is_scalar($email) ? strlen($email) : count($email)), __LINE__);
         }
         $this->email = $email;
         return $this;
@@ -260,11 +260,11 @@ class ApiShopper extends AbstractStructBase
         }
         // validation for constraint: maxLength
         if ((is_scalar($id) && strlen($id) > 35) || (is_array($id) && count($id) > 35)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 35 element(s) or a scalar of 35 character(s) at most', var_export($id, true), is_scalar($id) ? strlen($id) : count($id)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be less than or equal to 35', var_export($id, true), is_scalar($id) ? strlen($id) : count($id)), __LINE__);
         }
         // validation for constraint: minLength
         if ((is_scalar($id) && strlen($id) < 1) || (is_array($id) && count($id) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($id, true), is_scalar($id) ? strlen($id) : count($id)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be greater than or equal to 1', var_export($id, true), is_scalar($id) ? strlen($id) : count($id)), __LINE__);
         }
         $this->id = $id;
         return $this;
@@ -290,11 +290,11 @@ class ApiShopper extends AbstractStructBase
         }
         // validation for constraint: maxLength
         if ((is_scalar($dateOfBirth) && strlen($dateOfBirth) > 10) || (is_array($dateOfBirth) && count($dateOfBirth) > 10)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 10 element(s) or a scalar of 10 character(s) at most', var_export($dateOfBirth, true), is_scalar($dateOfBirth) ? strlen($dateOfBirth) : count($dateOfBirth)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be less than or equal to 10', var_export($dateOfBirth, true), is_scalar($dateOfBirth) ? strlen($dateOfBirth) : count($dateOfBirth)), __LINE__);
         }
         // validation for constraint: minLength
         if ((is_scalar($dateOfBirth) && strlen($dateOfBirth) < 10) || (is_array($dateOfBirth) && count($dateOfBirth) < 10)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 10 element(s) or a scalar of 10 character(s) at least', var_export($dateOfBirth, true), is_scalar($dateOfBirth) ? strlen($dateOfBirth) : count($dateOfBirth)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be greater than or equal to 10', var_export($dateOfBirth, true), is_scalar($dateOfBirth) ? strlen($dateOfBirth) : count($dateOfBirth)), __LINE__);
         }
         $this->dateOfBirth = $dateOfBirth;
         return $this;
@@ -320,11 +320,11 @@ class ApiShopper extends AbstractStructBase
         }
         // validation for constraint: maxLength
         if ((is_scalar($phoneNumber) && strlen($phoneNumber) > 50) || (is_array($phoneNumber) && count($phoneNumber) > 50)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 50 element(s) or a scalar of 50 character(s) at most', var_export($phoneNumber, true), is_scalar($phoneNumber) ? strlen($phoneNumber) : count($phoneNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be less than or equal to 50', var_export($phoneNumber, true), is_scalar($phoneNumber) ? strlen($phoneNumber) : count($phoneNumber)), __LINE__);
         }
         // validation for constraint: minLength
         if ((is_scalar($phoneNumber) && strlen($phoneNumber) < 1) || (is_array($phoneNumber) && count($phoneNumber) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($phoneNumber, true), is_scalar($phoneNumber) ? strlen($phoneNumber) : count($phoneNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be greater than or equal to 1', var_export($phoneNumber, true), is_scalar($phoneNumber) ? strlen($phoneNumber) : count($phoneNumber)), __LINE__);
         }
         $this->phoneNumber = $phoneNumber;
         return $this;
@@ -350,11 +350,11 @@ class ApiShopper extends AbstractStructBase
         }
         // validation for constraint: maxLength
         if ((is_scalar($mobilePhoneNumber) && strlen($mobilePhoneNumber) > 50) || (is_array($mobilePhoneNumber) && count($mobilePhoneNumber) > 50)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 50 element(s) or a scalar of 50 character(s) at most', var_export($mobilePhoneNumber, true), is_scalar($mobilePhoneNumber) ? strlen($mobilePhoneNumber) : count($mobilePhoneNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be less than or equal to 50', var_export($mobilePhoneNumber, true), is_scalar($mobilePhoneNumber) ? strlen($mobilePhoneNumber) : count($mobilePhoneNumber)), __LINE__);
         }
         // validation for constraint: minLength
         if ((is_scalar($mobilePhoneNumber) && strlen($mobilePhoneNumber) < 1) || (is_array($mobilePhoneNumber) && count($mobilePhoneNumber) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($mobilePhoneNumber, true), is_scalar($mobilePhoneNumber) ? strlen($mobilePhoneNumber) : count($mobilePhoneNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be greater than or equal to 1', var_export($mobilePhoneNumber, true), is_scalar($mobilePhoneNumber) ? strlen($mobilePhoneNumber) : count($mobilePhoneNumber)), __LINE__);
         }
         $this->mobilePhoneNumber = $mobilePhoneNumber;
         return $this;
@@ -380,11 +380,11 @@ class ApiShopper extends AbstractStructBase
         }
         // validation for constraint: maxLength
         if ((is_scalar($ipAddress) && strlen($ipAddress) > 35) || (is_array($ipAddress) && count($ipAddress) > 35)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 35 element(s) or a scalar of 35 character(s) at most', var_export($ipAddress, true), is_scalar($ipAddress) ? strlen($ipAddress) : count($ipAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be less than or equal to 35', var_export($ipAddress, true), is_scalar($ipAddress) ? strlen($ipAddress) : count($ipAddress)), __LINE__);
         }
         // validation for constraint: minLength
         if ((is_scalar($ipAddress) && strlen($ipAddress) < 1) || (is_array($ipAddress) && count($ipAddress) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($ipAddress, true), is_scalar($ipAddress) ? strlen($ipAddress) : count($ipAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be greater than or equal to 1', var_export($ipAddress, true), is_scalar($ipAddress) ? strlen($ipAddress) : count($ipAddress)), __LINE__);
         }
         $this->ipAddress = $ipAddress;
         return $this;

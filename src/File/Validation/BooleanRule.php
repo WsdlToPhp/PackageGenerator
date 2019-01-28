@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class BooleanRule extends AbstractRule
 {
+
     /**
      * @return string
      */

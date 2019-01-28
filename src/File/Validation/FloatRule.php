@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class FloatRule extends AbstractRule
 {
+
     /**
      * @return string
      */

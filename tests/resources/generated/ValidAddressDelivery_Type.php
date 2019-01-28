@@ -186,7 +186,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
         }
         // validation for constraint: length
         if ((is_scalar($postalCode) && strlen($postalCode) !== 4) || (is_array($postalCode) && count($postalCode) !== 4)) {
-            throw new \InvalidArgumentException('Invalid length, please provide an array with 4 element(s) or a scalar of 4 character(s)', __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal or the number of elements contained by the list must be equal to 4', var_export($postalCode, true), is_scalar($postalCode) ? strlen($postalCode) : count($postalCode)), __LINE__);
         }
         $this->PostalCode = $postalCode;
         return $this;

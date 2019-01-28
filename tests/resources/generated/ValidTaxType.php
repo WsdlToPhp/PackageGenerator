@@ -208,8 +208,8 @@ class ApiTaxType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
         }
         // validation for constraint: pattern
-        if (is_scalar($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $code)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}"', var_export($code, true)), __LINE__);
+        if (!is_null($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $code)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}', var_export($code, true)), __LINE__);
         }
         $this->Code = $code;
         return $this;
@@ -235,11 +235,11 @@ class ApiTaxType extends AbstractStructBase
         }
         // validation for constraint: maxInclusive
         if (!is_null($percent) && $percent > 100) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be inferior or equal to 100, %s given', var_export($percent, true), $percent), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 100.00', var_export($percent, true)), __LINE__);
         }
         // validation for constraint: minInclusive
         if (!is_null($percent) && $percent < 0) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be superior or equal to 0, %s given', var_export($percent, true), $percent), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0.00', var_export($percent, true)), __LINE__);
         }
         $this->Percent = $percent;
         return $this;
@@ -290,8 +290,8 @@ class ApiTaxType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
         }
         // validation for constraint: pattern
-        if (is_scalar($currencyCode) && !preg_match('/[a-zA-Z]{3}/', $currencyCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a scalar value that matches "[a-zA-Z]{3}"', var_export($currencyCode, true)), __LINE__);
+        if (!is_null($currencyCode) && !preg_match('/[a-zA-Z]{3}/', $currencyCode)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [a-zA-Z]{3}', var_export($currencyCode, true)), __LINE__);
         }
         $this->CurrencyCode = $currencyCode;
         return $this;

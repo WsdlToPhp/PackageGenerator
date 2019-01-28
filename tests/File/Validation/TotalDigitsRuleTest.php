@@ -21,12 +21,12 @@ class TotalDigitsRuleTest extends RuleTest
         call_user_func($funtionName, 2.5556);
     }
     /**
-     * @expectedException \InvalidArgumentException
+     *
      */
-    public function testApplyRuleWithExceptionFor4Digits()
+    public function testApplyRuleFor4Digits()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\TotalDigitsRule', 4);
-        call_user_func($funtionName, 2.55);
+        $this->assertTrue(call_user_func($funtionName, 2.55));
     }
     /**
      *

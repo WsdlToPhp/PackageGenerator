@@ -5,8 +5,15 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 use WsdlToPhp\PackageGenerator\File\StructEnum;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
+/**
+ * Class EnumerationRule
+ * @link https://www.w3.org/TR/xmlschema-2/#rf-enumeration
+ * Validation Rule: enumeration valid
+ * A value in a ·value space· is facet-valid with respect to ·enumeration· if the value is one of the values specified in {value}
+ */
 class EnumerationRule extends AbstractRule
 {
+
     /**
      * @var Struct
      */

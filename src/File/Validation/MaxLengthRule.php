@@ -2,8 +2,20 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-class MaxLengthRule extends AbstractRule
+/**
+ * Class MaxLengthRule
+ * @link https://www.w3.org/TR/xmlschema-2/#rf-maxLength
+ * Validation Rule: maxLength Valid
+ * A value in a ·value space· is facet-valid with respect to ·maxLength·, determined as follows:
+ *  - 1 if the {variety} is ·atomic· then
+ *   - 1.1 if {primitive type definition} is string or anyURI, then the length of the value, as measured in characters ·must· be less than or equal to {value};
+ *   - 1.2 if {primitive type definition} is hexBinary or base64Binary, then the length of the value, as measured in octets of the binary data, ·must· be less than or equal to {value};
+ *   - 1.3 if {primitive type definition} is QName or NOTATION, then any {value} is facet-valid.
+ *  - 2 if the {variety} is ·list·, then the length of the value, as measured in list items, ·must· be less than or equal to {value}
+ */
+class MaxLengthRule extends AbstractLengthRule
 {
+
     /**
      * @return string
      */
@@ -13,24 +25,10 @@ class MaxLengthRule extends AbstractRule
     }
 
     /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
      * @return string
      */
-    public function testConditions($parameterName, $value, $itemType = false)
+    public static function symbol()
     {
-        return sprintf('(is_scalar($%1$s) && strlen($%1$s) > %2$d) || (is_array($%1$s) && count($%1$s) > %2$d)', $parameterName, $value);
-    }
-
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
-    {
-        return sprintf('sprintf(\'Invalid length for %%s, please provide an array with %1$d element(s) or a scalar of %1$d character(s) at most\', var_export($%2$s, true), is_scalar($%2$s) ? strlen($%2$s) : count($%2$s))', $value, $parameterName);
+        return self::SYMBOL_MAX_INCLUSIVE;
     }
 }

@@ -8,6 +8,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 abstract class AbstractSetOfValuesRule extends AbstractRule
 {
+
     /**
      * Must check the attribute validity according to the current rule
      * @return bool

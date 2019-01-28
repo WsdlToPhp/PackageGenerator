@@ -10,10 +10,12 @@ use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 
 abstract class AbstractRule
 {
+
     /**
      * @var Rules
      */
     protected $rules;
+
     /**
      * @param Rules $rules
      */
@@ -21,6 +23,7 @@ abstract class AbstractRule
     {
         $this->rules = $rules;
     }
+
     /**
      * This method has to add the validation rule to the method's body
      * @param string $parameterName
@@ -42,11 +45,13 @@ abstract class AbstractRule
         }
         unset($test);
     }
+
     /**
      * Name of the validation rule
      * @return string
      */
     abstract public function name();
+
     /**
      * Inline tests of the validation rule
      * @param string $parameterName
@@ -55,6 +60,7 @@ abstract class AbstractRule
      * @return string
      */
     abstract public function testConditions($parameterName, $value, $itemType = false);
+
     /**
      * Message when test fails in order to throw the exception
      * @param string $parameterName
@@ -63,6 +69,7 @@ abstract class AbstractRule
      * @return string
      */
     abstract public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false);
+
     /**
      * @return Rules
      */
@@ -70,6 +77,7 @@ abstract class AbstractRule
     {
         return $this->rules;
     }
+
     /**
      * @return PhpMethod
      */
@@ -77,6 +85,7 @@ abstract class AbstractRule
     {
         return $this->rules->getMethod();
     }
+
     /**
      * @return MethodContainer
      */
@@ -84,6 +93,7 @@ abstract class AbstractRule
     {
         return $this->rules->getMethods();
     }
+
     /**
      * @return AbstractModelFile
      */
@@ -91,6 +101,7 @@ abstract class AbstractRule
     {
         return $this->rules->getFile();
     }
+
     /**
      * @return StructAttributeModel
      */
@@ -98,6 +109,7 @@ abstract class AbstractRule
     {
         return $this->rules->getAttribute();
     }
+
     /**
      * @return Generator
      */

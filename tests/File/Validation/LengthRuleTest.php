@@ -75,6 +75,7 @@ class LengthRuleTest extends RuleTest
     }
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid length of 1234567, the number of characters/octets contained by the literal or the number of elements contained by the list must be equal to 6
      */
     public function testApplyRuleWithGreaterLengthInteger()
     {
@@ -83,11 +84,12 @@ class LengthRuleTest extends RuleTest
     }
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid length of '1234567', the number of characters/octets contained by the literal or the number of elements contained by the list must be equal to 6
      */
     public function testApplyRuleWithGreaterLengthString()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        call_user_func($funtionName, 1234567);
+        call_user_func($funtionName, '1234567');
     }
     /**
      * @expectedException \InvalidArgumentException
