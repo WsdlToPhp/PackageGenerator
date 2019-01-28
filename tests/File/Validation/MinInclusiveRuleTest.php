@@ -29,11 +29,11 @@ class MinInclusiveRuleTest extends RuleTest
         call_user_func($funtionName, 1.99);
     }
     /**
-     * @expectedException \InvalidArgumentException
+     *
      */
     public function testApplyRuleWithNull()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', 2);
-        call_user_func($funtionName, null);
+        $this->assertTrue(call_user_func($funtionName, null));
     }
 }

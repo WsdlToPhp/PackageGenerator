@@ -20,7 +20,7 @@ class TotalDigitsRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('is_float($%1$s) && strlen(str_replace(array(\' \', \'.\', \',\', \'-\', \'+\'), \'\', $%1$s)) !== %2$d', $parameterName, $value);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . 'strlen(str_replace(array(\' \', \'.\', \',\', \'-\', \'+\'), \'\', $%1$s)) !== %2$d', $parameterName, $value);
     }
 
     /**

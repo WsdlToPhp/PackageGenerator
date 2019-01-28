@@ -20,7 +20,7 @@ class MinInclusiveRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('$%s < %d', $parameterName, $value);
+        return sprintf(($itemType  ? '' : '!is_null($%1$s) && ') . '$%s < %d', $parameterName, $value);
     }
 
     /**

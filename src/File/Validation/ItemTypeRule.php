@@ -24,7 +24,7 @@ class ItemTypeRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('!%s', $this->getItemSanityCheck($this->getAttribute(), $parameterName));
+        return sprintf('%s', $this->getItemSanityCheck($this->getAttribute(), $parameterName));
     }
 
     /**
@@ -50,23 +50,12 @@ class ItemTypeRule extends AbstractRule
         $model = $this->getFile()->getModelFromStructAttribute($attribute);
         $sanityCheck = 'false';
         if ($model instanceof Struct && !$model->isList() && ($model->isStruct() || ($model->isArray() && $model->getInheritanceStruct() instanceof Struct))) {
-            $sanityCheck = sprintf('$%s instanceof %s', $itemName, $this->getFile()->getStructAttributeType($attribute, true));
+            $sanityCheck = sprintf('!$%s instanceof %s', $itemName, $this->getFile()->getStructAttributeType($attribute, true));
         } else {
-            switch (AbstractModelFile::getPhpType($this->getFile()->getStructAttributeType($attribute))) {
-                case 'int':
-                    $sanityCheck = 'is_numeric($%s)';
-                    break;
-                case 'bool':
-                    $sanityCheck = 'is_bool($%s)';
-                    break;
-                case 'float':
-                    $sanityCheck = 'is_float($%s)';
-                    break;
-                case 'string':
-                    $sanityCheck = 'is_string($%s)';
-                    break;
+            $type = AbstractModelFile::getPhpType($this->getFile()->getStructAttributeType($attribute));
+            if ($rule = clone $this->getRules()->getRule($type)) {
+                $sanityCheck = $rule->testConditions($itemName, null, true);
             }
-            $sanityCheck = sprintf($sanityCheck, $itemName);
         }
         return $sanityCheck;
     }

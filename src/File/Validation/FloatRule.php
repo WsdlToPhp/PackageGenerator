@@ -2,14 +2,14 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-class StringRule extends AbstractRule
+class FloatRule extends AbstractRule
 {
     /**
      * @return string
      */
     public function name()
     {
-        return 'string';
+        return 'float';
     }
 
     /**
@@ -20,7 +20,7 @@ class StringRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!is_string($%1$s)', $parameterName);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!is_float($%1$s)', $parameterName, $value);
     }
 
     /**
@@ -31,6 +31,6 @@ class StringRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value %%s, please provide a string, %%s given\', var_export($%1$s, true), gettype($%1$s))', $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, please provide a float value, %%s given\', var_export($%1$s, true), gettype($%1$s))', $parameterName);
     }
 }

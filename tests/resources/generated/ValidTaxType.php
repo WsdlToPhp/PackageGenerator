@@ -229,12 +229,16 @@ class ApiTaxType extends AbstractStructBase
      */
     public function setPercent($percent = null)
     {
+        // validation for constraint: float
+        if (!is_null($percent) && !is_float($percent)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percent, true), gettype($percent)), __LINE__);
+        }
         // validation for constraint: maxInclusive
-        if ($percent > 100) {
+        if (!is_null($percent) && $percent > 100) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be inferior or equal to 100, %s given', var_export($percent, true), $percent), __LINE__);
         }
         // validation for constraint: minInclusive
-        if ($percent < 0) {
+        if (!is_null($percent) && $percent < 0) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be superior or equal to 0, %s given', var_export($percent, true), $percent), __LINE__);
         }
         $this->Percent = $percent;
@@ -255,8 +259,12 @@ class ApiTaxType extends AbstractStructBase
      */
     public function setAmount($amount = null)
     {
+        // validation for constraint: float
+        if (!is_null($amount) && !is_float($amount)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($amount, true), gettype($amount)), __LINE__);
+        }
         // validation for constraint: fractionDigits
-        if (is_float($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) > 3) {
+        if (!is_null($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) > 3) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 3 fraction digits, %d given', var_export($amount, true), strlen(substr($amount, strpos($amount, '.') + 1))), __LINE__);
         }
         $this->Amount = $amount;

@@ -20,7 +20,7 @@ class FractionDigitsRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('is_float($%1$s) && strlen(substr($%1$s, strpos($%1$s, \'.\') + 1)) > %2$d', $parameterName, $value);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . 'strlen(substr($%1$s, strpos($%1$s, \'.\') + 1)) > %2$d', $parameterName, $value);
     }
 
     /**

@@ -20,7 +20,7 @@ class IntRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('!is_null($%1$s) && !is_numeric($%1$s)', $parameterName, $value);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!is_numeric($%1$s)', $parameterName, $value);
     }
 
     /**

@@ -81,7 +81,7 @@ class Rules
      * @param string $name
      * @return AbstractRule|null
      */
-    protected function getRule($name)
+    public function getRule($name)
     {
         if (is_string($name)) {
             $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($name));

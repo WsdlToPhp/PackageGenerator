@@ -29,11 +29,11 @@ class MinExclusiveRuleTest extends RuleTest
         call_user_func($funtionName, 1.99);
     }
     /**
-     * @expectedException \InvalidArgumentException
+     *
      */
     public function testApplyRuleWithNull()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinExclusiveRule', 2);
-        call_user_func($funtionName, null);
+        $this->assertTrue(call_user_func($funtionName, null));
     }
 }
