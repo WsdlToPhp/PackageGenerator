@@ -60,20 +60,19 @@ class Rules
         } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->attribute))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
-        $this->applyRulesFromAttribute($parameterName, $itemType);
+        $this->applyRulesFromAttribute($parameterName);
     }
 
     /**
      * Generic method to apply rules from current model
      * @param string $parameterName
-     * @param bool $itemType
      */
-    protected function applyRulesFromAttribute($parameterName, $itemType = false)
+    protected function applyRulesFromAttribute($parameterName)
     {
         foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
             $rule = $this->getRule($metaName);
             if ($rule instanceof AbstractRule) {
-                $rule->applyRule($parameterName, $metaValue, $itemType);
+                $rule->applyRule($parameterName, $metaValue);
             }
         }
     }
