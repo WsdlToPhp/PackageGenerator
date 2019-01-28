@@ -54,7 +54,7 @@ class ItemTypeRule extends AbstractRule
             $sanityCheck = sprintf('!$%s instanceof %s', $itemName, $this->getFile()->getStructAttributeType($attribute, true));
         } else {
             $type = AbstractModelFile::getPhpType($this->getFile()->getStructAttributeType($attribute));
-            if ($rule = clone $this->getRules()->getRule($type)) {
+            if ($rule = $this->getRules()->getRule($type)) {
                 $sanityCheck = $rule->testConditions($itemName, null, true);
             }
         }

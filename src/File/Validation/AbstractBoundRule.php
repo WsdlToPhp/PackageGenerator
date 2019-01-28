@@ -5,7 +5,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
  * Class AbstractBoundRule
- * Gathers [min|max][In|Ex]Clusive rules
+ * Gathers [min|max][In|Ex]clusive rules
  * @package WsdlToPhp\PackageGenerator\File\Validation
  */
 abstract class AbstractBoundRule extends AbstractMinMaxRule
