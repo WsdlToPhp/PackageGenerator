@@ -312,8 +312,8 @@ class ApiTaxType extends AbstractStructBase
     public function setDecimalPlaces($decimalPlaces = null)
     {
         // validation for constraint: int
-        if (!is_null($decimalPlaces) && !is_numeric($decimalPlaces)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($decimalPlaces, true), gettype($decimalPlaces)), __LINE__);
+        if (!is_null($decimalPlaces) && !is_int($decimalPlaces)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($decimalPlaces, true), gettype($decimalPlaces)), __LINE__);
         }
         $this->DecimalPlaces = $decimalPlaces;
         return $this;

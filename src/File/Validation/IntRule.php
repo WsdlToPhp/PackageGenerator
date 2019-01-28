@@ -21,7 +21,7 @@ class IntRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!is_numeric($%1$s)', $parameterName, $value);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!is_int($%1$s)', $parameterName, $value);
     }
 
     /**
@@ -32,6 +32,6 @@ class IntRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value %%s, please provide a numeric value, %%s given\', var_export($%1$s, true), gettype($%1$s))', $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, please provide an integer value, %%s given\', var_export($%1$s, true), gettype($%1$s))', $parameterName);
     }
 }

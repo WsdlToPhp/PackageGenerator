@@ -350,8 +350,8 @@ class ApiBannerInfo extends AbstractStructBase
     public function setBannerID($bannerID = null)
     {
         // validation for constraint: int
-        if (!is_null($bannerID) && !is_numeric($bannerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($bannerID, true), gettype($bannerID)), __LINE__);
+        if (!is_null($bannerID) && !is_int($bannerID)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($bannerID, true), gettype($bannerID)), __LINE__);
         }
         $this->BannerID = $bannerID;
         return $this;
@@ -372,8 +372,8 @@ class ApiBannerInfo extends AbstractStructBase
     public function setCampaignID($campaignID = null)
     {
         // validation for constraint: int
-        if (!is_null($campaignID) && !is_numeric($campaignID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($campaignID, true), gettype($campaignID)), __LINE__);
+        if (!is_null($campaignID) && !is_int($campaignID)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($campaignID, true), gettype($campaignID)), __LINE__);
         }
         $this->CampaignID = $campaignID;
         return $this;
@@ -1042,8 +1042,8 @@ class ApiBannerInfo extends AbstractStructBase
     public function setAdGroupID($adGroupID = null)
     {
         // validation for constraint: int
-        if (!is_null($adGroupID) && !is_numeric($adGroupID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($adGroupID, true), gettype($adGroupID)), __LINE__);
+        if (!is_null($adGroupID) && !is_int($adGroupID)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($adGroupID, true), gettype($adGroupID)), __LINE__);
         }
         $this->AdGroupID = $adGroupID;
         return $this;
@@ -1174,8 +1174,8 @@ class ApiBannerInfo extends AbstractStructBase
     public function setAdGroupMobileBidAdjustment($adGroupMobileBidAdjustment = null)
     {
         // validation for constraint: int
-        if (!is_null($adGroupMobileBidAdjustment) && !is_numeric($adGroupMobileBidAdjustment)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a numeric value, %s given', var_export($adGroupMobileBidAdjustment, true), gettype($adGroupMobileBidAdjustment)), __LINE__);
+        if (!is_null($adGroupMobileBidAdjustment) && !is_int($adGroupMobileBidAdjustment)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($adGroupMobileBidAdjustment, true), gettype($adGroupMobileBidAdjustment)), __LINE__);
         }
         $this->AdGroupMobileBidAdjustment = $adGroupMobileBidAdjustment;
         return $this;

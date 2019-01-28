@@ -12,7 +12,7 @@ use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 
 abstract class RuleTest extends TestCase
 {
-    protected function createRuleFunction($ruleClassName, $value, $itemType = false, $structAttributeType = 'string')
+    protected function createRuleFunction($ruleClassName, $value = null, $itemType = false, $structAttributeType = 'string')
     {
         $generator = self::getBingGeneratorInstance();
         $methodName = '_any_' . md5(rand(0, time()));
