@@ -40,14 +40,14 @@ abstract class AbstractMinMaxRule extends AbstractRule
      * Must return the comparison symbol
      * @return string
      */
-    abstract public static function symbol();
+    abstract public function symbol();
 
     /**
      * @return string
      */
-    final public static function comparisonString()
+    final public function comparisonString()
     {
-        switch (static::symbol()) {
+        switch ($this->symbol()) {
             case self::SYMBOL_MAX_INCLUSIVE:
                 $comparison = 'less than or equal to';
                 break;
@@ -64,7 +64,7 @@ abstract class AbstractMinMaxRule extends AbstractRule
                 $comparison = 'equal to';
                 break;
             default:
-                throw new \InvalidArgumentException(sprintf('Invalid value %s returned by static::symbol(), can\'t determine comparison string', static::symbol()));
+                throw new \InvalidArgumentException(sprintf('Invalid value %s returned by symbol() method, can\'t determine comparison string', $this->symbol()));
                 break;
         }
         return $comparison;

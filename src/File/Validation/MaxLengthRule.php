@@ -27,7 +27,7 @@ class MaxLengthRule extends AbstractLengthRule
     /**
      * @return string
      */
-    public static function symbol()
+    public function symbol()
     {
         return self::SYMBOL_MAX_INCLUSIVE;
     }

@@ -24,7 +24,7 @@ abstract class AbstractBoundRule extends AbstractMinMaxRule
         } else {
             $test = '($time = (string) time()) && \DateTime::createFromFormat(\'U\', $time)->add(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', $%1$s))) %3$s \DateTime::createFromFormat(\'U\', $time)->add(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', \'%2$s\')))';
         }
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . $test, $parameterName, $value, static::symbol());
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . $test, $parameterName, $value, $this->symbol());
     }
 
     /**
@@ -35,6 +35,6 @@ abstract class AbstractBoundRule extends AbstractMinMaxRule
      */
     final public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value %%s, the value must be %s %s %s\', var_export($%4$s, true))', is_numeric($value) ? 'numerically' : 'chronologically', static::comparisonString(), $value, $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, the value must be %s %s %s\', var_export($%4$s, true))', is_numeric($value) ? 'numerically' : 'chronologically', $this->comparisonString(), $value, $parameterName);
     }
 }
