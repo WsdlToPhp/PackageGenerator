@@ -21,7 +21,7 @@ class FloatRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!is_float($%1$s)', $parameterName, $value);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!(is_float($%1$s) || is_numeric($%1$s))', $parameterName, $value);
     }
 
     /**

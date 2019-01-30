@@ -609,7 +609,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_total($area_total = null)
     {
         // validation for constraint: float
-        if (!is_null($area_total) && !is_float($area_total)) {
+        if (!is_null($area_total) && !(is_float($area_total) || is_numeric($area_total))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_total, true), gettype($area_total)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -639,7 +639,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_residential($area_residential = null)
     {
         // validation for constraint: float
-        if (!is_null($area_residential) && !is_float($area_residential)) {
+        if (!is_null($area_residential) && !(is_float($area_residential) || is_numeric($area_residential))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_residential, true), gettype($area_residential)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -669,7 +669,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_non_residential($area_non_residential = null)
     {
         // validation for constraint: float
-        if (!is_null($area_non_residential) && !is_float($area_non_residential)) {
+        if (!is_null($area_non_residential) && !(is_float($area_non_residential) || is_numeric($area_non_residential))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_non_residential, true), gettype($area_non_residential)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -950,7 +950,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_private($area_private = null)
     {
         // validation for constraint: float
-        if (!is_null($area_private) && !is_float($area_private)) {
+        if (!is_null($area_private) && !(is_float($area_private) || is_numeric($area_private))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_private, true), gettype($area_private)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -980,7 +980,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_municipal($area_municipal = null)
     {
         // validation for constraint: float
-        if (!is_null($area_municipal) && !is_float($area_municipal)) {
+        if (!is_null($area_municipal) && !(is_float($area_municipal) || is_numeric($area_municipal))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_municipal, true), gettype($area_municipal)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1010,7 +1010,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_national($area_national = null)
     {
         // validation for constraint: float
-        if (!is_null($area_national) && !is_float($area_national)) {
+        if (!is_null($area_national) && !(is_float($area_national) || is_numeric($area_national))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_national, true), gettype($area_national)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1040,7 +1040,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_land($area_land = null)
     {
         // validation for constraint: float
-        if (!is_null($area_land) && !is_float($area_land)) {
+        if (!is_null($area_land) && !(is_float($area_land) || is_numeric($area_land))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_land, true), gettype($area_land)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1070,7 +1070,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setArea_territory($area_territory = null)
     {
         // validation for constraint: float
-        if (!is_null($area_territory) && !is_float($area_territory)) {
+        if (!is_null($area_territory) && !(is_float($area_territory) || is_numeric($area_territory))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_territory, true), gettype($area_territory)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1210,7 +1210,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setThermal_actual_expense($thermal_actual_expense = null)
     {
         // validation for constraint: float
-        if (!is_null($thermal_actual_expense) && !is_float($thermal_actual_expense)) {
+        if (!is_null($thermal_actual_expense) && !(is_float($thermal_actual_expense) || is_numeric($thermal_actual_expense))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($thermal_actual_expense, true), gettype($thermal_actual_expense)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1240,7 +1240,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setThermal_normative_expense($thermal_normative_expense = null)
     {
         // validation for constraint: float
-        if (!is_null($thermal_normative_expense) && !is_float($thermal_normative_expense)) {
+        if (!is_null($thermal_normative_expense) && !(is_float($thermal_normative_expense) || is_numeric($thermal_normative_expense))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($thermal_normative_expense, true), gettype($thermal_normative_expense)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1339,7 +1339,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDeterioration_total($deterioration_total = null)
     {
         // validation for constraint: float
-        if (!is_null($deterioration_total) && !is_float($deterioration_total)) {
+        if (!is_null($deterioration_total) && !(is_float($deterioration_total) || is_numeric($deterioration_total))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_total, true), gettype($deterioration_total)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1369,7 +1369,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDeterioration_foundation($deterioration_foundation = null)
     {
         // validation for constraint: float
-        if (!is_null($deterioration_foundation) && !is_float($deterioration_foundation)) {
+        if (!is_null($deterioration_foundation) && !(is_float($deterioration_foundation) || is_numeric($deterioration_foundation))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_foundation, true), gettype($deterioration_foundation)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1399,7 +1399,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDeterioration_bearing_walls($deterioration_bearing_walls = null)
     {
         // validation for constraint: float
-        if (!is_null($deterioration_bearing_walls) && !is_float($deterioration_bearing_walls)) {
+        if (!is_null($deterioration_bearing_walls) && !(is_float($deterioration_bearing_walls) || is_numeric($deterioration_bearing_walls))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_bearing_walls, true), gettype($deterioration_bearing_walls)), __LINE__);
         }
         // validation for constraint: fractionDigits
@@ -1429,7 +1429,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDeterioration_floor($deterioration_floor = null)
     {
         // validation for constraint: float
-        if (!is_null($deterioration_floor) && !is_float($deterioration_floor)) {
+        if (!is_null($deterioration_floor) && !(is_float($deterioration_floor) || is_numeric($deterioration_floor))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_floor, true), gettype($deterioration_floor)), __LINE__);
         }
         // validation for constraint: fractionDigits

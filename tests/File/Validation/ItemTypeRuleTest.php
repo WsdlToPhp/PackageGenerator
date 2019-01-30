@@ -37,12 +37,20 @@ class ItemTypeRuleTest extends RuleTest
         $this->assertTrue(call_user_func($funtionName, null));
     }
     /**
-     * @expectedException \InvalidArgumentException
+     *
      */
     public function testApplyRuleForFloatWithInteger()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'float');
-        call_user_func($funtionName, 1);
+        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'int');
+        $this->assertTrue(call_user_func($funtionName, 1));
+    }
+    /**
+     *
+     */
+    public function testApplyRuleForFloatWithStringInteger()
+    {
+        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'int');
+        $this->assertTrue(call_user_func($funtionName, '1'));
     }
     /**
      * @expectedException \InvalidArgumentException
@@ -50,7 +58,7 @@ class ItemTypeRuleTest extends RuleTest
     public function testApplyRuleForFloatWithBool()
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'float');
-        call_user_func($funtionName, true);
+        $this->assertTrue(call_user_func($funtionName, true));
     }
     /**
      *
@@ -59,6 +67,14 @@ class ItemTypeRuleTest extends RuleTest
     {
         $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'float');
         $this->assertTrue(call_user_func($funtionName, 2.5));
+    }
+    /**
+     *
+     */
+    public function testApplyRuleForFloatWithStringFloat()
+    {
+        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'float');
+        $this->assertTrue(call_user_func($funtionName, '2.5'));
     }
     /**
      * @expectedException \InvalidArgumentException

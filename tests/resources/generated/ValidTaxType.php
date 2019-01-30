@@ -230,7 +230,7 @@ class ApiTaxType extends AbstractStructBase
     public function setPercent($percent = null)
     {
         // validation for constraint: float
-        if (!is_null($percent) && !is_float($percent)) {
+        if (!is_null($percent) && !(is_float($percent) || is_numeric($percent))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percent, true), gettype($percent)), __LINE__);
         }
         // validation for constraint: maxInclusive
@@ -260,7 +260,7 @@ class ApiTaxType extends AbstractStructBase
     public function setAmount($amount = null)
     {
         // validation for constraint: float
-        if (!is_null($amount) && !is_float($amount)) {
+        if (!is_null($amount) && !(is_float($amount) || is_numeric($amount))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         // validation for constraint: fractionDigits
