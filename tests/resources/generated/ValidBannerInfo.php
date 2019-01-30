@@ -350,7 +350,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setBannerID($bannerID = null)
     {
         // validation for constraint: int
-        if (!is_null($bannerID) && !is_int($bannerID)) {
+        if (!is_null($bannerID) && !(is_int($bannerID) || ctype_digit($bannerID))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($bannerID, true), gettype($bannerID)), __LINE__);
         }
         $this->BannerID = $bannerID;
@@ -372,7 +372,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setCampaignID($campaignID = null)
     {
         // validation for constraint: int
-        if (!is_null($campaignID) && !is_int($campaignID)) {
+        if (!is_null($campaignID) && !(is_int($campaignID) || ctype_digit($campaignID))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($campaignID, true), gettype($campaignID)), __LINE__);
         }
         $this->CampaignID = $campaignID;
@@ -1042,7 +1042,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setAdGroupID($adGroupID = null)
     {
         // validation for constraint: int
-        if (!is_null($adGroupID) && !is_int($adGroupID)) {
+        if (!is_null($adGroupID) && !(is_int($adGroupID) || ctype_digit($adGroupID))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($adGroupID, true), gettype($adGroupID)), __LINE__);
         }
         $this->AdGroupID = $adGroupID;
@@ -1174,7 +1174,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setAdGroupMobileBidAdjustment($adGroupMobileBidAdjustment = null)
     {
         // validation for constraint: int
-        if (!is_null($adGroupMobileBidAdjustment) && !is_int($adGroupMobileBidAdjustment)) {
+        if (!is_null($adGroupMobileBidAdjustment) && !(is_int($adGroupMobileBidAdjustment) || ctype_digit($adGroupMobileBidAdjustment))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($adGroupMobileBidAdjustment, true), gettype($adGroupMobileBidAdjustment)), __LINE__);
         }
         $this->AdGroupMobileBidAdjustment = $adGroupMobileBidAdjustment;

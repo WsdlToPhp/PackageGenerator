@@ -115,7 +115,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     public function setStartTimeInMinutes($startTimeInMinutes = null)
     {
         // validation for constraint: int
-        if (!is_null($startTimeInMinutes) && !is_int($startTimeInMinutes)) {
+        if (!is_null($startTimeInMinutes) && !(is_int($startTimeInMinutes) || ctype_digit($startTimeInMinutes))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($startTimeInMinutes, true), gettype($startTimeInMinutes)), __LINE__);
         }
         $this->StartTimeInMinutes = $startTimeInMinutes;
@@ -137,7 +137,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     public function setEndTimeInMinutes($endTimeInMinutes = null)
     {
         // validation for constraint: int
-        if (!is_null($endTimeInMinutes) && !is_int($endTimeInMinutes)) {
+        if (!is_null($endTimeInMinutes) && !(is_int($endTimeInMinutes) || ctype_digit($endTimeInMinutes))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($endTimeInMinutes, true), gettype($endTimeInMinutes)), __LINE__);
         }
         $this->EndTimeInMinutes = $endTimeInMinutes;

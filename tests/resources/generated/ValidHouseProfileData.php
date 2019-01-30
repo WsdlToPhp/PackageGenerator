@@ -884,7 +884,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setStoreys_count($storeys_count = null)
     {
         // validation for constraint: int
-        if (!is_null($storeys_count) && !is_int($storeys_count)) {
+        if (!is_null($storeys_count) && !(is_int($storeys_count) || ctype_digit($storeys_count))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($storeys_count, true), gettype($storeys_count)), __LINE__);
         }
         $this->storeys_count = $storeys_count;
@@ -906,7 +906,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setEntrance_count($entrance_count = null)
     {
         // validation for constraint: int
-        if (!is_null($entrance_count) && !is_int($entrance_count)) {
+        if (!is_null($entrance_count) && !(is_int($entrance_count) || ctype_digit($entrance_count))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($entrance_count, true), gettype($entrance_count)), __LINE__);
         }
         $this->entrance_count = $entrance_count;
@@ -928,7 +928,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setElevators_count($elevators_count = null)
     {
         // validation for constraint: int
-        if (!is_null($elevators_count) && !is_int($elevators_count)) {
+        if (!is_null($elevators_count) && !(is_int($elevators_count) || ctype_digit($elevators_count))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($elevators_count, true), gettype($elevators_count)), __LINE__);
         }
         $this->elevators_count = $elevators_count;
@@ -1122,7 +1122,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setFlats_count($flats_count = null)
     {
         // validation for constraint: int
-        if (!is_null($flats_count) && !is_int($flats_count)) {
+        if (!is_null($flats_count) && !(is_int($flats_count) || ctype_digit($flats_count))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($flats_count, true), gettype($flats_count)), __LINE__);
         }
         $this->flats_count = $flats_count;
@@ -1144,7 +1144,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setResidents_count($residents_count = null)
     {
         // validation for constraint: int
-        if (!is_null($residents_count) && !is_int($residents_count)) {
+        if (!is_null($residents_count) && !(is_int($residents_count) || ctype_digit($residents_count))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($residents_count, true), gettype($residents_count)), __LINE__);
         }
         $this->residents_count = $residents_count;
@@ -1166,7 +1166,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setAccounts_count($accounts_count = null)
     {
         // validation for constraint: int
-        if (!is_null($accounts_count) && !is_int($accounts_count)) {
+        if (!is_null($accounts_count) && !(is_int($accounts_count) || ctype_digit($accounts_count))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($accounts_count, true), gettype($accounts_count)), __LINE__);
         }
         $this->accounts_count = $accounts_count;

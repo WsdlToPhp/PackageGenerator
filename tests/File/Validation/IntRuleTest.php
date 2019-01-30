@@ -41,10 +41,9 @@ class IntRuleTest extends RuleTest
         $this->assertTrue(call_user_func($functionName, null));
     }
     /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value '6', please provide an integer value, string given
+     *
      */
-    public function testApplyRuleWithString()
+    public function testApplyRuleWithStringInteger()
     {
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule');
         $this->assertTrue(call_user_func($functionName, '6'));

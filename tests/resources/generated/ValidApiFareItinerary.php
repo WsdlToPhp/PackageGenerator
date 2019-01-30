@@ -145,7 +145,7 @@ class ApiFareItinerary extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $fareItineraryFirstSegmentsIdsItem) {
             // validation for constraint: itemType
-            if (!is_int($fareItineraryFirstSegmentsIdsItem)) {
+            if (!(is_int($fareItineraryFirstSegmentsIdsItem) || ctype_digit($fareItineraryFirstSegmentsIdsItem))) {
                 $invalidValues[] = is_object($fareItineraryFirstSegmentsIdsItem) ? get_class($fareItineraryFirstSegmentsIdsItem) : var_export($fareItineraryFirstSegmentsIdsItem, true);
             }
         }
@@ -179,7 +179,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function addToFirstSegmentsIds($item)
     {
         // validation for constraint: itemType
-        if (!is_int($item)) {
+        if (!(is_int($item) || ctype_digit($item))) {
             throw new \InvalidArgumentException(sprintf('The firstSegmentsIds property can only contain items of int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->firstSegmentsIds[] = $item;
@@ -249,7 +249,7 @@ class ApiFareItinerary extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $fareItinerarySecondSegmentsIdsItem) {
             // validation for constraint: itemType
-            if (!is_int($fareItinerarySecondSegmentsIdsItem)) {
+            if (!(is_int($fareItinerarySecondSegmentsIdsItem) || ctype_digit($fareItinerarySecondSegmentsIdsItem))) {
                 $invalidValues[] = is_object($fareItinerarySecondSegmentsIdsItem) ? get_class($fareItinerarySecondSegmentsIdsItem) : var_export($fareItinerarySecondSegmentsIdsItem, true);
             }
         }
@@ -283,7 +283,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function addToSecondSegmentsIds($item)
     {
         // validation for constraint: itemType
-        if (!is_int($item)) {
+        if (!(is_int($item) || ctype_digit($item))) {
             throw new \InvalidArgumentException(sprintf('The secondSegmentsIds property can only contain items of int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->secondSegmentsIds[] = $item;
@@ -309,7 +309,7 @@ class ApiFareItinerary extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $fareItineraryThirdSegmentsIdsItem) {
             // validation for constraint: itemType
-            if (!is_int($fareItineraryThirdSegmentsIdsItem)) {
+            if (!(is_int($fareItineraryThirdSegmentsIdsItem) || ctype_digit($fareItineraryThirdSegmentsIdsItem))) {
                 $invalidValues[] = is_object($fareItineraryThirdSegmentsIdsItem) ? get_class($fareItineraryThirdSegmentsIdsItem) : var_export($fareItineraryThirdSegmentsIdsItem, true);
             }
         }
@@ -343,7 +343,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function addToThirdSegmentsIds($item)
     {
         // validation for constraint: itemType
-        if (!is_int($item)) {
+        if (!(is_int($item) || ctype_digit($item))) {
             throw new \InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->thirdSegmentsIds[] = $item;

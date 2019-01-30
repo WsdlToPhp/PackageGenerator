@@ -79,7 +79,7 @@ class ApiVideoRequest extends AbstractStructBase
     public function setOffset($offset = null)
     {
         // validation for constraint: int
-        if (!is_null($offset) && !is_int($offset)) {
+        if (!is_null($offset) && !(is_int($offset) || ctype_digit($offset))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($offset, true), gettype($offset)), __LINE__);
         }
         $this->Offset = $offset;
@@ -101,7 +101,7 @@ class ApiVideoRequest extends AbstractStructBase
     public function setCount($count = null)
     {
         // validation for constraint: int
-        if (!is_null($count) && !is_int($count)) {
+        if (!is_null($count) && !(is_int($count) || ctype_digit($count))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($count, true), gettype($count)), __LINE__);
         }
         $this->Count = $count;
