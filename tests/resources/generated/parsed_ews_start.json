@@ -15668,7 +15668,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "IndexedPagingOffset",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -15678,7 +15681,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "NumeratorOffset",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -15688,7 +15694,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "AbsoluteDenominator",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -15698,7 +15707,10 @@
                         "type": "boolean",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:boolean",
+                            "use": "optional"
+                        },
                         "name": "IncludesLastItemInRange",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -15708,7 +15720,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "TotalItemsInView",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
@@ -17823,7 +17838,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "IndexedPagingOffset",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -17833,7 +17851,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "NumeratorOffset",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -17843,7 +17864,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "AbsoluteDenominator",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -17853,7 +17877,10 @@
                         "type": "boolean",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:boolean",
+                            "use": "optional"
+                        },
                         "name": "IncludesLastItemInRange",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -17863,7 +17890,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "TotalItemsInView",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
@@ -30273,7 +30303,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "IndexedPagingOffset",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -30283,7 +30316,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "NumeratorOffset",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -30293,7 +30329,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "AbsoluteDenominator",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -30303,7 +30342,10 @@
                         "type": "boolean",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:boolean",
+                            "use": "optional"
+                        },
                         "name": "IncludesLastItemInRange",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -30313,7 +30355,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "TotalItemsInView",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
@@ -30350,7 +30395,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "IndexedPagingOffset",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -30360,7 +30408,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "NumeratorOffset",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -30370,7 +30421,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "AbsoluteDenominator",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -30380,7 +30434,10 @@
                         "type": "boolean",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:boolean",
+                            "use": "optional"
+                        },
                         "name": "IncludesLastItemInRange",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
@@ -30390,7 +30447,10 @@
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "xs:int",
+                            "use": "optional"
+                        },
                         "name": "TotalItemsInView",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }

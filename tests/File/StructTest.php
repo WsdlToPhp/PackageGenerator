@@ -383,6 +383,23 @@ class StructTest extends AbstractFile
     /**
      *
      */
+    public function testWriteWhlUniqueID_Type()
+    {
+        $generator = self::whlInstance();
+        $generator->setOptionValidation(true);
+        if (($model = $generator->getStructByName('UniqueID_Type')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidUniqueID_Type', $struct);
+        } else {
+            $this->fail('Unable to find UniqueID_Type struct for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testStructWithIdenticalPropertiesDifferentByCase()
     {
         $generator = self::bingGeneratorInstance();

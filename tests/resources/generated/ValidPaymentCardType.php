@@ -161,6 +161,8 @@ class ApiPaymentCardType extends AbstractStructBase
      * The EffectiveDate
      * Meta informations extracted from the WSDL
      * - documentation: Indicates the starting date. | Month and year information.
+     * - type: whlsoap:MMYYDate
+     * - use: optional
      * - base: xs:string
      * - pattern: (0[1-9]|1[0-2])[0-9][0-9]
      * @var string
@@ -170,6 +172,8 @@ class ApiPaymentCardType extends AbstractStructBase
      * The ExpireDate
      * Meta informations extracted from the WSDL
      * - documentation: Indicates the ending date. | Month and year information.
+     * - type: whlsoap:MMYYDate
+     * - use: optional
      * - base: xs:string
      * - pattern: (0[1-9]|1[0-2])[0-9][0-9]
      * @var string

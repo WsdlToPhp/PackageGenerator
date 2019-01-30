@@ -1824,7 +1824,9 @@
                         "meta": {
                             "documentation": [
                                 "The language ID for the associated content."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "Language",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1882,7 +1884,9 @@
                         "meta": {
                             "documentation": [
                                 "An abbreviated version of the error in textual format."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "ShortText",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1896,7 +1900,9 @@
                         "meta": {
                             "documentation": [
                                 "If present, this refers to a table of coded values exchanged between applications to identify errors or warnings. Refer to OpenTravel Code List Error Codes (ERR)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "Code",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -1987,7 +1993,9 @@
                         "meta": {
                             "documentation": [
                                 "An abbreviated version of the error in textual format."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "ShortText",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2001,7 +2009,9 @@
                         "meta": {
                             "documentation": [
                                 "If present, this refers to a table of coded values exchanged between applications to identify errors or warnings. Refer to OpenTravel Code List Error Codes (ERR)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "Code",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2094,7 +2104,9 @@
                         "meta": {
                             "documentation": [
                                 "Used to provide the company common name."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "CompanyShortName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2108,7 +2120,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies a company by the company code."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "Code",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2156,7 +2170,9 @@
                         "meta": {
                             "documentation": [
                                 "URL that identifies the location associated with the record identified by the UniqueID."
-                            ]
+                            ],
+                            "type": "xs:anyURI",
+                            "use": "optional"
                         },
                         "name": "URL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2170,7 +2186,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference to the type of object defined by the UniqueID element. Refer to OpenTravel Code List Unique ID Type (UIT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "required"
                         },
                         "name": "Type",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2184,7 +2202,9 @@
                         "meta": {
                             "documentation": [
                                 "Used to identify the source of the identifier (e.g., IATA, ABTA)."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID_Context",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2198,7 +2218,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "required"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2309,7 +2331,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2323,7 +2347,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2347,7 +2373,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2361,7 +2389,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2532,7 +2562,9 @@
                         "meta": {
                             "documentation": [
                                 "The type of booking channel (e.g. Global Distribution System (GDS), Alternative Distribution System (ADS), Sales and Catering System (SCS), Property Management System (PMS), Central Reservation System (CRS), Tour Operator System (TOS), Internet and ALL). Refer to OpenTravel Code List Booking Channel Type (BCT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "required"
                         },
                         "name": "Type",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2546,7 +2578,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates whether the enumerated booking channel is the primary means of connectivity used by the source."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "Primary",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -2604,7 +2638,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3003,7 +3039,9 @@
                         "meta": {
                             "documentation": [
                                 "A monetary amount."
-                            ]
+                            ],
+                            "type": "whlsoap:Money",
+                            "use": "optional"
                         },
                         "name": "Amount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3052,7 +3090,9 @@
                         "meta": {
                             "documentation": [
                                 "Used to indicate if the amount is inclusive or exclusive of other charges, such as taxes, or is cumulative (amounts have been added to each other)."
-                            ]
+                            ],
+                            "type": "whlsoap:AmountDeterminationType",
+                            "use": "optional"
                         },
                         "name": "Type",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3066,7 +3106,9 @@
                         "meta": {
                             "documentation": [
                                 "Code identifying the fee (e.g.,agency fee, municipality fee). Refer to OpenTravel Code List Fee Tax Type (FTT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "Code",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3080,7 +3122,9 @@
                         "meta": {
                             "documentation": [
                                 "Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value)."
-                            ]
+                            ],
+                            "type": "whlsoap:Percentage",
+                            "use": "optional"
                         },
                         "name": "Percent",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3094,7 +3138,9 @@
                         "meta": {
                             "documentation": [
                                 "A monetary amount."
-                            ]
+                            ],
+                            "type": "whlsoap:Money",
+                            "use": "optional"
                         },
                         "name": "Amount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3108,7 +3154,9 @@
                         "meta": {
                             "documentation": [
                                 "The code specifying a monetary unit. Use ISO 4217, three alpha code."
-                            ]
+                            ],
+                            "type": "whlsoap:AlphaLength3",
+                            "use": "optional"
                         },
                         "name": "CurrencyCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3122,7 +3170,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the number of decimal places for a particular currency. This is equivalent to the ISO 4217 standard \"minor unit\". Typically used when the amount provided includes the minor unit of currency without a decimal point (e.g., USD 8500 needs DecimalPlaces=\"2\" to represent $85)."
-                            ]
+                            ],
+                            "type": "xs:nonNegativeInteger",
+                            "use": "optional"
                         },
                         "name": "DecimalPlaces",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3566,7 +3616,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the starting date."
-                            ]
+                            ],
+                            "type": "whlsoap:MMYYDate",
+                            "use": "optional"
                         },
                         "name": "EffectiveDate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3580,7 +3632,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the ending date."
-                            ]
+                            ],
+                            "type": "whlsoap:MMYYDate",
+                            "use": "optional"
                         },
                         "name": "ExpireDate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3614,7 +3668,9 @@
                         "meta": {
                             "documentation": [
                                 "Code of bank issuing the card."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "BankID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3669,7 +3725,9 @@
                                 "Describes the location of the phone, such as Home, Office, Property Reservation Office, etc. Refer to OpenTravel Code List Phone Location Type (PLT).",
                                 "Describes the location of the phone, such as Home, Office, Property Reservation Office, etc. Refer to OpenTravel Code List Phone Location Type (PLT).",
                                 "Describes the location of the phone, such as Home, Office, Property Reservation Office, etc. Refer to OpenTravel Code List Phone Location Type (PLT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "PhoneLocationType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3685,7 +3743,9 @@
                                 "Indicates type of technology associated with this telephone number, such as Voice, Data, Fax, Pager, Mobile, TTY, etc. Refer to OpenTravel Code List Phone Technology Type (PTT).",
                                 "Indicates type of technology associated with this telephone number, such as Voice, Data, Fax, Pager, Mobile, TTY, etc. Refer to OpenTravel Code List Phone Technology Type (PTT).",
                                 "Indicates type of technology associated with this telephone number, such as Voice, Data, Fax, Pager, Mobile, TTY, etc. Refer to OpenTravel Code List Phone Technology Type (PTT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "PhoneTechType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3701,7 +3761,9 @@
                                 "Describes the type of telephone number, in the context of its general use (e.g. Home, Business, Emergency Contact, Travel Arranger, Day, Evening). Refer to OpenTravel Code List Phone Use Type (PUT).",
                                 "Describes the type of telephone number, in the context of its general use (e.g. Home, Business, Emergency Contact, Travel Arranger, Day, Evening). Refer to OpenTravel Code List Phone Use Type (PUT).",
                                 "Describes the type of telephone number, in the context of its general use (e.g. Home, Business, Emergency Contact, Travel Arranger, Day, Evening). Refer to OpenTravel Code List Phone Use Type (PUT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "PhoneUseType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3717,7 +3779,9 @@
                                 "Code assigned by telecommunications authorities for international country access identifier.",
                                 "Code assigned by telecommunications authorities for international country access identifier.",
                                 "Code assigned by telecommunications authorities for international country access identifier."
-                            ]
+                            ],
+                            "type": "whlsoap:NumericStringLength1to3",
+                            "use": "optional"
                         },
                         "name": "CountryAccessCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3733,7 +3797,9 @@
                                 "Code assigned for telephones in a specific region, city, or area.",
                                 "Code assigned for telephones in a specific region, city, or area.",
                                 "Code assigned for telephones in a specific region, city, or area."
-                            ]
+                            ],
+                            "type": "whlsoap:NumericStringLength1to8",
+                            "use": "optional"
                         },
                         "name": "AreaCityCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3749,7 +3815,9 @@
                                 "Telephone number assigned to a single location.",
                                 "Telephone number assigned to a single location.",
                                 "Telephone number assigned to a single location."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "required"
                         },
                         "name": "PhoneNumber",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3765,7 +3833,9 @@
                                 "Extension to reach a specific party at the phone number.",
                                 "Extension to reach a specific party at the phone number.",
                                 "Extension to reach a specific party at the phone number."
-                            ]
+                            ],
+                            "type": "whlsoap:NumericStringLength1to5",
+                            "use": "optional"
                         },
                         "name": "Extension",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3781,7 +3851,9 @@
                                 "Additional codes used for pager or telephone access rights.",
                                 "Additional codes used for pager or telephone access rights.",
                                 "Additional codes used for pager or telephone access rights."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to8",
+                            "use": "optional"
                         },
                         "name": "PIN",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3797,7 +3869,9 @@
                                 "A remark associated with the telephone number.",
                                 "A remark associated with the telephone number.",
                                 "A remark associated with the telephone number."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "Remark",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3813,7 +3887,9 @@
                                 "Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted.",
                                 "Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted.",
                                 "Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "FormattedInd",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -3983,7 +4059,9 @@
                         "meta": {
                             "documentation": [
                                 "Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "FormattedInd",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4212,7 +4290,9 @@
                         "meta": {
                             "documentation": [
                                 "When true, indicates a default value should be used."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "DefaultInd",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4523,7 +4603,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4587,7 +4669,9 @@
                         "meta": {
                             "documentation": [
                                 "When true, indicates a default value should be used."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "DefaultInd",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4710,7 +4794,9 @@
                         "meta": {
                             "documentation": [
                                 "Used to indicate if the amount is inclusive or exclusive of other charges, such as taxes, or is cumulative (amounts have been added to each other)."
-                            ]
+                            ],
+                            "type": "whlsoap:AmountDeterminationType",
+                            "use": "optional"
                         },
                         "name": "Type",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4724,7 +4810,9 @@
                         "meta": {
                             "documentation": [
                                 "Code identifying the fee (e.g.,agency fee, municipality fee). Refer to OpenTravel Code List Fee Tax Type (FTT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "Code",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4738,7 +4826,9 @@
                         "meta": {
                             "documentation": [
                                 "Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value)."
-                            ]
+                            ],
+                            "type": "whlsoap:Percentage",
+                            "use": "optional"
                         },
                         "name": "Percent",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4752,7 +4842,9 @@
                         "meta": {
                             "documentation": [
                                 "A monetary amount."
-                            ]
+                            ],
+                            "type": "whlsoap:Money",
+                            "use": "optional"
                         },
                         "name": "Amount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4766,7 +4858,9 @@
                         "meta": {
                             "documentation": [
                                 "The code specifying a monetary unit. Use ISO 4217, three alpha code."
-                            ]
+                            ],
+                            "type": "whlsoap:AlphaLength3",
+                            "use": "optional"
                         },
                         "name": "CurrencyCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4780,7 +4874,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the number of decimal places for a particular currency. This is equivalent to the ISO 4217 standard \"minor unit\". Typically used when the amount provided includes the minor unit of currency without a decimal point (e.g., USD 8500 needs DecimalPlaces=\"2\" to represent $85)."
-                            ]
+                            ],
+                            "type": "xs:nonNegativeInteger",
+                            "use": "optional"
                         },
                         "name": "DecimalPlaces",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4794,7 +4890,9 @@
                         "meta": {
                             "documentation": [
                                 "This is the unit for which the charge applies (e.g. room, person, seat). Refer to OpenTravel Code List Charge Type (CHG)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "ChargeUnit",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4808,7 +4906,9 @@
                         "meta": {
                             "documentation": [
                                 "This is the timeframe used to apply the charge during the course of the reservation (e.g. Daily, Weekly, Stay). Refer to OpenTravel Code List Charge Type (CHG)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "ChargeFrequency",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4822,7 +4922,9 @@
                         "meta": {
                             "documentation": [
                                 "Number of units permitted before charges are applied (e.g., more than 4 persons)."
-                            ]
+                            ],
+                            "type": "xs:positiveInteger",
+                            "use": "optional"
                         },
                         "name": "ChargeUnitExempt",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -4836,7 +4938,9 @@
                         "meta": {
                             "documentation": [
                                 "ChargeFrequency exemptions before charges are applied (e.g. after 2 nights)."
-                            ]
+                            ],
+                            "type": "xs:positiveInteger",
+                            "use": "optional"
                         },
                         "name": "ChargeFrequencyExempt",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5111,7 +5215,9 @@
                         "meta": {
                             "documentation": [
                                 "When true, indicates a default value should be used."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "DefaultInd",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5413,7 +5519,9 @@
                         "meta": {
                             "documentation": [
                                 "The content ID of a file attachment with the prefix 'cid:'. The value of this can be used to retrieve the corresponding attachment by the receiving system."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "ContentID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5427,7 +5535,9 @@
                         "meta": {
                             "documentation": [
                                 "The title of the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "Title",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5441,7 +5551,9 @@
                         "meta": {
                             "documentation": [
                                 "The author of the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "Author",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5455,7 +5567,9 @@
                         "meta": {
                             "documentation": [
                                 "A copyright notice for the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CopyrightNotice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5469,7 +5583,9 @@
                         "meta": {
                             "documentation": [
                                 "Owner of the copyright for the multimedia content."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CopyrightOwner",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5483,7 +5599,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5607,7 +5725,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the language of the multimedia item."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "Language",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5621,7 +5741,9 @@
                         "meta": {
                             "documentation": [
                                 "The code associated with the format of the multimedia item. Refer to OpenTravel Code list Content Format Code (CFC)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "Format",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5635,7 +5757,9 @@
                         "meta": {
                             "documentation": [
                                 "The size of the multimedia file in bytes."
-                            ]
+                            ],
+                            "type": "xs:positiveInteger",
+                            "use": "optional"
                         },
                         "name": "FileSize",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5649,7 +5773,9 @@
                         "meta": {
                             "documentation": [
                                 "The name of the multimedia file."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "FileName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5712,7 +5838,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5864,7 +5992,9 @@
                         "meta": {
                             "documentation": [
                                 "The content ID of a file attachment with the prefix 'cid:'. The value of this can be used to retrieve the corresponding attachment by the receiving system."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "ContentID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5878,7 +6008,9 @@
                         "meta": {
                             "documentation": [
                                 "The title of the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "Title",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5892,7 +6024,9 @@
                         "meta": {
                             "documentation": [
                                 "The author of the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "Author",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5906,7 +6040,9 @@
                         "meta": {
                             "documentation": [
                                 "A copyright notice for the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CopyrightNotice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -5920,7 +6056,9 @@
                         "meta": {
                             "documentation": [
                                 "Owner of the copyright for the multimedia content."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CopyrightOwner",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6130,7 +6268,9 @@
                         "meta": {
                             "documentation": [
                                 "The content ID of a file attachment with the prefix 'cid:'. The value of this can be used to retrieve the corresponding attachment by the receiving system."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "ContentID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6144,7 +6284,9 @@
                         "meta": {
                             "documentation": [
                                 "The title of the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "Title",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6158,7 +6300,9 @@
                         "meta": {
                             "documentation": [
                                 "The author of the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "Author",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6172,7 +6316,9 @@
                         "meta": {
                             "documentation": [
                                 "A copyright notice for the multimedia object."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CopyrightNotice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6186,7 +6332,9 @@
                         "meta": {
                             "documentation": [
                                 "Owner of the copyright for the multimedia content."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CopyrightOwner",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6309,7 +6457,9 @@
                         "meta": {
                             "documentation": [
                                 "The starting value of the time span."
-                            ]
+                            ],
+                            "type": "whlsoap:DateOrTimeOrDateTimeType",
+                            "use": "optional"
                         },
                         "name": "Start",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6323,7 +6473,9 @@
                         "meta": {
                             "documentation": [
                                 "The duration datatype represents a combination of year, month, day and time values representing a single duration of time, encoded as a single string."
-                            ]
+                            ],
+                            "type": "whlsoap:DurationType",
+                            "use": "optional"
                         },
                         "name": "Duration",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6337,7 +6489,9 @@
                         "meta": {
                             "documentation": [
                                 "The ending value of the time span."
-                            ]
+                            ],
+                            "type": "whlsoap:DateOrTimeOrDateTimeType",
+                            "use": "optional"
                         },
                         "name": "End",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6445,7 +6599,9 @@
                         "meta": {
                             "documentation": [
                                 "The code specifying a monetary unit. Use ISO 4217, three alpha code."
-                            ]
+                            ],
+                            "type": "whlsoap:AlphaLength3",
+                            "use": "optional"
                         },
                         "name": "CurrencyCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -6459,7 +6615,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the number of decimal places for a particular currency. This is equivalent to the ISO 4217 standard \"minor unit\". Typically used when the amount provided includes the minor unit of currency without a decimal point (e.g., USD 8500 needs DecimalPlaces=\"2\" to represent $85)."
-                            ]
+                            ],
+                            "type": "xs:nonNegativeInteger",
+                            "use": "optional"
                         },
                         "name": "DecimalPlaces",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7416,7 +7574,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the date of birth as indicated in the document, in ISO 8601 prescribed format."
-                            ]
+                            ],
+                            "type": "xs:date",
+                            "use": "optional"
                         },
                         "name": "BirthDate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7430,7 +7590,9 @@
                         "meta": {
                             "documentation": [
                                 "The code specifying a monetary unit. Use ISO 4217, three alpha code."
-                            ]
+                            ],
+                            "type": "whlsoap:AlphaLength3",
+                            "use": "optional"
                         },
                         "name": "CurrencyCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7444,7 +7606,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the number of decimal places for a particular currency. This is equivalent to the ISO 4217 standard \"minor unit\". Typically used when the amount provided includes the minor unit of currency without a decimal point (e.g., USD 8500 needs DecimalPlaces=\"2\" to represent $85)."
-                            ]
+                            ],
+                            "type": "xs:nonNegativeInteger",
+                            "use": "optional"
                         },
                         "name": "DecimalPlaces",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7489,7 +7653,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7553,7 +7719,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7596,7 +7764,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7632,7 +7802,9 @@
                         "meta": {
                             "documentation": [
                                 "A 2 character country code as defined in ISO3166."
-                            ]
+                            ],
+                            "type": "whlsoap:ISO3166",
+                            "use": "optional"
                         },
                         "name": "Code",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7646,7 +7818,9 @@
                         "meta": {
                             "documentation": [
                                 "When true, indicates a default value should be used."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "DefaultInd",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7818,7 +7992,9 @@
                         "meta": {
                             "documentation": [
                                 "Code to specify a profile such as Customer, Tour Operator, Corporation, etc. Refer to OpenTravel Code List Profile Type (PRT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "ProfileType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -7924,7 +8100,9 @@
                         "meta": {
                             "documentation": [
                                 "May be used to give further detail on the code."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CodeDetail",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8092,7 +8270,9 @@
                         "meta": {
                             "documentation": [
                                 "May be used to give further detail on the code."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CodeDetail",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8140,7 +8320,9 @@
                         "meta": {
                             "documentation": [
                                 "May be used to give further detail on the code."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CodeDetail",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8607,7 +8789,9 @@
                         "meta": {
                             "documentation": [
                                 "The measure of the angular distance on a meridian north or south of the equator."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "Latitude",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8621,7 +8805,9 @@
                         "meta": {
                             "documentation": [
                                 "The measure of the angular distance on a meridian east or west of the prime meridian."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "Longitude",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8635,7 +8821,9 @@
                         "meta": {
                             "documentation": [
                                 "The height of an item, typically above sea level."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "Altitude",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8649,7 +8837,9 @@
                         "meta": {
                             "documentation": [
                                 "Provides the unit of measure for the altitude (e.g., feet, meters, miles, kilometers). Refer to OpenTravel Code List Unit of Measure Code (UOM)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "AltitudeUnitOfMeasureCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8663,7 +8853,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the accuracy of the property\u2019s geo-coding, since the property\u2019s longitude and latitude may not always be exact. Refer to OpenTravel Code List Position Accuracy Code (PAC)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "PositionAccuracy",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8895,7 +9087,9 @@
                         "meta": {
                             "documentation": [
                                 "The units of time, e.g.: days, hours, etc., that apply to the deadline."
-                            ]
+                            ],
+                            "type": "whlsoap:TimeUnitType",
+                            "use": "optional"
                         },
                         "name": "OffsetTimeUnit",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8909,7 +9103,9 @@
                         "meta": {
                             "documentation": [
                                 "The number of units of DeadlineTimeUnit."
-                            ]
+                            ],
+                            "type": "whlsoap:Numeric0to999",
+                            "use": "optional"
                         },
                         "name": "OffsetUnitMultiplier",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -8997,7 +9193,9 @@
                         "meta": {
                             "documentation": [
                                 "A monetary amount."
-                            ]
+                            ],
+                            "type": "whlsoap:Money",
+                            "use": "optional"
                         },
                         "name": "Amount",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -9669,7 +9867,9 @@
                         "meta": {
                             "documentation": [
                                 "The code specifying a monetary unit. Use ISO 4217, three alpha code."
-                            ]
+                            ],
+                            "type": "whlsoap:AlphaLength3",
+                            "use": "optional"
                         },
                         "name": "CurrencyCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -9683,7 +9883,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the number of decimal places for a particular currency. This is equivalent to the ISO 4217 standard \"minor unit\". Typically used when the amount provided includes the minor unit of currency without a decimal point (e.g., USD 8500 needs DecimalPlaces=\"2\" to represent $85)."
-                            ]
+                            ],
+                            "type": "xs:nonNegativeInteger",
+                            "use": "optional"
                         },
                         "name": "DecimalPlaces",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10007,7 +10209,9 @@
                         "meta": {
                             "documentation": [
                                 "May be used to give further detail on the code."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CodeDetail",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10031,7 +10235,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10186,7 +10392,9 @@
                         "meta": {
                             "documentation": [
                                 "Describes the location of the phone, such as Home, Office, Property Reservation Office, etc. Refer to OpenTravel Code List Phone Location Type (PLT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "PhoneLocationType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10200,7 +10408,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates type of technology associated with this telephone number, such as Voice, Data, Fax, Pager, Mobile, TTY, etc. Refer to OpenTravel Code List Phone Technology Type (PTT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "PhoneTechType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10214,7 +10424,9 @@
                         "meta": {
                             "documentation": [
                                 "Describes the type of telephone number, in the context of its general use (e.g. Home, Business, Emergency Contact, Travel Arranger, Day, Evening). Refer to OpenTravel Code List Phone Use Type (PUT)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "PhoneUseType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10228,7 +10440,9 @@
                         "meta": {
                             "documentation": [
                                 "Code assigned by telecommunications authorities for international country access identifier."
-                            ]
+                            ],
+                            "type": "whlsoap:NumericStringLength1to3",
+                            "use": "optional"
                         },
                         "name": "CountryAccessCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10242,7 +10456,9 @@
                         "meta": {
                             "documentation": [
                                 "Code assigned for telephones in a specific region, city, or area."
-                            ]
+                            ],
+                            "type": "whlsoap:NumericStringLength1to8",
+                            "use": "optional"
                         },
                         "name": "AreaCityCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10256,7 +10472,9 @@
                         "meta": {
                             "documentation": [
                                 "Telephone number assigned to a single location."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "required"
                         },
                         "name": "PhoneNumber",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10270,7 +10488,9 @@
                         "meta": {
                             "documentation": [
                                 "Extension to reach a specific party at the phone number."
-                            ]
+                            ],
+                            "type": "whlsoap:NumericStringLength1to5",
+                            "use": "optional"
                         },
                         "name": "Extension",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10284,7 +10504,9 @@
                         "meta": {
                             "documentation": [
                                 "Additional codes used for pager or telephone access rights."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to8",
+                            "use": "optional"
                         },
                         "name": "PIN",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10298,7 +10520,9 @@
                         "meta": {
                             "documentation": [
                                 "A remark associated with the telephone number."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "Remark",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10312,7 +10536,9 @@
                         "meta": {
                             "documentation": [
                                 "Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "FormattedInd",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10326,7 +10552,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10550,7 +10778,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10564,7 +10794,9 @@
                         "meta": {
                             "documentation": [
                                 "The measure of the angular distance on a meridian north or south of the equator."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "Latitude",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10578,7 +10810,9 @@
                         "meta": {
                             "documentation": [
                                 "The measure of the angular distance on a meridian east or west of the prime meridian."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "Longitude",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10592,7 +10826,9 @@
                         "meta": {
                             "documentation": [
                                 "The height of an item, typically above sea level."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "Altitude",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10606,7 +10842,9 @@
                         "meta": {
                             "documentation": [
                                 "Provides the unit of measure for the altitude (e.g., feet, meters, miles, kilometers). Refer to OpenTravel Code List Unit of Measure Code (UOM)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "AltitudeUnitOfMeasureCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10620,7 +10858,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the accuracy of the property\u2019s geo-coding, since the property\u2019s longitude and latitude may not always be exact. Refer to OpenTravel Code List Position Accuracy Code (PAC)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "PositionAccuracy",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10696,7 +10936,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10886,7 +11128,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10964,7 +11208,9 @@
                         "meta": {
                             "documentation": [
                                 "(Formerly, RoomInventoryCode) A code value that indicates the type of room for which this request is made, e.g.: double, king, etc. Values may use the Hotel Descriptive Content table or a codes specific to the property or hotel brand."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "RoomType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10978,7 +11224,9 @@
                         "meta": {
                             "documentation": [
                                 "A string value representing the unique identification of a room if the request is looking for a specific room."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "RoomID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -10992,7 +11240,9 @@
                         "meta": {
                             "documentation": [
                                 "Bed Type."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "BedType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11055,7 +11305,9 @@
                         "meta": {
                             "documentation": [
                                 "May be used to give further detail on the code."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "CodeDetail",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11069,7 +11321,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "optional"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11182,7 +11436,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "required"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11274,7 +11530,9 @@
                         "meta": {
                             "documentation": [
                                 "A code representing a business rule that determines the charges for a guest based upon age range (e.g. Adult, Child, Senior, Child With Adult, Child Without Adult). This attribute allows for an increase in rate by occupant class. Refer to OpenTravel Code List Age Qualifying Code (AQC)."
-                            ]
+                            ],
+                            "type": "whlsoap:OTA_CodeType",
+                            "use": "optional"
                         },
                         "name": "AgeQualifyingCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11288,7 +11546,9 @@
                         "meta": {
                             "documentation": [
                                 "Defines the age of a guest."
-                            ]
+                            ],
+                            "type": "whlsoap:Numeric0to999",
+                            "use": "optional"
                         },
                         "name": "Age",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11302,7 +11562,9 @@
                         "meta": {
                             "documentation": [
                                 "The number of guests in one AgeQualifyingCode or Count."
-                            ]
+                            ],
+                            "type": "whlsoap:Numeric1to999",
+                            "use": "optional"
                         },
                         "name": "Count",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11580,7 +11842,9 @@
                         "meta": {
                             "documentation": [
                                 "The code that uniquely identifies a single hotel property. The hotel code is decided between vendors."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "HotelCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11594,7 +11858,9 @@
                         "meta": {
                             "documentation": [
                                 "A text field used to communicate the proper name of the hotel."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "HotelName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -11608,7 +11874,9 @@
                         "meta": {
                             "documentation": [
                                 "A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to32",
+                            "use": "required"
                         },
                         "name": "ID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12271,7 +12539,9 @@
                         "meta": {
                             "documentation": [
                                 "The code specifying a monetary unit. Use ISO 4217, three alpha code."
-                            ]
+                            ],
+                            "type": "whlsoap:AlphaLength3",
+                            "use": "optional"
                         },
                         "name": "CurrencyCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12285,7 +12555,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the number of decimal places for a particular currency. This is equivalent to the ISO 4217 standard \"minor unit\". Typically used when the amount provided includes the minor unit of currency without a decimal point (e.g., USD 8500 needs DecimalPlaces=\"2\" to represent $85)."
-                            ]
+                            ],
+                            "type": "xs:nonNegativeInteger",
+                            "use": "optional"
                         },
                         "name": "DecimalPlaces",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12350,7 +12622,9 @@
                         "meta": {
                             "documentation": [
                                 "The code that uniquely identifies a single hotel property. The hotel code is decided between vendors."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "HotelCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12364,7 +12638,9 @@
                         "meta": {
                             "documentation": [
                                 "A text field used to communicate the proper name of the hotel."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "HotelName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12515,7 +12791,9 @@
                         "meta": {
                             "documentation": [
                                 "The starting value of the time span."
-                            ]
+                            ],
+                            "type": "whlsoap:DateOrTimeOrDateTimeType",
+                            "use": "optional"
                         },
                         "name": "Start",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12529,7 +12807,9 @@
                         "meta": {
                             "documentation": [
                                 "The duration datatype represents a combination of year, month, day and time values representing a single duration of time, encoded as a single string."
-                            ]
+                            ],
+                            "type": "whlsoap:DurationType",
+                            "use": "optional"
                         },
                         "name": "Duration",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12543,7 +12823,9 @@
                         "meta": {
                             "documentation": [
                                 "The ending value of the time span."
-                            ]
+                            ],
+                            "type": "whlsoap:DateOrTimeOrDateTimeType",
+                            "use": "optional"
                         },
                         "name": "End",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12557,7 +12839,9 @@
                         "meta": {
                             "documentation": [
                                 "A string value may be used to request a particular code or an ID if the guest qualifies for a specific rate, such as AARP, AAA, a corporate rate, etc., or to specify a negotiated code as a result of a negotiated rate."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "RatePlanCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12571,7 +12855,9 @@
                         "meta": {
                             "documentation": [
                                 "A value that indicates the type of inventory for which this request is made. If the inventory item is a room, typical values could be double, king, etc."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "InvType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12585,7 +12871,9 @@
                         "meta": {
                             "documentation": [
                                 "Specific system inventory type code. If the inventory item is a room, typical values could be room type code, e.g.: A1K, A1Q etc. Values may use the OpenTravel Code list or a code specific to the property or hotel brand."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "InvTypeCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12599,7 +12887,9 @@
                         "meta": {
                             "documentation": [
                                 "Simple indicator to detect if inventory is a room."
-                            ]
+                            ],
+                            "type": "xs:boolean",
+                            "use": "optional"
                         },
                         "name": "IsRoom",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12724,7 +13014,10 @@
                         "type": "AvailabilityStatusType",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "type": "whlsoap:AvailabilityStatusType",
+                            "use": "optional"
+                        },
                         "name": "Status",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
@@ -12845,7 +13138,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12859,7 +13154,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12883,7 +13180,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -12897,7 +13196,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13220,7 +13521,9 @@
                         "meta": {
                             "documentation": [
                                 "(Formerly, RoomInventoryCode) A code value that indicates the type of room for which this request is made, e.g.: double, king, etc. Values may use the Hotel Descriptive Content table or a codes specific to the property or hotel brand."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "RoomType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13234,7 +13537,9 @@
                         "meta": {
                             "documentation": [
                                 "A string value representing the unique identification of a room if the request is looking for a specific room."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "RoomID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13248,7 +13553,9 @@
                         "meta": {
                             "documentation": [
                                 "Bed Type."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to64",
+                            "use": "optional"
                         },
                         "name": "BedType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13546,7 +13853,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13560,7 +13869,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13584,7 +13895,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13598,7 +13911,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13645,7 +13960,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13659,7 +13976,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13683,7 +14002,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13697,7 +14018,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13820,7 +14143,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13834,7 +14159,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13858,7 +14185,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13872,7 +14201,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13920,7 +14251,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13934,7 +14267,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13958,7 +14293,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -13972,7 +14309,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14095,7 +14434,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14109,7 +14450,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14133,7 +14476,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14147,7 +14492,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14210,7 +14557,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14224,7 +14573,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14248,7 +14599,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14262,7 +14615,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14358,7 +14713,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14372,7 +14729,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14396,7 +14755,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14410,7 +14771,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14468,7 +14831,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14482,7 +14847,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14506,7 +14873,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14520,7 +14889,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14638,7 +15009,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14652,7 +15025,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14676,7 +15051,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14690,7 +15067,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14754,7 +15133,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14768,7 +15149,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14792,7 +15175,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14806,7 +15191,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14929,7 +15316,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14943,7 +15332,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14967,7 +15358,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -14981,7 +15374,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15042,7 +15437,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15056,7 +15453,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15080,7 +15479,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15094,7 +15495,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15217,7 +15620,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15231,7 +15636,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15255,7 +15662,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15269,7 +15678,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15327,7 +15738,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15341,7 +15754,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15365,7 +15780,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15379,7 +15796,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15545,7 +15964,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15559,7 +15980,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15583,7 +16006,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15597,7 +16022,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15660,7 +16087,9 @@
                         "meta": {
                             "documentation": [
                                 "The code that uniquely identifies a single hotel property. The hotel code is decided between vendors."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "HotelCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15674,7 +16103,9 @@
                         "meta": {
                             "documentation": [
                                 "A text field used to communicate the proper name of the hotel."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "HotelName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15732,7 +16163,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15746,7 +16179,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15770,7 +16205,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15784,7 +16221,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15920,7 +16359,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15934,7 +16375,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15958,7 +16401,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -15972,7 +16417,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -16092,7 +16539,9 @@
                         "meta": {
                             "documentation": [
                                 "A reference for additional message identification, assigned by the requesting host system. When a request message includes an echo token the corresponding response message MUST include an echo token with an identical value."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "EchoToken",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -16106,7 +16555,9 @@
                         "meta": {
                             "documentation": [
                                 "Indicates the creation date and time of the message in UTC using the following format specified by ISO 8601; YYYY-MM-DDThh:mm:ssZ with time values using the 24 hour clock (e.g. 20 November 2003, 1:59:38 pm UTC becomes 2003-11-20T13:59:38Z)."
-                            ]
+                            ],
+                            "type": "xs:dateTime",
+                            "use": "optional"
                         },
                         "name": "TimeStamp",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -16130,7 +16581,9 @@
                         "meta": {
                             "documentation": [
                                 "For all OpenTravel versioned messages, the version of the message is indicated by a decimal value."
-                            ]
+                            ],
+                            "type": "xs:decimal",
+                            "use": "optional"
                         },
                         "name": "Version",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -16144,7 +16597,9 @@
                         "meta": {
                             "documentation": [
                                 "Identifies the primary language preference for the message. The human language is identified by ISO 639 codes."
-                            ]
+                            ],
+                            "type": "xs:language",
+                            "use": "optional"
                         },
                         "name": "PrimaryLangID",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -16194,7 +16649,9 @@
                         "meta": {
                             "documentation": [
                                 "The code that uniquely identifies a single hotel property. The hotel code is decided between vendors."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to16",
+                            "use": "optional"
                         },
                         "name": "HotelCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -16208,7 +16665,9 @@
                         "meta": {
                             "documentation": [
                                 "A text field used to communicate the proper name of the hotel."
-                            ]
+                            ],
+                            "type": "whlsoap:StringLength1to128",
+                            "use": "optional"
                         },
                         "name": "HotelName",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"

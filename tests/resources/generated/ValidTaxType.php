@@ -27,6 +27,8 @@ class ApiTaxType extends AbstractStructBase
      * The Type
      * Meta informations extracted from the WSDL
      * - documentation: Used to indicate if the amount is inclusive or exclusive of other charges, such as taxes, or is cumulative (amounts have been added to each other).
+     * - type: whlsoap:AmountDeterminationType
+     * - use: optional
      * @var string
      */
     public $Type;
@@ -34,6 +36,8 @@ class ApiTaxType extends AbstractStructBase
      * The Code
      * Meta informations extracted from the WSDL
      * - documentation: Code identifying the fee (e.g.,agency fee, municipality fee). Refer to OpenTravel Code List Fee Tax Type (FTT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
+     * - type: whlsoap:OTA_CodeType
+     * - use: optional
      * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
      * @var string
@@ -43,6 +47,8 @@ class ApiTaxType extends AbstractStructBase
      * The Percent
      * Meta informations extracted from the WSDL
      * - documentation: Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value). | Used for percentage values.
+     * - type: whlsoap:Percentage
+     * - use: optional
      * - base: xs:decimal
      * - maxInclusive: 100.00
      * - minInclusive: 0.00
@@ -53,6 +59,8 @@ class ApiTaxType extends AbstractStructBase
      * The Amount
      * Meta informations extracted from the WSDL
      * - documentation: A monetary amount. | Specifies an amount, max 3 decimals.
+     * - type: whlsoap:Money
+     * - use: optional
      * - base: xs:decimal
      * - fractionDigits: 3
      * @var float
@@ -62,6 +70,8 @@ class ApiTaxType extends AbstractStructBase
      * The CurrencyCode
      * Meta informations extracted from the WSDL
      * - documentation: The code specifying a monetary unit. Use ISO 4217, three alpha code. | Used for an Alpha String, length exactly 3.
+     * - type: whlsoap:AlphaLength3
+     * - use: optional
      * - base: xs:string
      * - pattern: [a-zA-Z]{3}
      * @var string
@@ -72,6 +82,8 @@ class ApiTaxType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: Indicates the number of decimal places for a particular currency. This is equivalent to the ISO 4217 standard "minor unit". Typically used when the amount provided includes the minor unit of currency without a decimal point (e.g.,
      * USD 8500 needs DecimalPlaces="2" to represent $85).
+     * - type: xs:nonNegativeInteger
+     * - use: optional
      * @var int
      */
     public $DecimalPlaces;
