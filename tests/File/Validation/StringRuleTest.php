@@ -2,46 +2,104 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class StringRuleTest extends RuleTest
+class StringRuleTest extends AbstractRuleTest
 {
+
     /**
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value array
      */
-    public function testApplyRuleWithBool()
+    public function testSetCardNumberWithArrayValueMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\StringRule', null);
-        call_user_func($funtionName, true);
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $instance->setCardNumber([]);
     }
+
     /**
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value true, please provide a string, boolean given
      */
-    public function testApplyRuleWithArray()
+    public function testSetCardNumberWithBoolValueMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\StringRule', null);
-        call_user_func($funtionName, [6]);
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $instance->setCardNumber(true);
     }
+
     /**
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value 1, please provide a string, integer given
      */
-    public function testApplyRuleWithInteger()
+    public function testSetCardNumberWithIntValueMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\StringRule', null);
-        $this->assertTrue(call_user_func($funtionName, 6));
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $instance->setCardNumber(1);
     }
+
     /**
-     *
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value 12.5, please provide a string, double given
      */
-    public function testApplyRuleWithNull()
+    public function testSetCardNumberWithFloatValueMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\StringRule', null);
-        $this->assertTrue(call_user_func($funtionName, null));
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $instance->setCardNumber(12.5);
     }
+
     /**
-     *
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
      */
-    public function testApplyRuleWithString()
+    public function testSetCardNumberWithNullValueMustPass()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\StringRule', null);
-        $this->assertTrue(call_user_func($funtionName, ''));
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $this->assertSame($instance, $instance->setCardNumber(null));
+    }
+
+    /**
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
+     */
+    public function testSetCardNumberWithStringValueMustPass()
+    {
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $this->assertSame($instance, $instance->setCardNumber('015387434387354387343847'));
     }
 }

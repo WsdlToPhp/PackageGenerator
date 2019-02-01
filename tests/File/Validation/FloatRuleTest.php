@@ -2,66 +2,67 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class FloatRuleTest extends RuleTest
+class FloatRuleTest extends AbstractRuleTest
 {
+
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value true, please provide a float value, boolean given
+     * @expectedExceptionMessage Invalid value 'foo', please provide a float value, string given
      */
-    public function testApplyRuleWithBool()
+    public function testSetPercentValueWithStringValueMustThrowAnException()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FloatRule');
-        call_user_func($functionName, true);
+        $instance = self::getWhlTaxTypeInstance();
+
+        $instance->setPercent('foo');
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value array (
-    0 => 6,
-    ), please provide an integer value, array given
-     */
-    public function testApplyRuleWithArray()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FloatRule');
-        call_user_func($functionName, [6]);
-    }
+
     /**
      *
      */
-    public function testApplyRuleWithFloat()
+    public function testSetPercentValueWithIntValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FloatRule');
-        $this->assertTrue(call_user_func($functionName, 6.5));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setPercent(85));
     }
+
     /**
      *
      */
-    public function testApplyRuleWithInteger()
+    public function testSetPercentValueWithStringIntValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FloatRule');
-        $this->assertTrue(call_user_func($functionName, 6));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setPercent('85'));
     }
+
     /**
      *
      */
-    public function testApplyRuleWithNull()
+    public function testSetPercentValueWithFloatValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FloatRule');
-        $this->assertTrue(call_user_func($functionName, null));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setPercent(8.5));
     }
+
     /**
      *
      */
-    public function testApplyRuleWithStringInteger()
+    public function testSetPercentValueWithStringFloatValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FloatRule');
-        $this->assertTrue(call_user_func($functionName, '6'));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setPercent('8.5'));
     }
+
     /**
      *
      */
-    public function testApplyRuleWithFloatStringMustPass()
+    public function testSetPercentValueWithNullValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FloatRule');
-        $this->assertTrue(call_user_func($functionName, '6.5'));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setPercent(null));
     }
 }

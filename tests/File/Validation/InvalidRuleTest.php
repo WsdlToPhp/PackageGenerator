@@ -9,7 +9,7 @@ use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-class InvalidRuleTest extends RuleTest
+class InvalidRuleTest extends AbstractRuleTest
 {
     /**
      * @expectedException \InvalidArgumentException

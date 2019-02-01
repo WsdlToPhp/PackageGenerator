@@ -117,18 +117,18 @@ class ApiTaxType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxDescriptionForArrayContraintsFromSetTaxDescription(array $values = array())
+    public static function validateTaxDescriptionForArrayConstraintsFromSetTaxDescription(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $taxTypeTaxDescriptionItem) {
             // validation for constraint: itemType
             if (!$taxTypeTaxDescriptionItem instanceof \Api\StructType\ApiParagraphType) {
-                $invalidValues[] = is_object($taxTypeTaxDescriptionItem) ? get_class($taxTypeTaxDescriptionItem) : var_export($taxTypeTaxDescriptionItem, true);
+                $invalidValues[] = is_object($taxTypeTaxDescriptionItem) ? get_class($taxTypeTaxDescriptionItem) : sprintf('%s(%s)', gettype($taxTypeTaxDescriptionItem), var_export($taxTypeTaxDescriptionItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The TaxDescription property can only contain items of \Api\StructType\ApiParagraphType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -142,8 +142,12 @@ class ApiTaxType extends AbstractStructBase
     public function setTaxDescription(array $taxDescription = array())
     {
         // validation for constraint: array
-        if ('' !== ($taxDescriptionArrayErrorMessage = self::validateTaxDescriptionForArrayContraintsFromSetTaxDescription($taxDescription))) {
+        if ('' !== ($taxDescriptionArrayErrorMessage = self::validateTaxDescriptionForArrayConstraintsFromSetTaxDescription($taxDescription))) {
             throw new \InvalidArgumentException($taxDescriptionArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(5)
+        if (is_array($taxDescription) && count($taxDescription) > 5) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($taxDescription)), __LINE__);
         }
         $this->TaxDescription = $taxDescription;
         return $this;
@@ -158,7 +162,11 @@ class ApiTaxType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiParagraphType) {
-            throw new \InvalidArgumentException(sprintf('The TaxDescription property can only contain items of \Api\StructType\ApiParagraphType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(5)
+        if (is_array($this->TaxDescription) && count($this->TaxDescription) >= 5) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->TaxDescription)), __LINE__);
         }
         $this->TaxDescription[] = $item;
         return $this;
@@ -207,7 +215,7 @@ class ApiTaxType extends AbstractStructBase
         if (!is_null($code) && !is_string($code)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
         }
-        // validation for constraint: pattern
+        // validation for constraint: pattern([0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1})
         if (!is_null($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $code)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}', var_export($code, true)), __LINE__);
         }
@@ -233,12 +241,12 @@ class ApiTaxType extends AbstractStructBase
         if (!is_null($percent) && !(is_float($percent) || is_numeric($percent))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percent, true), gettype($percent)), __LINE__);
         }
-        // validation for constraint: maxInclusive
-        if (!is_null($percent) && $percent > 100) {
+        // validation for constraint: maxInclusive(100.00)
+        if (!is_null($percent) && $percent > 100.00) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 100.00', var_export($percent, true)), __LINE__);
         }
-        // validation for constraint: minInclusive
-        if (!is_null($percent) && $percent < 0) {
+        // validation for constraint: minInclusive(0.00)
+        if (!is_null($percent) && $percent < 0.00) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0.00', var_export($percent, true)), __LINE__);
         }
         $this->Percent = $percent;
@@ -263,7 +271,7 @@ class ApiTaxType extends AbstractStructBase
         if (!is_null($amount) && !(is_float($amount) || is_numeric($amount))) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
-        // validation for constraint: fractionDigits
+        // validation for constraint: fractionDigits(3)
         if (!is_null($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) > 3) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 3 fraction digits, %d given', var_export($amount, true), strlen(substr($amount, strpos($amount, '.') + 1))), __LINE__);
         }
@@ -289,7 +297,7 @@ class ApiTaxType extends AbstractStructBase
         if (!is_null($currencyCode) && !is_string($currencyCode)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
         }
-        // validation for constraint: pattern
+        // validation for constraint: pattern([a-zA-Z]{3})
         if (!is_null($currencyCode) && !preg_match('/[a-zA-Z]{3}/', $currencyCode)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [a-zA-Z]{3}', var_export($currencyCode, true)), __LINE__);
         }

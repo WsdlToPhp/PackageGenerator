@@ -1,6 +1,5 @@
 <?php
 
-
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
@@ -20,7 +19,7 @@ abstract class AbstractBoundRule extends AbstractMinMaxRule
     final public function testConditions($parameterName, $value, $itemType = false)
     {
         if (is_numeric($value)) {
-            $test = '$%1$s %3$s %2$d';
+            $test = '$%1$s %3$s %2$s';
         } else {
             $test = '($time = (string) time()) && \DateTime::createFromFormat(\'U\', $time)->add(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', $%1$s))) %3$s \DateTime::createFromFormat(\'U\', $time)->add(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', \'%2$s\')))';
         }

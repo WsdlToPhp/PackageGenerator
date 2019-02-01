@@ -30,6 +30,12 @@ class Rules
      * @var MethodContainer
      */
     protected $methods;
+
+    /**
+     * @var string[]
+     */
+    private static $rulesAppliedToAttribute = [];
+
     /**
      * @param AbstractModelFile $file
      * @param PhpMethod $method
@@ -56,23 +62,24 @@ class Rules
         } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->attribute)) {
             $this->getEnumerationRule()->applyRule($parameterName, null);
         } elseif ($itemType) {
-            $this->getItemTypeRule()->applyRule($parameterName, $itemType);
+            $this->getItemTypeRule()->applyRule($parameterName, null);
         } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->attribute))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
-        $this->applyRulesFromAttribute($parameterName);
+        $this->applyRulesFromAttribute($parameterName, $itemType);
     }
 
     /**
      * Generic method to apply rules from current model
      * @param string $parameterName
+     * @param bool $itemType
      */
-    protected function applyRulesFromAttribute($parameterName)
+    protected function applyRulesFromAttribute($parameterName, $itemType = false)
     {
         foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
             $rule = $this->getRule($metaName);
             if ($rule instanceof AbstractRule) {
-                $rule->applyRule($parameterName, $metaValue);
+                $rule->applyRule($parameterName, $metaValue, $itemType);
             }
         }
     }
@@ -179,5 +186,42 @@ class Rules
     public function getGenerator()
     {
         return $this->file->getGenerator();
+    }
+
+    /**
+     * @param AbstractRule $rule
+     * @param string|string[] $value
+     * @param StructAttribute $attribute
+     * @return string
+     */
+    private static function getAppliedRuleToAttributeKey(AbstractRule $rule, $value, StructAttribute $attribute)
+    {
+        return implode('_', [
+            $rule->validationRuleComment($value),
+            $attribute->getOwner()->getName(),
+            $attribute->getName(),
+        ]);
+    }
+
+    /**
+     * @param AbstractRule $rule
+     * @param string|string[] $value
+     * @param StructAttribute $attribute
+     * @retrun void
+     */
+    public static function ruleHasBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute)
+    {
+        self::$rulesAppliedToAttribute[self::getAppliedRuleToAttributeKey($rule, $value, $attribute)] = true;
+    }
+
+    /**
+     * @param AbstractRule $rule
+     * @param string|string[] $value
+     * @param StructAttribute $attribute
+     * @return bool
+     */
+    public static function hasRuleBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute)
+    {
+        return array_key_exists(self::getAppliedRuleToAttributeKey($rule, $value, $attribute), self::$rulesAppliedToAttribute);
     }
 }

@@ -180,18 +180,14 @@ class ApiHotelReservationType extends AbstractStructBase
         if (!\Api\EnumType\ApiTransactionActionType::valueIsValid($value)) {
             $exception1 = new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiTransactionActionType', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Api\EnumType\ApiTransactionActionType::getValidValues())), __LINE__);
         }
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            $exception2 = new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
-        // validation for constraint: pattern
+        // validation for constraint: pattern([A-Z]{1,2})
         if (!is_null($value) && !preg_match('/[A-Z]{1,2}/', $value)) {
-            $exception3 = new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [A-Z]{1,2}', var_export($value, true)), __LINE__);
+            $exception2 = new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [A-Z]{1,2}', var_export($value, true)), __LINE__);
         }
-        if (isset($exception0) && isset($exception1) && isset($exception2) && isset($exception3)) {
-            $message = sprintf("The value %s does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:\n%s", var_export($value, true), implode("\n", array_map(function(\InvalidArgumentException $e) { return sprintf(' - %s', $e->getMessage()); }, [$exception0, $exception1, $exception2, $exception3])));
+        if (isset($exception0) && isset($exception1) && isset($exception2)) {
+            $message = sprintf("The value %s does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:\n%s", var_export($value, true), implode("\n", array_map(function(\InvalidArgumentException $e) { return sprintf(' - %s', $e->getMessage()); }, [$exception0, $exception1, $exception2])));
         }
-        unset($exception0, $exception1, $exception2, $exception3);
+        unset($exception0, $exception1, $exception2);
         return $message;
     }
     /**
@@ -205,7 +201,7 @@ class ApiHotelReservationType extends AbstractStructBase
         if (!is_null($resStatus) && !is_string($resStatus)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($resStatus, true), gettype($resStatus)), __LINE__);
         }
-        // validation for constraint: union
+        // validation for constraint: union(PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2)
         if ('' !== ($resStatusUnionErrorMessage = self::validateResStatusForUnionConstraintsFromSetResStatus($resStatus))) {
             throw new \InvalidArgumentException($resStatusUnionErrorMessage, __LINE__);
         }

@@ -2,68 +2,69 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class IntRuleTest extends RuleTest
+class IntRuleTest extends AbstractRuleTest
 {
+
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value true, please provide an integer value, boolean given
+     * @expectedExceptionMessage Invalid value 'foo', please provide an integer value, string given
      */
-    public function testApplyRuleWithBool()
+    public function testSetDecimalPlacesValueWithStringValueMustThrowAnException()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule');
-        call_user_func($functionName, true);
+        $instance = self::getWhlTaxTypeInstance();
+
+        $instance->setDecimalPlaces('foo');
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value array (
-    0 => 6,
-    ), please provide an integer value, array given
-     */
-    public function testApplyRuleWithArray()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule');
-        call_user_func($functionName, [6]);
-    }
+
     /**
      *
      */
-    public function testApplyRuleWithInteger()
+    public function testSetDecimalPlacesValueWithIntValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule');
-        $this->assertTrue(call_user_func($functionName, 6));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setDecimalPlaces(18));
     }
+
     /**
      *
      */
-    public function testApplyRuleWithNull()
+    public function testSetDecimalPlacesValueWithStringIntValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule');
-        $this->assertTrue(call_user_func($functionName, null));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setDecimalPlaces('18'));
     }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value 18.5, please provide an integer value, double given
+     */
+    public function testSetDecimalPlacesValueWithFloatValueMustThrowAnException()
+    {
+        $instance = self::getWhlTaxTypeInstance();
+
+        $instance->setDecimalPlaces(18.5);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value '18.5', please provide an integer value, string given
+     */
+    public function testSetDecimalPlacesValueWithStringFloatValueMustThrowAnException()
+    {
+        $instance = self::getWhlTaxTypeInstance();
+
+        $instance->setDecimalPlaces('18.5');
+    }
+
     /**
      *
      */
-    public function testApplyRuleWithStringInteger()
+    public function testSetDecimalPlacesValueWithNullValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule');
-        $this->assertTrue(call_user_func($functionName, '6'));
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 6.5, please provide an integer value, double given
-     */
-    public function testApplyRuleWithFloatMustThrowAnException()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule');
-        $this->assertTrue(call_user_func($functionName, 6.5));
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value '6.5', please provide an integer value, string given
-     */
-    public function testApplyRuleWithFloatStringMustThrowAnException()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\IntRule');
-        $this->assertTrue(call_user_func($functionName, '6.5'));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setDecimalPlaces(null));
     }
 }

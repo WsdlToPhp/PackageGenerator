@@ -1,6 +1,5 @@
 <?php
 
-
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 abstract class AbstractMinMaxRule extends AbstractRule

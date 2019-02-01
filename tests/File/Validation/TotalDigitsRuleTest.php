@@ -2,54 +2,53 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class TotalDigitsRuleTest extends RuleTest
+class TotalDigitsRuleTest extends AbstractRuleTest
 {
+
     /**
+     * The area_total
+     * Meta informations extracted from the WSDL
+     * - base: xsd:decimal
+     * - fractionDigits: 2
+     * - totalDigits: 15
+     * - var: float
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value 123456789101112.12, the value must at most contain 2 fraction digits, 17 given
      */
-    public function testApplyRuleWithExceptionFor2Digits()
+    public function testSetAreaTotalWithFloatTooManyDigitsMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\TotalDigitsRule', 2);
-        call_user_func($funtionName, 2.555);
+        $instance = self::getReformaHouseProfileDataInstance();
+
+        $instance->setArea_total(123456789101112.12);
     }
+
     /**
-     * @expectedException \InvalidArgumentException
+     * The area_total
+     * Meta informations extracted from the WSDL
+     * - base: xsd:decimal
+     * - fractionDigits: 2
+     * - totalDigits: 15
+     * - var: float
      */
-    public function testApplyRuleWithExceptionFor3Digits()
+    public function testSetAreaTotalWithFloatExactDigitsMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\TotalDigitsRule', 3);
-        call_user_func($funtionName, 2.5556);
+        $instance = self::getReformaHouseProfileDataInstance();
+
+        $this->assertSame($instance, $instance->setArea_total(1234567891011.12));
     }
+
     /**
-     *
+     * The area_total
+     * Meta informations extracted from the WSDL
+     * - base: xsd:decimal
+     * - fractionDigits: 2
+     * - totalDigits: 15
+     * - var: float
      */
-    public function testApplyRuleFor4Digits()
+    public function testSetAreaTotalWithFloatLessDigitsMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\TotalDigitsRule', 4);
-        $this->assertTrue(call_user_func($funtionName, 2.55));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleFor2DigitsNegativeValue()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\TotalDigitsRule', 2);
-        $this->assertTrue(call_user_func($funtionName, -25));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleFor4DigitsPositiveValue()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\TotalDigitsRule', 4);
-        $this->assertTrue(call_user_func($funtionName, "+2,515"));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleForNull()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\TotalDigitsRule', 4);
-        $this->assertTrue(call_user_func($funtionName, null));
+        $instance = self::getReformaHouseProfileDataInstance();
+
+        $this->assertSame($instance, $instance->setArea_total(1.12));
     }
 }

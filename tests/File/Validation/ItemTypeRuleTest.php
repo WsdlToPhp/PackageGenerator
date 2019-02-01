@@ -2,86 +2,85 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class ItemTypeRuleTest extends RuleTest
+class ItemTypeRuleTest extends AbstractRuleTest
 {
+
+    /**
+     * @expectedException \TypeError
+     * @expectedExceptionMessage Argument 1 passed to Api\StructType\ApiTaxType::addToTaxDescription() must be an instance of Api\StructType\ApiParagraphType, string given
+     */
+    public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeError()
+    {
+        $instance = self::getWhlTaxTypeInstance();
+
+        $instance->addToTaxDescription('foo');
+    }
+
+    /**
+     * @expectedException \TypeError
+     * @expectedExceptionMessage Argument 1 passed to Api\StructType\ApiTaxType::addToTaxDescription() must be an instance of Api\StructType\ApiParagraphType, null given
+     */
+    public function testAddToTaxDescriptionValueWithNullValueMustThrowAnException()
+    {
+        $instance = self::getWhlTaxTypeInstance();
+
+        $instance->addToTaxDescription(null);
+    }
+
+    /**
+     *
+     */
+    public function testAddToTaxDescriptionValueWithApiParagraphTypeInstanceMustPass()
+    {
+        // true to avoid the maxoccurs error to occur
+        $instance = self::getWhlTaxTypeInstance(true);
+
+        $this->assertSame($instance, $instance->addToTaxDescription(new \Api\StructType\ApiParagraphType()));
+    }
+
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage The firstSegmentsIds property can only contain items of type int, string given
      */
-    public function testApplyRuleForBoolWithInteger()
+    public function testAddToFirstSegmentsIdsValueWithStringValueMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'bool');
-        call_user_func($funtionName, 1);
+        // true to avoid the maxoccurs error to occur
+        $instance = self::getOdigeoFareItineraryInstance(true);
+
+        $instance->addToFirstSegmentsIds('foo');
     }
-    /**
-     *
-     */
-    public function testApplyRuleForBoolWithTrue()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'bool');
-        $this->assertTrue(call_user_func($funtionName, true));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleForBoolWithFalse()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'bool');
-        $this->assertTrue(call_user_func($funtionName, false));
-    }
+
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage The firstSegmentsIds property can only contain items of type int, NULL given
      */
-    public function testApplyRuleForBoolWithNull()
+    public function testAddToFirstSegmentsIdsValueWithNullValueMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'bool');
-        $this->assertTrue(call_user_func($funtionName, null));
+        // true to avoid the maxoccurs error to occur
+        $instance = self::getOdigeoFareItineraryInstance(true);
+
+        $instance->addToFirstSegmentsIds(null);
     }
+
     /**
      *
      */
-    public function testApplyRuleForFloatWithInteger()
+    public function testAddToFirstSegmentsIdsValueWithIntValueMustPass()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'int');
-        $this->assertTrue(call_user_func($funtionName, 1));
+        // true to avoid the maxoccurs error to occur
+        $instance = self::getOdigeoFareItineraryInstance(true);
+
+        $this->assertSame($instance, $instance->addToFirstSegmentsIds(18));
     }
+
     /**
      *
      */
-    public function testApplyRuleForFloatWithStringInteger()
+    public function testAddToFirstSegmentsIdsValueWithStringIntValueMustPass()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'int');
-        $this->assertTrue(call_user_func($funtionName, '1'));
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testApplyRuleForFloatWithBool()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'float');
-        $this->assertTrue(call_user_func($funtionName, true));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleForFloatWithFloat()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'float');
-        $this->assertTrue(call_user_func($funtionName, 2.5));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleForFloatWithStringFloat()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'float');
-        $this->assertTrue(call_user_func($funtionName, '2.5'));
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testApplyRuleForNull()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\ItemTypeRule', null, false, 'float');
-        $this->assertTrue(call_user_func($funtionName, null));
+        // true to avoid the maxoccurs error to occur
+        $instance = self::getOdigeoFareItineraryInstance(true);
+
+        $this->assertSame($instance, $instance->addToFirstSegmentsIds('18'));
     }
 }

@@ -12,6 +12,11 @@ abstract class AbstractRule
 {
 
     /**
+     * @var string
+     */
+    const VALIDATION_RULE_COMMENT_SENTENCE = 'validation for constraint:';
+
+    /**
      * @var Rules
      */
     protected $rules;
@@ -27,7 +32,7 @@ abstract class AbstractRule
     /**
      * This method has to add the validation rule to the method's body
      * @param string $parameterName
-     * @param mixed $value
+     * @param string|string[] $value
      * @param bool $itemType
      * @return AbstractRule
      */
@@ -37,13 +42,23 @@ abstract class AbstractRule
         if (!empty($test)) {
             $message = $this->exceptionMessageOnTestFailure($parameterName, $value, $itemType);
             $this->getMethod()
-                ->addChild($this->getMethod()->getIndentedString(sprintf('// validation for constraint: %s', $this->name()), $itemType ? 1 : 0))
-                ->addChild($this->getMethod()->getIndentedString(sprintf('if (%s) {', $test), $itemType ? 1 : 0))
-                ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(%s, __LINE__);', $message), $itemType ? 2 : 1))
-                ->addChild($this->getMethod()->getIndentedString('}', $itemType ? 1 : 0));
+                ->addChild($this->validationRuleComment($value))
+                ->addChild(sprintf('if (%s) {', $test))
+                ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(%s, __LINE__);', $message), 1))
+                ->addChild('}');
             unset($message);
+            Rules::ruleHasBeenAppliedToAttribute($this, $value, $this->getAttribute());
         }
         unset($test);
+    }
+
+    /**
+     * @param string|string[] $value
+     * @return string
+     */
+    final public function validationRuleComment($value)
+    {
+        return sprintf('// %s %s%s', self::VALIDATION_RULE_COMMENT_SENTENCE, $this->name(), is_array($value) ? sprintf('(%s)', implode(', ', $value)) : (empty($value) ? '' : sprintf('(%s)', $value)));
     }
 
     /**
@@ -55,7 +70,7 @@ abstract class AbstractRule
     /**
      * Inline tests of the validation rule
      * @param string $parameterName
-     * @param mixed $value
+     * @param string|string[] $value
      * @param bool $itemType
      * @return string
      */
@@ -64,7 +79,7 @@ abstract class AbstractRule
     /**
      * Message when test fails in order to throw the exception
      * @param string $parameterName
-     * @param mixed $value
+     * @param string|string[] $value
      * @param bool $itemType
      * @return string
      */
