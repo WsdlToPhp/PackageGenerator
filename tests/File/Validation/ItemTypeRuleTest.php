@@ -6,6 +6,7 @@ class ItemTypeRuleTest extends AbstractRuleTest
 {
 
     /**
+     * @requires PHP 7.0
      * @expectedException \TypeError
      * @expectedExceptionMessage Argument 1 passed to Api\StructType\ApiTaxType::addToTaxDescription() must be an instance of Api\StructType\ApiParagraphType, string given
      */
@@ -17,6 +18,7 @@ class ItemTypeRuleTest extends AbstractRuleTest
     }
 
     /**
+     * @requires PHP 7.0
      * @expectedException \TypeError
      * @expectedExceptionMessage Argument 1 passed to Api\StructType\ApiTaxType::addToTaxDescription() must be an instance of Api\StructType\ApiParagraphType, null given
      */

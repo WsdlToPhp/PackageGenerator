@@ -12,6 +12,8 @@ class FractionDigitsRuleTest extends AbstractRuleTest
      */
     public function testSetAmountValueWithTooManyFractionDigitsMustThrowAnException()
     {
+        // hack as precision can return false negative with 2.1234500000000001
+        ini_set('serialize_precision', 6);
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setAmount(2.12345);

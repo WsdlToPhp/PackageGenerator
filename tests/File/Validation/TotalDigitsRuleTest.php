@@ -17,6 +17,9 @@ class TotalDigitsRuleTest extends AbstractRuleTest
      */
     public function testSetAreaTotalWithFloatTooManyDigitsMustThrowAnException()
     {
+        // hack as precision can return false negative with 1.23457E+14,
+        ini_set('serialize_precision', 17);
+
         $instance = self::getReformaHouseProfileDataInstance();
 
         $instance->setArea_total(123456789101112.12);
