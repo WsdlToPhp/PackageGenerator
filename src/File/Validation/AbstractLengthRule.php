@@ -62,7 +62,7 @@ abstract class AbstractLengthRule extends AbstractMinMaxRule
             ->addChild('$invalidValues = [];')
             ->addChild(sprintf('foreach ($values as $%s) {', $itemName))
             ->addChild($method->getIndentedString($this->validationRuleComment($value), 1))
-            ->addChild($method->getIndentedString(sprintf('if (%s) {', $this->testConditions($itemName, $value, true, true)), 1))
+            ->addChild($method->getIndentedString(sprintf('if (%s) {', $this->testConditions($itemName, $value, true)), 1))
             ->addChild($method->getIndentedString(sprintf('$invalidValues[] = var_export($%s, true);', $itemName), 2))
             ->addChild($method->getIndentedString('}', 1))
             ->addChild('}')

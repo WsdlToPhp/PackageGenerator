@@ -86,7 +86,7 @@ class UnionRule extends AbstractRule
                     if (0 === $validationRuleIndex) {
                         $ruleParts = [];
                         preg_match(sprintf('/%s\s(\w*)(.*)?/', self::VALIDATION_RULE_COMMENT_SENTENCE), $validationRule, $ruleParts);
-                        if (3 === count($ruleParts) && !empty($ruleParts[1]) && $rules->getRule($ruleParts[1]) && Rules::hasRuleBeenAppliedToAttribute($rules->getRule($ruleParts[1]), $ruleParts[2], $this->getAttribute())) {
+                        if (3 === count($ruleParts) && !empty($ruleParts[1]) && $rules->getRule($ruleParts[1]) instanceof AbstractRule && Rules::hasRuleBeenAppliedToAttribute($rules->getRule($ruleParts[1]), $ruleParts[2], $this->getAttribute())) {
                             continue(2);
                         }
                     }
