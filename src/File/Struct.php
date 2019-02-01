@@ -375,11 +375,20 @@ class Struct extends AbstractModelFile
             case false !== strpos($method->getName(), 'ForUnionConstraintsFrom'):
                 $annotationBlock = $this->getStructMethodsValidateUnionAnnotationBlock($method);
                 break;
-            case false !== strpos($method->getName(), 'ForArrayContraintsFrom'):
+            case false !== strpos($method->getName(), 'ForArrayConstraintsFrom'):
                 $annotationBlock = $this->getStructMethodsValidateArrayAnnotationBlock($method);
                 break;
             case false !== strpos($method->getName(), 'ForChoiceConstraintsFrom'):
                 $annotationBlock = $this->getStructMethodsValidateChoiceAnnotationBlock($method);
+                break;
+            case false !== strpos($method->getName(), 'MaxLengthConstraintFrom'):
+                $annotationBlock = $this->getStructMethodsValidateLengthAnnotationBlock($method, 'max');
+                break;
+            case false !== strpos($method->getName(), 'MinLengthConstraintFrom'):
+                $annotationBlock = $this->getStructMethodsValidateLengthAnnotationBlock($method, 'min');
+                break;
+            case false !== strpos($method->getName(), 'LengthConstraintFrom'):
+                $annotationBlock = $this->getStructMethodsValidateLengthAnnotationBlock($method);
                 break;
         }
         return $annotationBlock;
@@ -611,7 +620,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodsValidateArrayAnnotationBlock(PhpMethod $method)
     {
-        $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), 'ForArrayContraintsFrom') + strlen('ForArrayContraintsFrom')));
+        $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), 'ForArrayConstraintsFrom') + strlen('ForArrayConstraintsFrom')));
         return new PhpAnnotationBlock([
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the values passed to the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
@@ -646,6 +655,23 @@ class Struct extends AbstractModelFile
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(PhpAnnotation::NO_NAME, 'This has to validate that the property which is being set is the only one among the given choices', self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value'),
+            new PhpAnnotation(self::ANNOTATION_RETURN, 'string A non-empty message if the values does not match the validation rules'),
+        ]);
+    }
+    /**
+     * @param PhpMethod $method
+     * @param string $type
+     * @return PhpAnnotationBlock
+     */
+    protected function getStructMethodsValidateLengthAnnotationBlock(PhpMethod $method, $type = '')
+    {
+        $replace = sprintf('%sLengthConstraintFrom', ucfirst($type));
+        $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), $replace) + strlen($replace)));
+        return new PhpAnnotationBlock([
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the value passed to the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(PhpAnnotation::NO_NAME, 'This has to validate that the items contained by the array match the length constraint', self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $values'),
             new PhpAnnotation(self::ANNOTATION_RETURN, 'string A non-empty message if the values does not match the validation rules'),
         ]);
     }
