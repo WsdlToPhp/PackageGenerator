@@ -119,7 +119,7 @@ class TagRestriction extends AbstractTagParser
      */
     protected function parseRestrictionChildAttribute(AbstractModel $model, AttributeHandler $attribute)
     {
-        if (strtolower($attribute->getName()) === 'arraytype') {
+        if (mb_strtolower($attribute->getName()) === 'arraytype') {
             $model->setInheritance($attribute->getValue());
         }
         $model->addMeta($attribute->getName(), $attribute->getValue(true));

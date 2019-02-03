@@ -284,8 +284,8 @@ class ApiTaxType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         // validation for constraint: fractionDigits(3)
-        if (!is_null($amount) && strlen(substr($amount, strpos($amount, '.') + 1)) > 3) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 3 fraction digits, %d given', var_export($amount, true), strlen(substr($amount, strpos($amount, '.') + 1))), __LINE__);
+        if (!is_null($amount) && mb_strlen(mb_substr($amount, mb_strpos($amount, '.') + 1)) > 3) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 3 fraction digits, %d given', var_export($amount, true), mb_strlen(mb_substr($amount, mb_strpos($amount, '.') + 1))), __LINE__);
         }
         $this->Amount = $amount;
         return $this;

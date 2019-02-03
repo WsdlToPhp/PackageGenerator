@@ -28,7 +28,7 @@ class FractionDigitsRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . 'strlen(substr($%1$s, strpos($%1$s, \'.\') + 1)) > %2$d', $parameterName, $value);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . 'mb_strlen(mb_substr($%1$s, mb_strpos($%1$s, \'.\') + 1)) > %2$d', $parameterName, $value);
     }
 
     /**
@@ -39,6 +39,6 @@ class FractionDigitsRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value %%s, the value must at most contain %1$d fraction digits, %%d given\', var_export($%2$s, true), strlen(substr($%2$s, strpos($%2$s, \'.\') + 1)))', $value, $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, the value must at most contain %1$d fraction digits, %%d given\', var_export($%2$s, true), mb_strlen(mb_substr($%2$s, mb_strpos($%2$s, \'.\') + 1)))', $value, $parameterName);
     }
 }

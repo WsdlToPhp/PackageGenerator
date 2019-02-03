@@ -215,7 +215,7 @@ class Service extends AbstractModelFile
     protected function getMethodAnnotationBlock(PhpMethod $method)
     {
         $annotationBlock = new PhpAnnotationBlock();
-        if (stripos($method->getName(), self::METHOD_SET_HEADER_PREFIX) === 0) {
+        if (mb_stripos($method->getName(), self::METHOD_SET_HEADER_PREFIX) === 0) {
             $this->addAnnotationBlockForSoapHeaderMethod($annotationBlock, $method);
         } elseif ($method->getName() === self::METHOD_GET_RESULT) {
             $this->addAnnnotationBlockForgetResultMethod($annotationBlock);

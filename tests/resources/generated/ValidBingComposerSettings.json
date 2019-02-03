@@ -4,6 +4,7 @@
     "require": {
         "php": ">=5.3.3",
         "ext-soap": "*",
+        "ext-mbstring": "*",
         "wsdltophp/packagebase": "~1.0",
         "wsdltophp/wssecurity": "dev-master"
     },

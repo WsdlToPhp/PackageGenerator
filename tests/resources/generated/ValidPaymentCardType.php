@@ -260,12 +260,12 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardHolderName, true), gettype($cardHolderName)), __LINE__);
         }
         // validation for constraint: maxLength(64)
-        if (!is_null($cardHolderName) && strlen($cardHolderName) > 64) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', strlen($cardHolderName)), __LINE__);
+        if (!is_null($cardHolderName) && mb_strlen($cardHolderName) > 64) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen($cardHolderName)), __LINE__);
         }
         // validation for constraint: minLength(1)
-        if (!is_null($cardHolderName) && strlen($cardHolderName) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', strlen($cardHolderName)), __LINE__);
+        if (!is_null($cardHolderName) && mb_strlen($cardHolderName) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($cardHolderName)), __LINE__);
         }
         $this->CardHolderName = $cardHolderName;
         return $this;
@@ -665,12 +665,12 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($remark, true), gettype($remark)), __LINE__);
         }
         // validation for constraint: maxLength(128)
-        if (!is_null($remark) && strlen($remark) > 128) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', strlen($remark)), __LINE__);
+        if (!is_null($remark) && mb_strlen($remark) > 128) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen($remark)), __LINE__);
         }
         // validation for constraint: minLength(1)
-        if (!is_null($remark) && strlen($remark) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', strlen($remark)), __LINE__);
+        if (!is_null($remark) && mb_strlen($remark) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($remark)), __LINE__);
         }
         $this->Remark = $remark;
         return $this;

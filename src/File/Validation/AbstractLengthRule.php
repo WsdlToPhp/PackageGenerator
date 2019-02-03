@@ -22,7 +22,7 @@ abstract class AbstractLengthRule extends AbstractMinMaxRule
     final public function testConditions($parameterName, $value, $itemType = false)
     {
         if ($itemType || !$this->getAttribute()->isArray()) {
-            $test = sprintf(($itemType ? '' : '!is_null($%1$s) && ') . 'strlen($%1$s) %3$s %2$d', $parameterName, $value, $this->symbol());
+            $test = sprintf(($itemType ? '' : '!is_null($%1$s) && ') . 'mb_strlen($%1$s) %3$s %2$d', $parameterName, $value, $this->symbol());
         } else {
             $this->addValidationMethod($parameterName, $value);
             $test = sprintf('\'\' !== (%s = self::%s($%s))', $this->getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
@@ -39,7 +39,7 @@ abstract class AbstractLengthRule extends AbstractMinMaxRule
     final public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
         if ($itemType || !$this->getAttribute()->isArray()) {
-            $message = sprintf('sprintf(\'Invalid length of %%s, the number of characters/octets contained by the literal must be %s %s\', strlen($%s))', $this->comparisonString(), $value, $parameterName);
+            $message = sprintf('sprintf(\'Invalid length of %%s, the number of characters/octets contained by the literal must be %s %s\', mb_strlen($%s))', $this->comparisonString(), $value, $parameterName);
         } else {
             $message = $this->getErrorMessageVariableName($parameterName);
         }

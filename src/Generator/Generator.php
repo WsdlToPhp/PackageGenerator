@@ -933,7 +933,7 @@ class Generator implements \JsonSerializable
      */
     public function getUrlContent($url)
     {
-        if (strpos($url, '://') !== false) {
+        if (mb_strpos($url, '://') !== false) {
             $content = Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword(), $this->getSoapClient()->getSoapClientStreamContextOptions());
             if ($this->getOptionSchemasSave() === true) {
                 Utils::saveSchemas($this->getOptionDestination(), $this->getOptionSchemasFolder(), $url, $content);
