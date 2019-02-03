@@ -2,8 +2,16 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+/**
+ * Class TotalDigitsRule
+ * @link https://www.w3.org/TR/xmlschema-2/#rf-totalDigits
+ * Validation Rule: totalDigits Valid
+ * A value in a ·value space· is facet-valid with respect to ·totalDigits· if:
+ *  - 1 that value is expressible as i × 10^-n where i and n are integers such that |i| < 10^{value} and 0 <= n <= {value}.
+ */
 class TotalDigitsRule extends AbstractRule
 {
+
     /**
      * @return string
      */
@@ -20,7 +28,7 @@ class TotalDigitsRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('is_float($%1$s) && strlen(str_replace(array(\' \', \'.\', \',\', \'-\', \'+\'), \'\', $%1$s)) !== %2$d', $parameterName, $value);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . 'strlen(preg_replace(\'/(\D)/\', \'\', $%1$s)) > %2$d', $parameterName, $value);
     }
 
     /**
@@ -31,6 +39,6 @@ class TotalDigitsRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value %%s, the value must at most contain %1$d digits, "%%d" given\', var_export($%2$s, true), strlen(substr($%2$s, strpos($%2$s, \'.\'))))', $value, $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, the value must use at most %1$d digits, "%%d" given\', var_export($%2$s, true), strlen(preg_replace(\'/(\D)/\', \'\', $%2$s)))', $value, $parameterName);
     }
 }

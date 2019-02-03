@@ -110,7 +110,7 @@ class ApiResult extends AbstractStructBase
         if (!is_null($success) && !is_bool($success)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($success, true), gettype($success)), __LINE__);
         }
-        // validation for constraint: choice
+        // validation for constraint: choice(Success, Errors)
         if ('' !== ($successChoiceErrorMessage = self::validateSuccessForChoiceConstraintsFromSetSuccess($success))) {
             throw new \InvalidArgumentException($successChoiceErrorMessage, __LINE__);
         }
@@ -167,7 +167,7 @@ class ApiResult extends AbstractStructBase
      */
     public function setErrors(\Api\StructType\ApiErrors $errors = null)
     {
-        // validation for constraint: choice
+        // validation for constraint: choice(Success, Errors)
         if ('' !== ($errorsChoiceErrorMessage = self::validateErrorsForChoiceConstraintsFromSetErrors($errors))) {
             throw new \InvalidArgumentException($errorsChoiceErrorMessage, __LINE__);
         }

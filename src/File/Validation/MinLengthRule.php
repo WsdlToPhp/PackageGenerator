@@ -2,8 +2,20 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-class MinLengthRule extends AbstractRule
+/**
+ * Class MinLengthRule
+ * @link https://www.w3.org/TR/xmlschema-2/#rf-minLength
+ * Validation Rule: minLength Valid
+ * A value in a ·value space· is facet-valid with respect to ·minLength·, determined as follows:
+ *  - 1 if the {variety} is ·atomic· then
+ *   - 1.1 if {primitive type definition} is string or anyURI, then the length of the value, as measured in characters ·must· be greater than or equal to {value};
+ *   - 1.2 if {primitive type definition} is hexBinary or base64Binary, then the length of the value, as measured in octets of the binary data, ·must· be greater than or equal to {value};
+ *   - 1.3 if {primitive type definition} is QName or NOTATION, then any {value} is facet-valid.
+ *  - 2 if the {variety} is ·list·, then the length of the value, as measured in list items, ·must· be greater than or equal to {value}
+ */
+class MinLengthRule extends AbstractLengthRule
 {
+
     /**
      * @return string
      */
@@ -13,24 +25,10 @@ class MinLengthRule extends AbstractRule
     }
 
     /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
      * @return string
      */
-    public function testConditions($parameterName, $value, $itemType = false)
+    public function symbol()
     {
-        return sprintf('(is_scalar($%1$s) && strlen($%1$s) < %2$d) || (is_array($%1$s) && count($%1$s) < %2$d)', $parameterName, $value);
-    }
-
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
-    {
-        return sprintf('sprintf(\'Invalid length for %%s, please provide an array with %1$d element(s) or a scalar of %1$d character(s) at least\', var_export($%2$s, true), is_scalar($%2$s) ? strlen($%2$s) : count($%2$s))', $value, $parameterName);
+        return self::SYMBOL_MIN_INCLUSIVE;
     }
 }

@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class StringRule extends AbstractRule
 {
+
     /**
      * @return string
      */
@@ -20,7 +21,7 @@ class StringRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('!is_null($%1$s) && !is_string($%1$s)', $parameterName);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!is_string($%1$s)', $parameterName);
     }
 
     /**

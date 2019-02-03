@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class ArrayRule extends AbstractSetOfValuesRule
 {
+
     /**
      * @return string
      */

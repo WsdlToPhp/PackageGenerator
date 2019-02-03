@@ -2,107 +2,49 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class LengthRuleTest extends RuleTest
+class LengthRuleTest extends AbstractRuleTest
 {
+
     /**
+     * The PostalCode
+     * Meta informations extracted from the WSDL
+     * - base: string
+     * - length: 4
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid length of 5, the number of characters/octets contained by the literal must be equal to 4
      */
-    public function testApplyRuleWithLowerLengthInteger()
+    public function testAddToAddressLineWithTooManyCharactersLengthMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        call_user_func($funtionName, 12345);
+        $instance = self::getOrderContractAddressDeliveryTypeInstance();
+
+        $instance->setPostalCode('12345');
     }
+
     /**
+     * The PostalCode
+     * Meta informations extracted from the WSDL
+     * - base: string
+     * - length: 4
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid length of 3, the number of characters/octets contained by the literal must be equal to 4
      */
-    public function testApplyRuleWithLowerLengthString()
+    public function testAddToAddressLineWithTooLessCharactersLengthMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        call_user_func($funtionName, '12345');
+        $instance = self::getOrderContractAddressDeliveryTypeInstance();
+
+        $instance->setPostalCode('123');
     }
+
     /**
-     * @expectedException \InvalidArgumentException
+     * The PostalCode
+     * Meta informations extracted from the WSDL
+     * - base: string
+     * - length: 4
      */
-    public function testApplyRuleWithLowerLengthArray()
+    public function testAddToAddressLineWithSAmeCharactersLengthMustPass()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        call_user_func($funtionName, [
-            1,
-            2,
-            3,
-            4,
-            5,
-        ]);
-    }
-    /**
-     *
-     */
-    public function testApplyRuleWithNull()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, null));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleWithSameLengthInteger()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, 123456));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleWithSameLengthString()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, 123456));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleWithSameLengthArray()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        $this->assertTrue(call_user_func($funtionName, [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-        ]));
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testApplyRuleWithGreaterLengthInteger()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        call_user_func($funtionName, 1234567);
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testApplyRuleWithGreaterLengthString()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        call_user_func($funtionName, 1234567);
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testApplyRuleWithGreaterLengthArray()
-    {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\LengthRule', 6);
-        call_user_func($funtionName, [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-        ]);
+        $instance = self::getOrderContractAddressDeliveryTypeInstance();
+
+        $this->assertSame($instance, $instance->setPostalCode('1234'));
     }
 }

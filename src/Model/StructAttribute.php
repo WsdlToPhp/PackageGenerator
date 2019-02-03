@@ -186,7 +186,7 @@ class StructAttribute extends AbstractModel
      */
     public function getDefaultValue()
     {
-        if ($this->isArray()) {
+        if ($this->isArray() || $this->isList()) {
             return [];
         }
         return Utils::getValueWithinItsType($this->getMetaValueFirstSet([

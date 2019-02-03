@@ -2,70 +2,85 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class PatternRuleTest extends RuleTest
+class PatternRuleTest extends AbstractRuleTest
 {
+
     /**
-     *
-     */
-    public function testApplyRuleWithBool()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
-        $this->assertTrue(call_user_func($functionName, true));
-    }
-    /**
+     * The Code
+     * Meta informations extracted from the WSDL
+     * - documentation: Code identifying the fee (e.g.,agency fee, municipality fee). Refer to OpenTravel Code List Fee Tax Type (FTT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
+     * - base: xs:string
+     * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value '$^ù', please provide a literal that is among the set of character sequences denoted by the regular expression [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
      */
-    public function testApplyRuleWithString()
+    public function testSetCodeWithInvalidValueMustThrowAnException()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
-        $this->assertTrue(call_user_func($functionName, 'foo'));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $instance->setCode('$^ù');
     }
+
     /**
-     *
+     * The Code
+     * Meta informations extracted from the WSDL
+     * - documentation: Code identifying the fee (e.g.,agency fee, municipality fee). Refer to OpenTravel Code List Fee Tax Type (FTT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
+     * - base: xs:string
+     * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
      */
-    public function testApplyRuleWithInteger()
+    public function testSetCodeWithValidValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d+');
-        $this->assertTrue(call_user_func($functionName, 1));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setCode('AAA-111-BBB'));
     }
+
     /**
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value '', please provide a literal that is among the set of character sequences denoted by the regular expression [0-9]{1,19}
      */
-    public function testApplyRuleWithInvalidDate()
+    public function testSetCardNumberWithInvalidValueTooShortMustThrowAnException()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}');
-        $this->assertTrue(call_user_func($functionName, '2017-04-04T01:00:00'));
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $instance->setCardNumber(str_repeat('0', 0));
     }
+
     /**
-     *
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value 'aaaaa', please provide a literal that is among the set of character sequences denoted by the regular expression [0-9]{1,19}
      */
-    public function testApplyRuleWithValidDate()
+    public function testSetCardNumberWithInvalidCharactersMustThrowAnException()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}');
-        $this->assertTrue(call_user_func($functionName, '2017-04-04 01:00:00'));
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $instance->setCardNumber(str_repeat('a', 5));
     }
+
     /**
-     *
+     * The CardNumber
+     * Meta informations extracted from the WSDL
+     * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
+     * - use: optional
+     * - base: xs:string
+     * - pattern: [0-9]{1,19}
      */
-    public function testApplyRuleWithQuote()
+    public function testSetCardNumberWithValidValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\'');
-        $this->assertTrue(call_user_func($functionName, '\''));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleWithBackslash()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '\\\\');
-        $this->assertTrue(call_user_func($functionName, '\\'));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleWithForwardSlash()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\PatternRule', '/');
-        $this->assertTrue(call_user_func($functionName, '/'));
+        $instance = self::getWhlPaymentCardTypeInstance();
+
+        $this->assertSame($instance, $instance->setCardNumber(str_repeat('0', 20)));
     }
 }
