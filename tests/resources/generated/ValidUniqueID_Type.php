@@ -107,9 +107,9 @@ class ApiUniqueID_Type extends AbstractStructBase
         if (!is_null($type) && !is_string($type)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
-        // validation for constraint: pattern
-        if (is_scalar($type) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a scalar value that matches "[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}"', var_export($type, true)), __LINE__);
+        // validation for constraint: pattern([0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1})
+        if (!is_null($type) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $type)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}', var_export($type, true)), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -133,13 +133,13 @@ class ApiUniqueID_Type extends AbstractStructBase
         if (!is_null($iD) && !is_string($iD)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD, true), gettype($iD)), __LINE__);
         }
-        // validation for constraint: maxLength
-        if ((is_scalar($iD) && strlen($iD) > 32) || (is_array($iD) && count($iD) > 32)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 32 element(s) or a scalar of 32 character(s) at most', var_export($iD, true), is_scalar($iD) ? strlen($iD) : count($iD)), __LINE__);
+        // validation for constraint: maxLength(32)
+        if (!is_null($iD) && strlen($iD) > 32) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', strlen($iD)), __LINE__);
         }
-        // validation for constraint: minLength
-        if ((is_scalar($iD) && strlen($iD) < 1) || (is_array($iD) && count($iD) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($iD, true), is_scalar($iD) ? strlen($iD) : count($iD)), __LINE__);
+        // validation for constraint: minLength(1)
+        if (!is_null($iD) && strlen($iD) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', strlen($iD)), __LINE__);
         }
         $this->ID = $iD;
         return $this;
@@ -203,13 +203,13 @@ class ApiUniqueID_Type extends AbstractStructBase
         if (!is_null($iD_Context) && !is_string($iD_Context)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD_Context, true), gettype($iD_Context)), __LINE__);
         }
-        // validation for constraint: maxLength
-        if ((is_scalar($iD_Context) && strlen($iD_Context) > 32) || (is_array($iD_Context) && count($iD_Context) > 32)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 32 element(s) or a scalar of 32 character(s) at most', var_export($iD_Context, true), is_scalar($iD_Context) ? strlen($iD_Context) : count($iD_Context)), __LINE__);
+        // validation for constraint: maxLength(32)
+        if (!is_null($iD_Context) && strlen($iD_Context) > 32) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', strlen($iD_Context)), __LINE__);
         }
-        // validation for constraint: minLength
-        if ((is_scalar($iD_Context) && strlen($iD_Context) < 1) || (is_array($iD_Context) && count($iD_Context) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($iD_Context, true), is_scalar($iD_Context) ? strlen($iD_Context) : count($iD_Context)), __LINE__);
+        // validation for constraint: minLength(1)
+        if (!is_null($iD_Context) && strlen($iD_Context) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', strlen($iD_Context)), __LINE__);
         }
         $this->ID_Context = $iD_Context;
         return $this;

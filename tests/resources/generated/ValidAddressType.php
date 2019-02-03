@@ -109,6 +109,8 @@ class ApiAddressType extends AbstractStructBase
      * The FormattedInd
      * Meta informations extracted from the WSDL
      * - documentation: Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted.
+     * - type: xs:boolean
+     * - use: optional
      * @var bool
      */
     public $FormattedInd;
