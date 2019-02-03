@@ -81,6 +81,8 @@ abstract class AbstractFile extends TestCase
         if (!is_file($file->getFileName())) {
             return $this->fail(sprintf('Generated file "%s" could not be found', $file->getFileName()));
         }
+        // uncomment next line to easily regenerate all valid files :)
+        //file_put_contents(sprintf('%s%s.%s', self::getTestDirectory(), $valid, $fileExtension), str_replace($file->getGenerator()->getWsdl()->getName(), '__WSDL_URL__', file_get_contents($file->getFileName())));
         $validContent = file_get_contents(sprintf('%s%s.%s', self::getTestDirectory(), $valid, $fileExtension));
         $validContent = str_replace('__WSDL_URL__', $file->getGenerator()->getWsdl()->getName(), $validContent);
         $toBeValidatedContent = file_get_contents($file->getFileName());

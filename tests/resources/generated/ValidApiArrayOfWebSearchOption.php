@@ -44,14 +44,14 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateWebSearchOptionForArrayContraintsFromSetWebSearchOption(array $values = array())
+    public static function validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $arrayOfWebSearchOptionWebSearchOptionItem) {
             // validation for constraint: enumeration
             if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($arrayOfWebSearchOptionWebSearchOptionItem)) {
-                $invalidValues[] = is_object($arrayOfWebSearchOptionWebSearchOptionItem) ? get_class($arrayOfWebSearchOptionWebSearchOptionItem) : var_export($arrayOfWebSearchOptionWebSearchOptionItem, true);
+                $invalidValues[] = is_object($arrayOfWebSearchOptionWebSearchOptionItem) ? get_class($arrayOfWebSearchOptionWebSearchOptionItem) : sprintf('%s(%s)', gettype($arrayOfWebSearchOptionWebSearchOptionItem), var_export($arrayOfWebSearchOptionWebSearchOptionItem, true));
             }
         }
         if (!empty($invalidValues)) {
@@ -71,7 +71,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     public function setWebSearchOption(array $webSearchOption = array())
     {
         // validation for constraint: array
-        if ('' !== ($webSearchOptionArrayErrorMessage = self::validateWebSearchOptionForArrayContraintsFromSetWebSearchOption($webSearchOption))) {
+        if ('' !== ($webSearchOptionArrayErrorMessage = self::validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption($webSearchOption))) {
             throw new \InvalidArgumentException($webSearchOptionArrayErrorMessage, __LINE__);
         }
         $this->WebSearchOption = $webSearchOption;

@@ -10,6 +10,7 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
 abstract class TestCase extends PHPUnitFrameworkTestCase
 {
+
     /**
      * @var Generator[]
      */

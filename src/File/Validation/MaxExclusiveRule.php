@@ -2,8 +2,22 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-class MaxExclusiveRule extends AbstractRule
+/**
+ * Class MaxExclusiveRule
+ * @link https://www.w3.org/TR/xmlschema-2/#rf-maxExclusive
+ * @link https://www.w3.org/TR/xmlschema-2/#d0e11648 for Examples:
+ *  dateTime	            duration	        result
+ *  2000-01-12T12:13:14Z	P1Y3M5DT7H10M3.3S	2001-04-17T19:23:17.3Z
+ *  2000-01	                -P3M                1999-10
+ *  2000-01-12	            PT33H	            2000-01-13
+ * Validation Rule: maxExclusive Valid
+ * A value in an ·ordered· ·value space· is facet-valid with respect to ·maxExclusive·, determined as follows:
+ *  - 1 if the ·numeric· property in {fundamental facets} is true, then the value ·must· be numerically less than {value};
+ *  - 2 if the ·numeric· property in {fundamental facets} is false (i.e., {base type definition} is one of the date and time related datatypes), then the value ·must· be chronologically less than {value};
+ */
+class MaxExclusiveRule extends AbstractBoundRule
 {
+
     /**
      * @return string
      */
@@ -13,24 +27,10 @@ class MaxExclusiveRule extends AbstractRule
     }
 
     /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
      * @return string
      */
-    public function testConditions($parameterName, $value, $itemType = false)
+    public function symbol()
     {
-        return sprintf('$%s >= %d', $parameterName, $value);
-    }
-
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
-    {
-        return sprintf('sprintf(\'Invalid value %%s, the value must be striclty inferior to %d, %%s given\', var_export($%2$s, true), $%2$s)', $value, $parameterName);
+        return self::SYMBOL_MAX_EXCLUSIVE;
     }
 }

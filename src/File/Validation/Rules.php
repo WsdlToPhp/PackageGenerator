@@ -30,6 +30,12 @@ class Rules
      * @var MethodContainer
      */
     protected $methods;
+
+    /**
+     * @var string[]
+     */
+    private static $rulesAppliedToAttribute = [];
+
     /**
      * @param AbstractModelFile $file
      * @param PhpMethod $method
@@ -56,7 +62,7 @@ class Rules
         } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->attribute)) {
             $this->getEnumerationRule()->applyRule($parameterName, null);
         } elseif ($itemType) {
-            $this->getItemTypeRule()->applyRule($parameterName, $itemType);
+            $this->getItemTypeRule()->applyRule($parameterName, null);
         } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->attribute))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
@@ -82,7 +88,7 @@ class Rules
      * @param string $name
      * @return AbstractRule|null
      */
-    protected function getRule($name)
+    public function getRule($name)
     {
         if (is_string($name)) {
             $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($name));
@@ -180,5 +186,42 @@ class Rules
     public function getGenerator()
     {
         return $this->file->getGenerator();
+    }
+
+    /**
+     * @param AbstractRule $rule
+     * @param string|string[] $value
+     * @param StructAttribute $attribute
+     * @return string
+     */
+    private static function getAppliedRuleToAttributeKey(AbstractRule $rule, $value, StructAttribute $attribute)
+    {
+        return implode('_', [
+            $rule->validationRuleComment($value),
+            $attribute->getOwner()->getName(),
+            $attribute->getName(),
+        ]);
+    }
+
+    /**
+     * @param AbstractRule $rule
+     * @param string|string[] $value
+     * @param StructAttribute $attribute
+     * @retrun void
+     */
+    public static function ruleHasBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute)
+    {
+        self::$rulesAppliedToAttribute[self::getAppliedRuleToAttributeKey($rule, $value, $attribute)] = true;
+    }
+
+    /**
+     * @param AbstractRule $rule
+     * @param string|string[] $value
+     * @param StructAttribute $attribute
+     * @return bool
+     */
+    public static function hasRuleBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute)
+    {
+        return array_key_exists(self::getAppliedRuleToAttributeKey($rule, $value, $attribute), self::$rulesAppliedToAttribute);
     }
 }

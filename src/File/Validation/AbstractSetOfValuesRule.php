@@ -8,6 +8,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 abstract class AbstractSetOfValuesRule extends AbstractRule
 {
+
     /**
      * Must check the attribute validity according to the current rule
      * @return bool
@@ -24,7 +25,7 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
     {
         $test = '';
         if ($this->mustApplyRuleOnAttribute()) {
-            $this->addValidationMethod($parameterName);
+            $this->addValidationMethod($parameterName, $value);
             $test = sprintf('\'\' !== (%s = self::%s($%s))', self::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
         }
         return $test;
@@ -43,8 +44,9 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
 
     /**
      * @param string $parameterName
+     * @param mixed $value
      */
-    protected function addValidationMethod($parameterName)
+    protected function addValidationMethod($parameterName, $value)
     {
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
             new PhpFunctionParameter('values', [], 'array'),
@@ -63,9 +65,9 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
             ->addChild('$message = \'\';')
             ->addChild('$invalidValues = [];')
             ->addChild(sprintf('foreach ($values as $%s) {', $itemName))
-            ->addChild($method->getIndentedString(sprintf('// validation for constraint: %s', $rule->name()), 1))
+            ->addChild($method->getIndentedString($rule->validationRuleComment($value), 1))
             ->addChild($method->getIndentedString(sprintf('if (%s) {', $rule->testConditions($itemName, null)), 1))
-            ->addChild($method->getIndentedString(sprintf('$invalidValues[] = %s;', sprintf('is_object($%1$s) ? get_class($%1$s) : var_export($%1$s, true)', $itemName)), 2))
+            ->addChild($method->getIndentedString(sprintf('$invalidValues[] = %s;', sprintf('is_object($%1$s) ? get_class($%1$s) : sprintf(\'%%s(%%s)\', gettype($%1$s), var_export($%1$s, true))', $itemName)), 2))
             ->addChild($method->getIndentedString('}', 1))
             ->addChild('}')
             ->addChild('if (!empty($invalidValues)) {')
@@ -82,7 +84,7 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
      */
     protected function getValidationMethodName($parameterName)
     {
-        return sprintf('validate%sForArrayContraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
+        return sprintf('validate%sForArrayConstraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
     }
 
     /**
