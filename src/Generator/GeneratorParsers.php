@@ -49,7 +49,6 @@ class GeneratorParsers extends AbstractGeneratorAware
                 ->add(new TagImportParser($this->generator))
                 ->add(new TagAttributeParser($this->generator))
                 ->add(new TagComplexTypeParser($this->generator))
-                ->add(new TagDocumentationParser($this->generator))
                 ->add(new TagElementParser($this->generator))
                 ->add(new TagEnumerationParser($this->generator))
                 ->add(new TagExtensionParser($this->generator))
@@ -59,7 +58,8 @@ class GeneratorParsers extends AbstractGeneratorAware
                 ->add(new TagRestrictionParser($this->generator))
                 ->add(new TagUnionParser($this->generator))
                 ->add(new TagListParser($this->generator))
-                ->add(new TagChoiceParser($this->generator));
+                ->add(new TagChoiceParser($this->generator))
+                ->add(new TagDocumentationParser($this->generator));
         }
         return $this;
     }

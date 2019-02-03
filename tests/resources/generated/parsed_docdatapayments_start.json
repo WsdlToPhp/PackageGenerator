@@ -674,7 +674,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Male"
+                            ]
+                        },
                         "name": "M",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -682,7 +686,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Female"
+                            ]
+                        },
                         "name": "F",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -690,7 +698,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Undefined"
+                            ]
+                        },
                         "name": "U",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -812,7 +824,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The operation was generally successful."
+                            ]
+                        },
                         "name": "SUCCESS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -838,7 +854,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The reason of error is unknown."
+                            ]
+                        },
                         "name": "UNKNOWN_ERROR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -846,7 +866,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Request data is missing."
+                            ]
+                        },
                         "name": "REQUEST_DATA_MISSING",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -854,7 +878,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Request data is incorrect."
+                            ]
+                        },
                         "name": "REQUEST_DATA_INCORRECT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -862,7 +890,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Error related to security violations such as login failure or not allowed IP."
+                            ]
+                        },
                         "name": "SECURITY_ERROR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -870,7 +902,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Payment system error."
+                            ]
+                        },
                         "name": "INTERNAL_ERROR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -2305,7 +2341,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "This is a new payment without any actions performed on it yet."
+                            ]
+                        },
                         "name": "NEW",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2313,7 +2353,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "For this payment the risk check was okay."
+                            ]
+                        },
                         "name": "RISK_CHECK_OK",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2321,7 +2365,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The risk check for this payment triggered."
+                            ]
+                        },
                         "name": "RISK_CHECK_FAILED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2329,7 +2377,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The user has provided details and is authenticated."
+                            ]
+                        },
                         "name": "STARTED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2337,7 +2389,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The payment system could not start the payment due to a technical error."
+                            ]
+                        },
                         "name": "START_ERROR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2345,7 +2401,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The shopper is authenticated by the acquirer."
+                            ]
+                        },
                         "name": "AUTHENTICATED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2353,7 +2413,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The shopper is redirected to the acquirer web-site for authentication."
+                            ]
+                        },
                         "name": "REDIRECTED_FOR_AUTHENTICATION",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2361,7 +2425,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The shopper is not authenticated by the acquirer."
+                            ]
+                        },
                         "name": "AUTHENTICATION_FAILED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2369,7 +2437,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Unable to do the authentication of the shopper by the acquirer."
+                            ]
+                        },
                         "name": "AUTHENTICATION_ERROR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2377,7 +2449,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "This payment is authorized."
+                            ]
+                        },
                         "name": "AUTHORIZED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2385,7 +2461,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The shopper is redirected to the acquirer web-site for authorization."
+                            ]
+                        },
                         "name": "REDIRECTED_FOR_AUTHORIZATION",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2393,7 +2473,11 @@
                         "index": 11,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Requested authorization for this payment, waiting for a notification from acquirer."
+                            ]
+                        },
                         "name": "AUTHORIZATION_REQUESTED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2401,7 +2485,11 @@
                         "index": 12,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The payment was not authorized due to a functional error."
+                            ]
+                        },
                         "name": "AUTHORIZATION_FAILED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2409,7 +2497,11 @@
                         "index": 13,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Unable to do the payment authorization due to a technical error."
+                            ]
+                        },
                         "name": "AUTHORIZATION_ERROR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2417,7 +2509,11 @@
                         "index": 14,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The payment is canceled."
+                            ]
+                        },
                         "name": "CANCELED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2425,7 +2521,11 @@
                         "index": 15,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Payment is not canceled, due to functional error."
+                            ]
+                        },
                         "name": "CANCEL_FAILED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2433,7 +2533,11 @@
                         "index": 16,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Payment is not canceled, due to technical error."
+                            ]
+                        },
                         "name": "CANCEL_ERROR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2441,7 +2545,11 @@
                         "index": 17,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "A cancel request sent to acquirer."
+                            ]
+                        },
                         "name": "CANCEL_REQUESTED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -6096,7 +6204,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "A shopper receipt."
+                            ]
+                        },
                         "name": "SHOPPER",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -6104,7 +6216,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "A merchant receipt."
+                            ]
+                        },
                         "name": "MERCHANT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -6758,7 +6874,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "No payments found for this order."
+                            ]
+                        },
                         "name": "NO_PAYMENTS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -6766,7 +6886,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "All payments in this order were already canceled."
+                            ]
+                        },
                         "name": "ALREADY_CANCELED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -6774,7 +6898,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "All payments in this order are canceled successfully."
+                            ]
+                        },
                         "name": "SUCCESS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -6782,7 +6910,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "At least one payment in this order was not canceled successfully. Use the status operation to get more details."
+                            ]
+                        },
                         "name": "FAILED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -6790,7 +6922,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "A request for cancelation has been sent to the acquirer, but no response received for at least one payment in this order. Use the status operation to get more details."
+                            ]
+                        },
                         "name": "PENDING",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }

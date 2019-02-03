@@ -152,4 +152,20 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteWhlEnumTransactionActionType()
+    {
+        $generator = self::whlInstance();
+        if (($model = $generator->getStructByName('TransactionActionType')) instanceof StructModel) {
+            $struct = new EnumFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidApiTransactionActionType', $struct);
+        } else {
+            $this->fail('Unable to find TransactionActionType enumeration for file generation');
+        }
+    }
 }
