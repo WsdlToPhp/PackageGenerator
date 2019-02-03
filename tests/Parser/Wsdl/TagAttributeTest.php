@@ -33,19 +33,19 @@ class TagAttributeTest extends WsdlParser
         $ok = false;
         $structs = $tagAttributeParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
-            if ($structs->getStructByName('QuantityType') instanceof Struct) {
-                $this->assertSame('token', $structs->getStructByName('QuantityType')->getAttribute('unit')->getType());
-                $this->assertSame(['use' => 'optional'], $structs->getStructByName('QuantityType')->getAttribute('unit')->getMeta());
+            if (($struct = $structs->getStructByName('QuantityType')) instanceof Struct) {
+                $this->assertSame('token', $struct->getAttribute('unit')->getType());
+                $this->assertSame(['use' => 'optional'], $struct->getAttribute('unit')->getMeta());
                 $ok = true;
             }
-            if ($structs->getStructByName('CharityIDType') instanceof Struct) {
-                $this->assertSame('CharityAffiliationTypeCodeType', $structs->getStructByName('CharityIDType')->getAttribute('type')->getType());
-                $this->assertSame(['use' => 'required'], $structs->getStructByName('CharityIDType')->getAttribute('type')->getMeta());
+            if (($struct = $structs->getStructByName('CharityIDType')) instanceof Struct) {
+                $this->assertSame('CharityAffiliationTypeCodeType', $struct->getAttribute('type')->getType());
+                $this->assertSame(['use' => 'required'], $struct->getAttribute('type')->getMeta());
                 $ok = true;
             }
-            if ($structs->getStructByName('CharityAffiliationType') instanceof Struct) {
-                $this->assertSame('string', $structs->getStructByName('CharityAffiliationType')->getAttribute('id')->getType());
-                $this->assertSame('CharityAffiliationTypeCodeType', $structs->getStructByName('CharityAffiliationType')->getAttribute('type')->getType());
+            if (($struct = $structs->getStructByName('CharityAffiliationType')) instanceof Struct) {
+                $this->assertSame('string', $struct->getAttribute('id')->getType());
+                $this->assertSame('CharityAffiliationTypeCodeType', $struct->getAttribute('type')->getType());
                 $ok = true;
             }
         }
@@ -60,22 +60,40 @@ class TagAttributeTest extends WsdlParser
 
         $tagAttributeParser->parse();
 
-        $ok = false;
+        $count = 0;
         $structs = $tagAttributeParser->getGenerator()->getStructs();
         if ($structs->count() > 0) {
-            if ($structs->getStructByName('DestinationType') instanceof Struct) {
-                $this->assertSame('integer', $structs->getStructByName('DestinationType')->getAttribute('ID')->getType());
-                $this->assertSame('integer', $structs->getStructByName('DestinationType')->getAttribute('CountryID')->getType());
-                $ok = true;
+            if (($struct = $structs->getStructByName('DestinationType')) instanceof Struct) {
+                $this->assertSame('integer', $struct->getAttribute('ID')->getType());
+                $this->assertSame('integer', $struct->getAttribute('CountryID')->getType());
+                $count++;
             }
-            if ($structs->getStructByName('InventoryType') instanceof Struct) {
-                $this->assertSame('string', $structs->getStructByName('InventoryType')->getAttribute('RatePlanId')->getType());
-                $this->assertSame('string', $structs->getStructByName('InventoryType')->getAttribute('Availability')->getType());
-                $this->assertSame('string', $structs->getStructByName('InventoryType')->getAttribute('StartDate')->getType());
-                $this->assertSame('string', $structs->getStructByName('InventoryType')->getAttribute('EndDate')->getType());
-                $ok = true;
+            if (($struct = $structs->getStructByName('InventoryType')) instanceof Struct) {
+                $this->assertSame('string', $struct->getAttribute('RatePlanId')->getType());
+                $this->assertSame('string', $struct->getAttribute('Availability')->getType());
+                $this->assertSame('string', $struct->getAttribute('StartDate')->getType());
+                $this->assertSame('string', $struct->getAttribute('EndDate')->getType());
+                $count++;
+            }
+            if (($struct = $structs->getStructByName('UniqueID_Type')) instanceof Struct) {
+                $this->assertSame('optional', $struct->getAttribute('URL')->getMetaValue('use'));
+                $this->assertSame('xs:anyURI', $struct->getAttribute('URL')->getMetaValue('type'));
+                $this->assertFalse($struct->getAttribute('URL')->isRequired());
+
+                $this->assertSame('required', $struct->getAttribute('Type')->getMetaValue('use'));
+                $this->assertSame('whlsoap:OTA_CodeType', $struct->getAttribute('Type')->getMetaValue('type'));
+                $this->assertTrue($struct->getAttribute('Type')->isRequired());
+
+                $this->assertSame('optional', $struct->getAttribute('ID_Context')->getMetaValue('use'));
+                $this->assertSame('whlsoap:StringLength1to32', $struct->getAttribute('ID_Context')->getMetaValue('type'));
+                $this->assertFalse($struct->getAttribute('ID_Context')->isRequired());
+
+                $this->assertSame('required', $struct->getAttribute('ID')->getMetaValue('use'));
+                $this->assertSame('whlsoap:StringLength1to32', $struct->getAttribute('ID')->getMetaValue('type'));
+                $this->assertTrue($struct->getAttribute('ID')->isRequired());
+                $count++;
             }
         }
-        $this->assertTrue((bool) $ok);
+        $this->assertSame(3, $count);
     }
 }
