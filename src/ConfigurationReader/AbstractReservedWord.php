@@ -59,6 +59,6 @@ class AbstractReservedWord extends AbstractYamlReader
      */
     public function is($keyword)
     {
-        return in_array($keyword, $this->keywords[self::CASE_SENSITIVE_KEY], true) || in_array(strtolower($keyword), $this->keywords[self::CASE_INSENSITIVE_KEY], true);
+        return in_array($keyword, $this->keywords[self::CASE_SENSITIVE_KEY], true) || in_array(mb_strtolower($keyword), $this->keywords[self::CASE_INSENSITIVE_KEY], true);
     }
 }

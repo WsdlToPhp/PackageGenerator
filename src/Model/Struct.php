@@ -126,7 +126,7 @@ class Struct extends AbstractModel
                     ($this->isStruct() && $this->countOwnAttributes() === 1) ||
                     (!$this->isStruct() && $this->countOwnAttributes() <= 1)
                 ) &&
-                stripos($this->getName(), 'array') !== false
+                mb_stripos($this->getName(), 'array') !== false
             ) ||
             (!$this->isStruct() && $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false) !== false)
         );

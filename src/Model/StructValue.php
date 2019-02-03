@@ -63,7 +63,7 @@ class StructValue extends AbstractModel
         } else {
             $nameWithSeparatedWords = $this->getNameWithSeparatedWords($keepMultipleUnderscores);
             $key = self::constantSuffix($this->getOwner()->getName(), $nameWithSeparatedWords, $this->getIndex());
-            return 'VALUE_' . strtoupper($nameWithSeparatedWords . ($key ? '_' . $key : ''));
+            return 'VALUE_' . mb_strtoupper($nameWithSeparatedWords . ($key ? '_' . $key : ''));
         }
     }
     /**
@@ -116,7 +116,7 @@ class StructValue extends AbstractModel
      */
     protected static function constantSuffix($structName, $value, $index)
     {
-        $key = strtoupper($structName . '_' . $value);
+        $key = mb_strtoupper($structName . '_' . $value);
         $indexedKey = $key . '_' . $index;
         if (array_key_exists($indexedKey, self::$uniqueConstants)) {
             return self::$uniqueConstants[$indexedKey];

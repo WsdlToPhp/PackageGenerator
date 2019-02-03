@@ -460,7 +460,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     protected static function uniqueName($name, $context)
     {
-        $insensitiveKey = strtolower($name . '_' . $context);
+        $insensitiveKey = mb_strtolower($name . '_' . $context);
         $sensitiveKey = $name . '_' . $context;
         if (array_key_exists($sensitiveKey, self::$uniqueNames)) {
             return self::$uniqueNames[$sensitiveKey];

@@ -133,7 +133,7 @@ abstract class AbstractTagParser extends AbstractParser
             if ($type !== null) {
                 $typeModel = $this->generator->getStructByName($type);
                 $modelAttributeType = $structAttribute->getType();
-                if ($typeModel instanceof Struct && (empty($modelAttributeType) || strtolower($modelAttributeType) === 'unknown')) {
+                if ($typeModel instanceof Struct && (empty($modelAttributeType) || mb_strtolower($modelAttributeType) === 'unknown')) {
                     if ($typeModel->isRestriction()) {
                         $structAttribute->setType($typeModel->getName());
                     } elseif (!$typeModel->isStruct() && $typeModel->getInheritance()) {

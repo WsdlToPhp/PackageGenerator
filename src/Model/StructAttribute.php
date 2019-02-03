@@ -228,7 +228,7 @@ class StructAttribute extends AbstractModel
      */
     public function isXml()
     {
-        return stripos($this->getType(), '\DOM') === 0;
+        return mb_stripos($this->getType(), '\DOM') === 0;
     }
     /**
      * @return Struct|null

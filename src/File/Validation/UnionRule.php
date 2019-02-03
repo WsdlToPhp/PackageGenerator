@@ -91,7 +91,7 @@ class UnionRule extends AbstractRule
                         }
                     }
 
-                    if (is_string($validationRule) && false !== strpos($validationRule, 'throw new')) {
+                    if (is_string($validationRule) && false !== mb_strpos($validationRule, 'throw new')) {
                         $exceptionName = sprintf('$exception%d', $exceptions++);
                         $validationRule = str_replace('throw new', sprintf('%s = new', $exceptionName), $validationRule);
                         $exceptionsTests[] = sprintf('isset(%s)', $exceptionName);
