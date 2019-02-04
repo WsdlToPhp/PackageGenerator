@@ -6,5 +6,5 @@ services:
       context: .
       dockerfile: .docker/Dockerfile
     volumes:
-      - .:/var/www/html:rw
+      - .:/var/www:rw
     container_name: package_generator

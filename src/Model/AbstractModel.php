@@ -164,6 +164,55 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
         }
         return $this;
     }
+
+    /**
+     * Allows to merge meta from different sources and ensure consistency of their order
+     * Must be passed as less important (at first position) to most important (last position)
+     * @param array $meta
+     * @param array $meta
+     * @param array $meta
+     * @param array ...
+     * @return array
+     */
+    protected function mergeMeta()
+    {
+        $meta = func_get_args();
+        $mergedMeta = [];
+        $metaDocumentation = [];
+        // gather meta
+        foreach ($meta as $metaItem) {
+            foreach ($metaItem as $metaName => $metaValue) {
+                if (self::META_DOCUMENTATION === $metaName) {
+                    $metaDocumentation = array_merge($metaDocumentation, $metaValue);
+                } elseif (!array_key_exists($metaName, $mergedMeta)) {
+                    $mergedMeta[$metaName] = $metaValue;
+                } elseif (is_array($mergedMeta[$metaName]) && is_array($metaValue)) {
+                    $mergedMeta[$metaName] = array_merge($mergedMeta[$metaName], $metaValue);
+                } elseif (is_array($mergedMeta[$metaName])) {
+                    $mergedMeta[$metaName][] = $metaValue;
+                } else {
+                    $mergedMeta[$metaName] = $metaValue;
+                }
+            }
+        }
+
+        // sort by key
+        ksort($mergedMeta);
+
+        // add documentation if any at first position
+        if (!empty($metaDocumentation)) {
+            $definitiveMeta = [
+                self::META_DOCUMENTATION => array_unique(array_reverse($metaDocumentation)),
+            ];
+            foreach ($mergedMeta as $metaName => $metaValue) {
+                $definitiveMeta[$metaName] = $metaValue;
+            }
+            $mergedMeta = $definitiveMeta;
+            unset($definitiveMeta);
+        }
+        unset($meta, $metaDocumentation);
+        return $mergedMeta;
+    }
     /**
      * Sets the documentation meta value.
      * Documentation is set as an array so if multiple documentation nodes are set for an unique element, it will gather them.
@@ -460,7 +509,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      */
     protected static function uniqueName($name, $context)
     {
-        $insensitiveKey = strtolower($name . '_' . $context);
+        $insensitiveKey = mb_strtolower($name . '_' . $context);
         $sensitiveKey = $name . '_' . $context;
         if (array_key_exists($sensitiveKey, self::$uniqueNames)) {
             return self::$uniqueNames[$sensitiveKey];

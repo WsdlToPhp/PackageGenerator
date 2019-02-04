@@ -8,6 +8,7 @@ use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs as StructsParser;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions as FunctionsParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute as TagAttributeParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType as TagComplexTypeParser;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagChoice as TagChoiceParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation as TagDocumentationParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement as TagElementParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration as TagEnumerationParser;
@@ -46,9 +47,8 @@ abstract class AbstractFile extends TestCase
     }
     /**
      * @param Generator $generator
-     * @param string $wsdlPath
      */
-    private static function applyParsers(Generator $generator, $wsdlPath)
+    private static function applyParsers(Generator $generator)
     {
         $parsers = [
             new FunctionsParser($generator),
@@ -57,7 +57,6 @@ abstract class AbstractFile extends TestCase
             new TagImportParser($generator),
             new TagAttributeParser($generator),
             new TagComplexTypeParser($generator),
-            new TagDocumentationParser($generator),
             new TagElementParser($generator),
             new TagEnumerationParser($generator),
             new TagExtensionParser($generator),
@@ -67,6 +66,8 @@ abstract class AbstractFile extends TestCase
             new TagRestrictionParser($generator),
             new TagUnionParser($generator),
             new TagListParser($generator),
+            new TagChoiceParser($generator),
+            new TagDocumentationParser($generator),
         ];
         foreach ($parsers as $parser) {
             $parser->parse();
@@ -81,6 +82,8 @@ abstract class AbstractFile extends TestCase
         if (!is_file($file->getFileName())) {
             return $this->fail(sprintf('Generated file "%s" could not be found', $file->getFileName()));
         }
+        // uncomment next line to easily regenerate all valid files :)
+        //file_put_contents(sprintf('%s%s.%s', self::getTestDirectory(), $valid, $fileExtension), str_replace($file->getGenerator()->getWsdl()->getName(), '__WSDL_URL__', file_get_contents($file->getFileName())));
         $validContent = file_get_contents(sprintf('%s%s.%s', self::getTestDirectory(), $valid, $fileExtension));
         $validContent = str_replace('__WSDL_URL__', $file->getGenerator()->getWsdl()->getName(), $validContent);
         $toBeValidatedContent = file_get_contents($file->getFileName());

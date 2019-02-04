@@ -2,54 +2,50 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class FractionDigitsRuleTest extends RuleTest
+class FractionDigitsRuleTest extends AbstractRuleTest
 {
+
     /**
+     * - fractionDigits: 3
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value 2.12345, the value must at most contain 3 fraction digits, 5 given
      */
-    public function testApplyRuleWithExceptionForOneMoreDigitThanExpected2Digits()
+    public function testSetAmountValueWithTooManyFractionDigitsMustThrowAnException()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 2);
-        call_user_func($functionName, 2.555);
+        // hack as precision can return false negative with 2.1234500000000001
+        ini_set('serialize_precision', 6);
+        $instance = self::getWhlTaxTypeInstance();
+
+        $instance->setAmount(2.12345);
     }
+
     /**
-     * @expectedException \InvalidArgumentException
+     * - fractionDigits: 3
      */
-    public function testApplyRuleWithExceptionForOneMoreDigitThanExpected3Digits()
+    public function testSetAmountValueWithSameFractionDigitsMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 3);
-        call_user_func($functionName, 2.5556);
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setAmount(2.123));
     }
+
     /**
-     *
+     * - fractionDigits: 3
      */
-    public function testApplyRuleForTwoLessDigitsThanExpected4Digits()
+    public function testSetAmountValueWithLessFractionDigitsMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
-        $this->assertTrue(call_user_func($functionName, 2.55));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setAmount(2.12));
     }
+
     /**
-     *
+     * - fractionDigits: 3
      */
-    public function testApplyRuleForAsManyDigitsAsExpected2Digits()
+    public function testSetAmountValueWithNullValueMustPass()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 2);
-        $this->assertTrue(call_user_func($functionName, 2.55));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleForAsManyDigitsAsExpected4Digits()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
-        $this->assertTrue(call_user_func($functionName, 2.5152));
-    }
-    /**
-     *
-     */
-    public function testApplyRuleForNull()
-    {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 4);
-        $this->assertTrue(call_user_func($functionName, null));
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setAmount(null));
     }
 }

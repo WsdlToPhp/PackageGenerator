@@ -1828,7 +1828,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Amex"
+                            ]
+                        },
                         "name": "Active",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1836,7 +1840,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Visa"
+                            ]
+                        },
                         "name": "Pending",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1844,7 +1852,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Mastercard"
+                            ]
+                        },
                         "name": "Inactive",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1852,7 +1864,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -1878,7 +1894,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Request processing succeeded."
+                            ]
+                        },
                         "name": "Success",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1886,7 +1906,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Request processing failed."
+                            ]
+                        },
                         "name": "Failure",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1894,7 +1918,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Request processing completed with warning information being included in the response message."
+                            ]
+                        },
                         "name": "Warning",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1902,7 +1930,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Request processing completed successful with some with some warning information that could be useful for the requesting application to process and\/or record."
+                            ]
+                        },
                         "name": "SuccessWithWarning",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1910,7 +1942,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Request processing failed with some error and warnining information that requesting application should process to determine cause(s) of failure."
+                            ]
+                        },
                         "name": "FailureWithWarning",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1918,7 +1954,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Request processing completed with Partial Success."
+                            ]
+                        },
                         "name": "PartialSuccess",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1926,7 +1966,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -1952,7 +1996,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "PayPal owns address."
+                            ]
+                        },
                         "name": "PayPal",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1960,7 +2008,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "eBay owns address."
+                            ]
+                        },
                         "name": "eBay",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -1968,7 +2020,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -1994,7 +2050,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Unknown auction type"
+                            ]
+                        },
                         "name": "Unknown",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2002,7 +2062,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Chinese auction"
+                            ]
+                        },
                         "name": "Chinese",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2010,7 +2074,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Dutch auction"
+                            ]
+                        },
                         "name": "Dutch",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2018,7 +2086,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Live Auctions-type auction"
+                            ]
+                        },
                         "name": "Live",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2026,7 +2098,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Ad type auction"
+                            ]
+                        },
                         "name": "Ad type",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2034,7 +2110,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Stores Fixed-price auction (US only)"
+                            ]
+                        },
                         "name": "Stores Fixed-price",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2042,7 +2122,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Personal Offer auction"
+                            ]
+                        },
                         "name": "Personal Offer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2050,7 +2134,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Fixed Price item (\"BIN only\")."
+                            ]
+                        },
                         "name": "Fixed Price Item",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2058,7 +2146,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -2084,7 +2176,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Custom Code"
+                            ]
+                        },
                         "name": "Other",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2092,7 +2188,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -2118,7 +2218,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "No payment method specified"
+                            ]
+                        },
                         "name": "None",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2126,7 +2230,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Money order\/cashiers check"
+                            ]
+                        },
                         "name": "MOCC",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2134,7 +2242,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "American Express"
+                            ]
+                        },
                         "name": "AmEx",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2142,7 +2254,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Payment See Description"
+                            ]
+                        },
                         "name": "PaymentSeeDescription",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2150,7 +2266,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "American Express"
+                            ]
+                        },
                         "name": "CCAccepted",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2158,7 +2278,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Personal check"
+                            ]
+                        },
                         "name": "PersonalCheck",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2166,7 +2290,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "COD"
+                            ]
+                        },
                         "name": "COD",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2174,7 +2302,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Visa\/Mastercard"
+                            ]
+                        },
                         "name": "VisaMC",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2182,7 +2314,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Other forms of payment. Some custom method is accepted by seller as payment method in the transaction. For Motors vehicle items, this field refers to the Deposit payment method."
+                            ]
+                        },
                         "name": "Other",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2190,7 +2326,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "PayPal"
+                            ]
+                        },
                         "name": "PayPal",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2198,7 +2338,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Discover"
+                            ]
+                        },
                         "name": "Discover",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2206,7 +2350,11 @@
                         "index": 11,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Payment on delivery acceptable payment term."
+                            ]
+                        },
                         "name": "CashOnPickup",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2214,7 +2362,11 @@
                         "index": 12,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Direct transfer of money acceptable payment term."
+                            ]
+                        },
                         "name": "MoneyXferAccepted",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2222,7 +2374,11 @@
                         "index": 13,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "If the seller has bank account information on file, and MoneyXferAcceptedinCheckout = true, then the bank account information will be displayed in Checkout. Applicable to German site only."
+                            ]
+                        },
                         "name": "MoneyXferAcceptedinCheckout",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2230,7 +2386,11 @@
                         "index": 14,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Online Escrow paid for by seller."
+                            ]
+                        },
                         "name": "OtherOnlinePayments",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2238,7 +2398,11 @@
                         "index": 15,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -2264,7 +2428,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Item is ineligible (e.g., category not applicable)."
+                            ]
+                        },
                         "name": "ItemIneligible",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2272,7 +2440,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Item is eligible per standard criteria."
+                            ]
+                        },
                         "name": "ItemEligible",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2280,7 +2452,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Item marked ineligible per special criteria (e.g., seller's account closed)."
+                            ]
+                        },
                         "name": "ItemMarkedIneligible",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2288,7 +2464,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Item marked eligible per other criteria."
+                            ]
+                        },
                         "name": "ItemMarkedEligible",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2296,7 +2476,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -2322,7 +2506,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Checkout complete."
+                            ]
+                        },
                         "name": "CheckoutComplete",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2330,7 +2518,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Checkout incomplete. No details specified."
+                            ]
+                        },
                         "name": "CheckoutIncomplete",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2338,7 +2530,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Buyer requests total."
+                            ]
+                        },
                         "name": "BuyerRequestsTotal",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2346,7 +2542,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Seller responded to buyer's request."
+                            ]
+                        },
                         "name": "SellerResponded",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -2354,7 +2554,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -4300,7 +4504,11 @@
                         "index": 240,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "NOTE: APO\/FPO was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country code list for backward compatibility."
+                            ]
+                        },
                         "name": "AA",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -4308,7 +4516,11 @@
                         "index": 241,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "NOTE: Guernsey was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country list for backward compatibility."
+                            ]
+                        },
                         "name": "QM",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -4316,7 +4528,11 @@
                         "index": 242,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "NOTE: Jan Mayen was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country list for backward compatibility."
+                            ]
+                        },
                         "name": "QN",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -4324,7 +4540,11 @@
                         "index": 243,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "NOTE: Jersey was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country list for backward compatibility."
+                            ]
+                        },
                         "name": "QO",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -4332,7 +4552,11 @@
                         "index": 244,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "NOTE: Tahiti was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country list for backward compatibility."
+                            ]
+                        },
                         "name": "QP",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -4340,7 +4564,11 @@
                         "index": 245,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "NOTE: Serbia and Montenegro was not defined in the list previously but now an ISO 3166 code has been defined. As of 41.0 this country is supported in PayPal PRO."
+                            ]
+                        },
                         "name": "CS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -4348,7 +4576,11 @@
                         "index": 246,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -4388,7 +4620,11 @@
                         "index": 251,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Republic of Serbia."
+                            ]
+                        },
                         "name": "RS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -4396,7 +4632,11 @@
                         "index": 252,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Montenegro."
+                            ]
+                        },
                         "name": "ME",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -5814,7 +6054,11 @@
                         "index": 174,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -5840,7 +6084,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "None"
+                            ]
+                        },
                         "name": "None",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -5848,7 +6096,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Other Method"
+                            ]
+                        },
                         "name": "OtherMethod",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -5856,7 +6108,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Fast Deposit."
+                            ]
+                        },
                         "name": "FastDeposit",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -5864,7 +6120,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -5890,7 +6150,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Return in response message all detail levels."
+                            ]
+                        },
                         "name": "ReturnAll",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -5898,7 +6162,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Return item description."
+                            ]
+                        },
                         "name": "ItemReturnDescription",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -5906,7 +6174,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Return attributes as part of the item."
+                            ]
+                        },
                         "name": "ItemReturnAttributes",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -6042,7 +6314,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Identifies a BA flow for return shipment"
+                            ]
+                        },
                         "name": "ReturnShipment",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11322,7 +11598,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "By Buyer"
+                            ]
+                        },
                         "name": "ByBuyer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11330,7 +11610,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "By Seller."
+                            ]
+                        },
                         "name": "BySeller",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11338,7 +11622,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "None."
+                            ]
+                        },
                         "name": "None",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11346,7 +11634,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11372,7 +11664,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "No graphic displayed"
+                            ]
+                        },
                         "name": "None",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11380,7 +11676,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Yellow Star"
+                            ]
+                        },
                         "name": "Yellow",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11388,7 +11688,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Turquoise Star"
+                            ]
+                        },
                         "name": "Turquoise",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11396,7 +11700,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Purple Star"
+                            ]
+                        },
                         "name": "Purple",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11404,7 +11712,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Red Star"
+                            ]
+                        },
                         "name": "Red",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11412,7 +11724,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Green Star"
+                            ]
+                        },
                         "name": "Green",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11420,7 +11736,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Yellow Shooting Star"
+                            ]
+                        },
                         "name": "YellowShooting",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11428,7 +11748,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Turquoise Shooting Star"
+                            ]
+                        },
                         "name": "TurquoiseShooting",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11436,7 +11760,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Purple Shooting Star"
+                            ]
+                        },
                         "name": "PurpleShooting",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11444,7 +11772,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Red Shooting Star"
+                            ]
+                        },
                         "name": "RedShooting",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11452,7 +11784,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Blue Star"
+                            ]
+                        },
                         "name": "Blue",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11460,7 +11796,11 @@
                         "index": 11,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11486,7 +11826,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Indicates whether it is a featured item."
+                            ]
+                        },
                         "name": "Featured",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11494,7 +11838,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Include in the gallery."
+                            ]
+                        },
                         "name": "Gallery",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11502,7 +11850,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11528,7 +11880,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Custom Code"
+                            ]
+                        },
                         "name": "Other",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11536,7 +11892,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Electronic check."
+                            ]
+                        },
                         "name": "Echeck",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11544,7 +11904,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "ACH."
+                            ]
+                        },
                         "name": "ACH",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11552,7 +11916,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Credit-card."
+                            ]
+                        },
                         "name": "Creditcard",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11560,7 +11928,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Pay balance."
+                            ]
+                        },
                         "name": "PayPalBalance",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11568,7 +11940,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11594,7 +11970,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "indicates that the seller is offering to ship the item via an express shipping method as described in the item description."
+                            ]
+                        },
                         "name": "GiftExpressShipping",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11602,7 +11982,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "indicates that the seller is offering to ship to the gift recipient, not the buyer, when payment clears."
+                            ]
+                        },
                         "name": "GiftShipToRecipient",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11610,7 +11994,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "indicates that the seller is offering to wrap the item (and optionally include a card) as described in the item description."
+                            ]
+                        },
                         "name": "GiftWrap",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11618,7 +12006,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11644,7 +12036,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "No hit counter"
+                            ]
+                        },
                         "name": "NoHitCounter",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11652,7 +12048,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Honesty Style Hit Counter"
+                            ]
+                        },
                         "name": "HonestyStyle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11660,7 +12060,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Green LED counter."
+                            ]
+                        },
                         "name": "GreenLED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11668,7 +12072,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Hidden counter."
+                            ]
+                        },
                         "name": "Hidden",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11676,7 +12084,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11702,7 +12114,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Insurance optional."
+                            ]
+                        },
                         "name": "Optional",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11710,7 +12126,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Insurance required."
+                            ]
+                        },
                         "name": "Required",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11718,7 +12138,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Insurance not offered."
+                            ]
+                        },
                         "name": "NotOffered",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11726,7 +12150,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Insurance included in Shipping and Handling costs."
+                            ]
+                        },
                         "name": "IncludedInShippingHandling",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11734,7 +12162,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11760,7 +12192,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "1 Day"
+                            ]
+                        },
                         "name": "Days_1",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11768,7 +12204,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "3 Days"
+                            ]
+                        },
                         "name": "Days_3",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11776,7 +12216,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "5 Days"
+                            ]
+                        },
                         "name": "Days_5",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11784,7 +12228,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "7 Days"
+                            ]
+                        },
                         "name": "Days_7",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11792,7 +12240,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "10 Days"
+                            ]
+                        },
                         "name": "Days_10",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11800,7 +12252,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "30 Days"
+                            ]
+                        },
                         "name": "Days_30",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11808,7 +12264,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "60 Days"
+                            ]
+                        },
                         "name": "Days_60",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11816,7 +12276,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "90 Days"
+                            ]
+                        },
                         "name": "Days_90",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11824,7 +12288,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "120 Days"
+                            ]
+                        },
                         "name": "Days_120",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11832,7 +12300,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "GTC"
+                            ]
+                        },
                         "name": "GTC",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11840,7 +12312,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11866,7 +12342,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Indicates whether an item will be displayed with a border that will go around the item (e.g., for category-based search result page or store search that brings up multiple items) to differentiate it from the rest of list."
+                            ]
+                        },
                         "name": "Border",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11874,7 +12354,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Indicates whether the bolding option was used."
+                            ]
+                        },
                         "name": "BoldTitle",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11882,7 +12366,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Indicates whether it is a featured item."
+                            ]
+                        },
                         "name": "Featured",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11890,7 +12378,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Indicates item's listing is highlighted."
+                            ]
+                        },
                         "name": "Highlight",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11898,7 +12390,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Indicates item's listing is home page featured."
+                            ]
+                        },
                         "name": "HomePageFeatured",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11906,7 +12402,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -11932,7 +12432,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Unknown Listing Type"
+                            ]
+                        },
                         "name": "Unknown",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11940,7 +12444,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Chinese auction"
+                            ]
+                        },
                         "name": "Chinese",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11948,7 +12456,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Dutch auction"
+                            ]
+                        },
                         "name": "Dutch",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11956,7 +12468,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Live Auctions-type auction"
+                            ]
+                        },
                         "name": "Live",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11964,7 +12480,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Ad type auction"
+                            ]
+                        },
                         "name": "AdType",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11972,7 +12492,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Stores Fixed-price auction (US only)"
+                            ]
+                        },
                         "name": "StoresFixedPrice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11980,7 +12504,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Personal Offer auction"
+                            ]
+                        },
                         "name": "PersonalOffer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11988,7 +12516,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Fixed Price item (\"BIN only\")."
+                            ]
+                        },
                         "name": "FixedPriceItem",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -11996,7 +12528,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12022,7 +12558,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "OptIn"
+                            ]
+                        },
                         "name": "OptIn",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12030,7 +12570,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "OptOut"
+                            ]
+                        },
                         "name": "OptOut",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12038,7 +12582,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12064,7 +12612,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Indicate filed is to be dropped."
+                            ]
+                        },
                         "name": "Dropped",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12072,7 +12624,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Indicate filed is to be modified."
+                            ]
+                        },
                         "name": "Modify",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12080,7 +12636,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12106,7 +12666,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "No special Picture Services features."
+                            ]
+                        },
                         "name": "None",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12114,7 +12678,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Slideshow of multiple pictures."
+                            ]
+                        },
                         "name": "SlideShow",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12122,7 +12690,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Super-size format picture."
+                            ]
+                        },
                         "name": "SuperSize",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12130,7 +12702,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Picture Pack."
+                            ]
+                        },
                         "name": "PicturePack",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12138,7 +12714,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12164,7 +12744,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Auction Item"
+                            ]
+                        },
                         "name": "AuctionPrice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12172,7 +12756,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Buy It Now"
+                            ]
+                        },
                         "name": "BuyItNowPrice",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12180,7 +12768,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved. Do not use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12206,7 +12798,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Manual Selection"
+                            ]
+                        },
                         "name": "Manual",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12214,7 +12810,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Automatic Selection"
+                            ]
+                        },
                         "name": "Automatic",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12222,7 +12822,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved. Do not use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12248,7 +12852,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Cross Sell"
+                            ]
+                        },
                         "name": "CrossSell",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12256,7 +12864,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Up Sell"
+                            ]
+                        },
                         "name": "UpSell",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12264,7 +12876,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved. Do not use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12290,7 +12906,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Item to Item Promotional Scheme"
+                            ]
+                        },
                         "name": "ItemToItem",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12298,7 +12918,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Item to Item Store Scheme"
+                            ]
+                        },
                         "name": "ItemToStoreCat",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12306,7 +12930,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Store to Store Scheme"
+                            ]
+                        },
                         "name": "StoreToStoreCat",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12314,7 +12942,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved. Do not use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12340,7 +12972,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Custom Code"
+                            ]
+                        },
                         "name": "Other",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12404,7 +13040,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12430,7 +13070,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Bronze"
+                            ]
+                        },
                         "name": "Bronze",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12438,7 +13082,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Silver"
+                            ]
+                        },
                         "name": "Silver",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12446,7 +13094,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Gold"
+                            ]
+                        },
                         "name": "Gold",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12454,7 +13106,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Platinum"
+                            ]
+                        },
                         "name": "Platinum",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12462,7 +13118,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Titanium"
+                            ]
+                        },
                         "name": "Titanium",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12470,7 +13130,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "None"
+                            ]
+                        },
                         "name": "None",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12478,7 +13142,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12504,7 +13172,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "No payment method specified - some other payment method."
+                            ]
+                        },
                         "name": "Other",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12512,7 +13184,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Amex"
+                            ]
+                        },
                         "name": "Amex",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12520,7 +13196,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Visa"
+                            ]
+                        },
                         "name": "Visa",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12528,7 +13208,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Mastercard"
+                            ]
+                        },
                         "name": "Mastercard",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12536,7 +13220,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Discover"
+                            ]
+                        },
                         "name": "Discover",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12544,7 +13232,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "JCB"
+                            ]
+                        },
                         "name": "JCB",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12552,7 +13244,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Diners"
+                            ]
+                        },
                         "name": "Diners",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12560,7 +13256,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12586,7 +13286,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Warning or informational error."
+                            ]
+                        },
                         "name": "Warning",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12594,7 +13298,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Application-level error."
+                            ]
+                        },
                         "name": "Error",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12602,7 +13310,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Partial Success."
+                            ]
+                        },
                         "name": "PartialSuccess",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12610,7 +13322,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12636,7 +13352,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Site only."
+                            ]
+                        },
                         "name": "SiteOnly",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12644,7 +13364,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "WorldWide."
+                            ]
+                        },
                         "name": "WorldWide",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12652,7 +13376,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "SitePlusRegions."
+                            ]
+                        },
                         "name": "SitePlusRegions",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12660,7 +13388,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "WillNotShip."
+                            ]
+                        },
                         "name": "WillNotShip",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12668,7 +13400,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12694,7 +13430,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "None."
+                            ]
+                        },
                         "name": "None",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12702,7 +13442,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Letter."
+                            ]
+                        },
                         "name": "Letter",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12710,7 +13454,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "LargeEnvelope"
+                            ]
+                        },
                         "name": "LargeEnvelope",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12718,7 +13466,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USPS Large Package\/Oversize 1"
+                            ]
+                        },
                         "name": "USPSLargePack",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12726,7 +13478,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Very Large Package\/Oversize 2"
+                            ]
+                        },
                         "name": "VeryLargePack",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12734,7 +13490,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "UPS Letter"
+                            ]
+                        },
                         "name": "UPSLetter",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12742,7 +13502,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USPS Flat Rate Envelope"
+                            ]
+                        },
                         "name": "USPSFlatRateEnvelope",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12750,7 +13514,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Package\/thick envelope"
+                            ]
+                        },
                         "name": "PackageThickEnvelope",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12758,7 +13526,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12784,7 +13556,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Flat shipping rate."
+                            ]
+                        },
                         "name": "Flat",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12792,7 +13568,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Calculated shipping rate."
+                            ]
+                        },
                         "name": "Calculated",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12800,7 +13580,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12826,7 +13610,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Africa"
+                            ]
+                        },
                         "name": "Africa",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12834,7 +13622,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Asia"
+                            ]
+                        },
                         "name": "Asia",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12842,7 +13634,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Carribbean"
+                            ]
+                        },
                         "name": "Caribbean",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12850,7 +13646,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Europe"
+                            ]
+                        },
                         "name": "Europe",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12858,7 +13658,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "LatinAmerica"
+                            ]
+                        },
                         "name": "LatinAmerica",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12866,7 +13670,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "MiddleEast"
+                            ]
+                        },
                         "name": "MiddleEast",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12874,7 +13682,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "NorthAmerica"
+                            ]
+                        },
                         "name": "NorthAmerica",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12882,7 +13694,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Oceania (i.e., Pacific region other than Asia)"
+                            ]
+                        },
                         "name": "Oceania",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12890,7 +13706,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "SouthAmerica"
+                            ]
+                        },
                         "name": "SouthAmerica",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12898,7 +13718,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -12924,7 +13748,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "UPS Ground"
+                            ]
+                        },
                         "name": "UPSGround",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12932,7 +13760,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "UPS 3rd Day"
+                            ]
+                        },
                         "name": "UPS3rdDay",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12940,7 +13772,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "UPS 2nd Day"
+                            ]
+                        },
                         "name": "UPS2ndDay",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12948,7 +13784,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "UPS Next Day."
+                            ]
+                        },
                         "name": "UPSNextDay",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12956,7 +13796,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USPS Priority."
+                            ]
+                        },
                         "name": "USPSPriority",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12964,7 +13808,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USPS Parcel."
+                            ]
+                        },
                         "name": "USPSParcel",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12972,7 +13820,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USPS Media."
+                            ]
+                        },
                         "name": "USPSMedia",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12980,7 +13832,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USPS First Class"
+                            ]
+                        },
                         "name": "USPSFirstClass",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12988,7 +13844,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "ShippingMethodStandard - used by merchant tool only"
+                            ]
+                        },
                         "name": "ShippingMethodStandard",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -12996,7 +13856,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "ShippingMethodExpress- used by merchant tool only"
+                            ]
+                        },
                         "name": "ShippingMethodExpress",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13004,7 +13868,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "ShippingMethodNextDay- used by merchant tool only"
+                            ]
+                        },
                         "name": "ShippingMethodNextDay",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13012,7 +13880,11 @@
                         "index": 11,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USPS Express Mail"
+                            ]
+                        },
                         "name": "USPSExpressMail",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13020,7 +13892,11 @@
                         "index": 12,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USPS Ground"
+                            ]
+                        },
                         "name": "USPSGround",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13028,7 +13904,11 @@
                         "index": 13,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Download."
+                            ]
+                        },
                         "name": "Download",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13036,7 +13916,11 @@
                         "index": 14,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Will Call Or Pick Up."
+                            ]
+                        },
                         "name": "WillCall_Or_Pickup",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13044,7 +13928,11 @@
                         "index": 15,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -13070,7 +13958,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Seller pays all shipping costs."
+                            ]
+                        },
                         "name": "SellerPays",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13078,7 +13970,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Buyer pays all shipping costs."
+                            ]
+                        },
                         "name": "BuyerPays",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13086,7 +13982,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -13112,7 +14012,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "USA"
+                            ]
+                        },
                         "name": "US",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13120,7 +14024,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Canada"
+                            ]
+                        },
                         "name": "Canada",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13128,7 +14036,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "United Kingdom"
+                            ]
+                        },
                         "name": "UK",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13136,7 +14048,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Australia"
+                            ]
+                        },
                         "name": "Australia",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13144,7 +14060,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Austria"
+                            ]
+                        },
                         "name": "Austria",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13152,7 +14072,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Belgium (French)"
+                            ]
+                        },
                         "name": "Belgium_French",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13160,7 +14084,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "France"
+                            ]
+                        },
                         "name": "France",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13168,7 +14096,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Germany"
+                            ]
+                        },
                         "name": "Germany",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13176,7 +14108,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Italy"
+                            ]
+                        },
                         "name": "Italy",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13184,7 +14120,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Belgium (Dutch)"
+                            ]
+                        },
                         "name": "Belgium_Dutch",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13192,7 +14132,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Netherlands"
+                            ]
+                        },
                         "name": "Netherlands",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13200,7 +14144,11 @@
                         "index": 11,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Spain"
+                            ]
+                        },
                         "name": "Spain",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13208,7 +14156,11 @@
                         "index": 12,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Switzerland"
+                            ]
+                        },
                         "name": "Switzerland",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13216,7 +14168,11 @@
                         "index": 13,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Taiwan"
+                            ]
+                        },
                         "name": "Taiwan",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13224,7 +14180,11 @@
                         "index": 14,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "eBay Motors"
+                            ]
+                        },
                         "name": "eBayMotors",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13232,7 +14192,11 @@
                         "index": 15,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Hong Kong"
+                            ]
+                        },
                         "name": "HongKong",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13240,7 +14204,11 @@
                         "index": 16,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Singapore"
+                            ]
+                        },
                         "name": "Singapore",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13248,7 +14216,11 @@
                         "index": 17,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -13308,7 +14280,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Kilogram."
+                            ]
+                        },
                         "name": "kg",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13316,7 +14292,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Pounds."
+                            ]
+                        },
                         "name": "lbs",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13324,7 +14304,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Ounces"
+                            ]
+                        },
                         "name": "oz",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13332,7 +14316,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Centimeter."
+                            ]
+                        },
                         "name": "cm",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13340,7 +14328,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Inches."
+                            ]
+                        },
                         "name": "inches",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13348,7 +14340,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Feet."
+                            ]
+                        },
                         "name": "ft",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13356,7 +14352,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -13382,7 +14382,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User properties have never been set. This value should seldom, if ever, be returned and typically represents a problem."
+                            ]
+                        },
                         "name": "Unknown",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13390,7 +14394,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User has been suspended from selling and buying, such as for violations of eBay terms or agreement."
+                            ]
+                        },
                         "name": "Suspended",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13398,7 +14406,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User has completed online registration and has properly responded to confirmation email. Most users should fall in this category."
+                            ]
+                        },
                         "name": "Confirmed",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13406,7 +14418,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User has completed online registration, but has either not responded to confirmation email or has not yet been sent the confirmation email. ."
+                            ]
+                        },
                         "name": "Unconfirmed",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13414,7 +14430,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Registered users of AuctionWeb (pre-eBay) who never re-registered on eBay."
+                            ]
+                        },
                         "name": "Ghost",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13422,7 +14442,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Temporary user record state indicating the record is in the process of being changed by eBay. Query user information again to get new status."
+                            ]
+                        },
                         "name": "InMaintenance",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13430,7 +14454,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Records for the specified user have been deleted."
+                            ]
+                        },
                         "name": "Deleted",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13438,7 +14466,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User has completed registration and confirmation, but is pending a verification of credit card information."
+                            ]
+                        },
                         "name": "CreditCardVerify",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13446,7 +14478,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User's account is on hold, such as for non-payment of amounts due eBay. User cannot sell or buy items."
+                            ]
+                        },
                         "name": "AccountOnHold",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13454,7 +14490,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User record has been merged with another account record for the same user."
+                            ]
+                        },
                         "name": "Merged",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13462,7 +14502,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User has completed online registration and has been sent the confirmation email, but has not yet responded to the confirmation email."
+                            ]
+                        },
                         "name": "RegistrationCodeMailOut",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13470,7 +14514,11 @@
                         "index": 11,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User has been scheduled for account closure (typically when a user has requested to have their account closed.) A user in this state should not be considered an active user."
+                            ]
+                        },
                         "name": "TermPending",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13478,7 +14526,11 @@
                         "index": 12,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User has completed the registration for Half.com and opted to automatically also be registered with eBay, but the registration confirmation is still pending."
+                            ]
+                        },
                         "name": "UnconfirmedHalfOptIn",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13486,7 +14538,11 @@
                         "index": 13,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "User has completed the registration for Half.com and opted to automatically also be registered with eBay, but the verification of credit card information is still pending."
+                            ]
+                        },
                         "name": "CreditCardVerifyHalfOptIn",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13494,7 +14550,11 @@
                         "index": 14,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Passport User. User has completed the registration process, but the registration confirmation is still pending."
+                            ]
+                        },
                         "name": "UnconfirmedPassport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13502,7 +14562,11 @@
                         "index": 15,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Passport User Requiring Credit Card Verification. User has completed the registration process with credit card verification, but the registration confirmation is still pending."
+                            ]
+                        },
                         "name": "CreditCardVerifyPassport",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13510,7 +14574,11 @@
                         "index": 16,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Half.com User. User has completed the registration for Half.com and opted to automatically also be registered with eBay, but the registration confirmation is still pending."
+                            ]
+                        },
                         "name": "UnconfirmedExpress",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13518,7 +14586,11 @@
                         "index": 17,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -13544,7 +14616,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "No VAT Tax"
+                            ]
+                        },
                         "name": "NoVATTax",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13552,7 +14628,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "VAT Tax"
+                            ]
+                        },
                         "name": "VATTax",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13560,7 +14640,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "VAT Exempt"
+                            ]
+                        },
                         "name": "VATExempt",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -13568,7 +14652,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Reserved for internal or future use."
+                            ]
+                        },
                         "name": "CustomCode",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -14020,7 +15108,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Full Refund"
+                            ]
+                        },
                         "name": "Full",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14028,7 +15120,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Partial Refund"
+                            ]
+                        },
                         "name": "Partial",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14036,7 +15132,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "External Dispute"
+                            ]
+                        },
                         "name": "ExternalDispute",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -14063,7 +15163,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Each"
+                            ]
+                        },
                         "name": "EA",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14071,7 +15175,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Hours"
+                            ]
+                        },
                         "name": "Hours",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14079,7 +15187,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Days"
+                            ]
+                        },
                         "name": "Days",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14087,7 +15199,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Seconds"
+                            ]
+                        },
                         "name": "Seconds",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14095,7 +15211,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Crate of 12 bottles of beer"
+                            ]
+                        },
                         "name": "CrateOf12",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14103,7 +15223,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "6Pack"
+                            ]
+                        },
                         "name": "6Pack",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14111,7 +15235,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Gallon (UK)"
+                            ]
+                        },
                         "name": "GLI",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14119,7 +15247,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Gallon (US)"
+                            ]
+                        },
                         "name": "GLL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14127,7 +15259,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Litre"
+                            ]
+                        },
                         "name": "LTR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14135,7 +15271,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Inch"
+                            ]
+                        },
                         "name": "INH",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14143,7 +15283,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Foot"
+                            ]
+                        },
                         "name": "FOT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14151,7 +15295,11 @@
                         "index": 11,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Millimeter"
+                            ]
+                        },
                         "name": "MMT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14159,7 +15307,11 @@
                         "index": 12,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Centimeter"
+                            ]
+                        },
                         "name": "CMQ",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14167,7 +15319,11 @@
                         "index": 13,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Meter"
+                            ]
+                        },
                         "name": "MTR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14175,7 +15331,11 @@
                         "index": 14,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Square Meter"
+                            ]
+                        },
                         "name": "MTK",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14183,7 +15343,11 @@
                         "index": 15,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Cubic Meter"
+                            ]
+                        },
                         "name": "MTQ",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14191,7 +15355,11 @@
                         "index": 16,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Gram"
+                            ]
+                        },
                         "name": "GRM",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14199,7 +15367,11 @@
                         "index": 17,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Kilogram"
+                            ]
+                        },
                         "name": "KGM",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14207,7 +15379,11 @@
                         "index": 18,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Kilogram"
+                            ]
+                        },
                         "name": "KG",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14215,7 +15391,11 @@
                         "index": 19,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Pound"
+                            ]
+                        },
                         "name": "LBR",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14223,7 +15403,11 @@
                         "index": 20,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Annual"
+                            ]
+                        },
                         "name": "ANN",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14231,7 +15415,11 @@
                         "index": 21,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Degree Celcius"
+                            ]
+                        },
                         "name": "CEL",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14239,7 +15427,11 @@
                         "index": 22,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Degree Fahrenheit"
+                            ]
+                        },
                         "name": "FAH",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14247,7 +15439,11 @@
                         "index": 23,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "RESERVED"
+                            ]
+                        },
                         "name": "RESERVED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -14319,7 +15515,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "POS CHECKOUT AUTHORIZATION"
+                            ]
+                        },
                         "name": "CHECKOUT_AUTHORIZATION",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14327,7 +15527,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "POS CHECKOUT SALE"
+                            ]
+                        },
                         "name": "CHECKOUT_SALE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -14335,7 +15539,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "REFUND TRANSACTION"
+                            ]
+                        },
                         "name": "REFUND_TRANSACTION",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -33321,7 +34529,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Other"
+                            ]
+                        },
                         "name": "Other",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33329,7 +34541,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Airlines"
+                            ]
+                        },
                         "name": "Airlines",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33337,7 +34553,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Antiques"
+                            ]
+                        },
                         "name": "Antiques",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33345,7 +34565,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Art"
+                            ]
+                        },
                         "name": "Art",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33353,7 +34577,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Cameras & Photos"
+                            ]
+                        },
                         "name": "Cameras_Photos",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33361,7 +34589,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Cars, Boats, Vehicles & Parts"
+                            ]
+                        },
                         "name": "Cars_Boats_Vehicles_Parts",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33369,7 +34601,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Cell Phones & Telecom"
+                            ]
+                        },
                         "name": "CellPhones_Telecom",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33377,7 +34613,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Coins & Paper Money"
+                            ]
+                        },
                         "name": "Coins_PaperMoney",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33385,7 +34625,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Collectibles"
+                            ]
+                        },
                         "name": "Collectibles",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33393,7 +34637,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Computers & Networking"
+                            ]
+                        },
                         "name": "Computers_Networking",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33401,7 +34649,11 @@
                         "index": 10,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Consumer Electronics"
+                            ]
+                        },
                         "name": "ConsumerElectronics",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33409,7 +34661,11 @@
                         "index": 11,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Jewelry & Watches"
+                            ]
+                        },
                         "name": "Jewelry_Watches",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33417,7 +34673,11 @@
                         "index": 12,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Musical Instruments"
+                            ]
+                        },
                         "name": "MusicalInstruments",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33425,7 +34685,11 @@
                         "index": 13,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Real Estate"
+                            ]
+                        },
                         "name": "RealEstate",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33433,7 +34697,11 @@
                         "index": 14,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Sports Memorabilia, Cards & Fan Shop"
+                            ]
+                        },
                         "name": "SportsMemorabilia_Cards_FanShop",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33441,7 +34709,11 @@
                         "index": 15,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Stamps"
+                            ]
+                        },
                         "name": "Stamps",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33449,7 +34721,11 @@
                         "index": 16,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Tickets"
+                            ]
+                        },
                         "name": "Tickets",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33457,7 +34733,11 @@
                         "index": 17,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Travels"
+                            ]
+                        },
                         "name": "Travels",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33465,7 +34745,11 @@
                         "index": 18,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Gambling"
+                            ]
+                        },
                         "name": "Gambling",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33473,7 +34757,11 @@
                         "index": 19,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Alcohol"
+                            ]
+                        },
                         "name": "Alcohol",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33481,7 +34769,11 @@
                         "index": 20,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Tobacco"
+                            ]
+                        },
                         "name": "Tobacco",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33489,7 +34781,11 @@
                         "index": 21,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Money Transfer"
+                            ]
+                        },
                         "name": "MoneyTransfer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -33497,7 +34793,11 @@
                         "index": 22,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Software"
+                            ]
+                        },
                         "name": "Software",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -34036,7 +35336,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Creates Hosted Button"
+                            ]
+                        },
                         "name": "HOSTED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34044,7 +35348,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Creates Encrypted Button"
+                            ]
+                        },
                         "name": "ENCRYPTED",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34052,7 +35360,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Creates Cleartext Button"
+                            ]
+                        },
                         "name": "CLEARTEXT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34060,7 +35372,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Creates Token or temporary Button"
+                            ]
+                        },
                         "name": "TOKEN",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -34086,7 +35402,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is BUYNOW"
+                            ]
+                        },
                         "name": "BUYNOW",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34094,7 +35414,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is CART"
+                            ]
+                        },
                         "name": "CART",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34102,7 +35426,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is GIFTCERTIFICATE"
+                            ]
+                        },
                         "name": "GIFTCERTIFICATE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34110,7 +35438,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is SUBSCRIBE"
+                            ]
+                        },
                         "name": "SUBSCRIBE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34118,7 +35450,11 @@
                         "index": 4,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is DONATE"
+                            ]
+                        },
                         "name": "DONATE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34126,7 +35462,11 @@
                         "index": 5,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is UNSUBSCRIBE"
+                            ]
+                        },
                         "name": "UNSUBSCRIBE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34134,7 +35474,11 @@
                         "index": 6,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is VIEWCART"
+                            ]
+                        },
                         "name": "VIEWCART",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34142,7 +35486,11 @@
                         "index": 7,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is PAYMENTPLAN"
+                            ]
+                        },
                         "name": "PAYMENTPLAN",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34150,7 +35498,11 @@
                         "index": 8,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is AUTOBILLING"
+                            ]
+                        },
                         "name": "AUTOBILLING",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34158,7 +35510,11 @@
                         "index": 9,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button type is PAYMENT"
+                            ]
+                        },
                         "name": "PAYMENT",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -34184,7 +35540,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button subtype is PRODUCTS"
+                            ]
+                        },
                         "name": "PRODUCTS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34192,7 +35552,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button subtype is SERVICES"
+                            ]
+                        },
                         "name": "SERVICES",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -34218,7 +35582,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button image type is REG"
+                            ]
+                        },
                         "name": "REG",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34226,7 +35594,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button image type is SML"
+                            ]
+                        },
                         "name": "SML",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34234,7 +35606,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button image type is CC"
+                            ]
+                        },
                         "name": "CC",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -34260,7 +35636,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button wording is BUYNOW"
+                            ]
+                        },
                         "name": "BUYNOW",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34268,7 +35648,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button wording is PAYNOW"
+                            ]
+                        },
                         "name": "PAYNOW",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -34294,7 +35678,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button wording is BUYNOW"
+                            ]
+                        },
                         "name": "BUYNOW",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34302,7 +35690,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "button wording is SUBSCRIBE"
+                            ]
+                        },
                         "name": "SUBSCRIBE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -34328,7 +35720,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Changes Button Status to DELETE"
+                            ]
+                        },
                         "name": "DELETE",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -34813,7 +36209,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Physical"
+                            ]
+                        },
                         "name": "Physical",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -34821,7 +36221,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Digital"
+                            ]
+                        },
                         "name": "Digital",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -35992,7 +37396,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "The relation between buckets are for lifetime. Any post-transaction action on one affects other as well."
+                            ]
+                        },
                         "name": "LifeTime",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -36018,7 +37426,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Internalnation Shipping"
+                            ]
+                        },
                         "name": "InternationalShipping",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -36026,7 +37438,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "LocalDelivery"
+                            ]
+                        },
                         "name": "LocalDelivery",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -36034,7 +37450,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "BOPIS"
+                            ]
+                        },
                         "name": "BOPIS",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -36042,7 +37462,11 @@
                         "index": 3,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "PUDO"
+                            ]
+                        },
                         "name": "PUDO",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }
@@ -36068,7 +37492,11 @@
                         "index": 0,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Consumer"
+                            ]
+                        },
                         "name": "Consumer",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -36076,7 +37504,11 @@
                         "index": 1,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "Store"
+                            ]
+                        },
                         "name": "Store",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     },
@@ -36084,7 +37516,11 @@
                         "index": 2,
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "documentation": [
+                                "PickupDropOff"
+                            ]
+                        },
                         "name": "PickupDropoff",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
                     }

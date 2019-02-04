@@ -415,6 +415,10 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setLatitude($latitude = null)
     {
+        // validation for constraint: float
+        if (!is_null($latitude) && !(is_float($latitude) || is_numeric($latitude))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($latitude, true), gettype($latitude)), __LINE__);
+        }
         $this->Latitude = $latitude;
         return $this;
     }
@@ -433,6 +437,10 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setLongitude($longitude = null)
     {
+        // validation for constraint: float
+        if (!is_null($longitude) && !(is_float($longitude) || is_numeric($longitude))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($longitude, true), gettype($longitude)), __LINE__);
+        }
         $this->Longitude = $longitude;
         return $this;
     }
@@ -451,6 +459,10 @@ class ApiSearchRequest extends AbstractStructBase
      */
     public function setRadius($radius = null)
     {
+        // validation for constraint: float
+        if (!is_null($radius) && !(is_float($radius) || is_numeric($radius))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($radius, true), gettype($radius)), __LINE__);
+        }
         $this->Radius = $radius;
         return $this;
     }

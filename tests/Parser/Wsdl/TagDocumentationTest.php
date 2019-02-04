@@ -89,42 +89,37 @@ class TagDocumentationTest extends WsdlParser
     /**
      *
      */
-    public function testParseWhl()
+    public function testParseWhlPaymentCardCodeType()
     {
         $tagDocumentationParser = self::whlInstanceParser();
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
         $tagEnumerationParser->parse();
         $tagDocumentationParser->parse();
-        $ok = false;
-        foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->isRestriction() === true) {
-                if ($struct->getName() === 'PaymentCardCodeType') {
-                    $this->assertSame([
-                        'American Express',
-                    ], $struct->getValue('AX')->getMetaValue(Struct::META_DOCUMENTATION));
-                    $this->assertSame([
-                        'Bank Card',
-                    ], $struct->getValue('BC')->getMetaValue(Struct::META_DOCUMENTATION));
-                    $this->assertSame([
-                        'Carte Bleu',
-                    ], $struct->getValue('BL')->getMetaValue(Struct::META_DOCUMENTATION));
-                    $this->assertSame([
-                        'Carte Blanche',
-                    ], $struct->getValue('CB')->getMetaValue(Struct::META_DOCUMENTATION));
-                    $this->assertSame([
-                        'Diners Club',
-                    ], $struct->getValue('DN')->getMetaValue(Struct::META_DOCUMENTATION));
-                    $this->assertSame([
-                        'Discover Card',
-                    ], $struct->getValue('DS')->getMetaValue(Struct::META_DOCUMENTATION));
-                    $this->assertSame([
-                        'Eurocard',
-                    ], $struct->getValue('EC')->getMetaValue(Struct::META_DOCUMENTATION));
-                    $ok = true;
-                }
-            }
+        if ($struct = $tagDocumentationParser->getGenerator()->getStructByName('PaymentCardCodeType')) {
+            $this->assertSame([
+                'American Express',
+            ], $struct->getValue('AX')->getMetaValue(Struct::META_DOCUMENTATION));
+            $this->assertSame([
+                'Bank Card',
+            ], $struct->getValue('BC')->getMetaValue(Struct::META_DOCUMENTATION));
+            $this->assertSame([
+                'Carte Bleu',
+            ], $struct->getValue('BL')->getMetaValue(Struct::META_DOCUMENTATION));
+            $this->assertSame([
+                'Carte Blanche',
+            ], $struct->getValue('CB')->getMetaValue(Struct::META_DOCUMENTATION));
+            $this->assertSame([
+                'Diners Club',
+            ], $struct->getValue('DN')->getMetaValue(Struct::META_DOCUMENTATION));
+            $this->assertSame([
+                'Discover Card',
+            ], $struct->getValue('DS')->getMetaValue(Struct::META_DOCUMENTATION));
+            $this->assertSame([
+                'Eurocard',
+            ], $struct->getValue('EC')->getMetaValue(Struct::META_DOCUMENTATION));
+        } else {
+            $this->fail('Unabel to find PaymentCardCodeType restriction for tests');
         }
-        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -135,18 +130,13 @@ class TagDocumentationTest extends WsdlParser
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
         $tagEnumerationParser->parse();
         $tagDocumentationParser->parse();
-        $ok = false;
-        foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->isStruct() === false) {
-                if ($struct->getName() === 'ID') {
-                    $this->assertSame([
-                        'ID for an object',
-                    ], $struct->getMetaValue(Struct::META_DOCUMENTATION));
-                    $ok = true;
-                }
-            }
+        if ($struct = $tagDocumentationParser->getGenerator()->getStructByName('ID')) {
+            $this->assertSame([
+                'ID for an object',
+            ], $struct->getMetaValue(Struct::META_DOCUMENTATION));
+        } else {
+            $this->fail('Unable to find Id struct for tests');
         }
-        $this->assertTrue((bool) $ok);
     }
     /**
      *
@@ -177,5 +167,28 @@ class TagDocumentationTest extends WsdlParser
             }
         }
         $this->assertSame(count($attributes), $okCount);
+    }
+    /**
+     *
+     */
+    public function testParseWhlTransactionActionType()
+    {
+        $tagDocumentationParser = self::whlInstanceParser();
+        $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
+        $tagEnumerationParser->parse();
+        $tagDocumentationParser->parse();
+        if ($struct = $tagDocumentationParser->getGenerator()->getStructByName('TransactionActionType')) {
+            $this->assertSame([
+                'Commit the transaction and override the end transaction edits.',
+            ], $struct->getValue('CommitOverrideEdits')->getMetaValue(Struct::META_DOCUMENTATION));
+            $this->assertSame([
+                'Perform a price verification.',
+            ], $struct->getValue('VerifyPrice')->getMetaValue(Struct::META_DOCUMENTATION));
+            $this->assertSame([
+                'A ticket for an event, such as a show or theme park.',
+            ], $struct->getValue('Ticket')->getMetaValue(Struct::META_DOCUMENTATION));
+        } else {
+            $this->fail('Unable to find TransactionActionType restriction for tests');
+        }
     }
 }

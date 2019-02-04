@@ -74,8 +74,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: On your first invocation of SetExpressCheckoutRequest, the value of this token is returned by SetExpressCheckoutResponse. Optional Include this element and its value only if you want to modify an existing checkout session with
      * another invocation of SetExpressCheckoutRequest; for example, if you want the customer to edit his shipping address on PayPal. Character length and limitations: 20 single-byte characters
-     * - minOccurs: 0
      * - base: xs:string
+     * - minOccurs: 0
      * @var string
      */
     public $Token;
@@ -262,8 +262,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * The BuyerEmail
      * Meta informations extracted from the WSDL
      * - documentation: Email address of the buyer as entered during checkout. PayPal uses this value to pre-fill the PayPal membership sign-up portion of the PayPal login page. Optional Character length and limit: 127 single-byte alphanumeric characters
-     * - minOccurs: 0
      * - base: xs:string
+     * - minOccurs: 0
      * @var string
      */
     public $BuyerEmail;
@@ -1495,18 +1495,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBillingAgreementDetailsForArrayContraintsFromSetBillingAgreementDetails(array $values = array())
+    public static function validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem instanceof \Api\StructType\ApiBillingAgreementDetailsType) {
-                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) ? get_class($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) : var_export($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem, true);
+                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) ? get_class($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem), var_export($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The BillingAgreementDetails property can only contain items of \Api\StructType\ApiBillingAgreementDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The BillingAgreementDetails property can only contain items of type \Api\StructType\ApiBillingAgreementDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -1520,7 +1520,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setBillingAgreementDetails(array $billingAgreementDetails = array())
     {
         // validation for constraint: array
-        if ('' !== ($billingAgreementDetailsArrayErrorMessage = self::validateBillingAgreementDetailsForArrayContraintsFromSetBillingAgreementDetails($billingAgreementDetails))) {
+        if ('' !== ($billingAgreementDetailsArrayErrorMessage = self::validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails($billingAgreementDetails))) {
             throw new \InvalidArgumentException($billingAgreementDetailsArrayErrorMessage, __LINE__);
         }
         $this->BillingAgreementDetails = $billingAgreementDetails;
@@ -1536,7 +1536,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiBillingAgreementDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The BillingAgreementDetails property can only contain items of \Api\StructType\ApiBillingAgreementDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The BillingAgreementDetails property can only contain items of type \Api\StructType\ApiBillingAgreementDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->BillingAgreementDetails[] = $item;
         return $this;
@@ -1555,18 +1555,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePromoCodesForArrayContraintsFromSetPromoCodes(array $values = array())
+    public static function validatePromoCodesForArrayConstraintsFromSetPromoCodes(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypePromoCodesItem) {
             // validation for constraint: itemType
             if (!is_string($setExpressCheckoutRequestDetailsTypePromoCodesItem)) {
-                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypePromoCodesItem) ? get_class($setExpressCheckoutRequestDetailsTypePromoCodesItem) : var_export($setExpressCheckoutRequestDetailsTypePromoCodesItem, true);
+                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypePromoCodesItem) ? get_class($setExpressCheckoutRequestDetailsTypePromoCodesItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypePromoCodesItem), var_export($setExpressCheckoutRequestDetailsTypePromoCodesItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The PromoCodes property can only contain items of string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The PromoCodes property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -1580,7 +1580,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setPromoCodes(array $promoCodes = array())
     {
         // validation for constraint: array
-        if ('' !== ($promoCodesArrayErrorMessage = self::validatePromoCodesForArrayContraintsFromSetPromoCodes($promoCodes))) {
+        if ('' !== ($promoCodesArrayErrorMessage = self::validatePromoCodesForArrayConstraintsFromSetPromoCodes($promoCodes))) {
             throw new \InvalidArgumentException($promoCodesArrayErrorMessage, __LINE__);
         }
         $this->PromoCodes = $promoCodes;
@@ -1596,7 +1596,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The PromoCodes property can only contain items of string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PromoCodes property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->PromoCodes[] = $item;
         return $this;
@@ -1811,18 +1811,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOtherPaymentMethodsForArrayContraintsFromSetOtherPaymentMethods(array $values = array())
+    public static function validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem instanceof \Api\StructType\ApiOtherPaymentMethodDetailsType) {
-                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) ? get_class($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) : var_export($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem, true);
+                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) ? get_class($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem), var_export($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The OtherPaymentMethods property can only contain items of \Api\StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The OtherPaymentMethods property can only contain items of type \Api\StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -1836,7 +1836,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setOtherPaymentMethods(array $otherPaymentMethods = array())
     {
         // validation for constraint: array
-        if ('' !== ($otherPaymentMethodsArrayErrorMessage = self::validateOtherPaymentMethodsForArrayContraintsFromSetOtherPaymentMethods($otherPaymentMethods))) {
+        if ('' !== ($otherPaymentMethodsArrayErrorMessage = self::validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods($otherPaymentMethods))) {
             throw new \InvalidArgumentException($otherPaymentMethodsArrayErrorMessage, __LINE__);
         }
         $this->OtherPaymentMethods = $otherPaymentMethods;
@@ -1852,7 +1852,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiOtherPaymentMethodDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The OtherPaymentMethods property can only contain items of \Api\StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The OtherPaymentMethods property can only contain items of type \Api\StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->OtherPaymentMethods[] = $item;
         return $this;
@@ -1889,18 +1889,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentDetailsForArrayContraintsFromSetPaymentDetails(array $values = array())
+    public static function validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypePaymentDetailsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypePaymentDetailsItem instanceof \Api\StructType\ApiPaymentDetailsType) {
-                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypePaymentDetailsItem) ? get_class($setExpressCheckoutRequestDetailsTypePaymentDetailsItem) : var_export($setExpressCheckoutRequestDetailsTypePaymentDetailsItem, true);
+                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypePaymentDetailsItem) ? get_class($setExpressCheckoutRequestDetailsTypePaymentDetailsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypePaymentDetailsItem), var_export($setExpressCheckoutRequestDetailsTypePaymentDetailsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The PaymentDetails property can only contain items of \Api\StructType\ApiPaymentDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The PaymentDetails property can only contain items of type \Api\StructType\ApiPaymentDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -1914,8 +1914,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setPaymentDetails(array $paymentDetails = array())
     {
         // validation for constraint: array
-        if ('' !== ($paymentDetailsArrayErrorMessage = self::validatePaymentDetailsForArrayContraintsFromSetPaymentDetails($paymentDetails))) {
+        if ('' !== ($paymentDetailsArrayErrorMessage = self::validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails($paymentDetails))) {
             throw new \InvalidArgumentException($paymentDetailsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($paymentDetails) && count($paymentDetails) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($paymentDetails)), __LINE__);
         }
         $this->PaymentDetails = $paymentDetails;
         return $this;
@@ -1930,7 +1934,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiPaymentDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of \Api\StructType\ApiPaymentDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of type \Api\StructType\ApiPaymentDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($this->PaymentDetails) && count($this->PaymentDetails) >= 10) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->PaymentDetails)), __LINE__);
         }
         $this->PaymentDetails[] = $item;
         return $this;
@@ -1949,18 +1957,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlatRateShippingOptionsForArrayContraintsFromSetFlatRateShippingOptions(array $values = array())
+    public static function validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem instanceof \Api\StructType\ApiShippingOptionType) {
-                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) ? get_class($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) : var_export($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem, true);
+                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) ? get_class($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem), var_export($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The FlatRateShippingOptions property can only contain items of \Api\StructType\ApiShippingOptionType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The FlatRateShippingOptions property can only contain items of type \Api\StructType\ApiShippingOptionType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -1974,7 +1982,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setFlatRateShippingOptions(array $flatRateShippingOptions = array())
     {
         // validation for constraint: array
-        if ('' !== ($flatRateShippingOptionsArrayErrorMessage = self::validateFlatRateShippingOptionsForArrayContraintsFromSetFlatRateShippingOptions($flatRateShippingOptions))) {
+        if ('' !== ($flatRateShippingOptionsArrayErrorMessage = self::validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions($flatRateShippingOptions))) {
             throw new \InvalidArgumentException($flatRateShippingOptionsArrayErrorMessage, __LINE__);
         }
         $this->FlatRateShippingOptions = $flatRateShippingOptions;
@@ -1990,7 +1998,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiShippingOptionType) {
-            throw new \InvalidArgumentException(sprintf('The FlatRateShippingOptions property can only contain items of \Api\StructType\ApiShippingOptionType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The FlatRateShippingOptions property can only contain items of type \Api\StructType\ApiShippingOptionType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->FlatRateShippingOptions[] = $item;
         return $this;
@@ -2247,18 +2255,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSurveyChoiceForArrayContraintsFromSetSurveyChoice(array $values = array())
+    public static function validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeSurveyChoiceItem) {
             // validation for constraint: itemType
             if (!is_string($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem)) {
-                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem) ? get_class($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem) : var_export($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem, true);
+                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem) ? get_class($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem), var_export($setExpressCheckoutRequestDetailsTypeSurveyChoiceItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The SurveyChoice property can only contain items of string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The SurveyChoice property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -2272,7 +2280,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setSurveyChoice(array $surveyChoice = array())
     {
         // validation for constraint: array
-        if ('' !== ($surveyChoiceArrayErrorMessage = self::validateSurveyChoiceForArrayContraintsFromSetSurveyChoice($surveyChoice))) {
+        if ('' !== ($surveyChoiceArrayErrorMessage = self::validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice($surveyChoice))) {
             throw new \InvalidArgumentException($surveyChoiceArrayErrorMessage, __LINE__);
         }
         $this->SurveyChoice = $surveyChoice;
@@ -2288,7 +2296,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The SurveyChoice property can only contain items of string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The SurveyChoice property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->SurveyChoice[] = $item;
         return $this;
@@ -2354,18 +2362,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIncentivesForArrayContraintsFromSetIncentives(array $values = array())
+    public static function validateIncentivesForArrayConstraintsFromSetIncentives(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeIncentivesItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeIncentivesItem instanceof \Api\StructType\ApiIncentiveInfoType) {
-                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeIncentivesItem) ? get_class($setExpressCheckoutRequestDetailsTypeIncentivesItem) : var_export($setExpressCheckoutRequestDetailsTypeIncentivesItem, true);
+                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeIncentivesItem) ? get_class($setExpressCheckoutRequestDetailsTypeIncentivesItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeIncentivesItem), var_export($setExpressCheckoutRequestDetailsTypeIncentivesItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The Incentives property can only contain items of \Api\StructType\ApiIncentiveInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The Incentives property can only contain items of type \Api\StructType\ApiIncentiveInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -2379,7 +2387,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setIncentives(array $incentives = array())
     {
         // validation for constraint: array
-        if ('' !== ($incentivesArrayErrorMessage = self::validateIncentivesForArrayContraintsFromSetIncentives($incentives))) {
+        if ('' !== ($incentivesArrayErrorMessage = self::validateIncentivesForArrayConstraintsFromSetIncentives($incentives))) {
             throw new \InvalidArgumentException($incentivesArrayErrorMessage, __LINE__);
         }
         $this->Incentives = $incentives;
@@ -2395,7 +2403,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiIncentiveInfoType) {
-            throw new \InvalidArgumentException(sprintf('The Incentives property can only contain items of \Api\StructType\ApiIncentiveInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The Incentives property can only contain items of type \Api\StructType\ApiIncentiveInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Incentives[] = $item;
         return $this;
@@ -2508,18 +2516,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCoupledBucketsForArrayContraintsFromSetCoupledBuckets(array $values = array())
+    public static function validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) {
             // validation for constraint: itemType
             if (!$setExpressCheckoutRequestDetailsTypeCoupledBucketsItem instanceof \Api\StructType\ApiCoupledBucketsType) {
-                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) ? get_class($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) : var_export($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem, true);
+                $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) ? get_class($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem), var_export($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The CoupledBuckets property can only contain items of \Api\StructType\ApiCoupledBucketsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The CoupledBuckets property can only contain items of type \Api\StructType\ApiCoupledBucketsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -2533,8 +2541,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setCoupledBuckets(array $coupledBuckets = array())
     {
         // validation for constraint: array
-        if ('' !== ($coupledBucketsArrayErrorMessage = self::validateCoupledBucketsForArrayContraintsFromSetCoupledBuckets($coupledBuckets))) {
+        if ('' !== ($coupledBucketsArrayErrorMessage = self::validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets($coupledBuckets))) {
             throw new \InvalidArgumentException($coupledBucketsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(5)
+        if (is_array($coupledBuckets) && count($coupledBuckets) > 5) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($coupledBuckets)), __LINE__);
         }
         $this->CoupledBuckets = $coupledBuckets;
         return $this;
@@ -2549,7 +2561,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiCoupledBucketsType) {
-            throw new \InvalidArgumentException(sprintf('The CoupledBuckets property can only contain items of \Api\StructType\ApiCoupledBucketsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The CoupledBuckets property can only contain items of type \Api\StructType\ApiCoupledBucketsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(5)
+        if (is_array($this->CoupledBuckets) && count($this->CoupledBuckets) >= 5) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->CoupledBuckets)), __LINE__);
         }
         $this->CoupledBuckets[] = $item;
         return $this;

@@ -232,18 +232,18 @@ class ApiАдресРФ extends ApiСостав
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateДопАдрЭлForArrayContraintsFromSetДопАдрЭл(array $values = array())
+    public static function validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл(array $values = array())
     {
         $message = '';
         $invalidValues = [];
         foreach ($values as $АдресРФДопАдрЭлItem) {
             // validation for constraint: itemType
             if (!$АдресРФДопАдрЭлItem instanceof \Api\StructType\ApiДопАдрЭл) {
-                $invalidValues[] = is_object($АдресРФДопАдрЭлItem) ? get_class($АдресРФДопАдрЭлItem) : var_export($АдресРФДопАдрЭлItem, true);
+                $invalidValues[] = is_object($АдресРФДопАдрЭлItem) ? get_class($АдресРФДопАдрЭлItem) : sprintf('%s(%s)', gettype($АдресРФДопАдрЭлItem), var_export($АдресРФДопАдрЭлItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The ДопАдрЭл property can only contain items of \Api\StructType\ApiДопАдрЭл, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The ДопАдрЭл property can only contain items of type \Api\StructType\ApiДопАдрЭл, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -257,7 +257,7 @@ class ApiАдресРФ extends ApiСостав
     public function setДопАдрЭл(array $ДопАдрЭл = array())
     {
         // validation for constraint: array
-        if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayContraintsFromSetДопАдрЭл($ДопАдрЭл))) {
+        if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл($ДопАдрЭл))) {
             throw new \InvalidArgumentException($ДопАдрЭлArrayErrorMessage, __LINE__);
         }
         $this->ДопАдрЭл = $ДопАдрЭл;
@@ -273,7 +273,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiДопАдрЭл) {
-            throw new \InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of \Api\StructType\ApiДопАдрЭл, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of type \Api\StructType\ApiДопАдрЭл, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->ДопАдрЭл[] = $item;
         return $this;

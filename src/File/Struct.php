@@ -365,21 +365,30 @@ class Struct extends AbstractModelFile
             case self::METHOD_SET_STATE:
                 $annotationBlock = $this->getStructMethodSetStateAnnotationBlock();
                 break;
-            case 0 === strpos($method->getName(), 'get'):
-            case 0 === strpos($method->getName(), 'set'):
+            case 0 === mb_strpos($method->getName(), 'get'):
+            case 0 === mb_strpos($method->getName(), 'set'):
                 $annotationBlock = $this->getStructMethodsSetAndGetAnnotationBlock($method);
                 break;
-            case 0 === strpos($method->getName(), 'addTo'):
+            case 0 === mb_strpos($method->getName(), 'addTo'):
                 $annotationBlock = $this->getStructMethodsAddToAnnotationBlock($method);
                 break;
-            case false !== strpos($method->getName(), 'ForUnionConstraintsFrom'):
+            case false !== mb_strpos($method->getName(), 'ForUnionConstraintsFrom'):
                 $annotationBlock = $this->getStructMethodsValidateUnionAnnotationBlock($method);
                 break;
-            case false !== strpos($method->getName(), 'ForArrayContraintsFrom'):
+            case false !== mb_strpos($method->getName(), 'ForArrayConstraintsFrom'):
                 $annotationBlock = $this->getStructMethodsValidateArrayAnnotationBlock($method);
                 break;
-            case false !== strpos($method->getName(), 'ForChoiceConstraintsFrom'):
+            case false !== mb_strpos($method->getName(), 'ForChoiceConstraintsFrom'):
                 $annotationBlock = $this->getStructMethodsValidateChoiceAnnotationBlock($method);
+                break;
+            case false !== mb_strpos($method->getName(), 'MaxLengthConstraintFrom'):
+                $annotationBlock = $this->getStructMethodsValidateLengthAnnotationBlock($method, 'max');
+                break;
+            case false !== mb_strpos($method->getName(), 'MinLengthConstraintFrom'):
+                $annotationBlock = $this->getStructMethodsValidateLengthAnnotationBlock($method, 'min');
+                break;
+            case false !== mb_strpos($method->getName(), 'LengthConstraintFrom'):
+                $annotationBlock = $this->getStructMethodsValidateLengthAnnotationBlock($method);
                 break;
         }
         return $annotationBlock;
@@ -416,7 +425,7 @@ class Struct extends AbstractModelFile
     protected function getStructMethodsSetAndGetAnnotationBlock(PhpMethod $method)
     {
         $parameters = $method->getParameters();
-        $setOrGet = strtolower(substr($method->getName(), 0, 3));
+        $setOrGet = mb_strtolower(mb_substr($method->getName(), 0, 3));
         $parameter = array_shift($parameters);
         /**
          * Only set parameter must be based on a potential PhpFunctionParameter
@@ -424,7 +433,7 @@ class Struct extends AbstractModelFile
         if ($parameter instanceof PhpFunctionParameter && $setOrGet === 'set') {
             $parameterName = ucfirst($parameter->getName());
         } else {
-            $parameterName = substr($method->getName(), 3);
+            $parameterName = mb_substr($method->getName(), 3);
         }
         /**
          * Since properties can be duplicated with different case, we assume that _\d+ is replaceable by an empty string as methods are "duplicated" with this suffix
@@ -611,7 +620,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodsValidateArrayAnnotationBlock(PhpMethod $method)
     {
-        $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), 'ForArrayContraintsFrom') + strlen('ForArrayContraintsFrom')));
+        $methodName = lcfirst(mb_substr($method->getName(), mb_strpos($method->getName(), 'ForArrayConstraintsFrom') + mb_strlen('ForArrayConstraintsFrom')));
         return new PhpAnnotationBlock([
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the values passed to the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
@@ -625,7 +634,7 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodsValidateUnionAnnotationBlock(PhpMethod $method)
     {
-        $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), 'ForUnionConstraintsFrom') + strlen('ForUnionConstraintsFrom')));
+        $methodName = lcfirst(mb_substr($method->getName(), mb_strpos($method->getName(), 'ForUnionConstraintsFrom') + mb_strlen('ForUnionConstraintsFrom')));
         return new PhpAnnotationBlock([
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the value passed to the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
@@ -640,12 +649,29 @@ class Struct extends AbstractModelFile
      */
     protected function getStructMethodsValidateChoiceAnnotationBlock(PhpMethod $method)
     {
-        $methodName = lcfirst(substr($method->getName(), strpos($method->getName(), 'ForChoiceConstraintsFrom') + strlen('ForChoiceConstraintsFrom')));
+        $methodName = lcfirst(mb_substr($method->getName(), mb_strpos($method->getName(), 'ForChoiceConstraintsFrom') + mb_strlen('ForChoiceConstraintsFrom')));
         return new PhpAnnotationBlock([
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the value passed to the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(PhpAnnotation::NO_NAME, 'This has to validate that the property which is being set is the only one among the given choices', self::ANNOTATION_LONG_LENGTH),
             new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $value'),
+            new PhpAnnotation(self::ANNOTATION_RETURN, 'string A non-empty message if the values does not match the validation rules'),
+        ]);
+    }
+    /**
+     * @param PhpMethod $method
+     * @param string $type
+     * @return PhpAnnotationBlock
+     */
+    protected function getStructMethodsValidateLengthAnnotationBlock(PhpMethod $method, $type = '')
+    {
+        $replace = sprintf('%sLengthConstraintFrom', ucfirst($type));
+        $methodName = lcfirst(mb_substr($method->getName(), mb_strpos($method->getName(), $replace) + mb_strlen($replace)));
+        return new PhpAnnotationBlock([
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is responsible for validating the value passed to the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('This method is willingly generated in order to preserve the one-line inline validation within the %s method', $methodName), self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(PhpAnnotation::NO_NAME, 'This has to validate that the items contained by the array match the length constraint', self::ANNOTATION_LONG_LENGTH),
+            new PhpAnnotation(self::ANNOTATION_PARAM, 'mixed $values'),
             new PhpAnnotation(self::ANNOTATION_RETURN, 'string A non-empty message if the values does not match the validation rules'),
         ]);
     }

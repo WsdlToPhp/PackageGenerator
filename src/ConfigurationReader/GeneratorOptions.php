@@ -167,7 +167,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
          */
         $comments = [];
         foreach ($addComments as $index => $value) {
-            if (is_numeric($index) && strpos($value, ':') > 0) {
+            if (is_numeric($index) && mb_strpos($value, ':') > 0) {
                 list($tag, $val) = explode(':', $value);
                 $comments[$tag] = $val;
             } else {
@@ -593,7 +593,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
          */
         $settings = [];
         foreach ($composerSettings as $index => $value) {
-            if (is_numeric($index) && strpos($value, ':') > 0) {
+            if (is_numeric($index) && mb_strpos($value, ':') > 0) {
                 $path = implode('', array_slice(explode(':', $value), 0, 1));
                 $val = implode(':', array_slice(explode(':', $value), 1));
                 self::dotNotationToArray($path, $val, $settings);

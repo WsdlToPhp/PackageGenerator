@@ -126,7 +126,7 @@ class Struct extends AbstractModel
                     ($this->isStruct() && $this->countOwnAttributes() === 1) ||
                     (!$this->isStruct() && $this->countOwnAttributes() <= 1)
                 ) &&
-                stripos($this->getName(), 'array') !== false
+                mb_stripos($this->getName(), 'array') !== false
             ) ||
             (!$this->isStruct() && $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false) !== false)
         );
@@ -422,7 +422,7 @@ class Struct extends AbstractModel
     public function getMeta()
     {
         $inheritanceStruct = $this->getInheritanceStruct();
-        return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : []);
+        return $this->mergeMeta(($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : [], parent::getMeta());
     }
     /**
      * @param $filename

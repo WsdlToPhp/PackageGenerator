@@ -59,7 +59,7 @@ class Utils
         if (is_array($metaValue)) {
             $metaValue = implode(' | ', $metaValue);
         }
-        $metaValue = GeneratorUtils::cleanComment($metaValue, ', ', stripos($metaName, 'SOAPHeader') === false);
+        $metaValue = GeneratorUtils::cleanComment($metaValue, ', ', mb_stripos($metaName, 'SOAPHeader') === false);
         if (is_scalar($metaValue)) {
             $meta = sprintf("\t- %s: %s", $metaName, $metaValue);
         }

@@ -4,6 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class BooleanRule extends AbstractRule
 {
+
     /**
      * @return string
      */
@@ -20,7 +21,7 @@ class BooleanRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('!is_null($%1$s) && !is_bool($%1$s)', $parameterName);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!is_bool($%1$s)', $parameterName);
     }
 
     /**

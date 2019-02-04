@@ -186,7 +186,7 @@ class StructAttribute extends AbstractModel
      */
     public function getDefaultValue()
     {
-        if ($this->isArray()) {
+        if ($this->isArray() || $this->isList()) {
             return [];
         }
         return Utils::getValueWithinItsType($this->getMetaValueFirstSet([
@@ -228,7 +228,7 @@ class StructAttribute extends AbstractModel
      */
     public function isXml()
     {
-        return stripos($this->getType(), '\DOM') === 0;
+        return mb_stripos($this->getType(), '\DOM') === 0;
     }
     /**
      * @return Struct|null
@@ -275,7 +275,7 @@ class StructAttribute extends AbstractModel
      */
     public function getMeta()
     {
-        return array_merge_recursive(parent::getMeta(), $this->getTypeStructMeta(), $this->getInheritanceStructMeta());
+        return $this->mergeMeta($this->getInheritanceStructMeta(), $this->getTypeStructMeta(), parent::getMeta());
     }
     /**
      * @param $filename

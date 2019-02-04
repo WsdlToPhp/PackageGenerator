@@ -2,8 +2,16 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+/**
+ * Class PatternRule
+ * @link https://www.w3.org/TR/xmlschema-2/#rf-pattern
+ * Validation Rule: pattern valid
+ * A literal in a ·lexical space· is facet-valid with respect to ·pattern· if:
+ *  - 1 the literal is among the set of character sequences denoted by the ·regular expression· specified in {value}.
+ */
 class PatternRule extends AbstractRule
 {
+
     /**
      * @return string
      */
@@ -20,7 +28,7 @@ class PatternRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf('is_scalar($%1$s) && !preg_match(\'/%2$s/\', $%1$s)', $parameterName, addcslashes($value, '\'\\/'));
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!preg_match(\'/%2$s/\', $%1$s)', $parameterName, addcslashes($value, '\'\\/'));
     }
 
     /**
@@ -31,6 +39,6 @@ class PatternRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value %%s, please provide a scalar value that matches "%s"\', var_export($%s, true))', str_replace("'", "\'", $value), $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, please provide a literal that is among the set of character sequences denoted by the regular expression %s\', var_export($%s, true))', str_replace("'", "\'", $value), $parameterName);
     }
 }

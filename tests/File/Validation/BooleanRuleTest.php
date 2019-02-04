@@ -2,38 +2,47 @@
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class BooleanRuleTest extends RuleTest
+class BooleanRuleTest extends AbstractRuleTest
 {
+
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value 'true', please provide a bool, string given
      */
-    public function testApplyRuleWithInteger()
+    public function testSetPrimaryWithStringValueMustThrowAnException()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\BooleanRule', null);
-        call_user_func($funtionName, 2);
+        $instance = self::getWhlBookingChannelInstance();
+
+        $instance->setPrimary('true');
     }
+
     /**
      *
      */
-    public function testApplyRuleWithTrue()
+    public function testSetPrimaryWithTrueValueMustPass()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\BooleanRule', null);
-        $this->assertTrue(call_user_func($funtionName, true));
+        $instance = self::getWhlBookingChannelInstance();
+
+        $this->assertSame($instance, $instance->setPrimary(true));
     }
+
     /**
      *
      */
-    public function testApplyRuleWithFalse()
+    public function testSetPrimaryWithFalseValueMustPass()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\BooleanRule', null);
-        $this->assertTrue(call_user_func($funtionName, false));
+        $instance = self::getWhlBookingChannelInstance();
+
+        $this->assertSame($instance, $instance->setPrimary(false));
     }
+
     /**
      *
      */
-    public function testApplyRuleWithNull()
+    public function testSetPrimaryWithNullValueMustPass()
     {
-        $funtionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\BooleanRule', null);
-        $this->assertTrue(call_user_func($funtionName, null));
+        $instance = self::getWhlBookingChannelInstance();
+
+        $this->assertSame($instance, $instance->setPrimary(null));
     }
 }

@@ -23,7 +23,7 @@ class Utils
                     $parts = preg_split('/[A-Z]/', ucfirst($string));
                     $partsCount = count($parts);
                     if (!empty($parts[$partsCount - 1])) {
-                        $elementType = substr($string, strrpos($string, implode('', array_slice($parts, -1))) - 1);
+                        $elementType = mb_substr($string, mb_strrpos($string, implode('', array_slice($parts, -1))) - 1);
                     } else {
                         for ($i = $partsCount - 1; $i >= 0; $i--) {
                             $part = trim($parts[$i]);
@@ -31,14 +31,14 @@ class Utils
                                 break;
                             }
                         }
-                        $elementType = substr($string, ((count($parts) - 2 - $i) + 1) * -1);
+                        $elementType = mb_substr($string, ((count($parts) - 2 - $i) + 1) * -1);
                     }
                     break;
                 case GeneratorOptions::VALUE_START:
                     $parts = preg_split('/[A-Z]/', ucfirst($string));
                     $partsCount = count($parts);
                     if (empty($parts[0]) && !empty($parts[1])) {
-                        $elementType = substr($string, 0, strlen($parts[1]) + 1);
+                        $elementType = mb_substr($string, 0, mb_strlen($parts[1]) + 1);
                     } else {
                         for ($i = 0; $i < $partsCount; $i++) {
                             $part = trim($parts[$i]);
@@ -46,7 +46,7 @@ class Utils
                                 break;
                             }
                         }
-                        $elementType = substr($string, 0, $i);
+                        $elementType = mb_substr($string, 0, $i);
                     }
                     break;
                 case GeneratorOptions::VALUE_NONE:
@@ -154,9 +154,9 @@ class Utils
     public static function resolveCompletePath($origin, $destination)
     {
         $resolvedPath = $destination;
-        if (!empty($destination) && strpos($destination, 'http://') === false && strpos($destination, 'https://') === false && !empty($origin)) {
-            if (substr($destination, 0, 2) === './') {
-                $destination = substr($destination, 2);
+        if (!empty($destination) && mb_strpos($destination, 'http://') === false && mb_strpos($destination, 'https://') === false && !empty($origin)) {
+            if (mb_substr($destination, 0, 2) === './') {
+                $destination = mb_substr($destination, 2);
             }
             $destinationParts = explode('/', $destination);
             $fileParts = pathinfo($origin);
@@ -170,7 +170,7 @@ class Utils
             $finalPath = implode('/', $pathParts);
             foreach ($destinationParts as $locationPart) {
                 if ($locationPart == '..') {
-                    $finalPath = substr($finalPath, 0, strrpos($finalPath, '/', 0));
+                    $finalPath = mb_substr($finalPath, 0, mb_strrpos($finalPath, '/', 0));
                 } else {
                     $finalPath .= '/' . $locationPart;
                 }
@@ -263,7 +263,7 @@ class Utils
         }
         $schemasPath = rtrim($destinationFolder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . rtrim($schemasFolder, DIRECTORY_SEPARATOR);
         // Here we must cover all possible variants
-        if ((strpos(strtolower($schemasUrl), '.wsdl') !== false) || (strpos(strtolower($schemasUrl), '.xsd') !== false) || (strpos(strtolower($schemasUrl), '.xml') !== false)) {
+        if ((mb_strpos(mb_strtolower($schemasUrl), '.wsdl') !== false) || (mb_strpos(mb_strtolower($schemasUrl), '.xsd') !== false) || (mb_strpos(mb_strtolower($schemasUrl), '.xml') !== false)) {
             $filename = basename($schemasUrl);
         } else {
             // if $url is like http://example.com/index.php?WSDL default filename will be schema.wsdl

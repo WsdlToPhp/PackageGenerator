@@ -4,7 +4,6 @@ namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
@@ -215,7 +214,7 @@ class Service extends AbstractModelFile
     protected function getMethodAnnotationBlock(PhpMethod $method)
     {
         $annotationBlock = new PhpAnnotationBlock();
-        if (stripos($method->getName(), self::METHOD_SET_HEADER_PREFIX) === 0) {
+        if (mb_stripos($method->getName(), self::METHOD_SET_HEADER_PREFIX) === 0) {
             $this->addAnnotationBlockForSoapHeaderMethod($annotationBlock, $method);
         } elseif ($method->getName() === self::METHOD_GET_RESULT) {
             $this->addAnnnotationBlockForgetResultMethod($annotationBlock);

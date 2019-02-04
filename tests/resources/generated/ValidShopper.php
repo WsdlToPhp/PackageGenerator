@@ -25,12 +25,12 @@ class ApiShopper extends AbstractStructBase
      * The email
      * Meta informations extracted from the WSDL
      * - documentation: Shopper's e-mail address. | Email address.
-     * - maxOccurs: 1
-     * - minOccurs: 1
-     * - base: ddp:string100 | normalizedString
-     * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
+     * - base: ddp:string100
      * - maxLength: 100
+     * - maxOccurs: 1
      * - minLength: 1
+     * - minOccurs: 1
+     * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * @var string
      */
     public $email;
@@ -55,10 +55,10 @@ class ApiShopper extends AbstractStructBase
     /**
      * The id
      * Meta informations extracted from the WSDL
-     * - use: required
      * - base: normalizedString
      * - maxLength: 35
      * - minLength: 1
+     * - use: required
      * @var string
      */
     public $id;
@@ -66,11 +66,11 @@ class ApiShopper extends AbstractStructBase
      * The dateOfBirth
      * Meta informations extracted from the WSDL
      * - documentation: Shopper's date of birth. | A date formatted as yyyy-MM-dd, for example February 25th, 2014 would become "2012-02-25".
-     * - maxOccurs: 1
-     * - minOccurs: 0
      * - base: normalizedString
      * - maxLength: 10
+     * - maxOccurs: 1
      * - minLength: 10
+     * - minOccurs: 0
      * @var string
      */
     public $dateOfBirth;
@@ -78,11 +78,11 @@ class ApiShopper extends AbstractStructBase
      * The phoneNumber
      * Meta informations extracted from the WSDL
      * - documentation: Shopper's phone number. | Phone number, international numbers start with a +.
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * - base: ddp:string50 | normalizedString
+     * - base: ddp:string50
      * - maxLength: 50
+     * - maxOccurs: 1
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $phoneNumber;
@@ -90,11 +90,11 @@ class ApiShopper extends AbstractStructBase
      * The mobilePhoneNumber
      * Meta informations extracted from the WSDL
      * - documentation: Shopper's mobile phone number. | Phone number, international numbers start with a +.
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * - base: ddp:string50 | normalizedString
+     * - base: ddp:string50
      * - maxLength: 50
+     * - maxOccurs: 1
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $mobilePhoneNumber;
@@ -102,11 +102,11 @@ class ApiShopper extends AbstractStructBase
      * The ipAddress
      * Meta informations extracted from the WSDL
      * - documentation: Ip address of the shopper. Will be used in the future for riskchecks. Can be ipv4 or ipv6.
-     * - maxOccurs: 1
-     * - minOccurs: 0
      * - base: normalizedString
      * - maxLength: 35
+     * - maxOccurs: 1
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $ipAddress;
@@ -181,17 +181,17 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($email) && !is_string($email)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
-        // validation for constraint: pattern
-        if (is_scalar($email) && !preg_match('/[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', $email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a scalar value that matches "[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)"', var_export($email, true)), __LINE__);
+        // validation for constraint: maxLength(100)
+        if (!is_null($email) && mb_strlen($email) > 100) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 100', mb_strlen($email)), __LINE__);
         }
-        // validation for constraint: maxLength
-        if ((is_scalar($email) && strlen($email) > 100) || (is_array($email) && count($email) > 100)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 100 element(s) or a scalar of 100 character(s) at most', var_export($email, true), is_scalar($email) ? strlen($email) : count($email)), __LINE__);
+        // validation for constraint: minLength(1)
+        if (!is_null($email) && mb_strlen($email) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($email)), __LINE__);
         }
-        // validation for constraint: minLength
-        if ((is_scalar($email) && strlen($email) < 1) || (is_array($email) && count($email) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($email, true), is_scalar($email) ? strlen($email) : count($email)), __LINE__);
+        // validation for constraint: pattern([_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+))
+        if (!is_null($email) && !preg_match('/[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', $email)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)', var_export($email, true)), __LINE__);
         }
         $this->email = $email;
         return $this;
@@ -258,13 +258,13 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($id) && !is_string($id)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
-        // validation for constraint: maxLength
-        if ((is_scalar($id) && strlen($id) > 35) || (is_array($id) && count($id) > 35)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 35 element(s) or a scalar of 35 character(s) at most', var_export($id, true), is_scalar($id) ? strlen($id) : count($id)), __LINE__);
+        // validation for constraint: maxLength(35)
+        if (!is_null($id) && mb_strlen($id) > 35) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 35', mb_strlen($id)), __LINE__);
         }
-        // validation for constraint: minLength
-        if ((is_scalar($id) && strlen($id) < 1) || (is_array($id) && count($id) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($id, true), is_scalar($id) ? strlen($id) : count($id)), __LINE__);
+        // validation for constraint: minLength(1)
+        if (!is_null($id) && mb_strlen($id) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($id)), __LINE__);
         }
         $this->id = $id;
         return $this;
@@ -288,13 +288,13 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($dateOfBirth) && !is_string($dateOfBirth)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dateOfBirth, true), gettype($dateOfBirth)), __LINE__);
         }
-        // validation for constraint: maxLength
-        if ((is_scalar($dateOfBirth) && strlen($dateOfBirth) > 10) || (is_array($dateOfBirth) && count($dateOfBirth) > 10)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 10 element(s) or a scalar of 10 character(s) at most', var_export($dateOfBirth, true), is_scalar($dateOfBirth) ? strlen($dateOfBirth) : count($dateOfBirth)), __LINE__);
+        // validation for constraint: maxLength(10)
+        if (!is_null($dateOfBirth) && mb_strlen($dateOfBirth) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen($dateOfBirth)), __LINE__);
         }
-        // validation for constraint: minLength
-        if ((is_scalar($dateOfBirth) && strlen($dateOfBirth) < 10) || (is_array($dateOfBirth) && count($dateOfBirth) < 10)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 10 element(s) or a scalar of 10 character(s) at least', var_export($dateOfBirth, true), is_scalar($dateOfBirth) ? strlen($dateOfBirth) : count($dateOfBirth)), __LINE__);
+        // validation for constraint: minLength(10)
+        if (!is_null($dateOfBirth) && mb_strlen($dateOfBirth) < 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen($dateOfBirth)), __LINE__);
         }
         $this->dateOfBirth = $dateOfBirth;
         return $this;
@@ -318,13 +318,13 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($phoneNumber) && !is_string($phoneNumber)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phoneNumber, true), gettype($phoneNumber)), __LINE__);
         }
-        // validation for constraint: maxLength
-        if ((is_scalar($phoneNumber) && strlen($phoneNumber) > 50) || (is_array($phoneNumber) && count($phoneNumber) > 50)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 50 element(s) or a scalar of 50 character(s) at most', var_export($phoneNumber, true), is_scalar($phoneNumber) ? strlen($phoneNumber) : count($phoneNumber)), __LINE__);
+        // validation for constraint: maxLength(50)
+        if (!is_null($phoneNumber) && mb_strlen($phoneNumber) > 50) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen($phoneNumber)), __LINE__);
         }
-        // validation for constraint: minLength
-        if ((is_scalar($phoneNumber) && strlen($phoneNumber) < 1) || (is_array($phoneNumber) && count($phoneNumber) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($phoneNumber, true), is_scalar($phoneNumber) ? strlen($phoneNumber) : count($phoneNumber)), __LINE__);
+        // validation for constraint: minLength(1)
+        if (!is_null($phoneNumber) && mb_strlen($phoneNumber) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($phoneNumber)), __LINE__);
         }
         $this->phoneNumber = $phoneNumber;
         return $this;
@@ -348,13 +348,13 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($mobilePhoneNumber) && !is_string($mobilePhoneNumber)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobilePhoneNumber, true), gettype($mobilePhoneNumber)), __LINE__);
         }
-        // validation for constraint: maxLength
-        if ((is_scalar($mobilePhoneNumber) && strlen($mobilePhoneNumber) > 50) || (is_array($mobilePhoneNumber) && count($mobilePhoneNumber) > 50)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 50 element(s) or a scalar of 50 character(s) at most', var_export($mobilePhoneNumber, true), is_scalar($mobilePhoneNumber) ? strlen($mobilePhoneNumber) : count($mobilePhoneNumber)), __LINE__);
+        // validation for constraint: maxLength(50)
+        if (!is_null($mobilePhoneNumber) && mb_strlen($mobilePhoneNumber) > 50) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen($mobilePhoneNumber)), __LINE__);
         }
-        // validation for constraint: minLength
-        if ((is_scalar($mobilePhoneNumber) && strlen($mobilePhoneNumber) < 1) || (is_array($mobilePhoneNumber) && count($mobilePhoneNumber) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($mobilePhoneNumber, true), is_scalar($mobilePhoneNumber) ? strlen($mobilePhoneNumber) : count($mobilePhoneNumber)), __LINE__);
+        // validation for constraint: minLength(1)
+        if (!is_null($mobilePhoneNumber) && mb_strlen($mobilePhoneNumber) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($mobilePhoneNumber)), __LINE__);
         }
         $this->mobilePhoneNumber = $mobilePhoneNumber;
         return $this;
@@ -378,13 +378,13 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($ipAddress) && !is_string($ipAddress)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ipAddress, true), gettype($ipAddress)), __LINE__);
         }
-        // validation for constraint: maxLength
-        if ((is_scalar($ipAddress) && strlen($ipAddress) > 35) || (is_array($ipAddress) && count($ipAddress) > 35)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 35 element(s) or a scalar of 35 character(s) at most', var_export($ipAddress, true), is_scalar($ipAddress) ? strlen($ipAddress) : count($ipAddress)), __LINE__);
+        // validation for constraint: maxLength(35)
+        if (!is_null($ipAddress) && mb_strlen($ipAddress) > 35) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 35', mb_strlen($ipAddress)), __LINE__);
         }
-        // validation for constraint: minLength
-        if ((is_scalar($ipAddress) && strlen($ipAddress) < 1) || (is_array($ipAddress) && count($ipAddress) < 1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length for %s, please provide an array with 1 element(s) or a scalar of 1 character(s) at least', var_export($ipAddress, true), is_scalar($ipAddress) ? strlen($ipAddress) : count($ipAddress)), __LINE__);
+        // validation for constraint: minLength(1)
+        if (!is_null($ipAddress) && mb_strlen($ipAddress) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($ipAddress)), __LINE__);
         }
         $this->ipAddress = $ipAddress;
         return $this;
