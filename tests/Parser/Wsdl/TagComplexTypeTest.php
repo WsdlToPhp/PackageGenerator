@@ -104,15 +104,12 @@ class TagComplexTypeTest extends WsdlParser
                 $this->assertSame('string100', $email->getTypeStruct()->getInheritance());
                 $this->assertSame('normalizedString', $email->getTypeStruct()->getTopInheritance());
                 $this->assertSame([
-                    'maxOccurs' => '1',
-                    'minOccurs' => '1',
-                    'base' => [
-                        'ddp:string100',
-                        'normalizedString',
-                    ],
-                    'pattern' => '[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)',
+                    'base' => 'ddp:string100',
                     'maxLength' => '100',
+                    'maxOccurs' => '1',
                     'minLength' => '1',
+                    'minOccurs' => '1',
+                    'pattern' => '[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)',
                 ], $email->getMeta());
                 $count++;
             }
