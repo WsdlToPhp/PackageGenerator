@@ -25,12 +25,12 @@ class ApiShopper extends AbstractStructBase
      * The email
      * Meta informations extracted from the WSDL
      * - documentation: Shopper's e-mail address. | Email address.
-     * - maxOccurs: 1
-     * - minOccurs: 1
-     * - base: ddp:string100 | normalizedString
-     * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
+     * - base: ddp:string100
      * - maxLength: 100
+     * - maxOccurs: 1
      * - minLength: 1
+     * - minOccurs: 1
+     * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * @var string
      */
     public $email;
@@ -55,10 +55,10 @@ class ApiShopper extends AbstractStructBase
     /**
      * The id
      * Meta informations extracted from the WSDL
-     * - use: required
      * - base: normalizedString
      * - maxLength: 35
      * - minLength: 1
+     * - use: required
      * @var string
      */
     public $id;
@@ -66,11 +66,11 @@ class ApiShopper extends AbstractStructBase
      * The dateOfBirth
      * Meta informations extracted from the WSDL
      * - documentation: Shopper's date of birth. | A date formatted as yyyy-MM-dd, for example February 25th, 2014 would become "2012-02-25".
-     * - maxOccurs: 1
-     * - minOccurs: 0
      * - base: normalizedString
      * - maxLength: 10
+     * - maxOccurs: 1
      * - minLength: 10
+     * - minOccurs: 0
      * @var string
      */
     public $dateOfBirth;
@@ -78,11 +78,11 @@ class ApiShopper extends AbstractStructBase
      * The phoneNumber
      * Meta informations extracted from the WSDL
      * - documentation: Shopper's phone number. | Phone number, international numbers start with a +.
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * - base: ddp:string50 | normalizedString
+     * - base: ddp:string50
      * - maxLength: 50
+     * - maxOccurs: 1
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $phoneNumber;
@@ -90,11 +90,11 @@ class ApiShopper extends AbstractStructBase
      * The mobilePhoneNumber
      * Meta informations extracted from the WSDL
      * - documentation: Shopper's mobile phone number. | Phone number, international numbers start with a +.
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * - base: ddp:string50 | normalizedString
+     * - base: ddp:string50
      * - maxLength: 50
+     * - maxOccurs: 1
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $mobilePhoneNumber;
@@ -102,11 +102,11 @@ class ApiShopper extends AbstractStructBase
      * The ipAddress
      * Meta informations extracted from the WSDL
      * - documentation: Ip address of the shopper. Will be used in the future for riskchecks. Can be ipv4 or ipv6.
-     * - maxOccurs: 1
-     * - minOccurs: 0
      * - base: normalizedString
      * - maxLength: 35
+     * - maxOccurs: 1
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $ipAddress;
@@ -181,10 +181,6 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($email) && !is_string($email)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
-        // validation for constraint: pattern([_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+))
-        if (!is_null($email) && !preg_match('/[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', $email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)', var_export($email, true)), __LINE__);
-        }
         // validation for constraint: maxLength(100)
         if (!is_null($email) && mb_strlen($email) > 100) {
             throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 100', mb_strlen($email)), __LINE__);
@@ -192,6 +188,10 @@ class ApiShopper extends AbstractStructBase
         // validation for constraint: minLength(1)
         if (!is_null($email) && mb_strlen($email) < 1) {
             throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($email)), __LINE__);
+        }
+        // validation for constraint: pattern([_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+))
+        if (!is_null($email) && !preg_match('/[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', $email)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)', var_export($email, true)), __LINE__);
         }
         $this->email = $email;
         return $this;

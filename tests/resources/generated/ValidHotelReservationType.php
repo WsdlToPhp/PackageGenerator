@@ -51,8 +51,8 @@ class ApiHotelReservationType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: Indicates the status of the reservation. | A union between TransactionActionType and PMS_ResStatusType. Used in messages that communicate between reservation systems as well as between a reservation and property management system. In
      * addition to the TransactionActionType and PMS_ResStatusType, the UpperCaseAlphaLength1to2 may be used for company specifc codes.
-     * - use: optional
      * - union: PMS_ResStatusType | TransactionActionType | UpperCaseAlphaLength1to2
+     * - use: optional
      * @var string
      */
     public $ResStatus;

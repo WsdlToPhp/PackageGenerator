@@ -74,8 +74,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: On your first invocation of SetExpressCheckoutRequest, the value of this token is returned by SetExpressCheckoutResponse. Optional Include this element and its value only if you want to modify an existing checkout session with
      * another invocation of SetExpressCheckoutRequest; for example, if you want the customer to edit his shipping address on PayPal. Character length and limitations: 20 single-byte characters
-     * - minOccurs: 0
      * - base: xs:string
+     * - minOccurs: 0
      * @var string
      */
     public $Token;
@@ -262,8 +262,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * The BuyerEmail
      * Meta informations extracted from the WSDL
      * - documentation: Email address of the buyer as entered during checkout. PayPal uses this value to pre-fill the PayPal membership sign-up portion of the PayPal login page. Optional Character length and limit: 127 single-byte alphanumeric characters
-     * - minOccurs: 0
      * - base: xs:string
+     * - minOccurs: 0
      * @var string
      */
     public $BuyerEmail;

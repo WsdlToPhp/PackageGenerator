@@ -275,7 +275,7 @@ class StructAttribute extends AbstractModel
      */
     public function getMeta()
     {
-        return array_merge_recursive(parent::getMeta(), $this->getTypeStructMeta(), $this->getInheritanceStructMeta());
+        return $this->mergeMeta($this->getInheritanceStructMeta(), $this->getTypeStructMeta(), parent::getMeta());
     }
     /**
      * @param $filename
