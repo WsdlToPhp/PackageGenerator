@@ -7,7 +7,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for AddressType StructType
  * Meta informations extracted from the WSDL
- * - documentation: Provides address information. | Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted. | Allows for control of the sharing of address information between parties.
+ * - documentation: Allows for control of the sharing of address information between parties. | Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted. | Provides address information.
  * @package Api
  * @subpackage Structs
  * @release 1.1.0
@@ -26,11 +26,11 @@ class ApiAddressType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: When the address is unformatted (FormattedInd="false") these lines will contain free form address details. When the address is formatted and street number and street name must be sent independently, the street number will be sent
      * using StreetNmbr, and the street name will be sent in the first AddressLine occurrence. | Used for Character Strings, length 1 to 255.
-     * - maxOccurs: 5
-     * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
+     * - maxOccurs: 5
      * - minLength: 1
+     * - minOccurs: 0
      * @var string[]
      */
     public $AddressLine;
@@ -38,10 +38,10 @@ class ApiAddressType extends AbstractStructBase
      * The CityName
      * Meta informations extracted from the WSDL
      * - documentation: City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address). | Used for Character Strings, length 1 to 64.
-     * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 64
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $CityName;
@@ -49,10 +49,10 @@ class ApiAddressType extends AbstractStructBase
      * The PostalCode
      * Meta informations extracted from the WSDL
      * - documentation: Post Office Code number. | Used for Character Strings, length 1 to 16.
-     * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 16
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $PostalCode;
@@ -60,10 +60,10 @@ class ApiAddressType extends AbstractStructBase
      * The County
      * Meta informations extracted from the WSDL
      * - documentation: County or Region Name (e.g., Fairfax). | Used for Character Strings, length 1 to 32.
-     * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 32
      * - minLength: 1
+     * - minOccurs: 0
      * @var string
      */
     public $County;
@@ -88,9 +88,9 @@ class ApiAddressType extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - documentation: Defines the type of address (e.g. home, business, other). Refer to OpenTravel Code List Communication Location Type (CLT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or
      * 101.EQP.X.
-     * - use: optional
      * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
+     * - use: optional
      * @var string
      */
     public $Type;
@@ -98,10 +98,10 @@ class ApiAddressType extends AbstractStructBase
      * The Remark
      * Meta informations extracted from the WSDL
      * - documentation: A remark associated with this address. | Used for Character Strings, length 1 to 128.
-     * - use: optional
      * - base: xs:string
      * - maxLength: 128
      * - minLength: 1
+     * - use: optional
      * @var string
      */
     public $Remark;
@@ -273,13 +273,13 @@ class ApiAddressType extends AbstractStructBase
         if ('' !== ($addressLineArrayErrorMessage = self::validateAddressLineForArrayConstraintsFromSetAddressLine($addressLine))) {
             throw new \InvalidArgumentException($addressLineArrayErrorMessage, __LINE__);
         }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($addressLine) && count($addressLine) > 5) {
-            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($addressLine)), __LINE__);
-        }
         // validation for constraint: maxLength(255)
         if ('' !== ($addressLineMaxLengthErrorMessage = self::validateAddressLineForMaxLengthConstraintFromSetAddressLine($addressLine))) {
             throw new \InvalidArgumentException($addressLineMaxLengthErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(5)
+        if (is_array($addressLine) && count($addressLine) > 5) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($addressLine)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if ('' !== ($addressLineMinLengthErrorMessage = self::validateAddressLineForMinLengthConstraintFromSetAddressLine($addressLine))) {
@@ -300,13 +300,13 @@ class ApiAddressType extends AbstractStructBase
         if (!is_string($item)) {
             throw new \InvalidArgumentException(sprintf('The AddressLine property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($this->AddressLine) && count($this->AddressLine) >= 5) {
-            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->AddressLine)), __LINE__);
-        }
         // validation for constraint: maxLength(255)
         if (mb_strlen($item) > 255) {
             throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen($item)), __LINE__);
+        }
+        // validation for constraint: maxOccurs(5)
+        if (is_array($this->AddressLine) && count($this->AddressLine) >= 5) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->AddressLine)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (mb_strlen($item) < 1) {

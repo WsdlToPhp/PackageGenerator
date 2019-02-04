@@ -71,9 +71,9 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * The Phrases
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - arrayType: namesp1:BannerPhraseInfo[]
      * - base: soapenc:Array
+     * - nillable: true
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiBannerPhraseInfo[]
      */
@@ -81,9 +81,9 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * The MinusKeywords
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - arrayType: xsd:string[]
      * - base: soapenc:Array
+     * - nillable: true
      * - ref: soapenc:arrayType
      * @var string[]
      */
@@ -147,9 +147,9 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * The Sitelinks
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - arrayType: namesp1:Sitelink[]
      * - base: soapenc:Array
+     * - nillable: true
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiSitelink[]
      */
@@ -157,9 +157,9 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * The AdWarnings
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - arrayType: xsd:string[]
      * - base: soapenc:Array
+     * - nillable: true
      * - ref: soapenc:arrayType
      * @var string[]
      */
@@ -174,9 +174,9 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * The ModerateRejectionReasons
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - arrayType: namesp1:RejectReason[]
      * - base: soapenc:Array
+     * - nillable: true
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiRejectReason[]
      */

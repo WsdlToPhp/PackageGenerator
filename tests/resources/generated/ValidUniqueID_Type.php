@@ -18,10 +18,10 @@ class ApiUniqueID_Type extends AbstractStructBase
      * The Type
      * Meta informations extracted from the WSDL
      * - documentation: A reference to the type of object defined by the UniqueID element. Refer to OpenTravel Code List Unique ID Type (UIT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
-     * - type: whlsoap:OTA_CodeType
-     * - use: required
      * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
+     * - type: whlsoap:OTA_CodeType
+     * - use: required
      * @var string
      */
     public $Type;
@@ -29,11 +29,11 @@ class ApiUniqueID_Type extends AbstractStructBase
      * The ID
      * Meta informations extracted from the WSDL
      * - documentation: A unique identifying value assigned by the creating system. The ID attribute may be used to reference a primary-key value within a database or in a particular implementation. | Used for Character Strings, length 1 to 32.
-     * - type: whlsoap:StringLength1to32
-     * - use: required
      * - base: xs:string
      * - maxLength: 32
      * - minLength: 1
+     * - type: whlsoap:StringLength1to32
+     * - use: required
      * @var string
      */
     public $ID;
@@ -58,11 +58,11 @@ class ApiUniqueID_Type extends AbstractStructBase
      * The ID_Context
      * Meta informations extracted from the WSDL
      * - documentation: Used to identify the source of the identifier (e.g., IATA, ABTA). | Used for Character Strings, length 1 to 32.
-     * - type: whlsoap:StringLength1to32
-     * - use: optional
      * - base: xs:string
      * - maxLength: 32
      * - minLength: 1
+     * - type: whlsoap:StringLength1to32
+     * - use: optional
      * @var string
      */
     public $ID_Context;

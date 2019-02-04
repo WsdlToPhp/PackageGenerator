@@ -422,7 +422,7 @@ class Struct extends AbstractModel
     public function getMeta()
     {
         $inheritanceStruct = $this->getInheritanceStruct();
-        return array_merge_recursive(parent::getMeta(), ($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : []);
+        return $this->mergeMeta(($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : [], parent::getMeta());
     }
     /**
      * @param $filename

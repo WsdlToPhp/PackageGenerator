@@ -24,9 +24,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The area_residential
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -34,9 +34,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The area_non_residential
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -121,9 +121,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The area_private
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -131,9 +131,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The area_municipal
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -141,9 +141,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The area_national
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -151,9 +151,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The area_land
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -161,9 +161,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The area_territory
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -206,9 +206,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The thermal_actual_expense
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -216,9 +216,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The thermal_normative_expense
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -247,9 +247,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The deterioration_total
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -257,9 +257,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The deterioration_foundation
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -267,9 +267,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The deterioration_bearing_walls
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -277,9 +277,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The deterioration_floor
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - base: xsd:decimal
      * - fractionDigits: 2
+     * - nillable: true
      * - totalDigits: 15
      * @var float
      */
@@ -364,9 +364,9 @@ class ApiHouseProfileData extends AbstractStructBase
     /**
      * The lifts
      * Meta informations extracted from the WSDL
-     * - nillable: true
      * - arrayType: tns:Lift[]
      * - base: soap-enc:Array
+     * - nillable: true
      * - ref: soap-enc:arrayType
      * @var \Api\StructType\ApiLift[]
      */

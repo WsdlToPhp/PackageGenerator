@@ -17,41 +17,41 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * The Street1
      * Meta informations extracted from the WSDL
-     * - base: string
      * - documentation: First line on delivery address
+     * - base: string
      * @var string
      */
     public $Street1;
     /**
      * The Street2
      * Meta informations extracted from the WSDL
-     * - base: string
      * - documentation: Second line on delivery address
+     * - base: string
      * @var string
      */
     public $Street2;
     /**
      * The Street3
      * Meta informations extracted from the WSDL
-     * - base: string
      * - documentation: Third line on delivery address
+     * - base: string
      * @var string
      */
     public $Street3;
     /**
      * The City
      * Meta informations extracted from the WSDL
-     * - base: string
      * - documentation: The delivery city
+     * - base: string
      * @var string
      */
     public $City;
     /**
      * The PostalCode
      * Meta informations extracted from the WSDL
+     * - documentation: Postal code for the city
      * - base: string
      * - length: 4
-     * - documentation: Postal code for the city
      * @var string
      */
     public $PostalCode;
