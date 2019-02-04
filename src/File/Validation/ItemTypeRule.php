@@ -2,7 +2,6 @@
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 

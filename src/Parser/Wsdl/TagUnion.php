@@ -5,7 +5,6 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagUnion as Union;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagSimpleType as SimpleType;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
