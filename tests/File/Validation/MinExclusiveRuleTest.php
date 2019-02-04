@@ -38,20 +38,20 @@ class MinExclusiveRuleTest extends AbstractRuleTest
     }
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 'P10675199DT2H49M4.4775807S', the value must be chronologically greater than P10675199DT2H49M5.4775807S
+     * @expectedExceptionMessage Invalid value '-P10675199DT2H49M6.4775807S', the value must be chronologically greater than -P10675199DT2H49M5.4775807S
      */
     public function testApplyRuleWithDateIntervalMustBeFalseWithLowerInterval()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinExclusiveRule', 'P10675199DT2H49M5.4775807S');
-        $this->assertTrue(call_user_func($functionName, 'P10675199DT2H49M4.4775807S'));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinExclusiveRule', '-P10675199DT2H49M5.4775807S');
+        $this->assertTrue(call_user_func($functionName, '-P10675199DT2H49M6.4775807S'));
     }
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage P10675199DT2H49M5.4775807S', the value must be chronologically greater than P10675199DT2H49M5.4775807S
+     * @expectedExceptionMessage Invalid value '-P10675199DT2H49M5.4775807S', the value must be chronologically greater than -P10675199DT2H49M5.4775807S
      */
     public function testApplyRuleWithDateIntervalMustBeFalseWithSameInterval()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinExclusiveRule', $interval = 'P10675199DT2H49M5.4775807S');
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinExclusiveRule', $interval = '-P10675199DT2H49M5.4775807S');
         $this->assertTrue(call_user_func($functionName, $interval));
     }
     /**
@@ -59,7 +59,7 @@ class MinExclusiveRuleTest extends AbstractRuleTest
      */
     public function testApplyRuleWithDateIntervalMustBeTrueWthHigherInterval()
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinExclusiveRule', 'P10675199DT2H49M5.4775807S');
-        $this->assertTrue(call_user_func($functionName, 'P10675199DT2H49M6.4775807S'));
+        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinExclusiveRule', '-P10675199DT2H49M5.4775807S');
+        $this->assertTrue(call_user_func($functionName, '-P10675199DT2H49M4.4775807S'));
     }
 }
