@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 2.11.0
+- issue #168 - Invalid rules generation for non numeric value
+- issue #171 - Improve AttributeGroup > Attribute parsing
+- issue #172 - is_numeric is too permissive when checking for int's
+- issue #173 - Add maxOccurs validation rule
+- issue #174 - Documentation missing for enumeration value
+- issue #176 - Use mb_* functions when possible
+- issue #178 - Int setter throws exception when setting null
+- Miscellaneous improvements and refactorings:
+    - Validation rules: code generation and unit tests
+    - Remove unused use statements
+    - Use better Docker image base in order to be able to test and run the generator with any PHP version
+    - Improve meta merging and order
+
 ## 2.10.0
 - issue #128 - Using the DOMDocument $any value
 - issue #133 - Choice type
