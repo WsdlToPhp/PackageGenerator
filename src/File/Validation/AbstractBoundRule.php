@@ -18,12 +18,29 @@ abstract class AbstractBoundRule extends AbstractMinMaxRule
      */
     final public function testConditions($parameterName, $value, $itemType = false)
     {
+        $method = '';
+        $checkValueDomain = '';
         if (is_numeric($value)) {
             $test = '$%1$s %3$s %2$s';
         } else {
-            $test = '($time = (string) time()) && \DateTime::createFromFormat(\'U\', $time)->add(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', $%1$s))) %3$s \DateTime::createFromFormat(\'U\', $time)->add(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', \'%2$s\')))';
+            if (false === mb_strpos($value, '-')) {
+                $method = 'add';
+            } else {
+                $method = 'sub';
+                $value = mb_substr($value, 1);
+            }
+            switch ($this->symbol()) {
+                case self::SYMBOL_MAX_EXCLUSIVE:
+                case self::SYMBOL_MAX_INCLUSIVE:
+                    $checkValueDomain = '===';
+                    break;
+                default:
+                    $checkValueDomain = '!==';
+                    break;
+            }
+            $test = 'false %5$s mb_strpos($%1$s, \'-\') && ($time = (string) time()) && \DateTime::createFromFormat(\'U\', $time)->%4$s(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', str_replace(\'-\', \'\', $%1$s)))) %3$s \DateTime::createFromFormat(\'U\', $time)->%4$s(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', \'%2$s\')))';
         }
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . $test, $parameterName, $value, $this->symbol());
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . $test, $parameterName, $value, $this->symbol(), $method, $checkValueDomain);
     }
 
     /**
