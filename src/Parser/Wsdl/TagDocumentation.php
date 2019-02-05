@@ -64,7 +64,7 @@ class TagDocumentation extends AbstractTagParser
                 }
             }
             /**
-             * Is it an value of an enumeration ?
+             * Is it a value of an enumeration ?
              * Finds parent node of this documentation node
              */
             elseif ($parent instanceof Enumeration && $parentParent instanceof AbstractTag) {
@@ -73,11 +73,21 @@ class TagDocumentation extends AbstractTagParser
                 }
             }
             /**
+             * Is it a restriction with enumeration (a real struct) that needs to find the model based on its type ?
+             */
+            elseif ($parent->hasRestrictionChild() && $parent->getFirstRestrictionChild()->isEnumeration() && $parent->getFirstRestrictionChild()->isTheParent($parent)) {
+                $model = $this->getModel($parent, $parent->getFirstRestrictionChild()->getAttributeBase());
+                $model = $model ? $model : $this->getModel($parent);
+                if ($model instanceof Struct) {
+                    $model->setDocumentation($content);
+                }
+            }
+            /**
              * Is it an element ?
              * Finds parent node of this documentation node
              */
-            elseif ($this->getModel($parent) instanceof AbstractModel) {
-                $this->getModel($parent)->setDocumentation($content);
+            elseif (($model = $this->getModel($parent)) instanceof AbstractModel) {
+                $model->setDocumentation($content);
             }
         }
     }

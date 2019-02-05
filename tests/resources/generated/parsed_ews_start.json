@@ -5441,35 +5441,10 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     }
                 ],
-                "restriction": true,
+                "restriction": false,
                 "struct": true,
                 "types": [],
-                "values": [
-                    {
-                        "index": 0,
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": [],
-                        "name": "All",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
-                    },
-                    {
-                        "index": 1,
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": [],
-                        "name": "Current",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
-                    },
-                    {
-                        "index": 2,
-                        "inheritance": "",
-                        "abstract": false,
-                        "meta": [],
-                        "name": "Old",
-                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
-                    }
-                ],
+                "values": [],
                 "list": "",
                 "inheritance": "",
                 "abstract": false,
@@ -82135,10 +82110,35 @@
             },
             {
                 "attributes": [],
-                "restriction": false,
-                "struct": false,
+                "restriction": true,
+                "struct": true,
                 "types": [],
-                "values": [],
+                "values": [
+                    {
+                        "index": 0,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "All",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 1,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "Current",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    },
+                    {
+                        "index": 2,
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "Old",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructValue"
+                    }
+                ],
                 "list": "",
                 "inheritance": "string",
                 "abstract": false,
