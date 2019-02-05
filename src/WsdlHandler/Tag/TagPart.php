@@ -39,8 +39,8 @@ class TagPart extends Tag
     protected function getAttributeMixedValue($attributeName, $returnValue = true)
     {
         $value = $this->getAttribute($attributeName);
-        if ($returnValue === true && $value instanceof AttributeHandler) {
-            $value = $value->getValue();
+        if ($returnValue === true) {
+            $value = $value instanceof AttributeHandler ? $value->getValue() : null;
         }
         return $value;
     }

@@ -27,7 +27,7 @@ class TagEnumeration extends Tag
      */
     public function getRestrictionParentType()
     {
-        /** @var TagRestriction $restrictionParent */
+        /** @var TagRestriction|null $restrictionParent */
         $restrictionParent = $this->getRestrictionParent();
         return $restrictionParent ? $restrictionParent->getAttributeBase() : '';
     }

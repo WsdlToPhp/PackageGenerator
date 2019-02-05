@@ -31,6 +31,7 @@ class Tag extends AbstractTag
      */
     public function isTheParent(AbstractTag $tag)
     {
+        /** @var AbstractTag|null $parent */
         $parent = $this->getSuitableParent();
         return $parent ? $parent->getNode()->isSameNode($tag->getNode()) : false;
     }

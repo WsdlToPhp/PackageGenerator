@@ -2,14 +2,13 @@
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\Tag;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagDocumentation as Documentation;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagEnumeration as Enumeration;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagAttributeGroup;
 
@@ -41,8 +40,8 @@ class TagDocumentation extends AbstractTagParser
     {
         $content = $documentation->getContent();
         $parent = $documentation->getSuitableParent();
-        $parentParent = $parent instanceof AbstractTag ? $parent->getSuitableParent() : null;
-        if (!empty($content) && $parent instanceof AbstractTag) {
+        $parentParent = $parent instanceof Tag ? $parent->getSuitableParent() : null;
+        if (!empty($content) && $parent instanceof Tag) {
             /**
              * Is it an element ? part of an attributeGroup
              * Finds parent node of this documentation node
@@ -58,7 +57,7 @@ class TagDocumentation extends AbstractTagParser
              * Is it an element ? part of a struct
              * Finds parent node of this documentation node
              */
-            elseif ($parent->hasAttribute('type') && $parentParent instanceof AbstractTag) {
+            elseif ($parent->hasAttribute('type') && $parentParent instanceof Tag) {
                 if (($model = $this->getModel($parentParent)) instanceof Struct && ($attribute = $model->getAttribute($parent->getAttributeName())) instanceof StructAttribute) {
                     $attribute->setDocumentation($content);
                 }
@@ -67,7 +66,7 @@ class TagDocumentation extends AbstractTagParser
              * Is it a value of an enumeration ?
              * Finds parent node of this documentation node
              */
-            elseif ($parent instanceof Enumeration && $parentParent instanceof AbstractTag) {
+            elseif ($parent instanceof Enumeration && $parentParent instanceof Tag) {
                 if (($model = $this->getModel($parentParent)) instanceof Struct && ($structValue = $model->getValue($parent->getValue())) instanceof StructValue) {
                     $structValue->setDocumentation($content);
                 }
@@ -86,7 +85,7 @@ class TagDocumentation extends AbstractTagParser
              * Is it an element ?
              * Finds parent node of this documentation node
              */
-            elseif (($model = $this->getModel($parent)) instanceof AbstractModel) {
+            elseif ($model = $this->getModel($parent)) {
                 $model->setDocumentation($content);
             }
         }
