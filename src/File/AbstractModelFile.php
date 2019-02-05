@@ -104,7 +104,7 @@ abstract class AbstractModelFile extends AbstractFile
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
      * @param bool $withSrc
-     * @return int|bool
+     * @return void
      */
     public function writeFile($withSrc = true)
     {
@@ -113,7 +113,7 @@ abstract class AbstractModelFile extends AbstractFile
         }
         GeneratorUtils::createDirectory($this->getFileDestination($withSrc));
         $this->defineNamespace()->defineUseStatement()->addAnnotationBlock()->addClassElement();
-        return parent::writeFile();
+        parent::writeFile();
     }
     /**
      * @return AbstractModelFile

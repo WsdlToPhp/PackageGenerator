@@ -17,7 +17,7 @@ class TagPart extends Tag
     const ATTRIBUTE_TYPE = 'type';
     /**
      * @param bool $returnValue
-     * @return AttributeHandler|mixed
+     * @return AttributeHandler|string|int|null
      */
     public function getAttributeElement($returnValue = true)
     {
@@ -25,7 +25,7 @@ class TagPart extends Tag
     }
     /**
      * @param bool $returnValue
-     * @return AttributeHandler|mixed
+     * @return AttributeHandler|string|int|null
      */
     public function getAttributeType($returnValue = true)
     {
@@ -34,7 +34,7 @@ class TagPart extends Tag
     /**
      * @param string $attributeName
      * @param bool $returnValue
-     * @return AttributeHandler|mixed
+     * @return AttributeHandler|string|int|null
      */
     protected function getAttributeMixedValue($attributeName, $returnValue = true)
     {
