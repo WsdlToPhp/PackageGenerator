@@ -118,7 +118,7 @@ class Struct extends AbstractModelFile
     {
         $parametersValues = [];
         foreach ($this->getModelAttributes() as $attribute) {
-            $parametersValues[] = $this->getStructMethodParameter($attribute, true, null, $attribute);
+            $parametersValues[] = $this->getStructMethodParameter($attribute, true);
         }
         return $parametersValues;
     }

@@ -235,7 +235,7 @@ class Service extends AbstractModelFile
         if ($firstParameter instanceof PhpFunctionParameter) {
             $annotationBlock->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())));
             $firstParameterType = $firstParameter->getType();
-            if ($firstParameter->getModel()) {
+            if ($firstParameter->getModel() instanceof StructAttributeModel) {
                 $firstParameterType = $this->getStructAttributeTypeAsPhpType(new StructAttributeModel($firstParameter->getModel()->getGenerator(), $firstParameter->getName(), $firstParameter->getModel()->getName(), $firstParameter->getModel()));
                 if ($firstParameter->getModel()->isRestriction()) {
                     $annotationBlock
