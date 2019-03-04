@@ -215,21 +215,24 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodSetBody(PhpMethod $method, StructAttributeModel $attribute)
     {
+        $parameters = $method->getParameters();
+        $parameter = array_shift($parameters);
+        $parameterName = is_string($parameter) ? $parameter : $parameter->getName();
         if ($this->getGenerator()->getOptionValidation()) {
-            $uniqueString = $attribute->getUniqueString($attribute->getCleanName());
-            $this->applyRules($method, $attribute, lcfirst($uniqueString));
+            $this->applyRules($method, $attribute, $parameterName);
         }
-        return $this->addStructMethodSetBodyAssignment($method, $attribute)->addStructMethodSetBodyReturn($method);
+        return $this
+            ->addStructMethodSetBodyAssignment($method, $attribute, $parameterName)
+            ->addStructMethodSetBodyReturn($method);
     }
     /**
      * @param PhpMethod $method
      * @param StructAttributeModel $attribute
+     * @param string $parameterName
      * @return Struct
      */
-    protected function addStructMethodSetBodyAssignment(PhpMethod $method, StructAttributeModel $attribute)
+    protected function addStructMethodSetBodyAssignment(PhpMethod $method, StructAttributeModel $attribute, $parameterName)
     {
-        $uniqueString = $attribute->getUniqueString($attribute->getCleanName());
-        $parameterName = lcfirst($uniqueString);
         if ($attribute->getRemovableFromRequest() || $attribute->isAChoice()) {
             $method
                 ->addChild(sprintf('if (is_null($%1$s) || (is_array($%1$s) && empty($%1$s))) {', $parameterName))
