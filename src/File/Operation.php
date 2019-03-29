@@ -48,9 +48,7 @@ class Operation extends AbstractOperation
         if ($this->isParameterTypeAModel()) {
             if ($this->getParameterTypeModel()->getAttributes(true, true)->count() > 0) {
                 $method->setParameters([
-                    $this->getMethodParameter($this->getParameterName($this->getParameterTypeModel()
-                        ->getPackagedName()), $this->getParameterTypeModel()
-                        ->getPackagedName(true)),
+                    $this->getMethodParameter($this->getParameterName($this->getParameterTypeModel()->getPackagedName()), $this->getParameterTypeModel()->getPackagedName(true)),
                 ]);
             }
         }
