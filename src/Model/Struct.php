@@ -27,6 +27,10 @@ class Struct extends AbstractModel
      */
     const DOC_SUB_PACKAGE_ARRAYS = 'Arrays';
     /**
+     * @var string
+     */
+    const DEFAULT_ENUM_TYPE = 'string';
+    /**
      * Attributes of the struct
      * @var StructAttributeContainer
      */
@@ -357,10 +361,22 @@ class Struct extends AbstractModel
     public function addValue($value)
     {
         if ($this->getValue($value) === null) {
-            $this->values->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
-            $this
-                ->setRestriction(true)
-                ->setStruct(true);
+            // issue #177, rare case: a struct and an enum has the same name and the enum is not detected by the SoapClient,
+            // then we need to create the enumeration struct in order to deduplicate the two structs
+            // this is why enumerations has to be parsed before any other elements by the WSDL parsers
+            if (0 < $this->countOwnAttributes()) {
+                $enum = new static($this->getGenerator(), $this->getName(), true, true);
+                $enum
+                    ->setInheritance(self::DEFAULT_ENUM_TYPE)
+                    ->getValues()->add(new StructValue($enum->getGenerator(), $value, $enum->getValues()->count(), $enum));
+                $this->getGenerator()->getStructs()->add($enum);
+                return $enum;
+            } else {
+                $this
+                    ->setStruct(true)
+                    ->setRestriction(true)
+                    ->values->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
+            }
         }
         return $this;
     }

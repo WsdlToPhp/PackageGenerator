@@ -64,7 +64,6 @@ abstract class AbstractMinMaxRule extends AbstractRule
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('Invalid value %s returned by symbol() method, can\'t determine comparison string', $this->symbol()));
-                break;
         }
         return $comparison;
     }
