@@ -27,7 +27,7 @@ abstract class AbstractTagParser extends AbstractParser
      * Return the model on which the method will be called
      * @param Tag $tag
      * @param string $type can be passed to specify the Struct type (inheritance)
-     * @return Struct|Method
+     * @return Struct|Method|null
      */
     protected function getModel(Tag $tag, $type = '')
     {

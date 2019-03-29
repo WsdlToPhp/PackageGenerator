@@ -46,9 +46,13 @@ class TagEnumeration extends AbstractTagParser
      */
     public function addStructValue(Tag $tag, Enumeration $enumeration)
     {
-        $struct = $this->getModel($tag);
+        // issue #177: first time, the enumeration struct is unknown,
+        // it'll be created when addValue is called on the existing struct which is not an enum
+        $struct = $this->getModel($tag, $enumeration->getRestrictionParentType());
+        $struct = $struct ? $struct : $this->getModel($tag);
         if ($struct instanceof Struct) {
-            $struct->addValue($enumeration->getValue());
+            // issue #177: the aim of redefining the $struct variable is to keep the reference to the right struct
+            $struct = $struct->addValue($enumeration->getValue());
             if (($value = $struct->getValue($enumeration->getValue())) instanceof StructValue) {
                 $this->parseTagAttributes($enumeration, $value);
             }

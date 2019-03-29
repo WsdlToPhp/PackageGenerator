@@ -58,7 +58,7 @@ abstract class AbstractCommand extends Command
     }
     /**
      * @param string $name
-     * @return mixed
+     * @return string|string[]|bool|null
      */
     protected function getOptionValue($name)
     {

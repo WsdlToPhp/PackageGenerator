@@ -19,7 +19,7 @@ class TagHeader extends AbstractTagOperationElement
         return $this->getStrictParent(WsdlDocument::TAG_INPUT);
     }
     /**
-     * @return string
+     * @return string|bool
      */
     public function getAttributeRequired()
     {
