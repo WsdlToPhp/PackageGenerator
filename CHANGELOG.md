@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.11.1
+- issue #177 - Structure & Enumeration has same name will produce weird result
+- issue #181 - PHP Fatal error in AbstractModelFile.php
+- issue #183 - Wrong varialbe name in StructType
+- issue #185 - undefined StructType class
+
 ## 2.11.0
 - issue #168 - Invalid rules generation for non numeric value
 - issue #171 - Improve AttributeGroup > Attribute parsing
