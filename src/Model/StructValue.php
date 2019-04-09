@@ -35,13 +35,15 @@ class StructValue extends AbstractModel
      * @uses StructValue::setIndex()
      * @param Generator $generator
      * @param string $name the original name
-     * @param int|string $index the index of the value in the enumeration struct
+     * @param int $index the index of the value in the enumeration struct
      * @param Struct $struct defines the struct which owns this value
      */
     public function __construct(Generator $generator, $name, $index = 0, Struct $struct = null)
     {
         parent::__construct($generator, $name);
-        $this->setIndex($index)->setOwner($struct);
+        $this
+            ->setIndex($index)
+            ->setOwner($struct);
     }
     /**
      * Returns the name of the value as constant
@@ -101,7 +103,7 @@ class StructValue extends AbstractModel
     public function setIndex($index)
     {
         if (!is_int($index) || $index < 0) {
-            throw new \InvalidArgumentException(sprintf('The value\'s index must be aa positive integer, "%s" given', var_export($index, true)));
+            throw new \InvalidArgumentException(sprintf('The value\'s index must be a positive integer, "%s" given', var_export($index, true)));
         }
         $this->index = $index;
         return $this;

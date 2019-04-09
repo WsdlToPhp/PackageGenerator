@@ -7,7 +7,12 @@ use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagRestriction extends Tag
 {
+
+    /**
+     * @var string
+     */
     const ATTRIBUTE_BASE = 'base';
+
     /**
      * @return boolean
      */
@@ -15,6 +20,7 @@ class TagRestriction extends Tag
     {
         return count($this->getEnumerations()) > 0;
     }
+
     /**
      * @return TagEnumeration[]
      */
@@ -22,6 +28,7 @@ class TagRestriction extends Tag
     {
         return $this->getChildrenByName(WsdlDocument::TAG_ENUMERATION);
     }
+
     /**
      * @return string
      */
@@ -29,6 +36,7 @@ class TagRestriction extends Tag
     {
         return $this->hasAttributeBase() ? $this->getAttribute(self::ATTRIBUTE_BASE)->getValue() : '';
     }
+
     /**
      * @return bool
      */
@@ -36,6 +44,7 @@ class TagRestriction extends Tag
     {
         return $this->hasAttribute(self::ATTRIBUTE_BASE);
     }
+
     /**
      * Checks wether this element is contained by an union parent or not
      * @return bool

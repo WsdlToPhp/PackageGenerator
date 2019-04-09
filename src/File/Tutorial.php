@@ -13,7 +13,7 @@ class Tutorial extends AbstractFile
 {
     /**
      * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
-     * @return int|bool
+     * @return void
      */
     public function writeFile()
     {
@@ -22,7 +22,7 @@ class Tutorial extends AbstractFile
             ->addOptionsAnnotationBlock()
             ->addOptions()
             ->addContent();
-        return parent::writeFile();
+        parent::writeFile();
     }
     /**
      * @return Tutorial

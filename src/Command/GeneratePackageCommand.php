@@ -195,7 +195,7 @@ class GeneratePackageCommand extends AbstractCommand
         return $array;
     }
     /**
-     * @return string
+     * @return string|string[]|bool|null
      */
     public function getGeneratorOptionsConfigOption()
     {

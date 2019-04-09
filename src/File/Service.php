@@ -157,16 +157,7 @@ class Service extends AbstractModelFile
      */
     protected function getTypeFromName($name)
     {
-        $type = $name;
-        $model = $this->getModelByName($name);
-        if ($model instanceof StructModel) {
-            if ($model->isRestriction() || $model->isUnion()) {
-                $type = self::TYPE_STRING;
-            } else {
-                $type = $model->getPackagedName(true);
-            }
-        }
-        return self::getValidType($type, $this->getGenerator()->getOptionXsdTypesPath());
+        return self::getValidType($this->getStructAttributeTypeAsPhpType(new StructAttributeModel($this->generator, 'any', $name)), $this->getGenerator()->getOptionXsdTypesPath());
     }
     /**
      * @param string $soapHeaderName
@@ -235,7 +226,7 @@ class Service extends AbstractModelFile
         if ($firstParameter instanceof PhpFunctionParameter) {
             $annotationBlock->addChild(sprintf('Sets the %s SoapHeader param', ucfirst($firstParameter->getName())));
             $firstParameterType = $firstParameter->getType();
-            if ($firstParameter->getModel()) {
+            if ($firstParameter->getModel() instanceof StructModel) {
                 $firstParameterType = $this->getStructAttributeTypeAsPhpType(new StructAttributeModel($firstParameter->getModel()->getGenerator(), $firstParameter->getName(), $firstParameter->getModel()->getName(), $firstParameter->getModel()));
                 if ($firstParameter->getModel()->isRestriction()) {
                     $annotationBlock

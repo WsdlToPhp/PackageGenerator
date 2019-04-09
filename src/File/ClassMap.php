@@ -110,7 +110,7 @@ class ClassMap extends AbstractModelFile
     /**
      * work around for https://bugs.php.net/bug.php?id=69280
      * @param StructModel $struct
-     * @return ClassMap
+     * @return string
      */
     protected function getStructName(StructModel $struct)
     {

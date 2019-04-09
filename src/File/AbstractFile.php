@@ -44,18 +44,18 @@ abstract class AbstractFile implements FileInterface
         return $this->generator;
     }
     /**
-     * @return int|bool
+     * @return void
      */
     public function write()
     {
-        return $this->writeFile();
+        $this->writeFile();
     }
     /**
-     * @return int|bool
+     * @return void
      */
     protected function writeFile()
     {
-        return file_put_contents($this->getFileName(), $this->getFile()->toString(), LOCK_EX);
+        file_put_contents($this->getFileName(), $this->getFile()->toString(), LOCK_EX);
     }
     /**
      * @return string
