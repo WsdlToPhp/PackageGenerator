@@ -257,7 +257,7 @@ First major release:
 - improve unit tests
 - **BC**:
     - From now, Wsdl origin, package destination, basic authentication credentials, proxy and SoapClient options are contained by the GeneratorOptions instance
-    - Generator instanciation and usage reviewed, now it only accept one parameter, a GeneratorOptions object
+    - Generator instantiation and usage reviewed, now it only accept one parameter, a GeneratorOptions object
     - Removal of WsdlContainer class
 - Generator simplification by handling only one Wsdl at a time as it was only possible to do so, code refactored in this way
 - Adding the possibility to set the parent class for StructType, ArrayType and ServiceType generated classes (options: wsdl-struct, wsdl-structarray, wsdl-soapclient)
