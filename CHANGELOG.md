@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.2.2 - 2019-08-01
+- issue #199 - Inheritance from outer namespace
+
 ## 3.2.1 - 2019-03-09
 - issue #177 - Structure & Enumeration has same name will produce weird result
 - issue #181 - PHP Fatal error in AbstractModelFile.php
