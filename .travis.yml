@@ -18,11 +18,11 @@ install:
     - composer install
 
 script:
-    - ./vendor/phpunit/phpunit/phpunit --coverage-text --coverage-clover=coverage.clover
+    - php -dmemory_limit=-1 ./vendor/phpunit/phpunit/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
     - wget https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+    - php -dmemory_limit=-1 ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)

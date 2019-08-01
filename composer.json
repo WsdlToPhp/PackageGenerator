@@ -64,6 +64,11 @@
         {
             "name": "Andreas Kintzinger",
             "role": "Contributor"
+        },
+        {
+            "name": "Hendrik Luup",
+            "email": "hendrik@luup.info",
+            "role": "Contributor"
         }
     ],
     "support" : {

@@ -127,7 +127,7 @@ class Struct extends AbstractModel
         (
             (
                 (
-                    ($this->isStruct() && $this->countOwnAttributes() === 1) ||
+                    ($this->isStruct() && $this->countAllAttributes() === 1) ||
                     (!$this->isStruct() && $this->countOwnAttributes() <= 1)
                 ) &&
                 mb_stripos($this->getName(), 'array') !== false
@@ -221,6 +221,15 @@ class Struct extends AbstractModel
     public function countOwnAttributes()
     {
         return $this->getAttributes(false, false)->count();
+    }
+    /**
+     * Returns the number of all attributes
+     * @uses Struct::getAttributes()
+     * @return int
+     */
+    public function countAllAttributes()
+    {
+        return $this->getAttributes(true)->count();
     }
     /**
      * Sets the attributes of the struct

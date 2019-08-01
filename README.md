@@ -61,7 +61,7 @@ $options
     ->setOrigin('http://developer.ebay.com/webservices/latest/ebaySvc.wsdl')
     ->setDestination('./MySdk')
     ->setComposerName('myproject/mysdk');
-// Generator instanciation
+// Generator instantiation
 $generator = new Generator($options);
 // Package generation
 $generator->generatePackage();
@@ -142,6 +142,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [hordijk](https://github.com/hordijk)
 - [Andreas Möller](https://github.com/localheinz)
 - [Andreas Kintzinger](https://github.com/Phobetor)
+- [Hendrik Luup](https://github.com/hluup)
 
 ## FAQ
 

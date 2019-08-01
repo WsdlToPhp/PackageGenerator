@@ -1,9 +1,12 @@
 # CHANGELOG
 
+## 3.2.2 - 2019-08-01
+- issue #199 - Inheritance from outer namespace
+
 ## 3.2.1 - 2019-03-09
 - issue #177 - Structure & Enumeration has same name will produce weird result
 - issue #181 - PHP Fatal error in AbstractModelFile.php
-- issue #183 - Wrong varialbe name in StructType
+- issue #183 - Wrong variable name in StructType
 - issue #185 - undefined StructType class
 
 ## 3.2.0 - 2019-02-04
@@ -260,7 +263,7 @@ First major release:
 - improve unit tests
 - **BC**:
     - From now, Wsdl origin, package destination, basic authentication credentials, proxy and SoapClient options are contained by the GeneratorOptions instance
-    - Generator instanciation and usage reviewed, now it only accept one parameter, a GeneratorOptions object
+    - Generator instantiation and usage reviewed, now it only accept one parameter, a GeneratorOptions object
     - Removal of WsdlContainer class
 - Generator simplification by handling only one Wsdl at a time as it was only possible to do so, code refactored in this way
 - Adding the possibility to set the parent class for StructType, ArrayType and ServiceType generated classes (options: wsdl-struct, wsdl-structarray, wsdl-soapclient)
