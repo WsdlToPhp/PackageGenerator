@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.11.2
+- issue #199 - Inheritance from outer namespace
+
 ## 2.11.1
 - issue #177 - Structure & Enumeration has same name will produce weird result
 - issue #181 - PHP Fatal error in AbstractModelFile.php
