@@ -14,7 +14,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
 {
     /**
      * The NewsRelatedSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var \Api\StructType\ApiNewsRelatedSearch[]

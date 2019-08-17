@@ -972,7 +972,7 @@ class Generator implements \JsonSerializable
         if (json_last_error() === JSON_ERROR_NONE) {
             // load options first
             $options = GeneratorOptions::instance();
-            foreach ($decodedJson['options']as $name => $value) {
+            foreach ($decodedJson['options'] as $name => $value) {
                 $options->setOptionValue($name, $value);
             }
             // create generator instance with options

@@ -14,7 +14,7 @@ class ApiService extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named CodeManager.DeleteCodeArchive
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Delete page code.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -37,7 +37,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CodeManager.GenerateCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Generates page code.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -70,7 +70,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CodeManager.GetCodeArchives
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns a list of existing code archives.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -97,7 +97,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CodeManager.SaveCodeArchive
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a page code archive.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -126,7 +126,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.CancelQueueItem
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cancel a pending (queued) action that has yet to be approved.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -149,7 +149,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.DownloadProduct
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Downloads a product. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -172,7 +172,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetEndpoint
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the correct SOAP endpoint to be used for API calls
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -195,7 +195,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetQueue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns queued items that are pending approval for the requesting company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -215,7 +215,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetReportSuites
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves all report suites associated with your company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -240,7 +240,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetTokenCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns remaining tokens for a given auth key (note that this call also consumes a token).
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -260,7 +260,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetTokenUsage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns token usage information (note that this call also consumes a token).
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -280,7 +280,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetTrackingServer
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the tracking server and namespace for the given report suite
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -303,7 +303,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetVersionAccess
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves version access for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -323,7 +323,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.ResetTokenCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Resets the token count for the given auth key.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -346,7 +346,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Dashboards.GetDashboardAPI
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of reportlets owned by the given dashboard.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -371,7 +371,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Dashboards.GetReportletDataAPI
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves data for a given reportlet.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -394,7 +394,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.AppendDataBlock
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Add rows of data to and optionally end a block of data begun by a BeginDataBlock call
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -425,7 +425,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.BeginDataBlock
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Begin and optionally end a block of data to be inserted into the Data Sources processing queue
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -458,7 +458,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.Deactivate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deactivates a Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -483,7 +483,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetFileIDs
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns array of file ids for a given data source id.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -510,7 +510,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetFileInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns dataSource file status information.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -537,7 +537,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetFileStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns dataSource file status information.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -562,7 +562,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetIDs
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns a list of data sources that belong to the specified report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -585,7 +585,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns dataSource file status information.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -610,7 +610,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.ProcessIncompleteVisits
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Processes incomplete visits for a DataSource
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -635,7 +635,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.Restart
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets DataSource file state to processing.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -660,7 +660,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.SetupFull
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates or modifies a Full Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -687,7 +687,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.SetupGeneric
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates or modifies a Generic Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -716,7 +716,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.SetupTraffic
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates or modifies a Traffic Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -743,7 +743,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.SetupWebLog
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates or modifies a Webserver Log Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -770,7 +770,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.CancelRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cancels a Data Warehouse Request.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -793,7 +793,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.CheckRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Checks the status of a Data Warehouse Request.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -816,7 +816,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.CreateSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Create a new data warehouse segment
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -843,7 +843,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.GetReportData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Obtain content for the given request
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -870,7 +870,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.GetSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Obtain a description of an existing data warehouse segment
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -895,7 +895,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.GetSegments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets available segments.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -918,7 +918,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.ReplaceSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Replace a data warehouse segment of the given id with the given segment.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -945,7 +945,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.Request
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a Data Warehouse Request.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1008,7 +1008,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.VerifySegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Verify the correctness of the given data warehouse segment
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1031,7 +1031,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DeliveryList.Delete
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Delete a distribution list.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1054,7 +1054,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DeliveryList.Get
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets Publishing list.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1077,7 +1077,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DeliveryList.Save
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Save delivery list.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1102,7 +1102,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Discover.GetSegments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieve a list of Discover segments for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1129,7 +1129,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Discover.QueueDiscoverOvertime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue a Discover overtime report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1152,7 +1152,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Discover.QueueDiscoverRanked
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue a Discover ranked report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1175,7 +1175,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Discover.QueueDiscoverTrended
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue a Discover trended report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1198,7 +1198,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Logs.GetAdminConsoleCompanyLog
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get console logs.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1231,7 +1231,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Logs.GetAdminConsoleLog
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get console logs.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1264,7 +1264,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Logs.GetUsageLog
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieve usage log information for the given company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1299,7 +1299,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.AddLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a new login for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1350,7 +1350,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.Authenticate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether or not the login is valid for this company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1375,7 +1375,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.DeleteGroup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Removes the requested group from the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1398,7 +1398,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.DeleteLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Removes a user login from the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1421,7 +1421,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetCRMInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves CRM login information for a specific user.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1446,7 +1446,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetCategories
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves subgroups for a category.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1471,7 +1471,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetGroup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves information about a particular group.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1496,7 +1496,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetGroups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves all available groups for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1521,7 +1521,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a user login for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1544,7 +1544,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetLogins
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves user logins for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1569,7 +1569,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetReportBuilderLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: ReportBuilder login (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1593,7 +1593,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * Permissions.GetReportSuiteGroupCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves all available accounts for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1618,7 +1618,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetReportSuiteGroups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the groups that this report suite is a part of.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1641,7 +1641,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.HasPrivilege
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Determines if the current user has the given privilegeToken
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1664,7 +1664,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.SaveGroup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves group setting - if the group does not exist it creates a new one.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1703,7 +1703,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.SaveLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the login for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1752,7 +1752,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.SaveReportSuiteGroups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Assigns the provided groups to the indicated report suite ID.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1777,7 +1777,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.CancelReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cancel a report request.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1800,7 +1800,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetElementNames
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieve element names
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1823,7 +1823,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetOvertimeReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Runs an overtime report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1846,7 +1846,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetRankedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Runs a ranked report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1869,7 +1869,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get status and data for a queued report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1892,7 +1892,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetReportQueue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieve the report queue for a given company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1912,7 +1912,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get status for a queued report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1935,7 +1935,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetTrendedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Runs a trended report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1958,7 +1958,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.QueueOvertime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue an overtime report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1981,7 +1981,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.QueueRanked
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue an ranked report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2004,7 +2004,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.QueueSCMRanked
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue a ranked report that is optimized for SearchCenter classifications.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2027,7 +2027,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.QueueTrended
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue an trended report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2050,7 +2050,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.AddCorrelations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the given correlation for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2077,7 +2077,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.AddInternalURLFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Adds the internal URL filters for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2102,7 +2102,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.AddKeyVisitors
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Adds a key visitors for the selected report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2127,7 +2127,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.AddSavedFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves filter. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2150,7 +2150,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.Create
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a new report suite with the values specified
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2191,7 +2191,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteBaseURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the base URL for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2215,7 +2215,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteCalculatedMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes a calculated metric for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2240,7 +2240,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteClassifications
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes a classification for one report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2269,7 +2269,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteCorrelations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the specified data correlations
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2296,7 +2296,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteDefaultPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the default page for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2320,7 +2320,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteIPAddressExclusions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Delete an IP exclusion entry for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2346,7 +2346,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteInternalURLFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the specified internal URL filters
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2371,7 +2371,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteKeyVisitors
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: deletes a list of key visitors for the selected report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2397,7 +2397,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteMarketingChannelCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes a cost item for the selected report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2427,7 +2427,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteMarketingChannels
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Delete marketing channels.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2452,7 +2452,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeletePages
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the given pages from the requested report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2477,7 +2477,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeletePaidSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Removes the specified paid search rule.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2506,7 +2506,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteSavedFilter
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes a saved filter. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2529,7 +2529,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetActivation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the activated status for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2552,7 +2552,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetAvailableElements
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns available elements for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2577,7 +2577,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetAvailableMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns available metrics for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2602,7 +2602,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetAxleStartDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the axle start date for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2625,7 +2625,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetBaseCurrency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the base URL for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2648,7 +2648,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetBaseURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the base URL for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2671,7 +2671,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetCalculatedMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the calculated metrics for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2695,7 +2695,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetClassificationHierarchies
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the requested classifications from the requested report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2722,7 +2722,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetClassifications
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the requested classifications from the requested report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2751,7 +2751,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetCorrelations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the correlations for the specified report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2774,7 +2774,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetCustomCalendar
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the custom calendar for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2797,7 +2797,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetDefaultPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the default page for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2820,7 +2820,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetEVars
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the conversion variables for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2843,7 +2843,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetEcommerce
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Conversion level for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2866,7 +2866,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetFindingMethods
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the finding methods for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2889,7 +2889,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetIPAddressExclusions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the IP address exclusions for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2912,7 +2912,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetIPObfuscation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the IP Address Obfuscation setting.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2935,7 +2935,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetInternalURLFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the internal URL filters for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2958,7 +2958,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetKeyVisitors
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of Key visitors for the specified report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2981,7 +2981,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetLocalization
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the status of the multibyte character setting for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3005,7 +3005,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetMarketingChannelCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the marketing channel cost metrics for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3029,7 +3029,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetMarketingChannelExpiration
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the marketing channel engagement period expiration information for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3053,7 +3053,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetMarketingChannelRules
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the marketing channel rules for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3076,7 +3076,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetMarketingChannels
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the marketing channels for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3100,7 +3100,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetMarketingChannelsCustomSubRelations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the available custom subrelations for the marketing channels in the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3125,7 +3125,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetMobileAppReporting
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Mobile Application Tracking settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3148,7 +3148,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetPages
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of pages for the specified report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3179,7 +3179,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetPaidSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the paid search settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3202,7 +3202,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetPermanentTraffic
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the permanent traffic settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3225,7 +3225,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetProcessingStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns processing status for the given report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3248,7 +3248,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetRollupDates
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns rollup dates for the given rollup report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3271,7 +3271,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetRollups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the rollups for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3291,7 +3291,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSavedFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets the saved filters for a report suite. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3311,7 +3311,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetScheduledSpike
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the scheduled traffic changes for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3334,7 +3334,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSegments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the requested classifications from the requested report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3357,7 +3357,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSettings
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns report suite settings.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3382,7 +3382,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSiteTitle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Site Title for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3405,7 +3405,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSuccessEvents
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the success events for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3428,7 +3428,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetTemplate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the templates for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3451,7 +3451,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetTimeZone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Time Zone for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3474,7 +3474,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetTrafficVars
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Traffic Vars for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3497,7 +3497,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetUIVisibility
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the visibility states for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3521,7 +3521,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetUniqueVisitorVariable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of unique visitor variables
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3544,7 +3544,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetVideoReporting
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Video Tracking settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3567,7 +3567,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetVideoTracking
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Video Tracking settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3590,7 +3590,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveBaseCurrency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the Base Currency setting.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3615,7 +3615,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveBaseURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the base URL for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3640,7 +3640,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveCalculatedMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a calculated metric for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3666,7 +3666,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveClassificationHierarchies
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Modifies a classification hierarchy for one or more report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3705,7 +3705,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveClassifications
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a classification for one or more report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3744,7 +3744,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveCustomCalendar
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Enables custom calendars for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3771,7 +3771,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveDefaultPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the default page for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3796,7 +3796,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveEVars
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the conversion variables for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3821,7 +3821,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveEcommerce
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the conversion level for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3846,7 +3846,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveFindingMethods
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves finding method settings.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3872,7 +3872,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveIPAddressExclusions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Add an IP exclusion entry for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3897,7 +3897,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveIPObfuscation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the IP Address Obfuscation setting.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3923,7 +3923,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveMarketingChannelCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the marketing channel costs for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3949,7 +3949,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveMarketingChannelExpiration
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the visitor expiration period. Set the number of days required before the visit expires, or 0 for never expires
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3975,7 +3975,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveMarketingChannelRules
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the marketing channel rules for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4000,7 +4000,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveMarketingChannels
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a set of marketing channels.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4046,7 +4046,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SavePaidSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the paid search settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4075,7 +4075,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SavePermanentTraffic
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the permanent traffic settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4102,7 +4102,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveRollup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a rollup for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4131,7 +4131,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveSavedFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves filter. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4154,7 +4154,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveScheduledSpike
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves scheduled traffic spikes for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4183,7 +4183,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveSiteTitle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Changes the Site Title of the report suites specified (it is not recommended to update multiple report suites with the same site title)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4208,7 +4208,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveSuccessEvents
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the success events to rsid_list
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4260,7 +4260,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveTimeZone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Changes the timezone (lookup ID) of the report suites specified
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4285,7 +4285,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveTrafficVars
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the Traffic Vars for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4310,7 +4310,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveUIVisibility
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Changes the visibility state of the UI element given for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4338,7 +4338,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveUniqueVisitorVariable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the unique visitor variable specified
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4384,7 +4384,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.CheckJobStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return the current status of a Saint API Job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4407,7 +4407,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.CreateFTP
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates an ftp account for the given parameters and returns the ftp account info
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4440,7 +4440,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ExportCreateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates Saint Export Job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4489,7 +4489,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ExportGetFileSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the page details of a given file_id
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4514,7 +4514,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetCompatabiltyMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns Array of compatability information for a report suite(s),
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4537,7 +4537,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get SAINT export filters.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4562,7 +4562,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetTemplate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the template to be used in the SAINT browser or FTP download
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4593,7 +4593,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportCommitJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Commits a specified Saint Import job for processing.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4616,7 +4616,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportCreateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a Saint Import Job
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4653,7 +4653,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportPopulateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Attaches Import data to a given Saint Import job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4680,7 +4680,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ListFTP
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns a list of the ftp accounts configured for this company
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4700,7 +4700,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.CreatePublishedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a new published report. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4729,7 +4729,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.DeletePublishedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes published reports. (Internal use only)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4754,7 +4754,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.DeleteWorkbook
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes workbooks from the library. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4783,7 +4783,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.DownloadWorkbook
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Download a workbook. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4812,7 +4812,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.GetPublishedReports
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get published reports for a user. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4837,7 +4837,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.GetReportsRunHistory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets a history of reports published by a user.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4866,7 +4866,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.GetWorkbookList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets a list of workbooks for a user. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4891,7 +4891,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.ReRunReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Re-enables a failed report. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4914,7 +4914,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.UpdatePublishedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Edits a published report. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4941,7 +4941,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.UploadWorkbook
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Uploads a Workbook. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4972,7 +4972,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Survey.GetSummaryList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the list of current surveys created for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4997,7 +4997,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named User.GetBookmarkFolders
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the folders the user has on their menu.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -5020,7 +5020,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named User.GetDashboardsAPI
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of dashboards accessible by the user.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -5043,7 +5043,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named User.GetLastUsedReportSuite
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the last used report suite by the user.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -5063,7 +5063,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named User.LoginEmailExists
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Determines if the supplied email address exists is tied to a Suite login.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()

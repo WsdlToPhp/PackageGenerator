@@ -14,7 +14,7 @@ class ApiQuery extends AbstractStructBase
 {
     /**
      * The SearchTerms
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -22,7 +22,7 @@ class ApiQuery extends AbstractStructBase
     public $SearchTerms;
     /**
      * The AlteredQuery
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -30,7 +30,7 @@ class ApiQuery extends AbstractStructBase
     public $AlteredQuery;
     /**
      * The AlterationOverrideQuery
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string

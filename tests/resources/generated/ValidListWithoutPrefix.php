@@ -13,7 +13,7 @@ class _List extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named listPaymentMethods
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: List the payment methods. To be implemented in a future minor version upgrade.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()

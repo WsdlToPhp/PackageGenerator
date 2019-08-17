@@ -40,7 +40,7 @@ class ApiDelete extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named deleteList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader

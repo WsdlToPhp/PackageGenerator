@@ -14,7 +14,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
 {
     /**
      * The Error
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var \Api\StructType\ApiError[]

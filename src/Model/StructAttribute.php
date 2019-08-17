@@ -60,7 +60,7 @@ class StructAttribute extends AbstractModel
         return self::uniqueName($string, $this->getOwner()->getName() . $additionalContext);
     }
     /**
-     * Returns the unique name in the current struct (for setters/getters and struct contrusctor array)
+     * Returns the unique name in the current struct (for setters/getters and struct constructor array)
      * @uses AbstractModel::getCleanName()
      * @uses AbstractModel::getName()
      * @uses AbstractModel::uniqueName()
@@ -168,7 +168,7 @@ class StructAttribute extends AbstractModel
     }
     /**
      * If this attribute is based on a struct that is a list,
-     * then it is list of basic sclar values that are sent space-separated
+     * then it is list of basic scalar values that are sent space-separated
      * @return bool
      */
     public function isList()

@@ -30,7 +30,7 @@ abstract class AbstractCommand extends Command
      */
     protected function configure()
     {
-        $this->addOption('force', null, InputOption::VALUE_NONE, 'If true, then package is really generated otherwise debug informations are displayed');
+        $this->addOption('force', null, InputOption::VALUE_NONE, 'If true, then package is really generated otherwise debug information are displayed');
     }
     /**
      * @see \Symfony\Component\Console\Command\Command::execute()

@@ -14,7 +14,7 @@ class ApiSaint extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named Saint.CheckJobStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return the current status of a Saint API Job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -37,7 +37,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.CreateFTP
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates an ftp account for the given parameters and returns the ftp account info
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -70,7 +70,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ExportCreateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates Saint Export Job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -119,7 +119,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ExportGetFileSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the page details of a given file_id
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -144,7 +144,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetCompatabiltyMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns Array of compatability information for a report suite(s),
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -167,7 +167,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get SAINT export filters.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -192,7 +192,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetTemplate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the template to be used in the SAINT browser or FTP download
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -223,7 +223,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportCommitJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Commits a specified Saint Import job for processing.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -246,7 +246,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportCreateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a Saint Import Job
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -283,7 +283,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportPopulateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Attaches Import data to a given Saint Import job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -310,7 +310,7 @@ class ApiSaint extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ListFTP
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns a list of the ftp accounts configured for this company
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()

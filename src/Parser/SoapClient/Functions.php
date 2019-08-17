@@ -33,7 +33,7 @@ class Functions extends AbstractParser
                     /**
                      * RPC SOAP Style
                      * Some RPC WS defines the return type as a list of values
-                     * So we define the return type as an array and reset the informations to use to extract method name and parameters
+                     * So we define the return type as an array and reset the information to use to extract method name and parameters
                      */
                     if (mb_stripos($infos[0], 'list(') === 0) {
                         $infos = explode(' ', preg_replace('/(list\(.*\)\s)/i', '', $method));

@@ -14,7 +14,7 @@ class ApiShopper extends AbstractStructBase
 {
     /**
      * The name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shopper's full name.
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -23,7 +23,7 @@ class ApiShopper extends AbstractStructBase
     public $name;
     /**
      * The email
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shopper's e-mail address. | Email address.
      * - base: ddp:string100
      * - maxLength: 100
@@ -36,7 +36,7 @@ class ApiShopper extends AbstractStructBase
     public $email;
     /**
      * The language
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shopper's preferred language.
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -45,7 +45,7 @@ class ApiShopper extends AbstractStructBase
     public $language;
     /**
      * The gender
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shopper's gender.
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -54,7 +54,7 @@ class ApiShopper extends AbstractStructBase
     public $gender;
     /**
      * The id
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: normalizedString
      * - maxLength: 35
      * - minLength: 1
@@ -64,7 +64,7 @@ class ApiShopper extends AbstractStructBase
     public $id;
     /**
      * The dateOfBirth
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shopper's date of birth. | A date formatted as yyyy-MM-dd, for example February 25th, 2014 would become "2012-02-25".
      * - base: normalizedString
      * - maxLength: 10
@@ -76,7 +76,7 @@ class ApiShopper extends AbstractStructBase
     public $dateOfBirth;
     /**
      * The phoneNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shopper's phone number. | Phone number, international numbers start with a +.
      * - base: ddp:string50
      * - maxLength: 50
@@ -88,7 +88,7 @@ class ApiShopper extends AbstractStructBase
     public $phoneNumber;
     /**
      * The mobilePhoneNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shopper's mobile phone number. | Phone number, international numbers start with a +.
      * - base: ddp:string50
      * - maxLength: 50
@@ -100,7 +100,7 @@ class ApiShopper extends AbstractStructBase
     public $mobilePhoneNumber;
     /**
      * The ipAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Ip address of the shopper. Will be used in the future for riskchecks. Can be ipv4 or ipv6.
      * - base: normalizedString
      * - maxLength: 35

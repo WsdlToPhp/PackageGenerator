@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AddressType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Allows for control of the sharing of address information between parties. | Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted. | Provides address information.
  * @package Api
  * @subpackage Structs
@@ -16,14 +16,14 @@ class ApiAddressType extends AbstractStructBase
 {
     /**
      * The StreetNmbr
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Api\StructType\ApiStreetNmbr
      */
     public $StreetNmbr;
     /**
      * The AddressLine
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: When the address is unformatted (FormattedInd="false") these lines will contain free form address details. When the address is formatted and street number and street name must be sent independently, the street number will be sent
      * using StreetNmbr, and the street name will be sent in the first AddressLine occurrence. | Used for Character Strings, length 1 to 255.
      * - base: xs:string
@@ -36,7 +36,7 @@ class ApiAddressType extends AbstractStructBase
     public $AddressLine;
     /**
      * The CityName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: City (e.g., Dublin), town, or postal station (i.e., a postal service territory, often used in a military address). | Used for Character Strings, length 1 to 64.
      * - base: xs:string
      * - maxLength: 64
@@ -47,7 +47,7 @@ class ApiAddressType extends AbstractStructBase
     public $CityName;
     /**
      * The PostalCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Post Office Code number. | Used for Character Strings, length 1 to 16.
      * - base: xs:string
      * - maxLength: 16
@@ -58,7 +58,7 @@ class ApiAddressType extends AbstractStructBase
     public $PostalCode;
     /**
      * The County
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: County or Region Name (e.g., Fairfax). | Used for Character Strings, length 1 to 32.
      * - base: xs:string
      * - maxLength: 32
@@ -69,7 +69,7 @@ class ApiAddressType extends AbstractStructBase
     public $County;
     /**
      * The StateProv
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: State or Province name (e.g., Texas).
      * - minOccurs: 0
      * @var \Api\StructType\ApiStateProvType
@@ -77,7 +77,7 @@ class ApiAddressType extends AbstractStructBase
     public $StateProv;
     /**
      * The CountryName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Country name (e.g., Ireland).
      * - minOccurs: 0
      * @var \Api\StructType\ApiCountryNameType
@@ -85,7 +85,7 @@ class ApiAddressType extends AbstractStructBase
     public $CountryName;
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Defines the type of address (e.g. home, business, other). Refer to OpenTravel Code List Communication Location Type (CLT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or
      * 101.EQP.X.
      * - base: xs:string
@@ -96,7 +96,7 @@ class ApiAddressType extends AbstractStructBase
     public $Type;
     /**
      * The Remark
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A remark associated with this address. | Used for Character Strings, length 1 to 128.
      * - base: xs:string
      * - maxLength: 128
@@ -107,7 +107,7 @@ class ApiAddressType extends AbstractStructBase
     public $Remark;
     /**
      * The FormattedInd
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted.
      * - type: xs:boolean
      * - use: optional

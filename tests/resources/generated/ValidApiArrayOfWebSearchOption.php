@@ -14,7 +14,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
 {
     /**
      * The WebSearchOption
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var string[]

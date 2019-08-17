@@ -27,7 +27,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named RefundTransaction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -51,7 +51,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named InitiateRecoup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -75,7 +75,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CompleteRecoup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -99,7 +99,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CancelRecoup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -123,7 +123,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetTransactionDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -147,7 +147,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BMCreateButton
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -171,7 +171,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BMUpdateButton
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -195,7 +195,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BMSetInventory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -219,7 +219,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BMGetButtonDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -243,7 +243,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BMGetInventory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -267,7 +267,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BMManageButtonStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -291,7 +291,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BMButtonSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -315,7 +315,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BillUser
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -339,7 +339,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named TransactionSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -363,7 +363,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named MassPay
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -387,7 +387,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BillAgreementUpdate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -411,7 +411,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named AddressVerify
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -435,7 +435,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named EnterBoarding
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -459,7 +459,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetBoardingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -483,7 +483,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CreateMobilePayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -507,7 +507,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetMobileStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -531,7 +531,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named SetMobileCheckout
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -555,7 +555,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoMobileCheckoutPayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -579,7 +579,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetBalance
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -603,7 +603,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetPalDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -627,7 +627,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoExpressCheckoutPayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -651,7 +651,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoUATPExpressCheckoutPayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -675,7 +675,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named SetAuthFlowParam
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -699,7 +699,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetAuthDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -723,7 +723,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named SetAccessPermissions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -747,7 +747,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named UpdateAccessPermissions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -771,7 +771,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetAccessPermissionDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -795,7 +795,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetIncentiveEvaluation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -819,7 +819,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named SetExpressCheckout
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -843,7 +843,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ExecuteCheckoutOperations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -867,7 +867,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetExpressCheckoutDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -891,7 +891,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoDirectPayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -915,7 +915,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ManagePendingTransactionStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -939,7 +939,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoCancel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -963,7 +963,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoCapture
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -987,7 +987,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoReauthorization
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1011,7 +1011,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoVoid
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1035,7 +1035,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoAuthorization
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1059,7 +1059,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named UpdateAuthorization
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1083,7 +1083,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoUATPAuthorization
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1107,7 +1107,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named SetCustomerBillingAgreement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1131,7 +1131,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetBillingAgreementCustomerDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1155,7 +1155,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CreateBillingAgreement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1179,7 +1179,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoReferenceTransaction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1203,7 +1203,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CreateRecurringPaymentsProfile
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1227,7 +1227,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named GetRecurringPaymentsProfileDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1252,7 +1252,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ManageRecurringPaymentsProfileStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1276,7 +1276,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named BillOutstandingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1300,7 +1300,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named UpdateRecurringPaymentsProfile
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1324,7 +1324,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DoNonReferencedCredit
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1348,7 +1348,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReverseTransaction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
@@ -1372,7 +1372,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ExternalRememberMeOptOut
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
