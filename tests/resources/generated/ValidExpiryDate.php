@@ -14,7 +14,7 @@ class ApiExpiryDate extends AbstractStructBase
 {
     /**
      * The month
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: NMTOKEN
      * - pattern: (0[1-9]|1[012])
      * - use: required
@@ -23,7 +23,7 @@ class ApiExpiryDate extends AbstractStructBase
     public $month;
     /**
      * The year
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: NMTOKEN
      * - pattern: [0-9][0-9]
      * - use: required

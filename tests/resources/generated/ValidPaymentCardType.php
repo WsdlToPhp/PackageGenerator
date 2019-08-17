@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PaymentCardType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Date the card becomes valid for use (optional) and the date the card expires (required) in ISO 8601 prescribed format. | Allows for control of the sharing of payment card data between parties. | Identification about a specific credit
  * card.
  * @package Api
@@ -17,7 +17,7 @@ class ApiPaymentCardType extends AbstractStructBase
 {
     /**
      * The CardHolderName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Name of the card holder. | Used for Character Strings, length 1 to 64.
      * - base: xs:string
      * - maxLength: 64
@@ -28,14 +28,14 @@ class ApiPaymentCardType extends AbstractStructBase
     public $CardHolderName;
     /**
      * The CardIssuerName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Api\StructType\ApiCardIssuerName
      */
     public $CardIssuerName;
     /**
      * The Address
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Card holder's address used for additional authorization checks.
      * - minOccurs: 0
      * @var \Api\StructType\ApiAddressType
@@ -43,7 +43,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $Address;
     /**
      * The Telephone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 5
      * - minOccurs: 0
      * @var \Api\StructType\ApiTelephone[]
@@ -51,7 +51,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $Telephone;
     /**
      * The Email
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Card holder's email address(es) used for additional authorization checks.
      * - maxOccurs: 3
      * - minOccurs: 0
@@ -60,7 +60,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $Email;
     /**
      * The CardType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the type of magnetic striped card. Refer to OpenTravel Code List Card Type (CDT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
      * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
@@ -70,7 +70,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $CardType;
     /**
      * The CardCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The 2 character code of the credit card issuer.
      * - use: optional
      * @var string
@@ -78,7 +78,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $CardCode;
     /**
      * The CardName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The name of card.
      * - use: optional
      * @var string
@@ -86,7 +86,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $CardName;
     /**
      * The CardNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - base: xs:string
      * - pattern: [0-9]{1,19}
@@ -96,7 +96,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $CardNumber;
     /**
      * The SeriesCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Verification digits printed on the card following the embossed number. This may also accommodate the customer identification/batch number (CID), card verification value (CVV2 ), card validation code number (CVC2) on credit card. |
      * Used for Numeric Strings, length 1 to 8.
      * - base: xs:string
@@ -107,7 +107,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $SeriesCode;
     /**
      * The MaskedCardNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: May be used to send a concealed credit card number (e.g., xxxxxxxxxxxx9922). | Used forAlpha-Numeric Strings, length 1 to 19.
      * - base: xs:string
      * - pattern: [0-9a-zA-Z]{1,19}
@@ -117,7 +117,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $MaskedCardNumber;
     /**
      * The CardHolderRPH
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Provides a reference pointer that links the payment card to the payment card holder. | The Reference Place Holder (RPH) is an index code used to identify an instance in a collection of like items (e.g. used to assign individual
      * passengers or clients to particular itinerary items).
      * - base: xs:string
@@ -128,7 +128,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $CardHolderRPH;
     /**
      * The CountryOfIssue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Code for the country where the credit card was issued. | Specifies a 2 character country code as defined in ISO3166.
      * - base: xs:string
      * - pattern: [a-zA-Z]{2}
@@ -138,7 +138,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $CountryOfIssue;
     /**
      * The Remark
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A remark associated with this payment card. | Used for Character Strings, length 1 to 128.
      * - base: xs:string
      * - maxLength: 128
@@ -159,7 +159,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $ShareMarketInd;
     /**
      * The EffectiveDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the starting date. | Month and year information.
      * - base: xs:string
      * - pattern: (0[1-9]|1[0-2])[0-9][0-9]
@@ -170,7 +170,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public $EffectiveDate;
     /**
      * The ExpireDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the ending date. | Month and year information.
      * - base: xs:string
      * - pattern: (0[1-9]|1[0-2])[0-9][0-9]

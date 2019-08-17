@@ -14,7 +14,7 @@ class ApiHouseProfileData extends AbstractStructBase
 {
     /**
      * The area_total
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - totalDigits: 15
@@ -23,7 +23,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $area_total;
     /**
      * The area_residential
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -33,7 +33,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $area_residential;
     /**
      * The area_non_residential
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -43,84 +43,84 @@ class ApiHouseProfileData extends AbstractStructBase
     public $area_non_residential;
     /**
      * The cadastral_number
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $cadastral_number;
     /**
      * The project_type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $project_type;
     /**
      * The location_description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $location_description;
     /**
      * The individual_name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $individual_name;
     /**
      * The house_type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $house_type;
     /**
      * The exploitation_start_year
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $exploitation_start_year;
     /**
      * The wall_material
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $wall_material;
     /**
      * The floor_type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $floor_type;
     /**
      * The storeys_count
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $storeys_count;
     /**
      * The entrance_count
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $entrance_count;
     /**
      * The elevators_count
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $elevators_count;
     /**
      * The area_private
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -130,7 +130,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $area_private;
     /**
      * The area_municipal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -140,7 +140,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $area_municipal;
     /**
      * The area_national
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -150,7 +150,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $area_national;
     /**
      * The area_land
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -160,7 +160,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $area_land;
     /**
      * The area_territory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -170,42 +170,42 @@ class ApiHouseProfileData extends AbstractStructBase
     public $area_territory;
     /**
      * The inventory_number
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $inventory_number;
     /**
      * The flats_count
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $flats_count;
     /**
      * The residents_count
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $residents_count;
     /**
      * The accounts_count
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $accounts_count;
     /**
      * The construction_features
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $construction_features;
     /**
      * The thermal_actual_expense
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -215,7 +215,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $thermal_actual_expense;
     /**
      * The thermal_normative_expense
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -225,28 +225,28 @@ class ApiHouseProfileData extends AbstractStructBase
     public $thermal_normative_expense;
     /**
      * The energy_efficiency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $energy_efficiency;
     /**
      * The energy_audit_date
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $energy_audit_date;
     /**
      * The privatization_start_date
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $privatization_start_date;
     /**
      * The deterioration_total
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -256,7 +256,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $deterioration_total;
     /**
      * The deterioration_foundation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -266,7 +266,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $deterioration_foundation;
     /**
      * The deterioration_bearing_walls
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -276,7 +276,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public $deterioration_bearing_walls;
     /**
      * The deterioration_floor
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - nillable: true
@@ -286,84 +286,84 @@ class ApiHouseProfileData extends AbstractStructBase
     public $deterioration_floor;
     /**
      * The facade
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiFacade
      */
     public $facade;
     /**
      * The roof
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiRoof
      */
     public $roof;
     /**
      * The basement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiBasement
      */
     public $basement;
     /**
      * The common_space
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiCommonSpace
      */
     public $common_space;
     /**
      * The chute
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiChute
      */
     public $chute;
     /**
      * The heating_system
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiHeatingSystem
      */
     public $heating_system;
     /**
      * The hot_water_system
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiHotWaterSystem
      */
     public $hot_water_system;
     /**
      * The cold_water_system
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiColdWaterSystem
      */
     public $cold_water_system;
     /**
      * The sewerage_system
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiSewerageSystem
      */
     public $sewerage_system;
     /**
      * The electricity_system
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiElectricitySystem
      */
     public $electricity_system;
     /**
      * The gas_system
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiGasSystem
      */
     public $gas_system;
     /**
      * The lifts
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - arrayType: tns:Lift[]
      * - base: soap-enc:Array
      * - nillable: true
@@ -373,56 +373,56 @@ class ApiHouseProfileData extends AbstractStructBase
     public $lifts;
     /**
      * The management_contract
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiManagementContract
      */
     public $management_contract;
     /**
      * The heating_provider
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
     public $heating_provider;
     /**
      * The electricity_provider
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
     public $electricity_provider;
     /**
      * The gas_provider
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
     public $gas_provider;
     /**
      * The hot_water_provider
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
     public $hot_water_provider;
     /**
      * The cold_water_provider
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
     public $cold_water_provider;
     /**
      * The drainage_provider
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
     public $drainage_provider;
     /**
      * The finance
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiFinance
      */

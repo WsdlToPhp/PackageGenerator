@@ -14,7 +14,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
 {
     /**
      * The Id
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var int
@@ -22,7 +22,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $Id;
     /**
      * The Name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -30,7 +30,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $Name;
     /**
      * The StartDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -38,7 +38,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $StartDate;
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -46,7 +46,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $Type;
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -54,7 +54,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $Status;
     /**
      * The State
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -62,7 +62,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $State;
     /**
      * The StatusPayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -70,7 +70,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $StatusPayment;
     /**
      * The StatusClarification
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -78,7 +78,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $StatusClarification;
     /**
      * The SourceId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
@@ -87,7 +87,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $SourceId;
     /**
      * The Statistics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiStatistics
@@ -95,7 +95,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $Statistics;
     /**
      * The Currency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -103,7 +103,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $Currency;
     /**
      * The Funds
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiFundsParam
@@ -111,7 +111,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $Funds;
     /**
      * The RepresentedBy
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiCampaignAssistant
@@ -119,7 +119,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $RepresentedBy;
     /**
      * The DailyBudget
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
@@ -128,7 +128,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $DailyBudget;
     /**
      * The EndDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
@@ -137,7 +137,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $EndDate;
     /**
      * The NegativeKeywords
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
@@ -146,7 +146,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $NegativeKeywords;
     /**
      * The BlockedIps
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
@@ -155,7 +155,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $BlockedIps;
     /**
      * The ExcludedSites
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
@@ -164,7 +164,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $ExcludedSites;
     /**
      * The TextCampaign
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiTextCampaignGetItem
@@ -172,7 +172,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $TextCampaign;
     /**
      * The MobileAppCampaign
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiMobileAppCampaignGetItem
@@ -180,7 +180,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public $MobileAppCampaign;
     /**
      * The DynamicTextCampaign
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiDynamicTextCampaignGetItem

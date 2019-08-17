@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for offer StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - nillable: true
  * - type: tns:offer
  * @package Api
@@ -17,7 +17,7 @@ class ApiOffer extends ApiOrder
 {
     /**
      * The offerClassMember
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
      * @var string
@@ -25,7 +25,7 @@ class ApiOffer extends ApiOrder
     public $offerClassMember;
     /**
      * The offer
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
      * @var \Api\StructType\ApiOffer

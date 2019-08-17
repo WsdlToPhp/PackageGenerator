@@ -14,7 +14,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
 {
     /**
      * The OrderTotal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The total cost of the order to the customer. If shipping cost and tax charges are known, include them in OrderTotal; if not, OrderTotal should be the current sub-total of the order. You must set the currencyID attribute to one of the
      * three-character currency codes for any of the supported PayPal currencies. Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - minOccurs: 0
@@ -23,7 +23,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $OrderTotal;
     /**
      * The ReturnURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer's browser is returned after choosing to pay with PayPal. PayPal recommends that the value of ReturnURL be the final review page on which the customer confirms the order and payment. Required Character length
      * and limitations: no limit.
      * @var string
@@ -31,7 +31,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ReturnURL;
     /**
      * The CancelURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer is returned if he does not approve the use of PayPal to pay you. PayPal recommends that the value of CancelURL be the original page on which the customer chose to pay with PayPal. Required Character length
      * and limitations: no limit
      * @var string
@@ -39,7 +39,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $CancelURL;
     /**
      * The TrackingImageURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Tracking URL for ebay. Required Character length and limitations: no limit
      * - minOccurs: 0
      * @var string
@@ -47,7 +47,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $TrackingImageURL;
     /**
      * The giropaySuccessURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer's browser is returned after paying with giropay online. Optional Character length and limitations: no limit.
      * - minOccurs: 0
      * @var string
@@ -55,7 +55,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $giropaySuccessURL;
     /**
      * The giropayCancelURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer's browser is returned after fail to pay with giropay online. Optional Character length and limitations: no limit.
      * - minOccurs: 0
      * @var string
@@ -63,7 +63,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $giropayCancelURL;
     /**
      * The BanktxnPendingURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer's browser can be returned in the mEFT done page. Optional Character length and limitations: no limit.
      * - minOccurs: 0
      * @var string
@@ -71,7 +71,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $BanktxnPendingURL;
     /**
      * The Token
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: On your first invocation of SetExpressCheckoutRequest, the value of this token is returned by SetExpressCheckoutResponse. Optional Include this element and its value only if you want to modify an existing checkout session with
      * another invocation of SetExpressCheckoutRequest; for example, if you want the customer to edit his shipping address on PayPal. Character length and limitations: 20 single-byte characters
      * - base: xs:string
@@ -81,7 +81,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $Token;
     /**
      * The MaxAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The expected maximum total amount of the complete order, including shipping cost and tax charges. Optional You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
      * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - minOccurs: 0
@@ -90,7 +90,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $MaxAmount;
     /**
      * The OrderDescription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Description of items the customer is purchasing. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -98,7 +98,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $OrderDescription;
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A free-form field for your own use, such as a tracking number or other value you want PayPal to return on GetExpressCheckoutDetailsResponse and DoExpressCheckoutPaymentResponse. Optional Character length and limitations: 256
      * single-byte alphanumeric characters
      * - minOccurs: 0
@@ -107,7 +107,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $Custom;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Your own unique invoice or tracking number. PayPal returns this value to you on DoExpressCheckoutPaymentResponse. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -115,7 +115,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $InvoiceID;
     /**
      * The ReqConfirmShipping
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that you require that the customer's shipping address on file with PayPal be a confirmed address. Any value other than 1 indicates that the customer's shipping address on file with PayPal need NOT be a confirmed
      * address. Setting this element overrides the setting you have specified in the recipient's Merchant Account Profile. Optional Character length and limitations: One single-byte numeric character.
      * - minOccurs: 0
@@ -124,7 +124,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ReqConfirmShipping;
     /**
      * The ReqBillingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that you require that the customer's billing address on file. Setting this element overrides the setting you have specified in Admin. Optional Character length and limitations: One single-byte numeric character.
      * - minOccurs: 0
      * @var string
@@ -132,7 +132,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ReqBillingAddress;
     /**
      * The BillingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The billing address for the buyer. Optional If you include the BillingAddress element, the AddressType elements are required: Name Street1 CityName CountryCode Do not set set the CountryName element.
      * - minOccurs: 0
      * @var \Api\StructType\ApiAddressType
@@ -140,7 +140,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $BillingAddress;
     /**
      * The NoShipping
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that on the PayPal pages, no shipping address fields should be displayed whatsoever. Optional Character length and limitations: Four single-byte numeric characters.
      * - minOccurs: 0
      * @var string
@@ -148,7 +148,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $NoShipping;
     /**
      * The AddressOverride
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that the PayPal pages should display the shipping address set by you in the Address element on this SetExpressCheckoutRequest, not the shipping address on file with PayPal for this customer. Displaying the
      * PayPal street address on file does not allow the customer to edit that address. Optional Character length and limitations: Four single-byte numeric characters.
      * - minOccurs: 0
@@ -157,7 +157,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $AddressOverride;
     /**
      * The LocaleCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Locale of pages displayed by PayPal during Express Checkout. Optional Character length and limitations: Five single-byte alphabetic characters, upper- or lowercase. Allowable values: AU or en_AU DE or de_DE FR or fr_FR GB or en_GB IT
      * or it_IT JP or ja_JP US or en_US
      * - minOccurs: 0
@@ -166,7 +166,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $LocaleCode;
     /**
      * The PageStyle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the Custom Payment Page Style for payment pages associated with this button/link. PageStyle corresponds to the HTML variable page_style for customizing payment pages. The value is the same as the Page Style Name you chose when
      * adding or editing the page style from the Profile subtab of the My Account tab of your PayPal account. Optional Character length and limitations: 30 single-byte alphabetic characters.
      * - minOccurs: 0
@@ -175,7 +175,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $PageStyle;
     /**
      * The cpp_header_image
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A URL for the image you want to appear at the top left of the payment page. The image has a maximum size of 750 pixels wide by 90 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server.
      * Optional Character length and limitations: 127
      * - minOccurs: 0
@@ -184,7 +184,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $cpp_header_image;
     /**
      * The cpp_header_border_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the border color around the header of the payment page. The border is a 2-pixel perimeter around the header space, which is 750 pixels wide by 90 pixels high. Optional Character length and limitations: Six character HTML
      * hexadecimal color code in ASCII
      * - minOccurs: 0
@@ -193,7 +193,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $cpp_header_border_color;
     /**
      * The cpp_header_back_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the background color for the header of the payment page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
      * - minOccurs: 0
      * @var string
@@ -201,7 +201,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $cpp_header_back_color;
     /**
      * The cpp_payflow_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the background color for the payment page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
      * - minOccurs: 0
      * @var string
@@ -209,7 +209,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $cpp_payflow_color;
     /**
      * The cpp_cart_border_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the cart gradient color for the Mini Cart on 1X flow. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
      * - minOccurs: 0
      * @var string
@@ -217,7 +217,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $cpp_cart_border_color;
     /**
      * The cpp_logo_image
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A URL for the image you want to appear above the mini-cart. The image has a maximum size of 190 pixels wide by 60 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server. Optional Character
      * length and limitations: 127
      * - minOccurs: 0
@@ -226,7 +226,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $cpp_logo_image;
     /**
      * The Address
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Customer's shipping address. Optional If you include a shipping address and set the AddressOverride element on the request, PayPal returns this same address in GetExpressCheckoutDetailsResponse.
      * - minOccurs: 0
      * @var \Api\StructType\ApiAddressType
@@ -234,7 +234,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $Address;
     /**
      * The PaymentAction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: How you want to obtain payment. Required Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture. Order indicates that this payment is is an order authorization
      * subject to settlement with PayPal Authorization and Capture. Sale indicates that this is a final sale for which you are requesting payment. IMPORTANT: You cannot set PaymentAction to Sale or Order on SetExpressCheckoutRequest and then change
      * PaymentAction to Authorization on the final Express Checkout API, DoExpressCheckoutPaymentRequest. Character length and limit: Up to 13 single-byte alphabetic characters
@@ -244,7 +244,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $PaymentAction;
     /**
      * The SolutionType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This will indicate which flow you are choosing (expresschecheckout or expresscheckout optional) Optional None Sole indicates that you are in the ExpressO flow Mark indicates that you are in the old express flow.
      * - minOccurs: 0
      * @var string
@@ -252,7 +252,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $SolutionType;
     /**
      * The LandingPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This indicates Which page to display for ExpressO (Billing or Login) Optional None Billing indicates that you are not a paypal account holder Login indicates that you are a paypal account holder
      * - minOccurs: 0
      * @var string
@@ -260,7 +260,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $LandingPage;
     /**
      * The BuyerEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address of the buyer as entered during checkout. PayPal uses this value to pre-fill the PayPal membership sign-up portion of the PayPal login page. Optional Character length and limit: 127 single-byte alphanumeric characters
      * - base: xs:string
      * - minOccurs: 0
@@ -269,14 +269,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $BuyerEmail;
     /**
      * The ChannelType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ChannelType;
     /**
      * The BillingAgreementDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var \Api\StructType\ApiBillingAgreementDetailsType[]
@@ -284,7 +284,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $BillingAgreementDetails;
     /**
      * The PromoCodes
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Promo Code Optional List of promo codes supplied by merchant. These promo codes enable the Merchant Services Promotion Financing feature.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -293,7 +293,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $PromoCodes;
     /**
      * The PayPalCheckOutBtnType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Default Funding option for PayLater Checkout button.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -302,7 +302,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $PayPalCheckOutBtnType;
     /**
      * The ProductCategory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -310,7 +310,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ProductCategory;
     /**
      * The ShippingMethod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -318,7 +318,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ShippingMethod;
     /**
      * The ProfileAddressChangeDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Date and time (in GMT in the format yyyy-MM-ddTHH:mm:ssZ) at which address was changed by the user.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -327,7 +327,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ProfileAddressChangeDate;
     /**
      * The AllowNote
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that the customer may enter a note to the merchant on the PayPal page during checkout. The note is returned in the GetExpressCheckoutDetails response and the DoExpressCheckoutPayment response. Optional Character
      * length and limitations: One single-byte numeric character. Allowable values: 0,1
      * - maxOccurs: 1
@@ -337,7 +337,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $AllowNote;
     /**
      * The FundingSourceDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Funding source preferences.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -346,7 +346,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $FundingSourceDetails;
     /**
      * The BrandName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The label that needs to be displayed on the cancel links in the PayPal hosted checkout pages. Optional Character length and limit: 127 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -355,7 +355,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $BrandName;
     /**
      * The CallbackURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL for PayPal to use to retrieve shipping, handling, insurance, and tax details from your website. Optional Character length and limitations: 2048 characters.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -364,7 +364,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $CallbackURL;
     /**
      * The EnhancedCheckoutData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Enhanced data for different industry segments. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -373,7 +373,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $EnhancedCheckoutData;
     /**
      * The OtherPaymentMethods
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: List of other payment methods the user can pay with. Optional Refer to the OtherPaymentMethodDetailsType for more details.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -382,7 +382,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $OtherPaymentMethods;
     /**
      * The BuyerDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details about the buyer's account. Optional Refer to the BuyerDetailsType for more details.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -391,7 +391,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $BuyerDetails;
     /**
      * The PaymentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the payment.
      * - maxOccurs: 10
      * - minOccurs: 0
@@ -400,7 +400,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $PaymentDetails;
     /**
      * The FlatRateShippingOptions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: List of Fall Back Shipping options provided by merchant.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -409,7 +409,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $FlatRateShippingOptions;
     /**
      * The CallbackTimeout
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the call back timeout override.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -418,7 +418,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $CallbackTimeout;
     /**
      * The CallbackVersion
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the call back version.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -427,7 +427,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $CallbackVersion;
     /**
      * The CustomerServiceNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Customer service number.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -436,7 +436,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $CustomerServiceNumber;
     /**
      * The GiftMessageEnable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift message enable.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -445,7 +445,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $GiftMessageEnable;
     /**
      * The GiftReceiptEnable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift receipt enable.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -454,7 +454,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $GiftReceiptEnable;
     /**
      * The GiftWrapEnable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift Wrap enable.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -463,7 +463,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $GiftWrapEnable;
     /**
      * The GiftWrapName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift Wrap name.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -472,7 +472,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $GiftWrapName;
     /**
      * The GiftWrapAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift Wrap amount.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -481,7 +481,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $GiftWrapAmount;
     /**
      * The BuyerEmailOptInEnable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Buyer email option enable .
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -490,7 +490,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $BuyerEmailOptInEnable;
     /**
      * The SurveyEnable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the survey enable.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -499,7 +499,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $SurveyEnable;
     /**
      * The SurveyQuestion
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the survey question.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -508,7 +508,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $SurveyQuestion;
     /**
      * The SurveyChoice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the survey choices for survey question.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -517,14 +517,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $SurveyChoice;
     /**
      * The TotalType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $TotalType;
     /**
      * The NoteToBuyer
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Any message the seller would like to be displayed in the Mini Cart for UX.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -533,7 +533,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $NoteToBuyer;
     /**
      * The Incentives
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Incentive Code Optional List of incentive codes supplied by ebay/merchant.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -542,7 +542,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $Incentives;
     /**
      * The ReqInstrumentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchant specified flag which indicates whether to return Funding Instrument Details in DoEC or not. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -551,7 +551,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ReqInstrumentDetails;
     /**
      * The ExternalRememberMeOptInDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This element contains information that allows the merchant to request to opt into external remember me on behalf of the buyer or to request login bypass using external remember me. Note the opt-in details are silently ignored if the
      * ExternalRememberMeID is present.
      * - maxOccurs: 1
@@ -561,7 +561,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ExternalRememberMeOptInDetails;
     /**
      * The FlowControlDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An optional set of values related to flow-specific details.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -570,7 +570,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $FlowControlDetails;
     /**
      * The DisplayControlDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An optional set of values related to display-specific details.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -579,7 +579,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $DisplayControlDetails;
     /**
      * The ExternalPartnerTrackingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An optional set of values related to tracking for external partner.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -588,7 +588,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public $ExternalPartnerTrackingDetails;
     /**
      * The CoupledBuckets
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Optional element that defines relationship between buckets
      * - maxOccurs: 5
      * - minOccurs: 0

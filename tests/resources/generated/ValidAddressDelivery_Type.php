@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AddressDelivery_Type StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: The delivery address of the customer. This is a verified address on Location Register.
  * @package Api
  * @subpackage Structs
@@ -16,7 +16,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
 {
     /**
      * The Street1
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: First line on delivery address
      * - base: string
      * @var string
@@ -24,7 +24,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     public $Street1;
     /**
      * The Street2
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Second line on delivery address
      * - base: string
      * @var string
@@ -32,7 +32,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     public $Street2;
     /**
      * The Street3
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Third line on delivery address
      * - base: string
      * @var string
@@ -40,7 +40,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     public $Street3;
     /**
      * The City
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The delivery city
      * - base: string
      * @var string
@@ -48,7 +48,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     public $City;
     /**
      * The PostalCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Postal code for the city
      * - base: string
      * - length: 4

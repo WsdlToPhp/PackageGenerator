@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for TaxType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Provides details of the tax. | Applicable tax element. This element allows for both percentages and flat amounts. If one field is used, the other should be zero since logically, taxes should be calculated in only one of the two ways.
  * @package Api
  * @subpackage Structs
@@ -16,7 +16,7 @@ class ApiTaxType extends AbstractStructBase
 {
     /**
      * The TaxDescription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
      * - minOccurs: 0
@@ -25,7 +25,7 @@ class ApiTaxType extends AbstractStructBase
     public $TaxDescription;
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Used to indicate if the amount is inclusive or exclusive of other charges, such as taxes, or is cumulative (amounts have been added to each other).
      * - type: whlsoap:AmountDeterminationType
      * - use: optional
@@ -34,7 +34,7 @@ class ApiTaxType extends AbstractStructBase
     public $Type;
     /**
      * The Code
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Code identifying the fee (e.g.,agency fee, municipality fee). Refer to OpenTravel Code List Fee Tax Type (FTT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
      * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
@@ -45,7 +45,7 @@ class ApiTaxType extends AbstractStructBase
     public $Code;
     /**
      * The Percent
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value). | Used for percentage values.
      * - base: xs:decimal
      * - maxInclusive: 100.00
@@ -57,7 +57,7 @@ class ApiTaxType extends AbstractStructBase
     public $Percent;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A monetary amount. | Specifies an amount, max 3 decimals.
      * - base: xs:decimal
      * - fractionDigits: 3
@@ -68,7 +68,7 @@ class ApiTaxType extends AbstractStructBase
     public $Amount;
     /**
      * The CurrencyCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The code specifying a monetary unit. Use ISO 4217, three alpha code. | Used for an Alpha String, length exactly 3.
      * - base: xs:string
      * - pattern: [a-zA-Z]{3}
@@ -79,7 +79,7 @@ class ApiTaxType extends AbstractStructBase
     public $CurrencyCode;
     /**
      * The DecimalPlaces
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the number of decimal places for a particular currency. This is equivalent to the ISO 4217 standard "minor unit". Typically used when the amount provided includes the minor unit of currency without a decimal point (e.g.,
      * USD 8500 needs DecimalPlaces="2" to represent $85).
      * - type: xs:nonNegativeInteger

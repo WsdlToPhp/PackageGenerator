@@ -14,7 +14,7 @@ class ApiAddRequest extends AbstractStructBase
 {
     /**
      * The AdGroups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 1
      * @var \Api\StructType\ApiAdGroupAddItem[]

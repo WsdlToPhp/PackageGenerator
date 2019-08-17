@@ -99,7 +99,7 @@ class ApiFind extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named FindFolder
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: ExchangeImpersonation, MailboxCulture, RequestServerVersion, TimeZoneContext, ManagementRole
      * - SOAPHeaderNamespaces: http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types
      * - SOAPHeaderTypes: \Api\StructType\ApiExchangeImpersonationType, \Api\StructType\ApiMailboxCultureType, \Api\StructType\ApiRequestServerVersion, \Api\StructType\ApiTimeZoneContextType, \Api\StructType\ApiManagementRoleType
@@ -123,7 +123,7 @@ class ApiFind extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named FindItem
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: ExchangeImpersonation, MailboxCulture, RequestServerVersion, TimeZoneContext, DateTimePrecision, ManagementRole
      * - SOAPHeaderNamespaces: http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types
      * - SOAPHeaderTypes: \Api\StructType\ApiExchangeImpersonationType, \Api\StructType\ApiMailboxCultureType, \Api\StructType\ApiRequestServerVersion, \Api\StructType\ApiTimeZoneContextType, \Api\EnumType\ApiDateTimePrecisionType, \Api\StructType\ApiManagementRoleType
@@ -147,7 +147,7 @@ class ApiFind extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named FindMessageTrackingReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequestServerVersion
      * - SOAPHeaderNamespaces: http://schemas.microsoft.com/exchange/services/2006/types
      * - SOAPHeaderTypes: \Api\StructType\ApiRequestServerVersion
@@ -171,7 +171,7 @@ class ApiFind extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named FindConversation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequestServerVersion, ExchangeImpersonation
      * - SOAPHeaderNamespaces: http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types
      * - SOAPHeaderTypes: \Api\StructType\ApiRequestServerVersion, \Api\StructType\ApiExchangeImpersonationType
@@ -195,7 +195,7 @@ class ApiFind extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named FindPeople
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequestServerVersion, ExchangeImpersonation
      * - SOAPHeaderNamespaces: http://schemas.microsoft.com/exchange/services/2006/types, http://schemas.microsoft.com/exchange/services/2006/types
      * - SOAPHeaderTypes: \Api\StructType\ApiRequestServerVersion, \Api\StructType\ApiExchangeImpersonationType
@@ -219,7 +219,7 @@ class ApiFind extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named FindAvailableMeetingTimes
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequestServerVersion
      * - SOAPHeaderNamespaces: http://schemas.microsoft.com/exchange/services/2006/types
      * - SOAPHeaderTypes: \Api\StructType\ApiRequestServerVersion
@@ -243,7 +243,7 @@ class ApiFind extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named FindMeetingTimeCandidates
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequestServerVersion
      * - SOAPHeaderNamespaces: http://schemas.microsoft.com/exchange/services/2006/types
      * - SOAPHeaderTypes: \Api\StructType\ApiRequestServerVersion

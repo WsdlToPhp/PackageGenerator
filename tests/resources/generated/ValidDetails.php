@@ -14,7 +14,7 @@ class ApiDetails extends AbstractStructBase
 {
     /**
      * The mutualSettlementDetailCalcCostShipping
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -27,7 +27,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailCalcCostShipping;
     /**
      * The mutualSettlementDetailCashFlow
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -40,7 +40,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailCashFlow;
     /**
      * The mutualSettlementDetailClientPayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -53,7 +53,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailClientPayment;
     /**
      * The mutualSettlementDetailPostReturnRegistry
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -66,7 +66,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailPostReturnRegistry;
     /**
      * The mutualSettlementDetailRouteList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -79,7 +79,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailRouteList;
     /**
      * The mutualSettlementDetailTrackNumberPayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -92,7 +92,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailTrackNumberPayment;
     /**
      * The mutualSettlementDetailServiceRegistration
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -105,7 +105,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailServiceRegistration;
     /**
      * The mutualSettlementDetailAcceptanceRegistry
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -118,7 +118,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailAcceptanceRegistry;
     /**
      * The mutualSettlementDetailAdditionalChargeFare
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -131,7 +131,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailAdditionalChargeFare;
     /**
      * The mutualSettlementDetailOutgoingRequestToCarrier
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -144,7 +144,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailOutgoingRequestToCarrier;
     /**
      * The mutualSettlementDetailSMSInformation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -157,7 +157,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailSMSInformation;
     /**
      * The mutualSettlementDetailBuyerGoodsReturn
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -170,7 +170,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailBuyerGoodsReturn;
     /**
      * The mutualSettlementDetailProductsPackaging
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -183,7 +183,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailProductsPackaging;
     /**
      * The mutualSettlementDetailAdjustmentWriteRegisters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -196,7 +196,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailAdjustmentWriteRegisters;
     /**
      * The mutualSettlementDetailSafeCustody
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -209,7 +209,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailSafeCustody;
     /**
      * The mutualSettlementDetailSafeCustodyCalculation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |
@@ -222,7 +222,7 @@ class ApiDetails extends AbstractStructBase
     public $mutualSettlementDetailSafeCustodyCalculation;
     /**
      * The mutualSettlementDetailRegisterStorage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: mutualSettlementDetailCalcCostShipping | mutualSettlementDetailCashFlow | mutualSettlementDetailClientPayment | mutualSettlementDetailPostReturnRegistry | mutualSettlementDetailRouteList | mutualSettlementDetailTrackNumberPayment |
      * mutualSettlementDetailServiceRegistration | mutualSettlementDetailAcceptanceRegistry | mutualSettlementDetailAdditionalChargeFare | mutualSettlementDetailOutgoingRequestToCarrier | mutualSettlementDetailSMSInformation |
      * mutualSettlementDetailBuyerGoodsReturn | mutualSettlementDetailProductsPackaging | mutualSettlementDetailAdjustmentWriteRegisters | mutualSettlementDetailSafeCustody | mutualSettlementDetailSafeCustodyCalculation |

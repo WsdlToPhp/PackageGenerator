@@ -14,7 +14,7 @@ class ApiSearchRequest extends AbstractStructBase
 {
     /**
      * The Query
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -22,7 +22,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Query;
     /**
      * The AppId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -30,7 +30,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $AppId;
     /**
      * The Sources
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \Api\ArrayType\ApiArrayOfSourceType
@@ -38,7 +38,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Sources;
     /**
      * The parameters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \Api\StructType\ApiSearchRequest
@@ -46,7 +46,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $parameters;
     /**
      * The Version
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - default: 2.2
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -55,7 +55,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Version;
     /**
      * The Market
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -63,7 +63,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Market;
     /**
      * The UILanguage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -71,7 +71,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $UILanguage;
     /**
      * The Adult
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -79,7 +79,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Adult;
     /**
      * The Latitude
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var float
@@ -87,7 +87,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Latitude;
     /**
      * The Longitude
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var float
@@ -95,7 +95,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Longitude;
     /**
      * The Radius
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var float
@@ -103,7 +103,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Radius;
     /**
      * The Options
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\ArrayType\ApiArrayOfSearchOption
@@ -111,7 +111,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Options;
     /**
      * The Web
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiWebRequest
@@ -119,7 +119,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Web;
     /**
      * The Image
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiImageRequest
@@ -127,7 +127,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Image;
     /**
      * The Phonebook
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiPhonebookRequest
@@ -135,7 +135,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Phonebook;
     /**
      * The Video
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiVideoRequest
@@ -143,7 +143,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $Video;
     /**
      * The News
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiNewsRequest
@@ -151,7 +151,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $News;
     /**
      * The MobileWeb
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiMobileWebRequest
@@ -159,7 +159,7 @@ class ApiSearchRequest extends AbstractStructBase
     public $MobileWeb;
     /**
      * The Translation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiTranslationRequest

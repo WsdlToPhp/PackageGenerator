@@ -225,7 +225,7 @@ class StructTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidАдресРФ', $struct);
+            $this->assertSameFileContent('ValidAddress', $struct);
         } else {
             $this->fail('Unable to find АдресРФ struct for file generation');
         }
