@@ -20,7 +20,7 @@ Package Generator provides many options to generate your package even if a few a
 #### In a project:
 
 ```bash
-composer require wsdltophp/packagegenerator
+composer require wsdltophp/packagegenerator --dev
 ```
 
 #### With command line:
@@ -55,6 +55,9 @@ All the options are fully detailed in the [Options page](https://github.com/Wsdl
 #### In a project:
 
 ```php
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+
 // Options definition: the configuration file parameter is optional
 $options = GeneratorOptions::instance(/* '/path/file.yml' */);
 $options
