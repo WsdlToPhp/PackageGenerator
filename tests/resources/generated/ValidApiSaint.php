@@ -48,10 +48,10 @@ class ApiSaint extends AbstractSoapClientBase
      * @param string $export
      * @param string $overwrite
      * @param string $relation_id
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiSaint_ftp_info|bool
      */
-    public function Saint_CreateFTP($description, $email, $export, $overwrite, $relation_id, $rsid_list)
+    public function Saint_CreateFTP($description, $email, $export, $overwrite, $relation_id, array $rsid_list)
     {
         try {
             $this->setResult(self::getSoapClient()->__call('Saint.CreateFTP', array(
@@ -84,7 +84,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @param string $email_address
      * @param string $encoding
      * @param string $relation_id
-     * @param string $report_suite_array
+     * @param string[] $report_suite_array
      * @param string $row_match_filter_empty_column_name
      * @param string $row_match_filter_match_column_name
      * @param string $row_match_filter_match_column_value
@@ -92,7 +92,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @param string $select_number_of_rows
      * @return string|bool
      */
-    public function Saint_ExportCreateJob($campaign_filter_begin_range, $campaign_filter_end_range, $campaign_filter_option, $date_filter_row_end_date, $date_filter_row_start_date, $email_address, $encoding, $relation_id, $report_suite_array, $row_match_filter_empty_column_name, $row_match_filter_match_column_name, $row_match_filter_match_column_value, $select_all_rows, $select_number_of_rows)
+    public function Saint_ExportCreateJob($campaign_filter_begin_range, $campaign_filter_end_range, $campaign_filter_option, $date_filter_row_end_date, $date_filter_row_start_date, $email_address, $encoding, $relation_id, array $report_suite_array, $row_match_filter_empty_column_name, $row_match_filter_match_column_name, $row_match_filter_match_column_value, $select_all_rows, $select_number_of_rows)
     {
         try {
             $this->setResult(self::getSoapClient()->__call('Saint.ExportCreateJob', array(
@@ -150,10 +150,10 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $report_suite_array
+     * @param string[] $report_suite_array
      * @return \Api\StructType\ApiCompatability[]|bool
      */
-    public function Saint_GetCompatabiltyMetrics($report_suite_array)
+    public function Saint_GetCompatabiltyMetrics(array $report_suite_array)
     {
         try {
             $this->setResult(self::getSoapClient()->__call('Saint.GetCompatabiltyMetrics', array(
@@ -174,10 +174,10 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $relation_id
-     * @param string $report_suite_array
+     * @param string[] $report_suite_array
      * @return \Api\StructType\ApiExport_filter[]|bool
      */
-    public function Saint_GetFilters($relation_id, $report_suite_array)
+    public function Saint_GetFilters($relation_id, array $report_suite_array)
     {
         try {
             $this->setResult(self::getSoapClient()->__call('Saint.GetFilters', array(
@@ -199,13 +199,13 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $encoding
-     * @param string $numeric_div_nums
+     * @param int[] $numeric_div_nums
      * @param string $relation_id
      * @param string $report_suite
-     * @param string $text_div_nums
+     * @param int[] $text_div_nums
      * @return string|bool
      */
-    public function Saint_GetTemplate($encoding, $numeric_div_nums, $relation_id, $report_suite, $text_div_nums)
+    public function Saint_GetTemplate($encoding, array $numeric_div_nums, $relation_id, $report_suite, array $text_div_nums)
     {
         try {
             $this->setResult(self::getSoapClient()->__call('Saint.GetTemplate', array(
@@ -256,13 +256,13 @@ class ApiSaint extends AbstractSoapClientBase
      * @param string $description
      * @param string $email_address
      * @param string $export_results
-     * @param string $header
+     * @param string[] $header
      * @param string $overwrite_conflicts
      * @param string $relation_id
-     * @param string $report_suite_array
+     * @param string[] $report_suite_array
      * @return int|bool
      */
-    public function Saint_ImportCreateJob($check_divisions, $description, $email_address, $export_results, $header, $overwrite_conflicts, $relation_id, $report_suite_array)
+    public function Saint_ImportCreateJob($check_divisions, $description, $email_address, $export_results, array $header, $overwrite_conflicts, $relation_id, array $report_suite_array)
     {
         try {
             $this->setResult(self::getSoapClient()->__call('Saint.ImportCreateJob', array(
@@ -291,10 +291,10 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $job_id
      * @param string $page
-     * @param string $rows
+     * @param \Api\StructType\ApiRow[] $rows
      * @return string|bool
      */
-    public function Saint_ImportPopulateJob($job_id, $page, $rows)
+    public function Saint_ImportPopulateJob($job_id, $page, array $rows)
     {
         try {
             $this->setResult(self::getSoapClient()->__call('Saint.ImportPopulateJob', array(

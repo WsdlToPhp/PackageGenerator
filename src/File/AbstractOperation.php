@@ -17,6 +17,10 @@ abstract class AbstractOperation
     /**
      * @var string
      */
+    const ARRAY_TYPE = 'array';
+    /**
+     * @var string
+     */
     const SOAP_CALL_NAME = '__call';
     /**
      * @var MethodModel
@@ -67,8 +71,16 @@ abstract class AbstractOperation
         if (is_array($parameterTypes)) {
             foreach ($parameterTypes as $parameterName => $parameterType) {
                 $type = $methodUsage ? null : self::DEFAULT_TYPE;
-                if (($model = $this->getGenerator()->getStructByName($parameterType)) instanceof StructModel && $model->isStruct() && !$model->isRestriction()) {
-                    $type = $model->getPackagedName(true);
+                if (($model = $this->getGenerator()->getStructByName($parameterType)) instanceof StructModel) {
+                    if ($model->isStruct() && !$model->isRestriction()) {
+                        $type = $model->getPackagedName(true);
+                    } elseif (!$model->isStruct() && $model->isArray()) {
+                        if ($methodUsage) {
+                            $type = self::ARRAY_TYPE;
+                        } else {
+                            $type = ($struct = $model->getTopInheritanceStruct()) ? sprintf('%s[]', $struct->getPackagedName(true)) : $model->getTopInheritance();
+                        }
+                    }
                 }
                 $types[$parameterName] = $type;
             }

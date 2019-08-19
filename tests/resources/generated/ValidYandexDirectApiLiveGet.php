@@ -148,10 +148,10 @@ class Get extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $params
+     * @param string[] $params
      * @return \StructType\ClientsUnitInfo[]|bool
      */
-    public function GetClientsUnits($params)
+    public function GetClientsUnits(array $params)
     {
         try {
             $this->setResult(self::getSoapClient()->GetClientsUnits($params));
@@ -167,10 +167,10 @@ class Get extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $params
+     * @param string[] $params
      * @return \StructType\ClientInfo[]|bool
      */
-    public function GetClientInfo($params)
+    public function GetClientInfo(array $params)
     {
         try {
             $this->setResult(self::getSoapClient()->GetClientInfo($params));
@@ -205,10 +205,10 @@ class Get extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $params
+     * @param string[] $params
      * @return \StructType\ShortCampaignInfo[]|bool
      */
-    public function GetCampaignsList($params)
+    public function GetCampaignsList(array $params)
     {
         try {
             $this->setResult(self::getSoapClient()->GetCampaignsList($params));
@@ -243,10 +243,10 @@ class Get extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $params
+     * @param int[] $params
      * @return \StructType\CampaignBalanceInfo[]|bool
      */
-    public function GetBalance($params)
+    public function GetBalance(array $params)
     {
         try {
             $this->setResult(self::getSoapClient()->GetBalance($params));
@@ -262,10 +262,10 @@ class Get extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $params
+     * @param int[] $params
      * @return \StructType\BannerPhraseInfo[]|bool
      */
-    public function GetBannerPhrases($params)
+    public function GetBannerPhrases(array $params)
     {
         try {
             $this->setResult(self::getSoapClient()->GetBannerPhrases($params));
