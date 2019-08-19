@@ -22,7 +22,7 @@ class Utils
              * First line is the "The {propertyName}"
              */
             if (count($block->getChildren()) === 1) {
-                $block->addChild('Meta informations extracted from the WSDL');
+                $block->addChild('Meta information extracted from the WSDL');
             }
             foreach ($validMeta as $meta) {
                 $block->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, $meta, AbstractModelFile::ANNOTATION_META_LENGTH));

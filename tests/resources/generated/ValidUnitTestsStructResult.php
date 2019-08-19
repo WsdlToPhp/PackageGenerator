@@ -14,7 +14,7 @@ class ApiResult extends AbstractStructBase
 {
     /**
      * The Success
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - base: xsd:boolean
      * - choice: Success | Errors
      * - choiceMaxOccurs: 1
@@ -27,7 +27,7 @@ class ApiResult extends AbstractStructBase
     public $Success;
     /**
      * The Errors
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - choice: Success | Errors
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
@@ -38,7 +38,7 @@ class ApiResult extends AbstractStructBase
     public $Errors;
     /**
      * The Warnings
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\StructType\ApiWarnings

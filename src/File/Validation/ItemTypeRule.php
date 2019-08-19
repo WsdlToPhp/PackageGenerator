@@ -39,7 +39,7 @@ class ItemTypeRule extends AbstractRule
     }
 
     /**
-     * The second case which used PHP native functions is volontary limited by the native functions provided by PHP,
+     * The second case which used PHP native functions is voluntarily limited by the native functions provided by PHP,
      * and the possible types defined in xsd_types.yml
      * @param string $itemName
      * @return string

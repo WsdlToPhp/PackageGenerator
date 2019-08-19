@@ -225,7 +225,7 @@ class StructTest extends AbstractFile
             $struct
                 ->setModel($model)
                 ->write();
-            $this->assertSameFileContent('ValidАдресРФ', $struct);
+            $this->assertSameFileContent('ValidAddress', $struct);
         } else {
             $this->fail('Unable to find АдресРФ struct for file generation');
         }
@@ -478,6 +478,22 @@ class StructTest extends AbstractFile
             $this->assertSameFileContent('ValidWorkingPeriod', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find WorkingPeriod struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteEwsStructProposeNewTimeTypeWithNoConstructor()
+    {
+        $generator = self::ewsInstance();
+        if (($model = $generator->getStructByName('ProposeNewTimeType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidProposeNewTimeType', $struct);
+        } else {
+            $this->assertFalse(true, 'Unable to find ProposeNewTimeType struct for file generation');
         }
     }
 }

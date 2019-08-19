@@ -14,7 +14,7 @@ class ApiFareItinerary extends AbstractStructBase
 {
     /**
      * The price
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \Api\StructType\ApiFareItineraryPrice
@@ -22,21 +22,21 @@ class ApiFareItinerary extends AbstractStructBase
     public $price;
     /**
      * The key
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
     public $key;
     /**
      * The firstSegmentsIds
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - use: required
      * @var int[]
      */
     public $firstSegmentsIds;
     /**
      * The clickoutURLParams
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string

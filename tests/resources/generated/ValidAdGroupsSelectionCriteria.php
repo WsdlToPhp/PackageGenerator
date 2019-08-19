@@ -14,7 +14,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
 {
     /**
      * The CampaignIds
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var int[]
@@ -22,7 +22,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public $CampaignIds;
     /**
      * The Ids
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var int[]
@@ -30,7 +30,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public $Ids;
     /**
      * The Types
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var string[]
@@ -38,7 +38,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public $Types;
     /**
      * The Statuses
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var string[]
@@ -46,7 +46,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public $Statuses;
     /**
      * The TagIds
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var int[]
@@ -54,7 +54,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public $TagIds;
     /**
      * The Tags
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var string[]
@@ -62,7 +62,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public $Tags;
     /**
      * The AppIconStatuses
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var string[]

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for HotelReservationType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: The Reservation class contains the point of sale, reservation identifier, room stay, service, guest, payment, loyalty program, comments, confirmation and queue information for the reservation being created or modify.
  * @package Api
  * @subpackage Structs
@@ -16,7 +16,7 @@ class ApiHotelReservationType extends AbstractStructBase
 {
     /**
      * The RoomStays
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Collection of room stays.
      * - minOccurs: 0
      * @var \Api\StructType\ApiRoomStaysType
@@ -24,7 +24,7 @@ class ApiHotelReservationType extends AbstractStructBase
     public $RoomStays;
     /**
      * The ResGuests
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Collection of guests associated with the reservation.
      * - minOccurs: 0
      * @var \Api\StructType\ApiResGuestsType
@@ -32,7 +32,7 @@ class ApiHotelReservationType extends AbstractStructBase
     public $ResGuests;
     /**
      * The ResGlobalInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: ResGlobalInfo is a container for various information that affects the Reservation as a whole. These include global comments, counts, reservation IDs, loyalty programs, and payment methods.
      * - minOccurs: 0
      * @var \Api\StructType\ApiResGlobalInfoType
@@ -40,7 +40,7 @@ class ApiHotelReservationType extends AbstractStructBase
     public $ResGlobalInfo;
     /**
      * The RoomStayReservation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Boolean True if this reservation is reserving rooms. False if it is only reserving services.
      * - use: optional
      * @var bool
@@ -48,7 +48,7 @@ class ApiHotelReservationType extends AbstractStructBase
     public $RoomStayReservation;
     /**
      * The ResStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the status of the reservation. | A union between TransactionActionType and PMS_ResStatusType. Used in messages that communicate between reservation systems as well as between a reservation and property management system. In
      * addition to the TransactionActionType and PMS_ResStatusType, the UpperCaseAlphaLength1to2 may be used for company specifc codes.
      * - union: PMS_ResStatusType | TransactionActionType | UpperCaseAlphaLength1to2

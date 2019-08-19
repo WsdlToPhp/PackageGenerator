@@ -14,7 +14,7 @@ class ApiLogin extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named Login
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Выполняет авторизацию внешней системы и открывает сеанс работы
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()

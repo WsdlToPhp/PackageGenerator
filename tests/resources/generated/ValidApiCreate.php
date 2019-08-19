@@ -14,7 +14,7 @@ class ApiCreate extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named CreateQueue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The CreateQueue action creates a new queue, or returns the URL of an existing one. When you request CreateQueue, you provide a name for the queue. To successfully create a new queue, you must provide a name that is unique within the
      * scope of your own queues. If you provide the name of an existing queue, a new queue isn't created and an error isn't returned. Instead, the request succeeds and the queue URL for the existing queue is returned. A CreateQueue call may include
      * attributes to set on a newly created queue. The effect is the same as the CreateQueue call followed by a SetQueueAttributes call (with the same attributes). However, when the queue already exists CreateQueue will not update any attributes. It simply

@@ -4,7 +4,7 @@ namespace Api\EnumType;
 
 /**
  * This class stands for TransactionActionType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: To specify the type of action requested when more than one function could be handled by the message.
  * @package Api
  * @subpackage Enumerations
@@ -54,21 +54,21 @@ class ApiTransactionActionType
     const VALUE_CANCEL = 'Cancel';
     /**
      * Constant for value 'CommitOverrideEdits'
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Commit the transaction and override the end transaction edits.
      * @return string 'CommitOverrideEdits'
      */
     const VALUE_COMMIT_OVERRIDE_EDITS = 'CommitOverrideEdits';
     /**
      * Constant for value 'VerifyPrice'
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Perform a price verification.
      * @return string 'VerifyPrice'
      */
     const VALUE_VERIFY_PRICE = 'VerifyPrice';
     /**
      * Constant for value 'Ticket'
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A ticket for an event, such as a show or theme park.
      * @return string 'Ticket'
      */

@@ -95,7 +95,7 @@ class Wsdl extends AbstractDocument
         ], $includeExternals);
     }
     /**
-     * Handler any method that exist within the parant class,
+     * Handler any method that exist within the parent class,
      * in addition it handles the case when we want to use the external schemas to search in
      * @param string $method
      * @param array $parameters

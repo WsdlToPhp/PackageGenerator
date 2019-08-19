@@ -14,63 +14,63 @@ class ApiBannerInfo extends AbstractStructBase
 {
     /**
      * The BannerID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $BannerID;
     /**
      * The CampaignID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $CampaignID;
     /**
      * The Title
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $Title;
     /**
      * The Text
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $Text;
     /**
      * The Href
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $Href;
     /**
      * The Domain
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $Domain;
     /**
      * The ContactInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiContactInfo
      */
     public $ContactInfo;
     /**
      * The Geo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $Geo;
     /**
      * The Phrases
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - arrayType: namesp1:BannerPhraseInfo[]
      * - base: soapenc:Array
      * - nillable: true
@@ -80,7 +80,7 @@ class ApiBannerInfo extends AbstractStructBase
     public $Phrases;
     /**
      * The MinusKeywords
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - arrayType: xsd:string[]
      * - base: soapenc:Array
      * - nillable: true
@@ -90,63 +90,63 @@ class ApiBannerInfo extends AbstractStructBase
     public $MinusKeywords;
     /**
      * The StatusActivating
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $StatusActivating;
     /**
      * The StatusArchive
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $StatusArchive;
     /**
      * The StatusBannerModerate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $StatusBannerModerate;
     /**
      * The StatusPhrasesModerate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $StatusPhrasesModerate;
     /**
      * The StatusPhoneModerate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $StatusPhoneModerate;
     /**
      * The StatusShow
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $StatusShow;
     /**
      * The IsActive
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $IsActive;
     /**
      * The StatusSitelinksModerate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $StatusSitelinksModerate;
     /**
      * The Sitelinks
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - arrayType: namesp1:Sitelink[]
      * - base: soapenc:Array
      * - nillable: true
@@ -156,7 +156,7 @@ class ApiBannerInfo extends AbstractStructBase
     public $Sitelinks;
     /**
      * The AdWarnings
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - arrayType: xsd:string[]
      * - base: soapenc:Array
      * - nillable: true
@@ -166,14 +166,14 @@ class ApiBannerInfo extends AbstractStructBase
     public $AdWarnings;
     /**
      * The FixedOnModeration
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $FixedOnModeration;
     /**
      * The ModerateRejectionReasons
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - arrayType: namesp1:RejectReason[]
      * - base: soapenc:Array
      * - nillable: true
@@ -183,56 +183,56 @@ class ApiBannerInfo extends AbstractStructBase
     public $ModerateRejectionReasons;
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $Type;
     /**
      * The AdGroupID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
     public $AdGroupID;
     /**
      * The AdGroupName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $AdGroupName;
     /**
      * The AutoMinusWords
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $AutoMinusWords;
     /**
      * The AgeLabel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $AgeLabel;
     /**
      * The AdImageHash
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $AdImageHash;
     /**
      * The StatusAdImageModerate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
     public $StatusAdImageModerate;
     /**
      * The AdGroupMobileBidAdjustment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */

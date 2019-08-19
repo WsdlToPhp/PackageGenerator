@@ -14,7 +14,7 @@ class ApiWorkingPeriod extends AbstractStructBase
 {
     /**
      * The DayOfWeek
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string[]
@@ -22,7 +22,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     public $DayOfWeek;
     /**
      * The StartTimeInMinutes
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var int
@@ -30,7 +30,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     public $StartTimeInMinutes;
     /**
      * The EndTimeInMinutes
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var int

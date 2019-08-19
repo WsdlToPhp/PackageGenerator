@@ -14,7 +14,7 @@ class ApiService extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named CodeManager.DeleteCodeArchive
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Delete page code.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -37,7 +37,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CodeManager.GenerateCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Generates page code.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -70,18 +70,18 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CodeManager.GetCodeArchives
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns a list of existing code archives.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $archive_id_list
+     * @param int[] $archive_id_list
      * @param string $binary_encoding
      * @param string $populate_code_items
      * @return \Api\StructType\ApiCode_archive[]|bool
      */
-    public function CodeManager_GetCodeArchives($archive_id_list, $binary_encoding, $populate_code_items)
+    public function CodeManager_GetCodeArchives(array $archive_id_list, $binary_encoding, $populate_code_items)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('CodeManager.GetCodeArchives', array(
@@ -97,7 +97,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named CodeManager.SaveCodeArchive
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a page code archive.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -106,10 +106,10 @@ class ApiService extends AbstractSoapClientBase
      * @param string $archive_description
      * @param string $archive_id
      * @param string $archive_name
-     * @param string $code
+     * @param \Api\StructType\ApiCode_item[] $code
      * @return int|bool
      */
-    public function CodeManager_SaveCodeArchive($archive_description, $archive_id, $archive_name, $code)
+    public function CodeManager_SaveCodeArchive($archive_description, $archive_id, $archive_name, array $code)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('CodeManager.SaveCodeArchive', array(
@@ -126,7 +126,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.CancelQueueItem
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cancel a pending (queued) action that has yet to be approved.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -149,7 +149,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.DownloadProduct
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Downloads a product. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -172,7 +172,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetEndpoint
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the correct SOAP endpoint to be used for API calls
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -195,7 +195,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetQueue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns queued items that are pending approval for the requesting company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -215,17 +215,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetReportSuites
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves all report suites associated with your company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rs_types
+     * @param string[] $rs_types
      * @param string $sp
      * @return \Api\StructType\ApiSimple_report_suites_rval|bool
      */
-    public function Company_GetReportSuites($rs_types, $sp)
+    public function Company_GetReportSuites(array $rs_types, $sp)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Company.GetReportSuites', array(
@@ -240,7 +240,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetTokenCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns remaining tokens for a given auth key (note that this call also consumes a token).
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -260,7 +260,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetTokenUsage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns token usage information (note that this call also consumes a token).
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -280,7 +280,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetTrackingServer
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the tracking server and namespace for the given report suite
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -303,7 +303,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.GetVersionAccess
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves version access for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -323,7 +323,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Company.ResetTokenCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Resets the token count for the given auth key.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -346,7 +346,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Dashboards.GetDashboardAPI
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of reportlets owned by the given dashboard.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -371,7 +371,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Dashboards.GetReportletDataAPI
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves data for a given reportlet.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -394,7 +394,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.AppendDataBlock
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Add rows of data to and optionally end a block of data begun by a BeginDataBlock call
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -404,10 +404,10 @@ class ApiService extends AbstractSoapClientBase
      * @param string $dataSourceID
      * @param string $endOfBlock
      * @param string $reportSuiteID
-     * @param string $rows
+     * @param \Api\ArrayType\ApiColArray[] $rows
      * @return array|bool
      */
-    public function DataSource_AppendDataBlock($blockID, $dataSourceID, $endOfBlock, $reportSuiteID, $rows)
+    public function DataSource_AppendDataBlock($blockID, $dataSourceID, $endOfBlock, $reportSuiteID, array $rows)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('DataSource.AppendDataBlock', array(
@@ -425,21 +425,21 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.BeginDataBlock
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Begin and optionally end a block of data to be inserted into the Data Sources processing queue
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $blockName
-     * @param string $columnNames
+     * @param string[] $columnNames
      * @param string $dataSourceID
      * @param string $endOfBlock
      * @param string $reportSuiteID
-     * @param string $rows
+     * @param \Api\ArrayType\ApiColArray[] $rows
      * @return array|bool
      */
-    public function DataSource_BeginDataBlock($blockName, $columnNames, $dataSourceID, $endOfBlock, $reportSuiteID, $rows)
+    public function DataSource_BeginDataBlock($blockName, array $columnNames, $dataSourceID, $endOfBlock, $reportSuiteID, array $rows)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('DataSource.BeginDataBlock', array(
@@ -458,7 +458,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.Deactivate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deactivates a Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -483,7 +483,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetFileIDs
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns array of file ids for a given data source id.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -510,7 +510,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetFileInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns dataSource file status information.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -537,7 +537,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetFileStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns dataSource file status information.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -562,7 +562,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetIDs
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns a list of data sources that belong to the specified report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -585,7 +585,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.GetInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns dataSource file status information.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -610,7 +610,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.ProcessIncompleteVisits
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Processes incomplete visits for a DataSource
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -635,7 +635,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.Restart
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets DataSource file state to processing.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -660,7 +660,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.SetupFull
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates or modifies a Full Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -687,7 +687,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.SetupGeneric
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates or modifies a Generic Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -716,7 +716,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.SetupTraffic
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates or modifies a Traffic Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -743,7 +743,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataSource.SetupWebLog
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates or modifies a Webserver Log Data Source.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -770,7 +770,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.CancelRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cancels a Data Warehouse Request.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -793,7 +793,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.CheckRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Checks the status of a Data Warehouse Request.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -816,7 +816,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.CreateSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Create a new data warehouse segment
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -843,7 +843,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.GetReportData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Obtain content for the given request
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -870,7 +870,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.GetSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Obtain a description of an existing data warehouse segment
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -895,7 +895,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.GetSegments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets available segments.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -918,7 +918,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.ReplaceSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Replace a data warehouse segment of the given id with the given segment.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -945,13 +945,13 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.Request
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a Data Warehouse Request.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $breakdown_List
+     * @param string[] $breakdown_List
      * @param string $contact_Name
      * @param string $contact_Phone
      * @param string $date_From
@@ -967,14 +967,14 @@ class ApiService extends AbstractSoapClientBase
      * @param string $fTP_Port
      * @param string $fTP_UserName
      * @param string $file_Name
-     * @param string $metric_List
+     * @param string[] $metric_List
      * @param string $report_Description
      * @param string $report_Name
      * @param string $segment_Id
      * @param string $rsid
      * @return int|bool
      */
-    public function DataWarehouse_Request($breakdown_List, $contact_Name, $contact_Phone, $date_From, $date_Granularity, $date_Preset, $date_To, $date_Type, $email_Subject, $email_To, $fTP_Dir, $fTP_Host, $fTP_Password, $fTP_Port, $fTP_UserName, $file_Name, $metric_List, $report_Description, $report_Name, $segment_Id, $rsid)
+    public function DataWarehouse_Request(array $breakdown_List, $contact_Name, $contact_Phone, $date_From, $date_Granularity, $date_Preset, $date_To, $date_Type, $email_Subject, $email_To, $fTP_Dir, $fTP_Host, $fTP_Password, $fTP_Port, $fTP_UserName, $file_Name, array $metric_List, $report_Description, $report_Name, $segment_Id, $rsid)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('DataWarehouse.Request', array(
@@ -1008,7 +1008,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DataWarehouse.VerifySegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Verify the correctness of the given data warehouse segment
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1031,7 +1031,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DeliveryList.Delete
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Delete a distribution list.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1054,7 +1054,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DeliveryList.Get
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets Publishing list.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1077,7 +1077,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named DeliveryList.Save
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Save delivery list.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1102,7 +1102,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Discover.GetSegments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieve a list of Discover segments for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1129,7 +1129,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Discover.QueueDiscoverOvertime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue a Discover overtime report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1152,7 +1152,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Discover.QueueDiscoverRanked
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue a Discover ranked report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1175,7 +1175,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Discover.QueueDiscoverTrended
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue a Discover trended report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1198,7 +1198,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Logs.GetAdminConsoleCompanyLog
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get console logs.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1207,12 +1207,12 @@ class ApiService extends AbstractSoapClientBase
      * @param string $company
      * @param string $end_date
      * @param string $filter_rule
-     * @param string $filters
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiLog_filter[] $filters
+     * @param string[] $rsid_list
      * @param string $start_date
      * @return \Api\StructType\ApiLog_entry[]|bool
      */
-    public function Logs_GetAdminConsoleCompanyLog($company, $end_date, $filter_rule, $filters, $rsid_list, $start_date)
+    public function Logs_GetAdminConsoleCompanyLog($company, $end_date, $filter_rule, array $filters, array $rsid_list, $start_date)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Logs.GetAdminConsoleCompanyLog', array(
@@ -1231,7 +1231,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Logs.GetAdminConsoleLog
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get console logs.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1240,12 +1240,12 @@ class ApiService extends AbstractSoapClientBase
      * @param string $company
      * @param string $end_date
      * @param string $filter_rule
-     * @param string $filters
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiLog_filter[] $filters
+     * @param string[] $rsid_list
      * @param string $start_date
      * @return \Api\StructType\ApiLog_entry[]|bool
      */
-    public function Logs_GetAdminConsoleLog($company, $end_date, $filter_rule, $filters, $rsid_list, $start_date)
+    public function Logs_GetAdminConsoleLog($company, $end_date, $filter_rule, array $filters, array $rsid_list, $start_date)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Logs.GetAdminConsoleLog', array(
@@ -1264,7 +1264,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Logs.GetUsageLog
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieve usage log information for the given company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1299,7 +1299,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.AddLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a new login for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1315,14 +1315,14 @@ class ApiService extends AbstractSoapClientBase
      * @param string $login
      * @param string $password
      * @param string $phone_number
-     * @param string $selected_group_list
+     * @param \Api\StructType\ApiPermission_group[] $selected_group_list
      * @param string $temp_login
      * @param string $temp_login_end
      * @param string $temp_login_start
      * @param string $title
      * @return int|bool
      */
-    public function Permissions_AddLogin($admin, $change_password, $create_dashboards, $dashboard_rsid, $email, $first_name, $last_name, $login, $password, $phone_number, $selected_group_list, $temp_login, $temp_login_end, $temp_login_start, $title)
+    public function Permissions_AddLogin($admin, $change_password, $create_dashboards, $dashboard_rsid, $email, $first_name, $last_name, $login, $password, $phone_number, array $selected_group_list, $temp_login, $temp_login_end, $temp_login_start, $title)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Permissions.AddLogin', array(
@@ -1350,7 +1350,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.Authenticate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether or not the login is valid for this company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1375,7 +1375,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.DeleteGroup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Removes the requested group from the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1398,7 +1398,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.DeleteLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Removes a user login from the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1421,7 +1421,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetCRMInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves CRM login information for a specific user.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1446,7 +1446,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetCategories
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves subgroups for a category.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1471,7 +1471,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetGroup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves information about a particular group.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1496,7 +1496,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetGroups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves all available groups for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1521,7 +1521,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a user login for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1544,7 +1544,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetLogins
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves user logins for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1569,7 +1569,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetReportBuilderLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: ReportBuilder login (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1593,7 +1593,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * Permissions.GetReportSuiteGroupCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves all available accounts for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1618,7 +1618,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.GetReportSuiteGroups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the groups that this report suite is a part of.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1641,7 +1641,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.HasPrivilege
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Determines if the current user has the given privilegeToken
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1664,7 +1664,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.SaveGroup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves group setting - if the group does not exist it creates a new one.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1674,14 +1674,14 @@ class ApiService extends AbstractSoapClientBase
      * @param string $group_name
      * @param string $group_type
      * @param string $groupid
-     * @param string $perm_info
+     * @param \Api\StructType\ApiPerm_data[] $perm_info
      * @param \Api\StructType\ApiReport_categories $report_access_list
-     * @param string $report_id_list
-     * @param string $rsid_list
-     * @param string $user_list
+     * @param int[] $report_id_list
+     * @param string[] $rsid_list
+     * @param string[] $user_list
      * @return int|bool
      */
-    public function Permissions_SaveGroup($group_description, $group_name, $group_type, $groupid, $perm_info, \Api\StructType\ApiReport_categories $report_access_list, $report_id_list, $rsid_list, $user_list)
+    public function Permissions_SaveGroup($group_description, $group_name, $group_type, $groupid, array $perm_info, \Api\StructType\ApiReport_categories $report_access_list, array $report_id_list, array $rsid_list, array $user_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Permissions.SaveGroup', array(
@@ -1703,7 +1703,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.SaveLogin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the login for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1717,7 +1717,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $login
      * @param string $password
      * @param string $phone_number
-     * @param string $selected_group_list
+     * @param \Api\StructType\ApiPermission_group[] $selected_group_list
      * @param string $send_welcome_email
      * @param string $temp_end_date
      * @param string $temp_login
@@ -1725,7 +1725,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $title
      * @return int|bool
      */
-    public function Permissions_SaveLogin($admin, $change_password, $email, $first_name, $last_name, $login, $password, $phone_number, $selected_group_list, $send_welcome_email, $temp_end_date, $temp_login, $temp_start_date, $title)
+    public function Permissions_SaveLogin($admin, $change_password, $email, $first_name, $last_name, $login, $password, $phone_number, array $selected_group_list, $send_welcome_email, $temp_end_date, $temp_login, $temp_start_date, $title)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Permissions.SaveLogin', array(
@@ -1752,17 +1752,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Permissions.SaveReportSuiteGroups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Assigns the provided groups to the indicated report suite ID.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rsid
-     * @param string $selected_groups
+     * @param int[] $selected_groups
      * @return int|bool
      */
-    public function Permissions_SaveReportSuiteGroups($rsid, $selected_groups)
+    public function Permissions_SaveReportSuiteGroups($rsid, array $selected_groups)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Permissions.SaveReportSuiteGroups', array(
@@ -1777,7 +1777,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.CancelReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cancel a report request.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1800,7 +1800,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetElementNames
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieve element names
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1823,7 +1823,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetOvertimeReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Runs an overtime report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1846,7 +1846,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetRankedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Runs a ranked report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1869,7 +1869,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get status and data for a queued report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1892,7 +1892,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetReportQueue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieve the report queue for a given company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1912,7 +1912,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get status for a queued report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1935,7 +1935,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.GetTrendedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Runs a trended report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1958,7 +1958,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.QueueOvertime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue an overtime report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -1981,7 +1981,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.QueueRanked
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue an ranked report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2004,7 +2004,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.QueueSCMRanked
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue a ranked report that is optimized for SearchCenter classifications.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2027,7 +2027,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Report.QueueTrended
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Queue an trended report.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2050,18 +2050,18 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.AddCorrelations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the given correlation for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rel_ids
-     * @param string $rsid_list
+     * @param int[] $rel_ids
+     * @param string[] $rsid_list
      * @param string $size
      * @return int|bool
      */
-    public function ReportSuite_AddCorrelations($rel_ids, $rsid_list, $size)
+    public function ReportSuite_AddCorrelations(array $rel_ids, array $rsid_list, $size)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.AddCorrelations', array(
@@ -2077,17 +2077,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.AddInternalURLFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Adds the internal URL filters for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $filters
-     * @param string $rsid_list
+     * @param string[] $filters
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_AddInternalURLFilters($filters, $rsid_list)
+    public function ReportSuite_AddInternalURLFilters(array $filters, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.AddInternalURLFilters', array(
@@ -2102,17 +2102,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.AddKeyVisitors
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Adds a key visitors for the selected report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $key_visitors
-     * @param string $rsid_list
+     * @param string[] $key_visitors
+     * @param string[] $rsid_list
      * @return boolean|bool
      */
-    public function ReportSuite_AddKeyVisitors($key_visitors, $rsid_list)
+    public function ReportSuite_AddKeyVisitors(array $key_visitors, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.AddKeyVisitors', array(
@@ -2127,16 +2127,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.AddSavedFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves filter. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $savedFilters
+     * @param \Api\StructType\ApiSaved_filter[] $savedFilters
      * @return \Api\StructType\ApiSaved_filter[]|bool
      */
-    public function ReportSuite_AddSavedFilters($savedFilters)
+    public function ReportSuite_AddSavedFilters(array $savedFilters)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.AddSavedFilters', array(
@@ -2150,7 +2150,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.Create
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a new report suite with the values specified
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2191,16 +2191,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteBaseURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the base URL for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_DeleteBaseURL($rsid_list)
+    public function ReportSuite_DeleteBaseURL(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteBaseURL', array(
@@ -2215,17 +2215,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteCalculatedMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes a calculated metric for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $calculated_metrics
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiCalculated_metric[] $calculated_metrics
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_DeleteCalculatedMetrics($calculated_metrics, $rsid_list)
+    public function ReportSuite_DeleteCalculatedMetrics(array $calculated_metrics, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteCalculatedMetrics', array(
@@ -2240,7 +2240,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteClassifications
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes a classification for one report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2249,10 +2249,10 @@ class ApiService extends AbstractSoapClientBase
      * @param string $c_view
      * @param string $div_num
      * @param string $parent_div_num
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return boolean|bool
      */
-    public function ReportSuite_DeleteClassifications($c_view, $div_num, $parent_div_num, $rsid_list)
+    public function ReportSuite_DeleteClassifications($c_view, $div_num, $parent_div_num, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteClassifications', array(
@@ -2269,18 +2269,18 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteCorrelations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the specified data correlations
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rel_ids
-     * @param string $rsid_list
+     * @param int[] $rel_ids
+     * @param string[] $rsid_list
      * @param string $size
      * @return boolean|bool
      */
-    public function ReportSuite_DeleteCorrelations($rel_ids, $rsid_list, $size)
+    public function ReportSuite_DeleteCorrelations(array $rel_ids, array $rsid_list, $size)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteCorrelations', array(
@@ -2296,16 +2296,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteDefaultPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the default page for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_DeleteDefaultPage($rsid_list)
+    public function ReportSuite_DeleteDefaultPage(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteDefaultPage', array(
@@ -2320,17 +2320,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteIPAddressExclusions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Delete an IP exclusion entry for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $ip_list
-     * @param string $rsid_list
+     * @param string[] $ip_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_DeleteIPAddressExclusions($ip_list, $rsid_list)
+    public function ReportSuite_DeleteIPAddressExclusions(array $ip_list, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteIPAddressExclusions', array(
@@ -2346,17 +2346,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteInternalURLFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the specified internal URL filters
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $filters
-     * @param string $rsid_list
+     * @param string[] $filters
+     * @param string[] $rsid_list
      * @return boolean|bool
      */
-    public function ReportSuite_DeleteInternalURLFilters($filters, $rsid_list)
+    public function ReportSuite_DeleteInternalURLFilters(array $filters, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteInternalURLFilters', array(
@@ -2371,17 +2371,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteKeyVisitors
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: deletes a list of key visitors for the selected report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $key_visitors
-     * @param string $rsid_list
+     * @param string[] $key_visitors
+     * @param string[] $rsid_list
      * @return boolean|bool
      */
-    public function ReportSuite_DeleteKeyVisitors($key_visitors, $rsid_list)
+    public function ReportSuite_DeleteKeyVisitors(array $key_visitors, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteKeyVisitors', array(
@@ -2397,7 +2397,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteMarketingChannelCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes a cost item for the selected report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -2406,10 +2406,10 @@ class ApiService extends AbstractSoapClientBase
      * @param string $channel_type
      * @param string $cost_group
      * @param string $id
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return boolean|bool
      */
-    public function ReportSuite_DeleteMarketingChannelCost($channel_type, $cost_group, $id, $rsid_list)
+    public function ReportSuite_DeleteMarketingChannelCost($channel_type, $cost_group, $id, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteMarketingChannelCost', array(
@@ -2427,17 +2427,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.DeleteMarketingChannels
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Delete marketing channels.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $channel_ids
-     * @param string $rsid_list
+     * @param int[] $channel_ids
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_DeleteMarketingChannels($channel_ids, $rsid_list)
+    public function ReportSuite_DeleteMarketingChannels(array $channel_ids, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteMarketingChannels', array(
@@ -2452,17 +2452,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeletePages
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes the given pages from the requested report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $page_id_list
-     * @param string $rsid_list
+     * @param int[] $page_id_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_DeletePages($page_id_list, $rsid_list)
+    public function ReportSuite_DeletePages(array $page_id_list, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeletePages', array(
@@ -2477,19 +2477,19 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeletePaidSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Removes the specified paid search rule.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $filter
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $rule
      * @param string $search_engine
      * @return int|bool
      */
-    public function ReportSuite_DeletePaidSearch($filter, $rsid_list, $rule, $search_engine)
+    public function ReportSuite_DeletePaidSearch($filter, array $rsid_list, $rule, $search_engine)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeletePaidSearch', array(
@@ -2506,16 +2506,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.DeleteSavedFilter
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes a saved filter. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $savedFilterIds
+     * @param int[] $savedFilterIds
      * @return boolean|bool
      */
-    public function ReportSuite_DeleteSavedFilter($savedFilterIds)
+    public function ReportSuite_DeleteSavedFilter(array $savedFilterIds)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.DeleteSavedFilter', array(
@@ -2529,16 +2529,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetActivation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the activated status for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_activation[]|bool
      */
-    public function ReportSuite_GetActivation($rsid_list)
+    public function ReportSuite_GetActivation(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetActivation', array(
@@ -2552,17 +2552,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetAvailableElements
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns available elements for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $return_datawarehouse_elements
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_elements[]|bool
      */
-    public function ReportSuite_GetAvailableElements($return_datawarehouse_elements, $rsid_list)
+    public function ReportSuite_GetAvailableElements($return_datawarehouse_elements, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetAvailableElements', array(
@@ -2577,17 +2577,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetAvailableMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns available metrics for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $return_datawarehouse_metrics
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_metrics[]|bool
      */
-    public function ReportSuite_GetAvailableMetrics($return_datawarehouse_metrics, $rsid_list)
+    public function ReportSuite_GetAvailableMetrics($return_datawarehouse_metrics, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetAvailableMetrics', array(
@@ -2602,16 +2602,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetAxleStartDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the axle start date for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiRs_axle_start_date[]|bool
      */
-    public function ReportSuite_GetAxleStartDate($rsid_list)
+    public function ReportSuite_GetAxleStartDate(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetAxleStartDate', array(
@@ -2625,16 +2625,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetBaseCurrency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the base URL for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_base_currency[]|bool
      */
-    public function ReportSuite_GetBaseCurrency($rsid_list)
+    public function ReportSuite_GetBaseCurrency(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetBaseCurrency', array(
@@ -2648,16 +2648,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetBaseURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the base URL for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_base_url[]|bool
      */
-    public function ReportSuite_GetBaseURL($rsid_list)
+    public function ReportSuite_GetBaseURL(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetBaseURL', array(
@@ -2671,16 +2671,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetCalculatedMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the calculated metrics for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_calculated_metric[]|bool
      */
-    public function ReportSuite_GetCalculatedMetrics($rsid_list)
+    public function ReportSuite_GetCalculatedMetrics(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetCalculatedMetrics', array(
@@ -2695,18 +2695,18 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetClassificationHierarchies
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the requested classifications from the requested report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $c_view
-     * @param string $rel_id
-     * @param string $rsid_list
+     * @param string[] $rel_id
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_hierarchies[]|bool
      */
-    public function ReportSuite_GetClassificationHierarchies($c_view, $rel_id, $rsid_list)
+    public function ReportSuite_GetClassificationHierarchies($c_view, array $rel_id, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetClassificationHierarchies', array(
@@ -2722,19 +2722,19 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetClassifications
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the requested classifications from the requested report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $c_view
-     * @param string $rel_id
-     * @param string $rsid_list
+     * @param string[] $rel_id
+     * @param string[] $rsid_list
      * @param string $type
      * @return \Api\StructType\ApiReport_suite_classification[]|bool
      */
-    public function ReportSuite_GetClassifications($c_view, $rel_id, $rsid_list, $type)
+    public function ReportSuite_GetClassifications($c_view, array $rel_id, array $rsid_list, $type)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetClassifications', array(
@@ -2751,16 +2751,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetCorrelations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the correlations for the specified report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_correlation[]|bool
      */
-    public function ReportSuite_GetCorrelations($rsid_list)
+    public function ReportSuite_GetCorrelations(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetCorrelations', array(
@@ -2774,16 +2774,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetCustomCalendar
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the custom calendar for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_custom_calendar[]|bool
      */
-    public function ReportSuite_GetCustomCalendar($rsid_list)
+    public function ReportSuite_GetCustomCalendar(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetCustomCalendar', array(
@@ -2797,16 +2797,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetDefaultPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the default page for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_default_page[]|bool
      */
-    public function ReportSuite_GetDefaultPage($rsid_list)
+    public function ReportSuite_GetDefaultPage(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetDefaultPage', array(
@@ -2820,16 +2820,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetEVars
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the conversion variables for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_evar[]|bool
      */
-    public function ReportSuite_GetEVars($rsid_list)
+    public function ReportSuite_GetEVars(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetEVars', array(
@@ -2843,16 +2843,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetEcommerce
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Conversion level for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_ecommerce[]|bool
      */
-    public function ReportSuite_GetEcommerce($rsid_list)
+    public function ReportSuite_GetEcommerce(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetEcommerce', array(
@@ -2866,16 +2866,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetFindingMethods
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the finding methods for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_finding_method[]|bool
      */
-    public function ReportSuite_GetFindingMethods($rsid_list)
+    public function ReportSuite_GetFindingMethods(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetFindingMethods', array(
@@ -2889,16 +2889,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetIPAddressExclusions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the IP address exclusions for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_ip_exclusions[]|bool
      */
-    public function ReportSuite_GetIPAddressExclusions($rsid_list)
+    public function ReportSuite_GetIPAddressExclusions(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetIPAddressExclusions', array(
@@ -2912,16 +2912,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetIPObfuscation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the IP Address Obfuscation setting.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_ip_obfuscation[]|bool
      */
-    public function ReportSuite_GetIPObfuscation($rsid_list)
+    public function ReportSuite_GetIPObfuscation(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetIPObfuscation', array(
@@ -2935,16 +2935,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetInternalURLFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the internal URL filters for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_internal_url_filter[]|bool
      */
-    public function ReportSuite_GetInternalURLFilters($rsid_list)
+    public function ReportSuite_GetInternalURLFilters(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetInternalURLFilters', array(
@@ -2958,16 +2958,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetKeyVisitors
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of Key visitors for the specified report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_key_visitor[]|bool
      */
-    public function ReportSuite_GetKeyVisitors($rsid_list)
+    public function ReportSuite_GetKeyVisitors(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetKeyVisitors', array(
@@ -2981,16 +2981,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetLocalization
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the status of the multibyte character setting for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_localization[]|bool
      */
-    public function ReportSuite_GetLocalization($rsid_list)
+    public function ReportSuite_GetLocalization(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetLocalization', array(
@@ -3005,16 +3005,16 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetMarketingChannelCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the marketing channel cost metrics for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_costs[]|bool
      */
-    public function ReportSuite_GetMarketingChannelCost($rsid_list)
+    public function ReportSuite_GetMarketingChannelCost(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannelCost', array(
@@ -3029,16 +3029,16 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetMarketingChannelExpiration
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the marketing channel engagement period expiration information for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiExpiration_event[]|bool
      */
-    public function ReportSuite_GetMarketingChannelExpiration($rsid_list)
+    public function ReportSuite_GetMarketingChannelExpiration(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannelExpiration', array(
@@ -3053,16 +3053,16 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetMarketingChannelRules
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the marketing channel rules for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiRs_mchannel_rulesets[]|bool
      */
-    public function ReportSuite_GetMarketingChannelRules($rsid_list)
+    public function ReportSuite_GetMarketingChannelRules(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannelRules', array(
@@ -3076,16 +3076,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetMarketingChannels
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the marketing channels for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiMchannels[]|bool
      */
-    public function ReportSuite_GetMarketingChannels($rsid_list)
+    public function ReportSuite_GetMarketingChannels(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMarketingChannels', array(
@@ -3100,7 +3100,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetMarketingChannelsCustomSubRelations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the available custom subrelations for the marketing channels in the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3125,16 +3125,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetMobileAppReporting
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Mobile Application Tracking settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return string|bool
      */
-    public function ReportSuite_GetMobileAppReporting($rsid_list)
+    public function ReportSuite_GetMobileAppReporting(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetMobileAppReporting', array(
@@ -3148,7 +3148,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetPages
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of pages for the specified report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3156,12 +3156,12 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $limit
      * @param string $page_search
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $sc_period
      * @param string $start_point
      * @return \Api\StructType\ApiReport_suite_pages[]|bool
      */
-    public function ReportSuite_GetPages($limit, $page_search, $rsid_list, $sc_period, $start_point)
+    public function ReportSuite_GetPages($limit, $page_search, array $rsid_list, $sc_period, $start_point)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetPages', array(
@@ -3179,16 +3179,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetPaidSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the paid search settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_paid_search[]|bool
      */
-    public function ReportSuite_GetPaidSearch($rsid_list)
+    public function ReportSuite_GetPaidSearch(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetPaidSearch', array(
@@ -3202,16 +3202,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetPermanentTraffic
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the permanent traffic settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiPermanent_traffic[]|bool
      */
-    public function ReportSuite_GetPermanentTraffic($rsid_list)
+    public function ReportSuite_GetPermanentTraffic(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetPermanentTraffic', array(
@@ -3225,16 +3225,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetProcessingStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns processing status for the given report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_processing_status[]|bool
      */
-    public function ReportSuite_GetProcessingStatus($rsid_list)
+    public function ReportSuite_GetProcessingStatus(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetProcessingStatus', array(
@@ -3248,16 +3248,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetRollupDates
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns rollup dates for the given rollup report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_rollup_dates[]|bool
      */
-    public function ReportSuite_GetRollupDates($rsid_list)
+    public function ReportSuite_GetRollupDates(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetRollupDates', array(
@@ -3271,7 +3271,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetRollups
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the rollups for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3291,7 +3291,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSavedFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets the saved filters for a report suite. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3311,16 +3311,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetScheduledSpike
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the scheduled traffic changes for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiSchedule_spike[]|bool
      */
-    public function ReportSuite_GetScheduledSpike($rsid_list)
+    public function ReportSuite_GetScheduledSpike(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetScheduledSpike', array(
@@ -3334,16 +3334,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSegments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the requested classifications from the requested report suites
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiRs_sc_segments[]|bool
      */
-    public function ReportSuite_GetSegments($rsid_list)
+    public function ReportSuite_GetSegments(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSegments', array(
@@ -3357,17 +3357,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSettings
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns report suite settings.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $locale
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_settings[]|bool
      */
-    public function ReportSuite_GetSettings($locale, $rsid_list)
+    public function ReportSuite_GetSettings($locale, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSettings', array(
@@ -3382,16 +3382,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSiteTitle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Site Title for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_site_title[]|bool
      */
-    public function ReportSuite_GetSiteTitle($rsid_list)
+    public function ReportSuite_GetSiteTitle(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSiteTitle', array(
@@ -3405,16 +3405,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetSuccessEvents
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the success events for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_event[]|bool
      */
-    public function ReportSuite_GetSuccessEvents($rsid_list)
+    public function ReportSuite_GetSuccessEvents(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetSuccessEvents', array(
@@ -3428,16 +3428,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetTemplate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the templates for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_template[]|bool
      */
-    public function ReportSuite_GetTemplate($rsid_list)
+    public function ReportSuite_GetTemplate(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetTemplate', array(
@@ -3451,16 +3451,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetTimeZone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Time Zone for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_time_zone[]|bool
      */
-    public function ReportSuite_GetTimeZone($rsid_list)
+    public function ReportSuite_GetTimeZone(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetTimeZone', array(
@@ -3474,16 +3474,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetTrafficVars
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Traffic Vars for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_traffic_var[]|bool
      */
-    public function ReportSuite_GetTrafficVars($rsid_list)
+    public function ReportSuite_GetTrafficVars(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetTrafficVars', array(
@@ -3497,16 +3497,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetUIVisibility
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the visibility states for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_ui_element[]|bool
      */
-    public function ReportSuite_GetUIVisibility($rsid_list)
+    public function ReportSuite_GetUIVisibility(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetUIVisibility', array(
@@ -3521,16 +3521,16 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.GetUniqueVisitorVariable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of unique visitor variables
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_unique_visitor_variable[]|bool
      */
-    public function ReportSuite_GetUniqueVisitorVariable($rsid_list)
+    public function ReportSuite_GetUniqueVisitorVariable(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetUniqueVisitorVariable', array(
@@ -3544,16 +3544,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetVideoReporting
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Video Tracking settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return string|bool
      */
-    public function ReportSuite_GetVideoReporting($rsid_list)
+    public function ReportSuite_GetVideoReporting(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetVideoReporting', array(
@@ -3567,16 +3567,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.GetVideoTracking
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the Video Tracking settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiReport_suite_video_tracking[]|bool
      */
-    public function ReportSuite_GetVideoTracking($rsid_list)
+    public function ReportSuite_GetVideoTracking(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.GetVideoTracking', array(
@@ -3590,17 +3590,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveBaseCurrency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the Base Currency setting.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $base_currency
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveBaseCurrency($base_currency, $rsid_list)
+    public function ReportSuite_SaveBaseCurrency($base_currency, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveBaseCurrency', array(
@@ -3615,17 +3615,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveBaseURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the base URL for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $base_url
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveBaseURL($base_url, $rsid_list)
+    public function ReportSuite_SaveBaseURL($base_url, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveBaseURL', array(
@@ -3640,17 +3640,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveCalculatedMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a calculated metric for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $calculated_metrics
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiCalculated_metric[] $calculated_metrics
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveCalculatedMetrics($calculated_metrics, $rsid_list)
+    public function ReportSuite_SaveCalculatedMetrics(array $calculated_metrics, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveCalculatedMetrics', array(
@@ -3666,24 +3666,24 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveClassificationHierarchies
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Modifies a classification hierarchy for one or more report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $c_options
+     * @param string[] $c_options
      * @param string $c_view
      * @param string $camp_view
      * @param string $div_num
      * @param string $name
      * @param string $parent_div_num
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $type
      * @param string $update
      * @return int|bool
      */
-    public function ReportSuite_SaveClassificationHierarchies($c_options, $c_view, $camp_view, $div_num, $name, $parent_div_num, $rsid_list, $type, $update)
+    public function ReportSuite_SaveClassificationHierarchies(array $c_options, $c_view, $camp_view, $div_num, $name, $parent_div_num, array $rsid_list, $type, $update)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveClassificationHierarchies', array(
@@ -3705,24 +3705,24 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveClassifications
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a classification for one or more report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $c_options
+     * @param string[] $c_options
      * @param string $c_view
      * @param string $camp_view
      * @param string $div_num
      * @param string $name
      * @param string $parent_div_num
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $type
      * @param string $update
      * @return int|bool
      */
-    public function ReportSuite_SaveClassifications($c_options, $c_view, $camp_view, $div_num, $name, $parent_div_num, $rsid_list, $type, $update)
+    public function ReportSuite_SaveClassifications(array $c_options, $c_view, $camp_view, $div_num, $name, $parent_div_num, array $rsid_list, $type, $update)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveClassifications', array(
@@ -3744,7 +3744,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveCustomCalendar
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Enables custom calendars for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -3752,10 +3752,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $anchor_date
      * @param string $cal_type
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveCustomCalendar($anchor_date, $cal_type, $rsid_list)
+    public function ReportSuite_SaveCustomCalendar($anchor_date, $cal_type, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveCustomCalendar', array(
@@ -3771,17 +3771,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveDefaultPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the default page for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $default_page
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveDefaultPage($default_page, $rsid_list)
+    public function ReportSuite_SaveDefaultPage($default_page, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveDefaultPage', array(
@@ -3796,17 +3796,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveEVars
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the conversion variables for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $evars
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiEvar[] $evars
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveEVars($evars, $rsid_list)
+    public function ReportSuite_SaveEVars(array $evars, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveEVars', array(
@@ -3821,17 +3821,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveEcommerce
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the conversion level for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $ecommerce
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveEcommerce($ecommerce, $rsid_list)
+    public function ReportSuite_SaveEcommerce($ecommerce, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveEcommerce', array(
@@ -3846,17 +3846,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveFindingMethods
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves finding method settings.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $reports
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiFinding_method[] $reports
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveFindingMethods($reports, $rsid_list)
+    public function ReportSuite_SaveFindingMethods(array $reports, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveFindingMethods', array(
@@ -3872,17 +3872,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveIPAddressExclusions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Add an IP exclusion entry for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $ip_list
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiSave_ip_exclusion[] $ip_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveIPAddressExclusions($ip_list, $rsid_list)
+    public function ReportSuite_SaveIPAddressExclusions(array $ip_list, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveIPAddressExclusions', array(
@@ -3897,17 +3897,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveIPObfuscation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the IP Address Obfuscation setting.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $ip_obfuscation
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveIPObfuscation($ip_obfuscation, $rsid_list)
+    public function ReportSuite_SaveIPObfuscation($ip_obfuscation, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveIPObfuscation', array(
@@ -3923,17 +3923,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveMarketingChannelCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the marketing channel costs for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiCost_item $cost_item
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveMarketingChannelCost(\Api\StructType\ApiCost_item $cost_item, $rsid_list)
+    public function ReportSuite_SaveMarketingChannelCost(\Api\StructType\ApiCost_item $cost_item, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMarketingChannelCost', array(
@@ -3949,17 +3949,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveMarketingChannelExpiration
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the visitor expiration period. Set the number of days required before the visit expires, or 0 for never expires
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $days
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveMarketingChannelExpiration($days, $rsid_list)
+    public function ReportSuite_SaveMarketingChannelExpiration($days, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMarketingChannelExpiration', array(
@@ -3975,17 +3975,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveMarketingChannelRules
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the marketing channel rules for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $mchannel_rules
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiMchannel_ruleset[] $mchannel_rules
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveMarketingChannelRules($mchannel_rules, $rsid_list)
+    public function ReportSuite_SaveMarketingChannelRules(array $mchannel_rules, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMarketingChannelRules', array(
@@ -4000,17 +4000,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveMarketingChannels
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a set of marketing channels.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $channels
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiMchannel[] $channels
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveMarketingChannels($channels, $rsid_list)
+    public function ReportSuite_SaveMarketingChannels(array $channels, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMarketingChannels', array(
@@ -4029,10 +4029,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return void|bool
      */
-    public function ReportSuite_SaveMobileAppReporting($rsid_list)
+    public function ReportSuite_SaveMobileAppReporting(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveMobileAppReporting', array(
@@ -4046,19 +4046,19 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SavePaidSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the paid search settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $filter
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $rule
      * @param string $search_engine
      * @return int|bool
      */
-    public function ReportSuite_SavePaidSearch($filter, $rsid_list, $rule, $search_engine)
+    public function ReportSuite_SavePaidSearch($filter, array $rsid_list, $rule, $search_engine)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SavePaidSearch', array(
@@ -4075,18 +4075,18 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SavePermanentTraffic
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the permanent traffic settings for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $new_hits_per_day
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $start_date
      * @return int|bool
      */
-    public function ReportSuite_SavePermanentTraffic($new_hits_per_day, $rsid_list, $start_date)
+    public function ReportSuite_SavePermanentTraffic($new_hits_per_day, array $rsid_list, $start_date)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SavePermanentTraffic', array(
@@ -4102,19 +4102,19 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveRollup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves a rollup for the company.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $go_live_date
-     * @param string $rollup_rsids
+     * @param string[] $rollup_rsids
      * @param string $rsid
      * @param string $time_zone
      * @return int|bool
      */
-    public function ReportSuite_SaveRollup($go_live_date, $rollup_rsids, $rsid, $time_zone)
+    public function ReportSuite_SaveRollup($go_live_date, array $rollup_rsids, $rsid, $time_zone)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveRollup', array(
@@ -4131,16 +4131,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveSavedFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves filter. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $savedFilters
+     * @param \Api\StructType\ApiSaved_filter[] $savedFilters
      * @return \Api\StructType\ApiSaved_filter[]|bool
      */
-    public function ReportSuite_SaveSavedFilters($savedFilters)
+    public function ReportSuite_SaveSavedFilters(array $savedFilters)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveSavedFilters', array(
@@ -4154,19 +4154,19 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveScheduledSpike
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves scheduled traffic spikes for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $end_date
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $spike_hits_per_day
      * @param string $start_date
      * @return int|bool
      */
-    public function ReportSuite_SaveScheduledSpike($end_date, $rsid_list, $spike_hits_per_day, $start_date)
+    public function ReportSuite_SaveScheduledSpike($end_date, array $rsid_list, $spike_hits_per_day, $start_date)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveScheduledSpike', array(
@@ -4183,17 +4183,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveSiteTitle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Changes the Site Title of the report suites specified (it is not recommended to update multiple report suites with the same site title)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $site_title
      * @return int|bool
      */
-    public function ReportSuite_SaveSiteTitle($rsid_list, $site_title)
+    public function ReportSuite_SaveSiteTitle(array $rsid_list, $site_title)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveSiteTitle', array(
@@ -4208,17 +4208,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveSuccessEvents
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the success events to rsid_list
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $events
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiEvent[] $events
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveSuccessEvents($events, $rsid_list)
+    public function ReportSuite_SaveSuccessEvents(array $events, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveSuccessEvents', array(
@@ -4237,13 +4237,13 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $survey_display_event_num
      * @param string $survey_evar_num
      * @param string $survey_submit_event_num
      * @return void|bool
      */
-    public function ReportSuite_SaveSurveySettings($rsid_list, $survey_display_event_num, $survey_evar_num, $survey_submit_event_num)
+    public function ReportSuite_SaveSurveySettings(array $rsid_list, $survey_display_event_num, $survey_evar_num, $survey_submit_event_num)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveSurveySettings', array(
@@ -4260,17 +4260,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveTimeZone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Changes the timezone (lookup ID) of the report suites specified
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $time_zone
      * @return int|bool
      */
-    public function ReportSuite_SaveTimeZone($rsid_list, $time_zone)
+    public function ReportSuite_SaveTimeZone(array $rsid_list, $time_zone)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveTimeZone', array(
@@ -4285,17 +4285,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveTrafficVars
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Saves the Traffic Vars for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $property
-     * @param string $rsid_list
+     * @param \Api\StructType\ApiTraffic_var[] $property
+     * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveTrafficVars($property, $rsid_list)
+    public function ReportSuite_SaveTrafficVars(array $property, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveTrafficVars', array(
@@ -4310,18 +4310,18 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named ReportSuite.SaveUIVisibility
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Changes the visibility state of the UI element given for the requested report suites.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $state
      * @param string $ui_element
      * @return boolean|bool
      */
-    public function ReportSuite_SaveUIVisibility($rsid_list, $state, $ui_element)
+    public function ReportSuite_SaveUIVisibility(array $rsid_list, $state, $ui_element)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveUIVisibility', array(
@@ -4338,17 +4338,17 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named
      * ReportSuite.SaveUniqueVisitorVariable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the unique visitor variable specified
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @param string $unique_visitor_variable
      * @return int|bool
      */
-    public function ReportSuite_SaveUniqueVisitorVariable($rsid_list, $unique_visitor_variable)
+    public function ReportSuite_SaveUniqueVisitorVariable(array $rsid_list, $unique_visitor_variable)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveUniqueVisitorVariable', array(
@@ -4367,10 +4367,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return void|bool
      */
-    public function ReportSuite_SaveVideoReporting($rsid_list)
+    public function ReportSuite_SaveVideoReporting(array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('ReportSuite.SaveVideoReporting', array(
@@ -4384,7 +4384,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.CheckJobStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return the current status of a Saint API Job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4407,7 +4407,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.CreateFTP
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates an ftp account for the given parameters and returns the ftp account info
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4418,10 +4418,10 @@ class ApiService extends AbstractSoapClientBase
      * @param string $export
      * @param string $overwrite
      * @param string $relation_id
-     * @param string $rsid_list
+     * @param string[] $rsid_list
      * @return \Api\StructType\ApiSaint_ftp_info|bool
      */
-    public function Saint_CreateFTP($description, $email, $export, $overwrite, $relation_id, $rsid_list)
+    public function Saint_CreateFTP($description, $email, $export, $overwrite, $relation_id, array $rsid_list)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Saint.CreateFTP', array(
@@ -4440,7 +4440,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ExportCreateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates Saint Export Job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4454,7 +4454,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $email_address
      * @param string $encoding
      * @param string $relation_id
-     * @param string $report_suite_array
+     * @param string[] $report_suite_array
      * @param string $row_match_filter_empty_column_name
      * @param string $row_match_filter_match_column_name
      * @param string $row_match_filter_match_column_value
@@ -4462,7 +4462,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $select_number_of_rows
      * @return string|bool
      */
-    public function Saint_ExportCreateJob($campaign_filter_begin_range, $campaign_filter_end_range, $campaign_filter_option, $date_filter_row_end_date, $date_filter_row_start_date, $email_address, $encoding, $relation_id, $report_suite_array, $row_match_filter_empty_column_name, $row_match_filter_match_column_name, $row_match_filter_match_column_value, $select_all_rows, $select_number_of_rows)
+    public function Saint_ExportCreateJob($campaign_filter_begin_range, $campaign_filter_end_range, $campaign_filter_option, $date_filter_row_end_date, $date_filter_row_start_date, $email_address, $encoding, $relation_id, array $report_suite_array, $row_match_filter_empty_column_name, $row_match_filter_match_column_name, $row_match_filter_match_column_value, $select_all_rows, $select_number_of_rows)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Saint.ExportCreateJob', array(
@@ -4489,7 +4489,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ExportGetFileSegment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the page details of a given file_id
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4514,16 +4514,16 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetCompatabiltyMetrics
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns Array of compatability information for a report suite(s),
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param string $report_suite_array
+     * @param string[] $report_suite_array
      * @return \Api\StructType\ApiCompatability[]|bool
      */
-    public function Saint_GetCompatabiltyMetrics($report_suite_array)
+    public function Saint_GetCompatabiltyMetrics(array $report_suite_array)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Saint.GetCompatabiltyMetrics', array(
@@ -4537,17 +4537,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get SAINT export filters.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $relation_id
-     * @param string $report_suite_array
+     * @param string[] $report_suite_array
      * @return \Api\StructType\ApiExport_filter[]|bool
      */
-    public function Saint_GetFilters($relation_id, $report_suite_array)
+    public function Saint_GetFilters($relation_id, array $report_suite_array)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Saint.GetFilters', array(
@@ -4562,20 +4562,20 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.GetTemplate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the template to be used in the SAINT browser or FTP download
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $encoding
-     * @param string $numeric_div_nums
+     * @param int[] $numeric_div_nums
      * @param string $relation_id
      * @param string $report_suite
-     * @param string $text_div_nums
+     * @param int[] $text_div_nums
      * @return string|bool
      */
-    public function Saint_GetTemplate($encoding, $numeric_div_nums, $relation_id, $report_suite, $text_div_nums)
+    public function Saint_GetTemplate($encoding, array $numeric_div_nums, $relation_id, $report_suite, array $text_div_nums)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Saint.GetTemplate', array(
@@ -4593,7 +4593,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportCommitJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Commits a specified Saint Import job for processing.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4616,7 +4616,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportCreateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a Saint Import Job
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4626,13 +4626,13 @@ class ApiService extends AbstractSoapClientBase
      * @param string $description
      * @param string $email_address
      * @param string $export_results
-     * @param string $header
+     * @param string[] $header
      * @param string $overwrite_conflicts
      * @param string $relation_id
-     * @param string $report_suite_array
+     * @param string[] $report_suite_array
      * @return int|bool
      */
-    public function Saint_ImportCreateJob($check_divisions, $description, $email_address, $export_results, $header, $overwrite_conflicts, $relation_id, $report_suite_array)
+    public function Saint_ImportCreateJob($check_divisions, $description, $email_address, $export_results, array $header, $overwrite_conflicts, $relation_id, array $report_suite_array)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Saint.ImportCreateJob', array(
@@ -4653,7 +4653,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ImportPopulateJob
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Attaches Import data to a given Saint Import job.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4661,10 +4661,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $job_id
      * @param string $page
-     * @param string $rows
+     * @param \Api\StructType\ApiRow[] $rows
      * @return string|bool
      */
-    public function Saint_ImportPopulateJob($job_id, $page, $rows)
+    public function Saint_ImportPopulateJob($job_id, $page, array $rows)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Saint.ImportPopulateJob', array(
@@ -4680,7 +4680,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Saint.ListFTP
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns a list of the ftp accounts configured for this company
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4700,7 +4700,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.CreatePublishedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Creates a new published report. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4729,17 +4729,17 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.DeletePublishedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes published reports. (Internal use only)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $product
-     * @param string $scheduledReportIds
+     * @param int[] $scheduledReportIds
      * @return boolean|bool
      */
-    public function Scheduling_DeletePublishedReport($product, $scheduledReportIds)
+    public function Scheduling_DeletePublishedReport($product, array $scheduledReportIds)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Scheduling.DeletePublishedReport', array(
@@ -4754,7 +4754,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.DeleteWorkbook
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deletes workbooks from the library. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4763,10 +4763,10 @@ class ApiService extends AbstractSoapClientBase
      * @param string $location
      * @param string $product
      * @param string $username
-     * @param string $workbookNames
+     * @param string[] $workbookNames
      * @return boolean|bool
      */
-    public function Scheduling_DeleteWorkbook($location, $product, $username, $workbookNames)
+    public function Scheduling_DeleteWorkbook($location, $product, $username, array $workbookNames)
     {
         try {
             $this->setResult($this->getSoapClient()->__call('Scheduling.DeleteWorkbook', array(
@@ -4783,7 +4783,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.DownloadWorkbook
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Download a workbook. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4812,7 +4812,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.GetPublishedReports
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Get published reports for a user. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4837,7 +4837,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.GetReportsRunHistory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets a history of reports published by a user.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4866,7 +4866,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.GetWorkbookList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gets a list of workbooks for a user. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4891,7 +4891,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.ReRunReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Re-enables a failed report. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4914,7 +4914,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.UpdatePublishedReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Edits a published report. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4941,7 +4941,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Scheduling.UploadWorkbook
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Uploads a Workbook. (Internal use only.)
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4972,7 +4972,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named Survey.GetSummaryList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the list of current surveys created for a given report suite.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -4997,7 +4997,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named User.GetBookmarkFolders
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the folders the user has on their menu.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -5020,7 +5020,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named User.GetDashboardsAPI
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves a list of dashboards accessible by the user.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -5043,7 +5043,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named User.GetLastUsedReportSuite
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Retrieves the last used report suite by the user.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
@@ -5063,7 +5063,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named User.LoginEmailExists
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Determines if the supplied email address exists is tied to a Suite login.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()

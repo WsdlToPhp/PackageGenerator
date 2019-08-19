@@ -208,7 +208,7 @@ class Service extends AbstractModelFile
         if (mb_stripos($method->getName(), self::METHOD_SET_HEADER_PREFIX) === 0) {
             $this->addAnnotationBlockForSoapHeaderMethod($annotationBlock, $method);
         } elseif ($method->getName() === self::METHOD_GET_RESULT) {
-            $this->addAnnnotationBlockForgetResultMethod($annotationBlock);
+            $this->addAnnotationBlockForgetResultMethod($annotationBlock);
         } else {
             $this->addAnnotationBlockForOperationMethod($annotationBlock, $method);
         }
@@ -262,7 +262,7 @@ class Service extends AbstractModelFile
      * @param PhpAnnotationBlock $annotationBlock
      * @return Service
      */
-    protected function addAnnnotationBlockForgetResultMethod(PhpAnnotationBlock $annotationBlock)
+    protected function addAnnotationBlockForgetResultMethod(PhpAnnotationBlock $annotationBlock)
     {
         $annotationBlock
             ->addChild('Returns the result')->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', $this->getModel()->getExtends(true))))

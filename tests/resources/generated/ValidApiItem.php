@@ -19,7 +19,7 @@ class ApiItem extends AbstractStructBase
     public $itemType;
     /**
      * The id
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: ID for an object
      * - base: xsd:string
      * @var string

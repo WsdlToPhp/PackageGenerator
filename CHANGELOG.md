@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.2.3 - 2019-08-19
+- issue #200 - Array structures are missing from generated package
+- issue #201 - Do not generate empty constructor
+
 ## 3.2.2 - 2019-08-01
 - issue #199 - Inheritance from outer namespace
 

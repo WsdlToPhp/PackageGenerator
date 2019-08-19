@@ -32,7 +32,7 @@ class Struct extends AbstractModelFile
     }
     /**
      * @param bool $includeInheritanceAttributes include the attributes of parent class, default parent attributes are not included. If true, then the array is an associative array containing and index "attribute" for the StructAttribute object and an index "model" for the Struct object.
-     * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _contrust method with the required attribute at first
+     * @param bool $requiredFirst places the required attributes first, then the not required in order to have the __construct method with the required attribute at first
      * @return StructAttributeContainer
      */
     protected function getModelAttributes($includeInheritanceAttributes = false, $requiredFirst = true)
@@ -79,9 +79,11 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodConstruct()
     {
-        $method = new PhpMethod(self::METHOD_CONSTRUCT, $this->getStructMethodParametersValues());
-        $this->addStructMethodConstructBody($method);
-        $this->methods->add($method);
+        if (0 < count($parameters = $this->getStructMethodParametersValues())) {
+            $method = new PhpMethod(self::METHOD_CONSTRUCT, $parameters);
+            $this->addStructMethodConstructBody($method);
+            $this->methods->add($method);
+        }
         return $this;
     }
     /**

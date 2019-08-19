@@ -14,49 +14,49 @@ class ApiАдресРФ extends ApiСостав
 {
     /**
      * The СубъектРФ
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $СубъектРФ;
     /**
      * The СвРайМО
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Api\StructType\ApiСвРайМО
      */
     public $СвРайМО;
     /**
      * The Город
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $Город;
     /**
      * The ВнутригРайон
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ВнутригРайон;
     /**
      * The НаселПункт
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $НаселПункт;
     /**
      * The Улица
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $Улица;
     /**
      * The ДопАдрЭл
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var \Api\StructType\ApiДопАдрЭл[]

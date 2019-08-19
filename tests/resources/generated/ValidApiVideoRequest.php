@@ -14,7 +14,7 @@ class ApiVideoRequest extends AbstractStructBase
 {
     /**
      * The Offset
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var int
@@ -22,7 +22,7 @@ class ApiVideoRequest extends AbstractStructBase
     public $Offset;
     /**
      * The Count
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var int
@@ -30,7 +30,7 @@ class ApiVideoRequest extends AbstractStructBase
     public $Count;
     /**
      * The Filters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Api\ArrayType\ApiArrayOfString
@@ -38,7 +38,7 @@ class ApiVideoRequest extends AbstractStructBase
     public $Filters;
     /**
      * The SortBy
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string

@@ -46,7 +46,7 @@ class TagRestriction extends Tag
     }
 
     /**
-     * Checks wether this element is contained by an union parent or not
+     * Checks whether this element is contained by an union parent or not
      * @return bool
      */
     public function hasUnionParent()

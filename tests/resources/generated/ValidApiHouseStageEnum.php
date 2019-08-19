@@ -12,7 +12,7 @@ class ApiHouseStageEnum
 {
     /**
      * Constant for value '1'
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - description: Эксплуатируемый
      * - label: exploited
      * @return string '1'
@@ -20,7 +20,7 @@ class ApiHouseStageEnum
     const VALUE_1 = '1';
     /**
      * Constant for value '2'
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - description: Выведенный из эксплуатации
      * - label: decommissioned
      * @return string '2'
@@ -28,7 +28,7 @@ class ApiHouseStageEnum
     const VALUE_2 = '2';
     /**
      * Constant for value '3'
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - description: Снесенный
      * - label: drifting
      * @return string '3'

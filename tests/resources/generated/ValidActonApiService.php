@@ -40,7 +40,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named login
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiClusterHeader
@@ -65,7 +65,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named sendEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
@@ -90,7 +90,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named list
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
@@ -115,7 +115,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named uploadList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
@@ -140,7 +140,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named getUploadResult
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
@@ -165,7 +165,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named downloadList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
@@ -190,7 +190,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named messageReport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
@@ -214,7 +214,7 @@ class ApiService extends AbstractSoapClientBase
     }
     /**
      * Method to call the operation originally named deleteList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
      * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader

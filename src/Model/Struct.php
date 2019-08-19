@@ -51,7 +51,7 @@ class Struct extends AbstractModel
      */
     protected $types;
     /**
-     * Defines if the current struct is a concrete struct or just a virtual struct to store meta informations
+     * Defines if the current struct is a concrete struct or just a virtual struct to store meta information
      * @var bool
      */
     protected $isStruct = false;
@@ -439,6 +439,21 @@ class Struct extends AbstractModel
             }
         }
         return $inheritance;
+    }
+    /**
+     * @return Struct|null
+     */
+    public function getTopInheritanceStruct()
+    {
+        $struct = $this->getInheritanceStruct();
+        $latestValidStruct = $struct;
+        while ($struct instanceof Struct) {
+            $struct = $struct->getInheritanceStruct();
+            if ($struct instanceof Struct) {
+                $latestValidStruct = $struct;
+            }
+        }
+        return $latestValidStruct;
     }
     /**
      * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getMeta()
