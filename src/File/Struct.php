@@ -79,9 +79,11 @@ class Struct extends AbstractModelFile
      */
     protected function addStructMethodConstruct()
     {
-        $method = new PhpMethod(self::METHOD_CONSTRUCT, $this->getStructMethodParametersValues());
-        $this->addStructMethodConstructBody($method);
-        $this->methods->add($method);
+        if (0 < count($parameters = $this->getStructMethodParametersValues())) {
+            $method = new PhpMethod(self::METHOD_CONSTRUCT, $parameters);
+            $this->addStructMethodConstructBody($method);
+            $this->methods->add($method);
+        }
         return $this;
     }
     /**
