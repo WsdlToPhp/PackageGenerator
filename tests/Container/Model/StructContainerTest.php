@@ -95,7 +95,7 @@ class StructContainerTest extends TestCase
         $structContainer->getByType(new \stdClass(), '_');
     }
     /**
-     * @requires PHP >= 7.3
+     * @requires PHP 7.3
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Value "(object) array(
     )" can't be used to get an object
@@ -127,7 +127,7 @@ class StructContainerTest extends TestCase
         $structContainer->getVirtual(new \stdClass());
     }
     /**
-     * @requires PHP >= 7.3
+     * @requires PHP 7.3
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Value "(object) array(
     )" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
