@@ -96,8 +96,7 @@ class StructContainerTest extends TestCase
     /**
      * @requires PHP 7.3
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Value "(object) array(
-    )" can't be used to get an object
+     * @expectedExceptionMessage Value "stdClass" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
      */
     public function testGetByTypeMustThrowAnExceptionForInvalidValueWithPhp73()
     {
@@ -127,8 +126,7 @@ class StructContainerTest extends TestCase
     /**
      * @requires PHP 7.3
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Value "(object) array(
-    )" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
+     * @expectedExceptionMessage Value "stdClass" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
      */
     public function testGetVirtualMustThrowAnExceptionForInvalidValueWithPhp73()
     {
