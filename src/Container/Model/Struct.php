@@ -108,7 +108,7 @@ class Struct extends AbstractModel
     public function getVirtual($value)
     {
         if (!is_scalar($value)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', var_export($value, true), __CLASS__), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', is_object($value) ? get_class($value) : var_export($value, true), __CLASS__), __LINE__);
         }
         $key = $this->getVirtualKey($value);
         return array_key_exists($key, $this->virtualObjects) ? $this->virtualObjects[$key] : null;
@@ -123,10 +123,10 @@ class Struct extends AbstractModel
     public function getByType($value, $type)
     {
         if (!is_scalar($value)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', var_export($value, true), __CLASS__), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', is_object($value) ? get_class($value) : var_export($value, true), __CLASS__), __LINE__);
         }
         if (!is_scalar($type)) {
-            throw new \InvalidArgumentException(sprintf('Type "%s" can\'t be used to get an object from "%s"', var_export($type, true), __CLASS__), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Type "%s" can\'t be used to get an object from "%s"', is_object($value) ? get_class($value) : var_export($type, true), __CLASS__), __LINE__);
         }
         $key = $this->getTypeKey($value, $type);
         return array_key_exists($key, $this->objects) ? $this->objects[$key] : null;
