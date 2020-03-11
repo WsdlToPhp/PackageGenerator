@@ -75,15 +75,15 @@
         "email" : "contact@wsdltophp.com"
     },
     "require": {
-        "php": ">=5.4.0 || >=5.5.9",
+        "php": ">=5.4.0",
         "ext-soap": "*",
         "ext-dom": "*",
         "ext-libxml": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
         "composer/composer": "^1.0",
-        "symfony/console": "^2.8 || ^3.0 || ^4.0",
-        "symfony/yaml": "^2.8 || ^3.0 || ^4.0",
+        "symfony/console": ">=4",
+        "symfony/yaml": ">=4",
         "wsdltophp/domhandler": "^1.0",
         "wsdltophp/packagebase": "^1.0",
         "wsdltophp/phpgenerator": "^1.0"
