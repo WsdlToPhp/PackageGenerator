@@ -12,11 +12,11 @@ abstract class AbstractCommand extends Command
     /**
      * @var int
      */
-    const EXIT_OK = 1;
+    const EXIT_OK = 0;
     /**
      * @var int
      */
-    const EXIT_NOT_OK = 0;
+    const EXIT_NOT_OK = 1;
     /**
      * @var InputInterface
      */
