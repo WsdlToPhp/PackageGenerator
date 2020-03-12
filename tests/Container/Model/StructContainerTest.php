@@ -93,16 +93,6 @@ class StructContainerTest extends TestCase
         $structContainer->getByType(new \stdClass(), '_');
     }
     /**
-     * @requires PHP 7.3
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Value "stdClass" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
-     */
-    public function testGetByTypeMustThrowAnExceptionForInvalidValueWithPhp73()
-    {
-        $structContainer = self::instance();
-        $structContainer->getByType(new \stdClass(), '_');
-    }
-    /**
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Type "array (
      * )" can't be used to get an object
@@ -117,16 +107,6 @@ class StructContainerTest extends TestCase
      * @expectedExceptionMessage Value "stdClass" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
      */
     public function testGetVirtualMustThrowAnExceptionForInvalidValue()
-    {
-        $structContainer = self::instance();
-        $structContainer->getVirtual(new \stdClass());
-    }
-    /**
-     * @requires PHP 7.3
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Value "stdClass" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
-     */
-    public function testGetVirtualMustThrowAnExceptionForInvalidValueWithPhp73()
     {
         $structContainer = self::instance();
         $structContainer->getVirtual(new \stdClass());
