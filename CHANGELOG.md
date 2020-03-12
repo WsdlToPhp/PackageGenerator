@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.2.5 - 2020-03-12
+- issue #209 - Name "0" is invalid when instantiating PhpFunctionParameter object
+
 ## 3.2.4 - 2020-03-12
 - issue #208 - not able to use with symfony/console v5+
 

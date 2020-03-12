@@ -57,7 +57,7 @@ class StructAttribute extends AbstractModel
      */
     public function getUniqueString($string, $additionalContext = '')
     {
-        return self::uniqueName($string, $this->getOwner()->getName() . $additionalContext);
+        return self::uniqueName($string, spl_object_hash($this->getOwner()) . $this->getOwner()->getName() . $additionalContext);
     }
     /**
      * Returns the unique name in the current struct (for setters/getters and struct constructor array)
