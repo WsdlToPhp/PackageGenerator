@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.2.4 - 2020-03-12
+- issue #208 - not able to use with symfony/console v5+
+
 ## 3.2.3 - 2019-08-19
 - issue #200 - Array structures are missing from generated package
 - issue #201 - Do not generate empty constructor
