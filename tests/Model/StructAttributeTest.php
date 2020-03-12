@@ -10,12 +10,32 @@ class StructAttributeTest extends TestCase
     /**
      *
      */
-    public function testGetUniqueName()
+    public function testGetUniqueNameMustGenerateAUniqueNameAmongstTheSameStruct()
     {
-        $struct = StructTest::instance('Foo', true)->addAttribute('id', 'int')->addAttribute('name', 'string')->addAttribute('Name', 'string');
+        $struct = StructTest::instance('Foo', true)
+            ->addAttribute('id', 'int')
+            ->addAttribute('name', 'string')
+            ->addAttribute('Name', 'string');
         $this->assertSame('id', $struct->getAttribute('id')->getUniqueName());
         $this->assertSame('name', $struct->getAttribute('name')->getUniqueName());
         $this->assertSame('Name_1', $struct->getAttribute('Name')->getUniqueName());
+    }
+    /**
+     *
+     */
+    public function testGetUniqueNameMustGenerateOriginalNameBetweenTwoIndependentStructsSamelyCaseInsensitivelyNamed()
+    {
+        $Foo = StructTest::instance('Foo', true)
+            ->addAttribute('id', 'int')
+            ->addAttribute('name', 'string')
+            ->addAttribute('bar', 'string');
+        $foo = StructTest::instance('foo', true)
+            ->addAttribute('id', 'int')
+            ->addAttribute('name', 'string');
+        $this->assertSame('id', $Foo->getAttribute('id')->getUniqueName());
+        $this->assertSame('id', $foo->getAttribute('id')->getUniqueName());
+        $this->assertSame('name', $Foo->getAttribute('name')->getUniqueName());
+        $this->assertSame('name', $foo->getAttribute('name')->getUniqueName());
     }
     /**
      *
