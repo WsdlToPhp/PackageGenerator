@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.11.6
+- issue #210 - Validation for constraint: fractionDigits fails for integer numbers (0 fraction digits)
+
 ## 2.11.5
 - issue #209 - Name "0" is invalid when instantiating PhpFunctionParameter object
 
