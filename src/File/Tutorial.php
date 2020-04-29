@@ -39,9 +39,9 @@ class Tutorial extends AbstractFile
     {
         $block = new PhpAnnotationBlock();
         $this->addChild($block, 'This file aims to show you how to use this generated package.')
-            ->addChild($block, 'In addition, the goal is to show which methods are available and the fist needed parameter(s)')
+            ->addChild($block, 'In addition, the goal is to show which methods are available and the first needed parameter(s)')
             ->addChild($block, 'You have to use an associative array such as:')
-            ->addChild($block, '- the key must be a constant beginning with WSDL_ from AbstractSoapClientbase class each generated ServiceType class extends this class')
+            ->addChild($block, '- the key must be a constant beginning with WSDL_ from AbstractSoapClientBase class (each generated ServiceType class extends this class)')
             ->addChild($block, '- the value must be the corresponding key value (each option matches a {@link http://www.php.net/manual/en/soapclient.soapclient.php} option)')
             ->addChild($block, '$options = array(')
             ->addChild($block, sprintf('\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl()->getName()))
@@ -49,7 +49,7 @@ class Tutorial extends AbstractFile
             ->addChild($block, '\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_LOGIN => \'you_secret_login\',')
             ->addChild($block, '\WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD => \'you_secret_password\',')
             ->addChild($block, ');')
-            ->addChild($block, 'etc....');
+            ->addChild($block, 'etc...');
         if ($this->getGenerator()->getOptionStandalone() === false) {
             $this->addChild($block, '################################################################################')->addChild($block, 'Don\'t forget to add wsdltophp/packagebase:dev-master to your main composer.json.')->addChild($block, '################################################################################');
         }
