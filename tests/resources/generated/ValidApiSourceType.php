@@ -2,13 +2,15 @@
 
 namespace Api\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for SourceType EnumType
  * @package Api
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class ApiSourceType
+class ApiSourceType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Spell'
@@ -86,16 +88,6 @@ class ApiSourceType
      */
     const VALUE_TRANSLATION = 'Translation';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_SPELL
      * @uses self::VALUE_WEB
@@ -133,13 +125,5 @@ class ApiSourceType
             self::VALUE_MOBILE_WEB,
             self::VALUE_TRANSLATION,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

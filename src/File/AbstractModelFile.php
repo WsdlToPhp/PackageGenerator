@@ -67,10 +67,6 @@ abstract class AbstractModelFile extends AbstractFile
     /**
      * @var string
      */
-    const METHOD_SET_STATE = '__set_state';
-    /**
-     * @var string
-     */
     const TYPE_STRING = 'string';
     /**
      * @var string
@@ -230,7 +226,6 @@ abstract class AbstractModelFile extends AbstractFile
         $this->defineConstants($class)
             ->defineProperties($class)
             ->defineMethods($class)
-            ->defineStringMethod($class)
             ->getFile()
             ->addClassComponent($class);
         return $this;
@@ -334,35 +329,6 @@ abstract class AbstractModelFile extends AbstractFile
      * @return PhpAnnotationBlock|null
      */
     abstract protected function getMethodAnnotationBlock(PhpMethod $method);
-    /**
-     * @param PhpClass $class
-     * @return AbstractModelFile
-     */
-    protected function defineStringMethod(PhpClass $class)
-    {
-        $class->addAnnotationBlockElement($this->getToStringMethodAnnotationBlock());
-        $class->addMethodElement($this->getToStringMethod());
-        return $this;
-    }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getToStringMethodAnnotationBlock()
-    {
-        return new PhpAnnotationBlock([
-            'Method returning the class name',
-            new PhpAnnotation(self::ANNOTATION_RETURN, 'string __CLASS__'),
-        ]);
-    }
-    /**
-     * @return PhpMethod
-     */
-    protected function getToStringMethod()
-    {
-        $method = new PhpMethod('__toString');
-        $method->addChild('return __CLASS__;');
-        return $method;
-    }
     /**
      * @param StructAttributeModel|null $attribute
      * @return StructAttributeModel

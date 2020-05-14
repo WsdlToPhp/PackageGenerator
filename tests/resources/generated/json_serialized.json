@@ -3351,6 +3351,7 @@
         "validation": true,
         "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
         "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
+        "struct_enum_class": "\\WsdlToPhp\\PackageBase\\AbstractStructEnumBase",
         "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
         "origin": "__ORIGIN__",
         "destination": "__DESTINATION__",

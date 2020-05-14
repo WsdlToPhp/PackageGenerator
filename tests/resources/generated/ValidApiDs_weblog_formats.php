@@ -2,13 +2,15 @@
 
 namespace Api\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ds_weblog_formats EnumType
  * @package Api
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class ApiDs_weblog_formats
+class ApiDs_weblog_formats extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NCSA Common (Apache default)'
@@ -31,16 +33,6 @@ class ApiDs_weblog_formats
      */
     const VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER = 'Microsoft IIS Log (IIS 3 and earlier)';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NCSA_COMMON_APACHE_DEFAULT
      * @uses self::VALUE_NCSA_COMBINED_APACHE
@@ -56,13 +48,5 @@ class ApiDs_weblog_formats
             self::VALUE_W_3_C_EXTENDED_IIS_4_0_AND_LATER,
             self::VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }
