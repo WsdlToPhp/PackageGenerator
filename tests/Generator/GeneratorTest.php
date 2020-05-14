@@ -712,7 +712,9 @@ class GeneratorTest extends TestCase
             $this->assertSame([
                 'http' => [
                     'protocol_version' => 1.1000000000000001,
-                    'header' => "Connection: close\r\n",
+                    'header' => [
+                        'Connection: close',
+                    ],
                 ],
             ], $instance->getSoapClient()->getSoapClientStreamContextOptions());
         }
