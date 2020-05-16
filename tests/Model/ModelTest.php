@@ -108,7 +108,7 @@ class ModelTest extends TestCase
     'name' => 'foo_',
     )"
      */
-    public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingClass()
+    public function testInstanceFromSerializedJsonMustThrowAnExceptionForMissingClass()
     {
         EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), [
             'inheritance' => '',

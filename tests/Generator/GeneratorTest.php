@@ -730,7 +730,7 @@ class GeneratorTest extends TestCase
                 'http' => [
                     'protocol_version' => 1.1000000000000001,
                     'header' => [
-                        "Connection: close",
+                        'Connection: close',
                     ],
                 ],
             ], $instance->getSoapClient()->getSoapClientStreamContextOptions());
