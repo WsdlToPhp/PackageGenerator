@@ -444,6 +444,23 @@ class GeneratorOptionsTest extends TestCase
     /**
      *
      */
+    public function testGetStructEnumClass()
+    {
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructEnumBase', self::optionsInstance()->getStructEnumClass());
+    }
+    /**
+     *
+     */
+    public function testSetStructEnumClass()
+    {
+        $instance = self::optionsInstance();
+        $instance->setStructEnumClass('\My\Project\StructEnumClass');
+
+        $this->assertSame('\My\Project\StructEnumClass', $instance->getStructEnumClass());
+    }
+    /**
+     *
+     */
     public function testGetSoapClientClass()
     {
         $this->assertSame('\WsdlToPhp\PackageBase\AbstractSoapClientBase', self::optionsInstance()->getSoapClientClass());
@@ -663,6 +680,7 @@ class GeneratorOptionsTest extends TestCase
             'validation' => true,
             'struct_class' => '\WsdlToPhp\PackageBase\AbstractStructBase',
             'struct_array_class' => '\WsdlToPhp\PackageBase\AbstractStructArrayBase',
+            'struct_enum_class' => '\WsdlToPhp\PackageBase\AbstractStructEnumBase',
             'soap_client_class' => '\WsdlToPhp\PackageBase\AbstractSoapClientBase',
             'origin' => '',
             'destination' => '',
@@ -703,6 +721,7 @@ class GeneratorOptionsTest extends TestCase
             'validation' => true,
             'struct_class' => '\WsdlToPhp\PackageBase\AbstractStructBase',
             'struct_array_class' => '\WsdlToPhp\PackageBase\AbstractStructArrayBase',
+            'struct_enum_class' => '\WsdlToPhp\PackageBase\AbstractStructEnumBase',
             'soap_client_class' => '\WsdlToPhp\PackageBase\AbstractSoapClientBase',
             'origin' => '',
             'destination' => '',

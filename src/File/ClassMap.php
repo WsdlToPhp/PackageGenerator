@@ -4,7 +4,6 @@ namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
-use WsdlToPhp\PhpGenerator\Component\PhpClass;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpProperty;
@@ -72,13 +71,6 @@ class ClassMap extends AbstractModelFile
             'Class which returns the class map definition',
             new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionPrefix()),
         ]);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::defineStringMethod()
-     */
-    protected function defineStringMethod(PhpClass $class)
-    {
-        return $this;
     }
     /**
      * @param PhpMethod $method

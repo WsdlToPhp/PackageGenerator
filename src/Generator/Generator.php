@@ -442,6 +442,24 @@ class Generator implements \JsonSerializable
         return $this;
     }
     /**
+     * Gets the optionStructEnumClass value
+     * @return string
+     */
+    public function getOptionStructEnumClass()
+    {
+        return $this->options->getStructEnumClass();
+    }
+    /**
+     * Sets the optionStructEnumClass value
+     * @param string $structEnumClass
+     * @return Generator
+     */
+    public function setOptionStructEnumClass($structEnumClass)
+    {
+        $this->options->setStructEnumClass($structEnumClass);
+        return $this;
+    }
+    /**
      * Gets the optionSoapClientClass value
      * @return string
      */

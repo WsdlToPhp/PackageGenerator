@@ -2,13 +2,15 @@
 
 namespace Api\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for PhonebookSortOption EnumType
  * @package Api
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class PhonebookSortOptionApi
+class PhonebookSortOptionApi extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Default'
@@ -26,16 +28,6 @@ class PhonebookSortOptionApi
      */
     const VALUE_DISTANCE = 'Distance';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_DEFAULT
      * @uses self::VALUE_RELEVANCE
@@ -49,13 +41,5 @@ class PhonebookSortOptionApi
             self::VALUE_RELEVANCE,
             self::VALUE_DISTANCE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -1,7 +1,7 @@
 The Wsdl parsers
 ================
 
-The key of theses parsers is to do the minimum treatments meaning that we must load the minimum amount of nodes in order to speed it up and to low the memory usage.
+The key of these parsers is to do the minimum treatments meaning that we must load the minimum amount of nodes in order to speed it up and to low the memory usage.
 
 Nevertheless, the goals of these parsers are various:
 

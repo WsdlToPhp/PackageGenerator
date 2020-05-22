@@ -2,13 +2,15 @@
 
 namespace Api\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for HouseStageEnum EnumType
  * @package Api
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class ApiHouseStageEnum
+class ApiHouseStageEnum extends AbstractStructEnumBase
 {
     /**
      * Constant for value '1'
@@ -35,16 +37,6 @@ class ApiHouseStageEnum
      */
     const VALUE_3 = '3';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_1
      * @uses self::VALUE_2
@@ -58,13 +50,5 @@ class ApiHouseStageEnum
             self::VALUE_2,
             self::VALUE_3,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

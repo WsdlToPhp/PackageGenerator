@@ -81,6 +81,7 @@ class GeneratePackageCommand extends AbstractCommand
             ->addOption('validation', null, InputOption::VALUE_OPTIONAL, 'Enable/Disable the generation of validation rules in every generated setter.')
             ->addOption('struct', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructType class. Default class is \WsdlToPhp\PackageBase\AbstractStructBase from wsdltophp/packagebase package')
             ->addOption('structarray', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package')
+            ->addOption('structenum', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any StructEnumType class. Default class is \WsdlToPhp\PackageBase\AbstractStructEnumBase from wsdltophp/packagebase package')
             ->addOption('soapclient', null, InputOption::VALUE_OPTIONAL, 'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package')
             ->addOption('composer-name', null, InputOption::VALUE_REQUIRED, 'Composer name of the generated package')
             ->addOption('composer-settings', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'Composer settings of the generated package')
@@ -140,6 +141,7 @@ class GeneratePackageCommand extends AbstractCommand
             'services-folder' => 'ServicesFolder',
             'src-dirname' => 'SrcDirname',
             'structarray' => 'StructArrayClass',
+            'structenum' => 'StructEnumClass',
             'structs-folder' => 'StructsFolder',
             'soapclient' => 'SoapClientClass',
             'struct' => 'StructClass',

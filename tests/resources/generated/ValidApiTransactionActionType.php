@@ -2,6 +2,8 @@
 
 namespace Api\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for TransactionActionType EnumType
  * Meta information extracted from the WSDL
@@ -10,7 +12,7 @@ namespace Api\EnumType;
  * @subpackage Enumerations
  * @release 1.1.0
  */
-class ApiTransactionActionType
+class ApiTransactionActionType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Book'
@@ -74,16 +76,6 @@ class ApiTransactionActionType
      */
     const VALUE_TICKET = 'Ticket';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_BOOK
      * @uses self::VALUE_QUOTE
@@ -113,13 +105,5 @@ class ApiTransactionActionType
             self::VALUE_VERIFY_PRICE,
             self::VALUE_TICKET,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

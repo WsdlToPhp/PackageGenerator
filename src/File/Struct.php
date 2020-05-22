@@ -71,8 +71,7 @@ class Struct extends AbstractModelFile
     {
         $this
             ->addStructMethodConstruct()
-            ->addStructMethodsSetAndGet()
-            ->addStructMethodSetState();
+            ->addStructMethodsSetAndGet();
     }
     /**
      * @return Struct
@@ -344,18 +343,6 @@ class Struct extends AbstractModelFile
         return $parameters;
     }
     /**
-     * @return Struct
-     */
-    protected function addStructMethodSetState()
-    {
-        $method = new PhpMethod(self::METHOD_SET_STATE, [
-            new PhpFunctionParameter('array', PhpFunctionParameter::NO_VALUE, 'array'),
-        ], PhpMethod::ACCESS_PUBLIC, false, true);
-        $method->addChild(sprintf('return parent::__set_state($array);'));
-        $this->methods->add($method);
-        return $this;
-    }
-    /**
      * @return PhpAnnotationBlock|null
      */
     protected function getMethodAnnotationBlock(PhpMethod $method)
@@ -372,9 +359,6 @@ class Struct extends AbstractModelFile
         switch ($method->getName()) {
             case self::METHOD_CONSTRUCT:
                 $annotationBlock = $this->getStructMethodConstructAnnotationBlock();
-                break;
-            case self::METHOD_SET_STATE:
-                $annotationBlock = $this->getStructMethodSetStateAnnotationBlock();
                 break;
             case 0 === mb_strpos($method->getName(), 'get'):
             case 0 === mb_strpos($method->getName(), 'set'):
@@ -414,20 +398,6 @@ class Struct extends AbstractModelFile
         ]);
         $this->addStructPropertiesToAnnotationBlock($annotationBlock);
         return $annotationBlock;
-    }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getStructMethodSetStateAnnotationBlock()
-    {
-        return new PhpAnnotationBlock([
-            'Method called when an object has been exported with var_export() functions',
-            'It allows to return an object instantiated with the values',
-            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::__set_state()', $this->getModel()->getExtends(true))),
-            new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::__set_state()', $this->getModel()->getExtends(true))),
-            new PhpAnnotation(self::ANNOTATION_PARAM, 'array $array the exported values'),
-            new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName(true)),
-        ]);
     }
     /**
      * @param PhpMethod $method

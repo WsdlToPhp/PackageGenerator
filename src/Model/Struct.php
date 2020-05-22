@@ -410,7 +410,9 @@ class Struct extends AbstractModel
         $extends = '';
         if ($this->isArray()) {
             $extends = $this->getGenerator()->getOptionStructArrayClass();
-        } elseif (!$this->isRestriction()) {
+        } elseif ($this->isRestriction()) {
+            $extends = $this->getGenerator()->getOptionStructEnumClass();
+        } else {
             $extends = $this->getGenerator()->getOptionStructClass();
         }
         return $short ? Utils::removeNamespace($extends) : $extends;

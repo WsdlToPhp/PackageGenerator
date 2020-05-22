@@ -378,6 +378,23 @@ class GeneratorTest extends TestCase
     /**
      *
      */
+    public function testGetOptionStructEnumClass()
+    {
+        $this->assertSame('\WsdlToPhp\PackageBase\AbstractStructEnumBase', self::localInstance()->getOptionStructEnumClass());
+    }
+    /**
+     *
+     */
+    public function testSetOptionStructEnumClass()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionStructEnumClass('My\Project\StructEnumClass');
+
+        $this->assertSame('My\Project\StructEnumClass', $instance->getOptionStructEnumClass());
+    }
+    /**
+     *
+     */
     public function testGetOptionStandalone()
     {
         $this->assertTrue(self::localInstance()->getOptionStandalone());
@@ -712,7 +729,9 @@ class GeneratorTest extends TestCase
             $this->assertSame([
                 'http' => [
                     'protocol_version' => 1.1000000000000001,
-                    'header' => "Connection: close\r\n",
+                    'header' => [
+                        'Connection: close',
+                    ],
                 ],
             ], $instance->getSoapClient()->getSoapClientStreamContextOptions());
         }
@@ -775,7 +794,7 @@ class GeneratorTest extends TestCase
             json_encode(self::wsdlBingPath()),
             json_encode($generator->getOptionDestination()),
         ], $jsonContent);
-        $this->assertSame($jsonContent, json_encode($generator, JSON_PRETTY_PRINT));
+        $this->assertSame(trim($jsonContent), trim(json_encode($generator, JSON_PRETTY_PRINT)));
     }
     /**
      *

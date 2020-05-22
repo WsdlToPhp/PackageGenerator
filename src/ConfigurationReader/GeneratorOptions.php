@@ -42,6 +42,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     const SRC_DIRNAME = 'src_dirname';
     const STANDALONE = 'standalone';
     const STRUCT_ARRAY_CLASS = 'struct_array_class';
+    const STRUCT_ENUM_CLASS = 'struct_enum_class';
     const STRUCT_CLASS = 'struct_class';
     const STRUCTS_FOLDER = 'structs_folder';
     const SUFFIX = 'suffix';
@@ -319,6 +320,24 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     public function setStructArrayClass($structArrayClass)
     {
         return $this->setOptionValue(self::STRUCT_ARRAY_CLASS, $structArrayClass);
+    }
+    /**
+     * Get struct enum class option value
+     * @return string
+     */
+    public function getStructEnumClass()
+    {
+        return $this->getOptionValue(self::STRUCT_ENUM_CLASS);
+    }
+    /**
+     * Set current struct enum class option value
+     * @throws \InvalidArgumentException
+     * @param string $structEnumClass
+     * @return GeneratorOptions
+     */
+    public function setStructEnumClass($structEnumClass)
+    {
+        return $this->setOptionValue(self::STRUCT_ENUM_CLASS, $structEnumClass);
     }
     /**
      * Get struct array class option value
