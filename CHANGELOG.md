@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 3.2.7 - 2020-05-22
+- issue #170 - Enhance generated classes based on PackageBase updates
+- Minor typo
+- Update contributors list
+
 ## 3.2.6 - 2020-03-23
 - issue #210 - Validation for constraint: fractionDigits fails for integer numbers (0 fraction digits)
 
