@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.11.7
+- Typo in generated files
+- Update contributors list
+
 ## 2.11.6
 - issue #210 - Validation for constraint: fractionDigits fails for integer numbers (0 fraction digits)
 
