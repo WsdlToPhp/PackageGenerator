@@ -28,7 +28,7 @@ class PatternRule extends AbstractRule
      */
     public function testConditions($parameterName, $value, $itemType = false)
     {
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!preg_match(\'/%2$s/\', $%1$s)', $parameterName, addcslashes($value, '\'\\/'));
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!preg_match(\'/%2$s/\', $%1$s)', $parameterName, self::valueToRegularExpression($value));
     }
 
     /**
@@ -39,6 +39,15 @@ class PatternRule extends AbstractRule
      */
     public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value %%s, please provide a literal that is among the set of character sequences denoted by the regular expression %s\', var_export($%s, true))', str_replace("'", "\'", $value), $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, please provide a literal that is among the set of character sequences denoted by the regular expression /%s/\', var_export($%s, true))', self::valueToRegularExpression($value), $parameterName);
+    }
+
+    public static function valueToRegularExpression($value)
+    {
+        return implode('|', array_map(function($value) {
+            return addcslashes($value, '\'\\/');
+        }, array_map(function($value) {
+            return empty($value) ? '^$' : $value;
+        }, array_map('trim', is_array($value) ? $value : [$value]))));
     }
 }
