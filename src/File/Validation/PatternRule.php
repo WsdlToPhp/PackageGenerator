@@ -44,9 +44,9 @@ class PatternRule extends AbstractRule
 
     public static function valueToRegularExpression($value)
     {
-        return implode('|', array_map(function($value) {
+        return implode('|', array_map(function ($value) {
             return addcslashes($value, '\'\\/');
-        }, array_map(function($value) {
+        }, array_map(function ($value) {
             return empty($value) ? '^$' : $value;
         }, array_map('trim', is_array($value) ? $value : [$value]))));
     }
