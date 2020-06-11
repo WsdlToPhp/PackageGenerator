@@ -150,13 +150,18 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
             throw new \InvalidArgumentException(sprintf('Invalid meta name "%s" or value "%s". Please provide scalar meta name and scalar or array meta value.', gettype($metaName), gettype($metaValue)), __LINE__);
         }
         $metaValue = is_scalar($metaValue) ? ((is_numeric($metaValue) || is_bool($metaValue) ? $metaValue : trim($metaValue))) : $metaValue;
-        if ((is_scalar($metaValue) && $metaValue !== '') || is_array($metaValue)) {
+        if (is_scalar($metaValue) || is_array($metaValue)) {
             if (!array_key_exists($metaName, $this->meta)) {
                 $this->meta[$metaName] = $metaValue;
             } elseif (is_array($this->meta[$metaName]) && is_array($metaValue)) {
                 $this->meta[$metaName] = array_merge($this->meta[$metaName], $metaValue);
             } elseif (is_array($this->meta[$metaName])) {
                 array_push($this->meta[$metaName], $metaValue);
+            } elseif (array_key_exists($metaName, $this->meta) && $metaValue !== $this->meta[$metaName]) {
+                $this->meta[$metaName] = [
+                    $this->meta[$metaName],
+                    $metaValue,
+                ];
             } else {
                 $this->meta[$metaName] = $metaValue;
             }
