@@ -12,13 +12,28 @@ class PatternRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value '$^ù', please provide a literal that is among the set of character sequences denoted by the regular expression [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
+     * @expectedExceptionMessage Invalid value '$^ù', please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}|0AA.BBBX|^$/
      */
     public function testSetCodeWithInvalidValueMustThrowAnException()
     {
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setCode('$^ù');
+    }
+
+
+    /**
+     * The Code
+     * Meta informations extracted from the WSDL
+     * - documentation: Code identifying the fee (e.g.,agency fee, municipality fee). Refer to OpenTravel Code List Fee Tax Type (FTT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
+     * - base: xs:string
+     * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
+     */
+    public function testSetCodeWithValidEmptyValueMustPass()
+    {
+        $instance = self::getWhlTaxTypeInstance();
+
+        $this->assertSame($instance, $instance->setCode(''));
     }
 
     /**
@@ -43,7 +58,7 @@ class PatternRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9]{1,19}
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value '', please provide a literal that is among the set of character sequences denoted by the regular expression [0-9]{1,19}
+     * @expectedExceptionMessage Invalid value '', please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9]{1,19}/
      */
     public function testSetCardNumberWithInvalidValueTooShortMustThrowAnException()
     {
@@ -60,7 +75,7 @@ class PatternRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9]{1,19}
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 'aaaaa', please provide a literal that is among the set of character sequences denoted by the regular expression [0-9]{1,19}
+     * @expectedExceptionMessage Invalid value 'aaaaa', please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9]{1,19}/
      */
     public function testSetCardNumberWithInvalidCharactersMustThrowAnException()
     {
