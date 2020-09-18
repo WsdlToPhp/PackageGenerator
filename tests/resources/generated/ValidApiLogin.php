@@ -27,7 +27,10 @@ class ApiLogin extends AbstractSoapClientBase
     public function Login($login, $password)
     {
         try {
-            $this->setResult(self::getSoapClient()->Login($login, $password));
+            $this->setResult(self::getSoapClient()->__soapCall('Login', array(
+                $login,
+                $password,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

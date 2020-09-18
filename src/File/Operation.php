@@ -87,11 +87,7 @@ class Operation extends AbstractOperation
      */
     protected function getSoapCallName()
     {
-        $soapCall = sprintf('%s(', $this->getMethod()->getName());
-        if ($this->getMethod()->nameIsClean() === false) {
-            $soapCall = sprintf('%s(\'%s\'%s', self::SOAP_CALL_NAME, $this->getMethod()->getName(), $this->getOperationCallParametersStarting());
-        }
-        return $soapCall;
+        return sprintf('%s(\'%s\'%s', self::SOAP_CALL_NAME, $this->getMethod()->getName(), $this->getOperationCallParametersStarting());
     }
     /**
      * @param PhpMethod $method
@@ -105,28 +101,21 @@ class Operation extends AbstractOperation
                 $parameters[] = $this->getOperationCallParameterName($parameter, $method);
             }
         }
-        return sprintf('%s%s', implode($this->getOperationCallParametersSeparator(), $parameters), $this->getOperationCallParametersEnding());
-    }
-    /**
-     * @return string
-     */
-    protected function getOperationCallParametersSeparator()
-    {
-        return $this->getMethod()->nameIsClean() === false ? '' : ', ';
+        return sprintf('%s%s, array(), array(), $this->outputHeaders', implode('', $parameters), $this->isParameterTypeEmpty() ? '' : PhpMethod::BREAK_LINE_CHAR . ')');
     }
     /**
      * @return string
      */
     protected function getOperationCallParametersStarting()
     {
-        return ($this->isParameterTypeAnArray() && $this->getMethod()->nameIsClean() === false) ? ', array(' : ($this->isParameterTypeEmpty() ? '' : ', ');
+        return $this->isParameterTypeAnArray() ? ', array(' : ($this->isParameterTypeEmpty() ? ', array()' : ', array(');
     }
     /**
      * @return string
      */
     protected function getOperationCallParametersEnding()
     {
-        return ($this->isParameterTypeAnArray() && $this->getMethod()->nameIsClean() === false) ? sprintf('%s)', PhpMethod::BREAK_LINE_CHAR) : '';
+        return sprintf('%s)', PhpMethod::BREAK_LINE_CHAR);
     }
     /**
      * @param PhpFunctionParameter $parameter
@@ -137,10 +126,6 @@ class Operation extends AbstractOperation
     {
         $cloneParameter = clone $parameter;
         $cloneParameter->setType(null);
-        if ($this->getMethod()->nameIsClean() === false) {
-            return sprintf('%s%s', PhpMethod::BREAK_LINE_CHAR, $method->getIndentedString(sprintf('%s,', $cloneParameter->getPhpDeclaration()), 1));
-        } else {
-            return $cloneParameter->getPhpDeclaration();
-        }
+        return sprintf('%s%s', PhpMethod::BREAK_LINE_CHAR, $method->getIndentedString(sprintf('%s,', $cloneParameter->getPhpDeclaration()), 1));
     }
 }
