@@ -90,6 +90,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_SECRET }}
 
       - name: Build and push to Docker
+        if: startsWith('7.', ${{ matrix.php-version }})
         uses: docker/build-push-action@v2
         with:
           push: true
