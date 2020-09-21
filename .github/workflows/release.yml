@@ -94,7 +94,7 @@ jobs:
       - name: Build and push to Docker
         uses: docker/build-push-action@v2
         with:
-          # push: true
+          push: true
           file: .github/Dockerfile
           build-args: |
             PHP=${{ matrix.php-version }}
