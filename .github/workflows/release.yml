@@ -60,14 +60,14 @@ jobs:
 
       - name: Create release
         id: create_release
-        uses: meeDamian/github-release@2.0
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag: ${{ env.GITHUB_REF_NAME }}
-          name: ${{ env.GITHUB_REF_NAME }} - PHP ${{ matrix.php-version }}
+          tag_name: ${{ env.GITHUB_REF_NAME }}
+          release_name: ${{ env.GITHUB_REF_NAME }} - PHP ${{ matrix.php-version }}
           draft: true
           body: TODO
-          allow_override: true
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload phar to Github release
         uses: actions/upload-release-asset@v1
