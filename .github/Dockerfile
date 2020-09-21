@@ -4,7 +4,10 @@ ARG PHAR=https://github.com/WsdlToPhp/PackageGenerator/releases/download/$WSDLTO
 
 FROM php:$PHP-cli
 
-RUN apt-get update && apt-get install -y libxml2-dev && docker-php-ext-install -j$(nproc) soap
+RUN apt-get update \
+ && apt-get install -y libxml2-dev \
+ && NPROC="$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1)" \
+ && docker-php-ext-install soap
 
 ADD $PHAR wsdltophp
 
