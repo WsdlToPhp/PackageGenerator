@@ -5,6 +5,11 @@ ARG PHAR=https://github.com/WsdlToPhp/PackageGenerator/releases/download/$WSDLTO
 FROM php:$PHP-cli
 
 ARG PHAR
+ARG WSDLTOPHP
+
+LABEL maintainer="https://github.com/mikaelcom" \
+      version=$WSDLTOPHP \
+      description="This image allows to use the wsdltophp command line tool in order to generate a PHP SDK from any WSDL"
 
 RUN apt-get update \
  && apt-get install -y libxml2-dev tini \
