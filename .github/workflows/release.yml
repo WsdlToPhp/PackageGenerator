@@ -65,11 +65,11 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
           tag_name: "${{ env.GITHUB_REF_NAME }}"
-          release_name: "${{ env.GITHUB_REF_NAME_SLUG }} - ${{ matrix.php-version }}"
+          release_name: "${{ env.GITHUB_REF_NAME }} - PHP ${{ matrix.php-version }}"
           draft: true
           body: TODO
 
-      - name: Upload phar
+      - name: Upload phar to Github release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: "${{ secrets.SECRET_GITHUB_TOKEN }}"
@@ -78,3 +78,19 @@ jobs:
           asset_path: ./bin/wsdltophp.phar
           asset_name: "wsdltophp-${{ env.GITHUB_REF_NAME_SLUG }}-${{ matrix.php-version }}.phar"
           asset_content_type: application/octet-stream
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_SECRET }}
+
+      - name: Build and push to Docker
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          file: .github/Dockerfile
+          build-args: |
+            PHP: ${{ matrix.php-version }}
+            WSDLTOPHP: ${{ env.GITHUB_REF_NAME_SLUG }}
+          tags: mikaelcom/wsdltophp:${{ env.GITHUB_REF_NAME_SLUG }}
