@@ -11,8 +11,8 @@ RUN apt-get update \
  && NPROC="$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1)" \
  && docker-php-ext-install soap
 
-ADD $PHAR wsdltophp
+ADD $PHAR wsdltophp.phar
 
-RUN chmod +x wsdltophp
+RUN chmod +x wsdltophp.phar
 
-ENTRYPOINT /wsdltophp
+ENTRYPOINT /wsdltophp.phar
