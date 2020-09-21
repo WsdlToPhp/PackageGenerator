@@ -7,12 +7,13 @@ FROM php:$PHP-cli
 ARG PHAR
 
 RUN apt-get update \
- && apt-get install -y libxml2-dev \
+ && apt-get install -y libxml2-dev tini \
  && NPROC="$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1)" \
  && docker-php-ext-install soap
 
-ADD $PHAR wsdltophp.phar
+COPY $PHAR wsdltophp.phar
 
-RUN chmod +x wsdltophp.phar
-
-ENTRYPOINT /wsdltophp.phar
+COPY $PHAR /usr/bin/wsdltophp
+COPY .github/docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["wsdltophp"]
