@@ -32,7 +32,7 @@ jobs:
           coverage: none
           extensions: soap
           ini-values: memory_limit=-1, phar.readonly=Off
-          php-version: "${{ matrix.php-version }}"
+          php-version: ${{ matrix.php-version }}
 
       - name: Display PHP Version
         run: php -v
@@ -43,8 +43,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install dependencies from composer.lock using composer binary provided by system
-        run: "composer install ${{ env.COMPOSER_FLAGS }}"
+      - name: Install dependencies from composer.lock
+        run: composer install ${{ env.COMPOSER_FLAGS }}
 
       - name: Validate composer.json
         run: composer validate
@@ -62,21 +62,21 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: "${{ env.GITHUB_REF_NAME }}"
-          release_name: "${{ env.GITHUB_REF_NAME }} - PHP ${{ matrix.php-version }}"
+          tag_name: ${{ env.GITHUB_REF_NAME }}
+          release_name: ${{ env.GITHUB_REF_NAME }} - PHP ${{ matrix.php-version }}
           draft: true
           body: TODO
 
       - name: Upload phar to Github release
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: "${{ secrets.SECRET_GITHUB_TOKEN }}"
+          GITHUB_TOKEN: ${{ secrets.SECRET_GITHUB_TOKEN }}
         with:
-          upload_url: "${{ steps.create_release.outputs.upload_url }}"
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./bin/wsdltophp.phar
-          asset_name: "wsdltophp-${{ env.GITHUB_REF_NAME_SLUG }}-${{ matrix.php-version }}.phar"
+          asset_name: wsdltophp-${{ env.GITHUB_REF_NAME_SLUG }}-${{ matrix.php-version }}.phar
           asset_content_type: application/octet-stream
 
 

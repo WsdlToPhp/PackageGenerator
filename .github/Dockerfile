@@ -4,6 +4,8 @@ ARG PHAR=https://github.com/WsdlToPhp/PackageGenerator/releases/download/$WSDLTO
 
 FROM php:$PHP-cli
 
+ARG PHAR
+
 RUN apt-get update \
  && apt-get install -y libxml2-dev \
  && NPROC="$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1)" \
