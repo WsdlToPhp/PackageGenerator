@@ -99,5 +99,5 @@ jobs:
           build-args: |
             PHP=${{ matrix.php-version }}
             WSDLTOPHP=${{ env.GITHUB_REF_NAME_SLUG }}
-            PHAR=${{ steps.create_release.outputs.upload_url }}
+            PHAR=./bin/wsdltophp.phar
           tags: mikaelcom/wsdltophp:${{ env.GITHUB_REF_NAME_SLUG }}
