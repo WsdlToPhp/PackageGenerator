@@ -15,5 +15,5 @@ COPY $PHAR wsdltophp.phar
 
 COPY $PHAR /usr/bin/wsdltophp
 COPY .github/docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
 CMD ["wsdltophp"]
