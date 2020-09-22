@@ -79,7 +79,6 @@ jobs:
           asset_name: wsdltophp-${{ env.GITHUB_REF_NAME_SLUG }}-${{ matrix.php-version }}.phar
           asset_content_type: application/octet-stream
 
-
       - name: Setup Buildx
         if: startsWith(matrix.php-version, '7')
         uses: docker/setup-buildx-action@v1
