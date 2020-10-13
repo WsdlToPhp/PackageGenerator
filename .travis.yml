@@ -15,7 +15,8 @@ matrix:
     - php: 7.2
     - php: 7.3
     - php: 7.4
-    - php: nightly
+    # Waiting for Composer 2 compatible with PHP 8
+    # - php: nightly
 
 cache:
   directories:
