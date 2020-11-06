@@ -24,7 +24,9 @@ class SearchBingApi extends AbstractSoapClientBase
     public function Search(\BingApi\StructType\SearchRequestBingApi $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->Search($parameters));
+            $this->setResult($this->getSoapClient()->__soapCall('Search', array(
+                $parameters,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
