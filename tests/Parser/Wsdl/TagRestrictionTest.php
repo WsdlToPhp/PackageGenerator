@@ -29,6 +29,13 @@ class TagRestrictionTest extends WsdlParser
         return new TagRestriction(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
     /**
+     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
+     */
+    public static function whlInstanceParser()
+    {
+        return new TagRestriction(self::generatorInstance(self::wsdlWhlPath()));
+    }
+    /**
      *
      */
     public function testParseImageViewService()
@@ -113,5 +120,29 @@ class TagRestrictionTest extends WsdlParser
         }
 
         $this->assertEquals(2, $count);
+    }
+    /**
+     *
+     */
+    public function testParseWhlMustFetchAllRestrictionPatterns()
+    {
+        $tagRestrictionParser = self::whlInstanceParser();
+
+        $tagRestrictionParser->parse();
+
+        $struct = $tagRestrictionParser->getGenerator()->getStructByName('OTA_CodeType');
+
+        if ($struct) {
+            $this->assertSame([
+                'base' => 'xs:string',
+                'pattern' => [
+                    '[0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}',
+                    '0AA.BBBX',
+                    '',
+                ],
+            ], $struct->getMeta());
+        } else {
+            $this->fail(sprintf('Struct OTA_CodeType not found, can\'t test'));
+        }
     }
 }

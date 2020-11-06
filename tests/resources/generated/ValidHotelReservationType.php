@@ -182,7 +182,7 @@ class ApiHotelReservationType extends AbstractStructBase
         }
         // validation for constraint: pattern([A-Z]{1,2})
         if (!is_null($value) && !preg_match('/[A-Z]{1,2}/', $value)) {
-            $exception2 = new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [A-Z]{1,2}', var_export($value, true)), __LINE__);
+            $exception2 = new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[A-Z]{1,2}/', var_export($value, true)), __LINE__);
         }
         if (isset($exception0) && isset($exception1) && isset($exception2)) {
             $message = sprintf("The value %s does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:\n%s", var_export($value, true), implode("\n", array_map(function(\InvalidArgumentException $e) { return sprintf(' - %s', $e->getMessage()); }, [$exception0, $exception1, $exception2])));
