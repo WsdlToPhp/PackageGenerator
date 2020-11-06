@@ -15,6 +15,13 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      * @var Generator[]
      */
     private static $instances = [];
+
+    /**
+     * Instances
+     * @var Generator[]
+     */
+    private static $ids = [];
+
     /**
      * @return string
      */
@@ -22,6 +29,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/unit_tests.wsdl';
     }
+
     /**
      * @param $local bool
      * @return string
@@ -30,6 +38,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local' : '');
     }
+
     /**
      * @param $local bool
      * @return string
@@ -38,6 +47,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.scd' : '');
     }
+
     /**
      * @param $local bool
      * @return string
@@ -46,6 +56,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.third' : '');
     }
+
     /**
      * @return string
      */
@@ -53,6 +64,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/partner/PartnerService.0.xsd';
     }
+
     /**
      * @return string
      */
@@ -60,6 +72,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/image/ImageViewService.local.wsdl';
     }
+
     /**
      * @return string
      */
@@ -67,6 +80,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/image/imageViewCommon.xsd';
     }
+
     /**
      * @return string
      */
@@ -74,6 +88,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/image/availableImagesRequest.xsd';
     }
+
     /**
      * @return string
      */
@@ -81,6 +96,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/bingsearch.wsdl';
     }
+
     /**
      * @return string
      */
@@ -88,6 +104,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return 'https://phar.wsdltophp.com/bingsearch.wsdl';
     }
+
     /**
      * @return string
      */
@@ -95,6 +112,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/ebaySvc.wsdl';
     }
+
     /**
      * @return string
      */
@@ -102,6 +120,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/ActonService2.local.wsdl';
     }
+
     /**
      * @return string
      */
@@ -109,6 +128,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/odigeo.wsdl';
     }
+
     /**
      * @return string
      */
@@ -116,6 +136,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/OrderContract.wsdl';
     }
+
     /**
      * @return string
      */
@@ -123,6 +144,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/MyBoardPack.wsdl';
     }
+
     /**
      * @return string
      */
@@ -130,6 +152,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/whl.wsdl';
     }
+
     /**
      * @return string
      */
@@ -137,6 +160,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/portaplusapi.wsdl';
     }
+
     /**
      * @return string
      */
@@ -144,6 +168,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/reformagkh.wsdl';
     }
+
     /**
      * @return string
      */
@@ -151,6 +176,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/QueueService.wsdl';
     }
+
     /**
      * @return string
      */
@@ -158,6 +184,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/bullhornstaffing.local.wsdl';
     }
+
     /**
      * @return string
      */
@@ -165,6 +192,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/OmnitureAdminServices.wsdl';
     }
+
     /**
      * @return string
      */
@@ -172,6 +200,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/paypal/PayPalSvc.wsdl';
     }
+
     /**
      * @return string
      */
@@ -179,6 +208,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/wcf/Service1.wsdl';
     }
+
     /**
      * @return string
      */
@@ -186,6 +216,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/lnp/NumberManagement.wsdl';
     }
+
     /**
      * @return string
      */
@@ -193,6 +224,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/ews/services.wsdl';
     }
+
     /**
      * @return string
      */
@@ -200,6 +232,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/ews/types.xsd';
     }
+
     /**
      * @return string
      */
@@ -207,6 +240,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/ews/messages.xsd';
     }
+
     /**
      * @return string
      */
@@ -214,6 +248,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/directapi/campaigns.wsdl';
     }
+
     /**
      * @return string
      */
@@ -221,6 +256,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/directapi/adgroups.wsdl';
     }
+
     /**
      * @return string
      */
@@ -228,6 +264,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/directapi/live.wsdl';
     }
+
     /**
      * @return string
      */
@@ -235,6 +272,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/docdatapayments/1_3.wsdl';
     }
+
     /**
      * @return string
      */
@@ -242,6 +280,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/DeliveryService.wsdl';
     }
+
     /**
      * @return string
      */
@@ -249,6 +288,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return __DIR__ . '/resources/empty.wsdl';
     }
+
     /**
      * @param string $wsdlPath
      * @return Generator
@@ -260,6 +300,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
             ->setDestination(self::getTestDirectory());
         return new Generator($options);
     }
+
     /**
      * @return Generator
      */
@@ -267,6 +308,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlBingPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -274,6 +316,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlOmniturePath());
     }
+
     /**
      * @return Generator
      */
@@ -281,6 +324,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlBullhornstaffingPath());
     }
+
     /**
      * @return Generator
      */
@@ -288,6 +332,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlReformaPath());
     }
+
     /**
      * @return Generator
      */
@@ -295,6 +340,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlWcfPath());
     }
+
     /**
      * @return Generator
      */
@@ -302,6 +348,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlLnpPath(), true);
     }
+
     /**
      * @return Generator
      */
@@ -309,6 +356,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlEwsPath());
     }
+
     /**
      * @return Generator
      */
@@ -316,6 +364,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlYandexDirectApiCampaignsPath());
     }
+
     /**
      * @return Generator
      */
@@ -323,6 +372,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlYandexDirectApiAdGroupsPath());
     }
+
     /**
      * @return Generator
      */
@@ -330,6 +380,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlDocDataPaymentsPath());
     }
+
     /**
      * @return Generator
      */
@@ -337,6 +388,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlDeliveryServicePath());
     }
+
     /**
      * @return Generator
      */
@@ -344,6 +396,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlWhlPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -351,6 +404,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstance(self::wsdlUnitTestsPath(), $reset);
     }
+
     /**
      * @param string $wsdlPath
      * @param $reset bool
@@ -363,6 +417,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
         }
         return self::$instances[$wsdlPath];
     }
+
     /**
      * @param string $id
      * @return Generator
@@ -384,11 +439,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
         }
         return self::$ids[$id . $gatherMethods];
     }
-    /**
-     * Instances
-     * @var Generator[]
-     */
-    private static $ids = [];
+
     /**
      * @return Generator
      */
@@ -396,6 +447,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('bingsearch', $gatherMethods, self::wsdlBingPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -403,6 +455,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('actonservice2', $gatherMethods, self::wsdlActonPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -410,6 +463,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('portaplusapi', 'start', self::wsdlPortalPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -417,6 +471,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('reformagkh', 'start', self::wsdlReformaPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -424,6 +479,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('queueservice', 'start', self::wsdlQueuePath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -431,6 +487,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('omnitureadminservices', $gatherMethods, self::wsdlOmniturePath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -438,6 +495,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('odigeo', 'start', self::wsdlOdigeoPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -445,6 +503,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('paypal', $gatherMethods, self::wsdlPayPalPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -452,6 +511,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('wcf', $gatherMethods, self::wsdlWcfPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -459,6 +519,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('yandex_groups', $gatherMethods, self::wsdlYandexDirectApiAdGroupsPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -466,6 +527,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('yandex_campaigns', $gatherMethods, self::wsdlYandexDirectApiCampaignsPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -473,6 +535,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('yandex_live', $gatherMethods, self::wsdlYandexDirectApiLivePath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -480,6 +543,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('docdatapayments', $gatherMethods, self::wsdlDocDataPaymentsPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -487,6 +551,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('deliveryservice', $gatherMethods, self::wsdlDeliveryServicePath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -494,6 +559,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('ordercontract', $gatherMethods, self::wsdlOrderContractPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -501,6 +567,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('whl', $gatherMethods, self::wsdlWhlPath(), $reset);
     }
+
     /**
      * @return Generator
      */
@@ -508,6 +575,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('ews', 'start', self::wsdlEwsPath());
     }
+
     /**
      * @return Generator
      */
@@ -515,6 +583,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     {
         return self::getInstanceFromSerializedJson('unit_tests', 'start', self::wsdlUnitTestsPath());
     }
+
     /**
      * @return string
      */
