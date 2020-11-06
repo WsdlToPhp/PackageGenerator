@@ -17,15 +17,15 @@ Package Generator provides many options to generate your package even if a few a
 
 ## Installation
 
-#### In a project:
+### In a project:
 
 ```bash
 composer require wsdltophp/packagegenerator --dev
 ```
 
-#### With command line:
+### With command line:
 
-##### For PHP5
+#### For PHP5
 
 ```bash
 $ wget https://phar.wsdltophp.com/wsdltophp-php5.phar
@@ -33,12 +33,18 @@ $ chmod +x wsdltophp-php5.phar
 $ mv wsdltophp-php5.phar /usr/local/bin/wsdltophp
 ```
 
-##### For PHP7
+#### For PHP7
 
 ```bash
 $ wget https://phar.wsdltophp.com/wsdltophp-php7.phar
 $ chmod +x wsdltophp-php7.phar
 $ mv wsdltophp-php7.phar /usr/local/bin/wsdltophp
+```
+
+### With Docker:
+
+```bash
+$ docker run --rm -it mikaelcom/wsdltophp:tagname
 ```
 
 ## Usage
@@ -52,7 +58,7 @@ The `standalone` option is fully detailed in the [Standalone section](https://gi
 
 All the options are fully detailed in the [Options page](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options).
 
-#### In a project:
+### In a project:
 
 ```php
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
@@ -70,11 +76,22 @@ $generator = new Generator($options);
 $generator->generatePackage();
 ```
 
-#### With command line:
+### With command line:
 
 The command line is:
 ```bash
 $ wsdltophp generate:package \
+    --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
+    --destination="./MySdk" \
+    --composer-name="myproject/mysdk" \
+    --force
+```
+
+### With Docker:
+
+Such as with the command line above, simply use the `docker run` command line before:
+```bash
+$ docker --rm -it run mikaelcom/wsdltophp:tagname generate:package \
     --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --destination="./MySdk" \
     --composer-name="myproject/mysdk" \
