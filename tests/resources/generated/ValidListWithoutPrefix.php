@@ -25,7 +25,9 @@ class _List extends AbstractSoapClientBase
     public function listPaymentMethods(\StructType\ListPaymentMethodsRequest $parameters)
     {
         try {
-            $this->setResult(self::getSoapClient()->listPaymentMethods($parameters));
+            $this->setResult(self::getSoapClient()->__soapCall('listPaymentMethods', array(
+                $parameters,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

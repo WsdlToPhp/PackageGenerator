@@ -30,7 +30,9 @@ class ApiCreate extends AbstractSoapClientBase
     public function CreateQueue(\Api\StructType\ApiCreateQueue $body)
     {
         try {
-            $this->setResult(self::getSoapClient()->CreateQueue($body));
+            $this->setResult(self::getSoapClient()->__soapCall('CreateQueue', array(
+                $body,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

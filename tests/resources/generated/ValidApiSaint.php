@@ -26,9 +26,9 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_CheckJobStatus($job_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.CheckJobStatus', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.CheckJobStatus', array(
                 $job_id,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -54,14 +54,14 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_CreateFTP($description, $email, $export, $overwrite, $relation_id, array $rsid_list)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.CreateFTP', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.CreateFTP', array(
                 $description,
                 $email,
                 $export,
                 $overwrite,
                 $relation_id,
                 $rsid_list,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -95,7 +95,7 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_ExportCreateJob($campaign_filter_begin_range, $campaign_filter_end_range, $campaign_filter_option, $date_filter_row_end_date, $date_filter_row_start_date, $email_address, $encoding, $relation_id, array $report_suite_array, $row_match_filter_empty_column_name, $row_match_filter_match_column_name, $row_match_filter_match_column_value, $select_all_rows, $select_number_of_rows)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ExportCreateJob', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.ExportCreateJob', array(
                 $campaign_filter_begin_range,
                 $campaign_filter_end_range,
                 $campaign_filter_option,
@@ -110,7 +110,7 @@ class ApiSaint extends AbstractSoapClientBase
                 $row_match_filter_match_column_value,
                 $select_all_rows,
                 $select_number_of_rows,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -132,10 +132,10 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_ExportGetFileSegment($file_id, $segment_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ExportGetFileSegment', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.ExportGetFileSegment', array(
                 $file_id,
                 $segment_id,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -156,9 +156,9 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_GetCompatabiltyMetrics(array $report_suite_array)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.GetCompatabiltyMetrics', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.GetCompatabiltyMetrics', array(
                 $report_suite_array,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -180,10 +180,10 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_GetFilters($relation_id, array $report_suite_array)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.GetFilters', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.GetFilters', array(
                 $relation_id,
                 $report_suite_array,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -208,13 +208,13 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_GetTemplate($encoding, array $numeric_div_nums, $relation_id, $report_suite, array $text_div_nums)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.GetTemplate', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.GetTemplate', array(
                 $encoding,
                 $numeric_div_nums,
                 $relation_id,
                 $report_suite,
                 $text_div_nums,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -235,9 +235,9 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_ImportCommitJob($job_id)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ImportCommitJob', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.ImportCommitJob', array(
                 $job_id,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -265,7 +265,7 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_ImportCreateJob($check_divisions, $description, $email_address, $export_results, array $header, $overwrite_conflicts, $relation_id, array $report_suite_array)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ImportCreateJob', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.ImportCreateJob', array(
                 $check_divisions,
                 $description,
                 $email_address,
@@ -274,7 +274,7 @@ class ApiSaint extends AbstractSoapClientBase
                 $overwrite_conflicts,
                 $relation_id,
                 $report_suite_array,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -297,11 +297,11 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_ImportPopulateJob($job_id, $page, array $rows)
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ImportPopulateJob', array(
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.ImportPopulateJob', array(
                 $job_id,
                 $page,
                 $rows,
-            )));
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -321,7 +321,7 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_ListFTP()
     {
         try {
-            $this->setResult(self::getSoapClient()->__call('Saint.ListFTP'));
+            $this->setResult(self::getSoapClient()->__soapCall('Saint.ListFTP', array(), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
