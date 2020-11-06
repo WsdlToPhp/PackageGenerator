@@ -63,7 +63,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: Indicates the type of magnetic striped card. Refer to OpenTravel Code List Card Type (CDT). | Used for codes in the OpenTravel Code tables. Possible values of this pattern are 1, 101, 101.EQP, or 101.EQP.X.
      * - base: xs:string
-     * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}
+     * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1} | 0AA.BBBX |
      * - use: optional
      * @var string
      */
@@ -461,9 +461,9 @@ class ApiPaymentCardType extends AbstractStructBase
         if (!is_null($cardType) && !is_string($cardType)) {
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardType, true), gettype($cardType)), __LINE__);
         }
-        // validation for constraint: pattern([0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1})
-        if (!is_null($cardType) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}/', $cardType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}', var_export($cardType, true)), __LINE__);
+        // validation for constraint: pattern([0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}, 0AA.BBBX, )
+        if (!is_null($cardType) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', $cardType)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($cardType, true)), __LINE__);
         }
         $this->CardType = $cardType;
         return $this;
@@ -536,7 +536,7 @@ class ApiPaymentCardType extends AbstractStructBase
         }
         // validation for constraint: pattern([0-9]{1,19})
         if (!is_null($cardNumber) && !preg_match('/[0-9]{1,19}/', $cardNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [0-9]{1,19}', var_export($cardNumber, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9]{1,19}/', var_export($cardNumber, true)), __LINE__);
         }
         $this->CardNumber = $cardNumber;
         return $this;
@@ -562,7 +562,7 @@ class ApiPaymentCardType extends AbstractStructBase
         }
         // validation for constraint: pattern([0-9]{1,8})
         if (!is_null($seriesCode) && !preg_match('/[0-9]{1,8}/', $seriesCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [0-9]{1,8}', var_export($seriesCode, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9]{1,8}/', var_export($seriesCode, true)), __LINE__);
         }
         $this->SeriesCode = $seriesCode;
         return $this;
@@ -588,7 +588,7 @@ class ApiPaymentCardType extends AbstractStructBase
         }
         // validation for constraint: pattern([0-9a-zA-Z]{1,19})
         if (!is_null($maskedCardNumber) && !preg_match('/[0-9a-zA-Z]{1,19}/', $maskedCardNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [0-9a-zA-Z]{1,19}', var_export($maskedCardNumber, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9a-zA-Z]{1,19}/', var_export($maskedCardNumber, true)), __LINE__);
         }
         $this->MaskedCardNumber = $maskedCardNumber;
         return $this;
@@ -614,7 +614,7 @@ class ApiPaymentCardType extends AbstractStructBase
         }
         // validation for constraint: pattern([0-9]{1,8})
         if (!is_null($cardHolderRPH) && !preg_match('/[0-9]{1,8}/', $cardHolderRPH)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [0-9]{1,8}', var_export($cardHolderRPH, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9]{1,8}/', var_export($cardHolderRPH, true)), __LINE__);
         }
         $this->CardHolderRPH = $cardHolderRPH;
         return $this;
@@ -640,7 +640,7 @@ class ApiPaymentCardType extends AbstractStructBase
         }
         // validation for constraint: pattern([a-zA-Z]{2})
         if (!is_null($countryOfIssue) && !preg_match('/[a-zA-Z]{2}/', $countryOfIssue)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression [a-zA-Z]{2}', var_export($countryOfIssue, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[a-zA-Z]{2}/', var_export($countryOfIssue, true)), __LINE__);
         }
         $this->CountryOfIssue = $countryOfIssue;
         return $this;
@@ -740,7 +740,7 @@ class ApiPaymentCardType extends AbstractStructBase
         }
         // validation for constraint: pattern((0[1-9]|1[0-2])[0-9][0-9])
         if (!is_null($effectiveDate) && !preg_match('/(0[1-9]|1[0-2])[0-9][0-9]/', $effectiveDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression (0[1-9]|1[0-2])[0-9][0-9]', var_export($effectiveDate, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /(0[1-9]|1[0-2])[0-9][0-9]/', var_export($effectiveDate, true)), __LINE__);
         }
         $this->EffectiveDate = $effectiveDate;
         return $this;
@@ -766,7 +766,7 @@ class ApiPaymentCardType extends AbstractStructBase
         }
         // validation for constraint: pattern((0[1-9]|1[0-2])[0-9][0-9])
         if (!is_null($expireDate) && !preg_match('/(0[1-9]|1[0-2])[0-9][0-9]/', $expireDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression (0[1-9]|1[0-2])[0-9][0-9]', var_export($expireDate, true)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /(0[1-9]|1[0-2])[0-9][0-9]/', var_export($expireDate, true)), __LINE__);
         }
         $this->ExpireDate = $expireDate;
         return $this;
