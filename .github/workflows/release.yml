@@ -98,7 +98,6 @@ jobs:
           file: .github/Dockerfile
           build-args: |
             PHP=${{ matrix.php-version }}
-            WSDLTOPHP_SLUG=${{ env.GITHUB_REF_NAME_SLUG }}
             WSDLTOPHP=${{ env.GITHUB_REF_NAME }}
             PHAR=./bin/wsdltophp.phar
           tags: mikaelcom/wsdltophp:${{ env.GITHUB_REF_NAME }}
