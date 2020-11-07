@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 3.3.0 - 2020-11-07
+- issue #219 - How do you get the response <soap:Header> details
+- issue #221 - Feature: Actual versions docker images on docker hub
+- issue #223 - PHP 7.4 or PHP 8?
+
 ## 3.2.7 - 2020-05-22
 - issue #170 - Enhance generated classes based on PackageBase updates
 - Minor typo
