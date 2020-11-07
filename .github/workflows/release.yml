@@ -94,6 +94,7 @@ jobs:
         if: startsWith(matrix.php-version, '7')
         uses: docker/build-push-action@v2
         with:
+          context: .
           push: true
           file: .github/Dockerfile
           build-args: |
