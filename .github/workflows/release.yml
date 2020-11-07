@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Get convenient env variables
-        uses: FranzDiebold/github-env-vars-action@v1.2.0
+        uses: FranzDiebold/github-env-vars-action@v1.2.1
 
       - name: Install PHP
         uses: shivammathur/setup-php@v2
@@ -99,6 +99,6 @@ jobs:
           file: .github/Dockerfile
           build-args: |
             PHP=${{ matrix.php-version }}
-            WSDLTOPHP=${{ env.GITHUB_REF_NAME_SLUG }}
+            WSDLTOPHP=${{ env.GITHUB_REF_NAME }}
             PHAR=./bin/wsdltophp.phar
-          tags: mikaelcom/wsdltophp:${{ env.GITHUB_REF_NAME_SLUG }}
+          tags: mikaelcom/wsdltophp:${{ env.GITHUB_REF_NAME }}

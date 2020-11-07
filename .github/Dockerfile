@@ -1,6 +1,6 @@
 ARG PHP=7.4.10
 ARG WSDLTOPHP=3.2.7
-ARG PHAR=https://github.com/WsdlToPhp/PackageGenerator/releases/download/$WSDLTOPHP/wsdltophp-$WSDLTOPHP-$PHP.phar
+ARG PHAR
 
 FROM php:$PHP-cli
 
