@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.12.0
+- issue #219 - How do you get the response <soap:Header> details
+- issue #221 - Feature: Actual versions docker images on docker hub
+- issue #223 - PHP 7.4 or PHP 8?
+
 ## 2.11.7
 - Typo in generated files
 - Update contributors list
