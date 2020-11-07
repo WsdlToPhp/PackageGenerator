@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Get convenient env variables
-        uses: FranzDiebold/github-env-vars-action@v1.2.0
+        uses: FranzDiebold/github-env-vars-action@v1.2.1
 
       - name: Install PHP
         uses: shivammathur/setup-php@v2
