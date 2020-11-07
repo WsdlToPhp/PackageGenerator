@@ -59753,7 +59753,10 @@
                         "abstract": false,
                         "meta": {
                             "maxOccurs": "unbounded",
-                            "minOccurs": "1"
+                            "minOccurs": [
+                                "0",
+                                "1"
+                            ]
                         },
                         "name": "SearchRefiner",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
@@ -61114,7 +61117,10 @@
                         "abstract": false,
                         "meta": {
                             "maxOccurs": "1",
-                            "minOccurs": "0"
+                            "minOccurs": [
+                                "1",
+                                "0"
+                            ]
                         },
                         "name": "SenderRestrictions",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"

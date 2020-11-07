@@ -24,7 +24,9 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateAccount($authenticateAccount)
     {
         try {
-            $this->setResult($this->getSoapClient()->AuthenticateAccount($authenticateAccount));
+            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateAccount', array(
+                $authenticateAccount,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -43,7 +45,9 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateAdmin($authenticateAdmin)
     {
         try {
-            $this->setResult($this->getSoapClient()->AuthenticateAdmin($authenticateAdmin));
+            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateAdmin', array(
+                $authenticateAdmin,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -62,7 +66,9 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateReseller($authenticateReseller)
     {
         try {
-            $this->setResult($this->getSoapClient()->AuthenticateReseller($authenticateReseller));
+            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateReseller', array(
+                $authenticateReseller,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -81,7 +87,9 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateCustomer($authenticateCustomer)
     {
         try {
-            $this->setResult($this->getSoapClient()->AuthenticateCustomer($authenticateCustomer));
+            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateCustomer', array(
+                $authenticateCustomer,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

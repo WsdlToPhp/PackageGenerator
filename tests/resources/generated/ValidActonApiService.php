@@ -56,7 +56,9 @@ class ApiService extends AbstractSoapClientBase
     public function login(\Api\StructType\ApiLogin $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->login($parameter));
+            $this->setResult($this->getSoapClient()->__soapCall('login', array(
+                $parameter,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -81,7 +83,9 @@ class ApiService extends AbstractSoapClientBase
     public function sendEmail(\Api\StructType\ApiSendEmail $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->sendEmail($parameter));
+            $this->setResult($this->getSoapClient()->__soapCall('sendEmail', array(
+                $parameter,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -106,7 +110,9 @@ class ApiService extends AbstractSoapClientBase
     public function _list(\Api\StructType\ApiList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->list($parameter));
+            $this->setResult($this->getSoapClient()->__soapCall('list', array(
+                $parameter,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -131,7 +137,9 @@ class ApiService extends AbstractSoapClientBase
     public function uploadList(\Api\StructType\ApiUploadList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->uploadList($parameter));
+            $this->setResult($this->getSoapClient()->__soapCall('uploadList', array(
+                $parameter,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -156,7 +164,9 @@ class ApiService extends AbstractSoapClientBase
     public function getUploadResult(\Api\StructType\ApiGetUploadResultRequest $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->getUploadResult($parameter));
+            $this->setResult($this->getSoapClient()->__soapCall('getUploadResult', array(
+                $parameter,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -181,7 +191,9 @@ class ApiService extends AbstractSoapClientBase
     public function downloadList(\Api\StructType\ApiDownloadList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->downloadList($parameter));
+            $this->setResult($this->getSoapClient()->__soapCall('downloadList', array(
+                $parameter,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -205,7 +217,9 @@ class ApiService extends AbstractSoapClientBase
     public function messageReport(\Api\StructType\ApiMessageReport $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->messageReport($parameter));
+            $this->setResult($this->getSoapClient()->__soapCall('messageReport', array(
+                $parameter,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -229,7 +243,9 @@ class ApiService extends AbstractSoapClientBase
     public function deleteList(\Api\StructType\ApiDeleteList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->deleteList($parameter));
+            $this->setResult($this->getSoapClient()->__soapCall('deleteList', array(
+                $parameter,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

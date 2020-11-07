@@ -21,7 +21,7 @@ abstract class AbstractOperation
     /**
      * @var string
      */
-    const SOAP_CALL_NAME = '__call';
+    const SOAP_CALL_NAME = '__soapCall';
     /**
      * @var MethodModel
      */

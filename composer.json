@@ -86,7 +86,7 @@
         "ext-libxml": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "composer/composer": "^1.0",
+        "composer/composer": "^1.0 || ^2.0",
         "symfony/console": ">=2",
         "symfony/yaml": ">=2",
         "wsdltophp/domhandler": "^1.0",
