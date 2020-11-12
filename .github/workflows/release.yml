@@ -90,8 +90,9 @@ jobs:
           mkdir -p ~/.gnupg/
           chmod 0700 ~/.gnupg/
           printf "$GPG_SIGNING_KEY" | base64 --decode > ~/.gnupg/private.key
+          printf "$GPG_SIGNING_PASS" > ~/.gnupg/pass.key
           gpg --import ~/.gnupg/private.key
-          gpg -u wsdltophp@mikael-delsol.fr --passphrase "$GPG_SIGNING_PASS" --detach-sign --output wsdltophp.phar.asc ./bin/wsdltophp.phar
+          gpg -u wsdltophp@mikael-delsol.fr --passphrase-file ~/.gnupg/pass.key --detach-sign --output wsdltophp.phar.asc ./bin/wsdltophp.phar
         env:
           GPG_SIGNING_KEY: |
             ${{ secrets.GPG_SIGNING_KEY_48C5AF7B99DD01357AD1D2FF8CBC79B4C2889BC5_NEW }}
@@ -105,8 +106,9 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./wsdltophp.phar.asc
-          asset_name: wsdltophp.phar.asc
+          asset_name: wsdltophp-${{ env.GITHUB_REF_NAME_SLUG }}-${{ matrix.php-version }}.phar.asc
           asset_content_type: application/octet-stream
+
       - name: Setup Buildx
         if: startsWith(matrix.php-version, '7')
         uses: docker/setup-buildx-action@v1
