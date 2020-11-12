@@ -89,15 +89,12 @@ jobs:
         run: |
           mkdir -p ~/.gnupg/
           chmod 0700 ~/.gnupg/
-          printf "$GPG_SIGNING_KEY" | base64 --decode > ~/.gnupg/private.key
-          printf "$GPG_SIGNING_PASS" > ~/.gnupg/pass.key
+          printf "$GPG_SIGNING_KEY" > ~/.gnupg/private.key
           gpg --import ~/.gnupg/private.key
-          gpg -u wsdltophp@mikael-delsol.fr --passphrase-file ~/.gnupg/pass.key --detach-sign --output wsdltophp.phar.asc ./bin/wsdltophp.phar
+          gpg -u wsdltophp@mikael-delsol.fr --detach-sign --output wsdltophp.phar.asc ./bin/wsdltophp.phar
         env:
           GPG_SIGNING_KEY: |
-            ${{ secrets.GPG_SIGNING_KEY_48C5AF7B99DD01357AD1D2FF8CBC79B4C2889BC5_NEW }}
-          GPG_SIGNING_PASS: |
-            ${{ secrets.GPG_SIGNING_KEY_PASS }}
+            ${{ secrets.GPG_SIGNING_KEY_893E7553C4D525279BC8C6D9B41E3A1E3748D61F }}
 
       - name: Upload phar signature
         uses: actions/upload-release-asset@v1
