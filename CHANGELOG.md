@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.3.1 - 2020-11-12
+- issue #226 - Signatures for .phar releases?
+
 ## 3.3.0 - 2020-11-07
 - issue #219 - How do you get the response <soap:Header> details
 - issue #221 - Feature: Actual versions docker images on docker hub
