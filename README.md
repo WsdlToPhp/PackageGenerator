@@ -87,11 +87,13 @@ $ wsdltophp generate:package \
     --force
 ```
 
+_In order to see all the used options, just remove the `--force` argument._
+
 ### With Docker:
 
 Such as with the command line above, simply use the `docker run` command line before:
 ```bash
-$ docker --rm -it run mikaelcom/wsdltophp:tagname generate:package \
+$ docker run --rm -it mikaelcom/wsdltophp:tagname generate:package \
     --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --destination="./MySdk" \
     --composer-name="myproject/mysdk" \
