@@ -43,6 +43,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Get convenient Docker Meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+          images: mikaelcom/wsdltophp
+
       - name: Install dependencies from composer.lock
         run: composer install ${{ env.COMPOSER_FLAGS }}
 
@@ -79,6 +85,26 @@ jobs:
           asset_name: wsdltophp-${{ env.GITHUB_REF_NAME_SLUG }}-${{ matrix.php-version }}.phar
           asset_content_type: application/octet-stream
 
+      - name: Configure GPG key and sign phar
+        run: |
+          mkdir -p ~/.gnupg/
+          chmod 0700 ~/.gnupg/
+          printf "$GPG_SIGNING_KEY" | base64 --decode > ~/.gnupg/private.key
+          gpg --import ~/.gnupg/private.key
+          gpg -u wsdltophp@mikael-delsol.fr --detach-sign --output wsdltophp.phar.asc ./bin/wsdltophp.phar
+        env:
+          GPG_SIGNING_KEY: |
+            ${{ secrets.GPG_SIGNING_KEY_48C5AF7B99DD01357AD1D2FF8CBC79B4C2889BC5 }}
+
+      - name: Upload phar signature
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./wsdltophp.phar.asc
+          asset_name: wsdltophp.phar.asc
+          asset_content_type: application/octet-stream
       - name: Setup Buildx
         if: startsWith(matrix.php-version, '7')
         uses: docker/setup-buildx-action@v1
@@ -101,4 +127,5 @@ jobs:
             PHP=${{ matrix.php-version }}
             WSDLTOPHP=${{ env.GITHUB_REF_NAME }}
             PHAR=./bin/wsdltophp.phar
-          tags: mikaelcom/wsdltophp:${{ env.GITHUB_REF_NAME }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
