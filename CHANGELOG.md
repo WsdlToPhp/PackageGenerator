@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.12.1
+- issue #226 - Signatures for .phar releases?
+
 ## 2.12.0
 - issue #219 - How do you get the response <soap:Header> details
 - issue #221 - Feature: Actual versions docker images on docker hub
