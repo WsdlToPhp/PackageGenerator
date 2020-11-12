@@ -94,7 +94,7 @@ jobs:
           gpg -u wsdltophp@mikael-delsol.fr --passphrase "${{ secrets.GPG_SIGNING_KEY_PASS }}" --detach-sign --output wsdltophp.phar.asc ./bin/wsdltophp.phar
         env:
           GPG_SIGNING_KEY: |
-            ${{ secrets.GPG_SIGNING_KEY_48C5AF7B99DD01357AD1D2FF8CBC79B4C2889BC5 }}
+            ${{ secrets.GPG_SIGNING_KEY_48C5AF7B99DD01357AD1D2FF8CBC79B4C2889BC5_NEW }}
 
       - name: Upload phar signature
         uses: actions/upload-release-asset@v1
