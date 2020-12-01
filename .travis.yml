@@ -22,7 +22,7 @@ jobs:
     - name: 'Tests under PHP 7.4'
       php: 7.4
     - name: 'Tests under PHP 8'
-      php: 8
+      php: nightly
 
 cache:
   directories:
