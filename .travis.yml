@@ -26,7 +26,7 @@ jobs:
     - name: 'Tests under PHP 7.4'
       php: '7.4'
       dist: bionic
-    - name: 'Tests under PHP 8'
+    - name: 'Tests under PHP 8.0'
       php: '8.0'
       dist: bionic
     - name: 'Tests under PHP nightly'
