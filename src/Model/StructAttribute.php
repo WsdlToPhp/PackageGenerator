@@ -189,6 +189,11 @@ class StructAttribute extends AbstractModel
         if ($this->isArray() || $this->isList()) {
             return [];
         }
+
+        if (($struct = $this->getTypeStruct()) && $struct->isStruct()) {
+            return null;
+        }
+
         return Utils::getValueWithinItsType($this->getMetaValueFirstSet([
             'default',
             'Default',
