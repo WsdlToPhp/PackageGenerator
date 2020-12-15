@@ -3,6 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
+use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
@@ -321,5 +322,21 @@ class ServiceTest extends AbstractFile
         } else {
             $this->fail('Unable to find Find service for file generation');
         }
+    }
+    /**
+     *
+     */
+    public function testGetOperationMethodReturnTypeWithNullReturnTypeMustReturnNull()
+    {
+        $generatorInstance = self::bingGeneratorInstance();
+        $method = new MethodModel(
+            $generatorInstance,
+            'test',
+            'nullParameter',
+            null,
+            new ServiceModel($generatorInstance, 'nullService')
+        );
+
+        $this->assertSame('null', ServiceFile::getOperationMethodReturnType($method, $generatorInstance));
     }
 }
