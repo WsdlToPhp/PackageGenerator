@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.12.2
+- issue #227 - Give additional information and skip error and continue stub generation on PHP Fatal error: Uncaught InvalidArgumentException: Value "NULL" can't be used to get an object from ...
+
 ## 2.12.1
 - issue #226 - Signatures for .phar releases?
 
