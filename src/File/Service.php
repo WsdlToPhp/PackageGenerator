@@ -288,6 +288,11 @@ class Service extends AbstractModelFile
     public static function getOperationMethodReturnType(MethodModel $method, Generator $generator)
     {
         $returnType = $method->getReturnType();
+
+        if (is_null($returnType)) {
+            return 'null';
+        }
+
         if ((($struct = $generator->getStructByName($returnType)) instanceof StructModel) && !$struct->isRestriction()) {
             if ($struct->isStruct()) {
                 $returnType = $struct->getPackagedName(true);
