@@ -120,21 +120,23 @@ class Struct extends AbstractModelFile
     {
         $parametersValues = [];
         foreach ($this->getModelAttributes() as $attribute) {
-            $parametersValues[] = $this->getStructMethodParameter($attribute, true);
+            $parametersValues[] = $this->getStructMethodParameter($attribute);
         }
         return $parametersValues;
     }
     /**
      * @param StructAttributeModel $attribute
-     * @param bool $lowCaseFirstLetter
-     * @param mixed $defaultValue
      * @return PhpFunctionParameter
      */
-    protected function getStructMethodParameter(StructAttributeModel $attribute, $lowCaseFirstLetter = false, $defaultValue = null)
+    protected function getStructMethodParameter(StructAttributeModel $attribute)
     {
         try {
-            $uniqueString = $attribute->getUniqueString($attribute->getCleanName(), 'method');
-            return new PhpFunctionParameter($lowCaseFirstLetter ? lcfirst($uniqueString) : $uniqueString, isset($defaultValue) ? $defaultValue : $attribute->getDefaultValue(), $this->getStructMethodParameterType($attribute), $attribute);
+            return new PhpFunctionParameter(
+                lcfirst($attribute->getUniqueString($attribute->getCleanName(), 'method')),
+                $attribute->getDefaultValue(),
+                $this->getStructMethodParameterType($attribute),
+                $attribute
+            );
         } catch (\InvalidArgumentException $exception) {
             throw new \InvalidArgumentException(sprintf('Unable to create function parameter for struct "%s" with type "%s" for attribute "%s"', $this->getModel()->getName(), var_export($this->getStructMethodParameterType($attribute), true), $attribute->getName()), __LINE__, $exception);
         }
@@ -204,7 +206,7 @@ class Struct extends AbstractModelFile
     protected function addStructMethodSet(StructAttributeModel $attribute)
     {
         $method = new PhpMethod($attribute->getSetterName(), [
-            $this->getStructMethodParameter($attribute, true, null),
+            $this->getStructMethodParameter($attribute),
         ]);
         $this->addStructMethodSetBody($method, $attribute);
         $this->methods->add($method);

@@ -118,9 +118,9 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         if (!is_object($object)) {
             throw new \InvalidArgumentException(sprintf('You must only pass object to this container (%s), "%s" passed as parameter!', get_called_class(), gettype($object)), __LINE__);
         }
-        $instanceOf = $this->objectClass();
-        if (get_class($object) !== $this->objectClass() && !$object instanceof $instanceOf) {
-            throw new \InvalidArgumentException(sprintf('Model of type "%s" does not match the object contained by this class: "%s"', get_class($object), $this->objectClass()), __LINE__);
+        $objectClass = $this->objectClass();
+        if (!$object instanceof $objectClass) {
+            throw new \InvalidArgumentException(sprintf('Model of type "%s" does not match the object contained by this class: "%s"', get_class($object), $objectClass), __LINE__);
         }
     }
     /**
