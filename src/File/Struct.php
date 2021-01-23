@@ -31,23 +31,19 @@ class Struct extends AbstractModelFile
     {
     }
     /**
-     * @param bool $includeInheritanceAttributes include the attributes of parent class, default parent attributes are not included. If true, then the array is an associative array containing and index "attribute" for the StructAttribute object and an index "model" for the Struct object.
-     * @param bool $requiredFirst places the required attributes first, then the not required in order to have the __construct method with the required attribute at first
      * @return StructAttributeContainer
      */
-    protected function getModelAttributes($includeInheritanceAttributes = false, $requiredFirst = true)
+    protected function getModelAttributes()
     {
-        return $this->getModel()->getAttributes($includeInheritanceAttributes, $requiredFirst);
+        return $this->getModel()->getProperAttributes(true);
     }
     /**
      * @param PropertyContainer $properties
      */
     protected function getClassProperties(PropertyContainer $properties)
     {
-        if ($this->getModel()->getAttributes()->count() > 0) {
-            foreach ($this->getModelAttributes() as $attribute) {
-                $properties->add(new PhpProperty($attribute->getCleanName(), PhpProperty::NO_VALUE));
-            }
+        foreach ($this->getModelAttributes() as $attribute) {
+            $properties->add(new PhpProperty($attribute->getCleanName(), PhpProperty::NO_VALUE));
         }
     }
     /**
