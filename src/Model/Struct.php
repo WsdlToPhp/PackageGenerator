@@ -146,12 +146,43 @@ class Struct extends AbstractModel
      */
     public function getAttributes($includeInheritanceAttributes = false, $requiredFirst = false)
     {
-        if ($includeInheritanceAttributes === false && $requiredFirst === false) {
+        if (!$includeInheritanceAttributes && !$requiredFirst) {
             $attributes = $this->attributes;
         } else {
             $attributes = $this->getAllAttributes($includeInheritanceAttributes, $requiredFirst);
         }
         return $attributes;
+    }
+
+    /**
+     * Returns the attributes of the struct and not the ones that are declared by the parent struct if this struct inherits from a Struct
+     * This means it removes from the attributes this Struct has the attributes declared by its parent class(es)
+     * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _construct method with the required attribute at first
+     * @return StructAttributeContainer
+     */
+    public function getProperAttributes($requiredFirst = false)
+    {
+        $properAttributes = new StructAttributeContainer($this->getGenerator());
+        $parentAttributes = new StructAttributeContainer($this->getGenerator());
+
+        if ($this->getInheritance() != '' && ($model = $this->getInheritanceStruct()) instanceof Struct) {
+            while ($model instanceof Struct && $model->isStruct()) {
+                foreach ($model->getAttributes() as $attribute) {
+                    $parentAttributes->add($attribute);
+                }
+                $model = $model->getInheritanceStruct();
+            }
+        }
+
+        /** @var StructAttribute $attribute */
+        foreach ($this->getAttributes() as $attribute) {
+            if ($parentAttributes->getStructAttributeByName($attribute->getName())) {
+                continue;
+            }
+            $properAttributes->add($attribute);
+        }
+
+        return $requiredFirst ? $this->putRequiredAttributesFirst($properAttributes) : $properAttributes;
     }
     /**
      * @param bool $includeInheritanceAttributes
@@ -161,14 +192,14 @@ class Struct extends AbstractModel
     protected function getAllAttributes($includeInheritanceAttributes, $requiredFirst)
     {
         $allAttributes = new StructAttributeContainer($this->getGenerator());
-        if ($includeInheritanceAttributes === true) {
+        if ($includeInheritanceAttributes) {
             $this->addInheritanceAttributes($allAttributes);
         }
         foreach ($this->attributes as $attribute) {
             $allAttributes->add($attribute);
         }
-        if ($requiredFirst === true) {
-            $attributes = $this->putRequiredFirst($allAttributes);
+        if ($requiredFirst) {
+            $attributes = $this->putRequiredAttributesFirst($allAttributes);
         } else {
             $attributes = $allAttributes;
         }
@@ -192,7 +223,7 @@ class Struct extends AbstractModel
      * @param StructAttributeContainer $allAttributes
      * @return StructAttributeContainer
      */
-    protected function putRequiredFirst(StructAttributeContainer $allAttributes)
+    protected function putRequiredAttributesFirst(StructAttributeContainer $allAttributes)
     {
         $attributes = new StructAttributeContainer($this->getGenerator());
         $requiredAttributes = new StructAttributeContainer($this->getGenerator());
@@ -220,7 +251,7 @@ class Struct extends AbstractModel
      */
     public function countOwnAttributes()
     {
-        return $this->getAttributes(false, false)->count();
+        return $this->getAttributes()->count();
     }
     /**
      * Returns the number of all attributes
@@ -384,7 +415,7 @@ class Struct extends AbstractModel
                 $this
                     ->setStruct(true)
                     ->setRestriction(true)
-                    ->values->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
+                    ->getValues()->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
             }
         }
         return $this;
