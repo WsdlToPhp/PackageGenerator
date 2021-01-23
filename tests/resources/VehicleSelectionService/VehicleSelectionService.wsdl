@@ -10,11 +10,11 @@
     <types>
         <xsd:schema>
             <xsd:import namespace="http://www.dat.de/vxs"
-                        schemaLocation="https://gold.datgroup.com/DATECodeSelection/services/VehicleSelectionService/VehicleSelectionService_schema1.xsd"/>
+                        schemaLocation="VehicleSelectionService_schema1.xsd"/>
         </xsd:schema>
         <xsd:schema>
             <xsd:import namespace="http://sphinx.dat.de/services/VehicleSelectionService"
-                        schemaLocation="https://gold.datgroup.com/DATECodeSelection/services/VehicleSelectionService/VehicleSelectionService_schema2.xsd"/>
+                        schemaLocation="VehicleSelectionService_schema2.xsd"/>
         </xsd:schema>
     </types>
     <message name="getVersion">

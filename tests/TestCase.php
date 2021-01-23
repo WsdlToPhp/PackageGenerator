@@ -158,7 +158,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
      */
     public static function wsdlVehicleSelectionPath()
     {
-        return __DIR__ . '/resources/VehicleSelectionService.wsdl';
+        return __DIR__ . '/resources/VehicleSelectionService/VehicleSelectionService.wsdl';
     }
 
     /**
