@@ -496,4 +496,20 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find ProposeNewTimeType struct for file generation');
         }
     }
+    /**
+     *
+     */
+    public function testWriteVehicleSelectionStructFieldString1000()
+    {
+        $generator = self::vehicleSelectionPackGeneratorInstance();
+        if (($model = $generator->getStructByName('fieldString1000')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidFieldString1000', $struct);
+        } else {
+            $this->fail('Unable to find fieldString1000 struct for file generation');
+        }
+    }
 }

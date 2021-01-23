@@ -156,6 +156,14 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     /**
      * @return string
      */
+    public static function wsdlVehicleSelectionPath()
+    {
+        return __DIR__ . '/resources/VehicleSelectionService.wsdl';
+    }
+
+    /**
+     * @return string
+     */
     public static function wsdlPortalPath()
     {
         return __DIR__ . '/resources/portaplusapi.wsdl';
@@ -400,6 +408,14 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     /**
      * @return Generator
      */
+    public static function getVehicleSelectionInstance($reset = false)
+    {
+        return self::getInstance(self::wsdlVehicleSelectionPath(), $reset);
+    }
+
+    /**
+     * @return Generator
+     */
     public static function getUnitTestsInstance($reset = false)
     {
         return self::getInstance(self::wsdlUnitTestsPath(), $reset);
@@ -574,6 +590,22 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     public static function ewsInstance()
     {
         return self::getInstanceFromSerializedJson('ews', 'start', self::wsdlEwsPath());
+    }
+
+    /**
+     * @return Generator
+     */
+    public static function myBoardPackGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstanceFromSerializedJson('myboard', $gatherMethods, self::wsdlMyBoardPackPath(), $reset);
+    }
+
+    /**
+     * @return Generator
+     */
+    public static function vehicleSelectionPackGeneratorInstance($reset = true, $gatherMethods = GeneratorOptions::VALUE_START)
+    {
+        return self::getInstanceFromSerializedJson('vehicleselection', $gatherMethods, self::wsdlVehicleSelectionPath(), $reset);
     }
 
     /**
