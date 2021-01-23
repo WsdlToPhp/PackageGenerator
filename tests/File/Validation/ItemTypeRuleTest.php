@@ -22,7 +22,6 @@ class ItemTypeRuleTest extends AbstractRuleTest
      * TypeError introduced in PHP 7, https://www.php.net/manual/fr/class.typeerror.php
      * @requires PHP 8.0
      * @expectedException \TypeError
-     * @expectedExceptionMessage Api\StructType\ApiTaxType::addToTaxDescription(): Argument #1 ($item) must be of type Api\StructType\ApiParagraphType, string given, called in /var/www/tests/File/Validation/ItemTypeRuleTest.php on line 31
      */
     public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeErrorWithPHP8()
     {
@@ -49,7 +48,6 @@ class ItemTypeRuleTest extends AbstractRuleTest
      * TypeError introduced in PHP 7, https://www.php.net/manual/fr/class.typeerror.php
      * @requires PHP 8.0
      * @expectedException \TypeError
-     * @expectedExceptionMessage Api\StructType\ApiTaxType::addToTaxDescription(): Argument #1 ($item) must be of type Api\StructType\ApiParagraphType, null given, called in /var/www/tests/File/Validation/ItemTypeRuleTest.php on line 58
      */
     public function testAddToTaxDescriptionValueWithNullValueMustThrowAnExceptionWithPHP8()
     {
