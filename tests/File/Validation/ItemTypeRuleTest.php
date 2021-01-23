@@ -7,9 +7,7 @@ class ItemTypeRuleTest extends AbstractRuleTest
     /**
      * TypeError introduced in PHP 7, https://www.php.net/manual/fr/class.typeerror.php
      * @requires PHP 7.0
-     * @requires PHP < 8.0
      * @expectedException \TypeError
-     * @expectedExceptionMessage Argument 1 passed to Api\StructType\ApiTaxType::addToTaxDescription() must be an instance of Api\StructType\ApiParagraphType, string given
      */
     public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeError()
     {
@@ -20,36 +18,10 @@ class ItemTypeRuleTest extends AbstractRuleTest
 
     /**
      * TypeError introduced in PHP 7, https://www.php.net/manual/fr/class.typeerror.php
-     * @requires PHP 8.0
-     * @expectedException \TypeError
-     */
-    public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeErrorWithPHP8()
-    {
-        $instance = self::getWhlTaxTypeInstance();
-
-        $instance->addToTaxDescription('foo');
-    }
-
-    /**
-     * TypeError introduced in PHP 7, https://www.php.net/manual/fr/class.typeerror.php
      * @requires PHP 7.0
-     * @requires PHP < 8.0
      * @expectedException \TypeError
-     * @expectedExceptionMessage Argument 1 passed to Api\StructType\ApiTaxType::addToTaxDescription() must be an instance of Api\StructType\ApiParagraphType, null given
      */
     public function testAddToTaxDescriptionValueWithNullValueMustThrowAnException()
-    {
-        $instance = self::getWhlTaxTypeInstance();
-
-        $instance->addToTaxDescription(null);
-    }
-
-    /**
-     * TypeError introduced in PHP 7, https://www.php.net/manual/fr/class.typeerror.php
-     * @requires PHP 8.0
-     * @expectedException \TypeError
-     */
-    public function testAddToTaxDescriptionValueWithNullValueMustThrowAnExceptionWithPHP8()
     {
         $instance = self::getWhlTaxTypeInstance();
 
