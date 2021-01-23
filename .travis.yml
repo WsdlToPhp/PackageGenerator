@@ -43,7 +43,6 @@ cache:
     - $HOME/.composer/cache
 
 install:
-    - if [[ ${TRAVIS_PHP_VERSION:0:3} == "8.0" ]]; then cat composer-php8.json > composer.json; fi
     - composer install
 
 script:
