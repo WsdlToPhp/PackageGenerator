@@ -72,10 +72,6 @@ class ApiAddRequest extends AbstractStructBase
         if ('' !== ($adGroupsArrayErrorMessage = self::validateAdGroupsForArrayConstraintsFromSetAdGroups($adGroups))) {
             throw new \InvalidArgumentException($adGroupsArrayErrorMessage, __LINE__);
         }
-        // validation for constraint: maxOccurs(unbounded, 1)
-        if (is_array($adGroups) && count($adGroups) > 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to unbounded,1,unbounded', count($adGroups)), __LINE__);
-        }
         $this->AdGroups = $adGroups;
         return $this;
     }
@@ -91,31 +87,7 @@ class ApiAddRequest extends AbstractStructBase
         if (!$item instanceof \Api\StructType\ApiAdGroupAddItem) {
             throw new \InvalidArgumentException(sprintf('The AdGroups property can only contain items of type \Api\StructType\ApiAdGroupAddItem, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
-        // validation for constraint: maxOccurs(unbounded, 1)
-        if (is_array($this->AdGroups) && count($this->AdGroups) >= 1) {
-            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to unbounded,1,unbounded', count($this->AdGroups)), __LINE__);
-        }
         $this->AdGroups[] = $item;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \Api\StructType\ApiAddRequest
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }
