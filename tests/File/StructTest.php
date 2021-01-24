@@ -169,6 +169,32 @@ class StructTest extends AbstractFile
     /**
      *
      */
+    public function testWriteYandexDirectApiStructAddRequestWithRepeatedMetaValueMaxOccurs()
+    {
+        $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
+        if (($model = $generator->getStructByName('AddRequest')) instanceof StructModel) {
+            $model->getAttribute('AdGroups')
+                ->addMeta('maxOccurs', 1)
+                ->addMeta('maxOccurs', 'unbounded');
+
+            $this->assertSame([
+                'unbounded',
+                1,
+                'unbounded',
+            ], $model->getAttribute('AdGroups')->getMetaValue('maxOccurs'));
+
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidAddRequestRepeatedMaxOccurs', $struct);
+        } else {
+            $this->fail('Unable to find AddRequest struct for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testWriteYandexDirectApiStructAdGroupsSelectionCriteria()
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();

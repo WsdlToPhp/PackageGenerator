@@ -39,7 +39,7 @@ abstract class AbstractLengthRule extends AbstractMinMaxRule
     final public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
         if ($itemType || !$this->getAttribute()->isArray()) {
-            $message = sprintf('sprintf(\'Invalid length of %%s, the number of characters/octets contained by the literal must be %s %s\', mb_strlen($%s))', $this->comparisonString(), $value, $parameterName);
+            $message = sprintf('sprintf(\'Invalid length of %%s, the number of characters/octets contained by the literal must be %s %s\', mb_strlen($%s))', $this->comparisonString(), is_array($value) ? implode(',', $value) : $value, $parameterName);
         } else {
             $message = $this->getErrorMessageVariableName($parameterName);
         }

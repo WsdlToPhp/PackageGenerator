@@ -3,7 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * Class LengthRule
+ * Class MaxOccursRule
  * @link https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/structures.html#p-max_occurs
  * Validation Rule: Element Sequence Locally Valid (Particle)
  * For a sequence (possibly empty) of element information items to be locally ·valid· with respect to a particle the appropriate case among the following must be true:
@@ -81,6 +81,6 @@ class MaxOccursRule extends AbstractMinMaxRule
         } else {
             $message = 'sprintf(\'Invalid count of %%s, the number of elements contained by the property must be %1$s %2$s\', count($%3$s))';
         }
-        return sprintf($message, $this->comparisonString(), $value, $parameterName, $this->getAttribute()->getCleanName());
+        return sprintf($message, $this->comparisonString(), is_array($value) ? implode(',', $value) : $value, $parameterName, $this->getAttribute()->getCleanName());
     }
 }
