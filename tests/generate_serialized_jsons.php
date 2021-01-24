@@ -152,7 +152,7 @@ $jsons = [
         ],
     ],
     'vehicleselection' => [
-        'origin' => __DIR__ . '/resources/VehicleSelectionService.wsdl',
+        'origin' => __DIR__ . '/resources/VehicleSelectionService/VehicleSelectionService.wsdl',
         'methods' => [
             'none',
             'start',
