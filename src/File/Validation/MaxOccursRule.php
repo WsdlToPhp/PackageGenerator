@@ -47,6 +47,7 @@ class MaxOccursRule extends AbstractMinMaxRule
     }
 
     /**
+     * If maxOccurs is 'unbounded', no need to check occurrences count
      * @param string $parameterName
      * @param mixed $value
      * @param bool $itemType
@@ -55,7 +56,7 @@ class MaxOccursRule extends AbstractMinMaxRule
     final public function testConditions($parameterName, $value, $itemType = false)
     {
         $test = '';
-        if ('unbounded' !== $value && $this->getAttribute()->isArray()) {
+        if ($this->getAttribute()->isArray() && ((is_scalar($value) && 'unbounded' !== $value) || (is_array($value) && !in_array('unbounded', $value)))) {
             if ($itemType) {
                 $test = 'is_array($this->%1$s) && count($this->%1$s) %3$s %2$d';
                 $symbol = self::SYMBOL_MAX_EXCLUSIVE;
@@ -81,6 +82,6 @@ class MaxOccursRule extends AbstractMinMaxRule
         } else {
             $message = 'sprintf(\'Invalid count of %%s, the number of elements contained by the property must be %1$s %2$s\', count($%3$s))';
         }
-        return sprintf($message, $this->comparisonString(), $value, $parameterName, $this->getAttribute()->getCleanName());
+        return sprintf($message, $this->comparisonString(), is_array($value) ? implode(',', array_unique($value)) : $value, $parameterName, $this->getAttribute()->getCleanName());
     }
 }
