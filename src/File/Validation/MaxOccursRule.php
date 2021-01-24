@@ -3,7 +3,7 @@
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * Class LengthRule
+ * Class MaxOccursRule
  * @link https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/structures.html#p-max_occurs
  * Validation Rule: Element Sequence Locally Valid (Particle)
  * For a sequence (possibly empty) of element information items to be locally ·valid· with respect to a particle the appropriate case among the following must be true:
