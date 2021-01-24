@@ -51,6 +51,6 @@ abstract class AbstractBoundRule extends AbstractMinMaxRule
      */
     final public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
     {
-        return sprintf('sprintf(\'Invalid value %%s, the value must be %s %s %s\', var_export($%4$s, true))', is_numeric($value) ? 'numerically' : 'chronologically', $this->comparisonString(), is_array($value) ? implode(',', $value) : $value, $parameterName);
+        return sprintf('sprintf(\'Invalid value %%s, the value must be %s %s %s\', var_export($%4$s, true))', is_numeric($value) ? 'numerically' : 'chronologically', $this->comparisonString(), is_array($value) ? implode(',', array_unique($value)) : $value, $parameterName);
     }
 }
