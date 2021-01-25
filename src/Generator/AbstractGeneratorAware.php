@@ -1,34 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Generator;
 
 abstract class AbstractGeneratorAware
 {
-    /**
-     * @var Generator
-     */
-    protected $generator;
-    /**
-     * @param Generator $generator
-     */
+    protected Generator $generator;
+
     public function __construct(Generator $generator)
     {
         $this->setGenerator($generator);
     }
-    /**
-     * @param Generator $generator
-     * @return AbstractGeneratorAware
-     */
-    protected function setGenerator(Generator $generator)
-    {
-        $this->generator = $generator;
-        return $this;
-    }
-    /**
-     * @return Generator
-     */
-    public function getGenerator()
+
+    public function getGenerator(): ?Generator
     {
         return $this->generator;
+    }
+
+    protected function setGenerator(Generator $generator): self
+    {
+        $this->generator = $generator;
+
+        return $this;
     }
 }

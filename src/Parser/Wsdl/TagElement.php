@@ -1,35 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag as Tag;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagElement extends AbstractAttributesParser
+final class TagElement extends AbstractAttributesParser
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parsingTag()
-     */
-    protected function parsingTag()
+    protected function parsingTag(): string
     {
         return WsdlDocument::TAG_ELEMENT;
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractTagParser::parseTagAttributes()
-     * @uses AbstractTagParser::parseTagAttributes()
-     * @uses StructAttribute::setContainsElements()
-     * @uses AbstractElementHandler::canOccurSeveralTimes()
-     * @param Tag $tag
-     * @param AbstractModel|null $model
-     * @param StructAttribute|null $structAttribute
-     */
-    protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null)
+
+    protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null): void
     {
         parent::parseTagAttributes($tag, $model, $structAttribute);
+
         if ($structAttribute instanceof StructAttribute) {
-            $structAttribute->setContainsElements($tag->canOccurSeveralTimes())->setRemovableFromRequest($tag->isRemovable());
+            $structAttribute
+                ->setContainsElements($tag->canOccurSeveralTimes())
+                ->setRemovableFromRequest($tag->isRemovable())
+            ;
         }
     }
 }

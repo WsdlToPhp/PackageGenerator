@@ -1,37 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
-use WsdlToPhp\PackageGenerator\Model\StructValue;
 use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Model\StructValue;
+use WsdlToPhp\PackageGenerator\Model\StructValue as StructValueModel;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
 
-class StructValueContainerTest extends TestCase
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class StructValueContainerTest extends AbstractTestCase
 {
-    /**
-     * @return StructValueContainer
-     */
-    public static function instance()
+    public static function instance(): StructValueContainer
     {
-        $struct = StructTest::instance('Foo', 'true');
+        $struct = StructTest::instance('Foo', true);
+
         $structValueContainer = new StructValueContainer(self::getBingGeneratorInstance());
         $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 1, 0, $struct));
         $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 2, 1, $struct));
         $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 'any', 2, $struct));
         $structValueContainer->add(new StructValue(self::getBingGeneratorInstance(), 'bar', 3, $struct));
+
         return $structValueContainer;
     }
-    /**
-     *
-     */
+
     public function testGetStructValueByName()
     {
-        $structvalueContainer = self::instance();
+        $structValueContainer = self::instance();
 
-        $this->assertInstanceOf('\WSdlToPhp\PackageGenerator\Model\StructValue', $structvalueContainer->getStructValueByName(1));
-        $this->assertInstanceOf('\WSdlToPhp\PackageGenerator\Model\StructValue', $structvalueContainer->getStructValueByName(2));
-        $this->assertInstanceOf('\WSdlToPhp\PackageGenerator\Model\StructValue', $structvalueContainer->getStructValueByName('any'));
-        $this->assertNull($structvalueContainer->getStructValueByName('Bar'));
+        $this->assertInstanceOf(StructValueModel::class, $structValueContainer->getStructValueByName(1));
+        $this->assertInstanceOf(StructValueModel::class, $structValueContainer->getStructValueByName(2));
+        $this->assertInstanceOf(StructValueModel::class, $structValueContainer->getStructValueByName('any'));
+        $this->assertNull($structValueContainer->getStructValueByName('Bar'));
     }
 }

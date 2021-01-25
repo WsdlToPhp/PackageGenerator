@@ -1,138 +1,89 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Model;
 
-use WsdlToPhp\PackageGenerator\Generator\Utils;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
 use WsdlToPhp\PackageGenerator\Container\Model\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 
 /**
- * Class Service stands for an available service containing the methods/operations described in the WSDL
+ * Class Service stands for an available service containing the methods/operations described in the WSDL.
  */
 class Service extends AbstractModel
 {
-    /**
-     * @var string
-     */
-    const DEFAULT_SERVICE_CLASS_NAME = 'Service';
-    /**
-     * Store the methods of the service
-     * @var MethodContainer
-     */
-    protected $methods;
-    /**
-     * Main constructor
-     * @see AbstractModel::__construct()
-     * @uses Service::setMethods()
-     * @param Generator $generator
-     * @param string $name the service name
-     */
-    public function __construct(Generator $generator, $name)
+    public const DEFAULT_SERVICE_CLASS_NAME = 'Service';
+
+    protected MethodContainer $methods;
+
+    public function __construct(Generator $generator, string $name)
     {
         parent::__construct($generator, $name);
         $this->setMethods(new MethodContainer($generator));
     }
-    /**
-     * Returns the contextual part of the class name for the package
-     * @see AbstractModel::getContextualPart()
-     * @return string
-     */
-    public function getContextualPart()
+
+    public function getContextualPart(): string
     {
         return $this->getGenerator()->getOptionServicesFolder();
     }
-    /**
-     * Returns the sub package name which the model belongs to
-     * Must be overridden by sub classes
-     * @see AbstractModel::getDocSubPackages()
-     * @return array
-     */
-    public function getDocSubPackages()
+
+    public function getDocSubPackages(): array
     {
         return [
             'Services',
         ];
     }
-    /**
-     * Returns the methods of the service
-     * @return MethodContainer
-     */
-    public function getMethods()
+
+    public function getMethods(): MethodContainer
     {
         return $this->methods;
     }
-    /**
-     * Sets the methods container
-     * @param MethodContainer $methodContainer
-     * @return Service
-     */
-    protected function setMethods(MethodContainer $methodContainer)
-    {
-        $this->methods = $methodContainer;
-        return $this;
-    }
-    /**
-     * Adds a method to the service
-     * @uses Method::setUnique()
-     * @param string $methodName original method name
-     * @param string|array $methodParameterType original parameter type/name
-     * @param string|array $methodReturnType original return type/name
-     * @param bool $methodIsUnique original isUnique value
-     * @return Method
-     */
-    public function addMethod($methodName, $methodParameterType, $methodReturnType, $methodIsUnique = true)
+
+    public function addMethod(string $methodName, $methodParameterType, $methodReturnType, $methodIsUnique = true): Method
     {
         $method = new Method($this->getGenerator(), $methodName, $methodParameterType, $methodReturnType, $this, $methodIsUnique);
         $this->methods->add($method);
+
         return $method;
     }
-    /**
-     * Returns the method by its original name
-     * @uses Service::getMethods()
-     * @uses AbstractModel::getName()
-     * @param string $methodName the original method name
-     * @return Method|null
-     */
-    public function getMethod($methodName)
+
+    public function getMethod(string $methodName): ?Method
     {
         return $this->methods->getMethodByName($methodName);
     }
-    /**
-     * Allows to define from which class the current model extends
-     * @param bool $short
-     * @return string
-     */
-    public function getExtends($short = false)
+
+    public function getExtends(bool $short = false): string
     {
         $extends = $this->getGenerator()->getOptionSoapClientClass();
+
         return $short ? Utils::removeNamespace($extends) : $extends;
     }
-    /**
-     * @param $filename
-     * @return ServiceReservedMethod
-     */
-    public function getReservedMethodsInstance($filename = null)
+
+    public function getReservedMethodsInstance(?string $filename = null): ServiceReservedMethod
     {
         return ServiceReservedMethod::instance($filename);
     }
-    /**
-     * {@inheritDoc}
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
-     */
-    protected function toJsonSerialize()
-    {
-        return [
-            'methods' => $this->methods,
-        ];
-    }
-    /**
-     * @param array $methods
-     */
-    public function setMethodsFromSerializedJson(array $methods)
+
+    public function setMethodsFromSerializedJson(array $methods): void
     {
         foreach ($methods as $method) {
             $this->methods->add(self::instanceFromSerializedJson($this->generator, $method)->setOwner($this));
         }
+    }
+
+    protected function setMethods(MethodContainer $methodContainer): self
+    {
+        $this->methods = $methodContainer;
+
+        return $this;
+    }
+
+    protected function toJsonSerialize(): array
+    {
+        return [
+            'methods' => $this->methods,
+        ];
     }
 }

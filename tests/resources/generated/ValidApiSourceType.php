@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\EnumType;
 
-use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
 /**
  * This class stands for SourceType EnumType
@@ -106,9 +109,9 @@ class ApiSourceType extends AbstractStructEnumBase
      * @uses self::VALUE_TRANSLATION
      * @return string[]
      */
-    public static function getValidValues()
+    public static function getValidValues(): array
     {
-        return array(
+        return [
             self::VALUE_SPELL,
             self::VALUE_WEB,
             self::VALUE_IMAGE,
@@ -124,6 +127,6 @@ class ApiSourceType extends AbstractStructEnumBase
             self::VALUE_QUERY_LOCATION,
             self::VALUE_MOBILE_WEB,
             self::VALUE_TRANSLATION,
-        );
+        ];
     }
 }

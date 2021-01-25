@@ -1,43 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 
-class TagRestrictionTest extends WsdlParser
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class TagRestrictionTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
-     */
-    public static function actonInstanceParser()
+    public static function actonInstanceParser(): TagRestriction
     {
         return new TagRestriction(self::generatorInstance(self::wsdlActonPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
-     */
-    public static function imageViewInstanceParser()
+
+    public static function imageViewInstanceParser(): TagRestriction
     {
         return new TagRestriction(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
-     */
-    public static function docDataPaymentsViewInstanceParser()
+
+    public static function docDataPaymentsViewInstanceParser(): TagRestriction
     {
         return new TagRestriction(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
-     */
-    public static function whlInstanceParser()
+
+    public static function whlInstanceParser(): TagRestriction
     {
         return new TagRestriction(self::generatorInstance(self::wsdlWhlPath()));
     }
-    /**
-     *
-     */
+
     public function testParseImageViewService()
     {
         $tagRestrictionParser = self::imageViewInstanceParser();
@@ -46,30 +41,28 @@ class TagRestrictionTest extends WsdlParser
 
         $count = 0;
         foreach ($tagRestrictionParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->isRestriction() === false) {
-                if ($struct->getName() === 'EchoRequestType') {
+            if ($struct instanceof Struct && false === $struct->isRestriction()) {
+                if ('EchoRequestType' === $struct->getName()) {
                     $this->assertSame('string', $struct->getInheritance());
                     $this->assertEquals([
                         'maxLength' => '100',
                         'base' => 'xsd:string',
                     ], $struct->getMeta());
-                    $count++;
-                } elseif ($struct->getName() === 'PasswordType') {
+                    ++$count;
+                } elseif ('PasswordType' === $struct->getName()) {
                     $this->assertSame('string', $struct->getInheritance());
                     $this->assertEquals([
                         'minLength' => '5',
                         'maxLength' => '10',
                         'base' => 'xsd:string',
                     ], $struct->getMeta());
-                    $count++;
+                    ++$count;
                 }
             }
         }
         $this->assertEquals(2, $count);
     }
-    /**
-     *
-     */
+
     public function testParseActonService()
     {
         $tagRestrictionParser = self::actonInstanceParser();
@@ -79,7 +72,7 @@ class TagRestrictionTest extends WsdlParser
         $ok = false;
         foreach ($tagRestrictionParser->getGenerator()->getStructs() as $struct) {
             if ($struct instanceof Struct) {
-                if ($struct->getName() === 'ID') {
+                if ('ID' === $struct->getName()) {
                     $this->assertFalse($struct->isStruct());
                     $ok = true;
                 }
@@ -87,9 +80,7 @@ class TagRestrictionTest extends WsdlParser
         }
         $this->assertTrue($ok);
     }
-    /**
-     *
-     */
+
     public function testParseDocDataPayments()
     {
         $tagRestrictionParser = self::docDataPaymentsViewInstanceParser();
@@ -105,15 +96,18 @@ class TagRestrictionTest extends WsdlParser
                             $this->assertSame('19', $struct->getMetaValue('minLength'));
                             $this->assertSame('19', $struct->getMetaValue('maxLength'));
                             $this->assertSame('normalizedString', $struct->getInheritance());
-                            $count++;
+                            ++$count;
                         }
+
                         break;
+
                     case 'emailAddress':
                         if (!$struct->isStruct()) {
                             $this->assertSame('[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)', $struct->getMetaValue('pattern'));
                             $this->assertSame('string100', $struct->getInheritance());
-                            $count++;
+                            ++$count;
                         }
+
                         break;
                 }
             }
@@ -121,9 +115,7 @@ class TagRestrictionTest extends WsdlParser
 
         $this->assertEquals(2, $count);
     }
-    /**
-     *
-     */
+
     public function testParseWhlMustFetchAllRestrictionPatterns()
     {
         $tagRestrictionParser = self::whlInstanceParser();

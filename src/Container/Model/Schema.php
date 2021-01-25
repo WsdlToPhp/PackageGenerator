@@ -1,34 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Model\Schema as Model;
 
-class Schema extends AbstractModel
+final class Schema extends AbstractModel
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
-     * @return string
-     */
-    protected function objectClass()
-    {
-        return 'WsdlToPhp\PackageGenerator\Model\Schema';
-    }
-    /**
-     * @param string $name
-     * @return Model|null
-     */
-    public function getSchemaByName($name)
+    public function getSchemaByName(string $name): ?Model
     {
         return $this->get($name);
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
-     * @param string $value
-     * @return Model|null
-     */
-    public function get($value)
+
+    protected function objectClass(): string
     {
-        return parent::get($value);
+        return Model::class;
     }
 }

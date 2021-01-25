@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for HouseProfileData StructType
@@ -18,9 +21,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $area_total;
+    protected ?float $area_total = null;
     /**
      * The area_residential
      * Meta information extracted from the WSDL
@@ -28,9 +31,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $area_residential;
+    protected ?float $area_residential = null;
     /**
      * The area_non_residential
      * Meta information extracted from the WSDL
@@ -38,86 +41,86 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $area_non_residential;
+    protected ?float $area_non_residential = null;
     /**
      * The cadastral_number
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $cadastral_number;
+    protected ?string $cadastral_number = null;
     /**
      * The project_type
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $project_type;
+    protected ?string $project_type = null;
     /**
      * The location_description
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $location_description;
+    protected ?string $location_description = null;
     /**
      * The individual_name
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $individual_name;
+    protected ?string $individual_name = null;
     /**
      * The house_type
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $house_type;
+    protected ?string $house_type = null;
     /**
      * The exploitation_start_year
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $exploitation_start_year;
+    protected ?string $exploitation_start_year = null;
     /**
      * The wall_material
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $wall_material;
+    protected ?string $wall_material = null;
     /**
      * The floor_type
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $floor_type;
+    protected ?string $floor_type = null;
     /**
      * The storeys_count
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public $storeys_count;
+    protected ?int $storeys_count = null;
     /**
      * The entrance_count
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public $entrance_count;
+    protected ?int $entrance_count = null;
     /**
      * The elevators_count
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public $elevators_count;
+    protected ?int $elevators_count = null;
     /**
      * The area_private
      * Meta information extracted from the WSDL
@@ -125,9 +128,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $area_private;
+    protected ?float $area_private = null;
     /**
      * The area_municipal
      * Meta information extracted from the WSDL
@@ -135,9 +138,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $area_municipal;
+    protected ?float $area_municipal = null;
     /**
      * The area_national
      * Meta information extracted from the WSDL
@@ -145,9 +148,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $area_national;
+    protected ?float $area_national = null;
     /**
      * The area_land
      * Meta information extracted from the WSDL
@@ -155,9 +158,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $area_land;
+    protected ?float $area_land = null;
     /**
      * The area_territory
      * Meta information extracted from the WSDL
@@ -165,44 +168,44 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $area_territory;
+    protected ?float $area_territory = null;
     /**
      * The inventory_number
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $inventory_number;
+    protected ?string $inventory_number = null;
     /**
      * The flats_count
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public $flats_count;
+    protected ?int $flats_count = null;
     /**
      * The residents_count
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public $residents_count;
+    protected ?int $residents_count = null;
     /**
      * The accounts_count
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public $accounts_count;
+    protected ?int $accounts_count = null;
     /**
      * The construction_features
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $construction_features;
+    protected ?string $construction_features = null;
     /**
      * The thermal_actual_expense
      * Meta information extracted from the WSDL
@@ -210,9 +213,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $thermal_actual_expense;
+    protected ?float $thermal_actual_expense = null;
     /**
      * The thermal_normative_expense
      * Meta information extracted from the WSDL
@@ -220,30 +223,30 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $thermal_normative_expense;
+    protected ?float $thermal_normative_expense = null;
     /**
      * The energy_efficiency
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $energy_efficiency;
+    protected ?string $energy_efficiency = null;
     /**
      * The energy_audit_date
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $energy_audit_date;
+    protected ?string $energy_audit_date = null;
     /**
      * The privatization_start_date
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $privatization_start_date;
+    protected ?string $privatization_start_date = null;
     /**
      * The deterioration_total
      * Meta information extracted from the WSDL
@@ -251,9 +254,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $deterioration_total;
+    protected ?float $deterioration_total = null;
     /**
      * The deterioration_foundation
      * Meta information extracted from the WSDL
@@ -261,9 +264,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $deterioration_foundation;
+    protected ?float $deterioration_foundation = null;
     /**
      * The deterioration_bearing_walls
      * Meta information extracted from the WSDL
@@ -271,9 +274,9 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $deterioration_bearing_walls;
+    protected ?float $deterioration_bearing_walls = null;
     /**
      * The deterioration_floor
      * Meta information extracted from the WSDL
@@ -281,86 +284,86 @@ class ApiHouseProfileData extends AbstractStructBase
      * - fractionDigits: 2
      * - nillable: true
      * - totalDigits: 15
-     * @var float
+     * @var float|null
      */
-    public $deterioration_floor;
+    protected ?float $deterioration_floor = null;
     /**
      * The facade
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiFacade
+     * @var \Api\StructType\ApiFacade|null
      */
-    public $facade;
+    protected ?\Api\StructType\ApiFacade $facade = null;
     /**
      * The roof
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiRoof
+     * @var \Api\StructType\ApiRoof|null
      */
-    public $roof;
+    protected ?\Api\StructType\ApiRoof $roof = null;
     /**
      * The basement
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiBasement
+     * @var \Api\StructType\ApiBasement|null
      */
-    public $basement;
+    protected ?\Api\StructType\ApiBasement $basement = null;
     /**
      * The common_space
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiCommonSpace
+     * @var \Api\StructType\ApiCommonSpace|null
      */
-    public $common_space;
+    protected ?\Api\StructType\ApiCommonSpace $common_space = null;
     /**
      * The chute
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiChute
+     * @var \Api\StructType\ApiChute|null
      */
-    public $chute;
+    protected ?\Api\StructType\ApiChute $chute = null;
     /**
      * The heating_system
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiHeatingSystem
+     * @var \Api\StructType\ApiHeatingSystem|null
      */
-    public $heating_system;
+    protected ?\Api\StructType\ApiHeatingSystem $heating_system = null;
     /**
      * The hot_water_system
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiHotWaterSystem
+     * @var \Api\StructType\ApiHotWaterSystem|null
      */
-    public $hot_water_system;
+    protected ?\Api\StructType\ApiHotWaterSystem $hot_water_system = null;
     /**
      * The cold_water_system
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiColdWaterSystem
+     * @var \Api\StructType\ApiColdWaterSystem|null
      */
-    public $cold_water_system;
+    protected ?\Api\StructType\ApiColdWaterSystem $cold_water_system = null;
     /**
      * The sewerage_system
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiSewerageSystem
+     * @var \Api\StructType\ApiSewerageSystem|null
      */
-    public $sewerage_system;
+    protected ?\Api\StructType\ApiSewerageSystem $sewerage_system = null;
     /**
      * The electricity_system
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiElectricitySystem
+     * @var \Api\StructType\ApiElectricitySystem|null
      */
-    public $electricity_system;
+    protected ?\Api\StructType\ApiElectricitySystem $electricity_system = null;
     /**
      * The gas_system
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiGasSystem
+     * @var \Api\StructType\ApiGasSystem|null
      */
-    public $gas_system;
+    protected ?\Api\StructType\ApiGasSystem $gas_system = null;
     /**
      * The lifts
      * Meta information extracted from the WSDL
@@ -370,63 +373,63 @@ class ApiHouseProfileData extends AbstractStructBase
      * - ref: soap-enc:arrayType
      * @var \Api\StructType\ApiLift[]
      */
-    public $lifts;
+    protected array $lifts = [];
     /**
      * The management_contract
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiManagementContract
+     * @var \Api\StructType\ApiManagementContract|null
      */
-    public $management_contract;
+    protected ?\Api\StructType\ApiManagementContract $management_contract = null;
     /**
      * The heating_provider
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiProvider
+     * @var \Api\StructType\ApiProvider|null
      */
-    public $heating_provider;
+    protected ?\Api\StructType\ApiProvider $heating_provider = null;
     /**
      * The electricity_provider
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiProvider
+     * @var \Api\StructType\ApiProvider|null
      */
-    public $electricity_provider;
+    protected ?\Api\StructType\ApiProvider $electricity_provider = null;
     /**
      * The gas_provider
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiProvider
+     * @var \Api\StructType\ApiProvider|null
      */
-    public $gas_provider;
+    protected ?\Api\StructType\ApiProvider $gas_provider = null;
     /**
      * The hot_water_provider
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiProvider
+     * @var \Api\StructType\ApiProvider|null
      */
-    public $hot_water_provider;
+    protected ?\Api\StructType\ApiProvider $hot_water_provider = null;
     /**
      * The cold_water_provider
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiProvider
+     * @var \Api\StructType\ApiProvider|null
      */
-    public $cold_water_provider;
+    protected ?\Api\StructType\ApiProvider $cold_water_provider = null;
     /**
      * The drainage_provider
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiProvider
+     * @var \Api\StructType\ApiProvider|null
      */
-    public $drainage_provider;
+    protected ?\Api\StructType\ApiProvider $drainage_provider = null;
     /**
      * The finance
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiFinance
+     * @var \Api\StructType\ApiFinance|null
      */
-    public $finance;
+    protected ?\Api\StructType\ApiFinance $finance = null;
     /**
      * Constructor method for HouseProfileData
      * @uses ApiHouseProfileData::setArea_total()
@@ -536,7 +539,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $drainage_provider
      * @param \Api\StructType\ApiFinance $finance
      */
-    public function __construct($area_total = null, $area_residential = null, $area_non_residential = null, $cadastral_number = null, $project_type = null, $location_description = null, $individual_name = null, $house_type = null, $exploitation_start_year = null, $wall_material = null, $floor_type = null, $storeys_count = null, $entrance_count = null, $elevators_count = null, $area_private = null, $area_municipal = null, $area_national = null, $area_land = null, $area_territory = null, $inventory_number = null, $flats_count = null, $residents_count = null, $accounts_count = null, $construction_features = null, $thermal_actual_expense = null, $thermal_normative_expense = null, $energy_efficiency = null, $energy_audit_date = null, $privatization_start_date = null, $deterioration_total = null, $deterioration_foundation = null, $deterioration_bearing_walls = null, $deterioration_floor = null, \Api\StructType\ApiFacade $facade = null, \Api\StructType\ApiRoof $roof = null, \Api\StructType\ApiBasement $basement = null, \Api\StructType\ApiCommonSpace $common_space = null, \Api\StructType\ApiChute $chute = null, \Api\StructType\ApiHeatingSystem $heating_system = null, \Api\StructType\ApiHotWaterSystem $hot_water_system = null, \Api\StructType\ApiColdWaterSystem $cold_water_system = null, \Api\StructType\ApiSewerageSystem $sewerage_system = null, \Api\StructType\ApiElectricitySystem $electricity_system = null, \Api\StructType\ApiGasSystem $gas_system = null, array $lifts = array(), \Api\StructType\ApiManagementContract $management_contract = null, \Api\StructType\ApiProvider $heating_provider = null, \Api\StructType\ApiProvider $electricity_provider = null, \Api\StructType\ApiProvider $gas_provider = null, \Api\StructType\ApiProvider $hot_water_provider = null, \Api\StructType\ApiProvider $cold_water_provider = null, \Api\StructType\ApiProvider $drainage_provider = null, \Api\StructType\ApiFinance $finance = null)
+    public function __construct(?float $area_total = null, ?float $area_residential = null, ?float $area_non_residential = null, ?string $cadastral_number = null, ?string $project_type = null, ?string $location_description = null, ?string $individual_name = null, ?string $house_type = null, ?string $exploitation_start_year = null, ?string $wall_material = null, ?string $floor_type = null, ?int $storeys_count = null, ?int $entrance_count = null, ?int $elevators_count = null, ?float $area_private = null, ?float $area_municipal = null, ?float $area_national = null, ?float $area_land = null, ?float $area_territory = null, ?string $inventory_number = null, ?int $flats_count = null, ?int $residents_count = null, ?int $accounts_count = null, ?string $construction_features = null, ?float $thermal_actual_expense = null, ?float $thermal_normative_expense = null, ?string $energy_efficiency = null, ?string $energy_audit_date = null, ?string $privatization_start_date = null, ?float $deterioration_total = null, ?float $deterioration_foundation = null, ?float $deterioration_bearing_walls = null, ?float $deterioration_floor = null, ?\Api\StructType\ApiFacade $facade = null, ?\Api\StructType\ApiRoof $roof = null, ?\Api\StructType\ApiBasement $basement = null, ?\Api\StructType\ApiCommonSpace $common_space = null, ?\Api\StructType\ApiChute $chute = null, ?\Api\StructType\ApiHeatingSystem $heating_system = null, ?\Api\StructType\ApiHotWaterSystem $hot_water_system = null, ?\Api\StructType\ApiColdWaterSystem $cold_water_system = null, ?\Api\StructType\ApiSewerageSystem $sewerage_system = null, ?\Api\StructType\ApiElectricitySystem $electricity_system = null, ?\Api\StructType\ApiGasSystem $gas_system = null, array $lifts = [], ?\Api\StructType\ApiManagementContract $management_contract = null, ?\Api\StructType\ApiProvider $heating_provider = null, ?\Api\StructType\ApiProvider $electricity_provider = null, ?\Api\StructType\ApiProvider $gas_provider = null, ?\Api\StructType\ApiProvider $hot_water_provider = null, ?\Api\StructType\ApiProvider $cold_water_provider = null, ?\Api\StructType\ApiProvider $drainage_provider = null, ?\Api\StructType\ApiFinance $finance = null)
     {
         $this
             ->setArea_total($area_total)
@@ -597,7 +600,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_total value
      * @return float|null
      */
-    public function getArea_total()
+    public function getArea_total(): ?float
     {
         return $this->area_total;
     }
@@ -606,28 +609,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_total
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_total($area_total = null)
+    public function setArea_total(?float $area_total = null): self
     {
         // validation for constraint: float
         if (!is_null($area_total) && !(is_float($area_total) || is_numeric($area_total))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_total, true), gettype($area_total)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_total, true), gettype($area_total)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_total) && mb_strlen(mb_substr($area_total, false !== mb_strpos($area_total, '.') ? mb_strpos($area_total, '.') + 1 : mb_strlen($area_total))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_total, true), mb_strlen(mb_substr($area_total, mb_strpos($area_total, '.') + 1))), __LINE__);
+        if (!is_null($area_total) && mb_strlen(mb_substr((string) $area_total, false !== mb_strpos((string) $area_total, '.') ? mb_strpos((string) $area_total, '.') + 1 : mb_strlen((string) $area_total))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_total, true), mb_strlen(mb_substr((string) $area_total, mb_strpos((string) $area_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_total) && mb_strlen(preg_replace('/(\D)/', '', $area_total)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_total, true), mb_strlen(preg_replace('/(\D)/', '', $area_total))), __LINE__);
+        if (!is_null($area_total) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_total)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_total, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_total))), __LINE__);
         }
         $this->area_total = $area_total;
+        
         return $this;
     }
     /**
      * Get area_residential value
      * @return float|null
      */
-    public function getArea_residential()
+    public function getArea_residential(): ?float
     {
         return $this->area_residential;
     }
@@ -636,28 +640,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_residential
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_residential($area_residential = null)
+    public function setArea_residential(?float $area_residential = null): self
     {
         // validation for constraint: float
         if (!is_null($area_residential) && !(is_float($area_residential) || is_numeric($area_residential))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_residential, true), gettype($area_residential)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_residential, true), gettype($area_residential)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_residential) && mb_strlen(mb_substr($area_residential, false !== mb_strpos($area_residential, '.') ? mb_strpos($area_residential, '.') + 1 : mb_strlen($area_residential))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_residential, true), mb_strlen(mb_substr($area_residential, mb_strpos($area_residential, '.') + 1))), __LINE__);
+        if (!is_null($area_residential) && mb_strlen(mb_substr((string) $area_residential, false !== mb_strpos((string) $area_residential, '.') ? mb_strpos((string) $area_residential, '.') + 1 : mb_strlen((string) $area_residential))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_residential, true), mb_strlen(mb_substr((string) $area_residential, mb_strpos((string) $area_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_residential) && mb_strlen(preg_replace('/(\D)/', '', $area_residential)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_residential, true), mb_strlen(preg_replace('/(\D)/', '', $area_residential))), __LINE__);
+        if (!is_null($area_residential) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_residential)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_residential, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_residential))), __LINE__);
         }
         $this->area_residential = $area_residential;
+        
         return $this;
     }
     /**
      * Get area_non_residential value
      * @return float|null
      */
-    public function getArea_non_residential()
+    public function getArea_non_residential(): ?float
     {
         return $this->area_non_residential;
     }
@@ -666,28 +671,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_non_residential
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_non_residential($area_non_residential = null)
+    public function setArea_non_residential(?float $area_non_residential = null): self
     {
         // validation for constraint: float
         if (!is_null($area_non_residential) && !(is_float($area_non_residential) || is_numeric($area_non_residential))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_non_residential, true), gettype($area_non_residential)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_non_residential, true), gettype($area_non_residential)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_non_residential) && mb_strlen(mb_substr($area_non_residential, false !== mb_strpos($area_non_residential, '.') ? mb_strpos($area_non_residential, '.') + 1 : mb_strlen($area_non_residential))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_non_residential, true), mb_strlen(mb_substr($area_non_residential, mb_strpos($area_non_residential, '.') + 1))), __LINE__);
+        if (!is_null($area_non_residential) && mb_strlen(mb_substr((string) $area_non_residential, false !== mb_strpos((string) $area_non_residential, '.') ? mb_strpos((string) $area_non_residential, '.') + 1 : mb_strlen((string) $area_non_residential))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_non_residential, true), mb_strlen(mb_substr((string) $area_non_residential, mb_strpos((string) $area_non_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_non_residential) && mb_strlen(preg_replace('/(\D)/', '', $area_non_residential)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_non_residential, true), mb_strlen(preg_replace('/(\D)/', '', $area_non_residential))), __LINE__);
+        if (!is_null($area_non_residential) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_non_residential)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_non_residential, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_non_residential))), __LINE__);
         }
         $this->area_non_residential = $area_non_residential;
+        
         return $this;
     }
     /**
      * Get cadastral_number value
      * @return string|null
      */
-    public function getCadastral_number()
+    public function getCadastral_number(): ?string
     {
         return $this->cadastral_number;
     }
@@ -696,20 +702,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $cadastral_number
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setCadastral_number($cadastral_number = null)
+    public function setCadastral_number(?string $cadastral_number = null): self
     {
         // validation for constraint: string
         if (!is_null($cadastral_number) && !is_string($cadastral_number)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cadastral_number, true), gettype($cadastral_number)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cadastral_number, true), gettype($cadastral_number)), __LINE__);
         }
         $this->cadastral_number = $cadastral_number;
+        
         return $this;
     }
     /**
      * Get project_type value
      * @return string|null
      */
-    public function getProject_type()
+    public function getProject_type(): ?string
     {
         return $this->project_type;
     }
@@ -718,20 +725,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $project_type
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setProject_type($project_type = null)
+    public function setProject_type(?string $project_type = null): self
     {
         // validation for constraint: string
         if (!is_null($project_type) && !is_string($project_type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($project_type, true), gettype($project_type)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($project_type, true), gettype($project_type)), __LINE__);
         }
         $this->project_type = $project_type;
+        
         return $this;
     }
     /**
      * Get location_description value
      * @return string|null
      */
-    public function getLocation_description()
+    public function getLocation_description(): ?string
     {
         return $this->location_description;
     }
@@ -740,20 +748,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $location_description
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setLocation_description($location_description = null)
+    public function setLocation_description(?string $location_description = null): self
     {
         // validation for constraint: string
         if (!is_null($location_description) && !is_string($location_description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location_description, true), gettype($location_description)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location_description, true), gettype($location_description)), __LINE__);
         }
         $this->location_description = $location_description;
+        
         return $this;
     }
     /**
      * Get individual_name value
      * @return string|null
      */
-    public function getIndividual_name()
+    public function getIndividual_name(): ?string
     {
         return $this->individual_name;
     }
@@ -762,20 +771,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $individual_name
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setIndividual_name($individual_name = null)
+    public function setIndividual_name(?string $individual_name = null): self
     {
         // validation for constraint: string
         if (!is_null($individual_name) && !is_string($individual_name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($individual_name, true), gettype($individual_name)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($individual_name, true), gettype($individual_name)), __LINE__);
         }
         $this->individual_name = $individual_name;
+        
         return $this;
     }
     /**
      * Get house_type value
      * @return string|null
      */
-    public function getHouse_type()
+    public function getHouse_type(): ?string
     {
         return $this->house_type;
     }
@@ -783,24 +793,25 @@ class ApiHouseProfileData extends AbstractStructBase
      * Set house_type value
      * @uses \Api\EnumType\ApiHouseTypeEnum::valueIsValid()
      * @uses \Api\EnumType\ApiHouseTypeEnum::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $house_type
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHouse_type($house_type = null)
+    public function setHouse_type(?string $house_type = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseTypeEnum::valueIsValid($house_type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseTypeEnum', is_array($house_type) ? implode(', ', $house_type) : var_export($house_type, true), implode(', ', \Api\EnumType\ApiHouseTypeEnum::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseTypeEnum', is_array($house_type) ? implode(', ', $house_type) : var_export($house_type, true), implode(', ', \Api\EnumType\ApiHouseTypeEnum::getValidValues())), __LINE__);
         }
         $this->house_type = $house_type;
+        
         return $this;
     }
     /**
      * Get exploitation_start_year value
      * @return string|null
      */
-    public function getExploitation_start_year()
+    public function getExploitation_start_year(): ?string
     {
         return $this->exploitation_start_year;
     }
@@ -809,20 +820,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $exploitation_start_year
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setExploitation_start_year($exploitation_start_year = null)
+    public function setExploitation_start_year(?string $exploitation_start_year = null): self
     {
         // validation for constraint: string
         if (!is_null($exploitation_start_year) && !is_string($exploitation_start_year)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($exploitation_start_year, true), gettype($exploitation_start_year)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($exploitation_start_year, true), gettype($exploitation_start_year)), __LINE__);
         }
         $this->exploitation_start_year = $exploitation_start_year;
+        
         return $this;
     }
     /**
      * Get wall_material value
      * @return string|null
      */
-    public function getWall_material()
+    public function getWall_material(): ?string
     {
         return $this->wall_material;
     }
@@ -830,24 +842,25 @@ class ApiHouseProfileData extends AbstractStructBase
      * Set wall_material value
      * @uses \Api\EnumType\ApiHouseWallMaterialEnum::valueIsValid()
      * @uses \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $wall_material
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setWall_material($wall_material = null)
+    public function setWall_material(?string $wall_material = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseWallMaterialEnum::valueIsValid($wall_material)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseWallMaterialEnum', is_array($wall_material) ? implode(', ', $wall_material) : var_export($wall_material, true), implode(', ', \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseWallMaterialEnum', is_array($wall_material) ? implode(', ', $wall_material) : var_export($wall_material, true), implode(', ', \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues())), __LINE__);
         }
         $this->wall_material = $wall_material;
+        
         return $this;
     }
     /**
      * Get floor_type value
      * @return string|null
      */
-    public function getFloor_type()
+    public function getFloor_type(): ?string
     {
         return $this->floor_type;
     }
@@ -855,24 +868,25 @@ class ApiHouseProfileData extends AbstractStructBase
      * Set floor_type value
      * @uses \Api\EnumType\ApiHouseFloorTypeEnum::valueIsValid()
      * @uses \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $floor_type
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setFloor_type($floor_type = null)
+    public function setFloor_type(?string $floor_type = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseFloorTypeEnum::valueIsValid($floor_type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseFloorTypeEnum', is_array($floor_type) ? implode(', ', $floor_type) : var_export($floor_type, true), implode(', ', \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseFloorTypeEnum', is_array($floor_type) ? implode(', ', $floor_type) : var_export($floor_type, true), implode(', ', \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues())), __LINE__);
         }
         $this->floor_type = $floor_type;
+        
         return $this;
     }
     /**
      * Get storeys_count value
      * @return int|null
      */
-    public function getStoreys_count()
+    public function getStoreys_count(): ?int
     {
         return $this->storeys_count;
     }
@@ -881,20 +895,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $storeys_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setStoreys_count($storeys_count = null)
+    public function setStoreys_count(?int $storeys_count = null): self
     {
         // validation for constraint: int
         if (!is_null($storeys_count) && !(is_int($storeys_count) || ctype_digit($storeys_count))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($storeys_count, true), gettype($storeys_count)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($storeys_count, true), gettype($storeys_count)), __LINE__);
         }
         $this->storeys_count = $storeys_count;
+        
         return $this;
     }
     /**
      * Get entrance_count value
      * @return int|null
      */
-    public function getEntrance_count()
+    public function getEntrance_count(): ?int
     {
         return $this->entrance_count;
     }
@@ -903,20 +918,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $entrance_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setEntrance_count($entrance_count = null)
+    public function setEntrance_count(?int $entrance_count = null): self
     {
         // validation for constraint: int
         if (!is_null($entrance_count) && !(is_int($entrance_count) || ctype_digit($entrance_count))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($entrance_count, true), gettype($entrance_count)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($entrance_count, true), gettype($entrance_count)), __LINE__);
         }
         $this->entrance_count = $entrance_count;
+        
         return $this;
     }
     /**
      * Get elevators_count value
      * @return int|null
      */
-    public function getElevators_count()
+    public function getElevators_count(): ?int
     {
         return $this->elevators_count;
     }
@@ -925,20 +941,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $elevators_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setElevators_count($elevators_count = null)
+    public function setElevators_count(?int $elevators_count = null): self
     {
         // validation for constraint: int
         if (!is_null($elevators_count) && !(is_int($elevators_count) || ctype_digit($elevators_count))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($elevators_count, true), gettype($elevators_count)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($elevators_count, true), gettype($elevators_count)), __LINE__);
         }
         $this->elevators_count = $elevators_count;
+        
         return $this;
     }
     /**
      * Get area_private value
      * @return float|null
      */
-    public function getArea_private()
+    public function getArea_private(): ?float
     {
         return $this->area_private;
     }
@@ -947,28 +964,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_private
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_private($area_private = null)
+    public function setArea_private(?float $area_private = null): self
     {
         // validation for constraint: float
         if (!is_null($area_private) && !(is_float($area_private) || is_numeric($area_private))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_private, true), gettype($area_private)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_private, true), gettype($area_private)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_private) && mb_strlen(mb_substr($area_private, false !== mb_strpos($area_private, '.') ? mb_strpos($area_private, '.') + 1 : mb_strlen($area_private))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_private, true), mb_strlen(mb_substr($area_private, mb_strpos($area_private, '.') + 1))), __LINE__);
+        if (!is_null($area_private) && mb_strlen(mb_substr((string) $area_private, false !== mb_strpos((string) $area_private, '.') ? mb_strpos((string) $area_private, '.') + 1 : mb_strlen((string) $area_private))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_private, true), mb_strlen(mb_substr((string) $area_private, mb_strpos((string) $area_private, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_private) && mb_strlen(preg_replace('/(\D)/', '', $area_private)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_private, true), mb_strlen(preg_replace('/(\D)/', '', $area_private))), __LINE__);
+        if (!is_null($area_private) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_private)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_private, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_private))), __LINE__);
         }
         $this->area_private = $area_private;
+        
         return $this;
     }
     /**
      * Get area_municipal value
      * @return float|null
      */
-    public function getArea_municipal()
+    public function getArea_municipal(): ?float
     {
         return $this->area_municipal;
     }
@@ -977,28 +995,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_municipal
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_municipal($area_municipal = null)
+    public function setArea_municipal(?float $area_municipal = null): self
     {
         // validation for constraint: float
         if (!is_null($area_municipal) && !(is_float($area_municipal) || is_numeric($area_municipal))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_municipal, true), gettype($area_municipal)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_municipal, true), gettype($area_municipal)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_municipal) && mb_strlen(mb_substr($area_municipal, false !== mb_strpos($area_municipal, '.') ? mb_strpos($area_municipal, '.') + 1 : mb_strlen($area_municipal))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_municipal, true), mb_strlen(mb_substr($area_municipal, mb_strpos($area_municipal, '.') + 1))), __LINE__);
+        if (!is_null($area_municipal) && mb_strlen(mb_substr((string) $area_municipal, false !== mb_strpos((string) $area_municipal, '.') ? mb_strpos((string) $area_municipal, '.') + 1 : mb_strlen((string) $area_municipal))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_municipal, true), mb_strlen(mb_substr((string) $area_municipal, mb_strpos((string) $area_municipal, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_municipal) && mb_strlen(preg_replace('/(\D)/', '', $area_municipal)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_municipal, true), mb_strlen(preg_replace('/(\D)/', '', $area_municipal))), __LINE__);
+        if (!is_null($area_municipal) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_municipal)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_municipal, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_municipal))), __LINE__);
         }
         $this->area_municipal = $area_municipal;
+        
         return $this;
     }
     /**
      * Get area_national value
      * @return float|null
      */
-    public function getArea_national()
+    public function getArea_national(): ?float
     {
         return $this->area_national;
     }
@@ -1007,28 +1026,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_national
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_national($area_national = null)
+    public function setArea_national(?float $area_national = null): self
     {
         // validation for constraint: float
         if (!is_null($area_national) && !(is_float($area_national) || is_numeric($area_national))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_national, true), gettype($area_national)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_national, true), gettype($area_national)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_national) && mb_strlen(mb_substr($area_national, false !== mb_strpos($area_national, '.') ? mb_strpos($area_national, '.') + 1 : mb_strlen($area_national))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_national, true), mb_strlen(mb_substr($area_national, mb_strpos($area_national, '.') + 1))), __LINE__);
+        if (!is_null($area_national) && mb_strlen(mb_substr((string) $area_national, false !== mb_strpos((string) $area_national, '.') ? mb_strpos((string) $area_national, '.') + 1 : mb_strlen((string) $area_national))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_national, true), mb_strlen(mb_substr((string) $area_national, mb_strpos((string) $area_national, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_national) && mb_strlen(preg_replace('/(\D)/', '', $area_national)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_national, true), mb_strlen(preg_replace('/(\D)/', '', $area_national))), __LINE__);
+        if (!is_null($area_national) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_national)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_national, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_national))), __LINE__);
         }
         $this->area_national = $area_national;
+        
         return $this;
     }
     /**
      * Get area_land value
      * @return float|null
      */
-    public function getArea_land()
+    public function getArea_land(): ?float
     {
         return $this->area_land;
     }
@@ -1037,28 +1057,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_land
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_land($area_land = null)
+    public function setArea_land(?float $area_land = null): self
     {
         // validation for constraint: float
         if (!is_null($area_land) && !(is_float($area_land) || is_numeric($area_land))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_land, true), gettype($area_land)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_land, true), gettype($area_land)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_land) && mb_strlen(mb_substr($area_land, false !== mb_strpos($area_land, '.') ? mb_strpos($area_land, '.') + 1 : mb_strlen($area_land))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_land, true), mb_strlen(mb_substr($area_land, mb_strpos($area_land, '.') + 1))), __LINE__);
+        if (!is_null($area_land) && mb_strlen(mb_substr((string) $area_land, false !== mb_strpos((string) $area_land, '.') ? mb_strpos((string) $area_land, '.') + 1 : mb_strlen((string) $area_land))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_land, true), mb_strlen(mb_substr((string) $area_land, mb_strpos((string) $area_land, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_land) && mb_strlen(preg_replace('/(\D)/', '', $area_land)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_land, true), mb_strlen(preg_replace('/(\D)/', '', $area_land))), __LINE__);
+        if (!is_null($area_land) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_land)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_land, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_land))), __LINE__);
         }
         $this->area_land = $area_land;
+        
         return $this;
     }
     /**
      * Get area_territory value
      * @return float|null
      */
-    public function getArea_territory()
+    public function getArea_territory(): ?float
     {
         return $this->area_territory;
     }
@@ -1067,28 +1088,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_territory
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_territory($area_territory = null)
+    public function setArea_territory(?float $area_territory = null): self
     {
         // validation for constraint: float
         if (!is_null($area_territory) && !(is_float($area_territory) || is_numeric($area_territory))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_territory, true), gettype($area_territory)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_territory, true), gettype($area_territory)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_territory) && mb_strlen(mb_substr($area_territory, false !== mb_strpos($area_territory, '.') ? mb_strpos($area_territory, '.') + 1 : mb_strlen($area_territory))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_territory, true), mb_strlen(mb_substr($area_territory, mb_strpos($area_territory, '.') + 1))), __LINE__);
+        if (!is_null($area_territory) && mb_strlen(mb_substr((string) $area_territory, false !== mb_strpos((string) $area_territory, '.') ? mb_strpos((string) $area_territory, '.') + 1 : mb_strlen((string) $area_territory))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_territory, true), mb_strlen(mb_substr((string) $area_territory, mb_strpos((string) $area_territory, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_territory) && mb_strlen(preg_replace('/(\D)/', '', $area_territory)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_territory, true), mb_strlen(preg_replace('/(\D)/', '', $area_territory))), __LINE__);
+        if (!is_null($area_territory) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_territory)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_territory, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_territory))), __LINE__);
         }
         $this->area_territory = $area_territory;
+        
         return $this;
     }
     /**
      * Get inventory_number value
      * @return string|null
      */
-    public function getInventory_number()
+    public function getInventory_number(): ?string
     {
         return $this->inventory_number;
     }
@@ -1097,20 +1119,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $inventory_number
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setInventory_number($inventory_number = null)
+    public function setInventory_number(?string $inventory_number = null): self
     {
         // validation for constraint: string
         if (!is_null($inventory_number) && !is_string($inventory_number)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($inventory_number, true), gettype($inventory_number)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($inventory_number, true), gettype($inventory_number)), __LINE__);
         }
         $this->inventory_number = $inventory_number;
+        
         return $this;
     }
     /**
      * Get flats_count value
      * @return int|null
      */
-    public function getFlats_count()
+    public function getFlats_count(): ?int
     {
         return $this->flats_count;
     }
@@ -1119,20 +1142,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $flats_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setFlats_count($flats_count = null)
+    public function setFlats_count(?int $flats_count = null): self
     {
         // validation for constraint: int
         if (!is_null($flats_count) && !(is_int($flats_count) || ctype_digit($flats_count))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($flats_count, true), gettype($flats_count)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($flats_count, true), gettype($flats_count)), __LINE__);
         }
         $this->flats_count = $flats_count;
+        
         return $this;
     }
     /**
      * Get residents_count value
      * @return int|null
      */
-    public function getResidents_count()
+    public function getResidents_count(): ?int
     {
         return $this->residents_count;
     }
@@ -1141,20 +1165,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $residents_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setResidents_count($residents_count = null)
+    public function setResidents_count(?int $residents_count = null): self
     {
         // validation for constraint: int
         if (!is_null($residents_count) && !(is_int($residents_count) || ctype_digit($residents_count))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($residents_count, true), gettype($residents_count)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($residents_count, true), gettype($residents_count)), __LINE__);
         }
         $this->residents_count = $residents_count;
+        
         return $this;
     }
     /**
      * Get accounts_count value
      * @return int|null
      */
-    public function getAccounts_count()
+    public function getAccounts_count(): ?int
     {
         return $this->accounts_count;
     }
@@ -1163,20 +1188,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $accounts_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setAccounts_count($accounts_count = null)
+    public function setAccounts_count(?int $accounts_count = null): self
     {
         // validation for constraint: int
         if (!is_null($accounts_count) && !(is_int($accounts_count) || ctype_digit($accounts_count))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($accounts_count, true), gettype($accounts_count)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($accounts_count, true), gettype($accounts_count)), __LINE__);
         }
         $this->accounts_count = $accounts_count;
+        
         return $this;
     }
     /**
      * Get construction_features value
      * @return string|null
      */
-    public function getConstruction_features()
+    public function getConstruction_features(): ?string
     {
         return $this->construction_features;
     }
@@ -1185,20 +1211,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $construction_features
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setConstruction_features($construction_features = null)
+    public function setConstruction_features(?string $construction_features = null): self
     {
         // validation for constraint: string
         if (!is_null($construction_features) && !is_string($construction_features)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($construction_features, true), gettype($construction_features)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($construction_features, true), gettype($construction_features)), __LINE__);
         }
         $this->construction_features = $construction_features;
+        
         return $this;
     }
     /**
      * Get thermal_actual_expense value
      * @return float|null
      */
-    public function getThermal_actual_expense()
+    public function getThermal_actual_expense(): ?float
     {
         return $this->thermal_actual_expense;
     }
@@ -1207,28 +1234,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $thermal_actual_expense
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setThermal_actual_expense($thermal_actual_expense = null)
+    public function setThermal_actual_expense(?float $thermal_actual_expense = null): self
     {
         // validation for constraint: float
         if (!is_null($thermal_actual_expense) && !(is_float($thermal_actual_expense) || is_numeric($thermal_actual_expense))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($thermal_actual_expense, true), gettype($thermal_actual_expense)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($thermal_actual_expense, true), gettype($thermal_actual_expense)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($thermal_actual_expense) && mb_strlen(mb_substr($thermal_actual_expense, false !== mb_strpos($thermal_actual_expense, '.') ? mb_strpos($thermal_actual_expense, '.') + 1 : mb_strlen($thermal_actual_expense))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_actual_expense, true), mb_strlen(mb_substr($thermal_actual_expense, mb_strpos($thermal_actual_expense, '.') + 1))), __LINE__);
+        if (!is_null($thermal_actual_expense) && mb_strlen(mb_substr((string) $thermal_actual_expense, false !== mb_strpos((string) $thermal_actual_expense, '.') ? mb_strpos((string) $thermal_actual_expense, '.') + 1 : mb_strlen((string) $thermal_actual_expense))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_actual_expense, true), mb_strlen(mb_substr((string) $thermal_actual_expense, mb_strpos((string) $thermal_actual_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($thermal_actual_expense) && mb_strlen(preg_replace('/(\D)/', '', $thermal_actual_expense)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_actual_expense, true), mb_strlen(preg_replace('/(\D)/', '', $thermal_actual_expense))), __LINE__);
+        if (!is_null($thermal_actual_expense) && mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_actual_expense)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_actual_expense, true), mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_actual_expense))), __LINE__);
         }
         $this->thermal_actual_expense = $thermal_actual_expense;
+        
         return $this;
     }
     /**
      * Get thermal_normative_expense value
      * @return float|null
      */
-    public function getThermal_normative_expense()
+    public function getThermal_normative_expense(): ?float
     {
         return $this->thermal_normative_expense;
     }
@@ -1237,28 +1265,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $thermal_normative_expense
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setThermal_normative_expense($thermal_normative_expense = null)
+    public function setThermal_normative_expense(?float $thermal_normative_expense = null): self
     {
         // validation for constraint: float
         if (!is_null($thermal_normative_expense) && !(is_float($thermal_normative_expense) || is_numeric($thermal_normative_expense))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($thermal_normative_expense, true), gettype($thermal_normative_expense)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($thermal_normative_expense, true), gettype($thermal_normative_expense)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($thermal_normative_expense) && mb_strlen(mb_substr($thermal_normative_expense, false !== mb_strpos($thermal_normative_expense, '.') ? mb_strpos($thermal_normative_expense, '.') + 1 : mb_strlen($thermal_normative_expense))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_normative_expense, true), mb_strlen(mb_substr($thermal_normative_expense, mb_strpos($thermal_normative_expense, '.') + 1))), __LINE__);
+        if (!is_null($thermal_normative_expense) && mb_strlen(mb_substr((string) $thermal_normative_expense, false !== mb_strpos((string) $thermal_normative_expense, '.') ? mb_strpos((string) $thermal_normative_expense, '.') + 1 : mb_strlen((string) $thermal_normative_expense))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_normative_expense, true), mb_strlen(mb_substr((string) $thermal_normative_expense, mb_strpos((string) $thermal_normative_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($thermal_normative_expense) && mb_strlen(preg_replace('/(\D)/', '', $thermal_normative_expense)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_normative_expense, true), mb_strlen(preg_replace('/(\D)/', '', $thermal_normative_expense))), __LINE__);
+        if (!is_null($thermal_normative_expense) && mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_normative_expense)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_normative_expense, true), mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_normative_expense))), __LINE__);
         }
         $this->thermal_normative_expense = $thermal_normative_expense;
+        
         return $this;
     }
     /**
      * Get energy_efficiency value
      * @return string|null
      */
-    public function getEnergy_efficiency()
+    public function getEnergy_efficiency(): ?string
     {
         return $this->energy_efficiency;
     }
@@ -1266,24 +1295,25 @@ class ApiHouseProfileData extends AbstractStructBase
      * Set energy_efficiency value
      * @uses \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::valueIsValid()
      * @uses \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $energy_efficiency
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setEnergy_efficiency($energy_efficiency = null)
+    public function setEnergy_efficiency(?string $energy_efficiency = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::valueIsValid($energy_efficiency)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum', is_array($energy_efficiency) ? implode(', ', $energy_efficiency) : var_export($energy_efficiency, true), implode(', ', \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum', is_array($energy_efficiency) ? implode(', ', $energy_efficiency) : var_export($energy_efficiency, true), implode(', ', \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues())), __LINE__);
         }
         $this->energy_efficiency = $energy_efficiency;
+        
         return $this;
     }
     /**
      * Get energy_audit_date value
      * @return string|null
      */
-    public function getEnergy_audit_date()
+    public function getEnergy_audit_date(): ?string
     {
         return $this->energy_audit_date;
     }
@@ -1292,20 +1322,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $energy_audit_date
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setEnergy_audit_date($energy_audit_date = null)
+    public function setEnergy_audit_date(?string $energy_audit_date = null): self
     {
         // validation for constraint: string
         if (!is_null($energy_audit_date) && !is_string($energy_audit_date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($energy_audit_date, true), gettype($energy_audit_date)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($energy_audit_date, true), gettype($energy_audit_date)), __LINE__);
         }
         $this->energy_audit_date = $energy_audit_date;
+        
         return $this;
     }
     /**
      * Get privatization_start_date value
      * @return string|null
      */
-    public function getPrivatization_start_date()
+    public function getPrivatization_start_date(): ?string
     {
         return $this->privatization_start_date;
     }
@@ -1314,20 +1345,21 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $privatization_start_date
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setPrivatization_start_date($privatization_start_date = null)
+    public function setPrivatization_start_date(?string $privatization_start_date = null): self
     {
         // validation for constraint: string
         if (!is_null($privatization_start_date) && !is_string($privatization_start_date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($privatization_start_date, true), gettype($privatization_start_date)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($privatization_start_date, true), gettype($privatization_start_date)), __LINE__);
         }
         $this->privatization_start_date = $privatization_start_date;
+        
         return $this;
     }
     /**
      * Get deterioration_total value
      * @return float|null
      */
-    public function getDeterioration_total()
+    public function getDeterioration_total(): ?float
     {
         return $this->deterioration_total;
     }
@@ -1336,28 +1368,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $deterioration_total
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDeterioration_total($deterioration_total = null)
+    public function setDeterioration_total(?float $deterioration_total = null): self
     {
         // validation for constraint: float
         if (!is_null($deterioration_total) && !(is_float($deterioration_total) || is_numeric($deterioration_total))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_total, true), gettype($deterioration_total)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_total, true), gettype($deterioration_total)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($deterioration_total) && mb_strlen(mb_substr($deterioration_total, false !== mb_strpos($deterioration_total, '.') ? mb_strpos($deterioration_total, '.') + 1 : mb_strlen($deterioration_total))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_total, true), mb_strlen(mb_substr($deterioration_total, mb_strpos($deterioration_total, '.') + 1))), __LINE__);
+        if (!is_null($deterioration_total) && mb_strlen(mb_substr((string) $deterioration_total, false !== mb_strpos((string) $deterioration_total, '.') ? mb_strpos((string) $deterioration_total, '.') + 1 : mb_strlen((string) $deterioration_total))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_total, true), mb_strlen(mb_substr((string) $deterioration_total, mb_strpos((string) $deterioration_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($deterioration_total) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_total)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_total, true), mb_strlen(preg_replace('/(\D)/', '', $deterioration_total))), __LINE__);
+        if (!is_null($deterioration_total) && mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_total)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_total, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_total))), __LINE__);
         }
         $this->deterioration_total = $deterioration_total;
+        
         return $this;
     }
     /**
      * Get deterioration_foundation value
      * @return float|null
      */
-    public function getDeterioration_foundation()
+    public function getDeterioration_foundation(): ?float
     {
         return $this->deterioration_foundation;
     }
@@ -1366,28 +1399,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $deterioration_foundation
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDeterioration_foundation($deterioration_foundation = null)
+    public function setDeterioration_foundation(?float $deterioration_foundation = null): self
     {
         // validation for constraint: float
         if (!is_null($deterioration_foundation) && !(is_float($deterioration_foundation) || is_numeric($deterioration_foundation))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_foundation, true), gettype($deterioration_foundation)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_foundation, true), gettype($deterioration_foundation)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($deterioration_foundation) && mb_strlen(mb_substr($deterioration_foundation, false !== mb_strpos($deterioration_foundation, '.') ? mb_strpos($deterioration_foundation, '.') + 1 : mb_strlen($deterioration_foundation))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_foundation, true), mb_strlen(mb_substr($deterioration_foundation, mb_strpos($deterioration_foundation, '.') + 1))), __LINE__);
+        if (!is_null($deterioration_foundation) && mb_strlen(mb_substr((string) $deterioration_foundation, false !== mb_strpos((string) $deterioration_foundation, '.') ? mb_strpos((string) $deterioration_foundation, '.') + 1 : mb_strlen((string) $deterioration_foundation))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_foundation, true), mb_strlen(mb_substr((string) $deterioration_foundation, mb_strpos((string) $deterioration_foundation, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($deterioration_foundation) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_foundation)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_foundation, true), mb_strlen(preg_replace('/(\D)/', '', $deterioration_foundation))), __LINE__);
+        if (!is_null($deterioration_foundation) && mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_foundation)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_foundation, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_foundation))), __LINE__);
         }
         $this->deterioration_foundation = $deterioration_foundation;
+        
         return $this;
     }
     /**
      * Get deterioration_bearing_walls value
      * @return float|null
      */
-    public function getDeterioration_bearing_walls()
+    public function getDeterioration_bearing_walls(): ?float
     {
         return $this->deterioration_bearing_walls;
     }
@@ -1396,28 +1430,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $deterioration_bearing_walls
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDeterioration_bearing_walls($deterioration_bearing_walls = null)
+    public function setDeterioration_bearing_walls(?float $deterioration_bearing_walls = null): self
     {
         // validation for constraint: float
         if (!is_null($deterioration_bearing_walls) && !(is_float($deterioration_bearing_walls) || is_numeric($deterioration_bearing_walls))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_bearing_walls, true), gettype($deterioration_bearing_walls)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_bearing_walls, true), gettype($deterioration_bearing_walls)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($deterioration_bearing_walls) && mb_strlen(mb_substr($deterioration_bearing_walls, false !== mb_strpos($deterioration_bearing_walls, '.') ? mb_strpos($deterioration_bearing_walls, '.') + 1 : mb_strlen($deterioration_bearing_walls))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_bearing_walls, true), mb_strlen(mb_substr($deterioration_bearing_walls, mb_strpos($deterioration_bearing_walls, '.') + 1))), __LINE__);
+        if (!is_null($deterioration_bearing_walls) && mb_strlen(mb_substr((string) $deterioration_bearing_walls, false !== mb_strpos((string) $deterioration_bearing_walls, '.') ? mb_strpos((string) $deterioration_bearing_walls, '.') + 1 : mb_strlen((string) $deterioration_bearing_walls))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_bearing_walls, true), mb_strlen(mb_substr((string) $deterioration_bearing_walls, mb_strpos((string) $deterioration_bearing_walls, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($deterioration_bearing_walls) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_bearing_walls)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_bearing_walls, true), mb_strlen(preg_replace('/(\D)/', '', $deterioration_bearing_walls))), __LINE__);
+        if (!is_null($deterioration_bearing_walls) && mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_bearing_walls)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_bearing_walls, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_bearing_walls))), __LINE__);
         }
         $this->deterioration_bearing_walls = $deterioration_bearing_walls;
+        
         return $this;
     }
     /**
      * Get deterioration_floor value
      * @return float|null
      */
-    public function getDeterioration_floor()
+    public function getDeterioration_floor(): ?float
     {
         return $this->deterioration_floor;
     }
@@ -1426,28 +1461,29 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $deterioration_floor
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDeterioration_floor($deterioration_floor = null)
+    public function setDeterioration_floor(?float $deterioration_floor = null): self
     {
         // validation for constraint: float
         if (!is_null($deterioration_floor) && !(is_float($deterioration_floor) || is_numeric($deterioration_floor))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_floor, true), gettype($deterioration_floor)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_floor, true), gettype($deterioration_floor)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($deterioration_floor) && mb_strlen(mb_substr($deterioration_floor, false !== mb_strpos($deterioration_floor, '.') ? mb_strpos($deterioration_floor, '.') + 1 : mb_strlen($deterioration_floor))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_floor, true), mb_strlen(mb_substr($deterioration_floor, mb_strpos($deterioration_floor, '.') + 1))), __LINE__);
+        if (!is_null($deterioration_floor) && mb_strlen(mb_substr((string) $deterioration_floor, false !== mb_strpos((string) $deterioration_floor, '.') ? mb_strpos((string) $deterioration_floor, '.') + 1 : mb_strlen((string) $deterioration_floor))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_floor, true), mb_strlen(mb_substr((string) $deterioration_floor, mb_strpos((string) $deterioration_floor, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($deterioration_floor) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_floor)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_floor, true), mb_strlen(preg_replace('/(\D)/', '', $deterioration_floor))), __LINE__);
+        if (!is_null($deterioration_floor) && mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_floor)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_floor, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_floor))), __LINE__);
         }
         $this->deterioration_floor = $deterioration_floor;
+        
         return $this;
     }
     /**
      * Get facade value
      * @return \Api\StructType\ApiFacade|null
      */
-    public function getFacade()
+    public function getFacade(): ?\Api\StructType\ApiFacade
     {
         return $this->facade;
     }
@@ -1456,16 +1492,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiFacade $facade
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setFacade(\Api\StructType\ApiFacade $facade = null)
+    public function setFacade(?\Api\StructType\ApiFacade $facade = null): self
     {
         $this->facade = $facade;
+        
         return $this;
     }
     /**
      * Get roof value
      * @return \Api\StructType\ApiRoof|null
      */
-    public function getRoof()
+    public function getRoof(): ?\Api\StructType\ApiRoof
     {
         return $this->roof;
     }
@@ -1474,16 +1511,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiRoof $roof
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setRoof(\Api\StructType\ApiRoof $roof = null)
+    public function setRoof(?\Api\StructType\ApiRoof $roof = null): self
     {
         $this->roof = $roof;
+        
         return $this;
     }
     /**
      * Get basement value
      * @return \Api\StructType\ApiBasement|null
      */
-    public function getBasement()
+    public function getBasement(): ?\Api\StructType\ApiBasement
     {
         return $this->basement;
     }
@@ -1492,16 +1530,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiBasement $basement
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setBasement(\Api\StructType\ApiBasement $basement = null)
+    public function setBasement(?\Api\StructType\ApiBasement $basement = null): self
     {
         $this->basement = $basement;
+        
         return $this;
     }
     /**
      * Get common_space value
      * @return \Api\StructType\ApiCommonSpace|null
      */
-    public function getCommon_space()
+    public function getCommon_space(): ?\Api\StructType\ApiCommonSpace
     {
         return $this->common_space;
     }
@@ -1510,16 +1549,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiCommonSpace $common_space
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setCommon_space(\Api\StructType\ApiCommonSpace $common_space = null)
+    public function setCommon_space(?\Api\StructType\ApiCommonSpace $common_space = null): self
     {
         $this->common_space = $common_space;
+        
         return $this;
     }
     /**
      * Get chute value
      * @return \Api\StructType\ApiChute|null
      */
-    public function getChute()
+    public function getChute(): ?\Api\StructType\ApiChute
     {
         return $this->chute;
     }
@@ -1528,16 +1568,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiChute $chute
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setChute(\Api\StructType\ApiChute $chute = null)
+    public function setChute(?\Api\StructType\ApiChute $chute = null): self
     {
         $this->chute = $chute;
+        
         return $this;
     }
     /**
      * Get heating_system value
      * @return \Api\StructType\ApiHeatingSystem|null
      */
-    public function getHeating_system()
+    public function getHeating_system(): ?\Api\StructType\ApiHeatingSystem
     {
         return $this->heating_system;
     }
@@ -1546,16 +1587,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiHeatingSystem $heating_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHeating_system(\Api\StructType\ApiHeatingSystem $heating_system = null)
+    public function setHeating_system(?\Api\StructType\ApiHeatingSystem $heating_system = null): self
     {
         $this->heating_system = $heating_system;
+        
         return $this;
     }
     /**
      * Get hot_water_system value
      * @return \Api\StructType\ApiHotWaterSystem|null
      */
-    public function getHot_water_system()
+    public function getHot_water_system(): ?\Api\StructType\ApiHotWaterSystem
     {
         return $this->hot_water_system;
     }
@@ -1564,16 +1606,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiHotWaterSystem $hot_water_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHot_water_system(\Api\StructType\ApiHotWaterSystem $hot_water_system = null)
+    public function setHot_water_system(?\Api\StructType\ApiHotWaterSystem $hot_water_system = null): self
     {
         $this->hot_water_system = $hot_water_system;
+        
         return $this;
     }
     /**
      * Get cold_water_system value
      * @return \Api\StructType\ApiColdWaterSystem|null
      */
-    public function getCold_water_system()
+    public function getCold_water_system(): ?\Api\StructType\ApiColdWaterSystem
     {
         return $this->cold_water_system;
     }
@@ -1582,16 +1625,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiColdWaterSystem $cold_water_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setCold_water_system(\Api\StructType\ApiColdWaterSystem $cold_water_system = null)
+    public function setCold_water_system(?\Api\StructType\ApiColdWaterSystem $cold_water_system = null): self
     {
         $this->cold_water_system = $cold_water_system;
+        
         return $this;
     }
     /**
      * Get sewerage_system value
      * @return \Api\StructType\ApiSewerageSystem|null
      */
-    public function getSewerage_system()
+    public function getSewerage_system(): ?\Api\StructType\ApiSewerageSystem
     {
         return $this->sewerage_system;
     }
@@ -1600,16 +1644,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiSewerageSystem $sewerage_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setSewerage_system(\Api\StructType\ApiSewerageSystem $sewerage_system = null)
+    public function setSewerage_system(?\Api\StructType\ApiSewerageSystem $sewerage_system = null): self
     {
         $this->sewerage_system = $sewerage_system;
+        
         return $this;
     }
     /**
      * Get electricity_system value
      * @return \Api\StructType\ApiElectricitySystem|null
      */
-    public function getElectricity_system()
+    public function getElectricity_system(): ?\Api\StructType\ApiElectricitySystem
     {
         return $this->electricity_system;
     }
@@ -1618,16 +1663,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiElectricitySystem $electricity_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setElectricity_system(\Api\StructType\ApiElectricitySystem $electricity_system = null)
+    public function setElectricity_system(?\Api\StructType\ApiElectricitySystem $electricity_system = null): self
     {
         $this->electricity_system = $electricity_system;
+        
         return $this;
     }
     /**
      * Get gas_system value
      * @return \Api\StructType\ApiGasSystem|null
      */
-    public function getGas_system()
+    public function getGas_system(): ?\Api\StructType\ApiGasSystem
     {
         return $this->gas_system;
     }
@@ -1636,16 +1682,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiGasSystem $gas_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setGas_system(\Api\StructType\ApiGasSystem $gas_system = null)
+    public function setGas_system(?\Api\StructType\ApiGasSystem $gas_system = null): self
     {
         $this->gas_system = $gas_system;
+        
         return $this;
     }
     /**
      * Get lifts value
-     * @return \Api\StructType\ApiLift[]|null
+     * @return \Api\StructType\ApiLift[]
      */
-    public function getLifts()
+    public function getLifts(): array
     {
         return $this->lifts;
     }
@@ -1655,7 +1702,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLiftsForArrayConstraintsFromSetLifts(array $values = array())
+    public static function validateLiftsForArrayConstraintsFromSetLifts(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -1669,43 +1716,46 @@ class ApiHouseProfileData extends AbstractStructBase
             $message = sprintf('The lifts property can only contain items of type \Api\StructType\ApiLift, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set lifts value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiLift[] $lifts
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setLifts(array $lifts = array())
+    public function setLifts(array $lifts = []): self
     {
         // validation for constraint: array
         if ('' !== ($liftsArrayErrorMessage = self::validateLiftsForArrayConstraintsFromSetLifts($lifts))) {
-            throw new \InvalidArgumentException($liftsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($liftsArrayErrorMessage, __LINE__);
         }
         $this->lifts = $lifts;
+        
         return $this;
     }
     /**
      * Add item to lifts value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiLift $item
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function addToLifts(\Api\StructType\ApiLift $item)
+    public function addToLifts(\Api\StructType\ApiLift $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiLift) {
-            throw new \InvalidArgumentException(sprintf('The lifts property can only contain items of type \Api\StructType\ApiLift, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The lifts property can only contain items of type \Api\StructType\ApiLift, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->lifts[] = $item;
+        
         return $this;
     }
     /**
      * Get management_contract value
      * @return \Api\StructType\ApiManagementContract|null
      */
-    public function getManagement_contract()
+    public function getManagement_contract(): ?\Api\StructType\ApiManagementContract
     {
         return $this->management_contract;
     }
@@ -1714,16 +1764,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiManagementContract $management_contract
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setManagement_contract(\Api\StructType\ApiManagementContract $management_contract = null)
+    public function setManagement_contract(?\Api\StructType\ApiManagementContract $management_contract = null): self
     {
         $this->management_contract = $management_contract;
+        
         return $this;
     }
     /**
      * Get heating_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getHeating_provider()
+    public function getHeating_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->heating_provider;
     }
@@ -1732,16 +1783,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $heating_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHeating_provider(\Api\StructType\ApiProvider $heating_provider = null)
+    public function setHeating_provider(?\Api\StructType\ApiProvider $heating_provider = null): self
     {
         $this->heating_provider = $heating_provider;
+        
         return $this;
     }
     /**
      * Get electricity_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getElectricity_provider()
+    public function getElectricity_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->electricity_provider;
     }
@@ -1750,16 +1802,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $electricity_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setElectricity_provider(\Api\StructType\ApiProvider $electricity_provider = null)
+    public function setElectricity_provider(?\Api\StructType\ApiProvider $electricity_provider = null): self
     {
         $this->electricity_provider = $electricity_provider;
+        
         return $this;
     }
     /**
      * Get gas_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getGas_provider()
+    public function getGas_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->gas_provider;
     }
@@ -1768,16 +1821,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $gas_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setGas_provider(\Api\StructType\ApiProvider $gas_provider = null)
+    public function setGas_provider(?\Api\StructType\ApiProvider $gas_provider = null): self
     {
         $this->gas_provider = $gas_provider;
+        
         return $this;
     }
     /**
      * Get hot_water_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getHot_water_provider()
+    public function getHot_water_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->hot_water_provider;
     }
@@ -1786,16 +1840,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $hot_water_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHot_water_provider(\Api\StructType\ApiProvider $hot_water_provider = null)
+    public function setHot_water_provider(?\Api\StructType\ApiProvider $hot_water_provider = null): self
     {
         $this->hot_water_provider = $hot_water_provider;
+        
         return $this;
     }
     /**
      * Get cold_water_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getCold_water_provider()
+    public function getCold_water_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->cold_water_provider;
     }
@@ -1804,16 +1859,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $cold_water_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setCold_water_provider(\Api\StructType\ApiProvider $cold_water_provider = null)
+    public function setCold_water_provider(?\Api\StructType\ApiProvider $cold_water_provider = null): self
     {
         $this->cold_water_provider = $cold_water_provider;
+        
         return $this;
     }
     /**
      * Get drainage_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getDrainage_provider()
+    public function getDrainage_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->drainage_provider;
     }
@@ -1822,16 +1878,17 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $drainage_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDrainage_provider(\Api\StructType\ApiProvider $drainage_provider = null)
+    public function setDrainage_provider(?\Api\StructType\ApiProvider $drainage_provider = null): self
     {
         $this->drainage_provider = $drainage_provider;
+        
         return $this;
     }
     /**
      * Get finance value
      * @return \Api\StructType\ApiFinance|null
      */
-    public function getFinance()
+    public function getFinance(): ?\Api\StructType\ApiFinance
     {
         return $this->finance;
     }
@@ -1840,9 +1897,10 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiFinance $finance
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setFinance(\Api\StructType\ApiFinance $finance = null)
+    public function setFinance(?\Api\StructType\ApiFinance $finance = null): self
     {
         $this->finance = $finance;
+        
         return $this;
     }
 }

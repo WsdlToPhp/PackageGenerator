@@ -1,28 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
+use SoapClient;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput;
 
-class TagOutputTest extends WsdlParser
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class TagOutputTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput
-     */
-    public static function myBoardPackInstanceParser()
+    public static function myBoardPackInstanceParser(): TagOutput
     {
         return new TagOutput(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
-    /**
-     * @return \SoapClient
-     */
-    public static function myBoardPackSoapClient()
+
+    public static function myBoardPackSoapClient(): SoapClient
     {
-        return new \SoapClient(self::wsdlMyBoardPackPath());
+        return new SoapClient(self::wsdlMyBoardPackPath());
     }
-    /**
-     *
-     */
+
     public function testParseMyBoardpack()
     {
         $tagOutputParser = self::myBoardPackInstanceParser();
@@ -35,26 +35,29 @@ class TagOutputTest extends WsdlParser
         foreach ($soapFunctions as $soapFunction) {
             $methodData = self::getMethodDataFromSoapFunction($soapFunction);
             $method = $tagOutputParser->getGenerator()->getServiceMethod($methodData['name']);
-            if (strtolower($methodData['return']) === TagOutput::UNKNOWN) {
+            if (TagOutput::UNKNOWN === strtolower($methodData['return'])) {
                 $this->assertNotSame(TagOutput::UNKNOWN, strtolower($method->getReturnType()));
-                $count++;
+                ++$count;
             }
         }
         $this->assertSame(126, $count);
     }
+
     /**
      * @param string $soapFunction
+     *
      * @return string[]
      */
     public static function getMethodDataFromSoapFunction($soapFunction)
     {
-        if (stripos($soapFunction, TagOutput::UNKNOWN) === 0) {
+        if (0 === stripos($soapFunction, TagOutput::UNKNOWN)) {
             $returnType = sprintf('(%s)', TagOutput::UNKNOWN);
         } else {
             $returnType = '([a-zA-Z_]*)';
         }
         $matches = [];
         preg_match(sprintf('/%s\s([a-zA-Z_]*)\(.*/i', $returnType), $soapFunction, $matches);
+
         return [
             'name' => $matches[2],
             'return' => $matches[1],

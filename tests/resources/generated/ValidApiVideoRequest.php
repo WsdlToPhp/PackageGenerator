@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for VideoRequest StructType
@@ -17,33 +20,33 @@ class ApiVideoRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var int
+     * @var int|null
      */
-    public $Offset;
+    protected ?int $Offset = null;
     /**
      * The Count
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var int
+     * @var int|null
      */
-    public $Count;
+    protected ?int $Count = null;
     /**
      * The Filters
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\ArrayType\ApiArrayOfString
+     * @var \Api\ArrayType\ApiArrayOfString|null
      */
-    public $Filters;
+    protected ?\Api\ArrayType\ApiArrayOfString $Filters = null;
     /**
      * The SortBy
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $SortBy;
+    protected ?string $SortBy = null;
     /**
      * Constructor method for VideoRequest
      * @uses ApiVideoRequest::setOffset()
@@ -55,7 +58,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param \Api\ArrayType\ApiArrayOfString $filters
      * @param string $sortBy
      */
-    public function __construct($offset = null, $count = null, \Api\ArrayType\ApiArrayOfString $filters = null, $sortBy = null)
+    public function __construct(?int $offset = null, ?int $count = null, ?\Api\ArrayType\ApiArrayOfString $filters = null, ?string $sortBy = null)
     {
         $this
             ->setOffset($offset)
@@ -67,7 +70,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Get Offset value
      * @return int|null
      */
-    public function getOffset()
+    public function getOffset(): ?int
     {
         return $this->Offset;
     }
@@ -76,20 +79,21 @@ class ApiVideoRequest extends AbstractStructBase
      * @param int $offset
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setOffset($offset = null)
+    public function setOffset(?int $offset = null): self
     {
         // validation for constraint: int
         if (!is_null($offset) && !(is_int($offset) || ctype_digit($offset))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($offset, true), gettype($offset)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($offset, true), gettype($offset)), __LINE__);
         }
         $this->Offset = $offset;
+        
         return $this;
     }
     /**
      * Get Count value
      * @return int|null
      */
-    public function getCount()
+    public function getCount(): ?int
     {
         return $this->Count;
     }
@@ -98,20 +102,21 @@ class ApiVideoRequest extends AbstractStructBase
      * @param int $count
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setCount($count = null)
+    public function setCount(?int $count = null): self
     {
         // validation for constraint: int
         if (!is_null($count) && !(is_int($count) || ctype_digit($count))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($count, true), gettype($count)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($count, true), gettype($count)), __LINE__);
         }
         $this->Count = $count;
+        
         return $this;
     }
     /**
      * Get Filters value
      * @return \Api\ArrayType\ApiArrayOfString|null
      */
-    public function getFilters()
+    public function getFilters(): ?\Api\ArrayType\ApiArrayOfString
     {
         return $this->Filters;
     }
@@ -120,16 +125,17 @@ class ApiVideoRequest extends AbstractStructBase
      * @param \Api\ArrayType\ApiArrayOfString $filters
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setFilters(\Api\ArrayType\ApiArrayOfString $filters = null)
+    public function setFilters(?\Api\ArrayType\ApiArrayOfString $filters = null): self
     {
         $this->Filters = $filters;
+        
         return $this;
     }
     /**
      * Get SortBy value
      * @return string|null
      */
-    public function getSortBy()
+    public function getSortBy(): ?string
     {
         return $this->SortBy;
     }
@@ -137,17 +143,18 @@ class ApiVideoRequest extends AbstractStructBase
      * Set SortBy value
      * @uses \Api\EnumType\ApiVideoSortOption::valueIsValid()
      * @uses \Api\EnumType\ApiVideoSortOption::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $sortBy
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setSortBy($sortBy = null)
+    public function setSortBy(?string $sortBy = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiVideoSortOption', is_array($sortBy) ? implode(', ', $sortBy) : var_export($sortBy, true), implode(', ', \Api\EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiVideoSortOption', is_array($sortBy) ? implode(', ', $sortBy) : var_export($sortBy, true), implode(', ', \Api\EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
         }
         $this->SortBy = $sortBy;
+        
         return $this;
     }
 }

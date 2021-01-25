@@ -1,46 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-class Rules
+final class Rules
 {
+    private StructAttribute $attribute;
 
-    /**
-     * @var StructAttribute
-     */
-    protected $attribute;
+    private AbstractModelFile $file;
 
-    /**
-     * @var AbstractModelFile
-     */
-    protected $file;
+    private PhpMethod $method;
 
-    /**
-     * @var PhpMethod
-     */
-    protected $method;
+    private MethodContainer $methods;
 
-    /**
-     * @var MethodContainer
-     */
-    protected $methods;
+    private static array $rulesAppliedToAttribute = [];
 
-    /**
-     * @var string[]
-     */
-    private static $rulesAppliedToAttribute = [];
-
-    /**
-     * @param AbstractModelFile $file
-     * @param PhpMethod $method
-     * @param StructAttribute $attribute
-     */
     public function __construct(AbstractModelFile $file, PhpMethod $method, StructAttribute $attribute, MethodContainer $methods)
     {
         $this->file = $file;
@@ -49,14 +30,12 @@ class Rules
         $this->methods = $methods;
     }
 
-    /**
-     * @param string $parameterName
-     * @param bool $itemType
-     */
-    public function applyRules($parameterName, $itemType = false)
+    public function applyRules(string $parameterName, bool $itemType = false): void
     {
         if ($this->attribute->isArray() && !$itemType) {
             $this->getArrayRule()->applyRule($parameterName, null, $itemType);
+        } elseif ($this->attribute->isXml() && !$itemType) {
+            $this->getXmlRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->attribute->isList() && !$itemType) {
             $this->getListRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->attribute)) {
@@ -69,159 +48,104 @@ class Rules
         $this->applyRulesFromAttribute($parameterName, $itemType);
     }
 
-    /**
-     * Generic method to apply rules from current model
-     * @param string $parameterName
-     * @param bool $itemType
-     */
-    protected function applyRulesFromAttribute($parameterName, $itemType = false)
+    public function getRule(string $name): ?AbstractRule
     {
-        foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
-            $rule = $this->getRule($metaName);
-            if ($rule instanceof AbstractRule) {
-                $rule->applyRule($parameterName, $metaValue, $itemType);
-            }
-        }
+        $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($name));
+
+        return class_exists($className) ? new $className($this) : null;
     }
 
-    /**
-     * @param string $name
-     * @return AbstractRule|null
-     */
-    public function getRule($name)
-    {
-        if (is_string($name)) {
-            $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($name));
-            if (class_exists($className)) {
-                return new $className($this);
-            }
-        }
-        return null;
-    }
-
-    /**
-     * @return ArrayRule
-     */
-    public function getArrayRule()
+    public function getArrayRule(): ArrayRule
     {
         return $this->getRule('array');
     }
 
-    /**
-     * @return EnumerationRule
-     */
-    public function getEnumerationRule()
+    public function getXmlRule(): XmlRule
+    {
+        return $this->getRule('xml');
+    }
+
+    public function getEnumerationRule(): EnumerationRule
     {
         return $this->getRule('enumeration');
     }
 
-    /**
-     * @return ItemTypeRule
-     */
-    public function getItemTypeRule()
+    public function getItemTypeRule(): ItemTypeRule
     {
         return $this->getRule('itemType');
     }
 
-    /**
-     * @return ListRule
-     */
-    public function getListRule()
+    public function getListRule(): ListRule
     {
         return $this->getRule('list');
     }
-    /**
-     * @return StructAttribute
-     */
-    public function getAttribute()
+
+    public function getAttribute(): StructAttribute
     {
         return $this->attribute;
     }
 
-    /**
-     * @param StructAttribute $attribute
-     * @return Rules
-     */
-    public function setAttribute(StructAttribute $attribute)
+    public function setAttribute(StructAttribute $attribute): self
     {
         $this->attribute = $attribute;
+
         return $this;
     }
 
-    /**
-     * @return AbstractModelFile
-     */
-    public function getFile()
+    public function getFile(): AbstractModelFile
     {
         return $this->file;
     }
 
-    /**
-     * @return PhpMethod
-     */
-    public function getMethod()
+    public function getMethod(): PhpMethod
     {
         return $this->method;
     }
 
-    /**
-     * @param PhpMethod $method
-     * @return Rules
-     */
-    public function setMethod(PhpMethod $method)
+    public function setMethod(PhpMethod $method): self
     {
         $this->method = $method;
+
         return $this;
     }
-    /**
-     * @return MethodContainer
-     */
-    public function getMethods()
+
+    public function getMethods(): MethodContainer
     {
         return $this->methods;
     }
-    /**
-     * @return Generator
-     */
-    public function getGenerator()
+
+    public function getGenerator(): Generator
     {
         return $this->file->getGenerator();
     }
 
-    /**
-     * @param AbstractRule $rule
-     * @param string|string[] $value
-     * @param StructAttribute $attribute
-     * @return string
-     */
-    private static function getAppliedRuleToAttributeKey(AbstractRule $rule, $value, StructAttribute $attribute)
+    public static function ruleHasBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute): void
+    {
+        self::$rulesAppliedToAttribute[self::getAppliedRuleToAttributeKey($rule, $value, $attribute)] = true;
+    }
+
+    public static function hasRuleBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute): bool
+    {
+        return array_key_exists(self::getAppliedRuleToAttributeKey($rule, $value, $attribute), self::$rulesAppliedToAttribute);
+    }
+
+    private function applyRulesFromAttribute(string $parameterName, bool $itemType = false): void
+    {
+        foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
+            if (!($rule = $this->getRule($metaName)) instanceof AbstractRule) {
+                continue;
+            }
+
+            $rule->applyRule($parameterName, $metaValue, $itemType);
+        }
+    }
+
+    private static function getAppliedRuleToAttributeKey(AbstractRule $rule, $value, StructAttribute $attribute): string
     {
         return implode('_', [
             $rule->validationRuleComment($value),
             $attribute->getOwner()->getName(),
             $attribute->getName(),
         ]);
-    }
-
-    /**
-     * @param AbstractRule $rule
-     * @param string|string[] $value
-     * @param StructAttribute $attribute
-     * @retrun void
-     */
-    public static function ruleHasBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute)
-    {
-        self::$rulesAppliedToAttribute[self::getAppliedRuleToAttributeKey($rule, $value, $attribute)] = true;
-    }
-
-    /**
-     * @param AbstractRule $rule
-     * @param string|string[] $value
-     * @param StructAttribute $attribute
-     * @return bool
-     */
-    public static function hasRuleBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute)
-    {
-        return array_key_exists(self::getAppliedRuleToAttributeKey($rule, $value, $attribute), self::$rulesAppliedToAttribute);
     }
 }

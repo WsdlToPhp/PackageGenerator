@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use SoapFault;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Authenticate ServiceType
@@ -16,7 +19,6 @@ class ApiAuthenticate extends AbstractSoapClientBase
      * Method to call the operation originally named AuthenticateAccount
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param AuthenticateAccount $authenticateAccount
      * @return AuthenticateAccountResponse|bool
@@ -24,12 +26,14 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateAccount($authenticateAccount)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateAccount', array(
+            $this->setResult($resultAuthenticateAccount = $this->getSoapClient()->__soapCall('AuthenticateAccount', [
                 $authenticateAccount,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultAuthenticateAccount;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -37,7 +41,6 @@ class ApiAuthenticate extends AbstractSoapClientBase
      * Method to call the operation originally named AuthenticateAdmin
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param AuthenticateAdmin $authenticateAdmin
      * @return AuthenticateAdminResponse|bool
@@ -45,12 +48,14 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateAdmin($authenticateAdmin)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateAdmin', array(
+            $this->setResult($resultAuthenticateAdmin = $this->getSoapClient()->__soapCall('AuthenticateAdmin', [
                 $authenticateAdmin,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultAuthenticateAdmin;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -58,7 +63,6 @@ class ApiAuthenticate extends AbstractSoapClientBase
      * Method to call the operation originally named AuthenticateReseller
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param AuthenticateReseller $authenticateReseller
      * @return AuthenticateResellerResponse|bool
@@ -66,12 +70,14 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateReseller($authenticateReseller)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateReseller', array(
+            $this->setResult($resultAuthenticateReseller = $this->getSoapClient()->__soapCall('AuthenticateReseller', [
                 $authenticateReseller,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultAuthenticateReseller;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -79,7 +85,6 @@ class ApiAuthenticate extends AbstractSoapClientBase
      * Method to call the operation originally named AuthenticateCustomer
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param AuthenticateCustomer $authenticateCustomer
      * @return AuthenticateCustomerResponse|bool
@@ -87,12 +92,14 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateCustomer($authenticateCustomer)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateCustomer', array(
+            $this->setResult($resultAuthenticateCustomer = $this->getSoapClient()->__soapCall('AuthenticateCustomer', [
                 $authenticateCustomer,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultAuthenticateCustomer;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }

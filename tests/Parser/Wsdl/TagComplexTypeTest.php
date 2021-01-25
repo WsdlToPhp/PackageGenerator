@@ -1,37 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 
-class TagComplexTypeTest extends WsdlParser
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class TagComplexTypeTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
-     */
-    public static function ebayInstanceParser()
+    public static function ebayInstanceParser(): TagComplexType
     {
         return new TagComplexType(self::generatorInstance(self::wsdlEbayPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
-     */
-    public static function partnerInstanceParser()
+
+    public static function partnerInstanceParser(): TagComplexType
     {
         return new TagComplexType(self::generatorInstance(self::wsdlPartnerPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
-     */
-    public static function docDataPaymentsInstanceParser()
+
+    public static function docDataPaymentsInstanceParser(): TagComplexType
     {
         return new TagComplexType(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
-    /**
-     *
-     */
+
     public function testParseEbay()
     {
         $tagComplexTypeParser = self::ebayInstanceParser();
@@ -47,9 +44,7 @@ class TagComplexTypeTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParseOrderContract()
     {
         $tagComplexTypeParser = self::partnerInstanceParser();
@@ -65,9 +60,7 @@ class TagComplexTypeTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParseDocDataPaymnts()
     {
         $tagComplexTypeParser = self::docDataPaymentsInstanceParser();
@@ -92,7 +85,7 @@ class TagComplexTypeTest extends WsdlParser
                     'maxLength' => '19',
                     'minLength' => '19',
                 ], $exchangeRateDate->getMeta());
-                $count++;
+                ++$count;
             }
         }
         $shopper = $structs->getStructByName('shopper');
@@ -111,7 +104,7 @@ class TagComplexTypeTest extends WsdlParser
                     'minOccurs' => '1',
                     'pattern' => '[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)',
                 ], $email->getMeta());
-                $count++;
+                ++$count;
             }
         }
         $this->assertEquals(2, $count);

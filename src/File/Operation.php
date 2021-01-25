@@ -1,34 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-class Operation extends AbstractOperation
+final class Operation extends AbstractOperation
 {
-    /**
-     * @return PhpMethod
-     */
-    public function getMainMethod()
+    public function getMainMethod(): PhpMethod
     {
-        $phpMethod = new PhpMethod($this->getMethod()->getMethodName());
-        $this->defineParameters($phpMethod)->defineBody($phpMethod);
+        $phpMethod = new PhpMethod($this->getMethod()->getMethodName(), []);
+        $this
+            ->defineParameters($phpMethod)
+            ->defineBody($phpMethod)
+        ;
+
         return $phpMethod;
     }
-    /**
-     * @param PhpMethod $method
-     * @return Operation
-     */
-    protected function defineParameters(PhpMethod $method)
+
+    protected function defineParameters(PhpMethod $method): self
     {
         return $this->defineParametersFromArray($method)->defineParametersFromModel($method)->defineParametersFromString($method);
     }
-    /**
-     * @param PhpMethod $method
-     * @return Operation
-     */
-    protected function defineParametersFromArray(PhpMethod $method)
+
+    protected function defineParametersFromArray(PhpMethod $method): self
     {
         if ($this->isParameterTypeAnArray()) {
             $parameters = [];
@@ -37,13 +34,11 @@ class Operation extends AbstractOperation
             }
             $method->setParameters($parameters);
         }
+
         return $this;
     }
-    /**
-     * @param PhpMethod $method
-     * @return Operation
-     */
-    protected function defineParametersFromModel(PhpMethod $method)
+
+    protected function defineParametersFromModel(PhpMethod $method): self
     {
         if ($this->isParameterTypeAModel()) {
             if ($this->getParameterTypeModel()->getAttributes(true, true)->count() > 0) {
@@ -52,80 +47,73 @@ class Operation extends AbstractOperation
                 ]);
             }
         }
+
         return $this;
     }
-    /**
-     * @param PhpMethod $method
-     * @return Operation
-     */
-    protected function defineParametersFromString(PhpMethod $method)
+
+    protected function defineParametersFromString(PhpMethod $method): self
     {
         if ($this->isParameterTypeAString() && !$this->isParameterTypeAModel()) {
             $method->setParameters([
                 $this->getMethodParameter($this->getParameterName($this->getMethod()->getParameterType())),
             ]);
         }
+
         return $this;
     }
-    /**
-     * @param PhpMethod $method
-     * @return Operation
-     */
-    protected function defineBody(PhpMethod $method)
+
+    protected function defineBody(PhpMethod $method): self
     {
-        $method->addChild('try {')
-            ->addChild($method->getIndentedString(sprintf('$this->setResult($this->getSoapClient()->%s%s));', $this->getSoapCallName(), $this->getOperationCallParameters($method)), 1))
-            ->addChild($method->getIndentedString('return $this->getResult();', 1))
-            ->addChild('} catch (\SoapFault $soapFault) {')
+        $resultVariableName = sprintf('$result%s', ucfirst($this->getMethod()->getCleanName(false)));
+        $method
+            ->addChild('try {')
+            ->addChild($method->getIndentedString(sprintf('$this->setResult(%s = $this->getSoapClient()->%s%s));', $resultVariableName, $this->getSoapCallName(), $this->getOperationCallParameters($method)), 1))
+            ->addChild('')
+            ->addChild($method->getIndentedString(sprintf('return %s;', $resultVariableName), 1))
+            ->addChild('} catch (SoapFault $soapFault) {')
             ->addChild($method->getIndentedString('$this->saveLastError(__METHOD__, $soapFault);', 1))
+            ->addChild('')
             ->addChild($method->getIndentedString('return false;', 1))
-            ->addChild('}');
+            ->addChild('}')
+        ;
+
         return $this;
     }
-    /**
-     * @return string
-     */
-    protected function getSoapCallName()
+
+    protected function getSoapCallName(): string
     {
         return sprintf('%s(\'%s\'%s', self::SOAP_CALL_NAME, $this->getMethod()->getName(), $this->getOperationCallParametersStarting());
     }
-    /**
-     * @param PhpMethod $method
-     * @return string
-     */
-    protected function getOperationCallParameters(PhpMethod $method)
+
+    protected function getOperationCallParameters(PhpMethod $method): string
     {
         $parameters = [];
         foreach ($method->getParameters() as $parameter) {
-            if ($parameter instanceof PhpFunctionParameter) {
-                $parameters[] = $this->getOperationCallParameterName($parameter, $method);
+            if (!$parameter instanceof PhpFunctionParameter) {
+                continue;
             }
+
+            $parameters[] = $this->getOperationCallParameterName($parameter, $method);
         }
-        return sprintf('%s%s, array(), array(), $this->outputHeaders', implode('', $parameters), $this->isParameterTypeEmpty() ? '' : PhpMethod::BREAK_LINE_CHAR . ')');
+
+        return sprintf('%s%s, [], [], $this->outputHeaders', implode('', $parameters), $this->isParameterTypeEmpty() ? '' : PhpMethod::BREAK_LINE_CHAR.']');
     }
-    /**
-     * @return string
-     */
-    protected function getOperationCallParametersStarting()
+
+    protected function getOperationCallParametersStarting(): string
     {
-        return $this->isParameterTypeAnArray() ? ', array(' : ($this->isParameterTypeEmpty() ? ', array()' : ', array(');
+        return $this->isParameterTypeAnArray() ? ', [' : ($this->isParameterTypeEmpty() ? ', []' : ', [');
     }
-    /**
-     * @return string
-     */
-    protected function getOperationCallParametersEnding()
+
+    protected function getOperationCallParametersEnding(): string
     {
-        return sprintf('%s)', PhpMethod::BREAK_LINE_CHAR);
+        return sprintf('%s]', PhpMethod::BREAK_LINE_CHAR);
     }
-    /**
-     * @param PhpFunctionParameter $parameter
-     * @param PhpMethod $method
-     * @return string
-     */
-    protected function getOperationCallParameterName(PhpFunctionParameter $parameter, PhpMethod $method)
+
+    protected function getOperationCallParameterName(PhpFunctionParameter $parameter, PhpMethod $method): string
     {
         $cloneParameter = clone $parameter;
         $cloneParameter->setType(null);
+
         return sprintf('%s%s', PhpMethod::BREAK_LINE_CHAR, $method->getIndentedString(sprintf('%s,', $cloneParameter->getPhpDeclaration()), 1));
     }
 }

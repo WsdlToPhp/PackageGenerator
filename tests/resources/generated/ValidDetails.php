@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for details StructType
@@ -22,9 +25,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailCalcCostShipping
-     * @var \Api\StructType\ApiMutualSettlementDetailCalcCostShipping
+     * @var \Api\StructType\ApiMutualSettlementDetailCalcCostShipping|null
      */
-    public $mutualSettlementDetailCalcCostShipping;
+    protected ?\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null;
     /**
      * The mutualSettlementDetailCashFlow
      * Meta information extracted from the WSDL
@@ -35,9 +38,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailCashFlow
-     * @var \Api\StructType\ApiMutualSettlementDetailCashFlow
+     * @var \Api\StructType\ApiMutualSettlementDetailCashFlow|null
      */
-    public $mutualSettlementDetailCashFlow;
+    protected ?\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null;
     /**
      * The mutualSettlementDetailClientPayment
      * Meta information extracted from the WSDL
@@ -48,9 +51,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailClientPayment
-     * @var \Api\StructType\ApiMutualSettlementDetailClientPayment
+     * @var \Api\StructType\ApiMutualSettlementDetailClientPayment|null
      */
-    public $mutualSettlementDetailClientPayment;
+    protected ?\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null;
     /**
      * The mutualSettlementDetailPostReturnRegistry
      * Meta information extracted from the WSDL
@@ -61,9 +64,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailPostReturnRegistry
-     * @var \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry
+     * @var \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry|null
      */
-    public $mutualSettlementDetailPostReturnRegistry;
+    protected ?\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null;
     /**
      * The mutualSettlementDetailRouteList
      * Meta information extracted from the WSDL
@@ -74,9 +77,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailRouteList
-     * @var \Api\StructType\ApiMutualSettlementDetailRouteList
+     * @var \Api\StructType\ApiMutualSettlementDetailRouteList|null
      */
-    public $mutualSettlementDetailRouteList;
+    protected ?\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null;
     /**
      * The mutualSettlementDetailTrackNumberPayment
      * Meta information extracted from the WSDL
@@ -87,9 +90,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailTrackNumberPayment
-     * @var \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment
+     * @var \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment|null
      */
-    public $mutualSettlementDetailTrackNumberPayment;
+    protected ?\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null;
     /**
      * The mutualSettlementDetailServiceRegistration
      * Meta information extracted from the WSDL
@@ -100,9 +103,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailServiceRegistration
-     * @var \Api\StructType\ApiMutualSettlementDetailServiceRegistration
+     * @var \Api\StructType\ApiMutualSettlementDetailServiceRegistration|null
      */
-    public $mutualSettlementDetailServiceRegistration;
+    protected ?\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null;
     /**
      * The mutualSettlementDetailAcceptanceRegistry
      * Meta information extracted from the WSDL
@@ -113,9 +116,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailAcceptanceRegistry
-     * @var \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry
+     * @var \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry|null
      */
-    public $mutualSettlementDetailAcceptanceRegistry;
+    protected ?\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null;
     /**
      * The mutualSettlementDetailAdditionalChargeFare
      * Meta information extracted from the WSDL
@@ -126,9 +129,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailAdditionalChargeFare
-     * @var \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare
+     * @var \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare|null
      */
-    public $mutualSettlementDetailAdditionalChargeFare;
+    protected ?\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null;
     /**
      * The mutualSettlementDetailOutgoingRequestToCarrier
      * Meta information extracted from the WSDL
@@ -139,9 +142,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailOutgoingRequestToCarrier
-     * @var \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier
+     * @var \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier|null
      */
-    public $mutualSettlementDetailOutgoingRequestToCarrier;
+    protected ?\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null;
     /**
      * The mutualSettlementDetailSMSInformation
      * Meta information extracted from the WSDL
@@ -152,9 +155,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailSMSInformation
-     * @var \Api\StructType\ApiMutualSettlementDetailSMSInformation
+     * @var \Api\StructType\ApiMutualSettlementDetailSMSInformation|null
      */
-    public $mutualSettlementDetailSMSInformation;
+    protected ?\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null;
     /**
      * The mutualSettlementDetailBuyerGoodsReturn
      * Meta information extracted from the WSDL
@@ -165,9 +168,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailBuyerGoodsReturn
-     * @var \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn
+     * @var \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn|null
      */
-    public $mutualSettlementDetailBuyerGoodsReturn;
+    protected ?\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null;
     /**
      * The mutualSettlementDetailProductsPackaging
      * Meta information extracted from the WSDL
@@ -178,9 +181,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailProductsPackaging
-     * @var \Api\StructType\ApiMutualSettlementDetailProductsPackaging
+     * @var \Api\StructType\ApiMutualSettlementDetailProductsPackaging|null
      */
-    public $mutualSettlementDetailProductsPackaging;
+    protected ?\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null;
     /**
      * The mutualSettlementDetailAdjustmentWriteRegisters
      * Meta information extracted from the WSDL
@@ -191,9 +194,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailAdjustmentWriteRegisters
-     * @var \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters
+     * @var \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters|null
      */
-    public $mutualSettlementDetailAdjustmentWriteRegisters;
+    protected ?\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null;
     /**
      * The mutualSettlementDetailSafeCustody
      * Meta information extracted from the WSDL
@@ -204,9 +207,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailSafeCustody
-     * @var \Api\StructType\ApiMutualSettlementDetailSafeCustody
+     * @var \Api\StructType\ApiMutualSettlementDetailSafeCustody|null
      */
-    public $mutualSettlementDetailSafeCustody;
+    protected ?\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null;
     /**
      * The mutualSettlementDetailSafeCustodyCalculation
      * Meta information extracted from the WSDL
@@ -217,9 +220,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailSafeCustodyCalculation
-     * @var \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation
+     * @var \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation|null
      */
-    public $mutualSettlementDetailSafeCustodyCalculation;
+    protected ?\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null;
     /**
      * The mutualSettlementDetailRegisterStorage
      * Meta information extracted from the WSDL
@@ -230,9 +233,9 @@ class ApiDetails extends AbstractStructBase
      * - choiceMaxOccurs: unbounded
      * - choiceMinOccurs: 0
      * - ref: tns:mutualSettlementDetailRegisterStorage
-     * @var \Api\StructType\ApiMutualSettlementDetailRegisterStorage
+     * @var \Api\StructType\ApiMutualSettlementDetailRegisterStorage|null
      */
-    public $mutualSettlementDetailRegisterStorage;
+    protected ?\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null;
     /**
      * Constructor method for details
      * @uses ApiDetails::setMutualSettlementDetailCalcCostShipping()
@@ -270,7 +273,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation
      * @param \Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage
      */
-    public function __construct(\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null, \Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null, \Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null, \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null, \Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null, \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null, \Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null, \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null, \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null, \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null, \Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null, \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null, \Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null, \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null, \Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null, \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null, \Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null)
+    public function __construct(?\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null, ?\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null, ?\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null, ?\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null, ?\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null, ?\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null, ?\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null, ?\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null, ?\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null, ?\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null, ?\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null, ?\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null, ?\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null, ?\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null, ?\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null, ?\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null, ?\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null)
     {
         $this
             ->setMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping)
@@ -295,7 +298,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailCalcCostShipping value
      * @return \Api\StructType\ApiMutualSettlementDetailCalcCostShipping|null
      */
-    public function getMutualSettlementDetailCalcCostShipping()
+    public function getMutualSettlementDetailCalcCostShipping(): ?\Api\StructType\ApiMutualSettlementDetailCalcCostShipping
     {
         return isset($this->mutualSettlementDetailCalcCostShipping) ? $this->mutualSettlementDetailCalcCostShipping : null;
     }
@@ -306,7 +309,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailCalcCostShippingForChoiceConstraintsFromSetMutualSettlementDetailCalcCostShipping($value)
+    public function validateMutualSettlementDetailCalcCostShippingForChoiceConstraintsFromSetMutualSettlementDetailCalcCostShipping($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -333,12 +336,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailCalcCostShipping can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailCalcCostShipping, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -346,28 +350,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailCalcCostShipping(\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null)
+    public function setMutualSettlementDetailCalcCostShipping(?\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailCalcCostShippingChoiceErrorMessage = self::validateMutualSettlementDetailCalcCostShippingForChoiceConstraintsFromSetMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailCalcCostShippingChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailCalcCostShippingChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailCalcCostShipping) || (is_array($mutualSettlementDetailCalcCostShipping) && empty($mutualSettlementDetailCalcCostShipping))) {
             unset($this->mutualSettlementDetailCalcCostShipping);
         } else {
             $this->mutualSettlementDetailCalcCostShipping = $mutualSettlementDetailCalcCostShipping;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailCashFlow value
      * @return \Api\StructType\ApiMutualSettlementDetailCashFlow|null
      */
-    public function getMutualSettlementDetailCashFlow()
+    public function getMutualSettlementDetailCashFlow(): ?\Api\StructType\ApiMutualSettlementDetailCashFlow
     {
         return isset($this->mutualSettlementDetailCashFlow) ? $this->mutualSettlementDetailCashFlow : null;
     }
@@ -378,7 +383,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailCashFlowForChoiceConstraintsFromSetMutualSettlementDetailCashFlow($value)
+    public function validateMutualSettlementDetailCashFlowForChoiceConstraintsFromSetMutualSettlementDetailCashFlow($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -405,12 +410,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailCashFlow can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailCashFlow, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailCashFlow can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailCashFlow, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -418,28 +424,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailCashFlow(\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null)
+    public function setMutualSettlementDetailCashFlow(?\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailCashFlowChoiceErrorMessage = self::validateMutualSettlementDetailCashFlowForChoiceConstraintsFromSetMutualSettlementDetailCashFlow($mutualSettlementDetailCashFlow))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailCashFlowChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailCashFlowChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailCashFlow) || (is_array($mutualSettlementDetailCashFlow) && empty($mutualSettlementDetailCashFlow))) {
             unset($this->mutualSettlementDetailCashFlow);
         } else {
             $this->mutualSettlementDetailCashFlow = $mutualSettlementDetailCashFlow;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailClientPayment value
      * @return \Api\StructType\ApiMutualSettlementDetailClientPayment|null
      */
-    public function getMutualSettlementDetailClientPayment()
+    public function getMutualSettlementDetailClientPayment(): ?\Api\StructType\ApiMutualSettlementDetailClientPayment
     {
         return isset($this->mutualSettlementDetailClientPayment) ? $this->mutualSettlementDetailClientPayment : null;
     }
@@ -450,7 +457,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailClientPaymentForChoiceConstraintsFromSetMutualSettlementDetailClientPayment($value)
+    public function validateMutualSettlementDetailClientPaymentForChoiceConstraintsFromSetMutualSettlementDetailClientPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -477,12 +484,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailClientPayment can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailClientPayment, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailClientPayment can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailClientPayment, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -490,28 +498,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailClientPayment(\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null)
+    public function setMutualSettlementDetailClientPayment(?\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailClientPaymentChoiceErrorMessage = self::validateMutualSettlementDetailClientPaymentForChoiceConstraintsFromSetMutualSettlementDetailClientPayment($mutualSettlementDetailClientPayment))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailClientPaymentChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailClientPaymentChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailClientPayment) || (is_array($mutualSettlementDetailClientPayment) && empty($mutualSettlementDetailClientPayment))) {
             unset($this->mutualSettlementDetailClientPayment);
         } else {
             $this->mutualSettlementDetailClientPayment = $mutualSettlementDetailClientPayment;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailPostReturnRegistry value
      * @return \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry|null
      */
-    public function getMutualSettlementDetailPostReturnRegistry()
+    public function getMutualSettlementDetailPostReturnRegistry(): ?\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry
     {
         return isset($this->mutualSettlementDetailPostReturnRegistry) ? $this->mutualSettlementDetailPostReturnRegistry : null;
     }
@@ -522,7 +531,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintsFromSetMutualSettlementDetailPostReturnRegistry($value)
+    public function validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintsFromSetMutualSettlementDetailPostReturnRegistry($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -549,12 +558,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailPostReturnRegistry, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailPostReturnRegistry can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailPostReturnRegistry, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -562,28 +572,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailPostReturnRegistry(\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null)
+    public function setMutualSettlementDetailPostReturnRegistry(?\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailPostReturnRegistryChoiceErrorMessage = self::validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintsFromSetMutualSettlementDetailPostReturnRegistry($mutualSettlementDetailPostReturnRegistry))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailPostReturnRegistryChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailPostReturnRegistryChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailPostReturnRegistry) || (is_array($mutualSettlementDetailPostReturnRegistry) && empty($mutualSettlementDetailPostReturnRegistry))) {
             unset($this->mutualSettlementDetailPostReturnRegistry);
         } else {
             $this->mutualSettlementDetailPostReturnRegistry = $mutualSettlementDetailPostReturnRegistry;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailRouteList value
      * @return \Api\StructType\ApiMutualSettlementDetailRouteList|null
      */
-    public function getMutualSettlementDetailRouteList()
+    public function getMutualSettlementDetailRouteList(): ?\Api\StructType\ApiMutualSettlementDetailRouteList
     {
         return isset($this->mutualSettlementDetailRouteList) ? $this->mutualSettlementDetailRouteList : null;
     }
@@ -594,7 +605,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailRouteListForChoiceConstraintsFromSetMutualSettlementDetailRouteList($value)
+    public function validateMutualSettlementDetailRouteListForChoiceConstraintsFromSetMutualSettlementDetailRouteList($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -621,12 +632,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailRouteList can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailRouteList, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailRouteList can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailRouteList, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -634,28 +646,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailRouteList(\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null)
+    public function setMutualSettlementDetailRouteList(?\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailRouteListChoiceErrorMessage = self::validateMutualSettlementDetailRouteListForChoiceConstraintsFromSetMutualSettlementDetailRouteList($mutualSettlementDetailRouteList))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailRouteListChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailRouteListChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailRouteList) || (is_array($mutualSettlementDetailRouteList) && empty($mutualSettlementDetailRouteList))) {
             unset($this->mutualSettlementDetailRouteList);
         } else {
             $this->mutualSettlementDetailRouteList = $mutualSettlementDetailRouteList;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailTrackNumberPayment value
      * @return \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment|null
      */
-    public function getMutualSettlementDetailTrackNumberPayment()
+    public function getMutualSettlementDetailTrackNumberPayment(): ?\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment
     {
         return isset($this->mutualSettlementDetailTrackNumberPayment) ? $this->mutualSettlementDetailTrackNumberPayment : null;
     }
@@ -666,7 +679,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintsFromSetMutualSettlementDetailTrackNumberPayment($value)
+    public function validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintsFromSetMutualSettlementDetailTrackNumberPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -693,12 +706,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailTrackNumberPayment, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailTrackNumberPayment can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailTrackNumberPayment, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -706,28 +720,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailTrackNumberPayment(\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null)
+    public function setMutualSettlementDetailTrackNumberPayment(?\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailTrackNumberPaymentChoiceErrorMessage = self::validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintsFromSetMutualSettlementDetailTrackNumberPayment($mutualSettlementDetailTrackNumberPayment))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailTrackNumberPaymentChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailTrackNumberPaymentChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailTrackNumberPayment) || (is_array($mutualSettlementDetailTrackNumberPayment) && empty($mutualSettlementDetailTrackNumberPayment))) {
             unset($this->mutualSettlementDetailTrackNumberPayment);
         } else {
             $this->mutualSettlementDetailTrackNumberPayment = $mutualSettlementDetailTrackNumberPayment;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailServiceRegistration value
      * @return \Api\StructType\ApiMutualSettlementDetailServiceRegistration|null
      */
-    public function getMutualSettlementDetailServiceRegistration()
+    public function getMutualSettlementDetailServiceRegistration(): ?\Api\StructType\ApiMutualSettlementDetailServiceRegistration
     {
         return isset($this->mutualSettlementDetailServiceRegistration) ? $this->mutualSettlementDetailServiceRegistration : null;
     }
@@ -738,7 +753,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailServiceRegistrationForChoiceConstraintsFromSetMutualSettlementDetailServiceRegistration($value)
+    public function validateMutualSettlementDetailServiceRegistrationForChoiceConstraintsFromSetMutualSettlementDetailServiceRegistration($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -765,12 +780,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailServiceRegistration can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailServiceRegistration, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailServiceRegistration can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailServiceRegistration, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -778,28 +794,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailServiceRegistration(\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null)
+    public function setMutualSettlementDetailServiceRegistration(?\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailServiceRegistrationChoiceErrorMessage = self::validateMutualSettlementDetailServiceRegistrationForChoiceConstraintsFromSetMutualSettlementDetailServiceRegistration($mutualSettlementDetailServiceRegistration))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailServiceRegistrationChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailServiceRegistrationChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailServiceRegistration) || (is_array($mutualSettlementDetailServiceRegistration) && empty($mutualSettlementDetailServiceRegistration))) {
             unset($this->mutualSettlementDetailServiceRegistration);
         } else {
             $this->mutualSettlementDetailServiceRegistration = $mutualSettlementDetailServiceRegistration;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailAcceptanceRegistry value
      * @return \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry|null
      */
-    public function getMutualSettlementDetailAcceptanceRegistry()
+    public function getMutualSettlementDetailAcceptanceRegistry(): ?\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry
     {
         return isset($this->mutualSettlementDetailAcceptanceRegistry) ? $this->mutualSettlementDetailAcceptanceRegistry : null;
     }
@@ -810,7 +827,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($value)
+    public function validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -837,12 +854,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAcceptanceRegistry, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailAcceptanceRegistry can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAcceptanceRegistry, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -850,28 +868,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAcceptanceRegistry(\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null)
+    public function setMutualSettlementDetailAcceptanceRegistry(?\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailAcceptanceRegistryChoiceErrorMessage = self::validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($mutualSettlementDetailAcceptanceRegistry))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailAcceptanceRegistryChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailAcceptanceRegistryChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailAcceptanceRegistry) || (is_array($mutualSettlementDetailAcceptanceRegistry) && empty($mutualSettlementDetailAcceptanceRegistry))) {
             unset($this->mutualSettlementDetailAcceptanceRegistry);
         } else {
             $this->mutualSettlementDetailAcceptanceRegistry = $mutualSettlementDetailAcceptanceRegistry;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailAdditionalChargeFare value
      * @return \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare|null
      */
-    public function getMutualSettlementDetailAdditionalChargeFare()
+    public function getMutualSettlementDetailAdditionalChargeFare(): ?\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare
     {
         return isset($this->mutualSettlementDetailAdditionalChargeFare) ? $this->mutualSettlementDetailAdditionalChargeFare : null;
     }
@@ -882,7 +901,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($value)
+    public function validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -909,12 +928,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAdditionalChargeFare, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailAdditionalChargeFare can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAdditionalChargeFare, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -922,28 +942,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAdditionalChargeFare(\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null)
+    public function setMutualSettlementDetailAdditionalChargeFare(?\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailAdditionalChargeFareChoiceErrorMessage = self::validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($mutualSettlementDetailAdditionalChargeFare))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailAdditionalChargeFareChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailAdditionalChargeFareChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailAdditionalChargeFare) || (is_array($mutualSettlementDetailAdditionalChargeFare) && empty($mutualSettlementDetailAdditionalChargeFare))) {
             unset($this->mutualSettlementDetailAdditionalChargeFare);
         } else {
             $this->mutualSettlementDetailAdditionalChargeFare = $mutualSettlementDetailAdditionalChargeFare;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailOutgoingRequestToCarrier value
      * @return \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier|null
      */
-    public function getMutualSettlementDetailOutgoingRequestToCarrier()
+    public function getMutualSettlementDetailOutgoingRequestToCarrier(): ?\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier
     {
         return isset($this->mutualSettlementDetailOutgoingRequestToCarrier) ? $this->mutualSettlementDetailOutgoingRequestToCarrier : null;
     }
@@ -954,7 +975,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($value)
+    public function validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -981,12 +1002,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailOutgoingRequestToCarrier, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailOutgoingRequestToCarrier can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailOutgoingRequestToCarrier, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -994,28 +1016,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailOutgoingRequestToCarrier(\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null)
+    public function setMutualSettlementDetailOutgoingRequestToCarrier(?\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailOutgoingRequestToCarrierChoiceErrorMessage = self::validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($mutualSettlementDetailOutgoingRequestToCarrier))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailOutgoingRequestToCarrierChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailOutgoingRequestToCarrierChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailOutgoingRequestToCarrier) || (is_array($mutualSettlementDetailOutgoingRequestToCarrier) && empty($mutualSettlementDetailOutgoingRequestToCarrier))) {
             unset($this->mutualSettlementDetailOutgoingRequestToCarrier);
         } else {
             $this->mutualSettlementDetailOutgoingRequestToCarrier = $mutualSettlementDetailOutgoingRequestToCarrier;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailSMSInformation value
      * @return \Api\StructType\ApiMutualSettlementDetailSMSInformation|null
      */
-    public function getMutualSettlementDetailSMSInformation()
+    public function getMutualSettlementDetailSMSInformation(): ?\Api\StructType\ApiMutualSettlementDetailSMSInformation
     {
         return isset($this->mutualSettlementDetailSMSInformation) ? $this->mutualSettlementDetailSMSInformation : null;
     }
@@ -1026,7 +1049,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailSMSInformationForChoiceConstraintsFromSetMutualSettlementDetailSMSInformation($value)
+    public function validateMutualSettlementDetailSMSInformationForChoiceConstraintsFromSetMutualSettlementDetailSMSInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1053,12 +1076,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailSMSInformation can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSMSInformation, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailSMSInformation can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSMSInformation, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1066,28 +1090,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSMSInformation(\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null)
+    public function setMutualSettlementDetailSMSInformation(?\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailSMSInformationChoiceErrorMessage = self::validateMutualSettlementDetailSMSInformationForChoiceConstraintsFromSetMutualSettlementDetailSMSInformation($mutualSettlementDetailSMSInformation))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailSMSInformationChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailSMSInformationChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailSMSInformation) || (is_array($mutualSettlementDetailSMSInformation) && empty($mutualSettlementDetailSMSInformation))) {
             unset($this->mutualSettlementDetailSMSInformation);
         } else {
             $this->mutualSettlementDetailSMSInformation = $mutualSettlementDetailSMSInformation;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailBuyerGoodsReturn value
      * @return \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn|null
      */
-    public function getMutualSettlementDetailBuyerGoodsReturn()
+    public function getMutualSettlementDetailBuyerGoodsReturn(): ?\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn
     {
         return isset($this->mutualSettlementDetailBuyerGoodsReturn) ? $this->mutualSettlementDetailBuyerGoodsReturn : null;
     }
@@ -1098,7 +1123,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($value)
+    public function validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1125,12 +1150,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailBuyerGoodsReturn, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailBuyerGoodsReturn can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailBuyerGoodsReturn, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1138,28 +1164,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailBuyerGoodsReturn(\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null)
+    public function setMutualSettlementDetailBuyerGoodsReturn(?\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailBuyerGoodsReturnChoiceErrorMessage = self::validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($mutualSettlementDetailBuyerGoodsReturn))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailBuyerGoodsReturnChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailBuyerGoodsReturnChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailBuyerGoodsReturn) || (is_array($mutualSettlementDetailBuyerGoodsReturn) && empty($mutualSettlementDetailBuyerGoodsReturn))) {
             unset($this->mutualSettlementDetailBuyerGoodsReturn);
         } else {
             $this->mutualSettlementDetailBuyerGoodsReturn = $mutualSettlementDetailBuyerGoodsReturn;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailProductsPackaging value
      * @return \Api\StructType\ApiMutualSettlementDetailProductsPackaging|null
      */
-    public function getMutualSettlementDetailProductsPackaging()
+    public function getMutualSettlementDetailProductsPackaging(): ?\Api\StructType\ApiMutualSettlementDetailProductsPackaging
     {
         return isset($this->mutualSettlementDetailProductsPackaging) ? $this->mutualSettlementDetailProductsPackaging : null;
     }
@@ -1170,7 +1197,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailProductsPackagingForChoiceConstraintsFromSetMutualSettlementDetailProductsPackaging($value)
+    public function validateMutualSettlementDetailProductsPackagingForChoiceConstraintsFromSetMutualSettlementDetailProductsPackaging($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1197,12 +1224,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailProductsPackaging can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailProductsPackaging, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailProductsPackaging can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailProductsPackaging, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1210,28 +1238,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailProductsPackaging(\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null)
+    public function setMutualSettlementDetailProductsPackaging(?\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailProductsPackagingChoiceErrorMessage = self::validateMutualSettlementDetailProductsPackagingForChoiceConstraintsFromSetMutualSettlementDetailProductsPackaging($mutualSettlementDetailProductsPackaging))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailProductsPackagingChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailProductsPackagingChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailProductsPackaging) || (is_array($mutualSettlementDetailProductsPackaging) && empty($mutualSettlementDetailProductsPackaging))) {
             unset($this->mutualSettlementDetailProductsPackaging);
         } else {
             $this->mutualSettlementDetailProductsPackaging = $mutualSettlementDetailProductsPackaging;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailAdjustmentWriteRegisters value
      * @return \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters|null
      */
-    public function getMutualSettlementDetailAdjustmentWriteRegisters()
+    public function getMutualSettlementDetailAdjustmentWriteRegisters(): ?\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters
     {
         return isset($this->mutualSettlementDetailAdjustmentWriteRegisters) ? $this->mutualSettlementDetailAdjustmentWriteRegisters : null;
     }
@@ -1242,7 +1271,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($value)
+    public function validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1269,12 +1298,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAdjustmentWriteRegisters, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailAdjustmentWriteRegisters can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailAdjustmentWriteRegisters, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1282,28 +1312,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAdjustmentWriteRegisters(\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null)
+    public function setMutualSettlementDetailAdjustmentWriteRegisters(?\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailAdjustmentWriteRegistersChoiceErrorMessage = self::validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($mutualSettlementDetailAdjustmentWriteRegisters))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailAdjustmentWriteRegistersChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailAdjustmentWriteRegistersChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailAdjustmentWriteRegisters) || (is_array($mutualSettlementDetailAdjustmentWriteRegisters) && empty($mutualSettlementDetailAdjustmentWriteRegisters))) {
             unset($this->mutualSettlementDetailAdjustmentWriteRegisters);
         } else {
             $this->mutualSettlementDetailAdjustmentWriteRegisters = $mutualSettlementDetailAdjustmentWriteRegisters;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailSafeCustody value
      * @return \Api\StructType\ApiMutualSettlementDetailSafeCustody|null
      */
-    public function getMutualSettlementDetailSafeCustody()
+    public function getMutualSettlementDetailSafeCustody(): ?\Api\StructType\ApiMutualSettlementDetailSafeCustody
     {
         return isset($this->mutualSettlementDetailSafeCustody) ? $this->mutualSettlementDetailSafeCustody : null;
     }
@@ -1314,7 +1345,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailSafeCustodyForChoiceConstraintsFromSetMutualSettlementDetailSafeCustody($value)
+    public function validateMutualSettlementDetailSafeCustodyForChoiceConstraintsFromSetMutualSettlementDetailSafeCustody($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1341,12 +1372,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailSafeCustody can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSafeCustody, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailSafeCustody can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSafeCustody, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1354,28 +1386,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSafeCustody(\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null)
+    public function setMutualSettlementDetailSafeCustody(?\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailSafeCustodyChoiceErrorMessage = self::validateMutualSettlementDetailSafeCustodyForChoiceConstraintsFromSetMutualSettlementDetailSafeCustody($mutualSettlementDetailSafeCustody))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailSafeCustodyChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailSafeCustodyChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailSafeCustody) || (is_array($mutualSettlementDetailSafeCustody) && empty($mutualSettlementDetailSafeCustody))) {
             unset($this->mutualSettlementDetailSafeCustody);
         } else {
             $this->mutualSettlementDetailSafeCustody = $mutualSettlementDetailSafeCustody;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailSafeCustodyCalculation value
      * @return \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation|null
      */
-    public function getMutualSettlementDetailSafeCustodyCalculation()
+    public function getMutualSettlementDetailSafeCustodyCalculation(): ?\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation
     {
         return isset($this->mutualSettlementDetailSafeCustodyCalculation) ? $this->mutualSettlementDetailSafeCustodyCalculation : null;
     }
@@ -1386,7 +1419,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($value)
+    public function validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1413,12 +1446,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSafeCustodyCalculation, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailSafeCustodyCalculation can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailSafeCustodyCalculation, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1426,28 +1460,29 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSafeCustodyCalculation(\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null)
+    public function setMutualSettlementDetailSafeCustodyCalculation(?\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailSafeCustodyCalculationChoiceErrorMessage = self::validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($mutualSettlementDetailSafeCustodyCalculation))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailSafeCustodyCalculationChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailSafeCustodyCalculationChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailSafeCustodyCalculation) || (is_array($mutualSettlementDetailSafeCustodyCalculation) && empty($mutualSettlementDetailSafeCustodyCalculation))) {
             unset($this->mutualSettlementDetailSafeCustodyCalculation);
         } else {
             $this->mutualSettlementDetailSafeCustodyCalculation = $mutualSettlementDetailSafeCustodyCalculation;
         }
+        
         return $this;
     }
     /**
      * Get mutualSettlementDetailRegisterStorage value
      * @return \Api\StructType\ApiMutualSettlementDetailRegisterStorage|null
      */
-    public function getMutualSettlementDetailRegisterStorage()
+    public function getMutualSettlementDetailRegisterStorage(): ?\Api\StructType\ApiMutualSettlementDetailRegisterStorage
     {
         return isset($this->mutualSettlementDetailRegisterStorage) ? $this->mutualSettlementDetailRegisterStorage : null;
     }
@@ -1458,7 +1493,7 @@ class ApiDetails extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailRegisterStorageForChoiceConstraintsFromSetMutualSettlementDetailRegisterStorage($value)
+    public function validateMutualSettlementDetailRegisterStorageForChoiceConstraintsFromSetMutualSettlementDetailRegisterStorage($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1485,12 +1520,13 @@ class ApiDetails extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property mutualSettlementDetailRegisterStorage can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailRegisterStorage, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property mutualSettlementDetailRegisterStorage can\'t be set as the property %s is already set. Only one property must be set among these properties: mutualSettlementDetailRegisterStorage, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1498,21 +1534,22 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailRegisterStorage(\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null)
+    public function setMutualSettlementDetailRegisterStorage(?\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailRegisterStorageChoiceErrorMessage = self::validateMutualSettlementDetailRegisterStorageForChoiceConstraintsFromSetMutualSettlementDetailRegisterStorage($mutualSettlementDetailRegisterStorage))) {
-            throw new \InvalidArgumentException($mutualSettlementDetailRegisterStorageChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($mutualSettlementDetailRegisterStorageChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailRegisterStorage) || (is_array($mutualSettlementDetailRegisterStorage) && empty($mutualSettlementDetailRegisterStorage))) {
             unset($this->mutualSettlementDetailRegisterStorage);
         } else {
             $this->mutualSettlementDetailRegisterStorage = $mutualSettlementDetailRegisterStorage;
         }
+        
         return $this;
     }
 }

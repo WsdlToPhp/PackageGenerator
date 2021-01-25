@@ -1,28 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Generator;
 
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PackageGenerator\Model\EmptyModel;
+use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
+use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
+use WsdlToPhp\PackageGenerator\File\Composer as ComposerFile;
+use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
 use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
-use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
-use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
-use WsdlToPhp\PackageGenerator\File\Composer as ComposerFile;
+use WsdlToPhp\PackageGenerator\Model\EmptyModel;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
 class GeneratorFiles extends AbstractGeneratorAware
 {
-    /**
-     * Use classmap file object
-     * @var ClassMapFile
-     */
-    protected $classmapFile;
-    /**
-     * @return ClassMapFile
-     */
-    public function getClassmapFile()
+    protected ClassMapFile $classmapFile;
+
+    public function getClassmapFile(): ClassMapFile
     {
         if (!isset($this->classmapFile)) {
             $classMapModel = new EmptyModel($this->generator, 'ClassMap');
@@ -30,38 +27,39 @@ class GeneratorFiles extends AbstractGeneratorAware
             $classMap->setModel($classMapModel);
             $this->classmapFile = $classMap;
         }
+
         return $this->classmapFile;
     }
-    /**
-     * @return GeneratorFiles
-     */
-    public function doGenerate()
+
+    public function doGenerate(): GeneratorFiles
     {
-        return $this->generateStructsClasses()
+        return $this
+            ->generateStructsClasses()
             ->generateServicesClasses()
             ->generateClassMap()
             ->generateTutorialFile()
-            ->generateComposerFile();
+            ->generateComposerFile()
+        ;
     }
-    /**
-     * Generates structs classes based on structs collected
-     * @return GeneratorFiles
-     */
-    protected function generateStructsClasses()
+
+    protected function generateStructsClasses(): GeneratorFiles
     {
         foreach ($this->getGenerator()->getStructs() as $struct) {
             if (!$struct->isStruct()) {
                 continue;
             }
-            $this->getStructFile($struct)->setModel($struct)->write();
+
+            $this
+                ->getStructFile($struct)
+                ->setModel($struct)
+                ->write()
+            ;
         }
+
         return $this;
     }
-    /**
-     * @param StructModel $struct
-     * @return StructEnumFile|StructArrayFile|StructFile
-     */
-    protected function getStructFile(StructModel $struct)
+
+    protected function getStructFile(StructModel $struct): AbstractModelFile
     {
         if ($struct->isRestriction()) {
             $file = new StructEnumFile($this->generator, $struct->getPackagedName());
@@ -70,51 +68,44 @@ class GeneratorFiles extends AbstractGeneratorAware
         } else {
             $file = new StructFile($this->generator, $struct->getPackagedName());
         }
+
         return $file;
     }
-    /**
-     * Generates methods by class
-     * @return GeneratorFiles
-     */
-    protected function generateServicesClasses()
+
+    protected function generateServicesClasses(): self
     {
         foreach ($this->getGenerator()->getServices(true) as $service) {
             $file = new ServiceFile($this->generator, $service->getPackagedName());
             $file->setModel($service)->write();
         }
+
         return $this;
     }
-    /**
-     * Generates classMap class
-     * @return GeneratorFiles
-     */
-    protected function generateClassMap()
+
+    protected function generateClassMap(): self
     {
         $this->getClassmapFile()->write();
+
         return $this;
     }
-    /**
-     * Generates tutorial file
-     * @return GeneratorFiles
-     */
-    protected function generateTutorialFile()
+
+    protected function generateTutorialFile(): self
     {
-        if ($this->generator->getOptionGenerateTutorialFile() === true && $this->getClassmapFile() instanceof ClassMapFile) {
+        if ($this->generator->getOptionGenerateTutorialFile() && $this->getClassmapFile() instanceof ClassMapFile) {
             $tutorialFile = new TutorialFile($this->generator, 'tutorial');
             $tutorialFile->write();
         }
+
         return $this;
     }
-    /**
-     * @throws \InvalidArgumentException
-     * @return GeneratorFiles
-     */
-    protected function generateComposerFile()
+
+    protected function generateComposerFile(): self
     {
-        if ($this->generator->getOptionStandalone() === true) {
+        if ($this->generator->getOptionStandalone()) {
             $composerFile = new ComposerFile($this->generator, 'composer');
             $composerFile->write();
         }
+
         return $this;
     }
 }

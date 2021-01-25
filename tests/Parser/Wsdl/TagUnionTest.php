@@ -1,29 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion;
 
-class TagUnionTest extends WsdlParser
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class TagUnionTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion
-     */
-    public static function orderContractInstanceParser()
+    public static function orderContractInstanceParser(): TagUnion
     {
         return new TagUnion(self::generatorInstance(self::wsdlOrderContractPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion
-     */
-    public static function ewsInstanceParser()
+
+    public static function ewsInstanceParser(): TagUnion
     {
         return new TagUnion(self::generatorInstance(self::wsdlEwsPath()));
     }
-    /**
-     *
-     */
+
     public function testParseOrderContract()
     {
         $tagUnionParser = self::orderContractInstanceParser();
@@ -37,11 +36,14 @@ class TagUnionTest extends WsdlParser
                 switch ($struct->getName()) {
                     case 'RelationshipTypeOpenEnum':
                         $this->assertSame('anyURI', $struct->getInheritance());
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'FaultCodesOpenEnumType':
                         $this->assertSame('QName', $struct->getInheritance());
-                        $count++;
+                        ++$count;
+
                         break;
                 }
             }
@@ -49,9 +51,6 @@ class TagUnionTest extends WsdlParser
         $this->assertSame(2, $count);
     }
 
-    /**
-     *
-     */
     public function testParseEws()
     {
         $tagUnionParser = self::ewsInstanceParser();
@@ -71,15 +70,18 @@ class TagUnionTest extends WsdlParser
                                 'string',
                             ],
                         ], $struct->getAttribute('PropertyTag')->getMeta());
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'ItemType':
                         $this->assertSame([
                             'union' => [
                                 'int',
                             ],
                         ], $struct->getAttribute('ReminderMinutesBeforeStart')->getMeta());
-                        $count++;
+                        ++$count;
+
                         break;
                 }
             }

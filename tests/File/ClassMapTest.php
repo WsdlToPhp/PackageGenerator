@@ -1,16 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
-use WsdlToPhp\PackageGenerator\Model\EmptyModel;
-use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
+use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 
-class ClassMapTest extends AbstractFile
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class ClassMapTest extends AbstractFile
 {
-    /**
-     *
-     */
     public function testBing()
     {
         $instance = self::bingGeneratorInstance();
@@ -19,13 +22,12 @@ class ClassMapTest extends AbstractFile
         $classMap = new ClassMapFile($instance, $model->getPackagedName());
         $classMap
             ->setModel($model)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidBingClassMap', $classMap);
     }
-    /**
-     *
-     */
+
     public function testReforma()
     {
         $instance = self::reformaGeneratorInstance();
@@ -34,13 +36,12 @@ class ClassMapTest extends AbstractFile
         $classMap = new ClassMapFile($instance, $model->getPackagedName());
         $classMap
             ->setModel($model)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidReformaClassMap', $classMap);
     }
-    /**
-     *
-     */
+
     public function testActon()
     {
         $instance = self::actonGeneratorInstance();
@@ -49,50 +50,49 @@ class ClassMapTest extends AbstractFile
         $classMap = new ClassMapFile($instance, $model->getPackagedName());
         $classMap
             ->setModel($model)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidActonClassMap', $classMap);
     }
-    /**
-     *
-     */
+
     public function testActonWihthoutPrefix()
     {
         $instance = self::actonGeneratorInstance();
         $instance
             ->setOptionNamespacePrefix('')
-            ->setOptionPrefix('');
+            ->setOptionPrefix('')
+        ;
 
         $model = new EmptyModel($instance, 'ClassMap');
         $classMap = new ClassMapFile($instance, $model->getPackagedName());
         $classMap
             ->setModel($model)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidActonClassMapWihoutNamespace', $classMap);
     }
-    /**
-     *
-     */
+
     public function testActonWihthoutPrefixAndCategory()
     {
         $instance = self::actonGeneratorInstance();
         $instance
             ->setOptionNamespacePrefix('')
             ->setOptionPrefix('')
-            ->setOptionCategory(GeneratorOptions::VALUE_NONE);
+            ->setOptionCategory(GeneratorOptions::VALUE_NONE)
+        ;
 
         $model = new EmptyModel($instance, 'ClassMap');
         $classMap = new ClassMapFile($instance, $model->getPackagedName());
         $classMap
             ->setModel($model)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidActonClassMapWihoutNamespaceAndCategory', $classMap);
     }
-    /**
-     *
-     */
+
     public function testDestination()
     {
         $instance = self::bingGeneratorInstance();
@@ -101,6 +101,6 @@ class ClassMapTest extends AbstractFile
         $classMap = new ClassMapFile($instance, $model->getPackagedName());
         $classMap->setModel($model);
 
-        $this->assertSame(sprintf('%s%s', self::getTestDirectory(), $instance->getOptionSrcDirname() . DIRECTORY_SEPARATOR), $classMap->getFileDestination());
+        $this->assertSame(sprintf('%s%s', self::getTestDirectory(), $instance->getOptionSrcDirname().DIRECTORY_SEPARATOR), $classMap->getFileDestination());
     }
 }

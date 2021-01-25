@@ -13,7 +13,6 @@ xsd_types:
     decimal: "float"
     double: "float"
     duration: "string"
-    DayOfWeekType: "string"
     float: "float"
     gMonth: "string"
     gMonthDay: "int"

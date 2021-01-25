@@ -1,22 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class StringRuleTest extends AbstractRuleTest
-{
+use TypeError;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class StringRuleTest extends AbstractRuleTest
+{
     /**
      * The CardNumber
      * Meta informations extracted from the WSDL
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value array
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithArrayValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlPaymentCardTypeInstance();
 
         $instance->setCardNumber([]);
@@ -28,12 +35,12 @@ class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value true, please provide a string, boolean given
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithBoolValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlPaymentCardTypeInstance();
 
         $instance->setCardNumber(true);
@@ -45,12 +52,12 @@ class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 1, please provide a string, integer given
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithIntValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlPaymentCardTypeInstance();
 
         $instance->setCardNumber(1);
@@ -62,12 +69,12 @@ class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 12.5, please provide a string, double given
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithFloatValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlPaymentCardTypeInstance();
 
         $instance->setCardNumber(12.5);
@@ -79,7 +86,7 @@ class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithNullValueMustPass()
     {
@@ -94,7 +101,7 @@ class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithStringValueMustPass()
     {

@@ -1,34 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class EnumerationRuleTest extends AbstractRuleTest
-{
+use Api\EnumType\ApiAdultOption;
+use InvalidArgumentException;
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value(s) 'foo', please use one of: Off, Moderate, Strict from enumeration class \Api\EnumType\ApiAdultOption
-     */
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class EnumerationRuleTest extends AbstractRuleTest
+{
     public function testSetAdultValueWithInvalidValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value(s) \'foo\', please use one of: Off, Moderate, Strict from enumeration class \Api\EnumType\ApiAdultOption');
+
         $instance = self::getBingSearchRequestInstance();
 
         $instance->setAdult('foo');
     }
 
-    /**
-     *
-     */
     public function testSetAdultValueWithValidValueMustPass()
     {
         $instance = self::getBingSearchRequestInstance();
 
-        $this->assertSame($instance, $instance->setAdult(\Api\EnumType\ApiAdultOption::VALUE_MODERATE));
+        $this->assertSame($instance, $instance->setAdult(ApiAdultOption::VALUE_MODERATE));
     }
 
-    /**
-     *
-     */
     public function testSetAdultValueWithNullValueMustPass()
     {
         $instance = self::getBingSearchRequestInstance();

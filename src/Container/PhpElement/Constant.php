@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Container\PhpElement;
 
-class Constant extends AbstractPhpElement
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
+
+final class Constant extends AbstractPhpElement
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
-     * @return string
-     */
-    protected function objectClass()
+    protected function objectClass(): string
     {
-        return 'WsdlToPhp\PhpGenerator\Element\PhpConstant';
+        return PhpConstant::class;
     }
 }

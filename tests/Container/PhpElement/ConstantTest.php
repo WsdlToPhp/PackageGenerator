@@ -1,17 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container\PhpElement;
 
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
-use WsdlToPhp\PhpGenerator\Element\PhpConstant;
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-class ConstantTest extends TestCase
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class ConstantTest extends AbstractTestCase
 {
-    /**
-     *
-     */
     public function testAdd()
     {
         $constant = new Constant(self::getBingGeneratorInstance());
@@ -19,14 +23,13 @@ class ConstantTest extends TestCase
         $constant->add(new PhpConstant('foo', 1));
 
         $this->assertCount(1, $constant);
-
-        $this->assertInstanceOf('\WsdlToPhp\PhpGenerator\Element\PhpConstant', $constant->get('foo'));
+        $this->assertInstanceOf(PhpConstant::class, $constant->get('foo'));
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testAddWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $constant = new Constant(self::getBingGeneratorInstance());
 
         $constant->add(new PhpMethod('Bar'));

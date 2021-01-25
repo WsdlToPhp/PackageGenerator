@@ -1,28 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule;
+use InvalidArgumentException;
 
-class FractionDigitsRuleTest extends AbstractRuleTest
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class FractionDigitsRuleTest extends AbstractRuleTest
 {
-
     /**
-     * - fractionDigits: 3
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 2.12345, the value must at most contain 3 fraction digits, 5 given
+     * - fractionDigits: 3.
      */
     public function testSetAmountValueWithTooManyFractionDigitsMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value 2.12345, the value must at most contain 3 fraction digits, 5 given');
+
         // hack as precision can return false negative with 2.1234500000000001
-        ini_set('serialize_precision', 6);
+        ini_set('serialize_precision', '6');
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setAmount(2.12345);
     }
 
     /**
-     * - fractionDigits: 0
+     * - fractionDigits: 0.
      */
     public function testSetWeightValueWithIntegerMustPass()
     {
@@ -32,19 +38,20 @@ class FractionDigitsRuleTest extends AbstractRuleTest
     }
 
     /**
-     * - fractionDigits: 0
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 200.01, the value must at most contain 0 fraction digits, 2 given
+     * - fractionDigits: 0.
      */
     public function testSetWeightValueWithDecimalMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value 200.01, the value must at most contain 0 fraction digits, 2 given');
+
         $functionName = self::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 0);
 
         call_user_func($functionName, 200.010);
     }
 
     /**
-     * - fractionDigits: 3
+     * - fractionDigits: 3.
      */
     public function testSetAmountValueWithSameFractionDigitsMustPass()
     {
@@ -54,7 +61,7 @@ class FractionDigitsRuleTest extends AbstractRuleTest
     }
 
     /**
-     * - fractionDigits: 3
+     * - fractionDigits: 3.
      */
     public function testSetAmountValueWithLessFractionDigitsMustPass()
     {
@@ -64,7 +71,7 @@ class FractionDigitsRuleTest extends AbstractRuleTest
     }
 
     /**
-     * - fractionDigits: 3
+     * - fractionDigits: 3.
      */
     public function testSetAmountValueWithNullValueMustPass()
     {

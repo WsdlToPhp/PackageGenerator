@@ -1,59 +1,46 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
-use WsdlToPhp\PhpGenerator\Element\PhpConstant;
-use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
-use WsdlToPhp\PhpGenerator\Element\PhpProperty;
-use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
+use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
+use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 
-class ClassMap extends AbstractModelFile
+final class ClassMap extends AbstractModelFile
 {
-    /**
-     * @var string
-     */
-    const METHOD_NAME = 'get';
-    /**
-     * @param ConstantContainer $constants
-     */
-    protected function getClassConstants(ConstantContainer $constants)
+    public const METHOD_NAME = 'get';
+
+    protected function fillClassConstants(ConstantContainer $constants): void
     {
     }
-    /**
-     * @param PhpConstant $constant
-     * @return PhpAnnotationBlock|null
-     */
-    protected function getConstantAnnotationBlock(PhpConstant $constant)
+
+    protected function getConstantAnnotationBlock(PhpConstant $constant): ?PhpAnnotationBlock
     {
     }
-    /**
-     * @param PropertyContainer $properties
-     */
-    protected function getClassProperties(PropertyContainer $properties)
+
+    protected function fillClassProperties(PropertyContainer $properties): void
     {
     }
-    /**
-     * @param PhpProperty $property
-     * @return PhpAnnotationBlock|null
-     */
-    protected function getPropertyAnnotationBlock(PhpProperty $property)
+
+    protected function getPropertyAnnotationBlock(PhpProperty $property): ?PhpAnnotationBlock
     {
     }
-    protected function fillClassMethods()
+
+    protected function fillClassMethods(): void
     {
-        $method = new PhpMethod(self::METHOD_NAME, [], PhpMethod::ACCESS_PUBLIC, false, true, true);
+        $method = new PhpMethod(self::METHOD_NAME, [], self::TYPE_ARRAY, PhpMethod::ACCESS_PUBLIC, false, true, true);
         $this->addMethodBody($method);
         $this->methods->add($method);
     }
-    /**
-     * @param PhpMethod $method
-     * @return PhpAnnotationBlock|null
-     */
-    protected function getMethodAnnotationBlock(PhpMethod $method)
+
+    protected function getMethodAnnotationBlock(PhpMethod $method): ?PhpAnnotationBlock
     {
         return new PhpAnnotationBlock([
             'Returns the mapping between the WSDL Structs and generated Structs\' classes',
@@ -61,50 +48,46 @@ class ClassMap extends AbstractModelFile
             new PhpAnnotation(AbstractModelFile::ANNOTATION_RETURN, 'string[]'),
         ]);
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::getClassAnnotationBlock()
-     * @return PhpAnnotationBlock
-     */
-    protected function getClassAnnotationBlock()
+
+    protected function getClassAnnotationBlock(): PhpAnnotationBlock
     {
-        return new PhpAnnotationBlock([
+        $annotations = [
             'Class which returns the class map definition',
-            new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionPrefix()),
-        ]);
+        ];
+
+        if (!empty($this->getGenerator()->getOptionPrefix())) {
+            $annotations[] = new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionPrefix());
+        }
+
+        return new PhpAnnotationBlock($annotations);
     }
-    /**
-     * @param PhpMethod $method
-     * @return ClassMap
-     */
-    protected function addMethodBody(PhpMethod $method)
+
+    protected function addMethodBody(PhpMethod $method): self
     {
         if ($this->getGenerator()->getStructs()->count() > 0) {
-            $method->addChild('return array(');
+            $method->addChild('return [');
             foreach ($this->getGenerator()->getStructs() as $struct) {
                 $this->addStructToClassMapList($method, $struct);
             }
-            $method->addChild(');');
+            $method->addChild('];');
         }
+
         return $this;
     }
-    /**
-     * @param PhpMethod $method
-     * @param StructModel $struct
-     * @return ClassMap
-     */
-    protected function addStructToClassMapList(PhpMethod $method, StructModel $struct)
+
+    protected function addStructToClassMapList(PhpMethod $method, StructModel $struct): self
     {
         if ($struct->isStruct() && !$struct->isRestriction()) {
             $method->addChild($method->getIndentedString(sprintf('\'%s\' => \'%s\',', $struct->getName(), $this->getStructName($struct)), 1));
         }
+
         return $this;
     }
+
     /**
-     * work around for https://bugs.php.net/bug.php?id=69280
-     * @param StructModel $struct
-     * @return string
+     * Work around for https://bugs.php.net/bug.php?id=69280.
      */
-    protected function getStructName(StructModel $struct)
+    protected function getStructName(StructModel $struct): string
     {
         return str_replace('\\', '\\\\', $struct->getPackagedName(true));
     }

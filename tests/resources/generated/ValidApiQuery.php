@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for Query StructType
@@ -17,25 +20,25 @@ class ApiQuery extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $SearchTerms;
+    protected ?string $SearchTerms = null;
     /**
      * The AlteredQuery
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $AlteredQuery;
+    protected ?string $AlteredQuery = null;
     /**
      * The AlterationOverrideQuery
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $AlterationOverrideQuery;
+    protected ?string $AlterationOverrideQuery = null;
     /**
      * Constructor method for Query
      * @uses ApiQuery::setSearchTerms()
@@ -45,7 +48,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $alteredQuery
      * @param string $alterationOverrideQuery
      */
-    public function __construct($searchTerms = null, $alteredQuery = null, $alterationOverrideQuery = null)
+    public function __construct(?string $searchTerms = null, ?string $alteredQuery = null, ?string $alterationOverrideQuery = null)
     {
         $this
             ->setSearchTerms($searchTerms)
@@ -56,7 +59,7 @@ class ApiQuery extends AbstractStructBase
      * Get SearchTerms value
      * @return string|null
      */
-    public function getSearchTerms()
+    public function getSearchTerms(): ?string
     {
         return $this->SearchTerms;
     }
@@ -65,20 +68,21 @@ class ApiQuery extends AbstractStructBase
      * @param string $searchTerms
      * @return \Api\StructType\ApiQuery
      */
-    public function setSearchTerms($searchTerms = null)
+    public function setSearchTerms(?string $searchTerms = null): self
     {
         // validation for constraint: string
         if (!is_null($searchTerms) && !is_string($searchTerms)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms, true), gettype($searchTerms)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms, true), gettype($searchTerms)), __LINE__);
         }
         $this->SearchTerms = $searchTerms;
+        
         return $this;
     }
     /**
      * Get AlteredQuery value
      * @return string|null
      */
-    public function getAlteredQuery()
+    public function getAlteredQuery(): ?string
     {
         return $this->AlteredQuery;
     }
@@ -87,20 +91,21 @@ class ApiQuery extends AbstractStructBase
      * @param string $alteredQuery
      * @return \Api\StructType\ApiQuery
      */
-    public function setAlteredQuery($alteredQuery = null)
+    public function setAlteredQuery(?string $alteredQuery = null): self
     {
         // validation for constraint: string
         if (!is_null($alteredQuery) && !is_string($alteredQuery)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alteredQuery, true), gettype($alteredQuery)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alteredQuery, true), gettype($alteredQuery)), __LINE__);
         }
         $this->AlteredQuery = $alteredQuery;
+        
         return $this;
     }
     /**
      * Get AlterationOverrideQuery value
      * @return string|null
      */
-    public function getAlterationOverrideQuery()
+    public function getAlterationOverrideQuery(): ?string
     {
         return $this->AlterationOverrideQuery;
     }
@@ -109,13 +114,14 @@ class ApiQuery extends AbstractStructBase
      * @param string $alterationOverrideQuery
      * @return \Api\StructType\ApiQuery
      */
-    public function setAlterationOverrideQuery($alterationOverrideQuery = null)
+    public function setAlterationOverrideQuery(?string $alterationOverrideQuery = null): self
     {
         // validation for constraint: string
         if (!is_null($alterationOverrideQuery) && !is_string($alterationOverrideQuery)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alterationOverrideQuery, true), gettype($alterationOverrideQuery)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alterationOverrideQuery, true), gettype($alterationOverrideQuery)), __LINE__);
         }
         $this->AlterationOverrideQuery = $alterationOverrideQuery;
+        
         return $this;
     }
 }

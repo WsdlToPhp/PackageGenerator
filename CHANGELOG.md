@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 4.0.0 - 2021-xx-xx
+- issue #124 - PHP >= 7.4 tasks
+  - Code requires PHP >= 7.4
+  - Generated code requires PHP >= 7.4
+  - Code cleaning
+  - Update README
+  - Add [MANIFEST.md](/MANIFEST.md) explaining how files are generated and how they should be used
+  - Update Travis CI settings
+  - Update PHPUnit settings
+  - Update LICENSE file
+  - BC: read [UPGRADE-4.0.md](/UPGRADE-4.0.md)
+  - Version 2.0 is no more maintained
+
 ## 3.3.4 - 2021-01-25
 - issue #230 - Avoid repeated meta value within generated meta documentation
 - issue #217 - Inherited struct methods should not be overwritten
