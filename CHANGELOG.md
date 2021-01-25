@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 3.3.4 - 2021-01-25
+- issue #230 - Avoid repeated meta value within generated meta documentation
+- issue #217 - Inherited struct methods should not be overwritten
+- issue #214 - element with maxOccurs unbounded inside a sequence gets translated into a string instead of an array
+
 ## 3.3.3 - 2020-11-16
 - issue #229 - Docker image issues
 
