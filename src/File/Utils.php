@@ -57,7 +57,7 @@ class Utils
     {
         $meta = null;
         if (is_array($metaValue)) {
-            $metaValue = implode(' | ', $metaValue);
+            $metaValue = implode(' | ', array_unique($metaValue));
         }
         $metaValue = GeneratorUtils::cleanComment($metaValue, ', ', mb_stripos($metaName, 'SOAPHeader') === false);
         if (is_scalar($metaValue)) {

@@ -144,6 +144,20 @@ $jsons = [
             'start',
         ],
     ],
+    'myboard' => [
+        'origin' => __DIR__ . '/resources/MyBoardPack.wsdl',
+        'methods' => [
+            'none',
+            'start',
+        ],
+    ],
+    'vehicleselection' => [
+        'origin' => __DIR__ . '/resources/VehicleSelectionService/VehicleSelectionService.wsdl',
+        'methods' => [
+            'none',
+            'start',
+        ],
+    ],
 ];
 
 foreach ($jsons as $id => $settings) {

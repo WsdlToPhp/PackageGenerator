@@ -169,6 +169,32 @@ class StructTest extends AbstractFile
     /**
      *
      */
+    public function testWriteYandexDirectApiStructAddRequestWithRepeatedMetaValueMaxOccurs()
+    {
+        $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
+        if (($model = $generator->getStructByName('AddRequest')) instanceof StructModel) {
+            $model->getAttribute('AdGroups')
+                ->addMeta('maxOccurs', 1)
+                ->addMeta('maxOccurs', 'unbounded');
+
+            $this->assertSame([
+                'unbounded',
+                1,
+                'unbounded',
+            ], $model->getAttribute('AdGroups')->getMetaValue('maxOccurs'));
+
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidAddRequestRepeatedMaxOccurs', $struct);
+        } else {
+            $this->fail('Unable to find AddRequest struct for file generation');
+        }
+    }
+    /**
+     *
+     */
     public function testWriteYandexDirectApiStructAdGroupsSelectionCriteria()
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
@@ -494,6 +520,22 @@ class StructTest extends AbstractFile
             $this->assertSameFileContent('ValidProposeNewTimeType', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find ProposeNewTimeType struct for file generation');
+        }
+    }
+    /**
+     *
+     */
+    public function testWriteVehicleSelectionStructFieldString1000()
+    {
+        $generator = self::vehicleSelectionPackGeneratorInstance();
+        if (($model = $generator->getStructByName('fieldString1000')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write();
+            $this->assertSameFileContent('ValidFieldString1000', $struct);
+        } else {
+            $this->fail('Unable to find fieldString1000 struct for file generation');
         }
     }
 }

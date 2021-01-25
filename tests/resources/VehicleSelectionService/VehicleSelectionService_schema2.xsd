@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://sphinx.dat.de/services/VehicleSelectionService" xmlns:tns="http://sphinx.dat.de/services/VehicleSelectionService" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.dat.de/vxs">
+
+  <xs:import namespace="http://www.dat.de/vxs" schemaLocation="VehicleSelectionService_schema1.xsd"/>
+
+  <xs:element name="BaseModelSelectionRequest" type="tns:baseModelSelectionRequest"/>
+
+  <xs:element name="BaseSelectionRequest" type="tns:basicSelectionRequest"/>
+
+  <xs:element name="ConstructionPeriodSelectionRequest" type="tns:constructionPeriodSelectionRequest"/>
+
+  <xs:element name="HgvPlatformAggregateModelDataRequest" type="tns:hgvPlatformAggregateModelDataRequest"/>
+
+  <xs:element name="HgvPlatformAggregateModelSelectionRequest" type="tns:hgvPlatformAggregateModelSelectionRequest"/>
+
+  <xs:element name="HgvPlatformBaseModelSelectionRequest" type="tns:hgvPlatformBaseModelSelectionRequest"/>
+
+  <xs:element name="HgvPlatformManufacturerSelectionRequest" type="tns:hgvPlatformManufacturerSelectionRequest"/>
+
+  <xs:element name="HgvPlatformSubModelDataRequest" type="tns:hgvPlatformSubModelDataRequest"/>
+
+  <xs:element name="HgvPlatformSubModelSelectionRequest" type="tns:hgvPlatformSubModelSelectionRequest"/>
+
+  <xs:element name="ManufacturerSelectionRequest" type="tns:manufacturerSelectionRequest"/>
+
+  <xs:element name="PriceFocusSelectionRequest" type="tns:priceFocusSelectionRequest"/>
+
+  <xs:element name="SubModelByTextSearchSelectionRequest" type="tns:subModelByTextSearchSelectionRequest"/>
+
+  <xs:element name="SubModelByTextSearchSelectionResponse" type="tns:subModelByTextSearchSelectionResponse"/>
+
+  <xs:element name="SubModelSelectionRequest" type="tns:subModelSelectionRequest"/>
+
+  <xs:element name="SubTypeVariantClassifiedEquipmentSelectionRequest" type="tns:subTypeVariantClassifiedEquipmentSelectionRequest"/>
+
+  <xs:element name="SubTypeVariantEquipmentSelectionRequest" type="tns:subTypeVariantEquipmentSelectionRequest"/>
+
+  <xs:element name="SubTypeVariantNumberSelectionRequest" type="tns:subTypeVariantNumberSelectionRequest"/>
+
+  <xs:element name="SubTypeVariantSelectionRequest" type="tns:subTypeVariantSelectionRequest"/>
+
+  <xs:element name="VehicleDataSelectionRequest" type="tns:vehicleDataSelectionRequest"/>
+
+  <xs:element name="abstractSelectionRequest" type="tns:abstractSelectionRequest"/>
+
+  <xs:element name="compileDatECode" type="tns:compileDatECode"/>
+
+  <xs:element name="compileDatECodeResponse" type="tns:compileDatECodeResponse"/>
+
+  <xs:element name="getBaseModels" type="tns:getBaseModels"/>
+
+  <xs:element name="getBaseModelsN" type="tns:getBaseModelsN"/>
+
+  <xs:element name="getBaseModelsNResponse" type="tns:getBaseModelsNResponse"/>
+
+  <xs:element name="getBaseModelsResponse" type="tns:getBaseModelsResponse"/>
+
+  <xs:element name="getCarBodyOptions" type="tns:getCarBodyOptions"/>
+
+  <xs:element name="getCarBodyOptionsResponse" type="tns:getCarBodyOptionsResponse"/>
+
+  <xs:element name="getClassificationGroups" type="tns:getClassificationGroups"/>
+
+  <xs:element name="getClassificationGroupsResponse" type="tns:getClassificationGroupsResponse"/>
+
+  <xs:element name="getConstructionOptions" type="tns:getConstructionOptions"/>
+
+  <xs:element name="getConstructionOptionsResponse" type="tns:getConstructionOptionsResponse"/>
+
+  <xs:element name="getConstructionPeriodsN" type="tns:getConstructionPeriodsN"/>
+
+  <xs:element name="getConstructionPeriodsNResponse" type="tns:getConstructionPeriodsNResponse"/>
+
+  <xs:element name="getDriversCabOptions" type="tns:getDriversCabOptions"/>
+
+  <xs:element name="getDriversCabOptionsResponse" type="tns:getDriversCabOptionsResponse"/>
+
+  <xs:element name="getEngineOptions" type="tns:getEngineOptions"/>
+
+  <xs:element name="getEngineOptionsResponse" type="tns:getEngineOptionsResponse"/>
+
+  <xs:element name="getEquipmentLineOptions" type="tns:getEquipmentLineOptions"/>
+
+  <xs:element name="getEquipmentLineOptionsResponse" type="tns:getEquipmentLineOptionsResponse"/>
+
+  <xs:element name="getGearingOptions" type="tns:getGearingOptions"/>
+
+  <xs:element name="getGearingOptionsResponse" type="tns:getGearingOptionsResponse"/>
+
+  <xs:element name="getGrossVehicleWeightOptions" type="tns:getGrossVehicleWeightOptions"/>
+
+  <xs:element name="getGrossVehicleWeightOptionsResponse" type="tns:getGrossVehicleWeightOptionsResponse"/>
+
+  <xs:element name="getHgvPlatformAggregateManufacturers" type="tns:getHgvPlatformAggregateManufacturers"/>
+
+  <xs:element name="getHgvPlatformAggregateManufacturersResponse" type="tns:getHgvPlatformAggregateManufacturersResponse"/>
+
+  <xs:element name="getHgvPlatformAggregateModelData" type="tns:getHgvPlatformAggregateModelData"/>
+
+  <xs:element name="getHgvPlatformAggregateModelDataResponse" type="tns:getHgvPlatformAggregateModelDataResponse"/>
+
+  <xs:element name="getHgvPlatformAggregateModels" type="tns:getHgvPlatformAggregateModels"/>
+
+  <xs:element name="getHgvPlatformAggregateModelsResponse" type="tns:getHgvPlatformAggregateModelsResponse"/>
+
+  <xs:element name="getHgvPlatformBaseModels" type="tns:getHgvPlatformBaseModels"/>
+
+  <xs:element name="getHgvPlatformBaseModelsResponse" type="tns:getHgvPlatformBaseModelsResponse"/>
+
+  <xs:element name="getHgvPlatformManufacturers" type="tns:getHgvPlatformManufacturers"/>
+
+  <xs:element name="getHgvPlatformManufacturersResponse" type="tns:getHgvPlatformManufacturersResponse"/>
+
+  <xs:element name="getHgvPlatformSubModelData" type="tns:getHgvPlatformSubModelData"/>
+
+  <xs:element name="getHgvPlatformSubModelDataResponse" type="tns:getHgvPlatformSubModelDataResponse"/>
+
+  <xs:element name="getHgvPlatformSubModels" type="tns:getHgvPlatformSubModels"/>
+
+  <xs:element name="getHgvPlatformSubModelsResponse" type="tns:getHgvPlatformSubModelsResponse"/>
+
+  <xs:element name="getHgvPlatformTypes" type="tns:getHgvPlatformTypes"/>
+
+  <xs:element name="getHgvPlatformTypesResponse" type="tns:getHgvPlatformTypesResponse"/>
+
+  <xs:element name="getManufacturers" type="tns:getManufacturers"/>
+
+  <xs:element name="getManufacturersResponse" type="tns:getManufacturersResponse"/>
+
+  <xs:element name="getNumberOfAxleOptions" type="tns:getNumberOfAxleOptions"/>
+
+  <xs:element name="getNumberOfAxleOptionsResponse" type="tns:getNumberOfAxleOptionsResponse"/>
+
+  <xs:element name="getOptionsbyClassification" type="tns:getOptionsbyClassification"/>
+
+  <xs:element name="getOptionsbyClassificationResponse" type="tns:getOptionsbyClassificationResponse"/>
+
+  <xs:element name="getPriceFocusCases" type="tns:getPriceFocusCases"/>
+
+  <xs:element name="getPriceFocusCasesResponse" type="tns:getPriceFocusCasesResponse"/>
+
+  <xs:element name="getPriceFocusConstructionYears" type="tns:getPriceFocusConstructionYears"/>
+
+  <xs:element name="getPriceFocusConstructionYearsResponse" type="tns:getPriceFocusConstructionYearsResponse"/>
+
+  <xs:element name="getSubModels" type="tns:getSubModels"/>
+
+  <xs:element name="getSubModelsByTextSearch" type="tns:getSubModelsByTextSearch"/>
+
+  <xs:element name="getSubModelsByTextSearchResponse" type="tns:getSubModelsByTextSearchResponse"/>
+
+  <xs:element name="getSubModelsResponse" type="tns:getSubModelsResponse"/>
+
+  <xs:element name="getSuspensionOptions" type="tns:getSuspensionOptions"/>
+
+  <xs:element name="getSuspensionOptionsResponse" type="tns:getSuspensionOptionsResponse"/>
+
+  <xs:element name="getTypeOfDriveOptions" type="tns:getTypeOfDriveOptions"/>
+
+  <xs:element name="getTypeOfDriveOptionsResponse" type="tns:getTypeOfDriveOptionsResponse"/>
+
+  <xs:element name="getVehicleData" type="tns:getVehicleData"/>
+
+  <xs:element name="getVehicleDataResponse" type="tns:getVehicleDataResponse"/>
+
+  <xs:element name="getVehicleTypes" type="tns:getVehicleTypes"/>
+
+  <xs:element name="getVehicleTypesResponse" type="tns:getVehicleTypesResponse"/>
+
+  <xs:element name="getVersion" type="tns:getVersion"/>
+
+  <xs:element name="getVersionResponse" type="tns:getVersionResponse"/>
+
+  <xs:element name="getWheelBaseOptions" type="tns:getWheelBaseOptions"/>
+
+  <xs:element name="getWheelBaseOptionsResponse" type="tns:getWheelBaseOptionsResponse"/>
+
+  <xs:complexType name="getConstructionOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subTypeVariantEquipmentSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:subTypeVariantSelectionRequest">
+        <xs:sequence>
+          <xs:element name="availableOptions" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="subTypeVariantSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:subModelSelectionRequest">
+        <xs:sequence>
+          <xs:element name="subModel" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="subModelSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:baseModelSelectionRequest">
+        <xs:sequence>
+          <xs:element name="baseModel" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="baseModelSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:manufacturerSelectionRequest">
+        <xs:sequence>
+          <xs:element name="manufacturer" type="xs:int"/>
+          <xs:element name="withRepairIncomplete" type="xs:boolean" nillable="true" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="manufacturerSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:basicSelectionRequest">
+        <xs:sequence>
+          <xs:element name="vehicleType" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="basicSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractSelectionRequest">
+        <xs:sequence>
+          <xs:element name="constructionTimeFrom" type="xs:int" nillable="true" minOccurs="0"/>
+          <xs:element name="constructionTimeTo" type="xs:int" nillable="true" minOccurs="0"/>
+          <xs:element name="restriction" type="tns:releaseRestriction"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="abstractSelectionRequest">
+    <xs:sequence>
+      <xs:element name="locale" type="tns:locale"/>
+      <xs:element name="sessionID" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="locale">
+    <xs:sequence/>
+    <xs:attribute name="country" type="xs:string" use="required"/>
+    <xs:attribute name="datCountryIndicator" type="xs:string" use="required"/>
+    <xs:attribute name="language" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="getConstructionOptionsResponse">
+    <xs:sequence>
+      <xs:element name="constructionOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="integerStringPair">
+    <xs:sequence/>
+    <xs:attribute name="key" type="xs:int" use="required"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="getSuspensionOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSuspensionOptionsResponse">
+    <xs:sequence>
+      <xs:element name="suspensionOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getGrossVehicleWeightOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getGrossVehicleWeightOptionsResponse">
+    <xs:sequence>
+      <xs:element name="grossVehicleWeightOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="compileDatECode">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantNumberSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subTypeVariantNumberSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:subTypeVariantSelectionRequest">
+        <xs:sequence>
+          <xs:element name="selectedOptions" type="xs:int" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="compileDatECodeResponse">
+    <xs:sequence>
+      <xs:element name="datECode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformAggregateManufacturers">
+    <xs:sequence>
+      <xs:element name="request" type="tns:abstractSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformAggregateManufacturersResponse">
+    <xs:sequence>
+      <xs:element name="hgvPlatformAggregateManufacturer" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformTypes">
+    <xs:sequence>
+      <xs:element name="request" type="tns:basicSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformTypesResponse">
+    <xs:sequence>
+      <xs:element name="hgvPlatformType" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getClassificationGroups">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getClassificationGroupsResponse">
+    <xs:sequence>
+      <xs:element name="classificationGroup" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDriversCabOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDriversCabOptionsResponse">
+    <xs:sequence>
+      <xs:element name="driversCabOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getManufacturers">
+    <xs:sequence>
+      <xs:element name="request" type="tns:manufacturerSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getManufacturersResponse">
+    <xs:sequence>
+      <xs:element name="manufacturer" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCarBodyOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCarBodyOptionsResponse">
+    <xs:sequence>
+      <xs:element name="carBodyOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPriceFocusCases">
+    <xs:sequence>
+      <xs:element name="request" type="tns:priceFocusSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="priceFocusSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:basicSelectionRequest">
+        <xs:sequence>
+          <xs:element name="datECode" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getPriceFocusCasesResponse">
+    <xs:sequence>
+      <xs:element name="priceFocusCase" type="tns:stringStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stringStringPair">
+    <xs:sequence/>
+    <xs:attribute name="key" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="getEngineOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEngineOptionsResponse">
+    <xs:sequence>
+      <xs:element name="engineOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getNumberOfAxleOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getNumberOfAxleOptionsResponse">
+    <xs:sequence>
+      <xs:element name="numberOfAxleOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVehicleTypes">
+    <xs:sequence>
+      <xs:element name="request" type="tns:basicSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVehicleTypesResponse">
+    <xs:sequence>
+      <xs:element name="vehicleType" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBaseModelsN">
+    <xs:sequence>
+      <xs:element name="request" type="tns:baseModelSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBaseModelsNResponse">
+    <xs:sequence>
+      <xs:element name="baseModelN" type="tns:baseModelResult" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="baseModelResult">
+    <xs:sequence/>
+    <xs:attribute name="alternativeBaseType" type="xs:int"/>
+    <xs:attribute name="alternativeManufacturer" type="xs:int"/>
+    <xs:attribute name="alternativeVehicleType" type="xs:int"/>
+    <xs:attribute name="key" type="xs:int" use="required"/>
+    <xs:attribute name="repairIncomplete" type="xs:boolean"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="getConstructionPeriodsN">
+    <xs:sequence>
+      <xs:element name="request" type="tns:constructionPeriodSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="constructionPeriodSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:priceFocusSelectionRequest">
+        <xs:sequence>
+          <xs:element name="container" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getConstructionPeriodsNResponse">
+    <xs:sequence>
+      <xs:element name="constructionPeriodN" type="tns:constructionTimePeriod" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="constructionTimePeriod">
+    <xs:sequence>
+      <xs:element name="constructionTimes" type="tns:constructionTimes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="constructionTimeMax" type="xs:int" use="required"/>
+    <xs:attribute name="constructionTimeMin" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="constructionTimes">
+    <xs:sequence>
+      <xs:element name="constructionTimeClassWs" type="tns:constructionTimeClassWs" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="hint" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="constructionTimeClassWs">
+    <xs:sequence>
+      <xs:element name="entry" type="tns:ctEntry" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="ctEntry">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="value" type="xs:int"/>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformManufacturers">
+    <xs:sequence>
+      <xs:element name="request" type="tns:hgvPlatformManufacturerSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hgvPlatformManufacturerSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:basicSelectionRequest">
+        <xs:sequence>
+          <xs:element name="hgvPlatformType" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformManufacturersResponse">
+    <xs:sequence>
+      <xs:element name="hgvPlatformManufacturer" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformAggregateModels">
+    <xs:sequence>
+      <xs:element name="request" type="tns:hgvPlatformAggregateModelSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hgvPlatformAggregateModelSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractSelectionRequest">
+        <xs:sequence>
+          <xs:element name="manufacturer" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformAggregateModelsResponse">
+    <xs:sequence>
+      <xs:element name="hgvPlatformAggregateModel" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformBaseModels">
+    <xs:sequence>
+      <xs:element name="request" type="tns:hgvPlatformBaseModelSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hgvPlatformBaseModelSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:hgvPlatformManufacturerSelectionRequest">
+        <xs:sequence>
+          <xs:element name="manufacturer" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformBaseModelsResponse">
+    <xs:sequence>
+      <xs:element name="hgvPlatformBaseModel" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformAggregateModelData">
+    <xs:sequence>
+      <xs:element name="request" type="tns:hgvPlatformAggregateModelDataRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hgvPlatformAggregateModelDataRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:hgvPlatformAggregateModelSelectionRequest">
+        <xs:sequence>
+          <xs:element name="model" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformAggregateModelDataResponse">
+    <xs:sequence>
+      <xs:element name="VXS" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Name" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="Description" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="UUID" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="ExternalId" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD2" type="ns1:fieldString12" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSDo" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD3Local" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD3Network" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdExtern" type="ns1:fieldString40" form="qualified" minOccurs="0"/>
+            <xs:element name="Country" type="ns1:fieldString3" form="qualified"/>
+            <xs:element name="Language" type="ns1:fieldString5" form="qualified"/>
+            <xs:element name="DataVersion" type="ns1:fieldDecimal" form="qualified" minOccurs="0"/>
+            <xs:element name="Currency" type="ns1:fieldString3" form="qualified" minOccurs="0"/>
+            <xs:element name="DatCustomerId" type="ns1:fieldString10" form="qualified" minOccurs="0"/>
+            <xs:element name="MerchandId" type="ns1:fieldDecimal" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierType" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierOrigin" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateDate" type="ns1:fieldDateTime" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateUser" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="ChangeDate" type="ns1:fieldDateTime" form="qualified" minOccurs="0"/>
+            <xs:element name="ChangeUser" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="CDYear" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="CDMonth" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="DatCustomerAddress" type="ns1:address" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:Vehicle" minOccurs="0"/>
+            <xs:element ref="ns1:Images" minOccurs="0"/>
+            <xs:element ref="ns1:ImageList" minOccurs="0"/>
+            <xs:element ref="ns1:VAT" minOccurs="0"/>
+            <xs:element name="Management" type="xs:anyType" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:TradingData" minOccurs="0"/>
+            <xs:element ref="ns1:Valuation" minOccurs="0"/>
+            <xs:element ref="ns1:Compare" minOccurs="0"/>
+            <xs:element ref="ns1:RepairCalculation" minOccurs="0"/>
+            <xs:element ref="ns1:RepairOrder" minOccurs="0"/>
+            <xs:element ref="ns1:SparePartPositions" minOccurs="0"/>
+            <xs:element ref="ns1:MaintenanceIntervals" minOccurs="0"/>
+            <xs:element ref="ns1:Comments" minOccurs="0"/>
+            <xs:element ref="ns1:Attachments" minOccurs="0"/>
+            <xs:element ref="ns1:AdditionalVehicles" minOccurs="0"/>
+            <xs:element name="ChangeUserId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateUserId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="WearCalculation" type="ns1:fieldBoolean" form="qualified" minOccurs="0"/>
+            <xs:element name="InsuranceClaim" type="ns1:fieldBoolean" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:AdditionalServices" minOccurs="0"/>
+            <xs:element ref="ns1:ProcessManagement" minOccurs="0"/>
+            <xs:element ref="ns1:TradingActivity" minOccurs="0"/>
+            <xs:element ref="ns1:TradingAdditional" minOccurs="0"/>
+            <xs:element ref="ns1:MetaPositions" minOccurs="0"/>
+          </xs:all>
+          <xs:attribute name="overwrite" type="xs:boolean"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSubModelsByTextSearch">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subModelByTextSearchSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subModelByTextSearchSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:basicSelectionRequest">
+        <xs:sequence>
+          <xs:element name="searchText" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getSubModelsByTextSearchResponse">
+    <xs:sequence>
+      <xs:element name="subModelsByTextSearch" type="tns:subModelByTextSearchSelectionResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subModelByTextSearchSelectionResponse">
+    <xs:sequence>
+      <xs:element name="countOfSubModelsFound" type="xs:int" minOccurs="0"/>
+      <xs:element name="countOfSubModelsReturned" type="xs:int" minOccurs="0"/>
+      <xs:element name="dossiers" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns1:Dossier" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+          <xs:attribute name="source" type="xs:string"/>
+          <xs:attribute name="type" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSubModels">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subModelSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSubModelsResponse">
+    <xs:sequence>
+      <xs:element name="subModel" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getGearingOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getGearingOptionsResponse">
+    <xs:sequence>
+      <xs:element name="gearingOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEquipmentLineOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEquipmentLineOptionsResponse">
+    <xs:sequence>
+      <xs:element name="equipmentLineOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPriceFocusConstructionYears">
+    <xs:sequence>
+      <xs:element name="request" type="tns:priceFocusSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPriceFocusConstructionYearsResponse">
+    <xs:sequence>
+      <xs:element name="priceFocusConstructionYear" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBaseModels">
+    <xs:sequence>
+      <xs:element name="request" type="tns:baseModelSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBaseModelsResponse">
+    <xs:sequence>
+      <xs:element name="baseModel" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTypeOfDriveOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTypeOfDriveOptionsResponse">
+    <xs:sequence>
+      <xs:element name="typeOfDriveOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformSubModels">
+    <xs:sequence>
+      <xs:element name="request" type="tns:hgvPlatformSubModelSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hgvPlatformSubModelSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:hgvPlatformBaseModelSelectionRequest">
+        <xs:sequence>
+          <xs:element name="baseModel" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformSubModelsResponse">
+    <xs:sequence>
+      <xs:element name="hgvPlatformSubModel" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getOptionsbyClassification">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantClassifiedEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subTypeVariantClassifiedEquipmentSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:subTypeVariantEquipmentSelectionRequest">
+        <xs:sequence>
+          <xs:element name="classification" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getOptionsbyClassificationResponse">
+    <xs:sequence>
+      <xs:element name="options" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVehicleData">
+    <xs:sequence>
+      <xs:element name="request" type="tns:vehicleDataSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vehicleDataSelectionRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:constructionPeriodSelectionRequest">
+        <xs:sequence>
+          <xs:element name="constructionTime" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getVehicleDataResponse">
+    <xs:sequence>
+      <xs:element name="VXS" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Name" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="Description" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="UUID" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="ExternalId" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD2" type="ns1:fieldString12" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSDo" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD3Local" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD3Network" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdExtern" type="ns1:fieldString40" form="qualified" minOccurs="0"/>
+            <xs:element name="Country" type="ns1:fieldString3" form="qualified"/>
+            <xs:element name="Language" type="ns1:fieldString5" form="qualified"/>
+            <xs:element name="DataVersion" type="ns1:fieldDecimal" form="qualified" minOccurs="0"/>
+            <xs:element name="Currency" type="ns1:fieldString3" form="qualified" minOccurs="0"/>
+            <xs:element name="DatCustomerId" type="ns1:fieldString10" form="qualified" minOccurs="0"/>
+            <xs:element name="MerchandId" type="ns1:fieldDecimal" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierType" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierOrigin" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateDate" type="ns1:fieldDateTime" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateUser" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="ChangeDate" type="ns1:fieldDateTime" form="qualified" minOccurs="0"/>
+            <xs:element name="ChangeUser" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="CDYear" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="CDMonth" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="DatCustomerAddress" type="ns1:address" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:Vehicle" minOccurs="0"/>
+            <xs:element ref="ns1:Images" minOccurs="0"/>
+            <xs:element ref="ns1:ImageList" minOccurs="0"/>
+            <xs:element ref="ns1:VAT" minOccurs="0"/>
+            <xs:element name="Management" type="xs:anyType" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:TradingData" minOccurs="0"/>
+            <xs:element ref="ns1:Valuation" minOccurs="0"/>
+            <xs:element ref="ns1:Compare" minOccurs="0"/>
+            <xs:element ref="ns1:RepairCalculation" minOccurs="0"/>
+            <xs:element ref="ns1:RepairOrder" minOccurs="0"/>
+            <xs:element ref="ns1:SparePartPositions" minOccurs="0"/>
+            <xs:element ref="ns1:MaintenanceIntervals" minOccurs="0"/>
+            <xs:element ref="ns1:Comments" minOccurs="0"/>
+            <xs:element ref="ns1:Attachments" minOccurs="0"/>
+            <xs:element ref="ns1:AdditionalVehicles" minOccurs="0"/>
+            <xs:element name="ChangeUserId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateUserId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="WearCalculation" type="ns1:fieldBoolean" form="qualified" minOccurs="0"/>
+            <xs:element name="InsuranceClaim" type="ns1:fieldBoolean" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:AdditionalServices" minOccurs="0"/>
+            <xs:element ref="ns1:ProcessManagement" minOccurs="0"/>
+            <xs:element ref="ns1:TradingActivity" minOccurs="0"/>
+            <xs:element ref="ns1:TradingAdditional" minOccurs="0"/>
+            <xs:element ref="ns1:MetaPositions" minOccurs="0"/>
+          </xs:all>
+          <xs:attribute name="overwrite" type="xs:boolean"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformSubModelData">
+    <xs:sequence>
+      <xs:element name="request" type="tns:hgvPlatformSubModelDataRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hgvPlatformSubModelDataRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:hgvPlatformSubModelSelectionRequest">
+        <xs:sequence>
+          <xs:element name="subModel" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="getHgvPlatformSubModelDataResponse">
+    <xs:sequence>
+      <xs:element name="VXS" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="Name" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="Description" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="UUID" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="ExternalId" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD2" type="ns1:fieldString12" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSDo" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD3Local" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdSD3Network" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="IdExtern" type="ns1:fieldString40" form="qualified" minOccurs="0"/>
+            <xs:element name="Country" type="ns1:fieldString3" form="qualified"/>
+            <xs:element name="Language" type="ns1:fieldString5" form="qualified"/>
+            <xs:element name="DataVersion" type="ns1:fieldDecimal" form="qualified" minOccurs="0"/>
+            <xs:element name="Currency" type="ns1:fieldString3" form="qualified" minOccurs="0"/>
+            <xs:element name="DatCustomerId" type="ns1:fieldString10" form="qualified" minOccurs="0"/>
+            <xs:element name="MerchandId" type="ns1:fieldDecimal" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierType" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="DossierOrigin" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateDate" type="ns1:fieldDateTime" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateUser" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="ChangeDate" type="ns1:fieldDateTime" form="qualified" minOccurs="0"/>
+            <xs:element name="ChangeUser" type="ns1:fieldString" form="qualified" minOccurs="0"/>
+            <xs:element name="CDYear" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="CDMonth" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="DatCustomerAddress" type="ns1:address" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:Vehicle" minOccurs="0"/>
+            <xs:element ref="ns1:Images" minOccurs="0"/>
+            <xs:element ref="ns1:ImageList" minOccurs="0"/>
+            <xs:element ref="ns1:VAT" minOccurs="0"/>
+            <xs:element name="Management" type="xs:anyType" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:TradingData" minOccurs="0"/>
+            <xs:element ref="ns1:Valuation" minOccurs="0"/>
+            <xs:element ref="ns1:Compare" minOccurs="0"/>
+            <xs:element ref="ns1:RepairCalculation" minOccurs="0"/>
+            <xs:element ref="ns1:RepairOrder" minOccurs="0"/>
+            <xs:element ref="ns1:SparePartPositions" minOccurs="0"/>
+            <xs:element ref="ns1:MaintenanceIntervals" minOccurs="0"/>
+            <xs:element ref="ns1:Comments" minOccurs="0"/>
+            <xs:element ref="ns1:Attachments" minOccurs="0"/>
+            <xs:element ref="ns1:AdditionalVehicles" minOccurs="0"/>
+            <xs:element name="ChangeUserId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="CreateUserId" type="ns1:fieldInteger" form="qualified" minOccurs="0"/>
+            <xs:element name="WearCalculation" type="ns1:fieldBoolean" form="qualified" minOccurs="0"/>
+            <xs:element name="InsuranceClaim" type="ns1:fieldBoolean" form="qualified" minOccurs="0"/>
+            <xs:element ref="ns1:AdditionalServices" minOccurs="0"/>
+            <xs:element ref="ns1:ProcessManagement" minOccurs="0"/>
+            <xs:element ref="ns1:TradingActivity" minOccurs="0"/>
+            <xs:element ref="ns1:TradingAdditional" minOccurs="0"/>
+            <xs:element ref="ns1:MetaPositions" minOccurs="0"/>
+          </xs:all>
+          <xs:attribute name="overwrite" type="xs:boolean"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVersion">
+    <xs:sequence>
+      <xs:element name="request" type="tns:abstractSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getVersionResponse">
+    <xs:sequence>
+      <xs:element name="version" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getWheelBaseOptions">
+    <xs:sequence>
+      <xs:element name="request" type="tns:subTypeVariantEquipmentSelectionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getWheelBaseOptionsResponse">
+    <xs:sequence>
+      <xs:element name="wheelBaseOption" type="tns:integerStringPair" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="releaseRestriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALL"/>
+      <xs:enumeration value="REPAIR"/>
+      <xs:enumeration value="APPRAISAL"/>
+      <xs:enumeration value="GLASS"/>
+      <xs:enumeration value="APPRAISALNEW"/>
+      <xs:enumeration value="APPRAISALSHORT"/>
+      <xs:enumeration value="TCO"/>
+      <xs:enumeration value="APPRAISAL_AND_REPAIR"/>
+      <xs:enumeration value="TCO_NEW"/>
+      <xs:enumeration value="CA_DATAENGINEERINGMODE"/>
+      <xs:enumeration value="VA_DATAENGINEERINGMODE"/>
+      <xs:enumeration value="COMPREHENSIVE"/>
+      <xs:enumeration value="APPRAISALNEWFORMER"/>
+      <xs:enumeration value="REPAIR_OR_REPAIR_INCOMPLETE"/>
+      <xs:enumeration value="COMPREHENSIVE_OR_REPAIR_INCOMPLETE"/>
+      <xs:enumeration value="ALL_OR_REPAIR_OR_APPRAISAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

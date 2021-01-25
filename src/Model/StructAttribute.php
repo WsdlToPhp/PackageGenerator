@@ -125,12 +125,13 @@ class StructAttribute extends AbstractModel
     }
     /**
      * Sets the type value
+     * If already able to contain several occurrences, it must stay as it is, the wider behaviour wins
      * @param bool $containsElements
      * @return StructAttribute
      */
     public function setContainsElements($containsElements)
     {
-        $this->containsElements = $containsElements;
+        $this->containsElements = $this->containsElements || $containsElements;
         return $this;
     }
     /**
@@ -148,12 +149,13 @@ class StructAttribute extends AbstractModel
         return is_array($this->getMetaValue('choice'));
     }
     /**
+     * If already able to be removed from request, it must stay as it is, the wider behaviour wins
      * @param bool $removableFromRequest
      * @return StructAttribute
      */
     public function setRemovableFromRequest($removableFromRequest)
     {
-        $this->removableFromRequest = $removableFromRequest;
+        $this->removableFromRequest = $this->removableFromRequest || $removableFromRequest;
         return $this;
     }
     /**
