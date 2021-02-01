@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for fareItinerary StructType
@@ -139,7 +141,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds(array $values = array())
+    public static function validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -243,7 +245,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds(array $values = array())
+    public static function validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -303,7 +305,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds(array $values = array())
+    public static function validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];

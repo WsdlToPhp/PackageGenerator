@@ -1,39 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 
-class ItemTypeRule extends AbstractRule
+final class ItemTypeRule extends AbstractRule
 {
-
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'itemType';
     }
 
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function testConditions($parameterName, $value, $itemType = false)
+    public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
         return sprintf('%s', $this->getItemSanityCheck($parameterName));
     }
 
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string
     {
         return sprintf('sprintf(\'The %1$s property can only contain items of type %2$s, %%s given\', is_object($%3$s) ? get_class($%3$s) : (is_array($%3$s) ? implode(\', \', $%3$s) : gettype($%3$s)))', $this->getAttribute()->getCleanName(), $this->getFile()->getStructAttributeType($this->getAttribute(), true), $parameterName);
     }
@@ -44,7 +30,7 @@ class ItemTypeRule extends AbstractRule
      * @param string $itemName
      * @return string
      */
-    protected function getItemSanityCheck($itemName)
+    protected function getItemSanityCheck(string $itemName): string
     {
         $model = $this->getFile()->getModelFromStructAttribute($this->getAttribute());
         $sanityCheck = 'false';
@@ -56,6 +42,7 @@ class ItemTypeRule extends AbstractRule
                 $sanityCheck = $rule->testConditions($itemName, null, true);
             }
         }
+
         return $sanityCheck;
     }
 }

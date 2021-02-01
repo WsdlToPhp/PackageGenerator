@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class TotalDigitsRuleTest extends AbstractRuleTest
-{
+use InvalidArgumentException;
 
+final class TotalDigitsRuleTest extends AbstractRuleTest
+{
     /**
      * The area_total
      * Meta informations extracted from the WSDL
@@ -12,13 +15,14 @@ class TotalDigitsRuleTest extends AbstractRuleTest
      * - fractionDigits: 2
      * - totalDigits: 15
      * - var: float
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 123456789101112.12, the value must at most contain 2 fraction digits, 17 given
      */
     public function testSetAreaTotalWithFloatTooManyDigitsMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value 123456789101112.12, the value must at most contain 2 fraction digits, 17 given');
+
         // hack as precision can return false negative with 1.23457E+14,
-        ini_set('serialize_precision', 17);
+        ini_set('serialize_precision', '17');
 
         $instance = self::getReformaHouseProfileDataInstance();
 

@@ -1,24 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\File\StructEnum as EnumFile;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
-class StructEnumTest extends AbstractFile
+final class StructEnumTest extends AbstractFile
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $instance = self::bingGeneratorInstance();
         $enum = new EnumFile($instance, 'Foo');
         $enum->setModel(new StructModel($instance, 'FooEnum'));
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchEnumAdultOption()
     {
         $generator = self::bingGeneratorInstance();
@@ -32,9 +32,7 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find AdultOption enumeration for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchEnumSourceType()
     {
         $generator = self::bingGeneratorInstance();
@@ -48,9 +46,7 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find SourceType enumeration for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteReformaHouseStageEnum()
     {
         $generator = self::reformaGeneratorInstance();
@@ -64,9 +60,7 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find HouseStageEnum enumeration for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteOmnitureDsWeblogFormats()
     {
         $generator = self::omnitureGeneratorInstance();
@@ -80,9 +74,7 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find ds_weblog_formats enumeration for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchEnumWebSearchOption()
     {
         $generator = self::bingGeneratorInstance(true);
@@ -97,9 +89,7 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find WebSearchOption enumeration for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchEnumPhonebookSortOption()
     {
         $generator = self::bingGeneratorInstance(true);
@@ -115,9 +105,7 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchEnumPhonebookSortOptionSuffixed()
     {
         $generator = self::bingGeneratorInstance(true);
@@ -134,9 +122,7 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance(true);
@@ -152,9 +138,7 @@ class StructEnumTest extends AbstractFile
             $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteWhlEnumTransactionActionType()
     {
         $generator = self::whlInstance();

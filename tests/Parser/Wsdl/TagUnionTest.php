@@ -1,29 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion;
 
-class TagUnionTest extends WsdlParser
+final class TagUnionTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion
-     */
-    public static function orderContractInstanceParser()
+    public static function orderContractInstanceParser(): TagUnion
     {
         return new TagUnion(self::generatorInstance(self::wsdlOrderContractPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion
-     */
-    public static function ewsInstanceParser()
+
+    public static function ewsInstanceParser(): TagUnion
     {
         return new TagUnion(self::generatorInstance(self::wsdlEwsPath()));
     }
-    /**
-     *
-     */
+
     public function testParseOrderContract()
     {
         $tagUnionParser = self::orderContractInstanceParser();
@@ -49,9 +44,6 @@ class TagUnionTest extends WsdlParser
         $this->assertSame(2, $count);
     }
 
-    /**
-     *
-     */
     public function testParseEws()
     {
         $tagUnionParser = self::ewsInstanceParser();

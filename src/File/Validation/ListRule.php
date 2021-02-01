@@ -1,26 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * Class ListRule
  * @link https://www.w3.org/TR/xmlschema-2/#list-datatypes
  */
-class ListRule extends AbstractSetOfValuesRule
+final class ListRule extends AbstractSetOfValuesRule
 {
-
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'list';
     }
 
-    /**
-     * @return bool
-     */
-    protected function mustApplyRuleOnAttribute()
+    protected function mustApplyRuleOnAttribute(): bool
     {
         return $this->getAttribute()->isList();
     }

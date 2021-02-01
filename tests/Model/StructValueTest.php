@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
 
-class StructValueTest extends TestCase
+final class StructValueTest extends AbstractTestCase
 {
-    /**
-     *
-     */
     public function testGetValue()
     {
         $struct = StructTest::instance('Foot', true);
@@ -22,28 +22,26 @@ class StructValueTest extends TestCase
         $this->assertNotSame('1', $struct->getValue(1)->getValue());
         $this->assertSame('5.3', $struct->getValue('5.3')->getValue());
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testInvalidIndexValue()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $struct = StructTest::instance('Foot', true);
         new StructValue($struct->getGenerator(), 'foo', -1, $struct);
         new StructValue($struct->getGenerator(), 'foo', 'bar', $struct);
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testSetInvalidIndexValue()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $struct = StructTest::instance('Foot', true);
         $struct->addValue(1);
 
-        $struct->getValue(1)->setIndex('1');
+        $struct->getValue(1)->setIndex(-1);
     }
-    /**
-     *
-     */
+
     public function testGetCleanName()
     {
         $struct = StructTest::instance('Foo', true);

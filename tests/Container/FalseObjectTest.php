@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container;
 
-class FalseObjectTest
+final class FalseObjectTest
 {
-    public function getName()
+    public function getName(): array
     {
         return [];
     }

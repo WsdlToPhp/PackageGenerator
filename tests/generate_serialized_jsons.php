@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
 /**
@@ -162,7 +162,7 @@ $jsons = [
 
 foreach ($jsons as $id => $settings) {
     foreach ($settings['methods'] as $gatherMethod) {
-        fwrite(STDERR, PHP_EOL . sprintf('Start generation of %sparsed_%s_%s.json', TestCase::getTestDirectory(), $id, $gatherMethod));
+        fwrite(STDERR, PHP_EOL . sprintf('Start generation of %sparsed_%s_%s.json', AbstractTestCase::getTestDirectory(), $id, $gatherMethod));
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgePhpReservedKeywords();
         $options = GeneratorOptions::instance()
@@ -172,15 +172,15 @@ foreach ($jsons as $id => $settings) {
             ->setOrigin($settings['origin'])
             ->setGatherMethods($gatherMethod)
             ->setPrefix('Api')
-            ->setDestination(TestCase::getTestDirectory())
+            ->setDestination(AbstractTestCase::getTestDirectory())
             ->setSchemasSave(false)
             ->setSchemasFolder('wsdl');
         $generator = new Generator($options);
         $generator->parse();
         $json = json_encode($generator, JSON_PRETTY_PRINT);
         $json = str_replace(json_encode($settings['origin']), '"__ORIGIN__"', $json);
-        $json = str_replace(json_encode(TestCase::getTestDirectory()), '"__DESTINATION__"', $json);
-        file_put_contents(sprintf('%sparsed_%s_%s.json', TestCase::getTestDirectory(), $id, $gatherMethod), $json);
+        $json = str_replace(json_encode(AbstractTestCase::getTestDirectory()), '"__DESTINATION__"', $json);
+        file_put_contents(sprintf('%sparsed_%s_%s.json', AbstractTestCase::getTestDirectory(), $id, $gatherMethod), $json);
         fwrite(STDERR, ' -> generated');
     }
 }

@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for АдресРФ StructType
@@ -232,7 +234,7 @@ class ApiАдресРФ extends ApiСостав
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл(array $values = array())
+    public static function validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];

@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ArrayType;
 
-use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
+use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
  * This class stands for ArrayOfWebSearchOption ArrayType
@@ -44,7 +46,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption(array $values = array())
+    public static function validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];

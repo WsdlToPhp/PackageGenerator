@@ -1,72 +1,58 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Parser\SoapClient;
+
+use DOMDocument;
 
 class Structs extends AbstractParser
 {
-    /**
-     * @var string
-     */
-    const STRUCT_DECLARATION = 'struct';
-    /**
-     * @var string
-     */
-    const UNION_DECLARATION = 'union';
-    /**
-     * @var string
-     */
-    const ANY_XML_DECLARATION = '<anyXML>';
-    /**
-     * @var string
-     */
-    const ANY_XML_TYPE = '\DOMDocument';
-    /**
-     * @var string[]
-     */
-    protected $definedStructs = [];
-    /**
-     * Parses the SoapClient types
-     * @see \WsdlToPhp\PackageGenerator\Parser\ParserInterface::parse()
-     */
-    public function parse()
+    public const STRUCT_DECLARATION = 'struct';
+    public const UNION_DECLARATION = 'union';
+    public const ANY_XML_DECLARATION = '<anyXML>';
+    public const ANY_XML_TYPE = DOMDocument::class;
+
+    protected array $definedStructs = [];
+
+    public function parse(): void
     {
         $types = $this->getGenerator()
             ->getSoapClient()
             ->getSoapClient()
             ->getSoapClient()
             ->__getTypes();
+
         foreach ($types as $type) {
             $this->parseType($type);
         }
     }
-    /**
-     * @param string $type
-     */
-    protected function parseType($type)
+
+    protected function parseType(string $type): void
     {
         if (!$this->isStructDefined($type)) {
             $cleanType = self::cleanType($type);
             $typeDef = explode(' ', $cleanType);
+
             if (array_key_exists(1, $typeDef) && !empty($typeDef)) {
                 $structName = $typeDef[1];
-                if ($typeDef[0] === self::UNION_DECLARATION) {
+                if (self::UNION_DECLARATION === $typeDef[0]) {
                     $this->parseUnionStruct($typeDef);
-                } elseif ($typeDef[0] === self::STRUCT_DECLARATION) {
+                } elseif (self::STRUCT_DECLARATION === $typeDef[0]) {
                     $this->parseComplexStruct($typeDef);
                 } else {
                     $this->getGenerator()->getStructs()->addVirtualStruct($structName, $typeDef[0]);
                 }
             }
+
             $this->structHasBeenDefined($type);
         }
     }
-    /**
-     * @param array $typeDef
-     */
-    protected function parseComplexStruct($typeDef)
+
+    protected function parseComplexStruct(array $typeDef): void
     {
         $typeDefCount = count($typeDef);
-        if ($typeDefCount > 3) {
+        if (3 < $typeDefCount) {
             for ($i = 2; $i < $typeDefCount; $i += 2) {
                 $structParamType = str_replace(self::ANY_XML_DECLARATION, self::ANY_XML_TYPE, $typeDef[$i]);
                 $structParamName = $typeDef[$i + 1];
@@ -76,14 +62,15 @@ class Structs extends AbstractParser
             $this->getGenerator()->getStructs()->addStruct($typeDef[1]);
         }
     }
+
     /**
      * union types are passed such as ",dateTime,time" or ",PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2"
      * @param array $typeDef
      */
-    protected function parseUnionStruct($typeDef)
+    protected function parseUnionStruct(array $typeDef)
     {
         $typeDefCount = count($typeDef);
-        if ($typeDefCount === 3) {
+        if (3 === $typeDefCount) {
             $unionName = $typeDef[1];
             $unionTypes = array_filter(explode(',', $typeDef[2]), function ($type) {
                 return !empty($type);
@@ -92,6 +79,7 @@ class Structs extends AbstractParser
             $this->getGenerator()->getStructs()->addUnionStruct($unionName, $unionTypes);
         }
     }
+
     /**
      * Remove useless break line, tabs
      * Remove curly braces
@@ -101,7 +89,7 @@ class Structs extends AbstractParser
      * @param string $type
      * @return string
      */
-    protected static function cleanType($type)
+    protected static function cleanType(string $type)
     {
         $type = str_replace([
             "\r",
@@ -114,30 +102,23 @@ class Structs extends AbstractParser
             ';',
         ], '', $type);
         $type = preg_replace('/[\s]+/', ' ', $type);
+
         return trim($type);
     }
-    /**
-     * @param string $type
-     * @return boolean
-     */
-    protected function isStructDefined($type)
+
+    protected function isStructDefined(string $type): bool
     {
         return in_array(self::typeSignature($type), $this->definedStructs);
     }
-    /**
-     * @param string $type
-     * @return Structs
-     */
-    protected function structHasBeenDefined($type)
+
+    protected function structHasBeenDefined(string $type): Structs
     {
         $this->definedStructs[] = self::typeSignature($type);
+
         return $this;
     }
-    /**
-     * @param string $type
-     * @return string
-     */
-    protected static function typeSignature($type)
+
+    protected static function typeSignature(string $type): string
     {
         return md5($type);
     }

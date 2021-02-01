@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Tests\Model\ServiceTest;
-use WsdlToPhp\PackageGenerator\Model\Method;
+use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Container\Model\Method as MethodContainer;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
-class MethodContainerTest extends TestCase
+final class MethodContainerTest extends AbstractTestCase
 {
     /**
      * @return MethodContainer
@@ -16,9 +18,9 @@ class MethodContainerTest extends TestCase
     {
         $service = ServiceTest::instance('Bar');
         $methodContainer = new MethodContainer(self::getBingGeneratorInstance());
-        $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'Foo', 'string', 'int', $service));
-        $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'Bar', 'string', 'int', $service));
-        $methodContainer->add(new Method(self::getBingGeneratorInstance(), 'FooBar', [
+        $methodContainer->add(new MethodModel(self::getBingGeneratorInstance(), 'Foo', 'string', 'int', $service));
+        $methodContainer->add(new MethodModel(self::getBingGeneratorInstance(), 'Bar', 'string', 'int', $service));
+        $methodContainer->add(new MethodModel(self::getBingGeneratorInstance(), 'FooBar', [
             'string',
             'int',
             'int',
@@ -32,7 +34,7 @@ class MethodContainerTest extends TestCase
     {
         $methodContainer = self::instance();
 
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Method', $methodContainer->getMethodByName('Foo'));
+        $this->assertInstanceOf(MethodModel::class, $methodContainer->getMethodByName('Foo'));
         $this->assertNull($methodContainer->getMethodByName('boo'));
     }
 }

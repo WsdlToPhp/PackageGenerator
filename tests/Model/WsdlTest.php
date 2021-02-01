@@ -1,158 +1,126 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 
-class WsdlTest extends TestCase
+final class WsdlTest extends AbstractTestCase
 {
     /**
      * @var Wsdl[]
      */
-    private static $wsdls = [];
+    private static array $wsdls = [];
+
     /**
      * @var Schema[]
      */
-    private static $schemas = [];
-    /**
-     * @param string $wsdlPath
-     * @return Wsdl
-     */
-    public static function getWsdl($wsdlPath)
+    private static array $schemas = [];
+
+    public static function getWsdl(string $wsdlPath): Wsdl
     {
         if (!isset(self::$wsdls[$wsdlPath])) {
             self::$wsdls[$wsdlPath] = new Wsdl(self::getInstance($wsdlPath), $wsdlPath, file_get_contents($wsdlPath));
         }
+
         return self::$wsdls[$wsdlPath];
     }
-    /**
-     * @param string $schemaPath
-     * @return Schema
-     */
-    public static function getSchema($schemaPath)
+
+    public static function getSchema(string $schemaPath): Schema
     {
         if (!isset(self::$schemas[$schemaPath])) {
             self::$schemas[$schemaPath] = new Schema(self::getBingGeneratorInstance(), $schemaPath, file_get_contents($schemaPath));
         }
+
         return self::$schemas[$schemaPath];
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlBingInstance()
+
+    public static function wsdlBingInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlBingPath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlEbayInstance()
+
+    public static function wsdlEbayInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlEbayPath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlPartnerInstance($local = true)
+
+    public static function wsdlPartnerInstance(bool $local = true): Wsdl
     {
         return self::getWsdl(self::wsdlPartnerPath($local));
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlImageServiceViewInstance()
+
+    public static function wsdlImageServiceViewInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlImageViewServicePath());
     }
-    /**
-     * @return $schema
-     */
-    public static function wsdlImageServiceViewAvailRequestInstance()
+
+    public static function wsdlImageServiceViewAvailRequestInstance(): Schema
     {
         return self::getSchema(self::schemaImageViewServiceAvailableImagesRequestPath());
     }
-    /**
-     *
-     */
+
     public function testGetName()
     {
         $this->assertSame(self::wsdlBingPath(), self::wsdlBingInstance()->getName());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlActonInstance()
+
+    public static function wsdlActonInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlActonPath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlOdigeoInstance()
+
+    public static function wsdlOdigeoInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlOdigeoPath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlOrderContractInstance()
+
+    public static function wsdlOrderContractInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlOrderContractPath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlWhlInstance()
+
+    public static function wsdlWhlInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlWhlPath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlDeliveryInstance()
+
+    public static function wsdlDeliveryInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlDeliveryServicePath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function wsdlEwsInstance()
+
+    public static function wsdlEwsInstance(): Wsdl
     {
         return self::getWsdl(self::wsdlEwsPath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function schemaEwsTypesInstance()
+
+    public static function schemaEwsTypesInstance(): Schema
     {
         return self::getSchema(self::schemaEwsTypesPath());
     }
-    /**
-     * @return Wsdl
-     */
-    public static function schemaEwsMessagesInstance()
+
+    public static function schemaEwsMessagesInstance(): Schema
     {
         return self::getSchema(self::schemaEwsMessagesPath());
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         new Wsdl(self::getBingGeneratorInstance(), __DIR__ . '/../resources/empty.wsdl', file_get_contents(__DIR__ . '/../resources/empty.wsdl'));
     }
-    /**
-     * @return Schema
-     */
-    public static function wsdlNumericEnumerationInstance()
+
+    public static function wsdlNumericEnumerationInstance(): Schema
     {
         return self::getSchema(__DIR__ . '/../resources/numeric_enumeration.xml');
     }
-    /**
-     *
-     */
+
     public function testJsonSerialize()
     {
         $this->assertSame([
@@ -160,7 +128,7 @@ class WsdlTest extends TestCase
             'abstract' => false,
             'meta' => [],
             'name' => self::wsdlBingPath(),
-            '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\Wsdl',
+            '__CLASS__' => Wsdl::class,
         ], self::getWsdl(self::wsdlBingPath())->jsonSerialize());
     }
 }

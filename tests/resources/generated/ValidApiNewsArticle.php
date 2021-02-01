@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
 use \Std\Opt\StructClass;

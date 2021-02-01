@@ -1,38 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagExtension as Extension;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\WsdlHandler\Tag\TagExtension as Extension;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
 class TagExtension extends AbstractTagParser
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
-     * @param Wsdl $wsdl
-     */
-    protected function parseWsdl(Wsdl $wsdl)
+    protected function parseWsdl(Wsdl $wsdl): void
     {
         foreach ($this->getTags() as $tag) {
-            if ($tag instanceof Extension) {
-                $this->parseExtension($tag);
-            }
+            $this->parseExtension($tag);
         }
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parsingTag()
-     */
-    protected function parsingTag()
+
+    protected function parsingTag(): string
     {
         return WsdlDocument::TAG_EXTENSION;
     }
-    /**
-     * @param Extension $extension
-     */
-    public function parseExtension(Extension $extension)
+
+    public function parseExtension(Extension $extension): void
     {
         $base = $extension->getAttribute('base')->getValue();
         $parent = $extension->getSuitableParent();

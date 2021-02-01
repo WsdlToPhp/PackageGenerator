@@ -1,44 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
-class TagDocumentationTest extends WsdlParser
+final class TagDocumentationTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
-     */
-    public static function imageViewInstanceParser()
+    public static function imageViewInstanceParser(): TagDocumentation
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
-     */
-    public static function whlInstanceParser()
+
+    public static function whlInstanceParser(): TagDocumentation
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlWhlPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
-     */
-    public static function actonInstanceParser()
+
+    public static function actonInstanceParser(): TagDocumentation
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlActonPath(), true));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation
-     */
-    public static function payPalInstanceParser()
+
+    public static function payPalInstanceParser(): TagDocumentation
     {
         return new TagDocumentation(self::generatorInstance(self::wsdlPayPalPath(), true));
     }
-    /**
-     *
-     */
+
     public function testParseImageViewService()
     {
         $tagDocumentationParser = self::imageViewInstanceParser();
@@ -86,9 +77,7 @@ class TagDocumentationTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParseWhlPaymentCardCodeType()
     {
         $tagDocumentationParser = self::whlInstanceParser();
@@ -121,9 +110,7 @@ class TagDocumentationTest extends WsdlParser
             $this->fail('Unabel to find PaymentCardCodeType restriction for tests');
         }
     }
-    /**
-     *
-     */
+
     public function testParseActon()
     {
         $tagDocumentationParser = self::actonInstanceParser();
@@ -138,9 +125,7 @@ class TagDocumentationTest extends WsdlParser
             $this->fail('Unable to find Id struct for tests');
         }
     }
-    /**
-     *
-     */
+
     public function testParsePayPal()
     {
         $tagDocumentationParser = self::payPalInstanceParser();
@@ -168,9 +153,7 @@ class TagDocumentationTest extends WsdlParser
         }
         $this->assertSame(count($attributes), $okCount);
     }
-    /**
-     *
-     */
+
     public function testParseWhlTransactionActionType()
     {
         $tagDocumentationParser = self::whlInstanceParser();

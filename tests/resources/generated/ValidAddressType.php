@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AddressType StructType
@@ -199,7 +201,7 @@ class ApiAddressType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressLineForArrayConstraintsFromSetAddressLine(array $values = array())
+    public static function validateAddressLineForArrayConstraintsFromSetAddressLine(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -222,7 +224,7 @@ class ApiAddressType extends AbstractStructBase
      * @param mixed $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressLineForMaxLengthConstraintFromSetAddressLine($values)
+    public static function validateAddressLineForMaxLengthConstraintFromSetAddressLine($values): string
     {
         $message = '';
         $invalidValues = [];
@@ -245,7 +247,7 @@ class ApiAddressType extends AbstractStructBase
      * @param mixed $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressLineForMinLengthConstraintFromSetAddressLine($values)
+    public static function validateAddressLineForMinLengthConstraintFromSetAddressLine($values): string
     {
         $message = '';
         $invalidValues = [];

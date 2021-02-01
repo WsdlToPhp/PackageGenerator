@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -13,15 +15,15 @@ abstract class AbstractOperation
     /**
      * @var string
      */
-    const DEFAULT_TYPE = 'string';
+    public const DEFAULT_TYPE = 'string';
     /**
      * @var string
      */
-    const ARRAY_TYPE = 'array';
+    public const ARRAY_TYPE = 'array';
     /**
      * @var string
      */
-    const SOAP_CALL_NAME = '__soapCall';
+    public const SOAP_CALL_NAME = '__soapCall';
     /**
      * @var MethodModel
      */

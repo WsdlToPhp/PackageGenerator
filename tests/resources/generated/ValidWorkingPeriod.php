@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for WorkingPeriod StructType
@@ -66,7 +68,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDayOfWeekForArrayConstraintsFromSetDayOfWeek(array $values = array())
+    public static function validateDayOfWeekForArrayConstraintsFromSetDayOfWeek(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];

@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for all operations
@@ -42,9 +44,9 @@ class ApiService extends AbstractSoapClientBase
     public function RefundTransaction(\Api\StructType\ApiRefundTransactionReq $refundTransactionRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('RefundTransaction', array(
+            $this->setResult($this->getSoapClient()->__soapCall('RefundTransaction', [
                 $refundTransactionRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -68,9 +70,9 @@ class ApiService extends AbstractSoapClientBase
     public function InitiateRecoup(\Api\StructType\ApiInitiateRecoupReq $initiateRecoupRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('InitiateRecoup', array(
+            $this->setResult($this->getSoapClient()->__soapCall('InitiateRecoup', [
                 $initiateRecoupRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -94,9 +96,9 @@ class ApiService extends AbstractSoapClientBase
     public function CompleteRecoup(\Api\StructType\ApiCompleteRecoupReq $completeRecoupRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('CompleteRecoup', array(
+            $this->setResult($this->getSoapClient()->__soapCall('CompleteRecoup', [
                 $completeRecoupRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -120,9 +122,9 @@ class ApiService extends AbstractSoapClientBase
     public function CancelRecoup(\Api\StructType\ApiCancelRecoupReq $cancelRecoupRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('CancelRecoup', array(
+            $this->setResult($this->getSoapClient()->__soapCall('CancelRecoup', [
                 $cancelRecoupRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -146,9 +148,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetTransactionDetails(\Api\StructType\ApiGetTransactionDetailsReq $getTransactionDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetTransactionDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetTransactionDetails', [
                 $getTransactionDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -172,9 +174,9 @@ class ApiService extends AbstractSoapClientBase
     public function BMCreateButton(\Api\StructType\ApiBMCreateButtonReq $bMCreateButtonRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BMCreateButton', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BMCreateButton', [
                 $bMCreateButtonRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -198,9 +200,9 @@ class ApiService extends AbstractSoapClientBase
     public function BMUpdateButton(\Api\StructType\ApiBMUpdateButtonReq $bMUpdateButtonRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BMUpdateButton', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BMUpdateButton', [
                 $bMUpdateButtonRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -224,9 +226,9 @@ class ApiService extends AbstractSoapClientBase
     public function BMSetInventory(\Api\StructType\ApiBMSetInventoryReq $bMSetInventoryRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BMSetInventory', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BMSetInventory', [
                 $bMSetInventoryRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -250,9 +252,9 @@ class ApiService extends AbstractSoapClientBase
     public function BMGetButtonDetails(\Api\StructType\ApiBMGetButtonDetailsReq $bMGetButtonDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BMGetButtonDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BMGetButtonDetails', [
                 $bMGetButtonDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -276,9 +278,9 @@ class ApiService extends AbstractSoapClientBase
     public function BMGetInventory(\Api\StructType\ApiBMGetInventoryReq $bMGetInventoryRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BMGetInventory', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BMGetInventory', [
                 $bMGetInventoryRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -302,9 +304,9 @@ class ApiService extends AbstractSoapClientBase
     public function BMManageButtonStatus(\Api\StructType\ApiBMManageButtonStatusReq $bMManageButtonStatusRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BMManageButtonStatus', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BMManageButtonStatus', [
                 $bMManageButtonStatusRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -328,9 +330,9 @@ class ApiService extends AbstractSoapClientBase
     public function BMButtonSearch(\Api\StructType\ApiBMButtonSearchReq $bMButtonSearchRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BMButtonSearch', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BMButtonSearch', [
                 $bMButtonSearchRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -354,9 +356,9 @@ class ApiService extends AbstractSoapClientBase
     public function BillUser(\Api\StructType\ApiBillUserReq $billUserRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BillUser', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BillUser', [
                 $billUserRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -380,9 +382,9 @@ class ApiService extends AbstractSoapClientBase
     public function TransactionSearch(\Api\StructType\ApiTransactionSearchReq $transactionSearchRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('TransactionSearch', array(
+            $this->setResult($this->getSoapClient()->__soapCall('TransactionSearch', [
                 $transactionSearchRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -406,9 +408,9 @@ class ApiService extends AbstractSoapClientBase
     public function MassPay(\Api\StructType\ApiMassPayReq $massPayRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('MassPay', array(
+            $this->setResult($this->getSoapClient()->__soapCall('MassPay', [
                 $massPayRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -432,9 +434,9 @@ class ApiService extends AbstractSoapClientBase
     public function BillAgreementUpdate(\Api\StructType\ApiBillAgreementUpdateReq $billAgreementUpdateRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BillAgreementUpdate', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BillAgreementUpdate', [
                 $billAgreementUpdateRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -458,9 +460,9 @@ class ApiService extends AbstractSoapClientBase
     public function AddressVerify(\Api\StructType\ApiAddressVerifyReq $addressVerifyRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AddressVerify', array(
+            $this->setResult($this->getSoapClient()->__soapCall('AddressVerify', [
                 $addressVerifyRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -484,9 +486,9 @@ class ApiService extends AbstractSoapClientBase
     public function EnterBoarding(\Api\StructType\ApiEnterBoardingReq $enterBoardingRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('EnterBoarding', array(
+            $this->setResult($this->getSoapClient()->__soapCall('EnterBoarding', [
                 $enterBoardingRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -510,9 +512,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetBoardingDetails(\Api\StructType\ApiGetBoardingDetailsReq $getBoardingDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetBoardingDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetBoardingDetails', [
                 $getBoardingDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -536,9 +538,9 @@ class ApiService extends AbstractSoapClientBase
     public function CreateMobilePayment(\Api\StructType\ApiCreateMobilePaymentReq $createMobilePaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('CreateMobilePayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('CreateMobilePayment', [
                 $createMobilePaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -562,9 +564,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetMobileStatus(\Api\StructType\ApiGetMobileStatusReq $getMobileStatusRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetMobileStatus', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetMobileStatus', [
                 $getMobileStatusRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -588,9 +590,9 @@ class ApiService extends AbstractSoapClientBase
     public function SetMobileCheckout(\Api\StructType\ApiSetMobileCheckoutReq $setMobileCheckoutRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('SetMobileCheckout', array(
+            $this->setResult($this->getSoapClient()->__soapCall('SetMobileCheckout', [
                 $setMobileCheckoutRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -614,9 +616,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoMobileCheckoutPayment(\Api\StructType\ApiDoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoMobileCheckoutPayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoMobileCheckoutPayment', [
                 $doMobileCheckoutPaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -640,9 +642,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetBalance(\Api\StructType\ApiGetBalanceReq $getBalanceRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetBalance', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetBalance', [
                 $getBalanceRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -666,9 +668,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetPalDetails(\Api\StructType\ApiGetPalDetailsReq $getPalDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetPalDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetPalDetails', [
                 $getPalDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -692,9 +694,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoExpressCheckoutPayment(\Api\StructType\ApiDoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoExpressCheckoutPayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoExpressCheckoutPayment', [
                 $doExpressCheckoutPaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -718,9 +720,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoUATPExpressCheckoutPayment(\Api\StructType\ApiDoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoUATPExpressCheckoutPayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoUATPExpressCheckoutPayment', [
                 $doUATPExpressCheckoutPaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -744,9 +746,9 @@ class ApiService extends AbstractSoapClientBase
     public function SetAuthFlowParam(\Api\StructType\ApiSetAuthFlowParamReq $setAuthFlowParamRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('SetAuthFlowParam', array(
+            $this->setResult($this->getSoapClient()->__soapCall('SetAuthFlowParam', [
                 $setAuthFlowParamRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -770,9 +772,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetAuthDetails(\Api\StructType\ApiGetAuthDetailsReq $getAuthDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetAuthDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetAuthDetails', [
                 $getAuthDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -796,9 +798,9 @@ class ApiService extends AbstractSoapClientBase
     public function SetAccessPermissions(\Api\StructType\ApiSetAccessPermissionsReq $setAccessPermissionsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('SetAccessPermissions', array(
+            $this->setResult($this->getSoapClient()->__soapCall('SetAccessPermissions', [
                 $setAccessPermissionsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -822,9 +824,9 @@ class ApiService extends AbstractSoapClientBase
     public function UpdateAccessPermissions(\Api\StructType\ApiUpdateAccessPermissionsReq $updateAccessPermissionsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('UpdateAccessPermissions', array(
+            $this->setResult($this->getSoapClient()->__soapCall('UpdateAccessPermissions', [
                 $updateAccessPermissionsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -848,9 +850,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetAccessPermissionDetails(\Api\StructType\ApiGetAccessPermissionDetailsReq $getAccessPermissionDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetAccessPermissionDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetAccessPermissionDetails', [
                 $getAccessPermissionDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -874,9 +876,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetIncentiveEvaluation(\Api\StructType\ApiGetIncentiveEvaluationReq $getIncentiveEvaluationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetIncentiveEvaluation', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetIncentiveEvaluation', [
                 $getIncentiveEvaluationRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -900,9 +902,9 @@ class ApiService extends AbstractSoapClientBase
     public function SetExpressCheckout(\Api\StructType\ApiSetExpressCheckoutReq $setExpressCheckoutRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('SetExpressCheckout', array(
+            $this->setResult($this->getSoapClient()->__soapCall('SetExpressCheckout', [
                 $setExpressCheckoutRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -926,9 +928,9 @@ class ApiService extends AbstractSoapClientBase
     public function ExecuteCheckoutOperations(\Api\StructType\ApiExecuteCheckoutOperationsReq $executeCheckoutOperationsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('ExecuteCheckoutOperations', array(
+            $this->setResult($this->getSoapClient()->__soapCall('ExecuteCheckoutOperations', [
                 $executeCheckoutOperationsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -952,9 +954,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetExpressCheckoutDetails(\Api\StructType\ApiGetExpressCheckoutDetailsReq $getExpressCheckoutDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetExpressCheckoutDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetExpressCheckoutDetails', [
                 $getExpressCheckoutDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -978,9 +980,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoDirectPayment(\Api\StructType\ApiDoDirectPaymentReq $doDirectPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoDirectPayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoDirectPayment', [
                 $doDirectPaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1004,9 +1006,9 @@ class ApiService extends AbstractSoapClientBase
     public function ManagePendingTransactionStatus(\Api\StructType\ApiManagePendingTransactionStatusReq $managePendingTransactionStatusRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('ManagePendingTransactionStatus', array(
+            $this->setResult($this->getSoapClient()->__soapCall('ManagePendingTransactionStatus', [
                 $managePendingTransactionStatusRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1030,9 +1032,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoCancel(\Api\StructType\ApiDoCancelReq $doCancelRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoCancel', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoCancel', [
                 $doCancelRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1056,9 +1058,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoCapture(\Api\StructType\ApiDoCaptureReq $doCaptureRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoCapture', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoCapture', [
                 $doCaptureRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1082,9 +1084,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoReauthorization(\Api\StructType\ApiDoReauthorizationReq $doReauthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoReauthorization', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoReauthorization', [
                 $doReauthorizationRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1108,9 +1110,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoVoid(\Api\StructType\ApiDoVoidReq $doVoidRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoVoid', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoVoid', [
                 $doVoidRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1134,9 +1136,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoAuthorization(\Api\StructType\ApiDoAuthorizationReq $doAuthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoAuthorization', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoAuthorization', [
                 $doAuthorizationRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1160,9 +1162,9 @@ class ApiService extends AbstractSoapClientBase
     public function UpdateAuthorization(\Api\StructType\ApiUpdateAuthorizationReq $updateAuthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('UpdateAuthorization', array(
+            $this->setResult($this->getSoapClient()->__soapCall('UpdateAuthorization', [
                 $updateAuthorizationRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1186,9 +1188,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoUATPAuthorization(\Api\StructType\ApiDoUATPAuthorizationReq $doUATPAuthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoUATPAuthorization', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoUATPAuthorization', [
                 $doUATPAuthorizationRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1212,9 +1214,9 @@ class ApiService extends AbstractSoapClientBase
     public function SetCustomerBillingAgreement(\Api\StructType\ApiSetCustomerBillingAgreementReq $setCustomerBillingAgreementRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('SetCustomerBillingAgreement', array(
+            $this->setResult($this->getSoapClient()->__soapCall('SetCustomerBillingAgreement', [
                 $setCustomerBillingAgreementRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1238,9 +1240,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetBillingAgreementCustomerDetails(\Api\StructType\ApiGetBillingAgreementCustomerDetailsReq $getBillingAgreementCustomerDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetBillingAgreementCustomerDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetBillingAgreementCustomerDetails', [
                 $getBillingAgreementCustomerDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1264,9 +1266,9 @@ class ApiService extends AbstractSoapClientBase
     public function CreateBillingAgreement(\Api\StructType\ApiCreateBillingAgreementReq $createBillingAgreementRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('CreateBillingAgreement', array(
+            $this->setResult($this->getSoapClient()->__soapCall('CreateBillingAgreement', [
                 $createBillingAgreementRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1290,9 +1292,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoReferenceTransaction(\Api\StructType\ApiDoReferenceTransactionReq $doReferenceTransactionRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoReferenceTransaction', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoReferenceTransaction', [
                 $doReferenceTransactionRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1316,9 +1318,9 @@ class ApiService extends AbstractSoapClientBase
     public function CreateRecurringPaymentsProfile(\Api\StructType\ApiCreateRecurringPaymentsProfileReq $createRecurringPaymentsProfileRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('CreateRecurringPaymentsProfile', array(
+            $this->setResult($this->getSoapClient()->__soapCall('CreateRecurringPaymentsProfile', [
                 $createRecurringPaymentsProfileRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1342,9 +1344,9 @@ class ApiService extends AbstractSoapClientBase
     public function GetRecurringPaymentsProfileDetails(\Api\StructType\ApiGetRecurringPaymentsProfileDetailsReq $getRecurringPaymentsProfileDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('GetRecurringPaymentsProfileDetails', array(
+            $this->setResult($this->getSoapClient()->__soapCall('GetRecurringPaymentsProfileDetails', [
                 $getRecurringPaymentsProfileDetailsRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1369,9 +1371,9 @@ class ApiService extends AbstractSoapClientBase
     public function ManageRecurringPaymentsProfileStatus(\Api\StructType\ApiManageRecurringPaymentsProfileStatusReq $manageRecurringPaymentsProfileStatusRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('ManageRecurringPaymentsProfileStatus', array(
+            $this->setResult($this->getSoapClient()->__soapCall('ManageRecurringPaymentsProfileStatus', [
                 $manageRecurringPaymentsProfileStatusRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1395,9 +1397,9 @@ class ApiService extends AbstractSoapClientBase
     public function BillOutstandingAmount(\Api\StructType\ApiBillOutstandingAmountReq $billOutstandingAmountRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('BillOutstandingAmount', array(
+            $this->setResult($this->getSoapClient()->__soapCall('BillOutstandingAmount', [
                 $billOutstandingAmountRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1421,9 +1423,9 @@ class ApiService extends AbstractSoapClientBase
     public function UpdateRecurringPaymentsProfile(\Api\StructType\ApiUpdateRecurringPaymentsProfileReq $updateRecurringPaymentsProfileRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('UpdateRecurringPaymentsProfile', array(
+            $this->setResult($this->getSoapClient()->__soapCall('UpdateRecurringPaymentsProfile', [
                 $updateRecurringPaymentsProfileRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1447,9 +1449,9 @@ class ApiService extends AbstractSoapClientBase
     public function DoNonReferencedCredit(\Api\StructType\ApiDoNonReferencedCreditReq $doNonReferencedCreditRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoNonReferencedCredit', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoNonReferencedCredit', [
                 $doNonReferencedCreditRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1473,9 +1475,9 @@ class ApiService extends AbstractSoapClientBase
     public function ReverseTransaction(\Api\StructType\ApiReverseTransactionReq $reverseTransactionRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('ReverseTransaction', array(
+            $this->setResult($this->getSoapClient()->__soapCall('ReverseTransaction', [
                 $reverseTransactionRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -1499,9 +1501,9 @@ class ApiService extends AbstractSoapClientBase
     public function ExternalRememberMeOptOut(\Api\StructType\ApiExternalRememberMeOptOutReq $externalRememberMeOptOutRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('ExternalRememberMeOptOut', array(
+            $this->setResult($this->getSoapClient()->__soapCall('ExternalRememberMeOptOut', [
                 $externalRememberMeOptOutRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

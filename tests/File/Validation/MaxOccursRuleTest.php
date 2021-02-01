@@ -1,8 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class MaxOccursRuleTest extends AbstractRuleTest
+use Api\StructType\ApiParagraphType;
+use InvalidArgumentException;
+
+final class MaxOccursRuleTest extends AbstractRuleTest
 {
 
     /**
@@ -11,20 +16,21 @@ class MaxOccursRuleTest extends AbstractRuleTest
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
      * - minOccurs: 0
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid count of 6, the number of elements contained by the property must be less than or equal to 5
      */
     public function testSetTaxDescriptionWithTooManyItemsMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid count of 6, the number of elements contained by the property must be less than or equal to 5');
+
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setTaxDescription([
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
         ]);
     }
 
@@ -40,11 +46,11 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setTaxDescription([
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
         ]));
     }
 
@@ -60,8 +66,8 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setTaxDescription([
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
+            new ApiParagraphType(),
+            new ApiParagraphType(),
         ]));
     }
 
@@ -71,22 +77,23 @@ class MaxOccursRuleTest extends AbstractRuleTest
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
      * - minOccurs: 0
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage You can't add anymore element to this property that already contains 5 elements, the number of elements contained by the property must be less than or equal to 5
      */
     public function testAddToTaxDescriptionWithTooManyItemsMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('You can\'t add anymore element to this property that already contains 5 elements, the number of elements contained by the property must be less than or equal to 5');
+
         // true to ensure to start from zero for addTo calls
         $instance = self::getWhlTaxTypeInstance(true);
 
         $instance
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType());
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType());
     }
 
     /**
@@ -104,11 +111,11 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
         );
     }
 
@@ -127,8 +134,8 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
+            ->addToTaxDescription(new ApiParagraphType())
         );
     }
 }

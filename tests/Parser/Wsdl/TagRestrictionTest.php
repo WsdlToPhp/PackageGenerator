@@ -1,43 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
-class TagRestrictionTest extends WsdlParser
+final class TagRestrictionTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
-     */
-    public static function actonInstanceParser()
+    public static function actonInstanceParser(): TagRestriction
     {
         return new TagRestriction(self::generatorInstance(self::wsdlActonPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
-     */
-    public static function imageViewInstanceParser()
+
+    public static function imageViewInstanceParser(): TagRestriction
     {
         return new TagRestriction(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
-     */
-    public static function docDataPaymentsViewInstanceParser()
+
+    public static function docDataPaymentsViewInstanceParser(): TagRestriction
     {
         return new TagRestriction(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction
-     */
-    public static function whlInstanceParser()
+
+    public static function whlInstanceParser(): TagRestriction
     {
         return new TagRestriction(self::generatorInstance(self::wsdlWhlPath()));
     }
-    /**
-     *
-     */
+
     public function testParseImageViewService()
     {
         $tagRestrictionParser = self::imageViewInstanceParser();
@@ -67,9 +58,7 @@ class TagRestrictionTest extends WsdlParser
         }
         $this->assertEquals(2, $count);
     }
-    /**
-     *
-     */
+
     public function testParseActonService()
     {
         $tagRestrictionParser = self::actonInstanceParser();
@@ -87,9 +76,7 @@ class TagRestrictionTest extends WsdlParser
         }
         $this->assertTrue($ok);
     }
-    /**
-     *
-     */
+
     public function testParseDocDataPayments()
     {
         $tagRestrictionParser = self::docDataPaymentsViewInstanceParser();
@@ -121,9 +108,7 @@ class TagRestrictionTest extends WsdlParser
 
         $this->assertEquals(2, $count);
     }
-    /**
-     *
-     */
+
     public function testParseWhlMustFetchAllRestrictionPatterns()
     {
         $tagRestrictionParser = self::whlInstanceParser();

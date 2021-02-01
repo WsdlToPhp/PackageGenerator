@@ -1,23 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use InvalidArgumentException;
+use stdClass;
+use TypeError;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 
-class ModelTest extends TestCase
+final class ModelTest extends AbstractTestCase
 {
-    /**
-     * @param string $name
-     * @return \WsdlToPhp\PackageGenerator\Model\EmptyModel
-     */
-    public static function instance($name)
+    public static function instance(string $name): EmptyModel
     {
         return new EmptyModel(self::getBingGeneratorInstance(), $name);
     }
-    /**
-     *
-     */
+
     public function testGetCleanName()
     {
         $this->assertEquals('_foo_', self::instance('-foo-')->getCleanName());
@@ -26,9 +25,7 @@ class ModelTest extends TestCase
         $this->assertEquals('_é_àç_çfoo', self::instance('___é%àç_çfoo')->getCleanName(false));
         $this->assertEquals('_é_àç_çfoo_245', self::instance('___é%àç_çfoo----245')->getCleanName(false));
     }
-    /**
-     *
-     */
+
     public function testNameIsClean()
     {
         $this->assertTrue(self::instance('foo_')->nameIsClean());
@@ -37,30 +34,26 @@ class ModelTest extends TestCase
         $this->assertFalse(self::instance('-foo_')->nameIsClean());
         $this->asserttrue(self::instance('éfoo_')->nameIsClean());
     }
-    /**
-     *
-     */
+
     public function testGetDocSubPackages()
     {
         $this->assertEmpty(self::instance('Foo')->getDocSubPackages());
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testExceptionOnAddMetaName()
     {
+        $this->expectException(TypeError::class);
+
         self::instance('foo')->addMeta(null, 'bar');
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testExceptionOnAddMetaValue()
     {
-        self::instance('foo')->addMeta('', new \stdClass());
+        $this->expectException(InvalidArgumentException::class);
+
+        self::instance('foo')->addMeta('', new stdClass());
     }
-    /**
-     *
-     */
+
     public function testAddMeta()
     {
         $instance = self::instance('foo');
@@ -77,16 +70,14 @@ class ModelTest extends TestCase
             ],
         ], $instance->getMeta());
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testGetReservedMethodsInstance()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         self::instance('foo')->getReservedMethodsInstance();
     }
-    /**
-     *
-     */
+
     public function testToJsonSerialize()
     {
         $this->assertSame([
@@ -94,35 +85,28 @@ class ModelTest extends TestCase
             'abstract' => false,
             'meta' => [],
             'name' => 'foo_',
-            '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyModel',
+            '__CLASS__' => EmptyModel::class,
         ], self::instance('foo_')->jsonSerialize());
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage __CLASS__ key is missing from "array (
-    'inheritance' => '',
-    'abstract' => false,
-    'meta' =>
-    array (
-    ),
-    'name' => 'foo_',
-    )"
-     */
+
     public function testInstanceFromSerializedJsonMustThrowAnExceptionForMissingClass()
     {
-        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), [
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(sprintf('__CLASS__ key is missing from "%s"', var_export($array = [
             'inheritance' => '',
             'abstract' => false,
             'meta' => [],
             'name' => 'foo_',
-        ]);
+        ], true)));
+
+        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), $array);
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Class WsdlToPhp\PackageGenerator\Model\EmptyFakeModel is unknown
-     */
-    public function testInstanceFromSerializedJsonMustThrowAnAxceptionForInexistingClass()
+
+    public function testInstanceFromSerializedJsonMustThrowAnExceptionForInexistingClass()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Class "WsdlToPhp\PackageGenerator\Model\EmptyFakeModel" is unknown');
+
         EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), [
             'inheritance' => '',
             'abstract' => false,
@@ -131,24 +115,17 @@ class ModelTest extends TestCase
             '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyFakeModel',
         ]);
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage name key is missing from array (
-    'inheritance' => '',
-    'abstract' => false,
-    'meta' =>
-    array (
-    ),
-    '__CLASS__' => 'WsdlToPhp\\PackageGenerator\\Model\\EmptyModel',
-    )
-     */
+
     public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingName()
     {
-        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), [
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage(sprintf('name key is missing from "%s"', var_export($array = [
             'inheritance' => '',
             'abstract' => false,
             'meta' => [],
-            '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyModel',
-        ]);
+            '__CLASS__' => EmptyModel::class,
+        ], true)));
+
+        EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), $array);
     }
 }

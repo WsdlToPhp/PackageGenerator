@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration;
@@ -7,25 +9,18 @@ use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
 
-class TagEnumerationTest extends WsdlParser
+final class TagEnumerationTest extends WsdlParser
 {
-    /**
-     * @return TagEnumeration
-     */
-    public static function bingInstanceParser()
+    public static function bingInstanceParser(): TagEnumeration
     {
         return new TagEnumeration(self::generatorInstance(self::wsdlBingPath()));
     }
-    /**
-     * @return TagEnumeration
-     */
-    public static function reformaInstanceParser()
+
+    public static function reformaInstanceParser(): TagEnumeration
     {
         return new TagEnumeration(self::generatorInstance(self::wsdlReformaPath()));
     }
-    /**
-     *
-     */
+
     public function testBing()
     {
         $tagEnumerationParser = self::bingInstanceParser();
@@ -57,9 +52,7 @@ class TagEnumerationTest extends WsdlParser
         }
         $this->assertSame(2, $count);
     }
-    /**
-     *
-     */
+
     public function testReforma()
     {
         $tagEnumerationParser = self::reformaInstanceParser();

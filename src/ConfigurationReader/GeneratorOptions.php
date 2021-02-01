@@ -1,105 +1,90 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
+use InvalidArgumentException;
+
+final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
 {
     /**
      * Common values used as option's value
      */
-    const VALUE_CAT = 'cat';
-    const VALUE_END = 'end';
-    const VALUE_FALSE = false;
-    const VALUE_NONE = 'none';
-    const VALUE_START = 'start';
-    const VALUE_TRUE = true;
+    public const VALUE_CAT = 'cat';
+    public const VALUE_END = 'end';
+    public const VALUE_FALSE = false;
+    public const VALUE_NONE = 'none';
+    public const VALUE_START = 'start';
+    public const VALUE_TRUE = true;
+
     /**
      * Possible option keys
      * @var string
      */
-    const ADD_COMMENTS = 'add_comments';
-    const ARRAYS_FOLDER = 'arrays_folder';
-    const BASIC_LOGIN = 'basic_login';
-    const BASIC_PASSWORD = 'basic_password';
-    const CATEGORY = 'category';
-    const COMPOSER_NAME = 'composer_name';
-    const COMPOSER_SETTINGS = 'composer_settings';
-    const DESTINATION = 'destination';
-    const ENUMS_FOLDER = 'enums_folder';
-    const GATHER_METHODS = 'gather_methods';
-    const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
-    const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
-    const NAMESPACE_PREFIX = 'namespace_prefix';
-    const ORIGIN = 'origin';
-    const PREFIX = 'prefix';
-    const PROXY_HOST = 'proxy_host';
-    const PROXY_LOGIN = 'proxy_login';
-    const PROXY_PASSWORD = 'proxy_password';
-    const PROXY_PORT = 'proxy_port';
-    const SERVICES_FOLDER = 'services_folder';
-    const SOAP_CLIENT_CLASS = 'soap_client_class';
-    const SOAP_OPTIONS = 'soap_options';
-    const SRC_DIRNAME = 'src_dirname';
-    const STANDALONE = 'standalone';
-    const STRUCT_ARRAY_CLASS = 'struct_array_class';
-    const STRUCT_ENUM_CLASS = 'struct_enum_class';
-    const STRUCT_CLASS = 'struct_class';
-    const STRUCTS_FOLDER = 'structs_folder';
-    const SUFFIX = 'suffix';
-    const VALIDATION = 'validation';
-    const SCHEMAS_SAVE = 'schemas_save';
-    const SCHEMAS_FOLDER = 'schemas_folder';
-    const XSD_TYPES_PATH = 'xsd_types_path';
-    /**
-     * Generator's options
-     * @var array
-     */
-    protected $options;
-    /**
-     * @param string $filename
-     */
-    protected function __construct($filename)
+    public const ADD_COMMENTS = 'add_comments';
+    public const ARRAYS_FOLDER = 'arrays_folder';
+    public const BASIC_LOGIN = 'basic_login';
+    public const BASIC_PASSWORD = 'basic_password';
+    public const CATEGORY = 'category';
+    public const COMPOSER_NAME = 'composer_name';
+    public const COMPOSER_SETTINGS = 'composer_settings';
+    public const DESTINATION = 'destination';
+    public const ENUMS_FOLDER = 'enums_folder';
+    public const GATHER_METHODS = 'gather_methods';
+    public const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
+    public const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
+    public const NAMESPACE_PREFIX = 'namespace_prefix';
+    public const ORIGIN = 'origin';
+    public const PREFIX = 'prefix';
+    public const PROXY_HOST = 'proxy_host';
+    public const PROXY_LOGIN = 'proxy_login';
+    public const PROXY_PASSWORD = 'proxy_password';
+    public const PROXY_PORT = 'proxy_port';
+    public const SERVICES_FOLDER = 'services_folder';
+    public const SOAP_CLIENT_CLASS = 'soap_client_class';
+    public const SOAP_OPTIONS = 'soap_options';
+    public const SRC_DIRNAME = 'src_dirname';
+    public const STANDALONE = 'standalone';
+    public const STRUCT_ARRAY_CLASS = 'struct_array_class';
+    public const STRUCT_ENUM_CLASS = 'struct_enum_class';
+    public const STRUCT_CLASS = 'struct_class';
+    public const STRUCTS_FOLDER = 'structs_folder';
+    public const SUFFIX = 'suffix';
+    public const VALIDATION = 'validation';
+    public const SCHEMAS_SAVE = 'schemas_save';
+    public const SCHEMAS_FOLDER = 'schemas_folder';
+    public const XSD_TYPES_PATH = 'xsd_types_path';
+
+    protected array $options;
+
+    protected function __construct(string $filename)
     {
         $this->options = [];
         $this->parseOptions($filename);
     }
-    /**
-     * Parse options for generator
-     * @param string $filename options's file to parse
-     * @return GeneratorOptions
-     */
-    protected function parseOptions($filename)
+
+    protected function parseOptions(string $filename): self
     {
         $options = $this->loadYaml($filename);
         if (is_array($options)) {
             $this->options = $options;
         } else {
-            throw new \InvalidArgumentException(sprintf('Settings contained by "%s" are not valid as the settings are not contained by an array: "%s"', $filename, gettype($options)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Settings contained by "%s" are not valid as the settings are not contained by an array: "%s"', $filename, gettype($options)), __LINE__);
         }
+
         return $this;
     }
-    /**
-     * Returns the option value
-     * @throws \InvalidArgumentException
-     * @param string $optionName
-     * @return mixed
-     */
-    public function getOptionValue($optionName)
+
+    public function getOptionValue(string $optionName)
     {
         if (!isset($this->options[$optionName])) {
-            throw new \InvalidArgumentException(sprintf('Invalid option name "%s", possible options: %s', $optionName, implode(', ', array_keys($this->options))), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid option name "%s", possible options: %s', $optionName, implode(', ', array_keys($this->options))), __LINE__);
         }
         return array_key_exists('value', $this->options[$optionName]) ? $this->options[$optionName]['value'] : $this->options[$optionName]['default'];
     }
-    /**
-     * Allows to add an option and set its value
-     * @throws \InvalidArgumentException
-     * @param string $optionName
-     * @param mixed $optionValue
-     * @param array $values
-     * @return GeneratorOptions
-     */
-    public function setOptionValue($optionName, $optionValue, array $values = [])
+
+    public function setOptionValue(string $optionName, $optionValue, array $values = []): self
     {
         if (!isset($this->options[$optionName])) {
             $this->options[$optionName] = [
@@ -107,39 +92,26 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
                 'values' => $values,
             ];
         } elseif (!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])), __LINE__);
         } else {
             $this->options[$optionName]['value'] = $optionValue;
         }
+
         return $this;
     }
-    /**
-     * @throws \InvalidArgumentException
-     * @param string $filename options's file to parse
-     * @return GeneratorOptions
-     */
-    public static function instance($filename = null)
-    {
-        return parent::instance(empty($filename) ? self::getDefaultConfigurationPath() : $filename);
-    }
-    /**
-     * @return string
-     */
-    public static function getDefaultConfigurationPath()
+
+    public static function getDefaultConfigurationPath(): string
     {
         return __DIR__ . '/../resources/config/generator_options.yml';
     }
-    /**
-     * Get category option value
-     * @return string
-     */
-    public function getCategory()
+
+    public function getCategory(): string
     {
         return $this->getOptionValue(self::CATEGORY);
     }
     /**
      * Set current category option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $category
      * @return GeneratorOptions
      */
@@ -157,7 +129,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current add comments option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param array $addComments
      * @return GeneratorOptions
      */
@@ -169,7 +141,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
         $comments = [];
         foreach ($addComments as $index => $value) {
             if (is_numeric($index) && mb_strpos($value, ':') > 0) {
-                list($tag, $val) = explode(':', $value);
+                [$tag, $val] = explode(':', $value);
                 $comments[$tag] = $val;
             } else {
                 $comments[$index] = $value;
@@ -187,7 +159,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current gather methods option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $gatherMethods
      * @return GeneratorOptions
      */
@@ -205,7 +177,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current generate tutorial file option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param bool $generateTutorialFile
      * @return GeneratorOptions
      */
@@ -223,7 +195,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current namespace option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $namespace
      * @return GeneratorOptions
      */
@@ -241,7 +213,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current generic constants name option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param bool $genericConstantsName
      * @return GeneratorOptions
      */
@@ -259,7 +231,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current standalone option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param bool $standalone
      * @return GeneratorOptions
      */
@@ -277,7 +249,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current validation option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param bool $validation
      * @return GeneratorOptions
      */
@@ -295,7 +267,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current struct class option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $structClass
      * @return GeneratorOptions
      */
@@ -313,7 +285,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current struct array class option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $structArrayClass
      * @return GeneratorOptions
      */
@@ -331,7 +303,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current struct enum class option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $structEnumClass
      * @return GeneratorOptions
      */
@@ -349,7 +321,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current struct array class option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $soapClientClass
      * @return GeneratorOptions
      */
@@ -367,7 +339,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current origin option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $origin
      * @return GeneratorOptions
      */
@@ -385,7 +357,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current destination option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $destination
      * @return GeneratorOptions
      */
@@ -403,7 +375,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current src dirname option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $srcDirname
      * @return GeneratorOptions
      */
@@ -421,7 +393,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current prefix option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $prefix
      * @return GeneratorOptions
      */
@@ -439,7 +411,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current suffix option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $suffix
      * @return GeneratorOptions
      */
@@ -457,7 +429,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current basic login option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $basicLogin
      * @return GeneratorOptions
      */
@@ -475,7 +447,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current basic password option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $basicPassword
      * @return GeneratorOptions
      */
@@ -493,7 +465,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current proxy host option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $proxyHost
      * @return GeneratorOptions
      */
@@ -511,7 +483,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current proxy port option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $proxyPort
      * @return GeneratorOptions
      */
@@ -529,7 +501,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current proxy login option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $proxyLogin
      * @return GeneratorOptions
      */
@@ -547,7 +519,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current proxy password option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $proxyPassword
      * @return GeneratorOptions
      */
@@ -565,7 +537,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current soap options option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param array $soapOptions
      * @return GeneratorOptions
      */
@@ -583,7 +555,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current composer name option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $composerName
      * @return GeneratorOptions
      */
@@ -601,7 +573,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current composer settings option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param array $composerSettings
      * @return GeneratorOptions
      */
@@ -634,7 +606,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
         foreach ($keys as $key) {
             $array = &$array[$key];
         }
-        $array = ($value === 'true' || $value === 'false') ? $value === 'true' : $value;
+        $array = ('true' === $value || 'false' === $value) ? 'true' === $value : $value;
     }
     /**
      * Get structs folder option value
@@ -646,7 +618,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current structs folder option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $structsFolder
      * @return GeneratorOptions
      */
@@ -664,7 +636,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current arrays folder option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $arraysFolder
      * @return GeneratorOptions
      */
@@ -682,7 +654,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current enums folder option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $enumsFolder
      * @return GeneratorOptions
      */
@@ -700,7 +672,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set current services folder option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $servicesFolder
      * @return GeneratorOptions
      */
@@ -718,7 +690,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set schemas save option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param bool $saveSchemas
      * @return GeneratorOptions
      */
@@ -736,7 +708,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set schemas folder option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $schemasFolder
      * @return GeneratorOptions
      */
@@ -754,7 +726,7 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     }
     /**
      * Set xsd types path option value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $xsdTypesPath
      * @return GeneratorOptions
      */
@@ -762,10 +734,8 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
     {
         return $this->setOptionValue(self::XSD_TYPES_PATH, $xsdTypesPath);
     }
-    /**
-     * @return string[]
-     */
-    public function toArray()
+
+    public function toArray(): array
     {
         $options = [];
         foreach (array_keys($this->options) as $name) {
@@ -773,7 +743,8 @@ class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
         }
         return $options;
     }
-    public function jsonSerialize()
+
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }

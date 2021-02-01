@@ -1,42 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 
-class TagHeaderTest extends WsdlParser
+final class TagHeaderTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
-     */
-    public static function imageViewServiceInstanceParser()
+    public static function imageViewServiceInstanceParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
-     */
-    public static function paypalInstanceParserParser()
+
+    public static function paypalInstanceParserParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlActonPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
-     */
-    public static function paypalInstance()
+
+    public static function paypalInstance(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlPayPalPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
-     */
-    public static function ewsInstanceParser()
+
+    public static function ewsInstanceParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlEwsPath(), true, false, false));
     }
-    /**
-     *
-     */
+
     public function testParseImageViewService()
     {
         $tagHeaderParser = self::imageViewServiceInstanceParser();
@@ -68,9 +59,7 @@ class TagHeaderTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParseActon()
     {
         $tagHeaderParser = self::paypalInstanceParserParser();
@@ -142,9 +131,7 @@ class TagHeaderTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParsePayPal()
     {
         $tagHeaderParser = self::paypalInstance();
@@ -174,9 +161,7 @@ class TagHeaderTest extends WsdlParser
         }
         $this->assertSame(57, $count);
     }
-    /**
-     *
-     */
+
     public function testParseEws()
     {
         $tagHeaderParser = self::ewsInstanceParser();

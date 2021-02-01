@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\EnumType;
 
-use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
 /**
  * This class stands for TransactionActionType EnumType
@@ -90,9 +92,9 @@ class ApiTransactionActionType extends AbstractStructEnumBase
      * @uses self::VALUE_TICKET
      * @return string[]
      */
-    public static function getValidValues()
+    public static function getValidValues(): array
     {
-        return array(
+        return [
             self::VALUE_BOOK,
             self::VALUE_QUOTE,
             self::VALUE_HOLD,
@@ -104,6 +106,6 @@ class ApiTransactionActionType extends AbstractStructEnumBase
             self::VALUE_COMMIT_OVERRIDE_EDITS,
             self::VALUE_VERIFY_PRICE,
             self::VALUE_TICKET,
-        );
+        ];
     }
 }

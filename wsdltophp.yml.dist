@@ -30,16 +30,16 @@ validation:
     default: true
     values: [ true, false ]
 struct_class:
-    default: '\WsdlToPhp\PackageBase\AbstractStructBase'
+    default: 'WsdlToPhp\PackageBase\AbstractStructBase'
     values: ''
 struct_array_class:
-    default: '\WsdlToPhp\PackageBase\AbstractStructArrayBase'
+    default: 'WsdlToPhp\PackageBase\AbstractStructArrayBase'
     values: ''
 struct_enum_class:
-    default: '\WsdlToPhp\PackageBase\AbstractStructEnumBase'
+    default: 'WsdlToPhp\PackageBase\AbstractStructEnumBase'
     values: ''
 soap_client_class:
-    default: '\WsdlToPhp\PackageBase\AbstractSoapClientBase'
+    default: 'WsdlToPhp\PackageBase\AbstractSoapClientBase'
     values: ''
 origin:
     default: ''

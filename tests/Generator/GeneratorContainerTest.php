@@ -1,15 +1,18 @@
 <?php
 
-namespace Generator;
+declare(strict_types=1);
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+namespace WsdlToPhp\PackageGenerator\Tests\Generator;
+
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Generator\GeneratorContainers;
 
-class GeneratorContainerTest extends TestCase
+final class GeneratorContainerTest extends AbstractTestCase
 {
     public function testJsonSerialize()
     {
         $container = new GeneratorContainers(self::getBingGeneratorInstance());
+
         $this->assertSame([
             'services' => $container->getServices(),
             'structs' => $container->getStructs(),

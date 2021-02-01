@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api;
 
 /**
@@ -13,9 +15,9 @@ class ApiClassMap
      * This array is sent to the \SoapClient when calling the WS
      * @return string[]
      */
-    final public static function get()
+    final public static function get(): array
     {
-        return array(
+        return [
             'SearchRequest' => '\\Api\\StructType\\ApiSearchRequest',
             'ArrayOfSearchOption' => '\\Api\\ArrayType\\ApiArrayOfSearchOption',
             'ArrayOfSourceType' => '\\Api\\ArrayType\\ApiArrayOfSourceType',
@@ -68,6 +70,6 @@ class ApiClassMap
             'MobileWebResult' => '\\Api\\StructType\\ApiMobileWebResult',
             'ArrayOfError' => '\\Api\\ArrayType\\ApiArrayOfError',
             'Error' => '\\Api\\StructType\\ApiError',
-        );
+        ];
     }
 }

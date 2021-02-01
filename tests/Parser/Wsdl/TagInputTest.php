@@ -1,42 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
+use SoapClient;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput;
 
-class TagInputTest extends WsdlParser
+final class TagInputTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput
-     */
-    public static function myBoardPackInstanceParser()
+    public static function myBoardPackInstanceParser(): TagInput
     {
         return new TagInput(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput
-     */
-    public static function lnpInstanceParser()
+
+    public static function lnpInstanceParser(): TagInput
     {
         return new TagInput(self::generatorInstance(self::wsdlLnpPath()));
     }
-    /**
-     * @return \SoapClient
-     */
-    public static function myBoardPackSoapClient()
+
+    public static function myBoardPackSoapClient(): SoapClient
     {
-        return new \SoapClient(self::wsdlMyBoardPackPath());
+        return new SoapClient(self::wsdlMyBoardPackPath());
     }
-    /**
-     * @return \SoapClient
-     */
-    public static function lnpSoapClient()
+
+    public static function lnpSoapClient(): SoapClient
     {
-        return new \SoapClient(self::wsdlLnpPath());
+        return new SoapClient(self::wsdlLnpPath());
     }
-    /**
-     *
-     */
+
     public function testParseMyBoardpack()
     {
         $tagInputParser = self::myBoardPackInstanceParser();
@@ -56,9 +48,7 @@ class TagInputTest extends WsdlParser
         }
         $this->assertSame(128, $count);
     }
-    /**
-     *
-     */
+
     public function testParseLnp()
     {
         $tagInputParser = self::lnpInstanceParser();
@@ -97,8 +87,8 @@ class TagInputTest extends WsdlParser
         }
         $matches = [];
         preg_match(sprintf('/[a-zA-Z_]*\s([a-zA-Z_]*)\(.*(%s)\s/i', $parameterType), $soapFunction, $matches);
-        $name = isset($matches[1]) ? $matches[1] : '';
-        $parameter = isset($matches[2]) ? $matches[2] : '';
+        $name = $matches[1] ?? '';
+        $parameter = $matches[2] ?? '';
         return [
             'name' => $name,
             'parameter' => $parameter,

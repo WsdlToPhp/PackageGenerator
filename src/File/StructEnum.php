@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructValue as StructValueModel;
@@ -11,30 +14,19 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 
-class StructEnum extends Struct
+final class StructEnum extends Struct
 {
-    /**
-     * @var string
-     */
-    const METHOD_VALUE_IS_VALID = 'valueIsValid';
-    /**
-     * @var string
-     */
-    const METHOD_GET_VALID_VALUES = 'getValidValues';
-    /**
-     * @param ConstantContainer $constants
-     */
-    protected function getClassConstants(ConstantContainer $constants)
+    public const METHOD_VALUE_IS_VALID = 'valueIsValid';
+    public const METHOD_GET_VALID_VALUES = 'getValidValues';
+
+    protected function fillClassConstants(ConstantContainer $constants): void
     {
         foreach ($this->getModel()->getValues() as $value) {
             $constants->add(new PhpConstant($value->getCleanName(), $value->getValue()));
         }
     }
-    /**
-     * @param PhpConstant $constant
-     * @return PhpAnnotationBlock
-     */
-    protected function getConstantAnnotationBlock(PhpConstant $constant)
+
+    protected function getConstantAnnotationBlock(PhpConstant $constant): ?PhpAnnotationBlock
     {
         $block = new PhpAnnotationBlock([
             sprintf('Constant for value \'%s\'', $constant->getValue()),
@@ -43,17 +35,16 @@ class StructEnum extends Struct
             $this->defineModelAnnotationsFromWsdl($block, $value);
         }
         $block->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string \'%s\'', $constant->getValue())));
+
         return $block;
     }
-    protected function fillClassMethods()
+
+    protected function fillClassMethods(): void
     {
         $this->methods->add($this->getEnumMethodGetValidValues());
     }
-    /**
-     * @param PhpMethod $method
-     * @return PhpAnnotationBlock|null
-     */
-    protected function getMethodAnnotationBlock(PhpMethod $method)
+
+    protected function getMethodAnnotationBlock(PhpMethod $method): ?PhpAnnotationBlock
     {
         $block = null;
         switch ($method->getName()) {
@@ -61,37 +52,34 @@ class StructEnum extends Struct
                 $block = $this->getEnumGetValidValuesAnnotationBlock();
                 break;
         }
+
         return $block;
     }
-    /**
-     * @return PhpMethod
-     */
-    protected function getEnumMethodGetValidValues()
+
+    protected function getEnumMethodGetValidValues(): PhpMethod
     {
-        $method = new PhpMethod(self::METHOD_GET_VALID_VALUES, [], PhpMethod::ACCESS_PUBLIC, false, true);
+        $method = new PhpMethod(self::METHOD_GET_VALID_VALUES, [], 'array', PhpMethod::ACCESS_PUBLIC, false, true);
         $validValues = $this->getEnumMethodValues();
-        $method->addChild('return array(');
+        $method->addChild('return [');
         foreach ($validValues as $validValue) {
             $method->addChild(sprintf('%s,', $method->getIndentedString($validValue, 1)));
         }
-        $method->addChild(');');
+        $method->addChild('];');
+
         return $method;
     }
-    /**
-     * @return string[]
-     */
-    protected function getEnumMethodValues()
+
+    protected function getEnumMethodValues(): array
     {
         $values = [];
         foreach ($this->getModel()->getValues() as $value) {
             $values[] = sprintf('self::%s', $value->getCleanName());
         }
+
         return $values;
     }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getEnumGetValidValuesAnnotationBlock()
+
+    protected function getEnumGetValidValuesAnnotationBlock(): PhpAnnotationBlock
     {
         $annotationBlock = new PhpAnnotationBlock([
             'Return allowed values',
@@ -100,19 +88,16 @@ class StructEnum extends Struct
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_USES, $value));
         }
         $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'string[]'));
+
         return $annotationBlock;
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
-     * @throws \InvalidArgumentException
-     * @param AbstractModel $model
-     * @return StructArray
-     */
-    public function setModel(AbstractModel $model)
+
+    public function setModel(AbstractModel $model): self
     {
         if ($model instanceof StructModel && !$model->isRestriction()) {
-            throw new \InvalidArgumentException('Model must be a restriction containing values', __LINE__);
+            throw new InvalidArgumentException('Model must be a restriction containing values', __LINE__);
         }
+
         return parent::setModel($model);
     }
 }

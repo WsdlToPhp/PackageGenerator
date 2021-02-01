@@ -1,8 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class MaxLengthRuleTest extends AbstractRuleTest
+use InvalidArgumentException;
+
+final class MaxLengthRuleTest extends AbstractRuleTest
 {
 
     /**
@@ -14,11 +18,12 @@ class MaxLengthRuleTest extends AbstractRuleTest
      * - base: ddp:string100 | normalizedString
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * - maxLength: 100
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid length of 107, the number of characters/octets contained by the literal must be less than or equal to 100
      */
     public function testSetEmailWithTooLongCharactersMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid length of 107, the number of characters/octets contained by the literal must be less than or equal to 100');
+
         $instance = self::getDocDataPaymentsShoppperInstance();
 
         $instance->setEmail(str_repeat('a', 99) . '@foo.bar');
@@ -86,11 +91,12 @@ class MaxLengthRuleTest extends AbstractRuleTest
      * - maxLength: 255
      * - minLength: 1
      * @var string[]
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid length for value(s) 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', the number of characters/octets contained by the literal must be less than or equal to 255
      */
     public function testSetAddressLineWithTooManyCharactersPerItemMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid length for value(s) \'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\', \'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\', the number of characters/octets contained by the literal must be less than or equal to 255');
+
         $instance = self::getWhlAddressTypeInstance();
 
         $instance->setAddressLine([

@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\EnumType;
 
-use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
 /**
  * This class stands for AdultOption EnumType
@@ -34,12 +36,12 @@ class ApiAdultOption extends AbstractStructEnumBase
      * @uses self::VALUE_STRICT
      * @return string[]
      */
-    public static function getValidValues()
+    public static function getValidValues(): array
     {
-        return array(
+        return [
             self::VALUE_OFF,
             self::VALUE_MODERATE,
             self::VALUE_STRICT,
-        );
+        ];
     }
 }

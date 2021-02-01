@@ -1,17 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\File\StructArray as ArrayFile;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
-class StructArrayTest extends AbstractFile
+final class StructArrayTest extends AbstractFile
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $struct = new StructModel(self::bingGeneratorInstance(), 'FooArray');
         $struct
             ->addAttribute('bar', 'string')
@@ -19,19 +21,17 @@ class StructArrayTest extends AbstractFile
         $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo');
         $array->setModel($struct);
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testSetModelBasNameOneAttributeWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $struct = new StructModel(self::bingGeneratorInstance(), 'Foo');
         $struct->addAttribute('bar', 'string');
         $array = new ArrayFile(self::bingGeneratorInstance(), 'Foo');
         $array->setModel($struct);
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchArrayOfNewsRelatedSearch()
     {
         $generator = self::bingGeneratorInstance();
@@ -45,9 +45,7 @@ class StructArrayTest extends AbstractFile
             $this->fail('Unable to find ArrayOfNewsRelatedSearch struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchArrayOfWebSearchOption()
     {
         $generator = self::bingGeneratorInstance();
@@ -61,9 +59,7 @@ class StructArrayTest extends AbstractFile
             $this->fail('Unable to find ArrayOfWebSearchOption struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchArrayOfString()
     {
         $generator = self::bingGeneratorInstance();
@@ -77,9 +73,7 @@ class StructArrayTest extends AbstractFile
             $this->fail('Unable to find ArrayOfString struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchArrayOfError()
     {
         $generator = self::bingGeneratorInstance();
@@ -93,9 +87,7 @@ class StructArrayTest extends AbstractFile
             $this->fail('Unable to find ArrayOfError struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchApiArrayOfErrorProject()
     {
         $generator = self::bingGeneratorInstance();
@@ -112,9 +104,7 @@ class StructArrayTest extends AbstractFile
             $this->fail('Unable to find ArrayOfError struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();

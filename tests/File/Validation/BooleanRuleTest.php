@@ -1,24 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class BooleanRuleTest extends AbstractRuleTest
-{
+use InvalidArgumentException;
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 'true', please provide a bool, string given
-     */
+final class BooleanRuleTest extends AbstractRuleTest
+{
     public function testSetPrimaryWithStringValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value \'true\', please provide a bool, string given');
+
         $instance = self::getWhlBookingChannelInstance();
 
         $instance->setPrimary('true');
     }
 
-    /**
-     *
-     */
     public function testSetPrimaryWithTrueValueMustPass()
     {
         $instance = self::getWhlBookingChannelInstance();
@@ -26,9 +25,6 @@ class BooleanRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->setPrimary(true));
     }
 
-    /**
-     *
-     */
     public function testSetPrimaryWithFalseValueMustPass()
     {
         $instance = self::getWhlBookingChannelInstance();
@@ -36,9 +32,6 @@ class BooleanRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->setPrimary(false));
     }
 
-    /**
-     *
-     */
     public function testSetPrimaryWithNullValueMustPass()
     {
         $instance = self::getWhlBookingChannelInstance();

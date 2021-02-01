@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AdGroupsSelectionCriteria StructType
@@ -110,7 +112,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCampaignIdsForArrayConstraintsFromSetCampaignIds(array $values = array())
+    public static function validateCampaignIdsForArrayConstraintsFromSetCampaignIds(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -170,7 +172,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIdsForArrayConstraintsFromSetIds(array $values = array())
+    public static function validateIdsForArrayConstraintsFromSetIds(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -230,7 +232,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTypesForArrayConstraintsFromSetTypes(array $values = array())
+    public static function validateTypesForArrayConstraintsFromSetTypes(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -294,7 +296,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStatusesForArrayConstraintsFromSetStatuses(array $values = array())
+    public static function validateStatusesForArrayConstraintsFromSetStatuses(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -358,7 +360,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTagIdsForArrayConstraintsFromSetTagIds(array $values = array())
+    public static function validateTagIdsForArrayConstraintsFromSetTagIds(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -418,7 +420,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTagsForArrayConstraintsFromSetTags(array $values = array())
+    public static function validateTagsForArrayConstraintsFromSetTags(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -478,7 +480,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses(array $values = array())
+    public static function validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];

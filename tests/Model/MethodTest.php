@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\Service;
 
-class MethodTest extends TestCase
+final class MethodTest extends AbstractTestCase
 {
-    /**
-     *
-     */
     public function testGetMethodName()
     {
         $service = new Service(self::getBingGeneratorInstance(), 'Foo');
@@ -23,9 +23,7 @@ class MethodTest extends TestCase
         $this->assertSame('getIdStringString', $service->getMethod('getIdString')->getMethodName());
         $this->assertSame('getIdIntInt', $service->getMethod('getIdInt')->getMethodName());
     }
-    /**
-     *
-     */
+
     public function testGetMethodNameCalledTwice()
     {
         $service = new Service(self::getBingGeneratorInstance(), 'Foo');
@@ -43,9 +41,7 @@ class MethodTest extends TestCase
         $this->assertSame('_list', $method->getMethodName());
         $this->assertSame('_list', $method->getMethodName());
     }
-    /**
-     *
-     */
+
     public function testMultipleServicesSameMethods()
     {
         Service::purgeUniqueNames();
@@ -70,9 +66,7 @@ class MethodTest extends TestCase
         $this->assertSame('LoginInt', $service4->getMethod('Login')->getMethodName());
         $this->assertSame(sprintf('Login_%s', md5(var_export(['int',' string'], true))), $service5->getMethod('Login')->getMethodName());
     }
-    /**
-     *
-     */
+
     public function testMultipleServicesSameMethodsWithoutPurging()
     {
         Service::purgeUniqueNames();
@@ -89,9 +83,7 @@ class MethodTest extends TestCase
         $this->assertSame('login_1', $service2->getMethod('login')->getMethodName());
         $this->assertSame('Login', $service3->getMethod('Login')->getMethodName());
     }
-    /**
-     *
-     */
+
     public function testGetCleanNameWithOneInt()
     {
         Service::purgeUniqueNames();
@@ -100,9 +92,7 @@ class MethodTest extends TestCase
 
         $this->assertSame('_MyOperation', $service1->getMethod('0MyOperation')->getCleanName());
     }
-    /**
-     *
-     */
+
     public function testGetCleanNameWithMultipleInt()
     {
         Service::purgeUniqueNames();
@@ -111,9 +101,7 @@ class MethodTest extends TestCase
 
         $this->assertSame('_MyOperation', $service1->getMethod('0123456789MyOperation')->getCleanName());
     }
-    /**
-     *
-     */
+
     public function testNameIsCleanWithOneInt()
     {
         Service::purgeUniqueNames();
@@ -122,9 +110,7 @@ class MethodTest extends TestCase
 
         $this->assertFalse($service1->getMethod('0MyOperation')->nameIsClean());
     }
-    /**
-     *
-     */
+
     public function testNameIsCleanWithMultipleInt()
     {
         Service::purgeUniqueNames();
@@ -133,18 +119,14 @@ class MethodTest extends TestCase
 
         $this->assertFalse($service1->getMethod('0123456789MyOperation')->nameIsClean());
     }
-    /**
-     *
-     */
+
     public function testGetReservedMethodsInstance()
     {
         $service = new Service(self::getBingGeneratorInstance(), 'Foo');
         $service->addMethod('getId', 'string', 'string');
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod', $service->getMethod('getId')->getReservedMethodsInstance());
+        $this->assertInstanceOf(ServiceReservedMethod::class, $service->getMethod('getId')->getReservedMethodsInstance());
     }
-    /**
-     *
-     */
+
     public function testReplaceReservedMethod()
     {
         $service = new Service(self::getBingGeneratorInstance(), 'Foo');

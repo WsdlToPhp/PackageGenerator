@@ -1,37 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
-class StructContainerTest extends TestCase
+final class StructContainerTest extends AbstractTestCase
 {
-    /**
-     * @return StructContainer
-     */
-    public static function instance()
+    public static function instance(): StructContainer
     {
         $structContainer = new StructContainer(self::getBingGeneratorInstance());
         $structContainer->add(StructTest::instance('Foo', true));
         $structContainer->add(StructTest::instance('Bar', false));
         return $structContainer;
     }
-    /**
-     *
-     */
+
     public function testGetStructByName()
     {
         $structContainer = self::instance();
 
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Struct', $structContainer->getStructByName('Foo'));
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Struct', $structContainer->getStructByName('Bar'));
+        $this->assertInstanceOf(StructModel::class, $structContainer->getStructByName('Foo'));
+        $this->assertInstanceOf(StructModel::class, $structContainer->getStructByName('Bar'));
         $this->assertNull($structContainer->getStructByName('bar'));
     }
-    /**
-     *
-     */
+
     public function testAddStructWithSameAttributeName()
     {
         $structContainer = self::instance();
@@ -41,9 +37,7 @@ class StructContainerTest extends TestCase
 
         $this->assertCount(1, $structContainer->getStructByName('Foo')->getAttributes());
     }
-    /**
-     *
-     */
+
     public function testOffsetUnset()
     {
         $instance = self::instance();
@@ -55,18 +49,14 @@ class StructContainerTest extends TestCase
 
         $this->assertNull($instance->offsetGet(1));
     }
-    /**
-     *
-     */
+
     public function testGetStructByNameAndTypeMustFailAsTypeIsUnknown()
     {
         $structContainer = self::instance();
 
         $this->assertNull($structContainer->getStructByNameAndType('bar', 'string'));
     }
-    /**
-     *
-     */
+
     public function testGetStructByNameAndTypeMustReturnTheStruct()
     {
         $structContainer = self::instance();
@@ -82,35 +72,5 @@ class StructContainerTest extends TestCase
         $this->assertSame($fooStringFirst, $structContainer->getStructByNameAndType('FooString', 'string'));
         $this->assertSame($fooStringFirstMeta, $structContainer->getStructByNameAndType('FooString', 'string')->getMeta());
         $this->assertSame($fooStringSecondMeta, $structContainer->getStructByNameAndType('FooString', 'int')->getMeta());
-    }
-    /**
-     * @requires PHP < 7.3
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Value "stdClass" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
-     */
-    public function testGetByTypeMustThrowAnExceptionForInvalidValue()
-    {
-        $structContainer = self::instance();
-        $structContainer->getByType(new \stdClass(), '_');
-    }
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Type "array (
-     * )" can't be used to get an object
-     */
-    public function testGetByTypeMustThrowAnExceptionForInvalidType()
-    {
-        $structContainer = self::instance();
-        $structContainer->getByType(1, []);
-    }
-    /**
-     * @requires PHP < 7.3
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Value "stdClass" can't be used to get an object from "WsdlToPhp\PackageGenerator\Container\Model\Struct"
-     */
-    public function testGetVirtualMustThrowAnExceptionForInvalidValue()
-    {
-        $structContainer = self::instance();
-        $structContainer->getVirtual(new \stdClass());
     }
 }

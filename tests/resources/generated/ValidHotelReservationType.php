@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for HotelReservationType StructType
@@ -169,7 +171,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateResStatusForUnionConstraintsFromSetResStatus($value)
+    public static function validateResStatusForUnionConstraintsFromSetResStatus($value): string
     {
         $message = '';
         // validation for constraint: enumeration

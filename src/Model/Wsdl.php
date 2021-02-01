@@ -1,21 +1,49 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Model;
+
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 
 class Wsdl extends AbstractDocument
 {
-    /**
-     * @return string
-     */
-    protected function contentClass()
+    private SchemaContainer $schemas;
+
+    public function __construct(Generator $generator, string $name, string $content)
     {
-        return '\WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl';
+        parent::__construct($generator, $name, $content);
+        $this->schemas = new SchemaContainer($generator);
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl
-     */
-    public function getContent()
+
+    public function getContent(): WsdlDocument
     {
         return parent::getContent();
+    }
+
+    protected function contentClass(): string
+    {
+        return WsdlDocument::class;
+    }
+
+    public function addSchema(Schema $schema): self
+    {
+        $this->getContent()->addExternalSchema($schema->getContent());
+
+        $this->schemas->add($schema);
+
+        return $this;
+    }
+
+    public function hasSchema(string $schemaLocation): bool
+    {
+        return $this->schemas->getSchemaByName($schemaLocation) instanceof Schema;
+    }
+
+    public function getSchemas(): SchemaContainer
+    {
+        return $this->schemas;
     }
 }

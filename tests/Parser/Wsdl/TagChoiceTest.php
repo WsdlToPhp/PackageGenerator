@@ -1,32 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagChoice;
 
-class TagChoiceTest extends WsdlParser
+final class TagChoiceTest extends WsdlParser
 {
-    /**
-     * @return TagChoice
-     */
-    public static function whlInstanceParser()
+    public static function whlInstanceParser(): TagChoice
     {
         return new TagChoice(self::generatorInstance(self::wsdlWhlPath()));
     }
 
-    /**
-     * @return TagChoice
-     */
-    public static function ewsInstanceParser()
+    public static function ewsInstanceParser(): TagChoice
     {
         return new TagChoice(self::generatorInstance(self::wsdlEwsPath()));
     }
 
-    /**
-     * @return TagChoice
-     */
-    public static function deliveryInstanceParser()
+    public static function deliveryInstanceParser(): TagChoice
     {
         return new TagChoice(self::generatorInstance(self::wsdlDeliveryServicePath()));
     }

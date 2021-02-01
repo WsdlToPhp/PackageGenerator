@@ -1,35 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Model\Service;
+use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
-class ServiceContainerTest extends TestCase
+final class ServiceContainerTest extends AbstractTestCase
 {
-    /**
-     * @return ServiceContainer
-     */
-    public static function instance()
+    public static function instance(): ServiceContainer
     {
         $serviceContainer = new ServiceContainer(self::getBingGeneratorInstance());
-        $serviceContainer->add(new Service(self::getBingGeneratorInstance(), 'Foo'));
+        $serviceContainer->add(new ServiceModel(self::getBingGeneratorInstance(), 'Foo'));
         return $serviceContainer;
     }
-    /**
-     *
-     */
+
     public function testGetServiceByName()
     {
         $serviceContainer = self::instance();
 
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Service', $serviceContainer->getServiceByName('Foo'));
+        $this->assertInstanceOf(ServiceModel::class, $serviceContainer->getServiceByName('Foo'));
         $this->assertNull($serviceContainer->getServiceByName('Bar'));
     }
-    /**
-     *
-     */
+
     public function testAddServiceNonUnique()
     {
         $serviceContainer = self::instance();

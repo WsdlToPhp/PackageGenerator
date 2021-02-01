@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Model\StructValue;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
-class StructTest extends TestCase
+final class StructTest extends AbstractTestCase
 {
-    /**
-     * @param string $name
-     * @param bool $isStruct
-     * @return Struct
-     */
-    public static function instance($name, $isStruct)
+    public static function instance(string $name, bool $isStruct): Struct
     {
         return new Struct(self::getBingGeneratorInstance(), $name, $isStruct);
     }
@@ -100,8 +102,8 @@ class StructTest extends TestCase
         $struct->addValue('id');
         $struct->addValue('name');
         $struct->addValue('_key');
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructValue', $struct->getValue('id'));
-        $this->assertNotInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructValue', $struct->getValue('_id'));
+        $this->assertInstanceOf(StructValue::class, $struct->getValue('id'));
+        $this->assertNotInstanceOf(StructValue::class, $struct->getValue('_id'));
     }
 
     public function testGetAttibute()
@@ -110,38 +112,36 @@ class StructTest extends TestCase
         $struct->addAttribute('id', 'int');
         $struct->addAttribute('name', 'string');
         $struct->addAttribute('_key', 'string');
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $struct->getAttribute('id'));
-        $this->assertNotInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $struct->getAttribute('_id'));
+        $this->assertInstanceOf(StructAttribute::class, $struct->getAttribute('id'));
+        $this->assertNotInstanceOf(StructAttribute::class, $struct->getAttribute('_id'));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testAddEmptyAttributeNameWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $struct = self::instance('Foo', true);
         $struct->addAttribute('', 'string');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testAddEmptyAttributeTypeWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $struct = self::instance('Foo', true);
         $struct->addAttribute('bar', '');
     }
 
     public function testGetReservedMethodsInstance()
     {
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod', self::instance('foo', true)->getReservedMethodsInstance());
+        $this->assertInstanceOf(StructReservedMethod::class, self::instance('foo', true)->getReservedMethodsInstance());
     }
 
     public function testGetReservedMethodsInstanceForArray()
     {
         $instance = self::instance('array', true);
         $instance->addAttribute('bar', 'string');
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod', $instance->getReservedMethodsInstance());
+        $this->assertInstanceOf(StructArrayReservedMethod::class, $instance->getReservedMethodsInstance());
     }
 
     public function testSetListMustSetTheListProperty()

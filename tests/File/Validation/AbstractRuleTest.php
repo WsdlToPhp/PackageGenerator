@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
+use ReflectionClass;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
 use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
@@ -15,18 +18,14 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 
-abstract class AbstractRuleTest extends TestCase
+abstract class AbstractRuleTest extends AbstractTestCase
 {
+    private static array $generators = [];
 
-    /**
-     * @var Generator[]
-     */
-    private static $classInstances = [];
-
-    protected function createRuleFunction($ruleClassName, $value = null, $itemType = false, $structAttributeType = 'string')
+    protected function createRuleFunction(string $ruleClassName, $value = null, bool $itemType = false, string $structAttributeType = 'string'): string
     {
         $generator = self::getBingGeneratorInstance();
-        $methodName = '_any_' . md5(rand(0, time()));
+        $methodName = '_any_' . md5((string) rand(0, time()));
         $method = new PhpMethod($methodName, [
             'any',
         ]);
@@ -38,6 +37,7 @@ abstract class AbstractRuleTest extends TestCase
         $rule->applyRule('any', $value, $itemType);
         $method->addChild('return true;');
         eval(str_replace('public ', '', $method->toString()));
+
         return $methodName;
     }
 
@@ -77,106 +77,114 @@ abstract class AbstractRuleTest extends TestCase
         ])->getStructByName($structName);
 
         if (!$struct) {
-            self::fail(sprintf('Unable to find %s struct for instanciating a new instance using %s', $structName, $instanceMethod));
+            self::fail(sprintf('Unable to find %s struct for instantiating a new instance using %s', $structName, $instanceMethod));
         }
 
         // create class' file
         $fileCreated = false;
-        if (!array_key_exists($key, self::$classInstances)) {
+        if (!array_key_exists($key, self::$generators)) {
             self::createClassInstance($struct);
             $fileCreated = true;
         }
 
-        // instanciate class
+        // instantiate class
         if ($reset || $fileCreated) {
-            $reflection = new \ReflectionClass(($struct->getNamespace() ? $struct->getNamespace() . '\\' : '') . $struct->getPackagedName());
-            self::$classInstances[$key] = $reflection->newInstanceArgs();
+            $reflection = new ReflectionClass(($struct->getNamespace() ? $struct->getNamespace() . '\\' : '') . $struct->getPackagedName());
+            self::$generators[$key] = $reflection->newInstanceArgs();
         }
-        return self::$classInstances[$key];
+
+        return self::$generators[$key];
     }
 
-    public static function getWhlAddressTypeInstance($reset = false)
+    public static function getWhlAddressTypeInstance(bool $reset = false)
     {
         return self::getClassInstance('whlInstance', 'AddressType', $reset);
     }
 
-    public static function getWhlBookingChannelInstance($reset = false)
+    public static function getWhlBookingChannelInstance(bool $reset = false)
     {
         return self::getClassInstance('whlInstance', 'BookingChannel', $reset);
     }
 
-    public static function getWhlHotelReservationTypeInstance($reset = false)
+    public static function getWhlHotelReservationTypeInstance(bool $reset = false)
     {
         // required for validating enumeration values
         self::getClassInstance('whlInstance', 'PMS_ResStatusType');
         self::getClassInstance('whlInstance', 'TransactionActionType');
+
         return self::getClassInstance('whlInstance', 'HotelReservationType', $reset);
     }
 
-    public static function getWhlPaymentCardTypeInstance($reset = false)
+    public static function getWhlPaymentCardTypeInstance(bool $reset = false)
     {
         // required for validating enumeration values
         self::getClassInstance('whlInstance', 'PaymentCardCodeType');
+
         return self::getClassInstance('whlInstance', 'PaymentCardType', $reset);
     }
 
-    public static function getWhlTaxTypeInstance($reset = false)
+    public static function getWhlTaxTypeInstance(bool $reset = false)
     {
         // required for validating enumeration values
         self::getClassInstance('whlInstance', 'AmountDeterminationType');
         // required for validating itemType
         self::getClassInstance('whlInstance', 'ParagraphType');
+
         return self::getClassInstance('whlInstance', 'TaxType', $reset);
     }
 
-    public static function getQueueMessageAttributeValueInstance($reset = false)
+    public static function getQueueMessageAttributeValueInstance(bool $reset = false)
     {
         return self::getClassInstance('queueGeneratorInstance', 'MessageAttributeValue', $reset);
     }
 
-    public static function getBingSearchRequestInstance($reset = false)
+    public static function getBingSearchRequestInstance(bool $reset = false)
     {
         // required for validating enumeration values
         self::getClassInstance('bingGeneratorInstance', 'AdultOption');
+
         return self::getClassInstance('bingGeneratorInstance', 'SearchRequest', $reset);
     }
 
-    public static function getBingNewsArticleInstance($reset = false)
+    public static function getBingNewsArticleInstance(bool $reset = false)
     {
         return self::getClassInstance('bingGeneratorInstance', 'NewsArticle', $reset);
     }
 
-    public static function getOdigeoFareItineraryInstance($reset = false)
+    public static function getOdigeoFareItineraryInstance(bool $reset = false)
     {
         return self::getClassInstance('odigeoGeneratorInstance', 'fareItinerary', $reset);
     }
 
-    public static function getOrderContractAddressDeliveryTypeInstance($reset = false)
+    public static function getOrderContractAddressDeliveryTypeInstance(bool $reset = false)
     {
         return self::getClassInstance('orderContractInstance', 'AddressDelivery_Type', $reset);
     }
 
-    public static function getEwsWorkingPeriodInstance($reset = false)
+    public static function getEwsWorkingPeriodInstance(bool $reset = false)
     {
         // required for validating enumeration values
         self::getClassInstance('ewsInstance', 'DayOfWeekType');
+
         return self::getClassInstance('ewsInstance', 'WorkingPeriod', $reset);
     }
 
-    public static function getDocDataPaymentsShoppperInstance($reset = false)
+    public static function getDocDataPaymentsShoppperInstance(bool $reset = false)
     {
         // required for validating enumeration values
         self::getClassInstance('docDataPaymentsGeneratorInstance', 'gender');
+
         return self::getClassInstance('docDataPaymentsGeneratorInstance', 'shopper', $reset);
     }
 
-    public static function getReformaHouseProfileDataInstance($reset = false)
+    public static function getReformaHouseProfileDataInstance(bool $reset = false)
     {
         // required for validating enumeration values
         self::getClassInstance('reformaGeneratorInstance', 'HouseTypeEnum');
         self::getClassInstance('reformaGeneratorInstance', 'HouseWallMaterialEnum');
         self::getClassInstance('reformaGeneratorInstance', 'HouseFloorTypeEnum');
         self::getClassInstance('reformaGeneratorInstance', 'HouseEnergyEfficiencyClassEnum');
+
         return self::getClassInstance('reformaGeneratorInstance', 'HouseProfileData', $reset);
     }
 }

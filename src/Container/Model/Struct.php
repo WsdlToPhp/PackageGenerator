@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Model\Struct as Model;
 
 class Struct extends AbstractModel
@@ -10,169 +13,112 @@ class Struct extends AbstractModel
      * Only for virtually-considered objects (in order to avoid duplications in objects property)
      * @var array $virtualObjects
      */
-    protected $virtualObjects = [];
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
-     * @return string
-     */
-    protected function objectClass()
+    protected array $virtualObjects = [];
+
+    protected function objectClass(): string
     {
-        return 'WsdlToPhp\PackageGenerator\Model\Struct';
+        return Model::class;
     }
-    /**
-     * @param string $name
-     * @return Model|null
-     */
-    public function getStructByName($name)
+
+    public function getStructByName(string $name): ?Model
     {
         return $this->get($name);
     }
-    /**
-     * @param string $name
-     * @param string $type
-     * @return Model|null
-     */
-    public function getStructByNameAndType($name, $type)
+
+    public function getStructByNameAndType(string $name, string $type): ?Model
     {
         return $this->getByType($name, $type);
     }
-    /**
-     * Adds a virtual struct
-     * @param string $structName the original struct name
-     * @param string $structType the original struct type
-     * @return Struct
-     */
-    public function addVirtualStruct($structName, $structType = '')
+
+    public function addVirtualStruct(string $structName, string $structType = ''): self
     {
         return $this->addStruct($structName, false, $structType);
     }
-    /**
-     * Adds type to structs
-     * @param string $structName the original struct name
-     * @param bool $isStruct whether the Struct has to be generated or not
-     * @param string $structType the original struct type
-     * @return Struct
-     */
-    public function addStruct($structName, $isStruct = true, $structType = '')
+
+    public function addStruct(string $structName, bool $isStruct = true, string $structType = ''): self
     {
         if (null === (empty($structType) ? $this->get($structName) : $this->getByType($structName, $structType))) {
             $model = new Model($this->generator, $structName, $isStruct);
             $this->add($model->setInheritance($structType));
         }
+
         return $this;
     }
-    /**
-     * Adds type to structs and its attribute
-     * @param string $structName the original struct name
-     * @param string $attributeName the attribute name
-     * @param string $attributeType the attribute type
-     * @return Struct
-     */
-    public function addStructWithAttribute($structName, $attributeName, $attributeType)
+
+    public function addStructWithAttribute(string $structName, string $attributeName, string $attributeType): self
     {
         $this->addStruct($structName);
         if (($struct = $this->getStructByName($structName)) instanceof Model) {
             $struct->addAttribute($attributeName, $attributeType);
         }
+
         return $this;
     }
-    /**
-     * Adds a union struct
-     * @param string $structName
-     * @param string[] $types
-     * @return Struct
-     */
-    public function addUnionStruct($structName, $types)
+
+    public function addUnionStruct(string $structName, array $types): self
     {
         $this->addVirtualStruct($structName);
         if (($struct = $this->getStructByName($structName)) instanceof Model) {
             $struct->setTypes($types);
         }
+
         return $this;
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
-     * @param string $value
-     * @return Model|null
-     */
-    public function get($value)
-    {
-        return parent::get($value);
-    }
-    /**
-     * @see parent::get()
-     * @throws \InvalidArgumentException
-     * @param string $value
-     * @return mixed
-     */
-    public function getVirtual($value)
+
+    public function getVirtual(string $value): ?Model
     {
         if (!is_scalar($value)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', is_object($value) ? get_class($value) : var_export($value, true), __CLASS__), __LINE__);
+            throw new InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', is_object($value) ? get_class($value) : var_export($value, true), __CLASS__), __LINE__);
         }
+
         $key = $this->getVirtualKey($value);
+
         return array_key_exists($key, $this->virtualObjects) ? $this->virtualObjects[$key] : null;
     }
-    /**
-     * @see parent::get()
-     * @throws \InvalidArgumentException
-     * @param string $value
-     * @param string $type
-     * @return mixed
-     */
-    public function getByType($value, $type)
+
+    public function getByType(string $value, string $type): ?Model
     {
-        if (!is_scalar($value)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', is_object($value) ? get_class($value) : var_export($value, true), __CLASS__), __LINE__);
-        }
-        if (!is_scalar($type)) {
-            throw new \InvalidArgumentException(sprintf('Type "%s" can\'t be used to get an object from "%s"', is_object($value) ? get_class($value) : var_export($type, true), __CLASS__), __LINE__);
-        }
         $key = $this->getTypeKey($value, $type);
+
         return array_key_exists($key, $this->objects) ? $this->objects[$key] : null;
     }
-    /**
-     * @param $object
-     * @param $type
-     * @return string
-     */
-    public function getObjectKeyWithType($object, $type)
+
+    public function getObjectKeyWithType(object $object, string $type): string
     {
         return $this->getTypeKey($this->getObjectKey($object), $type);
     }
-    /**
-     * @param $object
-     * @return string
-     */
-    public function getObjectKeyWithVirtual($object)
+
+    public function getObjectKeyWithVirtual(object $object): string
     {
         return $this->getVirtualKey($this->getObjectKey($object));
     }
     /**
      * The key must not conflict with possible key values
-     * @param $name
-     * @param $type
+     * @param string $name
+     * @param string $type
      * @return string
      */
-    public function getTypeKey($name, $type)
+    public function getTypeKey(string $name, string $type): string
     {
         return sprintf('struct_name_%s-type_%s', $name, $type);
     }
+
     /**
      * The key must not conflict with possible key values
-     * @param $type
+     * @param string $name
      * @return string
      */
-    public function getVirtualKey($name)
+    public function getVirtualKey(string $name): string
     {
         return sprintf('virtual_struct_name_%s', $name);
     }
+
     /**
      * By overriding this method, we ensure that each time a new object is stored, it is stored with our new key if the inheritance is defined.
      * @param Model $object
      * @return Struct
      */
-    public function add($object)
+    public function add(object $object): self
     {
         $inheritance = $object->getInheritance();
         if (!empty($inheritance)) {
@@ -180,6 +126,7 @@ class Struct extends AbstractModel
         } else {
             parent::add($object);
         }
+
         return $this;
     }
 }

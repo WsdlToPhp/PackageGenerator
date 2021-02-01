@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\SoapClient;
 
 use WsdlToPhp\PackageGenerator\Model\Method;
+use WsdlToPhp\PackageGenerator\Model\Service;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions;
 
-class FunctionsTest extends SoapClientParser
+final class FunctionsTest extends SoapClientParser
 {
     /**
      *
@@ -36,8 +39,8 @@ class FunctionsTest extends SoapClientParser
         $parser = new Functions($generator);
         $parser->parse();
 
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Service', $generator->getService('Events'));
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Service', $generator->getService('Export'));
+        $this->assertInstanceOf(Service::class, $generator->getService('Events'));
+        $this->assertInstanceOf(Service::class, $generator->getService('Export'));
     }
     /**
      *

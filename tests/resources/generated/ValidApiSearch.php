@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Search ServiceType
@@ -24,9 +26,9 @@ class ApiSearch extends AbstractSoapClientBase
     public function Search(\Api\StructType\ApiSearchRequest $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('Search', array(
+            $this->setResult($this->getSoapClient()->__soapCall('Search', [
                 $parameters,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

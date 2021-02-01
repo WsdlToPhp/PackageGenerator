@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
-class TutorialTest extends AbstractFile
+final class TutorialTest extends AbstractFile
 {
-    const FILE_NAME = 'tutorial';
+    public const FILE_NAME = 'tutorial';
     /**
      *
      */

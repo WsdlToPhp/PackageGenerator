@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\Service;
 
-class StructAttributeTest extends TestCase
+final class StructAttributeTest extends AbstractTestCase
 {
-    /**
-     *
-     */
     public function testGetUniqueNameMustGenerateAUniqueNameAmongstTheSameStruct()
     {
         $struct = StructTest::instance('Foo', true)
@@ -20,9 +20,7 @@ class StructAttributeTest extends TestCase
         $this->assertSame('name', $struct->getAttribute('name')->getUniqueName());
         $this->assertSame('Name_1', $struct->getAttribute('Name')->getUniqueName());
     }
-    /**
-     *
-     */
+
     public function testGetUniqueNameMustGenerateOriginalNameBetweenTwoIndependentStructsSamelyCaseInsensitivelyNamed()
     {
         $Foo = StructTest::instance('Foo', true)
@@ -37,17 +35,13 @@ class StructAttributeTest extends TestCase
         $this->assertSame('name', $Foo->getAttribute('name')->getUniqueName());
         $this->assertSame('name', $foo->getAttribute('name')->getUniqueName());
     }
-    /**
-     *
-     */
+
     public function testGetReservedMethodsInstance()
     {
         $struct = StructTest::instance('Foo', true)->addAttribute('id', 'int');
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod', $struct->getAttribute('id')->getReservedMethodsInstance());
+        $this->assertInstanceOf(StructReservedMethod::class, $struct->getAttribute('id')->getReservedMethodsInstance());
     }
-    /**
-     *
-     */
+
     public function testGetUniqueNameWithConflict()
     {
         /**
@@ -67,9 +61,7 @@ class StructAttributeTest extends TestCase
         $this->assertSame('getQuery', $structAttribute->getGetterName());
         $this->assertSame('setQuery', $structAttribute->getSetterName());
     }
-    /**
-     *
-     */
+
     public function testStructAttributeTypeMustBeBool()
     {
         $structAttribute = self::unitTestsInstance()->getStructByName('Result')->getAttribute('Success');

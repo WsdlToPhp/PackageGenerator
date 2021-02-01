@@ -1,37 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Service;
 
-class ServiceTest extends TestCase
+final class ServiceTest extends AbstractTestCase
 {
-    /**
-     * @param sring $name
-     * @return Service
-     */
-    public static function instance($name)
+    public static function instance(string $name): Service
     {
         return new Service(self::getBingGeneratorInstance(), $name);
     }
-    /**
-     *
-     */
+
     public function testGetMethod()
     {
         $service = self::instance('Foo');
         $service->addMethod('getBar', 'string', 'int');
         $service->addMethod('getFoo', 'string', 'int');
 
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Method', $service->getMethod('getBar'));
-        $this->assertNotInstanceOf('\WsdlToPhp\PackageGenerator\Model\Method', $service->getMethod('getbar'));
+        $this->assertInstanceOf(Method::class, $service->getMethod('getBar'));
+        $this->assertNotInstanceOf(Method::class, $service->getMethod('getbar'));
 
         $service->getMethod('getBar')->setName('getbar');
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\Method', $service->getMethod('getbar'));
+        $this->assertInstanceOf(Method::class, $service->getMethod('getbar'));
     }
+
     public function testGetReservedMethodsInstance()
     {
-        $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod', self::instance('foo')->getReservedMethodsInstance());
+        $this->assertInstanceOf(ServiceReservedMethod::class, self::instance('foo')->getReservedMethodsInstance());
     }
 }

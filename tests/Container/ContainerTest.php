@@ -1,38 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
-class ContainerTest extends TestCase
+final class ContainerTest extends AbstractTestCase
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testAddWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $container = new ObjectContainerTest(self::getBingGeneratorInstance());
         $container->add(new FalseObjectTest());
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testOffsetSetWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $container = new ObjectContainerTest(self::getBingGeneratorInstance());
         $container->offsetSet(1, new FalseObjectTest());
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testInvalidPropertyName()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $container = new FalseObjectContainerTest(self::getBingGeneratorInstance());
         $container->add(new FalseObjectTest());
     }
-    /**
-     *
-     */
+
     public function testJsonSerialize()
     {
         $object = new ObjectTest();

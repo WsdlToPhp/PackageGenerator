@@ -1,24 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File;
 
 use Composer\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 
-class Composer extends AbstractFile
+final class Composer extends AbstractFile
 {
-    const JSON_FILE_EXTENSION = 'json';
+    public const JSON_FILE_EXTENSION = 'json';
+
     /**
      * Tests purpose: do not run composer update command
      * @var bool
      */
-    protected $runComposerUpdate = true;
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractFile::writeFile()
-     * @return void
-     */
-    protected function writeFile()
+    protected bool $runComposerUpdate = true;
+
+    protected function writeFile(): void
     {
         $composer = new Application();
         $composer->setAutoExit(false);
@@ -29,16 +29,18 @@ class Composer extends AbstractFile
             '--name' => $this->getGenerator()->getOptionComposerName(),
             '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getGenerator()->getWsdl()->getName()),
             '--require' => [
-                'php:>=5.3.3',
+                'php:>=7.4',
                 'ext-soap:*',
                 'ext-mbstring:*',
-                'wsdltophp/packagebase:~2.0',
+                'wsdltophp/packagebase:~3.0',
             ],
             '--working-dir' => $this->getGenerator()->getOptionDestination(),
         ]));
+
         $this->completeComposerJson();
-        if ($this->getRunComposerUpdate() === true) {
-            return $composer->run(new ArrayInput([
+
+        if ($this->getRunComposerUpdate()) {
+            $composer->run(new ArrayInput([
                 'command' => 'update',
                 '--verbose' => true,
                 '--optimize-autoloader' => true,
@@ -47,10 +49,8 @@ class Composer extends AbstractFile
             ]));
         }
     }
-    /**
-     * @return Composer
-     */
-    protected function completeComposerJson()
+
+    protected function completeComposerJson(): Composer
     {
         $content = $this->getComposerFileContent();
         if (is_array($content) && !empty($content)) {
@@ -58,99 +58,81 @@ class Composer extends AbstractFile
         }
         return $this->setComposerFileContent($content);
     }
-    /**
-     * @return Composer
-     */
-    protected function addAutoloadToComposerJson(array &$content)
+
+    protected function addAutoloadToComposerJson(array &$content): Composer
     {
         $content['autoload'] = [
             'psr-4' => $this->getPsr4Autoload(),
         ];
+
         return $this;
     }
-    /**
-     * @return Composer
-     */
-    protected function addComposerSettings(array &$content)
+
+    protected function addComposerSettings(array &$content): Composer
     {
         $content = array_merge_recursive($content, $this->getGenerator()->getOptionComposerSettings());
+
         return $this;
     }
-    /**
-     * @return array
-     */
-    protected function getPsr4Autoload()
+
+    protected function getPsr4Autoload(): array
     {
         $namespace = new EmptyModel($this->getGenerator(), '');
-        if ($namespace->getNamespace() !== '') {
+        if (!empty($namespace->getNamespace())) {
             $namespaceKey = sprintf('%s\\', $namespace->getNamespace());
         } else {
             $namespaceKey = '';
         }
         $src = rtrim($this->generator->getOptionSrcDirname(), DIRECTORY_SEPARATOR);
+
         return [
             $namespaceKey => sprintf('./%s', empty($src) ? '' : $src . DIRECTORY_SEPARATOR),
         ];
     }
-    /**
-     * @return array
-     */
-    protected function getComposerFileContent()
+
+    protected function getComposerFileContent(): array
     {
         $content = [];
         $composerFilePath = $this->getComposerFilePath();
         if (!empty($composerFilePath)) {
             $content = json_decode(file_get_contents($composerFilePath), true);
         }
+
         return $content;
     }
-    /**
-     * @param array $content
-     * @return Composer
-     */
-    protected function setComposerFileContent(array $content)
+
+    protected function setComposerFileContent(array $content): Composer
     {
         $composerFilePath = $this->getComposerFilePath();
         if (!empty($composerFilePath)) {
             file_put_contents($composerFilePath, self::encodeToJson($content));
         }
+
         return $this;
     }
-    /**
-     * @param array $content
-     * @return string
-     */
-    protected static function encodeToJson($content)
+
+    protected static function encodeToJson(array $content): string
     {
         return json_encode($content, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
-    /**
-     * @return string
-     */
-    protected function getComposerFilePath()
+
+    protected function getComposerFilePath(): string
     {
         return realpath(sprintf('%s/composer.json', $this->getGenerator()->getOptionDestination()));
     }
-    /**
-     * @param bool $runComposerUpdate
-     * @return Composer
-     */
-    public function setRunComposerUpdate($runComposerUpdate)
+
+    public function setRunComposerUpdate(bool $runComposerUpdate): Composer
     {
         $this->runComposerUpdate = $runComposerUpdate;
         return $this;
     }
-    /**
-     * @return bool
-     */
-    public function getRunComposerUpdate()
+
+    public function getRunComposerUpdate(): bool
     {
         return $this->runComposerUpdate;
     }
-    /**
-     * @return string
-     */
-    public function getFileExtension()
+
+    public function getFileExtension(): string
     {
         return self::JSON_FILE_EXTENSION;
     }

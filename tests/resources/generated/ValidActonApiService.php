@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for all operations
@@ -56,9 +58,9 @@ class ApiService extends AbstractSoapClientBase
     public function login(\Api\StructType\ApiLogin $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('login', array(
+            $this->setResult($this->getSoapClient()->__soapCall('login', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -83,9 +85,9 @@ class ApiService extends AbstractSoapClientBase
     public function sendEmail(\Api\StructType\ApiSendEmail $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('sendEmail', array(
+            $this->setResult($this->getSoapClient()->__soapCall('sendEmail', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -110,9 +112,9 @@ class ApiService extends AbstractSoapClientBase
     public function _list(\Api\StructType\ApiList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('list', array(
+            $this->setResult($this->getSoapClient()->__soapCall('list', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -137,9 +139,9 @@ class ApiService extends AbstractSoapClientBase
     public function uploadList(\Api\StructType\ApiUploadList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('uploadList', array(
+            $this->setResult($this->getSoapClient()->__soapCall('uploadList', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -164,9 +166,9 @@ class ApiService extends AbstractSoapClientBase
     public function getUploadResult(\Api\StructType\ApiGetUploadResultRequest $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('getUploadResult', array(
+            $this->setResult($this->getSoapClient()->__soapCall('getUploadResult', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -191,9 +193,9 @@ class ApiService extends AbstractSoapClientBase
     public function downloadList(\Api\StructType\ApiDownloadList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('downloadList', array(
+            $this->setResult($this->getSoapClient()->__soapCall('downloadList', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -217,9 +219,9 @@ class ApiService extends AbstractSoapClientBase
     public function messageReport(\Api\StructType\ApiMessageReport $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('messageReport', array(
+            $this->setResult($this->getSoapClient()->__soapCall('messageReport', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -243,9 +245,9 @@ class ApiService extends AbstractSoapClientBase
     public function deleteList(\Api\StructType\ApiDeleteList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('deleteList', array(
+            $this->setResult($this->getSoapClient()->__soapCall('deleteList', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

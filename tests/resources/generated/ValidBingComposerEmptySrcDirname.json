@@ -2,10 +2,10 @@
     "name": "wsdltophp/bing",
     "description": "Package generated from __WSDL_URL__ using wsdltophp/packagegenerator",
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=7.4",
         "ext-soap": "*",
         "ext-mbstring": "*",
-        "wsdltophp/packagebase": "~2.0"
+        "wsdltophp/packagebase": "~3.0"
     },
     "autoload": {
         "psr-4": {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api;
 
 /**
@@ -13,9 +15,9 @@ class ApiClassMap
      * This array is sent to the \SoapClient when calling the WS
      * @return string[]
      */
-    final public static function get()
+    final public static function get(): array
     {
-        return array(
+        return [
             'base64Binary' => '\\Api\\StructType\\ApiBase64Binary',
             'hexBinary' => '\\Api\\StructType\\ApiHexBinary',
             'AttachmentType' => '\\Api\\StructType\\ApiAttachmentType',
@@ -59,6 +61,6 @@ class ApiClassMap
             'actionRecordDetailType' => '\\Api\\StructType\\ApiActionRecordDetailType',
             'actionRecord' => '\\Api\\StructType\\ApiActionRecord',
             'contactField' => '\\Api\\StructType\\ApiContactField',
-        );
+        ];
     }
 }

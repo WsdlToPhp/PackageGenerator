@@ -1,29 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
-class TagAttributeTest extends WsdlParser
+final class TagAttributeTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute
-     */
-    public static function ebayInstanceParser()
+    public static function ebayInstanceParser(): TagAttribute
     {
         return new TagAttribute(self::generatorInstance(self::wsdlEbayPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute
-     */
-    public static function whlInstanceParser()
+
+    public static function whlInstanceParser(): TagAttribute
     {
         return new TagAttribute(self::generatorInstance(self::wsdlWhlPath()));
     }
-    /**
-     *
-     */
+
     public function testParseEbay()
     {
         $tagAttributeParser = self::ebayInstanceParser();
@@ -51,9 +46,7 @@ class TagAttributeTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParseWhl()
     {
         $tagAttributeParser = self::whlInstanceParser();

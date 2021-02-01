@@ -1,24 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class UnionRuleTest extends AbstractRuleTest
-{
+use Api\EnumType\ApiPMS_ResStatusType;
+use Api\EnumType\ApiTransactionActionType;
+use InvalidArgumentException;
 
+final class UnionRuleTest extends AbstractRuleTest
+{
     /**
      * Meta informations extracted from the WSDL
      * - documentation: Indicates the status of the reservation. | A union between TransactionActionType and PMS_ResStatusType. Used in messages that communicate between reservation systems as well as between a reservation and property management system. In
      * addition to the TransactionActionType and PMS_ResStatusType, the UpperCaseAlphaLength1to2 may be used for company specifc codes.
      * - use: optional
      * - union: PMS_ResStatusType | TransactionActionType | UpperCaseAlphaLength1to2
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The value '1234567980' does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:
-    - Invalid value(s) '1234567980', please use one of: Reserved, Requested, Request denied, No-show, Cancelled, In-house, Checked out, Waitlisted from enumeration class \Api\EnumType\ApiPMS_ResStatusType
-    - Invalid value(s) '1234567980', please use one of: Book, Quote, Hold, Initiate, Ignore, Modify, Commit, Cancel, CommitOverrideEdits, VerifyPrice, Ticket from enumeration class \Api\EnumType\ApiTransactionActionType
-    - Invalid value '1234567980', please provide a literal that is among the set of character sequences denoted by the regular expression [A-Z]{1,2}
      */
     public function testSetResStatusWithInvalidValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("The value '1234567980' does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:\n - Invalid value(s) '1234567980', please use one of: Reserved, Requested, Request denied, No-show, Cancelled, In-house, Checked out, Waitlisted from enumeration class \Api\EnumType\ApiPMS_ResStatusType\n - Invalid value(s) '1234567980', please use one of: Book, Quote, Hold, Initiate, Ignore, Modify, Commit, Cancel, CommitOverrideEdits, VerifyPrice, Ticket from enumeration class \Api\EnumType\ApiTransactionActionType\n - Invalid value '1234567980', please provide a literal that is among the set of character sequences denoted by the regular expression /[A-Z]{1,2}/");
+
         $instance = self::getWhlHotelReservationTypeInstance(true);
 
         $instance->setResStatus('1234567980');
@@ -35,7 +38,7 @@ class UnionRuleTest extends AbstractRuleTest
     {
         $instance = self::getWhlHotelReservationTypeInstance(true);
 
-        $this->assertSame($instance, $instance->setResStatus(\Api\EnumType\ApiPMS_ResStatusType::VALUE_RESERVED));
+        $this->assertSame($instance, $instance->setResStatus(ApiPMS_ResStatusType::VALUE_RESERVED));
     }
 
     /**
@@ -49,7 +52,7 @@ class UnionRuleTest extends AbstractRuleTest
     {
         $instance = self::getWhlHotelReservationTypeInstance(true);
 
-        $this->assertSame($instance, $instance->setResStatus(\Api\EnumType\ApiTransactionActionType::VALUE_BOOK));
+        $this->assertSame($instance, $instance->setResStatus(ApiTransactionActionType::VALUE_BOOK));
     }
 
     /**

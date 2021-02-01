@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for Item StructType
@@ -32,7 +34,7 @@ class ApiItem extends AbstractStructBase
     public $displayName;
     /**
      * The any
-     * @var \DOMDocument
+     * @var DOMDocument
      */
     public $any;
     /**
@@ -44,9 +46,9 @@ class ApiItem extends AbstractStructBase
      * @param string $itemType
      * @param string $id
      * @param string $displayName
-     * @param \DOMDocument $any
+     * @param DOMDocument $any
      */
-    public function __construct($itemType = null, $id = null, $displayName = null, \DOMDocument $any = null)
+    public function __construct($itemType = null, $id = null, $displayName = null, DOMDocument $any = null)
     {
         $this
             ->setItemType($itemType)
@@ -127,7 +129,7 @@ class ApiItem extends AbstractStructBase
      * Get any value
      * @uses \DOMDocument::loadXML()
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
-     * @return \DOMDocument|null
+     * @return DOMDocument|null
      */
     public function getAny($asString = true)
     {
@@ -143,10 +145,10 @@ class ApiItem extends AbstractStructBase
      * @uses \DOMDocument::hasChildNodes()
      * @uses \DOMDocument::saveXML()
      * @uses \DOMNode::item()
-     * @param \DOMDocument $any
+     * @param DOMDocument $any
      * @return \Api\StructType\ApiItem
      */
-    public function setAny(\DOMDocument $any = null)
+    public function setAny(DOMDocument $any = null)
     {
         $this->any = ($any instanceof \DOMDocument) && $any->hasChildNodes() ? $any->saveXML($any->childNodes->item(0)) : $any;
         return $this;

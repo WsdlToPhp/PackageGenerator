@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Delete ServiceType
@@ -55,9 +57,9 @@ class ApiDelete extends AbstractSoapClientBase
     public function deleteList(\Api\StructType\ApiDeleteList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('deleteList', array(
+            $this->setResult($this->getSoapClient()->__soapCall('deleteList', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
