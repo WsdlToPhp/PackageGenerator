@@ -1,29 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 
-class StructArrayReservedMethodTest extends TestCase
+final class StructArrayReservedMethodTest extends AbstractTestCase
 {
-    /**
-     * @return StructArrayReservedMethod
-     */
-    public static function instance()
+    public static function instance(): StructArrayReservedMethod
     {
         return StructArrayReservedMethod::instance(__DIR__ . '/../resources/struct_array_reserved_keywords.yml');
     }
-    /**
-     *
-     */
+
     public function testIs__CLASS__()
     {
         $this->assertFalse(self::instance()->is('__CLASS__'));
     }
-    /**
-     *
-     */
+
     public function testIs___class___()
     {
         $this->assertFalse(self::instance()->is('__class__'));
@@ -80,9 +75,9 @@ class StructArrayReservedMethodTest extends TestCase
     {
         $this->assertFalse(self::instance()->is('getLastHeaders'));
     }
-    public function testIsgetFormatedXml()
+    public function testIsgetFormattedXml()
     {
-        $this->assertFalse(self::instance()->is('getFormatedXml'));
+        $this->assertFalse(self::instance()->is('getFormattedXml'));
     }
     public function testIsconvertStringHeadersToArray()
     {

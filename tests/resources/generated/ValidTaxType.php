@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for TaxType StructType
@@ -129,7 +131,7 @@ class ApiTaxType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxDescriptionForArrayConstraintsFromSetTaxDescription(array $values = array())
+    public static function validateTaxDescriptionForArrayConstraintsFromSetTaxDescription(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -284,8 +286,8 @@ class ApiTaxType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         // validation for constraint: fractionDigits(3)
-        if (!is_null($amount) && mb_strlen(mb_substr($amount, false !== mb_strpos($amount, '.') ? mb_strpos($amount, '.') + 1 : mb_strlen($amount))) > 3) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 3 fraction digits, %d given', var_export($amount, true), mb_strlen(mb_substr($amount, mb_strpos($amount, '.') + 1))), __LINE__);
+        if (!is_null($amount) && mb_strlen(mb_substr((string) $amount, false !== mb_strpos((string) $amount, '.') ? mb_strpos((string) $amount, '.') + 1 : mb_strlen((string) $amount))) > 3) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 3 fraction digits, %d given', var_export($amount, true), mb_strlen(mb_substr((string) $amount, mb_strpos((string) $amount, '.') + 1))), __LINE__);
         }
         $this->Amount = $amount;
         return $this;

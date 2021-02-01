@@ -1,22 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class PhpReservedKeyword extends AbstractReservedWord
+final class PhpReservedKeyword extends AbstractReservedWord
 {
-    /**
-     * @throws \InvalidArgumentException
-     * @param string $filename options's file to parse
-     * @return PhpReservedKeyword
-     */
-    public static function instance($filename = null)
-    {
-        return parent::instance(empty($filename) ? self::getDefaultConfigurationPath() : $filename);
-    }
-    /**
-     * @return string
-     */
-    public static function getDefaultConfigurationPath()
+    public static function getDefaultConfigurationPath(): string
     {
         return __DIR__ . '/../resources/config/php_reserved_keywords.yml';
     }

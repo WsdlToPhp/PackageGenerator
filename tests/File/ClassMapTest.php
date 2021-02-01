@@ -1,16 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
-class ClassMapTest extends AbstractFile
+final class ClassMapTest extends AbstractFile
 {
-    /**
-     *
-     */
     public function testBing()
     {
         $instance = self::bingGeneratorInstance();
@@ -23,9 +22,7 @@ class ClassMapTest extends AbstractFile
 
         $this->assertSameFileContent('ValidBingClassMap', $classMap);
     }
-    /**
-     *
-     */
+
     public function testReforma()
     {
         $instance = self::reformaGeneratorInstance();
@@ -38,9 +35,7 @@ class ClassMapTest extends AbstractFile
 
         $this->assertSameFileContent('ValidReformaClassMap', $classMap);
     }
-    /**
-     *
-     */
+
     public function testActon()
     {
         $instance = self::actonGeneratorInstance();
@@ -53,9 +48,7 @@ class ClassMapTest extends AbstractFile
 
         $this->assertSameFileContent('ValidActonClassMap', $classMap);
     }
-    /**
-     *
-     */
+
     public function testActonWihthoutPrefix()
     {
         $instance = self::actonGeneratorInstance();
@@ -71,9 +64,7 @@ class ClassMapTest extends AbstractFile
 
         $this->assertSameFileContent('ValidActonClassMapWihoutNamespace', $classMap);
     }
-    /**
-     *
-     */
+
     public function testActonWihthoutPrefixAndCategory()
     {
         $instance = self::actonGeneratorInstance();
@@ -90,9 +81,7 @@ class ClassMapTest extends AbstractFile
 
         $this->assertSameFileContent('ValidActonClassMapWihoutNamespaceAndCategory', $classMap);
     }
-    /**
-     *
-     */
+
     public function testDestination()
     {
         $instance = self::bingGeneratorInstance();

@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class StringRuleTest extends AbstractRuleTest
-{
+use InvalidArgumentException;
 
+final class StringRuleTest extends AbstractRuleTest
+{
     /**
      * The CardNumber
      * Meta informations extracted from the WSDL
@@ -12,11 +15,12 @@ class StringRuleTest extends AbstractRuleTest
      * - use: optional
      * - base: xs:string
      * - pattern: [0-9]{1,19}
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value array
      */
     public function testSetCardNumberWithArrayValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value array');
+
         $instance = self::getWhlPaymentCardTypeInstance();
 
         $instance->setCardNumber([]);
@@ -29,11 +33,12 @@ class StringRuleTest extends AbstractRuleTest
      * - use: optional
      * - base: xs:string
      * - pattern: [0-9]{1,19}
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value true, please provide a string, boolean given
      */
     public function testSetCardNumberWithBoolValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value true, please provide a string, boolean given');
+
         $instance = self::getWhlPaymentCardTypeInstance();
 
         $instance->setCardNumber(true);
@@ -46,11 +51,12 @@ class StringRuleTest extends AbstractRuleTest
      * - use: optional
      * - base: xs:string
      * - pattern: [0-9]{1,19}
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 1, please provide a string, integer given
      */
     public function testSetCardNumberWithIntValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value 1, please provide a string, integer given');
+
         $instance = self::getWhlPaymentCardTypeInstance();
 
         $instance->setCardNumber(1);
@@ -63,11 +69,12 @@ class StringRuleTest extends AbstractRuleTest
      * - use: optional
      * - base: xs:string
      * - pattern: [0-9]{1,19}
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 12.5, please provide a string, double given
      */
     public function testSetCardNumberWithFloatValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value 12.5, please provide a string, double given');
+
         $instance = self::getWhlPaymentCardTypeInstance();
 
         $instance->setCardNumber(12.5);

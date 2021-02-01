@@ -1,29 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
 
-class ServiceReservedMethodTest extends TestCase
+final class ServiceReservedMethodTest extends AbstractTestCase
 {
-    /**
-     * @return ServiceReservedMethod
-     */
-    public static function instance()
+    public static function instance(): ServiceReservedMethod
     {
         return ServiceReservedMethod::instance(__DIR__ . '/../resources/service_reserved_keywords.yml');
     }
-    /**
-     *
-     */
+
     public function testIs__CLASS__()
     {
         $this->assertFalse(self::instance()->is('__CLASS__'));
     }
-    /**
-     *
-     */
+
     public function testIs___class___()
     {
         $this->assertFalse(self::instance()->is('__class__'));
@@ -80,9 +75,9 @@ class ServiceReservedMethodTest extends TestCase
     {
         $this->assertTrue(self::instance()->is('getLastHeaders'));
     }
-    public function testIsgetFormatedXml()
+    public function testIsgetFormattedXml()
     {
-        $this->assertTrue(self::instance()->is('getFormatedXml'));
+        $this->assertTrue(self::instance()->is('getFormattedXml'));
     }
     public function testIsconvertStringHeadersToArray()
     {

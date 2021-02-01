@@ -1,16 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class ListRuleTest extends AbstractRuleTest
-{
+use Api\EnumType\ApiDayOfWeekType;
+use InvalidArgumentException;
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value(s) string('Today'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \Api\EnumType\ApiDayOfWeekType
-     */
+final class ListRuleTest extends AbstractRuleTest
+{
     public function testSetDayOfWeekWithInvalidValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid value(s) string(\'Today\'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \Api\EnumType\ApiDayOfWeekType');
+
         $instance = self::getEwsWorkingPeriodInstance();
 
         $instance->setDayOfWeek([
@@ -18,24 +21,18 @@ class ListRuleTest extends AbstractRuleTest
         ]);
     }
 
-    /**
-     *
-     */
     public function testSetDayOfWeekWithValidValuesMustPass()
     {
         $instance = self::getEwsWorkingPeriodInstance();
 
         $this->assertSame($instance, $instance->setDayOfWeek([
-            \Api\EnumType\ApiDayOfWeekType::VALUE_MONDAY,
+            ApiDayOfWeekType::VALUE_MONDAY,
             'Tuesday',
             'Friday',
             'Sunday',
         ]));
     }
 
-    /**
-     *
-     */
     public function testSetDayOfWeekWithNullValueMustPass()
     {
         $instance = self::getEwsWorkingPeriodInstance();

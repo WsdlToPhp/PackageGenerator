@@ -1,37 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement;
 
-class TagComplexTypeTest extends WsdlParser
+final class TagComplexTypeTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
-     */
-    public static function ebayInstanceParser()
+    public static function ebayInstanceParser(): TagComplexType
     {
         return new TagComplexType(self::generatorInstance(self::wsdlEbayPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
-     */
-    public static function partnerInstanceParser()
+
+    public static function partnerInstanceParser(): TagComplexType
     {
         return new TagComplexType(self::generatorInstance(self::wsdlPartnerPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType
-     */
-    public static function docDataPaymentsInstanceParser()
+
+    public static function docDataPaymentsInstanceParser(): TagComplexType
     {
         return new TagComplexType(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
-    /**
-     *
-     */
+
     public function testParseEbay()
     {
         $tagComplexTypeParser = self::ebayInstanceParser();
@@ -47,9 +40,7 @@ class TagComplexTypeTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParseOrderContract()
     {
         $tagComplexTypeParser = self::partnerInstanceParser();
@@ -65,9 +56,7 @@ class TagComplexTypeTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParseDocDataPaymnts()
     {
         $tagComplexTypeParser = self::docDataPaymentsInstanceParser();

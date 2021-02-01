@@ -1,71 +1,63 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class ItemTypeRuleTest extends AbstractRuleTest
+use Api\StructType\ApiParagraphType;
+use InvalidArgumentException;
+use TypeError;
+
+final class ItemTypeRuleTest extends AbstractRuleTest
 {
-    /**
-     * TypeError introduced in PHP 7, https://www.php.net/manual/fr/class.typeerror.php
-     * @requires PHP 7.0
-     * @expectedException \TypeError
-     */
     public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeError()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->addToTaxDescription('foo');
     }
 
-    /**
-     * TypeError introduced in PHP 7, https://www.php.net/manual/fr/class.typeerror.php
-     * @requires PHP 7.0
-     * @expectedException \TypeError
-     */
     public function testAddToTaxDescriptionValueWithNullValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->addToTaxDescription(null);
     }
 
-    /**
-     *
-     */
     public function testAddToTaxDescriptionValueWithApiParagraphTypeInstanceMustPass()
     {
         // true to avoid the maxoccurs error to occur
         $instance = self::getWhlTaxTypeInstance(true);
 
-        $this->assertSame($instance, $instance->addToTaxDescription(new \Api\StructType\ApiParagraphType()));
+        $this->assertSame($instance, $instance->addToTaxDescription(new ApiParagraphType()));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The firstSegmentsIds property can only contain items of type int, string given
-     */
     public function testAddToFirstSegmentsIdsValueWithStringValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The firstSegmentsIds property can only contain items of type int, string given');
+
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);
 
         $instance->addToFirstSegmentsIds('foo');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The firstSegmentsIds property can only contain items of type int, NULL given
-     */
     public function testAddToFirstSegmentsIdsValueWithNullValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The firstSegmentsIds property can only contain items of type int, NULL given');
+
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);
 
         $instance->addToFirstSegmentsIds(null);
     }
 
-    /**
-     *
-     */
     public function testAddToFirstSegmentsIdsValueWithIntValueMustPass()
     {
         // true to avoid the maxoccurs error to occur
@@ -74,9 +66,6 @@ class ItemTypeRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->addToFirstSegmentsIds(18));
     }
 
-    /**
-     *
-     */
     public function testAddToFirstSegmentsIdsValueWithStringIntValueMustPass()
     {
         // true to avoid the maxoccurs error to occur

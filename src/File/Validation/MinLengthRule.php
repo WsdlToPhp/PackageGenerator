@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
@@ -13,21 +15,14 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
  *   - 1.3 if {primitive type definition} is QName or NOTATION, then any {value} is facet-valid.
  *  - 2 if the {variety} is ·list·, then the length of the value, as measured in list items, ·must· be greater than or equal to {value}
  */
-class MinLengthRule extends AbstractLengthRule
+final class MinLengthRule extends AbstractLengthRule
 {
-
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'minLength';
     }
 
-    /**
-     * @return string
-     */
-    public function symbol()
+    public function symbol(): string
     {
         return self::SYMBOL_MIN_INCLUSIVE;
     }

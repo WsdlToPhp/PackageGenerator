@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\SoapClient;
 
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
-class StructsTest extends SoapClientParser
+final class StructsTest extends SoapClientParser
 {
-    /**
-     *
-     */
     public function testWcf()
     {
         $generator = self::getWcfInstance();
@@ -20,8 +20,8 @@ class StructsTest extends SoapClientParser
         $offer = $generator->getStructByName('offer');
 
         if ($offer instanceof Struct) {
-            $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $offer->getAttribute('offerClassMember'));
-            $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $offer->getAttribute('offer'));
+            $this->assertInstanceOf(StructAttribute::class, $offer->getAttribute('offerClassMember'));
+            $this->assertInstanceOf(StructAttribute::class, $offer->getAttribute('offer'));
             $this->assertSame('offer', $offer->getAttribute('offer')->getType());
         } else {
             $this->fail('Unable to get offer struct');
@@ -30,16 +30,14 @@ class StructsTest extends SoapClientParser
         $order = $generator->getStructByName('order');
 
         if ($offer instanceof Struct) {
-            $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $order->getAttribute('orderClassMember'));
-            $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\Model\StructAttribute', $order->getAttribute('order'));
+            $this->assertInstanceOf(StructAttribute::class, $order->getAttribute('orderClassMember'));
+            $this->assertInstanceOf(StructAttribute::class, $order->getAttribute('order'));
             $this->assertSame('order', $order->getAttribute('order')->getType());
         } else {
             $this->fail('Unable to get order struct');
         }
     }
-    /**
-     *
-     */
+
     public function testLnp()
     {
         $generator = self::getLnpInstance();
@@ -54,9 +52,7 @@ class StructsTest extends SoapClientParser
 
         $this->assertEquals(0, $count);
     }
-    /**
-     *
-     */
+
     public function testWhl()
     {
         $generator = self::getWhlInstance(true);

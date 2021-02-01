@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Generator;
 
 use WsdlToPhp\PackageGenerator\Container\Parser as ParserContainer;
@@ -23,22 +25,15 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagChoice as TagChoiceParser;
 
 class GeneratorParsers extends AbstractGeneratorAware
 {
-    /**
-     * @var ParserContainer
-     */
-    protected $parsers;
-    /**
-     * @param Generator $generator
-     */
+    protected ParserContainer $parsers;
+
     public function __construct(Generator $generator)
     {
         parent::__construct($generator);
         $this->initParsers();
     }
-    /**
-     * @return GeneratorParsers
-     */
-    protected function initParsers()
+
+    protected function initParsers(): self
     {
         if (!isset($this->parsers)) {
             $this->parsers = new ParserContainer($this->generator);
@@ -61,22 +56,20 @@ class GeneratorParsers extends AbstractGeneratorAware
                 ->add(new TagChoiceParser($this->generator))
                 ->add(new TagDocumentationParser($this->generator));
         }
+
         return $this;
     }
-    /**
-     * @return GeneratorParsers
-     */
-    public function doParse()
+
+    public function doParse(): self
     {
         foreach ($this->parsers as $parser) {
             $parser->parse();
         }
+
         return $this;
     }
-    /**
-     * @return ParserContainer
-     */
-    public function getParsers()
+
+    public function getParsers(): ParserContainer
     {
         return $this->parsers;
     }

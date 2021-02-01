@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for BannerInfo StructType
@@ -520,7 +522,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePhrasesForArrayConstraintsFromSetPhrases(array $values = array())
+    public static function validatePhrasesForArrayConstraintsFromSetPhrases(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -580,7 +582,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords(array $values = array())
+    public static function validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -816,7 +818,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSitelinksForArrayConstraintsFromSetSitelinks(array $values = array())
+    public static function validateSitelinksForArrayConstraintsFromSetSitelinks(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -876,7 +878,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdWarningsForArrayConstraintsFromSetAdWarnings(array $values = array())
+    public static function validateAdWarningsForArrayConstraintsFromSetAdWarnings(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -958,7 +960,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons(array $values = array())
+    public static function validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];

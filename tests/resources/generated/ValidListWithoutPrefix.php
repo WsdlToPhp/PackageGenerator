@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for List ServiceType
@@ -25,9 +27,9 @@ class _List extends AbstractSoapClientBase
     public function listPaymentMethods(\StructType\ListPaymentMethodsRequest $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('listPaymentMethods', array(
+            $this->setResult($this->getSoapClient()->__soapCall('listPaymentMethods', [
                 $parameters,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

@@ -1,81 +1,77 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagUnion as Union;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagSimpleType as SimpleType;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\WsdlHandler\Tag\TagUnion as Union;
+use WsdlToPhp\WsdlHandler\Tag\TagSimpleType as SimpleType;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 
 class TagUnion extends AbstractTagParser
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
-     * @param Wsdl $wsdl
-     */
-    protected function parseWsdl(Wsdl $wsdl)
+    protected function parseWsdl(Wsdl $wsdl): void
     {
         foreach ($this->getTags() as $tag) {
-            if ($tag instanceof Union) {
-                $this->parseUnion($tag);
-            }
+            $this->parseUnion($tag);
         }
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parsingTag()
-     */
-    protected function parsingTag()
+
+    protected function parsingTag(): string
     {
         return WsdlDocument::TAG_UNION;
     }
-    /**
-     * @param Union $union
-     */
-    public function parseUnion(Union $union)
+
+    public function parseUnion(Union $union): void
     {
         $parent = $union->getSuitableParent();
-        if ($parent) {
-            $model = $this->getModel($parent);
-            if ($model) {
-                $memberTypes = $union->getAttributeMemberTypes();
-                if ($union->hasMemberTypesAsChildren()) {
-                    $memberTypes = array_unique(array_merge($memberTypes, $this->getUnionMemberTypesFromChildren($union)));
-                }
-                $memberTypes = array_filter($memberTypes, function ($memberType) use ($model) {
-                    return $model->getName() !== $memberType;
-                });
-                if (!empty($memberTypes)) {
-                    $model->addMeta('union', $memberTypes);
-                    $model->setInheritance($this->findSuitableInheritance($memberTypes));
-                }
-            }
+        if (!$parent) {
+            return;
         }
+
+        $model = $this->getModel($parent);
+        if (!$model) {
+            return;
+        }
+
+        $memberTypes = $union->getAttributeMemberTypes();
+        if ($union->hasMemberTypesAsChildren()) {
+            $memberTypes = array_unique(array_merge($memberTypes, $this->getUnionMemberTypesFromChildren($union)));
+        }
+
+        $memberTypes = array_filter($memberTypes, function ($memberType) use ($model) {
+            return $model->getName() !== $memberType;
+        });
+
+        if (empty($memberTypes)) {
+            return;
+        }
+
+        $model->addMeta('union', $memberTypes);
+        $model->setInheritance($this->findSuitableInheritance($memberTypes));
     }
-    /**
-     * @param string[] $values
-     * @return string
-     */
-    protected function findSuitableInheritance(array $values)
+
+    protected function findSuitableInheritance(array $values): string
     {
         $validInheritance = '';
         foreach ($values as $value) {
             $model = $this->getStructByName($value);
-            while ($model instanceof AbstractModel && $model->getInheritance() !== '') {
+            while ($model instanceof AbstractModel && !empty($model->getInheritance())) {
                 $model = $this->getStructByName($validInheritance = $model->getInheritance());
             }
+
             if ($model instanceof AbstractModel) {
                 $validInheritance = $model->getName();
                 break;
             }
         }
+
         return $validInheritance;
     }
-    /**
-     * @param Union $union
-     * @return string[]
-     */
-    protected function getUnionMemberTypesFromChildren(Union $union)
+
+    protected function getUnionMemberTypesFromChildren(Union $union): array
     {
         $memberTypes = [];
         foreach ($union->getMemberTypesChildren() as $child) {

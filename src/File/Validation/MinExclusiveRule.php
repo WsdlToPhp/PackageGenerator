@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * Class MinExclusiveRule
  * @link https://www.w3.org/TR/xmlschema-2/#rf-minExclusive
  * @link https://www.w3.org/TR/xmlschema-2/#d0e11648 for Examples:
  *  dateTime	            duration	        result
@@ -15,21 +16,14 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
  *  - 1 if the ·numeric· property in {fundamental facets} is true, then the value ·must· be numerically greater than {value};
  *  - 2 if the ·numeric· property in {fundamental facets} is false (i.e., {base type definition} is one of the date and time related datatypes), then the value ·must· be chronologically greater than {value};
  */
-class MinExclusiveRule extends AbstractBoundRule
+final class MinExclusiveRule extends AbstractBoundRule
 {
-
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'minExclusive';
     }
 
-    /**
-     * @return string
-     */
-    public function symbol()
+    public function symbol(): string
     {
         return self::SYMBOL_MIN_EXCLUSIVE;
     }

@@ -109,6 +109,7 @@ reserved_keywords:
         - "interface"
         - "isset"
         - "list"
+        - "match"
         - "namespace"
         - "new"
         - "or"

@@ -1,34 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Model\StructValue as Model;
 
 class StructValue extends AbstractModel
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
-     * @return string
-     */
-    protected function objectClass()
+    protected function objectClass(): string
     {
-        return 'WsdlToPhp\PackageGenerator\Model\StructValue';
+        return Model::class;
     }
-    /**
-     * @param string $name
-     * @return Model|null
-     */
-    public function getStructValueByName($name)
+
+    public function getStructValueByName($name): ?Model
     {
         return $this->get($name);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::get()
-     * @param string $value
-     * @return Model|null
-     */
-    public function get($value)
-    {
-        return parent::get($value);
     }
 }

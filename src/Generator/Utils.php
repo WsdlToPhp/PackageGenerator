@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Generator;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
-class Utils
+final class Utils
 {
     /**
      * Gets upper case word among a string from the end or from the beginning part
@@ -12,65 +14,57 @@ class Utils
      * @param string $string the string from which we can extract the part
      * @return string
      */
-    public static function getPart($optionValue, $string)
+    public static function getPart(string $optionValue, string $string): string
     {
-        $elementType = '';
         $string = str_replace('_', '', $string);
         $string = preg_replace('/([0-9])/', '', $string);
-        if (!empty($string)) {
-            switch ($optionValue) {
-                case GeneratorOptions::VALUE_END:
-                    $parts = preg_split('/[A-Z]/', ucfirst($string));
-                    $partsCount = count($parts);
-                    if (!empty($parts[$partsCount - 1])) {
-                        $elementType = mb_substr($string, mb_strrpos($string, implode('', array_slice($parts, -1))) - 1);
-                    } else {
-                        for ($i = $partsCount - 1; $i >= 0; $i--) {
-                            $part = trim($parts[$i]);
-                            if (!empty($part)) {
-                                break;
-                            }
-                        }
-                        $elementType = mb_substr($string, ((count($parts) - 2 - $i) + 1) * -1);
-                    }
-                    break;
-                case GeneratorOptions::VALUE_START:
-                    $parts = preg_split('/[A-Z]/', ucfirst($string));
-                    $partsCount = count($parts);
-                    if (empty($parts[0]) && !empty($parts[1])) {
-                        $elementType = mb_substr($string, 0, mb_strlen($parts[1]) + 1);
-                    } else {
-                        for ($i = 0; $i < $partsCount; $i++) {
-                            $part = trim($parts[$i]);
-                            if (!empty($part)) {
-                                break;
-                            }
-                        }
-                        $elementType = mb_substr($string, 0, $i);
-                    }
-                    break;
-                case GeneratorOptions::VALUE_NONE:
-                    $elementType = $string;
-                    break;
-                default:
-                    break;
-            }
+
+        if (empty($string)) {
+            return '';
         }
+
+        $elementType = '';
+        switch ($optionValue) {
+            case GeneratorOptions::VALUE_END:
+                $parts = preg_split('/[A-Z]/', ucfirst($string));
+                $partsCount = count($parts);
+                if (!empty($parts[$partsCount - 1])) {
+                    $elementType = mb_substr($string, mb_strrpos($string, implode('', array_slice($parts, -1))) - 1);
+                } else {
+                    for ($i = $partsCount - 1; $i >= 0; $i--) {
+                        $part = trim($parts[$i]);
+                        if (!empty($part)) {
+                            break;
+                        }
+                    }
+                    $elementType = mb_substr($string, ((count($parts) - 2 - $i) + 1) * -1);
+                }
+                break;
+
+            case GeneratorOptions::VALUE_START:
+                $parts = preg_split('/[A-Z]/', ucfirst($string));
+                $partsCount = count($parts);
+                if (empty($parts[0]) && !empty($parts[1])) {
+                    $elementType = mb_substr($string, 0, mb_strlen($parts[1]) + 1);
+                } else {
+                    for ($i = 0; $i < $partsCount; $i++) {
+                        $part = trim($parts[$i]);
+                        if (!empty($part)) {
+                            break;
+                        }
+                    }
+                    $elementType = mb_substr($string, 0, $i);
+                }
+                break;
+            case GeneratorOptions::VALUE_NONE:
+                $elementType = $string;
+                break;
+        }
+
         return $elementType;
     }
-    /**
-     * Get content from url using a proxy or not
-     * @param string $url
-     * @param string $basicAuthLogin
-     * @param string $basicAuthPassword
-     * @param string $proxyHost
-     * @param string $proxyPort
-     * @param string $proxyLogin
-     * @param string $proxyPassword
-     * @param array $contextOptions
-     * @return string
-     */
-    public static function getContentFromUrl($url, $basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = [])
+
+    public static function getContentFromUrl(string $url, ?string $basicAuthLogin = null, ?string $basicAuthPassword = null, ?string $proxyHost = null, $proxyPort = null, ?string $proxyLogin = null, ?string $proxyPassword = null, array $contextOptions = []): string
     {
         $context = null;
         $options = self::getStreamContextOptions($basicAuthLogin, $basicAuthPassword, $proxyHost, $proxyPort, $proxyLogin, $proxyPassword, $contextOptions);
@@ -79,17 +73,8 @@ class Utils
         }
         return file_get_contents($url, false, $context);
     }
-    /**
-     * @param string $basicAuthLogin
-     * @param string $basicAuthPassword
-     * @param string $proxyHost
-     * @param string $proxyPort
-     * @param string $proxyLogin
-     * @param string $proxyPassword
-     * @param array $contextOptions
-     * @return string[]
-     */
-    public static function getStreamContextOptions($basicAuthLogin = null, $basicAuthPassword = null, $proxyHost = null, $proxyPort = null, $proxyLogin = null, $proxyPassword = null, array $contextOptions = [])
+
+    public static function getStreamContextOptions(?string $basicAuthLogin = null, ?string $basicAuthPassword = null, ?string $proxyHost = null, $proxyPort = null, ?string $proxyLogin = null, ?string $proxyPassword = null, array $contextOptions = []): array
     {
         $proxyOptions = $basicAuthOptions = [];
         if (!empty($basicAuthLogin) && !empty($basicAuthPassword)) {
@@ -101,6 +86,7 @@ class Utils
                 ],
             ];
         }
+
         if (!empty($proxyHost)) {
             $proxyOptions = [
                 'http' => [
@@ -111,15 +97,11 @@ class Utils
                 ],
             ];
         }
+
         return array_merge_recursive($contextOptions, $proxyOptions, $basicAuthOptions);
     }
-    /**
-     * Returns the value with good type
-     * @param mixed $value the value
-     * @param string $knownType the value
-     * @return mixed
-     */
-    public static function getValueWithinItsType($value, $knownType = null)
+
+    public static function getValueWithinItsType($value, ?string $knownType = null)
     {
         if (is_int($value) || (!is_null($value) && in_array($knownType, [
             'time',
@@ -142,20 +124,17 @@ class Utils
             'bool',
             'boolean',
         ], true))) {
-            return ($value === 'true' || $value === true || $value === 1 || $value === '1');
+            return ('true' === $value || true === $value || 1 === $value || '1' === $value);
         }
+
         return $value;
     }
-    /**
-     * @param string $origin
-     * @param string $destination
-     * @return string
-     */
-    public static function resolveCompletePath($origin, $destination)
+
+    public static function resolveCompletePath(string $origin, string $destination): string
     {
         $resolvedPath = $destination;
-        if (!empty($destination) && mb_strpos($destination, 'http://') === false && mb_strpos($destination, 'https://') === false && !empty($origin)) {
-            if (mb_substr($destination, 0, 2) === './') {
+        if (!empty($destination) && false === mb_strpos($destination, 'http://') && false === mb_strpos($destination, 'https://') && !empty($origin)) {
+            if ('./' === mb_substr($destination, 0, 2)) {
                 $destination = mb_substr($destination, 2);
             }
             $destinationParts = explode('/', $destination);
@@ -169,7 +148,7 @@ class Utils
             $pathParts = explode('/', $path);
             $finalPath = implode('/', $pathParts);
             foreach ($destinationParts as $locationPart) {
-                if ($locationPart == '..') {
+                if ('..' === $locationPart) {
                     $finalPath = mb_substr($finalPath, 0, mb_strrpos($finalPath, '/', 0));
                 } else {
                     $finalPath .= '/' . $locationPart;
@@ -190,22 +169,19 @@ class Utils
                 }
             }
         }
+
         return $resolvedPath;
     }
-    /**
-     * Clean comment
-     * @param string $comment the comment to clean
-     * @param string $glueSeparator ths string to use when gathering values
-     * @param bool $uniqueValues indicates if comment values must be unique or not
-     * @return string
-     */
-    public static function cleanComment($comment, $glueSeparator = ',', $uniqueValues = true)
+
+    public static function cleanComment($comment, string $glueSeparator = ',', bool $uniqueValues = true): string
     {
         if (!is_scalar($comment) && !is_array($comment)) {
             return '';
         }
+
         return trim(str_replace('*/', '*[:slash:]', is_scalar($comment) ? $comment : implode($glueSeparator, $uniqueValues ? array_unique($comment) : $comment)));
     }
+
     /**
      * Clean a string to make it valid as PHP variable
      * See more about the used regular expression at {@link http://www.regular-expressions.info/unicode.html}:
@@ -216,35 +192,32 @@ class Utils
      * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      * @return string
      */
-    public static function cleanString($string, $keepMultipleUnderscores = true)
+    public static function cleanString(string $string, bool $keepMultipleUnderscores = true): string
     {
         $cleanedString = preg_replace('/[^\p{L}\p{N}_]/u', '_', $string);
         if (!$keepMultipleUnderscores) {
             $cleanedString = preg_replace('/[_]+/', '_', $cleanedString);
         }
+
         return $cleanedString;
     }
-    /**
-     * @param string $namespacedClassName
-     * @return string
-     */
-    public static function removeNamespace($namespacedClassName)
+
+    public static function removeNamespace(string $namespacedClassName): string
     {
         $elements = explode('\\', $namespacedClassName);
+
         return (string) array_pop($elements);
     }
-    /**
-     * @param string $directory
-     * @param int $permissions
-     * @return bool
-     */
-    public static function createDirectory($directory, $permissions = 0775)
+
+    public static function createDirectory(string $directory, $permissions = 0775): bool
     {
         if (!is_dir($directory)) {
             mkdir($directory, $permissions, true);
         }
+
         return true;
     }
+
     /**
      * Save schemas to schemasFolder
      * Filename will be extracted from schemasUrl or default schema.wsdl will be used
@@ -254,14 +227,15 @@ class Utils
      * @param string $content
      * @return string
      */
-    public static function saveSchemas($destinationFolder, $schemasFolder, $schemasUrl, $content)
+    public static function saveSchemas(string $destinationFolder, string $schemasFolder, string $schemasUrl, string $content): string
     {
-        if (($schemasFolder === null) || empty($schemasFolder)) {
+        if ((is_null($schemasFolder)) || empty($schemasFolder)) {
             // if null or empty schemas folder was provided
             // default schemas folder will be wsdl
             $schemasFolder = 'wsdl';
         }
         $schemasPath = rtrim($destinationFolder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . rtrim($schemasFolder, DIRECTORY_SEPARATOR);
+
         // Here we must cover all possible variants
         if ((mb_strpos(mb_strtolower($schemasUrl), '.wsdl') !== false) || (mb_strpos(mb_strtolower($schemasUrl), '.xsd') !== false) || (mb_strpos(mb_strtolower($schemasUrl), '.xml') !== false)) {
             $filename = basename($schemasUrl);
@@ -269,8 +243,11 @@ class Utils
             // if $url is like http://example.com/index.php?WSDL default filename will be schema.wsdl
             $filename = 'schema.wsdl';
         }
+
         self::createDirectory($schemasPath);
+
         file_put_contents($schemasPath . DIRECTORY_SEPARATOR . $filename, $content);
+
         return $schemasPath . DIRECTORY_SEPARATOR . $filename;
     }
 }

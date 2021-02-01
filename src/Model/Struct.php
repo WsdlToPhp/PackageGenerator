@@ -2,6 +2,8 @@
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
+use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
@@ -17,19 +19,19 @@ class Struct extends AbstractModel
     /**
      * @var string
      */
-    const DOC_SUB_PACKAGE_STRUCTS = 'Structs';
+    public const DOC_SUB_PACKAGE_STRUCTS = 'Structs';
     /**
      * @var string
      */
-    const DOC_SUB_PACKAGE_ENUMERATIONS = 'Enumerations';
+    public const DOC_SUB_PACKAGE_ENUMERATIONS = 'Enumerations';
     /**
      * @var string
      */
-    const DOC_SUB_PACKAGE_ARRAYS = 'Arrays';
+    public const DOC_SUB_PACKAGE_ARRAYS = 'Arrays';
     /**
      * @var string
      */
-    const DEFAULT_ENUM_TYPE = 'string';
+    public const DEFAULT_ENUM_TYPE = 'string';
     /**
      * Attributes of the struct
      * @var StructAttributeContainer
@@ -80,13 +82,8 @@ class Struct extends AbstractModel
             ->setValues(new StructValueContainer($generator))
             ->setTypes([]);
     }
-    /**
-     * Returns the contextual part of the class name for the package
-     * @see AbstractModel::getContextualPart()
-     * @uses Struct::isRestriction()
-     * @return string
-     */
-    public function getContextualPart()
+
+    public function getContextualPart(): string
     {
         $part = $this->getGenerator()->getOptionStructsFolder();
         if ($this->isRestriction()) {
@@ -94,16 +91,11 @@ class Struct extends AbstractModel
         } elseif ($this->isArray()) {
             $part = $this->getGenerator()->getOptionArraysFolder();
         }
+
         return $part;
     }
-    /**
-     * Returns the sub package name which the model belongs to
-     * Must be overridden by sub classes
-     * @see AbstractModel::getDocSubPackages()
-     * @uses Struct::isRestriction()
-     * @return array
-     */
-    public function getDocSubPackages()
+
+    public function getDocSubPackages(): array
     {
         $package = self::DOC_SUB_PACKAGE_STRUCTS;
         if ($this->isRestriction()) {
@@ -115,36 +107,23 @@ class Struct extends AbstractModel
             $package,
         ];
     }
-    /**
-     * Returns true if the current struct is a collection of values (like an array or a list of values)
-     * @uses AbstractModel::getName()
-     * @uses Struct::countOwnAttributes()
-     * @return bool
-     */
-    public function isArray()
+
+    public function isArray(): bool
     {
         return
         (
             (
                 (
-                    ($this->isStruct() && $this->countAllAttributes() === 1) ||
-                    (!$this->isStruct() && $this->countOwnAttributes() <= 1)
+                    ($this->isStruct() && 1 === $this->countAllAttributes()) ||
+                    (!$this->isStruct() && 1 >= $this->countOwnAttributes())
                 ) &&
                 mb_stripos($this->getName(), 'array') !== false
             ) ||
             (!$this->isStruct() && $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false) !== false)
         );
     }
-    /**
-     * Returns the attributes of the struct and potentially from the parent class
-     * @uses AbstractModel::getInheritance()
-     * @uses Struct::isStruct()
-     * @uses Struct::getAttributes()
-     * @param bool $includeInheritanceAttributes include the attributes of parent class, default parent attributes are not included. If true, then the array is an associative array containing and index "attribute" for the StructAttribute object and an index "model" for the Struct object.
-     * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _construct method with the required attribute at first
-     * @return StructAttributeContainer
-     */
-    public function getAttributes($includeInheritanceAttributes = false, $requiredFirst = false)
+
+    public function getAttributes(bool $includeInheritanceAttributes = false, bool $requiredFirst = false): StructAttributeContainer
     {
         if (!$includeInheritanceAttributes && !$requiredFirst) {
             $attributes = $this->attributes;
@@ -160,12 +139,12 @@ class Struct extends AbstractModel
      * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _construct method with the required attribute at first
      * @return StructAttributeContainer
      */
-    public function getProperAttributes($requiredFirst = false)
+    public function getProperAttributes(bool $requiredFirst = false): StructAttributeContainer
     {
         $properAttributes = new StructAttributeContainer($this->getGenerator());
         $parentAttributes = new StructAttributeContainer($this->getGenerator());
 
-        if ($this->getInheritance() != '' && ($model = $this->getInheritanceStruct()) instanceof Struct) {
+        if (!empty($this->getInheritance()) && ($model = $this->getInheritanceStruct()) instanceof Struct) {
             while ($model instanceof Struct && $model->isStruct()) {
                 foreach ($model->getAttributes() as $attribute) {
                     $parentAttributes->add($attribute);
@@ -184,33 +163,30 @@ class Struct extends AbstractModel
 
         return $requiredFirst ? $this->putRequiredAttributesFirst($properAttributes) : $properAttributes;
     }
-    /**
-     * @param bool $includeInheritanceAttributes
-     * @param bool $requiredFirst
-     * @return StructAttributeContainer
-     */
-    protected function getAllAttributes($includeInheritanceAttributes, $requiredFirst)
+
+    protected function getAllAttributes(bool $includeInheritanceAttributes, bool $requiredFirst): StructAttributeContainer
     {
         $allAttributes = new StructAttributeContainer($this->getGenerator());
         if ($includeInheritanceAttributes) {
             $this->addInheritanceAttributes($allAttributes);
         }
+
         foreach ($this->attributes as $attribute) {
             $allAttributes->add($attribute);
         }
+
         if ($requiredFirst) {
             $attributes = $this->putRequiredAttributesFirst($allAttributes);
         } else {
             $attributes = $allAttributes;
         }
+
         return $attributes;
     }
-    /**
-     * @param StructAttributeContainer $attributes
-     */
-    protected function addInheritanceAttributes(StructAttributeContainer $attributes)
+
+    protected function addInheritanceAttributes(StructAttributeContainer $attributes): void
     {
-        if ($this->getInheritance() != '' && ($model = $this->getInheritanceStruct()) instanceof Struct) {
+        if (!empty($this->getInheritance()) && ($model = $this->getInheritanceStruct()) instanceof Struct) {
             while ($model instanceof Struct && $model->isStruct()) {
                 foreach ($model->getAttributes() as $attribute) {
                     $attributes->add($attribute);
@@ -219,11 +195,8 @@ class Struct extends AbstractModel
             }
         }
     }
-    /**
-     * @param StructAttributeContainer $allAttributes
-     * @return StructAttributeContainer
-     */
-    protected function putRequiredAttributesFirst(StructAttributeContainer $allAttributes)
+
+    protected function putRequiredAttributesFirst(StructAttributeContainer $allAttributes): StructAttributeContainer
     {
         $attributes = new StructAttributeContainer($this->getGenerator());
         $requiredAttributes = new StructAttributeContainer($this->getGenerator());
@@ -242,165 +215,104 @@ class Struct extends AbstractModel
             $attributes->add($attribute);
         }
         unset($requiredAttributes, $notRequiredAttributes);
+
         return $attributes;
     }
-    /**
-     * Returns the number of own attributes
-     * @uses Struct::getAttributes()
-     * @return int
-     */
-    public function countOwnAttributes()
+
+    public function countOwnAttributes(): int
     {
         return $this->getAttributes()->count();
     }
-    /**
-     * Returns the number of all attributes
-     * @uses Struct::getAttributes()
-     * @return int
-     */
-    public function countAllAttributes()
+
+    public function countAllAttributes(): int
     {
         return $this->getAttributes(true)->count();
     }
-    /**
-     * Sets the attributes of the struct
-     * @param StructAttributeContainer $structAttributeContainer
-     * @return Struct
-     */
-    public function setAttributes(StructAttributeContainer $structAttributeContainer)
+
+    public function setAttributes(StructAttributeContainer $structAttributeContainer): self
     {
         $this->attributes = $structAttributeContainer;
+
         return $this;
     }
-    /**
-     * Adds attribute based on its original name
-     * @throws \InvalidArgumentException
-     * @param string $attributeName the attribute name
-     * @param string $attributeType the attribute type
-     * @return Struct
-     */
-    public function addAttribute($attributeName, $attributeType)
+
+    public function addAttribute(string $attributeName, string $attributeType): self
     {
         if (empty($attributeName) || empty($attributeType)) {
-            throw new \InvalidArgumentException(sprintf('Attribute name "%s" and/or attribute type "%s" is invalid for Struct "%s"', $attributeName, $attributeType, $this->getName()), __LINE__);
+            throw new InvalidArgumentException(sprintf('Attribute name "%s" and/or attribute type "%s" is invalid for Struct "%s"', $attributeName, $attributeType, $this->getName()), __LINE__);
         }
-        if ($this->attributes->getStructAttributeByName($attributeName) === null) {
+        if (is_null($this->attributes->getStructAttributeByName($attributeName))) {
             $structAttribute = new StructAttribute($this->getGenerator(), $attributeName, $attributeType, $this);
             $this->attributes->add($structAttribute);
         }
         return $this;
     }
-    /**
-     * Returns the attribute by its name, otherwise null
-     * @uses Struct::getAttributes()
-     * @param string $attributeName the original attribute name
-     * @return StructAttribute|null
-     */
-    public function getAttribute($attributeName)
+
+    public function getAttribute(string $attributeName): ?StructAttribute
     {
         return $this->attributes->getStructAttributeByName($attributeName);
     }
-    /**
-     * Returns the attribute by its cleaned name, otherwise null
-     * @uses Struct::getAttributes()
-     * @param string $attributeCleanName the cleaned attribute name
-     * @return StructAttribute|null
-     */
-    public function getAttributeByCleanName($attributeCleanName)
+
+    public function getAttributeByCleanName(string $attributeCleanName): ?StructAttribute
     {
         return $this->attributes->getStructAttributeByCleanName($attributeCleanName);
     }
-    /**
-     * Returns the isRestriction value
-     * @return bool
-     */
-    public function isRestriction()
+
+    public function isRestriction(): bool
     {
         return $this->isRestriction;
     }
-    /**
-     * Sets the isRestriction value
-     * @param bool $isRestriction
-     * @return Struct
-     */
-    public function setRestriction($isRestriction = true)
+
+    public function setRestriction($isRestriction = true): self
     {
         $this->isRestriction = $isRestriction;
+
         return $this;
     }
-    /**
-     * Returns the isStruct value
-     * @return bool
-     */
-    public function isStruct()
+
+    public function isStruct(): bool
     {
         return $this->isStruct;
     }
-    /**
-     * Sets the isStruct value
-     * @param bool $isStruct
-     * @return Struct
-     */
-    public function setStruct($isStruct = true)
+
+    public function setStruct(bool $isStruct = true): self
     {
         $this->isStruct = $isStruct;
         return $this;
     }
-    /**
-     * Returns the list value
-     * @return string
-     */
-    public function getList()
+
+    public function getList(): string
     {
         return $this->list;
     }
-    /**
-     * Returns if the current struct is a list
-     * List are a set of basic-type values
-     * @return bool
-     */
-    public function isList()
+
+    public function isList(): bool
     {
         return !empty($this->list);
     }
-    /**
-     * Sets the list value
-     * @param string $list
-     * @return Struct
-     */
-    public function setList($list = '')
+
+    public function setList(string $list = ''): self
     {
         $this->list = $list;
+
         return $this;
     }
-    /**
-     * Returns the values for an enumeration
-     * @return StructValueContainer
-     */
-    public function getValues()
+
+    public function getValues(): StructValueContainer
     {
         return $this->values;
     }
-    /**
-     * Sets the values for an enumeration
-     * @param StructValueContainer $structValueContainer
-     * @return Struct
-     */
-    protected function setValues(StructValueContainer $structValueContainer)
+
+    protected function setValues(StructValueContainer $structValueContainer): self
     {
         $this->values = $structValueContainer;
+
         return $this;
     }
-    /**
-     * Adds value to values array
-     * @uses Struct::getValue()
-     * @uses Struct::getValues()
-     * @param mixed $value the original value
-     * @return Struct
-     */
-    public function addValue($value)
+
+    public function addValue($value): self
     {
-        if ($this->getValue($value) === null) {
+        if (is_null($this->getValue($value))) {
             // issue #177, rare case: a struct and an enum has the same name and the enum is not detected by the SoapClient,
             // then we need to create the enumeration struct in order to deduplicate the two structs
             // this is why enumerations has to be parsed before any other elements by the WSDL parsers
@@ -410,6 +322,7 @@ class Struct extends AbstractModel
                     ->setInheritance(self::DEFAULT_ENUM_TYPE)
                     ->getValues()->add(new StructValue($enum->getGenerator(), $value, $enum->getValues()->count(), $enum));
                 $this->getGenerator()->getStructs()->add($enum);
+
                 return $enum;
             } else {
                 $this
@@ -418,27 +331,17 @@ class Struct extends AbstractModel
                     ->getValues()->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
             }
         }
+
         return $this;
     }
-    /**
-     * Gets the value object for the given value
-     * @uses Struct::getValues()
-     * @uses AbstractModel::getName()
-     * @param string $value Value name
-     * @return StructValue|null
-     */
-    public function getValue($value)
+
+    public function getValue($value): ?StructValue
     {
         return $this->values->getStructValueByName($value);
     }
-    /**
-     * Allows to define from which class the current model extends
-     * @param bool $short
-     * @return string
-     */
-    public function getExtends($short = false)
+
+    public function getExtends(bool $short = false): string
     {
-        $extends = '';
         if ($this->isArray()) {
             $extends = $this->getGenerator()->getOptionStructArrayClass();
         } elseif ($this->isRestriction()) {
@@ -446,19 +349,16 @@ class Struct extends AbstractModel
         } else {
             $extends = $this->getGenerator()->getOptionStructClass();
         }
+
         return $short ? Utils::removeNamespace($extends) : $extends;
     }
-    /**
-     * @return Struct|null
-     */
-    public function getInheritanceStruct()
+
+    public function getInheritanceStruct(): ?Struct
     {
         return $this->getName() === $this->getInheritance() ? null : $this->getGenerator()->getStructByName(str_replace('[]', '', $this->getInheritance()));
     }
-    /**
-     * @return string
-     */
-    public function getTopInheritance()
+
+    public function getTopInheritance(): string
     {
         $inheritance = $this->getInheritance();
         if (!empty($inheritance)) {
@@ -471,12 +371,11 @@ class Struct extends AbstractModel
                 $struct = $struct->getInheritanceStruct();
             }
         }
+
         return $inheritance;
     }
-    /**
-     * @return Struct|null
-     */
-    public function getTopInheritanceStruct()
+
+    public function getTopInheritanceStruct(): ?Struct
     {
         $struct = $this->getInheritanceStruct();
         $latestValidStruct = $struct;
@@ -486,57 +385,43 @@ class Struct extends AbstractModel
                 $latestValidStruct = $struct;
             }
         }
+
         return $latestValidStruct;
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::getMeta()
-     * @return string[]
-     */
-    public function getMeta()
+
+    public function getMeta(): array
     {
         $inheritanceStruct = $this->getInheritanceStruct();
         return $this->mergeMeta(($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : [], parent::getMeta());
     }
-    /**
-     * @param $filename
-     * @return StructReservedMethod|StructArrayReservedMethod
-     */
-    public function getReservedMethodsInstance($filename = null)
+
+    public function getReservedMethodsInstance(?string $filename = null): AbstractReservedWord
     {
         $instance = StructReservedMethod::instance($filename);
         if ($this->isArray()) {
             $instance = StructArrayReservedMethod::instance($filename);
         }
+
         return $instance;
     }
-    /**
-     * @return string[]
-     */
-    public function getTypes()
+
+    public function getTypes(): array
     {
         return $this->types;
     }
-    /**
-     * @return boolean
-     */
-    public function isUnion()
+
+    public function isUnion(): bool
     {
-        return count($this->types) > 0;
+        return 0 < count($this->types);
     }
-    /**
-     * @param string[] $types
-     * @return Struct
-     */
-    public function setTypes(array $types)
+
+    public function setTypes(array $types): self
     {
         $this->types = $types;
         return $this;
     }
-    /**
-     * {@inheritDoc}
-     * @see \WsdlToPhp\PackageGenerator\Model\AbstractModel::toJsonSerialize()
-     */
-    protected function toJsonSerialize()
+
+    protected function toJsonSerialize(): array
     {
         return [
             'attributes' => $this->attributes,
@@ -547,19 +432,15 @@ class Struct extends AbstractModel
             'list' => $this->list,
         ];
     }
-    /**
-     * @param array $attributes
-     */
-    public function setAttributesFromSerializedJson(array $attributes)
+
+    public function setAttributesFromSerializedJson(array $attributes): void
     {
         foreach ($attributes as $attribute) {
             $this->attributes->add(self::instanceFromSerializedJson($this->generator, $attribute)->setOwner($this));
         }
     }
-    /**
-     * @param array $values
-     */
-    public function setValuesFromSerializedJson(array $values)
+
+    public function setValuesFromSerializedJson(array $values): void
     {
         foreach ($values as $value) {
             $this->values->add(self::instanceFromSerializedJson($this->generator, $value)->setOwner($this));

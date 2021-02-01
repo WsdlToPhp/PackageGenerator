@@ -1162,7 +1162,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -2126,7 +2126,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -2619,7 +2619,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -2673,7 +2673,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -2740,7 +2740,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -4035,7 +4035,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -4187,7 +4187,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -4296,7 +4296,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5020,7 +5020,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5062,7 +5062,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5203,7 +5203,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5296,7 +5296,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5389,7 +5389,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5469,7 +5469,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5549,7 +5549,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5616,7 +5616,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5670,7 +5670,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5872,7 +5872,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -5926,7 +5926,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6006,7 +6006,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6073,7 +6073,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6114,7 +6114,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6168,7 +6168,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6377,7 +6377,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6431,7 +6431,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6563,7 +6563,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6639,7 +6639,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6715,7 +6715,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6804,7 +6804,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -6854,7 +6854,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -7336,7 +7336,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -7373,7 +7373,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -7690,7 +7690,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -7727,7 +7727,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -7940,7 +7940,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -7977,7 +7977,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -8321,7 +8321,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -8384,7 +8384,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -8625,7 +8625,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -8675,7 +8675,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -8984,7 +8984,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -9021,7 +9021,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -9366,7 +9366,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -9416,7 +9416,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -9456,7 +9456,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -9565,7 +9565,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -9602,7 +9602,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -9761,7 +9761,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -9811,7 +9811,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -10023,7 +10023,7 @@
                     {
                         "containsElements": false,
                         "removableFromRequest": false,
-                        "type": "\\DOMDocument",
+                        "type": "DOMDocument",
                         "inheritance": "",
                         "abstract": false,
                         "meta": [],
@@ -10116,10 +10116,10 @@
         "namespace_prefix": "",
         "standalone": true,
         "validation": true,
-        "struct_class": "\\WsdlToPhp\\PackageBase\\AbstractStructBase",
-        "struct_array_class": "\\WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
-        "struct_enum_class": "\\WsdlToPhp\\PackageBase\\AbstractStructEnumBase",
-        "soap_client_class": "\\WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
+        "struct_class": "WsdlToPhp\\PackageBase\\AbstractStructBase",
+        "struct_array_class": "WsdlToPhp\\PackageBase\\AbstractStructArrayBase",
+        "struct_enum_class": "WsdlToPhp\\PackageBase\\AbstractStructEnumBase",
+        "soap_client_class": "WsdlToPhp\\PackageBase\\AbstractSoapClientBase",
         "origin": "__ORIGIN__",
         "destination": "__DESTINATION__",
         "src_dirname": "src",

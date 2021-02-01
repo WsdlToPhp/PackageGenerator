@@ -4,7 +4,7 @@
 
 [![License](https://poser.pugx.org/wsdltophp/packagegenerator/license)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/packagegenerator/version.png)](https://packagist.org/packages/wsdltophp/packagegenerator)
-[![Build Status](https://api.travis-ci.org/WsdlToPhp/PackageGenerator.svg)](https://travis-ci.org/WsdlToPhp/PackageGenerator)
+[![Build Status](https://travis-ci.com/WsdlToPhp/PackageGenerator.svg)](https://travis-ci.com/github/WsdlToPhp/PackageGenerator)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/quality-score.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/packagegenerator/downloads)](https://packagist.org/packages/wsdltophp/packagegenerator)
@@ -24,16 +24,6 @@ composer require wsdltophp/packagegenerator --dev
 ```
 
 ### With command line:
-
-#### For PHP5
-
-```bash
-$ wget https://phar.wsdltophp.com/wsdltophp-php5.phar
-$ chmod +x wsdltophp-php5.phar
-$ mv wsdltophp-php5.phar /usr/local/bin/wsdltophp
-```
-
-#### For PHP7
 
 ```bash
 $ wget https://phar.wsdltophp.com/wsdltophp-php7.phar
@@ -104,10 +94,14 @@ _In order to see all the used options, just remove the `--force` argument._
 
 ## Versions
 
+### 4.0
+First released on xx xxx 2021, maintained until version 6.0 is released. Please read the [UPGRADE-4.0](UPGRADE-4.0.md) note in order to acknowledge the main changes.
+
 ### 3.0
 First released on 04 May 2018, maintained until version 5.0 is released. Please read the [UPGRADE-3.0](UPGRADE-3.0.md) note in order to acknowledge the main changes.
 
 ### 2.0
+Not maintained anymore since 2021/xx/xx
 First released on 29 Apr 2016, maintained until version 4.0 is released.
 
 ### 1.0
@@ -119,19 +113,13 @@ Not maintained anymore
 # launch all tests
 $ phpunit
 
-# launch a testsuite: command, configuration, utils, wsdlhandler, model, container, parser, file, packagegenerator
+# launch a testsuite: command, configuration, utils, model, container, parser, file, packagegenerator
 $ phpunit --testsuite=model
 ```
 
 ## Testing using [Docker](https://www.docker.com/)
 Thanks to the [Docker image](https://hub.docker.com/r/splitbrain/phpfarm) of [phpfarm](https://github.com/fpoirotte/phpfarm), tests can be run locally under *any* PHP version using the cli:
-- php-5.4
-- php-5.5
-- php-5.6
-- php-7.0
-- php-7.1
-- php-7.2
-- php-7.3
+- php-7.4
 
 First of all, you need to create your container which you can do using [docker-compose](https://docs.docker.com/compose/) by running the below command line from the root directory of the project:
 ```bash
@@ -141,9 +129,9 @@ $ docker-compose up -d --build
 You then have a container named `package_generator` in which you can run `composer` commands and `php cli` commands such as:
 ```bash
 # install deps in container (using update ensure it does use the composer.lock file if there is any)
-$ docker exec -it package_generator php-7.2 /usr/bin/composer update
+$ docker exec -it package_generator php-7.4 /usr/bin/composer update
 # run tests in container
-$ docker exec -it package_generator php-7.2 -dmemory_limit=-1 vendor/bin/phpunit
+$ docker exec -it package_generator php-7.4 -dmemory_limit=-1 vendor/bin/phpunit
 ```
 
 ## Contributing

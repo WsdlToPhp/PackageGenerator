@@ -1,68 +1,57 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
+use InvalidArgumentException;
 use Symfony\Component\Yaml\Parser;
 
 abstract class AbstractYamlReader
 {
-    /**
-     * @var AbstractYamlReader[]
-     */
-    protected static $instances;
-    /**
-     * Path to file to parse
-     * @var string
-     */
-    protected $filename;
-    /**
-     * Use singleton, instead of calling new Options(), use Options::instance()
-     * @param string $filename options's file to parse
-     */
-    abstract protected function __construct($filename);
-    /**
-     * @param string $filename
-     * @return mixed
-     */
-    protected function loadYaml($filename)
+    protected static array $instances;
+
+    protected string $filename;
+
+    abstract protected function __construct(string $filename);
+
+    abstract public static function getDefaultConfigurationPath(): string;
+
+    protected function loadYaml(string $filename)
     {
         $ymlParser = new Parser();
         return $ymlParser->parse(file_get_contents($filename));
     }
-    /**
-     * @throws \InvalidArgumentException
-     * @param string $filename options's file to parse
-     * @return AbstractYamlReader
-     */
-    public static function instance($filename = null)
+
+    public static function instance(?string $filename = null): self
     {
-        if (empty($filename) || !is_file($filename)) {
-            throw new \InvalidArgumentException(sprintf('Unable to locate file "%s"', $filename), __LINE__);
+        $loadFilename = empty($filename) ? static::getDefaultConfigurationPath() : $filename;
+        if (empty($loadFilename) || !is_file($loadFilename)) {
+            throw new InvalidArgumentException(sprintf('Unable to locate file "%s"', $loadFilename), __LINE__);
         }
-        $key = sprintf('%s_%s', get_called_class(), $filename);
+
+        $key = sprintf('%s_%s', get_called_class(), $loadFilename);
         if (!isset(self::$instances[$key])) {
-            self::$instances[$key] = new static($filename);
+            self::$instances[$key] = new static($loadFilename);
         }
+
         return self::$instances[$key];
     }
-    /**
-     * @param string $filename
-     * @param string $mainKey
-     * @throws \InvalidArgumentException
-     * @return array
-     */
-    protected function parseSimpleArray($filename, $mainKey)
+
+    protected function parseSimpleArray(string $filename, string $mainKey): array
     {
         $values = $this->loadYaml($filename);
         if (!array_key_exists($mainKey, $values)) {
-            throw new \InvalidArgumentException(sprintf('Unable to find section "%s" in "%s"', $mainKey, $filename), __LINE__);
+            throw new InvalidArgumentException(sprintf('Unable to find section "%s" in "%s"', $mainKey, $filename), __LINE__);
         }
+
         return $values[$mainKey];
     }
+
     /**
      * For tests purpose only!
      */
-    public static function resetInstances()
+    public static function resetInstances(): void
     {
         self::$instances = [];
     }

@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Container\PhpElement;
+
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 class Method extends AbstractPhpElement
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
-     * @return string
-     */
-    protected function objectClass()
+    protected function objectClass(): string
     {
-        return 'WsdlToPhp\PhpGenerator\Element\PhpMethod';
+        return PhpMethod::class;
     }
 }

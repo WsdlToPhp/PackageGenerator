@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Authenticate ServiceType
@@ -24,9 +26,9 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateAccount($authenticateAccount)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateAccount', array(
+            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateAccount', [
                 $authenticateAccount,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -45,9 +47,9 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateAdmin($authenticateAdmin)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateAdmin', array(
+            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateAdmin', [
                 $authenticateAdmin,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -66,9 +68,9 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateReseller($authenticateReseller)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateReseller', array(
+            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateReseller', [
                 $authenticateReseller,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -87,9 +89,9 @@ class ApiAuthenticate extends AbstractSoapClientBase
     public function AuthenticateCustomer($authenticateCustomer)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateCustomer', array(
+            $this->setResult($this->getSoapClient()->__soapCall('AuthenticateCustomer', [
                 $authenticateCustomer,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

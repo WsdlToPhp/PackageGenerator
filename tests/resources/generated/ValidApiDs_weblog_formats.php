@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\EnumType;
 
-use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
 /**
  * This class stands for ds_weblog_formats EnumType
@@ -40,13 +42,13 @@ class ApiDs_weblog_formats extends AbstractStructEnumBase
      * @uses self::VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER
      * @return string[]
      */
-    public static function getValidValues()
+    public static function getValidValues(): array
     {
-        return array(
+        return [
             self::VALUE_NCSA_COMMON_APACHE_DEFAULT,
             self::VALUE_NCSA_COMBINED_APACHE,
             self::VALUE_W_3_C_EXTENDED_IIS_4_0_AND_LATER,
             self::VALUE_MICROSOFT_IIS_LOG_IIS_3_AND_EARLIER,
-        );
+        ];
     }
 }

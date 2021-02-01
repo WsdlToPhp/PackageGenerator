@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for HouseProfileData StructType
@@ -613,8 +615,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_total, true), gettype($area_total)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_total) && mb_strlen(mb_substr($area_total, false !== mb_strpos($area_total, '.') ? mb_strpos($area_total, '.') + 1 : mb_strlen($area_total))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_total, true), mb_strlen(mb_substr($area_total, mb_strpos($area_total, '.') + 1))), __LINE__);
+        if (!is_null($area_total) && mb_strlen(mb_substr((string) $area_total, false !== mb_strpos((string) $area_total, '.') ? mb_strpos((string) $area_total, '.') + 1 : mb_strlen((string) $area_total))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_total, true), mb_strlen(mb_substr((string) $area_total, mb_strpos((string) $area_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($area_total) && mb_strlen(preg_replace('/(\D)/', '', $area_total)) > 15) {
@@ -643,8 +645,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_residential, true), gettype($area_residential)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_residential) && mb_strlen(mb_substr($area_residential, false !== mb_strpos($area_residential, '.') ? mb_strpos($area_residential, '.') + 1 : mb_strlen($area_residential))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_residential, true), mb_strlen(mb_substr($area_residential, mb_strpos($area_residential, '.') + 1))), __LINE__);
+        if (!is_null($area_residential) && mb_strlen(mb_substr((string) $area_residential, false !== mb_strpos((string) $area_residential, '.') ? mb_strpos((string) $area_residential, '.') + 1 : mb_strlen((string) $area_residential))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_residential, true), mb_strlen(mb_substr((string) $area_residential, mb_strpos((string) $area_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($area_residential) && mb_strlen(preg_replace('/(\D)/', '', $area_residential)) > 15) {
@@ -673,8 +675,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_non_residential, true), gettype($area_non_residential)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_non_residential) && mb_strlen(mb_substr($area_non_residential, false !== mb_strpos($area_non_residential, '.') ? mb_strpos($area_non_residential, '.') + 1 : mb_strlen($area_non_residential))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_non_residential, true), mb_strlen(mb_substr($area_non_residential, mb_strpos($area_non_residential, '.') + 1))), __LINE__);
+        if (!is_null($area_non_residential) && mb_strlen(mb_substr((string) $area_non_residential, false !== mb_strpos((string) $area_non_residential, '.') ? mb_strpos((string) $area_non_residential, '.') + 1 : mb_strlen((string) $area_non_residential))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_non_residential, true), mb_strlen(mb_substr((string) $area_non_residential, mb_strpos((string) $area_non_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($area_non_residential) && mb_strlen(preg_replace('/(\D)/', '', $area_non_residential)) > 15) {
@@ -954,8 +956,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_private, true), gettype($area_private)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_private) && mb_strlen(mb_substr($area_private, false !== mb_strpos($area_private, '.') ? mb_strpos($area_private, '.') + 1 : mb_strlen($area_private))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_private, true), mb_strlen(mb_substr($area_private, mb_strpos($area_private, '.') + 1))), __LINE__);
+        if (!is_null($area_private) && mb_strlen(mb_substr((string) $area_private, false !== mb_strpos((string) $area_private, '.') ? mb_strpos((string) $area_private, '.') + 1 : mb_strlen((string) $area_private))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_private, true), mb_strlen(mb_substr((string) $area_private, mb_strpos((string) $area_private, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($area_private) && mb_strlen(preg_replace('/(\D)/', '', $area_private)) > 15) {
@@ -984,8 +986,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_municipal, true), gettype($area_municipal)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_municipal) && mb_strlen(mb_substr($area_municipal, false !== mb_strpos($area_municipal, '.') ? mb_strpos($area_municipal, '.') + 1 : mb_strlen($area_municipal))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_municipal, true), mb_strlen(mb_substr($area_municipal, mb_strpos($area_municipal, '.') + 1))), __LINE__);
+        if (!is_null($area_municipal) && mb_strlen(mb_substr((string) $area_municipal, false !== mb_strpos((string) $area_municipal, '.') ? mb_strpos((string) $area_municipal, '.') + 1 : mb_strlen((string) $area_municipal))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_municipal, true), mb_strlen(mb_substr((string) $area_municipal, mb_strpos((string) $area_municipal, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($area_municipal) && mb_strlen(preg_replace('/(\D)/', '', $area_municipal)) > 15) {
@@ -1014,8 +1016,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_national, true), gettype($area_national)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_national) && mb_strlen(mb_substr($area_national, false !== mb_strpos($area_national, '.') ? mb_strpos($area_national, '.') + 1 : mb_strlen($area_national))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_national, true), mb_strlen(mb_substr($area_national, mb_strpos($area_national, '.') + 1))), __LINE__);
+        if (!is_null($area_national) && mb_strlen(mb_substr((string) $area_national, false !== mb_strpos((string) $area_national, '.') ? mb_strpos((string) $area_national, '.') + 1 : mb_strlen((string) $area_national))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_national, true), mb_strlen(mb_substr((string) $area_national, mb_strpos((string) $area_national, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($area_national) && mb_strlen(preg_replace('/(\D)/', '', $area_national)) > 15) {
@@ -1044,8 +1046,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_land, true), gettype($area_land)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_land) && mb_strlen(mb_substr($area_land, false !== mb_strpos($area_land, '.') ? mb_strpos($area_land, '.') + 1 : mb_strlen($area_land))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_land, true), mb_strlen(mb_substr($area_land, mb_strpos($area_land, '.') + 1))), __LINE__);
+        if (!is_null($area_land) && mb_strlen(mb_substr((string) $area_land, false !== mb_strpos((string) $area_land, '.') ? mb_strpos((string) $area_land, '.') + 1 : mb_strlen((string) $area_land))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_land, true), mb_strlen(mb_substr((string) $area_land, mb_strpos((string) $area_land, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($area_land) && mb_strlen(preg_replace('/(\D)/', '', $area_land)) > 15) {
@@ -1074,8 +1076,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_territory, true), gettype($area_territory)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($area_territory) && mb_strlen(mb_substr($area_territory, false !== mb_strpos($area_territory, '.') ? mb_strpos($area_territory, '.') + 1 : mb_strlen($area_territory))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_territory, true), mb_strlen(mb_substr($area_territory, mb_strpos($area_territory, '.') + 1))), __LINE__);
+        if (!is_null($area_territory) && mb_strlen(mb_substr((string) $area_territory, false !== mb_strpos((string) $area_territory, '.') ? mb_strpos((string) $area_territory, '.') + 1 : mb_strlen((string) $area_territory))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_territory, true), mb_strlen(mb_substr((string) $area_territory, mb_strpos((string) $area_territory, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($area_territory) && mb_strlen(preg_replace('/(\D)/', '', $area_territory)) > 15) {
@@ -1214,8 +1216,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($thermal_actual_expense, true), gettype($thermal_actual_expense)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($thermal_actual_expense) && mb_strlen(mb_substr($thermal_actual_expense, false !== mb_strpos($thermal_actual_expense, '.') ? mb_strpos($thermal_actual_expense, '.') + 1 : mb_strlen($thermal_actual_expense))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_actual_expense, true), mb_strlen(mb_substr($thermal_actual_expense, mb_strpos($thermal_actual_expense, '.') + 1))), __LINE__);
+        if (!is_null($thermal_actual_expense) && mb_strlen(mb_substr((string) $thermal_actual_expense, false !== mb_strpos((string) $thermal_actual_expense, '.') ? mb_strpos((string) $thermal_actual_expense, '.') + 1 : mb_strlen((string) $thermal_actual_expense))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_actual_expense, true), mb_strlen(mb_substr((string) $thermal_actual_expense, mb_strpos((string) $thermal_actual_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($thermal_actual_expense) && mb_strlen(preg_replace('/(\D)/', '', $thermal_actual_expense)) > 15) {
@@ -1244,8 +1246,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($thermal_normative_expense, true), gettype($thermal_normative_expense)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($thermal_normative_expense) && mb_strlen(mb_substr($thermal_normative_expense, false !== mb_strpos($thermal_normative_expense, '.') ? mb_strpos($thermal_normative_expense, '.') + 1 : mb_strlen($thermal_normative_expense))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_normative_expense, true), mb_strlen(mb_substr($thermal_normative_expense, mb_strpos($thermal_normative_expense, '.') + 1))), __LINE__);
+        if (!is_null($thermal_normative_expense) && mb_strlen(mb_substr((string) $thermal_normative_expense, false !== mb_strpos((string) $thermal_normative_expense, '.') ? mb_strpos((string) $thermal_normative_expense, '.') + 1 : mb_strlen((string) $thermal_normative_expense))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_normative_expense, true), mb_strlen(mb_substr((string) $thermal_normative_expense, mb_strpos((string) $thermal_normative_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($thermal_normative_expense) && mb_strlen(preg_replace('/(\D)/', '', $thermal_normative_expense)) > 15) {
@@ -1343,8 +1345,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_total, true), gettype($deterioration_total)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($deterioration_total) && mb_strlen(mb_substr($deterioration_total, false !== mb_strpos($deterioration_total, '.') ? mb_strpos($deterioration_total, '.') + 1 : mb_strlen($deterioration_total))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_total, true), mb_strlen(mb_substr($deterioration_total, mb_strpos($deterioration_total, '.') + 1))), __LINE__);
+        if (!is_null($deterioration_total) && mb_strlen(mb_substr((string) $deterioration_total, false !== mb_strpos((string) $deterioration_total, '.') ? mb_strpos((string) $deterioration_total, '.') + 1 : mb_strlen((string) $deterioration_total))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_total, true), mb_strlen(mb_substr((string) $deterioration_total, mb_strpos((string) $deterioration_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($deterioration_total) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_total)) > 15) {
@@ -1373,8 +1375,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_foundation, true), gettype($deterioration_foundation)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($deterioration_foundation) && mb_strlen(mb_substr($deterioration_foundation, false !== mb_strpos($deterioration_foundation, '.') ? mb_strpos($deterioration_foundation, '.') + 1 : mb_strlen($deterioration_foundation))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_foundation, true), mb_strlen(mb_substr($deterioration_foundation, mb_strpos($deterioration_foundation, '.') + 1))), __LINE__);
+        if (!is_null($deterioration_foundation) && mb_strlen(mb_substr((string) $deterioration_foundation, false !== mb_strpos((string) $deterioration_foundation, '.') ? mb_strpos((string) $deterioration_foundation, '.') + 1 : mb_strlen((string) $deterioration_foundation))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_foundation, true), mb_strlen(mb_substr((string) $deterioration_foundation, mb_strpos((string) $deterioration_foundation, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($deterioration_foundation) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_foundation)) > 15) {
@@ -1403,8 +1405,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_bearing_walls, true), gettype($deterioration_bearing_walls)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($deterioration_bearing_walls) && mb_strlen(mb_substr($deterioration_bearing_walls, false !== mb_strpos($deterioration_bearing_walls, '.') ? mb_strpos($deterioration_bearing_walls, '.') + 1 : mb_strlen($deterioration_bearing_walls))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_bearing_walls, true), mb_strlen(mb_substr($deterioration_bearing_walls, mb_strpos($deterioration_bearing_walls, '.') + 1))), __LINE__);
+        if (!is_null($deterioration_bearing_walls) && mb_strlen(mb_substr((string) $deterioration_bearing_walls, false !== mb_strpos((string) $deterioration_bearing_walls, '.') ? mb_strpos((string) $deterioration_bearing_walls, '.') + 1 : mb_strlen((string) $deterioration_bearing_walls))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_bearing_walls, true), mb_strlen(mb_substr((string) $deterioration_bearing_walls, mb_strpos((string) $deterioration_bearing_walls, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($deterioration_bearing_walls) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_bearing_walls)) > 15) {
@@ -1433,8 +1435,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($deterioration_floor, true), gettype($deterioration_floor)), __LINE__);
         }
         // validation for constraint: fractionDigits(2)
-        if (!is_null($deterioration_floor) && mb_strlen(mb_substr($deterioration_floor, false !== mb_strpos($deterioration_floor, '.') ? mb_strpos($deterioration_floor, '.') + 1 : mb_strlen($deterioration_floor))) > 2) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_floor, true), mb_strlen(mb_substr($deterioration_floor, mb_strpos($deterioration_floor, '.') + 1))), __LINE__);
+        if (!is_null($deterioration_floor) && mb_strlen(mb_substr((string) $deterioration_floor, false !== mb_strpos((string) $deterioration_floor, '.') ? mb_strpos((string) $deterioration_floor, '.') + 1 : mb_strlen((string) $deterioration_floor))) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_floor, true), mb_strlen(mb_substr((string) $deterioration_floor, mb_strpos((string) $deterioration_floor, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
         if (!is_null($deterioration_floor) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_floor)) > 15) {
@@ -1655,7 +1657,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLiftsForArrayConstraintsFromSetLifts(array $values = array())
+    public static function validateLiftsForArrayConstraintsFromSetLifts(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];

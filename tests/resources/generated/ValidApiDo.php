@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Do ServiceType
@@ -42,9 +44,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoMobileCheckoutPayment(\Api\StructType\ApiDoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoMobileCheckoutPayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoMobileCheckoutPayment', [
                 $doMobileCheckoutPaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -68,9 +70,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoExpressCheckoutPayment(\Api\StructType\ApiDoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoExpressCheckoutPayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoExpressCheckoutPayment', [
                 $doExpressCheckoutPaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -94,9 +96,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoUATPExpressCheckoutPayment(\Api\StructType\ApiDoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoUATPExpressCheckoutPayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoUATPExpressCheckoutPayment', [
                 $doUATPExpressCheckoutPaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -120,9 +122,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoDirectPayment(\Api\StructType\ApiDoDirectPaymentReq $doDirectPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoDirectPayment', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoDirectPayment', [
                 $doDirectPaymentRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -146,9 +148,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoCancel(\Api\StructType\ApiDoCancelReq $doCancelRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoCancel', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoCancel', [
                 $doCancelRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -172,9 +174,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoCapture(\Api\StructType\ApiDoCaptureReq $doCaptureRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoCapture', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoCapture', [
                 $doCaptureRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -198,9 +200,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoReauthorization(\Api\StructType\ApiDoReauthorizationReq $doReauthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoReauthorization', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoReauthorization', [
                 $doReauthorizationRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -224,9 +226,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoVoid(\Api\StructType\ApiDoVoidReq $doVoidRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoVoid', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoVoid', [
                 $doVoidRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -250,9 +252,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoAuthorization(\Api\StructType\ApiDoAuthorizationReq $doAuthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoAuthorization', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoAuthorization', [
                 $doAuthorizationRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -276,9 +278,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoUATPAuthorization(\Api\StructType\ApiDoUATPAuthorizationReq $doUATPAuthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoUATPAuthorization', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoUATPAuthorization', [
                 $doUATPAuthorizationRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -302,9 +304,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoReferenceTransaction(\Api\StructType\ApiDoReferenceTransactionReq $doReferenceTransactionRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoReferenceTransaction', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoReferenceTransaction', [
                 $doReferenceTransactionRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -328,9 +330,9 @@ class ApiDo extends AbstractSoapClientBase
     public function DoNonReferencedCredit(\Api\StructType\ApiDoNonReferencedCreditReq $doNonReferencedCreditRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('DoNonReferencedCredit', array(
+            $this->setResult($this->getSoapClient()->__soapCall('DoNonReferencedCredit', [
                 $doNonReferencedCreditRequest,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

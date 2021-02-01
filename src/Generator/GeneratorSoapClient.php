@@ -1,45 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Generator;
+
+use InvalidArgumentException;
+use SoapFault;
 
 class GeneratorSoapClient extends AbstractGeneratorAware
 {
-    /**
-     * @var SoapClient
-     */
-    protected $soapClient;
-    /**
-     * GeneratorSoapClient constructor.
-     * @param Generator $generator
-     * @see \WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware::__construct()
-     */
+    protected SoapClient $soapClient;
+
     public function __construct(Generator $generator)
     {
         parent::__construct($generator);
         $this->initSoapClient();
     }
-    /**
-     * @throws \InvalidArgumentException
-     * @return GeneratorSoapClient
-     */
-    public function initSoapClient()
+
+    public function initSoapClient(): self
     {
         try {
             $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_1));
-        } catch (\SoapFault $fault) {
+        } catch (SoapFault $fault) {
             try {
                 $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_2));
-            } catch (\SoapFault $fault) {
-                throw new \InvalidArgumentException(sprintf('Unable to load WSDL at "%s"!', $this->getGenerator()->getOptionOrigin()), __LINE__, $fault);
+            } catch (SoapFault $fault) {
+                throw new InvalidArgumentException(sprintf('Unable to load WSDL at "%s"!', $this->getGenerator()->getOptionOrigin()), __LINE__, $fault);
             }
         }
+
         return $this->setSoapClient($soapClient);
     }
-    /**
-     * @param int $soapVersion
-     * @return string[]
-     */
-    public function getSoapClientOptions($soapVersion)
+
+    public function getSoapClientOptions(int $soapVersion): array
     {
         return array_merge([
             SoapClient::WSDL_SOAP_VERSION => $soapVersion,
@@ -52,32 +45,28 @@ class GeneratorSoapClient extends AbstractGeneratorAware
             SoapClient::WSDL_PROXY_PASSWORD => $this->getGenerator()->getOptionProxyPassword(),
         ], $this->getGenerator()->getOptionSoapOptions());
     }
-    /**
-     * @param SoapClient $soapClient
-     * @return GeneratorSoapClient
-     */
-    public function setSoapClient(SoapClient $soapClient)
+
+    public function setSoapClient(SoapClient $soapClient): self
     {
         $this->soapClient = $soapClient;
+
         return $this;
     }
-    /**
-     * @return SoapClient
-     */
-    public function getSoapClient()
+
+    public function getSoapClient(): SoapClient
     {
         return $this->soapClient;
     }
-    /**
-     * @return array
-     */
-    public function getSoapClientStreamContextOptions()
+
+    public function getSoapClientStreamContextOptions(): array
     {
         $options = [];
         $soapClient = $this->getSoapClient();
+
         if ($soapClient instanceof SoapClient) {
             $options = $soapClient->getStreamContextOptions();
         }
+
         return $options;
     }
 }

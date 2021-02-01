@@ -20,7 +20,7 @@ reserved_keywords:
         - "getLastRequestHeaders"
         - "getLastResponseHeaders"
         - "getLastHeaders"
-        - "getFormatedXml"
+        - "getFormattedXml"
         - "convertStringHeadersToArray"
         - "setSoapHeader"
         - "setHttpHeader"

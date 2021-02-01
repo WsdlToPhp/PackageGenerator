@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Login ServiceType
@@ -27,10 +29,10 @@ class ApiLogin extends AbstractSoapClientBase
     public function Login($login, $password)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('Login', array(
+            $this->setResult($this->getSoapClient()->__soapCall('Login', [
                 $login,
                 $password,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

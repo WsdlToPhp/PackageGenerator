@@ -1,30 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class StructArrayReservedMethod extends StructReservedMethod
+final class StructArrayReservedMethod extends AbstractReservedWord
 {
-    /**
-     * @param string $filename
-     */
-    protected function __construct($filename)
-    {
-        parent::__construct($filename);
-        $this->parseReservedKeywords(parent::getDefaultConfigurationPath());
-    }
-    /**
-     * @throws \InvalidArgumentException
-     * @param string $filename options's file to parse
-     * @return StructArrayReservedMethod
-     */
-    public static function instance($filename = null)
-    {
-        return parent::instance(empty($filename) ? self::getDefaultArrayConfigurationPath() : $filename);
-    }
-    /**
-     * @return string
-     */
-    public static function getDefaultArrayConfigurationPath()
+    public static function getDefaultConfigurationPath(): string
     {
         return __DIR__ . '/../resources/config/struct_array_reserved_keywords.yml';
     }

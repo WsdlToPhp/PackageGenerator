@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
@@ -7,21 +9,16 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 
-class Utils
+final class Utils
 {
-    /**
-     * @param PhpAnnotationBlock $block
-     * @param AbstractModel $model
-     * @param array $ignoreMeta
-     */
-    public static function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model, array $ignoreMeta = [])
+    public static function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model, array $ignoreMeta = []): void
     {
         $validMeta = self::getValidMetaValues($model, $ignoreMeta);
         if (!empty($validMeta)) {
             /**
              * First line is the "The {propertyName}"
              */
-            if (count($block->getChildren()) === 1) {
+            if (1 === count($block->getChildren())) {
                 $block->addChild('Meta information extracted from the WSDL');
             }
             foreach ($validMeta as $meta) {
@@ -29,12 +26,8 @@ class Utils
             }
         }
     }
-    /**
-     * @param AbstractModel $model
-     * @param array $ignoreMeta
-     * @return string[]
-     */
-    public static function getValidMetaValues(AbstractModel $model, array $ignoreMeta = [])
+
+    public static function getValidMetaValues(AbstractModel $model, array $ignoreMeta = []): array
     {
         $meta = $model->getMeta();
         $validMeta = [];
@@ -46,23 +39,22 @@ class Utils
                 }
             }
         }
+
         return $validMeta;
     }
-    /**
-     * @param string $metaName
-     * @param mixed $metaValue
-     * @return string|null
-     */
-    public static function getMetaValueAnnotation($metaName, $metaValue)
+
+    public static function getMetaValueAnnotation(string $metaName, $metaValue): ?string
     {
         $meta = null;
         if (is_array($metaValue)) {
             $metaValue = implode(' | ', array_unique($metaValue));
         }
-        $metaValue = GeneratorUtils::cleanComment($metaValue, ', ', mb_stripos($metaName, 'SOAPHeader') === false);
+
+        $metaValue = GeneratorUtils::cleanComment($metaValue, ', ', false === mb_stripos($metaName, 'SOAPHeader'));
         if (is_scalar($metaValue)) {
             $meta = sprintf("\t- %s: %s", $metaName, $metaValue);
         }
+
         return $meta;
     }
 }

@@ -1,54 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-class ChoiceRule extends AbstractRule
+final class ChoiceRule extends AbstractRule
 {
-
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'choice';
     }
 
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function testConditions($parameterName, $value, $itemType = false)
+    public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
         $test = '';
         if (is_array($value) && 0 < count($value)) {
             $this->addValidationMethod($parameterName, $value);
             $test = sprintf('\'\' !== (%s = self::%s($%s))', self::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
         }
+
         return $test;
     }
 
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string
     {
         return self::getErrorMessageVariableName($parameterName);
     }
 
-    /**
-     * @param string $parameterName
-     * @param string[] $choiceNames
-     */
-    protected function addValidationMethod($parameterName, array $choiceNames)
+    protected function addValidationMethod(string $parameterName, array $choiceNames)
     {
         $attribute = $this->getAttribute();
         $struct = $attribute->getOwner();
@@ -90,20 +73,12 @@ class ChoiceRule extends AbstractRule
         $this->getMethods()->add($method);
     }
 
-    /**
-     * @param string $parameterName
-     * @return string
-     */
-    protected function getValidationMethodName($parameterName)
+    protected function getValidationMethodName(string $parameterName): string
     {
         return sprintf('validate%sForChoiceConstraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
     }
 
-    /**
-     * @param string $parameterName
-     * @return string
-     */
-    public static function getErrorMessageVariableName($parameterName)
+    public static function getErrorMessageVariableName(string $parameterName): string
     {
         return sprintf('$%sChoiceErrorMessage', $parameterName);
     }

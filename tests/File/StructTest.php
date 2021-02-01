@@ -1,34 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 
-class StructTest extends AbstractFile
+final class StructTest extends AbstractFile
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $instance = self::bingGeneratorInstance();
         $struct = new StructFile($instance, 'Foo');
         $struct->setModel(new EmptyModel($instance, 'Foo'));
     }
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+
     public function testExceptionOnWrite()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $file = new StructFile(self::bingGeneratorInstance(), 'foo');
 
         $file->write();
     }
-    /**
-     *
-     */
+
     public function testGetFileName()
     {
         $model = new StructModel(self::bingGeneratorInstance(), 'Foo');
@@ -37,9 +37,7 @@ class StructTest extends AbstractFile
 
         $this->assertSame(sprintf('%s%s%s/%s.php', self::getTestDirectory(), $model->getGenerator()->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart(), $model->getPackagedName(false)), $file->getFileName());
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchStructQuery()
     {
         $generator = self::bingGeneratorInstance();
@@ -53,9 +51,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find Query struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchStructVideoRequest()
     {
         $generator = self::bingGeneratorInstance();
@@ -69,9 +65,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find VideoRequest struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchStructSearchRequest()
     {
         $generator = self::bingGeneratorInstance();
@@ -85,9 +79,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find SearchRequest struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteActonStructItem()
     {
         $generator = self::actonGeneratorInstance();
@@ -101,9 +93,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find Item struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteOdigeoStructFareItinerary()
     {
         $generator = self::odigeoGeneratorInstance();
@@ -117,9 +107,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find fareItinerary struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingStructNewsArticle()
     {
         $generator = self::bingGeneratorInstance();
@@ -134,9 +122,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find NewsArticle struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteWcfStructOffer()
     {
         $generator = self::wcfGeneratorInstance();
@@ -150,9 +136,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find offer struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteYandexDirectApiStructAddRequest()
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
@@ -166,9 +150,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find AddRequest struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteYandexDirectApiStructAddRequestWithRepeatedMetaValueMaxOccurs()
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
@@ -192,9 +174,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find AddRequest struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteYandexDirectApiStructAdGroupsSelectionCriteria()
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
@@ -208,9 +188,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find AdGroupsSelectionCriteria struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteDocDataPaymentsStructShopper()
     {
         $generator = self::docDataPaymentsGeneratorInstance(true);
@@ -224,9 +202,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find shopper struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteDocDataPaymentsStructExpiryDate()
     {
         $generator = self::docDataPaymentsGeneratorInstance(true);
@@ -240,9 +216,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find expiryDate struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteDeliveryServiceStructExpiryDate()
     {
         $generator = self::deliveryServiceInstance();
@@ -256,9 +230,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find АдресРФ struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteReformaStructHouseProfileData()
     {
         $generator = self::reformaGeneratorInstance(true);
@@ -272,9 +244,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find HouseProfileData struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testOrderContractStructAddressDelivery_Type()
     {
         $generator = self::orderContractInstance(true);
@@ -288,9 +258,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find AddressDelivery_Type struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();
@@ -304,9 +272,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find NewsArticle struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteYandexDirectApiStructCampaignsCompaignGetItem()
     {
         $generator = self::yandexDirectApiCampaignsGeneratorInstance(true);
@@ -321,9 +287,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find CampaignGetItem struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteYandexDirectApiStructLiveBannerInfo()
     {
         $generator = self::yandexDirectApiLiveGeneratorInstance(true);
@@ -338,9 +302,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find BannerInfo struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWritePayPalApiStructSetExpressCheckoutRequestDetailsType()
     {
         $generator = self::payPalGeneratorInstance(true);
@@ -355,9 +317,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find SetExpressCheckoutRequestDetailsType struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteWhlHotelReservationType()
     {
         $generator = self::whlInstance(true);
@@ -372,9 +332,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find HotelReservationType struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteWhlTaxType()
     {
         $generator = self::whlInstance();
@@ -389,9 +347,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find TaxType struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteWhlPaymentCardType()
     {
         $generator = self::whlInstance();
@@ -406,9 +362,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find PaymentCardType struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteWhlAddressType()
     {
         $generator = self::whlInstance();
@@ -423,9 +377,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find AddressType struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteWhlUniqueID_Type()
     {
         $generator = self::whlInstance();
@@ -440,9 +392,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find UniqueID_Type struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testStructWithIdenticalPropertiesDifferentByCase()
     {
         $generator = self::bingGeneratorInstance();
@@ -457,9 +407,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find Query struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testStructResultFromUnitTestsWithBooleanAttribute()
     {
         $generator = self::unitTestsInstance();
@@ -473,9 +421,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find Result struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteDeliveryDetails()
     {
         $generator = self::deliveryServiceInstance();
@@ -490,9 +436,7 @@ class StructTest extends AbstractFile
             $this->fail('Unable to find details struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteEwsStructWorkingPeriod()
     {
         $generator = self::ewsInstance();
@@ -506,9 +450,7 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find WorkingPeriod struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteEwsStructProposeNewTimeTypeWithNoConstructor()
     {
         $generator = self::ewsInstance();
@@ -522,9 +464,7 @@ class StructTest extends AbstractFile
             $this->assertFalse(true, 'Unable to find ProposeNewTimeType struct for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteVehicleSelectionStructFieldString1000()
     {
         $generator = self::vehicleSelectionPackGeneratorInstance();

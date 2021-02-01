@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Generator;
 
+use InvalidArgumentException;
+use JsonSerializable;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
@@ -12,169 +16,131 @@ use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
 
-class Generator implements \JsonSerializable
+class Generator implements JsonSerializable
 {
-    /**
-     * Wsdl
-     * @var Wsdl
-     */
-    protected $wsdl;
-    /**
-     * @var GeneratorOptions
-     */
-    protected $options;
-    /**
-     * Used parsers
-     * @var GeneratorParsers
-     */
-    protected $parsers;
-    /**
-     * Used files
-     * @var GeneratorFiles
-     */
-    protected $files;
-    /**
-     * Used containers
-     * @var GeneratorContainers
-     */
-    protected $containers;
-    /**
-     * Used SoapClient
-     * @var GeneratorSoapClient
-     */
-    protected $soapClient;
-    /**
-     * Constructor
-     * @param GeneratorOptions $options
-     */
+    protected Wsdl $wsdl;
+
+    protected GeneratorOptions $options;
+
+    protected GeneratorParsers $parsers;
+
+    protected GeneratorFiles $files;
+
+    protected GeneratorContainers $containers;
+
+    protected GeneratorSoapClient $soapClient;
+
     public function __construct(GeneratorOptions $options)
     {
-        $this->setOptions($options)->initialize();
+        $this
+            ->setOptions($options)
+            ->initialize();
     }
-    /**
-     * @return Generator
-     */
-    protected function initialize()
+
+    protected function initialize(): self
     {
-        return $this->initContainers()
+        return $this
+            ->initContainers()
             ->initParsers()
             ->initFiles()
             ->initSoapClient()
             ->initWsdl();
     }
-    /**
-     * @throws \InvalidArgumentException
-     * @return Generator
-     */
-    protected function initSoapClient()
+
+    protected function initSoapClient(): self
     {
         if (!isset($this->soapClient)) {
             $this->soapClient = new GeneratorSoapClient($this);
         }
+
         return $this;
     }
-    /**
-     * @return Generator
-     */
-    protected function initContainers()
+
+    protected function initContainers(): self
     {
         if (!isset($this->containers)) {
             $this->containers = new GeneratorContainers($this);
         }
+
         return $this;
     }
-    /**
-     * @return Generator
-     */
-    protected function initParsers()
+
+    protected function initParsers(): self
     {
         if (!isset($this->parsers)) {
             $this->parsers = new GeneratorParsers($this);
         }
+
         return $this;
     }
-    /**
-     * @return GeneratorParsers
-     */
-    public function getParsers()
+
+    public function getParsers(): GeneratorParsers
     {
         return $this->parsers;
     }
-    /**
-     * @return Generator
-     */
-    protected function initFiles()
+
+    protected function initFiles(): self
     {
         if (!isset($this->files)) {
             $this->files = new GeneratorFiles($this);
         }
+
         return $this;
     }
-    /**
-     * @return GeneratorFiles
-     */
-    public function getFiles()
+
+    public function getFiles(): GeneratorFiles
     {
         return $this->files;
     }
-    /**
-     * @throws \InvalidArgumentException
-     * @return Generator
-     */
-    protected function initDirectory()
+
+    protected function initDirectory(): self
     {
         Utils::createDirectory($this->getOptions()->getDestination());
         if (!is_writable($this->getOptionDestination())) {
-            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists, its creation has been impossible or it\'s not writable', $this->getOptionDestination()), __LINE__);
+            throw new InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists, its creation has been impossible or it\'s not writable', $this->getOptionDestination()), __LINE__);
         }
+
         return $this;
     }
-    /**
-     * @return Generator
-     */
-    protected function initWsdl()
+
+    protected function initWsdl(): self
     {
         $this->setWsdl(new Wsdl($this, $this->getOptionOrigin(), $this->getUrlContent($this->getOptionOrigin())));
+
         return $this;
     }
-    /**
-     * @return Generator
-     */
-    protected function doSanityChecks()
+
+    protected function doSanityChecks(): self
     {
         $destination = $this->getOptionDestination();
         if (empty($destination)) {
-            throw new \InvalidArgumentException('Package\'s destination must be defined', __LINE__);
+            throw new InvalidArgumentException('Package\'s destination must be defined', __LINE__);
         }
+
         $composerName = $this->getOptionComposerName();
         if ($this->getOptionStandalone() && empty($composerName)) {
-            throw new \InvalidArgumentException('Package\'s composer name must be defined', __LINE__);
+            throw new InvalidArgumentException('Package\'s composer name must be defined', __LINE__);
         }
+
         return $this;
     }
-    /**
-     * @return Generator
-     */
-    protected function doParse()
+
+    protected function doParse(): self
     {
         $this->parsers->doParse();
+
         return $this;
     }
-    /**
-     * @return Generator
-     */
-    protected function doGenerate()
+
+    protected function doGenerate(): self
     {
         $this->files->doGenerate();
+
         return $this;
     }
-    /**
-     * Generates all classes based on options
-     * @return Generator
-     */
-    public function generatePackage()
+
+    public function generatePackage(): self
     {
         return $this
             ->doSanityChecks()
@@ -182,63 +148,42 @@ class Generator implements \JsonSerializable
             ->initDirectory()
             ->doGenerate();
     }
-    /**
-     * Only parses what has to be parsed, called before actually generating the package
-     * @return Generator
-     */
-    public function parse()
+
+    public function parse(): self
     {
         return $this->doParse();
     }
+
     /**
      * Gets the struct by its name
      * Starting from issue #157, we know call getVirtual secondly as structs are now betterly parsed and so is their inheritance/type is detected
-     * @uses Generator::getStructs()
      * @param string $structName the original struct name
      * @return Struct|null
+     * @uses Generator::getStructs()
      */
-    public function getStructByName($structName)
+    public function getStructByName(string $structName): ?Struct
     {
         $struct = $this->getStructs()->getStructByName($structName);
+
         return $struct ? $struct : $this->getStructs()->getVirtual($structName);
     }
-    /**
-     * Gets the struct by its name and type
-     * @uses Generator::getStructs()
-     * @param string $structName the original struct name
-     * @param string $type the original struct type
-     * @return Struct|null
-     */
-    public function getStructByNameAndType($structName, $type)
+
+    public function getStructByNameAndType(string $structName, string $type): ?Struct
     {
         return $this->getStructs()->getStructByNameAndType($structName, $type);
     }
-    /**
-     * Gets a service by its name
-     * @param string $serviceName the service name
-     * @return Service|null
-     */
-    public function getService($serviceName)
+
+    public function getService(string $serviceName): ?Service
     {
         return $this->getServices()->getServiceByName($serviceName);
     }
-    /**
-     * Returns the method
-     * @uses Generator::getServiceName()
-     * @uses Generator::getService()
-     * @uses Service::getMethod()
-     * @param string $methodName the original function name
-     * @return Method|null
-     */
-    public function getServiceMethod($methodName)
+
+    public function getServiceMethod(string $methodName): ?Method
     {
         return $this->getService($this->getServiceName($methodName)) instanceof Service ? $this->getService($this->getServiceName($methodName))->getMethod($methodName) : null;
     }
-    /**
-     * @param bool $usingGatherMethods allows to gather methods within a single service if gather_methods options is set to true
-     * @return ServiceContainer
-     */
-    public function getServices($usingGatherMethods = false)
+
+    public function getServices(bool $usingGatherMethods = false): ServiceContainer
     {
         $services = $this->containers->getServices();
         if ($usingGatherMethods && GeneratorOptions::VALUE_NONE === $this->getOptionGatherMethods()) {
@@ -252,12 +197,11 @@ class Generator implements \JsonSerializable
             $serviceContainer->add($serviceModel);
             $services = $serviceContainer;
         }
+
         return $services;
     }
-    /**
-     * @return StructContainer
-     */
-    public function getStructs()
+
+    public function getStructs(): StructContainer
     {
         return $this->containers->getStructs();
     }
@@ -664,7 +608,7 @@ class Generator implements \JsonSerializable
         if (!empty($optionDestination)) {
             $this->options->setDestination(rtrim($optionDestination, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR);
         } else {
-            throw new \InvalidArgumentException('Package\'s destination can\'t be empty', __LINE__);
+            throw new InvalidArgumentException('Package\'s destination can\'t be empty', __LINE__);
         }
         return $this;
     }
@@ -725,7 +669,7 @@ class Generator implements \JsonSerializable
         if (!empty($optionComposerName)) {
             $this->options->setComposerName($optionComposerName);
         } else {
-            throw new \InvalidArgumentException('Package\'s composer name can\'t be empty', __LINE__);
+            throw new InvalidArgumentException('Package\'s composer name can\'t be empty', __LINE__);
         }
         return $this;
     }
@@ -855,139 +799,100 @@ class Generator implements \JsonSerializable
         $this->options->setSchemasFolder($optionSchemasFolder);
         return $this;
     }
-    /**
-     * Gets the optionXsdTypesPath value
-     * @return string
-     */
-    public function getOptionXsdTypesPath()
+
+    public function getOptionXsdTypesPath(): string
     {
         return $this->options->getXsdTypesPath();
     }
-    /**
-     * Sets the optionXsdTypesPath value
-     * @param string $xsdTypesPath
-     * @return Generator
-     */
-    public function setOptionXsdTypesPath($xsdTypesPath)
+
+    public function setOptionXsdTypesPath(string $xsdTypesPath): self
     {
         $this->options->setXsdTypesPath($xsdTypesPath);
+
         return $this;
     }
-    /**
-     * Gets the WSDL
-     * @return Wsdl|null
-     */
-    public function getWsdl()
+
+    public function getWsdl(): ?Wsdl
     {
         return $this->wsdl;
     }
-    /**
-     * Sets the WSDLs
-     * @param Wsdl $wsdl
-     * @return Generator
-     */
-    protected function setWsdl(Wsdl $wsdl)
+
+    protected function setWsdl(Wsdl $wsdl): self
     {
         $this->wsdl = $wsdl;
+
         return $this;
     }
-    /**
-     * Adds Wsdl location
-     * @param Wsdl $wsdl
-     * @param string $schemaLocation
-     * @return Generator
-     */
-    public function addSchemaToWsdl(Wsdl $wsdl, $schemaLocation)
+
+    public function addSchemaToWsdl(Wsdl $wsdl, string $schemaLocation): self
     {
-        if (!empty($schemaLocation) && $wsdl->getContent() instanceof WsdlDocument && $wsdl->getContent()->getExternalSchema($schemaLocation) === null) {
-            $wsdl->getContent()->addExternalSchema(new Schema($wsdl->getGenerator(), $schemaLocation, $this->getUrlContent($schemaLocation)));
+        if (!empty($schemaLocation) && !$wsdl->hasSchema($schemaLocation)) {
+            $wsdl->addSchema(new Schema($wsdl->getGenerator(), $schemaLocation, $this->getUrlContent($schemaLocation)));
         }
+
         return $this;
     }
-    /**
-     * Gets gather name class
-     * @param AbstractModel $model the model for which we generate the folder
-     * @return string
-     */
-    protected function getGather(AbstractModel $model)
+
+    protected function getGather(AbstractModel $model): string
     {
         return Utils::getPart($this->getOptionGatherMethods(), $model->getCleanName());
     }
-    /**
-     * Returns the service name associated to the method/operation name in order to gather them in one service class
-     * @param string $methodName original operation/method name
-     * @return string
-     */
-    public function getServiceName($methodName)
+
+    public function getServiceName(string $methodName): string
     {
         return ucfirst($this->getGather(new EmptyModel($this, $methodName)));
     }
-    /**
-     * @param GeneratorOptions $options
-     * @return Generator
-     */
-    protected function setOptions(GeneratorOptions $options = null)
+
+    protected function setOptions(GeneratorOptions $options): self
     {
         $this->options = $options;
+
         return $this;
     }
-    /**
-     * @return GeneratorOptions
-     */
-    public function getOptions()
+
+    public function getOptions(): ?GeneratorOptions
     {
         return $this->options;
     }
-    /**
-     * @return GeneratorSoapClient
-     */
-    public function getSoapClient()
+
+    public function getSoapClient(): GeneratorSoapClient
     {
         return $this->soapClient;
     }
-    /**
-     * @param string $url
-     * @return string
-     */
-    public function getUrlContent($url)
+
+    public function getUrlContent(string $url): ?string
     {
         if (mb_strpos($url, '://') !== false) {
             $content = Utils::getContentFromUrl($url, $this->getOptionBasicLogin(), $this->getOptionBasicPassword(), $this->getOptionProxyHost(), $this->getOptionProxyPort(), $this->getOptionProxyLogin(), $this->getOptionProxyPassword(), $this->getSoapClient()->getSoapClientStreamContextOptions());
-            if ($this->getOptionSchemasSave() === true) {
+            if ($this->getOptionSchemasSave()) {
                 Utils::saveSchemas($this->getOptionDestination(), $this->getOptionSchemasFolder(), $url, $content);
             }
+
             return $content;
         } elseif (is_file($url)) {
             return file_get_contents($url);
         }
+
         return null;
     }
-    /**
-     * @return GeneratorContainers
-     */
-    public function getContainers()
+
+    public function getContainers(): GeneratorContainers
     {
         return $this->containers;
     }
-    /**
-     * @return array
-     */
-    public function jsonSerialize()
+
+    public function jsonSerialize(): array
     {
         return [
             'containers' => $this->containers,
             'options' => $this->options,
         ];
     }
-    /**
-     * @param string $json
-     * @throws \InvalidArgumentException
-     * @return Generator
-     */
-    public static function instanceFromSerializedJson($json)
+
+    public static function instanceFromSerializedJson(string $json): Generator
     {
         $decodedJson = json_decode($json, true);
-        if (json_last_error() === JSON_ERROR_NONE) {
+        if (JSON_ERROR_NONE === json_last_error()) {
             // load options first
             $options = GeneratorOptions::instance();
             foreach ($decodedJson['options'] as $name => $value) {
@@ -1004,16 +909,13 @@ class Generator implements \JsonSerializable
                 $instance->getContainers()->getStructs()->add(self::getModelInstanceFromJsonArrayEntry($instance, $struct));
             }
         } else {
-            throw new \InvalidArgumentException(sprintf('Json is invalid, please check error %s', json_last_error()));
+            throw new InvalidArgumentException(sprintf('Json is invalid, please check error %s', json_last_error()));
         }
+
         return $instance;
     }
-    /**
-     * @param Generator $generator
-     * @param array $jsonArrayEntry
-     * @return AbstractModel
-     */
-    protected static function getModelInstanceFromJsonArrayEntry(Generator $generator, array $jsonArrayEntry)
+
+    protected static function getModelInstanceFromJsonArrayEntry(Generator $generator, array $jsonArrayEntry): AbstractModel
     {
         return AbstractModel::instanceFromSerializedJson($generator, $jsonArrayEntry);
     }

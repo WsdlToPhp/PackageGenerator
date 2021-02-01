@@ -1,32 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Container;
 
 use WsdlToPhp\PackageGenerator\Parser\AbstractParser;
 
 class Parser extends AbstractObjectContainer
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer::objectClass()
-     * @return string
-     */
-    protected function objectClass()
+    protected function objectClass(): string
     {
-        return '\WsdlToPhp\PackageGenerator\Parser\AbstractParser';
+        return AbstractParser::class;
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer::objectProperty()
-     * @return string
-     */
-    protected function objectProperty()
+
+    protected function objectProperty(): string
     {
         return self::PROPERTY_NAME;
     }
-    /**
-     * @param string $name
-     * @return AbstractParser|null
-     */
-    public function getParserByName($name)
+
+    public function getParserByName(string $name): ?AbstractParser
     {
         return $this->get($name);
     }

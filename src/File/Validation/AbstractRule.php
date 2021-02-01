@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -10,33 +12,16 @@ use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 
 abstract class AbstractRule
 {
+    public const VALIDATION_RULE_COMMENT_SENTENCE = 'validation for constraint:';
 
-    /**
-     * @var string
-     */
-    const VALIDATION_RULE_COMMENT_SENTENCE = 'validation for constraint:';
+    protected Rules $rules;
 
-    /**
-     * @var Rules
-     */
-    protected $rules;
-
-    /**
-     * @param Rules $rules
-     */
     public function __construct(Rules $rules)
     {
         $this->rules = $rules;
     }
 
-    /**
-     * This method has to add the validation rule to the method's body
-     * @param string $parameterName
-     * @param string|string[] $value
-     * @param bool $itemType
-     * @return AbstractRule
-     */
-    final public function applyRule($parameterName, $value, $itemType = false)
+    final public function applyRule(string $parameterName, $value, bool $itemType = false): void
     {
         $test = $this->testConditions($parameterName, $value, $itemType);
         if (!empty($test)) {
@@ -52,83 +37,43 @@ abstract class AbstractRule
         unset($test);
     }
 
-    /**
-     * @param string|string[] $value
-     * @return string
-     */
-    final public function validationRuleComment($value)
+    final public function validationRuleComment($value): string
     {
         return sprintf('// %s %s%s', self::VALIDATION_RULE_COMMENT_SENTENCE, $this->name(), is_array($value) ? sprintf('(%s)', implode(', ', array_unique($value))) : (empty($value) ? '' : sprintf('(%s)', $value)));
     }
 
-    /**
-     * Name of the validation rule
-     * @return string
-     */
-    abstract public function name();
+    abstract public function name(): string;
 
-    /**
-     * Inline tests of the validation rule
-     * @param string $parameterName
-     * @param string|string[] $value
-     * @param bool $itemType
-     * @return string
-     */
-    abstract public function testConditions($parameterName, $value, $itemType = false);
+    abstract public function testConditions(string $parameterName, $value, bool $itemType = false): string;
 
-    /**
-     * Message when test fails in order to throw the exception
-     * @param string $parameterName
-     * @param string|string[] $value
-     * @param bool $itemType
-     * @return string
-     */
-    abstract public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false);
+    abstract public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string;
 
-    /**
-     * @return Rules
-     */
-    public function getRules()
+    public function getRules(): Rules
     {
         return $this->rules;
     }
 
-    /**
-     * @return PhpMethod
-     */
-    public function getMethod()
+    public function getMethod(): PhpMethod
     {
         return $this->rules->getMethod();
     }
 
-    /**
-     * @return MethodContainer
-     */
-    public function getMethods()
+    public function getMethods(): MethodContainer
     {
         return $this->rules->getMethods();
     }
 
-    /**
-     * @return AbstractModelFile
-     */
-    public function getFile()
+    public function getFile(): AbstractModelFile
     {
         return $this->rules->getFile();
     }
 
-    /**
-     * @return StructAttributeModel
-     */
-    public function getAttribute()
+    public function getAttribute(): StructAttributeModel
     {
         return $this->rules->getAttribute();
     }
 
-    /**
-     * @return Generator
-     */
-    public function getGenerator()
+    public function getGenerator(): Generator
     {
         return $this->rules->getGenerator();
     }

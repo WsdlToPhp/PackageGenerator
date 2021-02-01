@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for SetExpressCheckoutRequestDetailsType StructType
@@ -1495,7 +1497,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails(array $values = array())
+    public static function validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -1555,7 +1557,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePromoCodesForArrayConstraintsFromSetPromoCodes(array $values = array())
+    public static function validatePromoCodesForArrayConstraintsFromSetPromoCodes(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -1811,7 +1813,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods(array $values = array())
+    public static function validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -1889,7 +1891,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails(array $values = array())
+    public static function validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -1957,7 +1959,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions(array $values = array())
+    public static function validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -2255,7 +2257,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice(array $values = array())
+    public static function validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -2362,7 +2364,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIncentivesForArrayConstraintsFromSetIncentives(array $values = array())
+    public static function validateIncentivesForArrayConstraintsFromSetIncentives(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];
@@ -2516,7 +2518,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets(array $values = array())
+    public static function validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets(array $values = array()): string
     {
         $message = '';
         $invalidValues = [];

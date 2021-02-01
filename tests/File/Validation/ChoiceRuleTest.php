@@ -1,19 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class ChoiceRuleTest extends AbstractRuleTest
+use InvalidArgumentException;
+
+final class ChoiceRuleTest extends AbstractRuleTest
 {
 
     /**
      * - choice: StringValue | BinaryValue
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The property StringValue can't be set as the property BinaryValue is already set. Only one property must be set among these properties: StringValue, BinaryValue.
      */
     public function testSetStringValueAfterBinaryValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The property StringValue can\'t be set as the property BinaryValue is already set. Only one property must be set among these properties: StringValue, BinaryValue.');
+
         $instance = self::getQueueMessageAttributeValueInstance();
 
         $instance

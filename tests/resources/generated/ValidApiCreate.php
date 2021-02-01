@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Create ServiceType
@@ -30,9 +32,9 @@ class ApiCreate extends AbstractSoapClientBase
     public function CreateQueue(\Api\StructType\ApiCreateQueue $body)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('CreateQueue', array(
+            $this->setResult($this->getSoapClient()->__soapCall('CreateQueue', [
                 $body,
-            ), array(), array(), $this->outputHeaders));
+            ], [], [], $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

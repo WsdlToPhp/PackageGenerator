@@ -1,27 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
-class ServiceTest extends AbstractFile
+final class ServiceTest extends AbstractFile
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testSetModelGoodNameTooManyAttributesWithException()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $instance = self::bingGeneratorInstance();
         $service = new ServiceFile($instance, 'Foo');
         $service->setModel(new EmptyModel($instance, 'Foo'));
     }
-    /**
-     *
-     */
+
     public function testWriteActonServiceDeleteService()
     {
         $generator = self::actonGeneratorInstance();
@@ -35,9 +35,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Delete service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchSearchService()
     {
         $generator = self::bingGeneratorInstance();
@@ -51,9 +49,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Search service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchSearchServiceMyProjectApiProject()
     {
         $generator = self::bingGeneratorInstance();
@@ -71,9 +67,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Search service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingSearchSearchServiceBingApi()
     {
         $generator = self::bingGeneratorInstance();
@@ -90,9 +84,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Search service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWritePortalServiceAuthenticate()
     {
         $generator = self::portalGeneratorInstance();
@@ -106,9 +98,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Authenticate service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteReformServiceLogin()
     {
         $generator = self::reformaGeneratorInstance();
@@ -122,9 +112,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Login service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteQueueServiceCreate()
     {
         $generator = self::queueGeneratorInstance();
@@ -138,9 +126,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Create service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteOmnitureServiceSaint()
     {
         $generator = self::omnitureGeneratorInstance();
@@ -154,9 +140,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Saint service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWritePayPalServiceDo()
     {
         $generator = self::payPalGeneratorInstance(false, GeneratorOptions::VALUE_START);
@@ -170,9 +154,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Do service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWritePayPalServiceDoWithoutPrefix()
     {
         $generator = self::payPalGeneratorInstance();
@@ -187,9 +169,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Do service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteDocDataPaymentsServiceListWithoutPrefix()
     {
         $generator = self::docDataPaymentsGeneratorInstance();
@@ -204,9 +184,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find List service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteBingService()
     {
         $generator = self::bingGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
@@ -221,9 +199,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Service model for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteOmnitureService()
     {
         $generator = self::omnitureGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
@@ -239,9 +215,7 @@ class ServiceTest extends AbstractFile
             ->write();
         $this->assertSameFileContent('ValidOmnitureApiService', $serviceFile);
     }
-    /**
-     *
-     */
+
     public function testWritePayPalService()
     {
         $generator = self::payPalGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
@@ -257,9 +231,7 @@ class ServiceTest extends AbstractFile
             ->write();
         $this->assertSameFileContent('ValidPayPalApiService', $serviceFile);
     }
-    /**
-     *
-     */
+
     public function testWriteActonService()
     {
         $generator = self::actonGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
@@ -275,9 +247,7 @@ class ServiceTest extends AbstractFile
             ->write();
         $this->assertSameFileContent('ValidActonApiService', $serviceFile);
     }
-    /**
-     *
-     */
+
     public function testWriteYandexDirectApiLiveGetService()
     {
         $generator = self::yandexDirectApiLiveGeneratorInstance();
@@ -292,9 +262,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Get service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testDestination()
     {
         $generator = self::bingGeneratorInstance();
@@ -307,9 +275,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Search service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testWriteEwsFindService()
     {
         $generator = self::ewsInstance();
@@ -323,9 +289,7 @@ class ServiceTest extends AbstractFile
             $this->fail('Unable to find Find service for file generation');
         }
     }
-    /**
-     *
-     */
+
     public function testGetOperationMethodReturnTypeWithNullReturnTypeMustReturnNull()
     {
         $generatorInstance = self::bingGeneratorInstance();

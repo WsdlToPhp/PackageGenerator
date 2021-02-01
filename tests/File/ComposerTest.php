@@ -1,14 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\File\Composer;
 
-class ComposerTest extends AbstractFile
+final class ComposerTest extends AbstractFile
 {
-    /**
-     *
-     */
     public function testBing()
     {
         $instance = self::getBingGeneratorInstance(true);
@@ -22,9 +21,7 @@ class ComposerTest extends AbstractFile
 
         $this->assertSameFileContent('ValidBingComposer', $composerFile, 'json');
     }
-    /**
-     *
-     */
+
     public function testBingWithSettings()
     {
         $instance = self::getBingGeneratorInstance(true);
@@ -42,9 +39,7 @@ class ComposerTest extends AbstractFile
 
         $this->assertSameFileContent('ValidBingComposerSettings', $composerFile, 'json');
     }
-    /**
-     *
-     */
+
     public function testBingWithEmptySrcDirname()
     {
         $instance = self::getBingGeneratorInstance(true);
@@ -59,9 +54,7 @@ class ComposerTest extends AbstractFile
 
         $this->assertSameFileContent('ValidBingComposerEmptySrcDirname', $composerFile, 'json');
     }
-    /**
-     *
-     */
+
     public function testBingWithSlashSrcDirname()
     {
         $instance = self::getBingGeneratorInstance(true);
@@ -76,9 +69,7 @@ class ComposerTest extends AbstractFile
 
         $this->assertSameFileContent('ValidBingComposerSlashSrcDirname', $composerFile, 'json');
     }
-    /**
-     *
-     */
+
     public function testSetRunComposerUdpate()
     {
         $instance = self::getBingGeneratorInstance(true);
@@ -89,9 +80,7 @@ class ComposerTest extends AbstractFile
 
         $this->assertFalse($composerFile->getRunComposerUpdate());
     }
-    /**
-     *
-     */
+
     public function testGetFileName()
     {
         $instance = self::getBingGeneratorInstance(true);

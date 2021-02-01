@@ -1,22 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-class ArrayRule extends AbstractSetOfValuesRule
+final class ArrayRule extends AbstractSetOfValuesRule
 {
-
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'array';
     }
-
-    /**
-     * @return bool
-     */
-    protected function mustApplyRuleOnAttribute()
+    protected function mustApplyRuleOnAttribute(): bool
     {
         return $this->getAttribute()->isArray();
     }

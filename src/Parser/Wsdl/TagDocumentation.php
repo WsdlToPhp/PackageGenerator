@@ -1,42 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\Tag;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagDocumentation as Documentation;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagEnumeration as Enumeration;
+use WsdlToPhp\WsdlHandler\Tag\Tag;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\WsdlHandler\Tag\TagDocumentation as Documentation;
+use WsdlToPhp\WsdlHandler\Tag\TagEnumeration as Enumeration;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagAttributeGroup;
+use WsdlToPhp\WsdlHandler\Tag\TagAttributeGroup;
 
 class TagDocumentation extends AbstractTagParser
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
-     * @param Wsdl $wsdl
-     */
-    protected function parseWsdl(Wsdl $wsdl)
+    protected function parseWsdl(Wsdl $wsdl): void
     {
         foreach ($this->getTags() as $tag) {
-            if ($tag instanceof Documentation) {
-                $this->parseDocumentation($tag);
-            }
+            $this->parseDocumentation($tag);
         }
     }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parsingTag()
-     */
-    protected function parsingTag()
+
+    protected function parsingTag(): string
     {
         return WsdlDocument::TAG_DOCUMENTATION;
     }
-    /**
-     * @param Documentation $documentation
-     */
-    public function parseDocumentation(Documentation $documentation)
+
+    public function parseDocumentation(Documentation $documentation): void
     {
         $content = $documentation->getContent();
         $parent = $documentation->getSuitableParent();

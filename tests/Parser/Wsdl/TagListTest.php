@@ -1,37 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 
-class TagListTest extends WsdlParser
+final class TagListTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
-     */
-    public static function odigeoInstanceParser()
+    public static function odigeoInstanceParser(): TagList
     {
         return new TagList(self::generatorInstance(self::wsdlOdigeoPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
-     */
-    public static function myBaordInstanceParser()
+
+    public static function myBaordInstanceParser(): TagList
     {
         return new TagList(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
-     */
-    public static function ewsInstanceParser()
+
+    public static function ewsInstanceParser(): TagList
     {
         return new TagList(self::generatorInstance(self::wsdlEwsPath()));
     }
-    /**
-     *
-     */
+
     public function testParseOdigeo()
     {
         $tagListParser = self::odigeoInstanceParser();
@@ -66,9 +59,7 @@ class TagListTest extends WsdlParser
         }
         $this->assertSame(4, $count);
     }
-    /**
-     *
-     */
+
     public function testParseMyBoard()
     {
         $tagListParser = self::myBaordInstanceParser();

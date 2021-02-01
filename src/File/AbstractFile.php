@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageGenerator\Generator\Generator;
@@ -7,90 +9,64 @@ use WsdlToPhp\PhpGenerator\Component\PhpFile;
 
 abstract class AbstractFile implements FileInterface
 {
-    /**
-     * @var string
-     */
-    const PHP_FILE_EXTENSION = 'php';
-    /**
-     * @var Generator
-     */
-    protected $generator;
-    /**
-     * @var PhpFile
-     */
-    protected $file;
-    /**
-     * @param Generator $generator
-     * @param string $name
-     */
-    public function __construct(Generator $generator, $name)
+    public const PHP_FILE_EXTENSION = 'php';
+
+    protected Generator $generator;
+
+    protected PhpFile $file;
+
+    public function __construct(Generator $generator, string $name)
     {
-        $this->setFile(new PhpFile($name))->setGenerator($generator);
+        $this
+            ->setFile(new PhpFile($name))
+            ->setGenerator($generator);
     }
-    /**
-     * @param Generator $generator
-     * @return AbstractFile
-     */
-    public function setGenerator(Generator $generator)
+
+    public function setGenerator(Generator $generator): self
     {
         $this->generator = $generator;
+
         return $this;
     }
-    /**
-     * @return Generator
-     */
-    public function getGenerator()
+
+    public function getGenerator(): Generator
     {
         return $this->generator;
     }
-    /**
-     * @return void
-     */
-    public function write()
+
+    public function write(): void
     {
         $this->writeFile();
     }
-    /**
-     * @return void
-     */
-    protected function writeFile()
+
+    protected function writeFile(): void
     {
         file_put_contents($this->getFileName(), $this->getFile()->toString(), LOCK_EX);
     }
-    /**
-     * @return string
-     */
-    public function getFileName()
+
+    public function getFileName(): string
     {
         return sprintf('%s%s.%s', $this->getFileDestination(), $this->getFile()->getMainElement()->getName(), $this->getFileExtension());
     }
-    /**
-     * @return string
-     */
-    protected function getFileDestination()
+
+    protected function getFileDestination(): string
     {
         return $this->getGenerator()->getOptionDestination();
     }
-    /**
-     * @return string
-     */
-    public function getFileExtension()
+
+    public function getFileExtension(): string
     {
         return self::PHP_FILE_EXTENSION;
     }
-    /**
-     * @param PhpFile $file
-     * @return AbstractFile
-     */
-    protected function setFile($file)
+
+    protected function setFile(PhpFile $file): self
     {
         $this->file = $file;
+
         return $this;
     }
-    /**
-     * @return PhpFile
-     */
-    public function getFile()
+
+    public function getFile(): PhpFile
     {
         return $this->file;
     }
