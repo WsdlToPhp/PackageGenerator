@@ -12,6 +12,7 @@ xsd_types:
     dateTime: "string"
     decimal: "float"
     double: "float"
+    DOMDocument: "\\DOMDocument"
     duration: "string"
     DayOfWeekType: "string"
     float: "float"
