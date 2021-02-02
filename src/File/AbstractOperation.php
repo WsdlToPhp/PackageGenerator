@@ -13,8 +13,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 
 abstract class AbstractOperation
 {
-    public const DEFAULT_TYPE = 'string';
-    public const ARRAY_TYPE = 'array';
     public const SOAP_CALL_NAME = '__soapCall';
 
     protected MethodModel $method;
@@ -49,22 +47,25 @@ abstract class AbstractOperation
     {
         $types = [];
         $parameterTypes = $this->getMethod()->getParameterType();
-        if (is_array($parameterTypes)) {
-            foreach ($parameterTypes as $parameterName => $parameterType) {
-                $type = $methodUsage ? null : self::DEFAULT_TYPE;
-                if (($model = $this->getGenerator()->getStructByName($parameterType)) instanceof StructModel) {
-                    if ($model->isStruct() && !$model->isRestriction()) {
-                        $type = $model->getPackagedName(true);
-                    } elseif (!$model->isStruct() && $model->isArray()) {
-                        if ($methodUsage) {
-                            $type = self::ARRAY_TYPE;
-                        } else {
-                            $type = ($struct = $model->getTopInheritanceStruct()) ? sprintf('%s[]', $struct->getPackagedName(true)) : $model->getTopInheritance();
-                        }
+        if (!is_array($parameterTypes)) {
+            return [];
+        }
+
+        foreach ($parameterTypes as $parameterName => $parameterType) {
+            $type = $methodUsage ? null : AbstractModelFile::TYPE_STRING;
+
+            if (($model = $this->getGenerator()->getStructByName($parameterType)) instanceof StructModel) {
+                if ($model->isStruct() && !$model->isRestriction()) {
+                    $type = $model->getPackagedName(true);
+                } elseif (!$model->isStruct() && $model->isArray()) {
+                    if ($methodUsage) {
+                        $type = AbstractModelFile::TYPE_ARRAY;
+                    } else {
+                        $type = ($struct = $model->getTopInheritanceStruct()) ? sprintf('%s[]', $struct->getPackagedName(true)) : $model->getTopInheritance();
                     }
                 }
-                $types[$parameterName] = $type;
             }
+            $types[$parameterName] = $type;
         }
 
         return $types;
@@ -97,6 +98,7 @@ abstract class AbstractOperation
     public function setGenerator(Generator $generator): self
     {
         $this->generator = $generator;
+
         return $this;
     }
 
@@ -108,6 +110,7 @@ abstract class AbstractOperation
     public function setMethod(MethodModel $method): self
     {
         $this->method = $method;
+
         return $this;
     }
 

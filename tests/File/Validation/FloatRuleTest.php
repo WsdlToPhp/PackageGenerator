@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
+use TypeError;
 
 final class FloatRuleTest extends AbstractRuleTest
 {
     public function testSetPercentValueWithStringValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value \'foo\', please provide a float value, string given');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 
@@ -25,25 +24,11 @@ final class FloatRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->setPercent(85));
     }
 
-    public function testSetPercentValueWithStringIntValueMustPass()
-    {
-        $instance = self::getWhlTaxTypeInstance();
-
-        $this->assertSame($instance, $instance->setPercent('85'));
-    }
-
     public function testSetPercentValueWithFloatValueMustPass()
     {
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setPercent(8.5));
-    }
-
-    public function testSetPercentValueWithStringFloatValueMustPass()
-    {
-        $instance = self::getWhlTaxTypeInstance();
-
-        $this->assertSame($instance, $instance->setPercent('8.5'));
     }
 
     public function testSetPercentValueWithNullValueMustPass()

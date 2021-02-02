@@ -26,7 +26,7 @@ class ApiResult extends AbstractStructBase
      * - minOccurs: 0
      * @var bool
      */
-    public $Success;
+    public $Success = null;
     /**
      * The Errors
      * Meta information extracted from the WSDL
@@ -37,7 +37,7 @@ class ApiResult extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiErrors
      */
-    public $Errors;
+    public $Errors = null;
     /**
      * The Warnings
      * Meta information extracted from the WSDL
@@ -45,7 +45,7 @@ class ApiResult extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiWarnings
      */
-    public $Warnings;
+    public $Warnings = null;
     /**
      * Constructor method for Result
      * @uses ApiResult::setSuccess()
@@ -55,7 +55,7 @@ class ApiResult extends AbstractStructBase
      * @param \Api\StructType\ApiErrors $errors
      * @param \Api\StructType\ApiWarnings $warnings
      */
-    public function __construct($success = false, \Api\StructType\ApiErrors $errors = null, \Api\StructType\ApiWarnings $warnings = null)
+    public function __construct(bool $success = false, \Api\StructType\ApiErrors $errors = null, \Api\StructType\ApiWarnings $warnings = null)
     {
         $this
             ->setSuccess($success)
@@ -66,7 +66,7 @@ class ApiResult extends AbstractStructBase
      * Get Success value
      * @return bool|null
      */
-    public function getSuccess()
+    public function getSuccess(): ?bool
     {
         return isset($this->Success) ? $this->Success : null;
     }
@@ -77,7 +77,7 @@ class ApiResult extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSuccessForChoiceConstraintsFromSetSuccess($value)
+    public function validateSuccessForChoiceConstraintsFromSetSuccess($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -106,7 +106,7 @@ class ApiResult extends AbstractStructBase
      * @param bool $success
      * @return \Api\StructType\ApiResult
      */
-    public function setSuccess($success = false)
+    public function setSuccess(bool $success = false): self
     {
         // validation for constraint: boolean
         if (!is_null($success) && !is_bool($success)) {
@@ -127,7 +127,7 @@ class ApiResult extends AbstractStructBase
      * Get Errors value
      * @return \Api\StructType\ApiErrors|null
      */
-    public function getErrors()
+    public function getErrors(): ?\Api\StructType\ApiErrors
     {
         return isset($this->Errors) ? $this->Errors : null;
     }
@@ -138,7 +138,7 @@ class ApiResult extends AbstractStructBase
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateErrorsForChoiceConstraintsFromSetErrors($value)
+    public function validateErrorsForChoiceConstraintsFromSetErrors($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -167,7 +167,7 @@ class ApiResult extends AbstractStructBase
      * @param \Api\StructType\ApiErrors $errors
      * @return \Api\StructType\ApiResult
      */
-    public function setErrors(\Api\StructType\ApiErrors $errors = null)
+    public function setErrors(\Api\StructType\ApiErrors $errors = null): self
     {
         // validation for constraint: choice(Success, Errors)
         if ('' !== ($errorsChoiceErrorMessage = self::validateErrorsForChoiceConstraintsFromSetErrors($errors))) {
@@ -184,7 +184,7 @@ class ApiResult extends AbstractStructBase
      * Get Warnings value
      * @return \Api\StructType\ApiWarnings|null
      */
-    public function getWarnings()
+    public function getWarnings(): ?\Api\StructType\ApiWarnings
     {
         return $this->Warnings;
     }
@@ -193,7 +193,7 @@ class ApiResult extends AbstractStructBase
      * @param \Api\StructType\ApiWarnings $warnings
      * @return \Api\StructType\ApiResult
      */
-    public function setWarnings(\Api\StructType\ApiWarnings $warnings = null)
+    public function setWarnings(\Api\StructType\ApiWarnings $warnings = null): self
     {
         $this->Warnings = $warnings;
         return $this;

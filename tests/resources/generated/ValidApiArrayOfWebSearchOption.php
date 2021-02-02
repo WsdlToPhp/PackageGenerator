@@ -21,7 +21,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var string[]
      */
-    public $WebSearchOption;
+    public $WebSearchOption = null;
     /**
      * Constructor method for ArrayOfWebSearchOption
      * @uses ApiArrayOfWebSearchOption::setWebSearchOption()
@@ -36,7 +36,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * Get WebSearchOption value
      * @return string[]|null
      */
-    public function getWebSearchOption()
+    public function getWebSearchOption(): ?array
     {
         return $this->WebSearchOption;
     }
@@ -70,7 +70,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param string[] $webSearchOption
      * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
-    public function setWebSearchOption(array $webSearchOption = array())
+    public function setWebSearchOption(array $webSearchOption = array()): self
     {
         // validation for constraint: array
         if ('' !== ($webSearchOptionArrayErrorMessage = self::validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption($webSearchOption))) {
@@ -87,7 +87,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param string $item
      * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
-    public function addToWebSearchOption($item)
+    public function addToWebSearchOption(string $item): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {

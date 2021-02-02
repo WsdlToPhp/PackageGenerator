@@ -21,7 +21,7 @@ class ApiVideoRequest extends AbstractStructBase
      * - minOccurs: 0
      * @var int
      */
-    public $Offset;
+    public $Offset = null;
     /**
      * The Count
      * Meta information extracted from the WSDL
@@ -29,7 +29,7 @@ class ApiVideoRequest extends AbstractStructBase
      * - minOccurs: 0
      * @var int
      */
-    public $Count;
+    public $Count = null;
     /**
      * The Filters
      * Meta information extracted from the WSDL
@@ -37,7 +37,7 @@ class ApiVideoRequest extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\ArrayType\ApiArrayOfString
      */
-    public $Filters;
+    public $Filters = null;
     /**
      * The SortBy
      * Meta information extracted from the WSDL
@@ -45,7 +45,7 @@ class ApiVideoRequest extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $SortBy;
+    public $SortBy = null;
     /**
      * Constructor method for VideoRequest
      * @uses ApiVideoRequest::setOffset()
@@ -57,7 +57,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param \Api\ArrayType\ApiArrayOfString $filters
      * @param string $sortBy
      */
-    public function __construct($offset = null, $count = null, \Api\ArrayType\ApiArrayOfString $filters = null, $sortBy = null)
+    public function __construct(int $offset = null, int $count = null, \Api\ArrayType\ApiArrayOfString $filters = null, string $sortBy = null)
     {
         $this
             ->setOffset($offset)
@@ -69,7 +69,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Get Offset value
      * @return int|null
      */
-    public function getOffset()
+    public function getOffset(): ?int
     {
         return $this->Offset;
     }
@@ -78,7 +78,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param int $offset
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setOffset($offset = null)
+    public function setOffset(int $offset = null): self
     {
         // validation for constraint: int
         if (!is_null($offset) && !(is_int($offset) || ctype_digit($offset))) {
@@ -91,7 +91,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Get Count value
      * @return int|null
      */
-    public function getCount()
+    public function getCount(): ?int
     {
         return $this->Count;
     }
@@ -100,7 +100,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param int $count
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setCount($count = null)
+    public function setCount(int $count = null): self
     {
         // validation for constraint: int
         if (!is_null($count) && !(is_int($count) || ctype_digit($count))) {
@@ -113,7 +113,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Get Filters value
      * @return \Api\ArrayType\ApiArrayOfString|null
      */
-    public function getFilters()
+    public function getFilters(): ?\Api\ArrayType\ApiArrayOfString
     {
         return $this->Filters;
     }
@@ -122,7 +122,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param \Api\ArrayType\ApiArrayOfString $filters
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setFilters(\Api\ArrayType\ApiArrayOfString $filters = null)
+    public function setFilters(\Api\ArrayType\ApiArrayOfString $filters = null): self
     {
         $this->Filters = $filters;
         return $this;
@@ -131,7 +131,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Get SortBy value
      * @return string|null
      */
-    public function getSortBy()
+    public function getSortBy(): ?string
     {
         return $this->SortBy;
     }
@@ -143,7 +143,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param string $sortBy
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setSortBy($sortBy = null)
+    public function setSortBy(string $sortBy = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {

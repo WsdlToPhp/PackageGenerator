@@ -58,7 +58,7 @@ final class StructEnum extends Struct
 
     protected function getEnumMethodGetValidValues(): PhpMethod
     {
-        $method = new PhpMethod(self::METHOD_GET_VALID_VALUES, [], 'array', PhpMethod::ACCESS_PUBLIC, false, true);
+        $method = new PhpMethod(self::METHOD_GET_VALID_VALUES, [], self::TYPE_ARRAY, PhpMethod::ACCESS_PUBLIC, false, true);
         $validValues = $this->getEnumMethodValues();
         $method->addChild('return [');
         foreach ($validValues as $validValue) {

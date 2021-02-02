@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use Api\StructType\ApiParagraphType;
-use InvalidArgumentException;
 use TypeError;
 
 final class ItemTypeRuleTest extends AbstractRuleTest
@@ -38,8 +37,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
 
     public function testAddToFirstSegmentsIdsValueWithStringValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('The firstSegmentsIds property can only contain items of type int, string given');
+        $this->expectException(TypeError::class);
 
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);
@@ -49,8 +47,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
 
     public function testAddToFirstSegmentsIdsValueWithNullValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('The firstSegmentsIds property can only contain items of type int, NULL given');
+        $this->expectException(TypeError::class);
 
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);
@@ -71,6 +68,6 @@ final class ItemTypeRuleTest extends AbstractRuleTest
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);
 
-        $this->assertSame($instance, $instance->addToFirstSegmentsIds('18'));
+        $this->assertSame($instance, $instance->addToFirstSegmentsIds(18));
     }
 }

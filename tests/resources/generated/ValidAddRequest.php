@@ -21,7 +21,7 @@ class ApiAddRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiAdGroupAddItem[]
      */
-    public $AdGroups;
+    public $AdGroups = null;
     /**
      * Constructor method for AddRequest
      * @uses ApiAddRequest::setAdGroups()
@@ -36,7 +36,7 @@ class ApiAddRequest extends AbstractStructBase
      * Get AdGroups value
      * @return \Api\StructType\ApiAdGroupAddItem[]
      */
-    public function getAdGroups()
+    public function getAdGroups(): ?array
     {
         return $this->AdGroups;
     }
@@ -68,7 +68,7 @@ class ApiAddRequest extends AbstractStructBase
      * @param \Api\StructType\ApiAdGroupAddItem[] $adGroups
      * @return \Api\StructType\ApiAddRequest
      */
-    public function setAdGroups(array $adGroups = array())
+    public function setAdGroups(array $adGroups = array()): self
     {
         // validation for constraint: array
         if ('' !== ($adGroupsArrayErrorMessage = self::validateAdGroupsForArrayConstraintsFromSetAdGroups($adGroups))) {
@@ -83,7 +83,7 @@ class ApiAddRequest extends AbstractStructBase
      * @param \Api\StructType\ApiAdGroupAddItem $item
      * @return \Api\StructType\ApiAddRequest
      */
-    public function addToAdGroups(\Api\StructType\ApiAdGroupAddItem $item)
+    public function addToAdGroups(\Api\StructType\ApiAdGroupAddItem $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiAdGroupAddItem) {

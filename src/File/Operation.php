@@ -11,8 +11,10 @@ final class Operation extends AbstractOperation
 {
     public function getMainMethod(): PhpMethod
     {
-        $phpMethod = new PhpMethod($this->getMethod()->getMethodName());
-        $this->defineParameters($phpMethod)->defineBody($phpMethod);
+        $phpMethod = new PhpMethod($this->getMethod()->getMethodName(), []);
+        $this
+            ->defineParameters($phpMethod)
+            ->defineBody($phpMethod);
 
         return $phpMethod;
     }

@@ -27,14 +27,14 @@ class ApiPaymentCardType extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $CardHolderName;
+    public $CardHolderName = null;
     /**
      * The CardIssuerName
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Api\StructType\ApiCardIssuerName
      */
-    public $CardIssuerName;
+    public $CardIssuerName = null;
     /**
      * The Address
      * Meta information extracted from the WSDL
@@ -42,7 +42,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiAddressType
      */
-    public $Address;
+    public $Address = null;
     /**
      * The Telephone
      * Meta information extracted from the WSDL
@@ -50,7 +50,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiTelephone[]
      */
-    public $Telephone;
+    public $Telephone = null;
     /**
      * The Email
      * Meta information extracted from the WSDL
@@ -59,7 +59,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiEmailType[]
      */
-    public $Email;
+    public $Email = null;
     /**
      * The CardType
      * Meta information extracted from the WSDL
@@ -69,7 +69,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $CardType;
+    public $CardType = null;
     /**
      * The CardCode
      * Meta information extracted from the WSDL
@@ -77,7 +77,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $CardCode;
+    public $CardCode = null;
     /**
      * The CardName
      * Meta information extracted from the WSDL
@@ -85,7 +85,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $CardName;
+    public $CardName = null;
     /**
      * The CardNumber
      * Meta information extracted from the WSDL
@@ -95,7 +95,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $CardNumber;
+    public $CardNumber = null;
     /**
      * The SeriesCode
      * Meta information extracted from the WSDL
@@ -106,7 +106,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $SeriesCode;
+    public $SeriesCode = null;
     /**
      * The MaskedCardNumber
      * Meta information extracted from the WSDL
@@ -116,7 +116,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $MaskedCardNumber;
+    public $MaskedCardNumber = null;
     /**
      * The CardHolderRPH
      * Meta information extracted from the WSDL
@@ -127,7 +127,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $CardHolderRPH;
+    public $CardHolderRPH = null;
     /**
      * The CountryOfIssue
      * Meta information extracted from the WSDL
@@ -137,7 +137,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $CountryOfIssue;
+    public $CountryOfIssue = null;
     /**
      * The Remark
      * Meta information extracted from the WSDL
@@ -148,17 +148,17 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $Remark;
+    public $Remark = null;
     /**
      * The ShareSynchInd
      * @var string
      */
-    public $ShareSynchInd;
+    public $ShareSynchInd = null;
     /**
      * The ShareMarketInd
      * @var string
      */
-    public $ShareMarketInd;
+    public $ShareMarketInd = null;
     /**
      * The EffectiveDate
      * Meta information extracted from the WSDL
@@ -169,7 +169,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $EffectiveDate;
+    public $EffectiveDate = null;
     /**
      * The ExpireDate
      * Meta information extracted from the WSDL
@@ -180,7 +180,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $ExpireDate;
+    public $ExpireDate = null;
     /**
      * Constructor method for PaymentCardType
      * @uses ApiPaymentCardType::setCardHolderName()
@@ -220,7 +220,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $effectiveDate
      * @param string $expireDate
      */
-    public function __construct($cardHolderName = null, \Api\StructType\ApiCardIssuerName $cardIssuerName = null, \Api\StructType\ApiAddressType $address = null, array $telephone = array(), array $email = array(), $cardType = null, $cardCode = null, $cardName = null, $cardNumber = null, $seriesCode = null, $maskedCardNumber = null, $cardHolderRPH = null, $countryOfIssue = null, $remark = null, $shareSynchInd = null, $shareMarketInd = null, $effectiveDate = null, $expireDate = null)
+    public function __construct(string $cardHolderName = null, \Api\StructType\ApiCardIssuerName $cardIssuerName = null, \Api\StructType\ApiAddressType $address = null, array $telephone = array(), array $email = array(), string $cardType = null, string $cardCode = null, string $cardName = null, string $cardNumber = null, string $seriesCode = null, string $maskedCardNumber = null, string $cardHolderRPH = null, string $countryOfIssue = null, string $remark = null, string $shareSynchInd = null, string $shareMarketInd = null, string $effectiveDate = null, string $expireDate = null)
     {
         $this
             ->setCardHolderName($cardHolderName)
@@ -246,7 +246,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get CardHolderName value
      * @return string|null
      */
-    public function getCardHolderName()
+    public function getCardHolderName(): ?string
     {
         return $this->CardHolderName;
     }
@@ -255,7 +255,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $cardHolderName
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setCardHolderName($cardHolderName = null)
+    public function setCardHolderName(string $cardHolderName = null): self
     {
         // validation for constraint: string
         if (!is_null($cardHolderName) && !is_string($cardHolderName)) {
@@ -276,7 +276,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get CardIssuerName value
      * @return \Api\StructType\ApiCardIssuerName|null
      */
-    public function getCardIssuerName()
+    public function getCardIssuerName(): ?\Api\StructType\ApiCardIssuerName
     {
         return $this->CardIssuerName;
     }
@@ -285,7 +285,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param \Api\StructType\ApiCardIssuerName $cardIssuerName
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setCardIssuerName(\Api\StructType\ApiCardIssuerName $cardIssuerName = null)
+    public function setCardIssuerName(\Api\StructType\ApiCardIssuerName $cardIssuerName = null): self
     {
         $this->CardIssuerName = $cardIssuerName;
         return $this;
@@ -294,7 +294,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get Address value
      * @return \Api\StructType\ApiAddressType|null
      */
-    public function getAddress()
+    public function getAddress(): ?\Api\StructType\ApiAddressType
     {
         return $this->Address;
     }
@@ -303,7 +303,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param \Api\StructType\ApiAddressType $address
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setAddress(\Api\StructType\ApiAddressType $address = null)
+    public function setAddress(\Api\StructType\ApiAddressType $address = null): self
     {
         $this->Address = $address;
         return $this;
@@ -312,7 +312,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get Telephone value
      * @return \Api\StructType\ApiTelephone[]|null
      */
-    public function getTelephone()
+    public function getTelephone(): ?array
     {
         return $this->Telephone;
     }
@@ -344,7 +344,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param \Api\StructType\ApiTelephone[] $telephone
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setTelephone(array $telephone = array())
+    public function setTelephone(array $telephone = array()): self
     {
         // validation for constraint: array
         if ('' !== ($telephoneArrayErrorMessage = self::validateTelephoneForArrayConstraintsFromSetTelephone($telephone))) {
@@ -363,7 +363,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param \Api\StructType\ApiTelephone $item
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function addToTelephone(\Api\StructType\ApiTelephone $item)
+    public function addToTelephone(\Api\StructType\ApiTelephone $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiTelephone) {
@@ -380,7 +380,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get Email value
      * @return \Api\StructType\ApiEmailType[]|null
      */
-    public function getEmail()
+    public function getEmail(): ?array
     {
         return $this->Email;
     }
@@ -412,7 +412,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param \Api\StructType\ApiEmailType[] $email
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setEmail(array $email = array())
+    public function setEmail(array $email = array()): self
     {
         // validation for constraint: array
         if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintsFromSetEmail($email))) {
@@ -431,7 +431,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param \Api\StructType\ApiEmailType $item
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function addToEmail(\Api\StructType\ApiEmailType $item)
+    public function addToEmail(\Api\StructType\ApiEmailType $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiEmailType) {
@@ -448,7 +448,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get CardType value
      * @return string|null
      */
-    public function getCardType()
+    public function getCardType(): ?string
     {
         return $this->CardType;
     }
@@ -457,7 +457,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $cardType
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setCardType($cardType = null)
+    public function setCardType(string $cardType = null): self
     {
         // validation for constraint: string
         if (!is_null($cardType) && !is_string($cardType)) {
@@ -474,7 +474,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get CardCode value
      * @return string|null
      */
-    public function getCardCode()
+    public function getCardCode(): ?string
     {
         return $this->CardCode;
     }
@@ -486,7 +486,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $cardCode
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setCardCode($cardCode = null)
+    public function setCardCode(string $cardCode = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiPaymentCardCodeType::valueIsValid($cardCode)) {
@@ -499,7 +499,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get CardName value
      * @return string|null
      */
-    public function getCardName()
+    public function getCardName(): ?string
     {
         return $this->CardName;
     }
@@ -508,7 +508,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $cardName
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setCardName($cardName = null)
+    public function setCardName(string $cardName = null): self
     {
         // validation for constraint: string
         if (!is_null($cardName) && !is_string($cardName)) {
@@ -521,7 +521,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get CardNumber value
      * @return string|null
      */
-    public function getCardNumber()
+    public function getCardNumber(): ?string
     {
         return $this->CardNumber;
     }
@@ -530,7 +530,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $cardNumber
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setCardNumber($cardNumber = null)
+    public function setCardNumber(string $cardNumber = null): self
     {
         // validation for constraint: string
         if (!is_null($cardNumber) && !is_string($cardNumber)) {
@@ -547,7 +547,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get SeriesCode value
      * @return string|null
      */
-    public function getSeriesCode()
+    public function getSeriesCode(): ?string
     {
         return $this->SeriesCode;
     }
@@ -556,7 +556,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $seriesCode
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setSeriesCode($seriesCode = null)
+    public function setSeriesCode(string $seriesCode = null): self
     {
         // validation for constraint: string
         if (!is_null($seriesCode) && !is_string($seriesCode)) {
@@ -573,7 +573,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get MaskedCardNumber value
      * @return string|null
      */
-    public function getMaskedCardNumber()
+    public function getMaskedCardNumber(): ?string
     {
         return $this->MaskedCardNumber;
     }
@@ -582,7 +582,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $maskedCardNumber
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setMaskedCardNumber($maskedCardNumber = null)
+    public function setMaskedCardNumber(string $maskedCardNumber = null): self
     {
         // validation for constraint: string
         if (!is_null($maskedCardNumber) && !is_string($maskedCardNumber)) {
@@ -599,7 +599,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get CardHolderRPH value
      * @return string|null
      */
-    public function getCardHolderRPH()
+    public function getCardHolderRPH(): ?string
     {
         return $this->CardHolderRPH;
     }
@@ -608,7 +608,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $cardHolderRPH
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setCardHolderRPH($cardHolderRPH = null)
+    public function setCardHolderRPH(string $cardHolderRPH = null): self
     {
         // validation for constraint: string
         if (!is_null($cardHolderRPH) && !is_string($cardHolderRPH)) {
@@ -625,7 +625,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get CountryOfIssue value
      * @return string|null
      */
-    public function getCountryOfIssue()
+    public function getCountryOfIssue(): ?string
     {
         return $this->CountryOfIssue;
     }
@@ -634,7 +634,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $countryOfIssue
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setCountryOfIssue($countryOfIssue = null)
+    public function setCountryOfIssue(string $countryOfIssue = null): self
     {
         // validation for constraint: string
         if (!is_null($countryOfIssue) && !is_string($countryOfIssue)) {
@@ -651,7 +651,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get Remark value
      * @return string|null
      */
-    public function getRemark()
+    public function getRemark(): ?string
     {
         return $this->Remark;
     }
@@ -660,7 +660,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $remark
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setRemark($remark = null)
+    public function setRemark(string $remark = null): self
     {
         // validation for constraint: string
         if (!is_null($remark) && !is_string($remark)) {
@@ -681,7 +681,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get ShareSynchInd value
      * @return string|null
      */
-    public function getShareSynchInd()
+    public function getShareSynchInd(): ?string
     {
         return $this->ShareSynchInd;
     }
@@ -690,7 +690,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $shareSynchInd
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setShareSynchInd($shareSynchInd = null)
+    public function setShareSynchInd(string $shareSynchInd = null): self
     {
         // validation for constraint: string
         if (!is_null($shareSynchInd) && !is_string($shareSynchInd)) {
@@ -703,7 +703,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get ShareMarketInd value
      * @return string|null
      */
-    public function getShareMarketInd()
+    public function getShareMarketInd(): ?string
     {
         return $this->ShareMarketInd;
     }
@@ -712,7 +712,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $shareMarketInd
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setShareMarketInd($shareMarketInd = null)
+    public function setShareMarketInd(string $shareMarketInd = null): self
     {
         // validation for constraint: string
         if (!is_null($shareMarketInd) && !is_string($shareMarketInd)) {
@@ -725,7 +725,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get EffectiveDate value
      * @return string|null
      */
-    public function getEffectiveDate()
+    public function getEffectiveDate(): ?string
     {
         return $this->EffectiveDate;
     }
@@ -734,7 +734,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $effectiveDate
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setEffectiveDate($effectiveDate = null)
+    public function setEffectiveDate(string $effectiveDate = null): self
     {
         // validation for constraint: string
         if (!is_null($effectiveDate) && !is_string($effectiveDate)) {
@@ -751,7 +751,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get ExpireDate value
      * @return string|null
      */
-    public function getExpireDate()
+    public function getExpireDate(): ?string
     {
         return $this->ExpireDate;
     }
@@ -760,7 +760,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $expireDate
      * @return \Api\StructType\ApiPaymentCardType
      */
-    public function setExpireDate($expireDate = null)
+    public function setExpireDate(string $expireDate = null): self
     {
         // validation for constraint: string
         if (!is_null($expireDate) && !is_string($expireDate)) {

@@ -26,7 +26,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public $Type;
+    public $Type = null;
     /**
      * The ID
      * Meta information extracted from the WSDL
@@ -38,7 +38,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public $ID;
+    public $ID = null;
     /**
      * The CompanyName
      * Meta information extracted from the WSDL
@@ -46,7 +46,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiCompanyNameType
      */
-    public $CompanyName;
+    public $CompanyName = null;
     /**
      * The URL
      * Meta information extracted from the WSDL
@@ -55,7 +55,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $URL;
+    public $URL = null;
     /**
      * The ID_Context
      * Meta information extracted from the WSDL
@@ -67,7 +67,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $ID_Context;
+    public $ID_Context = null;
     /**
      * Constructor method for UniqueID_Type
      * @uses ApiUniqueID_Type::setType()
@@ -81,7 +81,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param string $uRL
      * @param string $iD_Context
      */
-    public function __construct($type = null, $iD = null, \Api\StructType\ApiCompanyNameType $companyName = null, $uRL = null, $iD_Context = null)
+    public function __construct(string $type = null, string $iD = null, \Api\StructType\ApiCompanyNameType $companyName = null, string $uRL = null, string $iD_Context = null)
     {
         $this
             ->setType($type)
@@ -94,7 +94,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * Get Type value
      * @return string
      */
-    public function getType()
+    public function getType(): ?string
     {
         return $this->Type;
     }
@@ -103,7 +103,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param string $type
      * @return \Api\StructType\ApiUniqueID_Type
      */
-    public function setType($type = null)
+    public function setType(string $type = null): self
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
@@ -120,7 +120,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * Get ID value
      * @return string
      */
-    public function getID()
+    public function getID(): ?string
     {
         return $this->ID;
     }
@@ -129,7 +129,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param string $iD
      * @return \Api\StructType\ApiUniqueID_Type
      */
-    public function setID($iD = null)
+    public function setID(string $iD = null): self
     {
         // validation for constraint: string
         if (!is_null($iD) && !is_string($iD)) {
@@ -150,7 +150,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * Get CompanyName value
      * @return \Api\StructType\ApiCompanyNameType|null
      */
-    public function getCompanyName()
+    public function getCompanyName(): ?\Api\StructType\ApiCompanyNameType
     {
         return $this->CompanyName;
     }
@@ -159,7 +159,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param \Api\StructType\ApiCompanyNameType $companyName
      * @return \Api\StructType\ApiUniqueID_Type
      */
-    public function setCompanyName(\Api\StructType\ApiCompanyNameType $companyName = null)
+    public function setCompanyName(\Api\StructType\ApiCompanyNameType $companyName = null): self
     {
         $this->CompanyName = $companyName;
         return $this;
@@ -168,7 +168,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * Get URL value
      * @return string|null
      */
-    public function getURL()
+    public function getURL(): ?string
     {
         return $this->URL;
     }
@@ -177,7 +177,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param string $uRL
      * @return \Api\StructType\ApiUniqueID_Type
      */
-    public function setURL($uRL = null)
+    public function setURL(string $uRL = null): self
     {
         // validation for constraint: string
         if (!is_null($uRL) && !is_string($uRL)) {
@@ -190,7 +190,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * Get ID_Context value
      * @return string|null
      */
-    public function getID_Context()
+    public function getID_Context(): ?string
     {
         return $this->ID_Context;
     }
@@ -199,7 +199,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param string $iD_Context
      * @return \Api\StructType\ApiUniqueID_Type
      */
-    public function setID_Context($iD_Context = null)
+    public function setID_Context(string $iD_Context = null): self
     {
         // validation for constraint: string
         if (!is_null($iD_Context) && !is_string($iD_Context)) {

@@ -22,7 +22,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $area_total;
+    public $area_total = null;
     /**
      * The area_residential
      * Meta information extracted from the WSDL
@@ -32,7 +32,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $area_residential;
+    public $area_residential = null;
     /**
      * The area_non_residential
      * Meta information extracted from the WSDL
@@ -42,84 +42,84 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $area_non_residential;
+    public $area_non_residential = null;
     /**
      * The cadastral_number
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $cadastral_number;
+    public $cadastral_number = null;
     /**
      * The project_type
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $project_type;
+    public $project_type = null;
     /**
      * The location_description
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $location_description;
+    public $location_description = null;
     /**
      * The individual_name
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $individual_name;
+    public $individual_name = null;
     /**
      * The house_type
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $house_type;
+    public $house_type = null;
     /**
      * The exploitation_start_year
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $exploitation_start_year;
+    public $exploitation_start_year = null;
     /**
      * The wall_material
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $wall_material;
+    public $wall_material = null;
     /**
      * The floor_type
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $floor_type;
+    public $floor_type = null;
     /**
      * The storeys_count
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $storeys_count;
+    public $storeys_count = null;
     /**
      * The entrance_count
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $entrance_count;
+    public $entrance_count = null;
     /**
      * The elevators_count
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $elevators_count;
+    public $elevators_count = null;
     /**
      * The area_private
      * Meta information extracted from the WSDL
@@ -129,7 +129,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $area_private;
+    public $area_private = null;
     /**
      * The area_municipal
      * Meta information extracted from the WSDL
@@ -139,7 +139,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $area_municipal;
+    public $area_municipal = null;
     /**
      * The area_national
      * Meta information extracted from the WSDL
@@ -149,7 +149,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $area_national;
+    public $area_national = null;
     /**
      * The area_land
      * Meta information extracted from the WSDL
@@ -159,7 +159,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $area_land;
+    public $area_land = null;
     /**
      * The area_territory
      * Meta information extracted from the WSDL
@@ -169,42 +169,42 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $area_territory;
+    public $area_territory = null;
     /**
      * The inventory_number
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $inventory_number;
+    public $inventory_number = null;
     /**
      * The flats_count
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $flats_count;
+    public $flats_count = null;
     /**
      * The residents_count
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $residents_count;
+    public $residents_count = null;
     /**
      * The accounts_count
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $accounts_count;
+    public $accounts_count = null;
     /**
      * The construction_features
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $construction_features;
+    public $construction_features = null;
     /**
      * The thermal_actual_expense
      * Meta information extracted from the WSDL
@@ -214,7 +214,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $thermal_actual_expense;
+    public $thermal_actual_expense = null;
     /**
      * The thermal_normative_expense
      * Meta information extracted from the WSDL
@@ -224,28 +224,28 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $thermal_normative_expense;
+    public $thermal_normative_expense = null;
     /**
      * The energy_efficiency
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $energy_efficiency;
+    public $energy_efficiency = null;
     /**
      * The energy_audit_date
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $energy_audit_date;
+    public $energy_audit_date = null;
     /**
      * The privatization_start_date
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $privatization_start_date;
+    public $privatization_start_date = null;
     /**
      * The deterioration_total
      * Meta information extracted from the WSDL
@@ -255,7 +255,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $deterioration_total;
+    public $deterioration_total = null;
     /**
      * The deterioration_foundation
      * Meta information extracted from the WSDL
@@ -265,7 +265,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $deterioration_foundation;
+    public $deterioration_foundation = null;
     /**
      * The deterioration_bearing_walls
      * Meta information extracted from the WSDL
@@ -275,7 +275,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $deterioration_bearing_walls;
+    public $deterioration_bearing_walls = null;
     /**
      * The deterioration_floor
      * Meta information extracted from the WSDL
@@ -285,84 +285,84 @@ class ApiHouseProfileData extends AbstractStructBase
      * - totalDigits: 15
      * @var float
      */
-    public $deterioration_floor;
+    public $deterioration_floor = null;
     /**
      * The facade
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiFacade
      */
-    public $facade;
+    public $facade = null;
     /**
      * The roof
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiRoof
      */
-    public $roof;
+    public $roof = null;
     /**
      * The basement
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiBasement
      */
-    public $basement;
+    public $basement = null;
     /**
      * The common_space
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiCommonSpace
      */
-    public $common_space;
+    public $common_space = null;
     /**
      * The chute
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiChute
      */
-    public $chute;
+    public $chute = null;
     /**
      * The heating_system
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiHeatingSystem
      */
-    public $heating_system;
+    public $heating_system = null;
     /**
      * The hot_water_system
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiHotWaterSystem
      */
-    public $hot_water_system;
+    public $hot_water_system = null;
     /**
      * The cold_water_system
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiColdWaterSystem
      */
-    public $cold_water_system;
+    public $cold_water_system = null;
     /**
      * The sewerage_system
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiSewerageSystem
      */
-    public $sewerage_system;
+    public $sewerage_system = null;
     /**
      * The electricity_system
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiElectricitySystem
      */
-    public $electricity_system;
+    public $electricity_system = null;
     /**
      * The gas_system
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiGasSystem
      */
-    public $gas_system;
+    public $gas_system = null;
     /**
      * The lifts
      * Meta information extracted from the WSDL
@@ -372,63 +372,63 @@ class ApiHouseProfileData extends AbstractStructBase
      * - ref: soap-enc:arrayType
      * @var \Api\StructType\ApiLift[]
      */
-    public $lifts;
+    public $lifts = null;
     /**
      * The management_contract
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiManagementContract
      */
-    public $management_contract;
+    public $management_contract = null;
     /**
      * The heating_provider
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
-    public $heating_provider;
+    public $heating_provider = null;
     /**
      * The electricity_provider
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
-    public $electricity_provider;
+    public $electricity_provider = null;
     /**
      * The gas_provider
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
-    public $gas_provider;
+    public $gas_provider = null;
     /**
      * The hot_water_provider
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
-    public $hot_water_provider;
+    public $hot_water_provider = null;
     /**
      * The cold_water_provider
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
-    public $cold_water_provider;
+    public $cold_water_provider = null;
     /**
      * The drainage_provider
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiProvider
      */
-    public $drainage_provider;
+    public $drainage_provider = null;
     /**
      * The finance
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiFinance
      */
-    public $finance;
+    public $finance = null;
     /**
      * Constructor method for HouseProfileData
      * @uses ApiHouseProfileData::setArea_total()
@@ -538,7 +538,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $drainage_provider
      * @param \Api\StructType\ApiFinance $finance
      */
-    public function __construct($area_total = null, $area_residential = null, $area_non_residential = null, $cadastral_number = null, $project_type = null, $location_description = null, $individual_name = null, $house_type = null, $exploitation_start_year = null, $wall_material = null, $floor_type = null, $storeys_count = null, $entrance_count = null, $elevators_count = null, $area_private = null, $area_municipal = null, $area_national = null, $area_land = null, $area_territory = null, $inventory_number = null, $flats_count = null, $residents_count = null, $accounts_count = null, $construction_features = null, $thermal_actual_expense = null, $thermal_normative_expense = null, $energy_efficiency = null, $energy_audit_date = null, $privatization_start_date = null, $deterioration_total = null, $deterioration_foundation = null, $deterioration_bearing_walls = null, $deterioration_floor = null, \Api\StructType\ApiFacade $facade = null, \Api\StructType\ApiRoof $roof = null, \Api\StructType\ApiBasement $basement = null, \Api\StructType\ApiCommonSpace $common_space = null, \Api\StructType\ApiChute $chute = null, \Api\StructType\ApiHeatingSystem $heating_system = null, \Api\StructType\ApiHotWaterSystem $hot_water_system = null, \Api\StructType\ApiColdWaterSystem $cold_water_system = null, \Api\StructType\ApiSewerageSystem $sewerage_system = null, \Api\StructType\ApiElectricitySystem $electricity_system = null, \Api\StructType\ApiGasSystem $gas_system = null, array $lifts = array(), \Api\StructType\ApiManagementContract $management_contract = null, \Api\StructType\ApiProvider $heating_provider = null, \Api\StructType\ApiProvider $electricity_provider = null, \Api\StructType\ApiProvider $gas_provider = null, \Api\StructType\ApiProvider $hot_water_provider = null, \Api\StructType\ApiProvider $cold_water_provider = null, \Api\StructType\ApiProvider $drainage_provider = null, \Api\StructType\ApiFinance $finance = null)
+    public function __construct(float $area_total = null, float $area_residential = null, float $area_non_residential = null, string $cadastral_number = null, string $project_type = null, string $location_description = null, string $individual_name = null, string $house_type = null, string $exploitation_start_year = null, string $wall_material = null, string $floor_type = null, int $storeys_count = null, int $entrance_count = null, int $elevators_count = null, float $area_private = null, float $area_municipal = null, float $area_national = null, float $area_land = null, float $area_territory = null, string $inventory_number = null, int $flats_count = null, int $residents_count = null, int $accounts_count = null, string $construction_features = null, float $thermal_actual_expense = null, float $thermal_normative_expense = null, string $energy_efficiency = null, string $energy_audit_date = null, string $privatization_start_date = null, float $deterioration_total = null, float $deterioration_foundation = null, float $deterioration_bearing_walls = null, float $deterioration_floor = null, \Api\StructType\ApiFacade $facade = null, \Api\StructType\ApiRoof $roof = null, \Api\StructType\ApiBasement $basement = null, \Api\StructType\ApiCommonSpace $common_space = null, \Api\StructType\ApiChute $chute = null, \Api\StructType\ApiHeatingSystem $heating_system = null, \Api\StructType\ApiHotWaterSystem $hot_water_system = null, \Api\StructType\ApiColdWaterSystem $cold_water_system = null, \Api\StructType\ApiSewerageSystem $sewerage_system = null, \Api\StructType\ApiElectricitySystem $electricity_system = null, \Api\StructType\ApiGasSystem $gas_system = null, array $lifts = array(), \Api\StructType\ApiManagementContract $management_contract = null, \Api\StructType\ApiProvider $heating_provider = null, \Api\StructType\ApiProvider $electricity_provider = null, \Api\StructType\ApiProvider $gas_provider = null, \Api\StructType\ApiProvider $hot_water_provider = null, \Api\StructType\ApiProvider $cold_water_provider = null, \Api\StructType\ApiProvider $drainage_provider = null, \Api\StructType\ApiFinance $finance = null)
     {
         $this
             ->setArea_total($area_total)
@@ -599,7 +599,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_total value
      * @return float|null
      */
-    public function getArea_total()
+    public function getArea_total(): ?float
     {
         return $this->area_total;
     }
@@ -608,7 +608,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_total
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_total($area_total = null)
+    public function setArea_total(float $area_total = null): self
     {
         // validation for constraint: float
         if (!is_null($area_total) && !(is_float($area_total) || is_numeric($area_total))) {
@@ -629,7 +629,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_residential value
      * @return float|null
      */
-    public function getArea_residential()
+    public function getArea_residential(): ?float
     {
         return $this->area_residential;
     }
@@ -638,7 +638,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_residential
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_residential($area_residential = null)
+    public function setArea_residential(float $area_residential = null): self
     {
         // validation for constraint: float
         if (!is_null($area_residential) && !(is_float($area_residential) || is_numeric($area_residential))) {
@@ -659,7 +659,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_non_residential value
      * @return float|null
      */
-    public function getArea_non_residential()
+    public function getArea_non_residential(): ?float
     {
         return $this->area_non_residential;
     }
@@ -668,7 +668,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_non_residential
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_non_residential($area_non_residential = null)
+    public function setArea_non_residential(float $area_non_residential = null): self
     {
         // validation for constraint: float
         if (!is_null($area_non_residential) && !(is_float($area_non_residential) || is_numeric($area_non_residential))) {
@@ -689,7 +689,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get cadastral_number value
      * @return string|null
      */
-    public function getCadastral_number()
+    public function getCadastral_number(): ?string
     {
         return $this->cadastral_number;
     }
@@ -698,7 +698,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $cadastral_number
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setCadastral_number($cadastral_number = null)
+    public function setCadastral_number(string $cadastral_number = null): self
     {
         // validation for constraint: string
         if (!is_null($cadastral_number) && !is_string($cadastral_number)) {
@@ -711,7 +711,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get project_type value
      * @return string|null
      */
-    public function getProject_type()
+    public function getProject_type(): ?string
     {
         return $this->project_type;
     }
@@ -720,7 +720,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $project_type
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setProject_type($project_type = null)
+    public function setProject_type(string $project_type = null): self
     {
         // validation for constraint: string
         if (!is_null($project_type) && !is_string($project_type)) {
@@ -733,7 +733,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get location_description value
      * @return string|null
      */
-    public function getLocation_description()
+    public function getLocation_description(): ?string
     {
         return $this->location_description;
     }
@@ -742,7 +742,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $location_description
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setLocation_description($location_description = null)
+    public function setLocation_description(string $location_description = null): self
     {
         // validation for constraint: string
         if (!is_null($location_description) && !is_string($location_description)) {
@@ -755,7 +755,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get individual_name value
      * @return string|null
      */
-    public function getIndividual_name()
+    public function getIndividual_name(): ?string
     {
         return $this->individual_name;
     }
@@ -764,7 +764,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $individual_name
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setIndividual_name($individual_name = null)
+    public function setIndividual_name(string $individual_name = null): self
     {
         // validation for constraint: string
         if (!is_null($individual_name) && !is_string($individual_name)) {
@@ -777,7 +777,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get house_type value
      * @return string|null
      */
-    public function getHouse_type()
+    public function getHouse_type(): ?string
     {
         return $this->house_type;
     }
@@ -789,7 +789,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $house_type
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHouse_type($house_type = null)
+    public function setHouse_type(string $house_type = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseTypeEnum::valueIsValid($house_type)) {
@@ -802,7 +802,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get exploitation_start_year value
      * @return string|null
      */
-    public function getExploitation_start_year()
+    public function getExploitation_start_year(): ?string
     {
         return $this->exploitation_start_year;
     }
@@ -811,7 +811,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $exploitation_start_year
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setExploitation_start_year($exploitation_start_year = null)
+    public function setExploitation_start_year(string $exploitation_start_year = null): self
     {
         // validation for constraint: string
         if (!is_null($exploitation_start_year) && !is_string($exploitation_start_year)) {
@@ -824,7 +824,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get wall_material value
      * @return string|null
      */
-    public function getWall_material()
+    public function getWall_material(): ?string
     {
         return $this->wall_material;
     }
@@ -836,7 +836,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $wall_material
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setWall_material($wall_material = null)
+    public function setWall_material(string $wall_material = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseWallMaterialEnum::valueIsValid($wall_material)) {
@@ -849,7 +849,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get floor_type value
      * @return string|null
      */
-    public function getFloor_type()
+    public function getFloor_type(): ?string
     {
         return $this->floor_type;
     }
@@ -861,7 +861,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $floor_type
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setFloor_type($floor_type = null)
+    public function setFloor_type(string $floor_type = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseFloorTypeEnum::valueIsValid($floor_type)) {
@@ -874,7 +874,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get storeys_count value
      * @return int|null
      */
-    public function getStoreys_count()
+    public function getStoreys_count(): ?int
     {
         return $this->storeys_count;
     }
@@ -883,7 +883,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $storeys_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setStoreys_count($storeys_count = null)
+    public function setStoreys_count(int $storeys_count = null): self
     {
         // validation for constraint: int
         if (!is_null($storeys_count) && !(is_int($storeys_count) || ctype_digit($storeys_count))) {
@@ -896,7 +896,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get entrance_count value
      * @return int|null
      */
-    public function getEntrance_count()
+    public function getEntrance_count(): ?int
     {
         return $this->entrance_count;
     }
@@ -905,7 +905,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $entrance_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setEntrance_count($entrance_count = null)
+    public function setEntrance_count(int $entrance_count = null): self
     {
         // validation for constraint: int
         if (!is_null($entrance_count) && !(is_int($entrance_count) || ctype_digit($entrance_count))) {
@@ -918,7 +918,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get elevators_count value
      * @return int|null
      */
-    public function getElevators_count()
+    public function getElevators_count(): ?int
     {
         return $this->elevators_count;
     }
@@ -927,7 +927,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $elevators_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setElevators_count($elevators_count = null)
+    public function setElevators_count(int $elevators_count = null): self
     {
         // validation for constraint: int
         if (!is_null($elevators_count) && !(is_int($elevators_count) || ctype_digit($elevators_count))) {
@@ -940,7 +940,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_private value
      * @return float|null
      */
-    public function getArea_private()
+    public function getArea_private(): ?float
     {
         return $this->area_private;
     }
@@ -949,7 +949,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_private
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_private($area_private = null)
+    public function setArea_private(float $area_private = null): self
     {
         // validation for constraint: float
         if (!is_null($area_private) && !(is_float($area_private) || is_numeric($area_private))) {
@@ -970,7 +970,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_municipal value
      * @return float|null
      */
-    public function getArea_municipal()
+    public function getArea_municipal(): ?float
     {
         return $this->area_municipal;
     }
@@ -979,7 +979,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_municipal
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_municipal($area_municipal = null)
+    public function setArea_municipal(float $area_municipal = null): self
     {
         // validation for constraint: float
         if (!is_null($area_municipal) && !(is_float($area_municipal) || is_numeric($area_municipal))) {
@@ -1000,7 +1000,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_national value
      * @return float|null
      */
-    public function getArea_national()
+    public function getArea_national(): ?float
     {
         return $this->area_national;
     }
@@ -1009,7 +1009,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_national
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_national($area_national = null)
+    public function setArea_national(float $area_national = null): self
     {
         // validation for constraint: float
         if (!is_null($area_national) && !(is_float($area_national) || is_numeric($area_national))) {
@@ -1030,7 +1030,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_land value
      * @return float|null
      */
-    public function getArea_land()
+    public function getArea_land(): ?float
     {
         return $this->area_land;
     }
@@ -1039,7 +1039,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_land
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_land($area_land = null)
+    public function setArea_land(float $area_land = null): self
     {
         // validation for constraint: float
         if (!is_null($area_land) && !(is_float($area_land) || is_numeric($area_land))) {
@@ -1060,7 +1060,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get area_territory value
      * @return float|null
      */
-    public function getArea_territory()
+    public function getArea_territory(): ?float
     {
         return $this->area_territory;
     }
@@ -1069,7 +1069,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $area_territory
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setArea_territory($area_territory = null)
+    public function setArea_territory(float $area_territory = null): self
     {
         // validation for constraint: float
         if (!is_null($area_territory) && !(is_float($area_territory) || is_numeric($area_territory))) {
@@ -1090,7 +1090,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get inventory_number value
      * @return string|null
      */
-    public function getInventory_number()
+    public function getInventory_number(): ?string
     {
         return $this->inventory_number;
     }
@@ -1099,7 +1099,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $inventory_number
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setInventory_number($inventory_number = null)
+    public function setInventory_number(string $inventory_number = null): self
     {
         // validation for constraint: string
         if (!is_null($inventory_number) && !is_string($inventory_number)) {
@@ -1112,7 +1112,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get flats_count value
      * @return int|null
      */
-    public function getFlats_count()
+    public function getFlats_count(): ?int
     {
         return $this->flats_count;
     }
@@ -1121,7 +1121,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $flats_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setFlats_count($flats_count = null)
+    public function setFlats_count(int $flats_count = null): self
     {
         // validation for constraint: int
         if (!is_null($flats_count) && !(is_int($flats_count) || ctype_digit($flats_count))) {
@@ -1134,7 +1134,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get residents_count value
      * @return int|null
      */
-    public function getResidents_count()
+    public function getResidents_count(): ?int
     {
         return $this->residents_count;
     }
@@ -1143,7 +1143,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $residents_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setResidents_count($residents_count = null)
+    public function setResidents_count(int $residents_count = null): self
     {
         // validation for constraint: int
         if (!is_null($residents_count) && !(is_int($residents_count) || ctype_digit($residents_count))) {
@@ -1156,7 +1156,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get accounts_count value
      * @return int|null
      */
-    public function getAccounts_count()
+    public function getAccounts_count(): ?int
     {
         return $this->accounts_count;
     }
@@ -1165,7 +1165,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param int $accounts_count
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setAccounts_count($accounts_count = null)
+    public function setAccounts_count(int $accounts_count = null): self
     {
         // validation for constraint: int
         if (!is_null($accounts_count) && !(is_int($accounts_count) || ctype_digit($accounts_count))) {
@@ -1178,7 +1178,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get construction_features value
      * @return string|null
      */
-    public function getConstruction_features()
+    public function getConstruction_features(): ?string
     {
         return $this->construction_features;
     }
@@ -1187,7 +1187,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $construction_features
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setConstruction_features($construction_features = null)
+    public function setConstruction_features(string $construction_features = null): self
     {
         // validation for constraint: string
         if (!is_null($construction_features) && !is_string($construction_features)) {
@@ -1200,7 +1200,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get thermal_actual_expense value
      * @return float|null
      */
-    public function getThermal_actual_expense()
+    public function getThermal_actual_expense(): ?float
     {
         return $this->thermal_actual_expense;
     }
@@ -1209,7 +1209,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $thermal_actual_expense
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setThermal_actual_expense($thermal_actual_expense = null)
+    public function setThermal_actual_expense(float $thermal_actual_expense = null): self
     {
         // validation for constraint: float
         if (!is_null($thermal_actual_expense) && !(is_float($thermal_actual_expense) || is_numeric($thermal_actual_expense))) {
@@ -1230,7 +1230,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get thermal_normative_expense value
      * @return float|null
      */
-    public function getThermal_normative_expense()
+    public function getThermal_normative_expense(): ?float
     {
         return $this->thermal_normative_expense;
     }
@@ -1239,7 +1239,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $thermal_normative_expense
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setThermal_normative_expense($thermal_normative_expense = null)
+    public function setThermal_normative_expense(float $thermal_normative_expense = null): self
     {
         // validation for constraint: float
         if (!is_null($thermal_normative_expense) && !(is_float($thermal_normative_expense) || is_numeric($thermal_normative_expense))) {
@@ -1260,7 +1260,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get energy_efficiency value
      * @return string|null
      */
-    public function getEnergy_efficiency()
+    public function getEnergy_efficiency(): ?string
     {
         return $this->energy_efficiency;
     }
@@ -1272,7 +1272,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $energy_efficiency
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setEnergy_efficiency($energy_efficiency = null)
+    public function setEnergy_efficiency(string $energy_efficiency = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::valueIsValid($energy_efficiency)) {
@@ -1285,7 +1285,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get energy_audit_date value
      * @return string|null
      */
-    public function getEnergy_audit_date()
+    public function getEnergy_audit_date(): ?string
     {
         return $this->energy_audit_date;
     }
@@ -1294,7 +1294,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $energy_audit_date
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setEnergy_audit_date($energy_audit_date = null)
+    public function setEnergy_audit_date(string $energy_audit_date = null): self
     {
         // validation for constraint: string
         if (!is_null($energy_audit_date) && !is_string($energy_audit_date)) {
@@ -1307,7 +1307,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get privatization_start_date value
      * @return string|null
      */
-    public function getPrivatization_start_date()
+    public function getPrivatization_start_date(): ?string
     {
         return $this->privatization_start_date;
     }
@@ -1316,7 +1316,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param string $privatization_start_date
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setPrivatization_start_date($privatization_start_date = null)
+    public function setPrivatization_start_date(string $privatization_start_date = null): self
     {
         // validation for constraint: string
         if (!is_null($privatization_start_date) && !is_string($privatization_start_date)) {
@@ -1329,7 +1329,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get deterioration_total value
      * @return float|null
      */
-    public function getDeterioration_total()
+    public function getDeterioration_total(): ?float
     {
         return $this->deterioration_total;
     }
@@ -1338,7 +1338,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $deterioration_total
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDeterioration_total($deterioration_total = null)
+    public function setDeterioration_total(float $deterioration_total = null): self
     {
         // validation for constraint: float
         if (!is_null($deterioration_total) && !(is_float($deterioration_total) || is_numeric($deterioration_total))) {
@@ -1359,7 +1359,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get deterioration_foundation value
      * @return float|null
      */
-    public function getDeterioration_foundation()
+    public function getDeterioration_foundation(): ?float
     {
         return $this->deterioration_foundation;
     }
@@ -1368,7 +1368,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $deterioration_foundation
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDeterioration_foundation($deterioration_foundation = null)
+    public function setDeterioration_foundation(float $deterioration_foundation = null): self
     {
         // validation for constraint: float
         if (!is_null($deterioration_foundation) && !(is_float($deterioration_foundation) || is_numeric($deterioration_foundation))) {
@@ -1389,7 +1389,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get deterioration_bearing_walls value
      * @return float|null
      */
-    public function getDeterioration_bearing_walls()
+    public function getDeterioration_bearing_walls(): ?float
     {
         return $this->deterioration_bearing_walls;
     }
@@ -1398,7 +1398,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $deterioration_bearing_walls
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDeterioration_bearing_walls($deterioration_bearing_walls = null)
+    public function setDeterioration_bearing_walls(float $deterioration_bearing_walls = null): self
     {
         // validation for constraint: float
         if (!is_null($deterioration_bearing_walls) && !(is_float($deterioration_bearing_walls) || is_numeric($deterioration_bearing_walls))) {
@@ -1419,7 +1419,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get deterioration_floor value
      * @return float|null
      */
-    public function getDeterioration_floor()
+    public function getDeterioration_floor(): ?float
     {
         return $this->deterioration_floor;
     }
@@ -1428,7 +1428,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param float $deterioration_floor
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDeterioration_floor($deterioration_floor = null)
+    public function setDeterioration_floor(float $deterioration_floor = null): self
     {
         // validation for constraint: float
         if (!is_null($deterioration_floor) && !(is_float($deterioration_floor) || is_numeric($deterioration_floor))) {
@@ -1449,7 +1449,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get facade value
      * @return \Api\StructType\ApiFacade|null
      */
-    public function getFacade()
+    public function getFacade(): ?\Api\StructType\ApiFacade
     {
         return $this->facade;
     }
@@ -1458,7 +1458,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiFacade $facade
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setFacade(\Api\StructType\ApiFacade $facade = null)
+    public function setFacade(\Api\StructType\ApiFacade $facade = null): self
     {
         $this->facade = $facade;
         return $this;
@@ -1467,7 +1467,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get roof value
      * @return \Api\StructType\ApiRoof|null
      */
-    public function getRoof()
+    public function getRoof(): ?\Api\StructType\ApiRoof
     {
         return $this->roof;
     }
@@ -1476,7 +1476,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiRoof $roof
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setRoof(\Api\StructType\ApiRoof $roof = null)
+    public function setRoof(\Api\StructType\ApiRoof $roof = null): self
     {
         $this->roof = $roof;
         return $this;
@@ -1485,7 +1485,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get basement value
      * @return \Api\StructType\ApiBasement|null
      */
-    public function getBasement()
+    public function getBasement(): ?\Api\StructType\ApiBasement
     {
         return $this->basement;
     }
@@ -1494,7 +1494,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiBasement $basement
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setBasement(\Api\StructType\ApiBasement $basement = null)
+    public function setBasement(\Api\StructType\ApiBasement $basement = null): self
     {
         $this->basement = $basement;
         return $this;
@@ -1503,7 +1503,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get common_space value
      * @return \Api\StructType\ApiCommonSpace|null
      */
-    public function getCommon_space()
+    public function getCommon_space(): ?\Api\StructType\ApiCommonSpace
     {
         return $this->common_space;
     }
@@ -1512,7 +1512,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiCommonSpace $common_space
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setCommon_space(\Api\StructType\ApiCommonSpace $common_space = null)
+    public function setCommon_space(\Api\StructType\ApiCommonSpace $common_space = null): self
     {
         $this->common_space = $common_space;
         return $this;
@@ -1521,7 +1521,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get chute value
      * @return \Api\StructType\ApiChute|null
      */
-    public function getChute()
+    public function getChute(): ?\Api\StructType\ApiChute
     {
         return $this->chute;
     }
@@ -1530,7 +1530,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiChute $chute
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setChute(\Api\StructType\ApiChute $chute = null)
+    public function setChute(\Api\StructType\ApiChute $chute = null): self
     {
         $this->chute = $chute;
         return $this;
@@ -1539,7 +1539,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get heating_system value
      * @return \Api\StructType\ApiHeatingSystem|null
      */
-    public function getHeating_system()
+    public function getHeating_system(): ?\Api\StructType\ApiHeatingSystem
     {
         return $this->heating_system;
     }
@@ -1548,7 +1548,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiHeatingSystem $heating_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHeating_system(\Api\StructType\ApiHeatingSystem $heating_system = null)
+    public function setHeating_system(\Api\StructType\ApiHeatingSystem $heating_system = null): self
     {
         $this->heating_system = $heating_system;
         return $this;
@@ -1557,7 +1557,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get hot_water_system value
      * @return \Api\StructType\ApiHotWaterSystem|null
      */
-    public function getHot_water_system()
+    public function getHot_water_system(): ?\Api\StructType\ApiHotWaterSystem
     {
         return $this->hot_water_system;
     }
@@ -1566,7 +1566,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiHotWaterSystem $hot_water_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHot_water_system(\Api\StructType\ApiHotWaterSystem $hot_water_system = null)
+    public function setHot_water_system(\Api\StructType\ApiHotWaterSystem $hot_water_system = null): self
     {
         $this->hot_water_system = $hot_water_system;
         return $this;
@@ -1575,7 +1575,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get cold_water_system value
      * @return \Api\StructType\ApiColdWaterSystem|null
      */
-    public function getCold_water_system()
+    public function getCold_water_system(): ?\Api\StructType\ApiColdWaterSystem
     {
         return $this->cold_water_system;
     }
@@ -1584,7 +1584,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiColdWaterSystem $cold_water_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setCold_water_system(\Api\StructType\ApiColdWaterSystem $cold_water_system = null)
+    public function setCold_water_system(\Api\StructType\ApiColdWaterSystem $cold_water_system = null): self
     {
         $this->cold_water_system = $cold_water_system;
         return $this;
@@ -1593,7 +1593,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get sewerage_system value
      * @return \Api\StructType\ApiSewerageSystem|null
      */
-    public function getSewerage_system()
+    public function getSewerage_system(): ?\Api\StructType\ApiSewerageSystem
     {
         return $this->sewerage_system;
     }
@@ -1602,7 +1602,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiSewerageSystem $sewerage_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setSewerage_system(\Api\StructType\ApiSewerageSystem $sewerage_system = null)
+    public function setSewerage_system(\Api\StructType\ApiSewerageSystem $sewerage_system = null): self
     {
         $this->sewerage_system = $sewerage_system;
         return $this;
@@ -1611,7 +1611,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get electricity_system value
      * @return \Api\StructType\ApiElectricitySystem|null
      */
-    public function getElectricity_system()
+    public function getElectricity_system(): ?\Api\StructType\ApiElectricitySystem
     {
         return $this->electricity_system;
     }
@@ -1620,7 +1620,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiElectricitySystem $electricity_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setElectricity_system(\Api\StructType\ApiElectricitySystem $electricity_system = null)
+    public function setElectricity_system(\Api\StructType\ApiElectricitySystem $electricity_system = null): self
     {
         $this->electricity_system = $electricity_system;
         return $this;
@@ -1629,7 +1629,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get gas_system value
      * @return \Api\StructType\ApiGasSystem|null
      */
-    public function getGas_system()
+    public function getGas_system(): ?\Api\StructType\ApiGasSystem
     {
         return $this->gas_system;
     }
@@ -1638,7 +1638,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiGasSystem $gas_system
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setGas_system(\Api\StructType\ApiGasSystem $gas_system = null)
+    public function setGas_system(\Api\StructType\ApiGasSystem $gas_system = null): self
     {
         $this->gas_system = $gas_system;
         return $this;
@@ -1647,7 +1647,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get lifts value
      * @return \Api\StructType\ApiLift[]|null
      */
-    public function getLifts()
+    public function getLifts(): ?array
     {
         return $this->lifts;
     }
@@ -1679,7 +1679,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiLift[] $lifts
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setLifts(array $lifts = array())
+    public function setLifts(array $lifts = array()): self
     {
         // validation for constraint: array
         if ('' !== ($liftsArrayErrorMessage = self::validateLiftsForArrayConstraintsFromSetLifts($lifts))) {
@@ -1694,7 +1694,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiLift $item
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function addToLifts(\Api\StructType\ApiLift $item)
+    public function addToLifts(\Api\StructType\ApiLift $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiLift) {
@@ -1707,7 +1707,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get management_contract value
      * @return \Api\StructType\ApiManagementContract|null
      */
-    public function getManagement_contract()
+    public function getManagement_contract(): ?\Api\StructType\ApiManagementContract
     {
         return $this->management_contract;
     }
@@ -1716,7 +1716,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiManagementContract $management_contract
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setManagement_contract(\Api\StructType\ApiManagementContract $management_contract = null)
+    public function setManagement_contract(\Api\StructType\ApiManagementContract $management_contract = null): self
     {
         $this->management_contract = $management_contract;
         return $this;
@@ -1725,7 +1725,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get heating_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getHeating_provider()
+    public function getHeating_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->heating_provider;
     }
@@ -1734,7 +1734,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $heating_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHeating_provider(\Api\StructType\ApiProvider $heating_provider = null)
+    public function setHeating_provider(\Api\StructType\ApiProvider $heating_provider = null): self
     {
         $this->heating_provider = $heating_provider;
         return $this;
@@ -1743,7 +1743,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get electricity_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getElectricity_provider()
+    public function getElectricity_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->electricity_provider;
     }
@@ -1752,7 +1752,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $electricity_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setElectricity_provider(\Api\StructType\ApiProvider $electricity_provider = null)
+    public function setElectricity_provider(\Api\StructType\ApiProvider $electricity_provider = null): self
     {
         $this->electricity_provider = $electricity_provider;
         return $this;
@@ -1761,7 +1761,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get gas_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getGas_provider()
+    public function getGas_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->gas_provider;
     }
@@ -1770,7 +1770,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $gas_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setGas_provider(\Api\StructType\ApiProvider $gas_provider = null)
+    public function setGas_provider(\Api\StructType\ApiProvider $gas_provider = null): self
     {
         $this->gas_provider = $gas_provider;
         return $this;
@@ -1779,7 +1779,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get hot_water_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getHot_water_provider()
+    public function getHot_water_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->hot_water_provider;
     }
@@ -1788,7 +1788,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $hot_water_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setHot_water_provider(\Api\StructType\ApiProvider $hot_water_provider = null)
+    public function setHot_water_provider(\Api\StructType\ApiProvider $hot_water_provider = null): self
     {
         $this->hot_water_provider = $hot_water_provider;
         return $this;
@@ -1797,7 +1797,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get cold_water_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getCold_water_provider()
+    public function getCold_water_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->cold_water_provider;
     }
@@ -1806,7 +1806,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $cold_water_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setCold_water_provider(\Api\StructType\ApiProvider $cold_water_provider = null)
+    public function setCold_water_provider(\Api\StructType\ApiProvider $cold_water_provider = null): self
     {
         $this->cold_water_provider = $cold_water_provider;
         return $this;
@@ -1815,7 +1815,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get drainage_provider value
      * @return \Api\StructType\ApiProvider|null
      */
-    public function getDrainage_provider()
+    public function getDrainage_provider(): ?\Api\StructType\ApiProvider
     {
         return $this->drainage_provider;
     }
@@ -1824,7 +1824,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiProvider $drainage_provider
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setDrainage_provider(\Api\StructType\ApiProvider $drainage_provider = null)
+    public function setDrainage_provider(\Api\StructType\ApiProvider $drainage_provider = null): self
     {
         $this->drainage_provider = $drainage_provider;
         return $this;
@@ -1833,7 +1833,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get finance value
      * @return \Api\StructType\ApiFinance|null
      */
-    public function getFinance()
+    public function getFinance(): ?\Api\StructType\ApiFinance
     {
         return $this->finance;
     }
@@ -1842,7 +1842,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \Api\StructType\ApiFinance $finance
      * @return \Api\StructType\ApiHouseProfileData
      */
-    public function setFinance(\Api\StructType\ApiFinance $finance = null)
+    public function setFinance(\Api\StructType\ApiFinance $finance = null): self
     {
         $this->finance = $finance;
         return $this;
