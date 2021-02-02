@@ -6,8 +6,6 @@ namespace WsdlToPhp\PackageGenerator\File\Element;
 
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter as PhpFunctionParameterBase;
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 
 class PhpFunctionParameter extends PhpFunctionParameterBase
 {

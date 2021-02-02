@@ -9,7 +9,7 @@ use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 
 /**
- * Class StructValue stands for an enumeration value
+ * Class StructValue stands for an enumeration value.
  */
 class StructValue extends AbstractModel
 {
@@ -27,19 +27,20 @@ class StructValue extends AbstractModel
         parent::__construct($generator, $name);
         $this
             ->setIndex($index)
-            ->setOwner($struct);
+            ->setOwner($struct)
+        ;
     }
 
     public function getCleanName(bool $keepMultipleUnderscores = false): string
     {
         if ($this->getGenerator()->getOptionGenericConstantsNames()) {
-            return self::GENERIC_NAME_PREFIX . $this->getIndex();
+            return self::GENERIC_NAME_PREFIX.$this->getIndex();
         }
 
         $nameWithSeparatedWords = $this->getNameWithSeparatedWords($keepMultipleUnderscores);
         $key = self::constantSuffix($this->getOwner()->getName(), $nameWithSeparatedWords, $this->getIndex());
 
-        return self::VALUE_NAME_PREFIX . mb_strtoupper($nameWithSeparatedWords . ($key ? '_' . $key : ''));
+        return self::VALUE_NAME_PREFIX.mb_strtoupper($nameWithSeparatedWords.($key ? '_'.$key : ''));
     }
 
     public function getNameWithSeparatedWords(bool $keepMultipleUnderscores = false): string
@@ -67,25 +68,26 @@ class StructValue extends AbstractModel
         return $this;
     }
 
+    public function getOwner(): Struct
+    {
+        return parent::getOwner();
+    }
+
     protected static function constantSuffix(string $structName, string $value, int $index): int
     {
-        $key = mb_strtoupper($structName . '_' . $value);
-        $indexedKey = $key . '_' . $index;
+        $key = mb_strtoupper($structName.'_'.$value);
+        $indexedKey = $key.'_'.$index;
         if (array_key_exists($indexedKey, self::$uniqueConstants)) {
             return self::$uniqueConstants[$indexedKey];
-        } elseif (!array_key_exists($key, self::$uniqueConstants)) {
+        }
+        if (!array_key_exists($key, self::$uniqueConstants)) {
             self::$uniqueConstants[$key] = 0;
         } else {
-            self::$uniqueConstants[$key]++;
+            ++self::$uniqueConstants[$key];
         }
         self::$uniqueConstants[$indexedKey] = self::$uniqueConstants[$key];
 
         return self::$uniqueConstants[$key];
-    }
-
-    public function getOwner(): Struct
-    {
-        return parent::getOwner();
     }
 
     protected function toJsonSerialize(): array

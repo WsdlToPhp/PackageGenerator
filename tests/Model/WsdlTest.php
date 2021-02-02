@@ -5,10 +5,14 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class WsdlTest extends AbstractTestCase
 {
     /**
@@ -113,12 +117,12 @@ final class WsdlTest extends AbstractTestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        new Wsdl(self::getBingGeneratorInstance(), __DIR__ . '/../resources/empty.wsdl', file_get_contents(__DIR__ . '/../resources/empty.wsdl'));
+        new Wsdl(self::getBingGeneratorInstance(), __DIR__.'/../resources/empty.wsdl', file_get_contents(__DIR__.'/../resources/empty.wsdl'));
     }
 
     public static function wsdlNumericEnumerationInstance(): Schema
     {
-        return self::getSchema(__DIR__ . '/../resources/numeric_enumeration.xml');
+        return self::getSchema(__DIR__.'/../resources/numeric_enumeration.xml');
     }
 
     public function testJsonSerialize()

@@ -7,6 +7,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\Container;
 use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ContainerTest extends AbstractTestCase
 {
     public function testAddWithException()

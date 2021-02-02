@@ -5,96 +5,20 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use ReflectionClass;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
-use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
 use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
 use WsdlToPhp\PackageGenerator\File\Validation\Rules;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
+use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 abstract class AbstractRuleTest extends AbstractTestCase
 {
     private static array $generators = [];
-
-    protected function createRuleFunction(string $ruleClassName, $value = null, bool $itemType = false, string $structAttributeType = 'string'): string
-    {
-        $generator = self::getBingGeneratorInstance();
-        $methodName = '_any_' . md5((string) rand(0, time()));
-        $method = new PhpMethod($methodName, [
-            'any',
-        ]);
-        $structFile = new StructFile($generator, 'any');
-        $structModel = new StructModel($generator, 'any');
-        $methodContainer = new MethodContainer($generator);
-        $structAttribute = new StructAttributeModel($generator, 'any', $structAttributeType, $structModel);
-        $rule = new $ruleClassName(new Rules($structFile, $method, $structAttribute, $methodContainer));
-        $rule->applyRule('any', $value, $itemType);
-        $method->addChild('return true;');
-        eval(str_replace('public ', '', $method->toString()));
-
-        return $methodName;
-    }
-
-
-    protected static function createClassInstance(Struct $struct)
-    {
-        // generate class' file
-        if ($struct->isArray()) {
-            $structFile = new StructArrayFile($struct->getGenerator(), 'any');
-        } elseif ($struct->isRestriction()) {
-            $structFile = new StructEnumFile($struct->getGenerator(), 'any');
-        } else {
-            $structFile = new StructFile($struct->getGenerator(), 'any');
-        }
-        $structFile->setModel($struct)->writeFile();
-
-        // load class
-        require_once $structFile->getFileName();
-
-        // remove no more useful file
-        @unlink($structFile->getFileName());
-    }
-
-    private static function getClassInstance($instanceMethod, $structName, $reset = false)
-    {
-        $key = implode('_', [
-            $instanceMethod,
-            $structName,
-        ]);
-
-        // get struct
-        $struct = call_user_func_array([
-            'self',
-            $instanceMethod,
-        ], [
-            false,
-        ])->getStructByName($structName);
-
-        if (!$struct) {
-            self::fail(sprintf('Unable to find %s struct for instantiating a new instance using %s', $structName, $instanceMethod));
-        }
-
-        // create class' file
-        $fileCreated = false;
-        if (!array_key_exists($key, self::$generators)) {
-            self::createClassInstance($struct);
-            $fileCreated = true;
-        }
-
-        // instantiate class
-        if ($reset || $fileCreated) {
-            $reflection = new ReflectionClass(($struct->getNamespace() ? $struct->getNamespace() . '\\' : '') . $struct->getPackagedName());
-            self::$generators[$key] = $reflection->newInstanceArgs();
-        }
-
-        return self::$generators[$key];
-    }
 
     public static function getWhlAddressTypeInstance(bool $reset = false)
     {
@@ -186,5 +110,78 @@ abstract class AbstractRuleTest extends AbstractTestCase
         self::getClassInstance('reformaGeneratorInstance', 'HouseEnergyEfficiencyClassEnum');
 
         return self::getClassInstance('reformaGeneratorInstance', 'HouseProfileData', $reset);
+    }
+
+    protected function createRuleFunction(string $ruleClassName, $value = null, bool $itemType = false, string $structAttributeType = 'string'): string
+    {
+        $generator = self::getBingGeneratorInstance();
+        $methodName = '_any_'.md5((string) rand(0, time()));
+        $method = new PhpMethod($methodName, [
+            'any',
+        ]);
+        $structFile = new StructFile($generator, 'any');
+        $structModel = new StructModel($generator, 'any');
+        $methodContainer = new MethodContainer($generator);
+        $structAttribute = new StructAttributeModel($generator, 'any', $structAttributeType, $structModel);
+        $rule = new $ruleClassName(new Rules($structFile, $method, $structAttribute, $methodContainer));
+        $rule->applyRule('any', $value, $itemType);
+        $method->addChild('return true;');
+        eval(str_replace('public ', '', $method->toString()));
+
+        return $methodName;
+    }
+
+    protected static function createClassInstance(Struct $struct)
+    {
+        // generate class' file
+        if ($struct->isArray()) {
+            $structFile = new StructArrayFile($struct->getGenerator(), 'any');
+        } elseif ($struct->isRestriction()) {
+            $structFile = new StructEnumFile($struct->getGenerator(), 'any');
+        } else {
+            $structFile = new StructFile($struct->getGenerator(), 'any');
+        }
+        $structFile->setModel($struct)->writeFile();
+
+        // load class
+        require_once $structFile->getFileName();
+
+        // remove no more useful file
+        @unlink($structFile->getFileName());
+    }
+
+    private static function getClassInstance($instanceMethod, $structName, $reset = false)
+    {
+        $key = implode('_', [
+            $instanceMethod,
+            $structName,
+        ]);
+
+        // get struct
+        $struct = call_user_func_array([
+            'self',
+            $instanceMethod,
+        ], [
+            false,
+        ])->getStructByName($structName);
+
+        if (!$struct) {
+            self::fail(sprintf('Unable to find %s struct for instantiating a new instance using %s', $structName, $instanceMethod));
+        }
+
+        // create class' file
+        $fileCreated = false;
+        if (!array_key_exists($key, self::$generators)) {
+            self::createClassInstance($struct);
+            $fileCreated = true;
+        }
+
+        // instantiate class
+        if ($reset || $fileCreated) {
+            $reflection = new ReflectionClass(($struct->getNamespace() ? $struct->getNamespace().'\\' : '').$struct->getPackagedName());
+            self::$generators[$key] = $reflection->newInstanceArgs();
+        }
+
+        return self::$generators[$key];
     }
 }

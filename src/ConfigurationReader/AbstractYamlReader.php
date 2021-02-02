@@ -17,12 +17,6 @@ abstract class AbstractYamlReader
 
     abstract public static function getDefaultConfigurationPath(): string;
 
-    protected function loadYaml(string $filename)
-    {
-        $ymlParser = new Parser();
-        return $ymlParser->parse(file_get_contents($filename));
-    }
-
     public static function instance(?string $filename = null): self
     {
         $loadFilename = empty($filename) ? static::getDefaultConfigurationPath() : $filename;
@@ -38,6 +32,21 @@ abstract class AbstractYamlReader
         return self::$instances[$key];
     }
 
+    /**
+     * For tests purpose only!
+     */
+    public static function resetInstances(): void
+    {
+        self::$instances = [];
+    }
+
+    protected function loadYaml(string $filename)
+    {
+        $ymlParser = new Parser();
+
+        return $ymlParser->parse(file_get_contents($filename));
+    }
+
     protected function parseSimpleArray(string $filename, string $mainKey): array
     {
         $values = $this->loadYaml($filename);
@@ -46,13 +55,5 @@ abstract class AbstractYamlReader
         }
 
         return $values[$mainKey];
-    }
-
-    /**
-     * For tests purpose only!
-     */
-    public static function resetInstances(): void
-    {
-        self::$instances = [];
     }
 }

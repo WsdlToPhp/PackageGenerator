@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
-use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Generator\GeneratorContainers;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class GeneratorContainerTest extends AbstractTestCase
 {
     public function testJsonSerialize()

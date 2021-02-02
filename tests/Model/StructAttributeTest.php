@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
-use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\Service;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StructAttributeTest extends AbstractTestCase
 {
     public function testGetUniqueNameMustGenerateAUniqueNameAmongstTheSameStruct()
@@ -15,7 +19,8 @@ final class StructAttributeTest extends AbstractTestCase
         $struct = StructTest::instance('Foo', true)
             ->addAttribute('id', 'int')
             ->addAttribute('name', 'string')
-            ->addAttribute('Name', 'string');
+            ->addAttribute('Name', 'string')
+        ;
         $this->assertSame('id', $struct->getAttribute('id')->getUniqueName());
         $this->assertSame('name', $struct->getAttribute('name')->getUniqueName());
         $this->assertSame('Name_1', $struct->getAttribute('Name')->getUniqueName());
@@ -26,10 +31,12 @@ final class StructAttributeTest extends AbstractTestCase
         $Foo = StructTest::instance('Foo', true)
             ->addAttribute('id', 'int')
             ->addAttribute('name', 'string')
-            ->addAttribute('bar', 'string');
+            ->addAttribute('bar', 'string')
+        ;
         $foo = StructTest::instance('foo', true)
             ->addAttribute('id', 'int')
-            ->addAttribute('name', 'string');
+            ->addAttribute('name', 'string')
+        ;
         $this->assertSame('id', $Foo->getAttribute('id')->getUniqueName());
         $this->assertSame('id', $foo->getAttribute('id')->getUniqueName());
         $this->assertSame('name', $Foo->getAttribute('name')->getUniqueName());
@@ -45,13 +52,13 @@ final class StructAttributeTest extends AbstractTestCase
     public function testGetUniqueNameWithConflict()
     {
         /**
-         * previous context
+         * previous context.
          */
         $service = new Service(self::getBingGeneratorInstance(), 'Query');
         $service->addMethod('query', '', '');
         $service->getMethod('query')->getMethodName();
         /**
-         * current context
+         * current context.
          */
         $struct = StructTest::instance('query', true);
         $struct->addAttribute('query', 'string');

@@ -10,6 +10,7 @@ final class ArrayRule extends AbstractSetOfValuesRule
     {
         return 'array';
     }
+
     protected function mustApplyRuleOnAttribute(): bool
     {
         return $this->getAttribute()->isArray();

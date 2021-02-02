@@ -6,9 +6,12 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class MaxLengthRuleTest extends AbstractRuleTest
 {
-
     /**
      * The email
      * Meta informations extracted from the WSDL
@@ -17,7 +20,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 1
      * - base: ddp:string100 | normalizedString
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
-     * - maxLength: 100
+     * - maxLength: 100.
      */
     public function testSetEmailWithTooLongCharactersMustThrowAnException()
     {
@@ -26,7 +29,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
 
         $instance = self::getDocDataPaymentsShoppperInstance();
 
-        $instance->setEmail(str_repeat('a', 99) . '@foo.bar');
+        $instance->setEmail(str_repeat('a', 99).'@foo.bar');
     }
 
     /**
@@ -37,13 +40,13 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 1
      * - base: ddp:string100 | normalizedString
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
-     * - maxLength: 100
+     * - maxLength: 100.
      */
     public function testSetEmailWithSameCharactersMustPass()
     {
         $instance = self::getDocDataPaymentsShoppperInstance();
 
-        $this->assertSame($instance, $instance->setEmail(str_repeat('a', 92) . '@foo.bar'));
+        $this->assertSame($instance, $instance->setEmail(str_repeat('a', 92).'@foo.bar'));
     }
 
     /**
@@ -54,7 +57,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 1
      * - base: ddp:string100 | normalizedString
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
-     * - maxLength: 100
+     * - maxLength: 100.
      */
     public function testSetEmailWithLessCharactersMustPass()
     {
@@ -71,7 +74,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 1
      * - base: ddp:string100 | normalizedString
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
-     * - maxLength: 100
+     * - maxLength: 100.
      */
     public function testSetEmailWithNullMustPass()
     {
@@ -89,7 +92,8 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
+     *
      * @var string[]
      */
     public function testSetAddressLineWithTooManyCharactersPerItemMustThrowAnException()
@@ -114,7 +118,8 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
+     *
      * @var string[]
      */
     public function testSetAddressLineWithExactCharactersPerItemMustPass()
@@ -139,7 +144,8 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
+     *
      * @var string[]
      */
     public function testSetAddressLineWithLessCharactersPerItemMustPass()

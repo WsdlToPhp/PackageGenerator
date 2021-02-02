@@ -10,7 +10,7 @@ final class XsdTypes extends AbstractYamlReader
     public const ANONYMOUS_KEY = 'anonymous';
     /**
      * This type is returned by the \SoapClient class when
-     * it does not succeed to define the type of a struct or an attribute
+     * it does not succeed to define the type of a struct or an attribute.
      */
     public const ANONYMOUS_TYPE = '/anonymous\d+/';
 
@@ -22,16 +22,9 @@ final class XsdTypes extends AbstractYamlReader
         $this->parseXsdTypes($filename);
     }
 
-    protected function parseXsdTypes(string $filename): self
-    {
-        $this->types = $this->parseSimpleArray($filename, self::MAIN_KEY);
-
-        return $this;
-    }
-
     public static function getDefaultConfigurationPath(): string
     {
-        return __DIR__ . '/../resources/config/xsd_types.yml';
+        return __DIR__.'/../resources/config/xsd_types.yml';
     }
 
     public function isXsd(string $xsdType): bool
@@ -47,5 +40,12 @@ final class XsdTypes extends AbstractYamlReader
     public function phpType(string $xsdType): string
     {
         return $this->isAnonymous($xsdType) ? $this->types[self::ANONYMOUS_KEY] : ($this->isXsd($xsdType) ? $this->types[$xsdType] : '');
+    }
+
+    protected function parseXsdTypes(string $filename): self
+    {
+        $this->types = $this->parseSimpleArray($filename, self::MAIN_KEY);
+
+        return $this;
     }
 }

@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagListTest extends WsdlParser
 {
     public static function odigeoInstanceParser(): TagList
@@ -43,16 +47,20 @@ final class TagListTest extends WsdlParser
                                 case 'secondSegmentsIds':
                                 case 'thirdSegmentsIds':
                                     $this->assertSame('int', $attribute->getInheritance());
-                                    $count++;
+                                    ++$count;
+
                                     break;
                             }
                         }
+
                         break;
+
                     case 'segment':
                         if ($struct->getAttribute('sectionIds') instanceof StructAttribute) {
                             $this->assertSame('int', $struct->getAttribute('sectionIds')->getInheritance());
-                            $count++;
+                            ++$count;
                         }
+
                         break;
                 }
             }
@@ -74,7 +82,8 @@ final class TagListTest extends WsdlParser
                 switch ($struct->getName()) {
                     case 'Rights':
                         $this->assertSame('string[]', $struct->getInheritance());
-                        $count++;
+                        ++$count;
+
                         break;
                 }
             }

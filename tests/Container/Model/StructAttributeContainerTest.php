@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StructAttributeContainerTest extends AbstractTestCase
 {
     public static function instance(): StructAttributeContainer
@@ -19,6 +23,7 @@ final class StructAttributeContainerTest extends AbstractTestCase
         $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'bar', 'int', $struct));
         $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'Bar', 'float', $struct));
         $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'fooBar', 'bool', $struct));
+
         return $structAttributeContainer;
     }
 

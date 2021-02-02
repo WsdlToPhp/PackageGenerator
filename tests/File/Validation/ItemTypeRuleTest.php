@@ -7,6 +7,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 use Api\StructType\ApiParagraphType;
 use TypeError;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ItemTypeRuleTest extends AbstractRuleTest
 {
     public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeError()

@@ -7,6 +7,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 use SoapClient;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagInputTest extends WsdlParser
 {
     public static function myBoardPackInstanceParser(): TagInput
@@ -41,9 +45,9 @@ final class TagInputTest extends WsdlParser
         foreach ($soapFunctions as $soapFunction) {
             $methodData = self::getMethodDataFromSoapFunction($soapFunction);
             $method = $tagInputParser->getGenerator()->getServiceMethod($methodData['name']);
-            if (strtolower($methodData['parameter']) === TagInput::UNKNOWN) {
+            if (TagInput::UNKNOWN === strtolower($methodData['parameter'])) {
                 $this->assertNotSame(TagInput::UNKNOWN, strtolower($method->getParameterType()));
-                $count++;
+                ++$count;
             }
         }
         $this->assertSame(128, $count);
@@ -61,7 +65,7 @@ final class TagInputTest extends WsdlParser
         foreach ($soapFunctions as $soapFunction) {
             $methodData = self::getMethodDataFromSoapFunction($soapFunction);
             $method = $tagInputParser->getGenerator()->getServiceMethod($methodData['name']);
-            if (strtolower($methodData['parameter']) === TagInput::UNKNOWN) {
+            if (TagInput::UNKNOWN === strtolower($methodData['parameter'])) {
                 if (is_array($method->getParameterType())) {
                     foreach ($method->getParameterType() as $methodParameterType) {
                         $this->assertNotSame(TagInput::UNKNOWN, strtolower($methodParameterType));
@@ -69,18 +73,20 @@ final class TagInputTest extends WsdlParser
                 } else {
                     $this->assertNotSame(TagInput::UNKNOWN, strtolower($method->getParameterType()));
                 }
-                $count++;
+                ++$count;
             }
         }
         $this->assertSame(7, $count);
     }
+
     /**
      * @param string $soapFunction
+     *
      * @return string[]
      */
     public static function getMethodDataFromSoapFunction($soapFunction)
     {
-        if (stripos($soapFunction, TagInput::UNKNOWN) !== false) {
+        if (false !== stripos($soapFunction, TagInput::UNKNOWN)) {
             $parameterType = TagInput::UNKNOWN;
         } else {
             $parameterType = '[a-zA-Z_]*';
@@ -89,6 +95,7 @@ final class TagInputTest extends WsdlParser
         preg_match(sprintf('/[a-zA-Z_]*\s([a-zA-Z_]*)\(.*(%s)\s/i', $parameterType), $soapFunction, $matches);
         $name = $matches[1] ?? '';
         $parameter = $matches[2] ?? '';
+
         return [
             'name' => $name,
             'parameter' => $parameter,

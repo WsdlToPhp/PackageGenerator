@@ -5,22 +5,22 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File;
 
 use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\File\Utils as FileUtils;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
-use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
+use WsdlToPhp\PhpGenerator\Component\PhpClass;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
+use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Element\PhpDeclare;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpProperty;
-use WsdlToPhp\PhpGenerator\Element\PhpConstant;
-use WsdlToPhp\PhpGenerator\Component\PhpClass;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 
 abstract class AbstractModelFile extends AbstractFile
 {
@@ -39,9 +39,9 @@ abstract class AbstractModelFile extends AbstractFile
     public const TYPE_BOOL = 'bool';
     public const TYPE_STRING = 'string';
 
-    private ?AbstractModel $model = null;
-
     protected Method $methods;
+
+    private ?AbstractModel $model = null;
 
     public function getFileDestination(bool $withSrc = true): string
     {
@@ -51,7 +51,8 @@ abstract class AbstractModelFile extends AbstractFile
     public function getDestinationFolder(bool $withSrc = true): string
     {
         $src = rtrim($this->generator->getOptionSrcDirname(), DIRECTORY_SEPARATOR);
-        return sprintf('%s%s', $this->getGenerator()->getOptionDestination(), (bool) $withSrc && !empty($src) ? $src . DIRECTORY_SEPARATOR : '');
+
+        return sprintf('%s%s', $this->getGenerator()->getOptionDestination(), (bool) $withSrc && !empty($src) ? $src.DIRECTORY_SEPARATOR : '');
     }
 
     public function writeFile(bool $withSrc = true): void
@@ -65,15 +66,9 @@ abstract class AbstractModelFile extends AbstractFile
             ->defineNamespace()
             ->defineUseStatement()
             ->addAnnotationBlock()
-            ->addClassElement();
+            ->addClassElement()
+        ;
         parent::writeFile();
-    }
-
-    protected function addAnnotationBlock(): AbstractModelFile
-    {
-        $this->getFile()->addAnnotationBlockElement($this->getClassAnnotationBlock());
-
-        return $this;
     }
 
     public function setModel(AbstractModel $model): self
@@ -83,7 +78,8 @@ abstract class AbstractModelFile extends AbstractFile
         $this
             ->getFile()
             ->getMainElement()
-            ->setName($model->getPackagedName());
+            ->setName($model->getPackagedName())
+        ;
 
         return $this;
     }
@@ -91,6 +87,115 @@ abstract class AbstractModelFile extends AbstractFile
     public function getModel(): ?AbstractModel
     {
         return $this->model;
+    }
+
+    public function getModelFromStructAttribute(StructAttributeModel $attribute = null): ?StructModel
+    {
+        return $this->getStructAttribute($attribute)->getTypeStruct();
+    }
+
+    public function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null): ?StructModel
+    {
+        $model = $this->getModelFromStructAttribute($attribute);
+        if ($model instanceof StructModel) {
+            // list are mainly scalar values of basic types (string, int, etc.) or of Restriction values
+            if ($model->isList()) {
+                $subModel = $this->getModelByName($model->getList());
+                if ($subModel && $subModel->isRestriction()) {
+                    $model = $subModel;
+                } elseif (!$model->isRestriction()) {
+                    $model = null;
+                }
+            } elseif (!$model->isRestriction()) {
+                $model = null;
+            }
+        }
+
+        return $model;
+    }
+
+    public function isAttributeAList(StructAttributeModel $attribute = null): bool
+    {
+        return $this->getStructAttribute($attribute)->isList();
+    }
+
+    public function getStructAttributeType(StructAttributeModel $attribute = null, bool $namespaced = false): string
+    {
+        $attribute = $this->getStructAttribute($attribute);
+        $inheritance = $attribute->getInheritance();
+        $type = empty($inheritance) ? $attribute->getType() : $inheritance;
+
+        if (!empty($type) && ($struct = $this->getGenerator()->getStructByName($type))) {
+            $inheritance = $struct->getTopInheritance();
+            if (!empty($inheritance)) {
+                $type = str_replace('[]', '', $inheritance);
+            } else {
+                $type = $struct->getPackagedName($namespaced);
+            }
+        }
+
+        $model = $this->getModelFromStructAttribute($attribute);
+        if ($model instanceof StructModel) {
+            // issue #84: union is considered as string as it would be difficult to have a method that accepts multiple object types.
+            // If the property has to be an object of multiple types => new issue...
+            if ($model->isRestriction() || $model->isUnion()) {
+                $type = self::TYPE_STRING;
+            } elseif ($model->isStruct()) {
+                $type = $model->getPackagedName($namespaced);
+            } elseif ($model->isArray() && ($inheritanceStruct = $model->getInheritanceStruct()) instanceof StructModel) {
+                $type = $inheritanceStruct->getPackagedName($namespaced);
+            }
+        }
+
+        return $type;
+    }
+
+    public function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null): string
+    {
+        $attribute = $this->getStructAttribute($attribute);
+        $attributeType = $this->getStructAttributeType($attribute, true);
+        if (XsdTypes::instance($this->getGenerator()->getOptionXsdTypesPath())->isXsd($attributeType)) {
+            $attributeType = self::getPhpType($attributeType, $this->getGenerator()->getOptionXsdTypesPath());
+        }
+
+        return $attributeType;
+    }
+
+    /**
+     * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
+     * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp.
+     *
+     * @param mixed $type
+     * @param null  $xsdTypesPath
+     * @param mixed $fallback
+     *
+     * @return mixed
+     */
+    public static function getValidType($type, $xsdTypesPath = null, $fallback = null)
+    {
+        return XsdTypes::instance($xsdTypesPath)->isXsd(str_replace('[]', '', $type)) ? $fallback : $type;
+    }
+
+    /**
+     * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
+     * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp.
+     *
+     * @param mixed $type
+     * @param null  $xsdTypesPath
+     * @param mixed $fallback
+     *
+     * @return mixed
+     */
+    public static function getPhpType($type, $xsdTypesPath = null, $fallback = self::TYPE_STRING)
+    {
+        return XsdTypes::instance($xsdTypesPath)->isXsd(str_replace('[]', '', $type)) ? XsdTypes::instance($xsdTypesPath)->phpType($type) : $fallback;
+    }
+
+    protected function addAnnotationBlock(): AbstractModelFile
+    {
+        $this->getFile()->addAnnotationBlockElement($this->getClassAnnotationBlock());
+
+        return $this;
     }
 
     protected function getModelByName(string $name): ?StructModel
@@ -166,7 +271,8 @@ abstract class AbstractModelFile extends AbstractFile
             ->defineProperties($class)
             ->defineMethods($class)
             ->getFile()
-            ->addClassComponent($class);
+            ->addClassComponent($class)
+        ;
 
         return $this;
     }
@@ -263,67 +369,6 @@ abstract class AbstractModelFile extends AbstractFile
         return $attribute;
     }
 
-    public function getModelFromStructAttribute(StructAttributeModel $attribute = null): ?StructModel
-    {
-        return $this->getStructAttribute($attribute)->getTypeStruct();
-    }
-
-    public function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null): ?StructModel
-    {
-        $model = $this->getModelFromStructAttribute($attribute);
-        if ($model instanceof StructModel) {
-            // list are mainly scalar values of basic types (string, int, etc.) or of Restriction values
-            if ($model->isList()) {
-                $subModel = $this->getModelByName($model->getList());
-                if ($subModel && $subModel->isRestriction()) {
-                    $model = $subModel;
-                } elseif (!$model->isRestriction()) {
-                    $model = null;
-                }
-            } elseif (!$model->isRestriction()) {
-                $model = null;
-            }
-        }
-
-        return $model;
-    }
-
-    public function isAttributeAList(StructAttributeModel $attribute = null): bool
-    {
-        return $this->getStructAttribute($attribute)->isList();
-    }
-
-    public function getStructAttributeType(StructAttributeModel $attribute = null, bool $namespaced = false): string
-    {
-        $attribute = $this->getStructAttribute($attribute);
-        $inheritance = $attribute->getInheritance();
-        $type = empty($inheritance) ? $attribute->getType() : $inheritance;
-
-        if (!empty($type) && ($struct = $this->getGenerator()->getStructByName($type))) {
-            $inheritance = $struct->getTopInheritance();
-            if (!empty($inheritance)) {
-                $type = str_replace('[]', '', $inheritance);
-            } else {
-                $type = $struct->getPackagedName($namespaced);
-            }
-        }
-
-        $model = $this->getModelFromStructAttribute($attribute);
-        if ($model instanceof StructModel) {
-            // issue #84: union is considered as string as it would be difficult to have a method that accepts multiple object types.
-            // If the property has to be an object of multiple types => new issue...
-            if ($model->isRestriction() || $model->isUnion()) {
-                $type = self::TYPE_STRING;
-            } elseif ($model->isStruct()) {
-                $type = $model->getPackagedName($namespaced);
-            } elseif ($model->isArray() && ($inheritanceStruct = $model->getInheritanceStruct()) instanceof StructModel) {
-                $type = $inheritanceStruct->getPackagedName($namespaced);
-            }
-        }
-
-        return $type;
-    }
-
     protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, bool $returnArrayType = true): string
     {
         $attribute = $this->getStructAttribute($attribute);
@@ -338,6 +383,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null, bool $returnArrayType = true): string
     {
         $attribute = $this->getStructAttribute($attribute);
+
         return sprintf('%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '');
     }
 
@@ -351,42 +397,5 @@ abstract class AbstractModelFile extends AbstractFile
         $attribute = $this->getStructAttribute($attribute);
 
         return ($returnArrayType && ($attribute->isArray() || $this->isAttributeAList($attribute))) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
-    }
-
-    public function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null): string
-    {
-        $attribute = $this->getStructAttribute($attribute);
-        $attributeType = $this->getStructAttributeType($attribute, true);
-        if (XsdTypes::instance($this->getGenerator()->getOptionXsdTypesPath())->isXsd($attributeType)) {
-            $attributeType = self::getPhpType($attributeType, $this->getGenerator()->getOptionXsdTypesPath());
-        }
-
-        return $attributeType;
-    }
-
-    /**
-     * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
-     * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp
-     * @param mixed $type
-     * @param null $xsdTypesPath
-     * @param mixed $fallback
-     * @return mixed
-     */
-    public static function getValidType($type, $xsdTypesPath = null, $fallback = null)
-    {
-        return XsdTypes::instance($xsdTypesPath)->isXsd(str_replace('[]', '', $type)) ? $fallback : $type;
-    }
-
-    /**
-     * See http://php.net/manual/fr/language.oop5.typehinting.php for these cases
-     * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp
-     * @param mixed $type
-     * @param null $xsdTypesPath
-     * @param mixed $fallback
-     * @return mixed
-     */
-    public static function getPhpType($type, $xsdTypesPath = null, $fallback = self::TYPE_STRING)
-    {
-        return XsdTypes::instance($xsdTypesPath)->isXsd(str_replace('[]', '', $type)) ? XsdTypes::instance($xsdTypesPath)->phpType($type) : $fallback;
     }
 }

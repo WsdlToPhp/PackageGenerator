@@ -6,67 +6,63 @@ namespace WsdlToPhp\PackageGenerator\Model;
 
 use InvalidArgumentException;
 use JsonSerializable;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeyword;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
+use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
-use WsdlToPhp\PackageGenerator\Generator\AbstractGeneratorAware;
 
 /**
- * Class AbstractModel defines the basic properties and methods to operations and structs extracted from the WSDL
+ * Class AbstractModel defines the basic properties and methods to operations and structs extracted from the WSDL.
  */
 abstract class AbstractModel extends AbstractGeneratorAware implements JsonSerializable
 {
     public const META_DOCUMENTATION = 'documentation';
 
     /**
-     * Original name od the element
+     * Original name od the element.
+     *
      * @var mixed
      */
     protected $name;
 
     /**
-     * Values associated to the operation
+     * Values associated to the operation.
+     *
      * @var string[]
      */
     protected array $meta = [];
 
     /**
-     * Define the inheritance of a struct by the name of the parent struct or type
-     * @var string
+     * Define the inheritance of a struct by the name of the parent struct or type.
      */
     protected string $inheritance = '';
 
     /**
-     * Store the object which owns the current model
-     * @var AbstractModel|null
+     * Store the object which owns the current model.
      */
     protected ?AbstractModel $owner = null;
 
     /**
      * Indicates that the current element is an abstract element.
      * It allows to generated an abstract class.
-     * This will happen for element/complexType that are defined with abstract="true"
-     * @var bool
+     * This will happen for element/complexType that are defined with abstract="true".
      */
     protected bool $isAbstract = false;
 
     /**
-     * Replaced keywords time in order to generate unique new keyword
-     * @var array
+     * Replaced keywords time in order to generate unique new keyword.
      */
     protected static array $replacedPhpReservedKeywords = [];
 
     /**
-     * Replaced methods time in order to generate unique new method
-     * @var array
+     * Replaced methods time in order to generate unique new method.
      */
     protected array $replacedReservedMethods = [];
 
     /**
-     * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name with same value)
-     * @var array
+     * Unique name generated in order to ensure unique naming (for struct constructor and setters/getters even for different case attribute name with same value).
      */
     protected static array $uniqueNames = [];
 
@@ -145,52 +141,6 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
         return $this;
     }
 
-    /**
-     * Allows to merge meta from different sources and ensure consistency of their order
-     * Must be passed as less important (at first position) to most important (last position)
-     * @return array
-     */
-    protected function mergeMeta(): array
-    {
-        $meta = func_get_args();
-        $mergedMeta = [];
-        $metaDocumentation = [];
-        // gather meta
-        foreach ($meta as $metaItem) {
-            foreach ($metaItem as $metaName => $metaValue) {
-                if (self::META_DOCUMENTATION === $metaName) {
-                    $metaDocumentation = array_merge($metaDocumentation, $metaValue);
-                } elseif (!array_key_exists($metaName, $mergedMeta)) {
-                    $mergedMeta[$metaName] = $metaValue;
-                } elseif (is_array($mergedMeta[$metaName]) && is_array($metaValue)) {
-                    $mergedMeta[$metaName] = array_merge($mergedMeta[$metaName], $metaValue);
-                } elseif (is_array($mergedMeta[$metaName])) {
-                    $mergedMeta[$metaName][] = $metaValue;
-                } else {
-                    $mergedMeta[$metaName] = $metaValue;
-                }
-            }
-        }
-
-        // sort by key
-        ksort($mergedMeta);
-
-        // add documentation if any at first position
-        if (!empty($metaDocumentation)) {
-            $definitiveMeta = [
-                self::META_DOCUMENTATION => array_unique(array_reverse($metaDocumentation)),
-            ];
-            foreach ($mergedMeta as $metaName => $metaValue) {
-                $definitiveMeta[$metaName] = $metaValue;
-            }
-            $mergedMeta = $definitiveMeta;
-            unset($definitiveMeta);
-        }
-        unset($meta, $metaDocumentation);
-
-        return $mergedMeta;
-    }
-
     public function setDocumentation(string $documentation): self
     {
         return $this->addMeta(self::META_DOCUMENTATION, is_array($documentation) ? $documentation : [
@@ -260,7 +210,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
 
     public function nameIsClean(): bool
     {
-        return ('' !== $this->getName() && $this->getName() === $this->getCleanName());
+        return '' !== $this->getName() && $this->getName() === $this->getCleanName();
     }
 
     public function getPackagedName(bool $namespaced = false): string
@@ -286,8 +236,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
     }
 
     /**
-     * Allows to define the contextual part of the class name for the package
-     * @return string
+     * Allows to define the contextual part of the class name for the package.
      */
     public function getContextualPart(): string
     {
@@ -333,8 +282,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
 
     /**
      * Returns the sub package name which the model belongs to
-     * Must be overridden by sub classes
-     * @return array
+     * Must be overridden by sub classes.
      */
     public function getDocSubPackages(): array
     {
@@ -350,17 +298,17 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
     {
         if (PhpReservedKeyword::instance()->is($keyword)) {
             if (!is_null($context)) {
-                $keywordKey = $keyword . '_' . $context;
+                $keywordKey = $keyword.'_'.$context;
                 if (!array_key_exists($keywordKey, self::$replacedPhpReservedKeywords)) {
                     self::$replacedPhpReservedKeywords[$keywordKey] = 0;
                 } else {
-                    self::$replacedPhpReservedKeywords[$keywordKey]++;
+                    ++self::$replacedPhpReservedKeywords[$keywordKey];
                 }
 
-                return '_' . $keyword . (self::$replacedPhpReservedKeywords[$keywordKey] ? '_' . self::$replacedPhpReservedKeywords[$keywordKey] : '');
+                return '_'.$keyword.(self::$replacedPhpReservedKeywords[$keywordKey] ? '_'.self::$replacedPhpReservedKeywords[$keywordKey] : '');
             }
 
-            return '_' . $keyword;
+            return '_'.$keyword;
         }
 
         return $keyword;
@@ -375,48 +323,24 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
     {
         if ($this->getReservedMethodsInstance()->is($methodName)) {
             if (!is_null($context)) {
-                $methodKey = $methodName . '_' . $context;
+                $methodKey = $methodName.'_'.$context;
                 if (!array_key_exists($methodKey, $this->replacedReservedMethods)) {
                     $this->replacedReservedMethods[$methodKey] = 0;
                 } else {
-                    $this->replacedReservedMethods[$methodKey]++;
+                    ++$this->replacedReservedMethods[$methodKey];
                 }
 
-                return '_' . $methodName . ($this->replacedReservedMethods[$methodKey] ? '_' . $this->replacedReservedMethods[$methodKey] : '');
-            } else {
-                return '_' . $methodName;
+                return '_'.$methodName.($this->replacedReservedMethods[$methodKey] ? '_'.$this->replacedReservedMethods[$methodKey] : '');
             }
-        } else {
-            return $methodName;
+
+            return '_'.$methodName;
         }
+
+        return $methodName;
     }
 
     /**
-     * Static method which returns a unique name case sensitively
-     * Useful to name methods case sensitively distinct, see http://the-echoplex.net/log/php-case-sensitivity
-     * @param string $name the original name
-     * @param string $context the context where the name is needed unique
-     * @return string
-     */
-    protected static function uniqueName(string $name, string $context): string
-    {
-        $insensitiveKey = mb_strtolower($name . '_' . $context);
-        $sensitiveKey = $name . '_' . $context;
-        if (array_key_exists($sensitiveKey, self::$uniqueNames)) {
-            return self::$uniqueNames[$sensitiveKey];
-        } elseif (!array_key_exists($insensitiveKey, self::$uniqueNames)) {
-            self::$uniqueNames[$insensitiveKey] = 0;
-        } else {
-            self::$uniqueNames[$insensitiveKey]++;
-        }
-        $uniqueName = $name . (self::$uniqueNames[$insensitiveKey] ? '_' . self::$uniqueNames[$insensitiveKey] : '');
-        self::$uniqueNames[$sensitiveKey] = $uniqueName;
-
-        return $uniqueName;
-    }
-
-    /**
-     * Gives the availability for test purpose and multiple package generation to purge unique names
+     * Gives the availability for test purpose and multiple package generation to purge unique names.
      */
     public static function purgeUniqueNames()
     {
@@ -424,18 +348,12 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
     }
 
     /**
-     * Gives the availability for test purpose and multiple package generation to purge reserved keywords usage
+     * Gives the availability for test purpose and multiple package generation to purge reserved keywords usage.
      */
     public static function purgePhpReservedKeywords()
     {
         self::$replacedPhpReservedKeywords = [];
     }
-
-    /**
-     * Must return the properties of the inherited class
-     * @return array
-     */
-    abstract protected function toJsonSerialize(): array;
 
     public function jsonSerialize(): array
     {
@@ -458,14 +376,89 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
             $setFromSerializedJson = sprintf('set%sFromSerializedJson', ucfirst($arg));
             $set = sprintf('set%s', ucfirst($arg));
             if (method_exists($instance, $setFromSerializedJson)) {
-                $instance->$setFromSerializedJson($value);
+                $instance->{$setFromSerializedJson}($value);
             } elseif (method_exists($instance, $set)) {
-                $instance->$set($value);
+                $instance->{$set}($value);
             }
         }
 
         return $instance;
     }
+
+    /**
+     * Allows to merge meta from different sources and ensure consistency of their order
+     * Must be passed as less important (at first position) to most important (last position).
+     */
+    protected function mergeMeta(): array
+    {
+        $meta = func_get_args();
+        $mergedMeta = [];
+        $metaDocumentation = [];
+        // gather meta
+        foreach ($meta as $metaItem) {
+            foreach ($metaItem as $metaName => $metaValue) {
+                if (self::META_DOCUMENTATION === $metaName) {
+                    $metaDocumentation = array_merge($metaDocumentation, $metaValue);
+                } elseif (!array_key_exists($metaName, $mergedMeta)) {
+                    $mergedMeta[$metaName] = $metaValue;
+                } elseif (is_array($mergedMeta[$metaName]) && is_array($metaValue)) {
+                    $mergedMeta[$metaName] = array_merge($mergedMeta[$metaName], $metaValue);
+                } elseif (is_array($mergedMeta[$metaName])) {
+                    $mergedMeta[$metaName][] = $metaValue;
+                } else {
+                    $mergedMeta[$metaName] = $metaValue;
+                }
+            }
+        }
+
+        // sort by key
+        ksort($mergedMeta);
+
+        // add documentation if any at first position
+        if (!empty($metaDocumentation)) {
+            $definitiveMeta = [
+                self::META_DOCUMENTATION => array_unique(array_reverse($metaDocumentation)),
+            ];
+            foreach ($mergedMeta as $metaName => $metaValue) {
+                $definitiveMeta[$metaName] = $metaValue;
+            }
+            $mergedMeta = $definitiveMeta;
+            unset($definitiveMeta);
+        }
+        unset($meta, $metaDocumentation);
+
+        return $mergedMeta;
+    }
+
+    /**
+     * Static method which returns a unique name case sensitively
+     * Useful to name methods case sensitively distinct, see http://the-echoplex.net/log/php-case-sensitivity.
+     *
+     * @param string $name    the original name
+     * @param string $context the context where the name is needed unique
+     */
+    protected static function uniqueName(string $name, string $context): string
+    {
+        $insensitiveKey = mb_strtolower($name.'_'.$context);
+        $sensitiveKey = $name.'_'.$context;
+        if (array_key_exists($sensitiveKey, self::$uniqueNames)) {
+            return self::$uniqueNames[$sensitiveKey];
+        }
+        if (!array_key_exists($insensitiveKey, self::$uniqueNames)) {
+            self::$uniqueNames[$insensitiveKey] = 0;
+        } else {
+            ++self::$uniqueNames[$insensitiveKey];
+        }
+        $uniqueName = $name.(self::$uniqueNames[$insensitiveKey] ? '_'.self::$uniqueNames[$insensitiveKey] : '');
+        self::$uniqueNames[$sensitiveKey] = $uniqueName;
+
+        return $uniqueName;
+    }
+
+    /**
+     * Must return the properties of the inherited class.
+     */
+    abstract protected function toJsonSerialize(): array;
 
     protected static function checkSerializedJson(array $args): void
     {

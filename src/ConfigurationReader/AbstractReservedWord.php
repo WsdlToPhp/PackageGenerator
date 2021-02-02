@@ -18,6 +18,11 @@ abstract class AbstractReservedWord extends AbstractYamlReader
         $this->parseReservedKeywords($filename);
     }
 
+    public function is(string $keyword): bool
+    {
+        return in_array($keyword, $this->keywords[self::CASE_SENSITIVE_KEY], true) || in_array(mb_strtolower($keyword), $this->keywords[self::CASE_INSENSITIVE_KEY], true);
+    }
+
     protected function parseReservedKeywords(string $filename): AbstractReservedWord
     {
         $allKeywords = $this->parseSimpleArray($filename, self::MAIN_KEY);
@@ -29,10 +34,5 @@ abstract class AbstractReservedWord extends AbstractYamlReader
         ]);
 
         return $this;
-    }
-
-    public function is(string $keyword): bool
-    {
-        return in_array($keyword, $this->keywords[self::CASE_SENSITIVE_KEY], true) || in_array(mb_strtolower($keyword), $this->keywords[self::CASE_INSENSITIVE_KEY], true);
     }
 }

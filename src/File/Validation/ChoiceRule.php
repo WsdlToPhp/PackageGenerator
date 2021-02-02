@@ -32,6 +32,11 @@ final class ChoiceRule extends AbstractRule
         return self::getErrorMessageVariableName($parameterName);
     }
 
+    public static function getErrorMessageVariableName(string $parameterName): string
+    {
+        return sprintf('$%sChoiceErrorMessage', $parameterName);
+    }
+
     protected function addValidationMethod(string $parameterName, array $choiceNames)
     {
         $attribute = $this->getAttribute();
@@ -52,7 +57,8 @@ final class ChoiceRule extends AbstractRule
             ->addChild('if (is_null($value)) {')
             ->addChild($method->getIndentedString('return $message;', 1))
             ->addChild('}')
-            ->addChild('$properties = [');
+            ->addChild('$properties = [')
+        ;
 
         array_walk($choiceAttributes, function (StructAttribute $choiceAttribute) use ($method) {
             $method->addChild($method->getIndentedString(sprintf('%s,', var_export($choiceAttribute->getCleanName(), true)), 1));
@@ -69,18 +75,14 @@ final class ChoiceRule extends AbstractRule
             ->addChild('} catch (\InvalidArgumentException $e) {')
             ->addChild($method->getIndentedString('$message = $e->getMessage();', 1))
             ->addChild('}')
-            ->addChild('return $message;');
+            ->addChild('return $message;')
+        ;
 
         $this->getMethods()->add($method);
     }
 
     protected function getValidationMethodName(string $parameterName): string
     {
-        return sprintf('validate%sForChoiceConstraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
-    }
-
-    public static function getErrorMessageVariableName(string $parameterName): string
-    {
-        return sprintf('$%sChoiceErrorMessage', $parameterName);
+        return sprintf('validate%sForChoiceConstraintsFrom%s', ucfirst($parameterName), ucfirst($this->getMethod()->getName()));
     }
 }

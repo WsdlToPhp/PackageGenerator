@@ -9,10 +9,9 @@ use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 final class Utils
 {
     /**
-     * Gets upper case word among a string from the end or from the beginning part
-     * @param string $optionValue
+     * Gets upper case word among a string from the end or from the beginning part.
+     *
      * @param string $string the string from which we can extract the part
-     * @return string
      */
     public static function getPart(string $optionValue, string $string): string
     {
@@ -24,6 +23,7 @@ final class Utils
         }
 
         $elementType = '';
+
         switch ($optionValue) {
             case GeneratorOptions::VALUE_END:
                 $parts = preg_split('/[A-Z]/', ucfirst($string));
@@ -31,7 +31,7 @@ final class Utils
                 if (!empty($parts[$partsCount - 1])) {
                     $elementType = mb_substr($string, mb_strrpos($string, implode('', array_slice($parts, -1))) - 1);
                 } else {
-                    for ($i = $partsCount - 1; $i >= 0; $i--) {
+                    for ($i = $partsCount - 1; $i >= 0; --$i) {
                         $part = trim($parts[$i]);
                         if (!empty($part)) {
                             break;
@@ -39,6 +39,7 @@ final class Utils
                     }
                     $elementType = mb_substr($string, ((count($parts) - 2 - $i) + 1) * -1);
                 }
+
                 break;
 
             case GeneratorOptions::VALUE_START:
@@ -47,7 +48,7 @@ final class Utils
                 if (empty($parts[0]) && !empty($parts[1])) {
                     $elementType = mb_substr($string, 0, mb_strlen($parts[1]) + 1);
                 } else {
-                    for ($i = 0; $i < $partsCount; $i++) {
+                    for ($i = 0; $i < $partsCount; ++$i) {
                         $part = trim($parts[$i]);
                         if (!empty($part)) {
                             break;
@@ -55,9 +56,12 @@ final class Utils
                     }
                     $elementType = mb_substr($string, 0, $i);
                 }
+
                 break;
+
             case GeneratorOptions::VALUE_NONE:
                 $elementType = $string;
+
                 break;
         }
 
@@ -71,6 +75,7 @@ final class Utils
         if (!empty($options)) {
             $context = stream_context_create($options);
         }
+
         return file_get_contents($url, false, $context);
     }
 
@@ -114,17 +119,19 @@ final class Utils
             'integer',
         ], true))) {
             return intval($value);
-        } elseif (is_float($value) || (!is_null($value) && in_array($knownType, [
+        }
+        if (is_float($value) || (!is_null($value) && in_array($knownType, [
             'float',
             'double',
             'decimal',
         ], true))) {
             return floatval($value);
-        } elseif (is_bool($value) || (!is_null($value) && in_array($knownType, [
+        }
+        if (is_bool($value) || (!is_null($value) && in_array($knownType, [
             'bool',
             'boolean',
         ], true))) {
-            return ('true' === $value || true === $value || 1 === $value || '1' === $value);
+            return 'true' === $value || true === $value || 1 === $value || '1' === $value;
         }
 
         return $value;
@@ -140,30 +147,26 @@ final class Utils
             $destinationParts = explode('/', $destination);
             $fileParts = pathinfo($origin);
             $fileBasename = (is_array($fileParts) && array_key_exists('basename', $fileParts)) ? $fileParts['basename'] : '';
-            $parts = parse_url(str_replace('/' . $fileBasename, '', $origin));
+            $parts = parse_url(str_replace('/'.$fileBasename, '', $origin));
             $scheme = (is_array($parts) && array_key_exists('scheme', $parts)) ? $parts['scheme'] : '';
             $host = (is_array($parts) && array_key_exists('host', $parts)) ? $parts['host'] : '';
             $path = (is_array($parts) && array_key_exists('path', $parts)) ? $parts['path'] : '';
-            $path = str_replace('/' . $fileBasename, '', $path);
+            $path = str_replace('/'.$fileBasename, '', $path);
             $pathParts = explode('/', $path);
             $finalPath = implode('/', $pathParts);
             foreach ($destinationParts as $locationPart) {
                 if ('..' === $locationPart) {
                     $finalPath = mb_substr($finalPath, 0, mb_strrpos($finalPath, '/', 0));
                 } else {
-                    $finalPath .= '/' . $locationPart;
+                    $finalPath .= '/'.$locationPart;
                 }
             }
             $port = (is_array($parts) && array_key_exists('port', $parts)) ? $parts['port'] : '';
-            /**
-             * Remote file
-             */
+            // Remote file
             if (!empty($scheme) && !empty($host)) {
-                $resolvedPath = str_replace('urn', 'http', $scheme) . '://' . $host . (!empty($port) ? ':' . $port : '') . str_replace('//', '/', $finalPath);
+                $resolvedPath = str_replace('urn', 'http', $scheme).'://'.$host.(!empty($port) ? ':'.$port : '').str_replace('//', '/', $finalPath);
             } elseif (empty($scheme) && empty($host) && count($pathParts)) {
-                /**
-                 * Local file
-                 */
+                // Local file
                 if (is_file($finalPath)) {
                     $resolvedPath = $finalPath;
                 }
@@ -187,10 +190,10 @@ final class Utils
      * See more about the used regular expression at {@link http://www.regular-expressions.info/unicode.html}:
      * - \p{L} for any valid letter
      * - \p{N} for any valid number
-     * - /u for supporting unicode
-     * @param string $string the string to clean
-     * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
-     * @return string
+     * - /u for supporting unicode.
+     *
+     * @param string $string                  the string to clean
+     * @param bool   $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      */
     public static function cleanString(string $string, bool $keepMultipleUnderscores = true): string
     {
@@ -220,12 +223,7 @@ final class Utils
 
     /**
      * Save schemas to schemasFolder
-     * Filename will be extracted from schemasUrl or default schema.wsdl will be used
-     * @param string $destinationFolder
-     * @param string $schemasFolder
-     * @param string $schemasUrl
-     * @param string $content
-     * @return string
+     * Filename will be extracted from schemasUrl or default schema.wsdl will be used.
      */
     public static function saveSchemas(string $destinationFolder, string $schemasFolder, string $schemasUrl, string $content): string
     {
@@ -234,10 +232,10 @@ final class Utils
             // default schemas folder will be wsdl
             $schemasFolder = 'wsdl';
         }
-        $schemasPath = rtrim($destinationFolder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . rtrim($schemasFolder, DIRECTORY_SEPARATOR);
+        $schemasPath = rtrim($destinationFolder, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.rtrim($schemasFolder, DIRECTORY_SEPARATOR);
 
         // Here we must cover all possible variants
-        if ((mb_strpos(mb_strtolower($schemasUrl), '.wsdl') !== false) || (mb_strpos(mb_strtolower($schemasUrl), '.xsd') !== false) || (mb_strpos(mb_strtolower($schemasUrl), '.xml') !== false)) {
+        if ((false !== mb_strpos(mb_strtolower($schemasUrl), '.wsdl')) || (false !== mb_strpos(mb_strtolower($schemasUrl), '.xsd')) || (false !== mb_strpos(mb_strtolower($schemasUrl), '.xml'))) {
             $filename = basename($schemasUrl);
         } else {
             // if $url is like http://example.com/index.php?WSDL default filename will be schema.wsdl
@@ -246,8 +244,8 @@ final class Utils
 
         self::createDirectory($schemasPath);
 
-        file_put_contents($schemasPath . DIRECTORY_SEPARATOR . $filename, $content);
+        file_put_contents($schemasPath.DIRECTORY_SEPARATOR.$filename, $content);
 
-        return $schemasPath . DIRECTORY_SEPARATOR . $filename;
+        return $schemasPath.DIRECTORY_SEPARATOR.$filename;
     }
 }

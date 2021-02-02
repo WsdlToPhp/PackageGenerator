@@ -6,27 +6,25 @@ namespace WsdlToPhp\PackageGenerator\Model;
 
 use DOMDocument;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
-use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 
 /**
- * Class StructAttribute stands for an available struct attribute described in the WSDL
+ * Class StructAttribute stands for an available struct attribute described in the WSDL.
  */
 class StructAttribute extends AbstractModel
 {
     protected string $type = '';
     /**
      * Defines that this property is not a simple value but an array of values
-     * Infos at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}
-     * @var bool
+     * Infos at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}.
      */
     protected bool $containsElements = false;
 
     /**
      * Defines that this property can be removed from request or not.
      * The property can be removed from the request (meaning from the Struct) as soon as the nillable=true && minOccurs=0
-     * Infos at {@link http://www.w3schools.com/xml/el_element.asp}
-     * @var bool
+     * Infos at {@link http://www.w3schools.com/xml/el_element.asp}.
      */
     protected bool $removableFromRequest = false;
 
@@ -35,12 +33,13 @@ class StructAttribute extends AbstractModel
         parent::__construct($generator, $name);
         $this
             ->setType($type)
-            ->setOwner($struct);
+            ->setOwner($struct)
+        ;
     }
 
     public function getUniqueString(string $string, string $additionalContext = ''): string
     {
-        return self::uniqueName($string, spl_object_hash($this->getOwner()) . $this->getOwner()->getName() . $additionalContext);
+        return self::uniqueName($string, spl_object_hash($this->getOwner()).$this->getOwner()->getName().$additionalContext);
     }
 
     public function getUniqueName(string $additionalContext = ''): string
@@ -85,13 +84,12 @@ class StructAttribute extends AbstractModel
     }
 
     /**
-     * If already able to contain several occurrences, it must stay as it is, the wider behaviour wins
-     * @param bool $containsElements
-     * @return StructAttribute
+     * If already able to contain several occurrences, it must stay as it is, the wider behaviour wins.
      */
     public function setContainsElements(bool $containsElements = true): StructAttribute
     {
         $this->containsElements = $this->containsElements || $containsElements;
+
         return $this;
     }
 
@@ -106,20 +104,19 @@ class StructAttribute extends AbstractModel
     }
 
     /**
-     * If already able to be removed from request, it must stay as it is, the wider behaviour wins
-     * @param bool $removableFromRequest
-     * @return StructAttribute
+     * If already able to be removed from request, it must stay as it is, the wider behaviour wins.
      */
     public function setRemovableFromRequest(bool $removableFromRequest = true): StructAttribute
     {
         $this->removableFromRequest = $this->removableFromRequest || $removableFromRequest;
+
         return $this;
     }
+
     /**
      * If this attribute contains elements then it's an array
      * only if its parent, the Struct, is not itself an array,
-     * if the parent is an array, then it is certainly not an array too
-     * @return bool
+     * if the parent is an array, then it is certainly not an array too.
      */
     public function isArray(): bool
     {
@@ -128,8 +125,7 @@ class StructAttribute extends AbstractModel
 
     /**
      * If this attribute is based on a struct that is a list,
-     * then it is a list of basic scalar values that are sent space-separated
-     * @return bool
+     * then it is a list of basic scalar values that are sent space-separated.
      */
     public function isList(): bool
     {
@@ -137,8 +133,9 @@ class StructAttribute extends AbstractModel
 
         return $typeStruct && $typeStruct->isList();
     }
+
     /**
-     * @return int|string|bool|float|array
+     * @return array|bool|float|int|string
      */
     public function getDefaultValue()
     {
@@ -161,12 +158,12 @@ class StructAttribute extends AbstractModel
 
     public function isRequired(): bool
     {
-        return ('required' === $this->getMetaValue('use', '') || $this->getMetaValueFirstSet([
+        return 'required' === $this->getMetaValue('use', '') || $this->getMetaValueFirstSet([
             'minOccurs',
             'minoccurs',
             'MinOccurs',
             'Minoccurs',
-        ], false));
+        ], false);
     }
 
     public function getOwner(): Struct

@@ -5,11 +5,15 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Container\PhpElement;
 
 use InvalidArgumentException;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
-use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class MethodTest extends AbstractTestCase
 {
     public function testAdd()

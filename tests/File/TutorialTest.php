@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
-use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TutorialTest extends AbstractFile
 {
     public const FILE_NAME = 'tutorial';
-    /**
-     *
-     */
+
     public function testBing()
     {
         $instance = self::bingGeneratorInstance();
@@ -22,9 +24,7 @@ final class TutorialTest extends AbstractFile
 
         $this->assertSameFileContent('ValidBingTutorial', $tutorial);
     }
-    /**
-     *
-     */
+
     public function testBingNotStandalone()
     {
         $instance = self::bingGeneratorInstance();
@@ -35,9 +35,7 @@ final class TutorialTest extends AbstractFile
 
         $this->assertSameFileContent('ValidBingTutorialNotStandalone', $tutorial);
     }
-    /**
-     *
-     */
+
     public function testBingNoPrefix()
     {
         $instance = self::bingGeneratorInstance();
@@ -48,9 +46,7 @@ final class TutorialTest extends AbstractFile
 
         $this->assertSameFileContent('ValidBingTutorialNoPrefix', $tutorial);
     }
-    /**
-     *
-     */
+
     public function testReforma()
     {
         $instance = self::reformaGeneratorInstance();
@@ -60,9 +56,7 @@ final class TutorialTest extends AbstractFile
 
         $this->assertSameFileContent('ValidReformaTutorial', $tutorial);
     }
-    /**
-     *
-     */
+
     public function testActon()
     {
         $instance = self::actonGeneratorInstance();
@@ -72,9 +66,7 @@ final class TutorialTest extends AbstractFile
 
         $this->assertSameFileContent('ValidActonTutorial', $tutorial);
     }
-    /**
-     *
-     */
+
     public function testOmniture()
     {
         $instance = self::omnitureGeneratorInstance();
@@ -84,9 +76,7 @@ final class TutorialTest extends AbstractFile
 
         $this->assertSameFileContent('ValidOmnitureTutorial', $tutorial);
     }
-    /**
-     *
-     */
+
     public function testActonNone()
     {
         $instance = self::actonGeneratorInstance(true, GeneratorOptions::VALUE_NONE);

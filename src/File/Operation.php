@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 final class Operation extends AbstractOperation
 {
@@ -14,7 +14,8 @@ final class Operation extends AbstractOperation
         $phpMethod = new PhpMethod($this->getMethod()->getMethodName(), []);
         $this
             ->defineParameters($phpMethod)
-            ->defineBody($phpMethod);
+            ->defineBody($phpMethod)
+        ;
 
         return $phpMethod;
     }
@@ -33,6 +34,7 @@ final class Operation extends AbstractOperation
             }
             $method->setParameters($parameters);
         }
+
         return $this;
     }
 
@@ -56,6 +58,7 @@ final class Operation extends AbstractOperation
                 $this->getMethodParameter($this->getParameterName($this->getMethod()->getParameterType())),
             ]);
         }
+
         return $this;
     }
 
@@ -67,7 +70,8 @@ final class Operation extends AbstractOperation
             ->addChild('} catch (\SoapFault $soapFault) {')
             ->addChild($method->getIndentedString('$this->saveLastError(__METHOD__, $soapFault);', 1))
             ->addChild($method->getIndentedString('return false;', 1))
-            ->addChild('}');
+            ->addChild('}')
+        ;
 
         return $this;
     }
@@ -86,7 +90,7 @@ final class Operation extends AbstractOperation
             }
         }
 
-        return sprintf('%s%s, [], [], $this->outputHeaders', implode('', $parameters), $this->isParameterTypeEmpty() ? '' : PhpMethod::BREAK_LINE_CHAR . ']');
+        return sprintf('%s%s, [], [], $this->outputHeaders', implode('', $parameters), $this->isParameterTypeEmpty() ? '' : PhpMethod::BREAK_LINE_CHAR.']');
     }
 
     protected function getOperationCallParametersStarting(): string

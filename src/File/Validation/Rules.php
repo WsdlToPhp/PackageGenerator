@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 final class Rules
 {
-    protected StructAttribute $attribute;
+    private StructAttribute $attribute;
 
-    protected AbstractModelFile $file;
+    private AbstractModelFile $file;
 
-    protected PhpMethod $method;
+    private PhpMethod $method;
 
-    protected MethodContainer $methods;
+    private MethodContainer $methods;
 
     private static array $rulesAppliedToAttribute = [];
 
@@ -44,16 +44,6 @@ final class Rules
             $rule->applyRule($parameterName, null, $itemType);
         }
         $this->applyRulesFromAttribute($parameterName, $itemType);
-    }
-
-    protected function applyRulesFromAttribute(string $parameterName, bool $itemType = false): void
-    {
-        foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
-            $rule = $this->getRule($metaName);
-            if ($rule instanceof AbstractRule) {
-                $rule->applyRule($parameterName, $metaValue, $itemType);
-            }
-        }
     }
 
     public function getRule(string $name): ?AbstractRule
@@ -127,15 +117,6 @@ final class Rules
         return $this->file->getGenerator();
     }
 
-    private static function getAppliedRuleToAttributeKey(AbstractRule $rule, $value, StructAttribute $attribute): string
-    {
-        return implode('_', [
-            $rule->validationRuleComment($value),
-            $attribute->getOwner()->getName(),
-            $attribute->getName(),
-        ]);
-    }
-
     public static function ruleHasBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute): void
     {
         self::$rulesAppliedToAttribute[self::getAppliedRuleToAttributeKey($rule, $value, $attribute)] = true;
@@ -144,5 +125,24 @@ final class Rules
     public static function hasRuleBeenAppliedToAttribute(AbstractRule $rule, $value, StructAttribute $attribute): bool
     {
         return array_key_exists(self::getAppliedRuleToAttributeKey($rule, $value, $attribute), self::$rulesAppliedToAttribute);
+    }
+
+    private function applyRulesFromAttribute(string $parameterName, bool $itemType = false): void
+    {
+        foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
+            $rule = $this->getRule($metaName);
+            if ($rule instanceof AbstractRule) {
+                $rule->applyRule($parameterName, $metaValue, $itemType);
+            }
+        }
+    }
+
+    private static function getAppliedRuleToAttributeKey(AbstractRule $rule, $value, StructAttribute $attribute): string
+    {
+        return implode('_', [
+            $rule->validationRuleComment($value),
+            $attribute->getOwner()->getName(),
+            $attribute->getName(),
+        ]);
     }
 }

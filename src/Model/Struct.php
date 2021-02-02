@@ -4,15 +4,15 @@ namespace WsdlToPhp\PackageGenerator\Model;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
-use WsdlToPhp\PackageGenerator\Generator\Utils;
-use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
-use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
+use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
+use WsdlToPhp\PackageGenerator\Container\Model\StructValue as StructValueContainer;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 
 /**
- * Class Struct stands for an available struct described in the WSDL
+ * Class Struct stands for an available struct described in the WSDL.
  */
 class Struct extends AbstractModel
 {
@@ -33,44 +33,53 @@ class Struct extends AbstractModel
      */
     public const DEFAULT_ENUM_TYPE = 'string';
     /**
-     * Attributes of the struct
+     * Attributes of the struct.
+     *
      * @var StructAttributeContainer
      */
     protected $attributes;
     /**
      * Is the struct a restriction with defined values  ?
+     *
      * @var bool
      */
     protected $isRestriction = false;
     /**
-     * If the struct is a restriction with values, then store values
+     * If the struct is a restriction with values, then store values.
+     *
      * @var StructValueContainer
      */
     protected $values;
     /**
-     * If the struct is a union with types, then store types
+     * If the struct is a union with types, then store types.
+     *
      * @var string[]
      */
     protected $types;
     /**
-     * Defines if the current struct is a concrete struct or just a virtual struct to store meta information
+     * Defines if the current struct is a concrete struct or just a virtual struct to store meta information.
+     *
      * @var bool
      */
     protected $isStruct = false;
     /**
      * Defines if the current struct is a list of a type or not.
-     * If it is a list of a type, then the list property value is the type
+     * If it is a list of a type, then the list property value is the type.
+     *
      * @var string
      */
     protected $list = '';
+
     /**
-     * Main constructor
+     * Main constructor.
+     *
      * @see AbstractModel::__construct()
+     *
      * @uses Struct::setStruct()
-     * @param Generator $generator
-     * @param string $name the original name
-     * @param bool $isStruct defines if it's a real struct or not
-     * @param bool $isRestriction defines if it's an enumeration or not
+     *
+     * @param string $name          the original name
+     * @param bool   $isStruct      defines if it's a real struct or not
+     * @param bool   $isRestriction defines if it's an enumeration or not
      */
     public function __construct(Generator $generator, $name, $isStruct = true, $isRestriction = false)
     {
@@ -80,7 +89,8 @@ class Struct extends AbstractModel
             ->setRestriction($isRestriction)
             ->setAttributes(new StructAttributeContainer($generator))
             ->setValues(new StructValueContainer($generator))
-            ->setTypes([]);
+            ->setTypes([])
+        ;
     }
 
     public function getContextualPart(): string
@@ -103,6 +113,7 @@ class Struct extends AbstractModel
         } elseif ($this->isArray()) {
             $package = self::DOC_SUB_PACKAGE_ARRAYS;
         }
+
         return [
             $package,
         ];
@@ -111,16 +122,15 @@ class Struct extends AbstractModel
     public function isArray(): bool
     {
         return
-        (
             (
                 (
-                    ($this->isStruct() && 1 === $this->countAllAttributes()) ||
-                    (!$this->isStruct() && 1 >= $this->countOwnAttributes())
-                ) &&
-                mb_stripos($this->getName(), 'array') !== false
-            ) ||
-            (!$this->isStruct() && $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false) !== false)
-        );
+                    ($this->isStruct() && 1 === $this->countAllAttributes())
+                    || (!$this->isStruct() && 1 >= $this->countOwnAttributes())
+                )
+                && false !== mb_stripos($this->getName(), 'array')
+            )
+            || (!$this->isStruct() && false !== $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false))
+        ;
     }
 
     public function getAttributes(bool $includeInheritanceAttributes = false, bool $requiredFirst = false): StructAttributeContainer
@@ -130,14 +140,15 @@ class Struct extends AbstractModel
         } else {
             $attributes = $this->getAllAttributes($includeInheritanceAttributes, $requiredFirst);
         }
+
         return $attributes;
     }
 
     /**
      * Returns the attributes of the struct and not the ones that are declared by the parent struct if this struct inherits from a Struct
-     * This means it removes from the attributes this Struct has the attributes declared by its parent class(es)
+     * This means it removes from the attributes this Struct has the attributes declared by its parent class(es).
+     *
      * @param bool $requiredFirst places the required attributes first, then the not required in order to have the _construct method with the required attribute at first
-     * @return StructAttributeContainer
      */
     public function getProperAttributes(bool $requiredFirst = false): StructAttributeContainer
     {
@@ -162,61 +173,6 @@ class Struct extends AbstractModel
         }
 
         return $requiredFirst ? $this->putRequiredAttributesFirst($properAttributes) : $properAttributes;
-    }
-
-    protected function getAllAttributes(bool $includeInheritanceAttributes, bool $requiredFirst): StructAttributeContainer
-    {
-        $allAttributes = new StructAttributeContainer($this->getGenerator());
-        if ($includeInheritanceAttributes) {
-            $this->addInheritanceAttributes($allAttributes);
-        }
-
-        foreach ($this->attributes as $attribute) {
-            $allAttributes->add($attribute);
-        }
-
-        if ($requiredFirst) {
-            $attributes = $this->putRequiredAttributesFirst($allAttributes);
-        } else {
-            $attributes = $allAttributes;
-        }
-
-        return $attributes;
-    }
-
-    protected function addInheritanceAttributes(StructAttributeContainer $attributes): void
-    {
-        if (!empty($this->getInheritance()) && ($model = $this->getInheritanceStruct()) instanceof Struct) {
-            while ($model instanceof Struct && $model->isStruct()) {
-                foreach ($model->getAttributes() as $attribute) {
-                    $attributes->add($attribute);
-                }
-                $model = $model->getInheritanceStruct();
-            }
-        }
-    }
-
-    protected function putRequiredAttributesFirst(StructAttributeContainer $allAttributes): StructAttributeContainer
-    {
-        $attributes = new StructAttributeContainer($this->getGenerator());
-        $requiredAttributes = new StructAttributeContainer($this->getGenerator());
-        $notRequiredAttributes = new StructAttributeContainer($this->getGenerator());
-        foreach ($allAttributes as $attribute) {
-            if ($attribute->isRequired()) {
-                $requiredAttributes->add($attribute);
-            } else {
-                $notRequiredAttributes->add($attribute);
-            }
-        }
-        foreach ($requiredAttributes as $attribute) {
-            $attributes->add($attribute);
-        }
-        foreach ($notRequiredAttributes as $attribute) {
-            $attributes->add($attribute);
-        }
-        unset($requiredAttributes, $notRequiredAttributes);
-
-        return $attributes;
     }
 
     public function countOwnAttributes(): int
@@ -245,6 +201,7 @@ class Struct extends AbstractModel
             $structAttribute = new StructAttribute($this->getGenerator(), $attributeName, $attributeType, $this);
             $this->attributes->add($structAttribute);
         }
+
         return $this;
     }
 
@@ -278,6 +235,7 @@ class Struct extends AbstractModel
     public function setStruct(bool $isStruct = true): self
     {
         $this->isStruct = $isStruct;
+
         return $this;
     }
 
@@ -303,13 +261,6 @@ class Struct extends AbstractModel
         return $this->values;
     }
 
-    protected function setValues(StructValueContainer $structValueContainer): self
-    {
-        $this->values = $structValueContainer;
-
-        return $this;
-    }
-
     public function addValue($value): self
     {
         if (is_null($this->getValue($value))) {
@@ -324,12 +275,11 @@ class Struct extends AbstractModel
                 $this->getGenerator()->getStructs()->add($enum);
 
                 return $enum;
-            } else {
-                $this
-                    ->setStruct(true)
-                    ->setRestriction(true)
-                    ->getValues()->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
             }
+            $this
+                ->setStruct(true)
+                ->setRestriction(true)
+                ->getValues()->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
         }
 
         return $this;
@@ -392,6 +342,7 @@ class Struct extends AbstractModel
     public function getMeta(): array
     {
         $inheritanceStruct = $this->getInheritanceStruct();
+
         return $this->mergeMeta(($inheritanceStruct && !$inheritanceStruct->isStruct()) ? $inheritanceStruct->getMeta() : [], parent::getMeta());
     }
 
@@ -418,19 +369,8 @@ class Struct extends AbstractModel
     public function setTypes(array $types): self
     {
         $this->types = $types;
-        return $this;
-    }
 
-    protected function toJsonSerialize(): array
-    {
-        return [
-            'attributes' => $this->attributes,
-            'restriction' => $this->isRestriction,
-            'struct' => $this->isStruct,
-            'types' => $this->types,
-            'values' => $this->values,
-            'list' => $this->list,
-        ];
+        return $this;
     }
 
     public function setAttributesFromSerializedJson(array $attributes): void
@@ -445,5 +385,79 @@ class Struct extends AbstractModel
         foreach ($values as $value) {
             $this->values->add(self::instanceFromSerializedJson($this->generator, $value)->setOwner($this));
         }
+    }
+
+    protected function getAllAttributes(bool $includeInheritanceAttributes, bool $requiredFirst): StructAttributeContainer
+    {
+        $allAttributes = new StructAttributeContainer($this->getGenerator());
+        if ($includeInheritanceAttributes) {
+            $this->addInheritanceAttributes($allAttributes);
+        }
+
+        foreach ($this->attributes as $attribute) {
+            $allAttributes->add($attribute);
+        }
+
+        if ($requiredFirst) {
+            $attributes = $this->putRequiredAttributesFirst($allAttributes);
+        } else {
+            $attributes = $allAttributes;
+        }
+
+        return $attributes;
+    }
+
+    protected function addInheritanceAttributes(StructAttributeContainer $attributes): void
+    {
+        if (!empty($this->getInheritance()) && ($model = $this->getInheritanceStruct()) instanceof Struct) {
+            while ($model instanceof Struct && $model->isStruct()) {
+                foreach ($model->getAttributes() as $attribute) {
+                    $attributes->add($attribute);
+                }
+                $model = $model->getInheritanceStruct();
+            }
+        }
+    }
+
+    protected function putRequiredAttributesFirst(StructAttributeContainer $allAttributes): StructAttributeContainer
+    {
+        $attributes = new StructAttributeContainer($this->getGenerator());
+        $requiredAttributes = new StructAttributeContainer($this->getGenerator());
+        $notRequiredAttributes = new StructAttributeContainer($this->getGenerator());
+        foreach ($allAttributes as $attribute) {
+            if ($attribute->isRequired()) {
+                $requiredAttributes->add($attribute);
+            } else {
+                $notRequiredAttributes->add($attribute);
+            }
+        }
+        foreach ($requiredAttributes as $attribute) {
+            $attributes->add($attribute);
+        }
+        foreach ($notRequiredAttributes as $attribute) {
+            $attributes->add($attribute);
+        }
+        unset($requiredAttributes, $notRequiredAttributes);
+
+        return $attributes;
+    }
+
+    protected function setValues(StructValueContainer $structValueContainer): self
+    {
+        $this->values = $structValueContainer;
+
+        return $this;
+    }
+
+    protected function toJsonSerialize(): array
+    {
+        return [
+            'attributes' => $this->attributes,
+            'restriction' => $this->isRestriction,
+            'struct' => $this->isStruct,
+            'types' => $this->types,
+            'values' => $this->values,
+            'list' => $this->list,
+        ];
     }
 }

@@ -4,37 +4,25 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Model\StructValue;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\WsdlHandler\Tag\Tag;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\WsdlHandler\Tag\TagAttributeGroup;
 use WsdlToPhp\WsdlHandler\Tag\TagDocumentation as Documentation;
 use WsdlToPhp\WsdlHandler\Tag\TagEnumeration as Enumeration;
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Model\StructValue;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
-use WsdlToPhp\WsdlHandler\Tag\TagAttributeGroup;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagDocumentation extends AbstractTagParser
 {
-    protected function parseWsdl(Wsdl $wsdl): void
-    {
-        foreach ($this->getTags() as $tag) {
-            $this->parseDocumentation($tag);
-        }
-    }
-
-    protected function parsingTag(): string
-    {
-        return WsdlDocument::TAG_DOCUMENTATION;
-    }
-
     public function parseDocumentation(Documentation $documentation): void
     {
         $content = $documentation->getContent();
         $parent = $documentation->getSuitableParent();
         $parentParent = $parent instanceof Tag ? $parent->getSuitableParent() : null;
         if (!empty($content) && $parent instanceof Tag) {
-            /**
+            /*
              * Is it an element ? part of an attributeGroup
              * Finds parent node of this documentation node
              */
@@ -45,7 +33,7 @@ class TagDocumentation extends AbstractTagParser
                     }
                 }
             }
-            /**
+            /*
              * Is it an element ? part of a struct
              * Finds parent node of this documentation node
              */
@@ -54,7 +42,7 @@ class TagDocumentation extends AbstractTagParser
                     $attribute->setDocumentation($content);
                 }
             }
-            /**
+            /*
              * Is it a value of an enumeration ?
              * Finds parent node of this documentation node
              */
@@ -63,9 +51,7 @@ class TagDocumentation extends AbstractTagParser
                     $structValue->setDocumentation($content);
                 }
             }
-            /**
-             * Is it a restriction with enumeration (a real struct) that needs to find the model based on its type ?
-             */
+            // Is it a restriction with enumeration (a real struct) that needs to find the model based on its type ?
             elseif ($parent->hasRestrictionChild() && $parent->getFirstRestrictionChild()->isEnumeration() && $parent->getFirstRestrictionChild()->isTheParent($parent)) {
                 $model = $this->getModel($parent, $parent->getFirstRestrictionChild()->getAttributeBase());
                 $model = $model ? $model : $this->getModel($parent);
@@ -73,7 +59,7 @@ class TagDocumentation extends AbstractTagParser
                     $model->setDocumentation($content);
                 }
             }
-            /**
+            /*
              * Is it an element ?
              * Finds parent node of this documentation node
              */
@@ -81,5 +67,17 @@ class TagDocumentation extends AbstractTagParser
                 $model->setDocumentation($content);
             }
         }
+    }
+
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            $this->parseDocumentation($tag);
+        }
+    }
+
+    protected function parsingTag(): string
+    {
+        return WsdlDocument::TAG_DOCUMENTATION;
     }
 }

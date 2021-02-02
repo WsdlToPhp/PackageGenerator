@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests;
 
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 use PHPUnit\Framework\TestCase as PHPUnitFrameworkTestCase;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 
 abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
 {
@@ -18,47 +18,47 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
 
     public static function wsdlUnitTestsPath(): string
     {
-        return __DIR__ . '/resources/unit_tests.wsdl';
+        return __DIR__.'/resources/unit_tests.wsdl';
     }
 
     public static function wsdlPartnerPath(bool $local = true): string
     {
-        return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local' : '');
+        return __DIR__.sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local' : '');
     }
 
     public static function wsdlPartnerScdPath(bool $local = true): string
     {
-        return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.scd' : '');
+        return __DIR__.sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.scd' : '');
     }
 
     public static function wsdlPartnerThirdPath(bool $local = true): string
     {
-        return __DIR__ . sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.third' : '');
+        return __DIR__.sprintf('/resources/partner/PartnerService%s.wsdl', $local ? '.local.third' : '');
     }
 
     public static function schemaPartnerPath(): string
     {
-        return __DIR__ . '/resources/partner/PartnerService.0.xsd';
+        return __DIR__.'/resources/partner/PartnerService.0.xsd';
     }
 
     public static function wsdlImageViewServicePath(): string
     {
-        return __DIR__ . '/resources/image/ImageViewService.local.wsdl';
+        return __DIR__.'/resources/image/ImageViewService.local.wsdl';
     }
 
     public static function schemaImageViewServicePath(): string
     {
-        return __DIR__ . '/resources/image/imageViewCommon.xsd';
+        return __DIR__.'/resources/image/imageViewCommon.xsd';
     }
 
     public static function schemaImageViewServiceAvailableImagesRequestPath(): string
     {
-        return __DIR__ . '/resources/image/availableImagesRequest.xsd';
+        return __DIR__.'/resources/image/availableImagesRequest.xsd';
     }
 
     public static function wsdlBingPath(): string
     {
-        return __DIR__ . '/resources/bingsearch.wsdl';
+        return __DIR__.'/resources/bingsearch.wsdl';
     }
 
     public static function onlineWsdlBingPath(): string
@@ -68,130 +68,122 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
 
     public static function wsdlEbayPath(): string
     {
-        return __DIR__ . '/resources/ebaySvc.wsdl';
+        return __DIR__.'/resources/ebaySvc.wsdl';
     }
 
     public static function wsdlActonPath(): string
     {
-        return __DIR__ . '/resources/ActonService2.local.wsdl';
+        return __DIR__.'/resources/ActonService2.local.wsdl';
     }
 
     public static function wsdlOdigeoPath(): string
     {
-        return __DIR__ . '/resources/odigeo.wsdl';
+        return __DIR__.'/resources/odigeo.wsdl';
     }
 
     public static function wsdlOrderContractPath(): string
     {
-        return __DIR__ . '/resources/OrderContract.wsdl';
+        return __DIR__.'/resources/OrderContract.wsdl';
     }
 
     public static function wsdlMyBoardPackPath(): string
     {
-        return __DIR__ . '/resources/MyBoardPack.wsdl';
+        return __DIR__.'/resources/MyBoardPack.wsdl';
     }
 
     public static function wsdlWhlPath(): string
     {
-        return __DIR__ . '/resources/whl.wsdl';
+        return __DIR__.'/resources/whl.wsdl';
     }
 
     public static function wsdlVehicleSelectionPath(): string
     {
-        return __DIR__ . '/resources/VehicleSelectionService/VehicleSelectionService.wsdl';
+        return __DIR__.'/resources/VehicleSelectionService/VehicleSelectionService.wsdl';
     }
 
     public static function wsdlPortalPath(): string
     {
-        return __DIR__ . '/resources/portaplusapi.wsdl';
+        return __DIR__.'/resources/portaplusapi.wsdl';
     }
 
     public static function wsdlReformaPath(): string
     {
-        return __DIR__ . '/resources/reformagkh.wsdl';
+        return __DIR__.'/resources/reformagkh.wsdl';
     }
 
     public static function wsdlQueuePath(): string
     {
-        return __DIR__ . '/resources/QueueService.wsdl';
+        return __DIR__.'/resources/QueueService.wsdl';
     }
 
     public static function wsdlBullhornstaffingPath(): string
     {
-        return __DIR__ . '/resources/bullhornstaffing.local.wsdl';
+        return __DIR__.'/resources/bullhornstaffing.local.wsdl';
     }
 
     public static function wsdlOmniturePath(): string
     {
-        return __DIR__ . '/resources/OmnitureAdminServices.wsdl';
+        return __DIR__.'/resources/OmnitureAdminServices.wsdl';
     }
 
     public static function wsdlPayPalPath(): string
     {
-        return __DIR__ . '/resources/paypal/PayPalSvc.wsdl';
+        return __DIR__.'/resources/paypal/PayPalSvc.wsdl';
     }
 
     public static function wsdlWcfPath(): string
     {
-        return __DIR__ . '/resources/wcf/Service1.wsdl';
+        return __DIR__.'/resources/wcf/Service1.wsdl';
     }
 
     public static function wsdlLnpPath(): string
     {
-        return __DIR__ . '/resources/lnp/NumberManagement.wsdl';
+        return __DIR__.'/resources/lnp/NumberManagement.wsdl';
     }
 
     public static function wsdlEwsPath(): string
     {
-        return __DIR__ . '/resources/ews/services.wsdl';
+        return __DIR__.'/resources/ews/services.wsdl';
     }
 
     public static function schemaEwsTypesPath(): string
     {
-        return __DIR__ . '/resources/ews/types.xsd';
+        return __DIR__.'/resources/ews/types.xsd';
     }
 
     public static function schemaEwsMessagesPath(): string
     {
-        return __DIR__ . '/resources/ews/messages.xsd';
+        return __DIR__.'/resources/ews/messages.xsd';
     }
 
     public static function wsdlYandexDirectApiCampaignsPath(): string
     {
-        return __DIR__ . '/resources/directapi/campaigns.wsdl';
+        return __DIR__.'/resources/directapi/campaigns.wsdl';
     }
 
     public static function wsdlYandexDirectApiAdGroupsPath(): string
     {
-        return __DIR__ . '/resources/directapi/adgroups.wsdl';
+        return __DIR__.'/resources/directapi/adgroups.wsdl';
     }
 
     public static function wsdlYandexDirectApiLivePath(): string
     {
-        return __DIR__ . '/resources/directapi/live.wsdl';
+        return __DIR__.'/resources/directapi/live.wsdl';
     }
 
     public static function wsdlDocDataPaymentsPath(): string
     {
-        return __DIR__ . '/resources/docdatapayments/1_3.wsdl';
+        return __DIR__.'/resources/docdatapayments/1_3.wsdl';
     }
 
     public static function wsdlDeliveryServicePath(): string
     {
-        return __DIR__ . '/resources/DeliveryService.wsdl';
+        return __DIR__.'/resources/DeliveryService.wsdl';
     }
 
     public static function wsdlEmptyPath(): string
     {
-        return __DIR__ . '/resources/empty.wsdl';
-    }
-
-    private static function getGeneratorInstance(string $wsdlPath): Generator
-    {
-        $options = GeneratorOptionsTest::optionsInstance()
-            ->setOrigin($wsdlPath)
-            ->setDestination(self::getTestDirectory());
-        return new Generator($options);
+        return __DIR__.'/resources/empty.wsdl';
     }
 
     public static function getBingGeneratorInstance(bool $reset = false): Generator
@@ -269,6 +261,7 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
         if (!isset(self::$generators[$wsdlPath]) || $reset) {
             self::$generators[$wsdlPath] = self::getGeneratorInstance($wsdlPath);
         }
+
         return self::$generators[$wsdlPath];
     }
 
@@ -276,7 +269,7 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
     {
         AbstractModel::purgeUniqueNames();
         AbstractModel::purgePhpReservedKeywords();
-        if (!array_key_exists($id . $gatherMethods, self::$ids) || $reset) {
+        if (!array_key_exists($id.$gatherMethods, self::$ids) || $reset) {
             $json = file_get_contents(sprintf('%sparsed_%s_%s.json', self::getTestDirectory(), $id, $gatherMethods));
             $json = str_replace([
                 '__DESTINATION__',
@@ -285,9 +278,10 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
                 self::getTestDirectory(),
                 $origin,
             ], $json);
-            self::$ids[$id . $gatherMethods] = Generator::instanceFromSerializedJson($json);
+            self::$ids[$id.$gatherMethods] = Generator::instanceFromSerializedJson($json);
         }
-        return self::$ids[$id . $gatherMethods];
+
+        return self::$ids[$id.$gatherMethods];
     }
 
     public static function bingGeneratorInstance(bool $reset = true, string $gatherMethods = GeneratorOptions::VALUE_START): Generator
@@ -392,6 +386,16 @@ abstract class AbstractTestCase extends PHPUnitFrameworkTestCase
 
     public static function getTestDirectory(): string
     {
-        return __DIR__ . '/resources/generated/';
+        return __DIR__.'/resources/generated/';
+    }
+
+    private static function getGeneratorInstance(string $wsdlPath): Generator
+    {
+        $options = GeneratorOptionsTest::optionsInstance()
+            ->setOrigin($wsdlPath)
+            ->setDestination(self::getTestDirectory())
+        ;
+
+        return new Generator($options);
     }
 }

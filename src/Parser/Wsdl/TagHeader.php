@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\WsdlHandler\Tag\TagHeader as Header;
-use WsdlToPhp\WsdlHandler\Tag\TagOperation as Operation;
-use WsdlToPhp\WsdlHandler\Tag\TagInput as Input;
 use WsdlToPhp\PackageGenerator\Model\Method;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\TagHeader as Header;
+use WsdlToPhp\WsdlHandler\Tag\TagInput as Input;
+use WsdlToPhp\WsdlHandler\Tag\TagOperation as Operation;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagHeader extends AbstractTagParser
 {
@@ -17,18 +17,6 @@ class TagHeader extends AbstractTagParser
     public const META_SOAP_HEADER_NAMES = 'SOAPHeaderNames';
     public const META_SOAP_HEADER_TYPES = 'SOAPHeaderTypes';
     public const META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
-
-    protected function parseWsdl(Wsdl $wsdl): void
-    {
-        foreach ($this->getTags() as $tag) {
-            $this->parseHeader($tag);
-        }
-    }
-
-    protected function parsingTag(): string
-    {
-        return WsdlDocument::TAG_HEADER;
-    }
 
     public function parseHeader(Header $header): void
     {
@@ -55,7 +43,20 @@ class TagHeader extends AbstractTagParser
             ])
             ->addMeta(self::META_SOAP_HEADER_NAMESPACES, [
                 $header->getHeaderNamespace(),
-            ]);
+            ])
+        ;
+    }
+
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            $this->parseHeader($tag);
+        }
+    }
+
+    protected function parsingTag(): string
+    {
+        return WsdlDocument::TAG_HEADER;
     }
 
     protected function isSoapHeaderAlreadyDefined(Method $method, string $soapHeaderName): bool

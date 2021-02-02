@@ -12,6 +12,7 @@ final class InvalidRuleClass extends AbstractMinMaxRule
     {
         return 'invalid';
     }
+
     public function symbol(): string
     {
         return '<>';

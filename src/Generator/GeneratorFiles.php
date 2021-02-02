@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Generator;
 
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PackageGenerator\Model\EmptyModel;
+use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
+use WsdlToPhp\PackageGenerator\File\Composer as ComposerFile;
+use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
 use WsdlToPhp\PackageGenerator\File\StructEnum as StructEnumFile;
-use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
-use WsdlToPhp\PackageGenerator\File\ClassMap as ClassMapFile;
-use WsdlToPhp\PackageGenerator\File\Composer as ComposerFile;
+use WsdlToPhp\PackageGenerator\Model\EmptyModel;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
 class GeneratorFiles extends AbstractGeneratorAware
 {
@@ -38,7 +38,8 @@ class GeneratorFiles extends AbstractGeneratorAware
             ->generateServicesClasses()
             ->generateClassMap()
             ->generateTutorialFile()
-            ->generateComposerFile();
+            ->generateComposerFile()
+        ;
     }
 
     protected function generateStructsClasses(): GeneratorFiles
@@ -49,6 +50,7 @@ class GeneratorFiles extends AbstractGeneratorAware
             }
             $this->getStructFile($struct)->setModel($struct)->write();
         }
+
         return $this;
     }
 

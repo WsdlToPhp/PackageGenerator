@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagDocumentationTest extends WsdlParser
 {
     public static function imageViewInstanceParser(): TagDocumentation
@@ -36,38 +40,38 @@ final class TagDocumentationTest extends WsdlParser
         $tagDocumentationParser->parse();
         $ok = false;
         foreach ($tagDocumentationParser->getGenerator()->getStructs() as $struct) {
-            if ($struct instanceof Struct && $struct->isRestriction() === false) {
-                if ($struct->getName() === 'imgRequest') {
+            if ($struct instanceof Struct && false === $struct->isRestriction()) {
+                if ('imgRequest' === $struct->getName()) {
                     $this->assertEquals([
                         'PRO is deprecated; provided for backward compatibility',
                     ], $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
-                } elseif ($struct->getName() === 'ProType') {
+                } elseif ('ProType' === $struct->getName()) {
                     $this->assertEquals([
                         'PRO is 10 digits or 11 digits with dash.',
                     ], $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
-                } elseif ($struct->getName() === 'SearchCriteriaType') {
+                } elseif ('SearchCriteriaType' === $struct->getName()) {
                     $this->assertEquals([
                         'Generic search criteria for image search',
                     ], $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
-                } elseif ($struct->getName() === 'SearchItemType') {
+                } elseif ('SearchItemType' === $struct->getName()) {
                     $this->assertEquals([
                         'Image search item',
                     ], $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
-                } elseif ($struct->getName() === 'DocumentType') {
+                } elseif ('DocumentType' === $struct->getName()) {
                     $this->assertEquals([
                         'Document type code',
                     ], $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
-                } elseif ($struct->getName() === 'ImagesType') {
+                } elseif ('ImagesType' === $struct->getName()) {
                     $this->assertEquals([
                         'Image file name and Base64 encoded binary source data',
                     ], $struct->getMetaValue(Struct::META_DOCUMENTATION));
                     $ok = true;
-                } elseif ($struct->getName() === 'availRequest') {
+                } elseif ('availRequest' === $struct->getName()) {
                     $this->assertEquals([
                         'PRO is deprecated; provided for backward compatibility',
                     ], $struct->getMetaValue(Struct::META_DOCUMENTATION));

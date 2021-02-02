@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
-use WsdlToPhp\PhpGenerator\Element\PhpConstant;
-use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
-use WsdlToPhp\PhpGenerator\Element\PhpProperty;
-use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
+use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
+use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 
 final class ClassMap extends AbstractModelFile
 {
@@ -85,9 +85,7 @@ final class ClassMap extends AbstractModelFile
     }
 
     /**
-     * Work around for https://bugs.php.net/bug.php?id=69280
-     * @param StructModel $struct
-     * @return string
+     * Work around for https://bugs.php.net/bug.php?id=69280.
      */
     protected function getStructName(StructModel $struct): string
     {

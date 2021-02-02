@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * @link https://www.w3.org/TR/xmlschema-2/#list-datatypes
+ * @see https://www.w3.org/TR/xmlschema-2/#list-datatypes
  */
 final class ListRule extends AbstractSetOfValuesRule
 {

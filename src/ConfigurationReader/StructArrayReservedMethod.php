@@ -8,6 +8,6 @@ final class StructArrayReservedMethod extends AbstractReservedWord
 {
     public static function getDefaultConfigurationPath(): string
     {
-        return __DIR__ . '/../resources/config/struct_array_reserved_keywords.yml';
+        return __DIR__.'/../resources/config/struct_array_reserved_keywords.yml';
     }
 }

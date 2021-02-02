@@ -21,7 +21,8 @@ class Structs extends AbstractParser
             ->getSoapClient()
             ->getSoapClient()
             ->getSoapClient()
-            ->__getTypes();
+            ->__getTypes()
+        ;
 
         foreach ($types as $type) {
             $this->parseType($type);
@@ -64,8 +65,7 @@ class Structs extends AbstractParser
     }
 
     /**
-     * union types are passed such as ",dateTime,time" or ",PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2"
-     * @param array $typeDef
+     * union types are passed such as ",dateTime,time" or ",PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2".
      */
     protected function parseUnionStruct(array $typeDef)
     {
@@ -85,8 +85,8 @@ class Structs extends AbstractParser
      * Remove curly braces
      * Remove brackets
      * Adds space before semicolon to parse it
-     * Remove duplicated spaces
-     * @param string $type
+     * Remove duplicated spaces.
+     *
      * @return string
      */
     protected static function cleanType(string $type)

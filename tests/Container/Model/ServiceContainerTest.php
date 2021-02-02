@@ -4,16 +4,21 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
+use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ServiceContainerTest extends AbstractTestCase
 {
     public static function instance(): ServiceContainer
     {
         $serviceContainer = new ServiceContainer(self::getBingGeneratorInstance());
         $serviceContainer->add(new ServiceModel(self::getBingGeneratorInstance(), 'Foo'));
+
         return $serviceContainer;
     }
 
@@ -39,7 +44,7 @@ final class ServiceContainerTest extends AbstractTestCase
         $count = 0;
         foreach ($fooService->getMethods() as $method) {
             $this->assertFalse($method->isUnique());
-            $count++;
+            ++$count;
         }
         $this->assertSame(2, $count);
     }

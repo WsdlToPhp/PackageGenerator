@@ -19,7 +19,8 @@ abstract class AbstractFile implements FileInterface
     {
         $this
             ->setFile(new PhpFile($name))
-            ->setGenerator($generator);
+            ->setGenerator($generator)
+        ;
     }
 
     public function setGenerator(Generator $generator): self
@@ -39,19 +40,9 @@ abstract class AbstractFile implements FileInterface
         $this->writeFile();
     }
 
-    protected function writeFile(): void
-    {
-        file_put_contents($this->getFileName(), $this->getFile()->toString(), LOCK_EX);
-    }
-
     public function getFileName(): string
     {
         return sprintf('%s%s.%s', $this->getFileDestination(), $this->getFile()->getMainElement()->getName(), $this->getFileExtension());
-    }
-
-    protected function getFileDestination(): string
-    {
-        return $this->getGenerator()->getOptionDestination();
     }
 
     public function getFileExtension(): string
@@ -59,15 +50,25 @@ abstract class AbstractFile implements FileInterface
         return self::PHP_FILE_EXTENSION;
     }
 
+    public function getFile(): PhpFile
+    {
+        return $this->file;
+    }
+
+    protected function writeFile(): void
+    {
+        file_put_contents($this->getFileName(), $this->getFile()->toString(), LOCK_EX);
+    }
+
+    protected function getFileDestination(): string
+    {
+        return $this->getGenerator()->getOptionDestination();
+    }
+
     protected function setFile(PhpFile $file): self
     {
         $this->file = $file;
 
         return $this;
-    }
-
-    public function getFile(): PhpFile
-    {
-        return $this->file;
     }
 }

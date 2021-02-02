@@ -7,11 +7,15 @@ namespace WsdlToPhp\PackageGenerator\Tests\Model;
 use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
+use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
-use WsdlToPhp\PackageGenerator\Model\Struct;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StructTest extends AbstractTestCase
 {
     public static function instance(string $name, bool $isStruct): Struct

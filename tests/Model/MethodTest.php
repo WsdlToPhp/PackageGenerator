@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
 use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
-use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\Service;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class MethodTest extends AbstractTestCase
 {
     public function testGetMethodName()
@@ -58,13 +62,13 @@ final class MethodTest extends AbstractTestCase
         $service4->addMethod('Login', 'int', 'id', false);
 
         $service5 = new Service(self::getBingGeneratorInstance(), 'login');
-        $service5->addMethod('Login', ['int',' string'], 'id', false);
+        $service5->addMethod('Login', ['int', ' string'], 'id', false);
 
         $this->assertSame('Login', $service1->getMethod('Login')->getMethodName());
         $this->assertSame('login_1', $service2->getMethod('login')->getMethodName());
         $this->assertSame('Login', $service3->getMethod('Login')->getMethodName());
         $this->assertSame('LoginInt', $service4->getMethod('Login')->getMethodName());
-        $this->assertSame(sprintf('Login_%s', md5(var_export(['int',' string'], true))), $service5->getMethod('Login')->getMethodName());
+        $this->assertSame(sprintf('Login_%s', md5(var_export(['int', ' string'], true))), $service5->getMethod('Login')->getMethodName());
     }
 
     public function testMultipleServicesSameMethodsWithoutPurging()

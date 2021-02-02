@@ -54,7 +54,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
 
     public function next()
     {
-        $this->offset++;
+        ++$this->offset;
     }
 
     public function key()
@@ -77,47 +77,6 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return count($this->objects);
     }
 
-    /**
-     * Must return the object class name that this container is made to contain
-     * @return string
-     */
-    abstract protected function objectClass(): string;
-
-    /**
-     * Must return the object class name that this container is made to contain
-     * @return string
-     */
-    abstract protected function objectProperty(): string;
-
-    /**
-     * This method is called before the object has been stored
-     * @throws InvalidArgumentException
-     * @param mixed $object
-     */
-    protected function beforeObjectIsStored(object $object): void
-    {
-        $objectClass = $this->objectClass();
-
-        if (!$object instanceof $objectClass) {
-            throw new InvalidArgumentException(sprintf('Model of type "%s" does not match the object contained by this class: "%s"', get_class($object), $objectClass), __LINE__);
-        }
-    }
-
-    protected function getObjectKey(object $object)
-    {
-        $get = sprintf('get%s', ucfirst($this->objectProperty()));
-        if (!method_exists($object, $get)) {
-            throw new InvalidArgumentException(sprintf('Method "%s" is required in "%s" in order to be stored in "%s"', $get, get_class($object), get_class($this)), __LINE__);
-        }
-
-        $key = $object->$get();
-        if (!is_scalar($key)) {
-            throw new InvalidArgumentException(sprintf('Property "%s" of "%s" must be scalar, "%s" returned', $this->objectProperty(), get_class($object), gettype($key)), __LINE__);
-        }
-
-        return $key;
-    }
-
     public function add(object $object): self
     {
         $this->beforeObjectIsStored($object);
@@ -138,5 +97,46 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     public function jsonSerialize(): array
     {
         return array_values($this->objects);
+    }
+
+    /**
+     * Must return the object class name that this container is made to contain.
+     */
+    abstract protected function objectClass(): string;
+
+    /**
+     * Must return the object class name that this container is made to contain.
+     */
+    abstract protected function objectProperty(): string;
+
+    /**
+     * This method is called before the object has been stored.
+     *
+     * @param mixed $object
+     *
+     * @throws InvalidArgumentException
+     */
+    protected function beforeObjectIsStored(object $object): void
+    {
+        $objectClass = $this->objectClass();
+
+        if (!$object instanceof $objectClass) {
+            throw new InvalidArgumentException(sprintf('Model of type "%s" does not match the object contained by this class: "%s"', get_class($object), $objectClass), __LINE__);
+        }
+    }
+
+    protected function getObjectKey(object $object)
+    {
+        $get = sprintf('get%s', ucfirst($this->objectProperty()));
+        if (!method_exists($object, $get)) {
+            throw new InvalidArgumentException(sprintf('Method "%s" is required in "%s" in order to be stored in "%s"', $get, get_class($object), get_class($this)), __LINE__);
+        }
+
+        $key = $object->{$get}();
+        if (!is_scalar($key)) {
+            throw new InvalidArgumentException(sprintf('Property "%s" of "%s" must be scalar, "%s" returned', $this->objectProperty(), get_class($object), gettype($key)), __LINE__);
+        }
+
+        return $key;
     }
 }

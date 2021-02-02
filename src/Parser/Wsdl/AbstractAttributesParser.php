@@ -4,20 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
 
 abstract class AbstractAttributesParser extends AbstractTagParser
 {
-    protected function parseWsdl(Wsdl $wsdl): void
-    {
-        foreach ($this->getTags() as $tag) {
-            $this->parseTag($tag);
-        }
-    }
-
     public function parseTag(Tag $tag)
     {
         $parent = $tag->getSuitableParent();
@@ -26,7 +19,8 @@ abstract class AbstractAttributesParser extends AbstractTagParser
             if ($model instanceof Struct) {
                 if ($tag->hasAttributeName() && ($modelAttribute = $model->getAttribute($tag->getAttributeName())) instanceof StructAttribute) {
                     return $this->parseTagAttributes($tag, $model, $modelAttribute);
-                } elseif ($tag->hasAttributeRef() && ($modelAttribute = $model->getAttribute($tag->getAttributeRef())) instanceof StructAttribute) {
+                }
+                if ($tag->hasAttributeRef() && ($modelAttribute = $model->getAttribute($tag->getAttributeRef())) instanceof StructAttribute) {
                     return $this->parseTagAttributes($tag, $model, $modelAttribute);
                 }
                 $this->parseTagAttributes($tag, $model);
@@ -34,5 +28,12 @@ abstract class AbstractAttributesParser extends AbstractTagParser
         }
 
         $this->parseTagAttributes($tag);
+    }
+
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            $this->parseTag($tag);
+        }
     }
 }

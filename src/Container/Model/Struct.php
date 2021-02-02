@@ -10,15 +10,9 @@ use WsdlToPhp\PackageGenerator\Model\Struct as Model;
 class Struct extends AbstractModel
 {
     /**
-     * Only for virtually-considered objects (in order to avoid duplications in objects property)
-     * @var array $virtualObjects
+     * Only for virtually-considered objects (in order to avoid duplications in objects property).
      */
     protected array $virtualObjects = [];
-
-    protected function objectClass(): string
-    {
-        return Model::class;
-    }
 
     public function getStructByName(string $name): ?Model
     {
@@ -92,11 +86,9 @@ class Struct extends AbstractModel
     {
         return $this->getVirtualKey($this->getObjectKey($object));
     }
+
     /**
-     * The key must not conflict with possible key values
-     * @param string $name
-     * @param string $type
-     * @return string
+     * The key must not conflict with possible key values.
      */
     public function getTypeKey(string $name, string $type): string
     {
@@ -104,9 +96,7 @@ class Struct extends AbstractModel
     }
 
     /**
-     * The key must not conflict with possible key values
-     * @param string $name
-     * @return string
+     * The key must not conflict with possible key values.
      */
     public function getVirtualKey(string $name): string
     {
@@ -115,7 +105,9 @@ class Struct extends AbstractModel
 
     /**
      * By overriding this method, we ensure that each time a new object is stored, it is stored with our new key if the inheritance is defined.
+     *
      * @param Model $object
+     *
      * @return Struct
      */
     public function add(object $object): self
@@ -128,5 +120,10 @@ class Struct extends AbstractModel
         }
 
         return $this;
+    }
+
+    protected function objectClass(): string
+    {
+        return Model::class;
     }
 }

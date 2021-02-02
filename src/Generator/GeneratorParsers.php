@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Generator;
 
 use WsdlToPhp\PackageGenerator\Container\Parser as ParserContainer;
-use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs as StructsParser;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions as FunctionsParser;
+use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs as StructsParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute as TagAttributeParser;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagChoice as TagChoiceParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType as TagComplexTypeParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagDocumentation as TagDocumentationParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement as TagElementParser;
@@ -21,7 +22,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList as TagListParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput as TagOutputParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction as TagRestrictionParser;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion as TagUnionParser;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagChoice as TagChoiceParser;
 
 class GeneratorParsers extends AbstractGeneratorAware
 {
@@ -31,6 +31,20 @@ class GeneratorParsers extends AbstractGeneratorAware
     {
         parent::__construct($generator);
         $this->initParsers();
+    }
+
+    public function doParse(): self
+    {
+        foreach ($this->parsers as $parser) {
+            $parser->parse();
+        }
+
+        return $this;
+    }
+
+    public function getParsers(): ParserContainer
+    {
+        return $this->parsers;
     }
 
     protected function initParsers(): self
@@ -54,23 +68,10 @@ class GeneratorParsers extends AbstractGeneratorAware
                 ->add(new TagUnionParser($this->generator))
                 ->add(new TagListParser($this->generator))
                 ->add(new TagChoiceParser($this->generator))
-                ->add(new TagDocumentationParser($this->generator));
+                ->add(new TagDocumentationParser($this->generator))
+            ;
         }
 
         return $this;
-    }
-
-    public function doParse(): self
-    {
-        foreach ($this->parsers as $parser) {
-            $parser->parse();
-        }
-
-        return $this;
-    }
-
-    public function getParsers(): ParserContainer
-    {
-        return $this->parsers;
     }
 }

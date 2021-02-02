@@ -6,13 +6,16 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ChoiceRuleTest extends AbstractRuleTest
 {
-
     /**
      * - choice: StringValue | BinaryValue
      * - choiceMaxOccurs: 1
-     * - choiceMinOccurs: 1
+     * - choiceMinOccurs: 1.
      */
     public function testSetStringValueAfterBinaryValueMustThrowAnException()
     {
@@ -23,13 +26,14 @@ final class ChoiceRuleTest extends AbstractRuleTest
 
         $instance
             ->setBinaryValue('1234567980')
-            ->setStringValue('0987654321');
+            ->setStringValue('0987654321')
+        ;
     }
 
     /**
      * - choice: StringValue | BinaryValue
      * - choiceMaxOccurs: 1
-     * - choiceMinOccurs: 1
+     * - choiceMinOccurs: 1.
      */
     public function testSetStringValueAloneMustPass()
     {
@@ -41,7 +45,7 @@ final class ChoiceRuleTest extends AbstractRuleTest
     /**
      * - choice: StringValue | BinaryValue
      * - choiceMaxOccurs: 1
-     * - choiceMinOccurs: 1
+     * - choiceMinOccurs: 1.
      */
     public function testSetStringValueAloneWithNullMustPass()
     {

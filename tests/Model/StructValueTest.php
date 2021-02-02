@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StructValueTest extends AbstractTestCase
 {
     public function testGetValue()

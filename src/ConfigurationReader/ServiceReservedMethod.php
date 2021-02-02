@@ -8,6 +8,6 @@ final class ServiceReservedMethod extends AbstractReservedWord
 {
     public static function getDefaultConfigurationPath(): string
     {
-        return __DIR__ . '/../resources/config/service_reserved_keywords.yml';
+        return __DIR__.'/../resources/config/service_reserved_keywords.yml';
     }
 }

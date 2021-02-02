@@ -4,26 +4,14 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\WsdlHandler\Tag\TagUnion as Union;
-use WsdlToPhp\WsdlHandler\Tag\TagSimpleType as SimpleType;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\TagSimpleType as SimpleType;
+use WsdlToPhp\WsdlHandler\Tag\TagUnion as Union;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagUnion extends AbstractTagParser
 {
-    protected function parseWsdl(Wsdl $wsdl): void
-    {
-        foreach ($this->getTags() as $tag) {
-            $this->parseUnion($tag);
-        }
-    }
-
-    protected function parsingTag(): string
-    {
-        return WsdlDocument::TAG_UNION;
-    }
-
     public function parseUnion(Union $union): void
     {
         $parent = $union->getSuitableParent();
@@ -53,6 +41,18 @@ class TagUnion extends AbstractTagParser
         $model->setInheritance($this->findSuitableInheritance($memberTypes));
     }
 
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            $this->parseUnion($tag);
+        }
+    }
+
+    protected function parsingTag(): string
+    {
+        return WsdlDocument::TAG_UNION;
+    }
+
     protected function findSuitableInheritance(array $values): string
     {
         $validInheritance = '';
@@ -64,6 +64,7 @@ class TagUnion extends AbstractTagParser
 
             if ($model instanceof AbstractModel) {
                 $validInheritance = $model->getName();
+
                 break;
             }
         }
@@ -79,6 +80,7 @@ class TagUnion extends AbstractTagParser
                 $memberTypes[] = $child->getFirstRestrictionChild()->getAttributeBase();
             }
         }
+
         return array_unique($memberTypes);
     }
 }

@@ -10,16 +10,6 @@ class Method extends AbstractModel
 {
     public const KEY_PARAMETER_TYPE = 'parameterType';
 
-    protected function objectClass(): string
-    {
-        return Model::class;
-    }
-
-    protected function objectProperty(): string
-    {
-        return 'methodName';
-    }
-
     public function getMethodByName(string $name): ?Model
     {
         return $this->get($name);
@@ -34,5 +24,15 @@ class Method extends AbstractModel
         }
 
         return null;
+    }
+
+    protected function objectClass(): string
+    {
+        return Model::class;
+    }
+
+    protected function objectProperty(): string
+    {
+        return 'methodName';
     }
 }

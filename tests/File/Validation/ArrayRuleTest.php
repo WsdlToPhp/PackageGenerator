@@ -8,9 +8,12 @@ use Api\StructType\ApiParagraphType;
 use Api\StructType\ApiTaxType;
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ArrayRuleTest extends AbstractRuleTest
 {
-
     /**
      * The AddressLine
      * Meta informations extracted from the WSDL
@@ -20,7 +23,7 @@ final class ArrayRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
      */
     public function testSetAddressLineWithNullOnOneItemMustThrowAnException()
     {
@@ -47,7 +50,8 @@ final class ArrayRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
+     *
      * @var string[]
      */
     public function testSetAddressLineWithStringsMustPass()

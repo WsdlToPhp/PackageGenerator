@@ -5,12 +5,16 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
-use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ServiceTest extends AbstractFile
 {
     public function testSetModelGoodNameTooManyAttributesWithException()
@@ -29,7 +33,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiDelete', $service);
         } else {
             $this->fail('Unable to find Delete service for file generation');
@@ -43,7 +48,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiSearch', $service);
         } else {
             $this->fail('Unable to find Search service for file generation');
@@ -57,11 +63,13 @@ final class ServiceTest extends AbstractFile
             $generator
                 ->setOptionPrefix('Api')
                 ->setOptionSuffix('Project')
-                ->setOptionNamespacePrefix('My\Project');
+                ->setOptionNamespacePrefix('My\Project')
+            ;
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidMyProjectApiSearchProject', $service);
         } else {
             $this->fail('Unable to find Search service for file generation');
@@ -74,11 +82,13 @@ final class ServiceTest extends AbstractFile
         if (($model = $generator->getService('Search')) instanceof ServiceModel) {
             $generator
                 ->setOptionPrefix('')
-                ->setOptionSuffix('BingApi');
+                ->setOptionSuffix('BingApi')
+            ;
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiSearchBingApi', $service);
         } else {
             $this->fail('Unable to find Search service for file generation');
@@ -92,7 +102,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiAuthenticate', $service);
         } else {
             $this->fail('Unable to find Authenticate service for file generation');
@@ -106,7 +117,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiLogin', $service);
         } else {
             $this->fail('Unable to find Login service for file generation');
@@ -120,7 +132,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiCreate', $service);
         } else {
             $this->fail('Unable to find Create service for file generation');
@@ -134,7 +147,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiSaint', $service);
         } else {
             $this->fail('Unable to find Saint service for file generation');
@@ -148,7 +162,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiDo', $service);
         } else {
             $this->fail('Unable to find Do service for file generation');
@@ -163,7 +178,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidDoWithoutPrefix', $service);
         } else {
             $this->fail('Unable to find Do service for file generation');
@@ -178,7 +194,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidListWithoutPrefix', $service);
         } else {
             $this->fail('Unable to find List service for file generation');
@@ -193,7 +210,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidBingApiService', $service);
         } else {
             $this->fail('Unable to find Service model for file generation');
@@ -212,7 +230,8 @@ final class ServiceTest extends AbstractFile
         }
         $serviceFile
             ->setModel($model)
-            ->write();
+            ->write()
+        ;
         $this->assertSameFileContent('ValidOmnitureApiService', $serviceFile);
     }
 
@@ -228,7 +247,8 @@ final class ServiceTest extends AbstractFile
         }
         $serviceFile
             ->setModel($model)
-            ->write();
+            ->write()
+        ;
         $this->assertSameFileContent('ValidPayPalApiService', $serviceFile);
     }
 
@@ -244,7 +264,8 @@ final class ServiceTest extends AbstractFile
         }
         $serviceFile
             ->setModel($model)
-            ->write();
+            ->write()
+        ;
         $this->assertSameFileContent('ValidActonApiService', $serviceFile);
     }
 
@@ -256,7 +277,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidYandexDirectApiLiveGet', $service);
         } else {
             $this->fail('Unable to find Get service for file generation');
@@ -270,7 +292,7 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service->setModel($model);
 
-            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $service->getFileDestination());
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname().DIRECTORY_SEPARATOR, $model->getContextualPart()), $service->getFileDestination());
         } else {
             $this->fail('Unable to find Search service for file generation');
         }
@@ -283,7 +305,8 @@ final class ServiceTest extends AbstractFile
             $service = new ServiceFile($generator, $model->getName());
             $service
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiFind', $service);
         } else {
             $this->fail('Unable to find Find service for file generation');

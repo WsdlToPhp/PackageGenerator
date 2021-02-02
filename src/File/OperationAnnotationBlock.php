@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
+use WsdlToPhp\PackageGenerator\File\Utils as FileUtils;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
-use WsdlToPhp\PackageGenerator\File\Utils as FileUtils;
 
 final class OperationAnnotationBlock extends AbstractOperation
 {
@@ -19,7 +19,8 @@ final class OperationAnnotationBlock extends AbstractOperation
             ->addOperationMethodMetaInformation($annotationBlock)
             ->addOperationMethodUses($annotationBlock)
             ->addOperationMethodParam($annotationBlock)
-            ->addOperationMethodReturn($annotationBlock);
+            ->addOperationMethodReturn($annotationBlock)
+        ;
 
         return $this;
     }
@@ -45,7 +46,8 @@ final class OperationAnnotationBlock extends AbstractOperation
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNames: %s', implode(', ', $soapHeaderNames)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNamespaces: %s', implode(', ', $soapHeaderNamespaces)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes: %s', implode(', ', $this->getSoapHeaderTypesTypes($soapHeaderTypes))), AbstractModelFile::ANNOTATION_LONG_LENGTH))
-                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaders: %s', implode(', ', $soapHeaders)), AbstractModelFile::ANNOTATION_LONG_LENGTH));
+                ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaders: %s', implode(', ', $soapHeaders)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
+            ;
         }
         FileUtils::defineModelAnnotationsFromWsdl($annotationBlock, $this->getMethod(), [
             TagHeader::META_SOAP_HEADER_NAMES,
@@ -83,7 +85,8 @@ final class OperationAnnotationBlock extends AbstractOperation
         $annotationBlock->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::getSoapClient()', $this->getMethod()->getOwner()->getExtends(true))))
             ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::setResult()', $this->getMethod()->getOwner()->getExtends(true))))
             ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::getResult()', $this->getMethod()->getOwner()->getExtends(true))))
-            ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::saveLastError()', $this->getMethod()->getOwner()->getExtends(true))));
+            ->addChild(new PhpAnnotation(AbstractModelFile::ANNOTATION_USES, sprintf('%s::saveLastError()', $this->getMethod()->getOwner()->getExtends(true))))
+        ;
 
         return $this;
     }
@@ -91,6 +94,7 @@ final class OperationAnnotationBlock extends AbstractOperation
     protected function addOperationMethodParam(PhpAnnotationBlock $annotationBlock): self
     {
         $this->addOperationMethodParamFromArray($annotationBlock)->addOperationMethodParamFromModel($annotationBlock)->addOperationMethodParamFromString($annotationBlock);
+
         return $this;
     }
 

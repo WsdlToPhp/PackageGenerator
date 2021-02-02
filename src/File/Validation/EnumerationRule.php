@@ -8,7 +8,7 @@ use WsdlToPhp\PackageGenerator\File\StructEnum;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
 /**
- * @link https://www.w3.org/TR/xmlschema-2/#rf-enumeration
+ * @see https://www.w3.org/TR/xmlschema-2/#rf-enumeration
  * Validation Rule: enumeration valid
  * A value in a ·value space· is facet-valid with respect to ·enumeration· if the value is one of the values specified in {value}
  */

@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use TypeError;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class IntRuleTest extends AbstractRuleTest
 {
     public function testSetDecimalPlacesValueWithStringValueMustThrowAnException()

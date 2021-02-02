@@ -7,6 +7,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 use Api\EnumType\ApiAdultOption;
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class EnumerationRuleTest extends AbstractRuleTest
 {
     public function testSetAdultValueWithInvalidValueMustThrowAnException()

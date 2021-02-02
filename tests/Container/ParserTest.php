@@ -8,6 +8,10 @@ use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Container\Parser;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ParserTest extends AbstractTestCase
 {
     public function testAddWithException()
