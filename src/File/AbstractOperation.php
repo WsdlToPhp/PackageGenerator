@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
@@ -12,61 +13,39 @@ use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 
 abstract class AbstractOperation
 {
-    /**
-     * @var string
-     */
     public const DEFAULT_TYPE = 'string';
-    /**
-     * @var string
-     */
     public const ARRAY_TYPE = 'array';
-    /**
-     * @var string
-     */
     public const SOAP_CALL_NAME = '__soapCall';
-    /**
-     * @var MethodModel
-     */
-    protected $method;
-    /**
-     * @var Generator
-     */
-    protected $generator;
-    /**
-     * @param MethodModel $method
-     * @param Generator $generator
-     */
+
+    protected MethodModel $method;
+
+    protected Generator $generator;
+
     public function __construct(MethodModel $method, Generator $generator)
     {
-        $this->setMethod($method)->setGenerator($generator);
+        $this
+            ->setMethod($method)
+            ->setGenerator($generator);
     }
-    /**
-     * @return StructModel|null
-     */
-    protected function getParameterTypeModel()
+
+    protected function getParameterTypeModel(): ?StructModel
     {
         return $this->isParameterTypeAString() ? $this->getGenerator()->getStructByName($this->getMethod()->getParameterType()) : null;
     }
-    /**
-     * @return bool
-     */
-    protected function isParameterTypeEmpty()
+
+    protected function isParameterTypeEmpty(): bool
     {
         $parameterType = $this->getMethod()->getParameterType();
+
         return empty($parameterType);
     }
-    /**
-     * @return bool
-     */
-    protected function isParameterTypeAnArray()
+
+    protected function isParameterTypeAnArray(): bool
     {
         return is_array($this->getMethod()->getParameterType());
     }
-    /**
-     * @param bool $methodUsage
-     * @return string[]
-     */
-    protected function getParameterTypeArrayTypes($methodUsage = false)
+
+    protected function getParameterTypeArrayTypes(bool $methodUsage = false): array
     {
         $types = [];
         $parameterTypes = $this->getMethod()->getParameterType();
@@ -87,80 +66,57 @@ abstract class AbstractOperation
                 $types[$parameterName] = $type;
             }
         }
+
         return $types;
     }
-    /**
-     * @return bool
-     */
-    protected function isParameterTypeAString()
+
+    protected function isParameterTypeAString(): bool
     {
         return is_string($this->getMethod()->getParameterType());
     }
-    /**
-     * @return bool
-     */
-    protected function isParameterTypeAModel()
+
+    protected function isParameterTypeAModel(): bool
     {
         return $this->getParameterTypeModel() instanceof StructModel;
     }
-    /**
-     * @param string $name
-     * @return string
-     */
-    protected function getParameterName($name)
+
+    protected function getParameterName(string $name): string
     {
         return lcfirst(AbstractModel::cleanString($name));
     }
-    /**
-     * @param string $name
-     * @param string $type
-     * @return PhpFunctionParameter
-     */
-    protected function getMethodParameter($name, $type = null)
+
+    protected function getMethodParameter(string $name, ?string $type = null): PhpFunctionParameter
     {
         try {
             return new PhpFunctionParameter($name, PhpFunctionParameter::NO_VALUE, $type);
-        } catch (\InvalidArgumentException $exception) {
-            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for method "%s" with type "%s" and name "%s"', $this->getMethod()->getName(), var_export($type, true), $name), __LINE__, $exception);
+        } catch (InvalidArgumentException $exception) {
+            throw new InvalidArgumentException(sprintf('Unable to create function parameter for method "%s" with type "%s" and name "%s"', $this->getMethod()->getName(), var_export($type, true), $name), __LINE__, $exception);
         }
     }
-    /**
-     * @param Generator $generator
-     * @return AbstractOperation
-     */
-    public function setGenerator(Generator $generator)
+
+    public function setGenerator(Generator $generator): self
     {
         $this->generator = $generator;
         return $this;
     }
-    /**
-     * @return Generator
-     */
-    public function getGenerator()
+
+    public function getGenerator(): Generator
     {
         return $this->generator;
     }
-    /**
-     * @param MethodModel $method
-     * @return AbstractOperation
-     */
-    public function setMethod(MethodModel $method)
+
+    public function setMethod(MethodModel $method): self
     {
         $this->method = $method;
         return $this;
     }
-    /**
-     * @return MethodModel
-     */
-    public function getMethod()
+
+    public function getMethod(): MethodModel
     {
         return $this->method;
     }
-    /**
-     * @param string $name
-     * @return StructModel|null
-     */
-    protected function getModelByName($name)
+
+    protected function getModelByName(string $name): ?StructModel
     {
         return $this->getGenerator()->getStructByName($name);
     }
