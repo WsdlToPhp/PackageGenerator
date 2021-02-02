@@ -8,6 +8,10 @@ use DateTime;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputInterface;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use WsdlToPhp\PackageBase\AbstractStructArrayBase;
+use WsdlToPhp\PackageBase\AbstractStructBase;
+use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 
@@ -156,25 +160,25 @@ final class GeneratePackageCommand extends AbstractCommand
                 'struct',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Use this class as parent class for any StructType class. Default class is \WsdlToPhp\PackageBase\AbstractStructBase from wsdltophp/packagebase package'
+                sprintf('Use this class as parent class for any StructType class. Default class is %s from wsdltophp/packagebase package', AbstractStructBase::class)
             )
             ->addOption(
                 'structarray',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Use this class as parent class for any StructArrayType class. Default class is \WsdlToPhp\PackageBase\AbstractStructArrayBase from wsdltophp/packagebase package'
+                sprintf('Use this class as parent class for any StructArrayType class. Default class is %s from wsdltophp/packagebase package', AbstractStructArrayBase::class)
             )
             ->addOption(
                 'structenum',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Use this class as parent class for any StructEnumType class. Default class is \WsdlToPhp\PackageBase\AbstractStructEnumBase from wsdltophp/packagebase package'
+                sprintf('Use this class as parent class for any StructEnumType class. Default class is %s from wsdltophp/packagebase package', AbstractStructEnumBase::class)
             )
             ->addOption(
                 'soapclient',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Use this class as parent class for any ServiceType class. Default class is \WsdlToPhp\PackageBase\AbstractSoapClientBase from wsdltophp/packagebase package'
+                sprintf('Use this class as parent class for any ServiceType class. Default class is %s from wsdltophp/packagebase package', AbstractSoapClientBase::class)
             )
             ->addOption(
                 'composer-name',
