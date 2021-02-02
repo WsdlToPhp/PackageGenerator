@@ -136,12 +136,12 @@ class ApiUniqueID_Type extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD, true), gettype($iD)), __LINE__);
         }
         // validation for constraint: maxLength(32)
-        if (!is_null($iD) && mb_strlen($iD) > 32) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen($iD)), __LINE__);
+        if (!is_null($iD) && mb_strlen((string) $iD) > 32) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $iD)), __LINE__);
         }
         // validation for constraint: minLength(1)
-        if (!is_null($iD) && mb_strlen($iD) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($iD)), __LINE__);
+        if (!is_null($iD) && mb_strlen((string) $iD) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $iD)), __LINE__);
         }
         $this->ID = $iD;
         return $this;
@@ -206,12 +206,12 @@ class ApiUniqueID_Type extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD_Context, true), gettype($iD_Context)), __LINE__);
         }
         // validation for constraint: maxLength(32)
-        if (!is_null($iD_Context) && mb_strlen($iD_Context) > 32) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen($iD_Context)), __LINE__);
+        if (!is_null($iD_Context) && mb_strlen((string) $iD_Context) > 32) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $iD_Context)), __LINE__);
         }
         // validation for constraint: minLength(1)
-        if (!is_null($iD_Context) && mb_strlen($iD_Context) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen($iD_Context)), __LINE__);
+        if (!is_null($iD_Context) && mb_strlen((string) $iD_Context) < 1) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $iD_Context)), __LINE__);
         }
         $this->ID_Context = $iD_Context;
         return $this;

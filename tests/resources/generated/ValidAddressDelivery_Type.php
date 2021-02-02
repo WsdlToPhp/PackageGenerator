@@ -187,8 +187,8 @@ class ApiAddressDelivery_Type extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($postalCode, true), gettype($postalCode)), __LINE__);
         }
         // validation for constraint: length(4)
-        if (!is_null($postalCode) && mb_strlen($postalCode) !== 4) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 4', mb_strlen($postalCode)), __LINE__);
+        if (!is_null($postalCode) && mb_strlen((string) $postalCode) !== 4) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 4', mb_strlen((string) $postalCode)), __LINE__);
         }
         $this->PostalCode = $postalCode;
         return $this;

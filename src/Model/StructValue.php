@@ -44,7 +44,7 @@ class StructValue extends AbstractModel
 
     public function getNameWithSeparatedWords(bool $keepMultipleUnderscores = false): string
     {
-        return trim(self::cleanString(preg_replace(self::MATCH_PATTERN, self::REPLACEMENT_PATTERN, $this->getName()), $keepMultipleUnderscores), '_');
+        return trim(self::cleanString(preg_replace(self::MATCH_PATTERN, self::REPLACEMENT_PATTERN, (string) $this->getName()), $keepMultipleUnderscores), '_');
     }
 
     public function getValue()

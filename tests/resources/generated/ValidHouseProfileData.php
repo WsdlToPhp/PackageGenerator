@@ -619,8 +619,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_total, true), mb_strlen(mb_substr((string) $area_total, mb_strpos((string) $area_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_total) && mb_strlen(preg_replace('/(\D)/', '', $area_total)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_total, true), mb_strlen(preg_replace('/(\D)/', '', $area_total))), __LINE__);
+        if (!is_null($area_total) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_total)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_total, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_total))), __LINE__);
         }
         $this->area_total = $area_total;
         return $this;
@@ -649,8 +649,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_residential, true), mb_strlen(mb_substr((string) $area_residential, mb_strpos((string) $area_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_residential) && mb_strlen(preg_replace('/(\D)/', '', $area_residential)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_residential, true), mb_strlen(preg_replace('/(\D)/', '', $area_residential))), __LINE__);
+        if (!is_null($area_residential) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_residential)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_residential, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_residential))), __LINE__);
         }
         $this->area_residential = $area_residential;
         return $this;
@@ -679,8 +679,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_non_residential, true), mb_strlen(mb_substr((string) $area_non_residential, mb_strpos((string) $area_non_residential, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_non_residential) && mb_strlen(preg_replace('/(\D)/', '', $area_non_residential)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_non_residential, true), mb_strlen(preg_replace('/(\D)/', '', $area_non_residential))), __LINE__);
+        if (!is_null($area_non_residential) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_non_residential)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_non_residential, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_non_residential))), __LINE__);
         }
         $this->area_non_residential = $area_non_residential;
         return $this;
@@ -960,8 +960,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_private, true), mb_strlen(mb_substr((string) $area_private, mb_strpos((string) $area_private, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_private) && mb_strlen(preg_replace('/(\D)/', '', $area_private)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_private, true), mb_strlen(preg_replace('/(\D)/', '', $area_private))), __LINE__);
+        if (!is_null($area_private) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_private)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_private, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_private))), __LINE__);
         }
         $this->area_private = $area_private;
         return $this;
@@ -990,8 +990,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_municipal, true), mb_strlen(mb_substr((string) $area_municipal, mb_strpos((string) $area_municipal, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_municipal) && mb_strlen(preg_replace('/(\D)/', '', $area_municipal)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_municipal, true), mb_strlen(preg_replace('/(\D)/', '', $area_municipal))), __LINE__);
+        if (!is_null($area_municipal) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_municipal)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_municipal, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_municipal))), __LINE__);
         }
         $this->area_municipal = $area_municipal;
         return $this;
@@ -1020,8 +1020,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_national, true), mb_strlen(mb_substr((string) $area_national, mb_strpos((string) $area_national, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_national) && mb_strlen(preg_replace('/(\D)/', '', $area_national)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_national, true), mb_strlen(preg_replace('/(\D)/', '', $area_national))), __LINE__);
+        if (!is_null($area_national) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_national)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_national, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_national))), __LINE__);
         }
         $this->area_national = $area_national;
         return $this;
@@ -1050,8 +1050,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_land, true), mb_strlen(mb_substr((string) $area_land, mb_strpos((string) $area_land, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_land) && mb_strlen(preg_replace('/(\D)/', '', $area_land)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_land, true), mb_strlen(preg_replace('/(\D)/', '', $area_land))), __LINE__);
+        if (!is_null($area_land) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_land)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_land, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_land))), __LINE__);
         }
         $this->area_land = $area_land;
         return $this;
@@ -1080,8 +1080,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_territory, true), mb_strlen(mb_substr((string) $area_territory, mb_strpos((string) $area_territory, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($area_territory) && mb_strlen(preg_replace('/(\D)/', '', $area_territory)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_territory, true), mb_strlen(preg_replace('/(\D)/', '', $area_territory))), __LINE__);
+        if (!is_null($area_territory) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_territory)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_territory, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_territory))), __LINE__);
         }
         $this->area_territory = $area_territory;
         return $this;
@@ -1220,8 +1220,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_actual_expense, true), mb_strlen(mb_substr((string) $thermal_actual_expense, mb_strpos((string) $thermal_actual_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($thermal_actual_expense) && mb_strlen(preg_replace('/(\D)/', '', $thermal_actual_expense)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_actual_expense, true), mb_strlen(preg_replace('/(\D)/', '', $thermal_actual_expense))), __LINE__);
+        if (!is_null($thermal_actual_expense) && mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_actual_expense)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_actual_expense, true), mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_actual_expense))), __LINE__);
         }
         $this->thermal_actual_expense = $thermal_actual_expense;
         return $this;
@@ -1250,8 +1250,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($thermal_normative_expense, true), mb_strlen(mb_substr((string) $thermal_normative_expense, mb_strpos((string) $thermal_normative_expense, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($thermal_normative_expense) && mb_strlen(preg_replace('/(\D)/', '', $thermal_normative_expense)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_normative_expense, true), mb_strlen(preg_replace('/(\D)/', '', $thermal_normative_expense))), __LINE__);
+        if (!is_null($thermal_normative_expense) && mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_normative_expense)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_normative_expense, true), mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_normative_expense))), __LINE__);
         }
         $this->thermal_normative_expense = $thermal_normative_expense;
         return $this;
@@ -1349,8 +1349,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_total, true), mb_strlen(mb_substr((string) $deterioration_total, mb_strpos((string) $deterioration_total, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($deterioration_total) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_total)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_total, true), mb_strlen(preg_replace('/(\D)/', '', $deterioration_total))), __LINE__);
+        if (!is_null($deterioration_total) && mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_total)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_total, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_total))), __LINE__);
         }
         $this->deterioration_total = $deterioration_total;
         return $this;
@@ -1379,8 +1379,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_foundation, true), mb_strlen(mb_substr((string) $deterioration_foundation, mb_strpos((string) $deterioration_foundation, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($deterioration_foundation) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_foundation)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_foundation, true), mb_strlen(preg_replace('/(\D)/', '', $deterioration_foundation))), __LINE__);
+        if (!is_null($deterioration_foundation) && mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_foundation)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_foundation, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_foundation))), __LINE__);
         }
         $this->deterioration_foundation = $deterioration_foundation;
         return $this;
@@ -1409,8 +1409,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_bearing_walls, true), mb_strlen(mb_substr((string) $deterioration_bearing_walls, mb_strpos((string) $deterioration_bearing_walls, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($deterioration_bearing_walls) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_bearing_walls)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_bearing_walls, true), mb_strlen(preg_replace('/(\D)/', '', $deterioration_bearing_walls))), __LINE__);
+        if (!is_null($deterioration_bearing_walls) && mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_bearing_walls)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_bearing_walls, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_bearing_walls))), __LINE__);
         }
         $this->deterioration_bearing_walls = $deterioration_bearing_walls;
         return $this;
@@ -1439,8 +1439,8 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($deterioration_floor, true), mb_strlen(mb_substr((string) $deterioration_floor, mb_strpos((string) $deterioration_floor, '.') + 1))), __LINE__);
         }
         // validation for constraint: totalDigits(15)
-        if (!is_null($deterioration_floor) && mb_strlen(preg_replace('/(\D)/', '', $deterioration_floor)) > 15) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_floor, true), mb_strlen(preg_replace('/(\D)/', '', $deterioration_floor))), __LINE__);
+        if (!is_null($deterioration_floor) && mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_floor)) > 15) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_floor, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_floor))), __LINE__);
         }
         $this->deterioration_floor = $deterioration_floor;
         return $this;
