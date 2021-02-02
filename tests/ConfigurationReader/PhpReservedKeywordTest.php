@@ -21,7 +21,7 @@ final class PhpReservedKeywordTest extends AbstractTestCase
 
     public function testIsClassUpper()
     {
-        $this->assertFalse(self::instance()->is('__CLASS__'));
+        $this->assertTrue(self::instance()->is('__CLASS__'));
     }
 
     public function testIsClassLower()
