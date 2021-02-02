@@ -22,7 +22,7 @@ class ApiExpiryDate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public $month;
+    public $month = null;
     /**
      * The year
      * Meta information extracted from the WSDL
@@ -31,7 +31,7 @@ class ApiExpiryDate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public $year;
+    public $year = null;
     /**
      * Constructor method for expiryDate
      * @uses ApiExpiryDate::setMonth()
@@ -39,7 +39,7 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $month
      * @param string $year
      */
-    public function __construct($month = null, $year = null)
+    public function __construct(string $month = null, string $year = null)
     {
         $this
             ->setMonth($month)
@@ -49,7 +49,7 @@ class ApiExpiryDate extends AbstractStructBase
      * Get month value
      * @return string
      */
-    public function getMonth()
+    public function getMonth(): ?string
     {
         return $this->month;
     }
@@ -58,7 +58,7 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $month
      * @return \Api\StructType\ApiExpiryDate
      */
-    public function setMonth($month = null)
+    public function setMonth(string $month = null): self
     {
         // validation for constraint: string
         if (!is_null($month) && !is_string($month)) {
@@ -75,7 +75,7 @@ class ApiExpiryDate extends AbstractStructBase
      * Get year value
      * @return string
      */
-    public function getYear()
+    public function getYear(): ?string
     {
         return $this->year;
     }
@@ -84,7 +84,7 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $year
      * @return \Api\StructType\ApiExpiryDate
      */
-    public function setYear($year = null)
+    public function setYear(string $year = null): self
     {
         // validation for constraint: string
         if (!is_null($year) && !is_string($year)) {

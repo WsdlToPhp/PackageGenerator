@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
+use TypeError;
 
 final class StringRuleTest extends AbstractRuleTest
 {
@@ -18,8 +18,7 @@ final class StringRuleTest extends AbstractRuleTest
      */
     public function testSetCardNumberWithArrayValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value array');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlPaymentCardTypeInstance();
 
@@ -36,8 +35,7 @@ final class StringRuleTest extends AbstractRuleTest
      */
     public function testSetCardNumberWithBoolValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value true, please provide a string, boolean given');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlPaymentCardTypeInstance();
 
@@ -54,8 +52,7 @@ final class StringRuleTest extends AbstractRuleTest
      */
     public function testSetCardNumberWithIntValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value 1, please provide a string, integer given');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlPaymentCardTypeInstance();
 
@@ -72,8 +69,7 @@ final class StringRuleTest extends AbstractRuleTest
      */
     public function testSetCardNumberWithFloatValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value 12.5, please provide a string, double given');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlPaymentCardTypeInstance();
 

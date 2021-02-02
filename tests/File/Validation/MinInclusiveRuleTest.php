@@ -67,7 +67,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
     public function testSetPercentWithLowerIntValueMustPass()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value -1, the value must be numerically greater than or equal to 0.00');
+        $this->expectExceptionMessage('Invalid value -1.0, the value must be numerically greater than or equal to 0.00');
 
         $instance = self::getWhlTaxTypeInstance();
 

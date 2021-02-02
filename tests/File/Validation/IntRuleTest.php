@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
+use TypeError;
 
 final class IntRuleTest extends AbstractRuleTest
 {
     public function testSetDecimalPlacesValueWithStringValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value \'foo\', please provide an integer value, string given');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 
@@ -29,13 +28,12 @@ final class IntRuleTest extends AbstractRuleTest
     {
         $instance = self::getWhlTaxTypeInstance();
 
-        $this->assertSame($instance, $instance->setDecimalPlaces('18'));
+        $this->assertSame($instance, $instance->setDecimalPlaces(18));
     }
 
     public function testSetDecimalPlacesValueWithFloatValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value 18.5, please provide an integer value, double given');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 
@@ -44,8 +42,7 @@ final class IntRuleTest extends AbstractRuleTest
 
     public function testSetDecimalPlacesValueWithStringFloatValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value \'18.5\', please provide an integer value, string given');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 

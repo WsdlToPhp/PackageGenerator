@@ -21,7 +21,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    public $CampaignIds;
+    public $CampaignIds = null;
     /**
      * The Ids
      * Meta information extracted from the WSDL
@@ -29,7 +29,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    public $Ids;
+    public $Ids = null;
     /**
      * The Types
      * Meta information extracted from the WSDL
@@ -37,7 +37,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public $Types;
+    public $Types = null;
     /**
      * The Statuses
      * Meta information extracted from the WSDL
@@ -45,7 +45,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public $Statuses;
+    public $Statuses = null;
     /**
      * The TagIds
      * Meta information extracted from the WSDL
@@ -53,7 +53,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    public $TagIds;
+    public $TagIds = null;
     /**
      * The Tags
      * Meta information extracted from the WSDL
@@ -61,7 +61,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public $Tags;
+    public $Tags = null;
     /**
      * The AppIconStatuses
      * Meta information extracted from the WSDL
@@ -69,7 +69,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public $AppIconStatuses;
+    public $AppIconStatuses = null;
     /**
      * Constructor method for AdGroupsSelectionCriteria
      * @uses ApiAdGroupsSelectionCriteria::setCampaignIds()
@@ -102,7 +102,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get CampaignIds value
      * @return int[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
         return $this->CampaignIds;
     }
@@ -134,7 +134,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int[] $campaignIds
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setCampaignIds(array $campaignIds = array())
+    public function setCampaignIds(array $campaignIds = array()): self
     {
         // validation for constraint: array
         if ('' !== ($campaignIdsArrayErrorMessage = self::validateCampaignIdsForArrayConstraintsFromSetCampaignIds($campaignIds))) {
@@ -149,7 +149,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function addToCampaignIds($item)
+    public function addToCampaignIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
@@ -162,7 +162,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get Ids value
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
         return $this->Ids;
     }
@@ -194,7 +194,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int[] $ids
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setIds(array $ids = array())
+    public function setIds(array $ids = array()): self
     {
         // validation for constraint: array
         if ('' !== ($idsArrayErrorMessage = self::validateIdsForArrayConstraintsFromSetIds($ids))) {
@@ -209,7 +209,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function addToIds($item)
+    public function addToIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
@@ -222,7 +222,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get Types value
      * @return string[]|null
      */
-    public function getTypes()
+    public function getTypes(): ?array
     {
         return $this->Types;
     }
@@ -256,7 +256,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $types
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setTypes(array $types = array())
+    public function setTypes(array $types = array()): self
     {
         // validation for constraint: array
         if ('' !== ($typesArrayErrorMessage = self::validateTypesForArrayConstraintsFromSetTypes($types))) {
@@ -273,7 +273,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function addToTypes($item)
+    public function addToTypes(string $item): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($item)) {
@@ -286,7 +286,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get Statuses value
      * @return string[]|null
      */
-    public function getStatuses()
+    public function getStatuses(): ?array
     {
         return $this->Statuses;
     }
@@ -320,7 +320,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $statuses
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setStatuses(array $statuses = array())
+    public function setStatuses(array $statuses = array()): self
     {
         // validation for constraint: array
         if ('' !== ($statusesArrayErrorMessage = self::validateStatusesForArrayConstraintsFromSetStatuses($statuses))) {
@@ -337,7 +337,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function addToStatuses($item)
+    public function addToStatuses(string $item): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
@@ -350,7 +350,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get TagIds value
      * @return int[]|null
      */
-    public function getTagIds()
+    public function getTagIds(): ?array
     {
         return $this->TagIds;
     }
@@ -382,7 +382,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int[] $tagIds
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setTagIds(array $tagIds = array())
+    public function setTagIds(array $tagIds = array()): self
     {
         // validation for constraint: array
         if ('' !== ($tagIdsArrayErrorMessage = self::validateTagIdsForArrayConstraintsFromSetTagIds($tagIds))) {
@@ -397,7 +397,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function addToTagIds($item)
+    public function addToTagIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
@@ -410,7 +410,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get Tags value
      * @return string[]|null
      */
-    public function getTags()
+    public function getTags(): ?array
     {
         return $this->Tags;
     }
@@ -442,7 +442,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $tags
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setTags(array $tags = array())
+    public function setTags(array $tags = array()): self
     {
         // validation for constraint: array
         if ('' !== ($tagsArrayErrorMessage = self::validateTagsForArrayConstraintsFromSetTags($tags))) {
@@ -457,7 +457,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function addToTags($item)
+    public function addToTags(string $item): self
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
@@ -470,7 +470,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get AppIconStatuses value
      * @return string[]|null
      */
-    public function getAppIconStatuses()
+    public function getAppIconStatuses(): ?array
     {
         return $this->AppIconStatuses;
     }
@@ -504,7 +504,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $appIconStatuses
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setAppIconStatuses(array $appIconStatuses = array())
+    public function setAppIconStatuses(array $appIconStatuses = array()): self
     {
         // validation for constraint: array
         if ('' !== ($appIconStatusesArrayErrorMessage = self::validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses($appIconStatuses))) {
@@ -521,7 +521,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string $item
      * @return \Api\StructType\ApiAdGroupsSelectionCriteria
      */
-    public function addToAppIconStatuses($item)
+    public function addToAppIconStatuses(string $item): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {

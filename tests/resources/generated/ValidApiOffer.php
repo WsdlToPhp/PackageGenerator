@@ -24,7 +24,7 @@ class ApiOffer extends ApiOrder
      * - nillable: true
      * @var string
      */
-    public $offerClassMember;
+    public $offerClassMember = null;
     /**
      * The offer
      * Meta information extracted from the WSDL
@@ -32,7 +32,7 @@ class ApiOffer extends ApiOrder
      * - nillable: true
      * @var \Api\StructType\ApiOffer
      */
-    public $offer;
+    public $offer = null;
     /**
      * Constructor method for offer
      * @uses ApiOffer::setOfferClassMember()
@@ -40,7 +40,7 @@ class ApiOffer extends ApiOrder
      * @param string $offerClassMember
      * @param \Api\StructType\ApiOffer $offer
      */
-    public function __construct($offerClassMember = null, \Api\StructType\ApiOffer $offer = null)
+    public function __construct(string $offerClassMember = null, \Api\StructType\ApiOffer $offer = null)
     {
         $this
             ->setOfferClassMember($offerClassMember)
@@ -53,7 +53,7 @@ class ApiOffer extends ApiOrder
      * removable from the request (nillable=true+minOccurs=0)
      * @return string|null
      */
-    public function getOfferClassMember()
+    public function getOfferClassMember(): ?string
     {
         return isset($this->offerClassMember) ? $this->offerClassMember : null;
     }
@@ -64,7 +64,7 @@ class ApiOffer extends ApiOrder
      * @param string $offerClassMember
      * @return \Api\StructType\ApiOffer
      */
-    public function setOfferClassMember($offerClassMember = null)
+    public function setOfferClassMember(string $offerClassMember = null): self
     {
         // validation for constraint: string
         if (!is_null($offerClassMember) && !is_string($offerClassMember)) {
@@ -84,7 +84,7 @@ class ApiOffer extends ApiOrder
      * removable from the request (nillable=true+minOccurs=0)
      * @return \Api\StructType\ApiOffer|null
      */
-    public function getOffer()
+    public function getOffer(): ?\Api\StructType\ApiOffer
     {
         return isset($this->offer) ? $this->offer : null;
     }
@@ -95,7 +95,7 @@ class ApiOffer extends ApiOrder
      * @param \Api\StructType\ApiOffer $offer
      * @return \Api\StructType\ApiOffer
      */
-    public function setOffer(\Api\StructType\ApiOffer $offer = null)
+    public function setOffer(\Api\StructType\ApiOffer $offer = null): self
     {
         if (is_null($offer) || (is_array($offer) && empty($offer))) {
             unset($this->offer);

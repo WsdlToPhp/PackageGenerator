@@ -21,7 +21,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * - minOccurs: 1
      * @var string[]
      */
-    public $DayOfWeek;
+    public $DayOfWeek = null;
     /**
      * The StartTimeInMinutes
      * Meta information extracted from the WSDL
@@ -29,7 +29,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * - minOccurs: 1
      * @var int
      */
-    public $StartTimeInMinutes;
+    public $StartTimeInMinutes = null;
     /**
      * The EndTimeInMinutes
      * Meta information extracted from the WSDL
@@ -37,7 +37,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * - minOccurs: 1
      * @var int
      */
-    public $EndTimeInMinutes;
+    public $EndTimeInMinutes = null;
     /**
      * Constructor method for WorkingPeriod
      * @uses ApiWorkingPeriod::setDayOfWeek()
@@ -47,7 +47,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param int $startTimeInMinutes
      * @param int $endTimeInMinutes
      */
-    public function __construct(array $dayOfWeek = array(), $startTimeInMinutes = null, $endTimeInMinutes = null)
+    public function __construct(array $dayOfWeek = array(), int $startTimeInMinutes = null, int $endTimeInMinutes = null)
     {
         $this
             ->setDayOfWeek($dayOfWeek)
@@ -58,7 +58,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * Get DayOfWeek value
      * @return string[]
      */
-    public function getDayOfWeek()
+    public function getDayOfWeek(): ?array
     {
         return $this->DayOfWeek;
     }
@@ -92,7 +92,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param string[] $dayOfWeek
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setDayOfWeek(array $dayOfWeek = array())
+    public function setDayOfWeek(array $dayOfWeek = array()): self
     {
         // validation for constraint: list
         if ('' !== ($dayOfWeekArrayErrorMessage = self::validateDayOfWeekForArrayConstraintsFromSetDayOfWeek($dayOfWeek))) {
@@ -105,7 +105,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * Get StartTimeInMinutes value
      * @return int
      */
-    public function getStartTimeInMinutes()
+    public function getStartTimeInMinutes(): ?int
     {
         return $this->StartTimeInMinutes;
     }
@@ -114,7 +114,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param int $startTimeInMinutes
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setStartTimeInMinutes($startTimeInMinutes = null)
+    public function setStartTimeInMinutes(int $startTimeInMinutes = null): self
     {
         // validation for constraint: int
         if (!is_null($startTimeInMinutes) && !(is_int($startTimeInMinutes) || ctype_digit($startTimeInMinutes))) {
@@ -127,7 +127,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * Get EndTimeInMinutes value
      * @return int
      */
-    public function getEndTimeInMinutes()
+    public function getEndTimeInMinutes(): ?int
     {
         return $this->EndTimeInMinutes;
     }
@@ -136,7 +136,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param int $endTimeInMinutes
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setEndTimeInMinutes($endTimeInMinutes = null)
+    public function setEndTimeInMinutes(int $endTimeInMinutes = null): self
     {
         // validation for constraint: int
         if (!is_null($endTimeInMinutes) && !(is_int($endTimeInMinutes) || ctype_digit($endTimeInMinutes))) {

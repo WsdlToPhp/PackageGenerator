@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
@@ -36,7 +37,7 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
     {
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
             new PhpFunctionParameter('values', [], 'array'),
-        ], 'string', PhpMethod::ACCESS_PUBLIC, false, true);
+        ], AbstractModelFile::TYPE_STRING, PhpMethod::ACCESS_PUBLIC, false, true);
         $model = $this->getFile()->getRestrictionFromStructAttribute($this->getAttribute());
         $itemName = sprintf('%s%sItem', lcfirst($this->getFile()->getModel()->getCleanName(false)), ucfirst($this->getAttribute()->getCleanName()));
         $rules = clone $this->getRules();

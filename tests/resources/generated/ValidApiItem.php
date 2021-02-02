@@ -18,7 +18,7 @@ class ApiItem extends AbstractStructBase
      * The itemType
      * @var string
      */
-    public $itemType;
+    public $itemType = null;
     /**
      * The id
      * Meta information extracted from the WSDL
@@ -26,17 +26,17 @@ class ApiItem extends AbstractStructBase
      * - base: xsd:string
      * @var string
      */
-    public $id;
+    public $id = null;
     /**
      * The displayName
      * @var string
      */
-    public $displayName;
+    public $displayName = null;
     /**
      * The any
      * @var DOMDocument
      */
-    public $any;
+    public $any = null;
     /**
      * Constructor method for Item
      * @uses ApiItem::setItemType()
@@ -48,7 +48,7 @@ class ApiItem extends AbstractStructBase
      * @param string $displayName
      * @param DOMDocument $any
      */
-    public function __construct($itemType = null, $id = null, $displayName = null, DOMDocument $any = null)
+    public function __construct(string $itemType = null, string $id = null, string $displayName = null, DOMDocument $any = null)
     {
         $this
             ->setItemType($itemType)
@@ -60,7 +60,7 @@ class ApiItem extends AbstractStructBase
      * Get itemType value
      * @return string|null
      */
-    public function getItemType()
+    public function getItemType(): ?string
     {
         return $this->itemType;
     }
@@ -72,7 +72,7 @@ class ApiItem extends AbstractStructBase
      * @param string $itemType
      * @return \Api\StructType\ApiItem
      */
-    public function setItemType($itemType = null)
+    public function setItemType(string $itemType = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
@@ -85,7 +85,7 @@ class ApiItem extends AbstractStructBase
      * Get id value
      * @return string|null
      */
-    public function getId()
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -94,7 +94,7 @@ class ApiItem extends AbstractStructBase
      * @param string $id
      * @return \Api\StructType\ApiItem
      */
-    public function setId($id = null)
+    public function setId(string $id = null): self
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
@@ -107,7 +107,7 @@ class ApiItem extends AbstractStructBase
      * Get displayName value
      * @return string|null
      */
-    public function getDisplayName()
+    public function getDisplayName(): ?string
     {
         return $this->displayName;
     }
@@ -116,7 +116,7 @@ class ApiItem extends AbstractStructBase
      * @param string $displayName
      * @return \Api\StructType\ApiItem
      */
-    public function setDisplayName($displayName = null)
+    public function setDisplayName(string $displayName = null): self
     {
         // validation for constraint: string
         if (!is_null($displayName) && !is_string($displayName)) {
@@ -131,7 +131,7 @@ class ApiItem extends AbstractStructBase
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
      * @return DOMDocument|null
      */
-    public function getAny($asString = true)
+    public function getAny($asString = true): ?DOMDocument
     {
         $domDocument = null;
         if (!empty($this->any) && !$asString) {
@@ -148,7 +148,7 @@ class ApiItem extends AbstractStructBase
      * @param DOMDocument $any
      * @return \Api\StructType\ApiItem
      */
-    public function setAny(DOMDocument $any = null)
+    public function setAny(DOMDocument $any = null): self
     {
         $this->any = ($any instanceof \DOMDocument) && $any->hasChildNodes() ? $any->saveXML($any->childNodes->item(0)) : $any;
         return $this;

@@ -21,7 +21,7 @@ class ApiQuery extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $SearchTerms;
+    public $SearchTerms = null;
     /**
      * The AlteredQuery
      * Meta information extracted from the WSDL
@@ -29,7 +29,7 @@ class ApiQuery extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $AlteredQuery;
+    public $AlteredQuery = null;
     /**
      * The AlterationOverrideQuery
      * Meta information extracted from the WSDL
@@ -37,12 +37,12 @@ class ApiQuery extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $AlterationOverrideQuery;
+    public $AlterationOverrideQuery = null;
     /**
      * The searchTerms
      * @var string
      */
-    public $searchTerms;
+    public $searchTerms = null;
     /**
      * Constructor method for Query
      * @uses ApiQuery::setSearchTerms()
@@ -54,7 +54,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $alterationOverrideQuery
      * @param string $searchTerms
      */
-    public function __construct($searchTerms = null, $alteredQuery = null, $alterationOverrideQuery = null, $searchTerms_1 = null)
+    public function __construct(string $searchTerms = null, string $alteredQuery = null, string $alterationOverrideQuery = null, string $searchTerms_1 = null)
     {
         $this
             ->setSearchTerms($searchTerms)
@@ -66,7 +66,7 @@ class ApiQuery extends AbstractStructBase
      * Get SearchTerms value
      * @return string|null
      */
-    public function getSearchTerms()
+    public function getSearchTerms(): ?string
     {
         return $this->SearchTerms;
     }
@@ -75,7 +75,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $searchTerms
      * @return \Api\StructType\ApiQuery
      */
-    public function setSearchTerms($searchTerms = null)
+    public function setSearchTerms(string $searchTerms = null): self
     {
         // validation for constraint: string
         if (!is_null($searchTerms) && !is_string($searchTerms)) {
@@ -88,7 +88,7 @@ class ApiQuery extends AbstractStructBase
      * Get AlteredQuery value
      * @return string|null
      */
-    public function getAlteredQuery()
+    public function getAlteredQuery(): ?string
     {
         return $this->AlteredQuery;
     }
@@ -97,7 +97,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $alteredQuery
      * @return \Api\StructType\ApiQuery
      */
-    public function setAlteredQuery($alteredQuery = null)
+    public function setAlteredQuery(string $alteredQuery = null): self
     {
         // validation for constraint: string
         if (!is_null($alteredQuery) && !is_string($alteredQuery)) {
@@ -110,7 +110,7 @@ class ApiQuery extends AbstractStructBase
      * Get AlterationOverrideQuery value
      * @return string|null
      */
-    public function getAlterationOverrideQuery()
+    public function getAlterationOverrideQuery(): ?string
     {
         return $this->AlterationOverrideQuery;
     }
@@ -119,7 +119,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $alterationOverrideQuery
      * @return \Api\StructType\ApiQuery
      */
-    public function setAlterationOverrideQuery($alterationOverrideQuery = null)
+    public function setAlterationOverrideQuery(string $alterationOverrideQuery = null): self
     {
         // validation for constraint: string
         if (!is_null($alterationOverrideQuery) && !is_string($alterationOverrideQuery)) {
@@ -132,7 +132,7 @@ class ApiQuery extends AbstractStructBase
      * Get SearchTerms value
      * @return string|null
      */
-    public function getSearchTerms_1()
+    public function getSearchTerms_1(): ?string
     {
         return $this->searchTerms;
     }
@@ -141,7 +141,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $searchTerms
      * @return \Api\StructType\ApiQuery
      */
-    public function setSearchTerms_1($searchTerms_1 = null)
+    public function setSearchTerms_1(string $searchTerms_1 = null): self
     {
         // validation for constraint: string
         if (!is_null($searchTerms_1) && !is_string($searchTerms_1)) {

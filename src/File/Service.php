@@ -103,10 +103,10 @@ final class Service extends AbstractModelFile
         try {
             $method = new PhpMethod($methodName, [
                 $firstParameter = new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameterBase::NO_VALUE, $this->getTypeFromName($soapHeaderType)),
-                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace),
-                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false),
-                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_ACTOR, null),
-            ]);
+                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace, self::TYPE_STRING),
+                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false, self::TYPE_BOOL),
+                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_ACTOR, null, '?'.self::TYPE_STRING),
+            ], 'self');
             $model = $this->getModelByName($soapHeaderType);
             if ($model instanceof StructModel) {
                 $rules = new Rules($this, $method, new StructAttributeModel($model->getGenerator(), $soapHeaderType, $model->getName(), $model), $this->methods);
@@ -123,7 +123,11 @@ final class Service extends AbstractModelFile
 
     protected function getTypeFromName(string $name): ?string
     {
-        return self::getValidType($this->getStructAttributeTypeAsPhpType(new StructAttributeModel($this->generator, 'any', $name)), $this->getGenerator()->getOptionXsdTypesPath());
+        return self::getPhpType(
+            $this->getStructAttributeTypeAsPhpType(new StructAttributeModel($this->generator, 'any', $name)),
+            $this->getGenerator()->getOptionXsdTypesPath(),
+            $this->getStructAttributeTypeAsPhpType(new StructAttributeModel($this->generator, 'any', $name))
+        );
     }
 
     protected function getSoapHeaderMethodName(string $soapHeaderName): string

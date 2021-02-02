@@ -35,7 +35,7 @@ final class ClassMap extends AbstractModelFile
 
     protected function fillClassMethods(): void
     {
-        $method = new PhpMethod(self::METHOD_NAME, [], 'array', PhpMethod::ACCESS_PUBLIC, false, true, true);
+        $method = new PhpMethod(self::METHOD_NAME, [], self::TYPE_ARRAY, PhpMethod::ACCESS_PUBLIC, false, true, true);
         $this->addMethodBody($method);
         $this->methods->add($method);
     }

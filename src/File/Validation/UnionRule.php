@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
@@ -89,7 +90,7 @@ final class UnionRule extends AbstractRule
         // populate final validation method
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
             new PhpFunctionParameter('value', PhpFunctionParameter::NO_VALUE),
-        ], 'string', PhpMethod::ACCESS_PUBLIC, false, true);
+        ], AbstractModelFile::TYPE_STRING, PhpMethod::ACCESS_PUBLIC, false, true);
         $method->addChild('$message = \'\';');
         array_walk($children, [
             $method,

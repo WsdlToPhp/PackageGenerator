@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
@@ -38,7 +39,7 @@ abstract class AbstractLengthRule extends AbstractMinMaxRule
     {
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
             new PhpFunctionParameter('values', PhpFunctionParameter::NO_VALUE),
-        ], 'string', PhpMethod::ACCESS_PUBLIC, false, true);
+        ], AbstractModelFile::TYPE_STRING, PhpMethod::ACCESS_PUBLIC, false, true);
         $itemName = sprintf('%s%sItem', lcfirst($this->getFile()->getModel()->getCleanName(false)), ucfirst($this->getAttribute()->getCleanName()));
 
         $method

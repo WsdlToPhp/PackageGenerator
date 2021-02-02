@@ -20,56 +20,56 @@ class ApiBannerInfo extends AbstractStructBase
      * - nillable: true
      * @var int
      */
-    public $BannerID;
+    public $BannerID = null;
     /**
      * The CampaignID
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $CampaignID;
+    public $CampaignID = null;
     /**
      * The Title
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $Title;
+    public $Title = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $Text;
+    public $Text = null;
     /**
      * The Href
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $Href;
+    public $Href = null;
     /**
      * The Domain
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $Domain;
+    public $Domain = null;
     /**
      * The ContactInfo
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var \Api\StructType\ApiContactInfo
      */
-    public $ContactInfo;
+    public $ContactInfo = null;
     /**
      * The Geo
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $Geo;
+    public $Geo = null;
     /**
      * The Phrases
      * Meta information extracted from the WSDL
@@ -79,7 +79,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiBannerPhraseInfo[]
      */
-    public $Phrases;
+    public $Phrases = null;
     /**
      * The MinusKeywords
      * Meta information extracted from the WSDL
@@ -89,63 +89,63 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var string[]
      */
-    public $MinusKeywords;
+    public $MinusKeywords = null;
     /**
      * The StatusActivating
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $StatusActivating;
+    public $StatusActivating = null;
     /**
      * The StatusArchive
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $StatusArchive;
+    public $StatusArchive = null;
     /**
      * The StatusBannerModerate
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $StatusBannerModerate;
+    public $StatusBannerModerate = null;
     /**
      * The StatusPhrasesModerate
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $StatusPhrasesModerate;
+    public $StatusPhrasesModerate = null;
     /**
      * The StatusPhoneModerate
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $StatusPhoneModerate;
+    public $StatusPhoneModerate = null;
     /**
      * The StatusShow
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $StatusShow;
+    public $StatusShow = null;
     /**
      * The IsActive
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $IsActive;
+    public $IsActive = null;
     /**
      * The StatusSitelinksModerate
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $StatusSitelinksModerate;
+    public $StatusSitelinksModerate = null;
     /**
      * The Sitelinks
      * Meta information extracted from the WSDL
@@ -155,7 +155,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiSitelink[]
      */
-    public $Sitelinks;
+    public $Sitelinks = null;
     /**
      * The AdWarnings
      * Meta information extracted from the WSDL
@@ -165,14 +165,14 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var string[]
      */
-    public $AdWarnings;
+    public $AdWarnings = null;
     /**
      * The FixedOnModeration
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $FixedOnModeration;
+    public $FixedOnModeration = null;
     /**
      * The ModerateRejectionReasons
      * Meta information extracted from the WSDL
@@ -182,63 +182,63 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiRejectReason[]
      */
-    public $ModerateRejectionReasons;
+    public $ModerateRejectionReasons = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $Type;
+    public $Type = null;
     /**
      * The AdGroupID
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $AdGroupID;
+    public $AdGroupID = null;
     /**
      * The AdGroupName
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $AdGroupName;
+    public $AdGroupName = null;
     /**
      * The AutoMinusWords
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $AutoMinusWords;
+    public $AutoMinusWords = null;
     /**
      * The AgeLabel
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $AgeLabel;
+    public $AgeLabel = null;
     /**
      * The AdImageHash
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $AdImageHash;
+    public $AdImageHash = null;
     /**
      * The StatusAdImageModerate
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var string
      */
-    public $StatusAdImageModerate;
+    public $StatusAdImageModerate = null;
     /**
      * The AdGroupMobileBidAdjustment
      * Meta information extracted from the WSDL
      * - nillable: true
      * @var int
      */
-    public $AdGroupMobileBidAdjustment;
+    public $AdGroupMobileBidAdjustment = null;
     /**
      * Constructor method for BannerInfo
      * @uses ApiBannerInfo::setBannerID()
@@ -302,7 +302,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusAdImageModerate
      * @param int $adGroupMobileBidAdjustment
      */
-    public function __construct($bannerID = null, $campaignID = null, $title = null, $text = null, $href = null, $domain = null, \Api\StructType\ApiContactInfo $contactInfo = null, $geo = null, array $phrases = array(), array $minusKeywords = array(), $statusActivating = null, $statusArchive = null, $statusBannerModerate = null, $statusPhrasesModerate = null, $statusPhoneModerate = null, $statusShow = null, $isActive = null, $statusSitelinksModerate = null, array $sitelinks = array(), array $adWarnings = array(), $fixedOnModeration = null, array $moderateRejectionReasons = array(), $type = null, $adGroupID = null, $adGroupName = null, $autoMinusWords = null, $ageLabel = null, $adImageHash = null, $statusAdImageModerate = null, $adGroupMobileBidAdjustment = null)
+    public function __construct(int $bannerID = null, int $campaignID = null, string $title = null, string $text = null, string $href = null, string $domain = null, \Api\StructType\ApiContactInfo $contactInfo = null, string $geo = null, array $phrases = array(), array $minusKeywords = array(), string $statusActivating = null, string $statusArchive = null, string $statusBannerModerate = null, string $statusPhrasesModerate = null, string $statusPhoneModerate = null, string $statusShow = null, string $isActive = null, string $statusSitelinksModerate = null, array $sitelinks = array(), array $adWarnings = array(), string $fixedOnModeration = null, array $moderateRejectionReasons = array(), string $type = null, int $adGroupID = null, string $adGroupName = null, string $autoMinusWords = null, string $ageLabel = null, string $adImageHash = null, string $statusAdImageModerate = null, int $adGroupMobileBidAdjustment = null)
     {
         $this
             ->setBannerID($bannerID)
@@ -340,7 +340,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get BannerID value
      * @return int|null
      */
-    public function getBannerID()
+    public function getBannerID(): ?int
     {
         return $this->BannerID;
     }
@@ -349,7 +349,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param int $bannerID
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setBannerID($bannerID = null)
+    public function setBannerID(int $bannerID = null): self
     {
         // validation for constraint: int
         if (!is_null($bannerID) && !(is_int($bannerID) || ctype_digit($bannerID))) {
@@ -362,7 +362,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get CampaignID value
      * @return int|null
      */
-    public function getCampaignID()
+    public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
@@ -371,7 +371,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param int $campaignID
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setCampaignID($campaignID = null)
+    public function setCampaignID(int $campaignID = null): self
     {
         // validation for constraint: int
         if (!is_null($campaignID) && !(is_int($campaignID) || ctype_digit($campaignID))) {
@@ -384,7 +384,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Title value
      * @return string|null
      */
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->Title;
     }
@@ -393,7 +393,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $title
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setTitle($title = null)
+    public function setTitle(string $title = null): self
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
@@ -406,7 +406,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Text value
      * @return string|null
      */
-    public function getText()
+    public function getText(): ?string
     {
         return $this->Text;
     }
@@ -415,7 +415,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $text
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setText($text = null)
+    public function setText(string $text = null): self
     {
         // validation for constraint: string
         if (!is_null($text) && !is_string($text)) {
@@ -428,7 +428,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Href value
      * @return string|null
      */
-    public function getHref()
+    public function getHref(): ?string
     {
         return $this->Href;
     }
@@ -437,7 +437,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $href
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setHref($href = null)
+    public function setHref(string $href = null): self
     {
         // validation for constraint: string
         if (!is_null($href) && !is_string($href)) {
@@ -450,7 +450,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Domain value
      * @return string|null
      */
-    public function getDomain()
+    public function getDomain(): ?string
     {
         return $this->Domain;
     }
@@ -459,7 +459,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $domain
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setDomain($domain = null)
+    public function setDomain(string $domain = null): self
     {
         // validation for constraint: string
         if (!is_null($domain) && !is_string($domain)) {
@@ -472,7 +472,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get ContactInfo value
      * @return \Api\StructType\ApiContactInfo|null
      */
-    public function getContactInfo()
+    public function getContactInfo(): ?\Api\StructType\ApiContactInfo
     {
         return $this->ContactInfo;
     }
@@ -481,7 +481,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \Api\StructType\ApiContactInfo $contactInfo
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setContactInfo(\Api\StructType\ApiContactInfo $contactInfo = null)
+    public function setContactInfo(\Api\StructType\ApiContactInfo $contactInfo = null): self
     {
         $this->ContactInfo = $contactInfo;
         return $this;
@@ -490,7 +490,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Geo value
      * @return string|null
      */
-    public function getGeo()
+    public function getGeo(): ?string
     {
         return $this->Geo;
     }
@@ -499,7 +499,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $geo
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setGeo($geo = null)
+    public function setGeo(string $geo = null): self
     {
         // validation for constraint: string
         if (!is_null($geo) && !is_string($geo)) {
@@ -512,7 +512,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Phrases value
      * @return \Api\StructType\ApiBannerPhraseInfo[]|null
      */
-    public function getPhrases()
+    public function getPhrases(): ?array
     {
         return $this->Phrases;
     }
@@ -544,7 +544,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \Api\StructType\ApiBannerPhraseInfo[] $phrases
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setPhrases(array $phrases = array())
+    public function setPhrases(array $phrases = array()): self
     {
         // validation for constraint: array
         if ('' !== ($phrasesArrayErrorMessage = self::validatePhrasesForArrayConstraintsFromSetPhrases($phrases))) {
@@ -559,7 +559,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \Api\StructType\ApiBannerPhraseInfo $item
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function addToPhrases(\Api\StructType\ApiBannerPhraseInfo $item)
+    public function addToPhrases(\Api\StructType\ApiBannerPhraseInfo $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiBannerPhraseInfo) {
@@ -572,7 +572,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get MinusKeywords value
      * @return string[]|null
      */
-    public function getMinusKeywords()
+    public function getMinusKeywords(): ?array
     {
         return $this->MinusKeywords;
     }
@@ -604,7 +604,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string[] $minusKeywords
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setMinusKeywords(array $minusKeywords = array())
+    public function setMinusKeywords(array $minusKeywords = array()): self
     {
         // validation for constraint: array
         if ('' !== ($minusKeywordsArrayErrorMessage = self::validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords($minusKeywords))) {
@@ -619,7 +619,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $item
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function addToMinusKeywords($item)
+    public function addToMinusKeywords(string $item): self
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
@@ -632,7 +632,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get StatusActivating value
      * @return string|null
      */
-    public function getStatusActivating()
+    public function getStatusActivating(): ?string
     {
         return $this->StatusActivating;
     }
@@ -641,7 +641,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusActivating
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setStatusActivating($statusActivating = null)
+    public function setStatusActivating(string $statusActivating = null): self
     {
         // validation for constraint: string
         if (!is_null($statusActivating) && !is_string($statusActivating)) {
@@ -654,7 +654,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get StatusArchive value
      * @return string|null
      */
-    public function getStatusArchive()
+    public function getStatusArchive(): ?string
     {
         return $this->StatusArchive;
     }
@@ -663,7 +663,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusArchive
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setStatusArchive($statusArchive = null)
+    public function setStatusArchive(string $statusArchive = null): self
     {
         // validation for constraint: string
         if (!is_null($statusArchive) && !is_string($statusArchive)) {
@@ -676,7 +676,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get StatusBannerModerate value
      * @return string|null
      */
-    public function getStatusBannerModerate()
+    public function getStatusBannerModerate(): ?string
     {
         return $this->StatusBannerModerate;
     }
@@ -685,7 +685,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusBannerModerate
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setStatusBannerModerate($statusBannerModerate = null)
+    public function setStatusBannerModerate(string $statusBannerModerate = null): self
     {
         // validation for constraint: string
         if (!is_null($statusBannerModerate) && !is_string($statusBannerModerate)) {
@@ -698,7 +698,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get StatusPhrasesModerate value
      * @return string|null
      */
-    public function getStatusPhrasesModerate()
+    public function getStatusPhrasesModerate(): ?string
     {
         return $this->StatusPhrasesModerate;
     }
@@ -707,7 +707,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusPhrasesModerate
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setStatusPhrasesModerate($statusPhrasesModerate = null)
+    public function setStatusPhrasesModerate(string $statusPhrasesModerate = null): self
     {
         // validation for constraint: string
         if (!is_null($statusPhrasesModerate) && !is_string($statusPhrasesModerate)) {
@@ -720,7 +720,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get StatusPhoneModerate value
      * @return string|null
      */
-    public function getStatusPhoneModerate()
+    public function getStatusPhoneModerate(): ?string
     {
         return $this->StatusPhoneModerate;
     }
@@ -729,7 +729,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusPhoneModerate
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setStatusPhoneModerate($statusPhoneModerate = null)
+    public function setStatusPhoneModerate(string $statusPhoneModerate = null): self
     {
         // validation for constraint: string
         if (!is_null($statusPhoneModerate) && !is_string($statusPhoneModerate)) {
@@ -742,7 +742,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get StatusShow value
      * @return string|null
      */
-    public function getStatusShow()
+    public function getStatusShow(): ?string
     {
         return $this->StatusShow;
     }
@@ -751,7 +751,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusShow
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setStatusShow($statusShow = null)
+    public function setStatusShow(string $statusShow = null): self
     {
         // validation for constraint: string
         if (!is_null($statusShow) && !is_string($statusShow)) {
@@ -764,7 +764,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get IsActive value
      * @return string|null
      */
-    public function getIsActive()
+    public function getIsActive(): ?string
     {
         return $this->IsActive;
     }
@@ -773,7 +773,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $isActive
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setIsActive($isActive = null)
+    public function setIsActive(string $isActive = null): self
     {
         // validation for constraint: string
         if (!is_null($isActive) && !is_string($isActive)) {
@@ -786,7 +786,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get StatusSitelinksModerate value
      * @return string|null
      */
-    public function getStatusSitelinksModerate()
+    public function getStatusSitelinksModerate(): ?string
     {
         return $this->StatusSitelinksModerate;
     }
@@ -795,7 +795,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusSitelinksModerate
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setStatusSitelinksModerate($statusSitelinksModerate = null)
+    public function setStatusSitelinksModerate(string $statusSitelinksModerate = null): self
     {
         // validation for constraint: string
         if (!is_null($statusSitelinksModerate) && !is_string($statusSitelinksModerate)) {
@@ -808,7 +808,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Sitelinks value
      * @return \Api\StructType\ApiSitelink[]|null
      */
-    public function getSitelinks()
+    public function getSitelinks(): ?array
     {
         return $this->Sitelinks;
     }
@@ -840,7 +840,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \Api\StructType\ApiSitelink[] $sitelinks
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setSitelinks(array $sitelinks = array())
+    public function setSitelinks(array $sitelinks = array()): self
     {
         // validation for constraint: array
         if ('' !== ($sitelinksArrayErrorMessage = self::validateSitelinksForArrayConstraintsFromSetSitelinks($sitelinks))) {
@@ -855,7 +855,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \Api\StructType\ApiSitelink $item
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function addToSitelinks(\Api\StructType\ApiSitelink $item)
+    public function addToSitelinks(\Api\StructType\ApiSitelink $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiSitelink) {
@@ -868,7 +868,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get AdWarnings value
      * @return string[]|null
      */
-    public function getAdWarnings()
+    public function getAdWarnings(): ?array
     {
         return $this->AdWarnings;
     }
@@ -900,7 +900,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string[] $adWarnings
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setAdWarnings(array $adWarnings = array())
+    public function setAdWarnings(array $adWarnings = array()): self
     {
         // validation for constraint: array
         if ('' !== ($adWarningsArrayErrorMessage = self::validateAdWarningsForArrayConstraintsFromSetAdWarnings($adWarnings))) {
@@ -915,7 +915,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $item
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function addToAdWarnings($item)
+    public function addToAdWarnings(string $item): self
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
@@ -928,7 +928,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get FixedOnModeration value
      * @return string|null
      */
-    public function getFixedOnModeration()
+    public function getFixedOnModeration(): ?string
     {
         return $this->FixedOnModeration;
     }
@@ -937,7 +937,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $fixedOnModeration
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setFixedOnModeration($fixedOnModeration = null)
+    public function setFixedOnModeration(string $fixedOnModeration = null): self
     {
         // validation for constraint: string
         if (!is_null($fixedOnModeration) && !is_string($fixedOnModeration)) {
@@ -950,7 +950,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get ModerateRejectionReasons value
      * @return \Api\StructType\ApiRejectReason[]|null
      */
-    public function getModerateRejectionReasons()
+    public function getModerateRejectionReasons(): ?array
     {
         return $this->ModerateRejectionReasons;
     }
@@ -982,7 +982,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \Api\StructType\ApiRejectReason[] $moderateRejectionReasons
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setModerateRejectionReasons(array $moderateRejectionReasons = array())
+    public function setModerateRejectionReasons(array $moderateRejectionReasons = array()): self
     {
         // validation for constraint: array
         if ('' !== ($moderateRejectionReasonsArrayErrorMessage = self::validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons($moderateRejectionReasons))) {
@@ -997,7 +997,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \Api\StructType\ApiRejectReason $item
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function addToModerateRejectionReasons(\Api\StructType\ApiRejectReason $item)
+    public function addToModerateRejectionReasons(\Api\StructType\ApiRejectReason $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiRejectReason) {
@@ -1010,7 +1010,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Type value
      * @return string|null
      */
-    public function getType()
+    public function getType(): ?string
     {
         return $this->Type;
     }
@@ -1019,7 +1019,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $type
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setType($type = null)
+    public function setType(string $type = null): self
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
@@ -1032,7 +1032,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get AdGroupID value
      * @return int|null
      */
-    public function getAdGroupID()
+    public function getAdGroupID(): ?int
     {
         return $this->AdGroupID;
     }
@@ -1041,7 +1041,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param int $adGroupID
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setAdGroupID($adGroupID = null)
+    public function setAdGroupID(int $adGroupID = null): self
     {
         // validation for constraint: int
         if (!is_null($adGroupID) && !(is_int($adGroupID) || ctype_digit($adGroupID))) {
@@ -1054,7 +1054,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get AdGroupName value
      * @return string|null
      */
-    public function getAdGroupName()
+    public function getAdGroupName(): ?string
     {
         return $this->AdGroupName;
     }
@@ -1063,7 +1063,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $adGroupName
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setAdGroupName($adGroupName = null)
+    public function setAdGroupName(string $adGroupName = null): self
     {
         // validation for constraint: string
         if (!is_null($adGroupName) && !is_string($adGroupName)) {
@@ -1076,7 +1076,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get AutoMinusWords value
      * @return string|null
      */
-    public function getAutoMinusWords()
+    public function getAutoMinusWords(): ?string
     {
         return $this->AutoMinusWords;
     }
@@ -1085,7 +1085,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $autoMinusWords
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setAutoMinusWords($autoMinusWords = null)
+    public function setAutoMinusWords(string $autoMinusWords = null): self
     {
         // validation for constraint: string
         if (!is_null($autoMinusWords) && !is_string($autoMinusWords)) {
@@ -1098,7 +1098,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get AgeLabel value
      * @return string|null
      */
-    public function getAgeLabel()
+    public function getAgeLabel(): ?string
     {
         return $this->AgeLabel;
     }
@@ -1107,7 +1107,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $ageLabel
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setAgeLabel($ageLabel = null)
+    public function setAgeLabel(string $ageLabel = null): self
     {
         // validation for constraint: string
         if (!is_null($ageLabel) && !is_string($ageLabel)) {
@@ -1120,7 +1120,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get AdImageHash value
      * @return string|null
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): ?string
     {
         return $this->AdImageHash;
     }
@@ -1129,7 +1129,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $adImageHash
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setAdImageHash($adImageHash = null)
+    public function setAdImageHash(string $adImageHash = null): self
     {
         // validation for constraint: string
         if (!is_null($adImageHash) && !is_string($adImageHash)) {
@@ -1142,7 +1142,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get StatusAdImageModerate value
      * @return string|null
      */
-    public function getStatusAdImageModerate()
+    public function getStatusAdImageModerate(): ?string
     {
         return $this->StatusAdImageModerate;
     }
@@ -1151,7 +1151,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusAdImageModerate
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setStatusAdImageModerate($statusAdImageModerate = null)
+    public function setStatusAdImageModerate(string $statusAdImageModerate = null): self
     {
         // validation for constraint: string
         if (!is_null($statusAdImageModerate) && !is_string($statusAdImageModerate)) {
@@ -1164,7 +1164,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get AdGroupMobileBidAdjustment value
      * @return int|null
      */
-    public function getAdGroupMobileBidAdjustment()
+    public function getAdGroupMobileBidAdjustment(): ?int
     {
         return $this->AdGroupMobileBidAdjustment;
     }
@@ -1173,7 +1173,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param int $adGroupMobileBidAdjustment
      * @return \Api\StructType\ApiBannerInfo
      */
-    public function setAdGroupMobileBidAdjustment($adGroupMobileBidAdjustment = null)
+    public function setAdGroupMobileBidAdjustment(int $adGroupMobileBidAdjustment = null): self
     {
         // validation for constraint: int
         if (!is_null($adGroupMobileBidAdjustment) && !(is_int($adGroupMobileBidAdjustment) || ctype_digit($adGroupMobileBidAdjustment))) {

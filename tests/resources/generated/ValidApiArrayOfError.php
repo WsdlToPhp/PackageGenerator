@@ -21,7 +21,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiError[]
      */
-    public $Error;
+    public $Error = null;
     /**
      * Constructor method for ArrayOfError
      * @uses ApiArrayOfError::setError()
@@ -36,7 +36,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * Get Error value
      * @return \Api\StructType\ApiError[]|null
      */
-    public function getError()
+    public function getError(): ?array
     {
         return $this->Error;
     }
@@ -68,7 +68,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * @param \Api\StructType\ApiError[] $error
      * @return \Api\ArrayType\ApiArrayOfError
      */
-    public function setError(array $error = array())
+    public function setError(array $error = array()): self
     {
         // validation for constraint: array
         if ('' !== ($errorArrayErrorMessage = self::validateErrorForArrayConstraintsFromSetError($error))) {
@@ -83,7 +83,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * @param \Api\StructType\ApiError $item
      * @return \Api\ArrayType\ApiArrayOfError
      */
-    public function addToError(\Api\StructType\ApiError $item)
+    public function addToError(\Api\StructType\ApiError $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiError) {

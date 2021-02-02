@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
+use TypeError;
 
 final class BooleanRuleTest extends AbstractRuleTest
 {
     public function testSetPrimaryWithStringValueMustThrowAnException()
     {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value \'true\', please provide a bool, string given');
+        $this->expectException(TypeError::class);
 
         $instance = self::getWhlBookingChannelInstance();
 

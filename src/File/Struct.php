@@ -37,7 +37,7 @@ class Struct extends AbstractModelFile
     protected function fillClassProperties(PropertyContainer $properties): void
     {
         foreach ($this->getModelAttributes() as $attribute) {
-            $properties->add(new PhpProperty($attribute->getCleanName(), PhpProperty::NO_VALUE));
+            $properties->add(new PhpProperty($attribute->getCleanName(), null));
         }
     }
 
@@ -121,7 +121,11 @@ class Struct extends AbstractModelFile
 
     protected function getStructMethodParameterType(StructAttributeModel $attribute, bool $returnArrayType = true): ?string
     {
-        return self::getValidType($this->getStructAttributeTypeHint($attribute, $returnArrayType), $this->getGenerator()->getOptionXsdTypesPath(), null);
+        return self::getPhpType(
+            $this->getStructAttributeTypeHint($attribute, $returnArrayType),
+            $this->getGenerator()->getOptionXsdTypesPath(),
+            $returnArrayType && ($attribute->isList() || $attribute->isArray()) ? self::TYPE_ARRAY : $this->getStructAttributeTypeAsPhpType($attribute)
+        );
     }
 
     protected function addStructMethodsSetAndGet(): self
@@ -140,11 +144,17 @@ class Struct extends AbstractModelFile
     {
         if ($attribute->isArray()) {
             $method = new PhpMethod(sprintf('addTo%s', ucfirst($attribute->getCleanName())), [
-                new PhpFunctionParameter('item', PhpFunctionParameter::NO_VALUE, $this->getStructMethodParameterType($attribute, false), $attribute),
-            ]);
+                new PhpFunctionParameter(
+                    'item',
+                    PhpFunctionParameter::NO_VALUE,
+                    $this->getStructMethodParameterType($attribute, false),
+                    $attribute
+                ),
+            ], 'self');
             $this->addStructMethodAddToBody($method, $attribute);
             $this->methods->add($method);
         }
+
         return $this;
     }
 
@@ -159,6 +169,7 @@ class Struct extends AbstractModelFile
         } else {
             $assignment = sprintf('$this->%s[] = $this->{\'%s\'}[] = $item;', $attribute->getCleanName(), addslashes($attribute->getName()), $attribute->getCleanName());
         }
+
         $method
             ->addChild($assignment)
             ->addChild('return $this;');
@@ -170,7 +181,7 @@ class Struct extends AbstractModelFile
     {
         $method = new PhpMethod($attribute->getSetterName(), [
             $this->getStructMethodParameter($attribute),
-        ]);
+        ], 'self');
         $this->addStructMethodSetBody($method, $attribute);
         $this->methods->add($method);
 
@@ -264,7 +275,11 @@ class Struct extends AbstractModelFile
 
     protected function addStructMethodGet(StructAttributeModel $attribute): self
     {
-        $method = new PhpMethod($attribute->getGetterName(), $this->getStructMethodGetParameters($attribute));
+        $method = new PhpMethod(
+            $attribute->getGetterName(),
+            $this->getStructMethodGetParameters($attribute),
+            '?'.($attribute->isArray() || $attribute->isList() ? self::TYPE_ARRAY : $this->getStructAttributeTypeAsPhpType($attribute))
+        );
         if ($attribute->nameIsClean()) {
             $thisAccess = sprintf('%s', $attribute->getName());
         } else {

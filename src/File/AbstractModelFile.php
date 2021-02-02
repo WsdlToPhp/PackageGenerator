@@ -35,8 +35,9 @@ abstract class AbstractModelFile extends AbstractFile
     public const ANNOTATION_SEE = 'see';
     public const ANNOTATION_THROWS = 'throws';
     public const METHOD_CONSTRUCT = '__construct';
-    public const TYPE_STRING = 'string';
     public const TYPE_ARRAY = 'array';
+    public const TYPE_BOOL = 'bool';
+    public const TYPE_STRING = 'string';
 
     private ?AbstractModel $model = null;
 

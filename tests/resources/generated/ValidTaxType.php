@@ -24,7 +24,7 @@ class ApiTaxType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiParagraphType[]
      */
-    public $TaxDescription;
+    public $TaxDescription = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -33,7 +33,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $Type;
+    public $Type = null;
     /**
      * The Code
      * Meta information extracted from the WSDL
@@ -44,7 +44,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $Code;
+    public $Code = null;
     /**
      * The Percent
      * Meta information extracted from the WSDL
@@ -56,7 +56,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var float
      */
-    public $Percent;
+    public $Percent = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -67,7 +67,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var float
      */
-    public $Amount;
+    public $Amount = null;
     /**
      * The CurrencyCode
      * Meta information extracted from the WSDL
@@ -78,7 +78,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $CurrencyCode;
+    public $CurrencyCode = null;
     /**
      * The DecimalPlaces
      * Meta information extracted from the WSDL
@@ -88,7 +88,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var int
      */
-    public $DecimalPlaces;
+    public $DecimalPlaces = null;
     /**
      * Constructor method for TaxType
      * @uses ApiTaxType::setTaxDescription()
@@ -106,7 +106,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $currencyCode
      * @param int $decimalPlaces
      */
-    public function __construct(array $taxDescription = array(), $type = null, $code = null, $percent = null, $amount = null, $currencyCode = null, $decimalPlaces = null)
+    public function __construct(array $taxDescription = array(), string $type = null, string $code = null, float $percent = null, float $amount = null, string $currencyCode = null, int $decimalPlaces = null)
     {
         $this
             ->setTaxDescription($taxDescription)
@@ -121,7 +121,7 @@ class ApiTaxType extends AbstractStructBase
      * Get TaxDescription value
      * @return \Api\StructType\ApiParagraphType[]|null
      */
-    public function getTaxDescription()
+    public function getTaxDescription(): ?array
     {
         return $this->TaxDescription;
     }
@@ -153,7 +153,7 @@ class ApiTaxType extends AbstractStructBase
      * @param \Api\StructType\ApiParagraphType[] $taxDescription
      * @return \Api\StructType\ApiTaxType
      */
-    public function setTaxDescription(array $taxDescription = array())
+    public function setTaxDescription(array $taxDescription = array()): self
     {
         // validation for constraint: array
         if ('' !== ($taxDescriptionArrayErrorMessage = self::validateTaxDescriptionForArrayConstraintsFromSetTaxDescription($taxDescription))) {
@@ -172,7 +172,7 @@ class ApiTaxType extends AbstractStructBase
      * @param \Api\StructType\ApiParagraphType $item
      * @return \Api\StructType\ApiTaxType
      */
-    public function addToTaxDescription(\Api\StructType\ApiParagraphType $item)
+    public function addToTaxDescription(\Api\StructType\ApiParagraphType $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiParagraphType) {
@@ -189,7 +189,7 @@ class ApiTaxType extends AbstractStructBase
      * Get Type value
      * @return string|null
      */
-    public function getType()
+    public function getType(): ?string
     {
         return $this->Type;
     }
@@ -201,7 +201,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $type
      * @return \Api\StructType\ApiTaxType
      */
-    public function setType($type = null)
+    public function setType(string $type = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAmountDeterminationType::valueIsValid($type)) {
@@ -214,7 +214,7 @@ class ApiTaxType extends AbstractStructBase
      * Get Code value
      * @return string|null
      */
-    public function getCode()
+    public function getCode(): ?string
     {
         return $this->Code;
     }
@@ -223,7 +223,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $code
      * @return \Api\StructType\ApiTaxType
      */
-    public function setCode($code = null)
+    public function setCode(string $code = null): self
     {
         // validation for constraint: string
         if (!is_null($code) && !is_string($code)) {
@@ -240,7 +240,7 @@ class ApiTaxType extends AbstractStructBase
      * Get Percent value
      * @return float|null
      */
-    public function getPercent()
+    public function getPercent(): ?float
     {
         return $this->Percent;
     }
@@ -249,7 +249,7 @@ class ApiTaxType extends AbstractStructBase
      * @param float $percent
      * @return \Api\StructType\ApiTaxType
      */
-    public function setPercent($percent = null)
+    public function setPercent(float $percent = null): self
     {
         // validation for constraint: float
         if (!is_null($percent) && !(is_float($percent) || is_numeric($percent))) {
@@ -270,7 +270,7 @@ class ApiTaxType extends AbstractStructBase
      * Get Amount value
      * @return float|null
      */
-    public function getAmount()
+    public function getAmount(): ?float
     {
         return $this->Amount;
     }
@@ -279,7 +279,7 @@ class ApiTaxType extends AbstractStructBase
      * @param float $amount
      * @return \Api\StructType\ApiTaxType
      */
-    public function setAmount($amount = null)
+    public function setAmount(float $amount = null): self
     {
         // validation for constraint: float
         if (!is_null($amount) && !(is_float($amount) || is_numeric($amount))) {
@@ -296,7 +296,7 @@ class ApiTaxType extends AbstractStructBase
      * Get CurrencyCode value
      * @return string|null
      */
-    public function getCurrencyCode()
+    public function getCurrencyCode(): ?string
     {
         return $this->CurrencyCode;
     }
@@ -305,7 +305,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $currencyCode
      * @return \Api\StructType\ApiTaxType
      */
-    public function setCurrencyCode($currencyCode = null)
+    public function setCurrencyCode(string $currencyCode = null): self
     {
         // validation for constraint: string
         if (!is_null($currencyCode) && !is_string($currencyCode)) {
@@ -322,7 +322,7 @@ class ApiTaxType extends AbstractStructBase
      * Get DecimalPlaces value
      * @return int|null
      */
-    public function getDecimalPlaces()
+    public function getDecimalPlaces(): ?int
     {
         return $this->DecimalPlaces;
     }
@@ -331,7 +331,7 @@ class ApiTaxType extends AbstractStructBase
      * @param int $decimalPlaces
      * @return \Api\StructType\ApiTaxType
      */
-    public function setDecimalPlaces($decimalPlaces = null)
+    public function setDecimalPlaces(int $decimalPlaces = null): self
     {
         // validation for constraint: int
         if (!is_null($decimalPlaces) && !(is_int($decimalPlaces) || ctype_digit($decimalPlaces))) {

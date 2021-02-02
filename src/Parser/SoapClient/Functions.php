@@ -67,7 +67,7 @@ class Functions extends AbstractParser
                             ], '', trim($infos[$i]));
                             if (!empty($info)) {
                                 $methodParameters = array_merge($methodParameters, [
-                                    $info => $start === $i  ? $firstParameterType : $infos[$i - 1],
+                                    $info => $start === $i ? $firstParameterType : $infos[$i - 1],
                                 ]);
                             }
                         }

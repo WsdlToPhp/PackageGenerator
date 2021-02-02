@@ -128,7 +128,7 @@ class StructAttribute extends AbstractModel
 
     /**
      * If this attribute is based on a struct that is a list,
-     * then it is list of basic scalar values that are sent space-separated
+     * then it is a list of basic scalar values that are sent space-separated
      * @return bool
      */
     public function isList(): bool

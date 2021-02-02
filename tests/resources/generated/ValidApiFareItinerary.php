@@ -21,21 +21,21 @@ class ApiFareItinerary extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiFareItineraryPrice
      */
-    public $price;
+    public $price = null;
     /**
      * The key
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    public $key;
+    public $key = null;
     /**
      * The firstSegmentsIds
      * Meta information extracted from the WSDL
      * - use: required
      * @var int[]
      */
-    public $firstSegmentsIds;
+    public $firstSegmentsIds = null;
     /**
      * The clickoutURLParams
      * Meta information extracted from the WSDL
@@ -43,22 +43,22 @@ class ApiFareItinerary extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $clickoutURLParams;
+    public $clickoutURLParams = null;
     /**
      * The resident
      * @var bool
      */
-    public $resident;
+    public $resident = null;
     /**
      * The secondSegmentsIds
      * @var int[]
      */
-    public $secondSegmentsIds;
+    public $secondSegmentsIds = null;
     /**
      * The thirdSegmentsIds
      * @var int[]
      */
-    public $thirdSegmentsIds;
+    public $thirdSegmentsIds = null;
     /**
      * Constructor method for fareItinerary
      * @uses ApiFareItinerary::setPrice()
@@ -76,7 +76,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @param int[] $thirdSegmentsIds
      */
-    public function __construct(\Api\StructType\ApiFareItineraryPrice $price = null, $key = null, array $firstSegmentsIds = array(), $clickoutURLParams = null, $resident = null, array $secondSegmentsIds = array(), array $thirdSegmentsIds = array())
+    public function __construct(\Api\StructType\ApiFareItineraryPrice $price = null, string $key = null, array $firstSegmentsIds = array(), string $clickoutURLParams = null, bool $resident = null, array $secondSegmentsIds = array(), array $thirdSegmentsIds = array())
     {
         $this
             ->setPrice($price)
@@ -91,7 +91,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get price value
      * @return \Api\StructType\ApiFareItineraryPrice
      */
-    public function getPrice()
+    public function getPrice(): ?\Api\StructType\ApiFareItineraryPrice
     {
         return $this->price;
     }
@@ -100,7 +100,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param \Api\StructType\ApiFareItineraryPrice $price
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setPrice(\Api\StructType\ApiFareItineraryPrice $price = null)
+    public function setPrice(\Api\StructType\ApiFareItineraryPrice $price = null): self
     {
         $this->price = $price;
         return $this;
@@ -109,7 +109,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get key value
      * @return string
      */
-    public function getKey()
+    public function getKey(): ?string
     {
         return $this->key;
     }
@@ -118,7 +118,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param string $key
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setKey($key = null)
+    public function setKey(string $key = null): self
     {
         // validation for constraint: string
         if (!is_null($key) && !is_string($key)) {
@@ -131,7 +131,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get firstSegmentsIds value
      * @return int[]
      */
-    public function getFirstSegmentsIds()
+    public function getFirstSegmentsIds(): ?array
     {
         return $this->firstSegmentsIds;
     }
@@ -163,7 +163,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $firstSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setFirstSegmentsIds(array $firstSegmentsIds = array())
+    public function setFirstSegmentsIds(array $firstSegmentsIds = array()): self
     {
         // validation for constraint: array
         if ('' !== ($firstSegmentsIdsArrayErrorMessage = self::validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds($firstSegmentsIds))) {
@@ -178,7 +178,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function addToFirstSegmentsIds($item)
+    public function addToFirstSegmentsIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
@@ -191,7 +191,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get clickoutURLParams value
      * @return string|null
      */
-    public function getClickoutURLParams()
+    public function getClickoutURLParams(): ?string
     {
         return $this->clickoutURLParams;
     }
@@ -200,7 +200,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param string $clickoutURLParams
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setClickoutURLParams($clickoutURLParams = null)
+    public function setClickoutURLParams(string $clickoutURLParams = null): self
     {
         // validation for constraint: string
         if (!is_null($clickoutURLParams) && !is_string($clickoutURLParams)) {
@@ -213,7 +213,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get resident value
      * @return bool|null
      */
-    public function getResident()
+    public function getResident(): ?bool
     {
         return $this->resident;
     }
@@ -222,7 +222,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param bool $resident
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setResident($resident = null)
+    public function setResident(bool $resident = null): self
     {
         // validation for constraint: boolean
         if (!is_null($resident) && !is_bool($resident)) {
@@ -235,7 +235,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get secondSegmentsIds value
      * @return int[]|null
      */
-    public function getSecondSegmentsIds()
+    public function getSecondSegmentsIds(): ?array
     {
         return $this->secondSegmentsIds;
     }
@@ -267,7 +267,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setSecondSegmentsIds(array $secondSegmentsIds = array())
+    public function setSecondSegmentsIds(array $secondSegmentsIds = array()): self
     {
         // validation for constraint: array
         if ('' !== ($secondSegmentsIdsArrayErrorMessage = self::validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds($secondSegmentsIds))) {
@@ -282,7 +282,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function addToSecondSegmentsIds($item)
+    public function addToSecondSegmentsIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
@@ -295,7 +295,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get thirdSegmentsIds value
      * @return int[]|null
      */
-    public function getThirdSegmentsIds()
+    public function getThirdSegmentsIds(): ?array
     {
         return $this->thirdSegmentsIds;
     }
@@ -327,7 +327,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $thirdSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setThirdSegmentsIds(array $thirdSegmentsIds = array())
+    public function setThirdSegmentsIds(array $thirdSegmentsIds = array()): self
     {
         // validation for constraint: array
         if ('' !== ($thirdSegmentsIdsArrayErrorMessage = self::validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds($thirdSegmentsIds))) {
@@ -342,7 +342,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function addToThirdSegmentsIds($item)
+    public function addToThirdSegmentsIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {

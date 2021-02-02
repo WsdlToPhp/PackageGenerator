@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
@@ -44,7 +45,7 @@ final class ChoiceRule extends AbstractRule
 
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
             new PhpFunctionParameter('value', PhpFunctionParameter::NO_VALUE),
-        ]);
+        ], AbstractModelFile::TYPE_STRING);
 
         $method
             ->addChild('$message = \'\';')
