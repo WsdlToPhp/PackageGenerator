@@ -179,7 +179,7 @@ final class Utils
             return '';
         }
 
-        return trim(str_replace('*/', '*[:slash:]', is_scalar($comment) ? $comment : implode($glueSeparator, $uniqueValues ? array_unique($comment) : $comment)));
+        return trim(str_replace('*/', '*[:slash:]', is_scalar($comment) ? (string) $comment : implode($glueSeparator, $uniqueValues ? array_unique($comment) : $comment)));
     }
 
     /**
