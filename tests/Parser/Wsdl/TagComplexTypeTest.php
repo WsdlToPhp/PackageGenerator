@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagComplexType;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagComplexTypeTest extends WsdlParser
 {
     public static function ebayInstanceParser(): TagComplexType
@@ -81,7 +85,7 @@ final class TagComplexTypeTest extends WsdlParser
                     'maxLength' => '19',
                     'minLength' => '19',
                 ], $exchangeRateDate->getMeta());
-                $count++;
+                ++$count;
             }
         }
         $shopper = $structs->getStructByName('shopper');
@@ -100,7 +104,7 @@ final class TagComplexTypeTest extends WsdlParser
                     'minOccurs' => '1',
                     'pattern' => '[_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)',
                 ], $email->getMeta());
-                $count++;
+                ++$count;
             }
         }
         $this->assertEquals(2, $count);

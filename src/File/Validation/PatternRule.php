@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * @link https://www.w3.org/TR/xmlschema-2/#rf-pattern
+ * @see https://www.w3.org/TR/xmlschema-2/#rf-pattern
  * Validation Rule: pattern valid
  * A literal in a ·lexical space· is facet-valid with respect to ·pattern· if:
  *  - 1 the literal is among the set of character sequences denoted by the ·regular expression· specified in {value}.
@@ -19,7 +19,7 @@ final class PatternRule extends AbstractRule
 
     public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . '!preg_match(\'/%2$s/\', $%1$s)', $parameterName, self::valueToRegularExpression($value));
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ').'!preg_match(\'/%2$s/\', $%1$s)', $parameterName, self::valueToRegularExpression($value));
     }
 
     public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string

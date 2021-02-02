@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
+use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 
 class Wsdl extends AbstractDocument
 {
@@ -21,11 +21,6 @@ class Wsdl extends AbstractDocument
     public function getContent(): WsdlDocument
     {
         return parent::getContent();
-    }
-
-    protected function contentClass(): string
-    {
-        return WsdlDocument::class;
     }
 
     public function addSchema(Schema $schema): self
@@ -45,5 +40,10 @@ class Wsdl extends AbstractDocument
     public function getSchemas(): SchemaContainer
     {
         return $this->schemas;
+    }
+
+    protected function contentClass(): string
+    {
+        return WsdlDocument::class;
     }
 }

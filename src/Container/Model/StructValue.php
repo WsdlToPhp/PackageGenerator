@@ -8,13 +8,13 @@ use WsdlToPhp\PackageGenerator\Model\StructValue as Model;
 
 class StructValue extends AbstractModel
 {
-    protected function objectClass(): string
-    {
-        return Model::class;
-    }
-
     public function getStructValueByName($name): ?Model
     {
         return $this->get($name);
+    }
+
+    protected function objectClass(): string
+    {
+        return Model::class;
     }
 }

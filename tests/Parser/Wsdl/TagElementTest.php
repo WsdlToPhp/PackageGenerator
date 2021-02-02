@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagElementTest extends WsdlParser
 {
     public static function bingInstanceParser(): TagElement
@@ -14,12 +18,12 @@ final class TagElementTest extends WsdlParser
         return new TagElement(self::generatorInstance(self::wsdlBingPath()));
     }
 
-    public static function yandexAdGroupsInstanceParser():TagElement
+    public static function yandexAdGroupsInstanceParser(): TagElement
     {
         return new TagElement(self::generatorInstance(self::wsdlYandexDirectApiAdGroupsPath()));
     }
 
-    public static function actonInstanceParser():TagElement
+    public static function actonInstanceParser(): TagElement
     {
         return new TagElement(self::generatorInstance(self::wsdlActonPath()));
     }
@@ -45,7 +49,7 @@ final class TagElementTest extends WsdlParser
                 $this->assertSame('string', $structs->getStructByName('SearchRequest')->getAttribute('Version')->getType());
                 $this->assertFalse($structs->getStructByName('SearchRequest')->getAttribute('Version')->getContainsElements());
                 $this->assertFalse($structs->getStructByName('SearchRequest')->getAttribute('Version')->getRemovableFromRequest());
-                $count++;
+                ++$count;
             }
             if ($structs->getStructByName('ArrayOfNewsRelatedSearch') instanceof Struct) {
                 $this->assertSame([
@@ -55,7 +59,7 @@ final class TagElementTest extends WsdlParser
                 $this->assertSame('NewsRelatedSearch', $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getType());
                 $this->assertTrue($structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getContainsElements());
                 $this->assertFalse($structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getRemovableFromRequest());
-                $count++;
+                ++$count;
             }
         }
         $this->assertEquals(2, $count);
@@ -77,7 +81,7 @@ final class TagElementTest extends WsdlParser
                 $this->assertSame('ArrayOfString', $structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getType());
                 $this->assertFalse($structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getContainsElements());
                 $this->assertTrue($structs->getStructByName('AdGroupBase')->getAttribute('NegativeKeywords')->getRemovableFromRequest());
-                $count++;
+                ++$count;
             }
         }
         $this->assertEquals(1, $count);
@@ -97,7 +101,7 @@ final class TagElementTest extends WsdlParser
                 $this->assertSame('string', $structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getType());
                 $this->assertFalse($structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getContainsElements());
                 $this->assertFalse($structs->getStructByName('LoginResult')->getAttribute('serverUrl')->getRemovableFromRequest());
-                $count++;
+                ++$count;
             }
         }
         $this->assertEquals(1, $count);

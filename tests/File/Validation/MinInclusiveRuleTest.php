@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class MinInclusiveRuleTest extends AbstractRuleTest
 {
     /**
@@ -14,7 +18,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - documentation: Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value). | Used for percentage values.
      * - base: xs:decimal
      * - maxInclusive: 100.00
-     * - minInclusive: 0.00
+     * - minInclusive: 0.00.
      */
     public function testSetPercentWithLowerFloatValueMustThrowAnException()
     {
@@ -32,7 +36,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - documentation: Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value). | Used for percentage values.
      * - base: xs:decimal
      * - maxInclusive: 100.00
-     * - minInclusive: 0.00
+     * - minInclusive: 0.00.
      */
     public function testSetPercentWithSameFloatValueMustPass()
     {
@@ -47,7 +51,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - documentation: Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value). | Used for percentage values.
      * - base: xs:decimal
      * - maxInclusive: 100.00
-     * - minInclusive: 0.00
+     * - minInclusive: 0.00.
      */
     public function testSetPercentWithSameIntValueMustPass()
     {
@@ -62,7 +66,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - documentation: Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value). | Used for percentage values.
      * - base: xs:decimal
      * - maxInclusive: 100.00
-     * - minInclusive: 0.00
+     * - minInclusive: 0.00.
      */
     public function testSetPercentWithLowerIntValueMustPass()
     {
@@ -80,7 +84,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - documentation: Fee percentage; if zero, assume use of the Amount attribute (Amount or Percent must be a zero value). | Used for percentage values.
      * - base: xs:decimal
      * - maxInclusive: 100.00
-     * - minInclusive: 0.00
+     * - minInclusive: 0.00.
      */
     public function testSetPercentWithNullValueMustPass()
     {

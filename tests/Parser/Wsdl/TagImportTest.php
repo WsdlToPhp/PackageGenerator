@@ -5,14 +5,18 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport;
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Schema;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagImport;
 use WsdlToPhp\WsdlHandler\Tag\TagElement;
 use WsdlToPhp\WsdlHandler\Tag\TagEnumeration;
 use WsdlToPhp\WsdlHandler\Tag\TagRestriction;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagImportTest extends WsdlParser
 {
     public static function partnerInstanceParser(): TagImport
@@ -51,8 +55,8 @@ final class TagImportTest extends WsdlParser
         $tagImportParser->parse();
 
         $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
-        for ($i = 0; $i < 19; $i++) {
-            $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/partner/PartnerService.%d.xsd', $i));
+        for ($i = 0; $i < 19; ++$i) {
+            $schemaPath = realpath(sprintf(__DIR__.'/../../resources/partner/PartnerService.%d.xsd', $i));
             $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schemaContainer->add($schema);
         }
@@ -67,8 +71,8 @@ final class TagImportTest extends WsdlParser
         $tagImportParser->parse();
 
         $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
-        for ($i = 0; $i < 19; $i++) {
-            $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/partner/PartnerService.%d.xsd', $i));
+        for ($i = 0; $i < 19; ++$i) {
+            $schemaPath = realpath(sprintf(__DIR__.'/../../resources/partner/PartnerService.%d.xsd', $i));
             $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schemaContainer->add($schema);
         }
@@ -83,8 +87,8 @@ final class TagImportTest extends WsdlParser
         $tagImportParser->parse();
 
         $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
-        for ($i = 0; $i < 19; $i++) {
-            $schemaPath = realpath(sprintf(__DIR__ . '/../../resources/partner/PartnerService.%d.xsd', $i));
+        for ($i = 0; $i < 19; ++$i) {
+            $schemaPath = realpath(sprintf(__DIR__.'/../../resources/partner/PartnerService.%d.xsd', $i));
             $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
             $schemaContainer->add($schema);
         }
@@ -100,11 +104,11 @@ final class TagImportTest extends WsdlParser
 
         $schemaContainer = new SchemaContainer($tagImportParser->getGenerator());
 
-        $schemaPath = realpath(__DIR__ . '/../../resources/docdatapayments/1_3.1.xsd');
+        $schemaPath = realpath(__DIR__.'/../../resources/docdatapayments/1_3.1.xsd');
         $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
         $schemaContainer->add($schema);
 
-        $schemaPath = realpath(__DIR__ . '/../../resources/docdatapayments/1_3.2.xsd');
+        $schemaPath = realpath(__DIR__.'/../../resources/docdatapayments/1_3.2.xsd');
         $schema = new Schema($tagImportParser->getGenerator(), $schemaPath, file_get_contents($schemaPath));
         $schemaContainer->add($schema);
 

@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * Class MinLengthRule
- * @link https://www.w3.org/TR/xmlschema-2/#rf-minLength
+ * Class MinLengthRule.
+ *
+ * @see https://www.w3.org/TR/xmlschema-2/#rf-minLength
  * Validation Rule: minLength Valid
  * A value in a ·value space· is facet-valid with respect to ·minLength·, determined as follows:
  *  - 1 if the {variety} is ·atomic· then

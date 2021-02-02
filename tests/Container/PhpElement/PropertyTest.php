@@ -5,11 +5,15 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Container\PhpElement;
 
 use InvalidArgumentException;
-use WsdlToPhp\PhpGenerator\Element\PhpConstant;
-use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
+use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class PropertyTest extends AbstractTestCase
 {
     public function testAdd()

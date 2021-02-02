@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StructContainerTest extends AbstractTestCase
 {
     public static function instance(): StructContainer
@@ -16,6 +20,7 @@ final class StructContainerTest extends AbstractTestCase
         $structContainer = new StructContainer(self::getBingGeneratorInstance());
         $structContainer->add(StructTest::instance('Foo', true));
         $structContainer->add(StructTest::instance('Bar', false));
+
         return $structContainer;
     }
 

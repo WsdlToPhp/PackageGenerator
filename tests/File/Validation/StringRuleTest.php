@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use TypeError;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StringRuleTest extends AbstractRuleTest
 {
     /**
@@ -14,7 +18,7 @@ final class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithArrayValueMustThrowAnException()
     {
@@ -31,7 +35,7 @@ final class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithBoolValueMustThrowAnException()
     {
@@ -48,7 +52,7 @@ final class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithIntValueMustThrowAnException()
     {
@@ -65,7 +69,7 @@ final class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithFloatValueMustThrowAnException()
     {
@@ -82,7 +86,7 @@ final class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithNullValueMustPass()
     {
@@ -97,7 +101,7 @@ final class StringRuleTest extends AbstractRuleTest
      * - documentation: Credit card number embossed on the card. | Used for Numeric Strings, length 1 to 19.
      * - use: optional
      * - base: xs:string
-     * - pattern: [0-9]{1,19}
+     * - pattern: [0-9]{1,19}.
      */
     public function testSetCardNumberWithStringValueMustPass()
     {

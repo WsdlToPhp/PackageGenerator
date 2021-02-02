@@ -4,27 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\WsdlHandler\Tag\TagList as ListTag;
-use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
+use WsdlToPhp\WsdlHandler\Tag\TagList as ListTag;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagList extends AbstractTagParser
 {
-    protected function parseWsdl(Wsdl $wsdl): void
-    {
-        foreach ($this->getTags() as $tag) {
-            $this->parseList($tag);
-        }
-    }
-
-    protected function parsingTag(): string
-    {
-        return WsdlDocument::TAG_LIST;
-    }
-
     public function parseList(ListTag $tag): void
     {
         $parent = $tag->getSuitableParent();
@@ -49,11 +37,25 @@ class TagList extends AbstractTagParser
             $attribute
                 ->setContainsElements(true)
                 ->setType($type)
-                ->setInheritance($type);
+                ->setInheritance($type)
+            ;
         } else {
             $model
                 ->setList($type)
-                ->setInheritance(sprintf('%s[]', $type));
+                ->setInheritance(sprintf('%s[]', $type))
+            ;
         }
+    }
+
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            $this->parseList($tag);
+        }
+    }
+
+    protected function parsingTag(): string
+    {
+        return WsdlDocument::TAG_LIST;
     }
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * @link https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/structures.html#p-max_occurs
+ * @see https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/structures.html#p-max_occurs
  * Validation Rule: Element Sequence Locally Valid (Particle)
  * For a sequence (possibly empty) of element information items to be locally ·valid· with respect to a particle the appropriate case among the following must be true:
  *  - 1 If the {term} is a wildcard, then all of the following must be true:
@@ -41,11 +41,9 @@ final class MaxOccursRule extends AbstractMinMaxRule
     }
 
     /**
-     * If maxOccurs is 'unbounded', no need to check occurrences count
-     * @param string $parameterName
+     * If maxOccurs is 'unbounded', no need to check occurrences count.
+     *
      * @param mixed $value
-     * @param bool $itemType
-     * @return string
      */
     final public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {

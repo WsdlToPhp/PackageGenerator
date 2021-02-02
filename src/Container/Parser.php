@@ -8,6 +8,11 @@ use WsdlToPhp\PackageGenerator\Parser\AbstractParser;
 
 class Parser extends AbstractObjectContainer
 {
+    public function getParserByName(string $name): ?AbstractParser
+    {
+        return $this->get($name);
+    }
+
     protected function objectClass(): string
     {
         return AbstractParser::class;
@@ -16,10 +21,5 @@ class Parser extends AbstractObjectContainer
     protected function objectProperty(): string
     {
         return self::PROPERTY_NAME;
-    }
-
-    public function getParserByName(string $name): ?AbstractParser
-    {
-        return $this->get($name);
     }
 }

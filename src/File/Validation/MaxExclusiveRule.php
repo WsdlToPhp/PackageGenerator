@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * @link https://www.w3.org/TR/xmlschema-2/#rf-maxExclusive
- * @link https://www.w3.org/TR/xmlschema-2/#d0e11648 for Examples:
+ * @see https://www.w3.org/TR/xmlschema-2/#rf-maxExclusive
+ * @see https://www.w3.org/TR/xmlschema-2/#d0e11648 for Examples:
  *  dateTime	            duration	        result
  *  2000-01-12T12:13:14Z	P1Y3M5DT7H10M3.3S	2001-04-17T19:23:17.3Z
  *  2000-01	                -P3M                1999-10

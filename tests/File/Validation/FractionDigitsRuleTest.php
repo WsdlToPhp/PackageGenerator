@@ -5,12 +5,15 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class FractionDigitsRuleTest extends AbstractRuleTest
 {
     /**
-     * - fractionDigits: 3
+     * - fractionDigits: 3.
      */
     public function testSetAmountValueWithTooManyFractionDigitsMustThrowAnException()
     {
@@ -25,7 +28,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     }
 
     /**
-     * - fractionDigits: 0
+     * - fractionDigits: 0.
      */
     public function testSetWeightValueWithIntegerMustPass()
     {
@@ -35,7 +38,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     }
 
     /**
-     * - fractionDigits: 0
+     * - fractionDigits: 0.
      */
     public function testSetWeightValueWithDecimalMustThrowAnException()
     {
@@ -48,7 +51,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     }
 
     /**
-     * - fractionDigits: 3
+     * - fractionDigits: 3.
      */
     public function testSetAmountValueWithSameFractionDigitsMustPass()
     {
@@ -58,7 +61,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     }
 
     /**
-     * - fractionDigits: 3
+     * - fractionDigits: 3.
      */
     public function testSetAmountValueWithLessFractionDigitsMustPass()
     {
@@ -68,7 +71,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     }
 
     /**
-     * - fractionDigits: 3
+     * - fractionDigits: 3.
      */
     public function testSetAmountValueWithNullValueMustPass()
     {

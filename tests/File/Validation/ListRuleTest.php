@@ -7,6 +7,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 use Api\EnumType\ApiDayOfWeekType;
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ListRuleTest extends AbstractRuleTest
 {
     public function testSetDayOfWeekWithInvalidValueMustThrowAnException()

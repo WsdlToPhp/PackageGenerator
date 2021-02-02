@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\Model\ServiceTest;
-use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Container\Model\Method as MethodContainer;
+use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PackageGenerator\Tests\Model\ServiceTest;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class MethodContainerTest extends AbstractTestCase
 {
     /**
@@ -25,11 +29,10 @@ final class MethodContainerTest extends AbstractTestCase
             'int',
             'int',
         ], 'int', $service));
+
         return $methodContainer;
     }
-    /**
-     *
-     */
+
     public function testGetMethodByName()
     {
         $methodContainer = self::instance();

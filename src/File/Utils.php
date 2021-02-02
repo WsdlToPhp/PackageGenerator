@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 
 final class Utils
@@ -15,9 +15,7 @@ final class Utils
     {
         $validMeta = self::getValidMetaValues($model, $ignoreMeta);
         if (!empty($validMeta)) {
-            /**
-             * First line is the "The {propertyName}"
-             */
+            // First line is the "The {propertyName}"
             if (1 === count($block->getChildren())) {
                 $block->addChild('Meta information extracted from the WSDL');
             }

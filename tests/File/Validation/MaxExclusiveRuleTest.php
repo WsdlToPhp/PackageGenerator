@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class MaxExclusiveRuleTest extends AbstractRuleTest
 {
     public function testApplyRuleWithExactSameValue()

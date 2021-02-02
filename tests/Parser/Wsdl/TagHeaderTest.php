@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagHeaderTest extends WsdlParser
 {
     public static function imageViewServiceInstanceParser(): TagHeader
@@ -38,7 +42,7 @@ final class TagHeaderTest extends WsdlParser
         $services = $tagHeaderParser->getGenerator()->getServices();
         if ($services->count() > 0) {
             foreach ($services as $service) {
-                if ($service->getName() === 'Image') {
+                if ('Image' === $service->getName()) {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame([
                             'auth',
@@ -70,7 +74,7 @@ final class TagHeaderTest extends WsdlParser
         $services = $tagHeaderParser->getGenerator()->getServices();
         if ($services->count() > 0) {
             foreach ($services as $service) {
-                if ($service->getName() === 'Send') {
+                if ('Send' === $service->getName()) {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame([
                             'SessionHeader',
@@ -90,7 +94,7 @@ final class TagHeaderTest extends WsdlParser
                         ], $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
                         $ok = true;
                     }
-                } elseif ($service->getName() === 'List') {
+                } elseif ('List' === $service->getName()) {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame([
                             'SessionHeader',
@@ -110,7 +114,7 @@ final class TagHeaderTest extends WsdlParser
                         ], $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
                         $ok = true;
                     }
-                } elseif ($service->getName() === 'Login') {
+                } elseif ('Login' === $service->getName()) {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame([
                             'ClusterHeader',
@@ -155,7 +159,7 @@ final class TagHeaderTest extends WsdlParser
                     $this->assertSame([
                         'required',
                     ], $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
-                    $count++;
+                    ++$count;
                 }
             }
         }
@@ -168,8 +172,9 @@ final class TagHeaderTest extends WsdlParser
         // parsing the whole structs/functions is too long for only tests purpose!
         $tagHeaderParser
             ->getGenerator()
-                ->getServices()
-                    ->addService('Update', 'UpdateItemInRecoverableItems', 'string', 'string');
+            ->getServices()
+            ->addService('Update', 'UpdateItemInRecoverableItems', 'string', 'string')
+        ;
 
         $tagHeaderParser->parse();
 
@@ -178,7 +183,7 @@ final class TagHeaderTest extends WsdlParser
         if ($services->count() > 0) {
             foreach ($services as $service) {
                 foreach ($service->getMethods() as $method) {
-                    if ($method->getName() === 'UpdateItemInRecoverableItems') {
+                    if ('UpdateItemInRecoverableItems' === $method->getName()) {
                         $this->assertSame([
                             'ExchangeImpersonation',
                             'MailboxCulture',
@@ -207,7 +212,7 @@ final class TagHeaderTest extends WsdlParser
                             'http://schemas.microsoft.com/exchange/services/2006/types',
                             'http://schemas.microsoft.com/exchange/services/2006/types',
                         ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
-                        $count++;
+                        ++$count;
                     }
                 }
             }

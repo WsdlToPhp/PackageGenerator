@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * @link https://www.w3.org/TR/xmlschema-2/#rf-maxLength
+ * @see https://www.w3.org/TR/xmlschema-2/#rf-maxLength
  * Validation Rule: maxLength Valid
  * A value in a ·value space· is facet-valid with respect to ·maxLength·, determined as follows:
  *  - 1 if the {variety} is ·atomic· then

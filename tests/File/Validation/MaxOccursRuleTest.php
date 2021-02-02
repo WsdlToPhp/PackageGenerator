@@ -7,15 +7,18 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 use Api\StructType\ApiParagraphType;
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class MaxOccursRuleTest extends AbstractRuleTest
 {
-
     /**
      * The TaxDescription
      * Meta informations extracted from the WSDL
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
-     * - minOccurs: 0
+     * - minOccurs: 0.
      */
     public function testSetTaxDescriptionWithTooManyItemsMustThrowAnException()
     {
@@ -39,7 +42,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * Meta informations extracted from the WSDL
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
-     * - minOccurs: 0
+     * - minOccurs: 0.
      */
     public function testSetTaxDescriptionWithSameItemsMustPass()
     {
@@ -59,7 +62,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * Meta informations extracted from the WSDL
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
-     * - minOccurs: 0
+     * - minOccurs: 0.
      */
     public function testSetTaxDescriptionWithLessItemsMustPass()
     {
@@ -76,7 +79,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * Meta informations extracted from the WSDL
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
-     * - minOccurs: 0
+     * - minOccurs: 0.
      */
     public function testAddToTaxDescriptionWithTooManyItemsMustThrowAnException()
     {
@@ -93,7 +96,8 @@ final class MaxOccursRuleTest extends AbstractRuleTest
             ->addToTaxDescription(new ApiParagraphType())
             ->addToTaxDescription(new ApiParagraphType())
             ->addToTaxDescription(new ApiParagraphType())
-            ->addToTaxDescription(new ApiParagraphType());
+            ->addToTaxDescription(new ApiParagraphType())
+        ;
     }
 
     /**
@@ -101,7 +105,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * Meta informations extracted from the WSDL
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
-     * - minOccurs: 0
+     * - minOccurs: 0.
      */
     public function testAddToTaxDescriptionWithSameItemsMustPass()
     {
@@ -111,11 +115,11 @@ final class MaxOccursRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance
-            ->addToTaxDescription(new ApiParagraphType())
-            ->addToTaxDescription(new ApiParagraphType())
-            ->addToTaxDescription(new ApiParagraphType())
-            ->addToTaxDescription(new ApiParagraphType())
-            ->addToTaxDescription(new ApiParagraphType())
+                ->addToTaxDescription(new ApiParagraphType())
+                ->addToTaxDescription(new ApiParagraphType())
+                ->addToTaxDescription(new ApiParagraphType())
+                ->addToTaxDescription(new ApiParagraphType())
+                ->addToTaxDescription(new ApiParagraphType())
         );
     }
 
@@ -124,7 +128,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * Meta informations extracted from the WSDL
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
-     * - minOccurs: 0
+     * - minOccurs: 0.
      */
     public function testAddToTaxDescriptionWithLessItemsMustPass()
     {
@@ -134,8 +138,8 @@ final class MaxOccursRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance
-            ->addToTaxDescription(new ApiParagraphType())
-            ->addToTaxDescription(new ApiParagraphType())
+                ->addToTaxDescription(new ApiParagraphType())
+                ->addToTaxDescription(new ApiParagraphType())
         );
     }
 }

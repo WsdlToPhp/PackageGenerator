@@ -6,11 +6,15 @@ namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
 use InvalidArgumentException;
 use TypeError;
-use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Container\Model\EmptyModel as ModelContainer;
+use WsdlToPhp\PackageGenerator\Model\EmptyModel;
+use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ModelContainerTest extends AbstractTestCase
 {
     public static function instance(): ModelContainer
@@ -73,17 +77,17 @@ final class ModelContainerTest extends AbstractTestCase
         foreach ($models as $model) {
             $this->assertSame($index, $models->key());
 
-            if ($models->key() === 0) {
+            if (0 === $models->key()) {
                 $this->assertSame('Foo', $model->getName());
-            } elseif ($models->key() === 1) {
+            } elseif (1 === $models->key()) {
                 $this->assertSame('Bar', $model->getName());
-            } elseif ($models->key() === 2) {
+            } elseif (2 === $models->key()) {
                 $this->assertSame('FooBar', $model->getName());
-            } elseif ($models->key() === 3) {
+            } elseif (3 === $models->key()) {
                 $this->assertSame('BarFoo', $model->getName());
             }
 
-            $index++;
+            ++$index;
         }
     }
 

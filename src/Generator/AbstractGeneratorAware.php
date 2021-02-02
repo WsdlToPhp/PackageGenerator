@@ -13,15 +13,15 @@ abstract class AbstractGeneratorAware
         $this->setGenerator($generator);
     }
 
+    public function getGenerator(): ?Generator
+    {
+        return $this->generator;
+    }
+
     protected function setGenerator(Generator $generator): self
     {
         $this->generator = $generator;
 
         return $this;
-    }
-
-    public function getGenerator(): ?Generator
-    {
-        return $this->generator;
     }
 }

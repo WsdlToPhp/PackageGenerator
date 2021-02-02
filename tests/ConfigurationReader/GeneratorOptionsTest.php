@@ -9,21 +9,25 @@ use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
-use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class GeneratorOptionsTest extends AbstractTestCase
 {
     public static function optionsInstance(): GeneratorOptions
     {
-        return clone GeneratorOptions::instance(__DIR__ . '/../resources/generator_options.yml');
+        return clone GeneratorOptions::instance(__DIR__.'/../resources/generator_options.yml');
     }
 
     public function testParseException()
     {
         $this->expectException(InvalidArgumentException::class);
 
-        GeneratorOptions::instance(__DIR__ . '/../resources/bad_generator_options.yml');
+        GeneratorOptions::instance(__DIR__.'/../resources/bad_generator_options.yml');
     }
 
     public function testGetPrefix()

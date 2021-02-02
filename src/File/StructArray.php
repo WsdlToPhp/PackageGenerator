@@ -32,9 +32,19 @@ final class StructArray extends Struct
             ->addArrayMethodLast()
             ->addArrayMethodOffsetGet()
             ->addArrayMethodAdd()
-            ->addArrayMethodGetAttributeName();
+            ->addArrayMethodGetAttributeName()
+        ;
 
         return $this;
+    }
+
+    public function setModel(AbstractModel $model): self
+    {
+        if ($model instanceof StructModel && !$model->isArray()) {
+            throw new InvalidArgumentException('The model is not a valid array struct (name must contain Array and the model must contain only one property', __LINE__);
+        }
+
+        return parent::setModel($model);
     }
 
     protected function addArrayMethodCurrent(): self
@@ -166,27 +176,42 @@ final class StructArray extends Struct
         switch ($method->getName()) {
             case self::METHOD_GET_ATTRIBUTE_NAME:
                 $annotationBlock = $this->getArrayMethodGetAttributeNameAnnotationBlock();
+
                 break;
+
             case self::METHOD_CURRENT:
                 $annotationBlock = $this->getArrayMethodCurrentAnnotationBlock();
+
                 break;
+
             case self::METHOD_FIRST:
                 $annotationBlock = $this->getArrayMethodFirstAnnotationBlock();
+
                 break;
+
             case self::METHOD_ITEM:
                 $annotationBlock = $this->getArrayMethodItemAnnotationBlock();
+
                 break;
+
             case self::METHOD_LAST:
                 $annotationBlock = $this->getArrayMethodLastAnnotationBlock();
+
                 break;
+
             case self::METHOD_OFFSET_GET:
                 $annotationBlock = $this->getArrayMethodOffsetGetAnnotationBlock();
+
                 break;
+
             case self::METHOD_ADD:
                 $annotationBlock = $this->getArrayMethodAddAnnotationBlock();
+
                 break;
+
             default:
                 $annotationBlock = parent::getStructMethodAnnotationBlock($method);
+
                 break;
         }
 
@@ -196,14 +221,5 @@ final class StructArray extends Struct
     protected function getArrayMethodBody(string $method, $var = ''): string
     {
         return sprintf('return parent::%s(%s);', $method, $var);
-    }
-
-    public function setModel(AbstractModel $model): self
-    {
-        if ($model instanceof StructModel && !$model->isArray()) {
-            throw new InvalidArgumentException('The model is not a valid array struct (name must contain Array and the model must contain only one property', __LINE__);
-        }
-
-        return parent::setModel($model);
     }
 }

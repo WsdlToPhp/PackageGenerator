@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagAttribute;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagAttributeTest extends WsdlParser
 {
     public static function ebayInstanceParser(): TagAttribute
@@ -59,14 +63,14 @@ final class TagAttributeTest extends WsdlParser
             if (($struct = $structs->getStructByName('DestinationType')) instanceof Struct) {
                 $this->assertSame('integer', $struct->getAttribute('ID')->getType());
                 $this->assertSame('integer', $struct->getAttribute('CountryID')->getType());
-                $count++;
+                ++$count;
             }
             if (($struct = $structs->getStructByName('InventoryType')) instanceof Struct) {
                 $this->assertSame('string', $struct->getAttribute('RatePlanId')->getType());
                 $this->assertSame('string', $struct->getAttribute('Availability')->getType());
                 $this->assertSame('string', $struct->getAttribute('StartDate')->getType());
                 $this->assertSame('string', $struct->getAttribute('EndDate')->getType());
-                $count++;
+                ++$count;
             }
             if (($struct = $structs->getStructByName('UniqueID_Type')) instanceof Struct) {
                 $this->assertSame('optional', $struct->getAttribute('URL')->getMetaValue('use'));
@@ -84,7 +88,7 @@ final class TagAttributeTest extends WsdlParser
                 $this->assertSame('required', $struct->getAttribute('ID')->getMetaValue('use'));
                 $this->assertSame('whlsoap:StringLength1to32', $struct->getAttribute('ID')->getMetaValue('type'));
                 $this->assertTrue($struct->getAttribute('ID')->isRequired());
-                $count++;
+                ++$count;
             }
         }
         $this->assertSame(3, $count);

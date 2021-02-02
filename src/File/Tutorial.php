@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File;
 
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
-use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
+use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 
@@ -20,13 +20,40 @@ final class Tutorial extends AbstractFile
             ->addAutoload()
             ->addOptionsAnnotationBlock()
             ->addOptions()
-            ->addContent();
+            ->addContent()
+        ;
         parent::writeFile();
     }
 
     public function addMainAnnotationBlock(): self
     {
         $this->getFile()->addAnnotationBlockElement($this->getAnnotationBlock());
+
+        return $this;
+    }
+
+    public function addChild(PhpAnnotationBlock $block, string $content): self
+    {
+        $block->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, $content, AbstractModelFile::ANNOTATION_LONG_LENGTH));
+
+        return $this;
+    }
+
+    public function addAutoload(): self
+    {
+        if ($this->getGenerator()->getOptionStandalone()) {
+            $this->getFile()->getMainElement()->addChild(sprintf('require_once __DIR__ . \'/vendor/autoload.php\';'));
+        }
+
+        return $this;
+    }
+
+    public function addContent(): self
+    {
+        foreach ($this->getGenerator()->getServices(true) as $service) {
+            $serviceVariableName = lcfirst($service->getName());
+            $this->addAnnotationBlockFromService($service)->addServiceDeclaration($serviceVariableName, $service)->addServiceSoapHeadersDefinitions($serviceVariableName, $service)->addContentFromService($serviceVariableName, $service);
+        }
 
         return $this;
     }
@@ -45,41 +72,18 @@ final class Tutorial extends AbstractFile
             ->addChild($block, sprintf('%s::WSDL_LOGIN => \'you_secret_login\',', AbstractSoapClientBase::class))
             ->addChild($block, sprintf('%s::WSDL_PASSWORD => \'you_secret_password\',', AbstractSoapClientBase::class))
             ->addChild($block, '];')
-            ->addChild($block, 'etc...');
+            ->addChild($block, 'etc...')
+        ;
 
         if (!$this->getGenerator()->getOptionStandalone()) {
             $this
                 ->addChild($block, '################################################################################')
                 ->addChild($block, 'Don\'t forget to add wsdltophp/packagebase:dev-master to your main composer.json.')
-                ->addChild($block, '################################################################################');
+                ->addChild($block, '################################################################################')
+            ;
         }
 
         return $block;
-    }
-
-    public function addChild(PhpAnnotationBlock $block, string $content): self
-    {
-        $block->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, $content, AbstractModelFile::ANNOTATION_LONG_LENGTH));
-
-        return $this;
-    }
-
-    public function addAutoload(): self
-    {
-        if ($this->getGenerator()->getOptionStandalone()) {
-            $this->getFile()->getMainElement()->addChild(sprintf('require_once __DIR__ . \'/vendor/autoload.php\';'));
-        }
-        return $this;
-    }
-
-    public function addContent(): self
-    {
-        foreach ($this->getGenerator()->getServices(true) as $service) {
-            $serviceVariableName = lcfirst($service->getName());
-            $this->addAnnotationBlockFromService($service)->addServiceDeclaration($serviceVariableName, $service)->addServiceSoapHeadersDefinitions($serviceVariableName, $service)->addContentFromService($serviceVariableName, $service);
-        }
-
-        return $this;
     }
 
     protected function addOptionsAnnotationBlock(): self
@@ -98,7 +102,8 @@ final class Tutorial extends AbstractFile
             ->addChild('$options = [')
             ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl()->getName()), 1))
             ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => %s::%s(),', $this->getGenerator()->getFiles()->getClassmapFile()->getModel()->getPackagedName(true), ClassMap::METHOD_NAME), 1))
-            ->addChild('];');
+            ->addChild('];')
+        ;
 
         return $this;
     }
@@ -146,6 +151,7 @@ final class Tutorial extends AbstractFile
                 $this->getFile()->getMainElement()->addChild(sprintf('$%s->%s%s(%s);', $serviceVariableName, Service::METHOD_SET_HEADER_PREFIX, ucfirst($soapHeaderName), $this->getMethodParameter($soapHeaderName)));
             }
         }
+
         return $addedNames;
     }
 
@@ -164,7 +170,8 @@ final class Tutorial extends AbstractFile
             ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('print_r($%s->getResult());', $serviceVariableName), 1))
             ->addChild('} else {')
             ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('print_r($%s->getLastError());', $serviceVariableName), 1))
-            ->addChild('}');
+            ->addChild('}')
+        ;
 
         return $this;
     }
@@ -186,7 +193,7 @@ final class Tutorial extends AbstractFile
     protected function getMethodParameter(?string $parameterType, ?string $parameterName = null): string
     {
         $parameter = sprintf('%1$s%2$s', (empty($parameterType) && empty($parameterName)) ? '' : '$', empty($parameterName) ? $parameterType : $parameterName);
-        $model = $parameterType !== null ? $this->getGenerator()->getStructByName($parameterType) : null;
+        $model = null !== $parameterType ? $this->getGenerator()->getStructByName($parameterType) : null;
         if ($model instanceof StructModel && $model->isStruct() && !$model->isRestriction()) {
             $parameter = sprintf('new %s()', $model->getPackagedName(true));
         }

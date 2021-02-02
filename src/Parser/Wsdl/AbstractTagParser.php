@@ -5,23 +5,29 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\DomHandler\AttributeHandler;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
+use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\Method;
+use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
-use WsdlToPhp\PackageGenerator\Model\Method;
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\PackageGenerator\Model\Schema;
-use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 abstract class AbstractTagParser extends AbstractParser
 {
+    public function getName(): string
+    {
+        return $this->parsingTag();
+    }
+
     protected function getModel(Tag $tag, string $type = ''): ?AbstractModel
     {
         switch ($tag->getName()) {
             case WsdlDocument::TAG_OPERATION:
                 $model = $this->getMethodByName($tag->getAttributeName());
+
                 break;
 
             default:
@@ -30,6 +36,7 @@ abstract class AbstractTagParser extends AbstractParser
                 } else {
                     $model = $this->getStructByNameAndType($tag->getAttributeName(), $type);
                 }
+
                 break;
         }
 
@@ -54,9 +61,7 @@ abstract class AbstractTagParser extends AbstractParser
     /**
      * Most of he time, this method is not used, even if it used,
      * for now, knowing that we are in a schema is not a useful information,
-     * so we can simply parse the tag with only the wsdl as parameter
-     * @param Wsdl $wsdl
-     * @param Schema $schema
+     * so we can simply parse the tag with only the wsdl as parameter.
      */
     protected function parseSchema(Wsdl $wsdl, Schema $schema): void
     {
@@ -121,7 +126,7 @@ abstract class AbstractTagParser extends AbstractParser
     }
 
     /**
-     * Avoid the "name" attribute to be added as meta
+     * Avoid the "name" attribute to be added as meta.
      */
     protected function parseTagAttributeName(): void
     {
@@ -133,19 +138,12 @@ abstract class AbstractTagParser extends AbstractParser
     }
 
     /**
-     * Enumeration does not need its own value as meta information, it's like the name for struct attribute
-     * @param AttributeHandler $tagAttribute
-     * @param AbstractModel $model
+     * Enumeration does not need its own value as meta information, it's like the name for struct attribute.
      */
     protected function parseTagAttributeValue(AttributeHandler $tagAttribute, AbstractModel $model): void
     {
         if (!$model instanceof StructValue) {
             $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
         }
-    }
-
-    public function getName(): string
-    {
-        return $this->parsingTag();
     }
 }

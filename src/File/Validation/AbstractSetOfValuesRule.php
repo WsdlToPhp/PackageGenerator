@@ -11,12 +11,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 abstract class AbstractSetOfValuesRule extends AbstractRule
 {
-    /**
-     * Must check the attribute validity according to the current rule
-     * @return bool
-     */
-    abstract protected function mustApplyRuleOnAttribute(): bool;
-
     public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
         $test = '';
@@ -32,6 +26,16 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
     {
         return self::getErrorMessageVariableName($parameterName);
     }
+
+    public static function getErrorMessageVariableName(string $parameterName): string
+    {
+        return sprintf('$%sArrayErrorMessage', $parameterName);
+    }
+
+    /**
+     * Must check the attribute validity according to the current rule.
+     */
+    abstract protected function mustApplyRuleOnAttribute(): bool;
 
     protected function addValidationMethod(string $parameterName, $value)
     {
@@ -61,17 +65,13 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
             ->addChild($method->getIndentedString(sprintf('$message = %s;', $rule->exceptionMessageOnTestFailure('invalidValues', null)), 1))
             ->addChild('}')
             ->addChild('unset($invalidValues);')
-            ->addChild('return $message;');
+            ->addChild('return $message;')
+        ;
         $this->getMethods()->add($method);
     }
 
     protected function getValidationMethodName(string $parameterName): string
     {
-        return sprintf('validate%sForArrayConstraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
-    }
-
-    public static function getErrorMessageVariableName(string $parameterName): string
-    {
-        return sprintf('$%sArrayErrorMessage', $parameterName);
+        return sprintf('validate%sForArrayConstraintsFrom%s', ucfirst($parameterName), ucfirst($this->getMethod()->getName()));
     }
 }

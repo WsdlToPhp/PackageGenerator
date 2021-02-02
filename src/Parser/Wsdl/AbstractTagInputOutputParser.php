@@ -6,24 +6,13 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\WsdlHandler\Tag\TagPart;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTagOperationElement;
 use WsdlToPhp\WsdlHandler\Tag\TagOperation;
+use WsdlToPhp\WsdlHandler\Tag\TagPart;
 
 abstract class AbstractTagInputOutputParser extends AbstractTagParser
 {
     public const UNKNOWN = 'unknown';
-
-    abstract protected function getKnownType(Method $method);
-
-    abstract protected function setKnownType(Method $method, $knownType);
-
-    protected function parseWsdl(Wsdl $wsdl): void
-    {
-        foreach ($this->getTags() as $tag) {
-            $this->parseInputOutput($tag);
-        }
-    }
 
     public function parseInputOutput(AbstractTagOperationElement $tag): void
     {
@@ -61,6 +50,17 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
         }
     }
 
+    abstract protected function getKnownType(Method $method);
+
+    abstract protected function setKnownType(Method $method, $knownType);
+
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            $this->parseInputOutput($tag);
+        }
+    }
+
     protected function getTypeFromPart(TagPart $part): string
     {
         return $part->getFinalType();
@@ -71,10 +71,10 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
         $isKnown = true;
         $knownType = $this->getKnownType($method);
         if (is_string($knownType)) {
-            $isKnown = !empty($knownType) && mb_strtolower($knownType) !== self::UNKNOWN;
+            $isKnown = !empty($knownType) && self::UNKNOWN !== mb_strtolower($knownType);
         } elseif (is_array($knownType)) {
             foreach ($knownType as $knownValue) {
-                $isKnown &= !empty($knownType) && mb_strtolower($knownValue) !== self::UNKNOWN;
+                $isKnown &= !empty($knownType) && self::UNKNOWN !== mb_strtolower($knownValue);
             }
         }
 

@@ -4,33 +4,17 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 use WsdlToPhp\DomHandler\AttributeHandler;
-use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
-use WsdlToPhp\WsdlHandler\Tag\TagRestriction as Restriction;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
+use WsdlToPhp\WsdlHandler\Tag\TagRestriction as Restriction;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagRestriction extends AbstractTagParser
 {
-    protected function parseWsdl(Wsdl $wsdl): void
-    {
-        foreach ($this->getTags() as $tag) {
-            if ($tag->isEnumeration()) {
-                continue;
-            }
-
-            $this->parseRestriction($tag);
-        }
-    }
-
-    protected function parsingTag(): string
-    {
-        return WsdlDocument::TAG_RESTRICTION;
-    }
-
     public function parseRestriction(Restriction $restriction): void
     {
         $parent = $restriction->getSuitableParent();
@@ -52,7 +36,8 @@ class TagRestriction extends AbstractTagParser
 
             $this
                 ->parseRestrictionAttributes($parentAttribute, $restriction)
-                ->parseRestrictionChildren($parentAttribute, $restriction);
+                ->parseRestrictionChildren($parentAttribute, $restriction)
+            ;
         } else {
             // if restriction is contained by an union tag, don't create the virtual struct as "union"s
             // are wrongly parsed by SoapClient::__getTypes and this creates a duplicated element then
@@ -64,9 +49,26 @@ class TagRestriction extends AbstractTagParser
             if ($model instanceof Struct) {
                 $this
                     ->parseRestrictionAttributes($model, $restriction)
-                    ->parseRestrictionChildren($model, $restriction);
+                    ->parseRestrictionChildren($model, $restriction)
+                ;
             }
         }
+    }
+
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            if ($tag->isEnumeration()) {
+                continue;
+            }
+
+            $this->parseRestriction($tag);
+        }
+    }
+
+    protected function parsingTag(): string
+    {
+        return WsdlDocument::TAG_RESTRICTION;
     }
 
     protected function parseRestrictionAttributes(AbstractModel $model, Restriction $restriction): self

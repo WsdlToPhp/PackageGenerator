@@ -13,10 +13,26 @@ final class Composer extends AbstractFile
     public const JSON_FILE_EXTENSION = 'json';
 
     /**
-     * Tests purpose: do not run composer update command
-     * @var bool
+     * Tests purpose: do not run composer update command.
      */
     protected bool $runComposerUpdate = true;
+
+    public function setRunComposerUpdate(bool $runComposerUpdate): Composer
+    {
+        $this->runComposerUpdate = $runComposerUpdate;
+
+        return $this;
+    }
+
+    public function getRunComposerUpdate(): bool
+    {
+        return $this->runComposerUpdate;
+    }
+
+    public function getFileExtension(): string
+    {
+        return self::JSON_FILE_EXTENSION;
+    }
 
     protected function writeFile(): void
     {
@@ -56,6 +72,7 @@ final class Composer extends AbstractFile
         if (is_array($content) && !empty($content)) {
             $this->addAutoloadToComposerJson($content)->addComposerSettings($content);
         }
+
         return $this->setComposerFileContent($content);
     }
 
@@ -86,7 +103,7 @@ final class Composer extends AbstractFile
         $src = rtrim($this->generator->getOptionSrcDirname(), DIRECTORY_SEPARATOR);
 
         return [
-            $namespaceKey => sprintf('./%s', empty($src) ? '' : $src . DIRECTORY_SEPARATOR),
+            $namespaceKey => sprintf('./%s', empty($src) ? '' : $src.DIRECTORY_SEPARATOR),
         ];
     }
 
@@ -119,21 +136,5 @@ final class Composer extends AbstractFile
     protected function getComposerFilePath(): string
     {
         return realpath(sprintf('%s/composer.json', $this->getGenerator()->getOptionDestination()));
-    }
-
-    public function setRunComposerUpdate(bool $runComposerUpdate): Composer
-    {
-        $this->runComposerUpdate = $runComposerUpdate;
-        return $this;
-    }
-
-    public function getRunComposerUpdate(): bool
-    {
-        return $this->runComposerUpdate;
-    }
-
-    public function getFileExtension(): string
-    {
-        return self::JSON_FILE_EXTENSION;
     }
 }

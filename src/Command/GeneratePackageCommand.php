@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Command;
 
 use DateTime;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\InputInterface;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 final class GeneratePackageCommand extends AbstractCommand
 {
@@ -28,6 +28,36 @@ final class GeneratePackageCommand extends AbstractCommand
     public function getGenerator(): Generator
     {
         return $this->generator;
+    }
+
+    public function getGeneratorOptionsConfigOption()
+    {
+        return $this->getOptionValue(self::GENERATOR_OPTIONS_CONFIG_OPTION);
+    }
+
+    public function resolveGeneratorOptionsConfigPath(): ?string
+    {
+        $path = null;
+        $possibilities = $this->getGeneratorOptionsPossibilities();
+        foreach ($possibilities as $possibility) {
+            if (!empty($possibility) && is_file($possibility)) {
+                $path = $possibility;
+
+                break;
+            }
+        }
+
+        return $path;
+    }
+
+    public function getGeneratorOptionsPossibilities(): array
+    {
+        return [
+            $this->getGeneratorOptionsConfigOption(),
+            sprintf('%s/%s', getcwd(), self::PROPER_USER_CONFIGURATION),
+            sprintf('%s/%s', getcwd(), self::DEFAULT_CONFIGURATION_FILE),
+            GeneratorOptions::getDefaultConfigurationPath(),
+        ];
     }
 
     protected function setGenerator(Generator $generator): self
@@ -233,25 +263,26 @@ final class GeneratePackageCommand extends AbstractCommand
                 null,
                 InputOption::VALUE_OPTIONAL,
                 'Path to the generator\'s configuration file to load'
-            );
+            )
+        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         parent::execute($input, $output);
         $start = new DateTime();
-        $this->writeLn(sprintf(" Start at %s", $start->format('Y-m-d H:i:s')));
+        $this->writeLn(sprintf(' Start at %s', $start->format('Y-m-d H:i:s')));
         $this->initGeneratorOptions();
         if ($this->canExecute()) {
             $this->initGenerator()->getGenerator()->generatePackage();
         } else {
-            $this->writeLn("  Generation not launched, use \"--force\" option to force generation");
+            $this->writeLn('  Generation not launched, use "--force" option to force generation');
             $this->writeLn(sprintf("  Generator's option file used: %s", $this->resolveGeneratorOptionsConfigPath()));
             $this->writeLn("  Used generator's options:");
-            $this->writeLn("    " . implode(PHP_EOL . '    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
+            $this->writeLn('    '.implode(PHP_EOL.'    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
         }
         $end = new DateTime();
-        $this->writeLn(sprintf(" End at %s, duration: %s", $end->format('Y-m-d H:i:s'), $start->diff($end)->format('%H:%I:%S')));
+        $this->writeLn(sprintf(' End at %s, duration: %s', $end->format('Y-m-d H:i:s'), $start->diff($end)->format('%H:%I:%S')));
 
         return self::EXIT_OK;
     }
@@ -298,7 +329,7 @@ final class GeneratePackageCommand extends AbstractCommand
 
         foreach ($this->getPackageGenerationCommandLineOptions() as $optionName => $optionMethod) {
             $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
-            if ($optionValue !== null) {
+            if (null !== $optionValue) {
                 call_user_func_array([
                     $generatorOptions,
                     sprintf('set%s', $optionMethod),
@@ -316,7 +347,8 @@ final class GeneratePackageCommand extends AbstractCommand
     {
         if ('true' === $optionValue || (is_numeric($optionValue) && 1 === (int) $optionValue)) {
             return true;
-        } elseif ('false' === $optionValue || (is_numeric($optionValue) && 0 === (int) $optionValue)) {
+        }
+        if ('false' === $optionValue || (is_numeric($optionValue) && 0 === (int) $optionValue)) {
             return false;
         }
 
@@ -324,44 +356,14 @@ final class GeneratePackageCommand extends AbstractCommand
     }
 
     /**
-     * Utility method to return readable array based on "key: value"
-     * @param array $array
-     * @return array
+     * Utility method to return readable array based on "key: value".
      */
     protected function formatArrayForConsole(array $array): array
     {
         array_walk($array, function (&$value, $index) {
-            $value = sprintf("%s: %s", $index, json_encode($value));
+            $value = sprintf('%s: %s', $index, json_encode($value));
         });
+
         return $array;
-    }
-
-    public function getGeneratorOptionsConfigOption()
-    {
-        return $this->getOptionValue(self::GENERATOR_OPTIONS_CONFIG_OPTION);
-    }
-
-    public function resolveGeneratorOptionsConfigPath(): ?string
-    {
-        $path = null;
-        $possibilities = $this->getGeneratorOptionsPossibilities();
-        foreach ($possibilities as $possibility) {
-            if (!empty($possibility) && is_file($possibility)) {
-                $path = $possibility;
-                break;
-            }
-        }
-
-        return $path;
-    }
-
-    public function getGeneratorOptionsPossibilities(): array
-    {
-        return [
-            $this->getGeneratorOptionsConfigOption(),
-            sprintf('%s/%s', getcwd(), self::PROPER_USER_CONFIGURATION),
-            sprintf('%s/%s', getcwd(), self::DEFAULT_CONFIGURATION_FILE),
-            GeneratorOptions::getDefaultConfigurationPath(),
-        ];
     }
 }

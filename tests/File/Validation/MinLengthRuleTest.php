@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class MinLengthRuleTest extends AbstractRuleTest
 {
     /**
@@ -16,7 +20,7 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: normalizedString
      * - maxLength: 10
-     * - minLength: 10
+     * - minLength: 10.
      */
     public function testSetDateOfBirthWithTooShortCharactersMustThrowAnException()
     {
@@ -36,7 +40,7 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: normalizedString
      * - maxLength: 10
-     * - minLength: 10
+     * - minLength: 10.
      */
     public function testDateOfBirthWithSameCharactersMustPass()
     {
@@ -53,7 +57,7 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: normalizedString
      * - maxLength: 10
-     * - minLength: 10
+     * - minLength: 10.
      */
     public function testDateOfBirthWithHigherCharactersMustPass()
     {
@@ -71,7 +75,8 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
+     *
      * @var string[]
      */
     public function testSetAddressLineWithLessCharactersPerItemMustThrowAnException()
@@ -96,7 +101,8 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
+     *
      * @var string[]
      */
     public function testSetAddressLineWithExactCharactersPerItemMustPass()
@@ -121,7 +127,8 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
+     *
      * @var string[]
      */
     public function testSetAddressLineWithMoreCharactersPerItemMustPass()

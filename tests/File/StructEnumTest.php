@@ -8,6 +8,10 @@ use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\File\StructEnum as EnumFile;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StructEnumTest extends AbstractFile
 {
     public function testSetModelGoodNameTooManyAttributesWithException()
@@ -26,7 +30,8 @@ final class StructEnumTest extends AbstractFile
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiAdultOption', $struct);
         } else {
             $this->fail('Unable to find AdultOption enumeration for file generation');
@@ -40,7 +45,8 @@ final class StructEnumTest extends AbstractFile
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiSourceType', $struct);
         } else {
             $this->fail('Unable to find SourceType enumeration for file generation');
@@ -54,7 +60,8 @@ final class StructEnumTest extends AbstractFile
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiHouseStageEnum', $struct);
         } else {
             $this->fail('Unable to find HouseStageEnum enumeration for file generation');
@@ -68,7 +75,8 @@ final class StructEnumTest extends AbstractFile
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiDs_weblog_formats', $struct);
         } else {
             $this->fail('Unable to find ds_weblog_formats enumeration for file generation');
@@ -83,7 +91,8 @@ final class StructEnumTest extends AbstractFile
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiWebSearchOption', $struct);
         } else {
             $this->fail('Unable to find WebSearchOption enumeration for file generation');
@@ -95,11 +104,13 @@ final class StructEnumTest extends AbstractFile
         $generator = self::bingGeneratorInstance(true);
         if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
             $generator
-                ->setOptionNamespacePrefix('Std\Opt');
+                ->setOptionNamespacePrefix('Std\Opt')
+            ;
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiPhonebookSortOption', $struct);
         } else {
             $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
@@ -112,11 +123,13 @@ final class StructEnumTest extends AbstractFile
         if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
             $generator
                 ->setOptionPrefix('')
-                ->setOptionSuffix('Api');
+                ->setOptionSuffix('Api')
+            ;
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiPhonebookSortOptionApi', $struct);
         } else {
             $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
@@ -129,11 +142,12 @@ final class StructEnumTest extends AbstractFile
         if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
             $generator
                 ->setOptionPrefix('')
-                ->setOptionSuffix('Api');
+                ->setOptionSuffix('Api')
+            ;
             $struct = new EnumFile($generator, $model->getName());
             $struct->setModel($model);
 
-            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname().DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
         } else {
             $this->fail('Unable to find PhonebookSortOption enumeration for file generation');
         }
@@ -146,7 +160,8 @@ final class StructEnumTest extends AbstractFile
             $struct = new EnumFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiTransactionActionType', $struct);
         } else {
             $this->fail('Unable to find TransactionActionType enumeration for file generation');

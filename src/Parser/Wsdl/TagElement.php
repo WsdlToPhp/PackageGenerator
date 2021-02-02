@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagElement extends AbstractAttributesParser
 {
@@ -23,7 +23,8 @@ class TagElement extends AbstractAttributesParser
         if ($structAttribute instanceof StructAttribute) {
             $structAttribute
                 ->setContainsElements($tag->canOccurSeveralTimes())
-                ->setRemovableFromRequest($tag->isRemovable());
+                ->setRemovableFromRequest($tag->isRemovable())
+            ;
         }
     }
 }

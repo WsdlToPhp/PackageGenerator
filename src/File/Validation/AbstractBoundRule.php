@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 /**
- * Gathers [min|max][In|Ex]clusive rules
+ * Gathers [min|max][In|Ex]clusive rules.
  */
 abstract class AbstractBoundRule extends AbstractMinMaxRule
 {
@@ -22,21 +22,24 @@ abstract class AbstractBoundRule extends AbstractMinMaxRule
                 $method = 'sub';
                 $value = mb_substr($value, 1);
             }
+
             switch ($this->symbol()) {
                 case self::SYMBOL_MAX_EXCLUSIVE:
                 case self::SYMBOL_MAX_INCLUSIVE:
                     $checkValueDomain = '===';
+
                     break;
+
                 default:
                     $checkValueDomain = '!==';
+
                     break;
             }
             $test = 'false %5$s mb_strpos((string) $%1$s, \'-\') && ($time = (string) time()) && \DateTime::createFromFormat(\'U\', $time)->%4$s(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', str_replace(\'-\', \'\', $%1$s)))) %3$s \DateTime::createFromFormat(\'U\', $time)->%4$s(new \DateInterval(preg_replace(\'/(.*)(\.[0-9]*S)/\', \'$1S\', \'%2$s\')))';
         }
 
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ') . $test, $parameterName, $value, $this->symbol(), $method, $checkValueDomain);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ').$test, $parameterName, $value, $this->symbol(), $method, $checkValueDomain);
     }
-
 
     final public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string
     {

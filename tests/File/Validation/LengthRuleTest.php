@@ -6,14 +6,17 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class LengthRuleTest extends AbstractRuleTest
 {
-
     /**
      * The PostalCode
      * Meta informations extracted from the WSDL
      * - base: string
-     * - length: 4
+     * - length: 4.
      */
     public function testAddToAddressLineWithTooManyCharactersLengthMustThrowAnException()
     {
@@ -29,7 +32,7 @@ final class LengthRuleTest extends AbstractRuleTest
      * The PostalCode
      * Meta informations extracted from the WSDL
      * - base: string
-     * - length: 4
+     * - length: 4.
      */
     public function testAddToAddressLineWithTooLessCharactersLengthMustThrowAnException()
     {
@@ -45,7 +48,7 @@ final class LengthRuleTest extends AbstractRuleTest
      * The PostalCode
      * Meta informations extracted from the WSDL
      * - base: string
-     * - length: 4
+     * - length: 4.
      */
     public function testAddToAddressLineWithSAmeCharactersLengthMustPass()
     {

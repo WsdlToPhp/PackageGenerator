@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagExtension;
 use WsdlToPhp\PackageGenerator\Model\Struct;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagExtension;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagExtensionTest extends WsdlParser
 {
     public static function ebayInstanceParser(): TagExtension
@@ -30,11 +34,11 @@ final class TagExtensionTest extends WsdlParser
         if ($structs->count() > 0) {
             if ($structs->getStructByName('AddDisputeRequestType') instanceof Struct) {
                 $this->assertSame('AbstractRequestType', $structs->getStructByName('AddDisputeRequestType')->getInheritance());
-                $count++;
+                ++$count;
             }
             if ($structs->getStructByName('TaxIdentifierAttributeType') instanceof Struct) {
                 $this->assertSame('string', $structs->getStructByName('TaxIdentifierAttributeType')->getInheritance());
-                $count++;
+                ++$count;
             }
         }
         $this->assertSame(2, $count);
@@ -51,11 +55,11 @@ final class TagExtensionTest extends WsdlParser
         if ($structs->count() > 0) {
             if ($structs->getStructByName('offer') instanceof Struct) {
                 $this->assertSame('order', $structs->getStructByName('offer')->getInheritance());
-                $count++;
+                ++$count;
             }
             if ($structs->getStructByName('order') instanceof Struct) {
                 $this->assertSame('', $structs->getStructByName('order')->getInheritance());
-                $count++;
+                ++$count;
             }
         }
         $this->assertSame(2, $count);

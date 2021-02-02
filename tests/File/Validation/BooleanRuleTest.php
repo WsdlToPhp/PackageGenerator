@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use TypeError;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class BooleanRuleTest extends AbstractRuleTest
 {
     public function testSetPrimaryWithStringValueMustThrowAnException()

@@ -5,17 +5,21 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
 use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
-use WsdlToPhp\PackageGenerator\Generator\Utils;
-use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class GeneratorTest extends AbstractTestCase
 {
     private static Generator $localInstance;
@@ -26,9 +30,11 @@ final class GeneratorTest extends AbstractTestCase
             $options = GeneratorOptionsTest::optionsInstance();
             $options
                 ->setOrigin(self::wsdlBingPath())
-                ->setDestination(self::getTestDirectory());
+                ->setDestination(self::getTestDirectory())
+            ;
             self::$localInstance = new Generator($options);
         }
+
         return self::$localInstance;
     }
 
@@ -506,61 +512,6 @@ final class GeneratorTest extends AbstractTestCase
     {
         $this->generate('reforma', self::wsdlReformaPath(), false);
     }
-    /**
-     * @param string $dir
-     * @param string $wsdl
-     */
-    private function generate($dir, $wsdl, $standalone = true)
-    {
-        Utils::createDirectory($destination = self::getTestDirectory() . $dir);
-
-        $options = GeneratorOptions::instance();
-        $options
-            ->setGenerateTutorialFile(false)
-            ->setAddComments([])
-            ->setArraysFolder('ArrayType')
-            ->setBasicLogin(null)
-            ->setBasicPassword(null)
-            ->setCategory(GeneratorOptions::VALUE_CAT)
-            ->setComposerName($standalone ? 'wsdltophp/' . $dir : '')
-            ->setComposerSettings($standalone ? [
-                'require.wsdltophp/wssecurity:dev-master',
-                'config.disable-tls:true',
-            ] : [])
-            ->setDestination($destination)
-            ->setEnumsFolder('EnumType')
-            ->setGatherMethods(GeneratorOptions::VALUE_START)
-            ->setGenerateTutorialFile(true)
-            ->setGenericConstantsName(false)
-            ->setNamespace('')
-            ->setOrigin($wsdl)
-            ->setPrefix('')
-            ->setProxyHost(null)
-            ->setProxyLogin(null)
-            ->setProxyPassword(null)
-            ->setProxyPort(null)
-            ->setServicesFolder('ServiceType')
-            ->setSchemasSave(false)
-            ->setSchemasFolder('wsdl')
-            ->setSoapClientClass('WsdlToPhp\PackageBase\AbstractSoapClientBase')
-            ->setSoapOptions([])
-            ->setStandalone($standalone)
-            ->setStructArrayClass('WsdlToPhp\PackageBase\AbstractStructArrayBase')
-            ->setStructClass('WsdlToPhp\PackageBase\AbstractStructBase')
-            ->setStructsFolder('StructType')
-            ->setSuffix('');
-
-        $generator = new Generator($options);
-        $generator->generatePackage();
-
-        $this->assertTrue(is_dir($destination));
-        if ($standalone) {
-            $this->assertTrue(is_file(sprintf('%s/composer.json', $destination)));
-            $this->assertTrue(is_file(sprintf('%s/composer.lock', $destination)));
-        }
-        $this->assertTrue(is_file(sprintf('%s/tutorial.php', $destination)));
-        $this->assertTrue(is_file($generator->getFiles()->getClassmapFile()->getFileName()));
-    }
 
     public function testGetUrlContent()
     {
@@ -578,12 +529,13 @@ final class GeneratorTest extends AbstractTestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        Utils::createDirectory($destination = self::getTestDirectory() . 'notwritable', 0444);
+        Utils::createDirectory($destination = self::getTestDirectory().'notwritable', 0444);
 
         $generator = self::getBingGeneratorInstance();
         $generator
             ->setOptionComposerName('wsdltophp/invalid')
-            ->setOptionDestination($destination);
+            ->setOptionDestination($destination)
+        ;
 
         $generator->generatePackage();
     }
@@ -622,7 +574,8 @@ final class GeneratorTest extends AbstractTestCase
                         'ca_path' => __DIR__,
                     ],
                 ]),
-            ]);
+            ])
+        ;
         $instance = new Generator($options);
 
         // HTTP headers are added to the context options with certain PHP version on certain platform
@@ -630,7 +583,7 @@ final class GeneratorTest extends AbstractTestCase
         // so we remove those we are not interested in!
         $contextOptions = $instance->getSoapClient()->getSoapClientStreamContextOptions();
         foreach (array_keys($contextOptions) as $index) {
-            if ($index !== 'https' && $index !== 'ssl') {
+            if ('https' !== $index && 'ssl' !== $index) {
                 unset($contextOptions[$index]);
             }
         }
@@ -696,5 +649,63 @@ final class GeneratorTest extends AbstractTestCase
         $this->expectExceptionMessage('Json is invalid, please check error 4');
 
         Generator::instanceFromSerializedJson('{"the":\'key\'}');
+    }
+
+    /**
+     * @param string $dir
+     * @param string $wsdl
+     * @param mixed  $standalone
+     */
+    private function generate($dir, $wsdl, $standalone = true)
+    {
+        Utils::createDirectory($destination = self::getTestDirectory().$dir);
+
+        $options = GeneratorOptions::instance();
+        $options
+            ->setGenerateTutorialFile(false)
+            ->setAddComments([])
+            ->setArraysFolder('ArrayType')
+            ->setBasicLogin(null)
+            ->setBasicPassword(null)
+            ->setCategory(GeneratorOptions::VALUE_CAT)
+            ->setComposerName($standalone ? 'wsdltophp/'.$dir : '')
+            ->setComposerSettings($standalone ? [
+                'require.wsdltophp/wssecurity:dev-master',
+                'config.disable-tls:true',
+            ] : [])
+            ->setDestination($destination)
+            ->setEnumsFolder('EnumType')
+            ->setGatherMethods(GeneratorOptions::VALUE_START)
+            ->setGenerateTutorialFile(true)
+            ->setGenericConstantsName(false)
+            ->setNamespace('')
+            ->setOrigin($wsdl)
+            ->setPrefix('')
+            ->setProxyHost(null)
+            ->setProxyLogin(null)
+            ->setProxyPassword(null)
+            ->setProxyPort(null)
+            ->setServicesFolder('ServiceType')
+            ->setSchemasSave(false)
+            ->setSchemasFolder('wsdl')
+            ->setSoapClientClass('WsdlToPhp\PackageBase\AbstractSoapClientBase')
+            ->setSoapOptions([])
+            ->setStandalone($standalone)
+            ->setStructArrayClass('WsdlToPhp\PackageBase\AbstractStructArrayBase')
+            ->setStructClass('WsdlToPhp\PackageBase\AbstractStructBase')
+            ->setStructsFolder('StructType')
+            ->setSuffix('')
+        ;
+
+        $generator = new Generator($options);
+        $generator->generatePackage();
+
+        $this->assertTrue(is_dir($destination));
+        if ($standalone) {
+            $this->assertTrue(is_file(sprintf('%s/composer.json', $destination)));
+            $this->assertTrue(is_file(sprintf('%s/composer.lock', $destination)));
+        }
+        $this->assertTrue(is_file(sprintf('%s/tutorial.php', $destination)));
+        $this->assertTrue(is_file($generator->getFiles()->getClassmapFile()->getFileName()));
     }
 }

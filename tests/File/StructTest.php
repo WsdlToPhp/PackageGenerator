@@ -5,10 +5,14 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
-use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StructTest extends AbstractFile
 {
     public function testSetModelGoodNameTooManyAttributesWithException()
@@ -35,7 +39,7 @@ final class StructTest extends AbstractFile
         $file = new StructFile(self::bingGeneratorInstance(), 'foo');
         $file->setModel($model);
 
-        $this->assertSame(sprintf('%s%s%s/%s.php', self::getTestDirectory(), $model->getGenerator()->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart(), $model->getPackagedName(false)), $file->getFileName());
+        $this->assertSame(sprintf('%s%s%s/%s.php', self::getTestDirectory(), $model->getGenerator()->getOptionSrcDirname().DIRECTORY_SEPARATOR, $model->getContextualPart(), $model->getPackagedName(false)), $file->getFileName());
     }
 
     public function testWriteBingSearchStructQuery()
@@ -45,7 +49,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiQuery', $struct);
         } else {
             $this->fail('Unable to find Query struct for file generation');
@@ -59,7 +64,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiVideoRequest', $struct);
         } else {
             $this->fail('Unable to find VideoRequest struct for file generation');
@@ -73,7 +79,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiSearchRequest', $struct);
         } else {
             $this->fail('Unable to find SearchRequest struct for file generation');
@@ -87,7 +94,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiItem', $struct);
         } else {
             $this->fail('Unable to find Item struct for file generation');
@@ -101,7 +109,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiFareItinerary', $struct);
         } else {
             $this->fail('Unable to find fareItinerary struct for file generation');
@@ -116,7 +125,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiNewsArticle', $struct);
         } else {
             $this->fail('Unable to find NewsArticle struct for file generation');
@@ -130,7 +140,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiOffer', $struct);
         } else {
             $this->fail('Unable to find offer struct for file generation');
@@ -144,7 +155,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidAddRequest', $struct);
         } else {
             $this->fail('Unable to find AddRequest struct for file generation');
@@ -157,7 +169,8 @@ final class StructTest extends AbstractFile
         if (($model = $generator->getStructByName('AddRequest')) instanceof StructModel) {
             $model->getAttribute('AdGroups')
                 ->addMeta('maxOccurs', 1)
-                ->addMeta('maxOccurs', 'unbounded');
+                ->addMeta('maxOccurs', 'unbounded')
+            ;
 
             $this->assertSame([
                 'unbounded',
@@ -168,7 +181,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidAddRequestRepeatedMaxOccurs', $struct);
         } else {
             $this->fail('Unable to find AddRequest struct for file generation');
@@ -182,7 +196,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidAdGroupsSelectionCriteria', $struct);
         } else {
             $this->fail('Unable to find AdGroupsSelectionCriteria struct for file generation');
@@ -196,7 +211,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidShopper', $struct);
         } else {
             $this->fail('Unable to find shopper struct for file generation');
@@ -210,7 +226,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidExpiryDate', $struct);
         } else {
             $this->fail('Unable to find expiryDate struct for file generation');
@@ -224,7 +241,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidAddress', $struct);
         } else {
             $this->fail('Unable to find АдресРФ struct for file generation');
@@ -238,21 +256,23 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidHouseProfileData', $struct);
         } else {
             $this->fail('Unable to find HouseProfileData struct for file generation');
         }
     }
 
-    public function testOrderContractStructAddressDelivery_Type()
+    public function testOrderContractStructAddressDeliveryType()
     {
         $generator = self::orderContractInstance(true);
         if (($model = $generator->getStructByName('AddressDelivery_Type')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidAddressDelivery_Type', $struct);
         } else {
             $this->fail('Unable to find AddressDelivery_Type struct for file generation');
@@ -267,7 +287,7 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct->setModel($model);
 
-            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname() . DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
+            $this->assertSame(sprintf('%s%s%s/', self::getTestDirectory(), $generator->getOptionSrcDirname().DIRECTORY_SEPARATOR, $model->getContextualPart()), $struct->getFileDestination());
         } else {
             $this->fail('Unable to find NewsArticle struct for file generation');
         }
@@ -281,7 +301,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidCampaignGetItem', $struct);
         } else {
             $this->fail('Unable to find CampaignGetItem struct for file generation');
@@ -296,7 +317,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidBannerInfo', $struct);
         } else {
             $this->fail('Unable to find BannerInfo struct for file generation');
@@ -311,7 +333,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidSetExpressCheckoutRequestDetailsType', $struct);
         } else {
             $this->fail('Unable to find SetExpressCheckoutRequestDetailsType struct for file generation');
@@ -326,7 +349,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidHotelReservationType', $struct);
         } else {
             $this->fail('Unable to find HotelReservationType struct for file generation');
@@ -341,7 +365,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidTaxType', $struct);
         } else {
             $this->fail('Unable to find TaxType struct for file generation');
@@ -356,7 +381,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidPaymentCardType', $struct);
         } else {
             $this->fail('Unable to find PaymentCardType struct for file generation');
@@ -371,14 +397,15 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidAddressType', $struct);
         } else {
             $this->fail('Unable to find AddressType struct for file generation');
         }
     }
 
-    public function testWriteWhlUniqueID_Type()
+    public function testWriteWhlUniqueIDType()
     {
         $generator = self::whlInstance();
         $generator->setOptionValidation(true);
@@ -386,7 +413,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidUniqueID_Type', $struct);
         } else {
             $this->fail('Unable to find UniqueID_Type struct for file generation');
@@ -401,7 +429,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidApiQueryWithIdenticalPropertiesDifferentByCase', $struct);
         } else {
             $this->fail('Unable to find Query struct for file generation');
@@ -415,7 +444,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidUnitTestsStructResult', $struct);
         } else {
             $this->fail('Unable to find Result struct for file generation');
@@ -430,7 +460,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidDetails', $struct);
         } else {
             $this->fail('Unable to find details struct for file generation');
@@ -444,7 +475,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidWorkingPeriod', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find WorkingPeriod struct for file generation');
@@ -458,7 +490,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidProposeNewTimeType', $struct);
         } else {
             $this->assertFalse(true, 'Unable to find ProposeNewTimeType struct for file generation');
@@ -472,7 +505,8 @@ final class StructTest extends AbstractFile
             $struct = new StructFile($generator, $model->getName());
             $struct
                 ->setModel($model)
-                ->write();
+                ->write()
+            ;
             $this->assertSameFileContent('ValidFieldString1000', $struct);
         } else {
             $this->fail('Unable to find fieldString1000 struct for file generation');

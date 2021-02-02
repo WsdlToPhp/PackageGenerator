@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Generator;
 
 use JsonSerializable;
-use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
+use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 
 class GeneratorContainers extends AbstractGeneratorAware implements JsonSerializable
 {
@@ -19,25 +19,8 @@ class GeneratorContainers extends AbstractGeneratorAware implements JsonSerializ
         parent::__construct($generator);
         $this
             ->initStructs()
-            ->initServices();
-    }
-
-    protected function initStructs(): self
-    {
-        if (!isset($this->structs)) {
-            $this->structs = new StructContainer($this->generator);
-        }
-
-        return $this;
-    }
-
-    protected function initServices(): self
-    {
-        if (!isset($this->services)) {
-            $this->services = new ServiceContainer($this->generator);
-        }
-
-        return $this;
+            ->initServices()
+        ;
     }
 
     public function getServices(): ServiceContainer
@@ -56,5 +39,23 @@ class GeneratorContainers extends AbstractGeneratorAware implements JsonSerializ
             'services' => $this->services,
             'structs' => $this->structs,
         ];
+    }
+
+    protected function initStructs(): self
+    {
+        if (!isset($this->structs)) {
+            $this->structs = new StructContainer($this->generator);
+        }
+
+        return $this;
+    }
+
+    protected function initServices(): self
+    {
+        if (!isset($this->services)) {
+            $this->services = new ServiceContainer($this->generator);
+        }
+
+        return $this;
     }
 }

@@ -5,24 +5,24 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File;
 
 use InvalidArgumentException;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
+use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
+use WsdlToPhp\PackageGenerator\File\Validation\Rules;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
-use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
+use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
-use WsdlToPhp\PhpGenerator\Element\PhpConstant;
-use WsdlToPhp\PhpGenerator\Element\PhpProperty;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter as PhpFunctionParameterBase;
-use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\File\Validation\Rules;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
+use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 
 final class Service extends AbstractModelFile
 {
@@ -36,10 +36,41 @@ final class Service extends AbstractModelFile
      * Method model can't be found in case the original method's name is unclean:
      * - ex: my.operation.name becomes my_operation_name
      * thus the Model from Model\Service::getMethod() can't be found
-     * So we store the generated name associated to the original method object
-     * @var array
+     * So we store the generated name associated to the original method object.
      */
     protected array $methodNames = [];
+
+    public static function getOperationMethodReturnType(MethodModel $method, Generator $generator): string
+    {
+        $returnType = $method->getReturnType();
+
+        if (is_null($returnType)) {
+            return 'null';
+        }
+
+        if ((($struct = $generator->getStructByName($returnType)) instanceof StructModel) && !$struct->isRestriction()) {
+            if ($struct->isStruct()) {
+                $returnType = $struct->getPackagedName(true);
+            } elseif ($struct->isArray()) {
+                if (($structInheritance = $struct->getInheritanceStruct()) instanceof StructModel) {
+                    $returnType = sprintf('%s[]', $structInheritance->getPackagedName(true));
+                } else {
+                    $returnType = $struct->getInheritance();
+                }
+            }
+        }
+
+        return $returnType;
+    }
+
+    public function setModel(AbstractModel $model): self
+    {
+        if (!$model instanceof ServiceModel) {
+            throw new InvalidArgumentException('Model must be an instance of a Service', __LINE__);
+        }
+
+        return parent::setModel($model);
+    }
 
     protected function fillClassConstants(ConstantContainer $constants): void
     {
@@ -67,7 +98,8 @@ final class Service extends AbstractModelFile
         $this
             ->addSoapHeaderMethods()
             ->addOperationsMethods()
-            ->addGetResultMethod();
+            ->addGetResultMethod()
+        ;
     }
 
     protected function addSoapHeaderMethods(): self
@@ -190,7 +222,8 @@ final class Service extends AbstractModelFile
                     $annotationBlock
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES)))
-                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'));
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'))
+                    ;
                 }
             }
             $annotationBlock
@@ -199,7 +232,8 @@ final class Service extends AbstractModelFile
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_NAMESPACE)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('bool $%s', self::PARAM_SET_HEADER_MUSTUNDERSTAND)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_ACTOR)))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool'));
+                ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool'))
+            ;
         }
 
         return $this;
@@ -219,7 +253,8 @@ final class Service extends AbstractModelFile
     {
         $annotationBlock
             ->addChild('Returns the result')->addChild(new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::getResult()', $this->getModel()->getExtends(true))))
-            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes()));
+            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getServiceReturnTypes()))
+        ;
 
         return $this;
     }
@@ -233,29 +268,6 @@ final class Service extends AbstractModelFile
         natcasesort($returnTypes);
 
         return implode('|', array_unique($returnTypes));
-    }
-
-    public static function getOperationMethodReturnType(MethodModel $method, Generator $generator): string
-    {
-        $returnType = $method->getReturnType();
-
-        if (is_null($returnType)) {
-            return 'null';
-        }
-
-        if ((($struct = $generator->getStructByName($returnType)) instanceof StructModel) && !$struct->isRestriction()) {
-            if ($struct->isStruct()) {
-                $returnType = $struct->getPackagedName(true);
-            } elseif ($struct->isArray()) {
-                if (($structInheritance = $struct->getInheritanceStruct()) instanceof StructModel) {
-                    $returnType = sprintf('%s[]', $structInheritance->getPackagedName(true));
-                } else {
-                    $returnType = $struct->getInheritance();
-                }
-            }
-        }
-
-        return $returnType;
     }
 
     protected function getModelFromMethod(PhpMethod $method): ?MethodModel
@@ -273,14 +285,5 @@ final class Service extends AbstractModelFile
         $this->methodNames[$phpMethod->getName()] = $methodModel;
 
         return $this;
-    }
-
-    public function setModel(AbstractModel $model): self
-    {
-        if (!$model instanceof ServiceModel) {
-            throw new InvalidArgumentException('Model must be an instance of a Service', __LINE__);
-        }
-
-        return parent::setModel($model);
     }
 }

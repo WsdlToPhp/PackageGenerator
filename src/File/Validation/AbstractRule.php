@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
-use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
+use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 abstract class AbstractRule
 {
@@ -30,7 +30,8 @@ abstract class AbstractRule
                 ->addChild($this->validationRuleComment($value))
                 ->addChild(sprintf('if (%s) {', $test))
                 ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(%s, __LINE__);', $message), 1))
-                ->addChild('}');
+                ->addChild('}')
+            ;
             unset($message);
             Rules::ruleHasBeenAppliedToAttribute($this, $value, $this->getAttribute());
         }

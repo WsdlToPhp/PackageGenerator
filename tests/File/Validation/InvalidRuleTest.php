@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
@@ -12,6 +11,10 @@ use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class InvalidRuleTest extends AbstractRuleTest
 {
     public function testComparisonStringMustThrowAnException()

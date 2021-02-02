@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File;
 
 use WsdlToPhp\PackageGenerator\File\Composer;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ComposerTest extends AbstractFile
 {
     public function testBing()
@@ -13,11 +17,13 @@ final class ComposerTest extends AbstractFile
         $instance = self::getBingGeneratorInstance(true);
         $instance
             ->setOptionPrefix('Api')
-            ->setOptionComposerName('wsdltophp/bing');
+            ->setOptionComposerName('wsdltophp/bing')
+        ;
         $composerFile = new Composer($instance, 'composer');
         $composerFile
             ->setRunComposerUpdate(false)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidBingComposer', $composerFile, 'json');
     }
@@ -31,11 +37,13 @@ final class ComposerTest extends AbstractFile
             ->setOptionComposerSettings([
                 'config.disable-tls:true',
                 'require.wsdltophp/wssecurity:dev-master',
-            ]);
+            ])
+        ;
         $composerFile = new Composer($instance, 'composer');
         $composerFile
             ->setRunComposerUpdate(false)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidBingComposerSettings', $composerFile, 'json');
     }
@@ -46,11 +54,13 @@ final class ComposerTest extends AbstractFile
         $instance
             ->setOptionPrefix('Api')
             ->setOptionComposerName('wsdltophp/bing')
-            ->setOptionSrcDirname('');
+            ->setOptionSrcDirname('')
+        ;
         $composerFile = new Composer($instance, 'composer');
         $composerFile
             ->setRunComposerUpdate(false)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidBingComposerEmptySrcDirname', $composerFile, 'json');
     }
@@ -61,11 +71,13 @@ final class ComposerTest extends AbstractFile
         $instance
             ->setOptionPrefix('Api')
             ->setOptionComposerName('wsdltophp/bing')
-            ->setOptionSrcDirname('/');
+            ->setOptionSrcDirname('/')
+        ;
         $composerFile = new Composer($instance, 'composer');
         $composerFile
             ->setRunComposerUpdate(false)
-            ->write();
+            ->write()
+        ;
 
         $this->assertSameFileContent('ValidBingComposerSlashSrcDirname', $composerFile, 'json');
     }
@@ -74,7 +86,8 @@ final class ComposerTest extends AbstractFile
     {
         $instance = self::getBingGeneratorInstance(true);
         $instance
-            ->setOptionPrefix('Api');
+            ->setOptionPrefix('Api')
+        ;
         $composerFile = new Composer($instance, 'composer');
         $composerFile->setRunComposerUpdate(false);
 
@@ -87,6 +100,6 @@ final class ComposerTest extends AbstractFile
         $instance->setOptionPrefix('Api');
         $composerFile = new Composer($instance, 'composer');
 
-        $this->assertSame(self::getTestDirectory() . 'composer.json', $composerFile->getFileName());
+        $this->assertSame(self::getTestDirectory().'composer.json', $composerFile->getFileName());
     }
 }

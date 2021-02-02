@@ -5,19 +5,28 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File;
 
 use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructValue as StructValueModel;
-use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
-use WsdlToPhp\PhpGenerator\Element\PhpConstant;
-use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
+use WsdlToPhp\PhpGenerator\Element\PhpConstant;
+use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 final class StructEnum extends Struct
 {
     public const METHOD_VALUE_IS_VALID = 'valueIsValid';
     public const METHOD_GET_VALID_VALUES = 'getValidValues';
+
+    public function setModel(AbstractModel $model): self
+    {
+        if ($model instanceof StructModel && !$model->isRestriction()) {
+            throw new InvalidArgumentException('Model must be a restriction containing values', __LINE__);
+        }
+
+        return parent::setModel($model);
+    }
 
     protected function fillClassConstants(ConstantContainer $constants): void
     {
@@ -47,9 +56,11 @@ final class StructEnum extends Struct
     protected function getMethodAnnotationBlock(PhpMethod $method): ?PhpAnnotationBlock
     {
         $block = null;
+
         switch ($method->getName()) {
             case self::METHOD_GET_VALID_VALUES:
                 $block = $this->getEnumGetValidValuesAnnotationBlock();
+
                 break;
         }
 
@@ -90,14 +101,5 @@ final class StructEnum extends Struct
         $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'string[]'));
 
         return $annotationBlock;
-    }
-
-    public function setModel(AbstractModel $model): self
-    {
-        if ($model instanceof StructModel && !$model->isRestriction()) {
-            throw new InvalidArgumentException('Model must be a restriction containing values', __LINE__);
-        }
-
-        return parent::setModel($model);
     }
 }

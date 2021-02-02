@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
+use WsdlToPhp\PackageGenerator\Model\Struct;
 
 final class ItemTypeRule extends AbstractRule
 {
@@ -26,9 +26,7 @@ final class ItemTypeRule extends AbstractRule
 
     /**
      * The second case which used PHP native functions is voluntarily limited by the native functions provided by PHP,
-     * and the possible types defined in xsd_types.yml
-     * @param string $itemName
-     * @return string
+     * and the possible types defined in xsd_types.yml.
      */
     protected function getItemSanityCheck(string $itemName): string
     {

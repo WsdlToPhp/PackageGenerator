@@ -8,11 +8,12 @@ use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Service;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class FunctionsTest extends SoapClientParser
 {
-    /**
-     *
-     */
     public function testReforma()
     {
         $generator = self::getReformaInstance();
@@ -29,9 +30,7 @@ final class FunctionsTest extends SoapClientParser
             $this->fail('Unable to find parsed Login operation');
         }
     }
-    /**
-     *
-     */
+
     public function testBullhornstaffing()
     {
         $generator = self::getBullhornstaffingInstance();
@@ -42,9 +41,7 @@ final class FunctionsTest extends SoapClientParser
         $this->assertInstanceOf(Service::class, $generator->getService('Events'));
         $this->assertInstanceOf(Service::class, $generator->getService('Export'));
     }
-    /**
-     *
-     */
+
     public function testOmniture()
     {
         $generator = self::getOmnitureInstance();
@@ -73,9 +70,7 @@ final class FunctionsTest extends SoapClientParser
             $this->fail('Unable to find Saint.CheckJobStatus method');
         }
     }
-    /**
-     *
-     */
+
     public function testLnp()
     {
         $generator = self::getLnpInstance();
@@ -92,75 +87,98 @@ final class FunctionsTest extends SoapClientParser
                             'baseNumber' => 'string',
                             'groupSize' => 'int',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'createPortingOrderCatA':
                         $expected = [
                             'portingOrderCatACreationParameters' => 'UNKNOWN',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'createPortingOrderCatC':
                         $expected = [
                             'portingOrderCatCCreationParameters' => 'UNKNOWN',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'uploadPaf':
                         $expected = [
                             'orderId' => 'long',
                             'fileName' => 'string',
                             'fileContent' => 'base64Binary',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'getPortingOrderStatus':
                         $expected = [
                             'orderId' => 'long',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'cancelPortingOrder':
                         $expected = [
                             'orderId' => 'long',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'listActorPortingOrders':
                         $expected = null;
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'listAvailablePublicNumberGroups':
                         $expected = [
                             'publicNumberGroupSearchParams' => 'UNKNOWN',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'importPublicNumberGroup':
                         $expected = [
                             'importPublicNumberGroupParams' => 'UNKNOWN',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'leasePublicNumberGroup':
                         $expected = [
                             'params' => 'UNKNOWN',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'unleasePublicNumberGroup':
                         $expected = [
                             'actorId' => 'long',
                             'baseNumber' => 'string',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'mapIpndDetailsToNumber':
                         $expected = [
                             'number' => 'string',
                             'ipndInformation' => 'UNKNOWN',
                         ];
-                        $count++;
+                        ++$count;
+
                         break;
                 }
                 $this->assertSame($expected, $method->getParameterType());

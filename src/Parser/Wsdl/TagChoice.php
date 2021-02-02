@@ -4,31 +4,18 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\WsdlHandler\Tag\TagChoice as Choice;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
+use WsdlToPhp\WsdlHandler\Tag\TagChoice as Choice;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 class TagChoice extends AbstractTagParser
 {
-    protected function parseWsdl(Wsdl $wsdl): void
-    {
-        foreach ($this->getTags() as $tag) {
-            $this->parseChoice($tag);
-        }
-    }
-
-    protected function parsingTag(): string
-    {
-        return WsdlDocument::TAG_CHOICE;
-    }
-
     /**
      * @see https://www.w3schools.com/xml/el_choice.asp
      * @see https://www.w3.org/TR/xmlschema11-1/#element-choice
-     * @param Choice $choice
      */
     public function parseChoice(Choice $choice): void
     {
@@ -46,6 +33,18 @@ class TagChoice extends AbstractTagParser
         }
     }
 
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            $this->parseChoice($tag);
+        }
+    }
+
+    protected function parsingTag(): string
+    {
+        return WsdlDocument::TAG_CHOICE;
+    }
+
     protected function parseChoiceChild(Choice $choice, array $choiceNames, AbstractTag $child, Struct $struct): void
     {
         $attributeName = $child->getAttributeName();
@@ -57,7 +56,8 @@ class TagChoice extends AbstractTagParser
             $structAttribute
                 ->addMeta('choice', $choiceNames)
                 ->addMeta('choiceMaxOccurs', $choice->getMaxOccurs())
-                ->addMeta('choiceMinOccurs', $choice->getMinOccurs());
+                ->addMeta('choiceMinOccurs', $choice->getMinOccurs())
+            ;
         }
     }
 }

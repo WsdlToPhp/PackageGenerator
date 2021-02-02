@@ -12,17 +12,16 @@ class Functions extends AbstractParser
             ->getSoapClient()
             ->getSoapClient()
             ->getSoapClient()
-            ->__getFunctions();
+            ->__getFunctions()
+        ;
         $services = $this->getGenerator()->getServices();
         if (is_array($methods) && count($methods)) {
             foreach ($methods as $method) {
                 $infos = explode(' ', $method);
-                /**
-                 * "Regular" SOAP Style
-                 */
+                // "Regular" SOAP Style
                 if (count($infos) < 3) {
                     $returnType = $infos[0];
-                    if (count($infos) < 3 && mb_strpos($infos[1], '()') !== false && array_key_exists(1, $infos)) {
+                    if (count($infos) < 3 && false !== mb_strpos($infos[1], '()') && array_key_exists(1, $infos)) {
                         $methodName = trim(str_replace('()', '', $infos[1]));
                         $parameterType = null;
                     } else {
@@ -32,7 +31,7 @@ class Functions extends AbstractParser
                         $services->addService($this->getGenerator()->getServiceName($methodName), $methodName, $parameterType, $returnType);
                     }
                 } elseif (count($infos) >= 3) {
-                    /**
+                    /*
                      * RPC SOAP Style
                      * Some RPC WS defines the return type as a list of values
                      * So we define the return type as an array and reset the information to use to extract method name and parameters
@@ -42,12 +41,12 @@ class Functions extends AbstractParser
                         array_unshift($infos, 'array');
                     }
                     /**
-                     * Returns type is not defined in some case
+                     * Returns type is not defined in some case.
                      */
                     $start = 0;
                     $returnType = false === mb_strpos($infos[0], '(') ? $infos[0] : '';
                     $firstParameterType = '';
-                    if (empty($returnType) && mb_strpos($infos[0], '(') !== false) {
+                    if (empty($returnType) && false !== mb_strpos($infos[0], '(')) {
                         $start = 1;
                         [$methodName, $firstParameterType] = explode('(', $infos[0]);
                     } elseif (false !== mb_strpos($infos[1], '(')) {

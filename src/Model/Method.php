@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
-use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
 
 /**
- * Class Method stands for an available operation described in the WSDL
+ * Class Method stands for an available operation described in the WSDL.
  */
 class Method extends AbstractModel
 {
@@ -27,12 +27,12 @@ class Method extends AbstractModel
             ->setParameterType($parameterType)
             ->setReturnType($returnType)
             ->setUnique($isUnique)
-            ->setOwner($service);
+            ->setOwner($service)
+        ;
     }
+
     /**
-     * Method name can't starts with numbers
-     * @param bool $keepMultipleUnderscores
-     * @return string
+     * Method name can't starts with numbers.
      */
     public function getCleanName(bool $keepMultipleUnderscores = true): string
     {
@@ -42,7 +42,6 @@ class Method extends AbstractModel
     /**
      * Returns the name of the method that is used to call the operation
      * It takes care of the fact that the method might not be the only one named as it is.
-     * @return string
      */
     public function getMethodName(): string
     {
@@ -52,7 +51,7 @@ class Method extends AbstractModel
                 if (is_string($this->getParameterType())) {
                     $methodName .= ucfirst($this->getParameterType());
                 } else {
-                    $methodName .= '_' . md5(var_export($this->getParameterType(), true));
+                    $methodName .= '_'.md5(var_export($this->getParameterType(), true));
                 }
             }
             $context = $this->getOwner()->getPackagedName();

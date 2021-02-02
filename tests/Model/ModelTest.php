@@ -7,9 +7,13 @@ namespace WsdlToPhp\PackageGenerator\Tests\Model;
 use InvalidArgumentException;
 use stdClass;
 use TypeError;
-use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class ModelTest extends AbstractTestCase
 {
     public static function instance(string $name): EmptyModel

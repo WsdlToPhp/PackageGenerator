@@ -8,11 +8,6 @@ use WsdlToPhp\PackageGenerator\Model\StructAttribute as Model;
 
 class StructAttribute extends AbstractModel
 {
-    protected function objectClass(): string
-    {
-        return Model::class;
-    }
-
     public function getStructAttributeByName(string $name): ?Model
     {
         return $this->get($name);
@@ -29,10 +24,16 @@ class StructAttribute extends AbstractModel
         foreach ($this->objects as $object) {
             if ($object instanceof Model && $cleanedName === $object->getCleanName()) {
                 $attribute = $object;
+
                 break;
             }
         }
 
         return $attribute;
+    }
+
+    protected function objectClass(): string
+    {
+        return Model::class;
     }
 }

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
-use WsdlToPhp\PackageGenerator\Generator\Utils;
+use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
 use WsdlToPhp\PackageGenerator\Container\Model\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
-use WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod;
+use WsdlToPhp\PackageGenerator\Generator\Utils;
 
 /**
- * Class Service stands for an available service containing the methods/operations described in the WSDL
+ * Class Service stands for an available service containing the methods/operations described in the WSDL.
  */
 class Service extends AbstractModel
 {
@@ -24,7 +24,7 @@ class Service extends AbstractModel
         $this->setMethods(new MethodContainer($generator));
     }
 
-    public function getContextualPart():string
+    public function getContextualPart(): string
     {
         return $this->getGenerator()->getOptionServicesFolder();
     }
@@ -39,12 +39,6 @@ class Service extends AbstractModel
     public function getMethods(): MethodContainer
     {
         return $this->methods;
-    }
-
-    protected function setMethods(MethodContainer $methodContainer): self
-    {
-        $this->methods = $methodContainer;
-        return $this;
     }
 
     public function addMethod(string $methodName, $methodParameterType, $methodReturnType, $methodIsUnique = true): Method
@@ -72,17 +66,24 @@ class Service extends AbstractModel
         return ServiceReservedMethod::instance($filename);
     }
 
-    protected function toJsonSerialize(): array
-    {
-        return [
-            'methods' => $this->methods,
-        ];
-    }
-
     public function setMethodsFromSerializedJson(array $methods): void
     {
         foreach ($methods as $method) {
             $this->methods->add(self::instanceFromSerializedJson($this->generator, $method)->setOwner($this));
         }
+    }
+
+    protected function setMethods(MethodContainer $methodContainer): self
+    {
+        $this->methods = $methodContainer;
+
+        return $this;
+    }
+
+    protected function toJsonSerialize(): array
+    {
+        return [
+            'methods' => $this->methods,
+        ];
     }
 }

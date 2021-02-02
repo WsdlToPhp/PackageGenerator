@@ -7,6 +7,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TagUnionTest extends WsdlParser
 {
     public static function orderContractInstanceParser(): TagUnion
@@ -32,11 +36,14 @@ final class TagUnionTest extends WsdlParser
                 switch ($struct->getName()) {
                     case 'RelationshipTypeOpenEnum':
                         $this->assertSame('anyURI', $struct->getInheritance());
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'FaultCodesOpenEnumType':
                         $this->assertSame('QName', $struct->getInheritance());
-                        $count++;
+                        ++$count;
+
                         break;
                 }
             }
@@ -63,15 +70,18 @@ final class TagUnionTest extends WsdlParser
                                 'string',
                             ],
                         ], $struct->getAttribute('PropertyTag')->getMeta());
-                        $count++;
+                        ++$count;
+
                         break;
+
                     case 'ItemType':
                         $this->assertSame([
                             'union' => [
                                 'int',
                             ],
                         ], $struct->getAttribute('ReminderMinutesBeforeStart')->getMeta());
-                        $count++;
+                        ++$count;
+
                         break;
                 }
             }

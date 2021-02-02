@@ -23,7 +23,32 @@ abstract class AbstractOperation
     {
         $this
             ->setMethod($method)
-            ->setGenerator($generator);
+            ->setGenerator($generator)
+        ;
+    }
+
+    public function setGenerator(Generator $generator): self
+    {
+        $this->generator = $generator;
+
+        return $this;
+    }
+
+    public function getGenerator(): Generator
+    {
+        return $this->generator;
+    }
+
+    public function setMethod(MethodModel $method): self
+    {
+        $this->method = $method;
+
+        return $this;
+    }
+
+    public function getMethod(): MethodModel
+    {
+        return $this->method;
     }
 
     protected function getParameterTypeModel(): ?StructModel
@@ -93,30 +118,6 @@ abstract class AbstractOperation
         } catch (InvalidArgumentException $exception) {
             throw new InvalidArgumentException(sprintf('Unable to create function parameter for method "%s" with type "%s" and name "%s"', $this->getMethod()->getName(), var_export($type, true), $name), __LINE__, $exception);
         }
-    }
-
-    public function setGenerator(Generator $generator): self
-    {
-        $this->generator = $generator;
-
-        return $this;
-    }
-
-    public function getGenerator(): Generator
-    {
-        return $this->generator;
-    }
-
-    public function setMethod(MethodModel $method): self
-    {
-        $this->method = $method;
-
-        return $this;
-    }
-
-    public function getMethod(): MethodModel
-    {
-        return $this->method;
     }
 
     protected function getModelByName(string $name): ?StructModel

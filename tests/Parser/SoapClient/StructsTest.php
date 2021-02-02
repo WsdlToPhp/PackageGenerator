@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\SoapClient;
 
+use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs;
-use WsdlToPhp\PackageGenerator\Model\Struct;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class StructsTest extends SoapClientParser
 {
     public function testWcf()

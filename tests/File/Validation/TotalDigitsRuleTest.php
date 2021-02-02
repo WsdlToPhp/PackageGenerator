@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class TotalDigitsRuleTest extends AbstractRuleTest
 {
     /**
@@ -14,7 +18,7 @@ final class TotalDigitsRuleTest extends AbstractRuleTest
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - totalDigits: 15
-     * - var: float
+     * - var: float.
      */
     public function testSetAreaTotalWithFloatTooManyDigitsMustThrowAnException()
     {
@@ -35,7 +39,7 @@ final class TotalDigitsRuleTest extends AbstractRuleTest
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - totalDigits: 15
-     * - var: float
+     * - var: float.
      */
     public function testSetAreaTotalWithFloatExactDigitsMustThrowAnException()
     {
@@ -50,7 +54,7 @@ final class TotalDigitsRuleTest extends AbstractRuleTest
      * - base: xsd:decimal
      * - fractionDigits: 2
      * - totalDigits: 15
-     * - var: float
+     * - var: float.
      */
     public function testSetAreaTotalWithFloatLessDigitsMustThrowAnException()
     {

@@ -20,6 +20,11 @@ abstract class AbstractDocument extends AbstractModel
         $this->initContentFromContentString($content);
     }
 
+    public function getContent(): AbstractDocumentHandler
+    {
+        return $this->content;
+    }
+
     abstract protected function contentClass(): string;
 
     protected function initContentFromContentString(string $content): AbstractDocument
@@ -35,11 +40,6 @@ abstract class AbstractDocument extends AbstractModel
         }
 
         return $this;
-    }
-
-    public function getContent(): AbstractDocumentHandler
-    {
-        return $this->content;
     }
 
     protected function toJsonSerialize(): array

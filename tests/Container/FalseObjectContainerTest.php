@@ -6,6 +6,10 @@ namespace WsdlToPhp\PackageGenerator\Tests\Container;
 
 use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
 final class FalseObjectContainerTest extends AbstractObjectContainer
 {
     protected function objectProperty(): string
