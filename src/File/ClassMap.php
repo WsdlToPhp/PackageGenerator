@@ -51,10 +51,15 @@ final class ClassMap extends AbstractModelFile
 
     protected function getClassAnnotationBlock(): PhpAnnotationBlock
     {
-        return new PhpAnnotationBlock([
+        $annotations = [
             'Class which returns the class map definition',
-            new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionPrefix()),
-        ]);
+        ];
+
+        if (!empty($this->getGenerator()->getOptionPrefix())) {
+            $annotations[] = new PhpAnnotation(self::ANNOTATION_PACKAGE, $this->getGenerator()->getOptionPrefix());
+        }
+
+        return new PhpAnnotationBlock($annotations);
     }
 
     protected function addMethodBody(PhpMethod $method): self
@@ -80,7 +85,7 @@ final class ClassMap extends AbstractModelFile
     }
 
     /**
-     * work around for https://bugs.php.net/bug.php?id=69280
+     * Work around for https://bugs.php.net/bug.php?id=69280
      * @param StructModel $struct
      * @return string
      */
