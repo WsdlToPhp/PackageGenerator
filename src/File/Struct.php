@@ -233,7 +233,7 @@ class Struct extends AbstractModelFile
             $parameterName = sprintf('is_array($%1$s) ? implode(\' \', $%1$s) : null', $parameterName);
         } elseif ($attribute->isXml()) {
             $prefix = '';
-            $parameterName = sprintf('($%1$s instanceof \DOMDocument) && $%1$s->hasChildNodes() ? $%1$s->saveXML($%1$s->childNodes->item(0)) : $%1$s', $parameterName);
+            $parameterName = sprintf('($%1$s instanceof \DOMDocument) && $%1$s->hasChildNodes() ? $%1$s->saveXML($%1$s->childNodes->item(0)) : null', $parameterName);
         }
 
         if ($attribute->nameIsClean()) {
@@ -275,10 +275,23 @@ class Struct extends AbstractModelFile
 
     protected function addStructMethodGet(StructAttributeModel $attribute): self
     {
+        switch (true) {
+            case $attribute->isArray() || $attribute->isList():
+                $returnType = '?'.self::TYPE_ARRAY;
+                break;
+            // it can either be a string, a DOMDocument or null...
+            case $attribute->isXml():
+                $returnType = '';
+                break;
+            default:
+                $returnType = '?'.$this->getStructAttributeTypeAsPhpType($attribute);
+                break;
+        }
+
         $method = new PhpMethod(
             $attribute->getGetterName(),
             $this->getStructMethodGetParameters($attribute),
-            '?'.($attribute->isArray() || $attribute->isList() ? self::TYPE_ARRAY : $this->getStructAttributeTypeAsPhpType($attribute))
+            $returnType
         );
         if ($attribute->nameIsClean()) {
             $thisAccess = sprintf('%s', $attribute->getName());
@@ -295,7 +308,7 @@ class Struct extends AbstractModelFile
     {
         $parameters = [];
         if ($attribute->isXml()) {
-            $parameters[] = new PhpFunctionParameter('asString', true, null, $attribute);
+            $parameters[] = new PhpFunctionParameter('asString', true, self::TYPE_BOOL, $attribute);
         }
 
         return $parameters;

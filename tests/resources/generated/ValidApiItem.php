@@ -34,7 +34,7 @@ class ApiItem extends AbstractStructBase
     public $displayName = null;
     /**
      * The any
-     * @var DOMDocument
+     * @var \DOMDocument
      */
     public $any = null;
     /**
@@ -46,9 +46,9 @@ class ApiItem extends AbstractStructBase
      * @param string $itemType
      * @param string $id
      * @param string $displayName
-     * @param DOMDocument $any
+     * @param \DOMDocument $any
      */
-    public function __construct(string $itemType = null, string $id = null, string $displayName = null, DOMDocument $any = null)
+    public function __construct(string $itemType = null, string $id = null, string $displayName = null, \DOMDocument $any = null)
     {
         $this
             ->setItemType($itemType)
@@ -129,9 +129,9 @@ class ApiItem extends AbstractStructBase
      * Get any value
      * @uses \DOMDocument::loadXML()
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
-     * @return DOMDocument|null
+     * @return \DOMDocument|string|null
      */
-    public function getAny($asString = true): ?DOMDocument
+    public function getAny(bool $asString = true)
     {
         $domDocument = null;
         if (!empty($this->any) && !$asString) {
@@ -145,12 +145,12 @@ class ApiItem extends AbstractStructBase
      * @uses \DOMDocument::hasChildNodes()
      * @uses \DOMDocument::saveXML()
      * @uses \DOMNode::item()
-     * @param DOMDocument $any
+     * @param \DOMDocument $any
      * @return \Api\StructType\ApiItem
      */
-    public function setAny(DOMDocument $any = null): self
+    public function setAny(\DOMDocument $any = null): self
     {
-        $this->any = ($any instanceof \DOMDocument) && $any->hasChildNodes() ? $any->saveXML($any->childNodes->item(0)) : $any;
+        $this->any = ($any instanceof \DOMDocument) && $any->hasChildNodes() ? $any->saveXML($any->childNodes->item(0)) : null;
         return $this;
     }
 }
