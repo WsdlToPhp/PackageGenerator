@@ -146,6 +146,7 @@ reserved_keywords:
         - "__toString"
         - "__invoke"
         - "__set_state"
+        - "__clone"
         - "__debugInfo"
         # List of other reserved words from http://php.net/manual/en/reserved.other-reserved-words.php
         - "int"
