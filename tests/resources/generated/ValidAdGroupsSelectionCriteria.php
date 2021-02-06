@@ -22,7 +22,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    public array $CampaignIds = [];
+    protected array $CampaignIds = [];
     /**
      * The Ids
      * Meta information extracted from the WSDL
@@ -30,7 +30,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    public array $Ids = [];
+    protected array $Ids = [];
     /**
      * The Types
      * Meta information extracted from the WSDL
@@ -38,7 +38,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public array $Types = [];
+    protected array $Types = [];
     /**
      * The Statuses
      * Meta information extracted from the WSDL
@@ -46,7 +46,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public array $Statuses = [];
+    protected array $Statuses = [];
     /**
      * The TagIds
      * Meta information extracted from the WSDL
@@ -54,7 +54,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    public array $TagIds = [];
+    protected array $TagIds = [];
     /**
      * The Tags
      * Meta information extracted from the WSDL
@@ -62,7 +62,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public array $Tags = [];
+    protected array $Tags = [];
     /**
      * The AppIconStatuses
      * Meta information extracted from the WSDL
@@ -70,7 +70,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public array $AppIconStatuses = [];
+    protected array $AppIconStatuses = [];
     /**
      * Constructor method for AdGroupsSelectionCriteria
      * @uses ApiAdGroupsSelectionCriteria::setCampaignIds()
@@ -101,9 +101,9 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get CampaignIds value
-     * @return int[]|null
+     * @return int[]
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
         return $this->CampaignIds;
     }
@@ -139,7 +139,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($campaignIdsArrayErrorMessage = self::validateCampaignIdsForArrayConstraintsFromSetCampaignIds($campaignIds))) {
-            throw new \InvalidArgumentException($campaignIdsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($campaignIdsArrayErrorMessage, __LINE__);
         }
         $this->CampaignIds = $campaignIds;
         return $this;
@@ -154,16 +154,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
-            throw new \InvalidArgumentException(sprintf('The CampaignIds property can only contain items of type long, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The CampaignIds property can only contain items of type long, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->CampaignIds[] = $item;
         return $this;
     }
     /**
      * Get Ids value
-     * @return int[]|null
+     * @return int[]
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
         return $this->Ids;
     }
@@ -199,7 +199,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($idsArrayErrorMessage = self::validateIdsForArrayConstraintsFromSetIds($ids))) {
-            throw new \InvalidArgumentException($idsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($idsArrayErrorMessage, __LINE__);
         }
         $this->Ids = $ids;
         return $this;
@@ -214,16 +214,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
-            throw new \InvalidArgumentException(sprintf('The Ids property can only contain items of type long, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The Ids property can only contain items of type long, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Ids[] = $item;
         return $this;
     }
     /**
      * Get Types value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getTypes(): ?array
+    public function getTypes(): array
     {
         return $this->Types;
     }
@@ -261,7 +261,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($typesArrayErrorMessage = self::validateTypesForArrayConstraintsFromSetTypes($types))) {
-            throw new \InvalidArgumentException($typesArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($typesArrayErrorMessage, __LINE__);
         }
         $this->Types = $types;
         return $this;
@@ -278,16 +278,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdGroupTypesEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdGroupTypesEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues())), __LINE__);
         }
         $this->Types[] = $item;
         return $this;
     }
     /**
      * Get Statuses value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getStatuses(): ?array
+    public function getStatuses(): array
     {
         return $this->Statuses;
     }
@@ -325,7 +325,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($statusesArrayErrorMessage = self::validateStatusesForArrayConstraintsFromSetStatuses($statuses))) {
-            throw new \InvalidArgumentException($statusesArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($statusesArrayErrorMessage, __LINE__);
         }
         $this->Statuses = $statuses;
         return $this;
@@ -342,16 +342,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
         }
         $this->Statuses[] = $item;
         return $this;
     }
     /**
      * Get TagIds value
-     * @return int[]|null
+     * @return int[]
      */
-    public function getTagIds(): ?array
+    public function getTagIds(): array
     {
         return $this->TagIds;
     }
@@ -387,7 +387,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($tagIdsArrayErrorMessage = self::validateTagIdsForArrayConstraintsFromSetTagIds($tagIds))) {
-            throw new \InvalidArgumentException($tagIdsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($tagIdsArrayErrorMessage, __LINE__);
         }
         $this->TagIds = $tagIds;
         return $this;
@@ -402,16 +402,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
-            throw new \InvalidArgumentException(sprintf('The TagIds property can only contain items of type long, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The TagIds property can only contain items of type long, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->TagIds[] = $item;
         return $this;
     }
     /**
      * Get Tags value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getTags(): ?array
+    public function getTags(): array
     {
         return $this->Tags;
     }
@@ -447,7 +447,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($tagsArrayErrorMessage = self::validateTagsForArrayConstraintsFromSetTags($tags))) {
-            throw new \InvalidArgumentException($tagsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($tagsArrayErrorMessage, __LINE__);
         }
         $this->Tags = $tags;
         return $this;
@@ -462,16 +462,16 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The Tags property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The Tags property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Tags[] = $item;
         return $this;
     }
     /**
      * Get AppIconStatuses value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getAppIconStatuses(): ?array
+    public function getAppIconStatuses(): array
     {
         return $this->AppIconStatuses;
     }
@@ -509,7 +509,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($appIconStatusesArrayErrorMessage = self::validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses($appIconStatuses))) {
-            throw new \InvalidArgumentException($appIconStatusesArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($appIconStatusesArrayErrorMessage, __LINE__);
         }
         $this->AppIconStatuses = $appIconStatuses;
         return $this;
@@ -526,7 +526,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
         }
         $this->AppIconStatuses[] = $item;
         return $this;

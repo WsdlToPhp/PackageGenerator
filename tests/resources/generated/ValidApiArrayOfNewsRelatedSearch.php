@@ -22,7 +22,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiNewsRelatedSearch[]
      */
-    public array $NewsRelatedSearch = [];
+    protected array $NewsRelatedSearch = [];
     /**
      * Constructor method for ArrayOfNewsRelatedSearch
      * @uses ApiArrayOfNewsRelatedSearch::setNewsRelatedSearch()
@@ -35,9 +35,9 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     }
     /**
      * Get NewsRelatedSearch value
-     * @return \Api\StructType\ApiNewsRelatedSearch[]|null
+     * @return \Api\StructType\ApiNewsRelatedSearch[]
      */
-    public function getNewsRelatedSearch(): ?array
+    public function getNewsRelatedSearch(): array
     {
         return $this->NewsRelatedSearch;
     }
@@ -73,7 +73,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     {
         // validation for constraint: array
         if ('' !== ($newsRelatedSearchArrayErrorMessage = self::validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch($newsRelatedSearch))) {
-            throw new \InvalidArgumentException($newsRelatedSearchArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($newsRelatedSearchArrayErrorMessage, __LINE__);
         }
         $this->NewsRelatedSearch = $newsRelatedSearch;
         return $this;

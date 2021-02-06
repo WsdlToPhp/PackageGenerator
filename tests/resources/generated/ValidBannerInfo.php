@@ -19,58 +19,58 @@ class ApiBannerInfo extends AbstractStructBase
      * The BannerID
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public ?int $BannerID = null;
+    protected ?int $BannerID = null;
     /**
      * The CampaignID
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public ?int $CampaignID = null;
+    protected ?int $CampaignID = null;
     /**
      * The Title
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $Title = null;
+    protected ?string $Title = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $Text = null;
+    protected ?string $Text = null;
     /**
      * The Href
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $Href = null;
+    protected ?string $Href = null;
     /**
      * The Domain
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $Domain = null;
+    protected ?string $Domain = null;
     /**
      * The ContactInfo
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiContactInfo
+     * @var \Api\StructType\ApiContactInfo|null
      */
-    public ?\Api\StructType\ApiContactInfo $ContactInfo = null;
+    protected ?\Api\StructType\ApiContactInfo $ContactInfo = null;
     /**
      * The Geo
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $Geo = null;
+    protected ?string $Geo = null;
     /**
      * The Phrases
      * Meta information extracted from the WSDL
@@ -80,7 +80,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiBannerPhraseInfo[]
      */
-    public array $Phrases = [];
+    protected array $Phrases = [];
     /**
      * The MinusKeywords
      * Meta information extracted from the WSDL
@@ -90,63 +90,63 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var string[]
      */
-    public array $MinusKeywords = [];
+    protected array $MinusKeywords = [];
     /**
      * The StatusActivating
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $StatusActivating = null;
+    protected ?string $StatusActivating = null;
     /**
      * The StatusArchive
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $StatusArchive = null;
+    protected ?string $StatusArchive = null;
     /**
      * The StatusBannerModerate
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $StatusBannerModerate = null;
+    protected ?string $StatusBannerModerate = null;
     /**
      * The StatusPhrasesModerate
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $StatusPhrasesModerate = null;
+    protected ?string $StatusPhrasesModerate = null;
     /**
      * The StatusPhoneModerate
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $StatusPhoneModerate = null;
+    protected ?string $StatusPhoneModerate = null;
     /**
      * The StatusShow
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $StatusShow = null;
+    protected ?string $StatusShow = null;
     /**
      * The IsActive
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $IsActive = null;
+    protected ?string $IsActive = null;
     /**
      * The StatusSitelinksModerate
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $StatusSitelinksModerate = null;
+    protected ?string $StatusSitelinksModerate = null;
     /**
      * The Sitelinks
      * Meta information extracted from the WSDL
@@ -156,7 +156,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiSitelink[]
      */
-    public array $Sitelinks = [];
+    protected array $Sitelinks = [];
     /**
      * The AdWarnings
      * Meta information extracted from the WSDL
@@ -166,14 +166,14 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var string[]
      */
-    public array $AdWarnings = [];
+    protected array $AdWarnings = [];
     /**
      * The FixedOnModeration
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $FixedOnModeration = null;
+    protected ?string $FixedOnModeration = null;
     /**
      * The ModerateRejectionReasons
      * Meta information extracted from the WSDL
@@ -183,63 +183,63 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \Api\StructType\ApiRejectReason[]
      */
-    public array $ModerateRejectionReasons = [];
+    protected array $ModerateRejectionReasons = [];
     /**
      * The Type
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $Type = null;
+    protected ?string $Type = null;
     /**
      * The AdGroupID
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public ?int $AdGroupID = null;
+    protected ?int $AdGroupID = null;
     /**
      * The AdGroupName
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $AdGroupName = null;
+    protected ?string $AdGroupName = null;
     /**
      * The AutoMinusWords
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $AutoMinusWords = null;
+    protected ?string $AutoMinusWords = null;
     /**
      * The AgeLabel
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $AgeLabel = null;
+    protected ?string $AgeLabel = null;
     /**
      * The AdImageHash
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $AdImageHash = null;
+    protected ?string $AdImageHash = null;
     /**
      * The StatusAdImageModerate
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $StatusAdImageModerate = null;
+    protected ?string $StatusAdImageModerate = null;
     /**
      * The AdGroupMobileBidAdjustment
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var int
+     * @var int|null
      */
-    public ?int $AdGroupMobileBidAdjustment = null;
+    protected ?int $AdGroupMobileBidAdjustment = null;
     /**
      * Constructor method for BannerInfo
      * @uses ApiBannerInfo::setBannerID()
@@ -354,7 +354,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($bannerID) && !(is_int($bannerID) || ctype_digit($bannerID))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($bannerID, true), gettype($bannerID)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($bannerID, true), gettype($bannerID)), __LINE__);
         }
         $this->BannerID = $bannerID;
         return $this;
@@ -376,7 +376,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($campaignID) && !(is_int($campaignID) || ctype_digit($campaignID))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($campaignID, true), gettype($campaignID)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($campaignID, true), gettype($campaignID)), __LINE__);
         }
         $this->CampaignID = $campaignID;
         return $this;
@@ -398,7 +398,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->Title = $title;
         return $this;
@@ -420,7 +420,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($text) && !is_string($text)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
         }
         $this->Text = $text;
         return $this;
@@ -442,7 +442,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($href) && !is_string($href)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($href, true), gettype($href)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($href, true), gettype($href)), __LINE__);
         }
         $this->Href = $href;
         return $this;
@@ -464,7 +464,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($domain) && !is_string($domain)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($domain, true), gettype($domain)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($domain, true), gettype($domain)), __LINE__);
         }
         $this->Domain = $domain;
         return $this;
@@ -504,16 +504,16 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($geo) && !is_string($geo)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($geo, true), gettype($geo)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($geo, true), gettype($geo)), __LINE__);
         }
         $this->Geo = $geo;
         return $this;
     }
     /**
      * Get Phrases value
-     * @return \Api\StructType\ApiBannerPhraseInfo[]|null
+     * @return \Api\StructType\ApiBannerPhraseInfo[]
      */
-    public function getPhrases(): ?array
+    public function getPhrases(): array
     {
         return $this->Phrases;
     }
@@ -549,7 +549,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($phrasesArrayErrorMessage = self::validatePhrasesForArrayConstraintsFromSetPhrases($phrases))) {
-            throw new \InvalidArgumentException($phrasesArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($phrasesArrayErrorMessage, __LINE__);
         }
         $this->Phrases = $phrases;
         return $this;
@@ -564,16 +564,16 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiBannerPhraseInfo) {
-            throw new \InvalidArgumentException(sprintf('The Phrases property can only contain items of type \Api\StructType\ApiBannerPhraseInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The Phrases property can only contain items of type \Api\StructType\ApiBannerPhraseInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Phrases[] = $item;
         return $this;
     }
     /**
      * Get MinusKeywords value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getMinusKeywords(): ?array
+    public function getMinusKeywords(): array
     {
         return $this->MinusKeywords;
     }
@@ -609,7 +609,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($minusKeywordsArrayErrorMessage = self::validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords($minusKeywords))) {
-            throw new \InvalidArgumentException($minusKeywordsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($minusKeywordsArrayErrorMessage, __LINE__);
         }
         $this->MinusKeywords = $minusKeywords;
         return $this;
@@ -624,7 +624,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The MinusKeywords property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The MinusKeywords property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->MinusKeywords[] = $item;
         return $this;
@@ -646,7 +646,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusActivating) && !is_string($statusActivating)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusActivating, true), gettype($statusActivating)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusActivating, true), gettype($statusActivating)), __LINE__);
         }
         $this->StatusActivating = $statusActivating;
         return $this;
@@ -668,7 +668,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusArchive) && !is_string($statusArchive)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusArchive, true), gettype($statusArchive)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusArchive, true), gettype($statusArchive)), __LINE__);
         }
         $this->StatusArchive = $statusArchive;
         return $this;
@@ -690,7 +690,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusBannerModerate) && !is_string($statusBannerModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusBannerModerate, true), gettype($statusBannerModerate)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusBannerModerate, true), gettype($statusBannerModerate)), __LINE__);
         }
         $this->StatusBannerModerate = $statusBannerModerate;
         return $this;
@@ -712,7 +712,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusPhrasesModerate) && !is_string($statusPhrasesModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusPhrasesModerate, true), gettype($statusPhrasesModerate)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusPhrasesModerate, true), gettype($statusPhrasesModerate)), __LINE__);
         }
         $this->StatusPhrasesModerate = $statusPhrasesModerate;
         return $this;
@@ -734,7 +734,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusPhoneModerate) && !is_string($statusPhoneModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusPhoneModerate, true), gettype($statusPhoneModerate)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusPhoneModerate, true), gettype($statusPhoneModerate)), __LINE__);
         }
         $this->StatusPhoneModerate = $statusPhoneModerate;
         return $this;
@@ -756,7 +756,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusShow) && !is_string($statusShow)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusShow, true), gettype($statusShow)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusShow, true), gettype($statusShow)), __LINE__);
         }
         $this->StatusShow = $statusShow;
         return $this;
@@ -778,7 +778,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($isActive) && !is_string($isActive)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isActive, true), gettype($isActive)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isActive, true), gettype($isActive)), __LINE__);
         }
         $this->IsActive = $isActive;
         return $this;
@@ -800,16 +800,16 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusSitelinksModerate) && !is_string($statusSitelinksModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusSitelinksModerate, true), gettype($statusSitelinksModerate)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusSitelinksModerate, true), gettype($statusSitelinksModerate)), __LINE__);
         }
         $this->StatusSitelinksModerate = $statusSitelinksModerate;
         return $this;
     }
     /**
      * Get Sitelinks value
-     * @return \Api\StructType\ApiSitelink[]|null
+     * @return \Api\StructType\ApiSitelink[]
      */
-    public function getSitelinks(): ?array
+    public function getSitelinks(): array
     {
         return $this->Sitelinks;
     }
@@ -845,7 +845,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($sitelinksArrayErrorMessage = self::validateSitelinksForArrayConstraintsFromSetSitelinks($sitelinks))) {
-            throw new \InvalidArgumentException($sitelinksArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($sitelinksArrayErrorMessage, __LINE__);
         }
         $this->Sitelinks = $sitelinks;
         return $this;
@@ -860,16 +860,16 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiSitelink) {
-            throw new \InvalidArgumentException(sprintf('The Sitelinks property can only contain items of type \Api\StructType\ApiSitelink, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The Sitelinks property can only contain items of type \Api\StructType\ApiSitelink, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Sitelinks[] = $item;
         return $this;
     }
     /**
      * Get AdWarnings value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getAdWarnings(): ?array
+    public function getAdWarnings(): array
     {
         return $this->AdWarnings;
     }
@@ -905,7 +905,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($adWarningsArrayErrorMessage = self::validateAdWarningsForArrayConstraintsFromSetAdWarnings($adWarnings))) {
-            throw new \InvalidArgumentException($adWarningsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($adWarningsArrayErrorMessage, __LINE__);
         }
         $this->AdWarnings = $adWarnings;
         return $this;
@@ -920,7 +920,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The AdWarnings property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The AdWarnings property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AdWarnings[] = $item;
         return $this;
@@ -942,16 +942,16 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($fixedOnModeration) && !is_string($fixedOnModeration)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fixedOnModeration, true), gettype($fixedOnModeration)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fixedOnModeration, true), gettype($fixedOnModeration)), __LINE__);
         }
         $this->FixedOnModeration = $fixedOnModeration;
         return $this;
     }
     /**
      * Get ModerateRejectionReasons value
-     * @return \Api\StructType\ApiRejectReason[]|null
+     * @return \Api\StructType\ApiRejectReason[]
      */
-    public function getModerateRejectionReasons(): ?array
+    public function getModerateRejectionReasons(): array
     {
         return $this->ModerateRejectionReasons;
     }
@@ -987,7 +987,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($moderateRejectionReasonsArrayErrorMessage = self::validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons($moderateRejectionReasons))) {
-            throw new \InvalidArgumentException($moderateRejectionReasonsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($moderateRejectionReasonsArrayErrorMessage, __LINE__);
         }
         $this->ModerateRejectionReasons = $moderateRejectionReasons;
         return $this;
@@ -1002,7 +1002,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiRejectReason) {
-            throw new \InvalidArgumentException(sprintf('The ModerateRejectionReasons property can only contain items of type \Api\StructType\ApiRejectReason, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The ModerateRejectionReasons property can only contain items of type \Api\StructType\ApiRejectReason, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->ModerateRejectionReasons[] = $item;
         return $this;
@@ -1024,7 +1024,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -1046,7 +1046,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($adGroupID) && !(is_int($adGroupID) || ctype_digit($adGroupID))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($adGroupID, true), gettype($adGroupID)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($adGroupID, true), gettype($adGroupID)), __LINE__);
         }
         $this->AdGroupID = $adGroupID;
         return $this;
@@ -1068,7 +1068,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($adGroupName) && !is_string($adGroupName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adGroupName, true), gettype($adGroupName)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adGroupName, true), gettype($adGroupName)), __LINE__);
         }
         $this->AdGroupName = $adGroupName;
         return $this;
@@ -1090,7 +1090,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($autoMinusWords) && !is_string($autoMinusWords)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($autoMinusWords, true), gettype($autoMinusWords)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($autoMinusWords, true), gettype($autoMinusWords)), __LINE__);
         }
         $this->AutoMinusWords = $autoMinusWords;
         return $this;
@@ -1112,7 +1112,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($ageLabel) && !is_string($ageLabel)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ageLabel, true), gettype($ageLabel)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ageLabel, true), gettype($ageLabel)), __LINE__);
         }
         $this->AgeLabel = $ageLabel;
         return $this;
@@ -1134,7 +1134,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($adImageHash) && !is_string($adImageHash)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adImageHash, true), gettype($adImageHash)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adImageHash, true), gettype($adImageHash)), __LINE__);
         }
         $this->AdImageHash = $adImageHash;
         return $this;
@@ -1156,7 +1156,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($statusAdImageModerate) && !is_string($statusAdImageModerate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusAdImageModerate, true), gettype($statusAdImageModerate)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusAdImageModerate, true), gettype($statusAdImageModerate)), __LINE__);
         }
         $this->StatusAdImageModerate = $statusAdImageModerate;
         return $this;
@@ -1178,7 +1178,7 @@ class ApiBannerInfo extends AbstractStructBase
     {
         // validation for constraint: int
         if (!is_null($adGroupMobileBidAdjustment) && !(is_int($adGroupMobileBidAdjustment) || ctype_digit($adGroupMobileBidAdjustment))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($adGroupMobileBidAdjustment, true), gettype($adGroupMobileBidAdjustment)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($adGroupMobileBidAdjustment, true), gettype($adGroupMobileBidAdjustment)), __LINE__);
         }
         $this->AdGroupMobileBidAdjustment = $adGroupMobileBidAdjustment;
         return $this;

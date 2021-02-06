@@ -179,7 +179,7 @@ abstract class AbstractRuleTest extends AbstractTestCase
         // instantiate class
         if ($reset || $fileCreated) {
             $reflection = new ReflectionClass(($struct->getNamespace() ? $struct->getNamespace().'\\' : '').$struct->getPackagedName());
-            self::$generators[$key] = $reflection->newInstanceArgs();
+            self::$generators[$key] = $reflection->newInstanceWithoutConstructor();
         }
 
         return self::$generators[$key];

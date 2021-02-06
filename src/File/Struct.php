@@ -30,9 +30,13 @@ class Struct extends AbstractModelFile
         return parent::setModel($model);
     }
 
+    /**
+     * @todo: only add `use InvalidArgumentException` if it's used!
+     *
+     * @return $this
+     */
     protected function defineUseStatements(): self
     {
-        // @todo: only add `use InvalidArgumentException` if it's used!
         if ($this->getGenerator()->getOptionValidation()) {
             $this->getFile()->addUse(InvalidArgumentException::class, null, false);
         }
@@ -59,9 +63,9 @@ class Struct extends AbstractModelFile
             $properties->add(
                 new PhpProperty(
                     $attribute->getCleanName(),
-                    $attribute->isArray() ? [] : null,
-                    PhpProperty::ACCESS_PUBLIC,
-                    $attribute->isArray() ? self::TYPE_ARRAY : '?'.$this->getStructAttributeTypeAsPhpType($attribute)
+                    $attribute->isArray() ? [] : ($attribute->isRequired() ? PhpProperty::NO_VALUE : null),
+                    $this->getGenerator()->getOptionValidation() ? PhpProperty::ACCESS_PROTECTED : PhpProperty::ACCESS_PUBLIC,
+                    $attribute->isArray() ? self::TYPE_ARRAY : ($attribute->isRequired() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute)
                 )
             );
         }
@@ -77,7 +81,7 @@ class Struct extends AbstractModelFile
         }
         if ($attribute instanceof StructAttributeModel) {
             $this->defineModelAnnotationsFromWsdl($annotationBlock, $attribute);
-            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_VAR, $this->getStructAttributeTypeSetAnnotation($attribute, true)));
+            $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_VAR, $this->getStructAttributeTypeGetAnnotation($attribute, true)));
         }
 
         return $annotationBlock;
@@ -138,8 +142,8 @@ class Struct extends AbstractModelFile
         try {
             return new PhpFunctionParameter(
                 lcfirst($attribute->getUniqueString($attribute->getCleanName(), 'method')),
-                $attribute->getDefaultValue(),
-                ($attribute->isArray() || $attribute->isList() ? '' : '?').$this->getStructMethodParameterType($attribute),
+                $attribute->isRequired() ? PhpFunctionParameter::NO_VALUE : $attribute->getDefaultValue(),
+                ($attribute->isArray() || $attribute->isList() || $attribute->isRequired() ? '' : '?').$this->getStructMethodParameterType($attribute),
                 $attribute
             );
         } catch (InvalidArgumentException $exception) {
@@ -310,7 +314,7 @@ class Struct extends AbstractModelFile
     {
         switch (true) {
             case $attribute->isArray():
-                $returnType = '?'.self::TYPE_ARRAY;
+                $returnType = ($attribute->getRemovableFromRequest() ? '?' : '').self::TYPE_ARRAY;
 
                 break;
             // it can either be a string, a DOMDocument or null...
@@ -320,7 +324,7 @@ class Struct extends AbstractModelFile
                 break;
 
             default:
-                $returnType = '?'.$this->getStructAttributeTypeAsPhpType($attribute);
+                $returnType = ($attribute->isRequired() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
 
                 break;
         }

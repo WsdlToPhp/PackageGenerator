@@ -22,13 +22,13 @@ class ApiAddRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiAdGroupAddItem[]
      */
-    public array $AdGroups = [];
+    protected array $AdGroups = [];
     /**
      * Constructor method for AddRequest
      * @uses ApiAddRequest::setAdGroups()
      * @param \Api\StructType\ApiAdGroupAddItem[] $adGroups
      */
-    public function __construct(array $adGroups = [])
+    public function __construct(array $adGroups)
     {
         $this
             ->setAdGroups($adGroups);
@@ -37,7 +37,7 @@ class ApiAddRequest extends AbstractStructBase
      * Get AdGroups value
      * @return \Api\StructType\ApiAdGroupAddItem[]
      */
-    public function getAdGroups(): ?array
+    public function getAdGroups(): array
     {
         return $this->AdGroups;
     }
@@ -69,11 +69,11 @@ class ApiAddRequest extends AbstractStructBase
      * @param \Api\StructType\ApiAdGroupAddItem[] $adGroups
      * @return \Api\StructType\ApiAddRequest
      */
-    public function setAdGroups(array $adGroups = []): self
+    public function setAdGroups(array $adGroups): self
     {
         // validation for constraint: array
         if ('' !== ($adGroupsArrayErrorMessage = self::validateAdGroupsForArrayConstraintsFromSetAdGroups($adGroups))) {
-            throw new \InvalidArgumentException($adGroupsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($adGroupsArrayErrorMessage, __LINE__);
         }
         $this->AdGroups = $adGroups;
         return $this;
@@ -88,7 +88,7 @@ class ApiAddRequest extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiAdGroupAddItem) {
-            throw new \InvalidArgumentException(sprintf('The AdGroups property can only contain items of type \Api\StructType\ApiAdGroupAddItem, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The AdGroups property can only contain items of type \Api\StructType\ApiAdGroupAddItem, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AdGroups[] = $item;
         return $this;

@@ -22,42 +22,42 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: First line on delivery address
      * - base: string
-     * @var string
+     * @var string|null
      */
-    public ?string $Street1 = null;
+    protected ?string $Street1 = null;
     /**
      * The Street2
      * Meta information extracted from the WSDL
      * - documentation: Second line on delivery address
      * - base: string
-     * @var string
+     * @var string|null
      */
-    public ?string $Street2 = null;
+    protected ?string $Street2 = null;
     /**
      * The Street3
      * Meta information extracted from the WSDL
      * - documentation: Third line on delivery address
      * - base: string
-     * @var string
+     * @var string|null
      */
-    public ?string $Street3 = null;
+    protected ?string $Street3 = null;
     /**
      * The City
      * Meta information extracted from the WSDL
      * - documentation: The delivery city
      * - base: string
-     * @var string
+     * @var string|null
      */
-    public ?string $City = null;
+    protected ?string $City = null;
     /**
      * The PostalCode
      * Meta information extracted from the WSDL
      * - documentation: Postal code for the city
      * - base: string
      * - length: 4
-     * @var string
+     * @var string|null
      */
-    public ?string $PostalCode = null;
+    protected ?string $PostalCode = null;
     /**
      * Constructor method for AddressDelivery_Type
      * @uses ApiAddressDelivery_Type::setStreet1()
@@ -97,7 +97,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($street1) && !is_string($street1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street1, true), gettype($street1)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street1, true), gettype($street1)), __LINE__);
         }
         $this->Street1 = $street1;
         return $this;
@@ -119,7 +119,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($street2) && !is_string($street2)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street2, true), gettype($street2)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street2, true), gettype($street2)), __LINE__);
         }
         $this->Street2 = $street2;
         return $this;
@@ -141,7 +141,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($street3) && !is_string($street3)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street3, true), gettype($street3)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street3, true), gettype($street3)), __LINE__);
         }
         $this->Street3 = $street3;
         return $this;
@@ -163,7 +163,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($city) && !is_string($city)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($city, true), gettype($city)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($city, true), gettype($city)), __LINE__);
         }
         $this->City = $city;
         return $this;
@@ -185,11 +185,11 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($postalCode) && !is_string($postalCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($postalCode, true), gettype($postalCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($postalCode, true), gettype($postalCode)), __LINE__);
         }
         // validation for constraint: length(4)
         if (!is_null($postalCode) && mb_strlen((string) $postalCode) !== 4) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 4', mb_strlen((string) $postalCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 4', mb_strlen((string) $postalCode)), __LINE__);
         }
         $this->PostalCode = $postalCode;
         return $this;

@@ -27,7 +27,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public ?string $Type = null;
+    protected string $Type;
     /**
      * The ID
      * Meta information extracted from the WSDL
@@ -39,24 +39,24 @@ class ApiUniqueID_Type extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public ?string $ID = null;
+    protected string $ID;
     /**
      * The CompanyName
      * Meta information extracted from the WSDL
      * - documentation: Identifies the company that is associated with the UniqueID.
      * - minOccurs: 0
-     * @var \Api\StructType\ApiCompanyNameType
+     * @var \Api\StructType\ApiCompanyNameType|null
      */
-    public ?\Api\StructType\ApiCompanyNameType $CompanyName = null;
+    protected ?\Api\StructType\ApiCompanyNameType $CompanyName = null;
     /**
      * The URL
      * Meta information extracted from the WSDL
      * - documentation: URL that identifies the location associated with the record identified by the UniqueID.
      * - type: xs:anyURI
      * - use: optional
-     * @var string
+     * @var string|null
      */
-    public ?string $URL = null;
+    protected ?string $URL = null;
     /**
      * The ID_Context
      * Meta information extracted from the WSDL
@@ -66,9 +66,9 @@ class ApiUniqueID_Type extends AbstractStructBase
      * - minLength: 1
      * - type: whlsoap:StringLength1to32
      * - use: optional
-     * @var string
+     * @var string|null
      */
-    public ?string $ID_Context = null;
+    protected ?string $ID_Context = null;
     /**
      * Constructor method for UniqueID_Type
      * @uses ApiUniqueID_Type::setType()
@@ -82,7 +82,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param string $uRL
      * @param string $iD_Context
      */
-    public function __construct(?string $type = null, ?string $iD = null, ?\Api\StructType\ApiCompanyNameType $companyName = null, ?string $uRL = null, ?string $iD_Context = null)
+    public function __construct(string $type, string $iD, ?\Api\StructType\ApiCompanyNameType $companyName = null, ?string $uRL = null, ?string $iD_Context = null)
     {
         $this
             ->setType($type)
@@ -95,7 +95,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * Get Type value
      * @return string
      */
-    public function getType(): ?string
+    public function getType(): string
     {
         return $this->Type;
     }
@@ -104,15 +104,15 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param string $type
      * @return \Api\StructType\ApiUniqueID_Type
      */
-    public function setType(?string $type = null): self
+    public function setType(string $type): self
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         // validation for constraint: pattern([0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}, 0AA.BBBX, )
         if (!is_null($type) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', $type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($type, true)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($type, true)), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -121,7 +121,7 @@ class ApiUniqueID_Type extends AbstractStructBase
      * Get ID value
      * @return string
      */
-    public function getID(): ?string
+    public function getID(): string
     {
         return $this->ID;
     }
@@ -130,19 +130,19 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @param string $iD
      * @return \Api\StructType\ApiUniqueID_Type
      */
-    public function setID(?string $iD = null): self
+    public function setID(string $iD): self
     {
         // validation for constraint: string
         if (!is_null($iD) && !is_string($iD)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD, true), gettype($iD)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD, true), gettype($iD)), __LINE__);
         }
         // validation for constraint: maxLength(32)
         if (!is_null($iD) && mb_strlen((string) $iD) > 32) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $iD)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $iD)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($iD) && mb_strlen((string) $iD) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $iD)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $iD)), __LINE__);
         }
         $this->ID = $iD;
         return $this;
@@ -182,7 +182,7 @@ class ApiUniqueID_Type extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($uRL) && !is_string($uRL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uRL, true), gettype($uRL)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uRL, true), gettype($uRL)), __LINE__);
         }
         $this->URL = $uRL;
         return $this;
@@ -204,15 +204,15 @@ class ApiUniqueID_Type extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($iD_Context) && !is_string($iD_Context)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD_Context, true), gettype($iD_Context)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD_Context, true), gettype($iD_Context)), __LINE__);
         }
         // validation for constraint: maxLength(32)
         if (!is_null($iD_Context) && mb_strlen((string) $iD_Context) > 32) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $iD_Context)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $iD_Context)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($iD_Context) && mb_strlen((string) $iD_Context) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $iD_Context)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $iD_Context)), __LINE__);
         }
         $this->ID_Context = $iD_Context;
         return $this;

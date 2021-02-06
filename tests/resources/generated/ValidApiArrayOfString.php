@@ -22,7 +22,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var string[]
      */
-    public array $string = [];
+    protected array $string = [];
     /**
      * Constructor method for ArrayOfString
      * @uses ApiArrayOfString::setString()
@@ -35,9 +35,9 @@ class ApiArrayOfString extends AbstractStructArrayBase
     }
     /**
      * Get string value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getString(): ?array
+    public function getString(): array
     {
         return $this->string;
     }
@@ -73,7 +73,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
     {
         // validation for constraint: array
         if ('' !== ($stringArrayErrorMessage = self::validateStringForArrayConstraintsFromSetString($string))) {
-            throw new \InvalidArgumentException($stringArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($stringArrayErrorMessage, __LINE__);
         }
         $this->string = $string;
         return $this;

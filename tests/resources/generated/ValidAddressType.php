@@ -21,9 +21,9 @@ class ApiAddressType extends AbstractStructBase
      * The StreetNmbr
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \Api\StructType\ApiStreetNmbr
+     * @var \Api\StructType\ApiStreetNmbr|null
      */
-    public ?\Api\StructType\ApiStreetNmbr $StreetNmbr = null;
+    protected ?\Api\StructType\ApiStreetNmbr $StreetNmbr = null;
     /**
      * The AddressLine
      * Meta information extracted from the WSDL
@@ -36,7 +36,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public array $AddressLine = [];
+    protected array $AddressLine = [];
     /**
      * The CityName
      * Meta information extracted from the WSDL
@@ -45,9 +45,9 @@ class ApiAddressType extends AbstractStructBase
      * - maxLength: 64
      * - minLength: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $CityName = null;
+    protected ?string $CityName = null;
     /**
      * The PostalCode
      * Meta information extracted from the WSDL
@@ -56,9 +56,9 @@ class ApiAddressType extends AbstractStructBase
      * - maxLength: 16
      * - minLength: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $PostalCode = null;
+    protected ?string $PostalCode = null;
     /**
      * The County
      * Meta information extracted from the WSDL
@@ -67,25 +67,25 @@ class ApiAddressType extends AbstractStructBase
      * - maxLength: 32
      * - minLength: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $County = null;
+    protected ?string $County = null;
     /**
      * The StateProv
      * Meta information extracted from the WSDL
      * - documentation: State or Province name (e.g., Texas).
      * - minOccurs: 0
-     * @var \Api\StructType\ApiStateProvType
+     * @var \Api\StructType\ApiStateProvType|null
      */
-    public ?\Api\StructType\ApiStateProvType $StateProv = null;
+    protected ?\Api\StructType\ApiStateProvType $StateProv = null;
     /**
      * The CountryName
      * Meta information extracted from the WSDL
      * - documentation: Country name (e.g., Ireland).
      * - minOccurs: 0
-     * @var \Api\StructType\ApiCountryNameType
+     * @var \Api\StructType\ApiCountryNameType|null
      */
-    public ?\Api\StructType\ApiCountryNameType $CountryName = null;
+    protected ?\Api\StructType\ApiCountryNameType $CountryName = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -94,9 +94,9 @@ class ApiAddressType extends AbstractStructBase
      * - base: xs:string
      * - pattern: [0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1} | 0AA.BBBX |
      * - use: optional
-     * @var string
+     * @var string|null
      */
-    public ?string $Type = null;
+    protected ?string $Type = null;
     /**
      * The Remark
      * Meta information extracted from the WSDL
@@ -105,28 +105,28 @@ class ApiAddressType extends AbstractStructBase
      * - maxLength: 128
      * - minLength: 1
      * - use: optional
-     * @var string
+     * @var string|null
      */
-    public ?string $Remark = null;
+    protected ?string $Remark = null;
     /**
      * The FormattedInd
      * Meta information extracted from the WSDL
      * - documentation: Specifies if the associated data is formatted or not. When true, then it is formatted; when false, then not formatted.
      * - type: xs:boolean
      * - use: optional
-     * @var bool
+     * @var bool|null
      */
-    public ?bool $FormattedInd = null;
+    protected ?bool $FormattedInd = null;
     /**
      * The ShareSynchInd
-     * @var string
+     * @var string|null
      */
-    public ?string $ShareSynchInd = null;
+    protected ?string $ShareSynchInd = null;
     /**
      * The ShareMarketInd
-     * @var string
+     * @var string|null
      */
-    public ?string $ShareMarketInd = null;
+    protected ?string $ShareMarketInd = null;
     /**
      * Constructor method for AddressType
      * @uses ApiAddressType::setStreetNmbr()
@@ -190,9 +190,9 @@ class ApiAddressType extends AbstractStructBase
     }
     /**
      * Get AddressLine value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getAddressLine(): ?array
+    public function getAddressLine(): array
     {
         return $this->AddressLine;
     }
@@ -274,19 +274,19 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: array
         if ('' !== ($addressLineArrayErrorMessage = self::validateAddressLineForArrayConstraintsFromSetAddressLine($addressLine))) {
-            throw new \InvalidArgumentException($addressLineArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($addressLineArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(255)
         if ('' !== ($addressLineMaxLengthErrorMessage = self::validateAddressLineForMaxLengthConstraintFromSetAddressLine($addressLine))) {
-            throw new \InvalidArgumentException($addressLineMaxLengthErrorMessage, __LINE__);
+            throw new InvalidArgumentException($addressLineMaxLengthErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)
         if (is_array($addressLine) && count($addressLine) > 5) {
-            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($addressLine)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($addressLine)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if ('' !== ($addressLineMinLengthErrorMessage = self::validateAddressLineForMinLengthConstraintFromSetAddressLine($addressLine))) {
-            throw new \InvalidArgumentException($addressLineMinLengthErrorMessage, __LINE__);
+            throw new InvalidArgumentException($addressLineMinLengthErrorMessage, __LINE__);
         }
         $this->AddressLine = $addressLine;
         return $this;
@@ -301,19 +301,19 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The AddressLine property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The AddressLine property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: maxLength(255)
         if (mb_strlen((string) $item) > 255) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $item)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $item)), __LINE__);
         }
         // validation for constraint: maxOccurs(5)
         if (is_array($this->AddressLine) && count($this->AddressLine) >= 5) {
-            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->AddressLine)), __LINE__);
+            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->AddressLine)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (mb_strlen((string) $item) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $item)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $item)), __LINE__);
         }
         $this->AddressLine[] = $item;
         return $this;
@@ -335,15 +335,15 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cityName) && !is_string($cityName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cityName, true), gettype($cityName)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cityName, true), gettype($cityName)), __LINE__);
         }
         // validation for constraint: maxLength(64)
         if (!is_null($cityName) && mb_strlen((string) $cityName) > 64) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $cityName)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $cityName)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($cityName) && mb_strlen((string) $cityName) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cityName)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cityName)), __LINE__);
         }
         $this->CityName = $cityName;
         return $this;
@@ -365,15 +365,15 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($postalCode) && !is_string($postalCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($postalCode, true), gettype($postalCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($postalCode, true), gettype($postalCode)), __LINE__);
         }
         // validation for constraint: maxLength(16)
         if (!is_null($postalCode) && mb_strlen((string) $postalCode) > 16) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $postalCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $postalCode)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($postalCode) && mb_strlen((string) $postalCode) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $postalCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $postalCode)), __LINE__);
         }
         $this->PostalCode = $postalCode;
         return $this;
@@ -395,15 +395,15 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($county) && !is_string($county)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($county, true), gettype($county)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($county, true), gettype($county)), __LINE__);
         }
         // validation for constraint: maxLength(32)
         if (!is_null($county) && mb_strlen((string) $county) > 32) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $county)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $county)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($county) && mb_strlen((string) $county) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $county)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $county)), __LINE__);
         }
         $this->County = $county;
         return $this;
@@ -461,11 +461,11 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         // validation for constraint: pattern([0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}, 0AA.BBBX, )
         if (!is_null($type) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', $type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($type, true)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($type, true)), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -487,15 +487,15 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($remark) && !is_string($remark)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($remark, true), gettype($remark)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($remark, true), gettype($remark)), __LINE__);
         }
         // validation for constraint: maxLength(128)
         if (!is_null($remark) && mb_strlen((string) $remark) > 128) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $remark)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $remark)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($remark) && mb_strlen((string) $remark) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $remark)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $remark)), __LINE__);
         }
         $this->Remark = $remark;
         return $this;
@@ -517,7 +517,7 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($formattedInd) && !is_bool($formattedInd)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($formattedInd, true), gettype($formattedInd)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($formattedInd, true), gettype($formattedInd)), __LINE__);
         }
         $this->FormattedInd = $formattedInd;
         return $this;
@@ -539,7 +539,7 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shareSynchInd) && !is_string($shareSynchInd)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareSynchInd, true), gettype($shareSynchInd)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareSynchInd, true), gettype($shareSynchInd)), __LINE__);
         }
         $this->ShareSynchInd = $shareSynchInd;
         return $this;
@@ -561,7 +561,7 @@ class ApiAddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shareMarketInd) && !is_string($shareMarketInd)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareMarketInd, true), gettype($shareMarketInd)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareMarketInd, true), gettype($shareMarketInd)), __LINE__);
         }
         $this->ShareMarketInd = $shareMarketInd;
         return $this;

@@ -29,7 +29,7 @@ abstract class AbstractRule
             $this->getMethod()
                 ->addChild($this->validationRuleComment($value))
                 ->addChild(sprintf('if (%s) {', $test))
-                ->addChild($this->getMethod()->getIndentedString(sprintf('throw new \InvalidArgumentException(%s, __LINE__);', $message), 1))
+                ->addChild($this->getMethod()->getIndentedString(sprintf('throw new InvalidArgumentException(%s, __LINE__);', $message), 1))
                 ->addChild('}')
             ;
             unset($message);

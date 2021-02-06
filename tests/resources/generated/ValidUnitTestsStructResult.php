@@ -25,9 +25,9 @@ class ApiResult extends AbstractStructBase
      * - default: false
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var bool
+     * @var bool|null
      */
-    public ?bool $Success = null;
+    protected ?bool $Success = null;
     /**
      * The Errors
      * Meta information extracted from the WSDL
@@ -36,17 +36,17 @@ class ApiResult extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiErrors
+     * @var \Api\StructType\ApiErrors|null
      */
-    public ?\Api\StructType\ApiErrors $Errors = null;
+    protected ?\Api\StructType\ApiErrors $Errors = null;
     /**
      * The Warnings
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiWarnings
+     * @var \Api\StructType\ApiWarnings|null
      */
-    public ?\Api\StructType\ApiWarnings $Warnings = null;
+    protected ?\Api\StructType\ApiWarnings $Warnings = null;
     /**
      * Constructor method for Result
      * @uses ApiResult::setSuccess()
@@ -90,10 +90,10 @@ class ApiResult extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property Success can\'t be set as the property %s is already set. Only one property must be set among these properties: Success, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property Success can\'t be set as the property %s is already set. Only one property must be set among these properties: Success, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
         return $message;
@@ -111,11 +111,11 @@ class ApiResult extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($success) && !is_bool($success)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($success, true), gettype($success)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($success, true), gettype($success)), __LINE__);
         }
         // validation for constraint: choice(Success, Errors)
         if ('' !== ($successChoiceErrorMessage = self::validateSuccessForChoiceConstraintsFromSetSuccess($success))) {
-            throw new \InvalidArgumentException($successChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($successChoiceErrorMessage, __LINE__);
         }
         if (is_null($success) || (is_array($success) && empty($success))) {
             unset($this->Success);
@@ -151,10 +151,10 @@ class ApiResult extends AbstractStructBase
         try {
             foreach ($properties as $property) {
                 if (isset($this->{$property})) {
-                    throw new \InvalidArgumentException(sprintf('The property Errors can\'t be set as the property %s is already set. Only one property must be set among these properties: Errors, %s.', $property, implode(', ', $properties)), __LINE__);
+                    throw new InvalidArgumentException(sprintf('The property Errors can\'t be set as the property %s is already set. Only one property must be set among these properties: Errors, %s.', $property, implode(', ', $properties)), __LINE__);
                 }
             }
-        } catch (\InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
         return $message;
@@ -172,7 +172,7 @@ class ApiResult extends AbstractStructBase
     {
         // validation for constraint: choice(Success, Errors)
         if ('' !== ($errorsChoiceErrorMessage = self::validateErrorsForChoiceConstraintsFromSetErrors($errors))) {
-            throw new \InvalidArgumentException($errorsChoiceErrorMessage, __LINE__);
+            throw new InvalidArgumentException($errorsChoiceErrorMessage, __LINE__);
         }
         if (is_null($errors) || (is_array($errors) && empty($errors))) {
             unset($this->Errors);

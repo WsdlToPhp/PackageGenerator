@@ -23,17 +23,17 @@ class ApiOffer extends ApiOrder
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public ?string $offerClassMember = null;
+    protected ?string $offerClassMember = null;
     /**
      * The offer
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\StructType\ApiOffer
+     * @var \Api\StructType\ApiOffer|null
      */
-    public ?\Api\StructType\ApiOffer $offer = null;
+    protected ?\Api\StructType\ApiOffer $offer = null;
     /**
      * Constructor method for offer
      * @uses ApiOffer::setOfferClassMember()
@@ -69,7 +69,7 @@ class ApiOffer extends ApiOrder
     {
         // validation for constraint: string
         if (!is_null($offerClassMember) && !is_string($offerClassMember)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offerClassMember, true), gettype($offerClassMember)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offerClassMember, true), gettype($offerClassMember)), __LINE__);
         }
         if (is_null($offerClassMember) || (is_array($offerClassMember) && empty($offerClassMember))) {
             unset($this->offerClassMember);

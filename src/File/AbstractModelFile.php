@@ -370,7 +370,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $attribute;
     }
 
-    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, bool $returnArrayType = true): string
+    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, bool $returnArrayType = true, bool $nullableItemType = false): string
     {
         $attribute = $this->getStructAttribute($attribute);
 
@@ -378,7 +378,7 @@ abstract class AbstractModelFile extends AbstractFile
             return '\\DOMDocument|string|null';
         }
 
-        return sprintf('%s%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', $attribute->isRequired() ? '' : '|null');
+        return sprintf('%s%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', !$nullableItemType && ($attribute->isRequired() || $attribute->isArray() || $attribute->isList()) ? '' : '|null');
     }
 
     protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null, bool $returnArrayType = true): string

@@ -20,41 +20,41 @@ class ApiNewsArticle extends StructClass
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Title = null;
+    protected ?string $Title = null;
     /**
      * The Url
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Url = null;
+    protected ?string $Url = null;
     /**
      * The Source
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Source = null;
+    protected ?string $Source = null;
     /**
      * The Snippet
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Snippet = null;
+    protected ?string $Snippet = null;
     /**
      * The Date
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Date = null;
+    protected ?string $Date = null;
     /**
      * Constructor method for NewsArticle
      * @uses ApiNewsArticle::setTitle()
@@ -94,7 +94,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->Title = $title;
         return $this;
@@ -116,7 +116,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($url) && !is_string($url)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($url, true), gettype($url)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($url, true), gettype($url)), __LINE__);
         }
         $this->Url = $url;
         return $this;
@@ -138,7 +138,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($source) && !is_string($source)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
         }
         $this->Source = $source;
         return $this;
@@ -160,7 +160,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($snippet) && !is_string($snippet)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($snippet, true), gettype($snippet)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($snippet, true), gettype($snippet)), __LINE__);
         }
         $this->Snippet = $snippet;
         return $this;
@@ -182,7 +182,7 @@ class ApiNewsArticle extends StructClass
     {
         // validation for constraint: string
         if (!is_null($date) && !is_string($date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->Date = $date;
         return $this;

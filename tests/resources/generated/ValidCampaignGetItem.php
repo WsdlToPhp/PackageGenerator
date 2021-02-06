@@ -19,7 +19,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var int
+     * @var int|null
      */
     public ?int $Id = null;
     /**
@@ -27,7 +27,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
     public ?string $Name = null;
     /**
@@ -35,7 +35,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
     public ?string $StartDate = null;
     /**
@@ -43,7 +43,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
     public ?string $Type = null;
     /**
@@ -51,7 +51,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
     public ?string $Status = null;
     /**
@@ -59,7 +59,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
     public ?string $State = null;
     /**
@@ -67,7 +67,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
     public ?string $StatusPayment = null;
     /**
@@ -75,7 +75,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
     public ?string $StatusClarification = null;
     /**
@@ -84,7 +84,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var int
+     * @var int|null
      */
     public ?int $SourceId = null;
     /**
@@ -92,7 +92,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiStatistics
+     * @var \Api\StructType\ApiStatistics|null
      */
     public ?\Api\StructType\ApiStatistics $Statistics = null;
     /**
@@ -100,7 +100,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
     public ?string $Currency = null;
     /**
@@ -108,7 +108,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiFundsParam
+     * @var \Api\StructType\ApiFundsParam|null
      */
     public ?\Api\StructType\ApiFundsParam $Funds = null;
     /**
@@ -116,7 +116,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiCampaignAssistant
+     * @var \Api\StructType\ApiCampaignAssistant|null
      */
     public ?\Api\StructType\ApiCampaignAssistant $RepresentedBy = null;
     /**
@@ -125,7 +125,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\StructType\ApiDailyBudget
+     * @var \Api\StructType\ApiDailyBudget|null
      */
     public ?\Api\StructType\ApiDailyBudget $DailyBudget = null;
     /**
@@ -134,7 +134,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var string
+     * @var string|null
      */
     public ?string $EndDate = null;
     /**
@@ -143,7 +143,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\ArrayType\ApiArrayOfString
+     * @var \Api\ArrayType\ApiArrayOfString|null
      */
     public ?\Api\ArrayType\ApiArrayOfString $NegativeKeywords = null;
     /**
@@ -152,7 +152,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\ArrayType\ApiArrayOfString
+     * @var \Api\ArrayType\ApiArrayOfString|null
      */
     public ?\Api\ArrayType\ApiArrayOfString $BlockedIps = null;
     /**
@@ -161,7 +161,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\ArrayType\ApiArrayOfString
+     * @var \Api\ArrayType\ApiArrayOfString|null
      */
     public ?\Api\ArrayType\ApiArrayOfString $ExcludedSites = null;
     /**
@@ -169,7 +169,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiTextCampaignGetItem
+     * @var \Api\StructType\ApiTextCampaignGetItem|null
      */
     public ?\Api\StructType\ApiTextCampaignGetItem $TextCampaign = null;
     /**
@@ -177,7 +177,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiMobileAppCampaignGetItem
+     * @var \Api\StructType\ApiMobileAppCampaignGetItem|null
      */
     public ?\Api\StructType\ApiMobileAppCampaignGetItem $MobileAppCampaign = null;
     /**
@@ -185,7 +185,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiDynamicTextCampaignGetItem
+     * @var \Api\StructType\ApiDynamicTextCampaignGetItem|null
      */
     public ?\Api\StructType\ApiDynamicTextCampaignGetItem $DynamicTextCampaign = null;
     /**
