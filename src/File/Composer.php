@@ -48,7 +48,7 @@ final class Composer extends AbstractFile
                 'php:>=7.4',
                 'ext-soap:*',
                 'ext-mbstring:*',
-                'wsdltophp/packagebase:~3.0',
+                'wsdltophp/packagebase:~5.0',
             ],
             '--working-dir' => $this->getGenerator()->getOptionDestination(),
         ]));

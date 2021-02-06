@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Std\Opt\EnumType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
 /**

@@ -38,6 +38,7 @@ abstract class AbstractModelFile extends AbstractFile
     public const TYPE_ARRAY = 'array';
     public const TYPE_BOOL = 'bool';
     public const TYPE_STRING = 'string';
+    public const TYPE_SELF = 'self';
 
     protected Method $methods;
 
@@ -64,7 +65,7 @@ abstract class AbstractModelFile extends AbstractFile
         $this
             ->addDeclareDirective()
             ->defineNamespace()
-            ->defineUseStatement()
+            ->defineUseStatements()
             ->addAnnotationBlock()
             ->addClassElement()
         ;
@@ -293,7 +294,7 @@ abstract class AbstractModelFile extends AbstractFile
         return $this;
     }
 
-    protected function defineUseStatement(): self
+    protected function defineUseStatements(): self
     {
         if (!empty($this->getModel()->getExtends())) {
             $this->getFile()->addUse($this->getModel()->getExtends(), null, true);
@@ -389,7 +390,7 @@ abstract class AbstractModelFile extends AbstractFile
 
     protected function useBrackets(StructAttributeModel $attribute, bool $returnArrayType = true): bool
     {
-        return $returnArrayType && ($attribute->isArray() || $this->isAttributeAList($attribute));
+        return $returnArrayType && $attribute->isArray();
     }
 
     protected function getStructAttributeTypeHint(StructAttributeModel $attribute = null, bool $returnArrayType = true): string

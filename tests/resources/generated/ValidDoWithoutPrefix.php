@@ -17,14 +17,14 @@ class _Do extends AbstractSoapClientBase
      * Sets the RequesterCredentials SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \StructType\CustomSecurityHeaderType $requesterCredentials
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \ServiceType\_Do
      */
-    public function setSoapHeaderRequesterCredentials(\StructType\CustomSecurityHeaderType $requesterCredentials, string $nameSpace = 'urn:ebay:api:PayPalAPI', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderRequesterCredentials(\StructType\CustomSecurityHeaderType $requesterCredentials, string $namespace = 'urn:ebay:api:PayPalAPI', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'RequesterCredentials', $requesterCredentials, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'RequesterCredentials', $requesterCredentials, $mustUnderstand, $actor);
     }
     /**
      * Method to call the operation originally named DoMobileCheckoutPayment

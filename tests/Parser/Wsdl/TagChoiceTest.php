@@ -70,7 +70,7 @@ final class TagChoiceTest extends WsdlParser
      * <xs:documentation xml:lang="en">Provides a reference to a specific form of payment.</xs:documentation>
      * </xs:annotation>
      * </xs:attribute>
-     * </xs:complexType>
+     * </xs:complexType>.
      *
      * <xs:complexType name="MessageAcknowledgementType">
      * <xs:annotation>
@@ -167,7 +167,7 @@ final class TagChoiceTest extends WsdlParser
      * <xs:attribute name="Traversal" type="t:FolderQueryTraversalType" use="required" />
      * </xs:extension>
      * </xs:complexContent>
-     * </xs:complexType>
+     * </xs:complexType>.
      *
      * <xs:complexType name="FindItemType">
      * <xs:complexContent>
@@ -262,7 +262,7 @@ final class TagChoiceTest extends WsdlParser
      * </xs:choice>
      * </xs:sequence>
      * </xs:complexType>
-     * </xs:element>
+     * </xs:element>.
      */
     public function testParseDeliveryMustAssignMetaOfChoice()
     {

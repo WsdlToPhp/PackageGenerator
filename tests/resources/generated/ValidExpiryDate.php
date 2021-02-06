@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +23,7 @@ class ApiExpiryDate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public $month = null;
+    public ?string $month = null;
     /**
      * The year
      * Meta information extracted from the WSDL
@@ -31,7 +32,7 @@ class ApiExpiryDate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public $year = null;
+    public ?string $year = null;
     /**
      * Constructor method for expiryDate
      * @uses ApiExpiryDate::setMonth()
@@ -39,7 +40,7 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $month
      * @param string $year
      */
-    public function __construct(string $month = null, string $year = null)
+    public function __construct(?string $month = null, ?string $year = null)
     {
         $this
             ->setMonth($month)
@@ -58,7 +59,7 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $month
      * @return \Api\StructType\ApiExpiryDate
      */
-    public function setMonth(string $month = null): self
+    public function setMonth(?string $month = null): self
     {
         // validation for constraint: string
         if (!is_null($month) && !is_string($month)) {
@@ -84,7 +85,7 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $year
      * @return \Api\StructType\ApiExpiryDate
      */
-    public function setYear(string $year = null): self
+    public function setYear(?string $year = null): self
     {
         // validation for constraint: string
         if (!is_null($year) && !is_string($year)) {

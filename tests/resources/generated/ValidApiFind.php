@@ -18,66 +18,66 @@ class ApiFind extends AbstractSoapClientBase
      * Sets the ExchangeImpersonation SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiExchangeImpersonationType $exchangeImpersonation
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiFind
      */
-    public function setSoapHeaderExchangeImpersonation(\Api\StructType\ApiExchangeImpersonationType $exchangeImpersonation, string $nameSpace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderExchangeImpersonation(\Api\StructType\ApiExchangeImpersonationType $exchangeImpersonation, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'ExchangeImpersonation', $exchangeImpersonation, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'ExchangeImpersonation', $exchangeImpersonation, $mustUnderstand, $actor);
     }
     /**
      * Sets the MailboxCulture SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiMailboxCultureType $mailboxCulture
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiFind
      */
-    public function setSoapHeaderMailboxCulture(\Api\StructType\ApiMailboxCultureType $mailboxCulture, string $nameSpace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderMailboxCulture(\Api\StructType\ApiMailboxCultureType $mailboxCulture, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'MailboxCulture', $mailboxCulture, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'MailboxCulture', $mailboxCulture, $mustUnderstand, $actor);
     }
     /**
      * Sets the RequestServerVersion SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiRequestServerVersion $requestServerVersion
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiFind
      */
-    public function setSoapHeaderRequestServerVersion(\Api\StructType\ApiRequestServerVersion $requestServerVersion, string $nameSpace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderRequestServerVersion(\Api\StructType\ApiRequestServerVersion $requestServerVersion, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'RequestServerVersion', $requestServerVersion, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'RequestServerVersion', $requestServerVersion, $mustUnderstand, $actor);
     }
     /**
      * Sets the TimeZoneContext SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiTimeZoneContextType $timeZoneContext
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiFind
      */
-    public function setSoapHeaderTimeZoneContext(\Api\StructType\ApiTimeZoneContextType $timeZoneContext, string $nameSpace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderTimeZoneContext(\Api\StructType\ApiTimeZoneContextType $timeZoneContext, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'TimeZoneContext', $timeZoneContext, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'TimeZoneContext', $timeZoneContext, $mustUnderstand, $actor);
     }
     /**
      * Sets the ManagementRole SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiManagementRoleType $managementRole
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiFind
      */
-    public function setSoapHeaderManagementRole(\Api\StructType\ApiManagementRoleType $managementRole, string $nameSpace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderManagementRole(\Api\StructType\ApiManagementRoleType $managementRole, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'ManagementRole', $managementRole, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'ManagementRole', $managementRole, $mustUnderstand, $actor);
     }
     /**
      * Sets the DateTimePrecision SoapHeader param
@@ -86,18 +86,18 @@ class ApiFind extends AbstractSoapClientBase
      * @throws \InvalidArgumentException
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param string $dateTimePrecision
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiFind
      */
-    public function setSoapHeaderDateTimePrecision(string $dateTimePrecision, string $nameSpace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderDateTimePrecision(string $dateTimePrecision, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiDateTimePrecisionType::valueIsValid($dateTimePrecision)) {
             throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiDateTimePrecisionType', is_array($dateTimePrecision) ? implode(', ', $dateTimePrecision) : var_export($dateTimePrecision, true), implode(', ', \Api\EnumType\ApiDateTimePrecisionType::getValidValues())), __LINE__);
         }
-        return $this->setSoapHeader($nameSpace, 'DateTimePrecision', $dateTimePrecision, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'DateTimePrecision', $dateTimePrecision, $mustUnderstand, $actor);
     }
     /**
      * Method to call the operation originally named FindFolder

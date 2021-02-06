@@ -30,6 +30,16 @@ class Struct extends AbstractModelFile
         return parent::setModel($model);
     }
 
+    protected function defineUseStatements(): self
+    {
+        // @todo: only add `use InvalidArgumentException` if it's used!
+        if ($this->getGenerator()->getOptionValidation()) {
+            $this->getFile()->addUse(InvalidArgumentException::class, null, false);
+        }
+
+        return parent::defineUseStatements();
+    }
+
     protected function fillClassConstants(ConstantContainer $constants): void
     {
     }
@@ -46,7 +56,14 @@ class Struct extends AbstractModelFile
     protected function fillClassProperties(PropertyContainer $properties): void
     {
         foreach ($this->getModelAttributes() as $attribute) {
-            $properties->add(new PhpProperty($attribute->getCleanName(), null));
+            $properties->add(
+                new PhpProperty(
+                    $attribute->getCleanName(),
+                    $attribute->isArray() ? [] : null,
+                    PhpProperty::ACCESS_PUBLIC,
+                    $attribute->isArray() ? self::TYPE_ARRAY : '?'.$this->getStructAttributeTypeAsPhpType($attribute)
+                )
+            );
         }
     }
 
@@ -122,7 +139,7 @@ class Struct extends AbstractModelFile
             return new PhpFunctionParameter(
                 lcfirst($attribute->getUniqueString($attribute->getCleanName(), 'method')),
                 $attribute->getDefaultValue(),
-                $this->getStructMethodParameterType($attribute),
+                ($attribute->isArray() || $attribute->isList() ? '' : '?').$this->getStructMethodParameterType($attribute),
                 $attribute
             );
         } catch (InvalidArgumentException $exception) {
@@ -162,7 +179,7 @@ class Struct extends AbstractModelFile
                     $this->getStructMethodParameterType($attribute, false),
                     $attribute
                 ),
-            ], 'self');
+            ], self::TYPE_SELF);
             $this->addStructMethodAddToBody($method, $attribute);
             $this->methods->add($method);
         }
@@ -194,7 +211,7 @@ class Struct extends AbstractModelFile
     {
         $method = new PhpMethod($attribute->getSetterName(), [
             $this->getStructMethodParameter($attribute),
-        ], 'self');
+        ], self::TYPE_SELF);
         $this->addStructMethodSetBody($method, $attribute);
         $this->methods->add($method);
 
@@ -271,15 +288,15 @@ class Struct extends AbstractModelFile
         if ($attribute->isXml()) {
             $method
                 ->addChild('$domDocument = null;')
-                ->addChild(sprintf('if (!empty($this->%1$s) && !$asString) {', $thisAccess))
+                ->addChild(sprintf('if (!empty($this->%1$s) && $asDomDocument) {', $thisAccess))
                 ->addChild($method->getIndentedString('$domDocument = new \DOMDocument(\'1.0\', \'UTF-8\');', 1))
                 ->addChild($method->getIndentedString(sprintf('$domDocument->loadXML($this->%s);', $thisAccess), 1))
                 ->addChild('}')
             ;
             if ($attribute->getRemovableFromRequest() || $attribute->isAChoice()) {
-                $return = sprintf('return $asString ? (isset($this->%1$s) ? $this->%1$s : null) : $domDocument;', $thisAccess);
+                $return = sprintf('return $asDomDocument ? $domDocument : (isset($this->%1$s) ? $this->%1$s : null);', $thisAccess);
             } else {
-                $return = sprintf('return $asString ? $this->%1$s : $domDocument;', $thisAccess);
+                $return = sprintf('return $asDomDocument ? $domDocument : $this->%1$s;', $thisAccess);
             }
         } elseif ($attribute->getRemovableFromRequest() || $attribute->isAChoice()) {
             $return = sprintf('return isset($this->%1$s) ? $this->%1$s : null;', $thisAccess);
@@ -292,7 +309,7 @@ class Struct extends AbstractModelFile
     protected function addStructMethodGet(StructAttributeModel $attribute): self
     {
         switch (true) {
-            case $attribute->isArray() || $attribute->isList():
+            case $attribute->isArray():
                 $returnType = '?'.self::TYPE_ARRAY;
 
                 break;
@@ -328,7 +345,7 @@ class Struct extends AbstractModelFile
     {
         $parameters = [];
         if ($attribute->isXml()) {
-            $parameters[] = new PhpFunctionParameter('asString', true, self::TYPE_BOOL, $attribute);
+            $parameters[] = new PhpFunctionParameter('asDomDocument', false, self::TYPE_BOOL, $attribute);
         }
 
         return $parameters;

@@ -67,7 +67,7 @@ final class Tutorial extends AbstractFile
             ->addChild($block, '- the key must be a constant beginning with WSDL_ from AbstractSoapClientBase class (each generated ServiceType class extends this class)')
             ->addChild($block, '- the value must be the corresponding key value (each option matches a {@link http://www.php.net/manual/en/soapclient.soapclient.php} option)')
             ->addChild($block, '$options = [')
-            ->addChild($block, sprintf('::WSDL_URL => \'%s\',', AbstractSoapClientBase::class, $this->getGenerator()->getWsdl()->getName()))
+            ->addChild($block, sprintf('%s::WSDL_URL => \'%s\',', AbstractSoapClientBase::class, $this->getGenerator()->getWsdl()->getName()))
             ->addChild($block, sprintf('%s::WSDL_TRACE => true,', AbstractSoapClientBase::class))
             ->addChild($block, sprintf('%s::WSDL_LOGIN => \'you_secret_login\',', AbstractSoapClientBase::class))
             ->addChild($block, sprintf('%s::WSDL_PASSWORD => \'you_secret_password\',', AbstractSoapClientBase::class))

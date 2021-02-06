@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -26,7 +27,7 @@ class ApiResult extends AbstractStructBase
      * - minOccurs: 0
      * @var bool
      */
-    public $Success = null;
+    public ?bool $Success = null;
     /**
      * The Errors
      * Meta information extracted from the WSDL
@@ -37,7 +38,7 @@ class ApiResult extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiErrors
      */
-    public $Errors = null;
+    public ?\Api\StructType\ApiErrors $Errors = null;
     /**
      * The Warnings
      * Meta information extracted from the WSDL
@@ -45,7 +46,7 @@ class ApiResult extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiWarnings
      */
-    public $Warnings = null;
+    public ?\Api\StructType\ApiWarnings $Warnings = null;
     /**
      * Constructor method for Result
      * @uses ApiResult::setSuccess()
@@ -55,7 +56,7 @@ class ApiResult extends AbstractStructBase
      * @param \Api\StructType\ApiErrors $errors
      * @param \Api\StructType\ApiWarnings $warnings
      */
-    public function __construct(bool $success = false, \Api\StructType\ApiErrors $errors = null, \Api\StructType\ApiWarnings $warnings = null)
+    public function __construct(?bool $success = false, ?\Api\StructType\ApiErrors $errors = null, ?\Api\StructType\ApiWarnings $warnings = null)
     {
         $this
             ->setSuccess($success)
@@ -106,7 +107,7 @@ class ApiResult extends AbstractStructBase
      * @param bool $success
      * @return \Api\StructType\ApiResult
      */
-    public function setSuccess(bool $success = false): self
+    public function setSuccess(?bool $success = false): self
     {
         // validation for constraint: boolean
         if (!is_null($success) && !is_bool($success)) {
@@ -167,7 +168,7 @@ class ApiResult extends AbstractStructBase
      * @param \Api\StructType\ApiErrors $errors
      * @return \Api\StructType\ApiResult
      */
-    public function setErrors(\Api\StructType\ApiErrors $errors = null): self
+    public function setErrors(?\Api\StructType\ApiErrors $errors = null): self
     {
         // validation for constraint: choice(Success, Errors)
         if ('' !== ($errorsChoiceErrorMessage = self::validateErrorsForChoiceConstraintsFromSetErrors($errors))) {
@@ -193,7 +194,7 @@ class ApiResult extends AbstractStructBase
      * @param \Api\StructType\ApiWarnings $warnings
      * @return \Api\StructType\ApiResult
      */
-    public function setWarnings(\Api\StructType\ApiWarnings $warnings = null): self
+    public function setWarnings(?\Api\StructType\ApiWarnings $warnings = null): self
     {
         $this->Warnings = $warnings;
         return $this;

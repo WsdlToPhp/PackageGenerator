@@ -7,8 +7,8 @@ reserved_keywords:
         -
     case_insensitive:
         # methods from AbstractStructArrayBase
-        - "_get"
-        - "_set"
+        - "getPropertyValue"
+        - "setPropertyValue"
         - "getAttributeName"
         - "length"
         - "count"

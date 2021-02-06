@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\ArrayType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
@@ -21,13 +22,13 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var string[]
      */
-    public $string = null;
+    public array $string = [];
     /**
      * Constructor method for ArrayOfString
      * @uses ApiArrayOfString::setString()
      * @param string[] $string
      */
-    public function __construct(array $string = array())
+    public function __construct(array $string = [])
     {
         $this
             ->setString($string);
@@ -46,7 +47,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStringForArrayConstraintsFromSetString(array $values = array()): string
+    public static function validateStringForArrayConstraintsFromSetString(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -68,7 +69,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @param string[] $string
      * @return \Api\ArrayType\ApiArrayOfString
      */
-    public function setString(array $string = array()): self
+    public function setString(array $string = []): self
     {
         // validation for constraint: array
         if ('' !== ($stringArrayErrorMessage = self::validateStringForArrayConstraintsFromSetString($string))) {
@@ -78,26 +79,11 @@ class ApiArrayOfString extends AbstractStructArrayBase
         return $this;
     }
     /**
-     * Add item to string value
-     * @throws \InvalidArgumentException
-     * @param string $item
-     * @return \Api\ArrayType\ApiArrayOfString
-     */
-    public function addToString(string $item): self
-    {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The string property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        $this->string[] = $item;
-        return $this;
-    }
-    /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
      * @return string|null
      */
-    public function current()
+    public function current(): ?string
     {
         return parent::current();
     }
@@ -107,7 +93,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @param int $index
      * @return string|null
      */
-    public function item($index)
+    public function item($index): ?string
     {
         return parent::item($index);
     }
@@ -116,7 +102,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::first()
      * @return string|null
      */
-    public function first()
+    public function first(): ?string
     {
         return parent::first();
     }
@@ -125,7 +111,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::last()
      * @return string|null
      */
-    public function last()
+    public function last(): ?string
     {
         return parent::last();
     }
@@ -135,7 +121,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @param int $offset
      * @return string|null
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): ?string
     {
         return parent::offsetGet($offset);
     }
@@ -144,7 +130,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::getAttributeName()
      * @return string string
      */
-    public function getAttributeName()
+    public function getAttributeName(): string
     {
         return 'string';
     }

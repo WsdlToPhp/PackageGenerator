@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +24,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiRoomStaysType
      */
-    public $RoomStays = null;
+    public ?\Api\StructType\ApiRoomStaysType $RoomStays = null;
     /**
      * The ResGuests
      * Meta information extracted from the WSDL
@@ -31,7 +32,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiResGuestsType
      */
-    public $ResGuests = null;
+    public ?\Api\StructType\ApiResGuestsType $ResGuests = null;
     /**
      * The ResGlobalInfo
      * Meta information extracted from the WSDL
@@ -39,7 +40,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiResGlobalInfoType
      */
-    public $ResGlobalInfo = null;
+    public ?\Api\StructType\ApiResGlobalInfoType $ResGlobalInfo = null;
     /**
      * The RoomStayReservation
      * Meta information extracted from the WSDL
@@ -47,7 +48,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * - use: optional
      * @var bool
      */
-    public $RoomStayReservation = null;
+    public ?bool $RoomStayReservation = null;
     /**
      * The ResStatus
      * Meta information extracted from the WSDL
@@ -57,7 +58,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $ResStatus = null;
+    public ?string $ResStatus = null;
     /**
      * Constructor method for HotelReservationType
      * @uses ApiHotelReservationType::setRoomStays()
@@ -71,7 +72,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * @param bool $roomStayReservation
      * @param string $resStatus
      */
-    public function __construct(\Api\StructType\ApiRoomStaysType $roomStays = null, \Api\StructType\ApiResGuestsType $resGuests = null, \Api\StructType\ApiResGlobalInfoType $resGlobalInfo = null, bool $roomStayReservation = null, string $resStatus = null)
+    public function __construct(?\Api\StructType\ApiRoomStaysType $roomStays = null, ?\Api\StructType\ApiResGuestsType $resGuests = null, ?\Api\StructType\ApiResGlobalInfoType $resGlobalInfo = null, ?bool $roomStayReservation = null, ?string $resStatus = null)
     {
         $this
             ->setRoomStays($roomStays)
@@ -93,7 +94,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * @param \Api\StructType\ApiRoomStaysType $roomStays
      * @return \Api\StructType\ApiHotelReservationType
      */
-    public function setRoomStays(\Api\StructType\ApiRoomStaysType $roomStays = null): self
+    public function setRoomStays(?\Api\StructType\ApiRoomStaysType $roomStays = null): self
     {
         $this->RoomStays = $roomStays;
         return $this;
@@ -111,7 +112,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * @param \Api\StructType\ApiResGuestsType $resGuests
      * @return \Api\StructType\ApiHotelReservationType
      */
-    public function setResGuests(\Api\StructType\ApiResGuestsType $resGuests = null): self
+    public function setResGuests(?\Api\StructType\ApiResGuestsType $resGuests = null): self
     {
         $this->ResGuests = $resGuests;
         return $this;
@@ -129,7 +130,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * @param \Api\StructType\ApiResGlobalInfoType $resGlobalInfo
      * @return \Api\StructType\ApiHotelReservationType
      */
-    public function setResGlobalInfo(\Api\StructType\ApiResGlobalInfoType $resGlobalInfo = null): self
+    public function setResGlobalInfo(?\Api\StructType\ApiResGlobalInfoType $resGlobalInfo = null): self
     {
         $this->ResGlobalInfo = $resGlobalInfo;
         return $this;
@@ -147,7 +148,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * @param bool $roomStayReservation
      * @return \Api\StructType\ApiHotelReservationType
      */
-    public function setRoomStayReservation(bool $roomStayReservation = null): self
+    public function setRoomStayReservation(?bool $roomStayReservation = null): self
     {
         // validation for constraint: boolean
         if (!is_null($roomStayReservation) && !is_bool($roomStayReservation)) {
@@ -197,7 +198,7 @@ class ApiHotelReservationType extends AbstractStructBase
      * @param string $resStatus
      * @return \Api\StructType\ApiHotelReservationType
      */
-    public function setResStatus(string $resStatus = null): self
+    public function setResStatus(?string $resStatus = null): self
     {
         // validation for constraint: string
         if (!is_null($resStatus) && !is_string($resStatus)) {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +25,7 @@ class ApiTaxType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiParagraphType[]
      */
-    public $TaxDescription = null;
+    public array $TaxDescription = [];
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -33,7 +34,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $Type = null;
+    public ?string $Type = null;
     /**
      * The Code
      * Meta information extracted from the WSDL
@@ -44,7 +45,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $Code = null;
+    public ?string $Code = null;
     /**
      * The Percent
      * Meta information extracted from the WSDL
@@ -56,7 +57,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var float
      */
-    public $Percent = null;
+    public ?float $Percent = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -67,7 +68,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var float
      */
-    public $Amount = null;
+    public ?float $Amount = null;
     /**
      * The CurrencyCode
      * Meta information extracted from the WSDL
@@ -78,7 +79,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $CurrencyCode = null;
+    public ?string $CurrencyCode = null;
     /**
      * The DecimalPlaces
      * Meta information extracted from the WSDL
@@ -88,7 +89,7 @@ class ApiTaxType extends AbstractStructBase
      * - use: optional
      * @var int
      */
-    public $DecimalPlaces = null;
+    public ?int $DecimalPlaces = null;
     /**
      * Constructor method for TaxType
      * @uses ApiTaxType::setTaxDescription()
@@ -106,7 +107,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $currencyCode
      * @param int $decimalPlaces
      */
-    public function __construct(array $taxDescription = array(), string $type = null, string $code = null, float $percent = null, float $amount = null, string $currencyCode = null, int $decimalPlaces = null)
+    public function __construct(array $taxDescription = [], ?string $type = null, ?string $code = null, ?float $percent = null, ?float $amount = null, ?string $currencyCode = null, ?int $decimalPlaces = null)
     {
         $this
             ->setTaxDescription($taxDescription)
@@ -131,7 +132,7 @@ class ApiTaxType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxDescriptionForArrayConstraintsFromSetTaxDescription(array $values = array()): string
+    public static function validateTaxDescriptionForArrayConstraintsFromSetTaxDescription(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -153,7 +154,7 @@ class ApiTaxType extends AbstractStructBase
      * @param \Api\StructType\ApiParagraphType[] $taxDescription
      * @return \Api\StructType\ApiTaxType
      */
-    public function setTaxDescription(array $taxDescription = array()): self
+    public function setTaxDescription(array $taxDescription = []): self
     {
         // validation for constraint: array
         if ('' !== ($taxDescriptionArrayErrorMessage = self::validateTaxDescriptionForArrayConstraintsFromSetTaxDescription($taxDescription))) {
@@ -201,7 +202,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $type
      * @return \Api\StructType\ApiTaxType
      */
-    public function setType(string $type = null): self
+    public function setType(?string $type = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAmountDeterminationType::valueIsValid($type)) {
@@ -223,7 +224,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $code
      * @return \Api\StructType\ApiTaxType
      */
-    public function setCode(string $code = null): self
+    public function setCode(?string $code = null): self
     {
         // validation for constraint: string
         if (!is_null($code) && !is_string($code)) {
@@ -249,7 +250,7 @@ class ApiTaxType extends AbstractStructBase
      * @param float $percent
      * @return \Api\StructType\ApiTaxType
      */
-    public function setPercent(float $percent = null): self
+    public function setPercent(?float $percent = null): self
     {
         // validation for constraint: float
         if (!is_null($percent) && !(is_float($percent) || is_numeric($percent))) {
@@ -279,7 +280,7 @@ class ApiTaxType extends AbstractStructBase
      * @param float $amount
      * @return \Api\StructType\ApiTaxType
      */
-    public function setAmount(float $amount = null): self
+    public function setAmount(?float $amount = null): self
     {
         // validation for constraint: float
         if (!is_null($amount) && !(is_float($amount) || is_numeric($amount))) {
@@ -305,7 +306,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $currencyCode
      * @return \Api\StructType\ApiTaxType
      */
-    public function setCurrencyCode(string $currencyCode = null): self
+    public function setCurrencyCode(?string $currencyCode = null): self
     {
         // validation for constraint: string
         if (!is_null($currencyCode) && !is_string($currencyCode)) {
@@ -331,7 +332,7 @@ class ApiTaxType extends AbstractStructBase
      * @param int $decimalPlaces
      * @return \Api\StructType\ApiTaxType
      */
-    public function setDecimalPlaces(int $decimalPlaces = null): self
+    public function setDecimalPlaces(?int $decimalPlaces = null): self
     {
         // validation for constraint: int
         if (!is_null($decimalPlaces) && !(is_int($decimalPlaces) || ctype_digit($decimalPlaces))) {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +22,7 @@ class ApiVideoRequest extends AbstractStructBase
      * - minOccurs: 0
      * @var int
      */
-    public $Offset = null;
+    public ?int $Offset = null;
     /**
      * The Count
      * Meta information extracted from the WSDL
@@ -29,7 +30,7 @@ class ApiVideoRequest extends AbstractStructBase
      * - minOccurs: 0
      * @var int
      */
-    public $Count = null;
+    public ?int $Count = null;
     /**
      * The Filters
      * Meta information extracted from the WSDL
@@ -37,7 +38,7 @@ class ApiVideoRequest extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\ArrayType\ApiArrayOfString
      */
-    public $Filters = null;
+    public ?\Api\ArrayType\ApiArrayOfString $Filters = null;
     /**
      * The SortBy
      * Meta information extracted from the WSDL
@@ -45,7 +46,7 @@ class ApiVideoRequest extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $SortBy = null;
+    public ?string $SortBy = null;
     /**
      * Constructor method for VideoRequest
      * @uses ApiVideoRequest::setOffset()
@@ -57,7 +58,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param \Api\ArrayType\ApiArrayOfString $filters
      * @param string $sortBy
      */
-    public function __construct(int $offset = null, int $count = null, \Api\ArrayType\ApiArrayOfString $filters = null, string $sortBy = null)
+    public function __construct(?int $offset = null, ?int $count = null, ?\Api\ArrayType\ApiArrayOfString $filters = null, ?string $sortBy = null)
     {
         $this
             ->setOffset($offset)
@@ -78,7 +79,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param int $offset
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setOffset(int $offset = null): self
+    public function setOffset(?int $offset = null): self
     {
         // validation for constraint: int
         if (!is_null($offset) && !(is_int($offset) || ctype_digit($offset))) {
@@ -100,7 +101,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param int $count
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setCount(int $count = null): self
+    public function setCount(?int $count = null): self
     {
         // validation for constraint: int
         if (!is_null($count) && !(is_int($count) || ctype_digit($count))) {
@@ -122,7 +123,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param \Api\ArrayType\ApiArrayOfString $filters
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setFilters(\Api\ArrayType\ApiArrayOfString $filters = null): self
+    public function setFilters(?\Api\ArrayType\ApiArrayOfString $filters = null): self
     {
         $this->Filters = $filters;
         return $this;
@@ -143,7 +144,7 @@ class ApiVideoRequest extends AbstractStructBase
      * @param string $sortBy
      * @return \Api\StructType\ApiVideoRequest
      */
-    public function setSortBy(string $sortBy = null): self
+    public function setSortBy(?string $sortBy = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {

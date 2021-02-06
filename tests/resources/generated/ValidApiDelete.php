@@ -18,27 +18,27 @@ class ApiDelete extends AbstractSoapClientBase
      * Sets the SessionHeader SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiSessionHeader $sessionHeader
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiDelete
      */
-    public function setSoapHeaderSessionHeader(\Api\StructType\ApiSessionHeader $sessionHeader, string $nameSpace = 'urn:api.actonsoftware.com', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderSessionHeader(\Api\StructType\ApiSessionHeader $sessionHeader, string $namespace = 'urn:api.actonsoftware.com', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'SessionHeader', $sessionHeader, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'SessionHeader', $sessionHeader, $mustUnderstand, $actor);
     }
     /**
      * Sets the ClusterHeader SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiClusterHeader $clusterHeader
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiDelete
      */
-    public function setSoapHeaderClusterHeader(\Api\StructType\ApiClusterHeader $clusterHeader, string $nameSpace = 'urn:api.actonsoftware.com', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderClusterHeader(\Api\StructType\ApiClusterHeader $clusterHeader, string $namespace = 'urn:api.actonsoftware.com', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'ClusterHeader', $clusterHeader, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'ClusterHeader', $clusterHeader, $mustUnderstand, $actor);
     }
     /**
      * Method to call the operation originally named deleteList

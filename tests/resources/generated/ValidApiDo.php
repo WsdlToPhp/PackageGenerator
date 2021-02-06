@@ -18,14 +18,14 @@ class ApiDo extends AbstractSoapClientBase
      * Sets the RequesterCredentials SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiCustomSecurityHeaderType $requesterCredentials
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiDo
      */
-    public function setSoapHeaderRequesterCredentials(\Api\StructType\ApiCustomSecurityHeaderType $requesterCredentials, string $nameSpace = 'urn:ebay:api:PayPalAPI', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderRequesterCredentials(\Api\StructType\ApiCustomSecurityHeaderType $requesterCredentials, string $namespace = 'urn:ebay:api:PayPalAPI', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'RequesterCredentials', $requesterCredentials, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'RequesterCredentials', $requesterCredentials, $mustUnderstand, $actor);
     }
     /**
      * Method to call the operation originally named DoMobileCheckoutPayment

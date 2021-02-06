@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -26,7 +27,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailCalcCostShipping
      * @var \Api\StructType\ApiMutualSettlementDetailCalcCostShipping
      */
-    public $mutualSettlementDetailCalcCostShipping = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null;
     /**
      * The mutualSettlementDetailCashFlow
      * Meta information extracted from the WSDL
@@ -39,7 +40,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailCashFlow
      * @var \Api\StructType\ApiMutualSettlementDetailCashFlow
      */
-    public $mutualSettlementDetailCashFlow = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null;
     /**
      * The mutualSettlementDetailClientPayment
      * Meta information extracted from the WSDL
@@ -52,7 +53,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailClientPayment
      * @var \Api\StructType\ApiMutualSettlementDetailClientPayment
      */
-    public $mutualSettlementDetailClientPayment = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null;
     /**
      * The mutualSettlementDetailPostReturnRegistry
      * Meta information extracted from the WSDL
@@ -65,7 +66,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailPostReturnRegistry
      * @var \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry
      */
-    public $mutualSettlementDetailPostReturnRegistry = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null;
     /**
      * The mutualSettlementDetailRouteList
      * Meta information extracted from the WSDL
@@ -78,7 +79,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailRouteList
      * @var \Api\StructType\ApiMutualSettlementDetailRouteList
      */
-    public $mutualSettlementDetailRouteList = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null;
     /**
      * The mutualSettlementDetailTrackNumberPayment
      * Meta information extracted from the WSDL
@@ -91,7 +92,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailTrackNumberPayment
      * @var \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment
      */
-    public $mutualSettlementDetailTrackNumberPayment = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null;
     /**
      * The mutualSettlementDetailServiceRegistration
      * Meta information extracted from the WSDL
@@ -104,7 +105,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailServiceRegistration
      * @var \Api\StructType\ApiMutualSettlementDetailServiceRegistration
      */
-    public $mutualSettlementDetailServiceRegistration = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null;
     /**
      * The mutualSettlementDetailAcceptanceRegistry
      * Meta information extracted from the WSDL
@@ -117,7 +118,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAcceptanceRegistry
      * @var \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry
      */
-    public $mutualSettlementDetailAcceptanceRegistry = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null;
     /**
      * The mutualSettlementDetailAdditionalChargeFare
      * Meta information extracted from the WSDL
@@ -130,7 +131,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAdditionalChargeFare
      * @var \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare
      */
-    public $mutualSettlementDetailAdditionalChargeFare = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null;
     /**
      * The mutualSettlementDetailOutgoingRequestToCarrier
      * Meta information extracted from the WSDL
@@ -143,7 +144,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailOutgoingRequestToCarrier
      * @var \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier
      */
-    public $mutualSettlementDetailOutgoingRequestToCarrier = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null;
     /**
      * The mutualSettlementDetailSMSInformation
      * Meta information extracted from the WSDL
@@ -156,7 +157,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSMSInformation
      * @var \Api\StructType\ApiMutualSettlementDetailSMSInformation
      */
-    public $mutualSettlementDetailSMSInformation = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null;
     /**
      * The mutualSettlementDetailBuyerGoodsReturn
      * Meta information extracted from the WSDL
@@ -169,7 +170,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailBuyerGoodsReturn
      * @var \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn
      */
-    public $mutualSettlementDetailBuyerGoodsReturn = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null;
     /**
      * The mutualSettlementDetailProductsPackaging
      * Meta information extracted from the WSDL
@@ -182,7 +183,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailProductsPackaging
      * @var \Api\StructType\ApiMutualSettlementDetailProductsPackaging
      */
-    public $mutualSettlementDetailProductsPackaging = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null;
     /**
      * The mutualSettlementDetailAdjustmentWriteRegisters
      * Meta information extracted from the WSDL
@@ -195,7 +196,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAdjustmentWriteRegisters
      * @var \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters
      */
-    public $mutualSettlementDetailAdjustmentWriteRegisters = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null;
     /**
      * The mutualSettlementDetailSafeCustody
      * Meta information extracted from the WSDL
@@ -208,7 +209,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSafeCustody
      * @var \Api\StructType\ApiMutualSettlementDetailSafeCustody
      */
-    public $mutualSettlementDetailSafeCustody = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null;
     /**
      * The mutualSettlementDetailSafeCustodyCalculation
      * Meta information extracted from the WSDL
@@ -221,7 +222,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSafeCustodyCalculation
      * @var \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation
      */
-    public $mutualSettlementDetailSafeCustodyCalculation = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null;
     /**
      * The mutualSettlementDetailRegisterStorage
      * Meta information extracted from the WSDL
@@ -234,7 +235,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailRegisterStorage
      * @var \Api\StructType\ApiMutualSettlementDetailRegisterStorage
      */
-    public $mutualSettlementDetailRegisterStorage = null;
+    public ?\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null;
     /**
      * Constructor method for details
      * @uses ApiDetails::setMutualSettlementDetailCalcCostShipping()
@@ -272,7 +273,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation
      * @param \Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage
      */
-    public function __construct(\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null, \Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null, \Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null, \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null, \Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null, \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null, \Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null, \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null, \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null, \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null, \Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null, \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null, \Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null, \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null, \Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null, \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null, \Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null)
+    public function __construct(?\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null, ?\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null, ?\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null, ?\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null, ?\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null, ?\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null, ?\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null, ?\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null, ?\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null, ?\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null, ?\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null, ?\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null, ?\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null, ?\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null, ?\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null, ?\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null, ?\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null)
     {
         $this
             ->setMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping)
@@ -352,7 +353,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailCalcCostShipping(\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null): self
+    public function setMutualSettlementDetailCalcCostShipping(?\Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailCalcCostShippingChoiceErrorMessage = self::validateMutualSettlementDetailCalcCostShippingForChoiceConstraintsFromSetMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping))) {
@@ -424,7 +425,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailCashFlow(\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null): self
+    public function setMutualSettlementDetailCashFlow(?\Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailCashFlowChoiceErrorMessage = self::validateMutualSettlementDetailCashFlowForChoiceConstraintsFromSetMutualSettlementDetailCashFlow($mutualSettlementDetailCashFlow))) {
@@ -496,7 +497,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailClientPayment(\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null): self
+    public function setMutualSettlementDetailClientPayment(?\Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailClientPaymentChoiceErrorMessage = self::validateMutualSettlementDetailClientPaymentForChoiceConstraintsFromSetMutualSettlementDetailClientPayment($mutualSettlementDetailClientPayment))) {
@@ -568,7 +569,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailPostReturnRegistry(\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null): self
+    public function setMutualSettlementDetailPostReturnRegistry(?\Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailPostReturnRegistryChoiceErrorMessage = self::validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintsFromSetMutualSettlementDetailPostReturnRegistry($mutualSettlementDetailPostReturnRegistry))) {
@@ -640,7 +641,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailRouteList(\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null): self
+    public function setMutualSettlementDetailRouteList(?\Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailRouteListChoiceErrorMessage = self::validateMutualSettlementDetailRouteListForChoiceConstraintsFromSetMutualSettlementDetailRouteList($mutualSettlementDetailRouteList))) {
@@ -712,7 +713,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailTrackNumberPayment(\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null): self
+    public function setMutualSettlementDetailTrackNumberPayment(?\Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailTrackNumberPaymentChoiceErrorMessage = self::validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintsFromSetMutualSettlementDetailTrackNumberPayment($mutualSettlementDetailTrackNumberPayment))) {
@@ -784,7 +785,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailServiceRegistration(\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null): self
+    public function setMutualSettlementDetailServiceRegistration(?\Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailServiceRegistrationChoiceErrorMessage = self::validateMutualSettlementDetailServiceRegistrationForChoiceConstraintsFromSetMutualSettlementDetailServiceRegistration($mutualSettlementDetailServiceRegistration))) {
@@ -856,7 +857,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAcceptanceRegistry(\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null): self
+    public function setMutualSettlementDetailAcceptanceRegistry(?\Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailAcceptanceRegistryChoiceErrorMessage = self::validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($mutualSettlementDetailAcceptanceRegistry))) {
@@ -928,7 +929,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAdditionalChargeFare(\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null): self
+    public function setMutualSettlementDetailAdditionalChargeFare(?\Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailAdditionalChargeFareChoiceErrorMessage = self::validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($mutualSettlementDetailAdditionalChargeFare))) {
@@ -1000,7 +1001,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailOutgoingRequestToCarrier(\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null): self
+    public function setMutualSettlementDetailOutgoingRequestToCarrier(?\Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailOutgoingRequestToCarrierChoiceErrorMessage = self::validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($mutualSettlementDetailOutgoingRequestToCarrier))) {
@@ -1072,7 +1073,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSMSInformation(\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null): self
+    public function setMutualSettlementDetailSMSInformation(?\Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailSMSInformationChoiceErrorMessage = self::validateMutualSettlementDetailSMSInformationForChoiceConstraintsFromSetMutualSettlementDetailSMSInformation($mutualSettlementDetailSMSInformation))) {
@@ -1144,7 +1145,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailBuyerGoodsReturn(\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null): self
+    public function setMutualSettlementDetailBuyerGoodsReturn(?\Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailBuyerGoodsReturnChoiceErrorMessage = self::validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($mutualSettlementDetailBuyerGoodsReturn))) {
@@ -1216,7 +1217,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailProductsPackaging(\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null): self
+    public function setMutualSettlementDetailProductsPackaging(?\Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailProductsPackagingChoiceErrorMessage = self::validateMutualSettlementDetailProductsPackagingForChoiceConstraintsFromSetMutualSettlementDetailProductsPackaging($mutualSettlementDetailProductsPackaging))) {
@@ -1288,7 +1289,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAdjustmentWriteRegisters(\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null): self
+    public function setMutualSettlementDetailAdjustmentWriteRegisters(?\Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailAdjustmentWriteRegistersChoiceErrorMessage = self::validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($mutualSettlementDetailAdjustmentWriteRegisters))) {
@@ -1360,7 +1361,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSafeCustody(\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null): self
+    public function setMutualSettlementDetailSafeCustody(?\Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailSafeCustodyChoiceErrorMessage = self::validateMutualSettlementDetailSafeCustodyForChoiceConstraintsFromSetMutualSettlementDetailSafeCustody($mutualSettlementDetailSafeCustody))) {
@@ -1432,7 +1433,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSafeCustodyCalculation(\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null): self
+    public function setMutualSettlementDetailSafeCustodyCalculation(?\Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailSafeCustodyCalculationChoiceErrorMessage = self::validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($mutualSettlementDetailSafeCustodyCalculation))) {
@@ -1504,7 +1505,7 @@ class ApiDetails extends AbstractStructBase
      * @param \Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage
      * @return \Api\StructType\ApiDetails
      */
-    public function setMutualSettlementDetailRegisterStorage(\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null): self
+    public function setMutualSettlementDetailRegisterStorage(?\Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage = null): self
     {
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
         if ('' !== ($mutualSettlementDetailRegisterStorageChoiceErrorMessage = self::validateMutualSettlementDetailRegisterStorageForChoiceConstraintsFromSetMutualSettlementDetailRegisterStorage($mutualSettlementDetailRegisterStorage))) {
