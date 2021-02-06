@@ -12,4 +12,6 @@ Generated Struct and StructArray classes' properties are now type hinted.
 
 TypeError are now thrown instead of InvalidArgumentException when instantiating or calling a generated Struct/StructArray setter if the parameter type does not match the property typehint. Be sure to handle this new error.
 
-`get{PropertyName}(bool $asString = true)` becomes `get{PropertyName}(bool $asDomDocument = false)` 
+`get{PropertyName}(bool $asString = true)` becomes `get{PropertyName}(bool $asDomDocument = false)`
+
+Generated class properties are now **protected** if validation rules are `enabled` which is the default behaviour. You can't not more use the arrow notation on the object you created, you have to call the setter. Otherwise, disable validation rules.
