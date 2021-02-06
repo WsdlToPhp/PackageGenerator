@@ -5,7 +5,7 @@
    - **Required** to run the generated package
 2. **Generated classes**:
    - **Properties are now all typed**
-   - Properties are now **protected** if validation rules are enabled (default `true`), you MUST use the setters and getters. Even if validation rules are disabled, **you're strongly encouraged to use the setters and getters**, please read the [MANIFEST](../MANIFEST.md#struct-classes) for more information.
+   - Properties are now **protected** if validation rules are enabled (default `true`), you MUST use the setters and getters. Even if validation rules are disabled, **you're strongly encouraged to use the setters and getters**, please read the [MANIFEST](MANIFEST.md#struct-classes) for more information.
      - If you want to keep the arrow notation to set and get, you must disable the validation rules ([validation option](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options#validation)) before generating the package.
    - A **[TypeError](https://www.php.net/manual/en/class.typeerror.php)** is thrown if you try to set to `null` a non-nullable property (`required` by the WSDL). An **[InvalidArgumentException](https://www.php.net/manual/en/class.invalidargumentexception.php)** was previously thrown for an invalid value type when validation rules were enabled.
    - **The directive** `declare(strict_types=1)` is placed at top of each file ensuring that the class is well-defined and behaves as declared.
