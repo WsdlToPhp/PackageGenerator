@@ -103,7 +103,11 @@ final class Composer extends AbstractFile
         $src = rtrim($this->generator->getOptionSrcDirname(), DIRECTORY_SEPARATOR);
 
         return [
-            $namespaceKey => sprintf('./%s', empty($src) ? '' : $src.DIRECTORY_SEPARATOR),
+            $namespaceKey => sprintf(
+                './%s%s',
+                empty($src) ? '' : $src.DIRECTORY_SEPARATOR,
+                str_replace('\\', DIRECTORY_SEPARATOR, $namespace->getNamespace())
+            ),
         ];
     }
 

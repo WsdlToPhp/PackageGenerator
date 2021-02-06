@@ -46,14 +46,25 @@ abstract class AbstractModelFile extends AbstractFile
 
     public function getFileDestination(bool $withSrc = true): string
     {
-        return sprintf('%s%s%s', $this->getDestinationFolder($withSrc), $this->getModel()->getSubDirectory(), !empty($this->getModel()->getSubDirectory()) ? '/' : '');
+        return sprintf(
+            '%s%s%s',
+            $this->getDestinationFolder($withSrc),
+            $this->getModel()->getSubDirectory(),
+            !empty($this->getModel()->getSubDirectory()) ? '/' : ''
+        );
     }
 
     public function getDestinationFolder(bool $withSrc = true): string
     {
         $src = rtrim($this->generator->getOptionSrcDirname(), DIRECTORY_SEPARATOR);
 
-        return sprintf('%s%s', $this->getGenerator()->getOptionDestination(), (bool) $withSrc && !empty($src) ? $src.DIRECTORY_SEPARATOR : '');
+        return sprintf(
+            '%s%s%s%s',
+            $this->getGenerator()->getOptionDestination(),
+            (bool) $withSrc && !empty($src) ? $src.DIRECTORY_SEPARATOR : '',
+            str_replace('\\', DIRECTORY_SEPARATOR, $this->getGenerator()->getOptionNamespacePrefix()),
+            $this->getGenerator()->getOptionNamespacePrefix() ? DIRECTORY_SEPARATOR : ''
+        );
     }
 
     public function writeFile(bool $withSrc = true): void
@@ -61,7 +72,9 @@ abstract class AbstractModelFile extends AbstractFile
         if (!$this->getModel()) {
             throw new InvalidArgumentException('You MUST define the model before being able to generate the file', __LINE__);
         }
+
         GeneratorUtils::createDirectory($this->getFileDestination($withSrc));
+
         $this
             ->addDeclareDirective()
             ->defineNamespace()
@@ -69,6 +82,7 @@ abstract class AbstractModelFile extends AbstractFile
             ->addAnnotationBlock()
             ->addClassElement()
         ;
+
         parent::writeFile();
     }
 

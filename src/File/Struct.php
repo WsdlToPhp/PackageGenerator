@@ -533,7 +533,10 @@ class Struct extends AbstractModelFile
 
     protected function addStructMethodsSetAnnotationBlock(PhpAnnotationBlock $annotationBlock, string $type, string $name): self
     {
-        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $type, $name)))->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName(true)));
+        $annotationBlock
+            ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $type, $name)))
+            ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName(true)))
+        ;
 
         return $this;
     }
