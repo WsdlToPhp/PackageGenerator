@@ -13,6 +13,7 @@
   - Add [MANIFEST.md](/MANIFEST.md)
   - Generated class properties are now **protected** if validation rules are `enabled` which is the default behaviour.
   - Generated classes are now created in the directory following their namespace
+  - BC: read [UPGRADE-4.0.md](/UPGRADE-4.0.md)
 
 ## 3.3.4 - 2021-01-25
 - issue #230 - Avoid repeated meta value within generated meta documentation
