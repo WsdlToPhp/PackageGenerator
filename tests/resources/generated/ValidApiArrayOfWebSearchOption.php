@@ -22,7 +22,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var string[]
      */
-    public array $WebSearchOption = [];
+    protected array $WebSearchOption = [];
     /**
      * Constructor method for ArrayOfWebSearchOption
      * @uses ApiArrayOfWebSearchOption::setWebSearchOption()
@@ -35,9 +35,9 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     }
     /**
      * Get WebSearchOption value
-     * @return string[]|null
+     * @return string[]
      */
-    public function getWebSearchOption(): ?array
+    public function getWebSearchOption(): array
     {
         return $this->WebSearchOption;
     }
@@ -75,7 +75,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     {
         // validation for constraint: array
         if ('' !== ($webSearchOptionArrayErrorMessage = self::validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption($webSearchOption))) {
-            throw new \InvalidArgumentException($webSearchOptionArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($webSearchOptionArrayErrorMessage, __LINE__);
         }
         $this->WebSearchOption = $webSearchOption;
         return $this;
@@ -139,7 +139,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiWebSearchOption', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiWebSearchOption', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
         }
         return parent::add($item);
     }

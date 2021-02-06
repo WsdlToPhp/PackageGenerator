@@ -158,12 +158,12 @@ class StructAttribute extends AbstractModel
 
     public function isRequired(): bool
     {
-        return 'required' === $this->getMetaValue('use', '') || $this->getMetaValueFirstSet([
+        return 'required' === $this->getMetaValue('use', '') || 0 < $this->getMetaValueFirstSet([
             'minOccurs',
             'minoccurs',
             'MinOccurs',
             'Minoccurs',
-        ], false);
+        ], 0);
     }
 
     public function getOwner(): Struct

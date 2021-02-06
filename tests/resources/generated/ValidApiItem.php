@@ -17,27 +17,27 @@ class ApiItem extends AbstractStructBase
 {
     /**
      * The itemType
-     * @var string
+     * @var string|null
      */
-    public ?string $itemType = null;
+    protected ?string $itemType = null;
     /**
      * The id
      * Meta information extracted from the WSDL
      * - documentation: ID for an object
      * - base: xsd:string
-     * @var string
+     * @var string|null
      */
-    public ?string $id = null;
+    protected ?string $id = null;
     /**
      * The displayName
-     * @var string
+     * @var string|null
      */
-    public ?string $displayName = null;
+    protected ?string $displayName = null;
     /**
      * The any
-     * @var \DOMDocument
+     * @var \DOMDocument|string|null
      */
-    public ?\DOMDocument $any = null;
+    protected ?\DOMDocument $any = null;
     /**
      * Constructor method for Item
      * @uses ApiItem::setItemType()
@@ -77,7 +77,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiItemType', is_array($itemType) ? implode(', ', $itemType) : var_export($itemType, true), implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiItemType', is_array($itemType) ? implode(', ', $itemType) : var_export($itemType, true), implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
         }
         $this->itemType = $itemType;
         return $this;
@@ -99,7 +99,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
         return $this;
@@ -121,7 +121,7 @@ class ApiItem extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($displayName) && !is_string($displayName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($displayName, true), gettype($displayName)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($displayName, true), gettype($displayName)), __LINE__);
         }
         $this->displayName = $displayName;
         return $this;

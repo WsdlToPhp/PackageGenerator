@@ -103,7 +103,7 @@ final class UnionRule extends AbstractRule
         ]);
         $method
             ->addChild(sprintf('if (%s) {', implode(' && ', $exceptionsTests)))
-            ->addChild($method->getIndentedString(sprintf('$message = sprintf("The value %%s does not match any of the union rules: %s. See following errors:\n%%s", var_export($value, true), implode("\n", array_map(function(\InvalidArgumentException $e) { return sprintf(\' - %%s\', $e->getMessage()); }, [%s])));', implode(', ', $unionValues), implode(', ', $exceptionsArray)), 1))
+            ->addChild($method->getIndentedString(sprintf('$message = sprintf("The value %%s does not match any of the union rules: %s. See following errors:\n%%s", var_export($value, true), implode("\n", array_map(function(InvalidArgumentException $e) { return sprintf(\' - %%s\', $e->getMessage()); }, [%s])));', implode(', ', $unionValues), implode(', ', $exceptionsArray)), 1))
             ->addChild('}')
             ->addChild(sprintf('unset(%s);', implode(', ', $exceptionsArray)))
             ->addChild('return $message;')

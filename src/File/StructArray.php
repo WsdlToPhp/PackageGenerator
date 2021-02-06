@@ -192,7 +192,7 @@ final class StructArray extends Struct
         if (!empty($param)) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, $param));
         }
-        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeTypeGetAnnotation(null, false)));
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeTypeGetAnnotation($this->getStructAttribute(), false, true)));
 
         return $annotationBlock;
     }

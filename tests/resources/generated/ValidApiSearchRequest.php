@@ -22,7 +22,7 @@ class ApiSearchRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var string
      */
-    public ?string $Query = null;
+    protected string $Query;
     /**
      * The AppId
      * Meta information extracted from the WSDL
@@ -30,7 +30,7 @@ class ApiSearchRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var string
      */
-    public ?string $AppId = null;
+    protected string $AppId;
     /**
      * The Sources
      * Meta information extracted from the WSDL
@@ -38,7 +38,7 @@ class ApiSearchRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\ArrayType\ApiArrayOfSourceType
      */
-    public ?\Api\ArrayType\ApiArrayOfSourceType $Sources = null;
+    protected \Api\ArrayType\ApiArrayOfSourceType $Sources;
     /**
      * The parameters
      * Meta information extracted from the WSDL
@@ -46,128 +46,128 @@ class ApiSearchRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiSearchRequest
      */
-    public ?\Api\StructType\ApiSearchRequest $parameters = null;
+    protected \Api\StructType\ApiSearchRequest $parameters;
     /**
      * The Version
      * Meta information extracted from the WSDL
      * - default: 2.2
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Version = null;
+    protected ?string $Version = null;
     /**
      * The Market
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Market = null;
+    protected ?string $Market = null;
     /**
      * The UILanguage
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $UILanguage = null;
+    protected ?string $UILanguage = null;
     /**
      * The Adult
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Adult = null;
+    protected ?string $Adult = null;
     /**
      * The Latitude
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var float
+     * @var float|null
      */
-    public ?float $Latitude = null;
+    protected ?float $Latitude = null;
     /**
      * The Longitude
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var float
+     * @var float|null
      */
-    public ?float $Longitude = null;
+    protected ?float $Longitude = null;
     /**
      * The Radius
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var float
+     * @var float|null
      */
-    public ?float $Radius = null;
+    protected ?float $Radius = null;
     /**
      * The Options
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\ArrayType\ApiArrayOfSearchOption
+     * @var \Api\ArrayType\ApiArrayOfSearchOption|null
      */
-    public ?\Api\ArrayType\ApiArrayOfSearchOption $Options = null;
+    protected ?\Api\ArrayType\ApiArrayOfSearchOption $Options = null;
     /**
      * The Web
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiWebRequest
+     * @var \Api\StructType\ApiWebRequest|null
      */
-    public ?\Api\StructType\ApiWebRequest $Web = null;
+    protected ?\Api\StructType\ApiWebRequest $Web = null;
     /**
      * The Image
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiImageRequest
+     * @var \Api\StructType\ApiImageRequest|null
      */
-    public ?\Api\StructType\ApiImageRequest $Image = null;
+    protected ?\Api\StructType\ApiImageRequest $Image = null;
     /**
      * The Phonebook
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiPhonebookRequest
+     * @var \Api\StructType\ApiPhonebookRequest|null
      */
-    public ?\Api\StructType\ApiPhonebookRequest $Phonebook = null;
+    protected ?\Api\StructType\ApiPhonebookRequest $Phonebook = null;
     /**
      * The Video
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiVideoRequest
+     * @var \Api\StructType\ApiVideoRequest|null
      */
-    public ?\Api\StructType\ApiVideoRequest $Video = null;
+    protected ?\Api\StructType\ApiVideoRequest $Video = null;
     /**
      * The News
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiNewsRequest
+     * @var \Api\StructType\ApiNewsRequest|null
      */
-    public ?\Api\StructType\ApiNewsRequest $News = null;
+    protected ?\Api\StructType\ApiNewsRequest $News = null;
     /**
      * The MobileWeb
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiMobileWebRequest
+     * @var \Api\StructType\ApiMobileWebRequest|null
      */
-    public ?\Api\StructType\ApiMobileWebRequest $MobileWeb = null;
+    protected ?\Api\StructType\ApiMobileWebRequest $MobileWeb = null;
     /**
      * The Translation
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiTranslationRequest
+     * @var \Api\StructType\ApiTranslationRequest|null
      */
-    public ?\Api\StructType\ApiTranslationRequest $Translation = null;
+    protected ?\Api\StructType\ApiTranslationRequest $Translation = null;
     /**
      * Constructor method for SearchRequest
      * @uses ApiSearchRequest::setQuery()
@@ -209,7 +209,7 @@ class ApiSearchRequest extends AbstractStructBase
      * @param \Api\StructType\ApiMobileWebRequest $mobileWeb
      * @param \Api\StructType\ApiTranslationRequest $translation
      */
-    public function __construct(?string $query = null, ?string $appId = null, ?\Api\ArrayType\ApiArrayOfSourceType $sources = null, ?\Api\StructType\ApiSearchRequest $parameters = null, ?string $version = '2.2', ?string $market = null, ?string $uILanguage = null, ?string $adult = null, ?float $latitude = null, ?float $longitude = null, ?float $radius = null, ?\Api\ArrayType\ApiArrayOfSearchOption $options = null, ?\Api\StructType\ApiWebRequest $web = null, ?\Api\StructType\ApiImageRequest $image = null, ?\Api\StructType\ApiPhonebookRequest $phonebook = null, ?\Api\StructType\ApiVideoRequest $video = null, ?\Api\StructType\ApiNewsRequest $news = null, ?\Api\StructType\ApiMobileWebRequest $mobileWeb = null, ?\Api\StructType\ApiTranslationRequest $translation = null)
+    public function __construct(string $query, string $appId, \Api\ArrayType\ApiArrayOfSourceType $sources, \Api\StructType\ApiSearchRequest $parameters, ?string $version = '2.2', ?string $market = null, ?string $uILanguage = null, ?string $adult = null, ?float $latitude = null, ?float $longitude = null, ?float $radius = null, ?\Api\ArrayType\ApiArrayOfSearchOption $options = null, ?\Api\StructType\ApiWebRequest $web = null, ?\Api\StructType\ApiImageRequest $image = null, ?\Api\StructType\ApiPhonebookRequest $phonebook = null, ?\Api\StructType\ApiVideoRequest $video = null, ?\Api\StructType\ApiNewsRequest $news = null, ?\Api\StructType\ApiMobileWebRequest $mobileWeb = null, ?\Api\StructType\ApiTranslationRequest $translation = null)
     {
         $this
             ->setQuery($query)
@@ -236,7 +236,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Get Query value
      * @return string
      */
-    public function getQuery(): ?string
+    public function getQuery(): string
     {
         return $this->Query;
     }
@@ -245,11 +245,11 @@ class ApiSearchRequest extends AbstractStructBase
      * @param string $query
      * @return \Api\StructType\ApiSearchRequest
      */
-    public function setQuery(?string $query = null): self
+    public function setQuery(string $query): self
     {
         // validation for constraint: string
         if (!is_null($query) && !is_string($query)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($query, true), gettype($query)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($query, true), gettype($query)), __LINE__);
         }
         $this->Query = $query;
         return $this;
@@ -258,7 +258,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Get AppId value
      * @return string
      */
-    public function getAppId(): ?string
+    public function getAppId(): string
     {
         return $this->AppId;
     }
@@ -267,11 +267,11 @@ class ApiSearchRequest extends AbstractStructBase
      * @param string $appId
      * @return \Api\StructType\ApiSearchRequest
      */
-    public function setAppId(?string $appId = null): self
+    public function setAppId(string $appId): self
     {
         // validation for constraint: string
         if (!is_null($appId) && !is_string($appId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($appId, true), gettype($appId)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($appId, true), gettype($appId)), __LINE__);
         }
         $this->AppId = $appId;
         return $this;
@@ -280,7 +280,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Get Sources value
      * @return \Api\ArrayType\ApiArrayOfSourceType
      */
-    public function getSources(): ?\Api\ArrayType\ApiArrayOfSourceType
+    public function getSources(): \Api\ArrayType\ApiArrayOfSourceType
     {
         return $this->Sources;
     }
@@ -289,7 +289,7 @@ class ApiSearchRequest extends AbstractStructBase
      * @param \Api\ArrayType\ApiArrayOfSourceType $sources
      * @return \Api\StructType\ApiSearchRequest
      */
-    public function setSources(?\Api\ArrayType\ApiArrayOfSourceType $sources = null): self
+    public function setSources(\Api\ArrayType\ApiArrayOfSourceType $sources): self
     {
         $this->Sources = $sources;
         return $this;
@@ -298,7 +298,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Get parameters value
      * @return \Api\StructType\ApiSearchRequest
      */
-    public function getParameters(): ?\Api\StructType\ApiSearchRequest
+    public function getParameters(): \Api\StructType\ApiSearchRequest
     {
         return $this->parameters;
     }
@@ -307,7 +307,7 @@ class ApiSearchRequest extends AbstractStructBase
      * @param \Api\StructType\ApiSearchRequest $parameters
      * @return \Api\StructType\ApiSearchRequest
      */
-    public function setParameters(?\Api\StructType\ApiSearchRequest $parameters = null): self
+    public function setParameters(\Api\StructType\ApiSearchRequest $parameters): self
     {
         $this->parameters = $parameters;
         return $this;
@@ -329,7 +329,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($version) && !is_string($version)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->Version = $version;
         return $this;
@@ -351,7 +351,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($market) && !is_string($market)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($market, true), gettype($market)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($market, true), gettype($market)), __LINE__);
         }
         $this->Market = $market;
         return $this;
@@ -373,7 +373,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($uILanguage) && !is_string($uILanguage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uILanguage, true), gettype($uILanguage)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uILanguage, true), gettype($uILanguage)), __LINE__);
         }
         $this->UILanguage = $uILanguage;
         return $this;
@@ -398,7 +398,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiAdultOption::valueIsValid($adult)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdultOption', is_array($adult) ? implode(', ', $adult) : var_export($adult, true), implode(', ', \Api\EnumType\ApiAdultOption::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdultOption', is_array($adult) ? implode(', ', $adult) : var_export($adult, true), implode(', ', \Api\EnumType\ApiAdultOption::getValidValues())), __LINE__);
         }
         $this->Adult = $adult;
         return $this;
@@ -420,7 +420,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: float
         if (!is_null($latitude) && !(is_float($latitude) || is_numeric($latitude))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($latitude, true), gettype($latitude)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($latitude, true), gettype($latitude)), __LINE__);
         }
         $this->Latitude = $latitude;
         return $this;
@@ -442,7 +442,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: float
         if (!is_null($longitude) && !(is_float($longitude) || is_numeric($longitude))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($longitude, true), gettype($longitude)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($longitude, true), gettype($longitude)), __LINE__);
         }
         $this->Longitude = $longitude;
         return $this;
@@ -464,7 +464,7 @@ class ApiSearchRequest extends AbstractStructBase
     {
         // validation for constraint: float
         if (!is_null($radius) && !(is_float($radius) || is_numeric($radius))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($radius, true), gettype($radius)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($radius, true), gettype($radius)), __LINE__);
         }
         $this->Radius = $radius;
         return $this;

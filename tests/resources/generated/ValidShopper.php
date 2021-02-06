@@ -23,7 +23,7 @@ class ApiShopper extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiName
      */
-    public ?\Api\StructType\ApiName $name = null;
+    protected \Api\StructType\ApiName $name;
     /**
      * The email
      * Meta information extracted from the WSDL
@@ -36,7 +36,7 @@ class ApiShopper extends AbstractStructBase
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * @var string
      */
-    public ?string $email = null;
+    protected string $email;
     /**
      * The language
      * Meta information extracted from the WSDL
@@ -45,7 +45,7 @@ class ApiShopper extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiLanguage
      */
-    public ?\Api\StructType\ApiLanguage $language = null;
+    protected \Api\StructType\ApiLanguage $language;
     /**
      * The gender
      * Meta information extracted from the WSDL
@@ -54,7 +54,7 @@ class ApiShopper extends AbstractStructBase
      * - minOccurs: 1
      * @var string
      */
-    public ?string $gender = null;
+    protected string $gender;
     /**
      * The id
      * Meta information extracted from the WSDL
@@ -64,7 +64,7 @@ class ApiShopper extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public ?string $id = null;
+    protected string $id;
     /**
      * The dateOfBirth
      * Meta information extracted from the WSDL
@@ -74,9 +74,9 @@ class ApiShopper extends AbstractStructBase
      * - maxOccurs: 1
      * - minLength: 10
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $dateOfBirth = null;
+    protected ?string $dateOfBirth = null;
     /**
      * The phoneNumber
      * Meta information extracted from the WSDL
@@ -86,9 +86,9 @@ class ApiShopper extends AbstractStructBase
      * - maxOccurs: 1
      * - minLength: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $phoneNumber = null;
+    protected ?string $phoneNumber = null;
     /**
      * The mobilePhoneNumber
      * Meta information extracted from the WSDL
@@ -98,9 +98,9 @@ class ApiShopper extends AbstractStructBase
      * - maxOccurs: 1
      * - minLength: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $mobilePhoneNumber = null;
+    protected ?string $mobilePhoneNumber = null;
     /**
      * The ipAddress
      * Meta information extracted from the WSDL
@@ -110,9 +110,9 @@ class ApiShopper extends AbstractStructBase
      * - maxOccurs: 1
      * - minLength: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $ipAddress = null;
+    protected ?string $ipAddress = null;
     /**
      * Constructor method for shopper
      * @uses ApiShopper::setName()
@@ -134,7 +134,7 @@ class ApiShopper extends AbstractStructBase
      * @param string $mobilePhoneNumber
      * @param string $ipAddress
      */
-    public function __construct(?\Api\StructType\ApiName $name = null, ?string $email = null, ?\Api\StructType\ApiLanguage $language = null, ?string $gender = null, ?string $id = null, ?string $dateOfBirth = null, ?string $phoneNumber = null, ?string $mobilePhoneNumber = null, ?string $ipAddress = null)
+    public function __construct(\Api\StructType\ApiName $name, string $email, \Api\StructType\ApiLanguage $language, string $gender, string $id, ?string $dateOfBirth = null, ?string $phoneNumber = null, ?string $mobilePhoneNumber = null, ?string $ipAddress = null)
     {
         $this
             ->setName($name)
@@ -151,7 +151,7 @@ class ApiShopper extends AbstractStructBase
      * Get name value
      * @return \Api\StructType\ApiName
      */
-    public function getName(): ?\Api\StructType\ApiName
+    public function getName(): \Api\StructType\ApiName
     {
         return $this->name;
     }
@@ -160,7 +160,7 @@ class ApiShopper extends AbstractStructBase
      * @param \Api\StructType\ApiName $name
      * @return \Api\StructType\ApiShopper
      */
-    public function setName(?\Api\StructType\ApiName $name = null): self
+    public function setName(\Api\StructType\ApiName $name): self
     {
         $this->name = $name;
         return $this;
@@ -169,7 +169,7 @@ class ApiShopper extends AbstractStructBase
      * Get email value
      * @return string
      */
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -178,23 +178,23 @@ class ApiShopper extends AbstractStructBase
      * @param string $email
      * @return \Api\StructType\ApiShopper
      */
-    public function setEmail(?string $email = null): self
+    public function setEmail(string $email): self
     {
         // validation for constraint: string
         if (!is_null($email) && !is_string($email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         // validation for constraint: maxLength(100)
         if (!is_null($email) && mb_strlen((string) $email) > 100) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 100', mb_strlen((string) $email)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 100', mb_strlen((string) $email)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($email) && mb_strlen((string) $email) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $email)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $email)), __LINE__);
         }
         // validation for constraint: pattern([_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+))
         if (!is_null($email) && !preg_match('/[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', $email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', var_export($email, true)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', var_export($email, true)), __LINE__);
         }
         $this->email = $email;
         return $this;
@@ -203,7 +203,7 @@ class ApiShopper extends AbstractStructBase
      * Get language value
      * @return \Api\StructType\ApiLanguage
      */
-    public function getLanguage(): ?\Api\StructType\ApiLanguage
+    public function getLanguage(): \Api\StructType\ApiLanguage
     {
         return $this->language;
     }
@@ -212,7 +212,7 @@ class ApiShopper extends AbstractStructBase
      * @param \Api\StructType\ApiLanguage $language
      * @return \Api\StructType\ApiShopper
      */
-    public function setLanguage(?\Api\StructType\ApiLanguage $language = null): self
+    public function setLanguage(\Api\StructType\ApiLanguage $language): self
     {
         $this->language = $language;
         return $this;
@@ -221,7 +221,7 @@ class ApiShopper extends AbstractStructBase
      * Get gender value
      * @return string
      */
-    public function getGender(): ?string
+    public function getGender(): string
     {
         return $this->gender;
     }
@@ -233,11 +233,11 @@ class ApiShopper extends AbstractStructBase
      * @param string $gender
      * @return \Api\StructType\ApiShopper
      */
-    public function setGender(?string $gender = null): self
+    public function setGender(string $gender): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiGender::valueIsValid($gender)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiGender', is_array($gender) ? implode(', ', $gender) : var_export($gender, true), implode(', ', \Api\EnumType\ApiGender::getValidValues())), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiGender', is_array($gender) ? implode(', ', $gender) : var_export($gender, true), implode(', ', \Api\EnumType\ApiGender::getValidValues())), __LINE__);
         }
         $this->gender = $gender;
         return $this;
@@ -246,7 +246,7 @@ class ApiShopper extends AbstractStructBase
      * Get id value
      * @return string
      */
-    public function getId(): ?string
+    public function getId(): string
     {
         return $this->id;
     }
@@ -255,19 +255,19 @@ class ApiShopper extends AbstractStructBase
      * @param string $id
      * @return \Api\StructType\ApiShopper
      */
-    public function setId(?string $id = null): self
+    public function setId(string $id): self
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         // validation for constraint: maxLength(35)
         if (!is_null($id) && mb_strlen((string) $id) > 35) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 35', mb_strlen((string) $id)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 35', mb_strlen((string) $id)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($id) && mb_strlen((string) $id) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $id)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $id)), __LINE__);
         }
         $this->id = $id;
         return $this;
@@ -289,15 +289,15 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($dateOfBirth) && !is_string($dateOfBirth)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dateOfBirth, true), gettype($dateOfBirth)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dateOfBirth, true), gettype($dateOfBirth)), __LINE__);
         }
         // validation for constraint: maxLength(10)
         if (!is_null($dateOfBirth) && mb_strlen((string) $dateOfBirth) > 10) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $dateOfBirth)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $dateOfBirth)), __LINE__);
         }
         // validation for constraint: minLength(10)
         if (!is_null($dateOfBirth) && mb_strlen((string) $dateOfBirth) < 10) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $dateOfBirth)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $dateOfBirth)), __LINE__);
         }
         $this->dateOfBirth = $dateOfBirth;
         return $this;
@@ -319,15 +319,15 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($phoneNumber) && !is_string($phoneNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phoneNumber, true), gettype($phoneNumber)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phoneNumber, true), gettype($phoneNumber)), __LINE__);
         }
         // validation for constraint: maxLength(50)
         if (!is_null($phoneNumber) && mb_strlen((string) $phoneNumber) > 50) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $phoneNumber)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $phoneNumber)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($phoneNumber) && mb_strlen((string) $phoneNumber) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $phoneNumber)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $phoneNumber)), __LINE__);
         }
         $this->phoneNumber = $phoneNumber;
         return $this;
@@ -349,15 +349,15 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($mobilePhoneNumber) && !is_string($mobilePhoneNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobilePhoneNumber, true), gettype($mobilePhoneNumber)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobilePhoneNumber, true), gettype($mobilePhoneNumber)), __LINE__);
         }
         // validation for constraint: maxLength(50)
         if (!is_null($mobilePhoneNumber) && mb_strlen((string) $mobilePhoneNumber) > 50) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $mobilePhoneNumber)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $mobilePhoneNumber)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($mobilePhoneNumber) && mb_strlen((string) $mobilePhoneNumber) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $mobilePhoneNumber)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $mobilePhoneNumber)), __LINE__);
         }
         $this->mobilePhoneNumber = $mobilePhoneNumber;
         return $this;
@@ -379,15 +379,15 @@ class ApiShopper extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($ipAddress) && !is_string($ipAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ipAddress, true), gettype($ipAddress)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ipAddress, true), gettype($ipAddress)), __LINE__);
         }
         // validation for constraint: maxLength(35)
         if (!is_null($ipAddress) && mb_strlen((string) $ipAddress) > 35) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 35', mb_strlen((string) $ipAddress)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 35', mb_strlen((string) $ipAddress)), __LINE__);
         }
         // validation for constraint: minLength(1)
         if (!is_null($ipAddress) && mb_strlen((string) $ipAddress) < 1) {
-            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ipAddress)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ipAddress)), __LINE__);
         }
         $this->ipAddress = $ipAddress;
         return $this;

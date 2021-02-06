@@ -22,7 +22,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * - minOccurs: 1
      * @var string
      */
-    public ?string $DayOfWeek = null;
+    protected string $DayOfWeek;
     /**
      * The StartTimeInMinutes
      * Meta information extracted from the WSDL
@@ -30,7 +30,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * - minOccurs: 1
      * @var int
      */
-    public ?int $StartTimeInMinutes = null;
+    protected int $StartTimeInMinutes;
     /**
      * The EndTimeInMinutes
      * Meta information extracted from the WSDL
@@ -38,7 +38,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * - minOccurs: 1
      * @var int
      */
-    public ?int $EndTimeInMinutes = null;
+    protected int $EndTimeInMinutes;
     /**
      * Constructor method for WorkingPeriod
      * @uses ApiWorkingPeriod::setDayOfWeek()
@@ -48,7 +48,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param int $startTimeInMinutes
      * @param int $endTimeInMinutes
      */
-    public function __construct(array $dayOfWeek = [], ?int $startTimeInMinutes = null, ?int $endTimeInMinutes = null)
+    public function __construct(array $dayOfWeek, int $startTimeInMinutes, int $endTimeInMinutes)
     {
         $this
             ->setDayOfWeek($dayOfWeek)
@@ -59,7 +59,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * Get DayOfWeek value
      * @return string
      */
-    public function getDayOfWeek(): ?string
+    public function getDayOfWeek(): string
     {
         return $this->DayOfWeek;
     }
@@ -93,11 +93,11 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param string $dayOfWeek
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setDayOfWeek(array $dayOfWeek = []): self
+    public function setDayOfWeek(array $dayOfWeek): self
     {
         // validation for constraint: list
         if ('' !== ($dayOfWeekArrayErrorMessage = self::validateDayOfWeekForArrayConstraintsFromSetDayOfWeek($dayOfWeek))) {
-            throw new \InvalidArgumentException($dayOfWeekArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($dayOfWeekArrayErrorMessage, __LINE__);
         }
         $this->DayOfWeek = is_array($dayOfWeek) ? implode(' ', $dayOfWeek) : null;
         return $this;
@@ -106,7 +106,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * Get StartTimeInMinutes value
      * @return int
      */
-    public function getStartTimeInMinutes(): ?int
+    public function getStartTimeInMinutes(): int
     {
         return $this->StartTimeInMinutes;
     }
@@ -115,11 +115,11 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param int $startTimeInMinutes
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setStartTimeInMinutes(?int $startTimeInMinutes = null): self
+    public function setStartTimeInMinutes(int $startTimeInMinutes): self
     {
         // validation for constraint: int
         if (!is_null($startTimeInMinutes) && !(is_int($startTimeInMinutes) || ctype_digit($startTimeInMinutes))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($startTimeInMinutes, true), gettype($startTimeInMinutes)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($startTimeInMinutes, true), gettype($startTimeInMinutes)), __LINE__);
         }
         $this->StartTimeInMinutes = $startTimeInMinutes;
         return $this;
@@ -128,7 +128,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * Get EndTimeInMinutes value
      * @return int
      */
-    public function getEndTimeInMinutes(): ?int
+    public function getEndTimeInMinutes(): int
     {
         return $this->EndTimeInMinutes;
     }
@@ -137,11 +137,11 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param int $endTimeInMinutes
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setEndTimeInMinutes(?int $endTimeInMinutes = null): self
+    public function setEndTimeInMinutes(int $endTimeInMinutes): self
     {
         // validation for constraint: int
         if (!is_null($endTimeInMinutes) && !(is_int($endTimeInMinutes) || ctype_digit($endTimeInMinutes))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($endTimeInMinutes, true), gettype($endTimeInMinutes)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($endTimeInMinutes, true), gettype($endTimeInMinutes)), __LINE__);
         }
         $this->EndTimeInMinutes = $endTimeInMinutes;
         return $this;

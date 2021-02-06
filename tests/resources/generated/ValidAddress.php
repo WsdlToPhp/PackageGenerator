@@ -19,44 +19,44 @@ class ApiАдресРФ extends ApiСостав
      * The СубъектРФ
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $СубъектРФ = null;
+    protected ?string $СубъектРФ = null;
     /**
      * The СвРайМО
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \Api\StructType\ApiСвРайМО
+     * @var \Api\StructType\ApiСвРайМО|null
      */
-    public ?\Api\StructType\ApiСвРайМО $СвРайМО = null;
+    protected ?\Api\StructType\ApiСвРайМО $СвРайМО = null;
     /**
      * The Город
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Город = null;
+    protected ?string $Город = null;
     /**
      * The ВнутригРайон
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $ВнутригРайон = null;
+    protected ?string $ВнутригРайон = null;
     /**
      * The НаселПункт
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $НаселПункт = null;
+    protected ?string $НаселПункт = null;
     /**
      * The Улица
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public ?string $Улица = null;
+    protected ?string $Улица = null;
     /**
      * The ДопАдрЭл
      * Meta information extracted from the WSDL
@@ -64,7 +64,7 @@ class ApiАдресРФ extends ApiСостав
      * - minOccurs: 0
      * @var \Api\StructType\ApiДопАдрЭл[]
      */
-    public array $ДопАдрЭл = [];
+    protected array $ДопАдрЭл = [];
     /**
      * Constructor method for АдресРФ
      * @uses ApiАдресРФ::setСубъектРФ()
@@ -110,7 +110,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($СубъектРФ) && !is_string($СубъектРФ)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($СубъектРФ, true), gettype($СубъектРФ)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($СубъектРФ, true), gettype($СубъектРФ)), __LINE__);
         }
         $this->СубъектРФ = $СубъектРФ;
         return $this;
@@ -150,7 +150,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($Город) && !is_string($Город)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Город, true), gettype($Город)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Город, true), gettype($Город)), __LINE__);
         }
         $this->Город = $Город;
         return $this;
@@ -172,7 +172,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($ВнутригРайон) && !is_string($ВнутригРайон)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ВнутригРайон, true), gettype($ВнутригРайон)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ВнутригРайон, true), gettype($ВнутригРайон)), __LINE__);
         }
         $this->ВнутригРайон = $ВнутригРайон;
         return $this;
@@ -194,7 +194,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($НаселПункт) && !is_string($НаселПункт)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($НаселПункт, true), gettype($НаселПункт)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($НаселПункт, true), gettype($НаселПункт)), __LINE__);
         }
         $this->НаселПункт = $НаселПункт;
         return $this;
@@ -216,16 +216,16 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: string
         if (!is_null($Улица) && !is_string($Улица)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Улица, true), gettype($Улица)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Улица, true), gettype($Улица)), __LINE__);
         }
         $this->Улица = $Улица;
         return $this;
     }
     /**
      * Get ДопАдрЭл value
-     * @return \Api\StructType\ApiДопАдрЭл[]|null
+     * @return \Api\StructType\ApiДопАдрЭл[]
      */
-    public function getДопАдрЭл(): ?array
+    public function getДопАдрЭл(): array
     {
         return $this->ДопАдрЭл;
     }
@@ -261,7 +261,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: array
         if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл($ДопАдрЭл))) {
-            throw new \InvalidArgumentException($ДопАдрЭлArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($ДопАдрЭлArrayErrorMessage, __LINE__);
         }
         $this->ДопАдрЭл = $ДопАдрЭл;
         return $this;
@@ -276,7 +276,7 @@ class ApiАдресРФ extends ApiСостав
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiДопАдрЭл) {
-            throw new \InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of type \Api\StructType\ApiДопАдрЭл, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of type \Api\StructType\ApiДопАдрЭл, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->ДопАдрЭл[] = $item;
         return $this;

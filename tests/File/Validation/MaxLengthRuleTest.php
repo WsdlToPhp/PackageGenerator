@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use InvalidArgumentException;
+use TypeError;
 
 /**
  * @internal
@@ -76,8 +77,10 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * - maxLength: 100.
      */
-    public function testSetEmailWithNullMustPass()
+    public function testSetEmailWithNullMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getDocDataPaymentsShoppperInstance();
 
         $this->assertSame($instance, $instance->setEmail(null));

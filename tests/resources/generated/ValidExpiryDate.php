@@ -23,7 +23,7 @@ class ApiExpiryDate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public ?string $month = null;
+    protected string $month;
     /**
      * The year
      * Meta information extracted from the WSDL
@@ -32,7 +32,7 @@ class ApiExpiryDate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    public ?string $year = null;
+    protected string $year;
     /**
      * Constructor method for expiryDate
      * @uses ApiExpiryDate::setMonth()
@@ -40,7 +40,7 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $month
      * @param string $year
      */
-    public function __construct(?string $month = null, ?string $year = null)
+    public function __construct(string $month, string $year)
     {
         $this
             ->setMonth($month)
@@ -50,7 +50,7 @@ class ApiExpiryDate extends AbstractStructBase
      * Get month value
      * @return string
      */
-    public function getMonth(): ?string
+    public function getMonth(): string
     {
         return $this->month;
     }
@@ -59,15 +59,15 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $month
      * @return \Api\StructType\ApiExpiryDate
      */
-    public function setMonth(?string $month = null): self
+    public function setMonth(string $month): self
     {
         // validation for constraint: string
         if (!is_null($month) && !is_string($month)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($month, true), gettype($month)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($month, true), gettype($month)), __LINE__);
         }
         // validation for constraint: pattern((0[1-9]|1[012]))
         if (!is_null($month) && !preg_match('/(0[1-9]|1[012])/', $month)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /(0[1-9]|1[012])/', var_export($month, true)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /(0[1-9]|1[012])/', var_export($month, true)), __LINE__);
         }
         $this->month = $month;
         return $this;
@@ -76,7 +76,7 @@ class ApiExpiryDate extends AbstractStructBase
      * Get year value
      * @return string
      */
-    public function getYear(): ?string
+    public function getYear(): string
     {
         return $this->year;
     }
@@ -85,15 +85,15 @@ class ApiExpiryDate extends AbstractStructBase
      * @param string $year
      * @return \Api\StructType\ApiExpiryDate
      */
-    public function setYear(?string $year = null): self
+    public function setYear(string $year): self
     {
         // validation for constraint: string
         if (!is_null($year) && !is_string($year)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($year, true), gettype($year)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($year, true), gettype($year)), __LINE__);
         }
         // validation for constraint: pattern([0-9][0-9])
         if (!is_null($year) && !preg_match('/[0-9][0-9]/', $year)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9][0-9]/', var_export($year, true)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9][0-9]/', var_export($year, true)), __LINE__);
         }
         $this->year = $year;
         return $this;
