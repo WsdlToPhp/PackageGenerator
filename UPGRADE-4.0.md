@@ -11,3 +11,5 @@ Generated PHP files containing a class now have the `declare(strict_types=1)` di
 Generated Struct and StructArray classes' properties are now type hinted.
 
 TypeError are now thrown instead of InvalidArgumentException when instantiating or calling a generated Struct/StructArray setter if the parameter type does not match the property typehint. Be sure to handle this new error.
+
+`get{PropertyName}(bool $asString = true)` becomes `get{PropertyName}(bool $asDomDocument = false)` 

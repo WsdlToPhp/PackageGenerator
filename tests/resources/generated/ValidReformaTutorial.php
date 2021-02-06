@@ -6,7 +6,7 @@
  * - the key must be a constant beginning with WSDL_ from AbstractSoapClientBase class (each generated ServiceType class extends this class)
  * - the value must be the corresponding key value (each option matches a {@link http://www.php.net/manual/en/soapclient.soapclient.php} option)
  * $options = [
- * ::WSDL_URL => 'WsdlToPhp\PackageBase\AbstractSoapClientBase',
+ * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_TRACE => true,
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_LOGIN => 'you_secret_login',
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD => 'you_secret_password',

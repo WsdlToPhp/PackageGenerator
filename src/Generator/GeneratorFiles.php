@@ -48,7 +48,12 @@ class GeneratorFiles extends AbstractGeneratorAware
             if (!$struct->isStruct()) {
                 continue;
             }
-            $this->getStructFile($struct)->setModel($struct)->write();
+
+            $this
+                ->getStructFile($struct)
+                ->setModel($struct)
+                ->write()
+            ;
         }
 
         return $this;

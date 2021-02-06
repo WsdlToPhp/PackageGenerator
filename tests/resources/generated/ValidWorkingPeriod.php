@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,9 +20,9 @@ class ApiWorkingPeriod extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
-     * @var string[]
+     * @var string
      */
-    public $DayOfWeek = null;
+    public ?string $DayOfWeek = null;
     /**
      * The StartTimeInMinutes
      * Meta information extracted from the WSDL
@@ -29,7 +30,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * - minOccurs: 1
      * @var int
      */
-    public $StartTimeInMinutes = null;
+    public ?int $StartTimeInMinutes = null;
     /**
      * The EndTimeInMinutes
      * Meta information extracted from the WSDL
@@ -37,17 +38,17 @@ class ApiWorkingPeriod extends AbstractStructBase
      * - minOccurs: 1
      * @var int
      */
-    public $EndTimeInMinutes = null;
+    public ?int $EndTimeInMinutes = null;
     /**
      * Constructor method for WorkingPeriod
      * @uses ApiWorkingPeriod::setDayOfWeek()
      * @uses ApiWorkingPeriod::setStartTimeInMinutes()
      * @uses ApiWorkingPeriod::setEndTimeInMinutes()
-     * @param string[] $dayOfWeek
+     * @param string $dayOfWeek
      * @param int $startTimeInMinutes
      * @param int $endTimeInMinutes
      */
-    public function __construct(array $dayOfWeek = array(), int $startTimeInMinutes = null, int $endTimeInMinutes = null)
+    public function __construct(array $dayOfWeek = [], ?int $startTimeInMinutes = null, ?int $endTimeInMinutes = null)
     {
         $this
             ->setDayOfWeek($dayOfWeek)
@@ -56,9 +57,9 @@ class ApiWorkingPeriod extends AbstractStructBase
     }
     /**
      * Get DayOfWeek value
-     * @return string[]
+     * @return string
      */
-    public function getDayOfWeek(): ?array
+    public function getDayOfWeek(): ?string
     {
         return $this->DayOfWeek;
     }
@@ -68,7 +69,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDayOfWeekForArrayConstraintsFromSetDayOfWeek(array $values = array()): string
+    public static function validateDayOfWeekForArrayConstraintsFromSetDayOfWeek(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -89,10 +90,10 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @uses \Api\EnumType\ApiDayOfWeekType::valueIsValid()
      * @uses \Api\EnumType\ApiDayOfWeekType::getValidValues()
      * @throws \InvalidArgumentException
-     * @param string[] $dayOfWeek
+     * @param string $dayOfWeek
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setDayOfWeek(array $dayOfWeek = array()): self
+    public function setDayOfWeek(array $dayOfWeek = []): self
     {
         // validation for constraint: list
         if ('' !== ($dayOfWeekArrayErrorMessage = self::validateDayOfWeekForArrayConstraintsFromSetDayOfWeek($dayOfWeek))) {
@@ -114,7 +115,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param int $startTimeInMinutes
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setStartTimeInMinutes(int $startTimeInMinutes = null): self
+    public function setStartTimeInMinutes(?int $startTimeInMinutes = null): self
     {
         // validation for constraint: int
         if (!is_null($startTimeInMinutes) && !(is_int($startTimeInMinutes) || ctype_digit($startTimeInMinutes))) {
@@ -136,7 +137,7 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @param int $endTimeInMinutes
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setEndTimeInMinutes(int $endTimeInMinutes = null): self
+    public function setEndTimeInMinutes(?int $endTimeInMinutes = null): self
     {
         // validation for constraint: int
         if (!is_null($endTimeInMinutes) && !(is_int($endTimeInMinutes) || ctype_digit($endTimeInMinutes))) {

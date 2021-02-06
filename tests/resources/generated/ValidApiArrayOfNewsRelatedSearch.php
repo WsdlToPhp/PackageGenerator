@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\ArrayType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
@@ -21,13 +22,13 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiNewsRelatedSearch[]
      */
-    public $NewsRelatedSearch = null;
+    public array $NewsRelatedSearch = [];
     /**
      * Constructor method for ArrayOfNewsRelatedSearch
      * @uses ApiArrayOfNewsRelatedSearch::setNewsRelatedSearch()
      * @param \Api\StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      */
-    public function __construct(array $newsRelatedSearch = array())
+    public function __construct(array $newsRelatedSearch = [])
     {
         $this
             ->setNewsRelatedSearch($newsRelatedSearch);
@@ -46,7 +47,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch(array $values = array()): string
+    public static function validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -68,7 +69,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @param \Api\StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
      */
-    public function setNewsRelatedSearch(array $newsRelatedSearch = array()): self
+    public function setNewsRelatedSearch(array $newsRelatedSearch = []): self
     {
         // validation for constraint: array
         if ('' !== ($newsRelatedSearchArrayErrorMessage = self::validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch($newsRelatedSearch))) {
@@ -78,26 +79,11 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
         return $this;
     }
     /**
-     * Add item to NewsRelatedSearch value
-     * @throws \InvalidArgumentException
-     * @param \Api\StructType\ApiNewsRelatedSearch $item
-     * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
-     */
-    public function addToNewsRelatedSearch(\Api\StructType\ApiNewsRelatedSearch $item): self
-    {
-        // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiNewsRelatedSearch) {
-            throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of type \Api\StructType\ApiNewsRelatedSearch, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        $this->NewsRelatedSearch[] = $item;
-        return $this;
-    }
-    /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
      * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
-    public function current()
+    public function current(): ?\Api\StructType\ApiNewsRelatedSearch
     {
         return parent::current();
     }
@@ -107,7 +93,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @param int $index
      * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
-    public function item($index)
+    public function item($index): ?\Api\StructType\ApiNewsRelatedSearch
     {
         return parent::item($index);
     }
@@ -116,7 +102,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::first()
      * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
-    public function first()
+    public function first(): ?\Api\StructType\ApiNewsRelatedSearch
     {
         return parent::first();
     }
@@ -125,7 +111,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::last()
      * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
-    public function last()
+    public function last(): ?\Api\StructType\ApiNewsRelatedSearch
     {
         return parent::last();
     }
@@ -135,16 +121,28 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @param int $offset
      * @return \Api\StructType\ApiNewsRelatedSearch|null
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): ?\Api\StructType\ApiNewsRelatedSearch
     {
         return parent::offsetGet($offset);
+    }
+    /**
+     * Add element to array
+     * @see AbstractStructArrayBase::add()
+     * @throws \InvalidArgumentException
+     * @uses \Api\StructType\ApiNewsRelatedSearch::valueIsValid()
+     * @param ApiNewsRelatedSearch $item
+     * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
+     */
+    public function add(\Api\StructType\ApiNewsRelatedSearch $item): self
+    {
+        return parent::add($item);
     }
     /**
      * Returns the attribute name
      * @see AbstractStructArrayBase::getAttributeName()
      * @return string NewsRelatedSearch
      */
-    public function getAttributeName()
+    public function getAttributeName(): string
     {
         return 'NewsRelatedSearch';
     }

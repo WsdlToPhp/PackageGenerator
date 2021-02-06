@@ -89,8 +89,8 @@
         "composer/composer": "^2.0",
         "symfony/console": ">=4.0",
         "symfony/yaml": ">=4.0",
-        "wsdltophp/packagebase": "^3.0",
-        "wsdltophp/phpgenerator": "^3.0",
+        "wsdltophp/packagebase": "^5.0",
+        "wsdltophp/phpgenerator": "^4.0",
         "wsdltophp/wsdlhandler": "^1.0"
     },
     "scripts": {

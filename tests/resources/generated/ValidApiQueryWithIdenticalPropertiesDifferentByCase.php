@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +22,7 @@ class ApiQuery extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $SearchTerms = null;
+    public ?string $SearchTerms = null;
     /**
      * The AlteredQuery
      * Meta information extracted from the WSDL
@@ -29,7 +30,7 @@ class ApiQuery extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $AlteredQuery = null;
+    public ?string $AlteredQuery = null;
     /**
      * The AlterationOverrideQuery
      * Meta information extracted from the WSDL
@@ -37,12 +38,12 @@ class ApiQuery extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $AlterationOverrideQuery = null;
+    public ?string $AlterationOverrideQuery = null;
     /**
      * The searchTerms
      * @var string
      */
-    public $searchTerms = null;
+    public ?string $searchTerms = null;
     /**
      * Constructor method for Query
      * @uses ApiQuery::setSearchTerms()
@@ -54,7 +55,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $alterationOverrideQuery
      * @param string $searchTerms
      */
-    public function __construct(string $searchTerms = null, string $alteredQuery = null, string $alterationOverrideQuery = null, string $searchTerms_1 = null)
+    public function __construct(?string $searchTerms = null, ?string $alteredQuery = null, ?string $alterationOverrideQuery = null, ?string $searchTerms_1 = null)
     {
         $this
             ->setSearchTerms($searchTerms)
@@ -75,7 +76,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $searchTerms
      * @return \Api\StructType\ApiQuery
      */
-    public function setSearchTerms(string $searchTerms = null): self
+    public function setSearchTerms(?string $searchTerms = null): self
     {
         // validation for constraint: string
         if (!is_null($searchTerms) && !is_string($searchTerms)) {
@@ -97,7 +98,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $alteredQuery
      * @return \Api\StructType\ApiQuery
      */
-    public function setAlteredQuery(string $alteredQuery = null): self
+    public function setAlteredQuery(?string $alteredQuery = null): self
     {
         // validation for constraint: string
         if (!is_null($alteredQuery) && !is_string($alteredQuery)) {
@@ -119,7 +120,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $alterationOverrideQuery
      * @return \Api\StructType\ApiQuery
      */
-    public function setAlterationOverrideQuery(string $alterationOverrideQuery = null): self
+    public function setAlterationOverrideQuery(?string $alterationOverrideQuery = null): self
     {
         // validation for constraint: string
         if (!is_null($alterationOverrideQuery) && !is_string($alterationOverrideQuery)) {
@@ -141,7 +142,7 @@ class ApiQuery extends AbstractStructBase
      * @param string $searchTerms
      * @return \Api\StructType\ApiQuery
      */
-    public function setSearchTerms_1(string $searchTerms_1 = null): self
+    public function setSearchTerms_1(?string $searchTerms_1 = null): self
     {
         // validation for constraint: string
         if (!is_null($searchTerms_1) && !is_string($searchTerms_1)) {

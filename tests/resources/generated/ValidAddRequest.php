@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,13 +22,13 @@ class ApiAddRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiAdGroupAddItem[]
      */
-    public $AdGroups = null;
+    public array $AdGroups = [];
     /**
      * Constructor method for AddRequest
      * @uses ApiAddRequest::setAdGroups()
      * @param \Api\StructType\ApiAdGroupAddItem[] $adGroups
      */
-    public function __construct(array $adGroups = array())
+    public function __construct(array $adGroups = [])
     {
         $this
             ->setAdGroups($adGroups);
@@ -46,7 +47,7 @@ class ApiAddRequest extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdGroupsForArrayConstraintsFromSetAdGroups(array $values = array()): string
+    public static function validateAdGroupsForArrayConstraintsFromSetAdGroups(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -68,7 +69,7 @@ class ApiAddRequest extends AbstractStructBase
      * @param \Api\StructType\ApiAdGroupAddItem[] $adGroups
      * @return \Api\StructType\ApiAddRequest
      */
-    public function setAdGroups(array $adGroups = array()): self
+    public function setAdGroups(array $adGroups = []): self
     {
         // validation for constraint: array
         if ('' !== ($adGroupsArrayErrorMessage = self::validateAdGroupsForArrayConstraintsFromSetAdGroups($adGroups))) {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +23,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiStreetNmbr
      */
-    public $StreetNmbr = null;
+    public ?\Api\StructType\ApiStreetNmbr $StreetNmbr = null;
     /**
      * The AddressLine
      * Meta information extracted from the WSDL
@@ -35,7 +36,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    public $AddressLine = null;
+    public array $AddressLine = [];
     /**
      * The CityName
      * Meta information extracted from the WSDL
@@ -46,7 +47,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $CityName = null;
+    public ?string $CityName = null;
     /**
      * The PostalCode
      * Meta information extracted from the WSDL
@@ -57,7 +58,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $PostalCode = null;
+    public ?string $PostalCode = null;
     /**
      * The County
      * Meta information extracted from the WSDL
@@ -68,7 +69,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var string
      */
-    public $County = null;
+    public ?string $County = null;
     /**
      * The StateProv
      * Meta information extracted from the WSDL
@@ -76,7 +77,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiStateProvType
      */
-    public $StateProv = null;
+    public ?\Api\StructType\ApiStateProvType $StateProv = null;
     /**
      * The CountryName
      * Meta information extracted from the WSDL
@@ -84,7 +85,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Api\StructType\ApiCountryNameType
      */
-    public $CountryName = null;
+    public ?\Api\StructType\ApiCountryNameType $CountryName = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -95,7 +96,7 @@ class ApiAddressType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $Type = null;
+    public ?string $Type = null;
     /**
      * The Remark
      * Meta information extracted from the WSDL
@@ -106,7 +107,7 @@ class ApiAddressType extends AbstractStructBase
      * - use: optional
      * @var string
      */
-    public $Remark = null;
+    public ?string $Remark = null;
     /**
      * The FormattedInd
      * Meta information extracted from the WSDL
@@ -115,17 +116,17 @@ class ApiAddressType extends AbstractStructBase
      * - use: optional
      * @var bool
      */
-    public $FormattedInd = null;
+    public ?bool $FormattedInd = null;
     /**
      * The ShareSynchInd
      * @var string
      */
-    public $ShareSynchInd = null;
+    public ?string $ShareSynchInd = null;
     /**
      * The ShareMarketInd
      * @var string
      */
-    public $ShareMarketInd = null;
+    public ?string $ShareMarketInd = null;
     /**
      * Constructor method for AddressType
      * @uses ApiAddressType::setStreetNmbr()
@@ -153,7 +154,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $shareSynchInd
      * @param string $shareMarketInd
      */
-    public function __construct(\Api\StructType\ApiStreetNmbr $streetNmbr = null, array $addressLine = array(), string $cityName = null, string $postalCode = null, string $county = null, \Api\StructType\ApiStateProvType $stateProv = null, \Api\StructType\ApiCountryNameType $countryName = null, string $type = null, string $remark = null, bool $formattedInd = null, string $shareSynchInd = null, string $shareMarketInd = null)
+    public function __construct(?\Api\StructType\ApiStreetNmbr $streetNmbr = null, array $addressLine = [], ?string $cityName = null, ?string $postalCode = null, ?string $county = null, ?\Api\StructType\ApiStateProvType $stateProv = null, ?\Api\StructType\ApiCountryNameType $countryName = null, ?string $type = null, ?string $remark = null, ?bool $formattedInd = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null)
     {
         $this
             ->setStreetNmbr($streetNmbr)
@@ -182,7 +183,7 @@ class ApiAddressType extends AbstractStructBase
      * @param \Api\StructType\ApiStreetNmbr $streetNmbr
      * @return \Api\StructType\ApiAddressType
      */
-    public function setStreetNmbr(\Api\StructType\ApiStreetNmbr $streetNmbr = null): self
+    public function setStreetNmbr(?\Api\StructType\ApiStreetNmbr $streetNmbr = null): self
     {
         $this->StreetNmbr = $streetNmbr;
         return $this;
@@ -201,7 +202,7 @@ class ApiAddressType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressLineForArrayConstraintsFromSetAddressLine(array $values = array()): string
+    public static function validateAddressLineForArrayConstraintsFromSetAddressLine(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -269,7 +270,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string[] $addressLine
      * @return \Api\StructType\ApiAddressType
      */
-    public function setAddressLine(array $addressLine = array()): self
+    public function setAddressLine(array $addressLine = []): self
     {
         // validation for constraint: array
         if ('' !== ($addressLineArrayErrorMessage = self::validateAddressLineForArrayConstraintsFromSetAddressLine($addressLine))) {
@@ -330,7 +331,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $cityName
      * @return \Api\StructType\ApiAddressType
      */
-    public function setCityName(string $cityName = null): self
+    public function setCityName(?string $cityName = null): self
     {
         // validation for constraint: string
         if (!is_null($cityName) && !is_string($cityName)) {
@@ -360,7 +361,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $postalCode
      * @return \Api\StructType\ApiAddressType
      */
-    public function setPostalCode(string $postalCode = null): self
+    public function setPostalCode(?string $postalCode = null): self
     {
         // validation for constraint: string
         if (!is_null($postalCode) && !is_string($postalCode)) {
@@ -390,7 +391,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $county
      * @return \Api\StructType\ApiAddressType
      */
-    public function setCounty(string $county = null): self
+    public function setCounty(?string $county = null): self
     {
         // validation for constraint: string
         if (!is_null($county) && !is_string($county)) {
@@ -420,7 +421,7 @@ class ApiAddressType extends AbstractStructBase
      * @param \Api\StructType\ApiStateProvType $stateProv
      * @return \Api\StructType\ApiAddressType
      */
-    public function setStateProv(\Api\StructType\ApiStateProvType $stateProv = null): self
+    public function setStateProv(?\Api\StructType\ApiStateProvType $stateProv = null): self
     {
         $this->StateProv = $stateProv;
         return $this;
@@ -438,7 +439,7 @@ class ApiAddressType extends AbstractStructBase
      * @param \Api\StructType\ApiCountryNameType $countryName
      * @return \Api\StructType\ApiAddressType
      */
-    public function setCountryName(\Api\StructType\ApiCountryNameType $countryName = null): self
+    public function setCountryName(?\Api\StructType\ApiCountryNameType $countryName = null): self
     {
         $this->CountryName = $countryName;
         return $this;
@@ -456,7 +457,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $type
      * @return \Api\StructType\ApiAddressType
      */
-    public function setType(string $type = null): self
+    public function setType(?string $type = null): self
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
@@ -482,7 +483,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $remark
      * @return \Api\StructType\ApiAddressType
      */
-    public function setRemark(string $remark = null): self
+    public function setRemark(?string $remark = null): self
     {
         // validation for constraint: string
         if (!is_null($remark) && !is_string($remark)) {
@@ -512,7 +513,7 @@ class ApiAddressType extends AbstractStructBase
      * @param bool $formattedInd
      * @return \Api\StructType\ApiAddressType
      */
-    public function setFormattedInd(bool $formattedInd = null): self
+    public function setFormattedInd(?bool $formattedInd = null): self
     {
         // validation for constraint: boolean
         if (!is_null($formattedInd) && !is_bool($formattedInd)) {
@@ -534,7 +535,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $shareSynchInd
      * @return \Api\StructType\ApiAddressType
      */
-    public function setShareSynchInd(string $shareSynchInd = null): self
+    public function setShareSynchInd(?string $shareSynchInd = null): self
     {
         // validation for constraint: string
         if (!is_null($shareSynchInd) && !is_string($shareSynchInd)) {
@@ -556,7 +557,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $shareMarketInd
      * @return \Api\StructType\ApiAddressType
      */
-    public function setShareMarketInd(string $shareMarketInd = null): self
+    public function setShareMarketInd(?string $shareMarketInd = null): self
     {
         // validation for constraint: string
         if (!is_null($shareMarketInd) && !is_string($shareMarketInd)) {

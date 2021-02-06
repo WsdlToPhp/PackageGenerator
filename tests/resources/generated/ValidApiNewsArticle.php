@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use \Std\Opt\StructClass;
 
 /**
@@ -21,7 +22,7 @@ class ApiNewsArticle extends StructClass
      * - minOccurs: 0
      * @var string
      */
-    public $Title = null;
+    public ?string $Title = null;
     /**
      * The Url
      * Meta information extracted from the WSDL
@@ -29,7 +30,7 @@ class ApiNewsArticle extends StructClass
      * - minOccurs: 0
      * @var string
      */
-    public $Url = null;
+    public ?string $Url = null;
     /**
      * The Source
      * Meta information extracted from the WSDL
@@ -37,7 +38,7 @@ class ApiNewsArticle extends StructClass
      * - minOccurs: 0
      * @var string
      */
-    public $Source = null;
+    public ?string $Source = null;
     /**
      * The Snippet
      * Meta information extracted from the WSDL
@@ -45,7 +46,7 @@ class ApiNewsArticle extends StructClass
      * - minOccurs: 0
      * @var string
      */
-    public $Snippet = null;
+    public ?string $Snippet = null;
     /**
      * The Date
      * Meta information extracted from the WSDL
@@ -53,7 +54,7 @@ class ApiNewsArticle extends StructClass
      * - minOccurs: 0
      * @var string
      */
-    public $Date = null;
+    public ?string $Date = null;
     /**
      * Constructor method for NewsArticle
      * @uses ApiNewsArticle::setTitle()
@@ -67,7 +68,7 @@ class ApiNewsArticle extends StructClass
      * @param string $snippet
      * @param string $date
      */
-    public function __construct(string $title = null, string $url = null, string $source = null, string $snippet = null, string $date = null)
+    public function __construct(?string $title = null, ?string $url = null, ?string $source = null, ?string $snippet = null, ?string $date = null)
     {
         $this
             ->setTitle($title)
@@ -89,7 +90,7 @@ class ApiNewsArticle extends StructClass
      * @param string $title
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setTitle(string $title = null): self
+    public function setTitle(?string $title = null): self
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
@@ -111,7 +112,7 @@ class ApiNewsArticle extends StructClass
      * @param string $url
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setUrl(string $url = null): self
+    public function setUrl(?string $url = null): self
     {
         // validation for constraint: string
         if (!is_null($url) && !is_string($url)) {
@@ -133,7 +134,7 @@ class ApiNewsArticle extends StructClass
      * @param string $source
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setSource(string $source = null): self
+    public function setSource(?string $source = null): self
     {
         // validation for constraint: string
         if (!is_null($source) && !is_string($source)) {
@@ -155,7 +156,7 @@ class ApiNewsArticle extends StructClass
      * @param string $snippet
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setSnippet(string $snippet = null): self
+    public function setSnippet(?string $snippet = null): self
     {
         // validation for constraint: string
         if (!is_null($snippet) && !is_string($snippet)) {
@@ -177,7 +178,7 @@ class ApiNewsArticle extends StructClass
      * @param string $date
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setDate(string $date = null): self
+    public function setDate(?string $date = null): self
     {
         // validation for constraint: string
         if (!is_null($date) && !is_string($date)) {

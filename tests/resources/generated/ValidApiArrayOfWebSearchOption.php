@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\ArrayType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
@@ -21,13 +22,13 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var string[]
      */
-    public $WebSearchOption = null;
+    public array $WebSearchOption = [];
     /**
      * Constructor method for ArrayOfWebSearchOption
      * @uses ApiArrayOfWebSearchOption::setWebSearchOption()
      * @param string[] $webSearchOption
      */
-    public function __construct(array $webSearchOption = array())
+    public function __construct(array $webSearchOption = [])
     {
         $this
             ->setWebSearchOption($webSearchOption);
@@ -46,7 +47,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption(array $values = array()): string
+    public static function validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -70,7 +71,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param string[] $webSearchOption
      * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
-    public function setWebSearchOption(array $webSearchOption = array()): self
+    public function setWebSearchOption(array $webSearchOption = []): self
     {
         // validation for constraint: array
         if ('' !== ($webSearchOptionArrayErrorMessage = self::validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption($webSearchOption))) {
@@ -80,28 +81,11 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
         return $this;
     }
     /**
-     * Add item to WebSearchOption value
-     * @uses \Api\EnumType\ApiWebSearchOption::valueIsValid()
-     * @uses \Api\EnumType\ApiWebSearchOption::getValidValues()
-     * @throws \InvalidArgumentException
-     * @param string $item
-     * @return \Api\ArrayType\ApiArrayOfWebSearchOption
-     */
-    public function addToWebSearchOption(string $item): self
-    {
-        // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiWebSearchOption', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiWebSearchOption::getValidValues())), __LINE__);
-        }
-        $this->WebSearchOption[] = $item;
-        return $this;
-    }
-    /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
      * @return string|null
      */
-    public function current()
+    public function current(): ?string
     {
         return parent::current();
     }
@@ -111,7 +95,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param int $index
      * @return string|null
      */
-    public function item($index)
+    public function item($index): ?string
     {
         return parent::item($index);
     }
@@ -120,7 +104,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::first()
      * @return string|null
      */
-    public function first()
+    public function first(): ?string
     {
         return parent::first();
     }
@@ -129,7 +113,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::last()
      * @return string|null
      */
-    public function last()
+    public function last(): ?string
     {
         return parent::last();
     }
@@ -139,7 +123,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param int $offset
      * @return string|null
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): ?string
     {
         return parent::offsetGet($offset);
     }
@@ -151,7 +135,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param string $item
      * @return \Api\ArrayType\ApiArrayOfWebSearchOption
      */
-    public function add($item)
+    public function add(string $item): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiWebSearchOption::valueIsValid($item)) {
@@ -164,7 +148,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @see AbstractStructArrayBase::getAttributeName()
      * @return string WebSearchOption
      */
-    public function getAttributeName()
+    public function getAttributeName(): string
     {
         return 'WebSearchOption';
     }

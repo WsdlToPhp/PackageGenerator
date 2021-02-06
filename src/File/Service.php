@@ -27,7 +27,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 final class Service extends AbstractModelFile
 {
     public const METHOD_SET_HEADER_PREFIX = 'setSoapHeader';
-    public const PARAM_SET_HEADER_NAMESPACE = 'nameSpace';
+    public const PARAM_SET_HEADER_NAMESPACE = 'namespace';
     public const PARAM_SET_HEADER_MUSTUNDERSTAND = 'mustUnderstand';
     public const PARAM_SET_HEADER_ACTOR = 'actor';
     public const METHOD_GET_RESULT = 'getResult';
@@ -138,7 +138,7 @@ final class Service extends AbstractModelFile
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace, self::TYPE_STRING),
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false, self::TYPE_BOOL),
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_ACTOR, null, '?'.self::TYPE_STRING),
-            ], 'self');
+            ], self::TYPE_SELF);
             $model = $this->getModelByName($soapHeaderType);
             if ($model instanceof StructModel) {
                 $rules = new Rules($this, $method, new StructAttributeModel($model->getGenerator(), $soapHeaderType, $model->getName(), $model), $this->methods);
@@ -227,12 +227,12 @@ final class Service extends AbstractModelFile
                 }
             }
             $annotationBlock
-                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::setSoapHeader()', $this->getModel()->getExtends(true))))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $this->getModel()->getExtends(true), self::METHOD_SET_HEADER_PREFIX)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $firstParameterType, $firstParameter->getName())))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_NAMESPACE)))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('bool $%s', self::PARAM_SET_HEADER_MUSTUNDERSTAND)))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('string $%s', self::PARAM_SET_HEADER_ACTOR)))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, 'bool'))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_STRING, self::PARAM_SET_HEADER_NAMESPACE)))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_BOOL, self::PARAM_SET_HEADER_MUSTUNDERSTAND)))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_STRING, self::PARAM_SET_HEADER_ACTOR)))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName(true)))
             ;
         }
 

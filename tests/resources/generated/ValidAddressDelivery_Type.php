@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +24,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * - base: string
      * @var string
      */
-    public $Street1 = null;
+    public ?string $Street1 = null;
     /**
      * The Street2
      * Meta information extracted from the WSDL
@@ -31,7 +32,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * - base: string
      * @var string
      */
-    public $Street2 = null;
+    public ?string $Street2 = null;
     /**
      * The Street3
      * Meta information extracted from the WSDL
@@ -39,7 +40,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * - base: string
      * @var string
      */
-    public $Street3 = null;
+    public ?string $Street3 = null;
     /**
      * The City
      * Meta information extracted from the WSDL
@@ -47,7 +48,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * - base: string
      * @var string
      */
-    public $City = null;
+    public ?string $City = null;
     /**
      * The PostalCode
      * Meta information extracted from the WSDL
@@ -56,7 +57,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * - length: 4
      * @var string
      */
-    public $PostalCode = null;
+    public ?string $PostalCode = null;
     /**
      * Constructor method for AddressDelivery_Type
      * @uses ApiAddressDelivery_Type::setStreet1()
@@ -70,7 +71,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $city
      * @param string $postalCode
      */
-    public function __construct(string $street1 = null, string $street2 = null, string $street3 = null, string $city = null, string $postalCode = null)
+    public function __construct(?string $street1 = null, ?string $street2 = null, ?string $street3 = null, ?string $city = null, ?string $postalCode = null)
     {
         $this
             ->setStreet1($street1)
@@ -92,7 +93,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $street1
      * @return \Api\StructType\ApiAddressDelivery_Type
      */
-    public function setStreet1(string $street1 = null): self
+    public function setStreet1(?string $street1 = null): self
     {
         // validation for constraint: string
         if (!is_null($street1) && !is_string($street1)) {
@@ -114,7 +115,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $street2
      * @return \Api\StructType\ApiAddressDelivery_Type
      */
-    public function setStreet2(string $street2 = null): self
+    public function setStreet2(?string $street2 = null): self
     {
         // validation for constraint: string
         if (!is_null($street2) && !is_string($street2)) {
@@ -136,7 +137,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $street3
      * @return \Api\StructType\ApiAddressDelivery_Type
      */
-    public function setStreet3(string $street3 = null): self
+    public function setStreet3(?string $street3 = null): self
     {
         // validation for constraint: string
         if (!is_null($street3) && !is_string($street3)) {
@@ -158,7 +159,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $city
      * @return \Api\StructType\ApiAddressDelivery_Type
      */
-    public function setCity(string $city = null): self
+    public function setCity(?string $city = null): self
     {
         // validation for constraint: string
         if (!is_null($city) && !is_string($city)) {
@@ -180,7 +181,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $postalCode
      * @return \Api\StructType\ApiAddressDelivery_Type
      */
-    public function setPostalCode(string $postalCode = null): self
+    public function setPostalCode(?string $postalCode = null): self
     {
         // validation for constraint: string
         if (!is_null($postalCode) && !is_string($postalCode)) {

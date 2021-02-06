@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -18,7 +19,7 @@ class ApiItem extends AbstractStructBase
      * The itemType
      * @var string
      */
-    public $itemType = null;
+    public ?string $itemType = null;
     /**
      * The id
      * Meta information extracted from the WSDL
@@ -26,17 +27,17 @@ class ApiItem extends AbstractStructBase
      * - base: xsd:string
      * @var string
      */
-    public $id = null;
+    public ?string $id = null;
     /**
      * The displayName
      * @var string
      */
-    public $displayName = null;
+    public ?string $displayName = null;
     /**
      * The any
      * @var \DOMDocument
      */
-    public $any = null;
+    public ?\DOMDocument $any = null;
     /**
      * Constructor method for Item
      * @uses ApiItem::setItemType()
@@ -48,7 +49,7 @@ class ApiItem extends AbstractStructBase
      * @param string $displayName
      * @param \DOMDocument $any
      */
-    public function __construct(string $itemType = null, string $id = null, string $displayName = null, \DOMDocument $any = null)
+    public function __construct(?string $itemType = null, ?string $id = null, ?string $displayName = null, ?\DOMDocument $any = null)
     {
         $this
             ->setItemType($itemType)
@@ -72,7 +73,7 @@ class ApiItem extends AbstractStructBase
      * @param string $itemType
      * @return \Api\StructType\ApiItem
      */
-    public function setItemType(string $itemType = null): self
+    public function setItemType(?string $itemType = null): self
     {
         // validation for constraint: enumeration
         if (!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
@@ -94,7 +95,7 @@ class ApiItem extends AbstractStructBase
      * @param string $id
      * @return \Api\StructType\ApiItem
      */
-    public function setId(string $id = null): self
+    public function setId(?string $id = null): self
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
@@ -116,7 +117,7 @@ class ApiItem extends AbstractStructBase
      * @param string $displayName
      * @return \Api\StructType\ApiItem
      */
-    public function setDisplayName(string $displayName = null): self
+    public function setDisplayName(?string $displayName = null): self
     {
         // validation for constraint: string
         if (!is_null($displayName) && !is_string($displayName)) {
@@ -131,14 +132,14 @@ class ApiItem extends AbstractStructBase
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
      * @return \DOMDocument|string|null
      */
-    public function getAny(bool $asString = true)
+    public function getAny(bool $asDomDocument = false)
     {
         $domDocument = null;
-        if (!empty($this->any) && !$asString) {
+        if (!empty($this->any) && $asDomDocument) {
             $domDocument = new \DOMDocument('1.0', 'UTF-8');
             $domDocument->loadXML($this->any);
         }
-        return $asString ? $this->any : $domDocument;
+        return $asDomDocument ? $domDocument : $this->any;
     }
     /**
      * Set any value
@@ -148,7 +149,7 @@ class ApiItem extends AbstractStructBase
      * @param \DOMDocument $any
      * @return \Api\StructType\ApiItem
      */
-    public function setAny(\DOMDocument $any = null): self
+    public function setAny(?\DOMDocument $any = null): self
     {
         $this->any = ($any instanceof \DOMDocument) && $any->hasChildNodes() ? $any->saveXML($any->childNodes->item(0)) : null;
         return $this;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,42 +21,42 @@ class ApiАдресРФ extends ApiСостав
      * - minOccurs: 0
      * @var string
      */
-    public $СубъектРФ = null;
+    public ?string $СубъектРФ = null;
     /**
      * The СвРайМО
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Api\StructType\ApiСвРайМО
      */
-    public $СвРайМО = null;
+    public ?\Api\StructType\ApiСвРайМО $СвРайМО = null;
     /**
      * The Город
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
-    public $Город = null;
+    public ?string $Город = null;
     /**
      * The ВнутригРайон
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
-    public $ВнутригРайон = null;
+    public ?string $ВнутригРайон = null;
     /**
      * The НаселПункт
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
-    public $НаселПункт = null;
+    public ?string $НаселПункт = null;
     /**
      * The Улица
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
-    public $Улица = null;
+    public ?string $Улица = null;
     /**
      * The ДопАдрЭл
      * Meta information extracted from the WSDL
@@ -63,7 +64,7 @@ class ApiАдресРФ extends ApiСостав
      * - minOccurs: 0
      * @var \Api\StructType\ApiДопАдрЭл[]
      */
-    public $ДопАдрЭл = null;
+    public array $ДопАдрЭл = [];
     /**
      * Constructor method for АдресРФ
      * @uses ApiАдресРФ::setСубъектРФ()
@@ -81,7 +82,7 @@ class ApiАдресРФ extends ApiСостав
      * @param string $Улица
      * @param \Api\StructType\ApiДопАдрЭл[] $ДопАдрЭл
      */
-    public function __construct(string $СубъектРФ = null, \Api\StructType\ApiСвРайМО $СвРайМО = null, string $Город = null, string $ВнутригРайон = null, string $НаселПункт = null, string $Улица = null, array $ДопАдрЭл = array())
+    public function __construct(?string $СубъектРФ = null, ?\Api\StructType\ApiСвРайМО $СвРайМО = null, ?string $Город = null, ?string $ВнутригРайон = null, ?string $НаселПункт = null, ?string $Улица = null, array $ДопАдрЭл = [])
     {
         $this
             ->setСубъектРФ($СубъектРФ)
@@ -105,7 +106,7 @@ class ApiАдресРФ extends ApiСостав
      * @param string $СубъектРФ
      * @return \Api\StructType\ApiАдресРФ
      */
-    public function setСубъектРФ(string $СубъектРФ = null): self
+    public function setСубъектРФ(?string $СубъектРФ = null): self
     {
         // validation for constraint: string
         if (!is_null($СубъектРФ) && !is_string($СубъектРФ)) {
@@ -127,7 +128,7 @@ class ApiАдресРФ extends ApiСостав
      * @param \Api\StructType\ApiСвРайМО $СвРайМО
      * @return \Api\StructType\ApiАдресРФ
      */
-    public function setСвРайМО(\Api\StructType\ApiСвРайМО $СвРайМО = null): self
+    public function setСвРайМО(?\Api\StructType\ApiСвРайМО $СвРайМО = null): self
     {
         $this->СвРайМО = $СвРайМО;
         return $this;
@@ -145,7 +146,7 @@ class ApiАдресРФ extends ApiСостав
      * @param string $Город
      * @return \Api\StructType\ApiАдресРФ
      */
-    public function setГород(string $Город = null): self
+    public function setГород(?string $Город = null): self
     {
         // validation for constraint: string
         if (!is_null($Город) && !is_string($Город)) {
@@ -167,7 +168,7 @@ class ApiАдресРФ extends ApiСостав
      * @param string $ВнутригРайон
      * @return \Api\StructType\ApiАдресРФ
      */
-    public function setВнутригРайон(string $ВнутригРайон = null): self
+    public function setВнутригРайон(?string $ВнутригРайон = null): self
     {
         // validation for constraint: string
         if (!is_null($ВнутригРайон) && !is_string($ВнутригРайон)) {
@@ -189,7 +190,7 @@ class ApiАдресРФ extends ApiСостав
      * @param string $НаселПункт
      * @return \Api\StructType\ApiАдресРФ
      */
-    public function setНаселПункт(string $НаселПункт = null): self
+    public function setНаселПункт(?string $НаселПункт = null): self
     {
         // validation for constraint: string
         if (!is_null($НаселПункт) && !is_string($НаселПункт)) {
@@ -211,7 +212,7 @@ class ApiАдресРФ extends ApiСостав
      * @param string $Улица
      * @return \Api\StructType\ApiАдресРФ
      */
-    public function setУлица(string $Улица = null): self
+    public function setУлица(?string $Улица = null): self
     {
         // validation for constraint: string
         if (!is_null($Улица) && !is_string($Улица)) {
@@ -234,7 +235,7 @@ class ApiАдресРФ extends ApiСостав
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл(array $values = array()): string
+    public static function validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -256,7 +257,7 @@ class ApiАдресРФ extends ApiСостав
      * @param \Api\StructType\ApiДопАдрЭл[] $ДопАдрЭл
      * @return \Api\StructType\ApiАдресРФ
      */
-    public function setДопАдрЭл(array $ДопАдрЭл = array()): self
+    public function setДопАдрЭл(array $ДопАдрЭл = []): self
     {
         // validation for constraint: array
         if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл($ДопАдрЭл))) {
