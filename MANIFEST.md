@@ -78,6 +78,14 @@ This file intends to explain the way the files are generated and why. Moreover, 
   - Read the [soapclient option](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options#soapclient) for more information
 - Classes contain custom method(s) in order to define the Soap Header(s) based on what is defined in the WSDL.
   - Methods are named `setSoapHeader{SoapHeaderName}({SoapHeaderType} ${SoapHeaderName}, string $nameSpace = '{soapHeadernamespace}'}, bool $mustUnderstand = false, ?string $actor = null)`
+- Classes contain one method per Soap operation **named after the operation name** all with respecting the **PHP method naming constraints**. The method returns:
+  - `false`:
+    - This means there is an error with the request or the Soap Server that has triggered a SoapFault (be sure that `WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_TRACE`=`true`)
+    - Use `getLastError(string $methodName): ?SoapFault` to get the [SoapFault](https://www.php.net/manual/en/class.soapfault.php) thrown when the method cas called.
+    - `$methodName` has the form `{fully qualified classname}::{__FUNCION__}`
+  - A `{returnType}` object result:
+    - The `getResult` method is annotated with the `@return` annotation listing all the possible return types
+    - Be sure to check the result type before using the result methods if it's supposed to be an object
 
 ### ClassMap class
 - `ClassMap` class is generated under the `src` folder.
