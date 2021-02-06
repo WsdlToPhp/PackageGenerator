@@ -4,7 +4,7 @@ This file intends to explain the way the files are generated and why. Moreover, 
 
 ## PHP files and classes
 - Files and classes are generated using our own [PhpGenerator](https://github.com/WsdlToPhp/PhpGenerator) library. The [PhpGenerator](https://github.com/WsdlToPhp/PhpGenerator) is independent and not tweaked specifically for this project, it can be used freely and for any purpose.
-- Classes are generated under the `src` folder within the `destination` folder based on their `category`.
+- Classes are generated under the `src` folder within the `destination` folder based on their `category` and their `namespace`.
   - Read the [src folder option](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options#src-dirname) for more information
   - Read the [destination option](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options#destination) for more information
   - Read the [category option](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options#category) for more information
