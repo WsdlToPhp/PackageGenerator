@@ -30,11 +30,6 @@ class Struct extends AbstractModelFile
         return parent::setModel($model);
     }
 
-    /**
-     * @todo: only add `use InvalidArgumentException` if it's used!
-     *
-     * @return $this
-     */
     protected function defineUseStatements(): self
     {
         if ($this->getGenerator()->getOptionValidation()) {
