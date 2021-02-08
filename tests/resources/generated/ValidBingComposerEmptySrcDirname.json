@@ -5,6 +5,7 @@
         "php": ">=7.4",
         "ext-soap": "*",
         "ext-mbstring": "*",
+        "ext-libxml": "*",
         "wsdltophp/packagebase": "~5.0"
     },
     "autoload": {
