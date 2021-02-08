@@ -4,7 +4,6 @@
 - issue #124 - PHP >= 7.4 tasks
   - Code requires PHP >= 7.4
   - Generated code requires PHP >= 7.4
-  - Change Docker Hub repository from **[mikaelcom/wsdltophp](https://hub.docker.com/repository/docker/mikaelcom/wsdltophp)** to **[wsdltophp/wsdltophp](https://hub.docker.com/repository/docker/wsdltohphp/wsdltophp)**
   - Code cleaning
   - Update README
   - Add [MANIFEST.md](/MANIFEST.md) explaining how files are generated and how they should be used
