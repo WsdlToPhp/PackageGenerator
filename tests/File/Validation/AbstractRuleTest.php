@@ -20,6 +20,11 @@ abstract class AbstractRuleTest extends AbstractTestCase
 {
     private static array $generators = [];
 
+    public static function getActonItemInstance(bool $reset = false)
+    {
+        return self::getClassInstance('actonGeneratorInstance', 'Item', $reset);
+    }
+
     public static function getWhlAddressTypeInstance(bool $reset = false)
     {
         return self::getClassInstance('whlInstance', 'AddressType', $reset);
