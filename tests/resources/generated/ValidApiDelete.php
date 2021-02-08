@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\ServiceType;
 
+use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
@@ -49,7 +50,6 @@ class ApiDelete extends AbstractSoapClientBase
      * - SOAPHeaders: optional, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiDeleteList $parameter
      * @return void|bool
@@ -57,12 +57,14 @@ class ApiDelete extends AbstractSoapClientBase
     public function deleteList(\Api\StructType\ApiDeleteList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('deleteList', [
+            $this->setResult($resultDeleteList = $this->getSoapClient()->__soapCall('deleteList', [
                 $parameter,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultDeleteList;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
