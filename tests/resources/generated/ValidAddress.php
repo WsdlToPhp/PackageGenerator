@@ -113,6 +113,7 @@ class ApiАдресРФ extends ApiСостав
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($СубъектРФ, true), gettype($СубъектРФ)), __LINE__);
         }
         $this->СубъектРФ = $СубъектРФ;
+        
         return $this;
     }
     /**
@@ -131,6 +132,7 @@ class ApiАдресРФ extends ApiСостав
     public function setСвРайМО(?\Api\StructType\ApiСвРайМО $СвРайМО = null): self
     {
         $this->СвРайМО = $СвРайМО;
+        
         return $this;
     }
     /**
@@ -153,6 +155,7 @@ class ApiАдресРФ extends ApiСостав
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Город, true), gettype($Город)), __LINE__);
         }
         $this->Город = $Город;
+        
         return $this;
     }
     /**
@@ -175,6 +178,7 @@ class ApiАдресРФ extends ApiСостав
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ВнутригРайон, true), gettype($ВнутригРайон)), __LINE__);
         }
         $this->ВнутригРайон = $ВнутригРайон;
+        
         return $this;
     }
     /**
@@ -197,6 +201,7 @@ class ApiАдресРФ extends ApiСостав
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($НаселПункт, true), gettype($НаселПункт)), __LINE__);
         }
         $this->НаселПункт = $НаселПункт;
+        
         return $this;
     }
     /**
@@ -219,6 +224,7 @@ class ApiАдресРФ extends ApiСостав
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Улица, true), gettype($Улица)), __LINE__);
         }
         $this->Улица = $Улица;
+        
         return $this;
     }
     /**
@@ -249,11 +255,12 @@ class ApiАдресРФ extends ApiСостав
             $message = sprintf('The ДопАдрЭл property can only contain items of type \Api\StructType\ApiДопАдрЭл, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set ДопАдрЭл value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiДопАдрЭл[] $ДопАдрЭл
      * @return \Api\StructType\ApiАдресРФ
      */
@@ -264,11 +271,12 @@ class ApiАдресРФ extends ApiСостав
             throw new InvalidArgumentException($ДопАдрЭлArrayErrorMessage, __LINE__);
         }
         $this->ДопАдрЭл = $ДопАдрЭл;
+        
         return $this;
     }
     /**
      * Add item to ДопАдрЭл value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiДопАдрЭл $item
      * @return \Api\StructType\ApiАдресРФ
      */
@@ -279,6 +287,7 @@ class ApiАдресРФ extends ApiСостав
             throw new InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of type \Api\StructType\ApiДопАдрЭл, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->ДопАдрЭл[] = $item;
+        
         return $this;
     }
 }

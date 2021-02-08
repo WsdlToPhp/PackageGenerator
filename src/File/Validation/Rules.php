@@ -34,6 +34,8 @@ final class Rules
     {
         if ($this->attribute->isArray() && !$itemType) {
             $this->getArrayRule()->applyRule($parameterName, null, $itemType);
+        } elseif ($this->attribute->isXml() && !$itemType) {
+            $this->getXmlRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->attribute->isList() && !$itemType) {
             $this->getListRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->attribute)) {
@@ -61,6 +63,11 @@ final class Rules
     public function getArrayRule(): ArrayRule
     {
         return $this->getRule('array');
+    }
+
+    public function getXmlRule(): XmlRule
+    {
+        return $this->getRule('xml');
     }
 
     public function getEnumerationRule(): EnumerationRule

@@ -230,7 +230,7 @@ final class Service extends AbstractModelFile
                     $annotationBlock
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES)))
-                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, 'InvalidArgumentException'))
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, InvalidArgumentException::class))
                     ;
                 }
             }

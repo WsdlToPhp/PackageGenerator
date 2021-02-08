@@ -104,6 +104,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function setPrice(\Api\StructType\ApiFareItineraryPrice $price): self
     {
         $this->price = $price;
+        
         return $this;
     }
     /**
@@ -126,6 +127,7 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->key = $key;
+        
         return $this;
     }
     /**
@@ -156,11 +158,12 @@ class ApiFareItinerary extends AbstractStructBase
             $message = sprintf('The firstSegmentsIds property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set firstSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int[] $firstSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
@@ -171,11 +174,12 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException($firstSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->firstSegmentsIds = $firstSegmentsIds;
+        
         return $this;
     }
     /**
      * Add item to firstSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
@@ -186,6 +190,7 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The firstSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->firstSegmentsIds[] = $item;
+        
         return $this;
     }
     /**
@@ -208,6 +213,7 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clickoutURLParams, true), gettype($clickoutURLParams)), __LINE__);
         }
         $this->clickoutURLParams = $clickoutURLParams;
+        
         return $this;
     }
     /**
@@ -230,6 +236,7 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($resident, true), gettype($resident)), __LINE__);
         }
         $this->resident = $resident;
+        
         return $this;
     }
     /**
@@ -260,11 +267,12 @@ class ApiFareItinerary extends AbstractStructBase
             $message = sprintf('The secondSegmentsIds property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set secondSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int[] $secondSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
@@ -275,11 +283,12 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException($secondSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->secondSegmentsIds = $secondSegmentsIds;
+        
         return $this;
     }
     /**
      * Add item to secondSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
@@ -290,6 +299,7 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The secondSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->secondSegmentsIds[] = $item;
+        
         return $this;
     }
     /**
@@ -320,11 +330,12 @@ class ApiFareItinerary extends AbstractStructBase
             $message = sprintf('The thirdSegmentsIds property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set thirdSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int[] $thirdSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
@@ -335,11 +346,12 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException($thirdSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->thirdSegmentsIds = $thirdSegmentsIds;
+        
         return $this;
     }
     /**
      * Add item to thirdSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
@@ -350,6 +362,7 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->thirdSegmentsIds[] = $item;
+        
         return $this;
     }
 }

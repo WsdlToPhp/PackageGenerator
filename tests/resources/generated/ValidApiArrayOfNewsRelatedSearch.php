@@ -61,11 +61,12 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
             $message = sprintf('The NewsRelatedSearch property can only contain items of type \Api\StructType\ApiNewsRelatedSearch, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set NewsRelatedSearch value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
      */
@@ -76,6 +77,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
             throw new InvalidArgumentException($newsRelatedSearchArrayErrorMessage, __LINE__);
         }
         $this->NewsRelatedSearch = $newsRelatedSearch;
+        
         return $this;
     }
     /**
@@ -128,9 +130,9 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Add element to array
      * @see AbstractStructArrayBase::add()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @uses \Api\StructType\ApiNewsRelatedSearch::valueIsValid()
-     * @param ApiNewsRelatedSearch $item
+     * @param \Api\StructType\ApiNewsRelatedSearch $item
      * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
      */
     public function add(\Api\StructType\ApiNewsRelatedSearch $item): self

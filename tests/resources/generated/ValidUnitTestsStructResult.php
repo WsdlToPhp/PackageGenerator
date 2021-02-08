@@ -96,6 +96,7 @@ class ApiResult extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -103,7 +104,7 @@ class ApiResult extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param bool $success
      * @return \Api\StructType\ApiResult
      */
@@ -122,6 +123,7 @@ class ApiResult extends AbstractStructBase
         } else {
             $this->Success = $success;
         }
+        
         return $this;
     }
     /**
@@ -157,6 +159,7 @@ class ApiResult extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -164,7 +167,7 @@ class ApiResult extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiErrors $errors
      * @return \Api\StructType\ApiResult
      */
@@ -179,6 +182,7 @@ class ApiResult extends AbstractStructBase
         } else {
             $this->Errors = $errors;
         }
+        
         return $this;
     }
     /**
@@ -197,6 +201,7 @@ class ApiResult extends AbstractStructBase
     public function setWarnings(?\Api\StructType\ApiWarnings $warnings = null): self
     {
         $this->Warnings = $warnings;
+        
         return $this;
     }
 }

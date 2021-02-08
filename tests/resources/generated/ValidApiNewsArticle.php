@@ -97,6 +97,7 @@ class ApiNewsArticle extends StructClass
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->Title = $title;
+        
         return $this;
     }
     /**
@@ -119,6 +120,7 @@ class ApiNewsArticle extends StructClass
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($url, true), gettype($url)), __LINE__);
         }
         $this->Url = $url;
+        
         return $this;
     }
     /**
@@ -141,6 +143,7 @@ class ApiNewsArticle extends StructClass
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
         }
         $this->Source = $source;
+        
         return $this;
     }
     /**
@@ -163,6 +166,7 @@ class ApiNewsArticle extends StructClass
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($snippet, true), gettype($snippet)), __LINE__);
         }
         $this->Snippet = $snippet;
+        
         return $this;
     }
     /**
@@ -185,6 +189,7 @@ class ApiNewsArticle extends StructClass
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->Date = $date;
+        
         return $this;
     }
 }

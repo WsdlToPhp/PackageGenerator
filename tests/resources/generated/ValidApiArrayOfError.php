@@ -61,11 +61,12 @@ class ApiArrayOfError extends AbstractStructArrayBase
             $message = sprintf('The Error property can only contain items of type \Api\StructType\ApiError, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set Error value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiError[] $error
      * @return \Api\ArrayType\ApiArrayOfError
      */
@@ -76,6 +77,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
         $this->Error = $error;
+        
         return $this;
     }
     /**
@@ -128,9 +130,9 @@ class ApiArrayOfError extends AbstractStructArrayBase
     /**
      * Add element to array
      * @see AbstractStructArrayBase::add()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @uses \Api\StructType\ApiError::valueIsValid()
-     * @param ApiError $item
+     * @param \Api\StructType\ApiError $item
      * @return \Api\ArrayType\ApiArrayOfError
      */
     public function add(\Api\StructType\ApiError $item): self

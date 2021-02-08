@@ -44,11 +44,11 @@ class ApiWorkingPeriod extends AbstractStructBase
      * @uses ApiWorkingPeriod::setDayOfWeek()
      * @uses ApiWorkingPeriod::setStartTimeInMinutes()
      * @uses ApiWorkingPeriod::setEndTimeInMinutes()
-     * @param string $dayOfWeek
+     * @param array|string $dayOfWeek
      * @param int $startTimeInMinutes
      * @param int $endTimeInMinutes
      */
-    public function __construct(array $dayOfWeek, int $startTimeInMinutes, int $endTimeInMinutes)
+    public function __construct($dayOfWeek, int $startTimeInMinutes, int $endTimeInMinutes)
     {
         $this
             ->setDayOfWeek($dayOfWeek)
@@ -83,23 +83,25 @@ class ApiWorkingPeriod extends AbstractStructBase
             $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiDayOfWeekType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiDayOfWeekType::getValidValues()));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set DayOfWeek value
      * @uses \Api\EnumType\ApiDayOfWeekType::valueIsValid()
      * @uses \Api\EnumType\ApiDayOfWeekType::getValidValues()
-     * @throws \InvalidArgumentException
-     * @param string $dayOfWeek
+     * @throws InvalidArgumentException
+     * @param array|string $dayOfWeek
      * @return \Api\StructType\ApiWorkingPeriod
      */
-    public function setDayOfWeek(array $dayOfWeek): self
+    public function setDayOfWeek($dayOfWeek): self
     {
         // validation for constraint: list
-        if ('' !== ($dayOfWeekArrayErrorMessage = self::validateDayOfWeekForArrayConstraintsFromSetDayOfWeek($dayOfWeek))) {
+        if ('' !== ($dayOfWeekArrayErrorMessage = self::validateDayOfWeekForArrayConstraintsFromSetDayOfWeek(is_string($dayOfWeek) ? explode(' ', $dayOfWeek) : $dayOfWeek))) {
             throw new InvalidArgumentException($dayOfWeekArrayErrorMessage, __LINE__);
         }
-        $this->DayOfWeek = is_array($dayOfWeek) ? implode(' ', $dayOfWeek) : null;
+        $this->DayOfWeek = is_array($dayOfWeek) ? implode(' ', $dayOfWeek) : $dayOfWeek;
+        
         return $this;
     }
     /**
@@ -122,6 +124,7 @@ class ApiWorkingPeriod extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($startTimeInMinutes, true), gettype($startTimeInMinutes)), __LINE__);
         }
         $this->StartTimeInMinutes = $startTimeInMinutes;
+        
         return $this;
     }
     /**
@@ -144,6 +147,7 @@ class ApiWorkingPeriod extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($endTimeInMinutes, true), gettype($endTimeInMinutes)), __LINE__);
         }
         $this->EndTimeInMinutes = $endTimeInMinutes;
+        
         return $this;
     }
 }

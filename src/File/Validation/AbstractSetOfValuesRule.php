@@ -16,7 +16,7 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
         $test = '';
         if ($this->mustApplyRuleOnAttribute()) {
             $this->addValidationMethod($parameterName, $value);
-            $test = sprintf('\'\' !== (%s = self::%s($%s))', self::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
+            $test = sprintf('\'\' !== (%s = self::%s(%s))', static::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), static::getParameterPassedValue($parameterName));
         }
 
         return $test;
@@ -24,12 +24,17 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
 
     public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string
     {
-        return self::getErrorMessageVariableName($parameterName);
+        return static::getErrorMessageVariableName($parameterName);
     }
 
     public static function getErrorMessageVariableName(string $parameterName): string
     {
         return sprintf('$%sArrayErrorMessage', $parameterName);
+    }
+
+    public static function getParameterPassedValue(string $parameterName): string
+    {
+        return sprintf('$%s', $parameterName);
     }
 
     /**
@@ -65,6 +70,7 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
             ->addChild($method->getIndentedString(sprintf('$message = %s;', $rule->exceptionMessageOnTestFailure('invalidValues', null)), 1))
             ->addChild('}')
             ->addChild('unset($invalidValues);')
+            ->addChild('')
             ->addChild('return $message;')
         ;
         $this->getMethods()->add($method);

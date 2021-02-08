@@ -75,6 +75,7 @@ final class ChoiceRule extends AbstractRule
             ->addChild('} catch (InvalidArgumentException $e) {')
             ->addChild($method->getIndentedString('$message = $e->getMessage();', 1))
             ->addChild('}')
+            ->addChild('')
             ->addChild('return $message;')
         ;
 

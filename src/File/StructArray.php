@@ -59,31 +59,31 @@ final class StructArray extends Struct
 
     protected function addArrayMethodCurrent(): self
     {
-        return $this->addArrayMethodGenericMethod(self::METHOD_CURRENT, $this->getArrayMethodBody(self::METHOD_CURRENT), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute()));
+        return $this->addArrayMethodGenericMethod(self::METHOD_CURRENT, $this->getArrayMethodBody(self::METHOD_CURRENT), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
 
     protected function addArrayMethodItem(): self
     {
         return $this->addArrayMethodGenericMethod(self::METHOD_ITEM, $this->getArrayMethodBody(self::METHOD_ITEM, '$index'), [
             'index',
-        ], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute()));
+        ], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
 
     protected function addArrayMethodFirst(): self
     {
-        return $this->addArrayMethodGenericMethod(self::METHOD_FIRST, $this->getArrayMethodBody(self::METHOD_FIRST), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute()));
+        return $this->addArrayMethodGenericMethod(self::METHOD_FIRST, $this->getArrayMethodBody(self::METHOD_FIRST), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
 
     protected function addArrayMethodLast(): self
     {
-        return $this->addArrayMethodGenericMethod(self::METHOD_LAST, $this->getArrayMethodBody(self::METHOD_LAST), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute()));
+        return $this->addArrayMethodGenericMethod(self::METHOD_LAST, $this->getArrayMethodBody(self::METHOD_LAST), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
 
     protected function addArrayMethodOffsetGet(): self
     {
         return $this->addArrayMethodGenericMethod(self::METHOD_OFFSET_GET, $this->getArrayMethodBody(self::METHOD_OFFSET_GET, '$offset'), [
             'offset',
-        ], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute()));
+        ], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
 
     protected function addArrayMethodGetAttributeName(): self
@@ -110,7 +110,7 @@ final class StructArray extends Struct
                 new PhpFunctionParameter(
                     'item',
                     PhpFunctionParameter::NO_VALUE,
-                    $this->getStructAttributeTypeAsPhpType($this->getStructAttribute()),
+                    $this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false),
                     $this->getStructAttribute()
                 ),
             ], self::TYPE_SELF);
@@ -175,9 +175,9 @@ final class StructArray extends Struct
         return new PhpAnnotationBlock([
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
-            new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'),
+            new PhpAnnotation(self::ANNOTATION_THROWS, InvalidArgumentException::class),
             new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName(true))),
-            new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType())),
+            new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType(null, true, false))),
             new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s', $this->getModel()->getPackagedName(true))),
         ]);
     }

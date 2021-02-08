@@ -61,6 +61,7 @@ abstract class AbstractLengthRule extends AbstractMinMaxRule
             ->addChild($method->getIndentedString(sprintf('$message = sprintf(\'Invalid length for value(s) %%s, the number of characters/octets contained by the literal must be %s %s\', implode(\', \', $invalidValues));', $this->comparisonString(), $value), 1))
             ->addChild('}')
             ->addChild('unset($invalidValues);')
+            ->addChild('')
             ->addChild('return $message;')
         ;
         $this->getMethods()->add($method);

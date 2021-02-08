@@ -86,6 +86,7 @@ class ApiVideoRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($offset, true), gettype($offset)), __LINE__);
         }
         $this->Offset = $offset;
+        
         return $this;
     }
     /**
@@ -108,6 +109,7 @@ class ApiVideoRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($count, true), gettype($count)), __LINE__);
         }
         $this->Count = $count;
+        
         return $this;
     }
     /**
@@ -126,6 +128,7 @@ class ApiVideoRequest extends AbstractStructBase
     public function setFilters(?\Api\ArrayType\ApiArrayOfString $filters = null): self
     {
         $this->Filters = $filters;
+        
         return $this;
     }
     /**
@@ -140,7 +143,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Set SortBy value
      * @uses \Api\EnumType\ApiVideoSortOption::valueIsValid()
      * @uses \Api\EnumType\ApiVideoSortOption::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $sortBy
      * @return \Api\StructType\ApiVideoRequest
      */
@@ -151,6 +154,7 @@ class ApiVideoRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiVideoSortOption', is_array($sortBy) ? implode(', ', $sortBy) : var_export($sortBy, true), implode(', ', \Api\EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
         }
         $this->SortBy = $sortBy;
+        
         return $this;
     }
 }

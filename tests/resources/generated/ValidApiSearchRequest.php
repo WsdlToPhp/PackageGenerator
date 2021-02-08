@@ -252,6 +252,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($query, true), gettype($query)), __LINE__);
         }
         $this->Query = $query;
+        
         return $this;
     }
     /**
@@ -274,6 +275,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($appId, true), gettype($appId)), __LINE__);
         }
         $this->AppId = $appId;
+        
         return $this;
     }
     /**
@@ -292,6 +294,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setSources(\Api\ArrayType\ApiArrayOfSourceType $sources): self
     {
         $this->Sources = $sources;
+        
         return $this;
     }
     /**
@@ -310,6 +313,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setParameters(\Api\StructType\ApiSearchRequest $parameters): self
     {
         $this->parameters = $parameters;
+        
         return $this;
     }
     /**
@@ -332,6 +336,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->Version = $version;
+        
         return $this;
     }
     /**
@@ -354,6 +359,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($market, true), gettype($market)), __LINE__);
         }
         $this->Market = $market;
+        
         return $this;
     }
     /**
@@ -376,6 +382,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uILanguage, true), gettype($uILanguage)), __LINE__);
         }
         $this->UILanguage = $uILanguage;
+        
         return $this;
     }
     /**
@@ -390,7 +397,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Set Adult value
      * @uses \Api\EnumType\ApiAdultOption::valueIsValid()
      * @uses \Api\EnumType\ApiAdultOption::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $adult
      * @return \Api\StructType\ApiSearchRequest
      */
@@ -401,6 +408,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdultOption', is_array($adult) ? implode(', ', $adult) : var_export($adult, true), implode(', ', \Api\EnumType\ApiAdultOption::getValidValues())), __LINE__);
         }
         $this->Adult = $adult;
+        
         return $this;
     }
     /**
@@ -423,6 +431,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($latitude, true), gettype($latitude)), __LINE__);
         }
         $this->Latitude = $latitude;
+        
         return $this;
     }
     /**
@@ -445,6 +454,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($longitude, true), gettype($longitude)), __LINE__);
         }
         $this->Longitude = $longitude;
+        
         return $this;
     }
     /**
@@ -467,6 +477,7 @@ class ApiSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($radius, true), gettype($radius)), __LINE__);
         }
         $this->Radius = $radius;
+        
         return $this;
     }
     /**
@@ -485,6 +496,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setOptions(?\Api\ArrayType\ApiArrayOfSearchOption $options = null): self
     {
         $this->Options = $options;
+        
         return $this;
     }
     /**
@@ -503,6 +515,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setWeb(?\Api\StructType\ApiWebRequest $web = null): self
     {
         $this->Web = $web;
+        
         return $this;
     }
     /**
@@ -521,6 +534,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setImage(?\Api\StructType\ApiImageRequest $image = null): self
     {
         $this->Image = $image;
+        
         return $this;
     }
     /**
@@ -539,6 +553,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setPhonebook(?\Api\StructType\ApiPhonebookRequest $phonebook = null): self
     {
         $this->Phonebook = $phonebook;
+        
         return $this;
     }
     /**
@@ -557,6 +572,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setVideo(?\Api\StructType\ApiVideoRequest $video = null): self
     {
         $this->Video = $video;
+        
         return $this;
     }
     /**
@@ -575,6 +591,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setNews(?\Api\StructType\ApiNewsRequest $news = null): self
     {
         $this->News = $news;
+        
         return $this;
     }
     /**
@@ -593,6 +610,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setMobileWeb(?\Api\StructType\ApiMobileWebRequest $mobileWeb = null): self
     {
         $this->MobileWeb = $mobileWeb;
+        
         return $this;
     }
     /**
@@ -611,6 +629,7 @@ class ApiSearchRequest extends AbstractStructBase
     public function setTranslation(?\Api\StructType\ApiTranslationRequest $translation = null): self
     {
         $this->Translation = $translation;
+        
         return $this;
     }
 }
