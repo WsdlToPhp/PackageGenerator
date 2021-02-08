@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\File;
 
 use InvalidArgumentException;
+use SoapFault;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
@@ -86,6 +87,13 @@ final class Service extends AbstractModelFile
 
     protected function getPropertyAnnotationBlock(PhpProperty $property): ?PhpAnnotationBlock
     {
+    }
+
+    protected function defineUseStatements(): AbstractModelFile
+    {
+        $this->getFile()->addUse(SoapFault::class);
+
+        return parent::defineUseStatements();
     }
 
     protected function getClassDeclarationLineText(): string
@@ -222,7 +230,7 @@ final class Service extends AbstractModelFile
                     $annotationBlock
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES)))
-                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'))
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, 'InvalidArgumentException'))
                     ;
                 }
             }

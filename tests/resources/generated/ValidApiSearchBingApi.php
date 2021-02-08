@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace BingApi\ServiceType;
 
+use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
@@ -18,7 +19,6 @@ class SearchBingApi extends AbstractSoapClientBase
      * Method to call the operation originally named Search
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \BingApi\StructType\SearchRequestBingApi $parameters
      * @return \BingApi\StructType\SearchResponseBingApi|bool
@@ -26,12 +26,14 @@ class SearchBingApi extends AbstractSoapClientBase
     public function Search(\BingApi\StructType\SearchRequestBingApi $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('Search', [
+            $this->setResult($resultSearch = $this->getSoapClient()->__soapCall('Search', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultSearch;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }

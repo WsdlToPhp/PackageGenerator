@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Api\ServiceType;
 
+use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
@@ -83,7 +84,7 @@ class ApiFind extends AbstractSoapClientBase
      * Sets the DateTimePrecision SoapHeader param
      * @uses \Api\EnumType\ApiDateTimePrecisionType::valueIsValid()
      * @uses \Api\EnumType\ApiDateTimePrecisionType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param string $dateTimePrecision
      * @param string $namespace
@@ -108,7 +109,6 @@ class ApiFind extends AbstractSoapClientBase
      * - SOAPHeaders: required, required, required, required, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiFindFolderType $request
      * @return \Api\StructType\ApiFindFolderResponseType|bool
@@ -116,12 +116,14 @@ class ApiFind extends AbstractSoapClientBase
     public function FindFolder(\Api\StructType\ApiFindFolderType $request)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('FindFolder', [
+            $this->setResult($resultFindFolder = $this->getSoapClient()->__soapCall('FindFolder', [
                 $request,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultFindFolder;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -134,7 +136,6 @@ class ApiFind extends AbstractSoapClientBase
      * - SOAPHeaders: required, required, required, required, required, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiFindItemType $request
      * @return \Api\StructType\ApiFindItemResponseType|bool
@@ -142,12 +143,14 @@ class ApiFind extends AbstractSoapClientBase
     public function FindItem(\Api\StructType\ApiFindItemType $request)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('FindItem', [
+            $this->setResult($resultFindItem = $this->getSoapClient()->__soapCall('FindItem', [
                 $request,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultFindItem;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -160,7 +163,6 @@ class ApiFind extends AbstractSoapClientBase
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiFindMessageTrackingReportRequestType $request
      * @return \Api\StructType\ApiFindMessageTrackingReportResponseMessageType|bool
@@ -168,12 +170,14 @@ class ApiFind extends AbstractSoapClientBase
     public function FindMessageTrackingReport(\Api\StructType\ApiFindMessageTrackingReportRequestType $request)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('FindMessageTrackingReport', [
+            $this->setResult($resultFindMessageTrackingReport = $this->getSoapClient()->__soapCall('FindMessageTrackingReport', [
                 $request,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultFindMessageTrackingReport;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -186,7 +190,6 @@ class ApiFind extends AbstractSoapClientBase
      * - SOAPHeaders: required, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiFindConversationType $request
      * @return \Api\StructType\ApiFindConversationResponseMessageType|bool
@@ -194,12 +197,14 @@ class ApiFind extends AbstractSoapClientBase
     public function FindConversation(\Api\StructType\ApiFindConversationType $request)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('FindConversation', [
+            $this->setResult($resultFindConversation = $this->getSoapClient()->__soapCall('FindConversation', [
                 $request,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultFindConversation;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -212,7 +217,6 @@ class ApiFind extends AbstractSoapClientBase
      * - SOAPHeaders: required, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiFindPeopleType $request
      * @return \Api\StructType\ApiFindPeopleResponseMessageType|bool
@@ -220,12 +224,14 @@ class ApiFind extends AbstractSoapClientBase
     public function FindPeople(\Api\StructType\ApiFindPeopleType $request)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('FindPeople', [
+            $this->setResult($resultFindPeople = $this->getSoapClient()->__soapCall('FindPeople', [
                 $request,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultFindPeople;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -238,7 +244,6 @@ class ApiFind extends AbstractSoapClientBase
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiFindAvailableMeetingTimesType $request
      * @return \Api\StructType\ApiFindAvailableMeetingTimesResponseMessageType|bool
@@ -246,12 +251,14 @@ class ApiFind extends AbstractSoapClientBase
     public function FindAvailableMeetingTimes(\Api\StructType\ApiFindAvailableMeetingTimesType $request)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('FindAvailableMeetingTimes', [
+            $this->setResult($resultFindAvailableMeetingTimes = $this->getSoapClient()->__soapCall('FindAvailableMeetingTimes', [
                 $request,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultFindAvailableMeetingTimes;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -264,7 +271,6 @@ class ApiFind extends AbstractSoapClientBase
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiFindMeetingTimeCandidatesType $request
      * @return \Api\StructType\ApiFindMeetingTimeCandidatesResponseMessageType|bool
@@ -272,12 +278,14 @@ class ApiFind extends AbstractSoapClientBase
     public function FindMeetingTimeCandidates(\Api\StructType\ApiFindMeetingTimeCandidatesType $request)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('FindMeetingTimeCandidates', [
+            $this->setResult($resultFindMeetingTimeCandidates = $this->getSoapClient()->__soapCall('FindMeetingTimeCandidates', [
                 $request,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultFindMeetingTimeCandidates;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ServiceType;
 
+use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
@@ -19,7 +20,6 @@ class _List extends AbstractSoapClientBase
      * - documentation: List the payment methods. To be implemented in a future minor version upgrade.
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \StructType\ListPaymentMethodsRequest $parameters
      * @return \StructType\ListPaymentMethodsResponse|bool
@@ -27,12 +27,14 @@ class _List extends AbstractSoapClientBase
     public function listPaymentMethods(\StructType\ListPaymentMethodsRequest $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('listPaymentMethods', [
+            $this->setResult($resultListPaymentMethods = $this->getSoapClient()->__soapCall('listPaymentMethods', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+        
+            return $resultListPaymentMethods;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }

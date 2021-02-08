@@ -64,11 +64,14 @@ final class Operation extends AbstractOperation
 
     protected function defineBody(PhpMethod $method): self
     {
+        $resultVariableName = sprintf('$result%s', ucfirst($this->getMethod()->getCleanName(false)));
         $method->addChild('try {')
-            ->addChild($method->getIndentedString(sprintf('$this->setResult($this->getSoapClient()->%s%s));', $this->getSoapCallName(), $this->getOperationCallParameters($method)), 1))
-            ->addChild($method->getIndentedString('return $this->getResult();', 1))
-            ->addChild('} catch (\SoapFault $soapFault) {')
+            ->addChild($method->getIndentedString(sprintf('$this->setResult(%s = $this->getSoapClient()->%s%s));', $resultVariableName, $this->getSoapCallName(), $this->getOperationCallParameters($method)), 1))
+            ->addChild('')
+            ->addChild($method->getIndentedString(sprintf('return %s;', $resultVariableName), 1))
+            ->addChild('} catch (SoapFault $soapFault) {')
             ->addChild($method->getIndentedString('$this->saveLastError(__METHOD__, $soapFault);', 1))
+            ->addChild('')
             ->addChild($method->getIndentedString('return false;', 1))
             ->addChild('}')
         ;
