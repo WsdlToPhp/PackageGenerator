@@ -36,8 +36,12 @@ This file intends to explain the way the files are generated and why. Moreover, 
     - **Removable property**: The setter **removes the property** from the object if it is declared as removable from the request (`nillable=true` + `minOccurs=0`). Passing `null` or an *empty array* to the setter removes the property from the object thus the XML request does not contain the element, which is often required by the Soap Server which handles the request.
   - **Enhanced** with methods:
     - **Array property**: If the property is detected as an array, you end up with a fluent-typed `addTo{PropertyName}(?{propertyType} $item)` method.
+    - **List property**: If the property is detected as a list of value (`xs:list`):
+      - The setter allows you to pass either a string or an array.
+      - If the values are restricted to an enumeration of values, a validation rule is applied on the parameter value to ensure you pass the right values.
+      - If you pass an array, the values are concatenated into a string with a space within each value.
     - **XML Any** (`<xs:any/>`): If the property is detected as an XML string:
-      - The setter allows you to pass a [DOMDocument](https://www.php.net/manual/en/class.domdocument.php) object that is converted to string for the XML request.
+      - The setter allows you to pass either a string or a [DOMDocument](https://www.php.net/manual/en/class.domdocument.php) object that is converted to string for the XML request.
       - The getter is adapted (`get{PropertyName}(bool $asDomDocument = false)`) and allows you to get a [DOMDocument](https://www.php.net/manual/en/class.domdocument.php) object from the XML string of the property returned by the XML response.
 
 ### StructArray classes
