@@ -342,6 +342,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -349,7 +350,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailCalcCostShipping $mutualSettlementDetailCalcCostShipping
      * @return \Api\StructType\ApiDetails
      */
@@ -364,6 +365,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailCalcCostShipping = $mutualSettlementDetailCalcCostShipping;
         }
+        
         return $this;
     }
     /**
@@ -414,6 +416,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -421,7 +424,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailCashFlow $mutualSettlementDetailCashFlow
      * @return \Api\StructType\ApiDetails
      */
@@ -436,6 +439,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailCashFlow = $mutualSettlementDetailCashFlow;
         }
+        
         return $this;
     }
     /**
@@ -486,6 +490,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -493,7 +498,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailClientPayment $mutualSettlementDetailClientPayment
      * @return \Api\StructType\ApiDetails
      */
@@ -508,6 +513,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailClientPayment = $mutualSettlementDetailClientPayment;
         }
+        
         return $this;
     }
     /**
@@ -558,6 +564,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -565,7 +572,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailPostReturnRegistry $mutualSettlementDetailPostReturnRegistry
      * @return \Api\StructType\ApiDetails
      */
@@ -580,6 +587,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailPostReturnRegistry = $mutualSettlementDetailPostReturnRegistry;
         }
+        
         return $this;
     }
     /**
@@ -630,6 +638,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -637,7 +646,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailRouteList $mutualSettlementDetailRouteList
      * @return \Api\StructType\ApiDetails
      */
@@ -652,6 +661,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailRouteList = $mutualSettlementDetailRouteList;
         }
+        
         return $this;
     }
     /**
@@ -702,6 +712,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -709,7 +720,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailTrackNumberPayment $mutualSettlementDetailTrackNumberPayment
      * @return \Api\StructType\ApiDetails
      */
@@ -724,6 +735,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailTrackNumberPayment = $mutualSettlementDetailTrackNumberPayment;
         }
+        
         return $this;
     }
     /**
@@ -774,6 +786,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -781,7 +794,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailServiceRegistration $mutualSettlementDetailServiceRegistration
      * @return \Api\StructType\ApiDetails
      */
@@ -796,6 +809,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailServiceRegistration = $mutualSettlementDetailServiceRegistration;
         }
+        
         return $this;
     }
     /**
@@ -846,6 +860,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -853,7 +868,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAcceptanceRegistry $mutualSettlementDetailAcceptanceRegistry
      * @return \Api\StructType\ApiDetails
      */
@@ -868,6 +883,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailAcceptanceRegistry = $mutualSettlementDetailAcceptanceRegistry;
         }
+        
         return $this;
     }
     /**
@@ -918,6 +934,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -925,7 +942,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAdditionalChargeFare $mutualSettlementDetailAdditionalChargeFare
      * @return \Api\StructType\ApiDetails
      */
@@ -940,6 +957,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailAdditionalChargeFare = $mutualSettlementDetailAdditionalChargeFare;
         }
+        
         return $this;
     }
     /**
@@ -990,6 +1008,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -997,7 +1016,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier $mutualSettlementDetailOutgoingRequestToCarrier
      * @return \Api\StructType\ApiDetails
      */
@@ -1012,6 +1031,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailOutgoingRequestToCarrier = $mutualSettlementDetailOutgoingRequestToCarrier;
         }
+        
         return $this;
     }
     /**
@@ -1062,6 +1082,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1069,7 +1090,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSMSInformation $mutualSettlementDetailSMSInformation
      * @return \Api\StructType\ApiDetails
      */
@@ -1084,6 +1105,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailSMSInformation = $mutualSettlementDetailSMSInformation;
         }
+        
         return $this;
     }
     /**
@@ -1134,6 +1156,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1141,7 +1164,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailBuyerGoodsReturn $mutualSettlementDetailBuyerGoodsReturn
      * @return \Api\StructType\ApiDetails
      */
@@ -1156,6 +1179,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailBuyerGoodsReturn = $mutualSettlementDetailBuyerGoodsReturn;
         }
+        
         return $this;
     }
     /**
@@ -1206,6 +1230,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1213,7 +1238,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailProductsPackaging $mutualSettlementDetailProductsPackaging
      * @return \Api\StructType\ApiDetails
      */
@@ -1228,6 +1253,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailProductsPackaging = $mutualSettlementDetailProductsPackaging;
         }
+        
         return $this;
     }
     /**
@@ -1278,6 +1304,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1285,7 +1312,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters $mutualSettlementDetailAdjustmentWriteRegisters
      * @return \Api\StructType\ApiDetails
      */
@@ -1300,6 +1327,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailAdjustmentWriteRegisters = $mutualSettlementDetailAdjustmentWriteRegisters;
         }
+        
         return $this;
     }
     /**
@@ -1350,6 +1378,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1357,7 +1386,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustody $mutualSettlementDetailSafeCustody
      * @return \Api\StructType\ApiDetails
      */
@@ -1372,6 +1401,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailSafeCustody = $mutualSettlementDetailSafeCustody;
         }
+        
         return $this;
     }
     /**
@@ -1422,6 +1452,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1429,7 +1460,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailSafeCustodyCalculation $mutualSettlementDetailSafeCustodyCalculation
      * @return \Api\StructType\ApiDetails
      */
@@ -1444,6 +1475,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailSafeCustodyCalculation = $mutualSettlementDetailSafeCustodyCalculation;
         }
+        
         return $this;
     }
     /**
@@ -1494,6 +1526,7 @@ class ApiDetails extends AbstractStructBase
         } catch (InvalidArgumentException $e) {
             $message = $e->getMessage();
         }
+        
         return $message;
     }
     /**
@@ -1501,7 +1534,7 @@ class ApiDetails extends AbstractStructBase
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiMutualSettlementDetailRegisterStorage $mutualSettlementDetailRegisterStorage
      * @return \Api\StructType\ApiDetails
      */
@@ -1516,6 +1549,7 @@ class ApiDetails extends AbstractStructBase
         } else {
             $this->mutualSettlementDetailRegisterStorage = $mutualSettlementDetailRegisterStorage;
         }
+        
         return $this;
     }
 }

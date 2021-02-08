@@ -100,6 +100,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street1, true), gettype($street1)), __LINE__);
         }
         $this->Street1 = $street1;
+        
         return $this;
     }
     /**
@@ -122,6 +123,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street2, true), gettype($street2)), __LINE__);
         }
         $this->Street2 = $street2;
+        
         return $this;
     }
     /**
@@ -144,6 +146,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street3, true), gettype($street3)), __LINE__);
         }
         $this->Street3 = $street3;
+        
         return $this;
     }
     /**
@@ -166,6 +169,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($city, true), gettype($city)), __LINE__);
         }
         $this->City = $city;
+        
         return $this;
     }
     /**
@@ -192,6 +196,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 4', mb_strlen((string) $postalCode)), __LINE__);
         }
         $this->PostalCode = $postalCode;
+        
         return $this;
     }
 }

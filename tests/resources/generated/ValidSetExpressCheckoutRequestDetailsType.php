@@ -822,6 +822,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setOrderTotal(?\Api\StructType\ApiBasicAmountType $orderTotal = null): self
     {
         $this->OrderTotal = $orderTotal;
+        
         return $this;
     }
     /**
@@ -844,6 +845,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->ReturnURL = $returnURL;
+        
         return $this;
     }
     /**
@@ -866,6 +868,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
         }
         $this->CancelURL = $cancelURL;
+        
         return $this;
     }
     /**
@@ -888,6 +891,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trackingImageURL, true), gettype($trackingImageURL)), __LINE__);
         }
         $this->TrackingImageURL = $trackingImageURL;
+        
         return $this;
     }
     /**
@@ -910,6 +914,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giropaySuccessURL, true), gettype($giropaySuccessURL)), __LINE__);
         }
         $this->giropaySuccessURL = $giropaySuccessURL;
+        
         return $this;
     }
     /**
@@ -932,6 +937,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giropayCancelURL, true), gettype($giropayCancelURL)), __LINE__);
         }
         $this->giropayCancelURL = $giropayCancelURL;
+        
         return $this;
     }
     /**
@@ -954,6 +960,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($banktxnPendingURL, true), gettype($banktxnPendingURL)), __LINE__);
         }
         $this->BanktxnPendingURL = $banktxnPendingURL;
+        
         return $this;
     }
     /**
@@ -976,6 +983,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->Token = $token;
+        
         return $this;
     }
     /**
@@ -994,6 +1002,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setMaxAmount(?\Api\StructType\ApiBasicAmountType $maxAmount = null): self
     {
         $this->MaxAmount = $maxAmount;
+        
         return $this;
     }
     /**
@@ -1016,6 +1025,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderDescription, true), gettype($orderDescription)), __LINE__);
         }
         $this->OrderDescription = $orderDescription;
+        
         return $this;
     }
     /**
@@ -1038,6 +1048,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
+        
         return $this;
     }
     /**
@@ -1060,6 +1071,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
+        
         return $this;
     }
     /**
@@ -1082,6 +1094,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqConfirmShipping, true), gettype($reqConfirmShipping)), __LINE__);
         }
         $this->ReqConfirmShipping = $reqConfirmShipping;
+        
         return $this;
     }
     /**
@@ -1104,6 +1117,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqBillingAddress, true), gettype($reqBillingAddress)), __LINE__);
         }
         $this->ReqBillingAddress = $reqBillingAddress;
+        
         return $this;
     }
     /**
@@ -1122,6 +1136,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setBillingAddress(?\Api\StructType\ApiAddressType $billingAddress = null): self
     {
         $this->BillingAddress = $billingAddress;
+        
         return $this;
     }
     /**
@@ -1144,6 +1159,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($noShipping, true), gettype($noShipping)), __LINE__);
         }
         $this->NoShipping = $noShipping;
+        
         return $this;
     }
     /**
@@ -1166,6 +1182,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($addressOverride, true), gettype($addressOverride)), __LINE__);
         }
         $this->AddressOverride = $addressOverride;
+        
         return $this;
     }
     /**
@@ -1188,6 +1205,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($localeCode, true), gettype($localeCode)), __LINE__);
         }
         $this->LocaleCode = $localeCode;
+        
         return $this;
     }
     /**
@@ -1210,6 +1228,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pageStyle, true), gettype($pageStyle)), __LINE__);
         }
         $this->PageStyle = $pageStyle;
+        
         return $this;
     }
     /**
@@ -1232,6 +1251,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_image, true), gettype($cpp_header_image)), __LINE__);
         }
         $this->cpp_header_image = $this->{'cpp-header-image'} = $cpp_header_image;
+        
         return $this;
     }
     /**
@@ -1254,6 +1274,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_border_color, true), gettype($cpp_header_border_color)), __LINE__);
         }
         $this->cpp_header_border_color = $this->{'cpp-header-border-color'} = $cpp_header_border_color;
+        
         return $this;
     }
     /**
@@ -1276,6 +1297,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_back_color, true), gettype($cpp_header_back_color)), __LINE__);
         }
         $this->cpp_header_back_color = $this->{'cpp-header-back-color'} = $cpp_header_back_color;
+        
         return $this;
     }
     /**
@@ -1298,6 +1320,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_payflow_color, true), gettype($cpp_payflow_color)), __LINE__);
         }
         $this->cpp_payflow_color = $this->{'cpp-payflow-color'} = $cpp_payflow_color;
+        
         return $this;
     }
     /**
@@ -1320,6 +1343,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_cart_border_color, true), gettype($cpp_cart_border_color)), __LINE__);
         }
         $this->cpp_cart_border_color = $this->{'cpp-cart-border-color'} = $cpp_cart_border_color;
+        
         return $this;
     }
     /**
@@ -1342,6 +1366,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_logo_image, true), gettype($cpp_logo_image)), __LINE__);
         }
         $this->cpp_logo_image = $this->{'cpp-logo-image'} = $cpp_logo_image;
+        
         return $this;
     }
     /**
@@ -1360,6 +1385,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setAddress(?\Api\StructType\ApiAddressType $address = null): self
     {
         $this->Address = $address;
+        
         return $this;
     }
     /**
@@ -1374,7 +1400,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set PaymentAction value
      * @uses \Api\EnumType\ApiPaymentActionCodeType::valueIsValid()
      * @uses \Api\EnumType\ApiPaymentActionCodeType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $paymentAction
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1385,6 +1411,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiPaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : var_export($paymentAction, true), implode(', ', \Api\EnumType\ApiPaymentActionCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentAction = $paymentAction;
+        
         return $this;
     }
     /**
@@ -1399,7 +1426,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set SolutionType value
      * @uses \Api\EnumType\ApiSolutionTypeType::valueIsValid()
      * @uses \Api\EnumType\ApiSolutionTypeType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $solutionType
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1410,6 +1437,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiSolutionTypeType', is_array($solutionType) ? implode(', ', $solutionType) : var_export($solutionType, true), implode(', ', \Api\EnumType\ApiSolutionTypeType::getValidValues())), __LINE__);
         }
         $this->SolutionType = $solutionType;
+        
         return $this;
     }
     /**
@@ -1424,7 +1452,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set LandingPage value
      * @uses \Api\EnumType\ApiLandingPageType::valueIsValid()
      * @uses \Api\EnumType\ApiLandingPageType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $landingPage
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1435,6 +1463,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiLandingPageType', is_array($landingPage) ? implode(', ', $landingPage) : var_export($landingPage, true), implode(', ', \Api\EnumType\ApiLandingPageType::getValidValues())), __LINE__);
         }
         $this->LandingPage = $landingPage;
+        
         return $this;
     }
     /**
@@ -1457,6 +1486,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmail, true), gettype($buyerEmail)), __LINE__);
         }
         $this->BuyerEmail = $buyerEmail;
+        
         return $this;
     }
     /**
@@ -1471,7 +1501,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set ChannelType value
      * @uses \Api\EnumType\ApiChannelType::valueIsValid()
      * @uses \Api\EnumType\ApiChannelType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $channelType
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1482,6 +1512,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiChannelType', is_array($channelType) ? implode(', ', $channelType) : var_export($channelType, true), implode(', ', \Api\EnumType\ApiChannelType::getValidValues())), __LINE__);
         }
         $this->ChannelType = $channelType;
+        
         return $this;
     }
     /**
@@ -1512,11 +1543,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             $message = sprintf('The BillingAgreementDetails property can only contain items of type \Api\StructType\ApiBillingAgreementDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set BillingAgreementDetails value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiBillingAgreementDetailsType[] $billingAgreementDetails
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1527,11 +1559,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException($billingAgreementDetailsArrayErrorMessage, __LINE__);
         }
         $this->BillingAgreementDetails = $billingAgreementDetails;
+        
         return $this;
     }
     /**
      * Add item to BillingAgreementDetails value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiBillingAgreementDetailsType $item
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1542,6 +1575,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The BillingAgreementDetails property can only contain items of type \Api\StructType\ApiBillingAgreementDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->BillingAgreementDetails[] = $item;
+        
         return $this;
     }
     /**
@@ -1572,11 +1606,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             $message = sprintf('The PromoCodes property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set PromoCodes value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string[] $promoCodes
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1587,11 +1622,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException($promoCodesArrayErrorMessage, __LINE__);
         }
         $this->PromoCodes = $promoCodes;
+        
         return $this;
     }
     /**
      * Add item to PromoCodes value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $item
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1602,6 +1638,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The PromoCodes property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->PromoCodes[] = $item;
+        
         return $this;
     }
     /**
@@ -1624,6 +1661,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payPalCheckOutBtnType, true), gettype($payPalCheckOutBtnType)), __LINE__);
         }
         $this->PayPalCheckOutBtnType = $payPalCheckOutBtnType;
+        
         return $this;
     }
     /**
@@ -1638,7 +1676,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set ProductCategory value
      * @uses \Api\EnumType\ApiProductCategoryType::valueIsValid()
      * @uses \Api\EnumType\ApiProductCategoryType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $productCategory
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1649,6 +1687,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiProductCategoryType', is_array($productCategory) ? implode(', ', $productCategory) : var_export($productCategory, true), implode(', ', \Api\EnumType\ApiProductCategoryType::getValidValues())), __LINE__);
         }
         $this->ProductCategory = $productCategory;
+        
         return $this;
     }
     /**
@@ -1663,7 +1702,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set ShippingMethod value
      * @uses \Api\EnumType\ApiShippingServiceCodeType::valueIsValid()
      * @uses \Api\EnumType\ApiShippingServiceCodeType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $shippingMethod
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1674,6 +1713,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiShippingServiceCodeType', is_array($shippingMethod) ? implode(', ', $shippingMethod) : var_export($shippingMethod, true), implode(', ', \Api\EnumType\ApiShippingServiceCodeType::getValidValues())), __LINE__);
         }
         $this->ShippingMethod = $shippingMethod;
+        
         return $this;
     }
     /**
@@ -1696,6 +1736,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileAddressChangeDate, true), gettype($profileAddressChangeDate)), __LINE__);
         }
         $this->ProfileAddressChangeDate = $profileAddressChangeDate;
+        
         return $this;
     }
     /**
@@ -1718,6 +1759,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($allowNote, true), gettype($allowNote)), __LINE__);
         }
         $this->AllowNote = $allowNote;
+        
         return $this;
     }
     /**
@@ -1736,6 +1778,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setFundingSourceDetails(?\Api\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null): self
     {
         $this->FundingSourceDetails = $fundingSourceDetails;
+        
         return $this;
     }
     /**
@@ -1758,6 +1801,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($brandName, true), gettype($brandName)), __LINE__);
         }
         $this->BrandName = $brandName;
+        
         return $this;
     }
     /**
@@ -1780,6 +1824,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackURL, true), gettype($callbackURL)), __LINE__);
         }
         $this->CallbackURL = $callbackURL;
+        
         return $this;
     }
     /**
@@ -1798,6 +1843,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setEnhancedCheckoutData(?\Api\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null): self
     {
         $this->EnhancedCheckoutData = $enhancedCheckoutData;
+        
         return $this;
     }
     /**
@@ -1828,11 +1874,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             $message = sprintf('The OtherPaymentMethods property can only contain items of type \Api\StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set OtherPaymentMethods value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiOtherPaymentMethodDetailsType[] $otherPaymentMethods
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1843,11 +1890,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException($otherPaymentMethodsArrayErrorMessage, __LINE__);
         }
         $this->OtherPaymentMethods = $otherPaymentMethods;
+        
         return $this;
     }
     /**
      * Add item to OtherPaymentMethods value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiOtherPaymentMethodDetailsType $item
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1858,6 +1906,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The OtherPaymentMethods property can only contain items of type \Api\StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->OtherPaymentMethods[] = $item;
+        
         return $this;
     }
     /**
@@ -1876,6 +1925,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setBuyerDetails(?\Api\StructType\ApiBuyerDetailsType $buyerDetails = null): self
     {
         $this->BuyerDetails = $buyerDetails;
+        
         return $this;
     }
     /**
@@ -1906,11 +1956,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             $message = sprintf('The PaymentDetails property can only contain items of type \Api\StructType\ApiPaymentDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set PaymentDetails value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiPaymentDetailsType[] $paymentDetails
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1925,11 +1976,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($paymentDetails)), __LINE__);
         }
         $this->PaymentDetails = $paymentDetails;
+        
         return $this;
     }
     /**
      * Add item to PaymentDetails value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiPaymentDetailsType $item
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1944,6 +1996,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->PaymentDetails)), __LINE__);
         }
         $this->PaymentDetails[] = $item;
+        
         return $this;
     }
     /**
@@ -1974,11 +2027,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             $message = sprintf('The FlatRateShippingOptions property can only contain items of type \Api\StructType\ApiShippingOptionType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set FlatRateShippingOptions value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiShippingOptionType[] $flatRateShippingOptions
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1989,11 +2043,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException($flatRateShippingOptionsArrayErrorMessage, __LINE__);
         }
         $this->FlatRateShippingOptions = $flatRateShippingOptions;
+        
         return $this;
     }
     /**
      * Add item to FlatRateShippingOptions value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiShippingOptionType $item
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2004,6 +2059,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The FlatRateShippingOptions property can only contain items of type \Api\StructType\ApiShippingOptionType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->FlatRateShippingOptions[] = $item;
+        
         return $this;
     }
     /**
@@ -2026,6 +2082,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackTimeout, true), gettype($callbackTimeout)), __LINE__);
         }
         $this->CallbackTimeout = $callbackTimeout;
+        
         return $this;
     }
     /**
@@ -2048,6 +2105,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackVersion, true), gettype($callbackVersion)), __LINE__);
         }
         $this->CallbackVersion = $callbackVersion;
+        
         return $this;
     }
     /**
@@ -2070,6 +2128,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerServiceNumber, true), gettype($customerServiceNumber)), __LINE__);
         }
         $this->CustomerServiceNumber = $customerServiceNumber;
+        
         return $this;
     }
     /**
@@ -2092,6 +2151,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftMessageEnable, true), gettype($giftMessageEnable)), __LINE__);
         }
         $this->GiftMessageEnable = $giftMessageEnable;
+        
         return $this;
     }
     /**
@@ -2114,6 +2174,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftReceiptEnable, true), gettype($giftReceiptEnable)), __LINE__);
         }
         $this->GiftReceiptEnable = $giftReceiptEnable;
+        
         return $this;
     }
     /**
@@ -2136,6 +2197,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftWrapEnable, true), gettype($giftWrapEnable)), __LINE__);
         }
         $this->GiftWrapEnable = $giftWrapEnable;
+        
         return $this;
     }
     /**
@@ -2158,6 +2220,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftWrapName, true), gettype($giftWrapName)), __LINE__);
         }
         $this->GiftWrapName = $giftWrapName;
+        
         return $this;
     }
     /**
@@ -2176,6 +2239,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setGiftWrapAmount(?\Api\StructType\ApiBasicAmountType $giftWrapAmount = null): self
     {
         $this->GiftWrapAmount = $giftWrapAmount;
+        
         return $this;
     }
     /**
@@ -2198,6 +2262,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmailOptInEnable, true), gettype($buyerEmailOptInEnable)), __LINE__);
         }
         $this->BuyerEmailOptInEnable = $buyerEmailOptInEnable;
+        
         return $this;
     }
     /**
@@ -2220,6 +2285,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surveyEnable, true), gettype($surveyEnable)), __LINE__);
         }
         $this->SurveyEnable = $surveyEnable;
+        
         return $this;
     }
     /**
@@ -2242,6 +2308,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surveyQuestion, true), gettype($surveyQuestion)), __LINE__);
         }
         $this->SurveyQuestion = $surveyQuestion;
+        
         return $this;
     }
     /**
@@ -2272,11 +2339,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             $message = sprintf('The SurveyChoice property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set SurveyChoice value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string[] $surveyChoice
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2287,11 +2355,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException($surveyChoiceArrayErrorMessage, __LINE__);
         }
         $this->SurveyChoice = $surveyChoice;
+        
         return $this;
     }
     /**
      * Add item to SurveyChoice value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $item
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2302,6 +2371,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The SurveyChoice property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->SurveyChoice[] = $item;
+        
         return $this;
     }
     /**
@@ -2316,7 +2386,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set TotalType value
      * @uses \Api\EnumType\ApiTotalType::valueIsValid()
      * @uses \Api\EnumType\ApiTotalType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $totalType
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2327,6 +2397,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiTotalType', is_array($totalType) ? implode(', ', $totalType) : var_export($totalType, true), implode(', ', \Api\EnumType\ApiTotalType::getValidValues())), __LINE__);
         }
         $this->TotalType = $totalType;
+        
         return $this;
     }
     /**
@@ -2349,6 +2420,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($noteToBuyer, true), gettype($noteToBuyer)), __LINE__);
         }
         $this->NoteToBuyer = $noteToBuyer;
+        
         return $this;
     }
     /**
@@ -2379,11 +2451,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             $message = sprintf('The Incentives property can only contain items of type \Api\StructType\ApiIncentiveInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set Incentives value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiIncentiveInfoType[] $incentives
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2394,11 +2467,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException($incentivesArrayErrorMessage, __LINE__);
         }
         $this->Incentives = $incentives;
+        
         return $this;
     }
     /**
      * Add item to Incentives value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiIncentiveInfoType $item
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2409,6 +2483,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The Incentives property can only contain items of type \Api\StructType\ApiIncentiveInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Incentives[] = $item;
+        
         return $this;
     }
     /**
@@ -2431,6 +2506,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqInstrumentDetails, true), gettype($reqInstrumentDetails)), __LINE__);
         }
         $this->ReqInstrumentDetails = $reqInstrumentDetails;
+        
         return $this;
     }
     /**
@@ -2449,6 +2525,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setExternalRememberMeOptInDetails(?\Api\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null): self
     {
         $this->ExternalRememberMeOptInDetails = $externalRememberMeOptInDetails;
+        
         return $this;
     }
     /**
@@ -2467,6 +2544,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setFlowControlDetails(?\Api\StructType\ApiFlowControlDetailsType $flowControlDetails = null): self
     {
         $this->FlowControlDetails = $flowControlDetails;
+        
         return $this;
     }
     /**
@@ -2485,6 +2563,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setDisplayControlDetails(?\Api\StructType\ApiDisplayControlDetailsType $displayControlDetails = null): self
     {
         $this->DisplayControlDetails = $displayControlDetails;
+        
         return $this;
     }
     /**
@@ -2503,6 +2582,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setExternalPartnerTrackingDetails(?\Api\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null): self
     {
         $this->ExternalPartnerTrackingDetails = $externalPartnerTrackingDetails;
+        
         return $this;
     }
     /**
@@ -2533,11 +2613,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             $message = sprintf('The CoupledBuckets property can only contain items of type \Api\StructType\ApiCoupledBucketsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set CoupledBuckets value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiCoupledBucketsType[] $coupledBuckets
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2552,11 +2633,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($coupledBuckets)), __LINE__);
         }
         $this->CoupledBuckets = $coupledBuckets;
+        
         return $this;
     }
     /**
      * Add item to CoupledBuckets value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiCoupledBucketsType $item
      * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2571,6 +2653,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->CoupledBuckets)), __LINE__);
         }
         $this->CoupledBuckets[] = $item;
+        
         return $this;
     }
 }

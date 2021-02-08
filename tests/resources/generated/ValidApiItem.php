@@ -37,7 +37,7 @@ class ApiItem extends AbstractStructBase
      * The any
      * @var \DOMDocument|string|null
      */
-    protected ?\DOMDocument $any = null;
+    protected $any = null;
     /**
      * Constructor method for Item
      * @uses ApiItem::setItemType()
@@ -47,9 +47,9 @@ class ApiItem extends AbstractStructBase
      * @param string $itemType
      * @param string $id
      * @param string $displayName
-     * @param \DOMDocument $any
+     * @param \DOMDocument|string|null $any
      */
-    public function __construct(?string $itemType = null, ?string $id = null, ?string $displayName = null, ?\DOMDocument $any = null)
+    public function __construct(?string $itemType = null, ?string $id = null, ?string $displayName = null, $any = null)
     {
         $this
             ->setItemType($itemType)
@@ -69,7 +69,7 @@ class ApiItem extends AbstractStructBase
      * Set itemType value
      * @uses \Api\EnumType\ApiItemType::valueIsValid()
      * @uses \Api\EnumType\ApiItemType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $itemType
      * @return \Api\StructType\ApiItem
      */
@@ -80,6 +80,7 @@ class ApiItem extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiItemType', is_array($itemType) ? implode(', ', $itemType) : var_export($itemType, true), implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
         }
         $this->itemType = $itemType;
+        
         return $this;
     }
     /**
@@ -102,6 +103,7 @@ class ApiItem extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
+        
         return $this;
     }
     /**
@@ -124,6 +126,7 @@ class ApiItem extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($displayName, true), gettype($displayName)), __LINE__);
         }
         $this->displayName = $displayName;
+        
         return $this;
     }
     /**
@@ -146,12 +149,17 @@ class ApiItem extends AbstractStructBase
      * @uses \DOMDocument::hasChildNodes()
      * @uses \DOMDocument::saveXML()
      * @uses \DOMNode::item()
-     * @param \DOMDocument $any
+     * @param \DOMDocument|string|null $any
      * @return \Api\StructType\ApiItem
      */
-    public function setAny(?\DOMDocument $any = null): self
+    public function setAny($any = null): self
     {
-        $this->any = ($any instanceof \DOMDocument) && $any->hasChildNodes() ? $any->saveXML($any->childNodes->item(0)) : null;
+        // validation for constraint: xml
+        if (!is_null($any) && !$any instanceof \DOMDocument && (!is_string($any) || (is_string($any) && (empty($any) || (($anyDoc = new \DOMDocument()) && false === $anyDoc->loadXML($any)))))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a valid XML string', var_export($any, true)), __LINE__);
+        }
+        $this->any = ($any instanceof \DOMDocument) ? $any->saveXML($any->hasChildNodes() ? $any->childNodes->item(0) : null) : $any;
+        
         return $this;
     }
 }

@@ -70,6 +70,7 @@ class ApiExpiryDate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /(0[1-9]|1[012])/', var_export($month, true)), __LINE__);
         }
         $this->month = $month;
+        
         return $this;
     }
     /**
@@ -96,6 +97,7 @@ class ApiExpiryDate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9][0-9]/', var_export($year, true)), __LINE__);
         }
         $this->year = $year;
+        
         return $this;
     }
 }

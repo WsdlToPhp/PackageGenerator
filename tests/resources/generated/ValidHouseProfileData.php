@@ -624,6 +624,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_total, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_total))), __LINE__);
         }
         $this->area_total = $area_total;
+        
         return $this;
     }
     /**
@@ -654,6 +655,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_residential, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_residential))), __LINE__);
         }
         $this->area_residential = $area_residential;
+        
         return $this;
     }
     /**
@@ -684,6 +686,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_non_residential, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_non_residential))), __LINE__);
         }
         $this->area_non_residential = $area_non_residential;
+        
         return $this;
     }
     /**
@@ -706,6 +709,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cadastral_number, true), gettype($cadastral_number)), __LINE__);
         }
         $this->cadastral_number = $cadastral_number;
+        
         return $this;
     }
     /**
@@ -728,6 +732,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($project_type, true), gettype($project_type)), __LINE__);
         }
         $this->project_type = $project_type;
+        
         return $this;
     }
     /**
@@ -750,6 +755,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location_description, true), gettype($location_description)), __LINE__);
         }
         $this->location_description = $location_description;
+        
         return $this;
     }
     /**
@@ -772,6 +778,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($individual_name, true), gettype($individual_name)), __LINE__);
         }
         $this->individual_name = $individual_name;
+        
         return $this;
     }
     /**
@@ -786,7 +793,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Set house_type value
      * @uses \Api\EnumType\ApiHouseTypeEnum::valueIsValid()
      * @uses \Api\EnumType\ApiHouseTypeEnum::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $house_type
      * @return \Api\StructType\ApiHouseProfileData
      */
@@ -797,6 +804,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseTypeEnum', is_array($house_type) ? implode(', ', $house_type) : var_export($house_type, true), implode(', ', \Api\EnumType\ApiHouseTypeEnum::getValidValues())), __LINE__);
         }
         $this->house_type = $house_type;
+        
         return $this;
     }
     /**
@@ -819,6 +827,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($exploitation_start_year, true), gettype($exploitation_start_year)), __LINE__);
         }
         $this->exploitation_start_year = $exploitation_start_year;
+        
         return $this;
     }
     /**
@@ -833,7 +842,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Set wall_material value
      * @uses \Api\EnumType\ApiHouseWallMaterialEnum::valueIsValid()
      * @uses \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $wall_material
      * @return \Api\StructType\ApiHouseProfileData
      */
@@ -844,6 +853,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseWallMaterialEnum', is_array($wall_material) ? implode(', ', $wall_material) : var_export($wall_material, true), implode(', ', \Api\EnumType\ApiHouseWallMaterialEnum::getValidValues())), __LINE__);
         }
         $this->wall_material = $wall_material;
+        
         return $this;
     }
     /**
@@ -858,7 +868,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Set floor_type value
      * @uses \Api\EnumType\ApiHouseFloorTypeEnum::valueIsValid()
      * @uses \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $floor_type
      * @return \Api\StructType\ApiHouseProfileData
      */
@@ -869,6 +879,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseFloorTypeEnum', is_array($floor_type) ? implode(', ', $floor_type) : var_export($floor_type, true), implode(', ', \Api\EnumType\ApiHouseFloorTypeEnum::getValidValues())), __LINE__);
         }
         $this->floor_type = $floor_type;
+        
         return $this;
     }
     /**
@@ -891,6 +902,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($storeys_count, true), gettype($storeys_count)), __LINE__);
         }
         $this->storeys_count = $storeys_count;
+        
         return $this;
     }
     /**
@@ -913,6 +925,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($entrance_count, true), gettype($entrance_count)), __LINE__);
         }
         $this->entrance_count = $entrance_count;
+        
         return $this;
     }
     /**
@@ -935,6 +948,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($elevators_count, true), gettype($elevators_count)), __LINE__);
         }
         $this->elevators_count = $elevators_count;
+        
         return $this;
     }
     /**
@@ -965,6 +979,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_private, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_private))), __LINE__);
         }
         $this->area_private = $area_private;
+        
         return $this;
     }
     /**
@@ -995,6 +1010,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_municipal, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_municipal))), __LINE__);
         }
         $this->area_municipal = $area_municipal;
+        
         return $this;
     }
     /**
@@ -1025,6 +1041,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_national, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_national))), __LINE__);
         }
         $this->area_national = $area_national;
+        
         return $this;
     }
     /**
@@ -1055,6 +1072,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_land, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_land))), __LINE__);
         }
         $this->area_land = $area_land;
+        
         return $this;
     }
     /**
@@ -1085,6 +1103,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_territory, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_territory))), __LINE__);
         }
         $this->area_territory = $area_territory;
+        
         return $this;
     }
     /**
@@ -1107,6 +1126,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($inventory_number, true), gettype($inventory_number)), __LINE__);
         }
         $this->inventory_number = $inventory_number;
+        
         return $this;
     }
     /**
@@ -1129,6 +1149,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($flats_count, true), gettype($flats_count)), __LINE__);
         }
         $this->flats_count = $flats_count;
+        
         return $this;
     }
     /**
@@ -1151,6 +1172,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($residents_count, true), gettype($residents_count)), __LINE__);
         }
         $this->residents_count = $residents_count;
+        
         return $this;
     }
     /**
@@ -1173,6 +1195,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($accounts_count, true), gettype($accounts_count)), __LINE__);
         }
         $this->accounts_count = $accounts_count;
+        
         return $this;
     }
     /**
@@ -1195,6 +1218,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($construction_features, true), gettype($construction_features)), __LINE__);
         }
         $this->construction_features = $construction_features;
+        
         return $this;
     }
     /**
@@ -1225,6 +1249,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_actual_expense, true), mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_actual_expense))), __LINE__);
         }
         $this->thermal_actual_expense = $thermal_actual_expense;
+        
         return $this;
     }
     /**
@@ -1255,6 +1280,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($thermal_normative_expense, true), mb_strlen(preg_replace('/(\D)/', '', (string) $thermal_normative_expense))), __LINE__);
         }
         $this->thermal_normative_expense = $thermal_normative_expense;
+        
         return $this;
     }
     /**
@@ -1269,7 +1295,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Set energy_efficiency value
      * @uses \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::valueIsValid()
      * @uses \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $energy_efficiency
      * @return \Api\StructType\ApiHouseProfileData
      */
@@ -1280,6 +1306,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum', is_array($energy_efficiency) ? implode(', ', $energy_efficiency) : var_export($energy_efficiency, true), implode(', ', \Api\EnumType\ApiHouseEnergyEfficiencyClassEnum::getValidValues())), __LINE__);
         }
         $this->energy_efficiency = $energy_efficiency;
+        
         return $this;
     }
     /**
@@ -1302,6 +1329,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($energy_audit_date, true), gettype($energy_audit_date)), __LINE__);
         }
         $this->energy_audit_date = $energy_audit_date;
+        
         return $this;
     }
     /**
@@ -1324,6 +1352,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($privatization_start_date, true), gettype($privatization_start_date)), __LINE__);
         }
         $this->privatization_start_date = $privatization_start_date;
+        
         return $this;
     }
     /**
@@ -1354,6 +1383,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_total, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_total))), __LINE__);
         }
         $this->deterioration_total = $deterioration_total;
+        
         return $this;
     }
     /**
@@ -1384,6 +1414,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_foundation, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_foundation))), __LINE__);
         }
         $this->deterioration_foundation = $deterioration_foundation;
+        
         return $this;
     }
     /**
@@ -1414,6 +1445,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_bearing_walls, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_bearing_walls))), __LINE__);
         }
         $this->deterioration_bearing_walls = $deterioration_bearing_walls;
+        
         return $this;
     }
     /**
@@ -1444,6 +1476,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($deterioration_floor, true), mb_strlen(preg_replace('/(\D)/', '', (string) $deterioration_floor))), __LINE__);
         }
         $this->deterioration_floor = $deterioration_floor;
+        
         return $this;
     }
     /**
@@ -1462,6 +1495,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setFacade(?\Api\StructType\ApiFacade $facade = null): self
     {
         $this->facade = $facade;
+        
         return $this;
     }
     /**
@@ -1480,6 +1514,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setRoof(?\Api\StructType\ApiRoof $roof = null): self
     {
         $this->roof = $roof;
+        
         return $this;
     }
     /**
@@ -1498,6 +1533,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setBasement(?\Api\StructType\ApiBasement $basement = null): self
     {
         $this->basement = $basement;
+        
         return $this;
     }
     /**
@@ -1516,6 +1552,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setCommon_space(?\Api\StructType\ApiCommonSpace $common_space = null): self
     {
         $this->common_space = $common_space;
+        
         return $this;
     }
     /**
@@ -1534,6 +1571,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setChute(?\Api\StructType\ApiChute $chute = null): self
     {
         $this->chute = $chute;
+        
         return $this;
     }
     /**
@@ -1552,6 +1590,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setHeating_system(?\Api\StructType\ApiHeatingSystem $heating_system = null): self
     {
         $this->heating_system = $heating_system;
+        
         return $this;
     }
     /**
@@ -1570,6 +1609,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setHot_water_system(?\Api\StructType\ApiHotWaterSystem $hot_water_system = null): self
     {
         $this->hot_water_system = $hot_water_system;
+        
         return $this;
     }
     /**
@@ -1588,6 +1628,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setCold_water_system(?\Api\StructType\ApiColdWaterSystem $cold_water_system = null): self
     {
         $this->cold_water_system = $cold_water_system;
+        
         return $this;
     }
     /**
@@ -1606,6 +1647,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setSewerage_system(?\Api\StructType\ApiSewerageSystem $sewerage_system = null): self
     {
         $this->sewerage_system = $sewerage_system;
+        
         return $this;
     }
     /**
@@ -1624,6 +1666,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setElectricity_system(?\Api\StructType\ApiElectricitySystem $electricity_system = null): self
     {
         $this->electricity_system = $electricity_system;
+        
         return $this;
     }
     /**
@@ -1642,6 +1685,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setGas_system(?\Api\StructType\ApiGasSystem $gas_system = null): self
     {
         $this->gas_system = $gas_system;
+        
         return $this;
     }
     /**
@@ -1672,11 +1716,12 @@ class ApiHouseProfileData extends AbstractStructBase
             $message = sprintf('The lifts property can only contain items of type \Api\StructType\ApiLift, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set lifts value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiLift[] $lifts
      * @return \Api\StructType\ApiHouseProfileData
      */
@@ -1687,11 +1732,12 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException($liftsArrayErrorMessage, __LINE__);
         }
         $this->lifts = $lifts;
+        
         return $this;
     }
     /**
      * Add item to lifts value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiLift $item
      * @return \Api\StructType\ApiHouseProfileData
      */
@@ -1702,6 +1748,7 @@ class ApiHouseProfileData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The lifts property can only contain items of type \Api\StructType\ApiLift, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->lifts[] = $item;
+        
         return $this;
     }
     /**
@@ -1720,6 +1767,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setManagement_contract(?\Api\StructType\ApiManagementContract $management_contract = null): self
     {
         $this->management_contract = $management_contract;
+        
         return $this;
     }
     /**
@@ -1738,6 +1786,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setHeating_provider(?\Api\StructType\ApiProvider $heating_provider = null): self
     {
         $this->heating_provider = $heating_provider;
+        
         return $this;
     }
     /**
@@ -1756,6 +1805,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setElectricity_provider(?\Api\StructType\ApiProvider $electricity_provider = null): self
     {
         $this->electricity_provider = $electricity_provider;
+        
         return $this;
     }
     /**
@@ -1774,6 +1824,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setGas_provider(?\Api\StructType\ApiProvider $gas_provider = null): self
     {
         $this->gas_provider = $gas_provider;
+        
         return $this;
     }
     /**
@@ -1792,6 +1843,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setHot_water_provider(?\Api\StructType\ApiProvider $hot_water_provider = null): self
     {
         $this->hot_water_provider = $hot_water_provider;
+        
         return $this;
     }
     /**
@@ -1810,6 +1862,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setCold_water_provider(?\Api\StructType\ApiProvider $cold_water_provider = null): self
     {
         $this->cold_water_provider = $cold_water_provider;
+        
         return $this;
     }
     /**
@@ -1828,6 +1881,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setDrainage_provider(?\Api\StructType\ApiProvider $drainage_provider = null): self
     {
         $this->drainage_provider = $drainage_provider;
+        
         return $this;
     }
     /**
@@ -1846,6 +1900,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setFinance(?\Api\StructType\ApiFinance $finance = null): self
     {
         $this->finance = $finance;
+        
         return $this;
     }
 }

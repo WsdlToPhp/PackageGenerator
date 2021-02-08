@@ -97,6 +97,7 @@ class ApiHotelReservationType extends AbstractStructBase
     public function setRoomStays(?\Api\StructType\ApiRoomStaysType $roomStays = null): self
     {
         $this->RoomStays = $roomStays;
+        
         return $this;
     }
     /**
@@ -115,6 +116,7 @@ class ApiHotelReservationType extends AbstractStructBase
     public function setResGuests(?\Api\StructType\ApiResGuestsType $resGuests = null): self
     {
         $this->ResGuests = $resGuests;
+        
         return $this;
     }
     /**
@@ -133,6 +135,7 @@ class ApiHotelReservationType extends AbstractStructBase
     public function setResGlobalInfo(?\Api\StructType\ApiResGlobalInfoType $resGlobalInfo = null): self
     {
         $this->ResGlobalInfo = $resGlobalInfo;
+        
         return $this;
     }
     /**
@@ -155,6 +158,7 @@ class ApiHotelReservationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($roomStayReservation, true), gettype($roomStayReservation)), __LINE__);
         }
         $this->RoomStayReservation = $roomStayReservation;
+        
         return $this;
     }
     /**
@@ -191,6 +195,7 @@ class ApiHotelReservationType extends AbstractStructBase
             $message = sprintf("The value %s does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:\n%s", var_export($value, true), implode("\n", array_map(function(InvalidArgumentException $e) { return sprintf(' - %s', $e->getMessage()); }, [$exception0, $exception1, $exception2])));
         }
         unset($exception0, $exception1, $exception2);
+        
         return $message;
     }
     /**
@@ -209,6 +214,7 @@ class ApiHotelReservationType extends AbstractStructBase
             throw new InvalidArgumentException($resStatusUnionErrorMessage, __LINE__);
         }
         $this->ResStatus = $resStatus;
+        
         return $this;
     }
 }

@@ -61,11 +61,12 @@ class ApiAddRequest extends AbstractStructBase
             $message = sprintf('The AdGroups property can only contain items of type \Api\StructType\ApiAdGroupAddItem, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set AdGroups value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiAdGroupAddItem[] $adGroups
      * @return \Api\StructType\ApiAddRequest
      */
@@ -76,11 +77,12 @@ class ApiAddRequest extends AbstractStructBase
             throw new InvalidArgumentException($adGroupsArrayErrorMessage, __LINE__);
         }
         $this->AdGroups = $adGroups;
+        
         return $this;
     }
     /**
      * Add item to AdGroups value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiAdGroupAddItem $item
      * @return \Api\StructType\ApiAddRequest
      */
@@ -91,6 +93,7 @@ class ApiAddRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AdGroups property can only contain items of type \Api\StructType\ApiAdGroupAddItem, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AdGroups[] = $item;
+        
         return $this;
     }
 }

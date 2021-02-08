@@ -163,6 +163,7 @@ class ApiShopper extends AbstractStructBase
     public function setName(\Api\StructType\ApiName $name): self
     {
         $this->name = $name;
+        
         return $this;
     }
     /**
@@ -197,6 +198,7 @@ class ApiShopper extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[_a-zA-Z0-9\\-\\+\\.]+@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*(\\.[a-zA-Z]+)/', var_export($email, true)), __LINE__);
         }
         $this->email = $email;
+        
         return $this;
     }
     /**
@@ -215,6 +217,7 @@ class ApiShopper extends AbstractStructBase
     public function setLanguage(\Api\StructType\ApiLanguage $language): self
     {
         $this->language = $language;
+        
         return $this;
     }
     /**
@@ -229,7 +232,7 @@ class ApiShopper extends AbstractStructBase
      * Set gender value
      * @uses \Api\EnumType\ApiGender::valueIsValid()
      * @uses \Api\EnumType\ApiGender::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $gender
      * @return \Api\StructType\ApiShopper
      */
@@ -240,6 +243,7 @@ class ApiShopper extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiGender', is_array($gender) ? implode(', ', $gender) : var_export($gender, true), implode(', ', \Api\EnumType\ApiGender::getValidValues())), __LINE__);
         }
         $this->gender = $gender;
+        
         return $this;
     }
     /**
@@ -270,6 +274,7 @@ class ApiShopper extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $id)), __LINE__);
         }
         $this->id = $id;
+        
         return $this;
     }
     /**
@@ -300,6 +305,7 @@ class ApiShopper extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $dateOfBirth)), __LINE__);
         }
         $this->dateOfBirth = $dateOfBirth;
+        
         return $this;
     }
     /**
@@ -330,6 +336,7 @@ class ApiShopper extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $phoneNumber)), __LINE__);
         }
         $this->phoneNumber = $phoneNumber;
+        
         return $this;
     }
     /**
@@ -360,6 +367,7 @@ class ApiShopper extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $mobilePhoneNumber)), __LINE__);
         }
         $this->mobilePhoneNumber = $mobilePhoneNumber;
+        
         return $this;
     }
     /**
@@ -390,6 +398,7 @@ class ApiShopper extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ipAddress)), __LINE__);
         }
         $this->ipAddress = $ipAddress;
+        
         return $this;
     }
 }

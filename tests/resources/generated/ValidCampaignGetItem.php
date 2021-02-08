@@ -274,6 +274,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setId(?int $id = null): self
     {
         $this->Id = $id;
+        
         return $this;
     }
     /**
@@ -292,6 +293,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setName(?string $name = null): self
     {
         $this->Name = $name;
+        
         return $this;
     }
     /**
@@ -310,6 +312,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setStartDate(?string $startDate = null): self
     {
         $this->StartDate = $startDate;
+        
         return $this;
     }
     /**
@@ -328,6 +331,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setType(?string $type = null): self
     {
         $this->Type = $type;
+        
         return $this;
     }
     /**
@@ -346,6 +350,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setStatus(?string $status = null): self
     {
         $this->Status = $status;
+        
         return $this;
     }
     /**
@@ -364,6 +369,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setState(?string $state = null): self
     {
         $this->State = $state;
+        
         return $this;
     }
     /**
@@ -382,6 +388,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setStatusPayment(?string $statusPayment = null): self
     {
         $this->StatusPayment = $statusPayment;
+        
         return $this;
     }
     /**
@@ -400,6 +407,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setStatusClarification(?string $statusClarification = null): self
     {
         $this->StatusClarification = $statusClarification;
+        
         return $this;
     }
     /**
@@ -427,6 +435,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
         } else {
             $this->SourceId = $sourceId;
         }
+        
         return $this;
     }
     /**
@@ -445,6 +454,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setStatistics(?\Api\StructType\ApiStatistics $statistics = null): self
     {
         $this->Statistics = $statistics;
+        
         return $this;
     }
     /**
@@ -463,6 +473,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setCurrency(?string $currency = null): self
     {
         $this->Currency = $currency;
+        
         return $this;
     }
     /**
@@ -481,6 +492,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setFunds(?\Api\StructType\ApiFundsParam $funds = null): self
     {
         $this->Funds = $funds;
+        
         return $this;
     }
     /**
@@ -499,6 +511,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setRepresentedBy(?\Api\StructType\ApiCampaignAssistant $representedBy = null): self
     {
         $this->RepresentedBy = $representedBy;
+        
         return $this;
     }
     /**
@@ -526,6 +539,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
         } else {
             $this->DailyBudget = $dailyBudget;
         }
+        
         return $this;
     }
     /**
@@ -553,6 +567,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
         } else {
             $this->EndDate = $endDate;
         }
+        
         return $this;
     }
     /**
@@ -580,6 +595,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
         } else {
             $this->NegativeKeywords = $negativeKeywords;
         }
+        
         return $this;
     }
     /**
@@ -607,6 +623,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
         } else {
             $this->BlockedIps = $blockedIps;
         }
+        
         return $this;
     }
     /**
@@ -634,6 +651,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
         } else {
             $this->ExcludedSites = $excludedSites;
         }
+        
         return $this;
     }
     /**
@@ -652,6 +670,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setTextCampaign(?\Api\StructType\ApiTextCampaignGetItem $textCampaign = null): self
     {
         $this->TextCampaign = $textCampaign;
+        
         return $this;
     }
     /**
@@ -670,6 +689,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setMobileAppCampaign(?\Api\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null): self
     {
         $this->MobileAppCampaign = $mobileAppCampaign;
+        
         return $this;
     }
     /**
@@ -688,6 +708,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setDynamicTextCampaign(?\Api\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null): self
     {
         $this->DynamicTextCampaign = $dynamicTextCampaign;
+        
         return $this;
     }
 }

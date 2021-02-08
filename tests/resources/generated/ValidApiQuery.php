@@ -75,6 +75,7 @@ class ApiQuery extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms, true), gettype($searchTerms)), __LINE__);
         }
         $this->SearchTerms = $searchTerms;
+        
         return $this;
     }
     /**
@@ -97,6 +98,7 @@ class ApiQuery extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alteredQuery, true), gettype($alteredQuery)), __LINE__);
         }
         $this->AlteredQuery = $alteredQuery;
+        
         return $this;
     }
     /**
@@ -119,6 +121,7 @@ class ApiQuery extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alterationOverrideQuery, true), gettype($alterationOverrideQuery)), __LINE__);
         }
         $this->AlterationOverrideQuery = $alterationOverrideQuery;
+        
         return $this;
     }
 }

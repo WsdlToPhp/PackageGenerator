@@ -271,6 +271,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cardHolderName)), __LINE__);
         }
         $this->CardHolderName = $cardHolderName;
+        
         return $this;
     }
     /**
@@ -289,6 +290,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setCardIssuerName(?\Api\StructType\ApiCardIssuerName $cardIssuerName = null): self
     {
         $this->CardIssuerName = $cardIssuerName;
+        
         return $this;
     }
     /**
@@ -307,6 +309,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setAddress(?\Api\StructType\ApiAddressType $address = null): self
     {
         $this->Address = $address;
+        
         return $this;
     }
     /**
@@ -337,11 +340,12 @@ class ApiPaymentCardType extends AbstractStructBase
             $message = sprintf('The Telephone property can only contain items of type \Api\StructType\ApiTelephone, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set Telephone value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiTelephone[] $telephone
      * @return \Api\StructType\ApiPaymentCardType
      */
@@ -356,11 +360,12 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($telephone)), __LINE__);
         }
         $this->Telephone = $telephone;
+        
         return $this;
     }
     /**
      * Add item to Telephone value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiTelephone $item
      * @return \Api\StructType\ApiPaymentCardType
      */
@@ -375,6 +380,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->Telephone)), __LINE__);
         }
         $this->Telephone[] = $item;
+        
         return $this;
     }
     /**
@@ -405,11 +411,12 @@ class ApiPaymentCardType extends AbstractStructBase
             $message = sprintf('The Email property can only contain items of type \Api\StructType\ApiEmailType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set Email value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiEmailType[] $email
      * @return \Api\StructType\ApiPaymentCardType
      */
@@ -424,11 +431,12 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 3', count($email)), __LINE__);
         }
         $this->Email = $email;
+        
         return $this;
     }
     /**
      * Add item to Email value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiEmailType $item
      * @return \Api\StructType\ApiPaymentCardType
      */
@@ -443,6 +451,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 3', count($this->Email)), __LINE__);
         }
         $this->Email[] = $item;
+        
         return $this;
     }
     /**
@@ -469,6 +478,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($cardType, true)), __LINE__);
         }
         $this->CardType = $cardType;
+        
         return $this;
     }
     /**
@@ -483,7 +493,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Set CardCode value
      * @uses \Api\EnumType\ApiPaymentCardCodeType::valueIsValid()
      * @uses \Api\EnumType\ApiPaymentCardCodeType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $cardCode
      * @return \Api\StructType\ApiPaymentCardType
      */
@@ -494,6 +504,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiPaymentCardCodeType', is_array($cardCode) ? implode(', ', $cardCode) : var_export($cardCode, true), implode(', ', \Api\EnumType\ApiPaymentCardCodeType::getValidValues())), __LINE__);
         }
         $this->CardCode = $cardCode;
+        
         return $this;
     }
     /**
@@ -516,6 +527,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardName, true), gettype($cardName)), __LINE__);
         }
         $this->CardName = $cardName;
+        
         return $this;
     }
     /**
@@ -542,6 +554,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9]{1,19}/', var_export($cardNumber, true)), __LINE__);
         }
         $this->CardNumber = $cardNumber;
+        
         return $this;
     }
     /**
@@ -568,6 +581,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9]{1,8}/', var_export($seriesCode, true)), __LINE__);
         }
         $this->SeriesCode = $seriesCode;
+        
         return $this;
     }
     /**
@@ -594,6 +608,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9a-zA-Z]{1,19}/', var_export($maskedCardNumber, true)), __LINE__);
         }
         $this->MaskedCardNumber = $maskedCardNumber;
+        
         return $this;
     }
     /**
@@ -620,6 +635,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9]{1,8}/', var_export($cardHolderRPH, true)), __LINE__);
         }
         $this->CardHolderRPH = $cardHolderRPH;
+        
         return $this;
     }
     /**
@@ -646,6 +662,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[a-zA-Z]{2}/', var_export($countryOfIssue, true)), __LINE__);
         }
         $this->CountryOfIssue = $countryOfIssue;
+        
         return $this;
     }
     /**
@@ -676,6 +693,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $remark)), __LINE__);
         }
         $this->Remark = $remark;
+        
         return $this;
     }
     /**
@@ -698,6 +716,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareSynchInd, true), gettype($shareSynchInd)), __LINE__);
         }
         $this->ShareSynchInd = $shareSynchInd;
+        
         return $this;
     }
     /**
@@ -720,6 +739,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareMarketInd, true), gettype($shareMarketInd)), __LINE__);
         }
         $this->ShareMarketInd = $shareMarketInd;
+        
         return $this;
     }
     /**
@@ -746,6 +766,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /(0[1-9]|1[0-2])[0-9][0-9]/', var_export($effectiveDate, true)), __LINE__);
         }
         $this->EffectiveDate = $effectiveDate;
+        
         return $this;
     }
     /**
@@ -772,6 +793,7 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /(0[1-9]|1[0-2])[0-9][0-9]/', var_export($expireDate, true)), __LINE__);
         }
         $this->ExpireDate = $expireDate;
+        
         return $this;
     }
 }

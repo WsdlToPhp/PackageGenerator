@@ -186,6 +186,7 @@ class ApiAddressType extends AbstractStructBase
     public function setStreetNmbr(?\Api\StructType\ApiStreetNmbr $streetNmbr = null): self
     {
         $this->StreetNmbr = $streetNmbr;
+        
         return $this;
     }
     /**
@@ -216,6 +217,7 @@ class ApiAddressType extends AbstractStructBase
             $message = sprintf('The AddressLine property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
@@ -239,6 +241,7 @@ class ApiAddressType extends AbstractStructBase
             $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be less than or equal to 255', implode(', ', $invalidValues));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
@@ -262,11 +265,12 @@ class ApiAddressType extends AbstractStructBase
             $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be greater than or equal to 1', implode(', ', $invalidValues));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set AddressLine value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string[] $addressLine
      * @return \Api\StructType\ApiAddressType
      */
@@ -289,11 +293,12 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException($addressLineMinLengthErrorMessage, __LINE__);
         }
         $this->AddressLine = $addressLine;
+        
         return $this;
     }
     /**
      * Add item to AddressLine value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $item
      * @return \Api\StructType\ApiAddressType
      */
@@ -316,6 +321,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $item)), __LINE__);
         }
         $this->AddressLine[] = $item;
+        
         return $this;
     }
     /**
@@ -346,6 +352,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cityName)), __LINE__);
         }
         $this->CityName = $cityName;
+        
         return $this;
     }
     /**
@@ -376,6 +383,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $postalCode)), __LINE__);
         }
         $this->PostalCode = $postalCode;
+        
         return $this;
     }
     /**
@@ -406,6 +414,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $county)), __LINE__);
         }
         $this->County = $county;
+        
         return $this;
     }
     /**
@@ -424,6 +433,7 @@ class ApiAddressType extends AbstractStructBase
     public function setStateProv(?\Api\StructType\ApiStateProvType $stateProv = null): self
     {
         $this->StateProv = $stateProv;
+        
         return $this;
     }
     /**
@@ -442,6 +452,7 @@ class ApiAddressType extends AbstractStructBase
     public function setCountryName(?\Api\StructType\ApiCountryNameType $countryName = null): self
     {
         $this->CountryName = $countryName;
+        
         return $this;
     }
     /**
@@ -468,6 +479,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($type, true)), __LINE__);
         }
         $this->Type = $type;
+        
         return $this;
     }
     /**
@@ -498,6 +510,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $remark)), __LINE__);
         }
         $this->Remark = $remark;
+        
         return $this;
     }
     /**
@@ -520,6 +533,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($formattedInd, true), gettype($formattedInd)), __LINE__);
         }
         $this->FormattedInd = $formattedInd;
+        
         return $this;
     }
     /**
@@ -542,6 +556,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareSynchInd, true), gettype($shareSynchInd)), __LINE__);
         }
         $this->ShareSynchInd = $shareSynchInd;
+        
         return $this;
     }
     /**
@@ -564,6 +579,7 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareMarketInd, true), gettype($shareMarketInd)), __LINE__);
         }
         $this->ShareMarketInd = $shareMarketInd;
+        
         return $this;
     }
 }

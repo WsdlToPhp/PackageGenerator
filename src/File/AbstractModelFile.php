@@ -129,14 +129,18 @@ abstract class AbstractModelFile extends AbstractFile
         return $model;
     }
 
-    public function isAttributeAList(StructAttributeModel $attribute = null): bool
-    {
-        return $this->getStructAttribute($attribute)->isList();
-    }
-
-    public function getStructAttributeType(StructAttributeModel $attribute = null, bool $namespaced = false): string
+    public function getStructAttributeType(StructAttributeModel $attribute = null, bool $namespaced = false, bool $returnArrayType = true): string
     {
         $attribute = $this->getStructAttribute($attribute);
+
+        if (!$attribute instanceof StructAttributeModel) {
+            throw new InvalidArgumentException(sprintf('Couldn\'t not find any valid StructAttribute'));
+        }
+
+        if ($returnArrayType && ($attribute->isArray())) {
+            return self::TYPE_ARRAY;
+        }
+
         $inheritance = $attribute->getInheritance();
         $type = empty($inheritance) ? $attribute->getType() : $inheritance;
 
@@ -165,10 +169,15 @@ abstract class AbstractModelFile extends AbstractFile
         return $type;
     }
 
-    public function getStructAttributeTypeAsPhpType(StructAttributeModel $attribute = null): string
+    public function getStructAttributeTypeAsPhpType(StructAttributeModel $fromAttribute = null, bool $returnArrayType = true): string
     {
-        $attribute = $this->getStructAttribute($attribute);
-        $attributeType = $this->getStructAttributeType($attribute, true);
+        $attribute = $this->getStructAttribute($fromAttribute);
+
+        if (!$attribute instanceof StructAttributeModel) {
+            throw new InvalidArgumentException(sprintf('Couldn\'t not find any valid StructAttribute'));
+        }
+
+        $attributeType = $this->getStructAttributeType($attribute, true, $returnArrayType);
         if (XsdTypes::instance($this->getGenerator()->getOptionXsdTypesPath())->isXsd($attributeType)) {
             $attributeType = self::getPhpType($attributeType, $this->getGenerator()->getOptionXsdTypesPath());
         }
@@ -392,14 +401,20 @@ abstract class AbstractModelFile extends AbstractFile
             return '\\DOMDocument|string|null';
         }
 
-        return sprintf('%s%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', !$nullableItemType && ($attribute->isRequired() || $attribute->isArray() || $attribute->isList()) ? '' : '|null');
+        return sprintf('%s%s%s', $this->getStructAttributeTypeAsPhpType($attribute, false), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', !$nullableItemType && ($attribute->isRequired() || $attribute->isArray() || $attribute->isList()) ? '' : '|null');
     }
 
-    protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute = null, bool $returnArrayType = true): string
+    protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute, bool $returnArrayType = true, bool $itemType = false): string
     {
-        $attribute = $this->getStructAttribute($attribute);
+        if ($attribute->isXml()) {
+            return '\\DOMDocument|string|null';
+        }
 
-        return sprintf('%s%s', $this->getStructAttributeTypeAsPhpType($attribute), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '');
+        if ($attribute->isList()) {
+            return 'array|string';
+        }
+
+        return sprintf('%s%s', $this->getStructAttributeTypeAsPhpType($attribute, $returnArrayType), $this->useBrackets($attribute, !$itemType) ? '[]' : '');
     }
 
     protected function useBrackets(StructAttributeModel $attribute, bool $returnArrayType = true): bool
@@ -411,6 +426,6 @@ abstract class AbstractModelFile extends AbstractFile
     {
         $attribute = $this->getStructAttribute($attribute);
 
-        return ($returnArrayType && ($attribute->isArray() || $this->isAttributeAList($attribute))) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
+        return ($returnArrayType && ($attribute->isArray() || $attribute->isList())) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
     }
 }

@@ -76,6 +76,7 @@ class ApiOffer extends ApiOrder
         } else {
             $this->offerClassMember = $offerClassMember;
         }
+        
         return $this;
     }
     /**
@@ -103,6 +104,7 @@ class ApiOffer extends ApiOrder
         } else {
             $this->offer = $offer;
         }
+        
         return $this;
     }
 }

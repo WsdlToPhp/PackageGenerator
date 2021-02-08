@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 
 final class ItemTypeRule extends AbstractRule
@@ -21,7 +20,7 @@ final class ItemTypeRule extends AbstractRule
 
     public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string
     {
-        return sprintf('sprintf(\'The %1$s property can only contain items of type %2$s, %%s given\', is_object($%3$s) ? get_class($%3$s) : (is_array($%3$s) ? implode(\', \', $%3$s) : gettype($%3$s)))', $this->getAttribute()->getCleanName(), $this->getFile()->getStructAttributeType($this->getAttribute(), true), $parameterName);
+        return sprintf('sprintf(\'The %1$s property can only contain items of type %2$s, %%s given\', is_object($%3$s) ? get_class($%3$s) : (is_array($%3$s) ? implode(\', \', $%3$s) : gettype($%3$s)))', $this->getAttribute()->getCleanName(), $this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute(), false), $parameterName);
     }
 
     /**
@@ -33,9 +32,11 @@ final class ItemTypeRule extends AbstractRule
         $model = $this->getFile()->getModelFromStructAttribute($this->getAttribute());
         $sanityCheck = 'false';
         if ($model instanceof Struct && !$model->isList() && ($model->isStruct() || ($model->isArray() && $model->getInheritanceStruct() instanceof Struct))) {
-            $sanityCheck = sprintf('!$%s instanceof %s', $itemName, $this->getFile()->getStructAttributeType($this->getAttribute(), true));
+            $sanityCheck = sprintf('!$%s instanceof %s', $itemName, $this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute(), false));
+        } elseif ($this->getAttribute()->isXml()) {
+            $sanityCheck = $this->getRules()->getXmlRule()->testConditions($itemName, null, true);
         } else {
-            $type = AbstractModelFile::getPhpType($this->getFile()->getStructAttributeType($this->getAttribute()));
+            $type = $this->getFile()->getStructAttributeTypeAsPhpType($this->getAttribute(), false);
             if ($rule = $this->getRules()->getRule($type)) {
                 $sanityCheck = $rule->testConditions($itemName, null, true);
             }

@@ -146,11 +146,12 @@ class ApiTaxType extends AbstractStructBase
             $message = sprintf('The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set TaxDescription value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiParagraphType[] $taxDescription
      * @return \Api\StructType\ApiTaxType
      */
@@ -165,11 +166,12 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($taxDescription)), __LINE__);
         }
         $this->TaxDescription = $taxDescription;
+        
         return $this;
     }
     /**
      * Add item to TaxDescription value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiParagraphType $item
      * @return \Api\StructType\ApiTaxType
      */
@@ -184,6 +186,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->TaxDescription)), __LINE__);
         }
         $this->TaxDescription[] = $item;
+        
         return $this;
     }
     /**
@@ -198,7 +201,7 @@ class ApiTaxType extends AbstractStructBase
      * Set Type value
      * @uses \Api\EnumType\ApiAmountDeterminationType::valueIsValid()
      * @uses \Api\EnumType\ApiAmountDeterminationType::getValidValues()
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string $type
      * @return \Api\StructType\ApiTaxType
      */
@@ -209,6 +212,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAmountDeterminationType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Api\EnumType\ApiAmountDeterminationType::getValidValues())), __LINE__);
         }
         $this->Type = $type;
+        
         return $this;
     }
     /**
@@ -235,6 +239,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($code, true)), __LINE__);
         }
         $this->Code = $code;
+        
         return $this;
     }
     /**
@@ -265,6 +270,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0.00', var_export($percent, true)), __LINE__);
         }
         $this->Percent = $percent;
+        
         return $this;
     }
     /**
@@ -291,6 +297,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 3 fraction digits, %d given', var_export($amount, true), mb_strlen(mb_substr((string) $amount, mb_strpos((string) $amount, '.') + 1))), __LINE__);
         }
         $this->Amount = $amount;
+        
         return $this;
     }
     /**
@@ -317,6 +324,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[a-zA-Z]{3}/', var_export($currencyCode, true)), __LINE__);
         }
         $this->CurrencyCode = $currencyCode;
+        
         return $this;
     }
     /**
@@ -339,6 +347,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($decimalPlaces, true), gettype($decimalPlaces)), __LINE__);
         }
         $this->DecimalPlaces = $decimalPlaces;
+        
         return $this;
     }
 }

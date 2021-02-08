@@ -61,11 +61,12 @@ class ApiArrayOfString extends AbstractStructArrayBase
             $message = sprintf('The string property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set string value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param string[] $string
      * @return \Api\ArrayType\ApiArrayOfString
      */
@@ -76,6 +77,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
             throw new InvalidArgumentException($stringArrayErrorMessage, __LINE__);
         }
         $this->string = $string;
+        
         return $this;
     }
     /**
