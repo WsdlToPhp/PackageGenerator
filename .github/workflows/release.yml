@@ -46,7 +46,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: wsdltophp/wsdltophp
+          images: mikaelcom/wsdltophp
 
       - name: Install dependencies from composer.lock
         run: composer install ${{ env.COMPOSER_FLAGS }}
