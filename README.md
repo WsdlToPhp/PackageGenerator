@@ -36,7 +36,7 @@ $ mv wsdltophp-php7.phar /usr/local/bin/wsdltophp
 ### With Docker:
 
 ```bash
-$ docker run --rm -it wsdltophp/wsdltophp:tagname
+$ docker run --rm -it mikaelcom/wsdltophp:tagname
 ```
 
 ## Usage
@@ -85,7 +85,7 @@ _In order to see all the used options, just remove the `--force` argument._
 
 Such as with the command line above, simply use the `docker run` command line before:
 ```bash
-$ docker run --rm -it --volume $PWD:/var/www wsdltophp/wsdltophp:tagname generate:package \
+$ docker run --rm -it --volume $PWD:/var/www mikaelcom/wsdltophp:tagname generate:package \
     --urlorpath="http://developer.ebay.com/webservices/latest/ebaySvc.wsdl" \
     --destination="/var/www/MySdk" \
     --composer-name="myproject/mysdk" \
