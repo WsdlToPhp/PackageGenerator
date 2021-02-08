@@ -10,7 +10,8 @@
    - A **[TypeError](https://www.php.net/manual/en/class.typeerror.php)** is thrown if you try to set to `null` a non-nullable property (`required` by the WSDL). An **[InvalidArgumentException](https://www.php.net/manual/en/class.invalidargumentexception.php)** was previously thrown for an invalid value type when validation rules were enabled.
    - **The directive** `declare(strict_types=1)` is placed at top of each file ensuring that the class is well-defined and behaves as declared.
    - **Method** `get{PropertyName}(bool $asString = true)` becomes `get{PropertyName}(bool $asDomDocument = false)` when the property is supposed to be an XML string (`any`). Be sure to pass `true` instead of `false` if you still need to get the **[DOMDocument](https://www.php.net/manual/en/class.domdocument.php)** as returned value.
-   - **Directory** is now based on the defined namespace. If the namespace was `SoapApi`:
-     - **Before**: the `Request` Struct was located at `src/StructType/Request.php`
-     - **Now**: the `Request` Struct is located at `src/SoapApi/StructType/Request.php`. So on for the `EnumType`, `ArrayType`, `ServiceType` and the `ClassMap` classes.
+   - Classes **directory** is now based on the defined namespace. If the namespace was `SoapApi`:
+     - **Before**: the `Request` Struct class was located at `src/StructType/Request.php`
+     - **Now**: the `Request` Struct class is located at `src/SoapApi/StructType/Request.php`. So on for the `EnumType`, `ArrayType`, `ServiceType` and the `ClassMap` classes.
 3. **WsdlHandler** classes: they have been exported to an independent project at **[WsdlTophp/Wsdlhandler](https://github.com/WsdlToPhp/Wsdlhandler)**. It's now loaded as a composer dependency.
+4. The [PackageBase](https://github.com/WsdlToPhp/PackageBase) version is now >= 5.0.

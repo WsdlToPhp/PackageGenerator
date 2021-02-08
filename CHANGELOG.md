@@ -3,17 +3,16 @@
 ## 4.0.0 - 2021-xx-xx
 - issue #124 - PHP >= 7.4 tasks
   - Code requires PHP >= 7.4
+  - Generated code requires PHP >= 7.4
+  - Change Docker Hub repository from **[mikaelcom/wsdltophp](https://hub.docker.com/repository/docker/mikaelcom/wsdltophp)** to **[wsdltophp/wsdltophp](https://hub.docker.com/repository/docker/wsdltohphp/wsdltophp)**
   - Code cleaning
   - Update README
+  - Add [MANIFEST.md](/MANIFEST.md) explaining how files are generated and how they should be used
   - Update Travis CI settings
   - Update PHPUnit settings
   - Update LICENSE file
-  - Version 2.0 is no more maintained
-  - Generated code is now requiring PHP >= 7.4
-  - Add [MANIFEST.md](/MANIFEST.md)
-  - Generated class properties are now **protected** if validation rules are `enabled` which is the default behaviour.
-  - Generated classes are now created in the directory following their namespace
   - BC: read [UPGRADE-4.0.md](/UPGRADE-4.0.md)
+  - Version 2.0 is no more maintained
 
 ## 3.3.4 - 2021-01-25
 - issue #230 - Avoid repeated meta value within generated meta documentation
