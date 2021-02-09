@@ -176,7 +176,6 @@ final class StructArray extends Struct
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
             new PhpAnnotation(self::ANNOTATION_THROWS, InvalidArgumentException::class),
-            new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName(true))),
             new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType(null, true, false))),
             new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s', $this->getModel()->getPackagedName(true))),
         ]);
