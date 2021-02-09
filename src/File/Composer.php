@@ -46,9 +46,9 @@ final class Composer extends AbstractFile
             '--description' => sprintf('Package generated from %s using wsdltophp/packagegenerator', $this->getGenerator()->getWsdl()->getName()),
             '--require' => [
                 'php:>=7.4',
-                'ext-soap:*',
+                'ext-dom:*',
                 'ext-mbstring:*',
-                'ext-libxml:*',
+                'ext-soap:*',
                 'wsdltophp/packagebase:~5.0',
             ],
             '--working-dir' => $this->getGenerator()->getOptionDestination(),
@@ -71,7 +71,9 @@ final class Composer extends AbstractFile
     {
         $content = $this->getComposerFileContent();
         if (is_array($content) && !empty($content)) {
-            $this->addAutoloadToComposerJson($content)->addComposerSettings($content);
+            $this
+                ->addAutoloadToComposerJson($content)
+                ->addComposerSettings($content);
         }
 
         return $this->setComposerFileContent($content);

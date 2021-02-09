@@ -3,9 +3,9 @@
     "description": "Package generated from __WSDL_URL__ using wsdltophp/packagegenerator",
     "require": {
         "php": ">=7.4",
-        "ext-soap": "*",
+        "ext-dom": "*",
         "ext-mbstring": "*",
-        "ext-libxml": "*",
+        "ext-soap": "*",
         "wsdltophp/packagebase": "~5.0",
         "wsdltophp/wssecurity": "dev-master"
     },
