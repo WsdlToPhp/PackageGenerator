@@ -86,7 +86,7 @@ This file intends to explain the way the files are generated and why. Moreover, 
   - `false`:
     - This means there is an error with the request or the Soap Server that has triggered a SoapFault (be sure that `WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_TRACE`=`true`).
     - Use `getLastError(string $methodName): ?SoapFault` to get the [SoapFault](https://www.php.net/manual/en/class.soapfault.php) thrown when the method cas called.
-    - `$methodName` has the form `{fully qualified classname}::{__FUNCION__}`.
+    - `$methodName` has the form `{fully qualified classname}::{__FUNCTION__}` aka `__METHOD__`.
   - A `{returnType}` object/value result:
     - The `getResult` method is annotated with the `@return` annotation listing all the possible return types.
     - Be sure to check the result type before using the returned result.
