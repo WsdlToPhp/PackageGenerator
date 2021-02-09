@@ -103,7 +103,8 @@ First released on xx xxx 2021, maintained until version 6.0 is released. Please 
 First released on 04 May 2018, maintained until version 5.0 is released. Please read the [UPGRADE-3.0](UPGRADE-3.0.md) note in order to acknowledge the main changes.
 
 ### 2.0
-Not maintained anymore since 2021/xx/xx
+**Not maintained since 2021/xx/xx.**
+
 First released on 29 Apr 2016, maintained until version 4.0 is released.
 
 ### 1.0
