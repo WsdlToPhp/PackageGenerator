@@ -131,7 +131,6 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Add element to array
      * @see AbstractStructArrayBase::add()
      * @throws InvalidArgumentException
-     * @uses \Api\StructType\ApiNewsRelatedSearch::valueIsValid()
      * @param \Api\StructType\ApiNewsRelatedSearch $item
      * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
      */

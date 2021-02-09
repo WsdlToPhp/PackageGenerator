@@ -131,7 +131,6 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      * Add element to array
      * @see AbstractStructArrayBase::add()
      * @throws InvalidArgumentException
-     * @uses \Api\StructType\ApiErrorProject::valueIsValid()
      * @param \Api\StructType\ApiErrorProject $item
      * @return \Api\ArrayType\ApiArrayOfErrorProject
      */
