@@ -16,7 +16,8 @@ final class Tutorial extends AbstractFile
 {
     public function writeFile(): void
     {
-        $this->addMainAnnotationBlock()
+        $this
+            ->addMainAnnotationBlock()
             ->addAutoload()
             ->addOptionsAnnotationBlock()
             ->addOptions()
@@ -61,7 +62,8 @@ final class Tutorial extends AbstractFile
     protected function getAnnotationBlock(): PhpAnnotationBlock
     {
         $block = new PhpAnnotationBlock();
-        $this->addChild($block, 'This file aims to show you how to use this generated package.')
+        $this
+            ->addChild($block, 'This file aims to show you how to use this generated package.')
             ->addChild($block, 'In addition, the goal is to show which methods are available and the first needed parameter(s)')
             ->addChild($block, 'You have to use an associative array such as:')
             ->addChild($block, '- the key must be a constant beginning with WSDL_ from AbstractSoapClientBase class (each generated ServiceType class extends this class)')
@@ -78,7 +80,7 @@ final class Tutorial extends AbstractFile
         if (!$this->getGenerator()->getOptionStandalone()) {
             $this
                 ->addChild($block, '################################################################################')
-                ->addChild($block, 'Don\'t forget to add wsdltophp/packagebase:dev-master to your main composer.json.')
+                ->addChild($block, 'Don\'t forget to add wsdltophp/packagebase:~5.0 to your main composer.json.')
                 ->addChild($block, '################################################################################')
             ;
         }
@@ -97,7 +99,8 @@ final class Tutorial extends AbstractFile
 
     protected function addOptions(): self
     {
-        $this->getFile()
+        $this
+            ->getFile()
             ->getMainElement()
             ->addChild('$options = [')
             ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => \'%s\',', $this->getGenerator()->getWsdl()->getName()), 1))
@@ -146,10 +149,12 @@ final class Tutorial extends AbstractFile
         $addedNames = [];
         $soapHeaderNames = $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES, []);
         foreach ($soapHeaderNames as $soapHeaderName) {
-            if (!in_array($soapHeaderName, $added, true)) {
-                $addedNames[] = $soapHeaderName;
-                $this->getFile()->getMainElement()->addChild(sprintf('$%s->%s%s(%s);', $serviceVariableName, Service::METHOD_SET_HEADER_PREFIX, ucfirst($soapHeaderName), $this->getMethodParameter($soapHeaderName)));
+            if (in_array($soapHeaderName, $added, true)) {
+                continue;
             }
+
+            $addedNames[] = $soapHeaderName;
+            $this->getFile()->getMainElement()->addChild(sprintf('$%s->%s%s(%s);', $serviceVariableName, Service::METHOD_SET_HEADER_PREFIX, ucfirst($soapHeaderName), $this->getMethodParameter($soapHeaderName)));
         }
 
         return $addedNames;
@@ -164,7 +169,8 @@ final class Tutorial extends AbstractFile
 
     protected function addContentFromMethod(string $serviceVariableName, MethodModel $method): self
     {
-        $this->getFile()
+        $this
+            ->getFile()
             ->getMainElement()
             ->addChild(sprintf('if ($%s->%s(%s) !== false) {', $serviceVariableName, $method->getMethodName(), $this->getMethodParameters($method)))
             ->addChild($this->getFile()->getMainElement()->getIndentedString(sprintf('print_r($%s->getResult());', $serviceVariableName), 1))

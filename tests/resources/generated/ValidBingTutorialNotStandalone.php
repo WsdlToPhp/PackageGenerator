@@ -13,7 +13,7 @@
  * ];
  * etc...
  * ################################################################################
- * Don't forget to add wsdltophp/packagebase:dev-master to your main composer.json.
+ * Don't forget to add wsdltophp/packagebase:~5.0 to your main composer.json.
  * ################################################################################
  */
 /**
