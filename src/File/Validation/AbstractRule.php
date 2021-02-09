@@ -26,7 +26,8 @@ abstract class AbstractRule
         $test = $this->testConditions($parameterName, $value, $itemType);
         if (!empty($test)) {
             $message = $this->exceptionMessageOnTestFailure($parameterName, $value, $itemType);
-            $this->getMethod()
+            $this
+                ->getMethod()
                 ->addChild($this->validationRuleComment($value))
                 ->addChild(sprintf('if (%s) {', $test))
                 ->addChild($this->getMethod()->getIndentedString(sprintf('throw new InvalidArgumentException(%s, __LINE__);', $message), 1))

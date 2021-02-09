@@ -11,7 +11,7 @@ use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\WsdlHandler\Tag\TagChoice as Choice;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagChoice extends AbstractTagParser
+final class TagChoice extends AbstractTagParser
 {
     /**
      * @see https://www.w3schools.com/xml/el_choice.asp

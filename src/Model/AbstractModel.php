@@ -444,11 +444,13 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
         if (array_key_exists($sensitiveKey, self::$uniqueNames)) {
             return self::$uniqueNames[$sensitiveKey];
         }
+
         if (!array_key_exists($insensitiveKey, self::$uniqueNames)) {
             self::$uniqueNames[$insensitiveKey] = 0;
         } else {
             ++self::$uniqueNames[$insensitiveKey];
         }
+
         $uniqueName = $name.(self::$uniqueNames[$insensitiveKey] ? '_'.self::$uniqueNames[$insensitiveKey] : '');
         self::$uniqueNames[$sensitiveKey] = $uniqueName;
 
@@ -465,9 +467,11 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
         if (!array_key_exists('__CLASS__', $args)) {
             throw new InvalidArgumentException(sprintf('__CLASS__ key is missing from "%s"', var_export($args, true)));
         }
+
         if (!class_exists($args['__CLASS__'])) {
             throw new InvalidArgumentException(sprintf('Class "%s" is unknown', $args['__CLASS__']));
         }
+
         if (!array_key_exists('name', $args)) {
             throw new InvalidArgumentException(sprintf('name key is missing from "%s"', var_export($args, true)));
         }

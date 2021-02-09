@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Container\PhpElement;
 
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
 
-class Constant extends AbstractPhpElement
+final class Constant extends AbstractPhpElement
 {
     protected function objectClass(): string
     {

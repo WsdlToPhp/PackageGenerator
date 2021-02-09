@@ -142,8 +142,10 @@ abstract class AbstractTagParser extends AbstractParser
      */
     protected function parseTagAttributeValue(AttributeHandler $tagAttribute, AbstractModel $model): void
     {
-        if (!$model instanceof StructValue) {
-            $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
+        if ($model instanceof StructValue) {
+            return;
         }
+
+        $model->addMeta($tagAttribute->getName(), $tagAttribute->getValue(true));
     }
 }

@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Container\PhpElement;
 
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-class Method extends AbstractPhpElement
+final class Method extends AbstractPhpElement
 {
     protected function objectClass(): string
     {

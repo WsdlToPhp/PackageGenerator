@@ -10,7 +10,7 @@ use WsdlToPhp\WsdlHandler\Tag\TagSimpleType as SimpleType;
 use WsdlToPhp\WsdlHandler\Tag\TagUnion as Union;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagUnion extends AbstractTagParser
+final class TagUnion extends AbstractTagParser
 {
     public function parseUnion(Union $union): void
     {

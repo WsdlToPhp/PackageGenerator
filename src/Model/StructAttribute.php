@@ -12,9 +12,10 @@ use WsdlToPhp\PackageGenerator\Generator\Utils;
 /**
  * Class StructAttribute stands for an available struct attribute described in the WSDL.
  */
-class StructAttribute extends AbstractModel
+final class StructAttribute extends AbstractModel
 {
     protected string $type = '';
+
     /**
      * Defines that this property is not a simple value but an array of values
      * Infos at {@link https://www.w3.org/TR/xmlschema-0/#OccurrenceConstraints}.

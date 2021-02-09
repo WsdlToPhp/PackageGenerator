@@ -19,6 +19,7 @@ final class Utils
             if (1 === count($block->getChildren())) {
                 $block->addChild('Meta information extracted from the WSDL');
             }
+
             foreach ($validMeta as $meta) {
                 $block->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, $meta, AbstractModelFile::ANNOTATION_META_LENGTH));
             }
@@ -30,11 +31,13 @@ final class Utils
         $meta = $model->getMeta();
         $validMeta = [];
         foreach ($meta as $metaName => $metaValue) {
-            if (!in_array($metaName, $ignoreMeta, true)) {
-                $finalMeta = self::getMetaValueAnnotation($metaName, $metaValue);
-                if (is_scalar($finalMeta)) {
-                    $validMeta[] = $finalMeta;
-                }
+            if (in_array($metaName, $ignoreMeta, true)) {
+                continue;
+            }
+
+            $finalMeta = self::getMetaValueAnnotation($metaName, $metaValue);
+            if (is_scalar($finalMeta)) {
+                $validMeta[] = $finalMeta;
             }
         }
 

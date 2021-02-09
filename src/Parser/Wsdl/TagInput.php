@@ -7,7 +7,7 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagInput extends AbstractTagInputOutputParser
+final class TagInput extends AbstractTagInputOutputParser
 {
     protected function parsingTag(): string
     {

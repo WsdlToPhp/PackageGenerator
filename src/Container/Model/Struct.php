@@ -7,7 +7,7 @@ namespace WsdlToPhp\PackageGenerator\Container\Model;
 use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Model\Struct as Model;
 
-class Struct extends AbstractModel
+final class Struct extends AbstractModel
 {
     /**
      * Only for virtually-considered objects (in order to avoid duplications in objects property).

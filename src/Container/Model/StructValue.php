@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Model\StructValue as Model;
 
-class StructValue extends AbstractModel
+final class StructValue extends AbstractModel
 {
     public function getStructValueByName($name): ?Model
     {

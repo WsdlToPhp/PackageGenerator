@@ -65,7 +65,8 @@ final class Operation extends AbstractOperation
     protected function defineBody(PhpMethod $method): self
     {
         $resultVariableName = sprintf('$result%s', ucfirst($this->getMethod()->getCleanName(false)));
-        $method->addChild('try {')
+        $method
+            ->addChild('try {')
             ->addChild($method->getIndentedString(sprintf('$this->setResult(%s = $this->getSoapClient()->%s%s));', $resultVariableName, $this->getSoapCallName(), $this->getOperationCallParameters($method)), 1))
             ->addChild('')
             ->addChild($method->getIndentedString(sprintf('return %s;', $resultVariableName), 1))
@@ -88,9 +89,11 @@ final class Operation extends AbstractOperation
     {
         $parameters = [];
         foreach ($method->getParameters() as $parameter) {
-            if ($parameter instanceof PhpFunctionParameter) {
-                $parameters[] = $this->getOperationCallParameterName($parameter, $method);
+            if (!$parameter instanceof PhpFunctionParameter) {
+                continue;
             }
+
+            $parameters[] = $this->getOperationCallParameterName($parameter, $method);
         }
 
         return sprintf('%s%s, [], [], $this->outputHeaders', implode('', $parameters), $this->isParameterTypeEmpty() ? '' : PhpMethod::BREAK_LINE_CHAR.']');

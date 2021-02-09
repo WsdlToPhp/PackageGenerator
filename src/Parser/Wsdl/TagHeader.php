@@ -11,7 +11,7 @@ use WsdlToPhp\WsdlHandler\Tag\TagInput as Input;
 use WsdlToPhp\WsdlHandler\Tag\TagOperation as Operation;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagHeader extends AbstractTagParser
+final class TagHeader extends AbstractTagParser
 {
     public const META_SOAP_HEADERS = 'SOAPHeaders';
     public const META_SOAP_HEADER_NAMES = 'SOAPHeaderNames';

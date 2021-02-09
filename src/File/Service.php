@@ -147,6 +147,7 @@ final class Service extends AbstractModelFile
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false, self::TYPE_BOOL),
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_ACTOR, null, '?'.self::TYPE_STRING),
             ], self::TYPE_SELF);
+
             $model = $this->getModelByName($soapHeaderType);
             if ($model instanceof StructModel) {
                 $rules = new Rules($this, $method, new StructAttributeModel($model->getGenerator(), $soapHeaderType, $model->getName(), $model), $this->methods);

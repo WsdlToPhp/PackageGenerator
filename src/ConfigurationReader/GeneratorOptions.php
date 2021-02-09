@@ -20,8 +20,6 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
 
     /**
      * Possible option keys.
-     *
-     * @var string
      */
     public const ADD_COMMENTS = 'add_comments';
     public const ARRAYS_FOLDER = 'arrays_folder';
@@ -67,7 +65,7 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
 
     public function getOptionValue(string $optionName)
     {
-        if (!isset($this->options[$optionName])) {
+        if (!array_key_exists($optionName, $this->options)) {
             throw new InvalidArgumentException(sprintf('Invalid option name "%s", possible options: %s', $optionName, implode(', ', array_keys($this->options))), __LINE__);
         }
 
@@ -76,7 +74,7 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
 
     public function setOptionValue(string $optionName, $optionValue, array $values = []): self
     {
-        if (!isset($this->options[$optionName])) {
+        if (!array_key_exists($optionName, $this->options)) {
             $this->options[$optionName] = [
                 'value' => $optionValue,
                 'values' => $values,

@@ -50,14 +50,9 @@ final class Rules
 
     public function getRule(string $name): ?AbstractRule
     {
-        if (is_string($name)) {
-            $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($name));
-            if (class_exists($className)) {
-                return new $className($this);
-            }
-        }
+        $className = sprintf('%s\%sRule', __NAMESPACE__, ucfirst($name));
 
-        return null;
+        return class_exists($className) ? new $className($this) : null;
     }
 
     public function getArrayRule(): ArrayRule
@@ -137,10 +132,11 @@ final class Rules
     private function applyRulesFromAttribute(string $parameterName, bool $itemType = false): void
     {
         foreach ($this->attribute->getMeta() as $metaName => $metaValue) {
-            $rule = $this->getRule($metaName);
-            if ($rule instanceof AbstractRule) {
-                $rule->applyRule($parameterName, $metaValue, $itemType);
+            if (!($rule = $this->getRule($metaName)) instanceof AbstractRule) {
+                continue;
             }
+
+            $rule->applyRule($parameterName, $metaValue, $itemType);
         }
     }
 

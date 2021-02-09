@@ -30,22 +30,24 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
             return;
         }
 
-        if ($this->isKnownTypeUnknown($method)) {
-            $parts = $tag->getParts();
-            $multipleParts = count($parts);
-            if (is_array($parts) && $multipleParts > 1) {
-                $types = [];
-                foreach ($parts as $part) {
-                    if (!empty($type = $this->getTypeFromPart($part))) {
-                        $types[$part->getAttributeName()] = $type;
-                    }
+        if (!$this->isKnownTypeUnknown($method)) {
+            return;
+        }
+
+        $parts = $tag->getParts();
+        $multipleParts = count($parts);
+        if (is_array($parts) && $multipleParts > 1) {
+            $types = [];
+            foreach ($parts as $part) {
+                if (!empty($type = $this->getTypeFromPart($part))) {
+                    $types[$part->getAttributeName()] = $type;
                 }
-                $this->setKnownType($method, $types);
-            } elseif (is_array($parts) && $multipleParts > 0) {
-                $part = array_shift($parts);
-                if ($part instanceof TagPart && !empty($type = $this->getTypeFromPart($part))) {
-                    $this->setKnownType($method, $type);
-                }
+            }
+            $this->setKnownType($method, $types);
+        } elseif (is_array($parts) && $multipleParts > 0) {
+            $part = array_shift($parts);
+            if ($part instanceof TagPart && !empty($type = $this->getTypeFromPart($part))) {
+                $this->setKnownType($method, $type);
             }
         }
     }

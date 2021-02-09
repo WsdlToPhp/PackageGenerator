@@ -7,7 +7,7 @@ namespace WsdlToPhp\PackageGenerator\File\Element;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter as PhpFunctionParameterBase;
 
-class PhpFunctionParameter extends PhpFunctionParameterBase
+final class PhpFunctionParameter extends PhpFunctionParameterBase
 {
     protected ?AbstractModel $model;
 

@@ -10,7 +10,7 @@ use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\WsdlHandler\Tag\TagExtension as Extension;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagExtension extends AbstractTagParser
+final class TagExtension extends AbstractTagParser
 {
     public function parseExtension(Extension $extension): void
     {

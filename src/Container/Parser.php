@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Container;
 
 use WsdlToPhp\PackageGenerator\Parser\AbstractParser;
 
-class Parser extends AbstractObjectContainer
+final class Parser extends AbstractObjectContainer
 {
     public function getParserByName(string $name): ?AbstractParser
     {
