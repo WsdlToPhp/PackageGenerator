@@ -11,7 +11,7 @@ use WsdlToPhp\PackageGenerator\Generator\Utils;
 /**
  * Class StructValue stands for an enumeration value.
  */
-class StructValue extends AbstractModel
+final class StructValue extends AbstractModel
 {
     public const MATCH_PATTERN = '/([[:upper:]]+[[:lower:]]*)|([[:lower:]]+)|(\d+)/';
     public const REPLACEMENT_PATTERN = '$1$2$3_';

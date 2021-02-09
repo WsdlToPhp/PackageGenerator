@@ -11,7 +11,7 @@ use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
 use WsdlToPhp\WsdlHandler\Tag\TagEnumeration as Enumeration;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagEnumeration extends AbstractTagParser
+final class TagEnumeration extends AbstractTagParser
 {
     public function addStructValue(Tag $tag, Enumeration $enumeration): void
     {
@@ -45,8 +45,11 @@ class TagEnumeration extends AbstractTagParser
     protected function parseEnumeration(Enumeration $enumeration): void
     {
         $parent = $enumeration->getSuitableParent();
-        if ($parent instanceof Tag) {
-            $this->addStructValue($parent, $enumeration);
+
+        if (!$parent instanceof Tag) {
+            return;
         }
+
+        $this->addStructValue($parent, $enumeration);
     }
 }

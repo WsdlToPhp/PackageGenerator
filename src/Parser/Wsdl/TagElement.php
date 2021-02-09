@@ -9,7 +9,7 @@ use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagElement extends AbstractAttributesParser
+final class TagElement extends AbstractAttributesParser
 {
     protected function parsingTag(): string
     {

@@ -7,7 +7,7 @@ namespace WsdlToPhp\PackageGenerator\Container\Model;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Service as Model;
 
-class Service extends AbstractModel
+final class Service extends AbstractModel
 {
     public function addService(string $serviceName, string $methodName, $methodParameter, $methodReturn): Service
     {

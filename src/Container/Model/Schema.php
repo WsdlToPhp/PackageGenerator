@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Model\Schema as Model;
 
-class Schema extends AbstractModel
+final class Schema extends AbstractModel
 {
     public function getSchemaByName(string $name): ?Model
     {

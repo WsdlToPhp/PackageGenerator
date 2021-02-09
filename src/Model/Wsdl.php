@@ -8,7 +8,7 @@ use WsdlToPhp\PackageGenerator\Container\Model\Schema as SchemaContainer;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class Wsdl extends AbstractDocument
+final class Wsdl extends AbstractDocument
 {
     private SchemaContainer $schemas;
 

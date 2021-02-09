@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Model\EmptyModel as Model;
 
-class EmptyModel extends AbstractModel
+final class EmptyModel extends AbstractModel
 {
     protected function objectClass(): string
     {

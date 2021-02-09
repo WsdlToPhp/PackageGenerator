@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Parser\SoapClient;
 
 use DOMDocument;
 
-class Structs extends AbstractParser
+final class Structs extends AbstractParser
 {
     public const STRUCT_DECLARATION = 'struct';
     public const UNION_DECLARATION = 'union';
@@ -17,7 +17,8 @@ class Structs extends AbstractParser
 
     public function parse(): void
     {
-        $types = $this->getGenerator()
+        $types = $this
+            ->getGenerator()
             ->getSoapClient()
             ->getSoapClient()
             ->getSoapClient()
@@ -31,23 +32,25 @@ class Structs extends AbstractParser
 
     protected function parseType(string $type): void
     {
-        if (!$this->isStructDefined($type)) {
-            $cleanType = self::cleanType($type);
-            $typeDef = explode(' ', $cleanType);
-
-            if (array_key_exists(1, $typeDef) && !empty($typeDef)) {
-                $structName = $typeDef[1];
-                if (self::UNION_DECLARATION === $typeDef[0]) {
-                    $this->parseUnionStruct($typeDef);
-                } elseif (self::STRUCT_DECLARATION === $typeDef[0]) {
-                    $this->parseComplexStruct($typeDef);
-                } else {
-                    $this->getGenerator()->getStructs()->addVirtualStruct($structName, $typeDef[0]);
-                }
-            }
-
-            $this->structHasBeenDefined($type);
+        if ($this->isStructDefined($type)) {
+            return;
         }
+
+        $cleanType = self::cleanType($type);
+        $typeDef = explode(' ', $cleanType);
+
+        if (array_key_exists(1, $typeDef) && !empty($typeDef)) {
+            $structName = $typeDef[1];
+            if (self::UNION_DECLARATION === $typeDef[0]) {
+                $this->parseUnionStruct($typeDef);
+            } elseif (self::STRUCT_DECLARATION === $typeDef[0]) {
+                $this->parseComplexStruct($typeDef);
+            } else {
+                $this->getGenerator()->getStructs()->addVirtualStruct($structName, $typeDef[0]);
+            }
+        }
+
+        $this->structHasBeenDefined($type);
     }
 
     protected function parseComplexStruct(array $typeDef): void
@@ -67,7 +70,7 @@ class Structs extends AbstractParser
     /**
      * union types are passed such as ",dateTime,time" or ",PMS_ResStatusType,TransactionActionType,UpperCaseAlphaLength1to2".
      */
-    protected function parseUnionStruct(array $typeDef)
+    protected function parseUnionStruct(array $typeDef): void
     {
         $typeDefCount = count($typeDef);
         if (3 === $typeDefCount) {
@@ -86,10 +89,8 @@ class Structs extends AbstractParser
      * Remove brackets
      * Adds space before semicolon to parse it
      * Remove duplicated spaces.
-     *
-     * @return string
      */
-    protected static function cleanType(string $type)
+    protected static function cleanType(string $type): string
     {
         $type = str_replace([
             "\r",

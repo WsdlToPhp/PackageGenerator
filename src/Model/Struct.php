@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Model;
 
 use InvalidArgumentException;
@@ -14,73 +16,46 @@ use WsdlToPhp\PackageGenerator\Generator\Utils;
 /**
  * Class Struct stands for an available struct described in the WSDL.
  */
-class Struct extends AbstractModel
+final class Struct extends AbstractModel
 {
-    /**
-     * @var string
-     */
     public const DOC_SUB_PACKAGE_STRUCTS = 'Structs';
-    /**
-     * @var string
-     */
     public const DOC_SUB_PACKAGE_ENUMERATIONS = 'Enumerations';
-    /**
-     * @var string
-     */
     public const DOC_SUB_PACKAGE_ARRAYS = 'Arrays';
-    /**
-     * @var string
-     */
     public const DEFAULT_ENUM_TYPE = 'string';
+
     /**
      * Attributes of the struct.
-     *
-     * @var StructAttributeContainer
      */
-    protected $attributes;
+    protected StructAttributeContainer $attributes;
+
     /**
      * Is the struct a restriction with defined values  ?
-     *
-     * @var bool
      */
-    protected $isRestriction = false;
+    protected bool $isRestriction = false;
+
     /**
      * If the struct is a restriction with values, then store values.
-     *
-     * @var StructValueContainer
      */
-    protected $values;
+    protected StructValueContainer $values;
+
     /**
      * If the struct is a union with types, then store types.
      *
      * @var string[]
      */
-    protected $types;
+    protected array $types = [];
+
     /**
      * Defines if the current struct is a concrete struct or just a virtual struct to store meta information.
-     *
-     * @var bool
      */
-    protected $isStruct = false;
+    protected bool $isStruct = false;
+
     /**
      * Defines if the current struct is a list of a type or not.
      * If it is a list of a type, then the list property value is the type.
-     *
-     * @var string
      */
-    protected $list = '';
+    protected string $list = '';
 
-    /**
-     * Main constructor.
-     *
-     * @see AbstractModel::__construct()
-     *
-     * @uses Struct::setStruct()
-     *
-     * @param string $name          the original name
-     * @param bool   $isStruct      defines if it's a real struct or not
-     * @param bool   $isRestriction defines if it's an enumeration or not
-     */
     public function __construct(Generator $generator, $name, $isStruct = true, $isRestriction = false)
     {
         parent::__construct($generator, $name);
@@ -89,7 +64,6 @@ class Struct extends AbstractModel
             ->setRestriction($isRestriction)
             ->setAttributes(new StructAttributeContainer($generator))
             ->setValues(new StructValueContainer($generator))
-            ->setTypes([])
         ;
     }
 

@@ -13,7 +13,7 @@ use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
 use WsdlToPhp\WsdlHandler\Tag\TagRestriction as Restriction;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagRestriction extends AbstractTagParser
+final class TagRestriction extends AbstractTagParser
 {
     public function parseRestriction(Restriction $restriction): void
     {

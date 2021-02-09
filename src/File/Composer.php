@@ -73,7 +73,8 @@ final class Composer extends AbstractFile
         if (is_array($content) && !empty($content)) {
             $this
                 ->addAutoloadToComposerJson($content)
-                ->addComposerSettings($content);
+                ->addComposerSettings($content)
+            ;
         }
 
         return $this->setComposerFileContent($content);

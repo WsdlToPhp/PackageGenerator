@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as Model;
 
-class StructAttribute extends AbstractModel
+final class StructAttribute extends AbstractModel
 {
     public function getStructAttributeByName(string $name): ?Model
     {

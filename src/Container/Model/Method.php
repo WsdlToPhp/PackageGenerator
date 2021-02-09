@@ -6,7 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Container\Model;
 
 use WsdlToPhp\PackageGenerator\Model\Method as Model;
 
-class Method extends AbstractModel
+final class Method extends AbstractModel
 {
     public const KEY_PARAMETER_TYPE = 'parameterType';
 

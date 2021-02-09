@@ -10,8 +10,6 @@ final class Utils
 {
     /**
      * Gets upper case word among a string from the end or from the beginning part.
-     *
-     * @param string $string the string from which we can extract the part
      */
     public static function getPart(string $optionValue, string $string): string
     {

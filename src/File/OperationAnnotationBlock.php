@@ -15,7 +15,8 @@ final class OperationAnnotationBlock extends AbstractOperation
 {
     public function addAnnotationBlockForOperationMethod(PhpAnnotationBlock $annotationBlock): self
     {
-        $this->addOperationMethodDeclaration($annotationBlock)
+        $this
+            ->addOperationMethodDeclaration($annotationBlock)
             ->addOperationMethodMetaInformation($annotationBlock)
             ->addOperationMethodUses($annotationBlock)
             ->addOperationMethodParam($annotationBlock)
@@ -42,7 +43,8 @@ final class OperationAnnotationBlock extends AbstractOperation
         $soapHeaderNamespaces = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES, []);
         $soapHeaders = $this->getMethod()->getMetaValue(TagHeader::META_SOAP_HEADERS, []);
         if (!empty($soapHeaderNames) && !empty($soapHeaderTypes) && !empty($soapHeaderNamespaces)) {
-            $annotationBlock->addChild('Meta information extracted from the WSDL')
+            $annotationBlock
+                ->addChild('Meta information extracted from the WSDL')
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNames: %s', implode(', ', $soapHeaderNames)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderNamespaces: %s', implode(', ', $soapHeaderNamespaces)), AbstractModelFile::ANNOTATION_LONG_LENGTH))
                 ->addChild(new PhpAnnotation(PhpAnnotation::NO_NAME, sprintf('- SOAPHeaderTypes: %s', implode(', ', $this->getSoapHeaderTypesTypes($soapHeaderTypes))), AbstractModelFile::ANNOTATION_LONG_LENGTH))

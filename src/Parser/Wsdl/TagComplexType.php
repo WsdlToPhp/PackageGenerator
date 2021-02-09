@@ -8,7 +8,7 @@ use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\WsdlHandler\Tag\TagComplexType as ComplexType;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagComplexType extends AbstractTagParser
+final class TagComplexType extends AbstractTagParser
 {
     public function parseComplexType(ComplexType $complexType): void
     {

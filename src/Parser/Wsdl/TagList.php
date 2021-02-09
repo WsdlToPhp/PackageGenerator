@@ -11,7 +11,7 @@ use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\WsdlHandler\Tag\TagList as ListTag;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagList extends AbstractTagParser
+final class TagList extends AbstractTagParser
 {
     public function parseList(ListTag $tag): void
     {
@@ -25,6 +25,7 @@ class TagList extends AbstractTagParser
         if (is_null($model) && $parentParent instanceof AbstractTag) {
             $model = $this->getModel($parentParent);
         }
+
         if (!$model instanceof Struct) {
             return;
         }
