@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
 use InvalidArgumentException;
+use JsonSerializable;
 
-final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
+final class GeneratorOptions extends AbstractYamlReader implements JsonSerializable
 {
     /**
      * Common values used as option's value.
