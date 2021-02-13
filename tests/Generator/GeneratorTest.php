@@ -651,7 +651,7 @@ class GeneratorTest extends TestCase
             ->setCategory(GeneratorOptions::VALUE_CAT)
             ->setComposerName($standalone ? 'wsdltophp/' . $dir : '')
             ->setComposerSettings($standalone ? [
-                'require.wsdltophp/wssecurity:dev-master',
+                'require.wsdltophp/wssecurity:~1.0',
                 'config.disable-tls:true',
             ] : [])
             ->setDestination($destination)
