@@ -15,7 +15,7 @@ Package Generator generates a PHP SDK from any WSDL so you can easily consume an
 
 Package Generator provides many options to generate your package even if a few are required. This project has been tested with many WSDL and is currently used on the platform [Providr.IO](https://providr.io).
 
-Package Generator generates files that are detailed in the [MANIFEST](/MANIFEST.md). You are encouraged to read it to understand how and why the files are generated in addition to the way the generated classes are supposed to be used.
+Package Generator generates files that are detailed in the [MANIFEST](/MANIFEST.md). **You are encouraged to read it to understand how and why the files are generated in addition to the way the generated classes are supposed to be used.**
 
 ## Installation
 
