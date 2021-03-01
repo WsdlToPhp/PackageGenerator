@@ -24,7 +24,7 @@ class Get extends AbstractSoapClientBase
     public function GetVersion()
     {
         try {
-            $this->setResult($resultGetVersion = $this->getSoapClient()->__soapCall('GetVersion', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetVersion = $this->getSoapClient()->__soapCall('GetVersion', [], [], [], $this->outputHeaders));
         
             return $resultGetVersion;
         } catch (SoapFault $soapFault) {
@@ -153,7 +153,7 @@ class Get extends AbstractSoapClientBase
     public function GetReportList()
     {
         try {
-            $this->setResult($resultGetReportList = $this->getSoapClient()->__soapCall('GetReportList', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetReportList = $this->getSoapClient()->__soapCall('GetReportList', [], [], [], $this->outputHeaders));
         
             return $resultGetReportList;
         } catch (SoapFault $soapFault) {
@@ -348,7 +348,7 @@ class Get extends AbstractSoapClientBase
     public function GetRegions()
     {
         try {
-            $this->setResult($resultGetRegions = $this->getSoapClient()->__soapCall('GetRegions', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetRegions = $this->getSoapClient()->__soapCall('GetRegions', [], [], [], $this->outputHeaders));
         
             return $resultGetRegions;
         } catch (SoapFault $soapFault) {
@@ -411,7 +411,7 @@ class Get extends AbstractSoapClientBase
     public function GetRubrics()
     {
         try {
-            $this->setResult($resultGetRubrics = $this->getSoapClient()->__soapCall('GetRubrics', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetRubrics = $this->getSoapClient()->__soapCall('GetRubrics', [], [], [], $this->outputHeaders));
         
             return $resultGetRubrics;
         } catch (SoapFault $soapFault) {
@@ -430,7 +430,7 @@ class Get extends AbstractSoapClientBase
     public function GetTimeZones()
     {
         try {
-            $this->setResult($resultGetTimeZones = $this->getSoapClient()->__soapCall('GetTimeZones', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetTimeZones = $this->getSoapClient()->__soapCall('GetTimeZones', [], [], [], $this->outputHeaders));
         
             return $resultGetTimeZones;
         } catch (SoapFault $soapFault) {
@@ -449,7 +449,7 @@ class Get extends AbstractSoapClientBase
     public function GetForecastList()
     {
         try {
-            $this->setResult($resultGetForecastList = $this->getSoapClient()->__soapCall('GetForecastList', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetForecastList = $this->getSoapClient()->__soapCall('GetForecastList', [], [], [], $this->outputHeaders));
         
             return $resultGetForecastList;
         } catch (SoapFault $soapFault) {
@@ -468,7 +468,7 @@ class Get extends AbstractSoapClientBase
     public function GetAvailableVersions()
     {
         try {
-            $this->setResult($resultGetAvailableVersions = $this->getSoapClient()->__soapCall('GetAvailableVersions', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetAvailableVersions = $this->getSoapClient()->__soapCall('GetAvailableVersions', [], [], [], $this->outputHeaders));
         
             return $resultGetAvailableVersions;
         } catch (SoapFault $soapFault) {
@@ -509,7 +509,7 @@ class Get extends AbstractSoapClientBase
     public function GetWordstatReportList()
     {
         try {
-            $this->setResult($resultGetWordstatReportList = $this->getSoapClient()->__soapCall('GetWordstatReportList', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetWordstatReportList = $this->getSoapClient()->__soapCall('GetWordstatReportList', [], [], [], $this->outputHeaders));
         
             return $resultGetWordstatReportList;
         } catch (SoapFault $soapFault) {
@@ -660,7 +660,7 @@ class Get extends AbstractSoapClientBase
     public function GetCreditLimits()
     {
         try {
-            $this->setResult($resultGetCreditLimits = $this->getSoapClient()->__soapCall('GetCreditLimits', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetCreditLimits = $this->getSoapClient()->__soapCall('GetCreditLimits', [], [], [], $this->outputHeaders));
         
             return $resultGetCreditLimits;
         } catch (SoapFault $soapFault) {
@@ -701,7 +701,7 @@ class Get extends AbstractSoapClientBase
     public function GetOfflineReportList()
     {
         try {
-            $this->setResult($resultGetOfflineReportList = $this->getSoapClient()->__soapCall('GetOfflineReportList', ], [], [], $this->outputHeaders));
+            $this->setResult($resultGetOfflineReportList = $this->getSoapClient()->__soapCall('GetOfflineReportList', [], [], [], $this->outputHeaders));
         
             return $resultGetOfflineReportList;
         } catch (SoapFault $soapFault) {

@@ -101,7 +101,7 @@ final class Operation extends AbstractOperation
 
     protected function getOperationCallParametersStarting(): string
     {
-        return $this->isParameterTypeAnArray() ? ', [' : ($this->isParameterTypeEmpty() ? ', ]' : ', [');
+        return $this->isParameterTypeAnArray() ? ', [' : ($this->isParameterTypeEmpty() ? ', []' : ', [');
     }
 
     protected function getOperationCallParametersEnding(): string
