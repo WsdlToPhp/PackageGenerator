@@ -139,7 +139,7 @@ $ docker exec -it package_generator php-7.4 -dmemory_limit=-1 vendor/bin/phpunit
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details. In addition, code documentation is at [doc.wsdltophp.com](http://doc.wsdltophp.com).
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details. In addition, code documentation is at [doc.wsdltophp.com](http://doc.wsdltophp.com).
 
 ## Credits
 
