@@ -333,7 +333,7 @@ class ApiSaint extends AbstractSoapClientBase
     public function Saint_ListFTP()
     {
         try {
-            $this->setResult($resultSaint_ListFTP = $this->getSoapClient()->__soapCall('Saint.ListFTP', ], [], [], $this->outputHeaders));
+            $this->setResult($resultSaint_ListFTP = $this->getSoapClient()->__soapCall('Saint.ListFTP', [], [], [], $this->outputHeaders));
         
             return $resultSaint_ListFTP;
         } catch (SoapFault $soapFault) {

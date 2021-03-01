@@ -215,7 +215,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetQueue()
     {
         try {
-            $this->setResult($resultCompany_GetQueue = $this->getSoapClient()->__soapCall('Company.GetQueue', ], [], [], $this->outputHeaders));
+            $this->setResult($resultCompany_GetQueue = $this->getSoapClient()->__soapCall('Company.GetQueue', [], [], [], $this->outputHeaders));
         
             return $resultCompany_GetQueue;
         } catch (SoapFault $soapFault) {
@@ -262,7 +262,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetTokenCount()
     {
         try {
-            $this->setResult($resultCompany_GetTokenCount = $this->getSoapClient()->__soapCall('Company.GetTokenCount', ], [], [], $this->outputHeaders));
+            $this->setResult($resultCompany_GetTokenCount = $this->getSoapClient()->__soapCall('Company.GetTokenCount', [], [], [], $this->outputHeaders));
         
             return $resultCompany_GetTokenCount;
         } catch (SoapFault $soapFault) {
@@ -283,7 +283,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetTokenUsage()
     {
         try {
-            $this->setResult($resultCompany_GetTokenUsage = $this->getSoapClient()->__soapCall('Company.GetTokenUsage', ], [], [], $this->outputHeaders));
+            $this->setResult($resultCompany_GetTokenUsage = $this->getSoapClient()->__soapCall('Company.GetTokenUsage', [], [], [], $this->outputHeaders));
         
             return $resultCompany_GetTokenUsage;
         } catch (SoapFault $soapFault) {
@@ -328,7 +328,7 @@ class ApiService extends AbstractSoapClientBase
     public function Company_GetVersionAccess()
     {
         try {
-            $this->setResult($resultCompany_GetVersionAccess = $this->getSoapClient()->__soapCall('Company.GetVersionAccess', ], [], [], $this->outputHeaders));
+            $this->setResult($resultCompany_GetVersionAccess = $this->getSoapClient()->__soapCall('Company.GetVersionAccess', [], [], [], $this->outputHeaders));
         
             return $resultCompany_GetVersionAccess;
         } catch (SoapFault $soapFault) {
@@ -1976,7 +1976,7 @@ class ApiService extends AbstractSoapClientBase
     public function Report_GetReportQueue()
     {
         try {
-            $this->setResult($resultReport_GetReportQueue = $this->getSoapClient()->__soapCall('Report.GetReportQueue', ], [], [], $this->outputHeaders));
+            $this->setResult($resultReport_GetReportQueue = $this->getSoapClient()->__soapCall('Report.GetReportQueue', [], [], [], $this->outputHeaders));
         
             return $resultReport_GetReportQueue;
         } catch (SoapFault $soapFault) {
@@ -3411,7 +3411,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetRollups()
     {
         try {
-            $this->setResult($resultReportSuite_GetRollups = $this->getSoapClient()->__soapCall('ReportSuite.GetRollups', ], [], [], $this->outputHeaders));
+            $this->setResult($resultReportSuite_GetRollups = $this->getSoapClient()->__soapCall('ReportSuite.GetRollups', [], [], [], $this->outputHeaders));
         
             return $resultReportSuite_GetRollups;
         } catch (SoapFault $soapFault) {
@@ -3432,7 +3432,7 @@ class ApiService extends AbstractSoapClientBase
     public function ReportSuite_GetSavedFilters()
     {
         try {
-            $this->setResult($resultReportSuite_GetSavedFilters = $this->getSoapClient()->__soapCall('ReportSuite.GetSavedFilters', ], [], [], $this->outputHeaders));
+            $this->setResult($resultReportSuite_GetSavedFilters = $this->getSoapClient()->__soapCall('ReportSuite.GetSavedFilters', [], [], [], $this->outputHeaders));
         
             return $resultReportSuite_GetSavedFilters;
         } catch (SoapFault $soapFault) {
@@ -4874,7 +4874,7 @@ class ApiService extends AbstractSoapClientBase
     public function Saint_ListFTP()
     {
         try {
-            $this->setResult($resultSaint_ListFTP = $this->getSoapClient()->__soapCall('Saint.ListFTP', ], [], [], $this->outputHeaders));
+            $this->setResult($resultSaint_ListFTP = $this->getSoapClient()->__soapCall('Saint.ListFTP', [], [], [], $this->outputHeaders));
         
             return $resultSaint_ListFTP;
         } catch (SoapFault $soapFault) {
@@ -5251,7 +5251,7 @@ class ApiService extends AbstractSoapClientBase
     public function User_GetLastUsedReportSuite()
     {
         try {
-            $this->setResult($resultUser_GetLastUsedReportSuite = $this->getSoapClient()->__soapCall('User.GetLastUsedReportSuite', ], [], [], $this->outputHeaders));
+            $this->setResult($resultUser_GetLastUsedReportSuite = $this->getSoapClient()->__soapCall('User.GetLastUsedReportSuite', [], [], [], $this->outputHeaders));
         
             return $resultUser_GetLastUsedReportSuite;
         } catch (SoapFault $soapFault) {
