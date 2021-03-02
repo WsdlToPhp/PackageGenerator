@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 4.0.0 - 2021-xx-xx
+## 4.0.0-rc.1 - 2021-03-02
 - issue #124 - PHP >= 7.4 tasks
   - Code requires PHP >= 7.4
   - Generated code requires PHP >= 7.4
