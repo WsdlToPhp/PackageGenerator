@@ -1,15 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Container\PhpElement;
 
-class Property extends AbstractPhpElement
+use WsdlToPhp\PhpGenerator\Element\PhpProperty;
+
+final class Property extends AbstractPhpElement
 {
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Container\Model\Model::objectClass()
-     * @return string
-     */
-    protected function objectClass()
+    protected function objectClass(): string
     {
-        return 'WsdlToPhp\PhpGenerator\Element\PhpProperty';
+        return PhpProperty::class;
     }
 }

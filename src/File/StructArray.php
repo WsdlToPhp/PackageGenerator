@@ -1,46 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File;
 
+use InvalidArgumentException;
+use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-class StructArray extends Struct
+final class StructArray extends Struct
 {
-    /**
-     * @var string
-     */
-    const METHOD_GET_ATTRIBUTE_NAME = 'getAttributeName';
-    /**
-     * @var string
-     */
-    const METHOD_CURRENT = 'current';
-    /**
-     * @var string
-     */
-    const METHOD_ITEM = 'item';
-    /**
-     * @var string
-     */
-    const METHOD_FIRST = 'first';
-    /**
-     * @var string
-     */
-    const METHOD_LAST = 'last';
-    /**
-     * @var string
-     */
-    const METHOD_OFFSET_GET = 'offsetGet';
-    /**
-     * @var string
-     */
-    const METHOD_ADD = 'add';
+    public const METHOD_GET_ATTRIBUTE_NAME = 'getAttributeName';
+    public const METHOD_CURRENT = 'current';
+    public const METHOD_ITEM = 'item';
+    public const METHOD_FIRST = 'first';
+    public const METHOD_LAST = 'last';
+    public const METHOD_OFFSET_GET = 'offsetGet';
+    public const METHOD_ADD = 'add';
 
-    public function addStructMethodsSetAndGet()
+    public function addStructMethodsSetAndGet(): self
     {
         parent::addStructMethodsSetAndGet();
         $this
@@ -50,93 +34,109 @@ class StructArray extends Struct
             ->addArrayMethodLast()
             ->addArrayMethodOffsetGet()
             ->addArrayMethodAdd()
-            ->addArrayMethodGetAttributeName();
+            ->addArrayMethodGetAttributeName()
+        ;
+
         return $this;
     }
-    /**
-     * @return StructArray
-     */
-    protected function addArrayMethodCurrent()
+
+    public function setModel(AbstractModel $model): self
     {
-        return $this->addArrayMethodGenericMethod(self::METHOD_CURRENT, $this->getArrayMethodBody(self::METHOD_CURRENT));
+        if ($model instanceof StructModel && !$model->isArray()) {
+            throw new InvalidArgumentException('The model is not a valid array struct (name must contain Array and the model must contain only one property', __LINE__);
+        }
+
+        return parent::setModel($model);
     }
+
     /**
-     * @return StructArray
+     * Disable this feature within StructArray class.
      */
-    protected function addArrayMethodItem()
+    protected function addStructMethodAddTo(StructAttributeModel $attribute): Struct
+    {
+        return $this;
+    }
+
+    protected function addArrayMethodCurrent(): self
+    {
+        return $this->addArrayMethodGenericMethod(self::METHOD_CURRENT, $this->getArrayMethodBody(self::METHOD_CURRENT), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
+    }
+
+    protected function addArrayMethodItem(): self
     {
         return $this->addArrayMethodGenericMethod(self::METHOD_ITEM, $this->getArrayMethodBody(self::METHOD_ITEM, '$index'), [
             'index',
-        ]);
+        ], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
-    /**
-     * @return StructArray
-     */
-    protected function addArrayMethodFirst()
+
+    protected function addArrayMethodFirst(): self
     {
-        return $this->addArrayMethodGenericMethod(self::METHOD_FIRST, $this->getArrayMethodBody(self::METHOD_FIRST));
+        return $this->addArrayMethodGenericMethod(self::METHOD_FIRST, $this->getArrayMethodBody(self::METHOD_FIRST), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
-    /**
-     * @return StructArray
-     */
-    protected function addArrayMethodLast()
+
+    protected function addArrayMethodLast(): self
     {
-        return $this->addArrayMethodGenericMethod(self::METHOD_LAST, $this->getArrayMethodBody(self::METHOD_LAST));
+        return $this->addArrayMethodGenericMethod(self::METHOD_LAST, $this->getArrayMethodBody(self::METHOD_LAST), [], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
-    /**
-     * @return StructArray
-     */
-    protected function addArrayMethodOffsetGet()
+
+    protected function addArrayMethodOffsetGet(): self
     {
         return $this->addArrayMethodGenericMethod(self::METHOD_OFFSET_GET, $this->getArrayMethodBody(self::METHOD_OFFSET_GET, '$offset'), [
             'offset',
-        ]);
+        ], '?'.$this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false));
     }
-    /**
-     * @return StructArray
-     */
-    protected function addArrayMethodGetAttributeName()
+
+    protected function addArrayMethodGetAttributeName(): self
     {
-        return $this->addArrayMethodGenericMethod(self::METHOD_GET_ATTRIBUTE_NAME, sprintf('return \'%s\';', $this->getModel()
-            ->getAttributes()
-            ->offsetGet(0)
-            ->getName()));
+        return $this->addArrayMethodGenericMethod(
+            self::METHOD_GET_ATTRIBUTE_NAME,
+            sprintf(
+                'return \'%s\';',
+                $this
+                    ->getModel()
+                    ->getAttributes()
+                    ->offsetGet(0)
+                    ->getName()
+            ),
+            [],
+            self::TYPE_STRING
+        );
     }
-    /**
-     * @return StructArray
-     */
-    protected function addArrayMethodAdd()
+
+    protected function addArrayMethodAdd(): self
     {
-        if ($this->getRestrictionFromStructAttribute() instanceof StructModel) {
+        if ($this->getModelFromStructAttribute() instanceof StructModel) {
             $method = new PhpMethod(self::METHOD_ADD, [
-                'item',
-            ]);
+                new PhpFunctionParameter(
+                    'item',
+                    PhpFunctionParameter::NO_VALUE,
+                    $this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false),
+                    $this->getStructAttribute()
+                ),
+            ], self::TYPE_SELF);
+
             if ($this->getGenerator()->getOptionValidation()) {
                 $rules = new Rules($this, $method, $this->getStructAttribute(), $this->methods);
                 $rules->getEnumerationRule()->applyRule('item', null);
             }
+
             $method->addChild('return parent::add($item);');
             $this->methods->add($method);
         }
+
         return $this;
     }
-    /**
-     * @param string $name
-     * @param string $body
-     * @param string[] $methodParameters
-     * @return StructArray
-     */
-    protected function addArrayMethodGenericMethod($name, $body, array $methodParameters = [])
+
+    protected function addArrayMethodGenericMethod(string $name, string $body, array $methodParameters = [], ?string $returnType = null): self
     {
-        $method = new PhpMethod($name, $methodParameters);
+        $method = new PhpMethod($name, $methodParameters, $returnType);
         $method->addChild($body);
         $this->methods->add($method);
+
         return $this;
     }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getArrayMethodGetAttributeNameAnnotationBlock()
+
+    protected function getArrayMethodGetAttributeNameAnnotationBlock(): PhpAnnotationBlock
     {
         return new PhpAnnotationBlock([
             'Returns the attribute name',
@@ -144,127 +144,107 @@ class StructArray extends Struct
             new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string %s', $this->getModel()->getAttributes()->offsetGet(0)->getName())),
         ]);
     }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getArrayMethodCurrentAnnotationBlock()
+
+    protected function getArrayMethodCurrentAnnotationBlock(): PhpAnnotationBlock
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_CURRENT, 'Returns the current element');
     }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getArrayMethodFirstAnnotationBlock()
+
+    protected function getArrayMethodFirstAnnotationBlock(): PhpAnnotationBlock
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_FIRST, 'Returns the first element');
     }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getArrayMethodLastAnnotationBlock()
+
+    protected function getArrayMethodLastAnnotationBlock(): PhpAnnotationBlock
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_LAST, 'Returns the last element');
     }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getArrayMethodItemAnnotationBlock()
+
+    protected function getArrayMethodItemAnnotationBlock(): PhpAnnotationBlock
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_ITEM, 'Returns the indexed element', 'int $index');
     }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getArrayMethodOffsetGetAnnotationBlock()
+
+    protected function getArrayMethodOffsetGetAnnotationBlock(): PhpAnnotationBlock
     {
         return $this->getArrayMethodGenericAnnotationBlock(self::METHOD_OFFSET_GET, 'Returns the element at the offset', 'int $offset');
     }
-    /**
-     * @return PhpAnnotationBlock
-     */
-    protected function getArrayMethodAddAnnotationBlock()
+
+    protected function getArrayMethodAddAnnotationBlock(): PhpAnnotationBlock
     {
         return new PhpAnnotationBlock([
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
-            new PhpAnnotation(self::ANNOTATION_THROWS, '\InvalidArgumentException'),
-            new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::valueIsValid()', $this->getModelFromStructAttribute()->getPackagedName(true))),
-            new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType())),
+            new PhpAnnotation(self::ANNOTATION_THROWS, InvalidArgumentException::class),
+            new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType(null, true, false))),
             new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s', $this->getModel()->getPackagedName(true))),
         ]);
     }
-    /**
-     * @param string $name
-     * @param string $description
-     * @param string $param
-     * @return PhpAnnotationBlock
-     */
-    protected function getArrayMethodGenericAnnotationBlock($name, $description, $param = null)
+
+    protected function getArrayMethodGenericAnnotationBlock(string $name, string $description, $param = null): PhpAnnotationBlock
     {
         $annotationBlock = new PhpAnnotationBlock([
             $description,
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $this->getModel()->getExtends(true), $name)),
         ]);
+
         if (!empty($param)) {
             $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, $param));
         }
-        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeTypeGetAnnotation(null, false)));
+        $annotationBlock->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getStructAttributeTypeGetAnnotation($this->getStructAttribute(), false, true)));
+
         return $annotationBlock;
     }
-    /**
-     * @param PhpMethod $method
-     * @return PhpAnnotationBlock|null
-     */
-    protected function getStructMethodAnnotationBlock(PhpMethod $method)
+
+    protected function getStructMethodAnnotationBlock(PhpMethod $method): ?PhpAnnotationBlock
     {
         switch ($method->getName()) {
             case self::METHOD_GET_ATTRIBUTE_NAME:
                 $annotationBlock = $this->getArrayMethodGetAttributeNameAnnotationBlock();
+
                 break;
+
             case self::METHOD_CURRENT:
                 $annotationBlock = $this->getArrayMethodCurrentAnnotationBlock();
+
                 break;
+
             case self::METHOD_FIRST:
                 $annotationBlock = $this->getArrayMethodFirstAnnotationBlock();
+
                 break;
+
             case self::METHOD_ITEM:
                 $annotationBlock = $this->getArrayMethodItemAnnotationBlock();
+
                 break;
+
             case self::METHOD_LAST:
                 $annotationBlock = $this->getArrayMethodLastAnnotationBlock();
+
                 break;
+
             case self::METHOD_OFFSET_GET:
                 $annotationBlock = $this->getArrayMethodOffsetGetAnnotationBlock();
+
                 break;
+
             case self::METHOD_ADD:
                 $annotationBlock = $this->getArrayMethodAddAnnotationBlock();
+
                 break;
+
             default:
                 $annotationBlock = parent::getStructMethodAnnotationBlock($method);
+
                 break;
         }
+
         return $annotationBlock;
     }
-    /**
-     * @param string $method
-     * @param string $var
-     * @return string
-     */
-    protected function getArrayMethodBody($method, $var = '')
+
+    protected function getArrayMethodBody(string $method, $var = ''): string
     {
         return sprintf('return parent::%s(%s);', $method, $var);
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\File\AbstractModelFile::setModel()
-     * @throws \InvalidArgumentException
-     * @param AbstractModel $model
-     * @return StructArray
-     */
-    public function setModel(AbstractModel $model)
-    {
-        if ($model instanceof StructModel && !$model->isArray()) {
-            throw new \InvalidArgumentException('The model is not a valid array struct (name must contain Array and the model must contain only one property', __LINE__);
-        }
-        return parent::setModel($model);
     }
 }

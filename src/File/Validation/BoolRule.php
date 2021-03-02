@@ -1,7 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-class BoolRule extends BooleanRule
+final class BoolRule extends BooleanRule
 {
 }

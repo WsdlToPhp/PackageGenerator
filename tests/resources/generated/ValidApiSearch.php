@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use SoapFault;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Search ServiceType
@@ -16,7 +19,6 @@ class ApiSearch extends AbstractSoapClientBase
      * Method to call the operation originally named Search
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiSearchRequest $parameters
      * @return \Api\StructType\ApiSearchResponse|bool
@@ -24,12 +26,14 @@ class ApiSearch extends AbstractSoapClientBase
     public function Search(\Api\StructType\ApiSearchRequest $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('Search', array(
+            $this->setResult($resultSearch = $this->getSoapClient()->__soapCall('Search', [
                 $parameters,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultSearch;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }

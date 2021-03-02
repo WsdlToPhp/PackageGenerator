@@ -1,18 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
-use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
-use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Container\Model\StructAttribute as StructAttributeContainer;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
+use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
 
-class StructAttributeContainerTest extends TestCase
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class StructAttributeContainerTest extends AbstractTestCase
 {
-    /**
-     * @return StructAttributeContainer
-     */
-    public static function instance()
+    public static function instance(): StructAttributeContainer
     {
         $struct = StructTest::instance('Bar', true);
         $structAttributeContainer = new StructAttributeContainer(self::getBingGeneratorInstance());
@@ -20,11 +23,10 @@ class StructAttributeContainerTest extends TestCase
         $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'bar', 'int', $struct));
         $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'Bar', 'float', $struct));
         $structAttributeContainer->add(new StructAttribute(self::getBingGeneratorInstance(), 'fooBar', 'bool', $struct));
+
         return $structAttributeContainer;
     }
-    /**
-     *
-     */
+
     public function testGetStructAttributeByName()
     {
         $structAttributeContainer = self::instance();

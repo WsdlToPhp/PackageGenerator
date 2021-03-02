@@ -1,10 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Container;
 
-class ObjectTest
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class ObjectTest
 {
-    public function getName()
+    public function getName(): string
     {
         return 'me';
     }

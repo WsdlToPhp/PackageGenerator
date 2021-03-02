@@ -1,24 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class FloatRuleTest extends AbstractRuleTest
-{
+use TypeError;
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 'foo', please provide a float value, string given
-     */
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class FloatRuleTest extends AbstractRuleTest
+{
     public function testSetPercentValueWithStringValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setPercent('foo');
     }
 
-    /**
-     *
-     */
     public function testSetPercentValueWithIntValueMustPass()
     {
         $instance = self::getWhlTaxTypeInstance();
@@ -26,19 +28,6 @@ class FloatRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->setPercent(85));
     }
 
-    /**
-     *
-     */
-    public function testSetPercentValueWithStringIntValueMustPass()
-    {
-        $instance = self::getWhlTaxTypeInstance();
-
-        $this->assertSame($instance, $instance->setPercent('85'));
-    }
-
-    /**
-     *
-     */
     public function testSetPercentValueWithFloatValueMustPass()
     {
         $instance = self::getWhlTaxTypeInstance();
@@ -46,19 +35,6 @@ class FloatRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->setPercent(8.5));
     }
 
-    /**
-     *
-     */
-    public function testSetPercentValueWithStringFloatValueMustPass()
-    {
-        $instance = self::getWhlTaxTypeInstance();
-
-        $this->assertSame($instance, $instance->setPercent('8.5'));
-    }
-
-    /**
-     *
-     */
     public function testSetPercentValueWithNullValueMustPass()
     {
         $instance = self::getWhlTaxTypeInstance();

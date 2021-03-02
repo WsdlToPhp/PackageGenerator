@@ -1,23 +1,30 @@
 <?php
 
-namespace WsdlToPhp\PackageGenerator\Test\Generator;
+declare(strict_types=1);
 
-use WsdlToPhp\PackageGenerator\Generator\Generator;
+namespace WsdlToPhp\PackageGenerator\Tests\Generator;
+
+use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
-use WsdlToPhp\PackageGenerator\Tests\TestCase;
+use WsdlToPhp\PackageGenerator\Generator\Generator;
+use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
-class GeneratorSoapClientTest extends TestCase
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+class GeneratorSoapClientTest extends AbstractTestCase
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testExceptionOnWsdl()
     {
         $options = GeneratorOptions::instance();
         $options
             ->setComposerName('wsdltophp/invalid')
             ->setDestination(self::getTestDirectory())
-            ->setOrigin(self::schemaPartnerPath());
+            ->setOrigin(self::schemaPartnerPath())
+        ;
+
+        $this->expectException(InvalidArgumentException::class);
 
         new Generator($options);
     }

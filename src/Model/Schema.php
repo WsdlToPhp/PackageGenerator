@@ -1,21 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Model;
+
+use WsdlToPhp\WsdlHandler\Schema as SchemaHandler;
 
 class Schema extends AbstractDocument
 {
-    /**
-     * @return string
-     */
-    protected function contentClass()
+    protected function contentClass(): string
     {
-        return '\WsdlToPhp\PackageGenerator\WsdlHandler\Schema';
-    }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl
-     */
-    public function getContent()
-    {
-        return parent::getContent();
+        return SchemaHandler::class;
     }
 }

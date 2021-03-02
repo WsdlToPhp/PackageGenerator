@@ -1,56 +1,52 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PhpGenerator\Element\PhpFunctionParameter;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 abstract class AbstractSetOfValuesRule extends AbstractRule
 {
-
-    /**
-     * Must check the attribute validity according to the current rule
-     * @return bool
-     */
-    abstract protected function mustApplyRuleOnAttribute();
-
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function testConditions($parameterName, $value, $itemType = false)
+    public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
         $test = '';
         if ($this->mustApplyRuleOnAttribute()) {
             $this->addValidationMethod($parameterName, $value);
-            $test = sprintf('\'\' !== (%s = self::%s($%s))', self::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
+            $test = sprintf('\'\' !== (%s = self::%s(%s))', static::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), static::getParameterPassedValue($parameterName));
         }
+
         return $test;
     }
 
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string
     {
-        return self::getErrorMessageVariableName($parameterName);
+        return static::getErrorMessageVariableName($parameterName);
+    }
+
+    public static function getErrorMessageVariableName(string $parameterName): string
+    {
+        return sprintf('$%sArrayErrorMessage', $parameterName);
+    }
+
+    public static function getParameterPassedValue(string $parameterName): string
+    {
+        return sprintf('$%s', $parameterName);
     }
 
     /**
-     * @param string $parameterName
-     * @param mixed $value
+     * Must check the attribute validity according to the current rule.
      */
-    protected function addValidationMethod($parameterName, $value)
+    abstract protected function mustApplyRuleOnAttribute(): bool;
+
+    protected function addValidationMethod(string $parameterName, $value)
     {
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
             new PhpFunctionParameter('values', [], 'array'),
-        ], PhpMethod::ACCESS_PUBLIC, false, true);
+        ], AbstractModelFile::TYPE_STRING, PhpMethod::ACCESS_PUBLIC, false, true);
         $model = $this->getFile()->getRestrictionFromStructAttribute($this->getAttribute());
         $itemName = sprintf('%s%sItem', lcfirst($this->getFile()->getModel()->getCleanName(false)), ucfirst($this->getAttribute()->getCleanName()));
         $rules = clone $this->getRules();
@@ -74,25 +70,14 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
             ->addChild($method->getIndentedString(sprintf('$message = %s;', $rule->exceptionMessageOnTestFailure('invalidValues', null)), 1))
             ->addChild('}')
             ->addChild('unset($invalidValues);')
-            ->addChild('return $message;');
+            ->addChild('')
+            ->addChild('return $message;')
+        ;
         $this->getMethods()->add($method);
     }
 
-    /**
-     * @param string $parameterName
-     * @return string
-     */
-    protected function getValidationMethodName($parameterName)
+    protected function getValidationMethodName(string $parameterName): string
     {
-        return sprintf('validate%sForArrayConstraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
-    }
-
-    /**
-     * @param string $parameterName
-     * @return string
-     */
-    public static function getErrorMessageVariableName($parameterName)
-    {
-        return sprintf('$%sArrayErrorMessage', $parameterName);
+        return sprintf('validate%sForArrayConstraintsFrom%s', ucfirst($parameterName), ucfirst($this->getMethod()->getName()));
     }
 }

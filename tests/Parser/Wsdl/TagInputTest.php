@@ -1,42 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
+use SoapClient;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput;
 
-class TagInputTest extends WsdlParser
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class TagInputTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput
-     */
-    public static function myBoardPackInstanceParser()
+    public static function myBoardPackInstanceParser(): TagInput
     {
         return new TagInput(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput
-     */
-    public static function lnpInstanceParser()
+
+    public static function lnpInstanceParser(): TagInput
     {
         return new TagInput(self::generatorInstance(self::wsdlLnpPath()));
     }
-    /**
-     * @return \SoapClient
-     */
-    public static function myBoardPackSoapClient()
+
+    public static function myBoardPackSoapClient(): SoapClient
     {
-        return new \SoapClient(self::wsdlMyBoardPackPath());
+        return new SoapClient(self::wsdlMyBoardPackPath());
     }
-    /**
-     * @return \SoapClient
-     */
-    public static function lnpSoapClient()
+
+    public static function lnpSoapClient(): SoapClient
     {
-        return new \SoapClient(self::wsdlLnpPath());
+        return new SoapClient(self::wsdlLnpPath());
     }
-    /**
-     *
-     */
+
     public function testParseMyBoardpack()
     {
         $tagInputParser = self::myBoardPackInstanceParser();
@@ -49,16 +45,14 @@ class TagInputTest extends WsdlParser
         foreach ($soapFunctions as $soapFunction) {
             $methodData = self::getMethodDataFromSoapFunction($soapFunction);
             $method = $tagInputParser->getGenerator()->getServiceMethod($methodData['name']);
-            if (strtolower($methodData['parameter']) === TagInput::UNKNOWN) {
+            if (TagInput::UNKNOWN === strtolower($methodData['parameter'])) {
                 $this->assertNotSame(TagInput::UNKNOWN, strtolower($method->getParameterType()));
-                $count++;
+                ++$count;
             }
         }
         $this->assertSame(128, $count);
     }
-    /**
-     *
-     */
+
     public function testParseLnp()
     {
         $tagInputParser = self::lnpInstanceParser();
@@ -71,7 +65,7 @@ class TagInputTest extends WsdlParser
         foreach ($soapFunctions as $soapFunction) {
             $methodData = self::getMethodDataFromSoapFunction($soapFunction);
             $method = $tagInputParser->getGenerator()->getServiceMethod($methodData['name']);
-            if (strtolower($methodData['parameter']) === TagInput::UNKNOWN) {
+            if (TagInput::UNKNOWN === strtolower($methodData['parameter'])) {
                 if (is_array($method->getParameterType())) {
                     foreach ($method->getParameterType() as $methodParameterType) {
                         $this->assertNotSame(TagInput::UNKNOWN, strtolower($methodParameterType));
@@ -79,26 +73,29 @@ class TagInputTest extends WsdlParser
                 } else {
                     $this->assertNotSame(TagInput::UNKNOWN, strtolower($method->getParameterType()));
                 }
-                $count++;
+                ++$count;
             }
         }
         $this->assertSame(7, $count);
     }
+
     /**
      * @param string $soapFunction
+     *
      * @return string[]
      */
     public static function getMethodDataFromSoapFunction($soapFunction)
     {
-        if (stripos($soapFunction, TagInput::UNKNOWN) !== false) {
+        if (false !== stripos($soapFunction, TagInput::UNKNOWN)) {
             $parameterType = TagInput::UNKNOWN;
         } else {
             $parameterType = '[a-zA-Z_]*';
         }
         $matches = [];
         preg_match(sprintf('/[a-zA-Z_]*\s([a-zA-Z_]*)\(.*(%s)\s/i', $parameterType), $soapFunction, $matches);
-        $name = isset($matches[1]) ? $matches[1] : '';
-        $parameter = isset($matches[2]) ? $matches[2] : '';
+        $name = $matches[1] ?? '';
+        $parameter = $matches[2] ?? '';
+
         return [
             'name' => $name,
             'parameter' => $parameter,

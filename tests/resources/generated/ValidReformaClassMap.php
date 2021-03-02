@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api;
 
 /**
@@ -13,9 +15,9 @@ class ApiClassMap
      * This array is sent to the \SoapClient when calling the WS
      * @return string[]
      */
-    final public static function get()
+    final public static function get(): array
     {
-        return array(
+        return [
             'RequestState' => '\\Api\\StructType\\ApiRequestState',
             'SetRequestForSubmitInnStatus' => '\\Api\\StructType\\ApiSetRequestForSubmitInnStatus',
             'FiasAddress' => '\\Api\\StructType\\ApiFiasAddress',
@@ -103,6 +105,6 @@ class ApiClassMap
             'ReportingPeriod' => '\\Api\\StructType\\ApiReportingPeriod',
             'FileObject' => '\\Api\\StructType\\ApiFileObject',
             'ErrorDetails' => '\\Api\\StructType\\ApiErrorDetails',
-        );
+        ];
     }
 }

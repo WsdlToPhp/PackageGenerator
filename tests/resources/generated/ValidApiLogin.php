@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use SoapFault;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Login ServiceType
@@ -18,7 +21,6 @@ class ApiLogin extends AbstractSoapClientBase
      * - documentation: Выполняет авторизацию внешней системы и открывает сеанс работы
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $login
      * @param string $password
@@ -27,13 +29,15 @@ class ApiLogin extends AbstractSoapClientBase
     public function Login($login, $password)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('Login', array(
+            $this->setResult($resultLogin = $this->getSoapClient()->__soapCall('Login', [
                 $login,
                 $password,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultLogin;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }

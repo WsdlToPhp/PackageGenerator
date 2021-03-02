@@ -1,54 +1,43 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
+use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-class ChoiceRule extends AbstractRule
+final class ChoiceRule extends AbstractRule
 {
-
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'choice';
     }
 
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function testConditions($parameterName, $value, $itemType = false)
+    public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
         $test = '';
         if (is_array($value) && 0 < count($value)) {
             $this->addValidationMethod($parameterName, $value);
             $test = sprintf('\'\' !== (%s = self::%s($%s))', self::getErrorMessageVariableName($parameterName), $this->getValidationMethodName($parameterName), $parameterName);
         }
+
         return $test;
     }
 
-    /**
-     * @param string $parameterName
-     * @param mixed $value
-     * @param bool $itemType
-     * @return string
-     */
-    public function exceptionMessageOnTestFailure($parameterName, $value, $itemType = false)
+    public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string
     {
         return self::getErrorMessageVariableName($parameterName);
     }
 
-    /**
-     * @param string $parameterName
-     * @param string[] $choiceNames
-     */
-    protected function addValidationMethod($parameterName, array $choiceNames)
+    public static function getErrorMessageVariableName(string $parameterName): string
+    {
+        return sprintf('$%sChoiceErrorMessage', $parameterName);
+    }
+
+    protected function addValidationMethod(string $parameterName, array $choiceNames)
     {
         $attribute = $this->getAttribute();
         $struct = $attribute->getOwner();
@@ -61,14 +50,15 @@ class ChoiceRule extends AbstractRule
 
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
             new PhpFunctionParameter('value', PhpFunctionParameter::NO_VALUE),
-        ]);
+        ], AbstractModelFile::TYPE_STRING);
 
         $method
             ->addChild('$message = \'\';')
             ->addChild('if (is_null($value)) {')
             ->addChild($method->getIndentedString('return $message;', 1))
             ->addChild('}')
-            ->addChild('$properties = [');
+            ->addChild('$properties = [')
+        ;
 
         array_walk($choiceAttributes, function (StructAttribute $choiceAttribute) use ($method) {
             $method->addChild($method->getIndentedString(sprintf('%s,', var_export($choiceAttribute->getCleanName(), true)), 1));
@@ -79,32 +69,21 @@ class ChoiceRule extends AbstractRule
             ->addChild('try {')
             ->addChild($method->getIndentedString('foreach ($properties as $property) {', 1))
             ->addChild($method->getIndentedString('if (isset($this->{$property})) {', 2))
-            ->addChild($method->getIndentedString(sprintf('throw new \InvalidArgumentException(sprintf(\'The property %1$s can\\\'t be set as the property %%s is already set. Only one property must be set among these properties: %1$s, %%s.\', $property, implode(\', \', $properties)), __LINE__);', $attribute->getName()), 3))
+            ->addChild($method->getIndentedString(sprintf('throw new InvalidArgumentException(sprintf(\'The property %1$s can\\\'t be set as the property %%s is already set. Only one property must be set among these properties: %1$s, %%s.\', $property, implode(\', \', $properties)), __LINE__);', $attribute->getName()), 3))
             ->addChild($method->getIndentedString(sprintf('}'), 2))
             ->addChild($method->getIndentedString('}', 1))
-            ->addChild('} catch (\InvalidArgumentException $e) {')
+            ->addChild('} catch (InvalidArgumentException $e) {')
             ->addChild($method->getIndentedString('$message = $e->getMessage();', 1))
             ->addChild('}')
-            ->addChild('return $message;');
+            ->addChild('')
+            ->addChild('return $message;')
+        ;
 
         $this->getMethods()->add($method);
     }
 
-    /**
-     * @param string $parameterName
-     * @return string
-     */
-    protected function getValidationMethodName($parameterName)
+    protected function getValidationMethodName(string $parameterName): string
     {
-        return sprintf('validate%sForChoiceConstraintsFrom%s', ucfirst($parameterName), ucFirst($this->getMethod()->getName()));
-    }
-
-    /**
-     * @param string $parameterName
-     * @return string
-     */
-    public static function getErrorMessageVariableName($parameterName)
-    {
-        return sprintf('$%sChoiceErrorMessage', $parameterName);
+        return sprintf('validate%sForChoiceConstraintsFrom%s', ucfirst($parameterName), ucfirst($this->getMethod()->getName()));
     }
 }

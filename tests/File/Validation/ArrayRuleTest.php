@@ -1,10 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class ArrayRuleTest extends AbstractRuleTest
-{
+use Api\StructType\ApiParagraphType;
+use Api\StructType\ApiTaxType;
+use InvalidArgumentException;
 
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class ArrayRuleTest extends AbstractRuleTest
+{
     /**
      * The AddressLine
      * Meta informations extracted from the WSDL
@@ -14,13 +23,13 @@ class ArrayRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
-     * @var string[]
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The AddressLine property can only contain items of type string, NULL(NULL) given
+     * - minLength: 1.
      */
     public function testSetAddressLineWithNullOnOneItemMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The AddressLine property can only contain items of type string, NULL(NULL) given');
+
         $instance = self::getWhlAddressTypeInstance();
 
         $this->assertSame(
@@ -41,7 +50,8 @@ class ArrayRuleTest extends AbstractRuleTest
      * - minOccurs: 0
      * - base: xs:string
      * - maxLength: 255
-     * - minLength: 1
+     * - minLength: 1.
+     *
      * @var string[]
      */
     public function testSetAddressLineWithStringsMustPass()
@@ -57,12 +67,11 @@ class ArrayRuleTest extends AbstractRuleTest
         );
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, string(''), integer(1) given
-     */
     public function testSetTaxDescriptionValueWithStringValueMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, string(\'\'), integer(1) given');
+
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setTaxDescription([
@@ -71,26 +80,22 @@ class ArrayRuleTest extends AbstractRuleTest
         ]);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, Api\StructType\ApiTaxType given
-     */
     public function testSetTaxDescriptionValueWithInvalidObjectItemMustThrowAnException()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, Api\StructType\ApiTaxType given');
+
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame(
             $instance,
             $instance->setTaxDescription([
-                new \Api\StructType\ApiTaxType(),
-                new \Api\StructType\ApiParagraphType(),
+                new ApiTaxType(),
+                new ApiParagraphType(),
             ])
         );
     }
 
-    /**
-     *
-     */
     public function testSetTaxDescriptionValueWithValidItemsMustPass()
     {
         $instance = self::getWhlTaxTypeInstance();
@@ -98,8 +103,8 @@ class ArrayRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance->setTaxDescription([
-                new \Api\StructType\ApiParagraphType(),
-                new \Api\StructType\ApiParagraphType(),
+                new ApiParagraphType(),
+                new ApiParagraphType(),
             ])
         );
     }

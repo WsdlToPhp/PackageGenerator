@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AddRequest StructType
@@ -19,13 +22,13 @@ class ApiAddRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiAdGroupAddItem[]
      */
-    public $AdGroups;
+    protected array $AdGroups = [];
     /**
      * Constructor method for AddRequest
      * @uses ApiAddRequest::setAdGroups()
      * @param \Api\StructType\ApiAdGroupAddItem[] $adGroups
      */
-    public function __construct(array $adGroups = array())
+    public function __construct(array $adGroups)
     {
         $this
             ->setAdGroups($adGroups);
@@ -34,7 +37,7 @@ class ApiAddRequest extends AbstractStructBase
      * Get AdGroups value
      * @return \Api\StructType\ApiAdGroupAddItem[]
      */
-    public function getAdGroups()
+    public function getAdGroups(): array
     {
         return $this->AdGroups;
     }
@@ -44,7 +47,7 @@ class ApiAddRequest extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdGroupsForArrayConstraintsFromSetAdGroups(array $values = array())
+    public static function validateAdGroupsForArrayConstraintsFromSetAdGroups(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -58,36 +61,39 @@ class ApiAddRequest extends AbstractStructBase
             $message = sprintf('The AdGroups property can only contain items of type \Api\StructType\ApiAdGroupAddItem, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set AdGroups value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiAdGroupAddItem[] $adGroups
      * @return \Api\StructType\ApiAddRequest
      */
-    public function setAdGroups(array $adGroups = array())
+    public function setAdGroups(array $adGroups): self
     {
         // validation for constraint: array
         if ('' !== ($adGroupsArrayErrorMessage = self::validateAdGroupsForArrayConstraintsFromSetAdGroups($adGroups))) {
-            throw new \InvalidArgumentException($adGroupsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($adGroupsArrayErrorMessage, __LINE__);
         }
         $this->AdGroups = $adGroups;
+        
         return $this;
     }
     /**
      * Add item to AdGroups value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \Api\StructType\ApiAdGroupAddItem $item
      * @return \Api\StructType\ApiAddRequest
      */
-    public function addToAdGroups(\Api\StructType\ApiAdGroupAddItem $item)
+    public function addToAdGroups(\Api\StructType\ApiAdGroupAddItem $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \Api\StructType\ApiAdGroupAddItem) {
-            throw new \InvalidArgumentException(sprintf('The AdGroups property can only contain items of type \Api\StructType\ApiAdGroupAddItem, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The AdGroups property can only contain items of type \Api\StructType\ApiAdGroupAddItem, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AdGroups[] = $item;
+        
         return $this;
     }
 }

@@ -1,42 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 
-class TagHeaderTest extends WsdlParser
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class TagHeaderTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
-     */
-    public static function imageViewServiceInstanceParser()
+    public static function imageViewServiceInstanceParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
-     */
-    public static function paypalInstanceParserParser()
+
+    public static function paypalInstanceParserParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlActonPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
-     */
-    public static function paypalInstance()
+
+    public static function paypalInstance(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlPayPalPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
-     */
-    public static function ewsInstanceParser()
+
+    public static function ewsInstanceParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlEwsPath(), true, false, false));
     }
-    /**
-     *
-     */
+
     public function testParseImageViewService()
     {
         $tagHeaderParser = self::imageViewServiceInstanceParser();
@@ -47,7 +42,7 @@ class TagHeaderTest extends WsdlParser
         $services = $tagHeaderParser->getGenerator()->getServices();
         if ($services->count() > 0) {
             foreach ($services as $service) {
-                if ($service->getName() === 'Image') {
+                if ('Image' === $service->getName()) {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame([
                             'auth',
@@ -68,9 +63,7 @@ class TagHeaderTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParseActon()
     {
         $tagHeaderParser = self::paypalInstanceParserParser();
@@ -81,7 +74,7 @@ class TagHeaderTest extends WsdlParser
         $services = $tagHeaderParser->getGenerator()->getServices();
         if ($services->count() > 0) {
             foreach ($services as $service) {
-                if ($service->getName() === 'Send') {
+                if ('Send' === $service->getName()) {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame([
                             'SessionHeader',
@@ -101,7 +94,7 @@ class TagHeaderTest extends WsdlParser
                         ], $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
                         $ok = true;
                     }
-                } elseif ($service->getName() === 'List') {
+                } elseif ('List' === $service->getName()) {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame([
                             'SessionHeader',
@@ -121,7 +114,7 @@ class TagHeaderTest extends WsdlParser
                         ], $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
                         $ok = true;
                     }
-                } elseif ($service->getName() === 'Login') {
+                } elseif ('Login' === $service->getName()) {
                     foreach ($service->getMethods() as $method) {
                         $this->assertSame([
                             'ClusterHeader',
@@ -142,9 +135,7 @@ class TagHeaderTest extends WsdlParser
         }
         $this->assertTrue((bool) $ok);
     }
-    /**
-     *
-     */
+
     public function testParsePayPal()
     {
         $tagHeaderParser = self::paypalInstance();
@@ -168,23 +159,22 @@ class TagHeaderTest extends WsdlParser
                     $this->assertSame([
                         'required',
                     ], $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
-                    $count++;
+                    ++$count;
                 }
             }
         }
         $this->assertSame(57, $count);
     }
-    /**
-     *
-     */
+
     public function testParseEws()
     {
         $tagHeaderParser = self::ewsInstanceParser();
         // parsing the whole structs/functions is too long for only tests purpose!
         $tagHeaderParser
             ->getGenerator()
-                ->getServices()
-                    ->addService('Update', 'UpdateItemInRecoverableItems', 'string', 'string');
+            ->getServices()
+            ->addService('Update', 'UpdateItemInRecoverableItems', 'string', 'string')
+        ;
 
         $tagHeaderParser->parse();
 
@@ -193,7 +183,7 @@ class TagHeaderTest extends WsdlParser
         if ($services->count() > 0) {
             foreach ($services as $service) {
                 foreach ($service->getMethods() as $method) {
-                    if ($method->getName() === 'UpdateItemInRecoverableItems') {
+                    if ('UpdateItemInRecoverableItems' === $method->getName()) {
                         $this->assertSame([
                             'ExchangeImpersonation',
                             'MailboxCulture',
@@ -222,7 +212,7 @@ class TagHeaderTest extends WsdlParser
                             'http://schemas.microsoft.com/exchange/services/2006/types',
                             'http://schemas.microsoft.com/exchange/services/2006/types',
                         ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
-                        $count++;
+                        ++$count;
                     }
                 }
             }

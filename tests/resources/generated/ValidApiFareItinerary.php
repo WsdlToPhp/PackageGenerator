@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for fareItinerary StructType
@@ -19,44 +22,44 @@ class ApiFareItinerary extends AbstractStructBase
      * - minOccurs: 1
      * @var \Api\StructType\ApiFareItineraryPrice
      */
-    public $price;
+    protected \Api\StructType\ApiFareItineraryPrice $price;
     /**
      * The key
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    public $key;
+    protected string $key;
     /**
      * The firstSegmentsIds
      * Meta information extracted from the WSDL
      * - use: required
      * @var int[]
      */
-    public $firstSegmentsIds;
+    protected array $firstSegmentsIds = [];
     /**
      * The clickoutURLParams
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $clickoutURLParams;
+    protected ?string $clickoutURLParams = null;
     /**
      * The resident
-     * @var bool
+     * @var bool|null
      */
-    public $resident;
+    protected ?bool $resident = null;
     /**
      * The secondSegmentsIds
      * @var int[]
      */
-    public $secondSegmentsIds;
+    protected array $secondSegmentsIds = [];
     /**
      * The thirdSegmentsIds
      * @var int[]
      */
-    public $thirdSegmentsIds;
+    protected array $thirdSegmentsIds = [];
     /**
      * Constructor method for fareItinerary
      * @uses ApiFareItinerary::setPrice()
@@ -74,7 +77,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @param int[] $thirdSegmentsIds
      */
-    public function __construct(\Api\StructType\ApiFareItineraryPrice $price = null, $key = null, array $firstSegmentsIds = array(), $clickoutURLParams = null, $resident = null, array $secondSegmentsIds = array(), array $thirdSegmentsIds = array())
+    public function __construct(\Api\StructType\ApiFareItineraryPrice $price, string $key, array $firstSegmentsIds, ?string $clickoutURLParams = null, ?bool $resident = null, array $secondSegmentsIds = [], array $thirdSegmentsIds = [])
     {
         $this
             ->setPrice($price)
@@ -89,7 +92,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get price value
      * @return \Api\StructType\ApiFareItineraryPrice
      */
-    public function getPrice()
+    public function getPrice(): \Api\StructType\ApiFareItineraryPrice
     {
         return $this->price;
     }
@@ -98,16 +101,17 @@ class ApiFareItinerary extends AbstractStructBase
      * @param \Api\StructType\ApiFareItineraryPrice $price
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setPrice(\Api\StructType\ApiFareItineraryPrice $price = null)
+    public function setPrice(\Api\StructType\ApiFareItineraryPrice $price): self
     {
         $this->price = $price;
+        
         return $this;
     }
     /**
      * Get key value
      * @return string
      */
-    public function getKey()
+    public function getKey(): string
     {
         return $this->key;
     }
@@ -116,20 +120,21 @@ class ApiFareItinerary extends AbstractStructBase
      * @param string $key
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setKey($key = null)
+    public function setKey(string $key): self
     {
         // validation for constraint: string
         if (!is_null($key) && !is_string($key)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->key = $key;
+        
         return $this;
     }
     /**
      * Get firstSegmentsIds value
      * @return int[]
      */
-    public function getFirstSegmentsIds()
+    public function getFirstSegmentsIds(): array
     {
         return $this->firstSegmentsIds;
     }
@@ -139,7 +144,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds(array $values = array())
+    public static function validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -153,43 +158,46 @@ class ApiFareItinerary extends AbstractStructBase
             $message = sprintf('The firstSegmentsIds property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set firstSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int[] $firstSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setFirstSegmentsIds(array $firstSegmentsIds = array())
+    public function setFirstSegmentsIds(array $firstSegmentsIds): self
     {
         // validation for constraint: array
         if ('' !== ($firstSegmentsIdsArrayErrorMessage = self::validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds($firstSegmentsIds))) {
-            throw new \InvalidArgumentException($firstSegmentsIdsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($firstSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->firstSegmentsIds = $firstSegmentsIds;
+        
         return $this;
     }
     /**
      * Add item to firstSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function addToFirstSegmentsIds($item)
+    public function addToFirstSegmentsIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
-            throw new \InvalidArgumentException(sprintf('The firstSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The firstSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->firstSegmentsIds[] = $item;
+        
         return $this;
     }
     /**
      * Get clickoutURLParams value
      * @return string|null
      */
-    public function getClickoutURLParams()
+    public function getClickoutURLParams(): ?string
     {
         return $this->clickoutURLParams;
     }
@@ -198,20 +206,21 @@ class ApiFareItinerary extends AbstractStructBase
      * @param string $clickoutURLParams
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setClickoutURLParams($clickoutURLParams = null)
+    public function setClickoutURLParams(?string $clickoutURLParams = null): self
     {
         // validation for constraint: string
         if (!is_null($clickoutURLParams) && !is_string($clickoutURLParams)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clickoutURLParams, true), gettype($clickoutURLParams)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clickoutURLParams, true), gettype($clickoutURLParams)), __LINE__);
         }
         $this->clickoutURLParams = $clickoutURLParams;
+        
         return $this;
     }
     /**
      * Get resident value
      * @return bool|null
      */
-    public function getResident()
+    public function getResident(): ?bool
     {
         return $this->resident;
     }
@@ -220,20 +229,21 @@ class ApiFareItinerary extends AbstractStructBase
      * @param bool $resident
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setResident($resident = null)
+    public function setResident(?bool $resident = null): self
     {
         // validation for constraint: boolean
         if (!is_null($resident) && !is_bool($resident)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($resident, true), gettype($resident)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($resident, true), gettype($resident)), __LINE__);
         }
         $this->resident = $resident;
+        
         return $this;
     }
     /**
      * Get secondSegmentsIds value
-     * @return int[]|null
+     * @return int[]
      */
-    public function getSecondSegmentsIds()
+    public function getSecondSegmentsIds(): array
     {
         return $this->secondSegmentsIds;
     }
@@ -243,7 +253,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds(array $values = array())
+    public static function validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -257,43 +267,46 @@ class ApiFareItinerary extends AbstractStructBase
             $message = sprintf('The secondSegmentsIds property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set secondSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int[] $secondSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setSecondSegmentsIds(array $secondSegmentsIds = array())
+    public function setSecondSegmentsIds(array $secondSegmentsIds = []): self
     {
         // validation for constraint: array
         if ('' !== ($secondSegmentsIdsArrayErrorMessage = self::validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds($secondSegmentsIds))) {
-            throw new \InvalidArgumentException($secondSegmentsIdsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($secondSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->secondSegmentsIds = $secondSegmentsIds;
+        
         return $this;
     }
     /**
      * Add item to secondSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function addToSecondSegmentsIds($item)
+    public function addToSecondSegmentsIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
-            throw new \InvalidArgumentException(sprintf('The secondSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The secondSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->secondSegmentsIds[] = $item;
+        
         return $this;
     }
     /**
      * Get thirdSegmentsIds value
-     * @return int[]|null
+     * @return int[]
      */
-    public function getThirdSegmentsIds()
+    public function getThirdSegmentsIds(): array
     {
         return $this->thirdSegmentsIds;
     }
@@ -303,7 +316,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds(array $values = array())
+    public static function validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds(array $values = []): string
     {
         $message = '';
         $invalidValues = [];
@@ -317,36 +330,39 @@ class ApiFareItinerary extends AbstractStructBase
             $message = sprintf('The thirdSegmentsIds property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set thirdSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int[] $thirdSegmentsIds
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function setThirdSegmentsIds(array $thirdSegmentsIds = array())
+    public function setThirdSegmentsIds(array $thirdSegmentsIds = []): self
     {
         // validation for constraint: array
         if ('' !== ($thirdSegmentsIdsArrayErrorMessage = self::validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds($thirdSegmentsIds))) {
-            throw new \InvalidArgumentException($thirdSegmentsIdsArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($thirdSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->thirdSegmentsIds = $thirdSegmentsIds;
+        
         return $this;
     }
     /**
      * Add item to thirdSegmentsIds value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param int $item
      * @return \Api\StructType\ApiFareItinerary
      */
-    public function addToThirdSegmentsIds($item)
+    public function addToThirdSegmentsIds(int $item): self
     {
         // validation for constraint: itemType
         if (!(is_int($item) || ctype_digit($item))) {
-            throw new \InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->thirdSegmentsIds[] = $item;
+        
         return $this;
     }
 }

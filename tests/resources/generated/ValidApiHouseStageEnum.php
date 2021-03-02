@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\EnumType;
 
-use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
 /**
  * This class stands for HouseStageEnum EnumType
@@ -43,12 +46,12 @@ class ApiHouseStageEnum extends AbstractStructEnumBase
      * @uses self::VALUE_3
      * @return string[]
      */
-    public static function getValidValues()
+    public static function getValidValues(): array
     {
-        return array(
+        return [
             self::VALUE_1,
             self::VALUE_2,
             self::VALUE_3,
-        );
+        ];
     }
 }

@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\StructType;
 
+use InvalidArgumentException;
 use \Std\Opt\StructClass;
 
 /**
@@ -17,41 +20,41 @@ class ApiNewsArticle extends StructClass
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $Title;
+    protected ?string $Title = null;
     /**
      * The Url
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $Url;
+    protected ?string $Url = null;
     /**
      * The Source
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $Source;
+    protected ?string $Source = null;
     /**
      * The Snippet
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $Snippet;
+    protected ?string $Snippet = null;
     /**
      * The Date
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $Date;
+    protected ?string $Date = null;
     /**
      * Constructor method for NewsArticle
      * @uses ApiNewsArticle::setTitle()
@@ -65,7 +68,7 @@ class ApiNewsArticle extends StructClass
      * @param string $snippet
      * @param string $date
      */
-    public function __construct($title = null, $url = null, $source = null, $snippet = null, $date = null)
+    public function __construct(?string $title = null, ?string $url = null, ?string $source = null, ?string $snippet = null, ?string $date = null)
     {
         $this
             ->setTitle($title)
@@ -78,7 +81,7 @@ class ApiNewsArticle extends StructClass
      * Get Title value
      * @return string|null
      */
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->Title;
     }
@@ -87,20 +90,21 @@ class ApiNewsArticle extends StructClass
      * @param string $title
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setTitle($title = null)
+    public function setTitle(?string $title = null): self
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->Title = $title;
+        
         return $this;
     }
     /**
      * Get Url value
      * @return string|null
      */
-    public function getUrl()
+    public function getUrl(): ?string
     {
         return $this->Url;
     }
@@ -109,20 +113,21 @@ class ApiNewsArticle extends StructClass
      * @param string $url
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setUrl($url = null)
+    public function setUrl(?string $url = null): self
     {
         // validation for constraint: string
         if (!is_null($url) && !is_string($url)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($url, true), gettype($url)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($url, true), gettype($url)), __LINE__);
         }
         $this->Url = $url;
+        
         return $this;
     }
     /**
      * Get Source value
      * @return string|null
      */
-    public function getSource()
+    public function getSource(): ?string
     {
         return $this->Source;
     }
@@ -131,20 +136,21 @@ class ApiNewsArticle extends StructClass
      * @param string $source
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setSource($source = null)
+    public function setSource(?string $source = null): self
     {
         // validation for constraint: string
         if (!is_null($source) && !is_string($source)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
         }
         $this->Source = $source;
+        
         return $this;
     }
     /**
      * Get Snippet value
      * @return string|null
      */
-    public function getSnippet()
+    public function getSnippet(): ?string
     {
         return $this->Snippet;
     }
@@ -153,20 +159,21 @@ class ApiNewsArticle extends StructClass
      * @param string $snippet
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setSnippet($snippet = null)
+    public function setSnippet(?string $snippet = null): self
     {
         // validation for constraint: string
         if (!is_null($snippet) && !is_string($snippet)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($snippet, true), gettype($snippet)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($snippet, true), gettype($snippet)), __LINE__);
         }
         $this->Snippet = $snippet;
+        
         return $this;
     }
     /**
      * Get Date value
      * @return string|null
      */
-    public function getDate()
+    public function getDate(): ?string
     {
         return $this->Date;
     }
@@ -175,13 +182,14 @@ class ApiNewsArticle extends StructClass
      * @param string $date
      * @return \Api\StructType\ApiNewsArticle
      */
-    public function setDate($date = null)
+    public function setDate(?string $date = null): self
     {
         // validation for constraint: string
         if (!is_null($date) && !is_string($date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->Date = $date;
+        
         return $this;
     }
 }

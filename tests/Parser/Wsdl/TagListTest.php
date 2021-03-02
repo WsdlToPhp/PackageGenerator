@@ -1,37 +1,34 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
 use WsdlToPhp\PackageGenerator\Model\Struct;
-use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList;
 
-class TagListTest extends WsdlParser
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class TagListTest extends WsdlParser
 {
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
-     */
-    public static function odigeoInstanceParser()
+    public static function odigeoInstanceParser(): TagList
     {
         return new TagList(self::generatorInstance(self::wsdlOdigeoPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
-     */
-    public static function myBaordInstanceParser()
+
+    public static function myBaordInstanceParser(): TagList
     {
         return new TagList(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
-    /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList
-     */
-    public static function ewsInstanceParser()
+
+    public static function ewsInstanceParser(): TagList
     {
         return new TagList(self::generatorInstance(self::wsdlEwsPath()));
     }
-    /**
-     *
-     */
+
     public function testParseOdigeo()
     {
         $tagListParser = self::odigeoInstanceParser();
@@ -50,25 +47,27 @@ class TagListTest extends WsdlParser
                                 case 'secondSegmentsIds':
                                 case 'thirdSegmentsIds':
                                     $this->assertSame('int', $attribute->getInheritance());
-                                    $count++;
+                                    ++$count;
+
                                     break;
                             }
                         }
+
                         break;
+
                     case 'segment':
                         if ($struct->getAttribute('sectionIds') instanceof StructAttribute) {
                             $this->assertSame('int', $struct->getAttribute('sectionIds')->getInheritance());
-                            $count++;
+                            ++$count;
                         }
+
                         break;
                 }
             }
         }
         $this->assertSame(4, $count);
     }
-    /**
-     *
-     */
+
     public function testParseMyBoard()
     {
         $tagListParser = self::myBaordInstanceParser();
@@ -83,7 +82,8 @@ class TagListTest extends WsdlParser
                 switch ($struct->getName()) {
                     case 'Rights':
                         $this->assertSame('string[]', $struct->getInheritance());
-                        $count++;
+                        ++$count;
+
                         break;
                 }
             }

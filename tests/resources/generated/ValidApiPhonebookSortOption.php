@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Std\Opt\EnumType;
 
-use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
 /**
  * This class stands for PhonebookSortOption EnumType
@@ -34,12 +37,12 @@ class ApiPhonebookSortOption extends AbstractStructEnumBase
      * @uses self::VALUE_DISTANCE
      * @return string[]
      */
-    public static function getValidValues()
+    public static function getValidValues(): array
     {
-        return array(
+        return [
             self::VALUE_DEFAULT,
             self::VALUE_RELEVANCE,
             self::VALUE_DISTANCE,
-        );
+        ];
     }
 }

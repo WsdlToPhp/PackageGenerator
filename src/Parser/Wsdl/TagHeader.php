@@ -1,84 +1,68 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
-use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagHeader as Header;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagOperation as Operation;
-use WsdlToPhp\PackageGenerator\WsdlHandler\Tag\TagInput as Input;
-use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Method;
+use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\TagHeader as Header;
+use WsdlToPhp\WsdlHandler\Tag\TagInput as Input;
+use WsdlToPhp\WsdlHandler\Tag\TagOperation as Operation;
+use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
-class TagHeader extends AbstractTagParser
+final class TagHeader extends AbstractTagParser
 {
-    /**
-     * @var string
-     */
-    const META_SOAP_HEADERS = 'SOAPHeaders';
-    /**
-     * @var string
-     */
-    const META_SOAP_HEADER_NAMES = 'SOAPHeaderNames';
-    /**
-     * @var string
-     */
-    const META_SOAP_HEADER_TYPES = 'SOAPHeaderTypes';
-    /**
-     * @var string
-     */
-    const META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parseWsdl()
-     * @param Wsdl $wsdl
-     */
-    protected function parseWsdl(Wsdl $wsdl)
-    {
-        foreach ($this->getTags() as $tag) {
-            if ($tag instanceof Header) {
-                $this->parseHeader($tag);
-            }
-        }
-    }
-    /**
-     * @see \WsdlToPhp\PackageGenerator\Parser\Wsdl\AbstractParser::parsingTag()
-     */
-    protected function parsingTag()
-    {
-        return WsdlDocument::TAG_HEADER;
-    }
-    /**
-     * @param Header $header
-     */
-    public function parseHeader(Header $header)
+    public const META_SOAP_HEADERS = 'SOAPHeaders';
+    public const META_SOAP_HEADER_NAMES = 'SOAPHeaderNames';
+    public const META_SOAP_HEADER_TYPES = 'SOAPHeaderTypes';
+    public const META_SOAP_HEADER_NAMESPACES = 'SOAPHeaderNamespaces';
+
+    public function parseHeader(Header $header): void
     {
         $operation = $header->getParentOperation();
         $input = $header->getParentInput();
-        if ($operation instanceof Operation && $input instanceof Input) {
-            $serviceMethod = $this->getModel($operation);
-            if ($serviceMethod instanceof Method && !$this->isSoapHeaderAlreadyDefined($serviceMethod, $header->getHeaderName())) {
-                $serviceMethod->addMeta(self::META_SOAP_HEADERS, [
-                    $header->getHeaderRequired(),
-                ])
-                    ->addMeta(self::META_SOAP_HEADER_NAMES, [
-                    $header->getHeaderName(),
-                ])
-                    ->addMeta(self::META_SOAP_HEADER_TYPES, [
-                    $header->getHeaderType(),
-                ])
-                    ->addMeta(self::META_SOAP_HEADER_NAMESPACES, [
-                    $header->getHeaderNamespace(),
-                ]);
-            }
+        if (!$operation instanceof Operation || !$input instanceof Input) {
+            return;
+        }
+
+        $serviceMethod = $this->getModel($operation);
+        if (!$serviceMethod instanceof Method || $this->isSoapHeaderAlreadyDefined($serviceMethod, $header->getHeaderName())) {
+            return;
+        }
+
+        $serviceMethod
+            ->addMeta(self::META_SOAP_HEADERS, [
+                $header->getHeaderRequired(),
+            ])
+            ->addMeta(self::META_SOAP_HEADER_NAMES, [
+                $header->getHeaderName(),
+            ])
+            ->addMeta(self::META_SOAP_HEADER_TYPES, [
+                $header->getHeaderType(),
+            ])
+            ->addMeta(self::META_SOAP_HEADER_NAMESPACES, [
+                $header->getHeaderNamespace(),
+            ])
+        ;
+    }
+
+    protected function parseWsdl(Wsdl $wsdl): void
+    {
+        foreach ($this->getTags() as $tag) {
+            $this->parseHeader($tag);
         }
     }
-    /**
-     * @param Method $method
-     * @param string $soapHeaderName
-     * @return bool
-     */
-    protected function isSoapHeaderAlreadyDefined(Method $method, $soapHeaderName)
+
+    protected function parsingTag(): string
+    {
+        return WsdlDocument::TAG_HEADER;
+    }
+
+    protected function isSoapHeaderAlreadyDefined(Method $method, string $soapHeaderName): bool
     {
         $methodSoapHeaders = $method->getMetaValue(self::META_SOAP_HEADER_NAMES, []);
+
         return in_array($soapHeaderName, $methodSoapHeaders, true);
     }
 }

@@ -1,72 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
-         backupGlobals="false"
-         colors="true"
-         bootstrap="vendor/autoload.php">
-    <php>
-        <ini name="error_reporting" value="-1" />
-    </php>
-    <testsuites>
-        <testsuite name="full">
-            <directory>./tests/Command/</directory>
-            <directory>./tests/ConfigurationReader/</directory>
-            <directory>./tests/Generator</directory>
-            <file>./tests/WsdlHandler/WsdlHandlerTest.php</file>
-            <directory>./tests/WsdlHandler/Tag/</directory>
-            <directory>./tests/File</directory>
-            <directory>./tests/Model/</directory>
-            <directory>./tests/Container/</directory>
-            <directory>./tests/Parser/</directory>
-        </testsuite>
-
-        <testsuite name="command">
-            <directory>./tests/Command/</directory>
-        </testsuite>
-
-        <testsuite name="configuration">
-            <directory>./tests/ConfigurationReader/</directory>
-        </testsuite>
-
-        <testsuite name="utils">
-            <file>./tests/Generator/UtilsTest.php</file>
-        </testsuite>
-
-        <testsuite name="packagegenerator">
-            <file>./tests/Generator/GeneratorTest.php</file>
-        </testsuite>
-
-        <testsuite name="file">
-            <directory>./tests/File/</directory>
-        </testsuite>
-
-        <testsuite name="wsdlhandler">
-            <file>./tests/WsdlHandler/WsdlHandlerTest.php</file>
-            <directory>./tests/WsdlHandler/Tag/</directory>
-        </testsuite>
-
-        <testsuite name="model">
-            <directory>./tests/Model/</directory>
-        </testsuite>
-
-        <testsuite name="container">
-            <directory>./tests/Container/</directory>
-        </testsuite>
-
-        <testsuite name="parser">
-            <directory>./tests/Parser/</directory>
-        </testsuite>
-    </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory>./</directory>
-            <exclude>
-                <directory>./src/resources</directory>
-                <directory>./tests</directory>
-                <directory>./vendor</directory>
-            </exclude>
-        </whitelist>
-    </filter>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="vendor/autoload.php">
+  <coverage>
+    <include>
+      <directory>./</directory>
+    </include>
+    <exclude>
+      <directory>./src/resources</directory>
+      <directory>./tests</directory>
+      <directory>./vendor</directory>
+    </exclude>
+  </coverage>
+  <php>
+    <ini name="error_reporting" value="-1"/>
+  </php>
+  <testsuites>
+    <testsuite name="full">
+      <directory>./tests/Command/</directory>
+      <directory>./tests/ConfigurationReader/</directory>
+      <directory>./tests/Generator</directory>
+      <directory>./tests/File</directory>
+      <directory>./tests/Model/</directory>
+      <directory>./tests/Container/</directory>
+      <directory>./tests/Parser/</directory>
+    </testsuite>
+    <testsuite name="command">
+      <directory>./tests/Command/</directory>
+    </testsuite>
+    <testsuite name="configuration">
+      <directory>./tests/ConfigurationReader/</directory>
+    </testsuite>
+    <testsuite name="utils">
+      <file>./tests/Generator/UtilsTest.php</file>
+    </testsuite>
+    <testsuite name="packagegenerator">
+      <file>./tests/Generator/GeneratorTest.php</file>
+    </testsuite>
+    <testsuite name="file">
+      <directory>./tests/File/</directory>
+    </testsuite>
+    <testsuite name="model">
+      <directory>./tests/Model/</directory>
+    </testsuite>
+    <testsuite name="container">
+      <directory>./tests/Container/</directory>
+    </testsuite>
+    <testsuite name="parser">
+      <directory>./tests/Parser/</directory>
+    </testsuite>
+  </testsuites>
 </phpunit>

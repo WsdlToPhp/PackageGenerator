@@ -1,7 +1,8 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Class which returns the class map definition
- * @package
  */
 class ClassMap
 {
@@ -10,9 +11,9 @@ class ClassMap
      * This array is sent to the \SoapClient when calling the WS
      * @return string[]
      */
-    final public static function get()
+    final public static function get(): array
     {
-        return array(
+        return [
             'base64Binary' => 'Base64Binary',
             'hexBinary' => 'HexBinary',
             'AttachmentType' => 'AttachmentType',
@@ -56,6 +57,6 @@ class ClassMap
             'actionRecordDetailType' => 'ActionRecordDetailType',
             'actionRecord' => 'ActionRecord',
             'contactField' => 'ContactField',
-        );
+        ];
     }
 }

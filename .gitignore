@@ -1,7 +1,9 @@
-vendor/
+vendor
 composer.lock
 composer.phar
 phpunit.xml
 wsdltophp.yml
-bin/
+bin
 tests/resources/generated
+coverage
+.phpunit.result.cache

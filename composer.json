@@ -80,18 +80,18 @@
         "email" : "contact@wsdltophp.com"
     },
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7.4",
         "ext-soap": "*",
         "ext-dom": "*",
         "ext-libxml": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "composer/composer": "^1.0 || ^2.0",
-        "symfony/console": ">=2",
-        "symfony/yaml": ">=2",
-        "wsdltophp/domhandler": "^1.0",
-        "wsdltophp/packagebase": "^2.0",
-        "wsdltophp/phpgenerator": "^1.0"
+        "composer/composer": "^2.0",
+        "symfony/console": "^4.0|^5.0",
+        "symfony/yaml": "^4.0|^5.0",
+        "wsdltophp/packagebase": "^5.0",
+        "wsdltophp/phpgenerator": "^4.0",
+        "wsdltophp/wsdlhandler": "^1.0"
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
@@ -100,7 +100,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit": "^3|^4|^5|^6|^7|^8"
+        "phpunit/phpunit": "^9"
     },
     "autoload": {
         "psr-4": {

@@ -1,24 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-class IntRuleTest extends AbstractRuleTest
-{
+use TypeError;
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 'foo', please provide an integer value, string given
-     */
+/**
+ * @internal
+ * @coversDefaultClass
+ */
+final class IntRuleTest extends AbstractRuleTest
+{
     public function testSetDecimalPlacesValueWithStringValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setDecimalPlaces('foo');
     }
 
-    /**
-     *
-     */
     public function testSetDecimalPlacesValueWithIntValueMustPass()
     {
         $instance = self::getWhlTaxTypeInstance();
@@ -26,41 +28,31 @@ class IntRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->setDecimalPlaces(18));
     }
 
-    /**
-     *
-     */
     public function testSetDecimalPlacesValueWithStringIntValueMustPass()
     {
         $instance = self::getWhlTaxTypeInstance();
 
-        $this->assertSame($instance, $instance->setDecimalPlaces('18'));
+        $this->assertSame($instance, $instance->setDecimalPlaces(18));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value 18.5, please provide an integer value, double given
-     */
     public function testSetDecimalPlacesValueWithFloatValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setDecimalPlaces(18.5);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value '18.5', please provide an integer value, string given
-     */
     public function testSetDecimalPlacesValueWithStringFloatValueMustThrowAnException()
     {
+        $this->expectException(TypeError::class);
+
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setDecimalPlaces('18.5');
     }
 
-    /**
-     *
-     */
     public function testSetDecimalPlacesValueWithNullValueMustPass()
     {
         $instance = self::getWhlTaxTypeInstance();

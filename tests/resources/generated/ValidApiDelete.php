@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Api\ServiceType;
 
-use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use SoapFault;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
  * This class stands for Delete ServiceType
@@ -16,27 +19,27 @@ class ApiDelete extends AbstractSoapClientBase
      * Sets the SessionHeader SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiSessionHeader $sessionHeader
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiDelete
      */
-    public function setSoapHeaderSessionHeader(\Api\StructType\ApiSessionHeader $sessionHeader, $nameSpace = 'urn:api.actonsoftware.com', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderSessionHeader(\Api\StructType\ApiSessionHeader $sessionHeader, string $namespace = 'urn:api.actonsoftware.com', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'SessionHeader', $sessionHeader, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'SessionHeader', $sessionHeader, $mustUnderstand, $actor);
     }
     /**
      * Sets the ClusterHeader SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
      * @param \Api\StructType\ApiClusterHeader $clusterHeader
-     * @param string $nameSpace
+     * @param string $namespace
      * @param bool $mustUnderstand
      * @param string $actor
-     * @return bool
+     * @return \Api\ServiceType\ApiDelete
      */
-    public function setSoapHeaderClusterHeader(\Api\StructType\ApiClusterHeader $clusterHeader, $nameSpace = 'urn:api.actonsoftware.com', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderClusterHeader(\Api\StructType\ApiClusterHeader $clusterHeader, string $namespace = 'urn:api.actonsoftware.com', bool $mustUnderstand = false, ?string $actor = null): self
     {
-        return $this->setSoapHeader($nameSpace, 'ClusterHeader', $clusterHeader, $mustUnderstand, $actor);
+        return $this->setSoapHeader($namespace, 'ClusterHeader', $clusterHeader, $mustUnderstand, $actor);
     }
     /**
      * Method to call the operation originally named deleteList
@@ -47,7 +50,6 @@ class ApiDelete extends AbstractSoapClientBase
      * - SOAPHeaders: optional, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param \Api\StructType\ApiDeleteList $parameter
      * @return void|bool
@@ -55,12 +57,14 @@ class ApiDelete extends AbstractSoapClientBase
     public function deleteList(\Api\StructType\ApiDeleteList $parameter)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('deleteList', array(
+            $this->setResult($resultDeleteList = $this->getSoapClient()->__soapCall('deleteList', [
                 $parameter,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultDeleteList;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }

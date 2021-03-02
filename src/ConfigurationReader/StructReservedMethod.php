@@ -1,23 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-class StructReservedMethod extends AbstractReservedWord
+final class StructReservedMethod extends AbstractReservedWord
 {
-    /**
-     * @throws \InvalidArgumentException
-     * @param string $filename options's file to parse
-     * @return StructReservedMethod
-     */
-    public static function instance($filename = null)
+    public static function getDefaultConfigurationPath(): string
     {
-        return parent::instance(empty($filename) ? self::getDefaultConfigurationPath() : $filename);
-    }
-    /**
-     * @return string
-     */
-    public static function getDefaultConfigurationPath()
-    {
-        return __DIR__ . '/../resources/config/struct_reserved_keywords.yml';
+        return __DIR__.'/../resources/config/struct_reserved_keywords.yml';
     }
 }

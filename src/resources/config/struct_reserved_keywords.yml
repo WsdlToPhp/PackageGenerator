@@ -7,5 +7,5 @@ reserved_keywords:
         -
     case_insensitive:
         # methods from AbstractStructBase
-        - "_set"
-        - "_get"
+        - "setPropertValue"
+        - "getPropertyValue"
