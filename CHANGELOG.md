@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.3.5 - 2021-03-29
+- issue #243 - Prefix/Suffix option used in namespace should not be used in namespace
+
 ## 3.3.4 - 2021-01-25
 - issue #230 - Avoid repeated meta value within generated meta documentation
 - issue #217 - Inherited struct methods should not be overwritten
