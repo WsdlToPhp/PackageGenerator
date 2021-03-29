@@ -383,24 +383,13 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
         return '';
     }
     /**
-     * @uses AbstractGeneratorAware::getGenerator()
-     * @uses Generator::getOptionNamespacePrefix()
-     * @uses Generator::getOptionPrefix()
-     * @uses Generator::getOptionSuffix()
-     * @uses AbstractModel::getSubDirectory()
      * @return string
      */
     public function getNamespace()
     {
         $namespaces = [];
         $namespace = $this->getGenerator()->getOptionNamespacePrefix();
-        if (empty($namespace)) {
-            if ($this->getGenerator()->getOptionPrefix() !== '') {
-                $namespaces[] = $this->getGenerator()->getOptionPrefix();
-            } elseif ($this->getGenerator()->getOptionSuffix() !== '') {
-                $namespaces[] = $this->getGenerator()->getOptionSuffix();
-            }
-        } else {
+        if (!empty($namespace)) {
             $namespaces[] = $namespace;
         }
         if ($this->getSubDirectory() !== '') {
