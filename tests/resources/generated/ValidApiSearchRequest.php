@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -33,7 +33,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
-     * @var \Api\ArrayType\ApiArrayOfSourceType
+     * @var \ArrayType\ApiArrayOfSourceType
      */
     public $Sources;
     /**
@@ -41,7 +41,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
-     * @var \Api\StructType\ApiSearchRequest
+     * @var \StructType\ApiSearchRequest
      */
     public $parameters;
     /**
@@ -106,7 +106,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\ArrayType\ApiArrayOfSearchOption
+     * @var \ArrayType\ApiArrayOfSearchOption
      */
     public $Options;
     /**
@@ -114,7 +114,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiWebRequest
+     * @var \StructType\ApiWebRequest
      */
     public $Web;
     /**
@@ -122,7 +122,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiImageRequest
+     * @var \StructType\ApiImageRequest
      */
     public $Image;
     /**
@@ -130,7 +130,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiPhonebookRequest
+     * @var \StructType\ApiPhonebookRequest
      */
     public $Phonebook;
     /**
@@ -138,7 +138,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiVideoRequest
+     * @var \StructType\ApiVideoRequest
      */
     public $Video;
     /**
@@ -146,7 +146,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiNewsRequest
+     * @var \StructType\ApiNewsRequest
      */
     public $News;
     /**
@@ -154,7 +154,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiMobileWebRequest
+     * @var \StructType\ApiMobileWebRequest
      */
     public $MobileWeb;
     /**
@@ -162,7 +162,7 @@ class ApiSearchRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiTranslationRequest
+     * @var \StructType\ApiTranslationRequest
      */
     public $Translation;
     /**
@@ -188,8 +188,8 @@ class ApiSearchRequest extends AbstractStructBase
      * @uses ApiSearchRequest::setTranslation()
      * @param string $query
      * @param string $appId
-     * @param \Api\ArrayType\ApiArrayOfSourceType $sources
-     * @param \Api\StructType\ApiSearchRequest $parameters
+     * @param \ArrayType\ApiArrayOfSourceType $sources
+     * @param \StructType\ApiSearchRequest $parameters
      * @param string $version
      * @param string $market
      * @param string $uILanguage
@@ -197,16 +197,16 @@ class ApiSearchRequest extends AbstractStructBase
      * @param float $latitude
      * @param float $longitude
      * @param float $radius
-     * @param \Api\ArrayType\ApiArrayOfSearchOption $options
-     * @param \Api\StructType\ApiWebRequest $web
-     * @param \Api\StructType\ApiImageRequest $image
-     * @param \Api\StructType\ApiPhonebookRequest $phonebook
-     * @param \Api\StructType\ApiVideoRequest $video
-     * @param \Api\StructType\ApiNewsRequest $news
-     * @param \Api\StructType\ApiMobileWebRequest $mobileWeb
-     * @param \Api\StructType\ApiTranslationRequest $translation
+     * @param \ArrayType\ApiArrayOfSearchOption $options
+     * @param \StructType\ApiWebRequest $web
+     * @param \StructType\ApiImageRequest $image
+     * @param \StructType\ApiPhonebookRequest $phonebook
+     * @param \StructType\ApiVideoRequest $video
+     * @param \StructType\ApiNewsRequest $news
+     * @param \StructType\ApiMobileWebRequest $mobileWeb
+     * @param \StructType\ApiTranslationRequest $translation
      */
-    public function __construct($query = null, $appId = null, \Api\ArrayType\ApiArrayOfSourceType $sources = null, \Api\StructType\ApiSearchRequest $parameters = null, $version = '2.2', $market = null, $uILanguage = null, $adult = null, $latitude = null, $longitude = null, $radius = null, \Api\ArrayType\ApiArrayOfSearchOption $options = null, \Api\StructType\ApiWebRequest $web = null, \Api\StructType\ApiImageRequest $image = null, \Api\StructType\ApiPhonebookRequest $phonebook = null, \Api\StructType\ApiVideoRequest $video = null, \Api\StructType\ApiNewsRequest $news = null, \Api\StructType\ApiMobileWebRequest $mobileWeb = null, \Api\StructType\ApiTranslationRequest $translation = null)
+    public function __construct($query = null, $appId = null, \ArrayType\ApiArrayOfSourceType $sources = null, \StructType\ApiSearchRequest $parameters = null, $version = '2.2', $market = null, $uILanguage = null, $adult = null, $latitude = null, $longitude = null, $radius = null, \ArrayType\ApiArrayOfSearchOption $options = null, \StructType\ApiWebRequest $web = null, \StructType\ApiImageRequest $image = null, \StructType\ApiPhonebookRequest $phonebook = null, \StructType\ApiVideoRequest $video = null, \StructType\ApiNewsRequest $news = null, \StructType\ApiMobileWebRequest $mobileWeb = null, \StructType\ApiTranslationRequest $translation = null)
     {
         $this
             ->setQuery($query)
@@ -240,7 +240,7 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set Query value
      * @param string $query
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setQuery($query = null)
     {
@@ -262,7 +262,7 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set AppId value
      * @param string $appId
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setAppId($appId = null)
     {
@@ -275,7 +275,7 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Get Sources value
-     * @return \Api\ArrayType\ApiArrayOfSourceType
+     * @return \ArrayType\ApiArrayOfSourceType
      */
     public function getSources()
     {
@@ -283,17 +283,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Sources value
-     * @param \Api\ArrayType\ApiArrayOfSourceType $sources
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \ArrayType\ApiArrayOfSourceType $sources
+     * @return \StructType\ApiSearchRequest
      */
-    public function setSources(\Api\ArrayType\ApiArrayOfSourceType $sources = null)
+    public function setSources(\ArrayType\ApiArrayOfSourceType $sources = null)
     {
         $this->Sources = $sources;
         return $this;
     }
     /**
      * Get parameters value
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function getParameters()
     {
@@ -301,10 +301,10 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set parameters value
-     * @param \Api\StructType\ApiSearchRequest $parameters
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \StructType\ApiSearchRequest $parameters
+     * @return \StructType\ApiSearchRequest
      */
-    public function setParameters(\Api\StructType\ApiSearchRequest $parameters = null)
+    public function setParameters(\StructType\ApiSearchRequest $parameters = null)
     {
         $this->parameters = $parameters;
         return $this;
@@ -320,7 +320,7 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set Version value
      * @param string $version
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setVersion($version = '2.2')
     {
@@ -342,7 +342,7 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set Market value
      * @param string $market
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setMarket($market = null)
     {
@@ -364,7 +364,7 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set UILanguage value
      * @param string $uILanguage
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setUILanguage($uILanguage = null)
     {
@@ -385,17 +385,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Adult value
-     * @uses \Api\EnumType\ApiAdultOption::valueIsValid()
-     * @uses \Api\EnumType\ApiAdultOption::getValidValues()
+     * @uses \EnumType\ApiAdultOption::valueIsValid()
+     * @uses \EnumType\ApiAdultOption::getValidValues()
      * @throws \InvalidArgumentException
      * @param string $adult
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setAdult($adult = null)
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiAdultOption::valueIsValid($adult)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdultOption', is_array($adult) ? implode(', ', $adult) : var_export($adult, true), implode(', ', \Api\EnumType\ApiAdultOption::getValidValues())), __LINE__);
+        if (!\EnumType\ApiAdultOption::valueIsValid($adult)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiAdultOption', is_array($adult) ? implode(', ', $adult) : var_export($adult, true), implode(', ', \EnumType\ApiAdultOption::getValidValues())), __LINE__);
         }
         $this->Adult = $adult;
         return $this;
@@ -411,7 +411,7 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set Latitude value
      * @param float $latitude
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setLatitude($latitude = null)
     {
@@ -433,7 +433,7 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set Longitude value
      * @param float $longitude
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setLongitude($longitude = null)
     {
@@ -455,7 +455,7 @@ class ApiSearchRequest extends AbstractStructBase
     /**
      * Set Radius value
      * @param float $radius
-     * @return \Api\StructType\ApiSearchRequest
+     * @return \StructType\ApiSearchRequest
      */
     public function setRadius($radius = null)
     {
@@ -468,7 +468,7 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Get Options value
-     * @return \Api\ArrayType\ApiArrayOfSearchOption|null
+     * @return \ArrayType\ApiArrayOfSearchOption|null
      */
     public function getOptions()
     {
@@ -476,17 +476,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Options value
-     * @param \Api\ArrayType\ApiArrayOfSearchOption $options
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \ArrayType\ApiArrayOfSearchOption $options
+     * @return \StructType\ApiSearchRequest
      */
-    public function setOptions(\Api\ArrayType\ApiArrayOfSearchOption $options = null)
+    public function setOptions(\ArrayType\ApiArrayOfSearchOption $options = null)
     {
         $this->Options = $options;
         return $this;
     }
     /**
      * Get Web value
-     * @return \Api\StructType\ApiWebRequest|null
+     * @return \StructType\ApiWebRequest|null
      */
     public function getWeb()
     {
@@ -494,17 +494,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Web value
-     * @param \Api\StructType\ApiWebRequest $web
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \StructType\ApiWebRequest $web
+     * @return \StructType\ApiSearchRequest
      */
-    public function setWeb(\Api\StructType\ApiWebRequest $web = null)
+    public function setWeb(\StructType\ApiWebRequest $web = null)
     {
         $this->Web = $web;
         return $this;
     }
     /**
      * Get Image value
-     * @return \Api\StructType\ApiImageRequest|null
+     * @return \StructType\ApiImageRequest|null
      */
     public function getImage()
     {
@@ -512,17 +512,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Image value
-     * @param \Api\StructType\ApiImageRequest $image
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \StructType\ApiImageRequest $image
+     * @return \StructType\ApiSearchRequest
      */
-    public function setImage(\Api\StructType\ApiImageRequest $image = null)
+    public function setImage(\StructType\ApiImageRequest $image = null)
     {
         $this->Image = $image;
         return $this;
     }
     /**
      * Get Phonebook value
-     * @return \Api\StructType\ApiPhonebookRequest|null
+     * @return \StructType\ApiPhonebookRequest|null
      */
     public function getPhonebook()
     {
@@ -530,17 +530,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Phonebook value
-     * @param \Api\StructType\ApiPhonebookRequest $phonebook
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \StructType\ApiPhonebookRequest $phonebook
+     * @return \StructType\ApiSearchRequest
      */
-    public function setPhonebook(\Api\StructType\ApiPhonebookRequest $phonebook = null)
+    public function setPhonebook(\StructType\ApiPhonebookRequest $phonebook = null)
     {
         $this->Phonebook = $phonebook;
         return $this;
     }
     /**
      * Get Video value
-     * @return \Api\StructType\ApiVideoRequest|null
+     * @return \StructType\ApiVideoRequest|null
      */
     public function getVideo()
     {
@@ -548,17 +548,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Video value
-     * @param \Api\StructType\ApiVideoRequest $video
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \StructType\ApiVideoRequest $video
+     * @return \StructType\ApiSearchRequest
      */
-    public function setVideo(\Api\StructType\ApiVideoRequest $video = null)
+    public function setVideo(\StructType\ApiVideoRequest $video = null)
     {
         $this->Video = $video;
         return $this;
     }
     /**
      * Get News value
-     * @return \Api\StructType\ApiNewsRequest|null
+     * @return \StructType\ApiNewsRequest|null
      */
     public function getNews()
     {
@@ -566,17 +566,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set News value
-     * @param \Api\StructType\ApiNewsRequest $news
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \StructType\ApiNewsRequest $news
+     * @return \StructType\ApiSearchRequest
      */
-    public function setNews(\Api\StructType\ApiNewsRequest $news = null)
+    public function setNews(\StructType\ApiNewsRequest $news = null)
     {
         $this->News = $news;
         return $this;
     }
     /**
      * Get MobileWeb value
-     * @return \Api\StructType\ApiMobileWebRequest|null
+     * @return \StructType\ApiMobileWebRequest|null
      */
     public function getMobileWeb()
     {
@@ -584,17 +584,17 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set MobileWeb value
-     * @param \Api\StructType\ApiMobileWebRequest $mobileWeb
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \StructType\ApiMobileWebRequest $mobileWeb
+     * @return \StructType\ApiSearchRequest
      */
-    public function setMobileWeb(\Api\StructType\ApiMobileWebRequest $mobileWeb = null)
+    public function setMobileWeb(\StructType\ApiMobileWebRequest $mobileWeb = null)
     {
         $this->MobileWeb = $mobileWeb;
         return $this;
     }
     /**
      * Get Translation value
-     * @return \Api\StructType\ApiTranslationRequest|null
+     * @return \StructType\ApiTranslationRequest|null
      */
     public function getTranslation()
     {
@@ -602,10 +602,10 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Set Translation value
-     * @param \Api\StructType\ApiTranslationRequest $translation
-     * @return \Api\StructType\ApiSearchRequest
+     * @param \StructType\ApiTranslationRequest $translation
+     * @return \StructType\ApiSearchRequest
      */
-    public function setTranslation(\Api\StructType\ApiTranslationRequest $translation = null)
+    public function setTranslation(\StructType\ApiTranslationRequest $translation = null)
     {
         $this->Translation = $translation;
         return $this;

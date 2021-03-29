@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\ServiceType;
+namespace ServiceType;
 
 use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -21,7 +21,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $job_id
-     * @return \Api\StructType\ApiSaintresult[]|bool
+     * @return \StructType\ApiSaintresult[]|bool
      */
     public function Saint_CheckJobStatus($job_id)
     {
@@ -49,7 +49,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @param string $overwrite
      * @param string $relation_id
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiSaint_ftp_info|bool
+     * @return \StructType\ApiSaint_ftp_info|bool
      */
     public function Saint_CreateFTP($description, $email, $export, $overwrite, $relation_id, array $rsid_list)
     {
@@ -127,7 +127,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $file_id
      * @param string $segment_id
-     * @return \Api\StructType\ApiPagedetail[]|bool
+     * @return \StructType\ApiPagedetail[]|bool
      */
     public function Saint_ExportGetFileSegment($file_id, $segment_id)
     {
@@ -151,7 +151,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $report_suite_array
-     * @return \Api\StructType\ApiCompatability[]|bool
+     * @return \StructType\ApiCompatability[]|bool
      */
     public function Saint_GetCompatabiltyMetrics(array $report_suite_array)
     {
@@ -175,7 +175,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $relation_id
      * @param string[] $report_suite_array
-     * @return \Api\StructType\ApiExport_filter[]|bool
+     * @return \StructType\ApiExport_filter[]|bool
      */
     public function Saint_GetFilters($relation_id, array $report_suite_array)
     {
@@ -291,7 +291,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $job_id
      * @param string $page
-     * @param \Api\StructType\ApiRow[] $rows
+     * @param \StructType\ApiRow[] $rows
      * @return string|bool
      */
     public function Saint_ImportPopulateJob($job_id, $page, array $rows)
@@ -316,7 +316,7 @@ class ApiSaint extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return \Api\StructType\ApiSaint_ftp[]|bool
+     * @return \StructType\ApiSaint_ftp[]|bool
      */
     public function Saint_ListFTP()
     {
@@ -331,7 +331,7 @@ class ApiSaint extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return int|string|\Api\StructType\ApiCompatability[]|\Api\StructType\ApiExport_filter[]|\Api\StructType\ApiPagedetail[]|\Api\StructType\ApiSaintresult[]|\Api\StructType\ApiSaint_ftp[]|\Api\StructType\ApiSaint_ftp_info
+     * @return int|string|\StructType\ApiCompatability[]|\StructType\ApiExport_filter[]|\StructType\ApiPagedetail[]|\StructType\ApiSaintresult[]|\StructType\ApiSaint_ftp[]|\StructType\ApiSaint_ftp_info
      */
     public function getResult()
     {

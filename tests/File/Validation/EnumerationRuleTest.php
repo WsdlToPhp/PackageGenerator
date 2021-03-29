@@ -7,7 +7,7 @@ class EnumerationRuleTest extends AbstractRuleTest
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value(s) 'foo', please use one of: Off, Moderate, Strict from enumeration class \Api\EnumType\ApiAdultOption
+     * @expectedExceptionMessage Invalid value(s) 'foo', please use one of: Off, Moderate, Strict from enumeration class \EnumType\ApiAdultOption
      */
     public function testSetAdultValueWithInvalidValueMustThrowAnException()
     {
@@ -23,7 +23,7 @@ class EnumerationRuleTest extends AbstractRuleTest
     {
         $instance = self::getBingSearchRequestInstance();
 
-        $this->assertSame($instance, $instance->setAdult(\Api\EnumType\ApiAdultOption::VALUE_MODERATE));
+        $this->assertSame($instance, $instance->setAdult(\EnumType\ApiAdultOption::VALUE_MODERATE));
     }
 
     /**

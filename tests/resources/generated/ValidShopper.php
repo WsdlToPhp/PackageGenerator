@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -18,7 +18,7 @@ class ApiShopper extends AbstractStructBase
      * - documentation: Shopper's full name.
      * - maxOccurs: 1
      * - minOccurs: 1
-     * @var \Api\StructType\ApiName
+     * @var \StructType\ApiName
      */
     public $name;
     /**
@@ -40,7 +40,7 @@ class ApiShopper extends AbstractStructBase
      * - documentation: Shopper's preferred language.
      * - maxOccurs: 1
      * - minOccurs: 1
-     * @var \Api\StructType\ApiLanguage
+     * @var \StructType\ApiLanguage
      */
     public $language;
     /**
@@ -121,9 +121,9 @@ class ApiShopper extends AbstractStructBase
      * @uses ApiShopper::setPhoneNumber()
      * @uses ApiShopper::setMobilePhoneNumber()
      * @uses ApiShopper::setIpAddress()
-     * @param \Api\StructType\ApiName $name
+     * @param \StructType\ApiName $name
      * @param string $email
-     * @param \Api\StructType\ApiLanguage $language
+     * @param \StructType\ApiLanguage $language
      * @param string $gender
      * @param string $id
      * @param string $dateOfBirth
@@ -131,7 +131,7 @@ class ApiShopper extends AbstractStructBase
      * @param string $mobilePhoneNumber
      * @param string $ipAddress
      */
-    public function __construct(\Api\StructType\ApiName $name = null, $email = null, \Api\StructType\ApiLanguage $language = null, $gender = null, $id = null, $dateOfBirth = null, $phoneNumber = null, $mobilePhoneNumber = null, $ipAddress = null)
+    public function __construct(\StructType\ApiName $name = null, $email = null, \StructType\ApiLanguage $language = null, $gender = null, $id = null, $dateOfBirth = null, $phoneNumber = null, $mobilePhoneNumber = null, $ipAddress = null)
     {
         $this
             ->setName($name)
@@ -146,7 +146,7 @@ class ApiShopper extends AbstractStructBase
     }
     /**
      * Get name value
-     * @return \Api\StructType\ApiName
+     * @return \StructType\ApiName
      */
     public function getName()
     {
@@ -154,10 +154,10 @@ class ApiShopper extends AbstractStructBase
     }
     /**
      * Set name value
-     * @param \Api\StructType\ApiName $name
-     * @return \Api\StructType\ApiShopper
+     * @param \StructType\ApiName $name
+     * @return \StructType\ApiShopper
      */
-    public function setName(\Api\StructType\ApiName $name = null)
+    public function setName(\StructType\ApiName $name = null)
     {
         $this->name = $name;
         return $this;
@@ -173,7 +173,7 @@ class ApiShopper extends AbstractStructBase
     /**
      * Set email value
      * @param string $email
-     * @return \Api\StructType\ApiShopper
+     * @return \StructType\ApiShopper
      */
     public function setEmail($email = null)
     {
@@ -198,7 +198,7 @@ class ApiShopper extends AbstractStructBase
     }
     /**
      * Get language value
-     * @return \Api\StructType\ApiLanguage
+     * @return \StructType\ApiLanguage
      */
     public function getLanguage()
     {
@@ -206,10 +206,10 @@ class ApiShopper extends AbstractStructBase
     }
     /**
      * Set language value
-     * @param \Api\StructType\ApiLanguage $language
-     * @return \Api\StructType\ApiShopper
+     * @param \StructType\ApiLanguage $language
+     * @return \StructType\ApiShopper
      */
-    public function setLanguage(\Api\StructType\ApiLanguage $language = null)
+    public function setLanguage(\StructType\ApiLanguage $language = null)
     {
         $this->language = $language;
         return $this;
@@ -224,17 +224,17 @@ class ApiShopper extends AbstractStructBase
     }
     /**
      * Set gender value
-     * @uses \Api\EnumType\ApiGender::valueIsValid()
-     * @uses \Api\EnumType\ApiGender::getValidValues()
+     * @uses \EnumType\ApiGender::valueIsValid()
+     * @uses \EnumType\ApiGender::getValidValues()
      * @throws \InvalidArgumentException
      * @param string $gender
-     * @return \Api\StructType\ApiShopper
+     * @return \StructType\ApiShopper
      */
     public function setGender($gender = null)
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiGender::valueIsValid($gender)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiGender', is_array($gender) ? implode(', ', $gender) : var_export($gender, true), implode(', ', \Api\EnumType\ApiGender::getValidValues())), __LINE__);
+        if (!\EnumType\ApiGender::valueIsValid($gender)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiGender', is_array($gender) ? implode(', ', $gender) : var_export($gender, true), implode(', ', \EnumType\ApiGender::getValidValues())), __LINE__);
         }
         $this->gender = $gender;
         return $this;
@@ -250,7 +250,7 @@ class ApiShopper extends AbstractStructBase
     /**
      * Set id value
      * @param string $id
-     * @return \Api\StructType\ApiShopper
+     * @return \StructType\ApiShopper
      */
     public function setId($id = null)
     {
@@ -280,7 +280,7 @@ class ApiShopper extends AbstractStructBase
     /**
      * Set dateOfBirth value
      * @param string $dateOfBirth
-     * @return \Api\StructType\ApiShopper
+     * @return \StructType\ApiShopper
      */
     public function setDateOfBirth($dateOfBirth = null)
     {
@@ -310,7 +310,7 @@ class ApiShopper extends AbstractStructBase
     /**
      * Set phoneNumber value
      * @param string $phoneNumber
-     * @return \Api\StructType\ApiShopper
+     * @return \StructType\ApiShopper
      */
     public function setPhoneNumber($phoneNumber = null)
     {
@@ -340,7 +340,7 @@ class ApiShopper extends AbstractStructBase
     /**
      * Set mobilePhoneNumber value
      * @param string $mobilePhoneNumber
-     * @return \Api\StructType\ApiShopper
+     * @return \StructType\ApiShopper
      */
     public function setMobilePhoneNumber($mobilePhoneNumber = null)
     {
@@ -370,7 +370,7 @@ class ApiShopper extends AbstractStructBase
     /**
      * Set ipAddress value
      * @param string $ipAddress
-     * @return \Api\StructType\ApiShopper
+     * @return \StructType\ApiShopper
      */
     public function setIpAddress($ipAddress = null)
     {

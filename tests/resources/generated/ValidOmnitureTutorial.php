@@ -19,12 +19,12 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 $options = array(
     \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Api\ApiClassMap::get(),
+    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => ApiClassMap::get(),
 );
 /**
  * Samples for Code ServiceType
  */
-$code = new \Api\ServiceType\ApiCode($options);
+$code = new \ServiceType\ApiCode($options);
 /**
  * Sample call for CodeManager_DeleteCodeArchive operation/method
  */
@@ -60,7 +60,7 @@ if ($code->CodeManager_SaveCodeArchive($archive_description, $archive_id, $archi
 /**
  * Samples for Company ServiceType
  */
-$company = new \Api\ServiceType\ApiCompany($options);
+$company = new \ServiceType\ApiCompany($options);
 /**
  * Sample call for Company_CancelQueueItem operation/method
  */
@@ -144,7 +144,7 @@ if ($company->Company_ResetTokenCount($auth_key) !== false) {
 /**
  * Samples for Dashboards ServiceType
  */
-$dashboards = new \Api\ServiceType\ApiDashboards($options);
+$dashboards = new \ServiceType\ApiDashboards($options);
 /**
  * Sample call for Dashboards_GetDashboardAPI operation/method
  */
@@ -164,7 +164,7 @@ if ($dashboards->Dashboards_GetReportletDataAPI($reportlet_id) !== false) {
 /**
  * Samples for Data ServiceType
  */
-$data = new \Api\ServiceType\ApiData($options);
+$data = new \ServiceType\ApiData($options);
 /**
  * Sample call for DataSource_AppendDataBlock operation/method
  */
@@ -248,7 +248,7 @@ if ($data->DataSource_Restart($dataSourceID, $reportSuiteID) !== false) {
 /**
  * Sample call for DataSource_SetupFull operation/method
  */
-if ($data->DataSource_SetupFull($dataSourceID, new \Api\StructType\ApiDs_full_settings(), $reportSuiteID) !== false) {
+if ($data->DataSource_SetupFull($dataSourceID, new \StructType\ApiDs_full_settings(), $reportSuiteID) !== false) {
     print_r($data->getResult());
 } else {
     print_r($data->getLastError());
@@ -256,7 +256,7 @@ if ($data->DataSource_SetupFull($dataSourceID, new \Api\StructType\ApiDs_full_se
 /**
  * Sample call for DataSource_SetupGeneric operation/method
  */
-if ($data->DataSource_SetupGeneric($dataSourceID, new \Api\StructType\ApiDs_generic_settings(), $dataSourceType, $reportSuiteID) !== false) {
+if ($data->DataSource_SetupGeneric($dataSourceID, new \StructType\ApiDs_generic_settings(), $dataSourceType, $reportSuiteID) !== false) {
     print_r($data->getResult());
 } else {
     print_r($data->getLastError());
@@ -264,7 +264,7 @@ if ($data->DataSource_SetupGeneric($dataSourceID, new \Api\StructType\ApiDs_gene
 /**
  * Sample call for DataSource_SetupTraffic operation/method
  */
-if ($data->DataSource_SetupTraffic($dataSourceID, new \Api\StructType\ApiDs_traffic_settings(), $reportSuiteID) !== false) {
+if ($data->DataSource_SetupTraffic($dataSourceID, new \StructType\ApiDs_traffic_settings(), $reportSuiteID) !== false) {
     print_r($data->getResult());
 } else {
     print_r($data->getLastError());
@@ -272,7 +272,7 @@ if ($data->DataSource_SetupTraffic($dataSourceID, new \Api\StructType\ApiDs_traf
 /**
  * Sample call for DataSource_SetupWebLog operation/method
  */
-if ($data->DataSource_SetupWebLog($dataSourceID, new \Api\StructType\ApiDs_weblog_settings(), $reportSuiteID) !== false) {
+if ($data->DataSource_SetupWebLog($dataSourceID, new \StructType\ApiDs_weblog_settings(), $reportSuiteID) !== false) {
     print_r($data->getResult());
 } else {
     print_r($data->getLastError());
@@ -296,7 +296,7 @@ if ($data->DataWarehouse_CheckRequest($Request_Id) !== false) {
 /**
  * Sample call for DataWarehouse_CreateSegment operation/method
  */
-if ($data->DataWarehouse_CreateSegment($hidden, $rsid, new \Api\StructType\ApiData_warehouse_segment()) !== false) {
+if ($data->DataWarehouse_CreateSegment($hidden, $rsid, new \StructType\ApiData_warehouse_segment()) !== false) {
     print_r($data->getResult());
 } else {
     print_r($data->getLastError());
@@ -328,7 +328,7 @@ if ($data->DataWarehouse_GetSegments($rsid) !== false) {
 /**
  * Sample call for DataWarehouse_ReplaceSegment operation/method
  */
-if ($data->DataWarehouse_ReplaceSegment($id, $rsid, new \Api\StructType\ApiData_warehouse_segment()) !== false) {
+if ($data->DataWarehouse_ReplaceSegment($id, $rsid, new \StructType\ApiData_warehouse_segment()) !== false) {
     print_r($data->getResult());
 } else {
     print_r($data->getLastError());
@@ -344,7 +344,7 @@ if ($data->DataWarehouse_Request($Breakdown_List, $Contact_Name, $Contact_Phone,
 /**
  * Sample call for DataWarehouse_VerifySegment operation/method
  */
-if ($data->DataWarehouse_VerifySegment(new \Api\StructType\ApiData_warehouse_segment()) !== false) {
+if ($data->DataWarehouse_VerifySegment(new \StructType\ApiData_warehouse_segment()) !== false) {
     print_r($data->getResult());
 } else {
     print_r($data->getLastError());
@@ -352,7 +352,7 @@ if ($data->DataWarehouse_VerifySegment(new \Api\StructType\ApiData_warehouse_seg
 /**
  * Samples for Delivery ServiceType
  */
-$delivery = new \Api\ServiceType\ApiDelivery($options);
+$delivery = new \ServiceType\ApiDelivery($options);
 /**
  * Sample call for DeliveryList_Delete operation/method
  */
@@ -380,7 +380,7 @@ if ($delivery->DeliveryList_Save($delivery_list_name, $dist_list_id) !== false) 
 /**
  * Samples for Discover ServiceType
  */
-$discover = new \Api\ServiceType\ApiDiscover($options);
+$discover = new \ServiceType\ApiDiscover($options);
 /**
  * Sample call for Discover_GetSegments operation/method
  */
@@ -392,7 +392,7 @@ if ($discover->Discover_GetSegments($end_date, $rsid, $start_date) !== false) {
 /**
  * Sample call for Discover_QueueDiscoverOvertime operation/method
  */
-if ($discover->Discover_QueueDiscoverOvertime(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($discover->Discover_QueueDiscoverOvertime(new \StructType\ApiReportDescription()) !== false) {
     print_r($discover->getResult());
 } else {
     print_r($discover->getLastError());
@@ -400,7 +400,7 @@ if ($discover->Discover_QueueDiscoverOvertime(new \Api\StructType\ApiReportDescr
 /**
  * Sample call for Discover_QueueDiscoverRanked operation/method
  */
-if ($discover->Discover_QueueDiscoverRanked(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($discover->Discover_QueueDiscoverRanked(new \StructType\ApiReportDescription()) !== false) {
     print_r($discover->getResult());
 } else {
     print_r($discover->getLastError());
@@ -408,7 +408,7 @@ if ($discover->Discover_QueueDiscoverRanked(new \Api\StructType\ApiReportDescrip
 /**
  * Sample call for Discover_QueueDiscoverTrended operation/method
  */
-if ($discover->Discover_QueueDiscoverTrended(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($discover->Discover_QueueDiscoverTrended(new \StructType\ApiReportDescription()) !== false) {
     print_r($discover->getResult());
 } else {
     print_r($discover->getLastError());
@@ -416,7 +416,7 @@ if ($discover->Discover_QueueDiscoverTrended(new \Api\StructType\ApiReportDescri
 /**
  * Samples for Logs ServiceType
  */
-$logs = new \Api\ServiceType\ApiLogs($options);
+$logs = new \ServiceType\ApiLogs($options);
 /**
  * Sample call for Logs_GetAdminConsoleCompanyLog operation/method
  */
@@ -444,7 +444,7 @@ if ($logs->Logs_GetUsageLog($date_from, $date_to, $event_details, $event_type, $
 /**
  * Samples for Permissions ServiceType
  */
-$permissions = new \Api\ServiceType\ApiPermissions($options);
+$permissions = new \ServiceType\ApiPermissions($options);
 /**
  * Sample call for Permissions_AddLogin operation/method
  */
@@ -560,7 +560,7 @@ if ($permissions->Permissions_HasPrivilege($privilegeToken) !== false) {
 /**
  * Sample call for Permissions_SaveGroup operation/method
  */
-if ($permissions->Permissions_SaveGroup($group_description, $group_name, $group_type, $groupid, $perm_info, new \Api\StructType\ApiReport_categories(), $report_id_list, $rsid_list, $user_list) !== false) {
+if ($permissions->Permissions_SaveGroup($group_description, $group_name, $group_type, $groupid, $perm_info, new \StructType\ApiReport_categories(), $report_id_list, $rsid_list, $user_list) !== false) {
     print_r($permissions->getResult());
 } else {
     print_r($permissions->getLastError());
@@ -584,7 +584,7 @@ if ($permissions->Permissions_SaveReportSuiteGroups($rsid, $selected_groups) !==
 /**
  * Samples for Report ServiceType
  */
-$report = new \Api\ServiceType\ApiReport($options);
+$report = new \ServiceType\ApiReport($options);
 /**
  * Sample call for Report_CancelReport operation/method
  */
@@ -596,7 +596,7 @@ if ($report->Report_CancelReport($reportID) !== false) {
 /**
  * Sample call for Report_GetElementNames operation/method
  */
-if ($report->Report_GetElementNames(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($report->Report_GetElementNames(new \StructType\ApiReportDescription()) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -604,7 +604,7 @@ if ($report->Report_GetElementNames(new \Api\StructType\ApiReportDescription()) 
 /**
  * Sample call for Report_GetOvertimeReport operation/method
  */
-if ($report->Report_GetOvertimeReport(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($report->Report_GetOvertimeReport(new \StructType\ApiReportDescription()) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -612,7 +612,7 @@ if ($report->Report_GetOvertimeReport(new \Api\StructType\ApiReportDescription()
 /**
  * Sample call for Report_GetRankedReport operation/method
  */
-if ($report->Report_GetRankedReport(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($report->Report_GetRankedReport(new \StructType\ApiReportDescription()) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -644,7 +644,7 @@ if ($report->Report_GetStatus($reportID) !== false) {
 /**
  * Sample call for Report_GetTrendedReport operation/method
  */
-if ($report->Report_GetTrendedReport(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($report->Report_GetTrendedReport(new \StructType\ApiReportDescription()) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -652,7 +652,7 @@ if ($report->Report_GetTrendedReport(new \Api\StructType\ApiReportDescription())
 /**
  * Sample call for Report_QueueOvertime operation/method
  */
-if ($report->Report_QueueOvertime(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($report->Report_QueueOvertime(new \StructType\ApiReportDescription()) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -660,7 +660,7 @@ if ($report->Report_QueueOvertime(new \Api\StructType\ApiReportDescription()) !=
 /**
  * Sample call for Report_QueueRanked operation/method
  */
-if ($report->Report_QueueRanked(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($report->Report_QueueRanked(new \StructType\ApiReportDescription()) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -668,7 +668,7 @@ if ($report->Report_QueueRanked(new \Api\StructType\ApiReportDescription()) !== 
 /**
  * Sample call for Report_QueueSCMRanked operation/method
  */
-if ($report->Report_QueueSCMRanked(new \Api\StructType\ApiSCM_reportDescription()) !== false) {
+if ($report->Report_QueueSCMRanked(new \StructType\ApiSCM_reportDescription()) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -676,7 +676,7 @@ if ($report->Report_QueueSCMRanked(new \Api\StructType\ApiSCM_reportDescription(
 /**
  * Sample call for Report_QueueTrended operation/method
  */
-if ($report->Report_QueueTrended(new \Api\StructType\ApiReportDescription()) !== false) {
+if ($report->Report_QueueTrended(new \StructType\ApiReportDescription()) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -1285,7 +1285,7 @@ if ($report->ReportSuite_SaveIPObfuscation($ip_obfuscation, $rsid_list) !== fals
 /**
  * Sample call for ReportSuite_SaveMarketingChannelCost operation/method
  */
-if ($report->ReportSuite_SaveMarketingChannelCost(new \Api\StructType\ApiCost_item(), $rsid_list) !== false) {
+if ($report->ReportSuite_SaveMarketingChannelCost(new \StructType\ApiCost_item(), $rsid_list) !== false) {
     print_r($report->getResult());
 } else {
     print_r($report->getLastError());
@@ -1429,7 +1429,7 @@ if ($report->ReportSuite_SaveVideoReporting($rsid_list) !== false) {
 /**
  * Samples for Saint ServiceType
  */
-$saint = new \Api\ServiceType\ApiSaint($options);
+$saint = new \ServiceType\ApiSaint($options);
 /**
  * Sample call for Saint_CheckJobStatus operation/method
  */
@@ -1521,11 +1521,11 @@ if ($saint->Saint_ListFTP() !== false) {
 /**
  * Samples for Scheduling ServiceType
  */
-$scheduling = new \Api\ServiceType\ApiScheduling($options);
+$scheduling = new \ServiceType\ApiScheduling($options);
 /**
  * Sample call for Scheduling_CreatePublishedReport operation/method
  */
-if ($scheduling->Scheduling_CreatePublishedReport($location, $product, new \Api\StructType\ApiScheduledReport(), $workbook) !== false) {
+if ($scheduling->Scheduling_CreatePublishedReport($location, $product, new \StructType\ApiScheduledReport(), $workbook) !== false) {
     print_r($scheduling->getResult());
 } else {
     print_r($scheduling->getLastError());
@@ -1589,7 +1589,7 @@ if ($scheduling->Scheduling_ReRunReport($id) !== false) {
 /**
  * Sample call for Scheduling_UpdatePublishedReport operation/method
  */
-if ($scheduling->Scheduling_UpdatePublishedReport($product, new \Api\StructType\ApiScheduledReport(), $workbook) !== false) {
+if ($scheduling->Scheduling_UpdatePublishedReport($product, new \StructType\ApiScheduledReport(), $workbook) !== false) {
     print_r($scheduling->getResult());
 } else {
     print_r($scheduling->getLastError());
@@ -1605,7 +1605,7 @@ if ($scheduling->Scheduling_UploadWorkbook($description, $filename, $location, $
 /**
  * Samples for Survey ServiceType
  */
-$survey = new \Api\ServiceType\ApiSurvey($options);
+$survey = new \ServiceType\ApiSurvey($options);
 /**
  * Sample call for Survey_GetSummaryList operation/method
  */
@@ -1617,7 +1617,7 @@ if ($survey->Survey_GetSummaryList($rsid, $status_filter) !== false) {
 /**
  * Samples for User ServiceType
  */
-$user = new \Api\ServiceType\ApiUser($options);
+$user = new \ServiceType\ApiUser($options);
 /**
  * Sample call for User_GetBookmarkFolders operation/method
  */

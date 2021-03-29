@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -90,7 +90,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiStatistics
+     * @var \StructType\ApiStatistics
      */
     public $Statistics;
     /**
@@ -106,7 +106,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiFundsParam
+     * @var \StructType\ApiFundsParam
      */
     public $Funds;
     /**
@@ -114,7 +114,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiCampaignAssistant
+     * @var \StructType\ApiCampaignAssistant
      */
     public $RepresentedBy;
     /**
@@ -123,7 +123,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\StructType\ApiDailyBudget
+     * @var \StructType\ApiDailyBudget
      */
     public $DailyBudget;
     /**
@@ -141,7 +141,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\ArrayType\ApiArrayOfString
+     * @var \ArrayType\ApiArrayOfString
      */
     public $NegativeKeywords;
     /**
@@ -150,7 +150,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\ArrayType\ApiArrayOfString
+     * @var \ArrayType\ApiArrayOfString
      */
     public $BlockedIps;
     /**
@@ -159,7 +159,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\ArrayType\ApiArrayOfString
+     * @var \ArrayType\ApiArrayOfString
      */
     public $ExcludedSites;
     /**
@@ -167,7 +167,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiTextCampaignGetItem
+     * @var \StructType\ApiTextCampaignGetItem
      */
     public $TextCampaign;
     /**
@@ -175,7 +175,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiMobileAppCampaignGetItem
+     * @var \StructType\ApiMobileAppCampaignGetItem
      */
     public $MobileAppCampaign;
     /**
@@ -183,7 +183,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiDynamicTextCampaignGetItem
+     * @var \StructType\ApiDynamicTextCampaignGetItem
      */
     public $DynamicTextCampaign;
     /**
@@ -218,20 +218,20 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * @param string $statusPayment
      * @param string $statusClarification
      * @param int $sourceId
-     * @param \Api\StructType\ApiStatistics $statistics
+     * @param \StructType\ApiStatistics $statistics
      * @param string $currency
-     * @param \Api\StructType\ApiFundsParam $funds
-     * @param \Api\StructType\ApiCampaignAssistant $representedBy
-     * @param \Api\StructType\ApiDailyBudget $dailyBudget
+     * @param \StructType\ApiFundsParam $funds
+     * @param \StructType\ApiCampaignAssistant $representedBy
+     * @param \StructType\ApiDailyBudget $dailyBudget
      * @param string $endDate
-     * @param \Api\ArrayType\ApiArrayOfString $negativeKeywords
-     * @param \Api\ArrayType\ApiArrayOfString $blockedIps
-     * @param \Api\ArrayType\ApiArrayOfString $excludedSites
-     * @param \Api\StructType\ApiTextCampaignGetItem $textCampaign
-     * @param \Api\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
-     * @param \Api\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
+     * @param \ArrayType\ApiArrayOfString $negativeKeywords
+     * @param \ArrayType\ApiArrayOfString $blockedIps
+     * @param \ArrayType\ApiArrayOfString $excludedSites
+     * @param \StructType\ApiTextCampaignGetItem $textCampaign
+     * @param \StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
+     * @param \StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
      */
-    public function __construct($id = null, $name = null, $startDate = null, $type = null, $status = null, $state = null, $statusPayment = null, $statusClarification = null, $sourceId = null, \Api\StructType\ApiStatistics $statistics = null, $currency = null, \Api\StructType\ApiFundsParam $funds = null, \Api\StructType\ApiCampaignAssistant $representedBy = null, \Api\StructType\ApiDailyBudget $dailyBudget = null, $endDate = null, \Api\ArrayType\ApiArrayOfString $negativeKeywords = null, \Api\ArrayType\ApiArrayOfString $blockedIps = null, \Api\ArrayType\ApiArrayOfString $excludedSites = null, \Api\StructType\ApiTextCampaignGetItem $textCampaign = null, \Api\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null, \Api\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null)
+    public function __construct($id = null, $name = null, $startDate = null, $type = null, $status = null, $state = null, $statusPayment = null, $statusClarification = null, $sourceId = null, \StructType\ApiStatistics $statistics = null, $currency = null, \StructType\ApiFundsParam $funds = null, \StructType\ApiCampaignAssistant $representedBy = null, \StructType\ApiDailyBudget $dailyBudget = null, $endDate = null, \ArrayType\ApiArrayOfString $negativeKeywords = null, \ArrayType\ApiArrayOfString $blockedIps = null, \ArrayType\ApiArrayOfString $excludedSites = null, \StructType\ApiTextCampaignGetItem $textCampaign = null, \StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null, \StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null)
     {
         $this
             ->setId($id)
@@ -267,7 +267,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set Id value
      * @param int $id
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setId($id = null)
     {
@@ -285,7 +285,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set Name value
      * @param string $name
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setName($name = null)
     {
@@ -303,7 +303,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set StartDate value
      * @param string $startDate
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setStartDate($startDate = null)
     {
@@ -321,7 +321,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set Type value
      * @param string $type
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setType($type = null)
     {
@@ -339,7 +339,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set Status value
      * @param string $status
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setStatus($status = null)
     {
@@ -357,7 +357,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set State value
      * @param string $state
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setState($state = null)
     {
@@ -375,7 +375,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set StatusPayment value
      * @param string $statusPayment
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setStatusPayment($statusPayment = null)
     {
@@ -393,7 +393,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set StatusClarification value
      * @param string $statusClarification
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setStatusClarification($statusClarification = null)
     {
@@ -416,7 +416,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
      * @param int $sourceId
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setSourceId($sourceId = null)
     {
@@ -429,7 +429,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Get Statistics value
-     * @return \Api\StructType\ApiStatistics|null
+     * @return \StructType\ApiStatistics|null
      */
     public function getStatistics()
     {
@@ -437,10 +437,10 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set Statistics value
-     * @param \Api\StructType\ApiStatistics $statistics
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \StructType\ApiStatistics $statistics
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setStatistics(\Api\StructType\ApiStatistics $statistics = null)
+    public function setStatistics(\StructType\ApiStatistics $statistics = null)
     {
         $this->Statistics = $statistics;
         return $this;
@@ -456,7 +456,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     /**
      * Set Currency value
      * @param string $currency
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setCurrency($currency = null)
     {
@@ -465,7 +465,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Get Funds value
-     * @return \Api\StructType\ApiFundsParam|null
+     * @return \StructType\ApiFundsParam|null
      */
     public function getFunds()
     {
@@ -473,17 +473,17 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set Funds value
-     * @param \Api\StructType\ApiFundsParam $funds
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \StructType\ApiFundsParam $funds
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setFunds(\Api\StructType\ApiFundsParam $funds = null)
+    public function setFunds(\StructType\ApiFundsParam $funds = null)
     {
         $this->Funds = $funds;
         return $this;
     }
     /**
      * Get RepresentedBy value
-     * @return \Api\StructType\ApiCampaignAssistant|null
+     * @return \StructType\ApiCampaignAssistant|null
      */
     public function getRepresentedBy()
     {
@@ -491,10 +491,10 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set RepresentedBy value
-     * @param \Api\StructType\ApiCampaignAssistant $representedBy
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \StructType\ApiCampaignAssistant $representedBy
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setRepresentedBy(\Api\StructType\ApiCampaignAssistant $representedBy = null)
+    public function setRepresentedBy(\StructType\ApiCampaignAssistant $representedBy = null)
     {
         $this->RepresentedBy = $representedBy;
         return $this;
@@ -504,7 +504,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \Api\StructType\ApiDailyBudget|null
+     * @return \StructType\ApiDailyBudget|null
      */
     public function getDailyBudget()
     {
@@ -514,10 +514,10 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Set DailyBudget value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \Api\StructType\ApiDailyBudget $dailyBudget
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \StructType\ApiDailyBudget $dailyBudget
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setDailyBudget(\Api\StructType\ApiDailyBudget $dailyBudget = null)
+    public function setDailyBudget(\StructType\ApiDailyBudget $dailyBudget = null)
     {
         if (is_null($dailyBudget) || (is_array($dailyBudget) && empty($dailyBudget))) {
             unset($this->DailyBudget);
@@ -542,7 +542,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
      * @param string $endDate
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @return \StructType\ApiCampaignGetItem
      */
     public function setEndDate($endDate = null)
     {
@@ -558,7 +558,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \Api\ArrayType\ApiArrayOfString|null
+     * @return \ArrayType\ApiArrayOfString|null
      */
     public function getNegativeKeywords()
     {
@@ -568,10 +568,10 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Set NegativeKeywords value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \Api\ArrayType\ApiArrayOfString $negativeKeywords
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \ArrayType\ApiArrayOfString $negativeKeywords
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setNegativeKeywords(\Api\ArrayType\ApiArrayOfString $negativeKeywords = null)
+    public function setNegativeKeywords(\ArrayType\ApiArrayOfString $negativeKeywords = null)
     {
         if (is_null($negativeKeywords) || (is_array($negativeKeywords) && empty($negativeKeywords))) {
             unset($this->NegativeKeywords);
@@ -585,7 +585,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \Api\ArrayType\ApiArrayOfString|null
+     * @return \ArrayType\ApiArrayOfString|null
      */
     public function getBlockedIps()
     {
@@ -595,10 +595,10 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Set BlockedIps value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \Api\ArrayType\ApiArrayOfString $blockedIps
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \ArrayType\ApiArrayOfString $blockedIps
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setBlockedIps(\Api\ArrayType\ApiArrayOfString $blockedIps = null)
+    public function setBlockedIps(\ArrayType\ApiArrayOfString $blockedIps = null)
     {
         if (is_null($blockedIps) || (is_array($blockedIps) && empty($blockedIps))) {
             unset($this->BlockedIps);
@@ -612,7 +612,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \Api\ArrayType\ApiArrayOfString|null
+     * @return \ArrayType\ApiArrayOfString|null
      */
     public function getExcludedSites()
     {
@@ -622,10 +622,10 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Set ExcludedSites value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \Api\ArrayType\ApiArrayOfString $excludedSites
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \ArrayType\ApiArrayOfString $excludedSites
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setExcludedSites(\Api\ArrayType\ApiArrayOfString $excludedSites = null)
+    public function setExcludedSites(\ArrayType\ApiArrayOfString $excludedSites = null)
     {
         if (is_null($excludedSites) || (is_array($excludedSites) && empty($excludedSites))) {
             unset($this->ExcludedSites);
@@ -636,7 +636,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Get TextCampaign value
-     * @return \Api\StructType\ApiTextCampaignGetItem|null
+     * @return \StructType\ApiTextCampaignGetItem|null
      */
     public function getTextCampaign()
     {
@@ -644,17 +644,17 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set TextCampaign value
-     * @param \Api\StructType\ApiTextCampaignGetItem $textCampaign
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \StructType\ApiTextCampaignGetItem $textCampaign
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setTextCampaign(\Api\StructType\ApiTextCampaignGetItem $textCampaign = null)
+    public function setTextCampaign(\StructType\ApiTextCampaignGetItem $textCampaign = null)
     {
         $this->TextCampaign = $textCampaign;
         return $this;
     }
     /**
      * Get MobileAppCampaign value
-     * @return \Api\StructType\ApiMobileAppCampaignGetItem|null
+     * @return \StructType\ApiMobileAppCampaignGetItem|null
      */
     public function getMobileAppCampaign()
     {
@@ -662,17 +662,17 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set MobileAppCampaign value
-     * @param \Api\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setMobileAppCampaign(\Api\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null)
+    public function setMobileAppCampaign(\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null)
     {
         $this->MobileAppCampaign = $mobileAppCampaign;
         return $this;
     }
     /**
      * Get DynamicTextCampaign value
-     * @return \Api\StructType\ApiDynamicTextCampaignGetItem|null
+     * @return \StructType\ApiDynamicTextCampaignGetItem|null
      */
     public function getDynamicTextCampaign()
     {
@@ -680,10 +680,10 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set DynamicTextCampaign value
-     * @param \Api\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
-     * @return \Api\StructType\ApiCampaignGetItem
+     * @param \StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
+     * @return \StructType\ApiCampaignGetItem
      */
-    public function setDynamicTextCampaign(\Api\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null)
+    public function setDynamicTextCampaign(\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null)
     {
         $this->DynamicTextCampaign = $dynamicTextCampaign;
         return $this;

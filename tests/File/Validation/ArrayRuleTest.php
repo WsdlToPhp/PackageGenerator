@@ -59,7 +59,7 @@ class ArrayRuleTest extends AbstractRuleTest
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, string(''), integer(1) given
+     * @expectedExceptionMessage The TaxDescription property can only contain items of type \StructType\ApiParagraphType, string(''), integer(1) given
      */
     public function testSetTaxDescriptionValueWithStringValueMustThrowAnException()
     {
@@ -73,7 +73,7 @@ class ArrayRuleTest extends AbstractRuleTest
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, Api\StructType\ApiTaxType given
+     * @expectedExceptionMessage The TaxDescription property can only contain items of type \StructType\ApiParagraphType, StructType\ApiTaxType given
      */
     public function testSetTaxDescriptionValueWithInvalidObjectItemMustThrowAnException()
     {
@@ -82,8 +82,8 @@ class ArrayRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance->setTaxDescription([
-                new \Api\StructType\ApiTaxType(),
-                new \Api\StructType\ApiParagraphType(),
+                new \StructType\ApiTaxType(),
+                new \StructType\ApiParagraphType(),
             ])
         );
     }
@@ -98,8 +98,8 @@ class ArrayRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance->setTaxDescription([
-                new \Api\StructType\ApiParagraphType(),
-                new \Api\StructType\ApiParagraphType(),
+                new \StructType\ApiParagraphType(),
+                new \StructType\ApiParagraphType(),
             ])
         );
     }

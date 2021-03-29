@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \Std\Opt\StructClass;
 
@@ -85,7 +85,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Title value
      * @param string $title
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setTitle($title = null)
     {
@@ -107,7 +107,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Url value
      * @param string $url
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setUrl($url = null)
     {
@@ -129,7 +129,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Source value
      * @param string $source
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setSource($source = null)
     {
@@ -151,7 +151,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Snippet value
      * @param string $snippet
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setSnippet($snippet = null)
     {
@@ -173,7 +173,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Date value
      * @param string $date
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setDate($date = null)
     {

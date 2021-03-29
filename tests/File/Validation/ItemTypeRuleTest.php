@@ -36,7 +36,7 @@ class ItemTypeRuleTest extends AbstractRuleTest
         // true to avoid the maxoccurs error to occur
         $instance = self::getWhlTaxTypeInstance(true);
 
-        $this->assertSame($instance, $instance->addToTaxDescription(new \Api\StructType\ApiParagraphType()));
+        $this->assertSame($instance, $instance->addToTaxDescription(new \StructType\ApiParagraphType()));
     }
 
     /**

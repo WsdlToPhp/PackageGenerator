@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\ArrayType;
+namespace ArrayType;
 
 use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
@@ -64,7 +64,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * Set string value
      * @throws \InvalidArgumentException
      * @param string[] $string
-     * @return \Api\ArrayType\ApiArrayOfString
+     * @return \ArrayType\ApiArrayOfString
      */
     public function setString(array $string = array())
     {
@@ -79,7 +79,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * Add item to string value
      * @throws \InvalidArgumentException
      * @param string $item
-     * @return \Api\ArrayType\ApiArrayOfString
+     * @return \ArrayType\ApiArrayOfString
      */
     public function addToString($item)
     {

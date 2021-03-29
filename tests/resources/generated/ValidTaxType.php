@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -20,7 +20,7 @@ class ApiTaxType extends AbstractStructBase
      * - documentation: Text description of the taxes in a given language.
      * - maxOccurs: 5
      * - minOccurs: 0
-     * @var \Api\StructType\ApiParagraphType[]
+     * @var \StructType\ApiParagraphType[]
      */
     public $TaxDescription;
     /**
@@ -96,7 +96,7 @@ class ApiTaxType extends AbstractStructBase
      * @uses ApiTaxType::setAmount()
      * @uses ApiTaxType::setCurrencyCode()
      * @uses ApiTaxType::setDecimalPlaces()
-     * @param \Api\StructType\ApiParagraphType[] $taxDescription
+     * @param \StructType\ApiParagraphType[] $taxDescription
      * @param string $type
      * @param string $code
      * @param float $percent
@@ -117,7 +117,7 @@ class ApiTaxType extends AbstractStructBase
     }
     /**
      * Get TaxDescription value
-     * @return \Api\StructType\ApiParagraphType[]|null
+     * @return \StructType\ApiParagraphType[]|null
      */
     public function getTaxDescription()
     {
@@ -135,12 +135,12 @@ class ApiTaxType extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $taxTypeTaxDescriptionItem) {
             // validation for constraint: itemType
-            if (!$taxTypeTaxDescriptionItem instanceof \Api\StructType\ApiParagraphType) {
+            if (!$taxTypeTaxDescriptionItem instanceof \StructType\ApiParagraphType) {
                 $invalidValues[] = is_object($taxTypeTaxDescriptionItem) ? get_class($taxTypeTaxDescriptionItem) : sprintf('%s(%s)', gettype($taxTypeTaxDescriptionItem), var_export($taxTypeTaxDescriptionItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The TaxDescription property can only contain items of type \StructType\ApiParagraphType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -148,8 +148,8 @@ class ApiTaxType extends AbstractStructBase
     /**
      * Set TaxDescription value
      * @throws \InvalidArgumentException
-     * @param \Api\StructType\ApiParagraphType[] $taxDescription
-     * @return \Api\StructType\ApiTaxType
+     * @param \StructType\ApiParagraphType[] $taxDescription
+     * @return \StructType\ApiTaxType
      */
     public function setTaxDescription(array $taxDescription = array())
     {
@@ -167,14 +167,14 @@ class ApiTaxType extends AbstractStructBase
     /**
      * Add item to TaxDescription value
      * @throws \InvalidArgumentException
-     * @param \Api\StructType\ApiParagraphType $item
-     * @return \Api\StructType\ApiTaxType
+     * @param \StructType\ApiParagraphType $item
+     * @return \StructType\ApiTaxType
      */
-    public function addToTaxDescription(\Api\StructType\ApiParagraphType $item)
+    public function addToTaxDescription(\StructType\ApiParagraphType $item)
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiParagraphType) {
-            throw new \InvalidArgumentException(sprintf('The TaxDescription property can only contain items of type \Api\StructType\ApiParagraphType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiParagraphType) {
+            throw new \InvalidArgumentException(sprintf('The TaxDescription property can only contain items of type \StructType\ApiParagraphType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: maxOccurs(5)
         if (is_array($this->TaxDescription) && count($this->TaxDescription) >= 5) {
@@ -193,17 +193,17 @@ class ApiTaxType extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Api\EnumType\ApiAmountDeterminationType::valueIsValid()
-     * @uses \Api\EnumType\ApiAmountDeterminationType::getValidValues()
+     * @uses \EnumType\ApiAmountDeterminationType::valueIsValid()
+     * @uses \EnumType\ApiAmountDeterminationType::getValidValues()
      * @throws \InvalidArgumentException
      * @param string $type
-     * @return \Api\StructType\ApiTaxType
+     * @return \StructType\ApiTaxType
      */
     public function setType($type = null)
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiAmountDeterminationType::valueIsValid($type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAmountDeterminationType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Api\EnumType\ApiAmountDeterminationType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiAmountDeterminationType::valueIsValid($type)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiAmountDeterminationType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \EnumType\ApiAmountDeterminationType::getValidValues())), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -219,7 +219,7 @@ class ApiTaxType extends AbstractStructBase
     /**
      * Set Code value
      * @param string $code
-     * @return \Api\StructType\ApiTaxType
+     * @return \StructType\ApiTaxType
      */
     public function setCode($code = null)
     {
@@ -245,7 +245,7 @@ class ApiTaxType extends AbstractStructBase
     /**
      * Set Percent value
      * @param float $percent
-     * @return \Api\StructType\ApiTaxType
+     * @return \StructType\ApiTaxType
      */
     public function setPercent($percent = null)
     {
@@ -275,7 +275,7 @@ class ApiTaxType extends AbstractStructBase
     /**
      * Set Amount value
      * @param float $amount
-     * @return \Api\StructType\ApiTaxType
+     * @return \StructType\ApiTaxType
      */
     public function setAmount($amount = null)
     {
@@ -301,7 +301,7 @@ class ApiTaxType extends AbstractStructBase
     /**
      * Set CurrencyCode value
      * @param string $currencyCode
-     * @return \Api\StructType\ApiTaxType
+     * @return \StructType\ApiTaxType
      */
     public function setCurrencyCode($currencyCode = null)
     {
@@ -327,7 +327,7 @@ class ApiTaxType extends AbstractStructBase
     /**
      * Set DecimalPlaces value
      * @param int $decimalPlaces
-     * @return \Api\StructType\ApiTaxType
+     * @return \StructType\ApiTaxType
      */
     public function setDecimalPlaces($decimalPlaces = null)
     {

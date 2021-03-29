@@ -19,12 +19,12 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 $options = array(
     \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Api\ApiClassMap::get(),
+    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => ApiClassMap::get(),
 );
 /**
  * Samples for Login ServiceType
  */
-$login = new \Api\ServiceType\ApiLogin($options);
+$login = new \ServiceType\ApiLogin($options);
 /**
  * Sample call for Login operation/method
  */
@@ -36,7 +36,7 @@ if ($login->Login($login, $password) !== false) {
 /**
  * Samples for Logout ServiceType
  */
-$logout = new \Api\ServiceType\ApiLogout($options);
+$logout = new \ServiceType\ApiLogout($options);
 /**
  * Sample call for Logout operation/method
  */
@@ -48,7 +48,7 @@ if ($logout->Logout() !== false) {
 /**
  * Samples for Get ServiceType
  */
-$get = new \Api\ServiceType\ApiGet($options);
+$get = new \ServiceType\ApiGet($options);
 /**
  * Sample call for GetRequestList operation/method
  */
@@ -60,7 +60,7 @@ if ($get->GetRequestList() !== false) {
 /**
  * Sample call for GetHouseInfo operation/method
  */
-if ($get->GetHouseInfo(new \Api\StructType\ApiFiasAddress()) !== false) {
+if ($get->GetHouseInfo(new \StructType\ApiFiasAddress()) !== false) {
     print_r($get->getResult());
 } else {
     print_r($get->getLastError());
@@ -156,7 +156,7 @@ if ($get->GetFileByID($file_id) !== false) {
 /**
  * Samples for Set ServiceType
  */
-$set = new \Api\ServiceType\ApiSet($options);
+$set = new \ServiceType\ApiSet($options);
 /**
  * Sample call for SetRequestForSubmit operation/method
  */
@@ -168,7 +168,7 @@ if ($set->SetRequestForSubmit($inns) !== false) {
 /**
  * Sample call for SetHouseProfile operation/method
  */
-if ($set->SetHouseProfile($house_id, $reporting_period_id, new \Api\StructType\ApiHouseProfileData()) !== false) {
+if ($set->SetHouseProfile($house_id, $reporting_period_id, new \StructType\ApiHouseProfileData()) !== false) {
     print_r($set->getResult());
 } else {
     print_r($set->getLastError());
@@ -176,7 +176,7 @@ if ($set->SetHouseProfile($house_id, $reporting_period_id, new \Api\StructType\A
 /**
  * Sample call for SetHouseProfile988 operation/method
  */
-if ($set->SetHouseProfile988($house_id, $reporting_period_id, new \Api\StructType\ApiHouseProfileData988()) !== false) {
+if ($set->SetHouseProfile988($house_id, $reporting_period_id, new \StructType\ApiHouseProfileData988()) !== false) {
     print_r($set->getResult());
 } else {
     print_r($set->getLastError());
@@ -192,7 +192,7 @@ if ($set->SetHouseLinkToOrganization($house_id, $inn, $date_start, $management_r
 /**
  * Sample call for SetNewHouse operation/method
  */
-if ($set->SetNewHouse(new \Api\StructType\ApiFiasAddress()) !== false) {
+if ($set->SetNewHouse(new \StructType\ApiFiasAddress()) !== false) {
     print_r($set->getResult());
 } else {
     print_r($set->getLastError());
@@ -208,7 +208,7 @@ if ($set->SetUnlinkFromOrganization($house_id, $date_stop, $stop_reason_type, $s
 /**
  * Sample call for SetNewCompany operation/method
  */
-if ($set->SetNewCompany($inn, new \Api\StructType\ApiNewCompanyProfileData()) !== false) {
+if ($set->SetNewCompany($inn, new \StructType\ApiNewCompanyProfileData()) !== false) {
     print_r($set->getResult());
 } else {
     print_r($set->getLastError());
@@ -216,7 +216,7 @@ if ($set->SetNewCompany($inn, new \Api\StructType\ApiNewCompanyProfileData()) !=
 /**
  * Sample call for SetCompanyProfile operation/method
  */
-if ($set->SetCompanyProfile($inn, $reporting_period_id, new \Api\StructType\ApiCompanyProfileData()) !== false) {
+if ($set->SetCompanyProfile($inn, $reporting_period_id, new \StructType\ApiCompanyProfileData()) !== false) {
     print_r($set->getResult());
 } else {
     print_r($set->getLastError());
@@ -224,7 +224,7 @@ if ($set->SetCompanyProfile($inn, $reporting_period_id, new \Api\StructType\ApiC
 /**
  * Sample call for SetCompanyProfile988 operation/method
  */
-if ($set->SetCompanyProfile988($inn, $reporting_period_id, new \Api\StructType\ApiCompanyProfileData988()) !== false) {
+if ($set->SetCompanyProfile988($inn, $reporting_period_id, new \StructType\ApiCompanyProfileData988()) !== false) {
     print_r($set->getResult());
 } else {
     print_r($set->getLastError());
@@ -232,7 +232,7 @@ if ($set->SetCompanyProfile988($inn, $reporting_period_id, new \Api\StructType\A
 /**
  * Sample call for SetUploadFile operation/method
  */
-if ($set->SetUploadFile(new \Api\StructType\ApiFileObject()) !== false) {
+if ($set->SetUploadFile(new \StructType\ApiFileObject()) !== false) {
     print_r($set->getResult());
 } else {
     print_r($set->getLastError());

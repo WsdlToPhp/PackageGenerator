@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\ArrayType;
+namespace ArrayType;
 
 use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
@@ -17,13 +17,13 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \Api\StructType\ApiNewsRelatedSearch[]
+     * @var \StructType\ApiNewsRelatedSearch[]
      */
     public $NewsRelatedSearch;
     /**
      * Constructor method for ArrayOfNewsRelatedSearch
      * @uses ApiArrayOfNewsRelatedSearch::setNewsRelatedSearch()
-     * @param \Api\StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
+     * @param \StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      */
     public function __construct(array $newsRelatedSearch = array())
     {
@@ -32,7 +32,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     }
     /**
      * Get NewsRelatedSearch value
-     * @return \Api\StructType\ApiNewsRelatedSearch[]|null
+     * @return \StructType\ApiNewsRelatedSearch[]|null
      */
     public function getNewsRelatedSearch()
     {
@@ -50,12 +50,12 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
         $invalidValues = [];
         foreach ($values as $arrayOfNewsRelatedSearchNewsRelatedSearchItem) {
             // validation for constraint: itemType
-            if (!$arrayOfNewsRelatedSearchNewsRelatedSearchItem instanceof \Api\StructType\ApiNewsRelatedSearch) {
+            if (!$arrayOfNewsRelatedSearchNewsRelatedSearchItem instanceof \StructType\ApiNewsRelatedSearch) {
                 $invalidValues[] = is_object($arrayOfNewsRelatedSearchNewsRelatedSearchItem) ? get_class($arrayOfNewsRelatedSearchNewsRelatedSearchItem) : sprintf('%s(%s)', gettype($arrayOfNewsRelatedSearchNewsRelatedSearchItem), var_export($arrayOfNewsRelatedSearchNewsRelatedSearchItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The NewsRelatedSearch property can only contain items of type \Api\StructType\ApiNewsRelatedSearch, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The NewsRelatedSearch property can only contain items of type \StructType\ApiNewsRelatedSearch, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -63,8 +63,8 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Set NewsRelatedSearch value
      * @throws \InvalidArgumentException
-     * @param \Api\StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
-     * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
+     * @param \StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
+     * @return \ArrayType\ApiArrayOfNewsRelatedSearch
      */
     public function setNewsRelatedSearch(array $newsRelatedSearch = array())
     {
@@ -78,14 +78,14 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Add item to NewsRelatedSearch value
      * @throws \InvalidArgumentException
-     * @param \Api\StructType\ApiNewsRelatedSearch $item
-     * @return \Api\ArrayType\ApiArrayOfNewsRelatedSearch
+     * @param \StructType\ApiNewsRelatedSearch $item
+     * @return \ArrayType\ApiArrayOfNewsRelatedSearch
      */
-    public function addToNewsRelatedSearch(\Api\StructType\ApiNewsRelatedSearch $item)
+    public function addToNewsRelatedSearch(\StructType\ApiNewsRelatedSearch $item)
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiNewsRelatedSearch) {
-            throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of type \Api\StructType\ApiNewsRelatedSearch, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiNewsRelatedSearch) {
+            throw new \InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of type \StructType\ApiNewsRelatedSearch, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->NewsRelatedSearch[] = $item;
         return $this;
@@ -93,7 +93,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
-     * @return \Api\StructType\ApiNewsRelatedSearch|null
+     * @return \StructType\ApiNewsRelatedSearch|null
      */
     public function current()
     {
@@ -103,7 +103,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Returns the indexed element
      * @see AbstractStructArrayBase::item()
      * @param int $index
-     * @return \Api\StructType\ApiNewsRelatedSearch|null
+     * @return \StructType\ApiNewsRelatedSearch|null
      */
     public function item($index)
     {
@@ -112,7 +112,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the first element
      * @see AbstractStructArrayBase::first()
-     * @return \Api\StructType\ApiNewsRelatedSearch|null
+     * @return \StructType\ApiNewsRelatedSearch|null
      */
     public function first()
     {
@@ -121,7 +121,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     /**
      * Returns the last element
      * @see AbstractStructArrayBase::last()
-     * @return \Api\StructType\ApiNewsRelatedSearch|null
+     * @return \StructType\ApiNewsRelatedSearch|null
      */
     public function last()
     {
@@ -131,7 +131,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Returns the element at the offset
      * @see AbstractStructArrayBase::offsetGet()
      * @param int $offset
-     * @return \Api\StructType\ApiNewsRelatedSearch|null
+     * @return \StructType\ApiNewsRelatedSearch|null
      */
     public function offsetGet($offset)
     {

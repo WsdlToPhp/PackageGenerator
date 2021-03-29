@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -130,7 +130,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Set CampaignIds value
      * @throws \InvalidArgumentException
      * @param int[] $campaignIds
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function setCampaignIds(array $campaignIds = array())
     {
@@ -145,7 +145,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Add item to CampaignIds value
      * @throws \InvalidArgumentException
      * @param int $item
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToCampaignIds($item)
     {
@@ -190,7 +190,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Set Ids value
      * @throws \InvalidArgumentException
      * @param int[] $ids
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function setIds(array $ids = array())
     {
@@ -205,7 +205,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Add item to Ids value
      * @throws \InvalidArgumentException
      * @param int $item
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToIds($item)
     {
@@ -236,23 +236,23 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaTypesItem) {
             // validation for constraint: enumeration
-            if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($adGroupsSelectionCriteriaTypesItem)) {
+            if (!\EnumType\ApiAdGroupTypesEnum::valueIsValid($adGroupsSelectionCriteriaTypesItem)) {
                 $invalidValues[] = is_object($adGroupsSelectionCriteriaTypesItem) ? get_class($adGroupsSelectionCriteriaTypesItem) : sprintf('%s(%s)', gettype($adGroupsSelectionCriteriaTypesItem), var_export($adGroupsSelectionCriteriaTypesItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdGroupTypesEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues()));
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiAdGroupTypesEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \EnumType\ApiAdGroupTypesEnum::getValidValues()));
         }
         unset($invalidValues);
         return $message;
     }
     /**
      * Set Types value
-     * @uses \Api\EnumType\ApiAdGroupTypesEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiAdGroupTypesEnum::getValidValues()
+     * @uses \EnumType\ApiAdGroupTypesEnum::valueIsValid()
+     * @uses \EnumType\ApiAdGroupTypesEnum::getValidValues()
      * @throws \InvalidArgumentException
      * @param string[] $types
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function setTypes(array $types = array())
     {
@@ -265,17 +265,17 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Add item to Types value
-     * @uses \Api\EnumType\ApiAdGroupTypesEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiAdGroupTypesEnum::getValidValues()
+     * @uses \EnumType\ApiAdGroupTypesEnum::valueIsValid()
+     * @uses \EnumType\ApiAdGroupTypesEnum::getValidValues()
      * @throws \InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToTypes($item)
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiAdGroupTypesEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiAdGroupTypesEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiAdGroupTypesEnum::getValidValues())), __LINE__);
+        if (!\EnumType\ApiAdGroupTypesEnum::valueIsValid($item)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiAdGroupTypesEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \EnumType\ApiAdGroupTypesEnum::getValidValues())), __LINE__);
         }
         $this->Types[] = $item;
         return $this;
@@ -300,23 +300,23 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaStatusesItem) {
             // validation for constraint: enumeration
-            if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaStatusesItem)) {
+            if (!\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaStatusesItem)) {
                 $invalidValues[] = is_object($adGroupsSelectionCriteriaStatusesItem) ? get_class($adGroupsSelectionCriteriaStatusesItem) : sprintf('%s(%s)', gettype($adGroupsSelectionCriteriaStatusesItem), var_export($adGroupsSelectionCriteriaStatusesItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues()));
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiStatusSelectionEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \EnumType\ApiStatusSelectionEnum::getValidValues()));
         }
         unset($invalidValues);
         return $message;
     }
     /**
      * Set Statuses value
-     * @uses \Api\EnumType\ApiStatusSelectionEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiStatusSelectionEnum::getValidValues()
+     * @uses \EnumType\ApiStatusSelectionEnum::valueIsValid()
+     * @uses \EnumType\ApiStatusSelectionEnum::getValidValues()
      * @throws \InvalidArgumentException
      * @param string[] $statuses
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function setStatuses(array $statuses = array())
     {
@@ -329,17 +329,17 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Add item to Statuses value
-     * @uses \Api\EnumType\ApiStatusSelectionEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiStatusSelectionEnum::getValidValues()
+     * @uses \EnumType\ApiStatusSelectionEnum::valueIsValid()
+     * @uses \EnumType\ApiStatusSelectionEnum::getValidValues()
      * @throws \InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToStatuses($item)
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
+        if (!\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
         }
         $this->Statuses[] = $item;
         return $this;
@@ -378,7 +378,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Set TagIds value
      * @throws \InvalidArgumentException
      * @param int[] $tagIds
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function setTagIds(array $tagIds = array())
     {
@@ -393,7 +393,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Add item to TagIds value
      * @throws \InvalidArgumentException
      * @param int $item
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToTagIds($item)
     {
@@ -438,7 +438,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Set Tags value
      * @throws \InvalidArgumentException
      * @param string[] $tags
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function setTags(array $tags = array())
     {
@@ -453,7 +453,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Add item to Tags value
      * @throws \InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToTags($item)
     {
@@ -484,23 +484,23 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaAppIconStatusesItem) {
             // validation for constraint: enumeration
-            if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaAppIconStatusesItem)) {
+            if (!\EnumType\ApiStatusSelectionEnum::valueIsValid($adGroupsSelectionCriteriaAppIconStatusesItem)) {
                 $invalidValues[] = is_object($adGroupsSelectionCriteriaAppIconStatusesItem) ? get_class($adGroupsSelectionCriteriaAppIconStatusesItem) : sprintf('%s(%s)', gettype($adGroupsSelectionCriteriaAppIconStatusesItem), var_export($adGroupsSelectionCriteriaAppIconStatusesItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues()));
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiStatusSelectionEnum', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \EnumType\ApiStatusSelectionEnum::getValidValues()));
         }
         unset($invalidValues);
         return $message;
     }
     /**
      * Set AppIconStatuses value
-     * @uses \Api\EnumType\ApiStatusSelectionEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiStatusSelectionEnum::getValidValues()
+     * @uses \EnumType\ApiStatusSelectionEnum::valueIsValid()
+     * @uses \EnumType\ApiStatusSelectionEnum::getValidValues()
      * @throws \InvalidArgumentException
      * @param string[] $appIconStatuses
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function setAppIconStatuses(array $appIconStatuses = array())
     {
@@ -513,17 +513,17 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Add item to AppIconStatuses value
-     * @uses \Api\EnumType\ApiStatusSelectionEnum::valueIsValid()
-     * @uses \Api\EnumType\ApiStatusSelectionEnum::getValidValues()
+     * @uses \EnumType\ApiStatusSelectionEnum::valueIsValid()
+     * @uses \EnumType\ApiStatusSelectionEnum::getValidValues()
      * @throws \InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiAdGroupsSelectionCriteria
+     * @return \StructType\ApiAdGroupsSelectionCriteria
      */
     public function addToAppIconStatuses($item)
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Api\EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
+        if (!\EnumType\ApiStatusSelectionEnum::valueIsValid($item)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiStatusSelectionEnum', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \EnumType\ApiStatusSelectionEnum::getValidValues())), __LINE__);
         }
         $this->AppIconStatuses[] = $item;
         return $this;
